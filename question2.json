@@ -1,0 +1,1989 @@
+{
+	"questions": [{
+			"numb": 1,
+			"question": "Por um circuito resistivo de 120 Ohm circula uma corrente de 0,15 A, quando alimentado por uma tensão de 18 V. Se for alimentado por uma tensão de 36 V, a corrente :",
+			"answers": [
+				"Diminui para 0,075 A",
+				"Aumenta para 0,300 A",
+				"Diminui para 1/4 do valor",
+				"Aumenta para 4 vezes o valor"
+			],
+			"correctIndex": 2,
+			"notes": "Lei de ohm, V=RI, 36=120*I, I=36/120, I=0.3A, logo resposta 2."
+
+		},
+		{
+			"numb": 2,
+			"question": " Determinado circuito precisa ser alimentado com 60 V e 0,8 A. Dispondo-se de uma fonte de 300 V, devese colocar em série com o circuito uma resistência de :",
+			"answers": [
+				"12 Ohm",
+				"60 Ohm",
+				"300 Ohm",
+				"1,2 kilo Ohm"
+
+			],
+			"correctIndex": 3,
+			"notes": "Temos então de passar de 300 para 60 volts,calculamos a diferença,VF = 300 - 60 = 240 V usamos agora a lei de ohm com 240 = R * 0,8,R = 240 / 0,8,R = 300 Ohm ou seja resposta 3. "
+		},
+		{
+			"numb": 3,
+			"question": " Quatro resistências estão ligadas em série. A tensão aplicada ao conjunto é de 50 V. As quedas de tensão nos terminais das três primeiras são, respetivamente: 25 V, 10 V e 13 V. Qual é a queda de tensão nos terminais da última resistência?",
+			"answers": [
+
+				"10 V",
+				"5 V",
+				"2 V",
+				"1 V"
+			],
+
+			"correctIndex": 3,
+			"notes": "Usando a lei das malhas,A soma da fonte com as quedas de tensão tem de ser 0,logo: 50 - 25 - 10 - 13 - x = 0 <= > x = 2. Opção 3 "
+		},
+		{
+			"numb": 4,
+			"question": " Qual a unidade em que se expressa a capacidade de uma bateria?",
+			"answers": [
+				"A/h",
+				"A.h",
+				"VA",
+				"V/h"
+			],
+			"correctIndex": 2,
+			"notes": "A capacidade de uma bateria é dada em A.h "
+		},
+		{
+			"numb": 5,
+			"question": " Qual o consumo de energia associado a um equipamento de 1 W que opera durante uma hora?",
+			"answers": [
+				"1 J",
+				"24 J",
+				"60 J",
+				"3600 J"
+			],
+			"correctIndex": 4,
+			"notes": "1 Joule é 1W por Segundo, logo numa hora, que contem 3600 segundos, são consumidos 3600 Joules, resposta 4"
+		},
+		{
+			"numb": 6,
+			"question": " A capacidade de uma bateria é de 20 A.h. Esta bateria é aplicada a um circuito ao qual fornece uma corrente constante de 2 A. Qual a previsão teórica do tempo de funcionamento do referido circuito?",
+			"answers": [
+
+				"1 hora",
+				"2 horas",
+				"5 horas",
+				"10 horas"
+			],
+			"correctIndex": 4,
+			"notes": "Se temos 20Ah de capacidade e usamos 2A , podemos então usar esse circuito por : 20Ah/2A = 10h"
+		},
+		{
+			"numb": 7,
+			"question": " Um gerador com a f.e.m. de 100 V e com 0,5 Ohm de resistência interna, debita sobre um circuito exterior uma corrente de 10 A. Qual é a tensão aos terminais do gerador?",
+			"answers": [
+
+				"80 V",
+				"90 V",
+				"95 V",
+				"100 V"
+			],
+			"correctIndex": 3,
+			"notes": "Temos de subtrair á voltagem gerada a quebra dada pela resistencia interna, assim, usando a lei de ohm: Vt=V-RI <=> Vt=100-10*0,5 <=> Vt= 95V, Opção 3."
+		},
+		{
+			"numb": 8,
+			"question": " Qual a força eletromotriz de duas baterias de 12 V ligadas em série?",
+			"answers": [
+
+				"6 V",
+				"12 V",
+				"24 V",
+				"Nenhuma das respostas está correta"
+			],
+			"correctIndex": 3,
+			"notes": "Para obter a força total, basta somar a forças electromotrizes das duas baterias, logo 12+12=24, opção 3."
+		},
+		{
+			"numb": 9,
+			"question": " Teoricamente, num circuito de corrente contínua, poderemos afirmar que a corrente de curto-circuito é:",
+			"answers": [
+
+				"infinita",
+				"nula",
+				"sempre igual a 1 Ampère",
+				"igual à corrente de circuito aberto"
+			],
+			"correctIndex": 1,
+			"notes": "Infinita, Teóricamente em curto circuito TUDO o que houver para passar, passa no mesmo instante, a diferença do teórico para o prático é que existe sempre uma resistencia e limites do material."
+		},
+		{
+			"numb": 10,
+			"question": " Qual das situações deveremos evitar ou ter cuidados especiais?",
+			"answers": [
+
+				"Ligação de fontes de tensão em série",
+				"Ligação de fontes de tensão em paralelo",
+				"Manutenção de fontes de tensão em vazio",
+				"Nenhuma das respostas está correta"
+			],
+			"correctIndex": 2,
+			"notes": "O truque desta pergunta está nas fontes de tensão, não confundir com fontes de alimentação, assim, devido as fontes puderem ter valores muito diferentes quer em tensão quer em resistência interna, deve-se ter cuidado ao colocar em paralelo, devido á discrepância destes valores poder resultar em valores de Intensidade de corrente muito altos. Referencia : http://www.ufrgs.br/eng04030/Aulas/teoria/cap_04/assocfon.htm – Obrigado ao Sérgio Matias."
+		},
+		{
+			"numb": 11,
+			"question": " A intensidade de campo elétrico é expressa em:",
+			"answers": [
+
+				"metro",
+				"Volt por metro",
+				"Watt",
+				"Volt"
+			],
+			"correctIndex": 2,
+			"notes": "Volt por Metro, resposta 2. (no SI também se usa o Newton por Coulomb"
+		},
+		{
+			"numb": 12,
+			"question": " A intensidade do campo elétrico,",
+			"answers": [
+
+				"cresce com a raiz quadrada da distância",
+				"decresce com a raiz quadrada da distância",
+				"decresce com o quadrado da distância",
+				"cresce com o quadrado da distância"
+			],
+			"correctIndex": 2,
+			"notes": "Decresce com o quadrado da distância – Ver Lei do Inverso do quadrado – opção 3."
+
+		},
+		{
+			"numb": 13,
+			"question": " Uma corrente a passar num condutor cria na sua proximidade:",
+			"answers": [
+
+				"um campo elétrico",
+				"um campo magnético",
+				"uma corrente elétrica",
+				"uma região luminosa"
+			],
+			"correctIndex": 2,
+			"notes": "Um campo magnético.Opção 2"
+
+		},
+		{
+			"numb": 14,
+			"question": " O que é o campo magnético?",
+			"answers": [
+
+				"É um campo, numa dada região do espaço, onde se manifesta a ação do efeito gravitacional",
+				"É um campo numa dada região do espaço, onde se manifesta a ação de uma carga elétrica estática",
+				"É um campo, numa dada região do espaço, onde se manifesta a ação de cargas elétricas em movimento num condutor",
+				"É um campo, numa dada região do espaço, tendo necessariamente ar, onde se manifesta a ação de fontesde luz coerente"
+			],
+			"correctIndex": 3,
+			"notes": "Opção 3. É criado pelo movimento da carga elétrica num condutor."
+		},
+		{
+			"numb": 15,
+			"question": " Qual das afirmações está correta?",
+			"correctIndex": 4,
+			"notes": "Opção 4, formam circulos concentricos em rodor do condutor.Imagem do campo magnético, (obtida na internet)",
+
+			"answers": [
+
+				"Uma carga positiva estática produz um campo magnético em que as linhas de força do campo são concêntricas",
+				"Um condutor onde flui uma corrente elétrica não produz qualquer campo magnético, a menos que esteja imerso numa substância líquida",
+				"As linhas do campo magnético, de um condutor onde flui uma corrente elétrica, são perpendiculares ao condutor",
+				"As linhas do campo magnético de um condutor onde flui uma corrente elétrica, formam círculos concêntricos ao redor do condutor"
+			]
+		},
+		{
+			"numb":
+
+				16,
+			"question": " Qual a frequência cujo comprimento de onda é 14,117 m?",
+			"answers": [
+
+				"14, 117 MHz",
+				"28, 234 MHz",
+				"21, 250 MHz",
+				"7, 000 MHz"
+			],
+			"correctIndex": 3,
+			"notes": "Divide - se a velocidade da luz no vazio por 14, 117 e dá o valor que corresponde a 21, 250 MHz.Opção 3."
+		},
+		{
+			"numb": 17,
+			"question": " O comprimento de onda da frequência de 25 MHz é:",
+			"answers": [
+
+				"10 m",
+				"12 m",
+				"15 m",
+				"18 m"
+			],
+			"correctIndex": 2,
+			"notes": "Divide - se a velocidade da luz em kilometros pela frequencia em Kilohertz 300000 / 25000 = 12 m, Opção 2."
+
+		},
+		{
+			"numb": 18,
+			"question": "Qual das seguintes características não está associada às ondas eletromagnéticas?",
+			"answers": [
+
+				"Polarização",
+				"Amplitude",
+				"Frequência",
+				"Temperatura"
+			],
+			"correctIndex": 4,
+			"notes": "Polarização Amplitude e Frequência são caracteristicas das ondas, logo a resposta certa é a 4, a temperatura."
+
+		},
+		{
+			"numb": 19,
+			"question": " Qual a unidade de medida de frequência?",
+			"answers": [
+
+				"Farad",
+				"Henry",
+				"Hertz",
+				"Watt"
+			],
+			"correctIndex": 3,
+			"notes": "Opção 3, Hertz."
+		},
+		{
+			"numb": 20,
+			"question": " Exprima 7,54 MHz em kHz.",
+			"answers": [
+
+				"754 kHz",
+				"7 540 kHz",
+				"0, 754 kHz",
+				"0, 0754 kHz"
+			],
+			"correctIndex": 2,
+			"notes": "1 MHz são 1000 KHz, logo 7.54 MHz são 7540 KHz"
+
+		},
+		{
+			"numb": 21,
+			"question": " O período T de uma onda sinusoidal é:",
+			"answers": [
+
+				"o dobro da sua frequência",
+				"metade da sua frequência",
+				"o inverso da sua frequência",
+				"o produto da sua frequência pelo seu comprimento de onda"
+
+			],
+			"correctIndex": 3,
+			"notes": "O periodo é o inverso da frequencia, ora vejamos, se a frequencia é medida em ciclos por segundo, invertemos e temos o numero de segundos para completar um ciclo ou seja o periodo que é dado em segundos.Logo opção 3."
+		},
+		{
+			"numb": 22,
+			"question": " Ovalor eficaz de uma onda sinusoidal com 1 Volt de amplitude máxima é:",
+			"answers": [
+
+				"0, 707 V",
+				"1, 414 V",
+				"0 V",
+				"2 V"
+			],
+			"correctIndex": 1,
+			"notes": "O valor eficaz é dado pelo valor da onda dividido pela raiz quadrada de 2,assim são 1 / sqr(2) = 1 / 1.41 = 0.707 V,opcão 1"
+		},
+		{
+			"numb": 23,
+			"question": " A uma determinada frequência f corresponde um determinado período T. Se a frequência duplicar o período",
+			"answers": [
+
+				"duplica",
+				"não se altera",
+				"passa para um quarto",
+				"passa para metade"
+			],
+			"correctIndex": 4,
+			"notes": "Como o periodo é o tempo decorrido até se completar um ciclo, se a frequencia duplica, o periodo passa para metade.Opção 4!"
+		},
+		{
+			"numb": 24,
+			"question": "Se um voltímetro indicar uma tensão de 34 volt r.m.s. na medição de uma onda sinusoidal, qual é aproximadamente a sua tensão de pico?",
+			"answers": [
+
+				"123 volt",
+				"96 volt",
+				"55 volt",
+				"48 volt"
+			],
+			"correctIndex": 4,
+			"notes": "Temos Vrms = Vpp * SQRT(2),logo Vpp = Vrms / Sqrt(2) => Vpp = 34 / 0,707 = 48 V,Opção 4."
+		},
+		{
+			"numb": 25,
+			"question": " O período de uma onda sinusoidal exprime-se em",
+			"answers": [
+
+				"metros",
+				"segundos",
+				"Hertz",
+				"metros por segundo"
+			],
+			"correctIndex": 2,
+			"notes": "Como já vimos acima, o periodo é o tempo que dura um ciclo, logo como a unica unidade de tempo é segundos, a resposta certa é a 2."
+		},
+		{
+			"numb": 26,
+			"question": " Qual das afirmações está correta?",
+			"answers": [
+
+				"Uma onda quadrada pode ser representada por um conjunto de ondas sinusoidais   ",
+				"Obtém - se a onda sinusoidal fundamental de uma onda quadrada, aplicando um filtro passa - baixo ",
+				"As ondas quadradas são fundamentais na representação e processamento dos sinais digitais",
+				"Todas as respostas anteriores estão corretas"
+			],
+			"correctIndex": 4,
+			"notes": "Podemos criar uma onda quadrada utilizando uma onda sinosoidal e adicionando lhe as suas harmonicas imparescom a amplitude 1 / n onde n é o numero da harmonica.logo a 1 é correcta, um filtro passa baixo bloqueia tudo acima de uma certa frequencia(deixa passar o que é‘ abaixo’) assim se o filtro pode deixar passar a fundamental e bloquear as harmonicas que são frequencias superiores assim a 2 ª é correcta.No dominio do digital, as ondas quadradas são usadas para quase tudo, logo a 3 ª também é correcta.Podemos assim selecciona a opção 4 que diz que toda as respostas anteriores são correctas,"
+		},
+		{
+			"numb": 27,
+			"question": "A frequência de uma onda quadrada expressa-se em",
+			"answers": [
+
+				"zeros e uns",
+				"segundos",
+				"Hertz",
+				"metros"
+			],
+			"correctIndex": 3,
+			"notes": "As ondas são medidas em Hertz,independentemente da sua forma.a opção correcta é a 3."
+		},
+		{
+			"numb": 28,
+			"question": " O dispositivo que transforma os sinais de voz em sinais elétricos, designa-se por :",
+			"answers": [
+
+				"microfone",
+				"amplificador",
+				"auscultador",
+				"misturador"
+			],
+			"correctIndex": 1,
+			"notes": "Microfone,a opção 4 é a correta,já que o amplificador serve para ampliar sinais,o auscultador para converter sinais elétricos em som e o misturador para misturar sinais."
+		},
+		{
+			"numb": 29,
+			"question": " Qual é a largura de faixa necessária numa emissão de modulação de frequência em que o desvio de frequência é 25 kHz e a máxima frequência de modulação é 3 kHz?",
+			"answers": [
+
+				"22 kHz",
+				"25 kHz",
+				"28 kHz",
+				"56 kHz"
+
+			],
+			"correctIndex": 4,
+			"notes": "Aplicação directa da Regra de Carson,Largura = 2 * (desvio + fm) =>Largura = 2 * (25 + 3) = 56 kHz,opção 4."
+		},
+		{
+			"numb": 30,
+			"question": " Define-se índice de modulação em frequência modulada como a relação entre o:",
+			"answers": [
+
+				"desvio máximo e a mais alta frequência de modulação ",
+				"desvio mínimo e a mais alta frequência de modulação ",
+				"desvio máximo e a mais baixa frequência de modulação",
+				"desvio mínimo e a mais baixa frequência de modulação"
+			],
+			"correctIndex": 1,
+			"notes": "O índice de modulação é a divisão do desvio pela frequência de modulação,no entanto as opções dadas são para o rácio de desvio,assim como é o resultado da divisão do desvio máximo pela mais alta frequência de modulação,logo a opção 1 parece a correta."
+
+		},
+		{
+			"numb": 31,
+			"question": " Num emissor de modulação de frequência, modulado a ± 5 kHz, a segunda harmónica tem o desvio de:",
+			"answers": [
+
+				"±2, 5 kHz",
+				"± 5, 0 kHz",
+				"± 10 kHz",
+				"± 20 kHz"
+			],
+			"correctIndex": 3,
+			"notes": "As harmónicas ocorrem nos múltiplos inteiros da frequência fundamental,como a 1 ª harmónica é a própria frequência a 2 a harmónica é nos 10 kHz = 2 x 5 kHz. "
+		},
+		{
+			"numb": 32,
+			"question": "Para converter 2610 kHz em 145 kHz é necessário:",
+			"answers": [
+
+				"um oscilador de 2465 kHz",
+				"um transformador de 18 / 1",
+				"um amplificador sintonizado em 2610 kHz",
+				"um desmodulador de 145 kHz"
+			],
+			"correctIndex": 1,
+			"notes": "Devemos usar um oscilador de 2465,ao misturar os sinais,vamos obter a soma das frequencias e a diferença das mesmas,assim obtemos 5075 KHz e 145 KHz,depois podemos usar um filtro para seleccionar apenas a pretendida,assim a resposta correcta é a 1."
+
+		},
+		{
+			"numb": 33,
+			"question": "Em modulação de amplitude, a que se dá o nome de faixas laterais?",
+			"answers": [
+
+				"Ao conjunto de frequências situadas imediatamente abaixo e acima da frequência da portadora e que resultam da soma e da diferença entre a frequência da portadora e de cada uma das frequências que a modulam",
+				"A todas as frequências situadas aos lados da portadora",
+				"Ao conjunto de frequências que modulam a portadora",
+				"A todas as frequências que o recetor possa receber simultaneamente com a portadora"
+			]
+
+		}, {
+			"numb": 34,
+			"question": " Em modulação de frequência, a que se dá o nome de desvio de frequência?",
+			"answers": [
+
+				"À diferença entre o valor máximo de frequência que a onda modulada apresenta devido à modulação e a frequência da portadora",
+				"À diferença entre o valor máximo e o valor mínimo da frequência da onda modulada",
+				"Ao dobro da tolerância de frequência permitida regulamentarmente",
+				"Ao número de kHz que a frequência da portadora se afasta do seu valor nominal devido à falta de estabilidade do oscilador, na ausência de modulação"
+			]
+		},
+		{
+			"numb": 35,
+			"question": " Qual é um dos inconvenientes da sobremodulação?",
+			"answers": [
+
+				"Produz um aumento significativo da potência aparente do emissor",
+				"Provoca o aumento da largura de faixa ocupada pela emissão, o que poderá originar interferências na receção dos canais adjacentes",
+				"Produz uma emissão em faixa mais estreita",
+				"Provoca uma saturação na antena do emissor"
+			]
+		},
+		{
+			"numb": 36,
+			"question": " Numa emissão em AM, a maior parte da potência é usada para transmitir",
+			"answers": [
+
+				"a banda lateral inferior",
+				"a banda lateral superior",
+				"as duas bandas laterais",
+				"a portadora"
+			],
+			"notes": "A Portadora,resposta 4."
+
+		},
+		{
+			"numb": 37,
+			"question": " Uma desvantagem da receção em AM em relação à receção em FM é",
+			"answers": [
+
+				"a menor largura de faixa utilizada",
+				"a maior sensibilidade aos ruídos interferentes",
+				"a menor estabilidade",
+				"o maior consumo de energia"
+			]
+		},
+		{
+			"numb": 38,
+			"question": " Numa comunicação em AM, transmite-se:",
+			"answers": [
+
+				"somente a faixa lateral inferior",
+				"somente a faixa lateral superior",
+				"somente as duas faixas laterais",
+				"somente a portadora e as duas faixas laterais"
+			]
+
+		},
+		{
+			"numb": 39,
+			"question": " Em modulação de frequência nas faixas de UHF com espaçamento entre canais de 25 kHz, a largura defaixa necessária em geral para uma emissão radiofónica é de:",
+			"answers": [
+
+				"500 Hz",
+				"16 kHz",
+				"22, 5 kHz",
+				"25 kHz"
+			]
+		},
+		{
+			"numb": 40,
+			"question": " Em modulação de frequência, quanto maior é o desvio de frequência",
+			"answers": [
+
+				"menos ruído se nota no recetor e maior é a faixa de frequências ocupada ",
+				"menos ruído se nota no recetor e menor é a faixa de frequências ocupada ",
+				"mais ruído se nota no recetor e maior é a faixa de frequências ocupada  ",
+				"mais ruído se nota no recetor e menor é a faixa de frequências ocupada  "
+			]
+		},
+		{
+			"numb": 41,
+			"question": " Uma modulação de faixa lateral única, ou SSB, é um tipo de modulação",
+			"answers": [
+
+				"de frequência",
+				"de amplitude",
+				"de fase",
+				"outro tipo"
+			]
+		},
+		{
+			"numb": 42,
+			"question": " Na transmissão utilizando modulação em faixa lateral única, ou SSB, com portadora suprimida,",
+			"answers": [
+
+				"a portadora é transmitida",
+				"a maior potência é consumida pela portadora",
+				"a desmodulação é mais simples do que na modulação em dupla faixa lateral ou DSB",
+				"há uma maior economia do espectro"
+			],
+			"correctIndex": 4,
+
+			"notes": "A unica correcta é a 4,há uma maior economia do espectro."
+		},
+		{
+			"numb": 43,
+			"question": " No âmbito das radiocomunicações o que significa a sigla CW?",
+			"answers": [
+
+				"Capacitive Wiring",
+				"Condensador de Watt",
+				"Continuous Wave",
+				"Coil in Water"
+			],
+			"correctIndex": 3,
+
+			"notes": "A sigla CW quer dizer continuous Wave,tal nome deriva de ser o modo que substituiu o anterior,dumped wave,que era gerado através de‘spark gap’ essas ondas iam desvanecendo rapidamente,ao contrário do CW que era continuo."
+		},
+		{
+			"numb":
+
+				44,
+			"question": " A largura de faixa ocupada por uma emissão",
+			"answers": [
+
+				"é sempre menor que a largura de faixa necessária para essa emissão",
+				"não engloba todas as frequências radiadas pelo emissor",
+				"pode ser desconhecida, sem inconveniente",
+				"só pode ser medida nos Centros de Monitorização e Controlo do Espectro da ANACOM"
+			]
+
+		},
+		{
+			"numb": 45,
+			"question": " Uma emissão em dupla faixa lateral é:",
+			"answers": [
+
+				"uma emissão em modulação de frequência",
+				"uma emissão em modulação de fase",
+				"uma emissão em modulação de amplitude",
+				"uma emissão em qualquer tipo de modulação"
+			]
+
+		},
+		{
+			"numb": 46,
+			"question": " Qual das seguintes afirmações é verdadeira no que respeita à modulação de voz em banda lateral única?",
+			"answers": [
+
+				"É um tipo de modulação em amplitude que suprime uma banda lateral e a portadora",
+				"É um tipo de modulação em amplitude que enfatiza as frequências mais elevadas",
+				"Reconstitui o sinal nas frequências elevadas com maior eficiência do que nas frequências baixas",
+				"É o único tipo de modulação de voz autorizado para operar em faixas HF entre os 14 e 30 MHz"
+
+			]
+		},
+		{
+			"numb": 47,
+			"question": " Como se designa o processo de alteração do ângulo de fase de uma onda de RF para transmissão de informação ?",
+			"answers": [
+
+				"Convolução de fase",
+				"Modulação de fase",
+				"Convolução de ângulo",
+				"Inversão de radianos"
+			]
+		},
+		{
+			"numb": 48,
+			"question": " Que tipo de transmissão provoca variação do nível instantâneo de potência do sinal de RF para transmissão de informação?",
+			"answers": [
+
+				"Modulação por pulsos codificados",
+				"Modulação de fase",
+				"Modulação de frequência",
+				"Modulação de amplitude"
+			]
+		},
+		{
+			"numb": 49,
+			"question": " Qual das seguintes emissões de fonia usa uma largura de banda mais estreita?",
+			"answers": [
+
+				"Banda lateral única",
+				"Banda lateral dupla",
+				"Modulação de fase",
+				"Modulação de frequência"
+			]
+
+		},
+		{
+			"numb": 50,
+			"question": " Qual é o índice de modulação de um sinal de fonia FM com um desvio máximo da portadora de ± 6kHz, quando modulada com uma frequência de modulação de 2kHz?",
+			"answers": [
+
+				"6000",
+				"3",
+				"2000",
+				"12"
+			],
+			"correctIndex": 2,
+
+			"notes": "O indice de modulação é o desvio maximo dividido pela freqeuncia máxima,log 6 /2 = 3,resposta 2."
+		},
+		{
+			"numb": 51,
+			"question": " Qual a potência associada a um sinal sinusoidal que faz passar uma corrente eficaz de 2 A numa resistência de 10 Ohm?",
+			"answers": [
+
+				"20 W",
+				"5 W",
+				"40 W",
+				"200 W"
+			],
+			"correctIndex": 3,
+
+			"notes": "A formula da potencia com a intensidade e resistencia é: P = R * I ^ 2,assim P = 10 * 4 = 40 W,Opção 3"
+
+		},
+		{
+			"numb": 52,
+			"question": " Por precaução teve que se pôr um atenuador de 10 dB entre um pré-amplificador e um amplificador. Sabendo que o valor máximo na saída do pré-amplificador é de 50 W, qual a potência máxima à entrada do amplificador?",
+			"answers": [
+
+				"60 W",
+				"10 W",
+				"1 W",
+				"5 W"
+			],
+			"correctIndex": 4,
+
+			"notes": "10 dB correspondem a uma atenuação de 10 x,assim a saida terá 5 W.Õpção 4."
+
+		},
+		{
+			"numb": 53,
+			"question": " Qual das seguintes frases é verdadeira?",
+			"answers": [
+
+				"Um amplificador é tanto mais eficiente quanto maior potência conseguir debitar numa carga de 50 Ohm",
+				"Um amplificador é tanto mais eficiente quanto menor for a entrada para um dado sinal de saída",
+				"Um amplificador é tanto mais eficiente quanto menor for o consumo para uma dada potência de saída",
+				"Um amplificador é tanto mais eficiente quanto maior for o consumo para uma dada potência de saída"
+
+			],
+			"correctIndex": 3,
+
+			"notes": "A eficiencia é a relacao entre o consumo e a saida,logo quanto mais eficiente,maior a potencia de saida com o menor sonsumo,logo opção 3 está correcta,"
+
+		},
+		{
+			"numb": 54,
+			"question": " Um aumento de potência para o dobro ou a redução da mesma para metade resulta na variação de quantos dB?",
+			"answers": [
+
+				"2 dB",
+				"3 dB",
+				"6 dB",
+				"12 dB"
+			],
+			"correctIndex": 2,
+
+			"notes": "duplicar ou dividir por 2 resulta numa variação de 3 dB,ora vejamos um exemplo entrada 5 W Saida 10 W Ganho = 10 * log(v1 / v2),Ganho = 10 * log(10 / 5) <= > Ganho = 3 dB."
+		},
+		{
+			"numb": 55,
+			"question": " O sinal na entrada de um amplificador é de 1 V rms e à saída de 10 V rms. Este amplificador tem um ganho de:",
+			"answers": [
+
+				"3 dB",
+				"6 dB",
+				"10 dB",
+				"20 dB"
+			],
+			"correctIndex": 3,
+
+			"notes": "Temos um ganho de 10 x assim o valor são 10 dB,para calcular este valor deve se usar a seguinte formula Ganho = 10 * log(v1 / v2) => Ganho = 10 * log(10 / 1) = 10 dB,opção 3."
+
+		},
+		{
+			"numb": 56,
+			"question": " Dois amplificadores com ganhos de 10 dB e de 40 dB estão ligados em cascata. O ganho do conjunto é de",
+			"answers": [
+
+				"8 dB",
+				"30 dB",
+				"50 dB",
+				"400 dB"
+			],
+			"correctIndex": 3,
+
+			"notes": "Devem - se somar os valores,assim 10 + 40 = 50,logo a opção correcta é a 3."
+		},
+		{
+			"numb": 57,
+			"question": "Qual a resistência total de duas resistências de 12,5 Ohm cada, quando ligadas em série?",
+			"answers": [
+				"12,5 Ohm",
+				"25 Ohm",
+				"50 Ohm",
+				"37,5 Ohm"
+			],
+			"correctIndex": 2,
+
+			"notes": "Para calcular a resistência Equivalente a resistências em série basta somar os valores das mesmas,assim 12,5+ 12,5 = 25,logo a opção 2 é a correcta."
+		},
+		{
+			"numb": 58,
+			"question": " A associação que resulta numa resistência equivalente de 600 Ohm é a série das seguintes resistências",
+			"answers": [
+
+				"100 Ohm, 80 Ohm, 20 Ohm",
+				"200 Ohm, 150 Ohm, 50 Ohm",
+				"200 Ohm, 200 Ohm, 200 Ohm",
+				"600 Ohm, 600 Ohm, 600 Ohm"
+			],
+			"correctIndex": 3,
+
+			"notes": "Para calcular a resistência Equivalente a resistências em série basta somar os valores das mesmas,das alíneas a que a soma sao 600 Ohm é a alínea 3."
+
+		},
+		{
+			"numb": 59,
+			"question": "Para obter uma resistência equivalente de 62,5 Ohm é necessário associar",
+			"answers": [
+				"3 resistências de 10 Ohm em série",
+				"4 resistências de 250 Ohm em paralelo",
+				"5 resistências de 200 Ohm em série",
+				"10 resistências de 10 Ohm em paralelo"
+			],
+			"correctIndex": 2,
+			"notes": ""
+
+		},
+		{
+			"numb": 60,
+			"question": " Se duas resistências de igual valor, estão associadas em paralelo, a resistência total será",
+			"answers": [
+
+				"de igual valor",
+				"o dobro do valor de cada uma delas",
+				"metade de cada uma delas",
+				"um quarto do valor de cada uma delas"
+			],
+			"correctIndex": 2,
+			"notes": ""
+		},
+		{
+			"numb": 61,
+			"question": " A resistência equivalente a uma associação de 10 resistências de 100 Ohm cada uma, em paralelo, é de:",
+			"answers": [
+
+				"1 Ohm",
+				"10 Ohm",
+				"12,5 Ohm",
+				"25 Ohm"
+			],
+			"correctIndex": 2,
+
+			"notes": "A valor associacao de resistencias em paralelo pode ser calculando dividindo o valor das resistencias pela quantidade delas,logo 10 resistencias de 100 Ohm em paralelo é 100 / 10 = 10 Ohm,atenção que só se pode usar esta formula para resistencias de igual valor."
+
+		},
+		{
+			"numb": 62,
+			"question": "Aplicando um sinal sinusoidal a uma resistência ideal",
+			"answers": [
+				"a corrente está em avanço relativamente à tensão",
+				"a tensão está em avanço relativamente à corrente",
+				"a tensão e a corrente estão em oposição de fase",
+				"a tensão e a corrente estão em fase"
+			],
+			"correctIndex": 4,
+			"notes": ""
+		},
+		{
+			"numb": 63,
+			"question": " Qual a unidade de medida da capacidade?",
+			"answers": [
+
+				"Farad",
+				"Henry",
+				"Hertz",
+				"Volt"
+			],
+			"correctIndex": 1,
+			"notes": "A capacidade é medida em Farad,opção 1."
+		},
+		{
+			"numb": 64,
+			"question": " Qual das igualdades é verdadeira?",
+			"answers": [
+
+				"0,01 F = 10 000 pF",
+				"0,01 mF = 10 000 pF",
+				"0,01 µF = 10 000 pF",
+				"0,01 nF = 10 000 pF"
+			],
+			"correctIndex": 2,
+			"notes": ""
+		},
+		{
+			"numb": 65,
+			"question": " Numa associação de condensadores em paralelo, a capacidade resultante é igual",
+			"answers": [
+
+				"ao produto das capacidades",
+				"à soma das capacidades",
+				"à diferença entre a capacidade maior e a menor",
+				"ao quociente da capacidade maior pela capacidade menor"
+			],
+			"correctIndex": 2,
+			"notes": "É a soma das capacidades.Opção 2. Ceq = C1 + C2 + … +Cn"
+		},
+		{
+			"numb": 66,
+			"question": " Qual a vantagem de um condensador eletrolítico?",
+			"answers": [
+
+				"Elevada precisão",
+				"Não ter polaridade",
+				"Capacidade elevada para um volume determinado",
+				"Condensador RF de custo reduzido"
+			],
+
+			"correctIndex": 3,
+			"notes": ""
+		},
+		{
+			"numb": 67,
+			"question": " Como se comporta um condensador num circuito de corrente contínua?",
+			"answers": [
+
+				"Apresenta elevada autoindução",
+				"Apresenta uma baixa resistência",
+				"Comporta-se como um curto-circuito",
+				"Comporta-se como um circuito aberto"
+			],
+			"correctIndex": 4,
+			"notes": "Um condensador simplificando são 2 placas condutoras separadas por um isolador,assim,num circuito de corrente continua um condensador comporta - se como um circuito aberto,resposta 4."
+		},
+		{
+			"numb": 68,
+			"question": " Qual a unidade de medida do coeficiente de autoindução?",
+			"answers": [
+
+				"Farad",
+				"Henry",
+				"Hertz",
+				"Volt"
+			],
+			"correctIndex": 2,
+			"notes": "A unidade de medida de autoindução é o Henry,resposta 2."
+
+		},
+		{
+			"numb": 69,
+			"question": " Como se comporta uma bobina num circuito de corrente contínua?",
+			"answers": [
+
+				"Apresenta elevadas capacidades parasitas",
+				"Apresenta uma elevada resistência",
+				"Comporta-se como um curto-circuito",
+				"Comporta-se como um circuito aberto"
+			],
+			"correctIndex": 3,
+			"notes": "Uma bobina é um fio enrolado sobre algo,esse algo pode ser ar,normalmente encontramos as mesmas num circuito enroladas em ferrite.Para um circuito de corrente continua, a bobina comporta-se como um curto circuito."
+		},
+		{
+			"numb": 70,
+			"question": " Qual das igualdades é verdadeira?",
+			"answers": [
+
+				"1 µH = 0,001 H",
+				"1 mH = 0,001 H",
+				"1 nH = 0,000 000 1 H",
+				"1 µH = 0,001 H"
+			],
+			"correctIndex": 2,
+			"notes": "Utilizando a imagem seguinte tirada do google: Podemos ver que a única afirmação verdadeira é a 2,1 mH = 0,001 H"
+		},
+		{
+			"numb": 71,
+			"question": " Qual das afirmações é verdadeira?",
+			"answers": [
+				"Os transformadores transformam corrente contínua em corrente alternada",
+				"Os transformadores transformam corrente alternada em corrente contínua",
+				"As frequências dos sinais no primário e no secundário dum transformador são iguais",
+				"Os transformadores são utilizados fundamentalmente para transformar uma tensão contínua dum dado valor numa tensão contínua de valor mais elevado"
+			],
+			"correctIndex": 3,
+			"notes": "Os transformadores não funcionam em corrente continua.Em corrente continua funcionam como curtos circuitos ou resistências,visto que são fios enrolados a volta de algo.Assim a 1,2 e 4 estão erradas,sobra a única certa que é a 3."
+
+		},
+		{
+			"numb": 72,
+			"question": " Um transformador com o primário ligado à rede elétrica, apresenta nos terminais do secundário em vazio o valor de 5,2 V",
+			"answers": [
+
+				"de tensão contínua",
+				"de tensão alternada",
+				"de tensão retificada",
+				"de tensão retificada em apenas metade do período"
+			],
+			"correctIndex": 2,
+			"notes": "A resposta certa é a 2,tensão alternada.a retificação não tem nada a ver com os transformadores,apesar de nas fontes de alimentação encontrarmos o retificador após o transformador."
+		},
+		{
+			"numb": 73,
+			"question": " Qual das seguintes afirmações é verdadeira?",
+			"answers": [
+
+				"Um transformador é constituído em geral por dois enrolamentos, separados galvanicamente, aos quais se dão os nomes de primário e secundário",
+				"Os transformadores só são utilizados em frequências acima de 1 kHz",
+				"Um transformador além de transformar tensões e correntes contínuas, também é utilizado em aplicações de transformação de impedâncias",
+				"Os transformadores só são utilizados em frequências abaixo de 5 Hz"
+			],
+			"correctIndex": 1,
+			"notes": "A resposta verdadeira é a 1. Os transformadores podem ser utilizados abaixo dos 1 kHz,poe exemplo na rede eletrica que funciona a 50 Hz,os transformadores não transformam correntes contínuas.!"
+		},
+		{
+			"numb": 74,
+			"question": " Qual razão para a existência de tensão no secundário de um transformador quando está ligada uma fonte de tensão alternada ao primário do transformador?",
+			"answers": [
+
+				"Acoplamento capacitivo",
+				"Acoplamento através de corrente dielétrica",
+				"Indutância mútua",
+				"Capacidade mútua"
+			],
+			"correctIndex": 3,
+			"notes": "Indutância mútua.Resposta 3."
+		},
+		{
+			"numb": 75,
+			"question": " Um díodo de junção é constituído por",
+			"answers": [
+
+				"uma junção entre duas substâncias semicondutoras",
+				"uma junção entre duas substâncias condutoras",
+				"uma junção entre duas substâncias isolantes",
+				"uma junção entre uma substância condutora e outra semicondutora"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 76,
+			"question": " Num díodo de junção, chama-se tensão de Zener",
+			"answers": [
+				"à tensão de polarização direta máxima",
+				"a qualquer valor de tensão alternada aplicada ao díodo",
+				"ao valor de tensão inversa que produz um aumento significativo da corrente inversa",
+				"à tensão de saturação"
+			],
+			"correctIndex": 0,
+			"notes": ""
+
+		},
+		{
+			"numb": 77,
+			"question": " Os portadores maioritários num material tipo P são",
+			"answers": [
+
+				"as lacunas",
+				"os eletrões",
+				"os neutrões",
+				"os fotões"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 78,
+			"question": " No díodo apresentado na figura, o valor da máxima tensão inversa é aproximadamente<img   src='image-48.png'>",
+			"answers": [
+
+
+				"0V",
+				"70V",
+				"100V",
+				"141V"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 79,
+			"question": " Na figura, identifique o símbolo que representa o díodo Zener:<img  src='image-49.png'>",
+			"answers": [
+
+
+				"D1 ",
+				"D2 ",
+				"D3 ",
+				"D4 "
+
+			],
+			"correctIndex": 4,
+
+			"notes": "O simbolo correcto é o D4,resposta 4."
+		},
+		{
+			"numb": 80,
+			"question": " Os díodos de junção não ideais quando polarizados diretamente têm tipicamente uma queda de tensão aos seus terminais",
+			"answers": [
+
+				"entre - 2 V e - 1 V",
+				"entre - 1 V e 0 V",
+				"entre 0 V e 1 V",
+				"entre 1 V e 2 V"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 81,
+			"question": " Uma ponte retificadora é constituída duma forma geral por",
+			"answers": [
+
+				"resistências",
+				"condensadores e transístores",
+				"termístores",
+				"díodos"
+			],
+			"correctIndex": 4,
+			"notes": "A ponte rectificadora é constituida por diodos."
+		},
+		{
+			"numb": 82,
+			"question": " Um transístor PNP pode ser formado por",
+			"answers": [
+				"duas lâminas muito finas de germânio de tipo N que envolvem uma lâmina espessa de germânio de tipo P",
+				"uma lâmina muito fina de germânio de tipo N colocada entre duas lâminas espessas de germânio de tipo P",
+				"um material emissor de eletrões e de protões",
+				"um emissor e uma base, podendo ter ou não ter coletor"
+			],
+			"correctIndex": 2,
+			"notes": "A resposta correcta é a 2."
+
+		},
+		{
+			"numb": 83,
+			"question": " Na figura, identifique o terminal base<img  src='image-50.png'>",
+			"answers": [
+				"A",
+				"B",
+				"C",
+				"Não há base"
+			],
+			"correctIndex": 1,
+
+			"notes": "A base é o terminal A,resposta 1."
+		},
+		{
+			"numb": 84,
+			"question": " Na figura, a que terminais correspondem as letras indicadas no seguinte transístor:<img  src='image-50.png'>",
+			"answers": [
+				"A – emissor, B – base e C – coletor",
+				"A – base, B – coletor e C – emissor",
+				"A – base, B – emissor e C – coletor",
+				"A – coletor, B – emissor e C – base"
+			],
+			"correctIndex": 3,
+
+			"notes": "Coletor é o C,Base o A e B o emissor,logo a resposta certa é a 3."
+		},
+		{
+			"numb": 85,
+			"question": " Os circuitos com transístores podem ser utilizados como",
+			"answers": [
+				"amplificadores",
+				"comutadores",
+				"osciladores",
+				"Todas as hipóteses estão corretas"
+			],
+			"correctIndex": 4,
+
+			"notes": "Resposta 4, os transistores podem ser utilizados como amplificadores, comutadores e osciladores."
+		},
+		{
+			"numb": 86,
+			"question": " Duma forma geral considera-se que os transístores de junção bipolar têm as seguintes três zonas de funcionamento:",
+			"answers": [
+
+				"inversa, corte e saturação",
+				"inversa, ativa e saturação",
+				"corte, ativa e saturação",
+				"ativa, saturação e inversa"
+			],
+			"correctIndex": 3,
+			"notes": "Corte,ativa e saturação.Resposta 3."
+		},
+		{
+			"numb": 87,
+			"question": " Em que zona de funcionamento deverá trabalhar um transístor de junção bipolar que é o único elemento ativo num circuito amplificador?",
+			"answers": [
+
+				"Na zona ativa",
+				"Na zona de corte",
+				"Na zona de saturação",
+				"Na zona inversa de saturação"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 88,
+			"question": " A polarização de um transístor corresponde",
+			"answers": [
+
+				"à determinação das tensões e correntes alternadas (AC) que garantem o funcionamento do transístor na zona ativa",
+				"à determinação das tensões e correntes contínuas (DC) que garantem o funcionamento do transístor na zona de corte",
+				"à determinação das tensões e correntes alternadas (AC) que garantem o funcionamento do transístor na zona de corte",
+				"à determinação das tensões e correntes contínuas (DC) que garantem o funcionamento do transístor na zona ativa"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 89,
+			"question": " Uma montagem de emissor comum, devidamente polarizada para garantir o funcionamento do transístor exclusivamente na zona ativa",
+			"answers": [
+
+				"duma forma geral, inverte e amplifica o sinal de entrada",
+				"duma forma geral, não possui qualquer ganho",
+				"duma forma geral, comporta-se da mesma forma que um seguidor de emissor",
+				"duma forma geral, reduz ligeiramente o sinal de entrada, mantendo a fase"
+			],
+			"correctIndex": 1,
+
+			"notes": "Vendo a seguinte imagem:<img  src='image-53.png'> Podemos concluir que inverte e amplifica,assim a resposta correta é a 1. "
+		},
+		{
+			"numb": 90,
+			"question": "Um tétrodo possui",
+			"answers": [
+
+				"3 elementos",
+				"4 elementos",
+				"5 elementos",
+				"6 elementos"
+			],
+			"correctIndex": 4,
+
+			"notes": "4 Elementos: Ânodo,Cátodo e duas grades.a resposta certa é a 2."
+		},
+		{
+			"numb": 91,
+			"question": " Porque é que as válvulas têm vindo a perder terreno relativamente aos elementos designados como de estado sólido (por exemplo transístores,na eletrónica em geral ? ",
+			"answers": [
+
+				"Devido à pouca linearidade das válvulas quando utilizadas em amplificadores de áudio",
+				"Pelo facto dos dispositivos a válvulas serem extremamente perigosos",
+				"Devido ao menor tamanho dos dispositivos de estado sólido",
+				"Todas as respostas estão corretas"
+			],
+			"correctIndex": 3,
+
+			"notes": "As valvulas são lieneares am amps de audio.os dispositivos a valvulas nao sao necessariamente perigodos,a 3 ª é a verdadeira."
+		},
+		{
+			"numb": 92,
+			"question": "Os amplificadores sintonizados",
+			"answers": [
+				"possuem circuitos ressonantes na entrada e na saída",
+				"são úteis para a amplificação de sinais em banda estreita",
+				"apresentam uma resposta tipicamente passa-banda",
+				"Todas as hipóteses estão corretas"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 93,
+			"question": "Um filtro passa baixo destina-se",
+			"answers": [
+
+				"a rejeitar as frequências mais baixas",
+				"a rejeitar as frequências mais altas",
+				"a rejeitar as frequências mais baixas e as frequências mais altas, deixando passar uma dada gama de frequências",
+				"a deixar passar as frequências mais baixas e as frequências mais altas, rejeitando uma dada gama de frequências"
+			],
+			"correctIndex": 2,
+
+			"notes": "Rejeitar as frequências mais altas,resposta 2."
+		},
+		{
+			"numb": 94,
+			"question": "Um filtro rejeita banda destina-se",
+			"answers": [
+				"a rejeitar as frequências mais baixas",
+				"a rejeitar as frequências mais altas",
+				"a rejeitar as frequências mais baixas e as frequências mais altas, deixando passar uma dada gama de frequências",
+				"a deixar passar as frequências mais baixas e as frequências mais altas, rejeitando uma dada gama de frequências"
+			],
+			"correctIndex": 4,
+
+			"notes": "Resposta 4. Serve por exemplo para bloquear estações de rádio muito fortes nas imediações."
+		},
+		{
+			"numb": 95,
+			"question": " Se num circuito se quiser filtrar as harmónicas de um dado sinal, deve-se utilizar:",
+			"answers": [
+
+				"um filtro passa alto",
+				"um filtro passa baixo",
+				"um filtro passa banda",
+				"um filtro rejeita banda"
+			],
+			"correctIndex": 2,
+
+			"notes": "As harmonicas ocorrem nos multiplos inteiros da fundamental,logo são sempre de frequência superior,assim podemos usar um filtro passa baixo."
+		},
+		{
+			"numb": 96,
+			"question": " Numa fonte de alimentação não comutada com transformador, a introdução de um díodo em série entre o secundário do transformador e um circuito de carga",
+			"answers": [
+
+				"faz uma retificação de meia onda que não é adequada se o circuito de carga necessitar de uma tensão contínua",
+				"faz uma retificação de onda completa que não é adequada se o circuito de carga necessitar de uma tensão contínua",
+				"faz uma retificação de um quarto de onda que não é adequada se o circuito de carga necessitar de uma tensão contínua",
+				"não provoca qualquer efeito, não sendo adequada se o circuito de carga necessitar de uma tensão contínua"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 97,
+			"question": " É possível fazer uma retificação de onda completa a partir de um sinal de corrente alternada, proveniente de um transformador, só com dois díodos?",
+			"answers": [
+
+				"Não, pois só uma ponte retificadora o permite fazer",
+				"Sim, se no secundário se tiver acesso a uma tomada central",
+				"Não, pois precisa-se pelo menos de um transístor",
+				"Sim se se tiver também uma resistência em série com cada um dos díodos"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 98,
+			"question": " Uma ponte retificadora efetua",
+			"answers": [
+
+				"uma retificação de um oitavo de onda",
+				"uma retificação de um quarto de onda",
+				"uma retificação de meia onda",
+				"uma retificação de onda completa"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 99,
+			"question": " Um condensador ligado ao secundário de um transformador, usado para absorver picos de tensão de curta duração, designa-se:",
+			"answers": [
+
+				"condensador retificador",
+				"condensador de ajuste",
+				"condensador“ feedback” de picos",
+				"condensador supressor de picos"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 100,
+			"question": " Qual o fator de segurança que oferece uma resistência de drenagem da fonte de alimentação?",
+			"answers": [
+
+				"Funciona como fusível da tensão em excesso",
+				"Descarrega o condensador de filtragem",
+				"Exclui os riscos de choques produzidos pelas bobinas de indução",
+				"Elimina a corrente do “loop” de terra"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 101,
+			"question": " Se num amplificador de emissor à massa, a corrente no coletor for de 5 mA e a corrente na base 1,5 mA, qual é o ganho de corrente em regime contínuo?",
+			"answers": [
+
+				"43,5",
+				"30",
+				"46,5",
+				"40"
+			],
+			"correctIndex": 0,
+			"notes": ""
+
+		},
+		{
+			"numb": 102,
+			"question": "Diz-se que há amplificação de tensão",
+			"answers": [
+
+				"se a um certo valor de tensão alternada aplicado à entrada de um circuito, corresponde uma tensão, também alternada mas de maior amplitude, na saída do mesmo circuito",
+				"se a um certo valor de tensão contínua aplicado à entrada de um circuito, corresponde uma tensão alternada na saída do mesmo circuito",
+				"se a um certo valor de tensão alternada aplicado à entrada de um circuito, corresponde uma tensão contínua na saída do mesmo circuito",
+				"se uma tensão de audiofrequência aplicada à entrada de um circuito , corresponde uma tensão de radiofrequência na saída do mesmo circuito"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 103,
+			"question": " Uma corrente de 20 mA circula entre a base e o emissor de um transístor que apresenta um ganho de 40.Em consequência, entre coletor e emissor circula uma corrente de:",
+			"answers": [
+
+				"0,5 mA",
+				"2 mA",
+				"40 mA",
+				"0,8 A"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 104,
+			"question": " Qual das seguintes opções descreve um amplificador linear?",
+			"answers": [
+
+				"Um amplificador que transforma sinais AC em sinais DC",
+				"Um amplificador cuja saída mantém a forma de onda de entrada",
+				"Um amplificador de classe C de elevada eficiência",
+				"Um amplificador usado como multiplicador de frequências"
+			],
+			"correctIndex": 0,
+			"notes": ""
+
+		},
+		{
+			"numb": 105,
+			"question": " Que circuito é usado para processar os sinais provenientes do amplificador de RF e do oscilador local e que depois os envia para o filtro de IF num recetor super-heterodino?",
+			"answers": [
+
+				"Modulador balanceado",
+				"Amplificador de IF",
+				"Misturador",
+				"Detetor"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 106,
+			"question": " Que tipo de recetor é apropriado para a receção de CW ou de SSB mas que não necessita de um andar de mistura ou de um amplificador de IF?",
+			"answers": [
+
+				"Um recetor super-regenerativo",
+				"Um recetor do tipo TRF (“Tuned Radio Frequency”)",
+				"Um recetor super-heterodino",
+				"Um recetor de conversão direta"
+			]
+
+		},
+		{
+			"numb": 107,
+			"question": " Como se pode designar em alternativa a mistura de dois sinais de RF?",
+			"answers": [
+
+				"Heterodinagem",
+				"Sintetização",
+				"Cancelamento",
+				"Filtragem"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 108,
+			"question": " Os recetores de CW estão associados a que tipo de modulação?",
+			"answers": [
+
+				"A1A",
+				"A3E",
+				"J3E",
+				"F3E"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 109,
+			"question": " Os recetores de FM estão associados a que tipo de modulação?",
+			"answers": [
+
+				"A1A",
+				"A3E",
+				"J3E",
+				"F3E"
+			]
+		},
+		{
+			"numb": 110,
+			"question": " Num recetor de FM, qual a função do circuito designado como discriminador?",
+			"answers": [
+
+				"É um circuito gerador de sinais de FM",
+				"É um circuito que filtra dois sinais adjacentes muito próximos",
+				"É um circuito com comutação de bandas automático",
+				"É um circuito de deteção de sinais FM"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb":
+
+				111,
+			"question": " Que parte de um recetor combina um sinal de entrada de 14,250 MHz com um sinal de um oscilador local de 13,795 MHz, para produzir um sinal de frequência intermédia de 455 kHz?",
+			"answers": [
+
+				"Misturador",
+				"BFO",
+				"VFO",
+				"Multiplicador"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 112,
+			"question": " Quanto é que a potência de um emissor tem que reduzir para que num recetor distante a leitura do indicador de nível (unidades S) mude de S9 para S8?",
+			"answers": [
+
+				"Aproximadamente 5 vezes",
+				"Aproximadamente 4 vezes",
+				"Aproximadamente 3 vezes",
+				"Aproximadamente 2 vezes"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 113,
+			"question": " Onde se encontra de uma forma geral o “squelch”?",
+			"answers": [
+
+				"No emissor",
+				"Numa ponte de SWR",
+				"No recetor",
+				"Numa ponte de díodos"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 114,
+			"question": " O que mede o medidor S?",
+			"answers": [
+
+				"Condutância",
+				"Impedância",
+				"Intensidade do sinal recebido",
+				"Potência do transmissor"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 115,
+			"question": " Num recetor, como funciona um detetor de díodo?",
+			"answers": [
+
+				"Pela retificação e filtragem de sinais de RF",
+				"Pela rutura da tensão de Zener",
+				"Pela mistura de sinais com ruído na zona de transição do díodo",
+				"Pela verificação da variação da reactância no díodo em relação à frequência"
+			],
+			"correctIndex": 0,
+			"notes": ""
+
+
+		},
+		{
+			"numb": 116,
+			"question": " Num recetor super-heterodino, o andar designado como “misturador”",
+			"answers": [
+
+				"combina sinais de duas frequências diferentes para obter uma frequência intermédia",
+				"combina as bandas laterais de modo a obter um sinal mais forte",
+				"faz a discriminação contra os sinais SSB e AM",
+				"insere uma portadora para obter um verdadeiro sinal FM"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 117,
+			"question": " Num recetor super-heterodino, o BFO é um",
+			"answers": [
+
+				"atenuador de frequências desnecessárias",
+				"oscilador de frequências básicas",
+				"oscilador de frequência de batimento",
+				"oscilador da banda de filtragem"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 118,
+			"question": " Num recetor de FM, o andar designado por “limitador”",
+			"answers": [
+
+				"Limita o sinal a uma amplitude constante.",
+				"Rejeita sinais SSB e CW",
+				"Limita o desvio de frequência do sinal",
+				"Limita o desvio de fase do sinal"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 119,
+			"question": " Que circuito é usado para combinar os sinais do oscilador de portadora e do amplificador de voz e enviar o resultado para o filtro num emissor de banda lateral única de fonia?",
+			"answers": [
+
+				"Misturador",
+				"Detetor",
+				"Amplificador de IF",
+				"Modulador balanceado"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 120,
+			"question": " Uma malha de captura de fase que contém um oscilador controlado por tensão, está associada a um modulador de:",
+			"answers": [
+
+				"amplitude",
+				"frequência",
+				"amplitude com portadora suprimida",
+				"onda contínua"
+			],
+			"correctIndex": 2,
+			"notes": "Modulador de frequencia, Resposta 2."
+
+		},
+		{
+			"numb": 121,
+			"question": " O sinal na saída de um emissor de modulação de frequência resulta",
+			"answers": [
+
+				"da variação da amplitude da portadora em função do sinal que a modula.",
+				"da variação da frequência da portadora em função do sinal que a modula.",
+				"da variação da fase da portadora em função do sinal que a modula.",
+				"da variação do ruído da portadora em função do sinal que a modula."
+			],
+			"correctIndex": 0,
+			"notes": ""
+
+
+		},
+		{
+			"numb": 122,
+			"question": " O sinal na saída de um emissor de modulação de amplitude resulta",
+			"answers": [
+
+				"da variação da amplitude da portadora em função do sinal que a modula.",
+				"da variação da frequência da portadora em função do sinal que a modula.",
+				"da variação da fase da portadora em função do sinal que a modula.",
+				"da variação do ruído da portadora em função do sinal que a modula."
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 123,
+			"question": " Num emissor, onde deve ser instalado um filtro para reduzir emissões espúrias?",
+			"answers": [
+
+				"Na fonte de alimentação",
+				"No recetor",
+				"A seguir ao andar de saída do emissor",
+				"No microfone"
+			],
+			"correctIndex": 4,
+			"notes": "Como as espurias são emitidas na saida de RF, o local logico é a seguir ao andar de saída do emissor, logo, resposta 2."
+		},
+		{
+			"numb": 124,
+			"question": " O que é um “buffer”?",
+			"answers": [
+
+				"É um circuito que, de uma forma geral, serve de amplificador.",
+				"É um circuito que, de ma forma geral, serve de fonte de alimentação.",
+				"É um circuito que, de uma forma geral, serve de isolador.",
+				"É um circuito que, de uma forma geral, serve de filtro."
+			],
+
+			"correctIndex": 3,
+			"notes": "Um buffer é, de forma geral um circuito que serve de isolador. Resposta 3."
+		},
+		{
+			"numb": 125,
+			"question ": "No emissor o que é VFO ?",
+			"answers": [
+
+				"É um oscilador de frequência áudio",
+				"É um oscilador fixo controlado por um “varicap”",
+				"É um oscilador de fase virtual",
+				"É um oscilador de frequência variável"
+
+			],
+			"correctIndex": 4,
+			"notes": "Variable Frequency Oscillator, resposta 4."
+		},
+		{
+			"numb": 126,
+			"question": " Qual das seguintes afirmações descreve uma vantagem de uma fonte de alimentação comutada relativamente a uma fonte linear convencional?",
+			"answers": [
+
+				"O facto de utilizar uma frequência de comutação elevada permite maiores tensões na saída",
+				"Necessita de menos circuitos e componentes",
+				"A utilização de altas frequências de comutação permite a utilização de componentes mais pequenos",
+				"Todas as afirmações anteriores estão corretas"
+			],
+			"correctIndex": 3,
+			"notes": "Resposta 3. Notar que as vezes estas frequencias e/ou os seus harmonicos elevadas coincidem com as frequencias de amador, causando assim interferencias."
+		},
+		{
+			"numb": 127,
+			"question": " Qual é a vantagem de um emissor controlado a cristal?",
+			"answers": [
+				"Frequência de saída estável",
+				"Excelente clareza na modulação",
+				"Facilidade na mudança de faixas de frequências",
+				"Facilidade na mudança de frequência"
+			]
+		},
+		{
+			"numb": 128,
+			"question": "Qual das seguintes emissões utiliza, duma forma geral, menor largura de banda?",
+			"answers": [
+				"Banda lateral única",
+				"Modulação de frequência",
+				"Dupla banda lateral",
+				"Modulação de fase"
+			],
+			"correctIndex": 1,
+			"notes": "Banda lateral única. (SSB – Single Side Banda)"
+		},
+		{
+			"numb": 129,
+			"question": "O que acontece ao sinal de um emissor de banda lateral única de fonia se estiver sobremodulado?",
+			"answers": [
+				"O áudio será mais alto sem quaisquer outros efeitos",
+				"Ocupará menos largura de banda com uma resposta mais pobre às altas frequências",
+				"Maior fidelidade e melhoria na relação sinal-ruído",
+				"Ficará distorcido e terá uma maior largura de banda"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 130,
+			"question": "A diferença entre a potência de entrada de RF e a potência de alimentação por um lado e a potência RF de saída de um emissor por outro",
+			"answers": [
+				"é emitida pela antena",
+				"é dissipada como calor",
+				"é perdida na alimentação da antena",
+				"deve-se às correntes oscilantes"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 131,
+			"question": "Por que razão não se deve usar a modulação de frequência em fonia abaixo dos 29,5 MHz?",
+			"answers": [
+				"A eficiência do transmissor é reduzida para este modo",
+				"Não é possível atenuar os sinais harmónicos a níveis práticos",
+				"A largura de banda excederia os limites de largura de banda regulamentares",
+				"A estabilidade da frequência não seria apropriada"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 132,
+			"question": "Qual a impedância de saída ideal de um emissor que se vai ligar a um cabo de alimentação de umaantena, se o referido cabo tiver uma impedância de entrada 50 Ohm?",
+			"answers": [
+				"100 Ohm",
+				"50 Ohm",
+				"Nula",
+				"Infinita"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 133,
+			"question": "Onde se poderão consultar, de forma segura e universalmente aceite, as definições de emissões espúriase de emissões harmónicas?",
+			"answers": [
+				"No Regulamento das Radiocomunicações da UIT",
+				"Em qualquer sítio da internet",
+				"Nos manuais de comunicações nacionais",
+				"Nos manuais de eletrónica"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 136,
+			"question": "Como deve variar o tamanho físico de dipolo de meia onda com a frequência de operação? ",
+			"answers": [
+				"Deve tornar-se maior quando a frequência aumenta",
+				"Não deverá variar pois as suas características são iguais quaisquer que sejam as frequências em causa",
+				"Deve tornar-se mais pequeno quando a frequência diminui",
+				"Deve tornar-se mais pequeno quando a frequência aumenta"
+			],
+			"correctIndex": 4,
+			"notes": ""
+		},
+		{
+			"numb": 137,
+			"question": "Diz-se usualmente que uma antena Yagi tem ganho de potência sobre uma antena dipolo para a mesmabanda de frequências porque",
+			"answers": [
+				"radia globalmente mais potência que o dipolo",
+				"pode ser usada por emissores mais potentes",
+				"concentra a radiação apenas numa direção",
+				"pode ser usada para mais do que uma banda de frequências"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 138,
+			"question": "A potência isotrópica radiada equivalente (p.i.r.e.) emitida por uma antena de 20dBi de ganho (no máximo do seu diagrama de radiação) quando lhe é entregue uma potência de 10 dBW é ",
+			"answers": [
+				"200 dBW",
+				"30 dBW",
+				"30 W",
+				"200 W"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 139,
+			"question": "Qual o ganho teórico de um dipolo de meia onda relativamente a uma antena isotrópica?",
+			"answers": [
+				"1,55",
+				"3,05",
+				"2,15",
+				"4,3"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 140,
+			"question": "A potência aparente radiada (p.a.r.) emitida por uma antena de 10 dBd de ganho (no máximo do seudiagrama de radiação) quando lhe é entregue uma potência de 20 dBW é ",
+			"answers": [
+				"200 dBW",
+				"30 dBW",
+				"30 W",
+				"200 W"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 141,
+			"question": "O que significa relação frente/costas ruma antena Yagi?",
+			"answers": [
+				"O número de diretores relativamente ao número de refletores",
+				"A posição relativa do elemento excitador relativamente aos refletores e diretores",
+				"A potência radiada no lóbulo principal de radiação comparada com a potência radiada na direção exatamente oposta",
+				"A relação entre o ganho direto e o ganho do dipolo"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 142,
+			"question": "Qual das seguintes antenas não tem ganho em qualquer direção?",
+			"answers": [
+				"Antena 'long wire'",
+				"Antena Yagi",
+				"Antena Beverage",
+				"Antena isotrópica"
+
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 143,
+			"question": "Qual o parâmetro que melhor descreve a interação de um cabo desadaptado com a carga a que é ligado?",
+			"answers": [
+				"A impedância característica",
+				"A relação de onda estacionária",
+				"As perdas no cabo",
+				"A constante dielétrica"
+
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 144,
+			"question": "Em que se traduzem as perdas de atenuação numa linha de transmissão?",
+			"answers": [
+				"Num aumento da relação de onda estacionária",
+				"Num aumento de potência refletida que pode danificar o emissor",
+				"Num aumento de temperatura na linha de transmissão",
+				"Num aumento de distorção do sinal"
+
+
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 145,
+			"question": "Qual é a impedância característica das linhas de transmissão habitualmente utilizada nas estações de amador para ligar o emissor à antena? ",
+			"answers": [
+				"8 Ohm",
+				"600 Ohm",
+				"12 Ohm",
+				"50 Ohm"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 146,
+			"question": "Uma linha de alimentação degradada que liga a saída de um emissor a uma antena, apresentará umaimpedância não adequada que poderá dar origem a",
+			"answers": [
+				"que o andar de pré-amplificação do emissor não seja capaz de entregar o nível necessário de potência ao andar de saída do emissor",
+				"avaria no circuito de alimentação do emissor",
+				"um aumento excessivo de temperatura no andar de saída do emissor",
+				"uma perda de modulação no sinal emitido"
+
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 147,
+			"question": "Uma linha de alimentação coaxial é constituída por",
+			"answers": [
+				"um condutor simples",
+				"dois condutores separados por espaçadores de cerâmica",
+				"uma malha à volta do dielétrico que por sua vez envolve o condutor central",
+				"uma malha e um condutor central enrolados em conjunto e revestidos por um dielétrico"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 148,
+			"question": "Verificou-se que uma linha de transmissão de 200 metros possuía uma atenuação total de 26 dB. Qual é asua atenuação por metro?",
+			"answers": [
+				"0,13 dB/m",
+				"0,26 dB/m",
+				"13 dB/m",
+				"26 dB/m"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 149,
+			"question": "As linhas de condutores paralelos são linhas",
+			"answers": [
+				"assimétricas",
+				"simétricas",
+				"de quatro condutores",
+				"que nunca poderão ser utilizadas com linhas de transmissão de sinais de RF"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 174,
+			"question": " Num cabo de alimentação de rede de três condutores o fio verde e amarelo é",
+			"answers": [
+				"o neutro",
+				"a fase",
+				"a terra",
+				"uma tensão DC"
+			],
+			"correctIndex": 3,
+			"notes": ""
+		}
+
+		,
+		{
+			"numb": 181,
+			"question": "Uma emissão fora de faixa",
+			"answers": [
+				"é uma emissão numa frequência ou em frequências fora da largura de faixa necessária, mas na sua vizinhança imediata, originada no amplificador de saída do emissor",
+				"é uma emissão numa frequência ou em frequências fora da largura de faixa necessária, mas na sua vizinhança imediata, devido a ruídos na alimentação do emissor",
+				"é uma emissão numa frequência ou em frequências fora da largura de faixa necessária, mas na sua vizinhança imediata, resultante do processo de modulação",
+				"é uma emissão numa frequência ou em frequências fora da largura de faixa necessária, mas na sua vizinhança imediata, originada por desaptação de impedância no cabo de alimentação da antena"
+			],
+			"correctIndex": 3,
+			"notes": ""
+		},
+		{
+			"numb": 182,
+			"question": "Qual das faixas tem estatuto primário para o serviço de amador na Região 1?",
+			"answers": [
+				"50 - 54 MHz",
+				"144 - 146 MHz",
+				"1240 - 1260 MHz",
+				"5725 - 5830 MHz"
+			],
+			"correctIndex": 2,
+			"notes": ""
+		},
+		{
+			"numb": 185,
+			"question": "Sempre que um amador estabeleça comunicações em Portugal ao abrigo de uma 'licença CEPT novice'emitida por uma outra Administração, deve emitir o IC da sua estação de amador antecedido do prefixo",
+			"answers": [
+				"CS7 se estiver a operar numa estação de amador, situada na área geográfica POR",
+				"CR8 se estiver a operar numa estação de amador, situada na área geográfica AZR",
+				"CQ9 se estiver a operar numa estação de amador, situada na área geográfica MDR",
+				"CT7 se estiver a operar numa estação de amador, situada na área geográfica POR"
+
+			],
+			"correctIndex": 1,
+			"notes": ""
+		}
+	]
+}
