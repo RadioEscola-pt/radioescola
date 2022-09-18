@@ -1861,9 +1861,6 @@
 				"Num aumento de potência refletida que pode danificar o emissor",
 				"Num aumento de temperatura na linha de transmissão",
 				"Num aumento de distorção do sinal"
-
-
-
 			],
 			"correctIndex": 0,
 			"notes": ""
@@ -1930,6 +1927,144 @@
 				"de quatro condutores",
 				"que nunca poderão ser utilizadas com linhas de transmissão de sinais de RF"
 
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 150,
+			"question": "Qual o coeficiente de onda estacionária que resulta da alimentação com um cabo coaxial de 50 Ohms de uma antena vertical com uma impedância de entrada de 25 Ohms?",
+			"answers": [
+				"2",
+				"2,5",
+				"1,25",
+				"1"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 151,
+			"question": "Diz-se que uma linha de alimentação está adaptada a uma antena quando a potência refletida pela antena",
+			"answers": [
+				"é quase igual à potência que lhe é transmitida",
+				"é quase nula",
+				"é praticamente infinita",
+				"é cerca de metade da potência que lhe é transmitida"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 152,
+			"question": "O que pode estar a acontecer quando recebemos sinais de VHF provenientes de longas distâncias?",
+			"answers": [
+				"Os sinais são refletidos no espaço exterior",
+				"Os sinais são refletidos em tempestades na vizinhança do local onde nos encontramos",
+				"Ocorreu uma reflexão lunar esporádica",
+				"Ocorreu uma reflexão na camada esporádica-E da ionosfera"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 153,
+			"question": "O que poderá acontecer se as antenas duma ligação em linha de vista, na faixa de UHF, não tiverem a mesma polarização?",
+			"answers": [
+				"As bandas laterais poderão ser invertidas",
+				"A ligação poderá ser várias dezenas de vezes mais fraca do que se tivessem a mesma polarização",
+				"Consegue-se notar um efeito de eco no áudio",
+				"Só tem vantagens pois atenua o multipercurso"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 154,
+			"question": "O que devemos fazer se numa comunicação de UHF em portátil repararmos que o sinal que era recebido em boas condições fica, de um momento para o outro, fraco e com distorção?",
+			"answers": [
+				"Mudar de imediato as baterias de alimentação",
+				"Comunicar de imediato com a outra estação para o operador falar mais alto",
+				"Ajustar de imediato o 'squelch'",
+				"Deslocarmo-nos uns metros para o lado, pois a perda de sinal pode ser devida a reflexões (multipercurso)"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 155,
+			"question": "Qual gama de frequências adequada a comunicações por dispersão de meteoros?",
+			"answers": [
+				"1,8 - 1,9 MHz",
+				"10 - 14 MHz",
+				"28 - 148 MHz",
+				"220 - 450 MHz"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 156,
+			"question": "As mudanças no nível do sinal recebido quando se usa propagação por onda ionosférica ('sky wave')chamam-se",
+			"answers": [
+				"perdas da onda de terra",
+				"perdas de modulação",
+				"desvanecimento ('fading')",
+				"manchas solares"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 157,
+			"question": "A ionosfera",
+			"answers": [
+				"é uma camada magnetizada em volta da terra",
+				"consiste em partículas magnetizadas à volta da terra",
+				"é formada por camadas de gases ionizados à volta da terra",
+				"é uma cintura esférica de radiação solar à volta da terra"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 158,
+			"question": "A posição da camada E da ionosfera é",
+			"answers": [
+				"por cima da camada F",
+				"abaixo da camada F",
+				"abaixo da camada D",
+				"esporádica"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 159,
+			"question": "A camada da ionosfera responsável pelas comunicações de longa distância é a camada",
+			"answers": [
+				"C",
+				"D",
+				"E",
+				"F"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 160,
+			"question": "Qual das seguintes camadas ionosféricas está mais próxima da superfície terrestres?",
+			"answers": [
+				"A camada D",
+				"A camada E",
+				"A camada F1",
+				"A camada F2"
 			],
 			"correctIndex": 0,
 			"notes": ""
