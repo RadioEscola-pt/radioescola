@@ -435,7 +435,9 @@
 				"A todas as frequências situadas aos lados da portadora",
 				"Ao conjunto de frequências que modulam a portadora",
 				"A todas as frequências que o recetor possa receber simultaneamente com a portadora"
-			]
+			],
+			"correctIndex": 0,
+			"notes": ""
 
 		}, {
 			"numb": 34,
@@ -446,7 +448,9 @@
 				"À diferença entre o valor máximo e o valor mínimo da frequência da onda modulada",
 				"Ao dobro da tolerância de frequência permitida regulamentarmente",
 				"Ao número de kHz que a frequência da portadora se afasta do seu valor nominal devido à falta de estabilidade do oscilador, na ausência de modulação"
-			]
+			],
+			"correctIndex": 0,
+			"notes": ""
 		},
 		{
 			"numb": 35,
@@ -457,7 +461,9 @@
 				"Provoca o aumento da largura de faixa ocupada pela emissão, o que poderá originar interferências na receção dos canais adjacentes",
 				"Produz uma emissão em faixa mais estreita",
 				"Provoca uma saturação na antena do emissor"
-			]
+			],
+			"correctIndex": 0,
+			"notes": ""
 		},
 		{
 			"numb": 36,
@@ -469,6 +475,8 @@
 				"as duas bandas laterais",
 				"a portadora"
 			],
+
+			"correctIndex": 4,
 			"notes": "A Portadora,resposta 4."
 
 		},
@@ -481,7 +489,9 @@
 				"a maior sensibilidade aos ruídos interferentes",
 				"a menor estabilidade",
 				"o maior consumo de energia"
-			]
+			],
+			"correctIndex": 0,
+			"notes": ""
 		},
 		{
 			"numb": 38,
@@ -492,7 +502,9 @@
 				"somente a faixa lateral superior",
 				"somente as duas faixas laterais",
 				"somente a portadora e as duas faixas laterais"
-			]
+			],
+			"correctIndex": 0,
+			"notes": ""
 
 		},
 		{
@@ -504,7 +516,9 @@
 				"16 kHz",
 				"22, 5 kHz",
 				"25 kHz"
-			]
+			],
+			"correctIndex": 2,
+			"notes": ""
 		},
 		{
 			"numb": 40,
@@ -515,7 +529,9 @@
 				"menos ruído se nota no recetor e menor é a faixa de frequências ocupada ",
 				"mais ruído se nota no recetor e maior é a faixa de frequências ocupada  ",
 				"mais ruído se nota no recetor e menor é a faixa de frequências ocupada  "
-			]
+			],
+			"correctIndex": 0,
+			"notes": ""
 		},
 		{
 			"numb": 41,
@@ -526,7 +542,9 @@
 				"de amplitude",
 				"de fase",
 				"outro tipo"
-			]
+			],
+			"correctIndex": 0,
+			"notes": ""
 		},
 		{
 			"numb": 42,
@@ -567,7 +585,9 @@
 				"não engloba todas as frequências radiadas pelo emissor",
 				"pode ser desconhecida, sem inconveniente",
 				"só pode ser medida nos Centros de Monitorização e Controlo do Espectro da ANACOM"
-			]
+			],
+			"correctIndex": 0,
+			"notes": ""
 
 		},
 		{
@@ -579,7 +599,9 @@
 				"uma emissão em modulação de fase",
 				"uma emissão em modulação de amplitude",
 				"uma emissão em qualquer tipo de modulação"
-			]
+			],
+			"correctIndex": 0,
+			"notes": ""
 
 		},
 		{
@@ -592,7 +614,9 @@
 				"Reconstitui o sinal nas frequências elevadas com maior eficiência do que nas frequências baixas",
 				"É o único tipo de modulação de voz autorizado para operar em faixas HF entre os 14 e 30 MHz"
 
-			]
+			],
+			"correctIndex": 0,
+			"notes": ""
 		},
 		{
 			"numb": 47,
@@ -603,7 +627,9 @@
 				"Modulação de fase",
 				"Convolução de ângulo",
 				"Inversão de radianos"
-			]
+			],
+			"correctIndex": 2,
+			"notes": ""
 		},
 		{
 			"numb": 48,
@@ -614,7 +640,9 @@
 				"Modulação de fase",
 				"Modulação de frequência",
 				"Modulação de amplitude"
-			]
+			],
+			"correctIndex": 0,
+			"notes": ""
 		},
 		{
 			"numb": 49,
@@ -625,7 +653,9 @@
 				"Banda lateral dupla",
 				"Modulação de fase",
 				"Modulação de frequência"
-			]
+			],
+			"correctIndex": 0,
+			"notes": ""
 
 		},
 		{
@@ -1300,7 +1330,7 @@
 				"condensador“ feedback” de picos",
 				"condensador supressor de picos"
 			],
-			"correctIndex": 0,
+			"correctIndex": 4,
 			"notes": ""
 		},
 		{
@@ -1354,7 +1384,7 @@
 				"40 mA",
 				"0,8 A"
 			],
-			"correctIndex": 0,
+			"correctIndex": 3,
 			"notes": ""
 		},
 		{
@@ -1382,7 +1412,7 @@
 				"Detetor"
 
 			],
-			"correctIndex": 0,
+			"correctIndex": 3,
 			"notes": ""
 		},
 		{
@@ -1420,7 +1450,7 @@
 				"J3E",
 				"F3E"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
@@ -1472,7 +1502,7 @@
 				"Aproximadamente 3 vezes",
 				"Aproximadamente 2 vezes"
 			],
-			"correctIndex": 0,
+			"correctIndex": 4,
 			"notes": ""
 		},
 		{
@@ -1620,7 +1650,7 @@
 				"A seguir ao andar de saída do emissor",
 				"No microfone"
 			],
-			"correctIndex": 4,
+			"correctIndex": 3,
 			"notes": "Como as espurias são emitidas na saida de RF, o local logico é a seguir ao andar de saída do emissor, logo, resposta 2."
 		},
 		{
@@ -1721,7 +1751,7 @@
 				"A estabilidade da frequência não seria apropriada"
 
 			],
-			"correctIndex": 0,
+			"correctIndex": 3,
 			"notes": ""
 		},
 		{
@@ -1809,7 +1839,7 @@
 				"200 W"
 
 			],
-			"correctIndex": 0,
+			"correctIndex": 2,
 			"notes": ""
 		},
 		{
@@ -2102,7 +2132,7 @@
 				"Indiscriminadamente",
 				"Em série-paralelo"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
@@ -2205,7 +2235,7 @@
 				"Em nenhum dos sítios referidos nas três hipóteses anteriores"
 
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
