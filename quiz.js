@@ -66,6 +66,7 @@ function getWelcome() {
                         let notAvailble = document.createElement("div");
                         notAvailble.innerHTML = "resposta Indisponivel";
                         questionBlock.appendChild(notAvailble);
+						console.log( question.numb)  ;
                     } else {
 
                         let btn = document.createElement("button");

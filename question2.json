@@ -2070,6 +2070,132 @@
 			"notes": ""
 		},
 		{
+			"numb": 161,
+			"question": "Ao nível da propagação de ondas eletromagnéticas nas faixas de frequências de radiocomunicações, o que se designa por 'ducto'?",
+			"answers": [
+				"É uma condição de propagação troposférica em que as ondas eletromagnéticas deixam de se propagar",
+				"É uma condição de propagação troposférica pouco comum",
+				"É a base dos modelos teóricos de propagação ionosférica",
+				"É uma condição de propagação ionosférica, em que estas camadas são atravessadas facilmente nas !faixas de HF"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 162,
+			"question": "Qual das seguintes medições descreve uma linha de transmissão desadaptada? ",
+			"answers": [
+				"Relação de onda estacionária de tensão (VSWR) menor que 1",
+				"Perdas no cabo inferiores maiores que 0,5 dB",
+				"Constante dielétrica maior que 1",
+				"Relação de onda estacionária de tensão (VSWR) maior que 1"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 163,
+			"question": "Como se deve ligar um amperímetro num circuito em que se pretende efetuar uma medida?",
+			"answers": [
+				"Em série",
+				"Em paralelo",
+				"Indiscriminadamente",
+				"Em série-paralelo"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 164,
+			"question": "Pretende-se medir a potência aparente radiada de uma estação numa dada frequência. Que instrumento se deve utilizar?",
+			"answers": [
+				"Um voltímetro seletivo que deverá ter uma precisão superior a 1/1 000 000",
+				"Um amperímetro que deverá ser colocado a medir a potência de alimentação da estação",
+				"Um frequencímetro, tendo o cuidado de evitar que ele sature",
+				"A potência aparente radiada não pode ser medida de forma direta por nenhum equipamento "
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+
+		{
+			"numb": 165,
+			"question": "Qual a vantagem do recurso a um wattímetro de leitura de pico para monitorizar a saída de um transmissor de fonia de banda lateral única?",
+			"answers": [
+				"Facilita a determinação da sintonização correta do circuito à saída",
+				"Permite visualizar os valores de potência de pico envolvente à saída com maior precisão na presença de modulação",
+				"Facilita a deteção de coeficientes elevados de onda estacionária na linha de alimentação",
+				"Permite a determinação da presença de ondas com 'flat-topping'em momentos de pico de modulação"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 166,
+			"question": "Para medir uma frequência pode ser usado",
+			"answers": [
+				"um osciloscópio",
+				"um frequencímetro",
+				"um analisador espectral",
+				"Todas as opções anteriores estão corretas"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 167,
+			"question": "Que equipamento mede com maior precisão uma dada frequência?",
+			"answers": [
+				"Absorption wave meter",
+				"Voltímetro",
+				"Frequencímetro",
+				"Reflectómetro"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 168,
+			"question": "Porque é desejável que um voltímetro tenha uma elevada impedância de entrada?",
+			"answers": [
+				"Porque melhora a resposta em frequência",
+				"Porque diminui o consumo da bateria",
+				"Porque melhora a resolução das medições",
+				"Porque apresenta um baixo efeito de carga no circuito a medir"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 169,
+			"question": "Qual das seguintes medições pode ser efetuada direta ou indiretamente com um medidor de potência direcional?",
+			"answers": [
+				"O coeficiente de onda estacionária",
+				"Relação frente - costas de uma antena",
+				"Interferência de RF",
+				"Propagação de ondas de rádio"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 170,
+			"question": "Que efeito pode ter a degradação numa linha de transmissão de um sistema de televisão por cabo numa estação de amador?",
+			"answers": [
+				"Não afeta a estação de amador",
+				"A radiação das harmónicas pode provocar a emissão pela estação de amador de radiações espúrias",
+				"Além da possibilidade do amador interferir a receção de radiodifusão quando em emissão, pode também causar interferência na receção da estação de amador",
+				"Podem ser criadas no cabo tensões muito elevadas quando a estação de amador emite"
+
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
 			"numb": 174,
 			"question": " Num cabo de alimentação de rede de três condutores o fio verde e amarelo é",
 			"answers": [
