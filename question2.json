@@ -654,7 +654,7 @@
 				"Modulação de fase",
 				"Modulação de frequência"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 
 		},
@@ -812,7 +812,7 @@
 				"metade de cada uma delas",
 				"um quarto do valor de cada uma delas"
 			],
-			"correctIndex": 2,
+			"correctIndex": 3,
 			"notes": ""
 		},
 		{
