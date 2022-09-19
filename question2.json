@@ -1317,7 +1317,7 @@
 				"uma retificação de meia onda",
 				"uma retificação de onda completa"
 			],
-			"correctIndex": 0,
+			"correctIndex": 4,
 			"notes": ""
 		},
 		{
@@ -1832,7 +1832,7 @@
 				"4,3"
 
 			],
-			"correctIndex": 0,
+			"correctIndex": 2,
 			"notes": ""
 		},
 		{
@@ -2427,7 +2427,7 @@
 				"utilizar estações de amador nos países cuja Administração tenha adotado a Recomendação CEPT ECC/REC/(05)06",
 				"utilizar estações de amador em todos os países da CEPT, nos Estados Unidos e na Austrália"
 			],
-			"correctIndex": 0,
+			"correctIndex": 3,
 			"notes": ""
 		},
 
@@ -2454,7 +2454,7 @@
 				"A estação que emitir com a potência mais baixa"
 
 			],
-			"correctIndex": 0,
+			"correctIndex": 2,
 			"notes": ""
 		},
 
