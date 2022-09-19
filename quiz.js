@@ -1,4 +1,6 @@
 var messagesArray;
+var pageBlocks=[];
+
 function checkQuestion() {
     var question = messagesArray.questions[parseInt(this.value) - 1];
     var answer = question.correctIndex;
@@ -20,8 +22,19 @@ function checkQuestion() {
     this.style.background = '#FF0000';
     this.innerHTML = "ERRDO";
 }
+function showPage()
+{
+	for (page of pageBlocks) {
+		page.style.display = "none";
+	}
+	 var currentPage = document.getElementById("Page" + this.value);
+	 currentPage.style.display = "block";
+}
+
 function getWelcome() {
 
+    var numberOfUnaswered = 0;
+    var questionCounter = 0;
     var ajaxRequest = new XMLHttpRequest();
     ajaxRequest.onreadystatechange = function () {
 
@@ -29,10 +42,38 @@ function getWelcome() {
             //the request is completed, now check its status
             if (ajaxRequest.status == 200) {
                 //turn JSON into array
+
                 messagesArray = JSON.parse(ajaxRequest.responseText);
                 var welcomeDiv = document.getElementById("welcome");
-                for (question of messagesArray.questions) {
+                indexBlock = document.createElement("div");
+                indexBlock.id = "qIndex";
+                welcomeDiv.appendChild(indexBlock);
 
+                for (question of messagesArray.questions) {
+					var pageBlock;
+                    if (questionCounter == 0) {
+                        pageBlock = document.createElement("div");
+                        pageBlock.id = "Page" + questionCounter ;
+                        pageBlock.style.display = "block";
+                        let btn = document.createElement("button");
+                        btn.innerHTML = questionCounter;
+                        btn.value = questionCounter;
+                        btn.onclick = showPage;
+                        indexBlock.appendChild(btn);
+						pageBlocks.push(pageBlock);
+
+                    } else if (questionCounter % 10 == 0) {
+                        pageBlock = document.createElement("div");
+                        pageBlock.id = "Page" + questionCounter ;
+                        pageBlock.style.display = "none";
+                        let btn = document.createElement("button");
+                        btn.innerHTML = questionCounter;
+                        btn.value = questionCounter;
+                        btn.onclick = showPage;
+                        indexBlock.appendChild(btn);
+						pageBlocks.push(pageBlock);
+                    }
+                    questionCounter++;
                     questionBlock = document.createElement("div");
                     questiontxt = document.createElement("div");
                     noteBlock = document.createElement("div");
@@ -57,16 +98,25 @@ function getWelcome() {
                         span.className = "checkmark";
                         label.className = "container";
                         questionBlock.appendChild(label);
-                        welcomeDiv.appendChild(questionBlock);
+                        pageBlock.appendChild(questionBlock);
+                        welcomeDiv.appendChild(pageBlock);
                         i++;
                     }
 
                     questionBlock.appendChild(noteBlock);
+                    if (question.correctIndex == null) {
+                        console.log("ERROR Q" + question.numb);
+                    }
+                    if (question.notes == null) {
+                        console.log("ERROR Q" + question.numb);
+                    }
+
                     if (question.correctIndex == 0) {
                         let notAvailble = document.createElement("div");
                         notAvailble.innerHTML = "resposta Indisponivel";
                         questionBlock.appendChild(notAvailble);
-						console.log( question.numb)  ;
+                        console.log(question.numb);
+                        numberOfUnaswered++;
                     } else {
 
                         let btn = document.createElement("button");
@@ -76,6 +126,7 @@ function getWelcome() {
                         questionBlock.appendChild(btn);
                     }
                 }
+                console.log("Unaswered" + numberOfUnaswered);
 
             } else {
                 console.log("Status error: " + ajaxRequest.status);

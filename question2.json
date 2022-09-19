@@ -1424,7 +1424,9 @@
 				"Um recetor do tipo TRF (“Tuned Radio Frequency”)",
 				"Um recetor super-heterodino",
 				"Um recetor de conversão direta"
-			]
+			],
+			"correctIndex": 0,
+			"notes": ""
 
 		},
 		{
@@ -1462,7 +1464,9 @@
 				"A3E",
 				"J3E",
 				"F3E"
-			]
+			],
+			"correctIndex": 0,
+			"notes": ""
 		},
 		{
 			"numb": 110,
@@ -1702,7 +1706,9 @@
 				"Excelente clareza na modulação",
 				"Facilidade na mudança de faixas de frequências",
 				"Facilidade na mudança de frequência"
-			]
+			],
+			"correctIndex": 0,
+			"notes": ""
 		},
 		{
 			"numb": 128,
