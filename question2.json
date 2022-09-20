@@ -1786,6 +1786,30 @@
 			"notes": ""
 		},
 		{
+			"numb": 134,
+			"question": "O que é uma antena isotrópica?",
+			"answers": [
+				"É uma antena usada para medir a condutividade da terra",
+				"É uma antena horizontal usada para ser comparada com antenas Yagi!",
+				"E uma antena teórica usada como referência para a determinação do ganho de uma antena",
+				"É uma antena instalada a bordo de uma aeronave para enviar sinais para a Terra"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
+			"numb": 135,
+			"question": "Como se designa uma antena que consiste num único elemento montado perpendicularmente à superfície da Terra?",
+			"answers": [
+				"Um monopolo cónico",
+				"Uma antena horizontal",
+				"Uma antena vertical",
+				"Uma antena Yagi"
+			],
+			"correctIndex": 0,
+			"notes": ""
+		},
+		{
 			"numb": 136,
 			"question": "Como deve variar o tamanho físico de dipolo de meia onda com a frequência de operação? ",
 			"answers": [
