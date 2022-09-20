@@ -4,7 +4,7 @@ var pageBlocks=[];
 function checkQuestion() {
 	var question;
 	 for (question of messagesArray.questions) {
-        if (question.numb==parseFloat(btn.value)) {
+        if (question.numb==parseFloat(this.value)) {
 			break;
         }
     }
