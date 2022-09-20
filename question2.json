@@ -436,7 +436,7 @@
 				"Ao conjunto de frequências que modulam a portadora",
 				"A todas as frequências que o recetor possa receber simultaneamente com a portadora"
 			],
-			"correctIndex": 0,
+			"correctIndex": 4,
 			"notes": ""
 
 		}, {
@@ -1022,7 +1022,7 @@
 				"ao valor de tensão inversa que produz um aumento significativo da corrente inversa",
 				"à tensão de saturação"
 			],
-			"correctIndex": 0,
+			"correctIndex": 4,
 			"notes": ""
 
 		},
@@ -1036,7 +1036,7 @@
 				"os neutrões",
 				"os fotões"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
@@ -1183,7 +1183,7 @@
 				"à determinação das tensões e correntes alternadas (AC) que garantem o funcionamento do transístor na zona de corte",
 				"à determinação das tensões e correntes contínuas (DC) que garantem o funcionamento do transístor na zona ativa"
 			],
-			"correctIndex": 0,
+			"correctIndex": 4,
 			"notes": ""
 		},
 		{
@@ -1787,7 +1787,7 @@
 		},
 		{
 			"numb": 134,
-			"question": "O que é uma antena isotrópica?",
+			"question": "O que é  uma antena isotrópica?",
 			"answers": [
 				"É uma antena usada para medir a condutividade da terra",
 				"É uma antena horizontal usada para ser comparada com antenas Yagi!",
