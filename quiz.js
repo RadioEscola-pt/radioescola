@@ -2,7 +2,12 @@ var messagesArray;
 var pageBlocks=[];
 
 function checkQuestion() {
-    var question = messagesArray.questions[parseInt(this.value) - 1];
+	var question;
+	 for (question of messagesArray.questions) {
+        if (question.numb==parseFloat(btn.value)) {
+			break;
+        }
+    }
     var answer = question.correctIndex;
     var elements = document.getElementsByName("n" + this.value);
 
