@@ -548,7 +548,7 @@
 		},
 		{
 			"numb": 42,
-			"question": " Na transmissão utilizando modulação em faixa lateral única, ou SSB, com portadora suprimida,",
+			"question": " Na transmissão utilizando modulação em faixa lateral única, ou SSB, com portadora suprimida",
 			"answers": [
 
 				"a portadora é transmitida",
@@ -1349,7 +1349,7 @@
 		},
 		{
 			"numb": 101,
-			"question": " Se num amplificador de emissor à massa, a corrente no coletor for de 5 mA e a corrente na base 1,5 mA, qual é o ganho de corrente em regime contínuo?",
+			"question": " Se num amplificador de emissor à massa, a corrente no coletor for de 45 mA e a corrente na base 1,5 mA, qual é o ganho de corrente em regime contínuo?",
 			"answers": [
 
 				"43,5",
@@ -1357,8 +1357,8 @@
 				"46,5",
 				"40"
 			],
-			"correctIndex": 0,
-			"notes": ""
+			"correctIndex": 2,
+			"notes": "45/1.5=30"
 
 		},
 		{
@@ -1469,6 +1469,19 @@
 			"notes": ""
 		},
 		{
+			"numb": 109.1,
+			"question": " Os receptores de SSB-SC estão associados a que tipo de modulação?",
+			"answers": [
+
+				"A1A",
+				"A3E",
+				"J3E",
+				"F3E"
+			],
+			"correctIndex": 3,
+			"notes": ""
+		},
+		{
 			"numb": 110,
 			"question": " Num recetor de FM, qual a função do circuito designado como discriminador?",
 			"answers": [
@@ -1482,9 +1495,7 @@
 			"notes": ""
 		},
 		{
-			"numb":
-
-				111,
+			"numb": 111,
 			"question": " Que parte de um recetor combina um sinal de entrada de 14,250 MHz com um sinal de um oscilador local de 13,795 MHz, para produzir um sinal de frequência intermédia de 455 kHz?",
 			"answers": [
 
@@ -2365,7 +2376,7 @@
 				"Apresentar fundamentadamente a discordância à ANACOM, propondo alterações",
 				"Recorrer a instâncias internacionais, no sentido destas entrarem em contacto com à ANACOM"
 			],
-			"correctIndex": 0,
+			"correctIndex": 3,
 			"notes": ""
 		},
 		{
@@ -2377,7 +2388,7 @@
 				"Investigar a situação e se se concluir que o problema é das minhas emissões, emitir às horas em que ela não vê televisão",
 				"Investigar a situação e resolvê-la ou ajudá-la a resolver se o problema for da instalação de receção"
 			],
-			"correctIndex": 0,
+			"correctIndex": 4,
 			"notes": ""
 		},
 		{
@@ -2404,6 +2415,19 @@
 			"correctIndex": 2,
 			"notes": ""
 		},
+		{
+			"numb": 182.1,
+			"question": "Qual das faixas não tem estatuto primário para o serviço de amador em Portugal?",
+			"answers": [
+				"438 - 440 MHz",
+				"1240 - 1260 MHz",
+				"7100 - 7200 kHz",
+				"24 - 24,05 GHz"
+			],
+			"correctIndex": 2,
+			"notes": ""
+		},
+
 		{
 			"numb": 183,
 			"question": "Qual das seguintes afirmações é falsa?",
