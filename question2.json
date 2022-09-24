@@ -1413,7 +1413,7 @@
 
 			],
 			"correctIndex": 3,
-			"notes": ""
+			"notes": "https://www.youtube.com/watch?v=hz_mMLhUinw https://www.youtube.com/watch?v=dk6DdG4vs4Y"
 		},
 		{
 			"numb": 106,
@@ -1426,12 +1426,12 @@
 				"Um recetor de conversão direta"
 			],
 			"correctIndex": 0,
-			"notes": ""
+			"notes": "super-regenerativo ou tfr  </br> o super-heterodino e conversão direta  tem misturador "
 
 		},
 		{
 			"numb": 107,
-			"question": " Como se pode designar em alternativa a mistura de dois sinais de RF?",
+			"question": "Como se pode designar em alternativa a mistura de dois sinais de RF?",
 			"answers": [
 
 				"Heterodinagem",
@@ -1439,7 +1439,7 @@
 				"Cancelamento",
 				"Filtragem"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
@@ -1504,7 +1504,7 @@
 				"VFO",
 				"Multiplicador"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
@@ -1518,7 +1518,7 @@
 				"Aproximadamente 2 vezes"
 			],
 			"correctIndex": 4,
-			"notes": ""
+			"notes": "https://www.youtube.com/watch?v=0rRs75Kdwq8 1s=3db 3db=2x"
 		},
 		{
 			"numb": 113,
@@ -1530,8 +1530,8 @@
 				"No recetor",
 				"Numa ponte de díodos"
 			],
-			"correctIndex": 0,
-			"notes": ""
+			"correctIndex": 3,
+			"notes": "https://en.wikipedia.org/wiki/S_meter"
 		},
 		{
 			"numb": 114,
@@ -1543,12 +1543,12 @@
 				"Intensidade do sinal recebido",
 				"Potência do transmissor"
 			],
-			"correctIndex": 0,
-			"notes": ""
+			"correctIndex": 3,
+			"notes": "https://en.wikipedia.org/wiki/S_meter"
 		},
 		{
 			"numb": 115,
-			"question": " Num recetor, como funciona um detetor de díodo?",
+			"question": "Num recetor, como funciona um detetor de díodo?",
 			"answers": [
 
 				"Pela retificação e filtragem de sinais de RF",
@@ -1711,7 +1711,7 @@
 		},
 		{
 			"numb": 127,
-			"question": " Qual é a vantagem de um emissor controlado a cristal?",
+			"question": "Qual é a vantagem de um emissor controlado a cristal?",
 			"answers": [
 				"Frequência de saída estável",
 				"Excelente clareza na modulação",
