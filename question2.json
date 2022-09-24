@@ -490,12 +490,12 @@
 				"a menor estabilidade",
 				"o maior consumo de energia"
 			],
-			"correctIndex": 0,
+			"correctIndex": 2,
 			"notes": ""
 		},
 		{
 			"numb": 38,
-			"question": " Numa comunicação em AM, transmite-se:",
+			"question": "Numa comunicação em AM, transmite-se:",
 			"answers": [
 
 				"somente a faixa lateral inferior",
@@ -503,8 +503,8 @@
 				"somente as duas faixas laterais",
 				"somente a portadora e as duas faixas laterais"
 			],
-			"correctIndex": 0,
-			"notes": ""
+			"correctIndex": 4,
+			"notes": "AM nao ssb"
 
 		},
 		{
@@ -522,7 +522,7 @@
 		},
 		{
 			"numb": 40,
-			"question": " Em modulação de frequência, quanto maior é o desvio de frequência",
+			"question": "Em modulação de frequência, quanto maior é o desvio de frequência",
 			"answers": [
 
 				"menos ruído se nota no recetor e maior é a faixa de frequências ocupada ",
@@ -543,7 +543,7 @@
 				"de fase",
 				"outro tipo"
 			],
-			"correctIndex": 0,
+			"correctIndex": 2,
 			"notes": ""
 		},
 		{
