@@ -606,7 +606,7 @@
 		},
 		{
 			"numb": 46,
-			"question": " Qual das seguintes afirmações é verdadeira no que respeita à modulação de voz em banda lateral única?",
+			"question": "Qual das seguintes afirmações é verdadeira no que respeita à modulação de voz em banda lateral única?",
 			"answers": [
 
 				"É um tipo de modulação em amplitude que suprime uma banda lateral e a portadora",
@@ -615,8 +615,8 @@
 				"É o único tipo de modulação de voz autorizado para operar em faixas HF entre os 14 e 30 MHz"
 
 			],
-			"correctIndex": 0,
-			"notes": ""
+			"correctIndex": 1,
+			"notes": "https://pt.wikipedia.org/wiki/Modula%C3%A7%C3%A3o_em_banda_lateral_%C3%BAnica "
 		},
 		{
 			"numb": 47,
@@ -633,7 +633,7 @@
 		},
 		{
 			"numb": 48,
-			"question": " Que tipo de transmissão provoca variação do nível instantâneo de potência do sinal de RF para transmissão de informação?",
+			"question": "Que tipo de transmissão provoca variação do nível instantâneo de potência do sinal de RF para transmissão de informação?",
 			"answers": [
 
 				"Modulação por pulsos codificados",
@@ -646,7 +646,7 @@
 		},
 		{
 			"numb": 49,
-			"question": " Qual das seguintes emissões de fonia usa uma largura de banda mais estreita?",
+			"question": "Qual das seguintes emissões de fonia usa uma largura de banda mais estreita?",
 			"answers": [
 
 				"Banda lateral única",
@@ -1002,7 +1002,7 @@
 		},
 		{
 			"numb": 75,
-			"question": " Um díodo de junção é constituído por",
+			"question": "Um díodo de junção é constituído por",
 			"answers": [
 
 				"uma junção entre duas substâncias semicondutoras",
@@ -1010,7 +1010,7 @@
 				"uma junção entre duas substâncias isolantes",
 				"uma junção entre uma substância condutora e outra semicondutora"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
@@ -1162,7 +1162,7 @@
 		},
 		{
 			"numb": 87,
-			"question": " Em que zona de funcionamento deverá trabalhar um transístor de junção bipolar que é o único elemento ativo num circuito amplificador?",
+			"question": "Em que zona de funcionamento deverá trabalhar um transístor de junção bipolar que é o único elemento ativo num circuito amplificador?",
 			"answers": [
 
 				"Na zona ativa",
@@ -1237,8 +1237,8 @@
 				"apresentam uma resposta tipicamente passa-banda",
 				"Todas as hipóteses estão corretas"
 			],
-			"correctIndex": 0,
-			"notes": ""
+			"correctIndex": 3,
+			"notes": "https://web.fe.up.pt/~vgt/dados/E3/apontamentos/ampl_sinto.pdf"
 		},
 		{
 			"numb": 93,
