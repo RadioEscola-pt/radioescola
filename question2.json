@@ -1556,7 +1556,7 @@
             "notes": "Um buffer é, de forma geral um circuito que serve de isolador. Resposta 3."
         }, {
             "numb": 125,
-            "question ": "No emissor o que é VFO ?",
+            "question": "No emissor o que é VFO ?",
             "answers": [
 
                 "É um oscilador de frequência áudio",
