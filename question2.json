@@ -429,7 +429,7 @@
                 "Produz uma emissão em faixa mais estreita",
                 "Provoca uma saturação na antena do emissor"
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "notes": ""
         }, {
             "numb": 36,
@@ -492,7 +492,7 @@
                 "mais ruído se nota no recetor e maior é a faixa de frequências ocupada  ",
                 "mais ruído se nota no recetor e menor é a faixa de frequências ocupada  "
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "notes": ""
         }, {
             "numb": 41,
@@ -544,7 +544,7 @@
                 "pode ser desconhecida, sem inconveniente",
                 "só pode ser medida nos Centros de Monitorização e Controlo do Espectro da ANACOM"
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "notes": ""
 
         }, {
@@ -3421,49 +3421,49 @@
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "98-Num emissor de modulação de frequência modulado a ± 5 kHz, a segunda harmónica tem o desvio de:",
+            "question": "Num emissor de modulação de frequência modulado a ± 5 kHz, a segunda harmónica tem o desvio de:",
             "answers": ["± 2,5 kHz", "± 5,0 kHz", "± 10 kHz", "± 20 kHz"],
             "numb": 25,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "99-Para converter 2610 kHz em 145 kHz é necessário:",
+            "question": "Para converter 2610 kHz em 145 kHz é necessário:",
             "answers": ["Um oscilador de 2465 kHz", "Um transformador de 18/1.", "Um amplificador sintonizado em 2610 kHz", "Um desmodulador de 145 kHz"],
             "numb": 26,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "100-Em modulação de amplitude, a que se dá o nome de faixas laterais?",
+            "question": "Em modulação de amplitude, a que se dá o nome de faixas laterais?",
             "answers": ["Ao conjunto de frequências situadas imediatamente abaixo e acima da frequência da portadora e que resultam da soma e da diferença entre a frequência da portadora e de cada uma das frequências modulantes.", "A todas as frequências situadas aos lados da portadora.", "Ao conjunto de frequências que modulam a portadora.", "A todas as frequências que o receptor possa receber simultaneamente com a portadora."],
             "numb": 27,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "101-Em modulação de frequência, a que se dá o nome de desvio de frequência?",
+            "question": "Em modulação de frequência, a que se dá o nome de desvio de frequência?",
             "answers": ["À diferença entre o valor máximo de frequência, que a onda modulada apresenta devido à modulação por um sinal modulante, e a frequência da onda portadora.", "À diferença entre o valor máximo e o valor mínimo da frequência da onda modulada.", "Ao dobro da tolerância de frequência permitida regulamentarmente.", "Ao número de kHz que a frequência da portadora  se afasta do seu valor nominal devido à falta de estabilidade do oscilador, na ausência de modulação."],
             "numb": 28,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "102-Em modulação de frequência, o índice de modulação:",
+            "question": "Em modulação de frequência, o índice de modulação:",
             "answers": ["É o factor que está relacionado com a largura de faixa.", "É sempre menor que a largura de faixa ocupada.", "Aumenta quando se diminui a reactância.", "Serve para calcular a percentagem de modulação."],
             "numb": 29,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "103-Numa emissão radiotelefónica deve utilizar-se a percentagem de modulação mais alta possível?",
+            "question": "Numa emissão radiotelefónica deve utilizar-se a percentagem de modulação mais alta possível?",
             "answers": ["Sim, mas sem exceder os 100% para que, para a mesma potência da portadora, se obtenha maior nível sonoro.", "Não porque danificaria o emissor.", "Não é importante já que a percentagem de modulação não afecta a qualidade de emissão.", "Não porque poderá danificar o receptor."],
             "numb": 30,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "104-Qual o inconveniente da sobremodulação?",
+            "question": "Qual o inconveniente da sobremodulação?",
             "answers": ["Produz um aumento da potência aparente do emissor.", "Provoca o aumento da largura de faixa ocupada pela emissão, o que poderá provocar interferências na recepção dos canais adjacentes.", "Produz uma emissão em faixa mais estreita.", "Provoca uma saturação na antena do emissor."],
             "numb": 31,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "105-Numa emissão em AM, a maior parte da potência é usada para transmitir:",
+            "question": "Numa emissão em AM, a maior parte da potência é usada para transmitir:",
             "answers": ["a banda lateral inferior.", "a banda lateral superior.", "as duas bandas laterais.", "a portadora."],
             "numb": 32,
             "notes": "",
@@ -3559,17 +3559,11 @@
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "121-Em modulação de frequência, a que se dá o nome de desvio de frequência?",
+            "question": "Em modulação de frequência, a que se dá o nome de desvio de frequência?",
             "answers": ["À diferença entre o valor máximo de frequência, que a onda modulada apresenta devido à modulação por um sinal modulante, e a frequência da onda portadora.", "À diferença entre o valor máximo e o valor mínimo da frequência da onda modulada.", "Ao dobro da tolerância de frequência permitida regularmente.", "Ao número de kHz que a frequência da portadora  se afasta do seu valor nominal devido à falta de estabilidade do oscilador, na ausência de modulação."],
             "numb": 8,
             "notes": "",
             "correctIndex": 1
-        }, {
-            "question": "122-A largura de faixa ocupada por uma emissão:",
-            "answers": ["é sempre menor que a largura de faixa necessária para essa emissão.", "não engloba todas as frequências radiadas pelo emissor.", "pode ser desconhecida, sem inconveniente.", "só pode ser medida nos Centros de Monitorização e Controlo do Espectro do ICP-ANACOM."],
-            "numb": 9,
-            "notes": "",
-            "correctIndex": 2
         }, {
             "question": "123-A largura de faixa necessária:",
             "answers": ["é, para uma dada classe de emissão, o valor máximo  da largura de faixa ocupada suficiente para assegurar a transmissão da informação à velocidade e com a qualidade requeridas  em determinadas condições.", "é, para uma dada classe de emissão, o valor mínimo da largura de faixa ocupada suficiente para assegurar a transmissão da informação à velocidade e com a qualidade requeridas em determinadas condições.", "depende das características do receptor.", "não depende da classe de emissão."],
@@ -3577,13 +3571,13 @@
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "124-Uma emissão de faixa lateral única é:",
+            "question": "Uma emissão de faixa lateral única é:",
             "answers": ["uma emissão em modulação de frequência.", "uma emissão em modulação de fase.", "uma emissão em modulação de amplitude.", "uma emissão em qualquer tipo de modulação."],
             "numb": 11,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "125-Que vantagem resulta da utilização da banda lateral única, em comparação com outros tipos de modulação de voz nas faixas HF de radioamador?",
+            "question": "Que vantagem resulta da utilização da banda lateral única, em comparação com outros tipos de modulação de voz nas faixas HF de radioamador?",
             "answers": ["Modulação de voz de muito alta-fidelidade.", "Menor largura de banda e elevada eficiência energética.", "Facilidade de sintonização na recepção.", "Menor susceptibilidade aos choques de electricidade estática (atmosféricos)."],
             "numb": 12,
             "notes": "",
