@@ -3030,6 +3030,967 @@
             "num": 39,
             "notes": "",
             "correctIndex": 4
+        }, {
+            "question": "6-Por um circuito resistivo de 120 ohms circula uma corrente de 0,15 A, quando alimentado por uma tensão de 18 V. Quando alimentado por uma tensão de 36 V a corrente…",
+            "answers": ["...diminui para 0,075 A", "…aumenta para 0,300 A", "...diminui para 4 vezes", "...aumenta 4 vezes"],
+            "num": 0,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "7-Determinado circuito precisa ser alimentado com 60 V e 0,2 A. Dispondo-se de uma fonte de 300 V, deve colocar-se em série com o circuito uma resistência de:",
+            "answers": ["12 ohms", "60 ohms", "300 ohms", "1,2 kohms"],
+            "num": 1,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "8-Determinado circuito precisa ser alimentado com 60 V e 0,8 A. Dispondo-se de uma fonte de 300 V, deve colocar-se em série com o circuito uma resistência de:",
+            "answers": ["12 ohms", "60 ohms", "300 ohms", "1,2 kohms"],
+            "num": 2,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "9-Quatro resistências estão montadas em série. As quedas de tensão em cada uma delas são as seguintes: 9,2 V; 12,5 V; 10 V e 3,4 V. A tensão aplicada ao circuito é:",
+            "answers": ["35,1 V", "25 V", "50 V", "Não se pode saber."],
+            "num": 3,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "10-Quatro resistências estão montadas em série. A tensão aplicada ao conjunto é de 50 V. As quedas de tensão nos bornes das três primeiras são, respectivamente: 25 V; 10,2 V e 12,8 V. Qual é a queda de tensão nos bornes da última resistência?",
+            "answers": ["10 V", "5 V", "2 V", "1 V"],
+            "num": 4,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "11-A energia eléctrica (W) é definida pelo:",
+            "answers": ["Produto da potência (P) pelo tempo (t).", "Quociente da potência (P) pelo tempo (t).", "Produto da tensão (V) pela corrente (I).", "Quociente da tensão (V) pela corrente (I)."],
+            "num": 5,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "12-Qual a unidade em que se expressa a capacidade de uma bateria?",
+            "answers": ["A/h", "Ah", "VA", "V/h"],
+            "num": 6,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "13-O que sucede quando a impedância de uma carga eléctrica é igual à impedância interna da fonte de energia?",
+            "answers": ["A fonte fornece apenas potência mínima à carga.", "A carga eléctrica é reduzida.", "Não é possível o fluxo de corrente no circuito.", "A fonte tem capacidade para fornecer o máximo de potência à carga."],
+            "num": 7,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "14-Por que razão é importante a adaptação de impedâncias?",
+            "answers": ["Para que a fonte consiga fornecer o máximo de potência à carga.", "Para que a carga adquira o mínimo de potência oriunda da fonte.", "Para garantir que a resistência é menor que a reactância no circuito.", "Para garantir que os níveis de resistência e de reactância no circuito se assemelham."],
+            "num": 8,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "15-A força eléctrica que provoca o movimento de cargas num condutor é:",
+            "answers": ["A condutância.", "O campo magnético.", "A força electromotriz.", "A frequência."],
+            "num": 9,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "16-Um gerador com a f.e.m. de 100 V e com 0,5 ohms de resistência interna, debita sobre um circuito exterior uma corrente de 10 A. Qual é a tensão dos terminais do gerador?",
+            "answers": ["80 V.", "90 V.", "95 V.", "100 V."],
+            "num": 10,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "17-Um gerador com a f.e.m. de 100 V e com 0,25 ohms de resistência interna, debita sobre um circuito exterior uma corrente de 40 A. Qual é a tensão dos terminais do gerador?",
+            "answers": ["80 V", "90 V", "95 V", "100 V"],
+            "num": 11,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "18-Qual a força electromotriz de duas baterias de automóvel quando ligadas em série?",
+            "answers": ["6 V", "12 V", "24 V", "Nenhuma das respostas está correcta. "],
+            "num": 12,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "19-Qual das afirmações está correcta?",
+            "answers": ["Uma fonte eléctrica ideal tem uma resistência interna nula.", "Quando carrego uma fonte eléctrica, a tensão pode baixar ligeiramente relativamente à tensão3em vazio.", "A associação de fontes de tensão em série dá origem a um fonte eléctrica em que a tensão é igual à soma das tensões das fontes de tensão associadas.", "As três afirmações são correctas."],
+            "num": 13,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "20-Em que situação é que uma bateria de armazenamento de chumbo-ácido liberta gás de hidrogénio explosivo?",
+            "answers": ["Quando armazenada por um período de tempo longo.", "Ao ser descarregada.", "Ao ser carregada.", "Ao ser colocada numa superfície não plana."],
+            "num": 14,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "21-Que nome recebe o processo pelo qual a luz solar é directamente convertida em energia eléctrica?",
+            "answers": ["Conversão fotovoltaica.", "Emissão de fotões.", "Fotossíntese.", "Decomposição de fotões."],
+            "num": 15,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "22-Como se relaciona a corrente total com a corrente individual em cada ramificação de um circuito em paralelo?",
+            "answers": ["Corresponde à média da corrente de cada ramificação.", "Diminui à medida que ramificações paralelas vão sendo adicionadas ao circuito.", "Corresponde à soma das correntes nas várias ramificações.", "Corresponde à soma do inverso de cada queda individual de tensão."],
+            "num": 16,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "23-Qual a vantagem da resistência interna reduzida das baterias de níquel-cádmio?",
+            "answers": ["Vida útil mais longa.", "Alta corrente de descarga.", "Alta tensão.", "Recarga rápida."],
+            "num": 17,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "24-Qual o mínimo de tensão de descarga permitido para o máximo de vida útil de uma bateria comum de chumbo-ácido de 12 volt?",
+            "answers": ["6 V ", "8,5 V ", "10,5 V ", "12 V "],
+            "num": 18,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "25-Em que circunstância se torna aceitável recarregar uma célula primária de carbono-zinco?",
+            "answers": ["Sempre que a tensão se mantenha superior a 1,0 V ", "Sempre que a célula se mantenha morna durante o período de recarga.", "Sempre que se use um carregador de corrente constante.", "Nunca."],
+            "num": 19,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "26-Qual das seguintes baterias é recarregável?",
+            "answers": ["Bateria de carbono-zinco.", "Bateria de óxido de prata.", "Bateria de hidreto metálico de níquel.", "Bateria de mercúrio."],
+            "num": 20,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "30-A intensidade de campo eléctrico é expressa em:",
+            "answers": ["metro.", "volt/metro.", "W", "V "],
+            "num": 21,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "31-Uma carga eléctrica fixa num ponto do espaço cria em torno de si:",
+            "answers": ["Um campo eléctrico.", "Um campo magnético.", "Uma corrente eléctrica.", "Uma região luminosa."],
+            "num": 22,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "32-O que é o campo eléctrico?",
+            "answers": ["É um campo numa dada região do espaço onde se manifesta a acção de um campo magnético.", "É um campo numa dada região do espaço onde se manifesta a acção de cargas eléctricas.", "É um campo numa dada região do espaço onde se manifesta a acção do efeito gravitacional", "É um campo numa dada região do espaço, tendo necessariamente ar, onde se manifesta a acção de fontes de luz coerente."],
+            "num": 23,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "33-As linhas de força de um campo eléctrico, provocadas por uma carga eléctrica:",
+            "answers": ["Nunca se intercetam.", "O potencial decresce ao longo e no sentido das linhas de campo.", "Por cada ponto passa só uma linha de campo.", "Todas as respostas anteriores estão correctas."],
+            "num": 24,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "34-Em condições de propagação normais, a intensidade do campo eléctrico:",
+            "answers": ["Cresce com a raiz quadrada da distância.", "Decresce com a raiz quadrada da distância.", "Decresce com o quadrado da distância.", "Cresce com o quadrado da distância."],
+            "num": 25,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "38-Uma corrente a passar num condutor cria na sua proximidade:",
+            "answers": ["Um campo eléctrico.", "Um campo magnético", "Uma corrente eléctrica.", "Uma região luminosa."],
+            "num": 26,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "39-A intensidade do campo magnético é expressa em:",
+            "answers": ["ampere/metro.", "volt/metro.", "W", "ampere."],
+            "num": 27,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "40-Uma bússola reage:",
+            "answers": ["aos campos eléctricos.", "aos campos magnéticos.", "tanto aos campos eléctricos como aos campos magnéticos.", "a tensões que lhe são aplicadas."],
+            "num": 28,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "41-O que é o campo magnético?",
+            "answers": ["É um campo numa dada região do espaço onde se manifesta a acção do efeito gravitacional.", "É um campo numa dada região do espaço onde se manifesta a acção de uma carga eléctrica estática.", "É um campo numa dada região do espaço onde se manifesta a acção de cargas eléctricas em movimento num condutor.", "É um campo numa dada região do espaço, tendo necessariamente ar, onde se manifesta a acção de fontes de luz coerente."],
+            "num": 29,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "42-Qual das afirmações está correcta?",
+            "answers": ["Uma carga positiva estática produz um campo magnético em que as linhas de força do campo são concêntricas.", "Um condutor onde flui uma corrente eléctrica não produz qualquer campo magnético, a menos que esteja imerso numa substância líquida.", "As linhas do campo magnético, de um condutor onde flui uma corrente eléctrica, são perpendiculares ao condutor.", "As linhas do campo magnético de um condutor onde flui uma corrente eléctrica, formam círculos concêntricos ao redor do condutor."],
+            "num": 30,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "43-Em que consiste um campo magnético?",
+            "answers": ["Corrente eléctrica que passa no espaço à volta de um íman permanente.", "A região que rodeia um íman através do qual actua uma força magnética.", "Espaço entre as placas de um condensador carregado, através das quais actua uma força magnética", "A força que impulsiona uma corrente através de uma resistência."],
+            "num": 31,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "44-Em que sentido está orientado um campo magnético num condutor relativamente ao sentido do fluxo de electrões?",
+            "answers": ["No mesmo sentido da corrente.", "No sentido oposto ao da corrente.", "Em todos os sentidos; omnidireccional.", "No sentido determinado pela regra da mão esquerda."],
+            "num": 32,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "45-O que é que determina a força do campo magnético à volta de um condutor?",
+            "answers": ["A resistência dividida pela corrente.", "A razão entre a corrente e a resistência.", "O diâmetro do condutor.", "A quantidade de corrente."],
+            "num": 33,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "46-As ondas electromagnéticas são produzidas por:",
+            "answers": ["Campos gravitacionais.", "Cargas eléctricas em repouso.", "Corrente eléctrica contínua.", "Corrente eléctrica oscilante."],
+            "num": 34,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "47-Qual a frequência de uma onda cujo comprimento é 14,117 metro?",
+            "answers": ["14,117 MHz", "28,234 MHz", "21,250 MHz", "7,000 MHz"],
+            "num": 35,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "48-O comprimento de onda da frequência de 25 MHz é:",
+            "answers": ["10 m", "12 m", "15 m", "18 m"],
+            "num": 36,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "49-A frequência, cujo comprimento de onda é de 10 metro, é:",
+            "answers": ["3 MHz", "10 MHz", "20 MHz", "30 MHz"],
+            "num": 37,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "50-Qual a velocidade, aproximada, da propagação das ondas rádio no espaço?",
+            "answers": ["300 000 km/s", "120 000 km/s", "500 000 km/s", "250 000 km/s"],
+            "num": 38,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "51-Qual das seguintes características não está associada às ondas electromagnéticas?",
+            "answers": ["Polarização.", "Amplitude.", "Frequência.", "Temperatura."],
+            "num": 39,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "52-Qual o valor da tensão pico-a-pico se um voltímetro AC ler uma tensão eficaz de 65 V numa forma de onda sinusoidal?",
+            "answers": ["46 V", "92 V", "130 V", "184 V"],
+            "num": 0,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "53-Qual das seguintes opções descreve melhor a forma como as ondas electromagnéticas viajam em espaço livre?",
+            "answers": ["Os campos magnético e eléctrico ficam alinhados à medida que viajam.", "A energia propaga-se num meio com um índice elevado de refracção.", "As ondas são reflectidas pela ionosfera e redireccionadas de volta à fonte.", "A energia propaga-se pela alteração dos campos eléctrico e magnético."],
+            "num": 1,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "57-Qual a unidade de medida de frequência?",
+            "answers": ["Farad", "Henry", "Hertz", "W"],
+            "num": 2,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "58-Exprima em Hz: 900 kHz ",
+            "answers": ["900 000 Hz", "0,900 Hz", "9 000 Hz", "90 000 Hz"],
+            "num": 3,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "59-1 MHz equivale a:",
+            "answers": ["100 000 Hz", "10 000 kHz", "1 000 Hz", "1 000 kHz"],
+            "num": 4,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "60-Exprima em kHz: 7,54 MHz",
+            "answers": ["754 kHz", "7 540 kHz", "0,754 kHz", "0,0754 kHz"],
+            "num": 5,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "61-O período T de uma onda sinusoidal é:",
+            "answers": ["O dobro da sua frequência.", "Metade da sua frequência.", "O inverso da sua frequência.", "O produto da sua frequência pelo seu comprimento de onda."],
+            "num": 6,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "62-O valor eficaz de uma onda sinusoidal com 1 V de amplitude máxima é:",
+            "answers": ["0,707 V", "1,414 V", "0 V", "2 V"],
+            "num": 7,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "63-Exprima em GHz: 9 300 MHz",
+            "answers": ["93 000 GHz", "0,93 GHz", "9,3 GHz", "9 300 000 GHz"],
+            "num": 8,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "64-Qual o período de uma onda sinusoidal de 50 Hz?",
+            "answers": ["0,2 s", "0,02 s", "0,5 s", "0,005 s"],
+            "num": 9,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "65-Exprima em Hz: 433,010 MHz",
+            "answers": ["433 010 Hz", "0,433 010 Hz", "433 010 000 Hz", "0,000 433 010 Hz"],
+            "num": 10,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "66-A uma determinada frequência f corresponde um determinado período T. Se a frequência duplicar, o período:",
+            "answers": ["duplica.", "não se altera.", "passa para um quarto.", "passa para metade."],
+            "num": 11,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "67-Qual das seguintes opções é equivalente ao valor quadrático médio de uma tensão AC?",
+            "answers": ["A tensão AC que se obtém tomando o quadrado do valor médio da tensão de pico AC.", "A tensão DC que provoca a mesma quantidade de calor num dado resistência que o pico de tensão AC correspondente.", "A tensão DC que provoca a mesma quantidade de calor num dado resistência que a tensão AC RMS correspondente.", "A tensão AC que se obtém tomando a raiz quadrada do valor médio AC."],
+            "num": 12,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "68-Em que consiste o período de uma onda?",
+            "answers": ["O tempo necessário para terminar um ciclo.", "O número de graus num ciclo.", "O número de vezes que a onda cruza a o eixo x (zero) num ciclo.", "A amplitude da onda."],
+            "num": 13,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "69-Se um voltímetro de tensão RMS indicar 34 V numa onda sinusoidal, qual é a tensão de pico?",
+            "answers": ["123 V", "96 V", "55 V", "48 V"],
+            "num": 14,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "73-Qual das afirmações está incorrecta?",
+            "answers": ["A nossa voz é um conjunto de ondas acústicas.", "A nossa voz é um conjunto de ondas electromagnéticas.", "Podemos transformar as ondas da nossa voz em sinais eléctricos.", "As frequências associadas às ondas da nossa voz raramente ultrapassam os 15 kHz"],
+            "num": 15,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "74-Qual das afirmações está correcta?",
+            "answers": ["Uma onda quadrada pode ser representada por um conjunto de ondas sinusoidais.", "Obtém-se a onda sinusoidal fundamental de uma onda quadrada, aplicando um filtro passa-baixo.", "As ondas quadradas são fundamentais na representação e processamento dos sinais digitais.", "Todas as hipóteses anteriores estão correctas."],
+            "num": 16,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "75-Qual das afirmações está incorrecta?",
+            "answers": ["Uma onda quadrada pode ter ou não ter componente contínua.", "A frequência fundamental e as harmónicas estão sempre presentes numa onda sinusoidal.", "Uma onda quadrada só tem a frequência fundamental, não tendo harmónicas.", "Numa onda quadrada as harmónicas possuem frequências mais elevadas que a fundamental."],
+            "num": 17,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "76-A frequência de uma onda quadrada expressa-se em:",
+            "answers": ["Zeros e uns.", "Segundos.", "Hertz.", "Tensão."],
+            "num": 18,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "77-O dispositivo que transforma voz em sinais eléctricos designa-se por:",
+            "answers": ["Microfone.", "Amplificador.", "Auscultador.", "Misturador."],
+            "num": 19,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "78-Que tipo de onda é produzido pela voz humana?",
+            "answers": ["Sinusoidal.", "Logarítmica.", "Irregular.", "Trapezoidal."],
+            "num": 20,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "94-Qual é a largura de faixa necessária numa emissão de modulação de frequência em que o desvio de frequência é 25 kHz e a máxima frequência moduladora é 3 kHz?",
+            "answers": ["22 kHz", "25 kHz", "28 kHz", "56 kHz"],
+            "num": 21,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "95-Num emissor de FM, cujo desvio máximo de frequência é de 5 kHz e a frequência máxima de modulação 3 kHz, qual é o índice de modulação?",
+            "answers": ["0,6", "1,67", "15", "18"],
+            "num": 22,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "96-Define-se índice de modulação em frequência modulada como a relação entre:",
+            "answers": ["O desvio máximo e a mais alta frequência modulante.", "O desvio mínimo e a mais alta frequência modulante.", "O desvio máximo e a mais baixa frequência modulante.", "O desvio mínimo e a mais baixa frequência modulante."],
+            "num": 23,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "97-Em modulação de frequência, uma emissão em que o desvio de frequência máximo é de 15 kHz e em que num dado instante o desvio de frequência é de 3 kHz, tem nesse instante uma percentagem de modulação de:",
+            "answers": ["0,1", "0,2", "0,3", "0,45"],
+            "num": 24,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "98-Num emissor de modulação de frequência modulado a ± 5 kHz, a segunda harmónica tem o desvio de:",
+            "answers": ["± 2,5 kHz", "± 5,0 kHz", "± 10 kHz", "± 20 kHz"],
+            "num": 25,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "99-Para converter 2610 kHz em 145 kHz é necessário:",
+            "answers": ["Um oscilador de 2465 kHz", "Um transformador de 18/1.", "Um amplificador sintonizado em 2610 kHz", "Um desmodulador de 145 kHz"],
+            "num": 26,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "100-Em modulação de amplitude, a que se dá o nome de faixas laterais?",
+            "answers": ["Ao conjunto de frequências situadas imediatamente abaixo e acima da frequência da portadora e que resultam da soma e da diferença entre a frequência da portadora e de cada uma das frequências modulantes.", "A todas as frequências situadas aos lados da portadora.", "Ao conjunto de frequências que modulam a portadora.", "A todas as frequências que o receptor possa receber simultaneamente com a portadora."],
+            "num": 27,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "101-Em modulação de frequência, a que se dá o nome de desvio de frequência?",
+            "answers": ["À diferença entre o valor máximo de frequência, que a onda modulada apresenta devido à modulação por um sinal modulante, e a frequência da onda portadora.", "À diferença entre o valor máximo e o valor mínimo da frequência da onda modulada.", "Ao dobro da tolerância de frequência permitida regulamentarmente.", "Ao número de kHz que a frequência da portadora  se afasta do seu valor nominal devido à falta de estabilidade do oscilador, na ausência de modulação."],
+            "num": 28,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "102-Em modulação de frequência, o índice de modulação:",
+            "answers": ["É o factor que está relacionado com a largura de faixa.", "É sempre menor que a largura de faixa ocupada.", "Aumenta quando se diminui a reactância.", "Serve para calcular a percentagem de modulação."],
+            "num": 29,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "103-Numa emissão radiotelefónica deve utilizar-se a percentagem de modulação mais alta possível?",
+            "answers": ["Sim, mas sem exceder os 100% para que, para a mesma potência da portadora, se obtenha maior nível sonoro.", "Não porque danificaria o emissor.", "Não é importante já que a percentagem de modulação não afecta a qualidade de emissão.", "Não porque poderá danificar o receptor."],
+            "num": 30,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "104-Qual o inconveniente da sobremodulação?",
+            "answers": ["Produz um aumento da potência aparente do emissor.", "Provoca o aumento da largura de faixa ocupada pela emissão, o que poderá provocar interferências na recepção dos canais adjacentes.", "Produz uma emissão em faixa mais estreita.", "Provoca uma saturação na antena do emissor."],
+            "num": 31,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "105-Numa emissão em AM, a maior parte da potência é usada para transmitir:",
+            "answers": ["a banda lateral inferior.", "a banda lateral superior.", "as duas bandas laterais.", "a portadora."],
+            "num": 32,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "106-Numa emissão em FM:",
+            "answers": ["não há faixas laterais.", "há apenas a faixa lateral referente à frequência modulante de maior amplitude.", "há apenas a faixa lateral referente à média das frequências.", "o número de frequências que constituem as faixas laterais é infinito."],
+            "num": 33,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "107-A recepção em AM tem desvantagens em relação à recepção em FM em:",
+            "answers": ["Menor largura de faixa utilizada.", "Maior sensibilidade aos ruídos interferentes.", "Menor estabilidade.", "Maior consumo de energia."],
+            "num": 34,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "108-A conversão de frequência:",
+            "answers": ["É a obtenção de uma certa frequência a partir da diferença de outras duas.", "É a multiplicação de frequência.", "Utiliza-se apenas nos emissores.", "Tem apenas interesse para separar duas frequências próximas."],
+            "num": 35,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "109-Dá-se o nome de desmodulação (ou detecção):",
+            "answers": ["Ao processamento de uma onda modulada de modo a recuperar o sinal modulante.", "À aplicação de uma onda modulada directamente a um altifalante.", "À rectificação de uma onda de radiofrequência modulada.", "À rectificação de uma onda de audiofrequência."],
+            "num": 36,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "110-Numa comunicação em AM, transmite-se:",
+            "answers": ["Somente a faixa lateral inferior.", "Somente a faixa lateral superior.", "Somente as duas faixas laterais.", "A portadora e as duas faixas laterais."],
+            "num": 37,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "111-Em modulação de amplitude, dupla faixa lateral, a largura de faixa necessária para uma emissão radiofónica é de:",
+            "answers": ["5 kHz", "6 kHz", "10 kHz", "12 kHz"],
+            "num": 38,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "112-Além das interferências provocadas, a sobremodulação terá mais algum inconveniente?",
+            "answers": ["Não tem mais nenhum inconveniente.", "Produz distorção.", "Pode danificar o receptor.", "Pode danificar a antena da estação emissora."],
+            "num": 39,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "113-Em modulação de frequência, por cada frequência modulante, a antena emissora radia:",
+            "answers": ["Uma só frequência - a portadora.", "Duas frequências - frequências laterais.", "Três frequências - portadora e duas frequências laterais.", "Um número infinito de frequências."],
+            "num": 0,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "114-Em modulação de frequência, quanto maior é o desvio de frequência:",
+            "answers": ["Menos ruídos se notam no receptor e maior é a faixa de frequências ocupada.", "Menos ruídos se notam no receptor e menor é a faixa de frequências ocupada.", "Mais ruídos se notam no receptor e maior é a faixa de frequências ocupada.", "Mais ruídos se notam no receptor e menor é a faixa de frequências ocupada."],
+            "num": 1,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "115-A percentagem de modulação da onda portadora de um emissor em modulação de frequência depende:",
+            "answers": ["Da frequência da tensão de modulação.", "Da faixa de frequências do sinal modulante.", "Da altura dos sons a transmitir.", "Da amplitude da tensão de modulação."],
+            "num": 2,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "116-Em relação à modulação de amplitude (dupla faixa lateral), a modulação de frequência tem a seguinte vantagem:",
+            "answers": ["Menos ruído.", "Menor largura de faixa.", "Atinge normalmente distâncias maiores.", "Menor separação entre canais adjacentes."],
+            "num": 3,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "117-O sistema faixa lateral única, ou SSB, é um tipo de modulação:",
+            "answers": ["de frequência.", "de amplitude.", "de fase.", "outro tipo."],
+            "num": 4,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "118-Na transmissão pelo sistema SSB, com portadora suprimida:",
+            "answers": ["a portadora é transmitida.", "a maior potência é consumida pela portadora.", "a desmodulação é mais simples do que no sistema DSB.", "há maior economia do espectro de frequência."],
+            "num": 5,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "119-Na comunicação pelo sistema SSB, com portadora suprimida:",
+            "answers": ["é transmitida apenas a metade da informação.", "metade da informação deve ser recuperada pelo receptor.", "para desmodular, o receptor deve restabelecer a portadora", "a sintonia é pouco selectiva"],
+            "num": 6,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "120-Na comunicação pelo sistema faixa lateral única, em inglês SSB (single side band), transmite-se",
+            "answers": ["apenas a portadora", "apenas as duas faixas laterais", "apenas uma faixa lateral, com portadora completa ou reduzida, ou sem portadora.", "a portadora e duas faixas laterais."],
+            "num": 7,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "121-Em modulação de frequência, a que se dá o nome de desvio de frequência?",
+            "answers": ["À diferença entre o valor máximo de frequência, que a onda modulada apresenta devido à modulação por um sinal modulante, e a frequência da onda portadora.", "À diferença entre o valor máximo e o valor mínimo da frequência da onda modulada.", "Ao dobro da tolerância de frequência permitida regularmente.", "Ao número de kHz que a frequência da portadora  se afasta do seu valor nominal devido à falta de estabilidade do oscilador, na ausência de modulação."],
+            "num": 8,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "122-A largura de faixa ocupada por uma emissão:",
+            "answers": ["é sempre menor que a largura de faixa necessária para essa emissão.", "não engloba todas as frequências radiadas pelo emissor.", "pode ser desconhecida, sem inconveniente.", "só pode ser medida nos Centros de Monitorização e Controlo do Espectro do ICP-ANACOM."],
+            "num": 9,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "123-A largura de faixa necessária:",
+            "answers": ["é, para uma dada classe de emissão, o valor máximo  da largura de faixa ocupada suficiente para assegurar a transmissão da informação à velocidade e com a qualidade requeridas  em determinadas condições.", "é, para uma dada classe de emissão, o valor mínimo da largura de faixa ocupada suficiente para assegurar a transmissão da informação à velocidade e com a qualidade requeridas em determinadas condições.", "depende das características do receptor.", "não depende da classe de emissão."],
+            "num": 10,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "124-Uma emissão de faixa lateral única é:",
+            "answers": ["uma emissão em modulação de frequência.", "uma emissão em modulação de fase.", "uma emissão em modulação de amplitude.", "uma emissão em qualquer tipo de modulação."],
+            "num": 11,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "125-Que vantagem resulta da utilização da banda lateral única, em comparação com outros tipos de modulação de voz nas faixas HF de radioamador?",
+            "answers": ["Modulação de voz de muito alta-fidelidade.", "Menor largura de banda e elevada eficiência energética.", "Facilidade de sintonização na recepção.", "Menor susceptibilidade aos choques de electricidade estática (atmosféricos)."],
+            "num": 12,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "126-Qual das seguintes afirmações é verdadeira no que respeita à modulação de voz em banda lateral única?",
+            "answers": ["Transmissão de uma banda lateral e da portadora; supressão da outra banda lateral.", "Transmissão de uma banda lateral; supressão da outra banda lateral e da portadora.", "As transmissões de voz em banda lateral única têm uma potência média mais elevada do que qualquer outro tipo de modulação.", "A banda lateral única é o único tipo de modulação autorizado a operar nas faixas de radioamador dos 160, 75 e 40 metro"],
+            "num": 13,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "127-Qual das seguintes afirmações é verdadeira no que respeita à modulação de voz em banda lateral única?",
+            "answers": ["É um tipo de modulação em amplitude que suprime uma banda lateral e a portadora.", "É um tipo de modulação em amplitude que enfatiza as frequências mais elevadas.", "Reconstitui o sinal a frequências elevadas com maior eficiência do que a frequências baixas.", "É o único tipo de modulação de voz autorizado para operar em faixas HF entre os 14 e 30 MHz"],
+            "num": 14,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "128-Como se designa o processo de alteração de envolvente de uma onda de RF para transmissão de informação?",
+            "answers": ["Modulação de fase.", "Modulação de frequência.", "Modulação por espalhamento espectral.", "Modulação de amplitude."],
+            "num": 15,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "129-Como se designa o processo de alteração do ângulo de fase de uma onda de RF para transmissão de informação?",
+            "answers": ["Convolução de fase.", "Modulação de fase.", "Convolução de ângulo.", "Inversão de radianos."],
+            "num": 16,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "130-Como se designa o processo de alteração da frequência de uma onda de RF para transmissão de informação?",
+            "answers": ["Convolução de frequência.", "Transformação de frequência.", "Conversão de frequência.", "Modulação de frequência."],
+            "num": 17,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "131-Que tipo de transmissão provoca variação do nível instantâneo de potência do sinal de RF para transmissão de informação?",
+            "answers": ["Modulação por chaveamento de frequência.", "Modulação por pulsos.", "Modulação de frequência.", "Modulação de amplitude"],
+            "num": 18,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "132-Qual a vantagem da supressão de portadora numa transmissão de fonia de banda lateral única?",
+            "answers": ["Maior fidelidade de som.", "Obtém-se uma maior percentagem de modulação e uma menor distorção.", "A banda lateral restante pode receber mais potência de transmissão.", "Pode ser usado equipamento de recepção de menor complexidade."],
+            "num": 19,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "133-Qual das seguintes emissões de fonia usa uma largura de banda mais estreita?",
+            "answers": ["Banda lateral única.", "Banda lateral dupla.", "Modulação de fase.", "Modulação de frequência."],
+            "num": 20,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "134-O que sucede ao sinal de um transmissor de fonia sobremodulado de banda lateral única?",
+            "answers": ["Torna-se mais sonoro, sem se produzirem outros efeitos.", "Ocupa menos largura de banda e apresenta uma resposta fraca em altas-frequências.", "Adquire maior fidelidade e a relação sinal-ruído melhora.", "Fica distorcido e ocupa maior largura de banda."],
+            "num": 21,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "135-Como se designa a razão entre o desvio de frequência de uma portadora de RF e a frequência modulada do sinal de fonia FM correspondente?",
+            "answers": ["Compressibilidade FM.", "Índice quieting (silenciamento).", "Percentagem da modulação.", "Índice de modulação."],
+            "num": 22,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "136-Como varia o índice de modulação de uma emissão modulada em fase com a frequência da portadora de RF (a frequência modulada)?",
+            "answers": ["Aumenta à medida que a frequência da portadora de RF aumenta.", "Diminui à medida que a frequência da portadora de RF aumenta.", "Varia com a raiz quadrada da frequência da portadora de RF.", "Não depende da frequência da portadora de RF."],
+            "num": 23,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "137-Qual é o índice de modulação de um sinal de fonia FM com um desvio máximo de frequência de 3000 Hz de cada lado da frequência da portadora, quando a frequência de modulação é 1000 Hz?",
+            "answers": ["3", "0,3", "3000", "1000"],
+            "num": 24,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "138-Qual é o índice de modulação de um sinal de fonia FM com um desvio máximo da portadora de ± 6kHz, quando modulada com uma frequência de modulação de 2kHz?",
+            "answers": ["6000", "3", "2000", "0,3"],
+            "num": 25,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "139-Qual a razão de desvio de um sinal de fonia FM com um máximo de frequência de oscilação de ± 5 kHz, assumindo uma taxa máxima de modulação de 3 kHz?",
+            "answers": ["60", "0,167", "0,6", "1,67"],
+            "num": 26,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "140-Qual a razão de desvio de um sinal de fonia FM com um máximo de frequência de oscilação de ± 7.5 kHz, assumindo uma taxa máxima de modulação de 3.5 kHz?",
+            "answers": ["2,14", "0,214", "0,47", "47"],
+            "num": 27,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "141-Em que consiste a razão de desvio?",
+            "answers": ["A razão entre a frequência áudio de modulação e a frequência central da portadora.", "A razão entre a frequência de máximo desvio da portadora e a máxima frequência áudio de modulação.", "A razão entre a frequência central da portadora e a frequência áudio de modulação.", "A razão entre a frequência áudio máxima de modulação e a frequência áudio média de modulação."],
+            "num": 28,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "142-As emissões SSB:",
+            "answers": ["ocupam cerca de duas vezes a banda de um sinal AM.", "contêm mais informação que uma emissão AM.", "ocupam cerca de metade da banda de uma emissão AM.", "são compatíveis com as emissões FM."],
+            "num": 29,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "143-O processo de modulação permite:",
+            "answers": ["colocar a informação na portadora.", "retirar a informação da portadora.", "combinar voz e código Morse.", "nenhum destes."],
+            "num": 30,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "144-Diz-se que existe adaptação quando:",
+            "answers": ["a transferência de energia é mínima.", "a transferência de energia é máxima.", "não há transferência de energia.", "a energia é duplicada."],
+            "num": 31,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "145-Qual a potência associada a um sinal sinusoidal que faz passar uma corrente eficaz de 2 A numa resistência de 10 ohms?",
+            "answers": ["20 W", "5 W", "40 W", "200 W"],
+            "num": 32,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "146-Um amplificador tem um ganho de 20 dB Qual a potência na sua saída quando a sua entrada é excitada com 1 W? ",
+            "answers": ["100 W", "20 W", "10 W", "200 W"],
+            "num": 33,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "147-Por precaução tive que pôr um atenuador de 10 dB entre o meu pré-amplificar e o amplificador. Sabendo que o valor máximo na saída do pré-amplificador é 50 W, qual a potência máxima à entrada do amplificador?",
+            "answers": ["60 W", "10 W", "1 W", "5 W"],
+            "num": 34,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "148-Qual das seguintes frases é verdadeira?",
+            "answers": ["Um amplificador é tanto mais eficiente quanto maior potência conseguir debitar numa carga de 50 ohms.", "Um amplificador é tanto mais eficiente quanto menor for a entrada para um dado sinal de saída.", "Um amplificador é tanto mais eficiente quanto menor for o consumo para uma dada potência de saída.", "Um amplificador é tanto mais eficiente quanto maior for o consumo para uma dada potência de saída."],
+            "num": 35,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "149-Um aumento de potência para o dobro ou a redução da mesma para metade resulta na alteração de quantos dB?",
+            "answers": ["2 dB", "3 dB", "6 dB", "12 dB"],
+            "num": 36,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "150-Qual é a potência de pico envolvente à saída de um transmissor se um osciloscópio medir 200 V pico a pico numa carga fictícia de 50 ohms ligada à potência de saída?",
+            "answers": ["1.4 W", "100 W", "353,5 W", "400 W"],
+            "num": 37,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "151-Qual a relação entre a potência de pico evolvente e a potência média numa portadora não modulada?",
+            "answers": ["0,707", "1", "1,414", "2"],
+            "num": 38,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "152-Qual seria a tensão numa carga fictícia de 50 ohms que dissipasse 1200 watt?",
+            "answers": ["173 V", "245 V", "346 V", "692 V"],
+            "num": 39,
+            "notes": "",
+            "correctIndex": 2
+        },
+        {
+            "question": "153-Qual a percentagem de perda de potência que resulta de uma transmissão com perda de 1dB na linha",
+            "answers": ["10,9%.", "12,2%.", "20,5%.", "25,9%."],
+            "num": 0,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "154-Qual é a potência de pico envolvente à saída de um transmissor se um osciloscópio medir 500 V pico a pico num resistência de 50 ohms ligado à saída do transmissor?",
+            "answers": ["8,75 W", "625 W", "2500 W", "5000 W"],
+            "num": 1,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "155-Qual é a potência de pico envolvente à saída de uma portadora não modulada se um wattímetro ligado à saída do transmissor indicar um valor médio de 1060 watt?",
+            "answers": ["530 W", "1060 W", "1500 W", "2120 W"],
+            "num": 2,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "156-Como se designa a energia fora de fase e não produtiva associada a indutores e condensadores?",
+            "answers": ["Potência efectiva.", "Potência activa.", "Potência de pico da envolvente.", "Potência reactiva."],
+            "num": 3,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "157-Como se determina a potência activa num circuito AC em que a tensão e a corrente estão fora de fase?",
+            "answers": ["Multiplicando a potência aparente pelo factor de potência.", "Dividindo a potência reactiva pelo factor de potência.", "Dividindo a potência aparente pelo factor de potência.", "Multiplicando a potência reactiva pelo factor de potência."],
+            "num": 4,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "158-Que potência é consumida num circuito com um factor de potência de 0.2 se a entrada é de 100V AC a 4 ampere?",
+            "answers": ["400 W", "80 W", "2000 W", "50 W"],
+            "num": 5,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "159-O sinal na entrada de um amplificador é de 1 V rms e à saída de 10 V rms. Este amplificador tem um ganho de: ",
+            "answers": ["3 dB ", "6 dB ", "10 dB ", "20 dB "],
+            "num": 6,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "160-O sinal na entrada de um amplificador é de 1 V rms e à saída de 10 V rms. Este amplificador tem um ganho de: ",
+            "answers": ["10 dB ", "20 dB ", "40 dB ", "100 dB "],
+            "num": 7,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "161-Num atenuador constituído por duas resistências de 100 ohms em série o sinal de entrada é aplicado no conjunto das duas e a saída é retirada do ponto médio. A atenuação da malha é de: ",
+            "answers": ["3 dB ", "6 dB ", "50 dB ", "100 dB "],
+            "num": 8,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "162-Um atenuador tem 10 V rms aplicados à entrada obtendo-se 5 V rms na saída. A atenuação obtida é de: ",
+            "answers": ["6 dB", "10 dB", "20 dB", "40 dB"],
+            "num": 9,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "163-Dois amplificadores com ganhos de 10 dB e de 40 db estão ligados em cascata. O ganho do conjunto é de: ",
+            "answers": ["8 dB", "30 dB", "50 dB", "400 dB"],
+            "num": 10,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "164-Um amplificador com um ganho de 20 dB tem a saída ligada a um atenuador de 10 dB O ganho do conjunto é de: ",
+            "answers": ["8 dB ", "10 dB ", "-10 dB ", "-200 dB "],
+            "num": 11,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "165-Cada um dos andares de um amplificador de três andares tem um ganho de 5 dB O ganho do amplificador é de: ",
+            "answers": ["10 dB ", "15 dB ", "25 dB ", "125 dB "],
+            "num": 12,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "171-Qual a resistência total de duas resistências de 25 ohms cada, quando ligadas em série?",
+            "answers": ["12,5 ohms", "25 ohms", "50 ohms", "37,5 ohms"],
+            "num": 13,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "172-Qual a resistência total de duas resistências de 12,5 ohms / cada, quando ligadas em série?",
+            "answers": ["12,5 ohms", "25 ohms", "50 ohms", "37,5 ohms"],
+            "num": 14,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "173-A associação série de três resistências de 20 ohms cada uma, equivale a uma resistência de",
+            "answers": ["10 ohms", "15 ohms", "20 ohms", "60 ohms"],
+            "num": 15,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "174-A associação que resulta numa resistência equivalente de 200 ohms é a série das seguintes resistências:",
+            "answers": ["100 ohms, 80 ohms, 20 ohms.", "200 ohms, 150 ohms, 50 ohms.", "200 ohms, 200 ohms, 200 ohms.", "600 ohms, 600 ohms, 600 ohms."],
+            "num": 16,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "175-A associação que resulta numa resistência equivalente de 600 ohms é a série das seguintes resistências:",
+            "answers": ["100 ohms, 80 ohms, 20 ohms.", "200 ohms, 150 ohms, 50 ohms.", "200 ohms, 200 ohms, 200 ohms.", "600 ohms, 600 ohms, 600 ohms."],
+            "num": 17,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "176-Para obter uma resistência equivalente de 1 kohm é necessário associar:",
+            "answers": ["3 resistências de 10 ohms em série.", "4 resistências de 250 ohms em paralelo.", "5 resistências de 200 ohms em série.", "10 resistências de 100 ohms em paralelo."],
+            "num": 18,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "177-Para obter uma resistência equivalente de 62,5 ohms é necessário associar:",
+            "answers": ["3 resistências de 10 ohms em série.", "4 resistências de 250 ohms em paralelo.", "5 resistências de 200 ohms em série.", "10 resistências de 10 ohms em paralelo."],
+            "num": 19,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "178-Qual a resistência total de duas resistências de 33 ohms quando ligadas em paralelo?",
+            "answers": ["33 ohms", "0,3 ohms", "330 ohms", "16,5 ohms"],
+            "num": 20,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "179-Qual a resistência total de duas resistências de 66 ohms quando ligadas em paralelo?",
+            "answers": ["33 ohms", "0,3 ohms", "330 ohms", "16,5 ohms"],
+            "num": 21,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "180-Se duas resistências de igual valor, estão associadas em paralelo, a resistência total será:",
+            "answers": ["de igual valor.", "o dobro do valor de cada uma delas.", "metade de cada uma delas.", "um quarto do valor de cada uma delas."],
+            "num": 22,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "181-Para se obter uma resistência equivalente de 4 ohms devem ser associadas:",
+            "answers": ["4 resistências de 8 ohms em paralelo.", "4 resistências de 16 ohms em paralelo.", "4 resistências de 8 ohms em série.", "4 resistências de 16 ohms em série."],
+            "num": 23,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "182-Para se obter uma resistência equivalente de 8 ohms devem ser associadas:",
+            "answers": ["4 resistências de 32 ohms em paralelo.", "4 resistências de 16 ohms em paralelo.", "4 resistências de 8 ohms em paralelo.", "4 resistências de 16 ohms em série."],
+            "num": 24,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "183-A resistência equivalente a uma associação de 10 resistências de 100 ohms cada uma, em paralelo, é de:",
+            "answers": ["1 ohm", "10 ohms", "12,5 ohms", "25 ohms"],
+            "num": 25,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "184-A resistência equivalente a uma associação de 100 resistências de 100 ohms cada uma, em paralelo, é de:",
+            "answers": ["1 ohm", "10 ohms", "12,5 ohms", "25 ohms"],
+            "num": 26,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "185-Em que consiste a impedância?",
+            "answers": ["A carga eléctrica armazenada num condensador.", "O inverso de resistência.", "Oposição ao fluxo de corrente num circuito de corrente alternada.", "Força de repulsão entre dois campos eléctricos semelhantes."],
+            "num": 27,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "186-Qual a resistência total de 3 resistencias ligados em paralelo, um de 10 ohms, o segundo de 20 ohms e o terceiro de 50 ohms?",
+            "answers": ["5,9 ohms", "0,17 ohms", "10000 ohms", "80 ohms"],
+            "num": 28,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "187-Que componente se deverá adicionar a um resistência de forma a aumentar a resistência do circuito?",
+            "answers": ["Uma resistência ligado em paralelo.", "Uma resistência ligado em série.", "Um condensador ligado em série.", "Um condensador ligado em paralelo."],
+            "num": 29,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "188-Que tipo de componente é um termístor?",
+            "answers": ["Uma resistência capaz de suportar alterações resultantes de variações de temperatura.", "Dispositivo susceptível a alterações controladas de resistência provocadas por variações de temperatura.", "Um tipo especial de transístor para utilização em temperaturas muito baixas.", "Condensador cujos valores se alteram com variações de temperatura."],
+            "num": 30,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "195-Qual a unidade de medida da capacidade?",
+            "answers": ["Farad.", "Henry.", "hertz.", "V"],
+            "num": 31,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "196-Exprima em microFarad uma capacidade de 470 pF (picoFarad):",
+            "answers": ["0,000 47 µF.", "0,047 µF.", "0,47 µF.", "4 700 µF."],
+            "num": 32,
+            "notes": "",
+            "correctIndex": 1
+        }, {
+            "question": "197-Qual das igualdades é verdadeira?",
+            "answers": ["0,01 F = 10 000 pF", "0,01 mF = 10 000 pF", "0,01 µF = 10 000 pF", "0,01 nF = 10 000 pF"],
+            "num": 33,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "198-Numa associação de condensadores em paralelo, a capacidade resultante é igual:",
+            "answers": ["ao produto das capacidades.", "à soma das capacidades.", "à diferença entre a capacidade maior e a menor.", "ao quociente da capacidade maior pela capacidade menor."],
+            "num": 34,
+            "notes": "",
+            "correctIndex": 2
+        }, {
+            "question": "199-Qual das seguintes afirmações é falsa?",
+            "answers": ["Os condensadores electrolíticos utilizam-se fundamentalmente em fontes de alimentação.", "Os condensadores variáveis utilizam-se para sintonizar circuitos.", "Os condensadores cerâmicos são muito utilizados em circuitos de radiofrequência.", "Os únicos condensadores que têm polaridade são os condensadores de mica."],
+            "num": 35,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "200-Qual é uma das principais vantagens dos condensadores cerâmicos?",
+            "answers": ["Tolerância reduzida.", "Estabilidade elevada.", "capacidade elevada para um volume determinado.", "Custo relativamente reduzido."],
+            "num": 36,
+            "notes": "",
+            "correctIndex": 4
+        }, {
+            "question": "201-Qual a vantagem de um condensador electrolítico?",
+            "answers": ["Tolerância reduzida.", "Não polarização.", "capacidade elevada para um volume determinado.", "Condensador RF de custo reduzido."],
+            "num": 37,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "202-Que dispositivo se utiliza para armazenar energia eléctrica num campo electrostático?",
+            "answers": ["Uma bateria.", "Um transformador.", "Um condensador.", "Um indutor."],
+            "num": 38,
+            "notes": "",
+            "correctIndex": 3
+        }, {
+            "question": "203-Qual dos seguintes tipos de condensadores é mais apropriado para uso em circuitos com filtros activos RC ampop de elevada estabilidade?",
+            "answers": ["Electrolítico.", "Disco de cerâmica.", "Poliestireno.", "Papel dieléctrico."],
+            "num": 39,
+            "notes": "",
+            "correctIndex": 3
         }
 
     ]
