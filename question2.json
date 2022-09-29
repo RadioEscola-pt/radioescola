@@ -2017,8 +2017,7 @@
             ],
             "correctIndex": 0,
             "notes": ""
-        },
-        {
+        }, {
             "numb": 165,
             "question": "Qual a vantagem do recurso a um wattímetro de leitura de pico para monitorizar a saída de um transmissor de fonia de banda lateral única?",
             "answers": [
@@ -2237,8 +2236,7 @@
             ],
             "correctIndex": 2,
             "notes": ""
-        },
-        {
+        }, {
             "numb": 183,
             "question": "Qual das seguintes afirmações é falsa?",
             "answers": [
@@ -2272,8 +2270,7 @@
             ],
             "correctIndex": 1,
             "notes": ""
-        },
-        {
+        }, {
             "numb": 186,
             "question": "A 'licença CEPT novice', permite",
             "answers": [
@@ -2284,8 +2281,7 @@
             ],
             "correctIndex": 3,
             "notes": ""
-        },
-        {
+        }, {
             "numb": 187,
             "question": "Qual a potência de pico máxima permitida a um amador da categoria 2 que opere a frequência 14260kHz?",
             "answers": [
@@ -2296,8 +2292,7 @@
             ],
             "correctIndex": 0,
             "notes": ""
-        },
-        {
+        }, {
             "numb": 188,
             "question": "Se uma estação de amador interferir uma estação de pequena potência e de curto alcance na frequência 433,5 MHz, quem tem prioridade?",
             "answers": [
@@ -2309,8 +2304,7 @@
             ],
             "correctIndex": 2,
             "notes": ""
-        },
-        {
+        }, {
             "numb": 189,
             "question": "Qual das afirmações está correta?",
             "answers": [
@@ -3036,7 +3030,7 @@
             "num": 39,
             "notes": "",
             "correctIndex": 4
-        },
+        }
 
     ]
 }
