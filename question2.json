@@ -2719,12 +2719,6 @@
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "27) ERRO NO DOCUMENTO - RESPONDA NA MARCAÇÃO CERTA ",
-            "answers": ["", "", "CERTA", ""],
-            "num": 26,
-            "notes": "",
-            "correctIndex": 3
-        }, {
             "question": "28) Qual das afirmações está correcta?",
             "answers": ["Uma carga positiva estática produz um campo magnético em que as linhas de força do campo são concêntricas", "Um condutor onde flui uma corrente eléctrica não produz qualquer campo magnético, a menos que esteja imerso numa substância líquida", "As linhas do campo magnético, de um condutor onde flui uma corrente eléctrica, são perpendiculares ao condutor", "As linhas do campo magnético de um condutor onde flui uma corrente eléctrica, formam círculos concêntricos ao redor do condutor"],
             "num": 27,
