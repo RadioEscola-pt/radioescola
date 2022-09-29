@@ -223,7 +223,7 @@
 
         }, {
             "numb": 19,
-            "question": " Qual a unidade de medida de frequência?",
+            "question": "Qual a unidade de medida de frequência?",
             "answers": [
 
                 "Farad",
@@ -2334,14 +2334,9 @@
             "numb": 2,
             "notes": "",
             "correctIndex": 2
-        }, {
-            "question": "4) Qual das faixas não tem estatuto primário para o serviço de amador em Portugal?",
-            "answers": ["438 - 440 MHz", "1240 - 1260 MHz", "7100 - 7200 kHz", "24 - 24,05 GHz"],
-            "numb": 3,
-            "notes": "",
-            "correctIndex": 2
-        }, {
-            "question": "5) Sempre que um amador estabeleça comunicações em Portugal ao abrigo de uma licença CEPT novice emitida por uma outra Administração, deve emitir o IC da sua estação de amador antecedido do prefixo:",
+        },
+		{
+            "question": " Sempre que um amador estabeleça comunicações em Portugal ao abrigo de uma licença CEPT novice emitida por uma outra Administração, deve emitir o IC da sua estação de amador antecedido do prefixo:",
             "answers": ["CS7 se estiver a operar numa estaçao de amador situada na área geográfica POR", "CR8 se estiver a operar numa estação de amador situada na área geográfica AZR", "CQ9 se estiver a operar numa estaçao de amador situada na área geográfica MDR", "CT7 se estiver a operar numa estação de amador situada na área geográfica POR"],
             "numb": 4,
             "notes": "",
@@ -2377,19 +2372,19 @@
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "11) Qual a mais simples combinação de andares que permite a implementação de um receptor super-heterodino?",
+            "question": "Qual a mais simples combinação de andares que permite a implementação de um receptor super-heterodino?",
             "answers": ["Amplificador de RF, detector e amplificador de áudio", "Amplificador de RF, misturador e amplificador de áudio", "Oscilador de HF, misturador e detector", "Oscilador de HF, detector de produto e amplificador"],
             "numb": 10,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "12) Como se designa uma antena que consiste num simples dipolo montado de forma que os elementos são paralelos à superfície da Terra?",
+            "question": "Como se designa uma antena que consiste num simples dipolo montado de forma que os elementos são paralelos à superfície da Terra?",
             "answers": ["Um monopolo cónico", "Uma antena horizontal", "Uma antena vertical", "Uma antena Yagi"],
             "numb": 11,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "13) Numa comunicação senti-me ofendido pelas palavras que me foram dirigidas por um colega amador. O que é mais correcto fazer?",
+            "question": "Numa comunicação senti-me ofendido pelas palavras que me foram dirigidas por um colega amador. O que é mais correcto fazer?",
             "answers": ["Queixar-me ao ICP-ANACOM", "Numa futura comunicação em que esse colega intervenha, falar sobre o ocorrido num tom cordial, no sentido que situações semelhantes não voltem a acontecer", "Queixar-me a uma força policial", "Não ligar"],
             "numb": 12,
             "notes": "",
@@ -2406,13 +2401,7 @@
             "numb": 14,
             "notes": "",
             "correctIndex": 3
-        }, {
-            "question": "16) A potência aparente radiada (p.a.r.) emitida por uma antena de 10 dBd de ganho (no máximo do seu diagrama de radiação) quando lhe é entregue uma potência de 20 dBW é",
-            "answers": ["200 dBW", "30 dBW", "30 W", "200 W"],
-            "numb": 15,
-            "notes": "",
-            "correctIndex": 2
-        }, {
+        },  {
             "question": "17) Identifique uma vantagem da supressão de portadora numa emissão de banda lateral única de fonia.",
             "answers": ["Melhoria na fidelidade de áudio", "Possibilidade de uma maior percentagem de modulação com menor distorção", "Pode ser posta maior potência de emissão na banda lateral", "Maior simplicidade no equipamento de recepção"],
             "numb": 16,
@@ -2449,7 +2438,7 @@
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "23) Qual das seguintes afirmações é verdadeira?",
+            "question": "Qual das seguintes afirmações é verdadeira?",
             "answers": ["A resistência parasita associada a uma bobina é tanto mais desprezável quanto maior for o seu coeficiente de auto-indução", "A resistência parasita associada a uma bobina é tanto mais desprezável quanto menor for o seu coeficiente de auto-indução", "A resistência parasita associada a uma bobina só depende da frequência", "A resistência parasita associada a uma bobina está intimamente relacionada com as capacidades parasitas associadas a essa bobina"],
             "numb": 22,
             "notes": "",
@@ -2508,13 +2497,8 @@
             "numb": 31,
             "notes": "",
             "correctIndex": 1
-        }, {
-            "question": "33) Qual a unidade de medida de frequência?",
-            "answers": ["Farad", "Henry", "Hertz", "Watt"],
-            "numb": 32,
-            "notes": "",
-            "correctIndex": 3
-        }, {
+        }, 
+		{
             "question": "34) O valor eficaz de uma onda sinusoidal com 1 Volt de amplitude máxima é",
             "answers": ["0, 707 V", "1, 414 V", "0 V", "2 V"],
             "numb": 33,
@@ -2557,19 +2541,13 @@
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "1) Porque é que os sinais de VHF e UHF não se propagam a longa distância?",
-            "answers": ["Porque são demasiado fracos para se propagarem até muito longe", "Porque a regulamentação nacional e internacional não permite que sejam utilizadas potências superiores a 50 W (p.a.r.)", "Porque, de uma forma geral, os sinais nestas gamas de frequências não se reflectem na ionosfera ", "Porque colidem facilmente com árvores e outros obstáculos, a menos que sejam emitidos na vertical para a ionosfera"],
-            "numb": 0,
-            "notes": "",
-            "correctIndex": 3
-        }, {
             "question": "2) Para que se usa um fusível num circuito eléctrico?",
             "answers": ["Para mos assegurarmos que a energia chega ao circuito", "Para interromper a energia em caso de sobrecarga", "Para evitar interferências na recepção de televisão", "Para evitar choques"],
             "numb": 1,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "3) As estações de amador podem participar em exercícios de protecção civil?",
+            "question": "As estações de amador podem participar em exercícios de protecção civil?",
             "answers": ["Podem desde que obtenham licença do ICP-ANACOM para o efeito, devendo para isso preencher o formulário apropriado", "Não podem", "Podem com o devido enquadramento das entidades com responsabilidade na protecção civil", "Só podem as estações de uso comum"],
             "numb": 2,
             "notes": "",
@@ -2580,12 +2558,6 @@
             "numb": 3,
             "notes": "",
             "correctIndex": 3
-        }, {
-            "question": "5) A licença CEPT novice, permite",
-            "answers": ["utilizar estações de amador em todos os países da CEPT", "utilizar estações de amador em todos os países membros da CEPT ou não, cuja Administração tenha adoptado a Recomendação CEPT T/R 61-01", "utilizar estações de amador nos países cuja Administração tenha adoptado a Recomendação CEPT ECC/REC/(05)06", "utilizar estações de amador em todos os países da CEPT, nos Estados Unidos e na Austrália"],
-            "numb": 4,
-            "notes": "",
-            "correctIndex": 4
         }, {
             "question": "6) Qual das seguintes afirmações é falsa?",
             "answers": ["As potências máximas das emissões das estações de amador são fixadas pelas Administrações dos países signatários da Constituição e da Convenção da UIT", "As potências máximas das emissões das estações de amador são fixadas pelo Regulamento das Radiocomunicações da UIT", "Cabe às Administrações dos países signatários da Constituição e da Convenção da UIT, determinar se uma pessoa que quer ser amador tem as necessárias qualificações", "Durante as suas comunicações, as estações de amador devem transmitir o seu indicativo de chamada de acordo com o definido na regulamentação aplicável"],
@@ -2617,19 +2589,19 @@
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "11) Como se pode designar em alternativa a mistura de dois sinais de RF?",
+            "question": "Como se pode designar em alternativa a mistura de dois sinais de RF?",
             "answers": ["Heterodinagem", "Sintetização", "Cancelamento", "Multiplicação"],
             "numb": 10,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "12) As antenas Yagi:",
+            "question": " As antenas Yagi:",
             "answers": ["São muito directivas", "São omnidireccionais", "Não são permitidas nas estações de amador", "Foram inventadas em 1990"],
             "numb": 11,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "13) Não concordo com determinadas disposições regulamentares aplicáveis aos Serviços de Amador e de Amador por Satélite. O que é correcto fazer?",
+            "question": "Não concordo com determinadas disposições regulamentares aplicáveis aos Serviços de Amador e de Amador por Satélite. O que é correcto fazer?",
             "answers": ["Não as respeitar", "Incentivar a que outros amadores não as respeitem", "Apresentar fundamentadamente a discordância ao ICP-ANACOM, propondo alterações", "Recorrer a instâncias internacionais, no sentido destas entrarem em contacto com o ICP-ANACOM"],
             "numb": 12,
             "notes": "",
@@ -2731,31 +2703,25 @@
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "31) O comprimento de onda da frequência de 25 MHz é?",
+            "question": "O comprimento de onda da frequência de 25 MHz é?",
             "answers": ["10 m", "12 m", "15 m", "18 m"],
             "numb": 30,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "32) Para utilizar o díodo de forma a bloquear o fluxo de corrente no circuito, onde deverá ser ligado o fio do positivo do circuito?",
+            "question": "Para utilizar o díodo de forma a bloquear o fluxo de corrente no circuito, onde deverá ser ligado o fio do positivo do circuito?",
             "answers": ["Ao ânodo", "Ao cátodo", "À base", "Ao ânodo e ao cátodo"],
             "numb": 31,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "33) A uma determinada frequência f corresponde um determinado período T. Se a frequência duplicar o período 1:",
-            "answers": ["duplica", "não se altera", "passa para um quarto", "passa para metade"],
-            "numb": 32,
-            "notes": "",
-            "correctIndex": 4
-        }, {
-            "question": "34) Exprima em Hz: 433,010 MHz",
+            "question": "Exprima em Hz: 433,010 MHz",
             "answers": ["433 010 Hz", "0,433 010 Hz", "433 010 000 Hz", "0,000 433 010 Hz"],
             "numb": 33,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "35) Na figura 8, a que terminais correspondem as letras indicadas no seguinte transístor:",
+            "question": " Na figura 8, a que terminais correspondem as letras indicadas no seguinte transístor:",
             "answers": ["A - emissor, B - base e C - colector", "A - base, B - colector e C - emissor", "A - base, B - emissor e C - colector", "A - colector, B - emissor e C – base"],
             "numb": 34,
             "notes": "",
@@ -2796,13 +2762,7 @@
             "numb": 0,
             "notes": "",
             "correctIndex": 4
-        }, {
-            "question": "2) O que está ligado ao fio verde (e amarelo) numa tomada tripla?",
-            "answers": ["O neutro", "A fase", "A terra", "Uma tensão DC"],
-            "numb": 1,
-            "notes": "",
-            "correctIndex": 3
-        }, {
+        },  {
             "question": "3) Qual a expressão usada em telefonia para sinal de perigo?",
             "answers": ["HELP", "SOCORRO", "MAYDAY", "AJUDA"],
             "numb": 2,
@@ -2821,43 +2781,43 @@
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "6) Qual das faixas tem estatuto secundário para o serviço de amador por satélite na região 1?",
+            "question": "Qual das faixas tem estatuto secundário para o serviço de amador por satélite na região 1?",
             "answers": ["7000-7100 kHz", "144-146 MHz", "10,45-10,5 GHz", "24-24,05 GHz"],
             "numb": 5,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "7) Determinado circuito precisa ser alimentado com 60 V e 0,2 A. Dispondo-se de uma fonte de 300 V, deve-se colocar em série com o circuito uma resistência de",
+            "question": "Determinado circuito precisa ser alimentado com 60 V e 0,2 A. Dispondo-se de uma fonte de 300 V, deve-se colocar em série com o circuito uma resistência de",
             "answers": ["12 Ohm", "60 Ohm", "300 Ohm", "1,2 Kilo Ohm"],
             "numb": 6,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "8) Qual a resistência total de duas resistências de 66 Ohm quando ligadas em paralelo?",
+            "question": "Qual a resistência total de duas resistências de 66 Ohm quando ligadas em paralelo?",
             "answers": ["33 Ohm", "0,3 Ohm", "330 Ohm", "16,5 Ohm"],
             "numb": 7,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "9) Pretende-se medir a potência aparente irradiada de uma estação numa dada frequência. Que instrumento se deve utilizar?",
+            "question": "Pretende-se medir a potência aparente irradiada de uma estação numa dada frequência. Que instrumento se deve utilizar?",
             "answers": ["Um voltimetro selectivo que deverá ter uma precisão superior a 1/1 000 000", "Um amperimetro que deverá ser colocado a medir a potência de alimentação da estação", "Um frequencimetro, tendo o cuidado de evitar que ele sature", "A potência aparente irradiada não pode ser medida de forma directa por nenhum equipamento"],
             "numb": 8,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "10) Qual a melhor maneira de reduzir a possibilidade de causer interferências quando se testa um emissor?",
+            "question": "Qual a melhor maneira de reduzir a possibilidade de causer interferências quando se testa um emissor?",
             "answers": ["Usar uma pequena antena no interior de um edificio", "Usar uma carga artificial", "Usar as frequências mais altas", "Usar uma frequência que não seja usada por repetidores"],
             "numb": 9,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "11)  Que circuito é usado para processar os sinais provenientes do amplificador de RF e do oscilador local e que depois os envia para o filtro de IF num receptor super-heterodino?",
+            "question": "Que circuito é usado para processar os sinais provenientes do amplificador de RF e do oscilador local e que depois os envia para o filtro de IF num receptor super-heterodino?",
             "answers": ["Modulador balanceado", "Amplificador de IF", "Misturador", "Detector"],
             "numb": 10,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "12)  Como se designa uma antena que consiste num simples dipolo montado de forma que os elementos são paralelos à superficie da Terra?",
+            "question": "  Como se designa uma antena que consiste num simples dipolo montado de forma que os elementos são paralelos à superficie da Terra?",
             "answers": ["Um monopolo cónico", "Uma antena horinzontal", "Uma antena vertical", "Uma antena Yagi"],
             "numb": 11,
             "notes": "",
@@ -3283,12 +3243,6 @@
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "57-Qual a unidade de medida de frequência?",
-            "answers": ["Farad", "Henry", "Hertz", "W"],
-            "numb": 2,
-            "notes": "",
-            "correctIndex": 3
-        }, {
             "question": "58-Exprima em Hz: 900 kHz ",
             "answers": ["900 000 Hz", "0,900 Hz", "9 000 Hz", "90 000 Hz"],
             "numb": 3,
@@ -3436,12 +3390,6 @@
             "question": "Em modulação de amplitude, a que se dá o nome de faixas laterais?",
             "answers": ["Ao conjunto de frequências situadas imediatamente abaixo e acima da frequência da portadora e que resultam da soma e da diferença entre a frequência da portadora e de cada uma das frequências modulantes.", "A todas as frequências situadas aos lados da portadora.", "Ao conjunto de frequências que modulam a portadora.", "A todas as frequências que o receptor possa receber simultaneamente com a portadora."],
             "numb": 27,
-            "notes": "",
-            "correctIndex": 1
-        }, {
-            "question": "Em modulação de frequência, a que se dá o nome de desvio de frequência?",
-            "answers": ["À diferença entre o valor máximo de frequência, que a onda modulada apresenta devido à modulação por um sinal modulante, e a frequência da onda portadora.", "À diferença entre o valor máximo e o valor mínimo da frequência da onda modulada.", "Ao dobro da tolerância de frequência permitida regulamentarmente.", "Ao número de kHz que a frequência da portadora  se afasta do seu valor nominal devido à falta de estabilidade do oscilador, na ausência de modulação."],
-            "numb": 28,
             "notes": "",
             "correctIndex": 1
         }, {
