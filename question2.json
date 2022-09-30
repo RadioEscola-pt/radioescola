@@ -404,7 +404,7 @@
                 "Ao conjunto de frequências que modulam a portadora",
                 "A todas as frequências que o recetor possa receber simultaneamente com a portadora"
             ],
-            "correctIndex": 4,
+            "correctIndex": 1,
             "notes": ""
 
         }, {
@@ -573,6 +573,12 @@
             ],
             "correctIndex": 1,
             "notes": "https://pt.wikipedia.org/wiki/Modula%C3%A7%C3%A3o_em_banda_lateral_%C3%BAnica "
+        }, {
+            "question": "Qual das seguintes afirmações é verdadeira no que respeita à modulação de voz em banda lateral única?",
+            "answers": ["Transmissão de uma banda lateral e da portadora; supressão da outra banda lateral.", "Transmissão de uma banda lateral; supressão da outra banda lateral e da portadora.", "As transmissões de voz em banda lateral única têm uma potência média mais elevada do que qualquer outro tipo de modulação.", "A banda lateral única é o único tipo de modulação autorizado a operar nas faixas de radioamador dos 160, 75 e 40 metro"],
+            "numb": 46.1,
+            "notes": "",
+            "correctIndex": 2
         }, {
             "numb": 47,
             "question": " Como se designa o processo de alteração do ângulo de fase de uma onda de RF para transmissão de informação ?",
@@ -2334,8 +2340,7 @@
             "numb": 2,
             "notes": "",
             "correctIndex": 2
-        },
-		{
+        }, {
             "question": " Sempre que um amador estabeleça comunicações em Portugal ao abrigo de uma licença CEPT novice emitida por uma outra Administração, deve emitir o IC da sua estação de amador antecedido do prefixo:",
             "answers": ["CS7 se estiver a operar numa estaçao de amador situada na área geográfica POR", "CR8 se estiver a operar numa estação de amador situada na área geográfica AZR", "CQ9 se estiver a operar numa estaçao de amador situada na área geográfica MDR", "CT7 se estiver a operar numa estação de amador situada na área geográfica POR"],
             "numb": 4,
@@ -2401,7 +2406,7 @@
             "numb": 14,
             "notes": "",
             "correctIndex": 3
-        },  {
+        }, {
             "question": "17) Identifique uma vantagem da supressão de portadora numa emissão de banda lateral única de fonia.",
             "answers": ["Melhoria na fidelidade de áudio", "Possibilidade de uma maior percentagem de modulação com menor distorção", "Pode ser posta maior potência de emissão na banda lateral", "Maior simplicidade no equipamento de recepção"],
             "numb": 16,
@@ -2497,8 +2502,7 @@
             "numb": 31,
             "notes": "",
             "correctIndex": 1
-        }, 
-		{
+        }, {
             "question": "34) O valor eficaz de uma onda sinusoidal com 1 Volt de amplitude máxima é",
             "answers": ["0, 707 V", "1, 414 V", "0 V", "2 V"],
             "numb": 33,
@@ -2762,7 +2766,7 @@
             "numb": 0,
             "notes": "",
             "correctIndex": 4
-        },  {
+        }, {
             "question": "3) Qual a expressão usada em telefonia para sinal de perigo?",
             "answers": ["HELP", "SOCORRO", "MAYDAY", "AJUDA"],
             "numb": 2,
@@ -2958,12 +2962,6 @@
             "question": "35)  Na figura 8 (acima), a que terminais correspondem as letras indicadas no seguinte transistor",
             "answers": ["A - emissor, B - base e C - colector", "A - base, B - colector e C - emissor", "A - base, B - emissor e C - colector", "A - colector, B - emissor e C - base"],
             "numb": 34,
-            "notes": "",
-            "correctIndex": 3
-        }, {
-            "question": "36)  A frequência de uma onda quadrada expressa-se em",
-            "answers": ["zeros e uns", "segundos", "Hertz", "tensão"],
-            "numb": 35,
             "notes": "",
             "correctIndex": 3
         }, {
@@ -3333,12 +3331,6 @@
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "76-A frequência de uma onda quadrada expressa-se em:",
-            "answers": ["Zeros e uns.", "Segundos.", "Hertz.", "Tensão."],
-            "numb": 18,
-            "notes": "",
-            "correctIndex": 3
-        }, {
             "question": "77-O dispositivo que transforma voz em sinais eléctricos designa-se por:",
             "answers": ["Microfone.", "Amplificador.", "Auscultador.", "Misturador."],
             "numb": 19,
@@ -3380,18 +3372,6 @@
             "numb": 25,
             "notes": "",
             "correctIndex": 3
-        }, {
-            "question": "Para converter 2610 kHz em 145 kHz é necessário:",
-            "answers": ["Um oscilador de 2465 kHz", "Um transformador de 18/1.", "Um amplificador sintonizado em 2610 kHz", "Um desmodulador de 145 kHz"],
-            "numb": 26,
-            "notes": "",
-            "correctIndex": 1
-        }, {
-            "question": "Em modulação de amplitude, a que se dá o nome de faixas laterais?",
-            "answers": ["Ao conjunto de frequências situadas imediatamente abaixo e acima da frequência da portadora e que resultam da soma e da diferença entre a frequência da portadora e de cada uma das frequências modulantes.", "A todas as frequências situadas aos lados da portadora.", "Ao conjunto de frequências que modulam a portadora.", "A todas as frequências que o receptor possa receber simultaneamente com a portadora."],
-            "numb": 27,
-            "notes": "",
-            "correctIndex": 1
         }, {
             "question": "Em modulação de frequência, o índice de modulação:",
             "answers": ["É o factor que está relacionado com a largura de faixa.", "É sempre menor que a largura de faixa ocupada.", "Aumenta quando se diminui a reactância.", "Serve para calcular a percentagem de modulação."],
@@ -3440,12 +3420,6 @@
             "numb": 36,
             "notes": "",
             "correctIndex": 1
-        }, {
-            "question": "110-Numa comunicação em AM, transmite-se:",
-            "answers": ["Somente a faixa lateral inferior.", "Somente a faixa lateral superior.", "Somente as duas faixas laterais.", "A portadora e as duas faixas laterais."],
-            "numb": 37,
-            "notes": "",
-            "correctIndex": 4
         }, {
             "question": "111-Em modulação de amplitude, dupla faixa lateral, a largura de faixa necessária para uma emissão radiofónica é de:",
             "answers": ["5 kHz", "6 kHz", "10 kHz", "12 kHz"],
@@ -3530,18 +3504,6 @@
             "numb": 12,
             "notes": "",
             "correctIndex": 2
-        }, {
-            "question": "126-Qual das seguintes afirmações é verdadeira no que respeita à modulação de voz em banda lateral única?",
-            "answers": ["Transmissão de uma banda lateral e da portadora; supressão da outra banda lateral.", "Transmissão de uma banda lateral; supressão da outra banda lateral e da portadora.", "As transmissões de voz em banda lateral única têm uma potência média mais elevada do que qualquer outro tipo de modulação.", "A banda lateral única é o único tipo de modulação autorizado a operar nas faixas de radioamador dos 160, 75 e 40 metro"],
-            "numb": 13,
-            "notes": "",
-            "correctIndex": 2
-        }, {
-            "question": "127-Qual das seguintes afirmações é verdadeira no que respeita à modulação de voz em banda lateral única?",
-            "answers": ["É um tipo de modulação em amplitude que suprime uma banda lateral e a portadora.", "É um tipo de modulação em amplitude que enfatiza as frequências mais elevadas.", "Reconstitui o sinal a frequências elevadas com maior eficiência do que a frequências baixas.", "É o único tipo de modulação de voz autorizado para operar em faixas HF entre os 14 e 30 MHz"],
-            "numb": 14,
-            "notes": "",
-            "correctIndex": 1
         }, {
             "question": "128-Como se designa o processo de alteração de envolvente de uma onda de RF para transmissão de informação?",
             "answers": ["Modulação de fase.", "Modulação de frequência.", "Modulação por espalhamento espectral.", "Modulação de amplitude."],
@@ -3692,8 +3654,7 @@
             "numb": 39,
             "notes": "",
             "correctIndex": 2
-        },
-        {
+        }, {
             "question": "153-Qual a percentagem de perda de potência que resulta de uma transmissão com perda de 1dB na linha",
             "answers": ["10,9%.", "12,2%.", "20,5%.", "25,9%."],
             "numb": 0,
@@ -3832,49 +3793,49 @@
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "181-Para se obter uma resistência equivalente de 4 ohms devem ser associadas:",
+            "question": "Para se obter uma resistência equivalente de 4 ohms devem ser associadas:",
             "answers": ["4 resistências de 8 ohms em paralelo.", "4 resistências de 16 ohms em paralelo.", "4 resistências de 8 ohms em série.", "4 resistências de 16 ohms em série."],
             "numb": 23,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "182-Para se obter uma resistência equivalente de 8 ohms devem ser associadas:",
+            "question": "Para se obter uma resistência equivalente de 8 ohms devem ser associadas:",
             "answers": ["4 resistências de 32 ohms em paralelo.", "4 resistências de 16 ohms em paralelo.", "4 resistências de 8 ohms em paralelo.", "4 resistências de 16 ohms em série."],
             "numb": 24,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "183-A resistência equivalente a uma associação de 10 resistências de 100 ohms cada uma, em paralelo, é de:",
+            "question": "A resistência equivalente a uma associação de 10 resistências de 100 ohms cada uma, em paralelo, é de:",
             "answers": ["1 ohm", "10 ohms", "12,5 ohms", "25 ohms"],
             "numb": 25,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "184-A resistência equivalente a uma associação de 100 resistências de 100 ohms cada uma, em paralelo, é de:",
+            "question": "A resistência equivalente a uma associação de 100 resistências de 100 ohms cada uma, em paralelo, é de:",
             "answers": ["1 ohm", "10 ohms", "12,5 ohms", "25 ohms"],
             "numb": 26,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "185-Em que consiste a impedância?",
+            "question": "Em que consiste a impedância?",
             "answers": ["A carga eléctrica armazenada num condensador.", "O inverso de resistência.", "Oposição ao fluxo de corrente num circuito de corrente alternada.", "Força de repulsão entre dois campos eléctricos semelhantes."],
             "numb": 27,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "186-Qual a resistência total de 3 resistencias ligados em paralelo, um de 10 ohms, o segundo de 20 ohms e o terceiro de 50 ohms?",
+            "question": "Qual a resistência total de 3 resistencias ligados em paralelo, um de 10 ohms, o segundo de 20 ohms e o terceiro de 50 ohms?",
             "answers": ["5,9 ohms", "0,17 ohms", "10000 ohms", "80 ohms"],
             "numb": 28,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "187-Que componente se deverá adicionar a um resistência de forma a aumentar a resistência do circuito?",
+            "question": "Que componente se deverá adicionar a um resistência de forma a aumentar a resistência do circuito?",
             "answers": ["Uma resistência ligado em paralelo.", "Uma resistência ligado em série.", "Um condensador ligado em série.", "Um condensador ligado em paralelo."],
             "numb": 29,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "188-Que tipo de componente é um termístor?",
+            "question": "Que tipo de componente é um termístor?",
             "answers": ["Uma resistência capaz de suportar alterações resultantes de variações de temperatura.", "Dispositivo susceptível a alterações controladas de resistência provocadas por variações de temperatura.", "Um tipo especial de transístor para utilização em temperaturas muito baixas.", "Condensador cujos valores se alteram com variações de temperatura."],
             "numb": 30,
             "notes": "",
@@ -3886,49 +3847,49 @@
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "196-Exprima em microFarad uma capacidade de 470 pF (picoFarad):",
+            "question": "Exprima em microFarad uma capacidade de 470 pF (picoFarad):",
             "answers": ["0,000 47 µF.", "0,047 µF.", "0,47 µF.", "4 700 µF."],
             "numb": 32,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "197-Qual das igualdades é verdadeira?",
+            "question": "Qual das igualdades é verdadeira?",
             "answers": ["0,01 F = 10 000 pF", "0,01 mF = 10 000 pF", "0,01 µF = 10 000 pF", "0,01 nF = 10 000 pF"],
             "numb": 33,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "198-Numa associação de condensadores em paralelo, a capacidade resultante é igual:",
+            "question": "Numa associação de condensadores em paralelo, a capacidade resultante é igual:",
             "answers": ["ao produto das capacidades.", "à soma das capacidades.", "à diferença entre a capacidade maior e a menor.", "ao quociente da capacidade maior pela capacidade menor."],
             "numb": 34,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "199-Qual das seguintes afirmações é falsa?",
+            "question": "Qual das seguintes afirmações é falsa?",
             "answers": ["Os condensadores electrolíticos utilizam-se fundamentalmente em fontes de alimentação.", "Os condensadores variáveis utilizam-se para sintonizar circuitos.", "Os condensadores cerâmicos são muito utilizados em circuitos de radiofrequência.", "Os únicos condensadores que têm polaridade são os condensadores de mica."],
             "numb": 35,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "200-Qual é uma das principais vantagens dos condensadores cerâmicos?",
+            "question": "Qual é uma das principais vantagens dos condensadores cerâmicos?",
             "answers": ["Tolerância reduzida.", "Estabilidade elevada.", "capacidade elevada para um volume determinado.", "Custo relativamente reduzido."],
             "numb": 36,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "201-Qual a vantagem de um condensador electrolítico?",
+            "question": "ual a vantagem de um condensador electrolítico?",
             "answers": ["Tolerância reduzida.", "Não polarização.", "capacidade elevada para um volume determinado.", "Condensador RF de custo reduzido."],
             "numb": 37,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "202-Que dispositivo se utiliza para armazenar energia eléctrica num campo electrostático?",
+            "question": "Que dispositivo se utiliza para armazenar energia eléctrica num campo electrostático?",
             "answers": ["Uma bateria.", "Um transformador.", "Um condensador.", "Um indutor."],
             "numb": 38,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "203-Qual dos seguintes tipos de condensadores é mais apropriado para uso em circuitos com filtros activos RC ampop de elevada estabilidade?",
+            "question": "Qual dos seguintes tipos de condensadores é mais apropriado para uso em circuitos com filtros activos RC ampop de elevada estabilidade?",
             "answers": ["Electrolítico.", "Disco de cerâmica.", "Poliestireno.", "Papel dieléctrico."],
             "numb": 39,
             "notes": "",
