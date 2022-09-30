@@ -2929,38 +2929,32 @@
             "numb": 5,
             "notes": "",
             "correctIndex": 1
-        }, {
-            "question": "12-Qual a unidade em que se expressa a capacidade de uma bateria?",
-            "answers": ["A/h", "Ah", "VA", "V/h"],
-            "numb": 6,
-            "notes": "",
-            "correctIndex": 2
-        }, {
-            "question": "13-O que sucede quando a impedância de uma carga eléctrica é igual à impedância interna da fonte de energia?",
+        },  {
+            "question": "O que sucede quando a impedância de uma carga eléctrica é igual à impedância interna da fonte de energia?",
             "answers": ["A fonte fornece apenas potência mínima à carga.", "A carga eléctrica é reduzida.", "Não é possível o fluxo de corrente no circuito.", "A fonte tem capacidade para fornecer o máximo de potência à carga."],
             "numb": 7,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "14-Por que razão é importante a adaptação de impedâncias?",
+            "question": "Por que razão é importante a adaptação de impedâncias?",
             "answers": ["Para que a fonte consiga fornecer o máximo de potência à carga.", "Para que a carga adquira o mínimo de potência oriunda da fonte.", "Para garantir que a resistência é menor que a reactância no circuito.", "Para garantir que os níveis de resistência e de reactância no circuito se assemelham."],
             "numb": 8,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "15-A força eléctrica que provoca o movimento de cargas num condutor é:",
+            "question": "A força eléctrica que provoca o movimento de cargas num condutor é:",
             "answers": ["A condutância.", "O campo magnético.", "A força electromotriz.", "A frequência."],
             "numb": 9,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "16-Um gerador com a f.e.m. de 100 V e com 0,5 ohms de resistência interna, debita sobre um circuito exterior uma corrente de 10 A. Qual é a tensão dos terminais do gerador?",
+            "question": "Um gerador com a f.e.m. de 100 V e com 0,5 ohms de resistência interna, debita sobre um circuito exterior uma corrente de 10 A. Qual é a tensão dos terminais do gerador?",
             "answers": ["80 V.", "90 V.", "95 V.", "100 V."],
             "numb": 10,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "17-Um gerador com a f.e.m. de 100 V e com 0,25 ohms de resistência interna, debita sobre um circuito exterior uma corrente de 40 A. Qual é a tensão dos terminais do gerador?",
+            "question": "Um gerador com a f.e.m. de 100 V e com 0,25 ohms de resistência interna, debita sobre um circuito exterior uma corrente de 40 A. Qual é a tensão dos terminais do gerador?",
             "answers": ["80 V", "90 V", "95 V", "100 V"],
             "numb": 11,
             "notes": "",
@@ -2972,181 +2966,163 @@
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "19-Qual das afirmações está correcta?",
+            "question": "Qual das afirmações está correcta?",
             "answers": ["Uma fonte eléctrica ideal tem uma resistência interna nula.", "Quando carrego uma fonte eléctrica, a tensão pode baixar ligeiramente relativamente à tensão3em vazio.", "A associação de fontes de tensão em série dá origem a um fonte eléctrica em que a tensão é igual à soma das tensões das fontes de tensão associadas.", "As três afirmações são correctas."],
             "numb": 13,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "2)Em que situação é que uma bateria de armazenamento de chumbo-ácido liberta gás de hidrogénio explosivo?",
+            "question": "Em que situação é que uma bateria de armazenamento de chumbo-ácido liberta gás de hidrogénio explosivo?",
             "answers": ["Quando armazenada por um período de tempo longo.", "Ao ser descarregada.", "Ao ser carregada.", "Ao ser colocada numa superfície não plana."],
             "numb": 14,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "2)Que nome recebe o processo pelo qual a luz solar é directamente convertida em energia eléctrica?",
+            "question": "Que nome recebe o processo pelo qual a luz solar é directamente convertida em energia eléctrica?",
             "answers": ["Conversão fotovoltaica.", "Emissão de fotões.", "Fotossíntese.", "Decomposição de fotões."],
             "numb": 15,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "22-Como se relaciona a corrente total com a corrente individual em cada ramificação de um circuito em paralelo?",
+            "question": "Como se relaciona a corrente total com a corrente individual em cada ramificação de um circuito em paralelo?",
             "answers": ["Corresponde à média da corrente de cada ramificação.", "Diminui à medida que ramificações paralelas vão sendo adicionadas ao circuito.", "Corresponde à soma das correntes nas várias ramificações.", "Corresponde à soma do inverso de cada queda individual de tensão."],
             "numb": 16,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "23-Qual a vantagem da resistência interna reduzida das baterias de níquel-cádmio?",
+            "question": "Qual a vantagem da resistência interna reduzida das baterias de níquel-cádmio?",
             "answers": ["Vida útil mais longa.", "Alta corrente de descarga.", "Alta tensão.", "Recarga rápida."],
             "numb": 17,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "24-Qual o mínimo de tensão de descarga permitido para o máximo de vida útil de uma bateria comum de chumbo-ácido de 12 volt?",
+            "question": "Qual o mínimo de tensão de descarga permitido para o máximo de vida útil de uma bateria comum de chumbo-ácido de 12 volt?",
             "answers": ["6 V ", "8,5 V ", "10,5 V ", "12 V "],
             "numb": 18,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "25-Em que circunstância se torna aceitável recarregar uma célula primária de carbono-zinco?",
+            "question": "Em que circunstância se torna aceitável recarregar uma célula primária de carbono-zinco?",
             "answers": ["Sempre que a tensão se mantenha superior a 1,0 V ", "Sempre que a célula se mantenha morna durante o período de recarga.", "Sempre que se use um carregador de corrente constante.", "Nunca."],
             "numb": 19,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "26-Qual das seguintes baterias é recarregável?",
+            "question": "Qual das seguintes baterias é recarregável?",
             "answers": ["Bateria de carbono-zinco.", "Bateria de óxido de prata.", "Bateria de hidreto metálico de níquel.", "Bateria de mercúrio."],
             "numb": 20,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "3)A intensidade de campo eléctrico é expressa em:",
+            "question": "A intensidade de campo eléctrico é expressa em:",
             "answers": ["metro.", "volt/metro.", "W", "V "],
             "numb": 21,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "3)Uma carga eléctrica fixa num ponto do espaço cria em torno de si:",
+            "question": "Uma carga eléctrica fixa num ponto do espaço cria em torno de si:",
             "answers": ["Um campo eléctrico.", "Um campo magnético.", "Uma corrente eléctrica.", "Uma região luminosa."],
             "numb": 22,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "32-O que é o campo eléctrico?",
+            "question": "O que é o campo eléctrico?",
             "answers": ["É um campo numa dada região do espaço onde se manifesta a acção de um campo magnético.", "É um campo numa dada região do espaço onde se manifesta a acção de cargas eléctricas.", "É um campo numa dada região do espaço onde se manifesta a acção do efeito gravitacional", "É um campo numa dada região do espaço, tendo necessariamente ar, onde se manifesta a acção de fontes de luz coerente."],
             "numb": 23,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "33-As linhas de força de um campo eléctrico, provocadas por uma carga eléctrica:",
+            "question": "As linhas de força de um campo eléctrico, provocadas por uma carga eléctrica:",
             "answers": ["Nunca se intercetam.", "O potencial decresce ao longo e no sentido das linhas de campo.", "Por cada ponto passa só uma linha de campo.", "Todas as respostas anteriores estão correctas."],
             "numb": 24,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "34-Em condições de propagação normais, a intensidade do campo eléctrico:",
+            "question": "Em condições de propagação normais, a intensidade do campo eléctrico:",
             "answers": ["Cresce com a raiz quadrada da distância.", "Decresce com a raiz quadrada da distância.", "Decresce com o quadrado da distância.", "Cresce com o quadrado da distância."],
             "numb": 25,
             "notes": "",
             "correctIndex": 3
-        }, {
-            "question": "38-Uma corrente a passar num condutor cria na sua proximidade:",
-            "answers": ["Um campo eléctrico.", "Um campo magnético", "Uma corrente eléctrica.", "Uma região luminosa."],
-            "numb": 26,
-            "notes": "",
-            "correctIndex": 2
-        }, {
-            "question": "39-A intensidade do campo magnético é expressa em:",
+        },  {
+            "question": "A intensidade do campo magnético é expressa em:",
             "answers": ["ampere/metro.", "volt/metro.", "W", "ampere."],
             "numb": 27,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "4)Uma bússola reage:",
+            "question": "Uma bússola reage:",
             "answers": ["aos campos eléctricos.", "aos campos magnéticos.", "tanto aos campos eléctricos como aos campos magnéticos.", "a tensões que lhe são aplicadas."],
             "numb": 28,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "4)O que é o campo magnético?",
-            "answers": ["É um campo numa dada região do espaço onde se manifesta a acção do efeito gravitacional.", "É um campo numa dada região do espaço onde se manifesta a acção de uma carga eléctrica estática.", "É um campo numa dada região do espaço onde se manifesta a acção de cargas eléctricas em movimento num condutor.", "É um campo numa dada região do espaço, tendo necessariamente ar, onde se manifesta a acção de fontes de luz coerente."],
-            "numb": 29,
-            "notes": "",
-            "correctIndex": 3
-        }, {
-            "question": "42-Qual das afirmações está correcta?",
+            "question": "Qual das afirmações está correcta?",
             "answers": ["Uma carga positiva estática produz um campo magnético em que as linhas de força do campo são concêntricas.", "Um condutor onde flui uma corrente eléctrica não produz qualquer campo magnético, a menos que esteja imerso numa substância líquida.", "As linhas do campo magnético, de um condutor onde flui uma corrente eléctrica, são perpendiculares ao condutor.", "As linhas do campo magnético de um condutor onde flui uma corrente eléctrica, formam círculos concêntricos ao redor do condutor."],
             "numb": 30,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "43-Em que consiste um campo magnético?",
+            "question": "Em que consiste um campo magnético?",
             "answers": ["Corrente eléctrica que passa no espaço à volta de um íman permanente.", "A região que rodeia um íman através do qual actua uma força magnética.", "Espaço entre as placas de um condensador carregado, através das quais actua uma força magnética", "A força que impulsiona uma corrente através de uma resistência."],
             "numb": 31,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "44-Em que sentido está orientado um campo magnético num condutor relativamente ao sentido do fluxo de electrões?",
+            "question": "Em que sentido está orientado um campo magnético num condutor relativamente ao sentido do fluxo de electrões?",
             "answers": ["No mesmo sentido da corrente.", "No sentido oposto ao da corrente.", "Em todos os sentidos; omnidireccional.", "No sentido determinado pela regra da mão esquerda."],
             "numb": 32,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "45-O que é que determina a força do campo magnético à volta de um condutor?",
+            "question": "O que é que determina a força do campo magnético à volta de um condutor?",
             "answers": ["A resistência dividida pela corrente.", "A razão entre a corrente e a resistência.", "O diâmetro do condutor.", "A quantidade de corrente."],
             "numb": 33,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "46-As ondas electromagnéticas são produzidas por:",
+            "question": "As ondas electromagnéticas são produzidas por:",
             "answers": ["Campos gravitacionais.", "Cargas eléctricas em repouso.", "Corrente eléctrica contínua.", "Corrente eléctrica oscilante."],
             "numb": 34,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "47-Qual a frequência de uma onda cujo comprimento é 14,117 metro?",
+            "question": "Qual a frequência de uma onda cujo comprimento é 14,117 metro?",
             "answers": ["14,117 MHz", "28,234 MHz", "21,250 MHz", "7,000 MHz"],
             "numb": 35,
             "notes": "",
             "correctIndex": 3
-        }, {
-            "question": "48-O comprimento de onda da frequência de 25 MHz é:",
-            "answers": ["10 m", "12 m", "15 m", "18 m"],
-            "numb": 36,
-            "notes": "",
-            "correctIndex": 2
-        }, {
-            "question": "49-A frequência, cujo comprimento de onda é de 10 metro, é:",
+        },  {
+            "question": "A frequência, cujo comprimento de onda é de 10 metro, é:",
             "answers": ["3 MHz", "10 MHz", "20 MHz", "30 MHz"],
             "numb": 37,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "5)Qual a velocidade, aproximada, da propagação das ondas rádio no espaço?",
+            "question": "Qual a velocidade, aproximada, da propagação das ondas rádio no espaço?",
             "answers": ["300 000 km/s", "120 000 km/s", "500 000 km/s", "250 000 km/s"],
             "numb": 38,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "5)Qual das seguintes características não está associada às ondas electromagnéticas?",
+            "question": "Qual das seguintes características não está associada às ondas electromagnéticas?",
             "answers": ["Polarização.", "Amplitude.", "Frequência.", "Temperatura."],
             "numb": 39,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "52-Qual o valor da tensão pico-a-pico se um voltímetro AC ler uma tensão eficaz de 65 V numa forma de onda sinusoidal?",
+            "question": "Qual o valor da tensão pico-a-pico se um voltímetro AC ler uma tensão eficaz de 65 V numa forma de onda sinusoidal?",
             "answers": ["46 V", "92 V", "130 V", "184 V"],
             "numb": 0,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "53-Qual das seguintes opções descreve melhor a forma como as ondas electromagnéticas viajam em espaço livre?",
+            "question": "Qual das seguintes opções descreve melhor a forma como as ondas electromagnéticas viajam em espaço livre?",
             "answers": ["Os campos magnético e eléctrico ficam alinhados à medida que viajam.", "A energia propaga-se num meio com um índice elevado de refracção.", "As ondas são reflectidas pela ionosfera e redireccionadas de volta à fonte.", "A energia propaga-se pela alteração dos campos eléctrico e magnético."],
             "numb": 1,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "58-Exprima em Hz: 900 kHz ",
+            "question": "Exprima em Hz: 900 kHz ",
             "answers": ["900 000 Hz", "0,900 Hz", "9 000 Hz", "90 000 Hz"],
             "numb": 3,
             "notes": "",
@@ -3163,32 +3139,26 @@
             "numb": 5,
             "notes": "",
             "correctIndex": 2
-        }, {
-            "question": "O período T de uma onda sinusoidal é:",
-            "answers": ["O dobro da sua frequência.", "Metade da sua frequência.", "O inverso da sua frequência.", "O produto da sua frequência pelo seu comprimento de onda."],
-            "numb": 6,
-            "notes": "",
-            "correctIndex": 3
-        }, {
-            "question": "62-O valor eficaz de uma onda sinusoidal com 1 V de amplitude máxima é:",
+        },  {
+            "question": "O valor eficaz de uma onda sinusoidal com 1 V de amplitude máxima é:",
             "answers": ["0,707 V", "1,414 V", "0 V", "2 V"],
             "numb": 7,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "63-Exprima em GHz: 9 300 MHz",
+            "question": "Exprima em GHz: 9 300 MHz",
             "answers": ["93 000 GHz", "0,93 GHz", "9,3 GHz", "9 300 000 GHz"],
             "numb": 8,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "64-Qual o período de uma onda sinusoidal de 50 Hz?",
+            "question": "Qual o período de uma onda sinusoidal de 50 Hz?",
             "answers": ["0,2 s", "0,02 s", "0,5 s", "0,005 s"],
             "numb": 9,
             "notes": "",
             "correctIndex": 2
         },  {
-            "question": "66-A uma determinada frequência f corresponde um determinado período T. Se a frequência duplicar, o período:",
+            "question": "A uma determinada frequência f corresponde um determinado período T. Se a frequência duplicar, o período:",
             "answers": ["duplica.", "não se altera.", "passa para um quarto.", "passa para metade."],
             "numb": 11,
             "notes": "",
