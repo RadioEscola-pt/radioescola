@@ -2418,20 +2418,15 @@
             "numb": 18,
             "notes": "",
             "correctIndex": 1
-        }, {
-            "question": "Exprima em microFarad uma capacidade de 470 pF (picoFarad)",
-            "answers": ["0, 000 47 uF", "0, 047 uF", "0, 47 uF", "4 700 uF"],
-            "numb": 19,
-            "notes": "",
-            "correctIndex": 1
-        }, {
+        },
+		{
             "question": "Qual das seguintes afirmações é verdadeira?",
             "answers": ["A resistência parasita associada a uma bobina é tanto mais desprezável quanto maior for o seu coeficiente de auto-indução", "A resistência parasita associada a uma bobina é tanto mais desprezável quanto menor for o seu coeficiente de auto-indução", "A resistência parasita associada a uma bobina só depende da frequência", "A resistência parasita associada a uma bobina está intimamente relacionada com as capacidades parasitas associadas a essa bobina"],
             "numb": 22,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "24) Quanto é que a potência de um emissor tem que aumentar para que num receptor distante a leitura do indicador de nível (unidades S) mude de S8 para S9?",
+            "question": "Quanto é que a potência de um emissor tem que aumentar para que num receptor distante a leitura do indicador de nível (unidades S) mude de S8 para S9?",
             "answers": ["Aproximadamente 2 vezes", "Aproximadamente 3 vezes", "Aproximadamente 4 vezes", "Aproximadamente 5 vezes"],
             "numb": 23,
             "notes": "",
@@ -2588,7 +2583,7 @@
             "notes": "",
             "correctIndex": 4
         },   {
-            "question": "2) O que é o campo eléctrico?",
+            "question": "O que é o campo eléctrico?",
             "answers": ["É um campo numa dada região do espaço onde se manifesta a acção de um campo magnético", "É um campo numa dada região do espaço onde se manifesta a acção de cargas eléctricas", "É um campo numa dada região do espaço onde se manifesta a acção do efeito gravitacional", "É um campo numa dada região do espaço, tendo necessariamente ar, onde se manifesta a acção de fontes de luz coerente"],
             "numb": 20,
             "notes": "",
@@ -2676,14 +2671,8 @@
             "answers": ["3 elementos", "4 elementos", "5 elementos", "6 elementos"],
             "numb": 36,
             "notes": "",
-            "correctIndex": 4
-        }, {
-            "question": "O sistema faixa lateral única, ou SSB, é um tipo de modulação",
-            "answers": ["de frequência", "de amplitude", "de fase", "outro tipo"],
-            "numb": 37,
-            "notes": "",
             "correctIndex": 2
-        }, {
+        },  {
             "question": "Define-se índice de modulação em frequência modulada como a relação entre o",
             "answers": ["desvio máximo e a mais alta frequência modulante", "o desvio mínimo e a mais alta frequência modulante", "desvio máximo e a mais baixa frequência modulante", "desvio mínimo e a mais baixa frequência modulante"],
             "numb": 38,
@@ -2917,13 +2906,8 @@
             "numb": 3,
             "notes": "",
             "correctIndex": 1
-        }, {
-            "question": "Quatro resistências estão montadas em série. A tensão aplicada ao conjunto é de 50 V. As quedas de tensão nos bornes das três primeiras são, respectivamente: 25 V; 10,2 V e 12,8 V. Qual é a queda de tensão nos bornes da última resistência?",
-            "answers": ["10 V", "5 V", "2 V", "1 V"],
-            "numb": 4,
-            "notes": "",
-            "correctIndex": 3
-        }, {
+        }, 
+		{
             "question": "A energia eléctrica (W) é definida pelo:",
             "answers": ["Produto da potência (P) pelo tempo (t).", "Quociente da potência (P) pelo tempo (t).", "Produto da tensão (V) pela corrente (I).", "Quociente da tensão (V) pela corrente (I)."],
             "numb": 5,
@@ -3313,25 +3297,15 @@
             "numb": 1,
             "notes": "",
             "correctIndex": 1
-        }, {
-            "question": "A percentagem de modulação da onda portadora de um emissor em modulação de frequência depende:",
-            "answers": ["Da frequência da tensão de modulação.", "Da faixa de frequências do sinal modulante.", "Da altura dos sons a transmitir.", "Da amplitude da tensão de modulação."],
-            "numb": 2,
-            "notes": "",
-            "correctIndex": 4
-        }, {
+        }, 
+		{
             "question": "Em relação à modulação de amplitude (dupla faixa lateral), a modulação de frequência tem a seguinte vantagem:",
             "answers": ["Menos ruído.", "Menor largura de faixa.", "Atinge normalmente distâncias maiores.", "Menor separação entre canais adjacentes."],
             "numb": 3,
             "notes": "",
             "correctIndex": 1
-        }, {
-            "question": "O sistema faixa lateral única, ou SSB, é um tipo de modulação:",
-            "answers": ["de frequência.", "de amplitude.", "de fase.", "outro tipo."],
-            "numb": 4,
-            "notes": "",
-            "correctIndex": 2
-        }, {
+        },
+		{
             "question": "Na transmissão pelo sistema SSB, com portadora suprimida:",
             "answers": ["a portadora é transmitida.", "a maior potência é consumida pela portadora.", "a desmodulação é mais simples do que no sistema DSB.", "há maior economia do espectro de frequência."],
             "numb": 5,
@@ -3356,7 +3330,7 @@
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "123-A largura de faixa necessária:",
+            "question": "A largura de faixa necessária:",
             "answers": ["é, para uma dada classe de emissão, o valor máximo  da largura de faixa ocupada suficiente para assegurar a transmissão da informação à velocidade e com a qualidade requeridas  em determinadas condições.", "é, para uma dada classe de emissão, o valor mínimo da largura de faixa ocupada suficiente para assegurar a transmissão da informação à velocidade e com a qualidade requeridas em determinadas condições.", "depende das características do receptor.", "não depende da classe de emissão."],
             "numb": 10,
             "notes": "",
@@ -3524,43 +3498,43 @@
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "155-Qual é a potência de pico envolvente à saída de uma portadora não modulada se um wattímetro ligado à saída do transmissor indicar um valor médio de 1060 watt?",
+            "question":"5-Qual é a potência de pico envolvente à saída de uma portadora não modulada se um wattímetro ligado à saída do transmissor indicar um valor médio de 1060 watt?",
             "answers": ["530 W", "1060 W", "1500 W", "2120 W"],
             "numb": 2,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "156-Como se designa a energia fora de fase e não produtiva associada a indutores e condensadores?",
+            "question": "Como se designa a energia fora de fase e não produtiva associada a indutores e condensadores?",
             "answers": ["Potência efectiva.", "Potência activa.", "Potência de pico da envolvente.", "Potência reactiva."],
             "numb": 3,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "157-Como se determina a potência activa num circuito AC em que a tensão e a corrente estão fora de fase?",
+            "question": "Como se determina a potência activa num circuito AC em que a tensão e a corrente estão fora de fase?",
             "answers": ["Multiplicando a potência aparente pelo factor de potência.", "Dividindo a potência reactiva pelo factor de potência.", "Dividindo a potência aparente pelo factor de potência.", "Multiplicando a potência reactiva pelo factor de potência."],
             "numb": 4,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "158-Que potência é consumida num circuito com um factor de potência de 0.2 se a entrada é de 100V AC a 4 ampere?",
+            "question": "Que potência é consumida num circuito com um factor de potência de 0.2 se a entrada é de 100V AC a 4 ampere?",
             "answers": ["400 W", "80 W", "2000 W", "50 W"],
             "numb": 5,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "159-O sinal na entrada de um amplificador é de 1 V rms e à saída de 10 V rms. Este amplificador tem um ganho de: ",
+            "question": "O sinal na entrada de um amplificador é de 1 V rms e à saída de 10 V rms. Este amplificador tem um ganho de: ",
             "answers": ["3 dB ", "6 dB ", "10 dB ", "20 dB "],
             "numb": 6,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "16)O sinal na entrada de um amplificador é de 1 V rms e à saída de 10 V rms. Este amplificador tem um ganho de: ",
+            "question": "O sinal na entrada de um amplificador é de 1 V rms e à saída de 10 V rms. Este amplificador tem um ganho de: ",
             "answers": ["10 dB ", "20 dB ", "40 dB ", "100 dB "],
             "numb": 7,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "16)Num atenuador constituído por duas resistências de 100 ohms em série o sinal de entrada é aplicado no conjunto das duas e a saída é retirada do ponto médio. A atenuação da malha é de: ",
+            "question": "Num atenuador constituído por duas resistências de 100 ohms em série o sinal de entrada é aplicado no conjunto das duas e a saída é retirada do ponto médio. A atenuação da malha é de: ",
             "answers": ["3 dB ", "6 dB ", "50 dB ", "100 dB "],
             "numb": 8,
             "notes": "",
