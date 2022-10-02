@@ -557,7 +557,7 @@
                 "uma emissão em modulação de amplitude",
                 "uma emissão em qualquer tipo de modulação"
             ],
-            "correctIndex": 0,
+            "correctIndex": 3,
             "notes": ""
 
         }, {
@@ -1005,7 +1005,7 @@
                 "entre 0 V e 1 V",
                 "entre 1 V e 2 V"
             ],
-            "correctIndex": 0,
+            "correctIndex": 3,
             "notes": ""
         }, {
             "numb": 81,
@@ -1250,7 +1250,7 @@
                 "Elimina a corrente do “loop” de terra"
 
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "notes": ""
         }, {
             "numb": 101,
@@ -1275,7 +1275,7 @@
                 "se a um certo valor de tensão alternada aplicado à entrada de um circuito, corresponde uma tensão contínua na saída do mesmo circuito",
                 "se uma tensão de audiofrequência aplicada à entrada de um circuito , corresponde uma tensão de radiofrequência na saída do mesmo circuito"
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "notes": ""
         }, {
             "numb": 103,
@@ -1644,7 +1644,7 @@
             "notes": ""
         }, {
             "numb": 132,
-            "question": "Qual a impedância de saída ideal de um emissor que se vai ligar a um cabo de alimentação de umaantena, se o referido cabo tiver uma impedância de entrada 50 Ohm?",
+            "question": "Qual a impedância de saída ideal de um emissor que se vai ligar a um cabo de alimentação de uma antena, se o referido cabo tiver uma impedância de entrada 50 Ohm?",
             "answers": [
                 "100 Ohm",
                 "50 Ohm",
@@ -2044,7 +2044,7 @@
                 "Todas as opções anteriores estão corretas"
 
             ],
-            "correctIndex": 0,
+            "correctIndex": 3,
             "notes": ""
         }, {
             "numb": 167,
@@ -2056,7 +2056,7 @@
                 "Reflectómetro"
 
             ],
-            "correctIndex": 0,
+            "correctIndex": 3,
             "notes": ""
         }, {
             "numb": 168,
@@ -2068,7 +2068,7 @@
                 "Porque apresenta um baixo efeito de carga no circuito a medir"
 
             ],
-            "correctIndex": 0,
+            "correctIndex": 4,
             "notes": ""
         }, {
             "numb": 169,
@@ -2151,7 +2151,7 @@
                 "Todas as respostas anteriores estão corretas"
 
             ],
-            "correctIndex": 0,
+            "correctIndex": 4,
             "notes": ""
         }, {
             "numb": 176,
@@ -2185,7 +2185,7 @@
                 "CT0",
                 "CR0"
             ],
-            "correctIndex": 0,
+            "correctIndex": 4,
             "notes": ""
         }, {
             "numb": 179,
@@ -2335,7 +2335,7 @@
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "3) Existem frequências internacionais de emergência e de segurança no âmbito dos Serviços de Amador e de Amador por Satélite? Em caso afirmativo onde podem ser consultadas?",
+            "question": "Existem frequências internacionais de emergência e de segurança no âmbito dos Serviços de Amador e de Amador por Satélite? Em caso afirmativo onde podem ser consultadas?",
             "answers": ["Sim. No Regulamento das Radiocomunicações da UIT", "Sim. No plano de frequências da IARU", "Sim. Nas Recomendações da CEPT", "Não existem"],
             "numb": 2,
             "notes": "",
@@ -2432,43 +2432,43 @@
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "25) Uma fonte de alimentação não comutada com entrada a partir da rede, para alimentar um circuito que trabalha com 12 Volt DC",
+            "question": "Uma fonte de alimentação não comutada com entrada a partir da rede, para alimentar um circuito que trabalha com 12 Volt DC",
             "answers": ["não precisa de transformador", "tem que ter uma ponte rectificadora", "tem que ter um estabilizador de corrente", "tem que ter um circuito de rectificação"],
             "numb": 24,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "26) Onde deve ser instalado um filtro par reduzir emissões espúrias?",
+            "question": "Onde deve ser instalado um filtro par reduzir emissões espúrias?",
             "answers": ["Na fonte de alimentação", "No receptor", "No emissor", "No microfone"],
             "numb": 25,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "27) Qual das afirmações está correcta?",
+            "question": "Qual das afirmações está correcta?",
             "answers": ["Uma carga positiva estática produz um campo magnético em que as linhas de força do campo são concêntricas", "Um condutor onde flui uma corrente eléctrica não produz qualquer campo magnético, a menos que esteja imerso numa substância líquida", "As linhas do campo magnético, de um condutor onde flui uma corrente eléctrica, são perpendiculares ao condutor", "As linhas do campo magnético de um condutor onde flui uma corrente eléctrica, formam círculos concêntricos ao redor do condutor"],
             "numb": 26,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "28) Se num amplificador de emissor à massa a corrente no colector for de 45 mA e a corrente na base 1,5 mA, qual é o ganho de corrente em regime contínuo?",
+            "question": "Se num amplificador de emissor à massa a corrente no colector for de 45 mA e a corrente na base 1,5 mA, qual é o ganho de corrente em regime contínuo?",
             "answers": ["43,5", "30", "46,5", "40"],
             "numb": 27,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "29) Qual é a vantagem de um emissor controlado por cristal?",
+            "question": "Qual é a vantagem de um emissor controlado por cristal?",
             "answers": ["Frequência de saída estável", "Excelente clareza na modulação", "Facilidade na mudança de faixas de frequências", "Facilidade na mudança de frequência"],
             "numb": 28,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "3)Um tranformador, projectado para o efeito, com o primário ligado à rede eléctrica, apresenta nos terminais do secundário em vazio 5,2 V",
+            "question": "Um tranformador, projectado para o efeito, com o primário ligado à rede eléctrica, apresenta nos terminais do secundário em vazio 5,2 V",
             "answers": ["de tensão contínua", "de tensão alternada", "de tensão rectificada", "de tensão rectificada em apenas metade do período"],
             "numb": 29,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "3) Qual das seguintes características não está associada às ondas electromagnéticas?",
+            "question": "Qual das seguintes características não está associada às ondas electromagnéticas?",
             "answers": ["Polarização", "Amplitude", "Frequência", "Temperatura"],
             "numb": 30,
             "notes": "",
@@ -3360,37 +3360,37 @@
             "notes": "",
             "correctIndex": 4
         },  {
-            "question": "132-Qual a vantagem da supressão de portadora numa transmissão de fonia de banda lateral única?",
+            "question": "Qual a vantagem da supressão de portadora numa transmissão de fonia de banda lateral única?",
             "answers": ["Maior fidelidade de som.", "Obtém-se uma maior percentagem de modulação e uma menor distorção.", "A banda lateral restante pode receber mais potência de transmissão.", "Pode ser usado equipamento de recepção de menor complexidade."],
             "numb": 19,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "134-O que sucede ao sinal de um transmissor de fonia sobremodulado de banda lateral única?",
+            "question": "O que sucede ao sinal de um transmissor de fonia sobremodulado de banda lateral única?",
             "answers": ["Torna-se mais sonoro, sem se produzirem outros efeitos.", "Ocupa menos largura de banda e apresenta uma resposta fraca em altas-frequências.", "Adquire maior fidelidade e a relação sinal-ruído melhora.", "Fica distorcido e ocupa maior largura de banda."],
             "numb": 21,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "135-Como se designa a razão entre o desvio de frequência de uma portadora de RF e a frequência modulada do sinal de fonia FM correspondente?",
+            "question": "Como se designa a razão entre o desvio de frequência de uma portadora de RF e a frequência modulada do sinal de fonia FM correspondente?",
             "answers": ["Compressibilidade FM.", "Índice quieting (silenciamento).", "Percentagem da modulação.", "Índice de modulação."],
             "numb": 22,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "136-Como varia o índice de modulação de uma emissão modulada em fase com a frequência da portadora de RF (a frequência modulada)?",
+            "question": "Como varia o índice de modulação de uma emissão modulada em fase com a frequência da portadora de RF (a frequência modulada)?",
             "answers": ["Aumenta à medida que a frequência da portadora de RF aumenta.", "Diminui à medida que a frequência da portadora de RF aumenta.", "Varia com a raiz quadrada da frequência da portadora de RF.", "Não depende da frequência da portadora de RF."],
             "numb": 23,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "137-Qual é o índice de modulação de um sinal de fonia FM com um desvio máximo de frequência de 3000 Hz de cada lado da frequência da portadora, quando a frequência de modulação é 1000 Hz?",
+            "question": "Qual é o índice de modulação de um sinal de fonia FM com um desvio máximo de frequência de 3000 Hz de cada lado da frequência da portadora, quando a frequência de modulação é 1000 Hz?",
             "answers": ["3", "0,3", "3000", "1000"],
             "numb": 24,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "138-Qual é o índice de modulação de um sinal de fonia FM com um desvio máximo da portadora de ± 6kHz, quando modulada com uma frequência de modulação de 2kHz?",
+            "question": "Qual é o índice de modulação de um sinal de fonia FM com um desvio máximo da portadora de ± 6kHz, quando modulada com uma frequência de modulação de 2kHz?",
             "answers": ["6000", "3", "2000", "0,3"],
             "numb": 25,
             "notes": "",
@@ -3402,97 +3402,97 @@
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "14)Qual a razão de desvio de um sinal de fonia FM com um máximo de frequência de oscilação de ± 7.5 kHz, assumindo uma taxa máxima de modulação de 3.5 kHz?",
+            "question": "Qual a razão de desvio de um sinal de fonia FM com um máximo de frequência de oscilação de ± 7.5 kHz, assumindo uma taxa máxima de modulação de 3.5 kHz?",
             "answers": ["2,14", "0,214", "0,47", "47"],
             "numb": 27,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "14)Em que consiste a razão de desvio?",
+            "question": "Em que consiste a razão de desvio?",
             "answers": ["A razão entre a frequência áudio de modulação e a frequência central da portadora.", "A razão entre a frequência de máximo desvio da portadora e a máxima frequência áudio de modulação.", "A razão entre a frequência central da portadora e a frequência áudio de modulação.", "A razão entre a frequência áudio máxima de modulação e a frequência áudio média de modulação."],
             "numb": 28,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "142-As emissões SSB:",
+            "question": "As emissões SSB:",
             "answers": ["ocupam cerca de duas vezes a banda de um sinal AM.", "contêm mais informação que uma emissão AM.", "ocupam cerca de metade da banda de uma emissão AM.", "são compatíveis com as emissões FM."],
             "numb": 29,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "143-O processo de modulação permite:",
+            "question": "O processo de modulação permite:",
             "answers": ["colocar a informação na portadora.", "retirar a informação da portadora.", "combinar voz e código Morse.", "nenhum destes."],
             "numb": 30,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "144-Diz-se que existe adaptação quando:",
+            "question": "Diz-se que existe adaptação quando:",
             "answers": ["a transferência de energia é mínima.", "a transferência de energia é máxima.", "não há transferência de energia.", "a energia é duplicada."],
             "numb": 31,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "145-Qual a potência associada a um sinal sinusoidal que faz passar uma corrente eficaz de 2 A numa resistência de 10 ohms?",
+            "question": "Qual a potência associada a um sinal sinusoidal que faz passar uma corrente eficaz de 2 A numa resistência de 10 ohms?",
             "answers": ["20 W", "5 W", "40 W", "200 W"],
             "numb": 32,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "146-Um amplificador tem um ganho de 20 dB Qual a potência na sua saída quando a sua entrada é excitada com 1 W? ",
+            "question": "Um amplificador tem um ganho de 20 dB Qual a potência na sua saída quando a sua entrada é excitada com 1 W? ",
             "answers": ["100 W", "20 W", "10 W", "200 W"],
             "numb": 33,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "147-Por precaução tive que pôr um atenuador de 10 dB entre o meu pré-amplificar e o amplificador. Sabendo que o valor máximo na saída do pré-amplificador é 50 W, qual a potência máxima à entrada do amplificador?",
+            "question": "Por precaução tive que pôr um atenuador de 10 dB entre o meu pré-amplificar e o amplificador. Sabendo que o valor máximo na saída do pré-amplificador é 50 W, qual a potência máxima à entrada do amplificador?",
             "answers": ["60 W", "10 W", "1 W", "5 W"],
             "numb": 34,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "148-Qual das seguintes frases é verdadeira?",
+            "question": "Qual das seguintes frases é verdadeira?",
             "answers": ["Um amplificador é tanto mais eficiente quanto maior potência conseguir debitar numa carga de 50 ohms.", "Um amplificador é tanto mais eficiente quanto menor for a entrada para um dado sinal de saída.", "Um amplificador é tanto mais eficiente quanto menor for o consumo para uma dada potência de saída.", "Um amplificador é tanto mais eficiente quanto maior for o consumo para uma dada potência de saída."],
             "numb": 35,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "149-Um aumento de potência para o dobro ou a redução da mesma para metade resulta na alteração de quantos dB?",
+            "question": "Um aumento de potência para o dobro ou a redução da mesma para metade resulta na alteração de quantos dB?",
             "answers": ["2 dB", "3 dB", "6 dB", "12 dB"],
             "numb": 36,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "15)Qual é a potência de pico envolvente à saída de um transmissor se um osciloscópio medir 200 V pico a pico numa carga fictícia de 50 ohms ligada à potência de saída?",
+            "question": "Qual é a potência de pico envolvente à saída de um transmissor se um osciloscópio medir 200 V pico a pico numa carga fictícia de 50 ohms ligada à potência de saída?",
             "answers": ["1.4 W", "100 W", "353,5 W", "400 W"],
             "numb": 37,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "15)Qual a relação entre a potência de pico evolvente e a potência média numa portadora não modulada?",
+            "question": "Qual a relação entre a potência de pico evolvente e a potência média numa portadora não modulada?",
             "answers": ["0,707", "1", "1,414", "2"],
             "numb": 38,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "152-Qual seria a tensão numa carga fictícia de 50 ohms que dissipasse 1200 watt?",
+            "question": "Qual seria a tensão numa carga fictícia de 50 ohms que dissipasse 1200 watt?",
             "answers": ["173 V", "245 V", "346 V", "692 V"],
             "numb": 39,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "153-Qual a percentagem de perda de potência que resulta de uma transmissão com perda de 1dB na linha",
+            "question": "Qual a percentagem de perda de potência que resulta de uma transmissão com perda de 1dB na linha",
             "answers": ["10,9%.", "12,2%.", "20,5%.", "25,9%."],
             "numb": 0,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "154-Qual é a potência de pico envolvente à saída de um transmissor se um osciloscópio medir 500 V pico a pico num resistência de 50 ohms ligado à saída do transmissor?",
+            "question": "Qual é a potência de pico envolvente à saída de um transmissor se um osciloscópio medir 500 V pico a pico num resistência de 50 ohms ligado à saída do transmissor?",
             "answers": ["8,75 W", "625 W", "2500 W", "5000 W"],
             "numb": 1,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question":"5-Qual é a potência de pico envolvente à saída de uma portadora não modulada se um wattímetro ligado à saída do transmissor indicar um valor médio de 1060 watt?",
+            "question":"Qual é a potência de pico envolvente à saída de uma portadora não modulada se um wattímetro ligado à saída do transmissor indicar um valor médio de 1060 watt?",
             "answers": ["530 W", "1060 W", "1500 W", "2120 W"],
             "numb": 2,
             "notes": "",
@@ -3534,85 +3534,86 @@
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "162-Um atenuador tem 10 V rms aplicados à entrada obtendo-se 5 V rms na saída. A atenuação obtida é de: ",
+            "question": "Um atenuador tem 10 V rms aplicados à entrada obtendo-se 5 V rms na saída. A atenuação obtida é de: ",
             "answers": ["6 dB", "10 dB", "20 dB", "40 dB"],
             "numb": 9,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "163-Dois amplificadores com ganhos de 10 dB e de 40 db estão ligados em cascata. O ganho do conjunto é de: ",
+            "question": "Dois amplificadores com ganhos de 10 dB e de 40 db estão ligados em cascata. O ganho do conjunto é de: ",
             "answers": ["8 dB", "30 dB", "50 dB", "400 dB"],
             "numb": 10,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "164-Um amplificador com um ganho de 20 dB tem a saída ligada a um atenuador de 10 dB O ganho do conjunto é de: ",
+            "question": "Um amplificador com um ganho de 20 dB tem a saída ligada a um atenuador de 10 dB O ganho do conjunto é de: ",
             "answers": ["8 dB ", "10 dB ", "-10 dB ", "-200 dB "],
             "numb": 11,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "165-Cada um dos andares de um amplificador de três andares tem um ganho de 5 dB O ganho do amplificador é de: ",
+            "question": "Cada um dos andares de um amplificador de três andares tem um ganho de 5 dB O ganho do amplificador é de: ",
             "answers": ["10 dB ", "15 dB ", "25 dB ", "125 dB "],
             "numb": 12,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "17)Qual a resistência total de duas resistências de 25 ohms cada, quando ligadas em série?",
+            "question": "Qual a resistência total de duas resistências de 25 ohms cada, quando ligadas em série?",
             "answers": ["12,5 ohms", "25 ohms", "50 ohms", "37,5 ohms"],
             "numb": 13,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "172-Qual a resistência total de duas resistências de 12,5 ohms / cada, quando ligadas em série?",
+            "question": "Qual a resistência total de duas resistências de 12,5 ohms / cada, quando ligadas em série?",
             "answers": ["12,5 ohms", "25 ohms", "50 ohms", "37,5 ohms"],
             "numb": 14,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "173-A associação série de três resistências de 20 ohms cada uma, equivale a uma resistência de",
+            "question": "A associação série de três resistências de 20 ohms cada uma, equivale a uma resistência de",
             "answers": ["10 ohms", "15 ohms", "20 ohms", "60 ohms"],
             "numb": 15,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "174-A associação que resulta numa resistência equivalente de 200 ohms é a série das seguintes resistências:",
+            "question": "A associação que resulta numa resistência equivalente de 200 ohms é a série das seguintes resistências:",
             "answers": ["100 ohms, 80 ohms, 20 ohms.", "200 ohms, 150 ohms, 50 ohms.", "200 ohms, 200 ohms, 200 ohms.", "600 ohms, 600 ohms, 600 ohms."],
             "numb": 16,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "175-A associação que resulta numa resistência equivalente de 600 ohms é a série das seguintes resistências:",
+            "question": "A associação que resulta numa resistência equivalente de 600 ohms é a série das seguintes resistências:",
             "answers": ["100 ohms, 80 ohms, 20 ohms.", "200 ohms, 150 ohms, 50 ohms.", "200 ohms, 200 ohms, 200 ohms.", "600 ohms, 600 ohms, 600 ohms."],
             "numb": 17,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "176-Para obter uma resistência equivalente de 1 kohm é necessário associar:",
+            "question": "Para obter uma resistência equivalente de 1 kohm é necessário associar:",
             "answers": ["3 resistências de 10 ohms em série.", "4 resistências de 250 ohms em paralelo.", "5 resistências de 200 ohms em série.", "10 resistências de 100 ohms em paralelo."],
             "numb": 18,
             "notes": "",
             "correctIndex": 3
         }, {
-            "question": "177-Para obter uma resistência equivalente de 62,5 ohms é necessário associar:",
+            "question": "Para obter uma resistência equivalente de 62,5 ohms é necessário associar:",
             "answers": ["3 resistências de 10 ohms em série.", "4 resistências de 250 ohms em paralelo.", "5 resistências de 200 ohms em série.", "10 resistências de 10 ohms em paralelo."],
             "numb": 19,
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "178-Qual a resistência total de duas resistências de 33 ohms quando ligadas em paralelo?",
+            "question": "Qual a resistência total de duas resistências de 33 ohms quando ligadas em paralelo?",
             "answers": ["33 ohms", "0,3 ohms", "330 ohms", "16,5 ohms"],
             "numb": 20,
             "notes": "",
             "correctIndex": 4
         }, {
-            "question": "179-Qual a resistência total de duas resistências de 66 ohms quando ligadas em paralelo?",
+            "question": "Qual a resistência total de duas resistências de 66 ohms quando ligadas em paralelo?",
             "answers": ["33 ohms", "0,3 ohms", "330 ohms", "16,5 ohms"],
             "numb": 21,
             "notes": "",
             "correctIndex": 1
         }, {
-            "question": "180-Se duas resistências de igual valor, estão associadas em paralelo, a resistência total será:",
+            "question": "
+			Se duas resistências de igual valor, estão associadas em paralelo, a resistência total será:",
             "answers": ["de igual valor.", "o dobro do valor de cada uma delas.", "metade de cada uma delas.", "um quarto do valor de cada uma delas."],
             "numb": 22,
             "notes": "",
@@ -3666,7 +3667,7 @@
             "notes": "",
             "correctIndex": 2
         }, {
-            "question": "195-Qual a unidade de medida da capacidade?",
+            "question": "Qual a unidade de medida da capacidade?",
             "answers": ["Farad.", "Henry.", "hertz.", "V"],
             "numb": 31,
             "notes": "",
