@@ -1053,7 +1053,7 @@
 				"Na zona de saturação",
 				"Na zona inversa de saturação"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
@@ -1161,7 +1161,7 @@
 				"faz uma retificação de um quarto de onda que não é adequada se o circuito de carga necessitar de uma tensão contínua",
 				"não provoca qualquer efeito, não sendo adequada se o circuito de carga necessitar de uma tensão contínua"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
@@ -1257,7 +1257,7 @@
 				"Um amplificador de classe C de elevada eficiência",
 				"Um amplificador usado como multiplicador de frequências"
 			],
-			"correctIndex": 0,
+			"correctIndex": 2,
 			"notes": ""
 		},
 		{
