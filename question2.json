@@ -2857,7 +2857,7 @@
 			"correctIndex": 3
 		},
 		{
-			"question": "24) Onde se encontra, de uma forma geral, o indicador de nível (unidades S)",
+			"question": "Onde se encontra, de uma forma geral, o indicador de nível (unidades S)",
 			"answers": [
 				"No receptor",
 				"Numa ponte de SWR",
@@ -4141,7 +4141,7 @@
 			"correctIndex": 4
 		},
 		{
-			"question": "6-Numa emissão em FM:",
+			"question": "Numa emissão em FM:",
 			"answers": [
 				"não há faixas laterais.",
 				"há apenas a faixa lateral referente à frequência modulante de maior amplitude.",
@@ -4153,7 +4153,7 @@
 			"correctIndex": 4
 		},
 		{
-			"question": "7-A recepção em AM tem desvantagens em relação à recepção em FM em:",
+			"question": "A recepção em AM tem desvantagens em relação à recepção em FM em:",
 			"answers": [
 				"Menor largura de faixa utilizada.",
 				"Maior sensibilidade aos ruídos interferentes.",
@@ -4165,7 +4165,7 @@
 			"correctIndex": 2
 		},
 		{
-			"question": "8-A conversão de frequência:",
+			"question": "A conversão de frequência:",
 			"answers": [
 				"É a obtenção de uma certa frequência a partir da diferença de outras duas.",
 				"É a multiplicação de frequência.",
@@ -4177,7 +4177,7 @@
 			"correctIndex": 1
 		},
 		{
-			"question": "9-Dá-se o nome de desmodulação (ou detecção):",
+			"question": "Dá-se o nome de desmodulação (ou detecção):",
 			"answers": [
 				"Ao processamento de uma onda modulada de modo a recuperar o sinal modulante.",
 				"À aplicação de uma onda modulada directamente a um altifalante.",
@@ -5041,7 +5041,7 @@
 			"correctIndex": 4
 		},
 		{
-			"question": "ual a vantagem de um condensador electrolítico?",
+			"question": "Qual a vantagem de um condensador electrolítico?",
 			"answers": [
 				"Tolerância reduzida.",
 				"Não polarização.",
