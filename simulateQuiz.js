@@ -16,7 +16,7 @@ class simulateQuiz {
 				answers[i]=simulateQuiz.UNANSWERED;
                 if (elements[i].checked) {
 					
-					if (simulateQuiz.messagesArray.questions[questionIndex].correctIndex==i)
+					if (simulateQuiz.messagesArray.questions[questionIndex].correctIndex==i+1)
 					{
 						answers[i]=simulateQuiz.WRITE;
 					}
