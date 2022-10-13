@@ -14,7 +14,7 @@ class simulateQuiz {
             var answers=Array();
 			for (var i = 0; i < elements.length; i++) {
 				answers[questionIndex]=simulateQuiz.UNANSWERED;
-                if (elements[questionIndex].checked) {
+                if (elements[i].checked) {
 					
 					if (simulateQuiz.messagesArray.questions[questionIndex].correctIndex==i+1)
 					{
