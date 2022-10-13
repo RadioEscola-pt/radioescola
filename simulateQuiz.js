@@ -19,6 +19,13 @@ class simulateQuiz {
 
         }
     }
+    static showPage() {
+        for (page of pageBlocks) {
+            page.style.display = "none";
+        }
+        var currentPage = document.getElementById("Page" + this.value);
+        currentPage.style.display = "block";
+    }
 
     static checkQuestions() {
         var answers = Array();
