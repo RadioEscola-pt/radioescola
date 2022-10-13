@@ -51,10 +51,10 @@ class simulateQuiz {
                     //turn JSON into array
 
                     var allMessagesArray = JSON.parse(ajaxRequest.responseText);
-					messagesArray.questions=[];
+					simulateQuiz.messagesArray.questions=[];
                     for (let i = 0; i < 40; i++ ) {
 						var questionIndex=Math.floor(Math.random() * allMessagesArray.questions.length);
-                        messagesArray.questions.push(allMessagesArray.questions[questionIndex]);
+                        simulateQuiz.messagesArray.questions.push(allMessagesArray.questions[questionIndex]);
                     }
                     var welcomeDiv = document.getElementById("welcome");
                     indexBlock = document.createElement("div");
