@@ -62,7 +62,7 @@ class simulateQuiz {
                     indexBlock.id = "qIndex";
                     welcomeDiv.appendChild(indexBlock);
                     var index = 0;
-                    for (qindex in simulateQuiz.messagesArray.questions) {
+                    for (var qindex in simulateQuiz.messagesArray.questions) {
                         var pageBlock;
                         simulateQuiz.messagesArray.questions[qindex].index = index;
                         index++;
