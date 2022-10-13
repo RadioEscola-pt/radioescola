@@ -3,32 +3,31 @@ class simulateQuiz {
 
     static UNANSWERED = 0;
     static WRITE = 1;
-    static WRONG =-0.25;
-	static COUINTERTIMEOT = 45*60;
+    static WRONG = -0.25;
+    static COUINTERTIMEOT = 45 * 60;
     static messagesArray = new Object();
     static pageBlocks = [];
-	static timeout = 0;
-	static timer = 0;
-	
-	 static checkTimer() {
-		 var counterDiv = document.getElementById("couter");
-		 counterDiv.innerHTML=Math.floor(simulateQuiz.timeout/60)+":"+(simulateQuiz.timeout%60)+" sec";
-		 simulateQuiz.timeout--;
-		 if (simulateQuiz.timeout<0)
-		 {
-			 simulateQuiz.checkQuestions();
+    static timeout = 0;
+    static timer = 0;
 
-		 }
-	 }
+    static checkTimer() {
+        var counterDiv = document.getElementById("couter");
+        counterDiv.innerHTML = Math.floor(simulateQuiz.timeout / 60) + ":" + (simulateQuiz.timeout % 60) + " sec";
+        simulateQuiz.timeout--;
+        if (simulateQuiz.timeout < 0) {
+            simulateQuiz.checkQuestions();
+
+        }
+    }
 
     static checkQuestions() {
         var answers = Array();
-		window.clearTimeout(simulateQuiz.timer);
+        window.clearTimeout(simulateQuiz.timer);
         for (var questionIndex in simulateQuiz.messagesArray.questions) {
             var elements = document.getElementsByName("n" + questionIndex);
             answers[questionIndex] = simulateQuiz.UNANSWERED;
-			var noteDiv = document.getElementById("note" + simulateQuiz.messagesArray.questions[questionIndex].index);
-			 
+            var noteDiv = document.getElementById("note" + simulateQuiz.messagesArray.questions[questionIndex].index);
+
             for (var i = 0; i < elements.length; i++) {
 
                 if (elements[i].checked) {
@@ -41,19 +40,18 @@ class simulateQuiz {
 
                 }
             }
-			if (answers[questionIndex]!=simulateQuiz.WRITE)
-			{
-				noteDiv.innerHTML="Resposta certa "+simulateQuiz.messagesArray.questions[questionIndex].correctIndex
-			}
-			var total=0;
-			 for (var answer in answers) {
-				 total+=answer;
-				 
-			 }
-			 var counterDiv = document.getElementById("couter");
-			counterDiv.innerHTML="Pontos:"+total+" em 40";
+            if (answers[questionIndex] != simulateQuiz.WRITE) {
+                noteDiv.innerHTML = "Resposta certa " + simulateQuiz.messagesArray.questions[questionIndex].correctIndex
+            }
 
         }
+        var total = 0;
+        for (var answer in answers) {
+            total += answer;
+
+        }
+        var counterDiv = document.getElementById("couter");
+        counterDiv.innerHTML = "Pontos:" + total + " em 40";
     }
 
     constructor() {
@@ -85,9 +83,7 @@ class simulateQuiz {
                     welcomeDiv.innerHTML = "";
                     var indexBlock = document.createElement("div");
                     indexBlock.id = "qIndex";
-					
-					
-					
+
                     welcomeDiv.appendChild(indexBlock);
                     var index = 0;
                     for (var qindex in simulateQuiz.messagesArray.questions) {
@@ -157,15 +153,15 @@ class simulateQuiz {
                     }
                     let btn = document.createElement("button");
                     btn.innerHTML = "Finalizar";
-					simulateQuiz.timeout=simulateQuiz.COUINTERTIMEOT;
-					simulateQuiz.timer=window.setInterval(simulateQuiz.checkTimer, 1000);
+                    simulateQuiz.timeout = simulateQuiz.COUINTERTIMEOT;
+                    simulateQuiz.timer = window.setInterval(simulateQuiz.checkTimer, 1000);
                     btn.onclick = simulateQuiz.checkQuestions;
                     indexBlock.appendChild(btn);
-					
-					var couterBlock = document.createElement("div");
+
+                    var couterBlock = document.createElement("div");
                     couterBlock.id = "couter";
-					indexBlock.appendChild(couterBlock);
-					
+                    indexBlock.appendChild(couterBlock);
+
                     console.log("Unaswered" + numberOfUnaswered);
 
                 } else {
