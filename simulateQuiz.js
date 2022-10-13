@@ -20,7 +20,7 @@ class simulateQuiz {
         }
     }
     static showPage() {
-        for (page of simulateQuiz.pageBlocks) {
+        for (var page of simulateQuiz.pageBlocks) {
             page.style.display = "none";
         }
         var currentPage = document.getElementById("Page" + this.value);
