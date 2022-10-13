@@ -13,16 +13,16 @@ class simulateQuiz {
             var elements = document.getElementsByName("n" + questionIndex);
             var answers=Array();
 			for (var i = 0; i < elements.length; i++) {
-				answers[i]=simulateQuiz.UNANSWERED;
-                if (elements[i].checked) {
+				answers[questionIndex]=simulateQuiz.UNANSWERED;
+                if (elements[questionIndex].checked) {
 					
 					if (simulateQuiz.messagesArray.questions[questionIndex].correctIndex==i+1)
 					{
-						answers[i]=simulateQuiz.WRITE;
+						answers[questionIndex]=simulateQuiz.WRITE;
 					}
 					else
 					{
-						answers[i]=simulateQuiz.WRONG;
+						answers[questionIndex]=simulateQuiz.WRONG;
 					}
 					
 					
