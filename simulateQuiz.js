@@ -129,7 +129,7 @@ class simulateQuiz {
                 console.log("Ignored readyState: " + ajaxRequest.readyState);
             }
         };
-        ajaxRequest.open(' GET ', ' question2.json ');
+        ajaxRequest.open('GET', 'question2.json');
         ajaxRequest.send();
     }
 }
