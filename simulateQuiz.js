@@ -3,7 +3,7 @@ class simulateQuiz {
 
     static UNANSWERED = 0;
     static WRITE = 1;
-    static WRONG = 2;
+    static WRONG =-0.25;
 	static COUINTERTIMEOT = 45*60;
     static messagesArray = new Object();
     static pageBlocks = [];
@@ -17,12 +17,13 @@ class simulateQuiz {
 		 if (simulateQuiz.timeout<0)
 		 {
 			 simulateQuiz.checkQuestions();
-			 window.clearTimeout(simulateQuiz.timer);
+
 		 }
 	 }
 
     static checkQuestions() {
         var answers = Array();
+		window.clearTimeout(simulateQuiz.timer);
         for (var questionIndex in simulateQuiz.messagesArray.questions) {
             var elements = document.getElementsByName("n" + questionIndex);
             answers[questionIndex] = simulateQuiz.UNANSWERED;
@@ -44,6 +45,13 @@ class simulateQuiz {
 			{
 				noteDiv.innerHTML="Resposta certa "+simulateQuiz.messagesArray.questions[questionIndex].correctIndex
 			}
+			var total=0;
+			 for (var answer in answers) {
+				 total+=answer;
+				 
+			 }
+			 var counterDiv = document.getElementById("couter");
+			counterDiv.innerHTML="Pontos:"+total+" em 40";
 
         }
     }
