@@ -50,7 +50,7 @@ function quiz() {
 
                 messagesArray = JSON.parse(ajaxRequest.responseText);
                 var welcomeDiv = document.getElementById("welcome");
-				welcomeDiv..innerHTML = "";
+				welcomeDiv.innerHTML = "";
                 indexBlock = document.createElement("div");
                 indexBlock.id = "qIndex";
                 welcomeDiv.appendChild(indexBlock);

@@ -58,6 +58,7 @@ class simulateQuiz {
 						allMessagesArray.questions.splice(i, 1);
                     }
                     var welcomeDiv = document.getElementById("welcome");
+					welcomeDiv.innerHTML = "";
                     var indexBlock = document.createElement("div");
                     indexBlock.id = "qIndex";
                     welcomeDiv.appendChild(indexBlock);
