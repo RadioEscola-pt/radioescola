@@ -4,7 +4,7 @@ class simulateQuiz {
     static UNANSWERED = 0;
     static WRITE = 1;
     static WRONG = -0.25;
-    static COUINTERTIMEOT = 45 * 60;
+    static COUINTERTIMEOT = 60 * 60;
     static messagesArray = new Object();
     static pageBlocks = [];
     static timeout = 0;
@@ -124,7 +124,7 @@ class simulateQuiz {
                         var questiontxt = document.createElement("div");
                         var noteBlock = document.createElement("div");
                         noteBlock.id = "note" + simulateQuiz.messagesArray.questions[qindex].index;
-                        questiontxt.innerHTML = simulateQuiz.messagesArray.questions[qindex].index + ")" + simulateQuiz.messagesArray.questions[qindex].question;
+                        questiontxt.innerHTML = simulateQuiz.messagesArray.questions[qindex].index+1 + ")" + simulateQuiz.messagesArray.questions[qindex].question;
 
                         questionBlock.appendChild(questiontxt);
                         let i = 1;
