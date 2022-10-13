@@ -1,6 +1,9 @@
 
 class simulateQuiz {
 
+	static UNANSWERED=0;
+	static WRITE=1;
+	static WRONG=2;
     static messagesArray = new Object();
     static pageBlocks = [];
 
@@ -8,12 +11,18 @@ class simulateQuiz {
 
         for (var questionIndex in simulateQuiz.messagesArray.questions) {
             var elements = document.getElementsByName("n" + questionIndex);
-            for (var i = 0; i < elements.length; i++) {
+            var answers=array();
+			for (var i = 0; i < elements.length; i++) {
+				answers[i]=simulateQuiz.UNANSWERED;
                 if (elements[i].checked) {
 					
-					if (simulateQuiz.messagesArray.questions[questionIndex].answers==i)
+					if (simulateQuiz.messagesArray.questions[questionIndex].correctIndex==i)
 					{
-						console.log("write");
+						answers[i]=simulateQuiz.WRITE;
+					}
+					else
+					{
+						answers[i]=simulateQuiz.WRONG;
 					}
 					
 					
