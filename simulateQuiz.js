@@ -8,7 +8,7 @@ class simulateQuiz {
 
         for (var questionIndex in simulateQuiz.messagesArray.questions) {
             var elements = document.getElementsByName("n" + questionIndex);
-            for (i = 0; i < elements.length; i++) {
+            for (var i = 0; i < elements.length; i++) {
                 if (elements[i].checked) {
 					
 					if (simulateQuiz.messagesArray.questions[questionIndex].answers==i)
