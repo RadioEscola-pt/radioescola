@@ -128,6 +128,11 @@ class simulateQuiz {
 
 
                     }
+					let btn = document.createElement("button");
+                    btn.innerHTML = "Finalizar";
+                    
+                    //btn.onclick = simulateQuiz.showPage;
+                    indexBlock.appendChild(btn);
                     console.log("Unaswered" + numberOfUnaswered);
 
                 } else {
