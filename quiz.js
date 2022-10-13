@@ -111,18 +111,18 @@ function getWelcome() {
                     }
 
                     questionBlock.appendChild(noteBlock);
-                    if (question.correctIndex == null) {
-                        console.log("ERROR Q" + question.numb);
+                    if (messagesArray.questions[qindex].correctIndex == null) {
+                        console.log("ERROR Q" + messagesArray.questions[qindex].numb);
                     }
-                    if (question.notes == null) {
-                        console.log("ERROR Q" + question.numb);
+                    if (messagesArray.questions[qindex].notes == null) {
+                        console.log("ERROR Q" + messagesArray.questions[qindex].numb);
                     }
 
-                    if (question.correctIndex == 0) {
+                    if (messagesArray.questions[qindex].correctIndex == 0) {
                         let notAvailble = document.createElement("div");
                         notAvailble.innerHTML = "resposta Indisponivel";
                         questionBlock.appendChild(notAvailble);
-                        console.log(question.numb);
+                        console.log(messagesArray.questions[qindex].numb);
                         numberOfUnaswered++;
                     } else {
 
