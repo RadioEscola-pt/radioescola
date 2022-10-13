@@ -1,34 +1,28 @@
 
 class simulateQuiz {
 
-	static UNANSWERED=0;
-	static WRITE=1;
-	static WRONG=2;
+    static UNANSWERED = 0;
+    static WRITE = 1;
+    static WRONG = 2;
     static messagesArray = new Object();
     static pageBlocks = [];
 
     static checkQuestions() {
-
+        var answers = Array();
         for (var questionIndex in simulateQuiz.messagesArray.questions) {
             var elements = document.getElementsByName("n" + questionIndex);
-            var answers=Array();
-			for (var i = 0; i < elements.length; i++) {
-				answers[questionIndex]=simulateQuiz.UNANSWERED;
+
+            for (var i = 0; i < elements.length; i++) {
+                answers[questionIndex] = simulateQuiz.UNANSWERED;
                 if (elements[i].checked) {
-					
-					if (simulateQuiz.messagesArray.questions[questionIndex].correctIndex==i+1)
-					{
-						answers[questionIndex]=simulateQuiz.WRITE;
-					}
-					else
-					{
-						answers[questionIndex]=simulateQuiz.WRONG;
-					}
-					
-					
-					
-					
-				}
+
+                    if (simulateQuiz.messagesArray.questions[questionIndex].correctIndex == i + 1) {
+                        answers[questionIndex] = simulateQuiz.WRITE;
+                    } else {
+                        answers[questionIndex] = simulateQuiz.WRONG;
+                    }
+
+                }
             }
 
         }
