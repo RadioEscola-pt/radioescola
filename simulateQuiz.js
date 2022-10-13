@@ -46,7 +46,7 @@ class simulateQuiz {
 
         }
         var total = 0;
-        for (var answer in answers) {
+        for (var answer of answers) {
             total += answer;
 
         }
