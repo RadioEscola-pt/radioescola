@@ -36,7 +36,7 @@ function showPage()
 	 currentPage.style.display = "block";
 }
 
-function getWelcome() {
+function quiz() {
 
     var numberOfUnaswered = 0;
     var questionCounter = 0;
