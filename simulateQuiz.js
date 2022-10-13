@@ -89,9 +89,9 @@ class simulateQuiz {
                             simulateQuiz.pageBlocks.push(pageBlock);
                         }
                         questionCounter++;
-                        questionBlock = document.createElement("div");
-                        questiontxt = document.createElement("div");
-                        noteBlock = document.createElement("div");
+                        var questionBlock = document.createElement("div");
+                        var questiontxt = document.createElement("div");
+                        var noteBlock = document.createElement("div");
                         noteBlock.id = "note" + simulateQuiz.messagesArray.questions[qindex].index;
                         questiontxt.innerHTML = simulateQuiz.messagesArray.questions[qindex].index + ")" + messagesArray.questions[qindex].question;
 
