@@ -52,7 +52,7 @@ class simulateQuiz {
 
                     allMessagesArray = JSON.parse(ajaxRequest.responseText);
 					messagesArray.questions=[];
-                    for (let i = 0; i < 40; i++; ) {
+                    for (let i = 0; i < 40; i++ ) {
 						var questionIndex=Math.floor(Math.random() * allMessagesArray.questions.length);
                         messagesArray.questions.push(allMessagesArray.questions[questionIndex]);
                     }
