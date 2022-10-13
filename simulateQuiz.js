@@ -97,7 +97,7 @@ class simulateQuiz {
 
                         questionBlock.appendChild(questiontxt);
                         let i = 1;
-                        for (key of simulateQuiz.messagesArray.questions[qindex].answers) {
+                        for (let key of simulateQuiz.messagesArray.questions[qindex].answers) {
 
                             let label = document.createElement("label");
                             let span = document.createElement("span");
