@@ -4,8 +4,22 @@ class simulateQuiz {
     static UNANSWERED = 0;
     static WRITE = 1;
     static WRONG = 2;
+	static COUINTERTIMEOT = 1;
     static messagesArray = new Object();
     static pageBlocks = [];
+	static timeout = 0;
+	static timer = 0;
+	
+	 static checkTimer() {
+		 var counterDiv = document.getElementById("couter");
+		 counterDiv.innerHTML=simulateQuiz.timeout+" sec";
+		 simulateQuiz.timeout--;
+		 if (simulateQuiz.timeout<0)
+		 {
+			 simulateQuiz.checkQuestions();
+			 window.clearTimeout(simulateQuiz.timer);
+		 }
+	 }
 
     static checkQuestions() {
         var answers = Array();
@@ -63,6 +77,9 @@ class simulateQuiz {
                     welcomeDiv.innerHTML = "";
                     var indexBlock = document.createElement("div");
                     indexBlock.id = "qIndex";
+					
+					
+					
                     welcomeDiv.appendChild(indexBlock);
                     var index = 0;
                     for (var qindex in simulateQuiz.messagesArray.questions) {
@@ -132,9 +149,15 @@ class simulateQuiz {
                     }
                     let btn = document.createElement("button");
                     btn.innerHTML = "Finalizar";
-
+					simulateQuiz.timeout=simulateQuiz.COUINTERTIMEOT;
+					simulateQuiz.timer=window.setInterval(simulateQuiz.checkTimer, 1000);
                     btn.onclick = simulateQuiz.checkQuestions;
                     indexBlock.appendChild(btn);
+					
+					var couterBlock = document.createElement("div");
+                    couterBlock.id = "couter";
+					indexBlock.appendChild(couterBlock);
+					
                     console.log("Unaswered" + numberOfUnaswered);
 
                 } else {
