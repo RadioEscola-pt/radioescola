@@ -55,9 +55,10 @@ class simulateQuiz {
                     for (let i = 0; i < 40; i++ ) {
 						var questionIndex=Math.floor(Math.random() * allMessagesArray.questions.length);
                         simulateQuiz.messagesArray.questions.push(allMessagesArray.questions[questionIndex]);
+						allMessagesArray.questions.splice(i, 1);
                     }
                     var welcomeDiv = document.getElementById("welcome");
-                    indexBlock = document.createElement("div");
+                    var indexBlock = document.createElement("div");
                     indexBlock.id = "qIndex";
                     welcomeDiv.appendChild(indexBlock);
                     var index = 0;
