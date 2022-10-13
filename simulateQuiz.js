@@ -12,6 +12,8 @@ class simulateQuiz {
         for (var questionIndex in simulateQuiz.messagesArray.questions) {
             var elements = document.getElementsByName("n" + questionIndex);
             answers[questionIndex] = simulateQuiz.UNANSWERED;
+			var noteDiv = document.getElementById("note" + simulateQuiz.messagesArray.questions[qindex].index);
+			 
             for (var i = 0; i < elements.length; i++) {
 
                 if (elements[i].checked) {
@@ -24,6 +26,10 @@ class simulateQuiz {
 
                 }
             }
+			if (answers[questionIndex]!=simulateQuiz.WRITE)
+			{
+				noteDiv.innerHTML="Resposta certa "+simulateQuiz.messagesArray.questions[questionIndex].correctIndex
+			}
 
         }
     }
