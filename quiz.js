@@ -4,7 +4,7 @@ var pageBlocks=[];
 function checkQuestion() {
 	var question;
 	 for (question of messagesArray.questions) {
-        if (question.numb==parseFloat(this.value)) {
+        if (question.index==parseFloat(this.value)) {
 			break;
         }
     }
@@ -53,9 +53,11 @@ function getWelcome() {
                 indexBlock = document.createElement("div");
                 indexBlock.id = "qIndex";
                 welcomeDiv.appendChild(indexBlock);
-
-                for (question of messagesArray.questions) {
+				var index=0;
+                for (qindex in messagesArray.questions) {
 					var pageBlock;
+					messagesArray.questions[qindex].index=index;
+					index++;
                     if (questionCounter == 0) {
                         pageBlock = document.createElement("div");
                         pageBlock.id = "Page" + questionCounter ;
@@ -82,12 +84,12 @@ function getWelcome() {
                     questionBlock = document.createElement("div");
                     questiontxt = document.createElement("div");
                     noteBlock = document.createElement("div");
-                    noteBlock.id = "note" + question.numb;
-                    questiontxt.innerHTML = question.numb + ")" + question.question;
+                    noteBlock.id = "note" + messagesArray.questions[qindex].index;
+                    questiontxt.innerHTML = messagesArray.questions[qindex].numb + ")" + messagesArray.questions[qindex].question;
 
                     questionBlock.appendChild(questiontxt);
                     let i = 1;
-                    for (key of question.answers) {
+                    for (key of messagesArray.questions[qindex].answers) {
 
                         let label = document.createElement("label");
                         let span = document.createElement("span");
@@ -96,8 +98,8 @@ function getWelcome() {
                         let input = document.createElement("input");
                         input.type = "radio";
                         input.value = i;
-                        input.name = "n" + question.numb;
-                        input.questionIndex = question.numb;
+                        input.name = "n" + messagesArray.questions[qindex].numb;
+                        input.questionIndex = messagesArray.questions[qindex].numb;
                         label.appendChild(input);
                         label.appendChild(span);
                         span.className = "checkmark";
@@ -126,7 +128,7 @@ function getWelcome() {
 
                         let btn = document.createElement("button");
                         btn.innerHTML = "Verificar";
-                        btn.value = question.numb;
+                        btn.value = messagesArray.questions[qindex].index;
                         btn.onclick = checkQuestion;
                         questionBlock.appendChild(btn);
                     }
