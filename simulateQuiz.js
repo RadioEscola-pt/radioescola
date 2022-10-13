@@ -1,41 +1,28 @@
 
 class simulateQuiz {
 
-    static messagesArray=new Object();
+    static messagesArray = new Object();
     static pageBlocks = [];
 
-    static checkQuestion() {
-        var question;
-        for (question of simulateQuiz.messagesArray.questions) {
-            if (question.index == parseFloat(this.value)) {
-                break;
+    static checkQuestions() {
+
+        for (var questionIndex in simulateQuiz.messagesArray.questions) {
+            var elements = document.getElementsByName("n" + questionIndex);
+            for (i = 0; i < elements.length; i++) {
+                if (elements[i].checked) {
+					
+					if (simulateQuiz.messagesArray.questions[questionIndex].answers==i)
+					{
+						console.log("write");
+					}
+					
+					
+					
+					
+				}
             }
-        }
-        var answer = question.correctIndex;
-        var elements = document.getElementsByName("n" + this.value);
 
-        for (i = 0; i < elements.length; i++) {
-            if (elements[i].checked) {
-                if (answer - 1 == i) {
-
-                    this.style.background = '#00FF00';
-                    this.innerHTML = "CERTO";
-
-                    return;
-                }
-            }
         }
-        var noteElement = document.getElementById("note" + question.numb);
-        noteElement.innerHTML = question.notes;
-        this.style.background = '#FF0000';
-        this.innerHTML = "ERRDO";
-    }
-    static showPage() {
-        for (let page of simulateQuiz.pageBlocks) {
-            page.style.display = "none";
-        }
-        var currentPage = document.getElementById("Page" + this.value);
-        currentPage.style.display = "block";
     }
 
     constructor() {
@@ -51,14 +38,14 @@ class simulateQuiz {
                     //turn JSON into array
 
                     var allMessagesArray = JSON.parse(ajaxRequest.responseText);
-					simulateQuiz.messagesArray.questions=[];
-                    for (let i = 0; i < 40; i++ ) {
-						var questionIndex=Math.floor(Math.random() * allMessagesArray.questions.length);
+                    simulateQuiz.messagesArray.questions = [];
+                    for (let i = 0; i < 40; i++) {
+                        var questionIndex = Math.floor(Math.random() * allMessagesArray.questions.length);
                         simulateQuiz.messagesArray.questions.push(allMessagesArray.questions[questionIndex]);
-						allMessagesArray.questions.splice(i, 1);
+                        allMessagesArray.questions.splice(i, 1);
                     }
                     var welcomeDiv = document.getElementById("welcome");
-					welcomeDiv.innerHTML = "";
+                    welcomeDiv.innerHTML = "";
                     var indexBlock = document.createElement("div");
                     indexBlock.id = "qIndex";
                     welcomeDiv.appendChild(indexBlock);
@@ -108,7 +95,7 @@ class simulateQuiz {
                             input.type = "radio";
                             input.value = i;
                             input.name = "n" + simulateQuiz.messagesArray.questions[qindex].index;
-                            
+
                             label.appendChild(input);
                             label.appendChild(span);
                             span.className = "checkmark";
@@ -127,11 +114,10 @@ class simulateQuiz {
                             console.log("ERROR Q" + simulateQuiz.messagesArray.questions[qindex].numb);
                         }
 
-
                     }
-					let btn = document.createElement("button");
+                    let btn = document.createElement("button");
                     btn.innerHTML = "Finalizar";
-                    
+
                     //btn.onclick = simulateQuiz.showPage;
                     indexBlock.appendChild(btn);
                     console.log("Unaswered" + numberOfUnaswered);
@@ -143,7 +129,7 @@ class simulateQuiz {
                 console.log("Ignored readyState: " + ajaxRequest.readyState);
             }
         };
-        ajaxRequest.open('GET', 'question2.json');
+        ajaxRequest.open(' GET ', ' question2.json ');
         ajaxRequest.send();
     }
 }
