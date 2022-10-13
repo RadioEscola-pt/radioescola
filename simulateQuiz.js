@@ -11,7 +11,7 @@ class simulateQuiz {
 
         for (var questionIndex in simulateQuiz.messagesArray.questions) {
             var elements = document.getElementsByName("n" + questionIndex);
-            var answers=array();
+            var answers=Array();
 			for (var i = 0; i < elements.length; i++) {
 				answers[i]=simulateQuiz.UNANSWERED;
                 if (elements[i].checked) {
@@ -127,7 +127,7 @@ class simulateQuiz {
                     let btn = document.createElement("button");
                     btn.innerHTML = "Finalizar";
 
-                    //btn.onclick = simulateQuiz.showPage;
+                    btn.onclick = simulateQuiz.checkQuestions;
                     indexBlock.appendChild(btn);
                     console.log("Unaswered" + numberOfUnaswered);
 
