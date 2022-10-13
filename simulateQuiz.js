@@ -12,7 +12,7 @@ class simulateQuiz {
 	
 	 static checkTimer() {
 		 var counterDiv = document.getElementById("couter");
-		 counterDiv.innerHTML=simulateQuiz.timeout+" sec";
+		 counterDiv.innerHTML=(simulateQuiz.timeout/60)+":"+(simulateQuiz.timeout%60)+" sec";
 		 simulateQuiz.timeout--;
 		 if (simulateQuiz.timeout<0)
 		 {
