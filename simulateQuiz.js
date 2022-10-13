@@ -4,7 +4,7 @@ class simulateQuiz {
     static UNANSWERED = 0;
     static WRITE = 1;
     static WRONG = 2;
-	static COUINTERTIMEOT = 1;
+	static COUINTERTIMEOT = 45*60;
     static messagesArray = new Object();
     static pageBlocks = [];
 	static timeout = 0;
