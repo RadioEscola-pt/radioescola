@@ -11,9 +11,9 @@ class simulateQuiz {
         var answers = Array();
         for (var questionIndex in simulateQuiz.messagesArray.questions) {
             var elements = document.getElementsByName("n" + questionIndex);
-
+            answers[questionIndex] = simulateQuiz.UNANSWERED;
             for (var i = 0; i < elements.length; i++) {
-                answers[questionIndex] = simulateQuiz.UNANSWERED;
+
                 if (elements[i].checked) {
 
                     if (simulateQuiz.messagesArray.questions[questionIndex].correctIndex == i + 1) {
@@ -42,7 +42,7 @@ class simulateQuiz {
 
                     var allMessagesArray = JSON.parse(ajaxRequest.responseText);
                     for (var qindex in allMessagesArray.questions) {
-                        if (allMessagesArray[qindex].questions.correctIndex == 0) {
+                        if (allMessagesArray.questions[qindex].correctIndex == 0) {
                             allMessagesArray.questions.splice(qindex, 1);
                         }
 
