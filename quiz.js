@@ -98,8 +98,8 @@ function getWelcome() {
                         let input = document.createElement("input");
                         input.type = "radio";
                         input.value = i;
-                        input.name = "n" + messagesArray.questions[qindex].numb;
-                        input.questionIndex = messagesArray.questions[qindex].numb;
+                        input.name = "n" + messagesArray.questions[qindex].index;
+                        //input.questionIndex = messagesArray.questions[qindex].numb;
                         label.appendChild(input);
                         label.appendChild(span);
                         span.className = "checkmark";
