@@ -85,7 +85,7 @@ function getWelcome() {
                     questiontxt = document.createElement("div");
                     noteBlock = document.createElement("div");
                     noteBlock.id = "note" + messagesArray.questions[qindex].index;
-                    questiontxt.innerHTML = messagesArray.questions[qindex].numb + ")" + messagesArray.questions[qindex].question;
+                    questiontxt.innerHTML = messagesArray.questions[qindex].index + ")" + messagesArray.questions[qindex].question;
 
                     questionBlock.appendChild(questiontxt);
                     let i = 1;
