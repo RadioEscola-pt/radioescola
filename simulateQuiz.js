@@ -41,6 +41,14 @@ class simulateQuiz {
                     //turn JSON into array
 
                     var allMessagesArray = JSON.parse(ajaxRequest.responseText);
+					 for (var qindex in allMessagesArray.questions)
+					 {
+						 if (allMessagesArray[qindex].questions.correctIndex == 0)
+						 {
+							allMessagesArray.questions.splice(qindex, 1);
+						 }
+						 
+					 }
                     simulateQuiz.messagesArray.questions = [];
                     for (let i = 0; i < 40; i++) {
                         var questionIndex = Math.floor(Math.random() * allMessagesArray.questions.length);
