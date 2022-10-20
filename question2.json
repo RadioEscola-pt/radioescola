@@ -1281,7 +1281,7 @@
 				"Um recetor super-heterodino",
 				"Um recetor de conversão direta"
 			],
-			"correctIndex": 3,
+			"correctIndex": 1,
 			"notes": "super-regenerativo ou tfr  </br> o super-heterodino e conversão direta  tem misturador "
 		},
 		{
@@ -1365,7 +1365,7 @@
 				"Aproximadamente 3 vezes",
 				"Aproximadamente 2 vezes"
 			],
-			"correctIndex": 4,
+			"correctIndex": 2,
 			"notes": "https://www.youtube.com/watch?v=0rRs75Kdwq8 1s=3db 3db=2x"
 		},
 		{
@@ -1401,7 +1401,7 @@
 				"Pela mistura de sinais com ruído na zona de transição do díodo",
 				"Pela verificação da variação da reactância no díodo em relação à frequência"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
@@ -1413,7 +1413,7 @@
 				"faz a discriminação contra os sinais SSB e AM",
 				"insere uma portadora para obter um verdadeiro sinal FM"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
@@ -1425,7 +1425,7 @@
 				"oscilador de frequência de batimento",
 				"oscilador da banda de filtragem"
 			],
-			"correctIndex": 0,
+			"correctIndex": 3,
 			"notes": ""
 		},
 		{
@@ -1437,7 +1437,7 @@
 				"Limita o desvio de frequência do sinal",
 				"Limita o desvio de fase do sinal"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
@@ -1473,7 +1473,7 @@
 				"da variação da fase da portadora em função do sinal que a modula.",
 				"da variação do ruído da portadora em função do sinal que a modula."
 			],
-			"correctIndex": 0,
+			"correctIndex": 2,
 			"notes": ""
 		},
 		{
@@ -1485,7 +1485,7 @@
 				"da variação da fase da portadora em função do sinal que a modula.",
 				"da variação do ruído da portadora em função do sinal que a modula."
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
@@ -1545,7 +1545,7 @@
 				"Facilidade na mudança de faixas de frequências",
 				"Facilidade na mudança de frequência"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
@@ -1581,7 +1581,7 @@
 				"é perdida na alimentação da antena",
 				"deve-se às correntes oscilantes"
 			],
-			"correctIndex": 0,
+			"correctIndex": 2,
 			"notes": ""
 		},
 		{
@@ -1605,7 +1605,7 @@
 				"Nula",
 				"Infinita"
 			],
-			"correctIndex": 0,
+			"correctIndex": 2,
 			"notes": ""
 		},
 		{
@@ -1617,7 +1617,7 @@
 				"Nos manuais de comunicações nacionais",
 				"Nos manuais de eletrónica"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
@@ -1629,7 +1629,7 @@
 				"E uma antena teórica usada como referência para a determinação do ganho de uma antena",
 				"É uma antena instalada a bordo de uma aeronave para enviar sinais para a Terra"
 			],
-			"correctIndex": 0,
+			"correctIndex": 3,
 			"notes": ""
 		},
 		{
@@ -1641,7 +1641,7 @@
 				"Uma antena vertical",
 				"Uma antena Yagi"
 			],
-			"correctIndex": 0,
+			"correctIndex": 3,
 			"notes": ""
 		},
 		{
@@ -1665,7 +1665,7 @@
 				"concentra a radiação apenas numa direção",
 				"pode ser usada para mais do que uma banda de frequências"
 			],
-			"correctIndex": 0,
+			"correctIndex": 3,
 			"notes": ""
 		},
 		{
@@ -1713,7 +1713,7 @@
 				"A potência radiada no lóbulo principal de radiação comparada com a potência radiada na direção exatamente oposta",
 				"A relação entre o ganho direto e o ganho do dipolo"
 			],
-			"correctIndex": 0,
+			"correctIndex": 3,
 			"notes": ""
 		},
 		{
@@ -1725,7 +1725,7 @@
 				"Antena Beverage",
 				"Antena isotrópica"
 			],
-			"correctIndex": 0,
+			"correctIndex": 4,
 			"notes": ""
 		},
 		{
@@ -1737,7 +1737,7 @@
 				"As perdas no cabo",
 				"A constante dielétrica"
 			],
-			"correctIndex": 0,
+			"correctIndex": 2,
 			"notes": ""
 		},
 		{
@@ -1761,7 +1761,7 @@
 				"12 Ohm",
 				"50 Ohm"
 			],
-			"correctIndex": 0,
+			"correctIndex": 4,
 			"notes": ""
 		},
 		{
@@ -1773,7 +1773,7 @@
 				"um aumento excessivo de temperatura no andar de saída do emissor",
 				"uma perda de modulação no sinal emitido"
 			],
-			"correctIndex": 0,
+			"correctIndex": 3,
 			"notes": ""
 		},
 		{
@@ -1785,7 +1785,7 @@
 				"uma malha à volta do dielétrico que por sua vez envolve o condutor central",
 				"uma malha e um condutor central enrolados em conjunto e revestidos por um dielétrico"
 			],
-			"correctIndex": 0,
+			"correctIndex": 3,
 			"notes": ""
 		},
 		{
@@ -1797,7 +1797,7 @@
 				"13 dB/m",
 				"26 dB/m"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
@@ -1809,7 +1809,7 @@
 				"de quatro condutores",
 				"que nunca poderão ser utilizadas com linhas de transmissão de sinais de RF"
 			],
-			"correctIndex": 0,
+			"correctIndex": 2,
 			"notes": ""
 		},
 		{
