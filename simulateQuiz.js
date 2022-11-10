@@ -53,7 +53,9 @@ class simulateQuiz {
                 }
             }
             if (answers[questionIndex] != simulateQuiz.WRITE) {
-                noteDiv.innerHTML = "Resposta certa " + simulateQuiz.messagesArray.questions[questionIndex].correctIndex
+                noteDiv.innerHTML = "Resposta certa " + simulateQuiz.messagesArray.questions[questionIndex].correctIndex;
+				noteDiv.style.background = "red";
+				
             }
 
         }
@@ -81,7 +83,7 @@ class simulateQuiz {
                     var allMessagesArray = JSON.parse(ajaxRequest.responseText);
                     for (var qindex in allMessagesArray.questions) {
                         if (allMessagesArray.questions[qindex].correctIndex == 0) {
-                            allMessagesArray.questions.splice(qindex, 1);
+                            allMessagesArray.questions=allMessagesArray.questions.splice(qindex, 1);
                         }
 
                     }
@@ -89,7 +91,7 @@ class simulateQuiz {
                     for (let i = 0; i < 40; i++) {
                         var questionIndex = Math.floor(Math.random() * allMessagesArray.questions.length);
                         simulateQuiz.messagesArray.questions.push(allMessagesArray.questions[questionIndex]);
-                        allMessagesArray.questions.splice(i, 1);
+                        allMessagesArray.questions=allMessagesArray.questions.splice(i, 1);
                     }
                     var welcomeDiv = document.getElementById("welcome");
                     welcomeDiv.innerHTML = "";
