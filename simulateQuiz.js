@@ -81,9 +81,10 @@ class simulateQuiz {
                     //turn JSON into array
 
                     var allMessagesArray = JSON.parse(ajaxRequest.responseText);
+					var questions;
                     for (var qindex in allMessagesArray.questions) {
                         if (allMessagesArray.questions[qindex].correctIndex == 0) {
-                            allMessagesArray.questions=allMessagesArray.questions.splice(qindex, 1);
+                            questions=allMessagesArray.questions.splice(qindex, 1);
                         }
 
                     }
