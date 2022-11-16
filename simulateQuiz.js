@@ -88,7 +88,7 @@ class simulateQuiz {
                         }
 
                     }
-                    simulateQuiz = [];
+                    var simulateQuiz = [];
                     for (let i = 0; i < 40; i++) {
                         var questionIndex = Math.floor(Math.random() * allMessagesArray.questions.length);
                         simulateQuiz.push(questions[questionIndex]);
