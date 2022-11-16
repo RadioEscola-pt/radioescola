@@ -92,8 +92,9 @@ class simulateQuiz {
                     for (let i = 0; i < 40; i++) {
                         var questionIndex = Math.floor(Math.random() * questions.length);
                         randomQ.push(questions[questionIndex]);
-                        questions=questions.splice(questionIndex, 1);
+                        questions.splice(questionIndex, 1);
                     }
+					simulateQuiz.questions=randomQ;
                     var welcomeDiv = document.getElementById("welcome");
                     welcomeDiv.innerHTML = "";
                     var indexBlock = document.createElement("div");
@@ -131,8 +132,8 @@ class simulateQuiz {
                         var questionBlock = document.createElement("div");
                         var questiontxt = document.createElement("div");
                         var noteBlock = document.createElement("div");
-                        noteBlock.id = "note" + simulateQuiz.messagesArray.questions[qindex].index;
-                        questiontxt.innerHTML = simulateQuiz.messagesArray.questions[qindex].index+1 + ")" + simulateQuiz.messagesArray.questions[qindex].question;
+                        noteBlock.id = "note" + simulateQuiz.questions[qindex].index;
+                        questiontxt.innerHTML = simulateQuiz.questions[qindex].index+1 + ")" + simulateQuiz.questions[qindex].question;
 
                         questionBlock.appendChild(questiontxt);
                         let i = 1;
@@ -145,7 +146,7 @@ class simulateQuiz {
                             let input = document.createElement("input");
                             input.type = "radio";
                             input.value = i;
-                            input.name = "n" + simulateQuiz.messagesArray.questions[qindex].index;
+                            input.name = "n" + simulateQuiz.questions[qindex].index;
 
                             label.appendChild(input);
                             label.appendChild(span);
@@ -159,10 +160,10 @@ class simulateQuiz {
 
                         questionBlock.appendChild(noteBlock);
                         if (simulateQuiz.messagesArray.questions[qindex].correctIndex == null) {
-                            console.log("ERROR Q" + simulateQuiz.messagesArray.questions[qindex].numb);
+                            console.log("ERROR Q" + simulateQuiz.questions[qindex].numb);
                         }
                         if (simulateQuiz.messagesArray.questions[qindex].notes == null) {
-                            console.log("ERROR Q" + simulateQuiz.messagesArray.questions[qindex].numb);
+                            console.log("ERROR Q" + simulateQuiz.questions[qindex].numb);
                         }
 
                     }
