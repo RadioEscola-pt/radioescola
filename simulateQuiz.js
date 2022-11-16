@@ -82,8 +82,8 @@ class simulateQuiz {
 
                     var allMessagesArray = JSON.parse(ajaxRequest.responseText);
 					var questions=[];
-                    for (var qindex in allMessagesArray) {
-                        if (allMessagesArray[qindex].correctIndex != 0) {
+                    for (var qindex in allMessagesArray.question) {
+                        if (allMessagesArray.question[qindex].correctIndex != 0) {
                             questions.push(allMessagesArray.questions[qindex]);
                         }
 
