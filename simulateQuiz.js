@@ -81,17 +81,17 @@ class simulateQuiz {
                     //turn JSON into array
 
                     var allMessagesArray = JSON.parse(ajaxRequest.responseText);
-					var questions;
+					var questions[];
                     for (var qindex in allMessagesArray.questions) {
-                        if (allMessagesArray.questions[qindex].correctIndex == 0) {
-                            questions=allMessagesArray.questions.splice(qindex, 1);
+                        if (allMessagesArray.questions[qindex].correctIndex != 0) {
+                            questions.push(allMessagesArray.questions[qindex]);
                         }
 
                     }
                     simulateQuiz = [];
                     for (let i = 0; i < 40; i++) {
                         var questionIndex = Math.floor(Math.random() * allMessagesArray.questions.length);
-                        simulateQuiz.push(allMessagesArray.questions[questionIndex]);
+                        simulateQuiz.push(questions[questionIndex]);
                         allMessagesArray.questions=allMessagesArray.questions.splice(i, 1);
                     }
                     var welcomeDiv = document.getElementById("welcome");
