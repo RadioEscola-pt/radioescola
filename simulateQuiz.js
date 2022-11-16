@@ -88,11 +88,11 @@ class simulateQuiz {
                         }
 
                     }
-                    var simulateQuiz = [];
+                    var randomQ = [];
                     for (let i = 0; i < 40; i++) {
                         var questionIndex = Math.floor(Math.random() * allMessagesArray.questions.length);
-                        simulateQuiz.push(questions[questionIndex]);
-                        allMessagesArray.questions=allMessagesArray.questions.splice(i, 1);
+                        randomQ.push(questions[questionIndex]);
+                        questions=questions.splice(questionIndex, 1);
                     }
                     var welcomeDiv = document.getElementById("welcome");
                     welcomeDiv.innerHTML = "";
@@ -114,7 +114,7 @@ class simulateQuiz {
                             btn.value = questionCounter;
                             btn.onclick = simulateQuiz.showPage;
                             indexBlock.appendChild(btn);
-                            simulateQuiz.pageBlocks.push(pageBlock);
+                            
 
                         } else if (questionCounter % 10 == 0) {
                             pageBlock = document.createElement("div");
@@ -125,7 +125,7 @@ class simulateQuiz {
                             btn.value = questionCounter;
                             btn.onclick = simulateQuiz.showPage;
                             indexBlock.appendChild(btn);
-                            simulateQuiz.pageBlocks.push(pageBlock);
+                            
                         }
                         questionCounter++;
                         var questionBlock = document.createElement("div");
