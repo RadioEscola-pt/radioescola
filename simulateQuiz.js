@@ -90,7 +90,7 @@ class simulateQuiz {
                     }
                     var randomQ = [];
                     for (let i = 0; i < 40; i++) {
-                        var questionIndex = Math.floor(Math.random() * allMessagesArray.questions.length);
+                        var questionIndex = Math.floor(Math.random() * questions.length);
                         randomQ.push(questions[questionIndex]);
                         questions=questions.splice(questionIndex, 1);
                     }
