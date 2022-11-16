@@ -88,10 +88,10 @@ class simulateQuiz {
                         }
 
                     }
-                    simulateQuiz.messagesArray.questions = [];
+                    simulateQuiz = [];
                     for (let i = 0; i < 40; i++) {
                         var questionIndex = Math.floor(Math.random() * allMessagesArray.questions.length);
-                        simulateQuiz.messagesArray.questions.push(allMessagesArray.questions[questionIndex]);
+                        simulateQuiz.push(allMessagesArray.questions[questionIndex]);
                         allMessagesArray.questions=allMessagesArray.questions.splice(i, 1);
                     }
                     var welcomeDiv = document.getElementById("welcome");
@@ -101,9 +101,9 @@ class simulateQuiz {
 
                     welcomeDiv.appendChild(indexBlock);
                     var index = 0;
-                    for (var qindex in simulateQuiz.messagesArray.questions) {
+                    for (var qindex in simulateQuiz) {
                         var pageBlock;
-                        simulateQuiz.messagesArray.questions[qindex].index = index;
+                        simulateQuiz[qindex].index = index;
                         index++;
                         if (questionCounter == 0) {
                             pageBlock = document.createElement("div");
