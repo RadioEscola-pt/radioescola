@@ -116,7 +116,7 @@ class simulateQuiz {
                             btn.value = questionCounter;
                             btn.onclick = simulateQuiz.showPage;
                             indexBlock.appendChild(btn);
-                            
+                            simulateQuiz.pageBlocks.push(pageBlock);
 
                         } else if (questionCounter % 10 == 0) {
                             pageBlock = document.createElement("div");
@@ -127,7 +127,7 @@ class simulateQuiz {
                             btn.value = questionCounter;
                             btn.onclick = simulateQuiz.showPage;
                             indexBlock.appendChild(btn);
-                            
+                            simulateQuiz.pageBlocks.push(pageBlock);
                         }
                         questionCounter++;
                         var questionBlock = document.createElement("div");
