@@ -1173,7 +1173,7 @@
 				"Não, pois precisa-se pelo menos de um transístor",
 				"Sim se se tiver também uma resistência em série com cada um dos díodos"
 			],
-			"correctIndex": 1,
+			"correctIndex": 2,
 			"notes": ""
 		},
 		{

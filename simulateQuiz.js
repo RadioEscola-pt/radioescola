@@ -5,10 +5,11 @@ class simulateQuiz {
     static WRITE = 1;
     static WRONG = -0.25;
     static COUINTERTIMEOT = 60 * 60;
-    static messagesArray = new Object();
+    static questions = new Object();
     static pageBlocks = [];
     static timeout = 0;
     static timer = 0;
+	
 
     static checkTimer() {
         var counterDiv = document.getElementById("couter");
@@ -35,16 +36,16 @@ class simulateQuiz {
     static checkQuestions() {
         var answers = Array();
         window.clearTimeout(simulateQuiz.timer);
-        for (var questionIndex in simulateQuiz.messagesArray.questions) {
+        for (var questionIndex in simulateQuiz.questions) {
             var elements = document.getElementsByName("n" + questionIndex);
             answers[questionIndex] = simulateQuiz.UNANSWERED;
-            var noteDiv = document.getElementById("note" + simulateQuiz.messagesArray.questions[questionIndex].index);
+            var noteDiv = document.getElementById("note" + simulateQuiz.questions[questionIndex].index);
 
             for (var i = 0; i < elements.length; i++) {
 
                 if (elements[i].checked) {
 
-                    if (simulateQuiz.messagesArray.questions[questionIndex].correctIndex == i + 1) {
+                    if (simulateQuiz.questions[questionIndex].correctIndex == i + 1) {
                         answers[questionIndex] = simulateQuiz.WRITE;
                     } else {
                         answers[questionIndex] = simulateQuiz.WRONG;
@@ -53,7 +54,7 @@ class simulateQuiz {
                 }
             }
             if (answers[questionIndex] != simulateQuiz.WRITE) {
-                noteDiv.innerHTML = "Resposta certa " + simulateQuiz.messagesArray.questions[questionIndex].correctIndex;
+                noteDiv.innerHTML = "Resposta certa " + simulateQuiz.questions[questionIndex].correctIndex;
 				noteDiv.style.background = "red";
 				
             }
@@ -137,7 +138,7 @@ class simulateQuiz {
 
                         questionBlock.appendChild(questiontxt);
                         let i = 1;
-                        for (let key of simulateQuiz.messagesArray.questions[qindex].answers) {
+                        for (let key of simulateQuiz.questions[qindex].answers) {
 
                             let label = document.createElement("label");
                             let span = document.createElement("span");
@@ -159,10 +160,10 @@ class simulateQuiz {
                         }
 
                         questionBlock.appendChild(noteBlock);
-                        if (simulateQuiz.messagesArray.questions[qindex].correctIndex == null) {
+                        if (simulateQuiz.questions[qindex].correctIndex == null) {
                             console.log("ERROR Q" + simulateQuiz.questions[qindex].numb);
                         }
-                        if (simulateQuiz.messagesArray.questions[qindex].notes == null) {
+                        if (simulateQuiz.questions[qindex].notes == null) {
                             console.log("ERROR Q" + simulateQuiz.questions[qindex].numb);
                         }
 
