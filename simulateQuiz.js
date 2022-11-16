@@ -82,8 +82,8 @@ class simulateQuiz {
 
                     var allMessagesArray = JSON.parse(ajaxRequest.responseText);
 					var questions=[];
-                    for (var qindex in allMessagesArray.questions) {
-                        if (allMessagesArray.questions[qindex].correctIndex != 0) {
+                    for (var qindex in allMessagesArray) {
+                        if (allMessagesArray[qindex].correctIndex != 0) {
                             questions.push(allMessagesArray.questions[qindex]);
                         }
 
@@ -101,9 +101,9 @@ class simulateQuiz {
 
                     welcomeDiv.appendChild(indexBlock);
                     var index = 0;
-                    for (var qindex in simulateQuiz) {
+                    for (var qindex in randomQ) {
                         var pageBlock;
-                        simulateQuiz[qindex].index = index;
+                        randomQ[qindex].index = index;
                         index++;
                         if (questionCounter == 0) {
                             pageBlock = document.createElement("div");
