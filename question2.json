@@ -1845,8 +1845,8 @@
 				"Ocorreu uma reflexão lunar esporádica",
 				"Ocorreu uma reflexão na camada esporádica-E da ionosfera"
 			],
-			"correctIndex": 0,
-			"notes": "4"
+			"correctIndex": 4,
+			"notes": ""
 		},
 		{
 			"numb": 153,
@@ -1857,7 +1857,7 @@
 				"Consegue-se notar um efeito de eco no áudio",
 				"Só tem vantagens pois atenua o multipercurso"
 			],
-			"correctIndex": 0,
+			"correctIndex": 2,
 			"notes": ""
 		},
 		{
@@ -1869,7 +1869,7 @@
 				"Ajustar de imediato o 'squelch'",
 				"Deslocarmo-nos uns metros para o lado, pois a perda de sinal pode ser devida a reflexões (multipercurso)"
 			],
-			"correctIndex": 0,
+			"correctIndex": 4,
 			"notes": ""
 		},
 		{
@@ -1881,7 +1881,7 @@
 				"28 - 148 MHz",
 				"220 - 450 MHz"
 			],
-			"correctIndex": 0,
+			"correctIndex": 3,
 			"notes": ""
 		},
 		{
@@ -1893,7 +1893,7 @@
 				"desvanecimento ('fading')",
 				"manchas solares"
 			],
-			"correctIndex": 0,
+			"correctIndex": 3,
 			"notes": ""
 		},
 		{
@@ -1905,7 +1905,7 @@
 				"é formada por camadas de gases ionizados à volta da terra",
 				"é uma cintura esférica de radiação solar à volta da terra"
 			],
-			"correctIndex": 0,
+			"correctIndex": 3,
 			"notes": ""
 		},
 		{
@@ -1917,7 +1917,7 @@
 				"abaixo da camada D",
 				"esporádica"
 			],
-			"correctIndex": 0,
+			"correctIndex": 2,
 			"notes": ""
 		},
 		{
@@ -1929,7 +1929,7 @@
 				"E",
 				"F"
 			],
-			"correctIndex": 0,
+			"correctIndex": 4,
 			"notes": ""
 		},
 		{
@@ -1941,7 +1941,7 @@
 				"A camada F1",
 				"A camada F2"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
