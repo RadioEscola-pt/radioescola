@@ -2013,7 +2013,7 @@
 				"um analisador espectral",
 				"Todas as opções anteriores estão corretas"
 			],
-			"correctIndex": 3,
+			"correctIndex": 4,
 			"notes": ""
 		},
 		{
@@ -4441,7 +4441,7 @@
 			"correctIndex": 2
 		},
 		{
-			"question": "139-Qual a razão de desvio de um sinal de fonia FM com um máximo de frequência de oscilação de ± 5 kHz, assumindo uma taxa máxima de modulação de 3 kHz?",
+			"question": "Qual a razão de desvio de um sinal de fonia FM com um máximo de frequência de oscilação de ± 5 kHz, assumindo uma taxa máxima de modulação de 3 kHz?",
 			"answers": [
 				"60",
 				"0,167",
