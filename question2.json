@@ -1833,8 +1833,8 @@
 				"é praticamente infinita",
 				"é cerca de metade da potência que lhe é transmitida"
 			],
-			"correctIndex": 0,
-			"notes": "2"
+			"correctIndex": 2,
+			"notes": ""
 		},
 		{
 			"numb": 152,
@@ -1953,7 +1953,7 @@
 				"É a base dos modelos teóricos de propagação ionosférica",
 				"É uma condição de propagação ionosférica, em que estas camadas são atravessadas facilmente nas !faixas de HF"
 			],
-			"correctIndex": 0,
+			"correctIndex": 2,
 			"notes": ""
 		},
 		{
@@ -1965,7 +1965,7 @@
 				"Constante dielétrica maior que 1",
 				"Relação de onda estacionária de tensão (VSWR) maior que 1"
 			],
-			"correctIndex": 0,
+			"correctIndex": 4,
 			"notes": ""
 		},
 		{
@@ -1989,7 +1989,7 @@
 				"Um frequencímetro, tendo o cuidado de evitar que ele sature",
 				"A potência aparente radiada não pode ser medida de forma direta por nenhum equipamento "
 			],
-			"correctIndex": 0,
+			"correctIndex": 4,
 			"notes": ""
 		},
 		{
@@ -2001,7 +2001,7 @@
 				"Facilita a deteção de coeficientes elevados de onda estacionária na linha de alimentação",
 				"Permite a determinação da presença de ondas com 'flat-topping'em momentos de pico de modulação"
 			],
-			"correctIndex": 0,
+			"correctIndex": 2,
 			"notes": ""
 		},
 		{
@@ -2049,7 +2049,7 @@
 				"Interferência de RF",
 				"Propagação de ondas de rádio"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
@@ -2061,7 +2061,7 @@
 				"Além da possibilidade do amador interferir a receção de radiodifusão quando em emissão, pode também causar interferência na receção da estação de amador",
 				"Podem ser criadas no cabo tensões muito elevadas quando a estação de amador emite"
 			],
-			"correctIndex": 2,
+			"correctIndex": 3,
 			"notes": ""
 		},
 		{
@@ -2085,7 +2085,7 @@
 				"Através de outras ligações",
 				"Todas as hipóteses anteriores estão corretas"
 			],
-			"correctIndex": 0,
+			"correctIndex": 3,
 			"notes": ""
 		},
 		{
@@ -2097,7 +2097,7 @@
 				"Resistência",
 				"Robustez"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
@@ -2133,7 +2133,7 @@
 				"Só se emitirem em HF",
 				"Só se emitirem acima de 1 GHz"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": ""
 		},
 		{
@@ -2241,7 +2241,7 @@
 				"Certificado de Operador de Estação de Radioamador (COER), das classes A e B, emitido pela Administração da República Federativa do Brasil",
 				"Certificado internacional HAREC, nos termos da Recomendação CEPT T/R 61-02"
 			],
-			"correctIndex": 0,
+			"correctIndex": 4,
 			"notes": ""
 		},
 		{
@@ -2277,7 +2277,7 @@
 				"750 W",
 				"100 W"
 			],
-			"correctIndex": 0,
+			"correctIndex": 2,
 			"notes": ""
 		},
 		{
