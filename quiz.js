@@ -5,7 +5,7 @@ function checkQuestion() {
 
     var index=parseFloat(this.value);
 
-	question=messagesArray.questions[];
+	question=messagesArray.questions[index];
     var answer = question.correctIndex;
     var elements = document.getElementsByName("n" + this.value);
 
