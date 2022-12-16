@@ -2,12 +2,10 @@ var messagesArray;
 var pageBlocks=[];
 
 function checkQuestion() {
-	var question;
-	 for (question of messagesArray.questions) {
-        if (question.index==parseFloat(this.value)) {
-			break;
-        }
-    }
+
+    var index=parseFloat(this.value);
+
+	question=messagesArray.questions[];
     var answer = question.correctIndex;
     var elements = document.getElementsByName("n" + this.value);
 
@@ -99,7 +97,7 @@ function quiz() {
                         let input = document.createElement("input");
                         input.type = "radio";
                         input.value = i;
-                        input.name = "n" + messagesArray.questions[qindex].index;
+                        input.name = "n" + qindex;
                         //input.questionIndex = messagesArray.questions[qindex].numb;
                         label.appendChild(input);
                         label.appendChild(span);
@@ -129,7 +127,7 @@ function quiz() {
 
                         let btn = document.createElement("button");
                         btn.innerHTML = "Verificar";
-                        btn.value = messagesArray.questions[qindex].index;
+                        btn.value =qindex;
                         btn.onclick = checkQuestion;
                         questionBlock.appendChild(btn);
                     }
