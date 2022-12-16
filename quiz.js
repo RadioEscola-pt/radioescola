@@ -7,7 +7,7 @@ function checkQuestion() {
 
 	question=messagesArray.questions[index];
     var answer = question.correctIndex;
-    var elements = document.getElementsByName("n" + this.value);
+    var elements = document.getElementsByName("n" + index);
 
     for (i = 0; i < elements.length; i++) {
         if (elements[i].checked) {
@@ -20,7 +20,7 @@ function checkQuestion() {
             }
         }
     }
-    var noteElement = document.getElementById("note" + question.numb);
+    var noteElement = document.getElementById("note" + index);
     noteElement.innerHTML = question.notes;
     this.style.background = '#FF0000';
     this.innerHTML = "ERRDO";
