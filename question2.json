@@ -10,6 +10,7 @@
 				"Aumenta para 4 vezes o valor"
 			],
 			"correctIndex": 2,
+			"TEMA":"ohm",
 			"notes": "Lei de ohm, V=RI, 36=120*I, I=36/120, I=0.3A, logo resposta 2."
 		},
 		{

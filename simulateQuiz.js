@@ -66,7 +66,7 @@ class simulateQuiz {
 
         }
         var counterDiv = document.getElementById("couter");
-        counterDiv.innerHTML = "Pontos:" + total + " em 40";
+        counterDiv.innerHTML = "Pontos:" + total + " em 40  a classificação mínima de 20 pontos";
     }
 
     constructor() {
