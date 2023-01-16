@@ -69,7 +69,7 @@ class simulateQuiz {
         counterDiv.innerHTML = "Pontos:" + total + " em 40  a classificação mínima de 20 pontos";
     }
 
-    constructor() {
+    constructor(json) {
 
         var numberOfUnaswered = 0;
         var questionCounter = 0;
@@ -82,18 +82,12 @@ class simulateQuiz {
                     //turn JSON into array
 
                     var allMessagesArray = JSON.parse(ajaxRequest.responseText);
-					var questions=[];
-                    for (var qindex in allMessagesArray.questions) {
-                        if (allMessagesArray.questions[qindex].correctIndex != 0) {
-                            questions.push(allMessagesArray.questions[qindex]);
-                        }
-
-                    }
+					allMessagesArray=allMessagesArray.questions;
                     var randomQ = [];
                     for (let i = 0; i < 40; i++) {
-                        var questionIndex = Math.floor(Math.random() * questions.length);
-                        randomQ.push(questions[questionIndex]);
-                        questions.splice(questionIndex, 1);
+                        var questionIndex = Math.floor(Math.random() * allMessagesArray.length);
+                        randomQ.push(allMessagesArray[questionIndex]);
+                        allMessagesArray.splice(questionIndex, 1);
                     }
 					simulateQuiz.questions=randomQ;
                     var welcomeDiv = document.getElementById("welcome");
@@ -134,7 +128,7 @@ class simulateQuiz {
                         var questiontxt = document.createElement("div");
                         var noteBlock = document.createElement("div");
                         noteBlock.id = "note" + simulateQuiz.questions[qindex].index;
-                        questiontxt.innerHTML = simulateQuiz.questions[qindex].index+1 + ")" + simulateQuiz.questions[qindex].question;
+                        questiontxt.innerHTML = simulateQuiz.questions[qindex].index+1 + ")" + simulateQuiz.questions[qindex].question
 
                         questionBlock.appendChild(questiontxt);
                         let i = 1;
@@ -188,7 +182,7 @@ class simulateQuiz {
                 console.log("Ignored readyState: " + ajaxRequest.readyState);
             }
         };
-        ajaxRequest.open('GET', 'question2.json');
+        ajaxRequest.open('GET', json);
         ajaxRequest.send();
     }
 }
