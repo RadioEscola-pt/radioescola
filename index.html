@@ -155,7 +155,10 @@ body {
 <script type="text/javascript" src="simulateQuiz.js"></script>
 <script type="text/javascript" src="loadChapter.js"></script>
 
-
+<script>
+  window.onload = new loadChapter('home');
+  
+  </script>
 
 
 
@@ -165,7 +168,7 @@ body {
 <header>
   <h2>Escola de Radio Amador</h2>
   <div class="navbar">
-  <a href="#home">Home</a>
+  <a onclick="new loadChapter('home')" href="#home">Pagina Inicial</a>
   <div class="subnav">
     <button class="subnavbtn">Tuturial<i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
@@ -202,7 +205,7 @@ body {
 <section>
 
   <article id="welcome">
-Bem-vindo à Escola de Rádio Amador! Nós oferecemos recursos e estudos para ajudá-lo a se preparar para o exame de rádio amador em Portugal. Ser um operador de rádio amador é uma oportunidade incrível para se comunicar com pessoas de todo o mundo, aprender sobre tecnologia de rádio e contribuir para a comunidade em situações de emergência. Ao se tornar um operador de rádio amador, você pode desfrutar de aventuras de comunicação em rádio, como a comunicação internacional, a comunicação por satélite e a participação em eventos de rádio amador. Navegue pelo nosso site para encontrar informações sobre o exame, tutoriais e quizzes para ajudá-lo a se preparar.
+
   </article>
 </section>
 
