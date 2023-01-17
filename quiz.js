@@ -94,7 +94,7 @@ class Quiz {
                         questionCounter++;
                         var questionBlock = document.createElement("div");
                         var questiontxt = document.createElement("div");
-						questiontxt.className = "container";
+						questiontxt.className = "question";
                         var noteBlock = document.createElement("div");
                         noteBlock.id = "note" + Quiz.messagesArray.questions[qindex].index;
                         questiontxt.innerHTML = Quiz.messagesArray.questions[qindex].index + ")" + Quiz.messagesArray.questions[qindex].question;
