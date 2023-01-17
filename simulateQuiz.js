@@ -126,6 +126,7 @@ class simulateQuiz {
                         questionCounter++;
                         var questionBlock = document.createElement("div");
                         var questiontxt = document.createElement("div");
+						questiontxt.className = "question";
                         var noteBlock = document.createElement("div");
                         noteBlock.id = "note" + simulateQuiz.questions[qindex].index;
                         questiontxt.innerHTML = simulateQuiz.questions[qindex].index+1 + ")" + simulateQuiz.questions[qindex].question
