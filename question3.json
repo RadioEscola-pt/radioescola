@@ -3,9 +3,13 @@
             "numb": 1,
             "question": "Qual das seguintes expressões não representa a Lei de Ohm (em que V é a tensão, I é a corrente e R é aresistência)?",
             "answers": [
+			"a",
+			"b",
+			"c",
+			"d"
 
             ],
-            "correctIndex": ,
+            "correctIndex":"1" ,
             "notes": ""
         },
         {
@@ -13,20 +17,28 @@
             "question":
 
             "No Sistema Internacional de Unidades (SI) o valor da tensão expressa-se em",
-            "answers": [
+              "answers": [
+			"a",
+			"b",
+			"c",
+			"d"
 
             ],
-            "correctIndex": ,
+            "correctIndex":"1" ,
             "notes": ""
         },
         {
             "numb": 3,
             "question":
             "Qual das seguintes substâncias é um condutor?",
-            "answers": [
+              "answers": [
+			"a",
+			"b",
+			"c",
+			"d"
 
             ],
-            "correctIndex": ,
+            "correctIndex":"1" ,
             "notes": ""
         },
         {
@@ -34,9 +46,13 @@
             "question":
             "Qual das seguintes substâncias é um isolante?",
             "answers": [
+			"a",
+			"b",
+			"c",
+			"d"
 
             ],
-            "correctIndex": ,
+            "correctIndex":"1" ,
             "notes": ""
         },
         {
@@ -44,9 +60,13 @@
             "question":
             "Qual a velocidade, aproximada, da propagação das ondas rádio no espaço?",
             "answers": [
+			"a",
+			"b",
+			"c",
+			"d"
 
             ],
-            "correctIndex": ,
+            "correctIndex":"1" ,
             "notes": ""
         },
         {
@@ -54,9 +74,13 @@
             "question":
             "O valor do comprimento de onda, no Sistema Internacional de Unidades (SI), exprime-se em",
             "answers": [
+			"a",
+			"b",
+			"c",
+			"d"
 
             ],
-            "correctIndex": ,
+            "correctIndex":"1" ,
             "notes": ""
         },
         {
@@ -64,9 +88,13 @@
             "question":
             "Qual das seguintes afirmações não está correta?",
             "answers": [
+			"a",
+			"b",
+			"c",
+			"d"
 
             ],
-            "correctIndex": ,
+            "correctIndex":"1" ,
             "notes": ""
         },
         {
@@ -74,9 +102,13 @@
             "question":
             "Qual das figuras representa um sinal sinusoidal?",
             "answers": [
+			"a",
+			"b",
+			"c",
+			"d"
 
             ],
-            "correctIndex": ,
+            "correctIndex":"1" ,
             "notes": ""
         },
         {
@@ -84,9 +116,13 @@
             "question":
             "A figura representa um sinal sinusoidal em que +Um é igual a 1 Volt. Qual o valor eficaz do sinal?",
             "answers": [
+			"a",
+			"b",
+			"c",
+			"d"
 
             ],
-            "correctIndex": ,
+            "correctIndex":"1" ,
             "notes": ""
         },
         {
@@ -94,15 +130,14 @@
             "question":
             "A figura representa um sinal sinusoidal em que +Um é igual a 1 Volt. Qual o valor médio do sinal?",
             "answers": [
+			"a",
+			"b",
+			"c",
+			"d"
 
             ],
-            "correctIndex": ,
+            "correctIndex":"1" ,
             "notes": ""
-        },
-        {
-            "numb": 11,
-            "question": ""
-
         }
     ]
 }
