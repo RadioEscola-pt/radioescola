@@ -2,7 +2,7 @@
 	"questions": [{
 			"numb": 1,
 			"question": "No que respeita às Leis de Kirchhoff qual das seguintes afirmações é verdadeira?",
-			"correctIndexs": [
+			"answers": [
 				"Existem duas Ieis: a Iei dos nós e a Iei das malhas",
 				"Existem três Ieis: a Iei dos nós, a Iei das redes e a Iei das malhas",
 				"Existem duas Ieis: a Iei das redes e a Iei das fontes",
@@ -13,7 +13,7 @@
 		{
 			"numb": 2,
 			"question": "A Iei das malhas de Kirchhoff, também se designa por",
-			"correctIndexs": [
+			"answers": [
 				"Iei das potências",
 				"Iei dastensões",
 				"Iei das correntes",
@@ -24,7 +24,7 @@
 		{
 			"numb": 3,
 			"question": "Num circuito em paralelo, como se relaciona a corrente total com a corrente individual em cada uma das ramificações do referido circuito?",
-			"correctIndexs": [
+			"answers": [
 				"A corrente total é igual ao valor médio das correntes nas várias ramificações",
 				"A corrente total diminui à medida que ramificações paralelas vão sendo adicionadas ao circuito",
 				"A corrente total é igual à soma das correntes nas várias ramificações",
@@ -35,7 +35,7 @@
 		{
 			"numb": 4,
 			"question": "Uma gaiola de Faraday",
-			"correctIndexs": [
+			"answers": [
 				"constitui uma proteção eficaz relativamente a campos eletromagnéticos",
 				"constitui uma proteção eficaz relativamente a ondas sonoras",
 				"constitui uma proteção eficaz relativamente a sismos",
@@ -46,7 +46,7 @@
 		{
 			"numb": 5,
 			"question": "Duma forma geral, qual das seguintes Iinhas de transmissão possui a melhor inndagem a campos eletromagnéticos?",
-			"correctIndexs": [
+			"answers": [
 				"Cabo coaxial",
 				"PLC - \"Power Line Communications\"",
 				"Par telefónico",
@@ -58,7 +58,7 @@
 		{
 			"numb": 6,
 			"question": "Qual das expressões define a efetividade da inndagem (S) para campos elétricos (sendo 'Ei' a intensidade do campo elétrico incidente e 'Et' a intensidade do campo elétrico transmitido através da inndagem)?",
-			"correctIndexs": [
+			"answers": [
 				"S=20+Iog(Ei/Et)",
 				"S=1-Iog(Ei/Et)",
 				"S=20x|og(Ei/Et)",
@@ -69,7 +69,7 @@
 		{
 			"numb": 7,
 			"question": "Qual das seguintes afirmações está correta?",
-			"correctIndexs": [
+			"answers": [
 				"A ionosfera constitui uma inndagem à volta da Terra, a campos eletromagnéticos apenas para radiação óptica",
 				"A ionosfera constitui uma inndagem à volta da Terra, a campos eletromagnéticos apenas acima de 1 GHz",
 				"A ionosfera constitui uma inndagem à volta da Terra, a campos eletromagnéticos em todas as frequências",
@@ -80,7 +80,7 @@
 		{
 			"numb": 8,
 			"question": "Quais são os efeitos da inndagem sobre os campos magnéticos?",
-			"correctIndexs": [
+			"answers": [
 				"Reflexão e absorção",
 				"Reflexão e efeito de túnel",
 				"Absorção e efeito de túnel",
@@ -91,7 +91,7 @@
 		{
 			"numb": 9,
 			"question": "Qual o equipamento mais adequado para efetuar a medição da diferença de fase entre dois sinais sinusoidais?",
-			"correctIndexs": [
+			"answers": [
 				"Wattímetro",
 				"Osciloscópio",
 				"Frequencímetro",
@@ -102,7 +102,7 @@
 		{
 			"numb": 10,
 			"question": "Como se designam as figuras que representam num osciloscópio a relação de fase entre dois sinais sinusoidais?",
-			"correctIndexs": [
+			"answers": [
 				"Figuras de Lissajous",
 				"Figuras de Dirac",
 				"Figuras de mérito",
@@ -115,7 +115,7 @@
 		{
 			"numb": 11,
 			"question": "Que tipo de circuitos ideais apresentam os sinais de corrente e de tensão em fase?",
-			"correctIndexs": [
+			"answers": [
 				"Circuitos puramente capacitivos",
 				"Circuitos puramente resistivos",
 				"Circuitos puramente indutivos",
@@ -126,7 +126,7 @@
 		{
 			"numb": 12,
 			"question": "Diz-se que dois sinais sinusoidais estão em quadratura?",
-			"correctIndexs": [
+			"answers": [
 				"Quando o desfasamento entre eles é de 0 graus",
 				"Quando o desfasamento entre eles é de 60 graus",
 				"Quando o desfasamento entre eles é de 90 graus",
@@ -137,7 +137,7 @@
 		{
 			"numb": 13,
 			"question": "A potência de ruído é dada pela expressão Pn=kTB Como se designa a constante k?",
-			"correctIndexs": [
+			"answers": [
 				"Constante de Kelvin",
 				"Constante de Lissajous",
 				"Constante de Dirac",
@@ -148,7 +148,7 @@
 		{
 			"numb": 14,
 			"question": "Como podemos diminuir a potência de ruído de um sistema de receção?",
-			"correctIndexs": [
+			"answers": [
 				"Aumentando o mais possível a largura de banda efetiva do sistema",
 				"Aumentando o mais possível a temperatura de ruído do sistema, sem degradar o sinal desejado",
 				"Filtrando de forma a diminuir o mais possível a largura de banda efetiva do sistema, sem degradar o sinal desejado",
@@ -159,7 +159,7 @@
 		{
 			"numb": 15,
 			"question": "O ruído térmico é um sinal",
-			"correctIndexs": [
+			"answers": [
 				"sinusoidal",
 				"contínuo",
 				"quadrático",
@@ -170,7 +170,7 @@
 		{
 			"numb": 16,
 			"question": "O que quer dizer FSK?",
-			"correctIndexs": [
+			"answers": [
 				"Frequency Shunt Kelvin",
 				"Frequency Shift Keying",
 				"Forward Shunt Keying",
@@ -182,7 +182,7 @@
 		{
 			"numb": 17,
 			"question": "Ao transmitir um sinal de dados, por que razão é importante saber qual o respetivo ciclo de trabalho (\"duty cycle\")?",
-			"correctIndexs": [
+			"answers": [
 				"Para ajudar a sintonizar o transmissor",
 				"Para evitar quaisquer danos no andar final de saída do transmissor",
 				"Para permitir que outras estações tenham tempo para interromper a transmissão",
@@ -193,7 +193,7 @@
 		{
 			"numb": 18,
 			"question": "Que tipo de informação pode ser transmitido por meio de formas de onda digitais?",
-			"correctIndexs": [
+			"answers": [
 				"Voz humana",
 				"Sinais de vídeo",
 				"Dados",
@@ -204,7 +204,7 @@
 		{
 			"numb": 19,
 			"question": "O bit rate pode ser definido como",
-			"correctIndexs": [
+			"answers": [
 				"o número de bits por segundo",
 				"a taxa de erros por cada bit transmitido",
 				"o número de inversões de fase numa dada comunicação",
@@ -215,7 +215,7 @@
 		{
 			"numb": 20,
 			"question": "Que parâmetro varia no sinal modulado num sistema de modulação por posição de pulso, vulgarmente designado por PPM (\"Pulse-Position Modulation\")?",
-			"correctIndexs": [
+			"answers": [
 				"O número de pulsos por segundo",
 				"A amplitude dos pulsos",
 				"A duração dos pulsos",
@@ -226,7 +226,7 @@
 		{
 			"numb": 21,
 			"question": "A que estão associadas as siglas CRC e FEC nas comunicações eletrónicas?",
-			"correctIndexs": [
+			"answers": [
 				"A diferentes técnicas de modulação analógicas e digitais",
 				"A sistemas de deteção de erros em transmissão de dados",
 				"A sistemas de amplificação de RF",
@@ -237,7 +237,7 @@
 		{
 			"numb": 22,
 			"question": "Numa comunicação o bit rate é de 9600. Sabendo que o baud rate é de 4800, qual o número de bits por símbololpalavra (conjunto de bits com comprimento fixo)?",
-			"correctIndexs": [
+			"answers": [
 				"2",
 				"4",
 				"8",
@@ -248,7 +248,7 @@
 		{
 			"numb": 23,
 			"question": "Qual das afirmações está correta?",
-			"correctIndexs": [
+			"answers": [
 				"Duma forma geral e para um dado tipo de comunicação, quanto maior o bit rate menor é a Iargura de faixa necessáña",
 				"Duma forma geral e para um dado tipo de comunicação, quanto maior o bit rate maior é a Iargura de faixa necessáña",
 				"Duma forma geral e para um dado tipo de comunicação, a Iargura de faixa necessária não depende do bit rate",
@@ -259,7 +259,7 @@
 		{
 			"numb": 24,
 			"question": "A conversão analógicaldigital pode ser dividida em três etapas que são",
-			"correctIndexs": [
+			"answers": [
 				"a diferenciação, a amostragem e a integração",
 				"a integração, a codificação e a quantificação",
 				"a amostragem a quantificação e a codificação",
@@ -270,7 +270,7 @@
 		{
 			"numb": 25,
 			"question": "O teorema de Nyquist ou da amostragem estabelece que",
-			"correctIndexs": [
+			"answers": [
 				"a frequência de amostragem deve ser no mínimo igual à maior frequência associada ao sinal amostrado",
 				"a frequência de amostragem deve ser no mínimo o dobro da maior frequência associada ao sinal amostrado",
 				"a frequência de amostragem deve ser no mínimo quatro vezes superior à maior frequência associada ao sinal amostrado",
@@ -281,7 +281,7 @@
 		{
 			"numb": 26,
 			"question": "Numa conversão analógicaldigital em que consiste o a|iasing?",
-			"correctIndexs": [
+			"answers": [
 				"É a distorção resultante de não se utilizar componentes de qualidade no circuito",
 				"É uma distorção aleatória que se verifica na conversão de sinais de muito alta frequência",
 				"É uma distorção relacionada com não Iinearidades dos amplificadores utilizados no processo",
@@ -293,7 +293,7 @@
 		{
 			"numb": 27,
 			"question": "A convolução de dois pulsos retangulares tem como resultado",
-			"correctIndexs": [
+			"answers": [
 				"um pulso retangular",
 				"um pulso triangular",
 				"um pulso de amplitude infinita",
@@ -304,7 +304,7 @@
 		{
 			"numb": 28,
 			"question": "Como reage um condensador a uma corrente alternada?",
-			"correctIndexs": [
+			"answers": [
 				"À medida que aumenta a frequência da corrente alternada aplicada a reactância diminui",
 				"À medida que aumenta a frequência da corrente alternada aplicada a reactância aumenta",
 				"À medida que aumenta a amplitude da corrente alternada aplicada a reactância aumenta",
@@ -315,7 +315,7 @@
 		{
 			"numb": 29,
 			"question": "Num condensador plano constituído por duas superfícies metálicas, separadas por um isolante, a sua capacidade aumenta quando",
-			"correctIndexs": [
+			"answers": [
 				"aumenta a área das superfícies metálicas",
 				"diminui o afastamento entre as superfícies metálicas",
 				"aumenta a constante dielétrica do isolante",
@@ -326,7 +326,7 @@
 		{
 			"numb": 30,
 			"question": "A reactância de um condensador é tanto maior quanto",
-			"correctIndexs": [
+			"answers": [
 				"menor for a sua capacidade",
 				"maior for a sua capacidade",
 				"menor for a sua indutância",
@@ -337,7 +337,7 @@
 		{
 			"numb": 31,
 			"question": "Em que consiste a reactância numa bobina?",
-			"correctIndexs": [
+			"answers": [
 				"Oposição ao fluxo de corrente contínua causada pela resistência",
 				"Oposição ao fluxo de corrente alternada causada pela sua indutância",
 				"Uma propriedade de resistências ideais em circuitos de corrente alternada",
@@ -349,7 +349,7 @@
 		{
 			"numb": 32,
 			"question": "Qual das seguintes frases está correta?",
-			"correctIndexs": [
+			"answers": [
 				"Numa bobina, à medida que aumenta a frequência da corrente alternada aplicada a reactância diminui",
 				"Numa bobina, à medida que aumenta a amplitude da corrente alternada aplicada a reactância aumenta",
 				"Numa bobina, à medida que aumenta a amplitude da corrente alternada aplicada a reactância diminui",
