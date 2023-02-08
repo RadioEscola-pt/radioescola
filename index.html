@@ -128,17 +128,22 @@ body {
   margin: 0;
 }
 
-.navbar a:hover, .subnav:hover .subnavbtn {
-  background-color: red;
+.navbar a:hover {
+  background-color: #ddd;
 }
 
 .subnav-content {
   display: none;
   position: absolute;
   left: 0;
-  background-color: red;
-  width: 100%;
+
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  
+  width: 100%;
+
 }
 
 .subnav-content a {
@@ -148,13 +153,31 @@ body {
 }
 
 .subnav-content a:hover {
-  background-color: #eee;
+  
   color: black;
 }
 
 .subnav:hover .subnav-content {
   display: block;
 }
+
+.subnav1 {
+  background-color: #3399ff;
+}
+
+.subnav2 {
+  background-color: #00cc99;
+}
+
+.subnav3 {
+  background-color: #ff9999;
+}
+
+.subnav0 {
+  background-color: #99ff99;
+}
+
+
 </style>
 <script type="text/javascript" src="quiz.js"></script>
 <script type="text/javascript" src="simulateQuiz.js"></script>
@@ -174,9 +197,9 @@ body {
   <h2>Escola de Radio Amador</h2>
   <div class="navbar">
   <a onclick="new loadChapter('home')" href="#home">Pagina Inicial</a>
-  <div class="subnav">
-    <button class="subnavbtn">Tuturial<i class="fa fa-caret-down"></i></button>
-    <div class="subnav-content">
+  <div class="subnav subnav0">
+    <button class="subnavbtn subnav0">Tuturial</button>
+    <div class="subnav-content subnav0">
       <a onclick="new loadChapter('ohm')">Lei de Ohm</a>
 	 <a onclick="new loadChapter('gain')">Ganho (dB)</a>
 	  <a onclick="new loadChapter('SWR')">Onda estacionaria (SWR)</a>
@@ -184,9 +207,9 @@ body {
 	<a onclick="new loadChapter('AC')">AC </a>
 	</div>
   </div> 
-    <div class="subnav">
-    <button class="subnavbtn">Testes Cat3 (em dedevolvimento)<i class="fa fa-caret-down"></i></button>
-    <div class="subnav-content">
+    <div class="subnav subnav1">
+    <button class="subnavbtn">Testes Cat3 (em dedevolvimento)</button>
+    <div class="subnav-content subnav1">
       <a onclick="new Quiz('question3.json')" href="#">todas as perguntas</a>
       <a onclick="new simulateQuiz('question3.json')" href="#">Simulador de exame</a>
 
@@ -194,17 +217,17 @@ body {
   </div>
   
  
-  <div class="subnav">
-    <button class="subnavbtn">Testes Cat2 <i class="fa fa-caret-down"></i></button>
-    <div class="subnav-content">
+  <div class="subnav subnav2">
+    <button class="subnavbtn">Testes Cat2</button>
+    <div class="subnav-content subnav2">
       <a onclick="new Quiz('question2.json')" href="#">todas as perguntas</a>
       <a onclick="new simulateQuiz('question2.json')" href="#">Simulador de exame</a>
 
     </div>
   </div>
-    <div class="subnav">
-    <button class="subnavbtn">Testes Cat1 <i class="fa fa-caret-down"></i></button>
-    <div class="subnav-content">
+    <div class="subnav subnav3">
+    <button class="subnavbtn ">Testes Cat1 </button>
+    <div class="subnav-content subnav3">
       <a onclick="new Quiz('question1.json')" href="#">todas as perguntas</a>
       <a onclick="new simulateQuiz('question1.json')" href="#">Simulador de exame</a>
 
