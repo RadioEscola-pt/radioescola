@@ -2329,7 +2329,7 @@
         },
         {
             "numb": 196,
-            "question": "Qual o valor da resistencia apresentada na figura?<img src='radioAmadorCat2exame/images/cat3/100k.png'>",
+            "question": "Qual o valor da resistencia apresentada na figura?<img src='images/cat3/100k.png'>",
             "answers": [
                 "1 Ohm",
                 "1 000 Ohm",
@@ -2341,7 +2341,7 @@
         },
         {
             "numb": 197,
-            "question": "Qual o valor da resistência apresentada na figura?<img src='radioAmadorCat2exame/images/cat3/220ohm.png'>",
+            "question": "Qual o valor da resistência apresentada na figura?<img src='images/cat3/220ohm.png'>",
             "answers": [
                 "210 Ohm",
                 "220 Ohm",
@@ -2353,7 +2353,7 @@
         },
         {
             "numb": 198,
-            "question": "Qual o valor da resistência apresentada na figura?<img src='/images/cat3/2k.png'>",
+            "question": "Qual o valor da resistência apresentada na figura?<img src='images/cat3/2k.png'>",
             "answers": [
                 "210 Ohm",
                 "2000 Ohm",
@@ -2365,7 +2365,7 @@
         },
         {
             "numb": 199,
-            "question": "A figura representa a amplitude de um sinal sinusoidal em função do tempo. O que representa 4?<img src='/images/cat3/sinusoidal.png'>",
+            "question": "A figura representa a amplitude de um sinal sinusoidal em função do tempo. O que representa 4?<img src='images/cat3/sinusoidal.png'>",
             "answers": [
                 "Período do sinal",
                 "Valor eficaz do sinal",
@@ -2377,7 +2377,7 @@
         },
         {
             "numb": 200,
-            "question": "A figura representa a amplitude de um sinal sinusoidal em função do tempo. O que representa 2?<img src='/images/cat3/sinusoidal.png'>",
+            "question": "A figura representa a amplitude de um sinal sinusoidal em função do tempo. O que representa 2?<img src='images/cat3/sinusoidal.png'>",
             "answers": [
                 "Período do sinal",
                 "Valor eficaz do sinal",
@@ -2389,7 +2389,7 @@
         },
         {
             "numb": 201,
-            "question": "A figura representa a amplitude de um sinal sinusoidal em função do tempo. O que representa 1?<img src='/images/cat3/sinusoidal.png'>",
+            "question": "A figura representa a amplitude de um sinal sinusoidal em função do tempo. O que representa 1?<img src='images/cat3/sinusoidal.png'>",
             "answers": [
                 "Período do sinal",
                 "Valor eficaz do sinal",
@@ -2401,7 +2401,7 @@
         },
         {
             "numb": 202,
-            "question": "A figura representa um sinal sinusoidal de amplitude em função do tempo. O que representa 3?<img src='/images/cat3/sinusoidal.png'>",
+            "question": "A figura representa um sinal sinusoidal de amplitude em função do tempo. O que representa 3?<img src='images/cat3/sinusoidal.png'>",
             "answers": [
                 "Periodo do sinal",
                 "Valor eficaz do sinal",
@@ -2413,7 +2413,7 @@
         },
         {
             "numb": 203,
-            "question": "A figura representa um sinal sinusoidal em que +Um é igual a 1 volt. Qual o valor pico a pico do sinal?<img src='/images/cat3/sinusoidal.png'>",
+            "question": "A figura representa um sinal sinusoidal em que +Um é igual a 1 volt. Qual o valor pico a pico do sinal?<img src='images/cat3/sinusoidal.png'>",
             "answers": [
                 "0,707 Volt",
                 "0 Volt",
@@ -2425,7 +2425,7 @@
         },
         {
             "numb": 204,
-            "question": "A figura representa um sinal sinusoidal em que +Um é igual a 1 volt. Qual o valor de pico do sinal?<img src='/images/cat3/sinusoidal.png'>",
+            "question": "A figura representa um sinal sinusoidal em que +Um é igual a 1 volt. Qual o valor de pico do sinal?<img src='images/cat3/sinusoidal.png'>",
             "answers": [
                 "0,707 Volt",
                 "0 Volt",
@@ -2437,7 +2437,7 @@
         },
         {
             "numb": 205,
-            "question": "A figura representa um sinal sinusoidal em que +Um é igual a 1 Volt. Qual o valor eficaz do sinal?<img src='/images/cat3/sinusoidal.png'>",
+            "question": "A figura representa um sinal sinusoidal em que +Um é igual a 1 Volt. Qual o valor eficaz do sinal?<img src='images/cat3/sinusoidal.png'>",
             "answers": [
                 "0.707 Volt",
                 "0 Volt",
@@ -2449,7 +2449,7 @@
         },
         {
             "numb": 206,
-            "question": "A figura representa a amplitude de um sinal sinusoidal em função do tempo. O que representa 4?<img src='/images/cat3/sinusoidal.png'>",
+            "question": "A figura representa a amplitude de um sinal sinusoidal em função do tempo. O que representa 4?<img src='images/cat3/sinusoidal.png'>",
             "answers": [
                 "Período do sinal",
                 "Valor eficaz do sinal",
@@ -2461,7 +2461,7 @@
         },
         {
             "numb": 207,
-            "question": "A figura representa um sinal sinusoidal em que +Um é igual a 1 volt. Qual o valor médio do sinal da figura?<img src='/images/cat3/sinusoidal.png'>",
+            "question": "A figura representa um sinal sinusoidal em que +Um é igual a 1 volt. Qual o valor médio do sinal da figura?<img src='images/cat3/sinusoidal.png'>",
             "answers": [
                 "0.707 Volt",
                 "0 Volt",
@@ -2473,7 +2473,7 @@
         },
         {
             "numb": 208,
-            "question": "Qual das seguintes ondas tem a frequência mais elevada?<img src='/images/cat3/frequencia.png'>",
+            "question": "Qual das seguintes ondas tem a frequência mais elevada?<img src='images/cat3/frequencia.png'>",
             "answers": [
                 "1",
                 "2",
@@ -2485,7 +2485,7 @@
         },
         {
             "numb": 209,
-            "question": "Qual das figuras representa um sinal sinusoidal?<img src='/images/cat3/sinal.png'>",
+            "question": "Qual das figuras representa um sinal sinusoidal?<img src='images/cat3/sinal.png'>",
             "answers": [
                 "1",
                 "2",
@@ -2497,7 +2497,7 @@
         },
         {
             "numb": 210,
-            "question": "Na figura, qual o símbolo de uma resistência?<img src='/images/cat3/simbolos.png'>",
+            "question": "Na figura, qual o símbolo de uma resistência?<img src='images/cat3/simbolos.png'>",
             "answers": [
                 "1",
                 "2",
