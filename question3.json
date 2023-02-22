@@ -2329,7 +2329,7 @@
         },
         {
             "numb": 196,
-            "question": "Qual o valor da resistencia apresentada na figura?",
+            "question": "Qual o valor da resistencia apresentada na figura?<img src='radioAmadorCat2exame/images/cat3/100k.png'>",
             "answers": [
                 "1 Ohm",
                 "1 000 Ohm",
@@ -2341,7 +2341,7 @@
         },
         {
             "numb": 197,
-            "question": "Qual o valor da resistência apresentada na figura?<img src='/images/cat3/220ohm.png'>",
+            "question": "Qual o valor da resistência apresentada na figura?<img src='radioAmadorCat2exame/images/cat3/220ohm.png'>",
             "answers": [
                 "210 Ohm",
                 "220 Ohm",
