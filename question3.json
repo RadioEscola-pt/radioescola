@@ -2329,7 +2329,7 @@
         },
         {
             "numb": 196,
-            "question": "Qual o valor da resistencia apresentada na figura?<img src='/images/cat3/100k.jpg'>",
+            "question": "Qual o valor da resistencia apresentada na figura?",
             "answers": [
                 "1 Ohm",
                 "1 000 Ohm",
