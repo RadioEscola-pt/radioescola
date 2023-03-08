@@ -2313,7 +2313,7 @@
 				"Porque, de uma forma geral, os sinais nestas gamas de frequências não se reflectem na ionosfera",
 				"Porque colidem facilmente com árvores e outros obstáculos, a menos que sejam emitidos na vertical para a ionosfera"
 			],
-			"numb": 3,
+			"numb":190,
 			"notes": "",
 			"correctIndex": 3
 		},
@@ -2325,7 +2325,7 @@
 				"A terra",
 				"Uma tensão DC"
 			],
-			"numb": 1,
+			"numb": 191,
 			"notes": "",
 			"correctIndex": 3
 		},
@@ -2337,7 +2337,7 @@
 				"Sim. Nas Recomendações da CEPT",
 				"Não existem"
 			],
-			"numb": 2,
+			"numb": 192,
 			"notes": "",
 			"correctIndex": 2
 		},
@@ -2349,7 +2349,7 @@
 				"CQ9 se estiver a operar numa estaçao de amador situada na área geográfica MDR",
 				"CT7 se estiver a operar numa estação de amador situada na área geográfica POR"
 			],
-			"numb": 4,
+			"numb": 193,
 			"notes": "",
 			"correctIndex": 1
 		},
@@ -2361,7 +2361,7 @@
 				"Cabe às Administrações dos países signatários da Constituição e da Convenção da UIT, determinar se uma pessoa que quer ser amador tem as necessárias qualificações",
 				"Durante as suas comunicações, as estações de amador devem transmitir o seu indicativo de chamada de acordo com o definido na regulamentação aplicável"
 			],
-			"numb": 5,
+			"numb": 194,
 			"notes": "",
 			"correctIndex": 2
 		},
@@ -2373,7 +2373,7 @@
 				"produto da tensão (V) pela corrente (I)",
 				"quociente da tensão (V) pela corrente (I)"
 			],
-			"numb": 6,
+			"numb": 195,
 			"notes": "",
 			"correctIndex": 1
 		},
@@ -2385,7 +2385,7 @@
 				"20 Ohm",
 				"60 Ohm"
 			],
-			"numb": 7,
+			"numb": 196,
 			"notes": "",
 			"correctIndex": 4
 		},
@@ -2397,7 +2397,7 @@
 				"Constante dieléctrica maior que 1",
 				"Relação de onda estacionária (VSWR) maior que 1"
 			],
-			"numb": 8,
+			"numb": 197,
 			"notes": "",
 			"correctIndex": 4
 		},
@@ -2409,7 +2409,7 @@
 				"Além da possibilidade do amador interferir quando em emissão, pode causar interferência na recepção da estação de amador",
 				"Podem ser criadas no cabo tensões muito elevadas quando a estação de amador emite"
 			],
-			"numb": 9,
+			"numb": 198,
 			"notes": "",
 			"correctIndex": 3
 		},
@@ -2421,7 +2421,7 @@
 				"Oscilador de HF, misturador e detector",
 				"Oscilador de HF, detector de produto e amplificador"
 			],
-			"numb": 10,
+			"numb": 199,
 			"notes": "",
 			"correctIndex": 3
 		},
@@ -2433,7 +2433,7 @@
 				"Uma antena vertical",
 				"Uma antena Yagi"
 			],
-			"numb": 11,
+			"numb": 200,
 			"notes": "",
 			"correctIndex": 2
 		},
