@@ -1859,7 +1859,7 @@
 				"Só tem vantagens pois atenua o multipercurso"
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": "val.0000_00_01.P1"
 		},
 		{
 			"numb": 154,
@@ -5076,6 +5076,18 @@
 			"numb": 39,
 			"notes": "",
 			"correctIndex": 3
+		},
+		{
+			"numb": 40,
+			"question": "Para que se usa um fusível num circuito elétrico?",
+			"answers": [
+				"Para nos assegurarmos que a energia chega ao circuito",
+				"Para interromper a energia em caso de sobrecarga",
+				"Para evitar interferências na recepção de televisão",
+				"Para evitar choques"
+			],
+			"notes": "val.0000_00_00.P2",
+			"correctIndex": 2
 		}
 	]
 }
