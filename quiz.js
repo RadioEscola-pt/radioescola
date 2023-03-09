@@ -27,7 +27,7 @@ class Quiz {
         const noteElement = document.getElementById('note' + index);
         noteElement.innerHTML = question.notes;
         this.style.background = "#FF0000";
-        this.innerHTML = "ERRDO";
+        this.innerHTML = "ERRADO";
     }
 
     showPage() {

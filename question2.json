@@ -2291,7 +2291,7 @@
 				"A estação que emitir com a potência mais baixa"
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": "val0000_00_01p4"
 		},
 		{
 			"numb": 189,
@@ -5075,6 +5075,19 @@
 			],
 			"numb": 39,
 			"notes": "",
+			"correctIndex": 3
+	
+		},
+		{
+			"question": "Qual das afirmações é verdadeira?",
+			"answers": [
+				"Aos amadores da categoria 2 são emitidas licenças CEPT nos termos expressos na Recomendação CEPT T/R 61-01",
+				"Os amadores da categoria 2 não têm direito a qualquer tipo de licensa CEPT",
+				"Aos amadores da categoria 2 são emitidas licenças CEPT novice nos termos expressos na recomendação CEPT ECC/REC/(05)06",
+				"Os amadores da categoria 2 têm direito a licensas CEPT em função dos exames em que tiverem aproveitamento"
+			],
+			"numb": 40,
+			"notes": "val0000_00_01p5",
 			"correctIndex": 3
 	
 		}
