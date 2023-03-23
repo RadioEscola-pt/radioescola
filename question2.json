@@ -1859,7 +1859,7 @@
 				"Só tem vantagens pois atenua o multipercurso"
 			],
 			"correctIndex": 2,
-			"notes": "val0000_00_01p1"
+			"notes": "0000_00_01p1"
 		},
 		{
 			"numb": 154,
@@ -2291,7 +2291,7 @@
 				"A estação que emitir com a potência mais baixa"
 			],
 			"correctIndex": 2,
-			"notes": "val0000_00_01p4"
+			"notes": "0000_00_01p4"
 		},
 		{
 			"numb": 189,
@@ -2674,7 +2674,7 @@
 				"Para evitar choques"
 			],
 			"numb": 1,
-			"notes": "val0000_00_01p2",
+			"notes": "0000_00_01p2",
 			"correctIndex": 2
 		},
 		{
