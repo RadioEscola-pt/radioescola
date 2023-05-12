@@ -251,7 +251,7 @@
 				"o produto da sua frequência pelo seu comprimento de onda"
 			],
 			"correctIndex": 3,
-			"notes": "O periodo é o inverso da frequencia, ora vejamos, se a frequencia é medida em ciclos por segundo, invertemos e temos o numero de segundos para completar um ciclo ou seja o periodo que é dado em segundos.Logo opção 3."
+			"notes": "0000_00_01p34 O periodo é o inverso da frequencia, ora vejamos, se a frequencia é medida em ciclos por segundo, invertemos e temos o numero de segundos para completar um ciclo ou seja o periodo que é dado em segundos.Logo opção 3."
 		},
 		{
 			"numb": 22,
@@ -419,7 +419,7 @@
 				"Provoca uma saturação na antena do emissor"
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": "0000_00_01p38"
 		},
 		{
 			"numb": 36,
@@ -552,18 +552,6 @@
 			],
 			"correctIndex": 1,
 			"notes": "https://pt.wikipedia.org/wiki/Modula%C3%A7%C3%A3o_em_banda_lateral_%C3%BAnica "
-		},
-		{
-			"question": "Qual das seguintes afirmações é verdadeira no que respeita à modulação de voz em banda lateral única?",
-			"answers": [
-				"Transmissão de uma banda lateral e da portadora; supressão da outra banda lateral.",
-				"Transmissão de uma banda lateral; supressão da outra banda lateral e da portadora.",
-				"As transmissões de voz em banda lateral única têm uma potência média mais elevada do que qualquer outro tipo de modulação.",
-				"A banda lateral única é o único tipo de modulação autorizado a operar nas faixas de radioamador dos 160, 75 e 40 metro"
-			],
-			"numb": 46.1,
-			"notes": "",
-			"correctIndex": 2
 		},
 		{
 			"numb": 47,
@@ -743,7 +731,7 @@
 				"25 Ohm"
 			],
 			"correctIndex": 2,
-			"notes": "0000_00_01p8O valor associacao de resistencias em paralelo pode ser calculando dividindo o valor das resistencias pela quantidade delas,logo 10 resistencias de 100 Ohm em paralelo é 100 / 10 = 10 Ohm,atenção que só se pode usar esta formula para resistencias de igual valor."
+			"notes": "0000_00_01p8 O valor associacao de resistencias em paralelo pode ser calculando dividindo o valor das resistencias pela quantidade delas,logo 10 resistencias de 100 Ohm em paralelo é 100 / 10 = 10 Ohm,atenção que só se pode usar esta formula para resistencias de igual valor."
 		},
 		{
 			"numb": 62,
@@ -791,7 +779,7 @@
 				"ao quociente da capacidade maior pela capacidade menor"
 			],
 			"correctIndex": 2,
-			"notes": "É a soma das capacidades.Opção 2. Ceq = C1 + C2 + … +Cn"
+			"notes": "0000_00_01p20 É a soma das capacidades.Opção 2. Ceq = C1 + C2 + … +Cn"
 		},
 		{
 			"numb": 66,
@@ -947,11 +935,11 @@
 				"141V"
 			],
 			"correctIndex": 4,
-			"notes": ""
+			"notes": "0000_00_01p32"
 		},
 		{
 			"numb": 79,
-			"question": "Na figura, identifique o símbolo que representa o díodo Zener:<img  src='image-49.png'>",
+			"question": "Na figura, identifique o símbolo que representa o díodo Zener:<img  src='images/cat2/image-49.png'>",
 			"answers": [
 				"D1 ",
 				"D2 ",
@@ -999,7 +987,7 @@
 		},
 		{
 			"numb": 83,
-			"question": "Na figura, identifique o terminal base<img  src='image-50.png'>",
+			"question": "Na figura, identifique o terminal base<img  src='images/cat2/image-50.png'>",
 			"answers": [
 				"A",
 				"B",
@@ -1011,7 +999,7 @@
 		},
 		{
 			"numb": 84,
-			"question": "Na figura, a que terminais correspondem as letras indicadas no seguinte transístor:<img  src='image-50.png'>",
+			"question": "Na figura, a que terminais correspondem as letras indicadas no seguinte transístor:<img  src='images/cat2/image-50.png'>",
 			"answers": [
 				"A – emissor, B – base e C – coletor",
 				"A – base, B – coletor e C – emissor",
@@ -1019,7 +1007,7 @@
 				"A – coletor, B – emissor e C – base"
 			],
 			"correctIndex": 3,
-			"notes": "Coletor é o C,Base o A e B o emissor,logo a resposta certa é a 3."
+			"notes": "0000_00_01p35 Coletor é o C,Base o A e B o emissor,logo a resposta certa é a 3."
 		},
 		{
 			"numb": 85,
@@ -1079,7 +1067,7 @@
 				"duma forma geral, reduz ligeiramente o sinal de entrada, mantendo a fase"
 			],
 			"correctIndex": 1,
-			"notes": "Vendo a seguinte imagem:<img  src='image-53.png'> Podemos concluir que inverte e amplifica,assim a resposta correta é a 1. "
+			"notes": "Vendo a seguinte imagem:<img  src='images/cat2/image-53.png'> Podemos concluir que inverte e amplifica,assim a resposta correta é a 1. "
 		},
 		{
 			"numb": 90,
@@ -1151,7 +1139,7 @@
 				"um filtro rejeita banda"
 			],
 			"correctIndex": 2,
-			"notes": "As harmonicas ocorrem nos multiplos inteiros da fundamental,logo são sempre de frequência superior,assim podemos usar um filtro passa baixo."
+			"notes": "0000_00_01p19 As harmonicas ocorrem nos multiplos inteiros da fundamental,logo são sempre de frequência superior,assim podemos usar um filtro passa baixo."
 		},
 		{
 			"numb": 96,
@@ -1175,7 +1163,7 @@
 				"Sim se se tiver também uma resistência em série com cada um dos díodos"
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": "0000_00_01p25"
 		},
 		{
 			"numb": 98,
@@ -1307,7 +1295,7 @@
 				"F3E"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": "0000_00_01p18"
 		},
 		{
 			"numb": 109,
@@ -1319,18 +1307,6 @@
 				"F3E"
 			],
 			"correctIndex": 4,
-			"notes": ""
-		},
-		{
-			"numb": 109.1,
-			"question": "Os receptores de SSB-SC estão associados a que tipo de modulação?",
-			"answers": [
-				"A1A",
-				"A3E",
-				"J3E",
-				"F3E"
-			],
-			"correctIndex": 3,
 			"notes": ""
 		},
 		{
@@ -1355,7 +1331,7 @@
 				"Multiplicador"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": "0000_00_01p24"
 		},
 		{
 			"numb": 112,
@@ -1559,7 +1535,7 @@
 				"Modulação de fase"
 			],
 			"correctIndex": 1,
-			"notes": "Banda lateral única. (SSB – Single Side Banda)"
+			"notes": "0000_00_01p29 Banda lateral única. (SSB – Single Side Banda)"
 		},
 		{
 			"numb": 129,
@@ -1655,7 +1631,7 @@
 				"Deve tornar-se mais pequeno quando a frequência aumenta"
 			],
 			"correctIndex": 4,
-			"notes": ""
+			"notes": "0000_00_01p12"
 		},
 		{
 			"numb": 137,
@@ -1751,7 +1727,7 @@
 				"Num aumento de distorção do sinal"
 			],
 			"correctIndex": 3,
-			"notes": ""
+			"notes": "0000_00_01p22"
 		},
 		{
 			"numb": 145,
@@ -2410,7 +2386,7 @@
 				"Podem ser criadas no cabo tensões muito elevadas quando a estação de amador emite"
 			],
 			"numb": 198,
-			"notes": "",
+			"notes": "0000_00_01p10",
 			"correctIndex": 3
 		},
 		{
@@ -2422,7 +2398,7 @@
 				"Oscilador de HF, detector de produto e amplificador"
 			],
 			"numb": 199,
-			"notes": "",
+			"notes": "0000_00_01p11",
 			"correctIndex": 3
 		},
 		{
@@ -2446,7 +2422,7 @@
 				"Não ligar"
 			],
 			"numb": 12,
-			"notes": "",
+			"notes": "0000_00_01p10",
 			"correctIndex": 2
 		},
 		{
@@ -2470,7 +2446,7 @@
 				"Tem uma resposta mais rápida"
 			],
 			"numb": 14,
-			"notes": "",
+			"notes": "0000_00_01p15",
 			"correctIndex": 3
 		},
 		{
@@ -2590,7 +2566,7 @@
 				"de tensão rectificada em apenas metade do período"
 			],
 			"numb": 29,
-			"notes": "",
+			"notes": "0000_00_01p30",
 			"correctIndex": 2
 		},
 		{
@@ -2806,7 +2782,7 @@
 				"Nenhuma das respostas está correcta"
 			],
 			"numb": 16,
-			"notes": "",
+			"notes": "0000_00_01p17",
 			"correctIndex": 3
 		},
 		{
@@ -2854,7 +2830,7 @@
 				"Porque se comportam como um circuito aberto"
 			],
 			"numb": 22,
-			"notes": "",
+			"notes": "0000_00_01p23",
 			"correctIndex": 3
 		},
 		{
@@ -2890,7 +2866,7 @@
 				"é simples, mas só se aplica aos emissores com baixa potência de saída e com pequena profundidade de modulação."
 			],
 			"numb": 25,
-			"notes": "",
+			"notes": "0000_00_01p26",
 			"correctIndex": 4
 		},
 		{
@@ -2962,7 +2938,7 @@
 				"0,000 433 010 Hz"
 			],
 			"numb": 33,
-			"notes": "",
+			"notes": "0000_00_01p33",
 			"correctIndex": 3
 		},
 		{
@@ -3310,7 +3286,7 @@
 				"7,000 MHz"
 			],
 			"numb": 30,
-			"notes": "",
+			"notes": "0000_00_01p31",
 			"correctIndex": 3
 		},
 		{
@@ -3641,12 +3617,12 @@
 			"question": "A intensidade de campo eléctrico é expressa em:",
 			"answers": [
 				"metro.",
-				"volt/metro.",
-				"W",
-				"V "
+				"volt por metro.",
+				"Watt",
+				"Volt "
 			],
 			"numb": 21,
-			"notes": "",
+			"notes": "0000_00_01p21",
 			"correctIndex": 2
 		},
 		{
@@ -3700,13 +3676,13 @@
 		{
 			"question": "A intensidade do campo magnético é expressa em:",
 			"answers": [
-				"ampere/metro.",
-				"volt/metro.",
-				"W",
-				"ampere."
+				"Ampere por metro.",
+				"volt por metro.",
+				"Watt",
+				"Ampere."
 			],
 			"numb": 27,
-			"notes": "",
+			"notes": "0000_00_01p27",
 			"correctIndex": 1
 		},
 		{
@@ -4006,7 +3982,7 @@
 				"Numa onda quadrada as harmónicas possuem frequências mais elevadas que a fundamental."
 			],
 			"numb": 17,
-			"notes": "",
+			"notes": "0000_00_01p36",
 			"correctIndex": 3
 		},
 		{
@@ -4294,7 +4270,7 @@
 				"Ao número de kHz que a frequência da portadora  se afasta do seu valor nominal devido à falta de estabilidade do oscilador, na ausência de modulação."
 			],
 			"numb": 8,
-			"notes": "",
+			"notes": "0000_00_01p39",
 			"correctIndex": 1
 		},
 		{
@@ -4558,7 +4534,7 @@
 				"Um amplificador é tanto mais eficiente quanto maior for o consumo para uma dada potência de saída."
 			],
 			"numb": 35,
-			"notes": "",
+			"notes": "0000_00_01p40",
 			"correctIndex": 3
 		},
 		{
@@ -5103,6 +5079,91 @@
 			"notes": "0000_00_01p6",
 			"correctIndex": 1
 	
+		},
+		{
+			"question": "As medidas de intensidade de campo permitem avaliar",
+			"answers": [
+				"o ganho da antena da estação emissora",
+				"a radiação da antena da estação emissora",
+				"a altura da antena da estação emissora",
+				"a sensibildade do receptor"
+			],
+			"numb": 40,
+			"notes": "0000_00_01p9",
+			"correctIndex": 2
+	
+		},
+		{
+			"question": "Qual a força electromotriz de duas baterias de 12 V ligadas em série?",
+			"answers": [
+				"6 V",
+				"12 V",
+				"24 V",
+				"Nenhuma das respostas está correcta."
+			],
+			"numb": 12,
+			"notes": "0000_00_01p14",
+			"correctIndex": 3
+		},
+		{
+			"question": "A potência aparente radiada (p.a.r.) emitida por uma antena de 5 dBd de ganho (no máximo do seu diagrama de radiação) quando lhe é entregue uma potência de 10 dBW é",
+			"answers": [
+				"15 dBW",
+				"50 dBW",
+				"15 W",
+				"50 W"
+			],
+			"numb": 12,
+			"notes": "0000_00_01p16",
+			"correctIndex": 1
+		},
+		{
+			"question": "Qual é a relação de potência entre a saída e a entrada de um amplificador cujo ganho de potência é de 14,1 dB?",
+			"answers": [
+				"25,7",
+				"10,1",
+				"5,1",
+				"3,0"
+			],
+			"numb": 12,
+			"notes": "0000_00_01p28",
+			"correctIndex": 1
+		},
+		{
+			"question": "Qual das seguintes afirmações é verdadeira no que respeita à modulação de voz em banda lateral única?",
+			"answers": [
+				"Transmissão de uma banda lateral e da portadora; supressão da outra banda lateral.",
+				"Transmissão de uma banda lateral; supressão da outra banda lateral e da portadora.",
+				"As transmissões de voz em banda lateral única têm uma potência média mais elevada do que qualquer outro tipo de modulação.",
+				"A banda lateral única é o único tipo de modulação autorizado a operar nas faixas de radioamador dos 160, 75 e 40 metro"
+			],
+			"numb": 47,
+			"notes": "",
+			"correctIndex": 2
+		},
+		{
+			"numb": 110,
+			"question": "Os receptores de SSB-SC estão associados a que tipo de modulação?",
+			"answers": [
+				"A1A",
+				"A3E",
+				"J3E",
+				"F3E"
+			],
+			"correctIndex": 3,
+			"notes": ""
+		},
+		{
+			"numb": 110,
+			"question": "As válvulas tipo díodo",
+			"answers": [
+				"têm três elementos e podem ser utilizadas para amplificar áudio",
+				"têm dois elementos e podem ser utilizadas como elementos de rectificação",
+				"têm quatro elementos, sendo usadas como amplidicadores de potência",
+				"têm cinco elementos e não têm utilização prática"
+			],
+			"correctIndex": 2,
+			"notes": "0000_00_01p37"
 		}
 	]
 }
