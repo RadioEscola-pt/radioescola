@@ -2291,7 +2291,7 @@
 				"A estação que emitir com a potência mais baixa"
 			],
 			"correctIndex": 2,
-			"notes": "0000_00_01p4"
+			"notes": "0000_00_01p4 Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf'>ADENDA_2013_QNAF</a>"
 		},
 		{
 			"numb": 189,
@@ -5089,6 +5089,19 @@
 			"numb": 40,
 			"notes": "0000_00_01p5 Consulte os documentos:<a target='_blank' href='docs/Rec0506.pdf'>ECC_Recommendation_05_06</a> & <a target='_blank' href='docs/TR6101.pdf'>Recommendation_T/R_61-01</a> ",
 			"correctIndex": 3
+	
+		},
+		{
+			"question": "Define-se potência aparente radiada (p.a.r.)",
+			"answers": [
+				"como o produto da potência entregue à antena pelo seu ganho relativamente ao dipolo de meia onda, numa dada direcção",
+				"como o produto da potência entregue à antena pelo seu ganho relativamente a uma antena isotrópica, numa dada direcção",
+				"como o produto da potência entregue à antena pelo seu ganho relativamente a um dipolo de quarto de onda, numa dada direcção",
+				"como o produto da potência entregue à antena pelo seu ganho relativamente a uma antena logarítmica, numa dada direcção"
+			],
+			"numb": 40,
+			"notes": "0000_00_01p6",
+			"correctIndex": 1
 	
 		}
 	]
