@@ -743,7 +743,7 @@
 				"25 Ohm"
 			],
 			"correctIndex": 2,
-			"notes": "A valor associacao de resistencias em paralelo pode ser calculando dividindo o valor das resistencias pela quantidade delas,logo 10 resistencias de 100 Ohm em paralelo é 100 / 10 = 10 Ohm,atenção que só se pode usar esta formula para resistencias de igual valor."
+			"notes": "0000_00_01p8 O valor associacao de resistencias em paralelo pode ser calculando dividindo o valor das resistencias pela quantidade delas,logo 10 resistencias de 100 Ohm em paralelo é 100 / 10 = 10 Ohm,atenção que só se pode usar esta formula para resistencias de igual valor."
 		},
 		{
 			"numb": 62,
@@ -2686,7 +2686,7 @@
 				"Só podem as estações de uso comum"
 			],
 			"numb": 2,
-			"notes": "val0000_00_01p3",
+			"notes": "0000_00_01p3",
 			"correctIndex": 3
 		},
 		{
@@ -2722,7 +2722,7 @@
 				"1 V"
 			],
 			"numb": 6,
-			"notes": "",
+			"notes": "0000_00_01p7",
 			"correctIndex": 3
 		},
 		{
