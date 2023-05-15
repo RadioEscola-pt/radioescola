@@ -47,7 +47,7 @@
 				"V/h"
 			],
 			"correctIndex": 2,
-			"notes": "A capacidade de uma bateria é dada em A.h "
+			"notes": "A capacidade de uma bateria é dada em A.h (0000_00_02p7)"
 		},
 		{
 			"numb": 5,
@@ -251,7 +251,7 @@
 				"o produto da sua frequência pelo seu comprimento de onda"
 			],
 			"correctIndex": 3,
-			"notes": "0000_00_01p34 O periodo é o inverso da frequencia, ora vejamos, se a frequencia é medida em ciclos por segundo, invertemos e temos o numero de segundos para completar um ciclo ou seja o periodo que é dado em segundos.Logo opção 3."
+			"notes": "(0000_00_01p34 e 0000_00_02p34) O periodo é o inverso da frequencia, ora vejamos, se a frequencia é medida em ciclos por segundo, invertemos e temos o numero de segundos para completar um ciclo ou seja o periodo que é dado em segundos.Logo opção 3."
 		},
 		{
 			"numb": 22,
@@ -323,7 +323,7 @@
 				"metros"
 			],
 			"correctIndex": 3,
-			"notes": "As ondas são medidas em Hertz,independentemente da sua forma.a opção correcta é a 3."
+			"notes": "(0000_00_02p36) As ondas são medidas em Hertz,independentemente da sua forma.a opção correcta é a 3."
 		},
 		{
 			"numb": 28,
@@ -401,13 +401,13 @@
 			"numb": 34,
 			"question": "Em modulação de frequência, a que se dá o nome de desvio de frequência?",
 			"answers": [
-				"À diferença entre o valor máximo de frequência que a onda modulada apresenta devido à modulação e a frequência da portadora",
+				"À diferença entre o valor máximo de frequência que a onda modulada apresenta devido à modulação por um sinal modulante e a frequência da onda portadora",
 				"À diferença entre o valor máximo e o valor mínimo da frequência da onda modulada",
 				"Ao dobro da tolerância de frequência permitida regulamentarmente",
 				"Ao número de kHz que a frequência da portadora se afasta do seu valor nominal devido à falta de estabilidade do oscilador, na ausência de modulação"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": "0000_00_02p39"
 		},
 		{
 			"numb": 35,
@@ -455,7 +455,7 @@
 				"somente a portadora e as duas faixas laterais"
 			],
 			"correctIndex": 4,
-			"notes": "AM nao ssb"
+			"notes": "(0000_00_02p38) AM nao ssb"
 		},
 		{
 			"numb": 39,
@@ -623,7 +623,7 @@
 				"5 W"
 			],
 			"correctIndex": 4,
-			"notes": "10 dB correspondem a uma atenuação de 10 x,assim a saida terá 5 W.Õpção 4."
+			"notes": "(0000_00_02p40) 10 dB correspondem a uma atenuação de 10 x,assim a saida terá 5 W.Õpção 4."
 		},
 		{
 			"numb": 53,
@@ -683,7 +683,7 @@
 				"37,5 Ohm"
 			],
 			"correctIndex": 2,
-			"notes": "Para calcular a resistência Equivalente a resistências em série basta somar os valores das mesmas,assim 12,5+ 12,5 = 25,logo a opção 2 é a correcta."
+			"notes": "Para calcular a resistência Equivalente a resistências em série basta somar os valores das mesmas,assim 12,5+ 12,5 = 25,logo a opção 2 é a correcta. (0000_00_02p8)"
 		},
 		{
 			"numb": 58,
@@ -1523,7 +1523,7 @@
 				"Facilidade na mudança de frequência"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": "0000_00_02p29"
 		},
 		{
 			"numb": 128,
@@ -1631,11 +1631,11 @@
 				"Deve tornar-se mais pequeno quando a frequência aumenta"
 			],
 			"correctIndex": 4,
-			"notes": "0000_00_01p12"
+			"notes": "0000_00_01p12 e 0000_00_02p12"
 		},
 		{
 			"numb": 137,
-			"question": "Diz-se usualmente que uma antena Yagi tem ganho de potência sobre uma antena dipolo para a mesmabanda de frequências porque",
+			"question": "Diz-se usualmente que uma antena Yagi tem ganho de potência sobre uma antena dipolo para a mesma banda de frequências porque",
 			"answers": [
 				"radia globalmente mais potência que o dipolo",
 				"pode ser usada por emissores mais potentes",
@@ -1666,8 +1666,8 @@
 				"2,15",
 				"4,3"
 			],
-			"correctIndex": 2,
-			"notes": ""
+			"correctIndex": 3,
+			"notes": "0000_00_02p16"
 		},
 		{
 			"numb": 140,
@@ -1955,7 +1955,7 @@
 				"Em série-paralelo"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": "0000_00_02p9"
 		},
 		{
 			"numb": 164,
@@ -2123,7 +2123,7 @@
 				"AJUDA"
 			],
 			"correctIndex": 3,
-			"notes": ""
+			"notes": "0000_00_02p3"
 		},
 		{
 			"numb": 178,
@@ -2650,7 +2650,7 @@
 				"Para evitar choques"
 			],
 			"numb": 1,
-			"notes": "0000_00_01p2",
+			"notes": "0000_00_01p2 e 0000_00_02p2",
 			"correctIndex": 2
 		},
 		{
@@ -2674,8 +2674,8 @@
 				"100 W"
 			],
 			"numb": 3,
-			"notes": "",
-			"correctIndex": 3
+			"notes": "0000_00_02p4",
+			"correctIndex": 2
 		},
 		{
 			"question": "Qual das seguintes afirmações é falsa?",
@@ -3046,7 +3046,7 @@
 				"24-24,05 GHz"
 			],
 			"numb": 5,
-			"notes": "",
+			"notes": "0000_00_02p6",
 			"correctIndex": 3
 		},
 		{
@@ -3086,7 +3086,7 @@
 			"correctIndex": 4
 		},
 		{
-			"question": "Qual a melhor maneira de reduzir a possibilidade de causer interferências quando se testa um emissor?",
+			"question": "Qual a melhor maneira de reduzir a possibilidade de causar interferências quando se testa um emissor?",
 			"answers": [
 				"Usar uma pequena antena no interior de um edificio",
 				"Usar uma carga artificial",
@@ -3094,7 +3094,7 @@
 				"Usar uma frequência que não seja usada por repetidores"
 			],
 			"numb": 9,
-			"notes": "",
+			"notes": "0000_00_02p10",
 			"correctIndex": 2
 		},
 		{
@@ -3130,7 +3130,7 @@
 				"Esperar que a situação de interferência passe"
 			],
 			"numb": 12,
-			"notes": "",
+			"notes": "0000_00_02p13",
 			"correctIndex": 1
 		},
 		{
@@ -3190,7 +3190,7 @@
 				"A constante dieléctrica"
 			],
 			"numb": 21,
-			"notes": "",
+			"notes": "0000_00_02p22",
 			"correctIndex": 2
 		},
 		{
@@ -3202,11 +3202,11 @@
 				"Volt"
 			],
 			"numb": 22,
-			"notes": "",
+			"notes": "0000_00_02p23",
 			"correctIndex": 2
 		},
 		{
-			"question": "Quanto é que a potência de um emissor tem que aumentar para que num receptor distante a leitura do indicador de nivél (unidades S) mude de S8 ara S9?",
+			"question": "Quanto é que a potência de um emissor tem que aumentar para que num receptor distante a leitura do indicador de nível (unidades S) mude de S8 ara S9?",
 			"answers": [
 				"Aproximadamente 2 vezes",
 				"Aproximadamente 3 vezes",
@@ -3214,7 +3214,7 @@
 				"Aproximadamente 5 vezes"
 			],
 			"numb": 23,
-			"notes": "",
+			"notes": "0000_00_02p24",
 			"correctIndex": 3
 		},
 		{
@@ -3226,7 +3226,7 @@
 				"Evitar interferências rádio no circuito a alimentar"
 			],
 			"numb": 24,
-			"notes": "",
+			"notes": "0000_00_02p25",
 			"correctIndex": 1
 		},
 		{
@@ -3290,7 +3290,7 @@
 			"correctIndex": 3
 		},
 		{
-			"question": "O simbolo indicado em D, na figura 6 (acima), representa",
+			"question": "O simbolo indicado em D, na figura 6 (acima), representa <img src='images/cat2/diodos_1.jpg'>",
 			"answers": [
 				"Transistor NPN",
 				"Transistor PNP",
@@ -3298,7 +3298,7 @@
 				"Díodo Túnel"
 			],
 			"numb": 31,
-			"notes": "",
+			"notes": "0000_00_02p32 (Consulte <a target='_blank' href='images/cat2/syb_diodos.jpg'>Simbolos de Diodos</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -3521,12 +3521,12 @@
 			"question": "Qual das afirmações está correcta?",
 			"answers": [
 				"Uma fonte eléctrica ideal tem uma resistência interna nula.",
-				"Quando carrego uma fonte eléctrica, a tensão pode baixar ligeiramente relativamente à tensão3em vazio.",
+				"Quando carrego uma fonte eléctrica, a tensão pode baixar ligeiramente relativamente à tensão em vazio.",
 				"A associação de fontes de tensão em série dá origem a um fonte eléctrica em que a tensão é igual à soma das tensões das fontes de tensão associadas.",
 				"As três afirmações são correctas."
 			],
 			"numb": 13,
-			"notes": "",
+			"notes": "0000_00_02p14",
 			"correctIndex": 4
 		},
 		{
@@ -3646,7 +3646,7 @@
 				"É um campo numa dada região do espaço, tendo necessariamente ar, onde se manifesta a acção de fontes de luz coerente."
 			],
 			"numb": 23,
-			"notes": "",
+			"notes": "0000_00_02p21",
 			"correctIndex": 2
 		},
 		{
@@ -3778,7 +3778,7 @@
 				"30 MHz"
 			],
 			"numb": 37,
-			"notes": "",
+			"notes": "0000_00_02p31",
 			"correctIndex": 4
 		},
 		{
@@ -3838,7 +3838,7 @@
 				"90 000 Hz"
 			],
 			"numb": 3,
-			"notes": "",
+			"notes": "0000_00_02p33",
 			"correctIndex": 1
 		},
 		{
@@ -5163,7 +5163,115 @@
 				"têm cinco elementos e não têm utilização prática"
 			],
 			"correctIndex": 2,
-			"notes": "0000_00_01p37"
+			"notes": "0000_00_01p37 e 0000_00_02p37"
+		},
+		{
+			"numb": 110,
+			"question": "Porque é que de uma forma geral os sinais de UHF (trabalham melhor) no interior de edifícios do que os sinais de VHF?",
+			"answers": [
+				"Porque os sinais de VHF atenuam-se mais com a distância",
+				"Porque o menor comprimento de onda dos sinais de UHF faz com que eles se propaguem melhor nos edificios e áreas urbanas",
+				"A frase é incorrecta: os sinais de VHF propagam-se melhor nestas condições do que os de UHF",
+				"Porque as antenas de UHF são mais eficientes do que as de VHF"
+			],
+			"correctIndex": 2,
+			"notes": "0000_00_02p1"
+		},
+		{
+			"numb": 110,
+			"question": "Sempre que um amador de categoria 2 pretenda exercer a actividade temporariamente num país cuja Administração tenha adoptado a Recomendação CEPT ECC/REC (05) 06 (licença CEPT novice)",
+			"answers": [
+				"Poderá utilizar estações nas faixas que utiliza em Portugal",
+				"Sem prejuízo de respeitar as condicionantes expressa na Recomendação referida, deverá respeitar as condicionantes aplicáveis desse país",
+				"Terá que solicitar uma licença a ANACOM",
+				"Terá que solicitar uma licença à CEPT"
+			],
+			"correctIndex": 2,
+			"notes": "0000_00_02p5"
+		},
+		{
+			"numb": 110,
+			"question": "Qual a mais simples combinação de andares que permite a implementação de um receptor super-heterodino",
+			"answers": [
+				"Amplificador de RF, detector e amplificador de áudio",
+				"Amplificador de RF, misturador e amplificador de áudio",
+				"Oscilador de HF, misturador e detector",
+				"Oscilador de HF, detector de produto e amplificador de áudio"
+			],
+			"correctIndex": 3,
+			"notes": "0000_00_02p11"
+		},
+		{
+			"numb": 110,
+			"question": "Para que serve uma carga artificial?",
+			"answers": [
+				"Para podermos emitir com uma maior potência nos ensaios que estamos a realizar",
+				"Para evitar que tenhamos problemas de segurança com a estação devido a sobretensões na rede de alimentação",
+				"Para efectuar ensaios, sem que haja emissão significativa de campos electromagnéticos",
+				"Para evitar que sejamos interferidos"
+			],
+			"correctIndex": 3,
+			"notes": "0000_00_02p15"
+		},
+		{
+			"numb": 110,
+			"question": "Qual é a melhor razão para se utilizar uma fonte de alimentação estabilizada em equipamentos de radiocomunicações",
+			"answers": [
+				"Para proteger os equipamentos de flutuações na tensão",
+				"As fontes de alimentação estabilizadas têm aprovação segundo as normas europeias",
+				"Para não se utilizarem fusíveis",
+				"Estas fontes são mais baratas "
+			],
+			"correctIndex": 1,
+			"notes": "0000_00_02p26"
+		},
+		{
+			"numb": 110,
+			"question": "Uma corrente a passar num condutor cria na sua proximidade",
+			"answers": [
+				"um campo eléctrico",
+				"um campo magnético",
+				"uma corrente eléctrica",
+				"uma região luminosa"
+			],
+			"correctIndex": 2,
+			"notes": "0000_00_02p27"
+		},
+		{
+			"numb": 110,
+			"question": "Qual é a relação de potência entre a saída e a entrada de um amplificador cujo ganho de potência é de 14,1dB?",
+			"answers": [
+				"25,7",
+				"10,1",
+				"5,1",
+				"3,0"
+			],
+			"correctIndex": 1,
+			"notes": "0000_00_02p28"
+		},
+		{
+			"numb": 110,
+			"question": "Se considerarmos um transformador, projectado para o efeito, com o primário ligado à rede eléctrica e apresentando nos terminais do secundário em vazio 12,6 V, qual das afirmações está correcta?",
+			"answers": [
+				"A frequência do sinal do secundário é igual à frequência do primário ",
+				"Se carregado e à medida que a corrente for aumentando é expectável uma ligeira diminuição da tensão aos terminais do secundário",
+				"Por não ser um transformador ideal, será previsível um ligeiro aquecimento",
+				"Todas as afirmações estão correctas"
+			],
+			"correctIndex": 4,
+			"notes": "0000_00_02p30"
+		},
+		{
+			"numb": 110,
+			"question": "Na figura 7, identifique o terminal colector <img src='images/cat2/tran_fig_7.jpg'>",
+			"answers": [
+				"A",
+				"B",
+				"C",
+				"Não há colector"
+			],
+			"correctIndex": 3,
+			"notes": "0000_00_02p35"
 		}
 	]
 }
