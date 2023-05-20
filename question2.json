@@ -255,7 +255,7 @@
 		},
 		{
 			"numb": 22,
-			"question": "Ovalor eficaz de uma onda sinusoidal com 1 Volt de amplitude máxima é:",
+			"question": "O valor eficaz de uma onda sinusoidal com 1 Volt de amplitude máxima é:",
 			"answers": [
 				"0, 707 V",
 				"1, 414 V",
@@ -263,7 +263,7 @@
 				"2 V"
 			],
 			"correctIndex": 1,
-			"notes": "O valor eficaz é dado pelo valor da onda dividido pela raiz quadrada de 2,assim são 1 / sqr(2) = 1 / 1.41 = 0.707 V,opcão 1"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p34</a>) O valor eficaz é dado pelo valor da onda dividido pela raiz quadrada de 2,assim são 1 / sqr(2) = 1 / 1.41 = 0.707 V,opcão 1"
 		},
 		{
 			"numb": 23,
@@ -383,7 +383,7 @@
 				"um desmodulador de 145 kHz"
 			],
 			"correctIndex": 1,
-			"notes": "Devemos usar um oscilador de 2465,ao misturar os sinais,vamos obter a soma das frequencias e a diferença das mesmas,assim obtemos 5075 KHz e 145 KHz,depois podemos usar um filtro para seleccionar apenas a pretendida,assim a resposta correcta é a 1."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p38</a>) Devemos usar um oscilador de 2465,ao misturar os sinais,vamos obter a soma das frequencias e a diferença das mesmas,assim obtemos 5075 KHz e 145 KHz,depois podemos usar um filtro para seleccionar apenas a pretendida,assim a resposta correcta é a 1."
 		},
 		{
 			"numb": 33,
@@ -635,7 +635,7 @@
 				"Um amplificador é tanto mais eficiente quanto maior for o consumo para uma dada potência de saída"
 			],
 			"correctIndex": 3,
-			"notes": "A eficiencia é a relacao entre o consumo e a saida,logo quanto mais eficiente,maior a potencia de saida com o menor sonsumo,logo opção 3 está correcta,"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p40</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p40</a>) A eficiencia é a relacao entre o consumo e a saida,logo quanto mais eficiente,maior a potencia de saida com o menor sonsumo,logo opção 3 está correcta,"
 		},
 		{
 			"numb": 54,
@@ -779,7 +779,7 @@
 				"ao quociente da capacidade maior pela capacidade menor"
 			],
 			"correctIndex": 2,
-			"notes": "0000_00_01p20 É a soma das capacidades.Opção 2. Ceq = C1 + C2 + … +Cn"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p20</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p20</a>) É a soma das capacidades.Opção 2. Ceq = C1 + C2 + … +Cn"
 		},
 		{
 			"numb": 66,
@@ -839,7 +839,7 @@
 				"1 µH = 0,001 H"
 			],
 			"correctIndex": 2,
-			"notes": "Utilizando a imagem seguinte tirada do google: Podemos ver que a única afirmação verdadeira é a 2,1 mH = 0,001 H"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p23</a>) Utilizando a imagem seguinte tirada do google: (Podemos ver que a única afirmação verdadeira é a 2) 1 mH = 0,001 H"
 		},
 		{
 			"numb": 71,
@@ -847,11 +847,11 @@
 			"answers": [
 				"Os transformadores transformam corrente contínua em corrente alternada",
 				"Os transformadores transformam corrente alternada em corrente contínua",
-				"As frequências dos sinais no primário e no secundário dum transformador são iguais",
+				"As frequências das ondas no primário e no secundário dum trasnformador são iguais",
 				"Os transformadores são utilizados fundamentalmente para transformar uma tensão contínua dum dado valor numa tensão contínua de valor mais elevado"
 			],
 			"correctIndex": 3,
-			"notes": "Os transformadores não funcionam em corrente continua.Em corrente continua funcionam como curtos circuitos ou resistências,visto que são fios enrolados a volta de algo.Assim a 1,2 e 4 estão erradas,sobra a única certa que é a 3."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p30</a>) Os transformadores não funcionam em corrente continua.Em corrente continua funcionam como curtos circuitos ou resistências,visto que são fios enrolados a volta de algo.Assim a 1,2 e 4 estão erradas,sobra a única certa que é a 3."
 		},
 		{
 			"numb": 72,
@@ -1127,7 +1127,7 @@
 				"a deixar passar as frequências mais baixas e as frequências mais altas, rejeitando uma dada gama de frequências"
 			],
 			"correctIndex": 4,
-			"notes": "Resposta 4. Serve por exemplo para bloquear estações de rádio muito fortes nas imediações."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p19</a>) Resposta 4. Serve por exemplo para bloquear estações de rádio muito fortes nas imediações."
 		},
 		{
 			"numb": 95,
@@ -1167,7 +1167,7 @@
 		},
 		{
 			"numb": 98,
-			"question": "Uma ponte retificadora efetua",
+			"question": "Uma ponte rectificadora efetua",
 			"answers": [
 				"uma retificação de um oitavo de onda",
 				"uma retificação de um quarto de onda",
@@ -1175,7 +1175,7 @@
 				"uma retificação de onda completa"
 			],
 			"correctIndex": 4,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p25</a>)"
 		},
 		{
 			"numb": 99,
@@ -1260,6 +1260,18 @@
 			],
 			"correctIndex": 3,
 			"notes": "https://www.youtube.com/watch?v=hz_mMLhUinw https://www.youtube.com/watch?v=dk6DdG4vs4Y"
+		},
+		{
+			"numb": 105,
+			"question": "Que sinal ou sinais podem ser encontrados na saída de um modulador balanceado adequadamente ajustado?",
+			"answers": [
+				"Ambas as bandas laterais (superior e inferior)",
+				"Ou a banda lateral superior ou a banda lateral inferior, mas não ambas em simultâneo",
+				"Ambas as bandas laterais (superior e inferior) e a portadora",
+				"O sinal modulante e a portadora não modulada"
+			],
+			"correctIndex": 1,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p17</a>)"
 		},
 		{
 			"numb": 106,
@@ -1527,7 +1539,7 @@
 		},
 		{
 			"numb": 128,
-			"question": "Qual das seguintes emissões utiliza, duma forma geral, menor largura de banda?",
+			"question": "Qual das seguintes emissões utiliza menor largura de banda?",
 			"answers": [
 				"Banda lateral única",
 				"Modulação de frequência",
@@ -1535,7 +1547,7 @@
 				"Modulação de fase"
 			],
 			"correctIndex": 1,
-			"notes": "0000_00_01p29 Banda lateral única. (SSB – Single Side Banda)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p29</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p29</a>) Banda lateral única. (SSB – Single Side Band)"
 		},
 		{
 			"numb": 129,
@@ -1667,7 +1679,7 @@
 				"4,3"
 			],
 			"correctIndex": 3,
-			"notes": "0000_00_02p16"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p16</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p16</a>)"
 		},
 		{
 			"numb": 140,
@@ -1800,6 +1812,18 @@
 			],
 			"correctIndex": 1,
 			"notes": "R=(ZL-ZS)/(ZL+ZS)=>(50-25)/(50-25)=25/75=1/3 </br>VRMS=(1+R)/(1-R)=>(1+(1/3))/(1-(1/3))=2"
+		},
+		{
+			"numb": 150,
+			"question": "Porque é que o cabo coaxial é utilizado com maior frequência que outros tipos de cabos para alimentar antenas nas estações de amador?",
+			"answers": [
+				"Porque é mais fácial de utilizar e não necessita muitos cuidados na sua instalação",
+				"Tem menos perdas que os outros tipos de linhas de transmissão",
+				"Pode trasnportar maior potência do que qualquer outro tipo de linha de transmissão",
+				"É mais barato que qualquer outro tipo de linha de transmissão"
+			],
+			"correctIndex": 1,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p22</a>)"
 		},
 		{
 			"numb": 151,
@@ -2006,6 +2030,18 @@
 			"notes": ""
 		},
 		{
+			"numb": 167,
+			"question": "Como se deve ligar um voltímetro num circuito (no qual se pretende efectuar a medida?",
+			"answers": [
+				"Insicriminadamente",
+				"Em série",
+				"Em paralelo",
+				"Em série-paralelo"
+			],
+			"correctIndex": 3,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p9</a>)"
+		},
+		{
 			"numb": 168,
 			"question": "Porque é desejável que um voltímetro tenha uma elevada impedância de entrada?",
 			"answers": [
@@ -2174,6 +2210,18 @@
 			"notes": ""
 		},
 		{
+			"numb": 181,
+			"question": "Uma emissão fora de faixa",
+			"answers": [
+				"é uma radiação não essencial (unicamente)",
+				"é uma radiação harmónica (unicamente)",
+				"é uma emissão numa frequência ou em frequências fora da largura de faixa necessária, mas na sua vizinhança imediata, resultante do processo de modulação",
+				"é uma emissão numa frequência fora da largura de faixa ocupada (unicamente)"
+			],
+			"correctIndex": 3,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p6</a>"
+		},
+		{
 			"numb": 182,
 			"question": "Qual das faixas tem estatuto primário para o serviço de amador na Região 1?",
 			"answers": [
@@ -2234,18 +2282,6 @@
 			"notes": ""
 		},
 		{
-			"numb": 186,
-			"question": "A 'licença CEPT novice', permite",
-			"answers": [
-				"utilizar estações de amador em todos os países da CEPT",
-				"utilizar estações de amador em todos os países membros da CEPT ou não, cuja Administração tenha adotado a Recomendação CEPT T/R 61-01;",
-				"utilizar estações de amador nos países cuja Administração tenha adotado a Recomendação CEPT ECC/REC/(05)06",
-				"utilizar estações de amador em todos os países da CEPT, nos Estados Unidos e na Austrália"
-			],
-			"correctIndex": 3,
-			"notes": ""
-		},
-		{
 			"numb": 187,
 			"question": "Qual a potência de pico máxima permitida a um amador da categoria 2 que opere a frequência 14260kHz?",
 			"answers": [
@@ -2267,7 +2303,7 @@
 				"A estação que emitir com a potência mais baixa"
 			],
 			"correctIndex": 2,
-			"notes": "0000_00_01p4 Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf'>ADENDA_2013_QNAF</a>"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p4</a>) (<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p4</a>) Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf'>ADENDA_2013_QNAF</a>"
 		},
 		{
 			"numb": 189,
@@ -2398,7 +2434,7 @@
 				"Oscilador de HF, detector de produto e amplificador"
 			],
 			"numb": 199,
-			"notes": "0000_00_01p11",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p11</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_03p11</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -2486,18 +2522,6 @@
 			"correctIndex": 1
 		},
 		{
-			"question": "Quanto é que a potência de um emissor tem que aumentar para que num receptor distante a leitura do indicador de nível (unidades S) mude de S8 para S9?",
-			"answers": [
-				"Aproximadamente 2 vezes",
-				"Aproximadamente 3 vezes",
-				"Aproximadamente 4 vezes",
-				"Aproximadamente 5 vezes"
-			],
-			"numb": 23,
-			"notes": "",
-			"correctIndex": 3
-		},
-		{
 			"question": "Uma fonte de alimentação não comutada com entrada a partir da rede, para alimentar um circuito que trabalha com 12 Volt DC",
 			"answers": [
 				"não precisa de transformador",
@@ -2582,18 +2606,6 @@
 			"correctIndex": 4
 		},
 		{
-			"question": "O valor eficaz de uma onda sinusoidal com 1 Volt de amplitude máxima é",
-			"answers": [
-				"0, 707 V",
-				"1, 414 V",
-				"0 V",
-				"2 V"
-			],
-			"numb": 33,
-			"notes": "",
-			"correctIndex": 1
-		},
-		{
 			"question": "O dispositivo que transforma voz em sinais eléctricos, designa-se por",
 			"answers": [
 				"microfone",
@@ -2618,30 +2630,6 @@
 			"correctIndex": 3
 		},
 		{
-			"question": "Para converter 2610 kHz em 145 kHz é necessário",
-			"answers": [
-				"um oscilador de 2465 kHz",
-				"um transformador de 18/1",
-				"um amplificador sintonizado em 2610 kHz",
-				"um desmodulador de 145 kHz"
-			],
-			"numb": 37,
-			"notes": "",
-			"correctIndex": 1
-		},
-		{
-			"question": "Qual das seguintes frases é verdadeira?",
-			"answers": [
-				"Um amplificador é tanto mais eficiente quanto maior potência conseguir debitar numa carga de 50 Ohm",
-				"Um amplificador é tanto mais eficiente quanto menor for a entrada para um dado sinal de saída",
-				"Um amplificador é tanto mais eficiente quanto menor for o consumo para uma dada potência de saída",
-				"Um amplificador é tanto mais eficiente quanto maior for o consumo para uma dada potência de saída"
-			],
-			"numb": 39,
-			"notes": "",
-			"correctIndex": 3
-		},
-		{
 			"question": "Para que se usa um fusível num circuito eléctrico?",
 			"answers": [
 				"Para mos assegurarmos que a energia chega ao circuito",
@@ -2662,7 +2650,7 @@
 				"Só podem as estações de uso comum"
 			],
 			"numb": 2,
-			"notes": "0000_00_01p3",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p3</a>) (<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p3</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -2734,7 +2722,7 @@
 				"Foram inventadas em 1990"
 			],
 			"numb": 11,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p12</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -2794,20 +2782,8 @@
 				"Discriminador"
 			],
 			"numb": 17,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p18</a>)",
 			"correctIndex": 4
-		},
-		{
-			"question": "O que é o campo eléctrico?",
-			"answers": [
-				"É um campo numa dada região do espaço onde se manifesta a acção de um campo magnético",
-				"É um campo numa dada região do espaço onde se manifesta a acção de cargas eléctricas",
-				"É um campo numa dada região do espaço onde se manifesta a acção do efeito gravitacional",
-				"É um campo numa dada região do espaço, tendo necessariamente ar, onde se manifesta a acção de fontes de luz coerente"
-			],
-			"numb": 20,
-			"notes": "",
-			"correctIndex": 2
 		},
 		{
 			"question": "Para que serve um circuito sintonizador de antena?",
@@ -2866,7 +2842,7 @@
 				"é simples, mas só se aplica aos emissores com baixa potência de saída e com pequena profundidade de modulação."
 			],
 			"numb": 25,
-			"notes": "0000_00_01p26",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p26</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p26</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -2892,18 +2868,6 @@
 			"numb": 28,
 			"notes": "",
 			"correctIndex": 1
-		},
-		{
-			"question": "Qual das seguintes emissões utiliza a menor largura de banda?",
-			"answers": [
-				"de tensão contínua",
-				"de tensão alternada",
-				"de tensão rectificada",
-				"de tensão rectificada em apenas metade do período"
-			],
-			"numb": 29,
-			"notes": "",
-			"correctIndex": 2
 		},
 		{
 			"question": "O comprimento de onda da frequência de 25 MHz é?",
@@ -2938,7 +2902,7 @@
 				"0,000 433 010 Hz"
 			],
 			"numb": 33,
-			"notes": "0000_00_01p33",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p33</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p33</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -3034,7 +2998,7 @@
 				"Utilizar estações de amador em todos os países da CEPT, nos Estados Unidos e na Austrália"
 			],
 			"numb": 4,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p5</a>",
 			"correctIndex": 3
 		},
 		{
@@ -3098,6 +3062,18 @@
 			"correctIndex": 2
 		},
 		{
+			"question": "O que é que poderá ser eficaz na redução de interferências de RF em circuitos de áudio?",
+			"answers": [
+				"Uma bobine de (bypass) ou de desacoplamento",
+				"Um condensador de (bypass) ou de desacoplamento",
+				"Um díodo directamente polarizado",
+				"Um díodo inversamente polarizado"
+			],
+			"numb": 9,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p10</a>)",
+			"correctIndex": 2
+		},
+		{
 			"question": "Que circuito é usado para processar os sinais provenientes do amplificador de RF e do oscilador local e que depois os envia para o filtro de IF num receptor super-heterodino?",
 			"answers": [
 				"Modulador balanceado",
@@ -3130,7 +3106,7 @@
 				"Esperar que a situação de interferência passe"
 			],
 			"numb": 12,
-			"notes": "0000_00_02p13",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p13</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p13</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -3214,7 +3190,7 @@
 				"Aproximadamente 5 vezes"
 			],
 			"numb": 23,
-			"notes": "0000_00_02p24",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p24</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p24</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -3254,7 +3230,7 @@
 			"correctIndex": 4
 		},
 		{
-			"question": "A corrente que circula entre o colector e o emissor de um transistor é 8 mA, e a corrente que circula entre a base e o emissor do mesmo transistor é 400 uA. Qualm é o ganho de corrente apresentado?",
+			"question": "A corrente que circula entre o colector e o emissor de um transistor é 8 mA, e a corrente que circula entre a base e o emissor do mesmo transistor é 400 uA. Qual é o ganho de corrente apresentado?",
 			"answers": [
 				"0,2",
 				"20",
@@ -3262,7 +3238,7 @@
 				"200"
 			],
 			"numb": 27,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p28</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -3298,7 +3274,7 @@
 				"Díodo Túnel"
 			],
 			"numb": 31,
-			"notes": "0000_00_02p32 (Consulte <a target='_blank' href='images/cat2/syb_diodos.jpg'>Simbolos de Diodos</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p32</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p32</a>) (Consulte <a target='_blank' href='images/cat2/syb_diodos.jpg'>Simbolos de Diodos</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -3346,7 +3322,7 @@
 				"6 elementos"
 			],
 			"numb": 36,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p37</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -3430,7 +3406,7 @@
 				"Não se pode saber."
 			],
 			"numb": 3,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p7</a>) o Resultado é a soma de todas as tensões",
 			"correctIndex": 1
 		},
 		{
@@ -3646,7 +3622,7 @@
 				"É um campo numa dada região do espaço, tendo necessariamente ar, onde se manifesta a acção de fontes de luz coerente."
 			],
 			"numb": 23,
-			"notes": "0000_00_02p21",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p21</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p21</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -3682,7 +3658,7 @@
 				"Ampere."
 			],
 			"numb": 27,
-			"notes": "0000_00_01p27",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p27</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p27</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -3754,7 +3730,7 @@
 				"Corrente eléctrica oscilante."
 			],
 			"numb": 34,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p31</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -3866,18 +3842,6 @@
 			"correctIndex": 2
 		},
 		{
-			"question": "O valor eficaz de uma onda sinusoidal com 1 V de amplitude máxima é:",
-			"answers": [
-				"0,707 V",
-				"1,414 V",
-				"0 V",
-				"2 V"
-			],
-			"numb": 7,
-			"notes": "",
-			"correctIndex": 1
-		},
-		{
 			"question": "Exprima em GHz: 9 300 MHz",
 			"answers": [
 				"93 000 GHz",
@@ -3982,7 +3946,7 @@
 				"Numa onda quadrada as harmónicas possuem frequências mais elevadas que a fundamental."
 			],
 			"numb": 17,
-			"notes": "0000_00_01p36",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p36</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p36</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -4186,7 +4150,7 @@
 				"Pode danificar a antena da estação emissora."
 			],
 			"numb": 39,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p39</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -4526,18 +4490,6 @@
 			"correctIndex": 4
 		},
 		{
-			"question": "Qual das seguintes frases é verdadeira?",
-			"answers": [
-				"Um amplificador é tanto mais eficiente quanto maior potência conseguir debitar numa carga de 50 ohms.",
-				"Um amplificador é tanto mais eficiente quanto menor for a entrada para um dado sinal de saída.",
-				"Um amplificador é tanto mais eficiente quanto menor for o consumo para uma dada potência de saída.",
-				"Um amplificador é tanto mais eficiente quanto maior for o consumo para uma dada potência de saída."
-			],
-			"numb": 35,
-			"notes": "0000_00_01p40",
-			"correctIndex": 3
-		},
-		{
 			"question": "Um aumento de potência para o dobro ou a redução da mesma para metade resulta na alteração de quantos dB?",
 			"answers": [
 				"2 dB",
@@ -4870,7 +4822,7 @@
 				"4 resistências de 16 ohms em série."
 			],
 			"numb": 23,
-			"notes": "",
+			"notes": "Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p8</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -5102,7 +5054,7 @@
 				"Nenhuma das respostas está correcta."
 			],
 			"numb": 12,
-			"notes": "0000_00_01p14",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p14</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p14</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -5166,7 +5118,7 @@
 			"notes": "0000_00_01p37 e 0000_00_02p37"
 		},
 		{
-			"numb": 110,
+			"numb": 210,
 			"question": "Porque é que de uma forma geral os sinais de UHF (trabalham melhor) no interior de edifícios do que os sinais de VHF?",
 			"answers": [
 				"Porque os sinais de VHF atenuam-se mais com a distância",
@@ -5175,7 +5127,7 @@
 				"Porque as antenas de UHF são mais eficientes do que as de VHF"
 			],
 			"correctIndex": 2,
-			"notes": "0000_00_02p1"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p1</a>) (<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p1</a>)"
 		},
 		{
 			"numb": 110,
@@ -5191,18 +5143,6 @@
 		},
 		{
 			"numb": 110,
-			"question": "Qual a mais simples combinação de andares que permite a implementação de um receptor super-heterodino",
-			"answers": [
-				"Amplificador de RF, detector e amplificador de áudio",
-				"Amplificador de RF, misturador e amplificador de áudio",
-				"Oscilador de HF, misturador e detector",
-				"Oscilador de HF, detector de produto e amplificador de áudio"
-			],
-			"correctIndex": 3,
-			"notes": "0000_00_02p11"
-		},
-		{
-			"numb": 110,
 			"question": "Para que serve uma carga artificial?",
 			"answers": [
 				"Para podermos emitir com uma maior potência nos ensaios que estamos a realizar",
@@ -5211,7 +5151,7 @@
 				"Para evitar que sejamos interferidos"
 			],
 			"correctIndex": 3,
-			"notes": "0000_00_02p15"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p15</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p15</a>)"
 		},
 		{
 			"numb": 110,
@@ -5271,7 +5211,31 @@
 				"Não há colector"
 			],
 			"correctIndex": 3,
-			"notes": "0000_00_02p35"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p35</a>)"
+		},
+		{
+			"numb": 110,
+			"question": "Que precauções devem ser tomadas quando se prevê a ocorrência de uma trovoada?",
+			"answers": [
+				"Desligar os cabos das antenas da estação e mantê-os afastados dos equipamentos",
+				"Desligar todas as fichas de alimentação das tomadas",
+				"Parar de utilizar a sua estação e ir para outra sala até que a trovoada passe",
+				"Todas as respostas anteriores estão correctas"
+			],
+			"correctIndex": 4,
+			"notes": " Exames:<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p2</a>"
+		},
+		{
+			"numb": 110,
+			"question": "Um transístor NPN pode ser formado por?",
+			"answers": [
+				"uma lâmina delgadissíma de germâneo de tipo P colocada entre duas lâminas relativamente espessas de germâneo de tipo N",
+				"um emissor, uma base mas sem colector",
+				"uma lâmina delgadíssima de germâneo de tipo N colocada entre duas lâminas  relativamente espessas de germâneo de tipo P",
+				"um material emissor de electrões e de protões"
+			],
+			"correctIndex": 1,
+			"notes": " Exames:<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p35</a>"
 		}
 	]
 }
