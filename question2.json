@@ -86,6 +86,30 @@
 			"notes": "Temos de subtrair á voltagem gerada a quebra dada pela resistencia interna, assim, usando a lei de ohm: Vt=V-RI <=> Vt=100-10*0,5 <=> Vt= 95V, Opção 3."
 		},
 		{
+			"question": "Um gerador com a f.e.m. de 100 V e com 0,5 ohms de resistência interna, debita sobre um circuito exterior uma corrente de 10 A. Qual é a tensão dos terminais do gerador?",
+			"answers": [
+				"80 V.",
+				"90 V.",
+				"95 V.",
+				"100 V."
+			],
+			"numb": 10,
+			"notes": "",
+			"correctIndex": 3
+		},
+		{
+			"question": "Um gerador com a f.e.m. de 100 V e com 0,25 Ohm de resistência interna, debita sobre um circuito exterior uma corrente de 40 A. Qual é a tensão aos terminais do gerador?",
+			"answers": [
+				"80 V",
+				"90 V",
+				"95 V",
+				"100 V"
+			],
+			"numb": 13,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p14</a>)",
+			"correctIndex": 2
+		},
+		{
 			"numb": 8,
 			"question": "Qual a força eletromotriz de duas baterias de 12 V ligadas em série?",
 			"answers": [
@@ -215,7 +239,7 @@
 				"Temperatura"
 			],
 			"correctIndex": 4,
-			"notes": "Polarização Amplitude e Frequência são caracteristicas das ondas, logo a resposta certa é a 4, a temperatura."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p31</a>) Polarização Amplitude e Frequência são caracteristicas das ondas, logo a resposta certa é a 4, a temperatura."
 		},
 		{
 			"numb": 19,
@@ -227,7 +251,19 @@
 				"Watt"
 			],
 			"correctIndex": 3,
-			"notes": "Opção 3, Hertz."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p33</a>) Resposta: Opção 3, Hertz"
+		},
+		{
+			"numb": 63,
+			"question": "Qual a unidade de medida da capacidade?",
+			"answers": [
+				"Farad",
+				"Henry",
+				"Hertz",
+				"Volt"
+			],
+			"correctIndex": 1,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p20</a>) A capacidade é medida em Farad,opção 1."
 		},
 		{
 			"numb": 20,
@@ -263,7 +299,7 @@
 				"2 V"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p34</a>) O valor eficaz é dado pelo valor da onda dividido pela raiz quadrada de 2,assim são 1 / sqr(2) = 1 / 1.41 = 0.707 V,opcão 1"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p34</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p34</a>) O valor eficaz é dado pelo valor da onda dividido pela raiz quadrada de 2,assim são 1 / sqr(2) = 1 / 1.41 = 0.707 V,opcão 1"
 		},
 		{
 			"numb": 23,
@@ -383,7 +419,7 @@
 				"um desmodulador de 145 kHz"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p38</a>) Devemos usar um oscilador de 2465,ao misturar os sinais,vamos obter a soma das frequencias e a diferença das mesmas,assim obtemos 5075 KHz e 145 KHz,depois podemos usar um filtro para seleccionar apenas a pretendida,assim a resposta correcta é a 1."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p38</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p38</a>) Devemos usar um oscilador de 2465,ao misturar os sinais,vamos obter a soma das frequencias e a diferença das mesmas,assim obtemos 5075 KHz e 145 KHz,depois podemos usar um filtro para seleccionar apenas a pretendida,assim a resposta correcta é a 1."
 		},
 		{
 			"numb": 33,
@@ -407,7 +443,7 @@
 				"Ao número de kHz que a frequência da portadora se afasta do seu valor nominal devido à falta de estabilidade do oscilador, na ausência de modulação"
 			],
 			"correctIndex": 1,
-			"notes": "0000_00_02p39"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p38</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p39</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p39</a>)"
 		},
 		{
 			"numb": 35,
@@ -626,6 +662,18 @@
 			"notes": "(0000_00_02p40) 10 dB correspondem a uma atenuação de 10 x,assim a saida terá 5 W.Õpção 4."
 		},
 		{
+			"numb": 55,
+			"question": "O sinal na entrada de um amplificador é de 1 V rms e à saída de 10 V rms. Este amplificador tem um ganho de:",
+			"answers": [
+				"3 dB",
+				"6 dB",
+				"10 dB",
+				"20 dB"
+			],
+			"correctIndex": 3,
+			"notes": "Temos um ganho de 10 x assim o valor são 10 dB,para calcular este valor deve se usar a seguinte formula Ganho = 10 * log(v1 / v2) => Ganho = 10 * log(10 / 1) = 10 dB,opção 3."
+		},
+		{
 			"numb": 53,
 			"question": "Qual das seguintes frases é verdadeira?",
 			"answers": [
@@ -635,7 +683,7 @@
 				"Um amplificador é tanto mais eficiente quanto maior for o consumo para uma dada potência de saída"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p40</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p40</a>) A eficiencia é a relacao entre o consumo e a saida,logo quanto mais eficiente,maior a potencia de saida com o menor sonsumo,logo opção 3 está correcta,"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p40</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p40</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p40</a>) A eficiencia é a relacao entre o consumo e a saida,logo quanto mais eficiente,maior a potencia de saida com o menor sonsumo,logo opção 3 está correcta,"
 		},
 		{
 			"numb": 54,
@@ -648,18 +696,6 @@
 			],
 			"correctIndex": 2,
 			"notes": "duplicar ou dividir por 2 resulta numa variação de 3 dB,ora vejamos um exemplo entrada 5 W Saida 10 W Ganho = 10 * log(v1 / v2),Ganho = 10 * log(10 / 5) <= > Ganho = 3 dB."
-		},
-		{
-			"numb": 55,
-			"question": "O sinal na entrada de um amplificador é de 1 V rms e à saída de 10 V rms. Este amplificador tem um ganho de:",
-			"answers": [
-				"3 dB",
-				"6 dB",
-				"10 dB",
-				"20 dB"
-			],
-			"correctIndex": 3,
-			"notes": "Temos um ganho de 10 x assim o valor são 10 dB,para calcular este valor deve se usar a seguinte formula Ganho = 10 * log(v1 / v2) => Ganho = 10 * log(10 / 1) = 10 dB,opção 3."
 		},
 		{
 			"numb": 56,
@@ -683,7 +719,7 @@
 				"37,5 Ohm"
 			],
 			"correctIndex": 2,
-			"notes": "Para calcular a resistência Equivalente a resistências em série basta somar os valores das mesmas,assim 12,5+ 12,5 = 25,logo a opção 2 é a correcta. (0000_00_02p8)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p8</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p8</a>) Para calcular a resistência Equivalente a resistências em série basta somar os valores das mesmas,assim 12,5+ 12,5 = 25,logo a opção 2 é a correcta."
 		},
 		{
 			"numb": 58,
@@ -746,18 +782,6 @@
 			"notes": ""
 		},
 		{
-			"numb": 63,
-			"question": "Qual a unidade de medida da capacidade?",
-			"answers": [
-				"Farad",
-				"Henry",
-				"Hertz",
-				"Volt"
-			],
-			"correctIndex": 1,
-			"notes": "A capacidade é medida em Farad,opção 1."
-		},
-		{
 			"numb": 64,
 			"question": "Qual das igualdades é verdadeira?",
 			"answers": [
@@ -818,6 +842,18 @@
 			"notes": "A unidade de medida de autoindução é o Henry,resposta 2."
 		},
 		{
+			"question": "Qual a unidade de medida do coeficiente de auto-indução?",
+			"answers": [
+				"Farad",
+				"Henry",
+				"Hertz",
+				"Volt"
+			],
+			"numb": 22,
+			"notes": "0000_00_02p23",
+			"correctIndex": 2
+		},
+		{
 			"numb": 69,
 			"question": "Como se comporta uma bobina num circuito de corrente contínua?",
 			"answers": [
@@ -839,7 +875,7 @@
 				"1 µH = 0,001 H"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p23</a>) Utilizando a imagem seguinte tirada do google: (Podemos ver que a única afirmação verdadeira é a 2) 1 mH = 0,001 H"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p23</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p23</a>) Utilizando a imagem seguinte tirada do google: (Podemos ver que a única afirmação verdadeira é a 2) 1 mH = 0,001 H"
 		},
 		{
 			"numb": 71,
@@ -851,7 +887,7 @@
 				"Os transformadores são utilizados fundamentalmente para transformar uma tensão contínua dum dado valor numa tensão contínua de valor mais elevado"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p30</a>) Os transformadores não funcionam em corrente continua.Em corrente continua funcionam como curtos circuitos ou resistências,visto que são fios enrolados a volta de algo.Assim a 1,2 e 4 estão erradas,sobra a única certa que é a 3."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p30</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p30</a>) Os transformadores não funcionam em corrente continua.Em corrente continua funcionam como curtos circuitos ou resistências,visto que são fios enrolados a volta de algo.Assim a 1,2 e 4 estão erradas,sobra a única certa que é a 3."
 		},
 		{
 			"numb": 72,
@@ -863,7 +899,7 @@
 				"de tensão retificada em apenas metade do período"
 			],
 			"correctIndex": 2,
-			"notes": "A resposta certa é a 2,tensão alternada.a retificação não tem nada a ver com os transformadores,apesar de nas fontes de alimentação encontrarmos o retificador após o transformador."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p30</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p30</a>) A resposta certa é a 2,tensão alternada.a retificação não tem nada a ver com os transformadores,apesar de nas fontes de alimentação encontrarmos o retificador após o transformador."
 		},
 		{
 			"numb": 73,
@@ -911,7 +947,7 @@
 				"à tensão de saturação"
 			],
 			"correctIndex": 3,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p32</a>)"
 		},
 		{
 			"numb": 77,
@@ -923,7 +959,7 @@
 				"os fotões"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p32</a>)"
 		},
 		{
 			"numb": 78,
@@ -983,11 +1019,11 @@
 				"um emissor e uma base, podendo ter ou não ter coletor"
 			],
 			"correctIndex": 2,
-			"notes": "A resposta correcta é a 2."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p35</a>) A resposta correcta é a 2."
 		},
 		{
 			"numb": 83,
-			"question": "Na figura, identifique o terminal base<img  src='images/cat2/image-50.png'>",
+			"question": "Na figura 8, identifique o terminal base<img  src='images/cat2/image-50.png'>",
 			"answers": [
 				"A",
 				"B",
@@ -995,7 +1031,7 @@
 				"Não há base"
 			],
 			"correctIndex": 1,
-			"notes": "A base é o terminal A,resposta 1."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p35</a>) A base é o terminal A,resposta 1."
 		},
 		{
 			"numb": 84,
@@ -1082,18 +1118,6 @@
 			"notes": "4 Elementos: Ânodo,Cátodo e duas grades.a resposta certa é a 2."
 		},
 		{
-			"numb": 91,
-			"question": "Porque é que as válvulas têm vindo a perder terreno relativamente aos elementos designados como de estado sólido (por exemplo transístores,na eletrónica em geral ? ",
-			"answers": [
-				"Devido à pouca linearidade das válvulas quando utilizadas em amplificadores de áudio",
-				"Pelo facto dos dispositivos a válvulas serem extremamente perigosos",
-				"Devido ao menor tamanho dos dispositivos de estado sólido",
-				"Todas as respostas estão corretas"
-			],
-			"correctIndex": 3,
-			"notes": "As valvulas são lieneares am amps de audio.os dispositivos a valvulas nao sao necessariamente perigodos,a 3 ª é a verdadeira."
-		},
-		{
 			"numb": 92,
 			"question": "Os amplificadores sintonizados",
 			"answers": [
@@ -1151,7 +1175,7 @@
 				"não provoca qualquer efeito, não sendo adequada se o circuito de carga necessitar de uma tensão contínua"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p25</a>)"
 		},
 		{
 			"numb": 97,
@@ -1211,7 +1235,7 @@
 				"40"
 			],
 			"correctIndex": 2,
-			"notes": "45/1.5=30"
+			"notes": " Resposta 45/1.5=30 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p28</a>)"
 		},
 		{
 			"numb": 102,
@@ -1236,6 +1260,42 @@
 			],
 			"correctIndex": 4,
 			"notes": ""
+		},
+		{
+			"question": "Uma corrente de 20 mA circula entre a base e o emissor de um transístor que apresenta um ganho de 40. Em consequência, entre colector e emissor circula uma corrente de:",
+			"answers": [
+				"0,5 mA",
+				"2 mA",
+				"40 mA",
+				"0,8 A"
+			],
+			"numb": 28,
+			"notes": "",
+			"correctIndex": 1
+		},
+		{
+			"question": "A corrente que circula entre o colector e o emissor de um transistor é 8 mA, e a corrente que circula entre a base e o emissor do mesmo transistor é 400 uA. Qual é o ganho de corrente apresentado?",
+			"answers": [
+				"0,2",
+				"20",
+				"50",
+				"200"
+			],
+			"numb": 27,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p28</a>)",
+			"correctIndex": 2
+		},
+		{
+			"question": "Num transístor a corrente que circula entre o colector e o emissor é de 80 mA. Se entre a base e  o emissor circular uma corrente de 400 µA, qual o seu ganho?",
+			"answers": [
+				"0,2",
+				"20",
+				"50",
+				"200"
+			],
+			"numb": 27,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p28</a>)",
+			"correctIndex": 4
 		},
 		{
 			"numb": 104,
@@ -1343,7 +1403,7 @@
 				"Multiplicador"
 			],
 			"correctIndex": 1,
-			"notes": "0000_00_01p24"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p24</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p24</a>)"
 		},
 		{
 			"numb": 112,
@@ -1439,7 +1499,7 @@
 				"Modulador balanceado"
 			],
 			"correctIndex": 4,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p17</a>)"
 		},
 		{
 			"numb": 120,
@@ -1527,7 +1587,7 @@
 		},
 		{
 			"numb": 127,
-			"question": "Qual é a vantagem de um emissor controlado a cristal?",
+			"question": "Qual é a vantagem de um emissor controlado por cristal?",
 			"answers": [
 				"Frequência de saída estável",
 				"Excelente clareza na modulação",
@@ -1535,7 +1595,7 @@
 				"Facilidade na mudança de frequência"
 			],
 			"correctIndex": 1,
-			"notes": "0000_00_02p29"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p29</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_01p29</a>)"
 		},
 		{
 			"numb": 128,
@@ -1547,7 +1607,7 @@
 				"Modulação de fase"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p29</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p29</a>) Banda lateral única. (SSB – Single Side Band)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p29</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p29</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p29</a>) Banda lateral única. (SSB – Single Side Band)"
 		},
 		{
 			"numb": 129,
@@ -1619,7 +1679,7 @@
 				"É uma antena instalada a bordo de uma aeronave para enviar sinais para a Terra"
 			],
 			"correctIndex": 3,
-			"notes": ""
+			"notes": "(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p12</a>)"
 		},
 		{
 			"numb": 135,
@@ -1658,6 +1718,18 @@
 			"notes": ""
 		},
 		{
+			"question": "Como se designa uma antena que consiste num simples dipolo montado de forma que os elementos são paralelos à superfície da Terra?",
+			"answers": [
+				"Um monopolo cónico",
+				"Uma antena horizontal",
+				"Uma antena vertical",
+				"Uma antena Yagi"
+			],
+			"numb": 200,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p12</a>)",
+			"correctIndex": 2
+		},
+		{
 			"numb": 138,
 			"question": "A potência isotrópica radiada equivalente (p.i.r.e.) emitida por uma antena de 20dBi de ganho (no máximo do seu diagrama de radiação) quando lhe é entregue uma potência de 10 dBW é ",
 			"answers": [
@@ -1679,11 +1751,11 @@
 				"4,3"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p16</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p16</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p16</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p16</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p16</a>)"
 		},
 		{
 			"numb": 140,
-			"question": "A potência aparente radiada (p.a.r.) emitida por uma antena de 10 dBd de ganho (no máximo do seudiagrama de radiação) quando lhe é entregue uma potência de 20 dBW é ",
+			"question": "A potência aparente radiada (p.a.r.) emitida por uma antena de 10 dBd de ganho (no máximo do seudiagrama de radiação) quando lhe é entregue uma potência de 20 dBW é:",
 			"answers": [
 				"200 dBW",
 				"30 dBW",
@@ -1691,7 +1763,7 @@
 				"200 W"
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p16</a>)"
 		},
 		{
 			"numb": 141,
@@ -1727,7 +1799,7 @@
 				"A constante dielétrica"
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p22</a>)"
 		},
 		{
 			"numb": 144,
@@ -1739,7 +1811,19 @@
 				"Num aumento de distorção do sinal"
 			],
 			"correctIndex": 3,
-			"notes": "0000_00_01p22"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p22</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p22</a>)"
+		},
+		{
+			"numb": 144,
+			"question": "Qual deve ser a impedância de um filtro passa-baixo relativamente ao de uma linha de transmissão a que esteja ligado?",
+			"answers": [
+				"Impedância substancialmente mais elevada",
+				"Impedância relativamente idêntica",
+				"Impedância substancialmente inferior",
+				"Dobro da impedância da linha de trasnmissão"
+			],
+			"correctIndex": 2,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p19</a>)"
 		},
 		{
 			"numb": 145,
@@ -1871,7 +1955,7 @@
 				"Deslocarmo-nos uns metros para o lado, pois a perda de sinal pode ser devida a reflexões (multipercurso)"
 			],
 			"correctIndex": 4,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p1</a>)"
 		},
 		{
 			"numb": 155,
@@ -1959,7 +2043,7 @@
 		},
 		{
 			"numb": 162,
-			"question": "Qual das seguintes medições descreve uma linha de transmissão desadaptada? ",
+			"question": "Qual das seguintes medições descreve uma linha de transmissão desadaptada?",
 			"answers": [
 				"Relação de onda estacionária de tensão (VSWR) menor que 1",
 				"Perdas no cabo inferiores maiores que 0,5 dB",
@@ -1967,19 +2051,7 @@
 				"Relação de onda estacionária de tensão (VSWR) maior que 1"
 			],
 			"correctIndex": 4,
-			"notes": ""
-		},
-		{
-			"numb": 163,
-			"question": "Como se deve ligar um amperímetro num circuito em que se pretende efetuar uma medida?",
-			"answers": [
-				"Em série",
-				"Em paralelo",
-				"Indiscriminadamente",
-				"Em série-paralelo"
-			],
-			"correctIndex": 1,
-			"notes": "0000_00_02p9"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p9</a>)"
 		},
 		{
 			"numb": 164,
@@ -2159,7 +2231,7 @@
 				"AJUDA"
 			],
 			"correctIndex": 3,
-			"notes": "0000_00_02p3"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p3</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p3</a>)"
 		},
 		{
 			"numb": 178,
@@ -2195,7 +2267,7 @@
 				"Investigar a situação e resolvê-la ou ajudá-la a resolver se o problema for da instalação de receção"
 			],
 			"correctIndex": 4,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p13</a>)"
 		},
 		{
 			"numb": 181,
@@ -2231,7 +2303,7 @@
 				"5725 - 5830 MHz"
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p6</a>)"
 		},
 		{
 			"numb": 182.1,
@@ -2243,7 +2315,7 @@
 				"24 - 24,05 GHz"
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p4</a>)"
 		},
 		{
 			"numb": 183,
@@ -2255,7 +2327,7 @@
 				"Durante as suas comunicações, as estações de amador devem transmitir o seu indicativo de chamada de acordo com o definido na regulamentação aplicável"
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p6</a>)"
 		},
 		{
 			"numb": 184,
@@ -2279,7 +2351,7 @@
 				"CT7 se estiver a operar numa estação de amador, situada na área geográfica POR"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p5</a>)"
 		},
 		{
 			"numb": 187,
@@ -2326,7 +2398,7 @@
 				"Porque colidem facilmente com árvores e outros obstáculos, a menos que sejam emitidos na vertical para a ionosfera"
 			],
 			"numb":190,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p1</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -2338,7 +2410,7 @@
 				"Uma tensão DC"
 			],
 			"numb": 191,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p2</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -2350,7 +2422,7 @@
 				"Não existem"
 			],
 			"numb": 192,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p3</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -2386,7 +2458,7 @@
 				"quociente da tensão (V) pela corrente (I)"
 			],
 			"numb": 195,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p7</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -2398,19 +2470,7 @@
 				"60 Ohm"
 			],
 			"numb": 196,
-			"notes": "",
-			"correctIndex": 4
-		},
-		{
-			"question": "Qual das seguintes medições descreve uma linha de transmissão desadaptada?",
-			"answers": [
-				"Relação de onda estacionária (VSWR) menor que 1",
-				"Perdas no cabo inferiores maiores que 0,5 dB",
-				"Constante dieléctrica maior que 1",
-				"Relação de onda estacionária (VSWR) maior que 1"
-			],
-			"numb": 197,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p8</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -2422,7 +2482,7 @@
 				"Podem ser criadas no cabo tensões muito elevadas quando a estação de amador emite"
 			],
 			"numb": 198,
-			"notes": "0000_00_01p10",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p10</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p10</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -2434,20 +2494,8 @@
 				"Oscilador de HF, detector de produto e amplificador"
 			],
 			"numb": 199,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p11</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_03p11</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p11</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_03p11</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p11</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p11</a>)",
 			"correctIndex": 3
-		},
-		{
-			"question": "Como se designa uma antena que consiste num simples dipolo montado de forma que os elementos são paralelos à superfície da Terra?",
-			"answers": [
-				"Um monopolo cónico",
-				"Uma antena horizontal",
-				"Uma antena vertical",
-				"Uma antena Yagi"
-			],
-			"numb": 200,
-			"notes": "",
-			"correctIndex": 2
 		},
 		{
 			"question": "Numa comunicação senti-me ofendido pelas palavras que me foram dirigidas por um colega amador. O que é mais correcto fazer?",
@@ -2458,7 +2506,7 @@
 				"Não ligar"
 			],
 			"numb": 12,
-			"notes": "0000_00_01p10",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p13</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p13</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -2470,7 +2518,7 @@
 				"a frequência"
 			],
 			"numb": 13,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p14</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -2482,7 +2530,7 @@
 				"Tem uma resposta mais rápida"
 			],
 			"numb": 14,
-			"notes": "0000_00_01p15",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p15</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p15</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p15</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -2494,7 +2542,7 @@
 				"Maior simplicidade no equipamento de recepção"
 			],
 			"numb": 16,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p17</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -2506,7 +2554,7 @@
 				"a deixar passar as frequências mais baixas e as frequências mais altas, rejeitando uma dada gama de frequências"
 			],
 			"numb": 18,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p19</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -2518,7 +2566,7 @@
 				"A resistência parasita associada a uma bobina está intimamente relacionada com as capacidades parasitas associadas a essa bobina"
 			],
 			"numb": 22,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p23</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -2530,7 +2578,7 @@
 				"tem que ter um circuito de rectificação"
 			],
 			"numb": 24,
-			"notes": "",
+			"notes": "(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p25</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -2542,7 +2590,7 @@
 				"No microfone"
 			],
 			"numb": 25,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p26</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -2554,32 +2602,8 @@
 				"As linhas do campo magnético de um condutor onde flui uma corrente eléctrica, formam círculos concêntricos ao redor do condutor"
 			],
 			"numb": 26,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p27</a>)",
 			"correctIndex": 4
-		},
-		{
-			"question": "Se num amplificador de emissor à massa a corrente no colector for de 45 mA e a corrente na base 1,5 mA, qual é o ganho de corrente em regime contínuo?",
-			"answers": [
-				"43,5",
-				"30",
-				"46,5",
-				"40"
-			],
-			"numb": 27,
-			"notes": "",
-			"correctIndex": 2
-		},
-		{
-			"question": "Qual é a vantagem de um emissor controlado por cristal?",
-			"answers": [
-				"Frequência de saída estável",
-				"Excelente clareza na modulação",
-				"Facilidade na mudança de faixas de frequências",
-				"Facilidade na mudança de frequência"
-			],
-			"numb": 28,
-			"notes": "",
-			"correctIndex": 1
 		},
 		{
 			"question": "Um tranformador, projectado para o efeito, com o primário ligado à rede eléctrica, apresenta nos terminais do secundário em vazio 5,2 V",
@@ -2590,20 +2614,8 @@
 				"de tensão rectificada em apenas metade do período"
 			],
 			"numb": 29,
-			"notes": "0000_00_01p30",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p30</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p30</a>) A resposta certa é a 2,tensão alternada.a retificação não tem nada a ver com os transformadores,apesar de nas fontes de alimentação encontrarmos o retificador após o transformador.",
 			"correctIndex": 2
-		},
-		{
-			"question": "Qual das seguintes características não está associada às ondas electromagnéticas?",
-			"answers": [
-				"Polarização",
-				"Amplitude",
-				"Frequência",
-				"Temperatura"
-			],
-			"numb": 30,
-			"notes": "",
-			"correctIndex": 4
 		},
 		{
 			"question": "O dispositivo que transforma voz em sinais eléctricos, designa-se por",
@@ -2614,7 +2626,7 @@
 				"misturador"
 			],
 			"numb": 35,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p36</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -2626,7 +2638,7 @@
 				"Todas as respostas estão correctas"
 			],
 			"numb": 36,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p37</a>) As valvulas são lineares am amps de audio.os dispositivos a valvulas nao sao necessariamente perigosos,a 3 ª é a verdadeira.",
 			"correctIndex": 3
 		},
 		{
@@ -2638,7 +2650,7 @@
 				"Para evitar choques"
 			],
 			"numb": 1,
-			"notes": "0000_00_01p2 e 0000_00_02p2",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p2</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p2</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p2</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -2710,7 +2722,7 @@
 				"Em série-paralelo"
 			],
 			"numb": 8,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p9</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p9</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -2748,18 +2760,6 @@
 			"numb": 14,
 			"notes": "",
 			"correctIndex": 3
-		},
-		{
-			"question": "A potência aparente radiada (p.a.r.) emitida por uma antena de 10 dBd de ganho (no máximo do seu diagrama de radiação) quando lhe é entregue uma potência de 20 dBW é:",
-			"answers": [
-				"200 dBW",
-				"30 dBW",
-				"30 W",
-				"200 W"
-			],
-			"numb": 15,
-			"notes": "",
-			"correctIndex": 2
 		},
 		{
 			"question": "Num emissor de FM a malha de captura de fase contém obrigatoriamente",
@@ -2842,32 +2842,8 @@
 				"é simples, mas só se aplica aos emissores com baixa potência de saída e com pequena profundidade de modulação."
 			],
 			"numb": 25,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p26</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p26</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p26</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p26</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p26</a>)",
 			"correctIndex": 4
-		},
-		{
-			"question": "Qual das afirmações está correcta?",
-			"answers": [
-				"Uma carga positiva estática produz um campo magnético em que as linhas de força do campo são concêntricas",
-				"Um condutor onde flui uma corrente eléctrica não produz qualquer campo magnético, a menos que esteja imerso numa substância líquida",
-				"As linhas do campo magnético, de um condutor onde flui uma corrente eléctrica, são perpendiculares ao condutor",
-				"As linhas do campo magnético de um condutor onde flui uma corrente eléctrica, formam círculos concêntricos ao redor do condutor"
-			],
-			"numb": 27,
-			"notes": "",
-			"correctIndex": 4
-		},
-		{
-			"question": "Uma corrente de 20 mA circula entre a base e o emissor de um transístor que apresenta um ganho de 40. Em consequência, entre colector e emissor circula uma corrente de:",
-			"answers": [
-				"0,5 mA",
-				"2 mA",
-				"40 mA",
-				"0,8 A"
-			],
-			"numb": 28,
-			"notes": "",
-			"correctIndex": 1
 		},
 		{
 			"question": "O comprimento de onda da frequência de 25 MHz é?",
@@ -2986,7 +2962,7 @@
 				"Respeitando as condicionantes expressas na regulamentação aplicavél"
 			],
 			"numb": 3,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p4</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -3022,7 +2998,7 @@
 				"1,2 Kilo Ohm"
 			],
 			"numb": 6,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p7</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -3086,18 +3062,6 @@
 			"correctIndex": 3
 		},
 		{
-			"question": "Como se designa uma antena que consiste num simples dipolo montado de forma que os elementos são paralelos à superficie da Terra?",
-			"answers": [
-				"Um monopolo cónico",
-				"Uma antena horinzontal",
-				"Uma antena vertical",
-				"Uma antena Yagi"
-			],
-			"numb": 11,
-			"notes": "",
-			"correctIndex": 2
-		},
-		{
 			"question": "Estou a ser interferido por outro amador. O que devo fazer?",
 			"answers": [
 				"Chegar a acordo com o outro amador, no sentido que as interferências não voltem a ocorrer",
@@ -3108,30 +3072,6 @@
 			"numb": 12,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p13</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p13</a>)",
 			"correctIndex": 1
-		},
-		{
-			"question": "Um gerador com a f.e.m. de 100 V e com 0,25 Ohm de resistência interna, debita sobre um circuito exterior uma corrente de 40 A. Qual é a tensão aos terminais do gerador?",
-			"answers": [
-				"80 V",
-				"90 V",
-				"95 V",
-				"100 V"
-			],
-			"numb": 13,
-			"notes": "",
-			"correctIndex": 2
-		},
-		{
-			"question": "Qual a vantagem de um voltimetro digital relativamente a um analógico?",
-			"answers": [
-				"É melhor para medir circuitos num computador",
-				"É melhor para medir circuitos de RF",
-				"Melhora significativamente a precisão na maioria das utilizações",
-				"Tem uma resposta mais rápida"
-			],
-			"numb": 14,
-			"notes": "",
-			"correctIndex": 3
 		},
 		{
 			"question": "Os receptores de FM são associados a que tipo de modulação?",
@@ -3146,6 +3086,30 @@
 			"correctIndex": 4
 		},
 		{
+			"numb": 110,
+			"question": "Os receptores de SSB-SC estão associados a que tipo de modulação?",
+			"answers": [
+				"A1A",
+				"A3E",
+				"J3E",
+				"F3E"
+			],
+			"correctIndex": 3,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p18</a>)"
+		},
+		{
+			"numb": 110,
+			"question": "Os receptores AM estão associados a que tipo de modulação?",
+			"answers": [
+				"A1A",
+				"A3E",
+				"J3E",
+				"F3E"
+			],
+			"correctIndex": 2,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p18</a>)"
+		},
+		{
 			"question": "Nas linhas de força de um campo eléctrico provocadas por uma carga eléctrica",
 			"answers": [
 				"Nunca há intersecção das mesmas",
@@ -3154,7 +3118,7 @@
 				"Todas as respostas anteriores estão correctas"
 			],
 			"numb": 20,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p21</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p21</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -3170,18 +3134,6 @@
 			"correctIndex": 2
 		},
 		{
-			"question": "Qual a unidade de medida do coeficiente de auto-indução?",
-			"answers": [
-				"Farad",
-				"Henry",
-				"Hertz",
-				"Volt"
-			],
-			"numb": 22,
-			"notes": "0000_00_02p23",
-			"correctIndex": 2
-		},
-		{
 			"question": "Quanto é que a potência de um emissor tem que aumentar para que num receptor distante a leitura do indicador de nível (unidades S) mude de S8 ara S9?",
 			"answers": [
 				"Aproximadamente 2 vezes",
@@ -3190,7 +3142,7 @@
 				"Aproximadamente 5 vezes"
 			],
 			"numb": 23,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p24</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p24</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p24</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p24</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p24</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -3216,42 +3168,6 @@
 			"numb": 25,
 			"notes": "",
 			"correctIndex": 3
-		},
-		{
-			"question": "Qual das afirmações está correcta?",
-			"answers": [
-				"Uma carga positiva estática produz um campo magnético em que as linhas de força do campo são concêntricas",
-				"Um condutor onde flui uma corrente eléctrica não produz qualquer campo magnético, a menos que esteja imerso numa substância liquida",
-				"As linhas do campo magnético, de um condutor onde flui uma corrente eléctrica, são perpendiculares ao condutor",
-				"As linhas do campo magnético de um condutor onde aflui uma corrente eléctrica , formam circulos concêntricos ao redor do condutor"
-			],
-			"numb": 26,
-			"notes": "",
-			"correctIndex": 4
-		},
-		{
-			"question": "A corrente que circula entre o colector e o emissor de um transistor é 8 mA, e a corrente que circula entre a base e o emissor do mesmo transistor é 400 uA. Qual é o ganho de corrente apresentado?",
-			"answers": [
-				"0,2",
-				"20",
-				"50",
-				"200"
-			],
-			"numb": 27,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p28</a>)",
-			"correctIndex": 2
-		},
-		{
-			"question": "Um transformador, projectado para o efeito, com o primário ligado à rede eléctrica, apresenta nos terminais do secundário em vazio 5,2 V",
-			"answers": [
-				"De tensão contínua",
-				"De tensão alternada",
-				"De tensão rectificada",
-				"De tensão rectificada em apenas metade do periodo"
-			],
-			"numb": 29,
-			"notes": "",
-			"correctIndex": 2
 		},
 		{
 			"question": "Qual a frequência cujo comprimento de onda é 14,117 metro",
@@ -3446,39 +3362,15 @@
 			"correctIndex": 1
 		},
 		{
-			"question": "A força eléctrica que provoca o movimento de cargas num condutor é:",
+			"question": "Diz-se que existe adaptação quando:",
 			"answers": [
-				"A condutância.",
-				"O campo magnético.",
-				"A força electromotriz.",
-				"A frequência."
+				"a transferência de energia é mínima.",
+				"a transferência de energia é máxima.",
+				"não há transferência de energia.",
+				"a energia é duplicada."
 			],
-			"numb": 9,
-			"notes": "",
-			"correctIndex": 3
-		},
-		{
-			"question": "Um gerador com a f.e.m. de 100 V e com 0,5 ohms de resistência interna, debita sobre um circuito exterior uma corrente de 10 A. Qual é a tensão dos terminais do gerador?",
-			"answers": [
-				"80 V.",
-				"90 V.",
-				"95 V.",
-				"100 V."
-			],
-			"numb": 10,
-			"notes": "",
-			"correctIndex": 3
-		},
-		{
-			"question": "Um gerador com a f.e.m. de 100 V e com 0,25 ohms de resistência interna, debita sobre um circuito exterior uma corrente de 40 A. Qual é a tensão dos terminais do gerador?",
-			"answers": [
-				"80 V",
-				"90 V",
-				"95 V",
-				"100 V"
-			],
-			"numb": 11,
-			"notes": "",
+			"numb": 31,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p40</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -3626,18 +3518,6 @@
 			"correctIndex": 2
 		},
 		{
-			"question": "As linhas de força de um campo eléctrico, provocadas por uma carga eléctrica:",
-			"answers": [
-				"Nunca se intercetam.",
-				"O potencial decresce ao longo e no sentido das linhas de campo.",
-				"Por cada ponto passa só uma linha de campo.",
-				"Todas as respostas anteriores estão correctas."
-			],
-			"numb": 24,
-			"notes": "",
-			"correctIndex": 4
-		},
-		{
 			"question": "Em condições de propagação normais, a intensidade do campo eléctrico:",
 			"answers": [
 				"Cresce com a raiz quadrada da distância.",
@@ -3670,20 +3550,8 @@
 				"a tensões que lhe são aplicadas."
 			],
 			"numb": 28,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p27</a>)",
 			"correctIndex": 2
-		},
-		{
-			"question": "Qual das afirmações está correcta?",
-			"answers": [
-				"Uma carga positiva estática produz um campo magnético em que as linhas de força do campo são concêntricas.",
-				"Um condutor onde flui uma corrente eléctrica não produz qualquer campo magnético, a menos que esteja imerso numa substância líquida.",
-				"As linhas do campo magnético, de um condutor onde flui uma corrente eléctrica, são perpendiculares ao condutor.",
-				"As linhas do campo magnético de um condutor onde flui uma corrente eléctrica, formam círculos concêntricos ao redor do condutor."
-			],
-			"numb": 30,
-			"notes": "",
-			"correctIndex": 4
 		},
 		{
 			"question": "Em que consiste um campo magnético?",
@@ -3766,20 +3634,8 @@
 				"250 000 km/s"
 			],
 			"numb": 38,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p31</a>)",
 			"correctIndex": 1
-		},
-		{
-			"question": "Qual das seguintes características não está associada às ondas electromagnéticas?",
-			"answers": [
-				"Polarização.",
-				"Amplitude.",
-				"Frequência.",
-				"Temperatura."
-			],
-			"numb": 39,
-			"notes": "",
-			"correctIndex": 4
 		},
 		{
 			"question": "Qual o valor da tensão pico-a-pico se um voltímetro AC ler uma tensão eficaz de 65 V numa forma de onda sinusoidal?",
@@ -3818,7 +3674,7 @@
 			"correctIndex": 1
 		},
 		{
-			"question": "59-1 MHz equivale a:",
+			"question": "1 MHz equivale a:",
 			"answers": [
 				"100 000 Hz",
 				"10 000 kHz",
@@ -3826,7 +3682,7 @@
 				"1 000 kHz"
 			],
 			"numb": 4,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p33</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -3850,7 +3706,7 @@
 				"9 300 000 GHz"
 			],
 			"numb": 8,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p34</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -3946,20 +3802,8 @@
 				"Numa onda quadrada as harmónicas possuem frequências mais elevadas que a fundamental."
 			],
 			"numb": 17,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p36</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p36</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p36</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p36</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p36</a>)",
 			"correctIndex": 3
-		},
-		{
-			"question": "O dispositivo que transforma voz em sinais eléctricos designa-se por:",
-			"answers": [
-				"Microfone.",
-				"Amplificador.",
-				"Auscultador.",
-				"Misturador."
-			],
-			"numb": 19,
-			"notes": "",
-			"correctIndex": 1
 		},
 		{
 			"question": "Que tipo de onda é produzido pela voz humana?",
@@ -4018,7 +3862,7 @@
 				"0,45"
 			],
 			"numb": 24,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p39</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -4210,7 +4054,7 @@
 				"a sintonia é pouco selectiva"
 			],
 			"numb": 6,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p39</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -4224,18 +4068,6 @@
 			"numb": 7,
 			"notes": "",
 			"correctIndex": 3
-		},
-		{
-			"question": "Em modulação de frequência, a que se dá o nome de desvio de frequência?",
-			"answers": [
-				"À diferença entre o valor máximo de frequência, que a onda modulada apresenta devido à modulação por um sinal modulante, e a frequência da onda portadora.",
-				"À diferença entre o valor máximo e o valor mínimo da frequência da onda modulada.",
-				"Ao dobro da tolerância de frequência permitida regularmente.",
-				"Ao número de kHz que a frequência da portadora  se afasta do seu valor nominal devido à falta de estabilidade do oscilador, na ausência de modulação."
-			],
-			"numb": 8,
-			"notes": "0000_00_01p39",
-			"correctIndex": 1
 		},
 		{
 			"question": "A largura de faixa necessária:",
@@ -4440,18 +4272,6 @@
 			"numb": 30,
 			"notes": "",
 			"correctIndex": 1
-		},
-		{
-			"question": "Diz-se que existe adaptação quando:",
-			"answers": [
-				"a transferência de energia é mínima.",
-				"a transferência de energia é máxima.",
-				"não há transferência de energia.",
-				"a energia é duplicada."
-			],
-			"numb": 31,
-			"notes": "",
-			"correctIndex": 2
 		},
 		{
 			"question": "Qual a potência associada a um sinal sinusoidal que faz passar uma corrente eficaz de 2 A numa resistência de 10 ohms?",
@@ -4706,18 +4526,6 @@
 			"correctIndex": 3
 		},
 		{
-			"question": "Qual a resistência total de duas resistências de 12,5 ohms / cada, quando ligadas em série?",
-			"answers": [
-				"12,5 ohms",
-				"25 ohms",
-				"50 ohms",
-				"37,5 ohms"
-			],
-			"numb": 14,
-			"notes": "",
-			"correctIndex": 2
-		},
-		{
 			"question": "A associação série de três resistências de 20 ohms cada uma, equivale a uma resistência de",
 			"answers": [
 				"10 ohms",
@@ -4910,18 +4718,6 @@
 			"correctIndex": 2
 		},
 		{
-			"question": "Qual a unidade de medida da capacidade?",
-			"answers": [
-				"Farad.",
-				"Henry.",
-				"hertz.",
-				"V"
-			],
-			"numb": 31,
-			"notes": "",
-			"correctIndex": 1
-		},
-		{
 			"question": "Exprima em microFarad uma capacidade de 470 pF (picoFarad):",
 			"answers": [
 				"0,000 47 µF.",
@@ -4930,7 +4726,7 @@
 				"4 700 µF."
 			],
 			"numb": 32,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p20</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -5015,7 +4811,7 @@
 				"Os amadores da categoria 2 têm direito a licensas CEPT em função dos exames em que tiverem aproveitamento"
 			],
 			"numb": 40,
-			"notes": "0000_00_01p5 Consulte os documentos:<a target='_blank' href='docs/Rec0506.pdf'>ECC_Recommendation_05_06</a> & <a target='_blank' href='docs/TR6101.pdf'>Recommendation_T/R_61-01</a> ",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p5</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p5</a>) Consulte os documentos:<a target='_blank' href='docs/Rec0506.pdf'>ECC_Recommendation_05_06</a> & <a target='_blank' href='docs/TR6101.pdf'>Recommendation_T/R_61-01</a> ",
 			"correctIndex": 3
 	
 		},
@@ -5103,7 +4899,7 @@
 				"F3E"
 			],
 			"correctIndex": 3,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p18</a>)"
 		},
 		{
 			"numb": 110,
@@ -5236,6 +5032,30 @@
 			],
 			"correctIndex": 1,
 			"notes": " Exames:<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p35</a>"
+		},
+		{
+			"numb": 110,
+			"question": "Nas definições do Reglamento das Radiocomunicações, além da definição geral de interferêncas são definidos quantos tipos  específicos de interferências?",
+			"answers": [
+				"Só um: interferência prejudicial",
+				"Quatro: interferência prejudicial, interferência permissível, interferência aceitável e interferência inadmissível",
+				"Dois: interferência prejudicial e interferência inadmissível",
+				"Três: interferência prejudicial, interferência permissível e interferência aceitável"
+			],
+			"correctIndex": 3,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p10</a>)"
+		},
+		{
+			"numb": 110,
+			"question": "Designa-se por efeito termoiónico",
+			"answers": [
+				"a emissão de protõe por um metal próximo do zero absoluto",
+				"a emissão de electrões por uma vareta de teflon aquecida",
+				"a emissão de electrões por um metal aquecido",
+				"a emissão de protões por um metal aquecido"
+			],
+			"correctIndex": 3,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p37</a>)"
 		}
 	]
 }
