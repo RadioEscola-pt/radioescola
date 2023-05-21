@@ -47,7 +47,7 @@
 				"V/h"
 			],
 			"correctIndex": 2,
-			"notes": "A capacidade de uma bateria é dada em A.h (0000_00_02p7)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p7</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p7</a>) A capacidade de uma bateria é dada em A.h"
 		},
 		{
 			"numb": 5,
@@ -83,19 +83,7 @@
 				"100 V"
 			],
 			"correctIndex": 3,
-			"notes": "Temos de subtrair á voltagem gerada a quebra dada pela resistencia interna, assim, usando a lei de ohm: Vt=V-RI <=> Vt=100-10*0,5 <=> Vt= 95V, Opção 3."
-		},
-		{
-			"question": "Um gerador com a f.e.m. de 100 V e com 0,5 ohms de resistência interna, debita sobre um circuito exterior uma corrente de 10 A. Qual é a tensão dos terminais do gerador?",
-			"answers": [
-				"80 V.",
-				"90 V.",
-				"95 V.",
-				"100 V."
-			],
-			"numb": 10,
-			"notes": "",
-			"correctIndex": 3
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p14</a>) Temos de subtrair á voltagem gerada a quebra dada pela resistencia interna, assim, usando a lei de ohm: Vt=V-RI <=> Vt=100-10*0,5 <=> Vt= 95V, Opção 3."
 		},
 		{
 			"question": "Um gerador com a f.e.m. de 100 V e com 0,25 Ohm de resistência interna, debita sobre um circuito exterior uma corrente de 40 A. Qual é a tensão aos terminais do gerador?",
@@ -191,7 +179,7 @@
 				"É um campo, numa dada região do espaço, tendo necessariamente ar, onde se manifesta a ação de fontesde luz coerente"
 			],
 			"correctIndex": 3,
-			"notes": "Opção 3. É criado pelo movimento da carga elétrica num condutor."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p27</a>) Opção 3. É criado pelo movimento da carga elétrica num condutor."
 		},
 		{
 			"numb": 15,
@@ -207,7 +195,7 @@
 		},
 		{
 			"numb": 16,
-			"question": "Qual a frequência cujo comprimento de onda é 14,117 m?",
+			"question": "Qual a frequência cujo comprimento de onda é 14,117 metro?",
 			"answers": [
 				"14, 117 MHz",
 				"28, 234 MHz",
@@ -215,7 +203,7 @@
 				"7, 000 MHz"
 			],
 			"correctIndex": 3,
-			"notes": "Divide - se a velocidade da luz no vazio por 14, 117 e dá o valor que corresponde a 21, 250 MHz.Opção 3."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p31</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p31</a>) Divide - se a velocidade da luz no vazio por 14, 117 e dá o valor que corresponde a 21, 250 MHz.Opção 3."
 		},
 		{
 			"numb": 17,
@@ -263,7 +251,7 @@
 				"Volt"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p20</a>) A capacidade é medida em Farad,opção 1."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p20</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p20</a>) A capacidade é medida em Farad,opção 1."
 		},
 		{
 			"numb": 20,
@@ -299,7 +287,7 @@
 				"2 V"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p34</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p34</a>) O valor eficaz é dado pelo valor da onda dividido pela raiz quadrada de 2,assim são 1 / sqr(2) = 1 / 1.41 = 0.707 V,opcão 1"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p34</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p34</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p33</a>) O valor eficaz é dado pelo valor da onda dividido pela raiz quadrada de 2,assim são 1 / sqr(2) = 1 / 1.41 = 0.707 V,opcão 1"
 		},
 		{
 			"numb": 23,
@@ -444,6 +432,18 @@
 			],
 			"correctIndex": 1,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p38</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p39</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p39</a>)"
+		},
+		{
+			"numb": 34,
+			"question": "O que acontece numa modulação de frequência?",
+			"answers": [
+				"A frequência da portadora varia proporcionalmente com a amplitude instantânea do sinal modulante",
+				"A frequência da portadora varia proporcionalmente com a amplitude e com a frequência do sinal modulante",
+				"A amplitude da portadora varia proporcionalmente com a frequência instantânea do sinal modulante",
+				"A fase da portadora varia proporcionalmente com a frequência do sinal modulante"
+			],
+			"correctIndex": 1,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p29</a>)"
 		},
 		{
 			"numb": 35,
@@ -767,7 +767,19 @@
 				"25 Ohm"
 			],
 			"correctIndex": 2,
-			"notes": "0000_00_01p8 O valor associacao de resistencias em paralelo pode ser calculando dividindo o valor das resistencias pela quantidade delas,logo 10 resistencias de 100 Ohm em paralelo é 100 / 10 = 10 Ohm,atenção que só se pode usar esta formula para resistencias de igual valor."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p8</a>) O valor associacao de resistencias em paralelo pode ser calculando dividindo o valor das resistencias pela quantidade delas,logo 10 resistencias de 100 Ohm em paralelo é 100 / 10 = 10 Ohm,atenção que só se pode usar esta formula para resistencias de igual valor."
+		},
+		{
+			"numb": 61,
+			"question": "A resistência equivalente a uma associação de 100 resistências de 100 Ohm cada uma, em paralelo, é de:",
+			"answers": [
+				"1 Ohm",
+				"10 Ohm",
+				"12,5 Ohm",
+				"25 Ohm"
+			],
+			"correctIndex": 1,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p8</a>) O valor associacao de resistencias em paralelo pode ser calculando dividindo o valor das resistencias pela quantidade delas,logo 100 resistencias de 100 Ohm em paralelo é 100 / 100 = 1 Ohm,atenção que só se pode usar esta formula para resistencias de igual valor."
 		},
 		{
 			"numb": 62,
@@ -850,7 +862,7 @@
 				"Volt"
 			],
 			"numb": 22,
-			"notes": "0000_00_02p23",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p23</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p23</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -947,7 +959,7 @@
 				"à tensão de saturação"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p32</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p32</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p32</a>)"
 		},
 		{
 			"numb": 77,
@@ -1163,7 +1175,7 @@
 				"um filtro rejeita banda"
 			],
 			"correctIndex": 2,
-			"notes": "0000_00_01p19 As harmonicas ocorrem nos multiplos inteiros da fundamental,logo são sempre de frequência superior,assim podemos usar um filtro passa baixo."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p19</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p19</a>) As harmonicas ocorrem nos multiplos inteiros da fundamental, logo são sempre de frequência superior,assim podemos usar um filtro passa baixo."
 		},
 		{
 			"numb": 96,
@@ -1247,7 +1259,7 @@
 				"se uma tensão de audiofrequência aplicada à entrada de um circuito , corresponde uma tensão de radiofrequência na saída do mesmo circuito"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p28</a>)"
 		},
 		{
 			"numb": 103,
@@ -1319,7 +1331,7 @@
 				"Detetor"
 			],
 			"correctIndex": 3,
-			"notes": "https://www.youtube.com/watch?v=hz_mMLhUinw https://www.youtube.com/watch?v=dk6DdG4vs4Y"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p11</a>) https://www.youtube.com/watch?v=hz_mMLhUinw https://www.youtube.com/watch?v=dk6DdG4vs4Y"
 		},
 		{
 			"numb": 105,
@@ -1415,7 +1427,19 @@
 				"Aproximadamente 2 vezes"
 			],
 			"correctIndex": 2,
-			"notes": "https://www.youtube.com/watch?v=0rRs75Kdwq8 1s=3db 3db=2x"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p24</a>) https://www.youtube.com/watch?v=0rRs75Kdwq8 1s=3db 3db=2x"
+		},
+		{
+			"question": "Quanto é que a potência de um emissor tem que aumentar para que num receptor distante a leitura do indicador de nível (unidades S) mude de S8 ara S9?",
+			"answers": [
+				"Aproximadamente 2 vezes",
+				"Aproximadamente 3 vezes",
+				"Aproximadamente 4 vezes",
+				"Aproximadamente 5 vezes"
+			],
+			"numb": 23,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p24</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p24</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p24</a>)",
+			"correctIndex": 3
 		},
 		{
 			"numb": 113,
@@ -1554,12 +1578,12 @@
 			"question": "O que é um “buffer”?",
 			"answers": [
 				"É um circuito que, de uma forma geral, serve de amplificador.",
-				"É um circuito que, de ma forma geral, serve de fonte de alimentação.",
+				"É um circuito que, de uma forma geral, serve de fonte de alimentação.",
 				"É um circuito que, de uma forma geral, serve de isolador.",
 				"É um circuito que, de uma forma geral, serve de filtro."
 			],
 			"correctIndex": 3,
-			"notes": "Um buffer é, de forma geral um circuito que serve de isolador. Resposta 3."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p26</a>) Um buffer é, de forma geral um circuito que serve de isolador. Resposta 3."
 		},
 		{
 			"numb": 125,
@@ -1726,7 +1750,7 @@
 				"Uma antena Yagi"
 			],
 			"numb": 200,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p12</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p12</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p12</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -1739,7 +1763,7 @@
 				"200 W"
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p16</a>)"
 		},
 		{
 			"numb": 139,
@@ -1955,7 +1979,7 @@
 				"Deslocarmo-nos uns metros para o lado, pois a perda de sinal pode ser devida a reflexões (multipercurso)"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p1</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p1</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p1</a>)"
 		},
 		{
 			"numb": 155,
@@ -2054,6 +2078,18 @@
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p9</a>)"
 		},
 		{
+			"numb": 162,
+			"question": "Porque é importante temos um baixo valor de VSWR na alimentação de uma antena por um cabo coaxial?",
+			"answers": [
+				"Para reduzir a possibilidade de interferências na radiodifusao televisiva",
+				"Para possibilitar uma eficiente transferência de energia",
+				"Para prolongar a vida da antena",
+				"Para evitar a despolarização do sinal"
+			],
+			"correctIndex": 2,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p22</a>)"
+		},
+		{
 			"numb": 164,
 			"question": "Pretende-se medir a potência aparente radiada de uma estação numa dada frequência. Que instrumento se deve utilizar?",
 			"answers": [
@@ -2111,7 +2147,7 @@
 				"Em série-paralelo"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p9</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p9</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p9</a>)"
 		},
 		{
 			"numb": 168,
@@ -2201,13 +2237,13 @@
 			"numb": 175,
 			"question": "Quais os fatores que afetam a maior ou menor exposição da população a campos eletromagnéticos perto de uma estação de amador?",
 			"answers": [
-				"Potência emitida",
+				"Frequência e nível da potência emitida",
 				"Distância às antenas",
 				"Diagrama de radiação das antenas",
 				"Todas as respostas anteriores estão corretas"
 			],
 			"correctIndex": 4,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p2</a>)"
 		},
 		{
 			"numb": 176,
@@ -2255,7 +2291,7 @@
 				"Recorrer a instâncias internacionais, no sentido destas entrarem em contacto com à ANACOM"
 			],
 			"correctIndex": 3,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p13</a>)"
 		},
 		{
 			"numb": 180,
@@ -2339,7 +2375,7 @@
 				"Certificado internacional HAREC, nos termos da Recomendação CEPT T/R 61-02"
 			],
 			"correctIndex": 4,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p5</a>)"
 		},
 		{
 			"numb": 185,
@@ -2375,7 +2411,7 @@
 				"A estação que emitir com a potência mais baixa"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p4</a>) (<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p4</a>) Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf'>ADENDA_2013_QNAF</a>"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p4</a>) (<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p4</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p4</a>) Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf'>ADENDA_2013_QNAF</a>"
 		},
 		{
 			"numb": 189,
@@ -2482,7 +2518,7 @@
 				"Podem ser criadas no cabo tensões muito elevadas quando a estação de amador emite"
 			],
 			"numb": 198,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p10</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p10</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p10</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p10</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p10</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -2542,7 +2578,7 @@
 				"Maior simplicidade no equipamento de recepção"
 			],
 			"numb": 16,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p17</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p17</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p17</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -2662,7 +2698,7 @@
 				"Só podem as estações de uso comum"
 			],
 			"numb": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p3</a>) (<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p3</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p3</a>) (<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p3</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p3</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -2736,18 +2772,6 @@
 			"numb": 11,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p12</a>)",
 			"correctIndex": 1
-		},
-		{
-			"question": "Não concordo com determinadas disposições regulamentares aplicáveis aos Serviços de Amador e de Amador por Satélite. O que é correcto fazer?",
-			"answers": [
-				"Não as respeitar",
-				"Incentivar a que outros amadores não as respeitem",
-				"Apresentar fundamentadamente a discordância ao ICP-ANACOM, propondo alterações",
-				"Recorrer a instâncias internacionais, no sentido destas entrarem em contacto com o ICP-ANACOM"
-			],
-			"numb": 12,
-			"notes": "",
-			"correctIndex": 3
 		},
 		{
 			"question": "Que equipamento mede com maior precisão uma dada frequência:",
@@ -2830,7 +2854,7 @@
 				"evitar interferências rádio no circuito a alimentar"
 			],
 			"numb": 24,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p25</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p25</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -3050,18 +3074,6 @@
 			"correctIndex": 2
 		},
 		{
-			"question": "Que circuito é usado para processar os sinais provenientes do amplificador de RF e do oscilador local e que depois os envia para o filtro de IF num receptor super-heterodino?",
-			"answers": [
-				"Modulador balanceado",
-				"Amplificador de IF",
-				"Misturador",
-				"Detector"
-			],
-			"numb": 10,
-			"notes": "",
-			"correctIndex": 3
-		},
-		{
 			"question": "Estou a ser interferido por outro amador. O que devo fazer?",
 			"answers": [
 				"Chegar a acordo com o outro amador, no sentido que as interferências não voltem a ocorrer",
@@ -3074,7 +3086,7 @@
 			"correctIndex": 1
 		},
 		{
-			"question": "Os receptores de FM são associados a que tipo de modulação?",
+			"question": "Os receptores de FM estão associados a que tipo de modulação?",
 			"answers": [
 				"A1A",
 				"A2E",
@@ -3082,7 +3094,7 @@
 				"F3E"
 			],
 			"numb": 17,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p18</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -3132,54 +3144,6 @@
 			"numb": 21,
 			"notes": "0000_00_02p22",
 			"correctIndex": 2
-		},
-		{
-			"question": "Quanto é que a potência de um emissor tem que aumentar para que num receptor distante a leitura do indicador de nível (unidades S) mude de S8 ara S9?",
-			"answers": [
-				"Aproximadamente 2 vezes",
-				"Aproximadamente 3 vezes",
-				"Aproximadamente 4 vezes",
-				"Aproximadamente 5 vezes"
-			],
-			"numb": 23,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p24</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p24</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p24</a>)",
-			"correctIndex": 3
-		},
-		{
-			"question": "É tipico nas fontes de alimentação não comutadas termos um condensador electrolitico de elevada capacidade com o objectivo de",
-			"answers": [
-				"Filtrar o sinal que vem do circuito de rectificação",
-				"Evitar que sinais de muito alta frequência provenientes do circuito a alimentar passem para a rede",
-				"Proteger o circuito a alimentar de sobretensão na rede",
-				"Evitar interferências rádio no circuito a alimentar"
-			],
-			"numb": 24,
-			"notes": "0000_00_02p25",
-			"correctIndex": 1
-		},
-		{
-			"question": "O que é um buffer?",
-			"answers": [
-				"É um circuito que, de uma forma geral, serve de amplificador",
-				"É um circuito que, de uma forma geral, serve de fonte de alimentação",
-				"É um circuito que, de uma forma geral, serve de isolador",
-				"É um circuito que, de uma forma geral, serve de filtro"
-			],
-			"numb": 25,
-			"notes": "",
-			"correctIndex": 3
-		},
-		{
-			"question": "Qual a frequência cujo comprimento de onda é 14,117 metro",
-			"answers": [
-				"14,117 MHz",
-				"28,234 MHz",
-				"21,250 MHz",
-				"7,000 MHz"
-			],
-			"numb": 30,
-			"notes": "0000_00_01p31",
-			"correctIndex": 3
 		},
 		{
 			"question": "O simbolo indicado em D, na figura 6 (acima), representa <img src='images/cat2/diodos_1.jpg'>",
@@ -3502,7 +3466,7 @@
 				"Uma região luminosa."
 			],
 			"numb": 22,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p21</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -3602,18 +3566,6 @@
 			"correctIndex": 4
 		},
 		{
-			"question": "Qual a frequência de uma onda cujo comprimento é 14,117 metro?",
-			"answers": [
-				"14,117 MHz",
-				"28,234 MHz",
-				"21,250 MHz",
-				"7,000 MHz"
-			],
-			"numb": 35,
-			"notes": "",
-			"correctIndex": 3
-		},
-		{
 			"question": "A frequência, cujo comprimento de onda é de 10 metro, é:",
 			"answers": [
 				"3 MHz",
@@ -3682,7 +3634,7 @@
 				"1 000 kHz"
 			],
 			"numb": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p33</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p33</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p34</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -4995,7 +4947,7 @@
 				"Todas as afirmações estão correctas"
 			],
 			"correctIndex": 4,
-			"notes": "0000_00_02p30"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p30</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p30</a>)"
 		},
 		{
 			"numb": 110,
@@ -5008,6 +4960,18 @@
 			],
 			"correctIndex": 3,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p35</a>)"
+		},
+		{
+			"numb": 110,
+			"question": "identifique o símbolo representado na figura 7: <img src='images/cat2/tran_fig_7.jpg'>",
+			"answers": [
+				"díodo",
+				"transistor PNP",
+				"transistor NPN",
+				"díodo Zener"
+			],
+			"correctIndex": 3,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p35</a>)"
 		},
 		{
 			"numb": 110,
@@ -5056,6 +5020,18 @@
 			],
 			"correctIndex": 3,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p37</a>)"
+		},
+		{
+			"numb": 110,
+			"question": "Que grandeza poderá ser calulada com base nas medições efectuadas com um Wattímetro direccional?",
+			"answers": [
+				"Relação de onda estacionária",
+				"Relação frente-costas de uma antena",
+				"Factor de interferência",
+				"Campo electromagnético recebido na antena da nossa estação"
+			],
+			"correctIndex": 1,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p15</a>)"
 		}
 	]
 }
