@@ -359,7 +359,7 @@
 				"misturador"
 			],
 			"correctIndex": 1,
-			"notes": "Microfone,a opção 4 é a correta,já que o amplificador serve para ampliar sinais,o auscultador para converter sinais elétricos em som e o misturador para misturar sinais."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p36</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p36</a>) Microfone,a opção 4 é a correta,já que o amplificador serve para ampliar sinais,o auscultador para converter sinais elétricos em som e o misturador para misturar sinais."
 		},
 		{
 			"numb": 29,
@@ -407,7 +407,7 @@
 				"um desmodulador de 145 kHz"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p38</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p38</a>) Devemos usar um oscilador de 2465,ao misturar os sinais,vamos obter a soma das frequencias e a diferença das mesmas,assim obtemos 5075 KHz e 145 KHz,depois podemos usar um filtro para seleccionar apenas a pretendida,assim a resposta correcta é a 1."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p38</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p38</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p38</a>) Devemos usar um oscilador de 2465,ao misturar os sinais,vamos obter a soma das frequencias e a diferença das mesmas,assim obtemos 5075 KHz e 145 KHz,depois podemos usar um filtro para seleccionar apenas a pretendida,assim a resposta correcta é a 1."
 		},
 		{
 			"numb": 33,
@@ -647,7 +647,7 @@
 				"200 W"
 			],
 			"correctIndex": 3,
-			"notes": "A formula da potencia com a intensidade e resistencia é: P = R * I ^ 2,assim P = 10 * 4 = 40 W,Opção 3"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p40</a>) A formula da potencia com a intensidade e resistencia é: P = R * I ^ 2,assim P = 10 * 4 = 40 W,Opção 3"
 		},
 		{
 			"numb": 52,
@@ -2654,18 +2654,6 @@
 			"correctIndex": 2
 		},
 		{
-			"question": "O dispositivo que transforma voz em sinais eléctricos, designa-se por",
-			"answers": [
-				"microfone",
-				"amplificador",
-				"auscultador",
-				"misturador"
-			],
-			"numb": 35,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p36</a>)",
-			"correctIndex": 1
-		},
-		{
 			"question": "Porque é que as válvulas têm vindo a perder terreno relativamente aos elementos designados como de estado sólido (por exemplo transístores), na electrónica de consumo?",
 			"answers": [
 				"Devido à pouca linearidade das válvulas quando utilizadas em amplificadores de áudio",
@@ -3982,7 +3970,7 @@
 				"Menor separação entre canais adjacentes."
 			],
 			"numb": 3,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p39</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -4224,18 +4212,6 @@
 			"numb": 30,
 			"notes": "",
 			"correctIndex": 1
-		},
-		{
-			"question": "Qual a potência associada a um sinal sinusoidal que faz passar uma corrente eficaz de 2 A numa resistência de 10 ohms?",
-			"answers": [
-				"20 W",
-				"5 W",
-				"40 W",
-				"200 W"
-			],
-			"numb": 32,
-			"notes": "",
-			"correctIndex": 3
 		},
 		{
 			"question": "Um amplificador tem um ganho de 20 dB Qual a potência na sua saída quando a sua entrada é excitada com 1 W? ",
@@ -5019,7 +4995,7 @@
 				"a emissão de protões por um metal aquecido"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p37</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p37</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p37</a>)"
 		},
 		{
 			"numb": 110,
