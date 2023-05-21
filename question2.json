@@ -47,7 +47,7 @@
 				"V/h"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p7</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p7</a>) A capacidade de uma bateria é dada em A.h"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p7</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p7</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p7</a>) A capacidade de uma bateria é dada em A.h"
 		},
 		{
 			"numb": 5,
@@ -227,7 +227,7 @@
 				"Temperatura"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p31</a>) Polarização Amplitude e Frequência são caracteristicas das ondas, logo a resposta certa é a 4, a temperatura."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p31</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p31</a>) Polarização Amplitude e Frequência são caracteristicas das ondas, logo a resposta certa é a 4, a temperatura."
 		},
 		{
 			"numb": 19,
@@ -311,7 +311,7 @@
 				"48 volt"
 			],
 			"correctIndex": 4,
-			"notes": "Temos Vrms = Vpp * SQRT(2),logo Vpp = Vrms / Sqrt(2) => Vpp = 34 / 0,707 = 48 V,Opção 4."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p34</a>) Temos Vrms = Vpp * SQRT(2),logo Vpp = Vrms / Sqrt(2) => Vpp = 34 / 0,707 = 48 V,Opção 4."
 		},
 		{
 			"numb": 25,
@@ -467,7 +467,7 @@
 				"a portadora"
 			],
 			"correctIndex": 4,
-			"notes": "A Portadora,resposta 4."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p38</a>) A Portadora,resposta 4."
 		},
 		{
 			"numb": 37,
@@ -746,6 +746,54 @@
 			"notes": ""
 		},
 		{
+			"question": "Para obter uma resistência equivalente de 1 kohm é necessário associar:",
+			"answers": [
+				"3 resistências de 10 ohms em série.",
+				"4 resistências de 250 ohms em paralelo.",
+				"5 resistências de 200 ohms em série.",
+				"10 resistências de 100 ohms em paralelo."
+			],
+			"numb": 18,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p8</a>)",
+			"correctIndex": 3
+		},
+		{
+			"question": "Para obter uma resistência equivalente de 62,5 ohms é necessário associar:",
+			"answers": [
+				"3 resistências de 10 ohms em série.",
+				"4 resistências de 250 ohms em paralelo.",
+				"5 resistências de 200 ohms em série.",
+				"10 resistências de 10 ohms em paralelo."
+			],
+			"numb": 19,
+			"notes": "",
+			"correctIndex": 2
+		},
+		{
+			"question": "Para se obter uma resistência equivalente de 4 ohms devem ser associadas:",
+			"answers": [
+				"4 resistências de 8 ohms em paralelo.",
+				"4 resistências de 16 ohms em paralelo.",
+				"4 resistências de 8 ohms em série.",
+				"4 resistências de 16 ohms em série."
+			],
+			"numb": 23,
+			"notes": "Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p8</a>)",
+			"correctIndex": 2
+		},
+		{
+			"question": "Para se obter uma resistência equivalente de 8 ohms devem ser associadas:",
+			"answers": [
+				"4 resistências de 32 ohms em paralelo.",
+				"4 resistências de 16 ohms em paralelo.",
+				"4 resistências de 8 ohms em paralelo.",
+				"4 resistências de 16 ohms em série."
+			],
+			"numb": 24,
+			"notes": "",
+			"correctIndex": 1
+		},
+		{
 			"numb": 60,
 			"question": "Se duas resistências de igual valor, estão associadas em paralelo, a resistência total será",
 			"answers": [
@@ -815,7 +863,7 @@
 				"ao quociente da capacidade maior pela capacidade menor"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p20</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p20</a>) É a soma das capacidades.Opção 2. Ceq = C1 + C2 + … +Cn"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p20</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p20</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p15</a>) É a soma das capacidades.Opção 2. Ceq = C1 + C2 + … +Cn"
 		},
 		{
 			"numb": 66,
@@ -875,7 +923,7 @@
 				"Comporta-se como um circuito aberto"
 			],
 			"correctIndex": 3,
-			"notes": "Uma bobina é um fio enrolado sobre algo,esse algo pode ser ar,normalmente encontramos as mesmas num circuito enroladas em ferrite.Para um circuito de corrente continua, a bobina comporta-se como um curto circuito."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p24</a>) Uma bobina é um fio enrolado sobre algo,esse algo pode ser ar,normalmente encontramos as mesmas num circuito enroladas em ferrite.Para um circuito de corrente continua, a bobina comporta-se como um curto circuito."
 		},
 		{
 			"numb": 70,
@@ -923,7 +971,7 @@
 				"Os transformadores só são utilizados em frequências abaixo de 5 Hz"
 			],
 			"correctIndex": 1,
-			"notes": "A resposta verdadeira é a 1. Os transformadores podem ser utilizados abaixo dos 1 kHz,poe exemplo na rede eletrica que funciona a 50 Hz,os transformadores não transformam correntes contínuas.!"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p28</a>) A resposta verdadeira é a 1. Os transformadores podem ser utilizados abaixo dos 1 kHz,poe exemplo na rede eletrica que funciona a 50 Hz,os transformadores não transformam correntes contínuas.!"
 		},
 		{
 			"numb": 74,
@@ -971,7 +1019,7 @@
 				"os fotões"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p32</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p32</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p32</a>)"
 		},
 		{
 			"numb": 78,
@@ -1070,6 +1118,18 @@
 			"notes": "Resposta 4, os transistores podem ser utilizados como amplificadores, comutadores e osciladores."
 		},
 		{
+			"numb": 85,
+			"question": "Um transístor de junção bipolar, a funcionar num circuito lógico em que zonas de funcionamento deverá operar",
+			"answers": [
+				"Na zona ativa e na zona de stauração",
+				"Na zona de corte e na zona de Zener",
+				"Na zona de corte e na zona de saturação",
+				"Na zona inversa de saturação e na zona ativa"
+			],
+			"correctIndex": 3,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p35</a>)"
+		},
+		{
 			"numb": 86,
 			"question": "Duma forma geral considera-se que os transístores de junção bipolar têm as seguintes três zonas de funcionamento:",
 			"answers": [
@@ -1127,7 +1187,7 @@
 				"6 elementos"
 			],
 			"correctIndex": 2,
-			"notes": "4 Elementos: Ânodo,Cátodo e duas grades.a resposta certa é a 2."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p37</a>) 4 Elementos: Ânodo,Cátodo e duas grades.a resposta certa é a 2."
 		},
 		{
 			"numb": 92,
@@ -1163,7 +1223,7 @@
 				"a deixar passar as frequências mais baixas e as frequências mais altas, rejeitando uma dada gama de frequências"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p19</a>) Resposta 4. Serve por exemplo para bloquear estações de rádio muito fortes nas imediações."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p19</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p16</a>) Resposta 4. Serve por exemplo para bloquear estações de rádio muito fortes nas imediações."
 		},
 		{
 			"numb": 95,
@@ -1235,7 +1295,7 @@
 				"Elimina a corrente do “loop” de terra"
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p26</a>)"
 		},
 		{
 			"numb": 101,
@@ -1271,19 +1331,7 @@
 				"0,8 A"
 			],
 			"correctIndex": 4,
-			"notes": ""
-		},
-		{
-			"question": "Uma corrente de 20 mA circula entre a base e o emissor de um transístor que apresenta um ganho de 40. Em consequência, entre colector e emissor circula uma corrente de:",
-			"answers": [
-				"0,5 mA",
-				"2 mA",
-				"40 mA",
-				"0,8 A"
-			],
-			"numb": 28,
-			"notes": "",
-			"correctIndex": 1
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p30</a>)"
 		},
 		{
 			"question": "A corrente que circula entre o colector e o emissor de um transistor é 8 mA, e a corrente que circula entre a base e o emissor do mesmo transistor é 400 uA. Qual é o ganho de corrente apresentado?",
@@ -1367,7 +1415,7 @@
 				"Filtragem"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p9</a>)"
 		},
 		{
 			"numb": 108,
@@ -1382,16 +1430,16 @@
 			"notes": "0000_00_01p18"
 		},
 		{
-			"numb": 109,
-			"question": "Os recetores de FM estão associados a que tipo de modulação?",
+			"question": "Os receptores de FM estão associados a que tipo de modulação?",
 			"answers": [
 				"A1A",
-				"A3E",
+				"A2E",
 				"J3E",
 				"F3E"
 			],
-			"correctIndex": 4,
-			"notes": ""
+			"numb": 17,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p18</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p20</a>)",
+			"correctIndex": 4
 		},
 		{
 			"numb": 110,
@@ -1438,7 +1486,7 @@
 				"Aproximadamente 5 vezes"
 			],
 			"numb": 23,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p24</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p24</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p24</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p24</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p24</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p24</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p25</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -1550,6 +1598,18 @@
 			"notes": ""
 		},
 		{
+			"numb": 121,
+			"question": "O sinal na saída de um emissor de modulação de frequência consiste",
+			"answers": [
+				"na variação da amplitude da portadora em função do sinal que a modula",
+				"na variação da frequência da portadora em função do sinal que a modula",
+				"numa única banda lateral que acompanha o sinal que modula a portadora",
+				"em duas bandas laterais que acompanham o sinal que modula a portadora"
+			],
+			"correctIndex": 2,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p19</a>)"
+		},
+		{
 			"numb": 122,
 			"question": "O sinal na saída de um emissor de modulação de amplitude resulta",
 			"answers": [
@@ -1571,7 +1631,7 @@
 				"No microfone"
 			],
 			"correctIndex": 3,
-			"notes": "Como as espurias são emitidas na saida de RF, o local logico é a seguir ao andar de saída do emissor, logo, resposta 2."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p23</a>) Como as espurias são emitidas na saida de RF, o local logico é a seguir ao andar de saída do emissor, logo, resposta 2."
 		},
 		{
 			"numb": 124,
@@ -1631,7 +1691,7 @@
 				"Modulação de fase"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p29</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p29</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p29</a>) Banda lateral única. (SSB – Single Side Band)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p29</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p29</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p29</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p29</a>) Banda lateral única. (SSB – Single Side Band)"
 		},
 		{
 			"numb": 129,
@@ -1779,7 +1839,7 @@
 		},
 		{
 			"numb": 140,
-			"question": "A potência aparente radiada (p.a.r.) emitida por uma antena de 10 dBd de ganho (no máximo do seudiagrama de radiação) quando lhe é entregue uma potência de 20 dBW é:",
+			"question": "A potência aparente radiada (p.a.r.) emitida por uma antena de 10 dBd de ganho (no máximo do seu diagrama de radiação) quando lhe é entregue uma potência de 20 dBW é:",
 			"answers": [
 				"200 dBW",
 				"30 dBW",
@@ -1787,7 +1847,7 @@
 				"200 W"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p16</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p16</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p17</a>)"
 		},
 		{
 			"numb": 141,
@@ -1931,7 +1991,7 @@
 				"É mais barato que qualquer outro tipo de linha de transmissão"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p22</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p22</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p22</a>)"
 		},
 		{
 			"numb": 151,
@@ -1967,7 +2027,7 @@
 				"Só tem vantagens pois atenua o multipercurso"
 			],
 			"correctIndex": 2,
-			"notes": "0000_00_01p1"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p1</a>)"
 		},
 		{
 			"numb": 154,
@@ -2004,6 +2064,18 @@
 			],
 			"correctIndex": 3,
 			"notes": ""
+		},
+		{
+			"numb": 156,
+			"question": "Embora os sinais de HF de uma estação distante possam ser recebidos via onda ionoaférica (sky wave) numa dada altura, isso pode não ser possível uma hora depois. Isto deve-se a",
+			"answers": [
+				"mudanças na ionosfera",
+				"sombras na terra devido a nuvens",
+				"mudanças na temperatura atmosférica",
+				"absorção do sinal da onda de superfície"
+			],
+			"correctIndex": 1,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p1</a>)"
 		},
 		{
 			"numb": 157,
@@ -2111,7 +2183,7 @@
 				"Permite a determinação da presença de ondas com 'flat-topping'em momentos de pico de modulação"
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": "(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p13</a>) "
 		},
 		{
 			"numb": 166,
@@ -2159,7 +2231,7 @@
 				"Porque apresenta um baixo efeito de carga no circuito a medir"
 			],
 			"correctIndex": 4,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p18</a>)"
 		},
 		{
 			"numb": 169,
@@ -2258,6 +2330,18 @@
 			"notes": ""
 		},
 		{
+			"numb": 176,
+			"question": "De acordo com a regulamentação em vigor, é obrigatória a identificação das estações individuais de amador?",
+			"answers": [
+				"Sim",
+				"Não",
+				"Só se emitirem em HF",
+				"Só se emitirem acima de 1 GHz"
+			],
+			"correctIndex": 2,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p6</a>)"
+		},
+		{
 			"numb": 177,
 			"question": "Qual a expressão usada em telefonia para sinal de perigo?",
 			"answers": [
@@ -2267,7 +2351,7 @@
 				"AJUDA"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p3</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p3</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p3</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p3</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p4</a>)"
 		},
 		{
 			"numb": 178,
@@ -2291,7 +2375,7 @@
 				"Recorrer a instâncias internacionais, no sentido destas entrarem em contacto com à ANACOM"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p13</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p13</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p12</a>)"
 		},
 		{
 			"numb": 180,
@@ -2315,7 +2399,7 @@
 				"é uma emissão numa frequência ou em frequências fora da largura de faixa necessária, mas na sua vizinhança imediata, originada por desaptação de impedância no cabo de alimentação da antena"
 			],
 			"correctIndex": 3,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p2</a>)"
 		},
 		{
 			"numb": 181,
@@ -2375,7 +2459,7 @@
 				"Certificado internacional HAREC, nos termos da Recomendação CEPT T/R 61-02"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p5</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p5</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p3</a>)"
 		},
 		{
 			"numb": 185,
@@ -2546,7 +2630,7 @@
 			"correctIndex": 2
 		},
 		{
-			"question": "A força eléctrica que provoca o movimento de cargas num condutor é",
+			"question": "A força que provoca o movimento de cargas num condutor é",
 			"answers": [
 				"a condutância",
 				"o campo magnético",
@@ -2554,7 +2638,7 @@
 				"a frequência"
 			],
 			"numb": 13,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p14</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p14</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p14</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -2638,7 +2722,7 @@
 				"As linhas do campo magnético de um condutor onde flui uma corrente eléctrica, formam círculos concêntricos ao redor do condutor"
 			],
 			"numb": 26,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p27</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p27</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p27</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -2759,6 +2843,18 @@
 			],
 			"numb": 11,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p12</a>)",
+			"correctIndex": 1
+		},
+		{
+			"question": "Qual é um dos efeitos do aumento do comprimento do (boom) e da adição de directores a uma antena Yagi?",
+			"answers": [
+				"Aumento do ganho",
+				"Aumento do coeficiente de onda estacionária",
+				"Diminuição do peso",
+				"Diminuição da resistência ao vento"
+			],
+			"numb": 11,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p10</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -2918,18 +3014,6 @@
 			"correctIndex": 2
 		},
 		{
-			"question": "Um tétrodo possui",
-			"answers": [
-				"3 elementos",
-				"4 elementos",
-				"5 elementos",
-				"6 elementos"
-			],
-			"numb": 36,
-			"notes": "",
-			"correctIndex": 2
-		},
-		{
 			"question": "Define-se índice de modulação em frequência modulada como a relação entre o",
 			"answers": [
 				"desvio máximo e a mais alta frequência modulante",
@@ -2974,7 +3058,7 @@
 				"Respeitando as condicionantes expressas na regulamentação aplicavél"
 			],
 			"numb": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p4</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p4</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p5</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -3074,18 +3158,6 @@
 			"correctIndex": 1
 		},
 		{
-			"question": "Os receptores de FM estão associados a que tipo de modulação?",
-			"answers": [
-				"A1A",
-				"A2E",
-				"J3E",
-				"F3E"
-			],
-			"numb": 17,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p18</a>)",
-			"correctIndex": 4
-		},
-		{
 			"numb": 110,
 			"question": "Os receptores de SSB-SC estão associados a que tipo de modulação?",
 			"answers": [
@@ -3118,7 +3190,7 @@
 				"Todas as respostas anteriores estão correctas"
 			],
 			"numb": 20,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p21</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p21</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p21</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p21</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p21</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -3322,7 +3394,7 @@
 				"a energia é duplicada."
 			],
 			"numb": 31,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p40</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p40</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p40</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -3746,6 +3818,18 @@
 			"correctIndex": 3
 		},
 		{
+			"question": "Qual das afirmações está incorrecta?",
+			"answers": [
+				"Uma onda quadrada pode ter ou não ter componente contínua.",
+				"A frequência fundamental e as harmónicas estão sempre presentes numa onda quadrada.",
+				"Uma onda quadrada só tem a frequência fundamental, não tendo harmónicas.",
+				"Numa onda quadrada as harmónicas possuem frequências mais elevadas que a fundamental."
+			],
+			"numb": 17,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p36</a>)",
+			"correctIndex": 3
+		},
+		{
 			"question": "Que tipo de onda é produzido pela voz humana?",
 			"answers": [
 				"Sinusoidal.",
@@ -3854,18 +3938,6 @@
 			"correctIndex": 2
 		},
 		{
-			"question": "Numa emissão em AM, a maior parte da potência é usada para transmitir:",
-			"answers": [
-				"a banda lateral inferior.",
-				"a banda lateral superior.",
-				"as duas bandas laterais.",
-				"a portadora."
-			],
-			"numb": 32,
-			"notes": "",
-			"correctIndex": 4
-		},
-		{
 			"question": "Numa emissão em FM:",
 			"answers": [
 				"não há faixas laterais.",
@@ -3910,7 +3982,7 @@
 				"À rectificação de uma onda de audiofrequência."
 			],
 			"numb": 36,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p39</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -4490,30 +4562,6 @@
 			"correctIndex": 3
 		},
 		{
-			"question": "Para obter uma resistência equivalente de 1 kohm é necessário associar:",
-			"answers": [
-				"3 resistências de 10 ohms em série.",
-				"4 resistências de 250 ohms em paralelo.",
-				"5 resistências de 200 ohms em série.",
-				"10 resistências de 100 ohms em paralelo."
-			],
-			"numb": 18,
-			"notes": "",
-			"correctIndex": 3
-		},
-		{
-			"question": "Para obter uma resistência equivalente de 62,5 ohms é necessário associar:",
-			"answers": [
-				"3 resistências de 10 ohms em série.",
-				"4 resistências de 250 ohms em paralelo.",
-				"5 resistências de 200 ohms em série.",
-				"10 resistências de 10 ohms em paralelo."
-			],
-			"numb": 19,
-			"notes": "",
-			"correctIndex": 2
-		},
-		{
 			"question": "Qual a resistência total de duas resistências de 33 ohms quando ligadas em paralelo?",
 			"answers": [
 				"33 ohms",
@@ -4548,30 +4596,6 @@
 			"numb": 22,
 			"notes": "",
 			"correctIndex": 3
-		},
-		{
-			"question": "Para se obter uma resistência equivalente de 4 ohms devem ser associadas:",
-			"answers": [
-				"4 resistências de 8 ohms em paralelo.",
-				"4 resistências de 16 ohms em paralelo.",
-				"4 resistências de 8 ohms em série.",
-				"4 resistências de 16 ohms em série."
-			],
-			"numb": 23,
-			"notes": "Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p8</a>)",
-			"correctIndex": 2
-		},
-		{
-			"question": "Para se obter uma resistência equivalente de 8 ohms devem ser associadas:",
-			"answers": [
-				"4 resistências de 32 ohms em paralelo.",
-				"4 resistências de 16 ohms em paralelo.",
-				"4 resistências de 8 ohms em paralelo.",
-				"4 resistências de 16 ohms em série."
-			],
-			"numb": 24,
-			"notes": "",
-			"correctIndex": 1
 		},
 		{
 			"question": "A resistência equivalente a uma associação de 10 resistências de 100 ohms cada uma, em paralelo, é de:",
@@ -4983,7 +5007,7 @@
 				"Três: interferência prejudicial, interferência permissível e interferência aceitável"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p10</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p10</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p11</a>)"
 		},
 		{
 			"numb": 110,
