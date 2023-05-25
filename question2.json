@@ -35,7 +35,19 @@
 				"1 V"
 			],
 			"correctIndex": 3,
-			"notes": "Usando a lei das malhas,A soma da fonte com as quedas de tensão tem de ser 0,logo: 50 - 25 - 10 - 13 - x = 0 <= > x = 2. Opção 3 "
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p7</a>) Usando a lei das malhas,A soma da fonte com as quedas de tensão tem de ser 0,logo: 50 - 25 - 10 - 13 - x = 0 <= > x = 2. Opção 3 "
+		},
+		{
+			"question": "Quatro resistências estão montadas em série. A tensão aplicada ao conjunto é de 50 V. As quedas de tensão nos bornes das três primeiras são, respectivamente: 25 V; 10,2 V e 12,8 V. Qual é a queda de tensão nos bornes da última resistência?",
+			"answers": [
+				"10 V",
+				"5 V",
+				"2 V",
+				"1 V"
+			],
+			"numb": 6,
+			"notes": "0000_00_01p7",
+			"correctIndex": 3
 		},
 		{
 			"numb": 4,
@@ -196,14 +208,14 @@
 		{
 			"numb": 15,
 			"question": "Qual das afirmações está correta?",
-			"correctIndex": 4,
-			"notes": "Opção 4, formam circulos concentricos em rodor do condutor.Imagem do campo magnético, (obtida na internet)",
 			"answers": [
 				"Uma carga positiva estática produz um campo magnético em que as linhas de força do campo são concêntricas",
 				"Um condutor onde flui uma corrente elétrica não produz qualquer campo magnético, a menos que esteja imerso numa substância líquida",
 				"As linhas do campo magnético, de um condutor onde flui uma corrente elétrica, são perpendiculares ao condutor",
 				"As linhas do campo magnético de um condutor onde flui uma corrente elétrica, formam círculos concêntricos ao redor do condutor"
-			]
+			],
+			"correctIndex": 4,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p27</a>) Opção 4, formam circulos concentricos em redor do condutor.Imagem do campo magnético, (obtida na internet)"
 		},
 		{
 			"numb": 16,
@@ -335,7 +347,7 @@
 				"metros por segundo"
 			],
 			"correctIndex": 2,
-			"notes": "Como já vimos acima, o periodo é o tempo que dura um ciclo, logo como a unica unidade de tempo é segundos, a resposta certa é a 2."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p34</a>) Como já vimos acima, o periodo é o tempo que dura um ciclo, logo como a unica unidade de tempo é segundos, a resposta certa é a 2."
 		},
 		{
 			"numb": 25,
@@ -383,7 +395,7 @@
 				"misturador"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p36</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p36</a>) Microfone,a opção 4 é a correta,já que o amplificador serve para ampliar sinais,o auscultador para converter sinais elétricos em som e o misturador para misturar sinais."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p36</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p36</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p36</a>) Microfone,a opção 4 é a correta,já que o amplificador serve para ampliar sinais,o auscultador para converter sinais elétricos em som e o misturador para misturar sinais."
 		},
 		{
 			"numb": 29,
@@ -563,7 +575,7 @@
 				"há uma maior economia do espectro"
 			],
 			"correctIndex": 4,
-			"notes": "A unica correcta é a 4,há uma maior economia do espectro."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p38</a>) A unica correcta é a 4,há uma maior economia do espectro."
 		},
 		{
 			"numb": 42,
@@ -635,7 +647,7 @@
 				"Inversão de radianos"
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p39</a>)"
 		},
 		{
 			"numb": 48,
@@ -683,7 +695,7 @@
 				"200 W"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p40</a>) A formula da potencia com a intensidade e resistencia é: P = R * I ^ 2,assim P = 10 * 4 = 40 W,Opção 3"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p40</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p40</a>) A formula da potencia com a intensidade e resistencia é: P = R * I ^ 2,assim P = 10 * 4 = 40 W,Opção 3"
 		},
 		{
 			"numb": 52,
@@ -922,7 +934,7 @@
 				"Volt"
 			],
 			"numb": 22,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p23</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p23</a>) A unidade de medida de autoindução é o Henry,resposta 2.",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p23</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p23</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p24</a>)A unidade de medida de autoindução é o Henry,resposta 2.",
 			"correctIndex": 2
 		},
 		{
@@ -995,7 +1007,7 @@
 				"Os transformadores só são utilizados em frequências abaixo de 5 Hz"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p28</a>) A resposta verdadeira é a 1. Os transformadores podem ser utilizados abaixo dos 1 kHz,poe exemplo na rede eletrica que funciona a 50 Hz,os transformadores não transformam correntes contínuas.!"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p28</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p28</a>) A resposta verdadeira é a 1. Os transformadores podem ser utilizados abaixo dos 1 kHz,por exemplo na rede eletrica que funciona a 50 Hz,os transformadores não transformam correntes contínuas.!"
 		},
 		{
 			"numb": 74,
@@ -1079,7 +1091,7 @@
 				"D4 "
 			],
 			"correctIndex": 4,
-			"notes": "O simbolo correcto é o D4,resposta 4."
+			"notes": " (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p32</a>) O simbolo correcto é o D4,resposta 4."
 		},
 		{
 			"numb": 80,
@@ -1199,7 +1211,7 @@
 				"à determinação das tensões e correntes contínuas (DC) que garantem o funcionamento do transístor na zona ativa"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p35</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p35</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p35</a>)"
 		},
 		{
 			"numb": 89,
@@ -1271,7 +1283,7 @@
 				"a deixar passar as frequências mais baixas e as frequências mais altas, rejeitando uma dada gama de frequências"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p19</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p16</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p16</a>) Resposta 4. Serve por exemplo para bloquear estações de rádio muito fortes nas imediações."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p19</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p16</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p16</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p16</a>) Resposta 4. Serve por exemplo para bloquear estações de rádio muito fortes nas imediações."
 		},
 		{
 			"numb": 95,
@@ -1439,7 +1451,7 @@
 				"Detetor"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p11</a>) https://www.youtube.com/watch?v=hz_mMLhUinw https://www.youtube.com/watch?v=dk6DdG4vs4Y"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p11</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p9</a>) https://www.youtube.com/watch?v=hz_mMLhUinw https://www.youtube.com/watch?v=dk6DdG4vs4Y"
 		},
 		{
 			"numb": 105,
@@ -1451,7 +1463,7 @@
 				"O sinal modulante e a portadora não modulada"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p17</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p19</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p17</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p19</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p19</a>)"
 		},
 		{
 			"numb": 106,
@@ -1715,7 +1727,7 @@
 				"No microfone"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p23</a>) Como as espurias são emitidas na saida de RF, o local logico é a seguir ao andar de saída do emissor, logo, resposta 2."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p23</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p23</a>) Como as espurias são emitidas na saida de RF, o local logico é a seguir ao andar de saída do emissor, logo, resposta 2."
 		},
 		{
 			"numb": 124,
@@ -1799,7 +1811,7 @@
 				"deve-se às correntes oscilantes"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p29</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p29</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p29</a>)"
 		},
 		{
 			"numb": 131,
@@ -1931,7 +1943,19 @@
 				"200 W"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p16</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p17</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p16</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p17</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p17</a>)"
+		},
+		{
+			"question": "A potência aparente radiada (p.a.r.) emitida por uma antena de 5 dBd de ganho (no máximo do seu diagrama de radiação) quando lhe é entregue uma potência de 10 dBW é",
+			"answers": [
+				"15 dBW",
+				"50 dBW",
+				"15 W",
+				"50 W"
+			],
+			"numb": 12,
+			"notes": "0000_00_01p16",
+			"correctIndex": 1
 		},
 		{
 			"numb": 141,
@@ -2051,7 +2075,7 @@
 				"que nunca poderão ser utilizadas com linhas de transmissão de sinais de RF"
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p22</a>)"
 		},
 		{
 			"numb": 150,
@@ -2087,7 +2111,7 @@
 				"é cerca de metade da potência que lhe é transmitida"
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p1</a>)"
 		},
 		{
 			"numb": 152,
@@ -2279,7 +2303,7 @@
 				"Permite a determinação da presença de ondas com 'flat-topping'em momentos de pico de modulação"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p13</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p13</a>) "
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p13</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p13</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p13</a>)"
 		},
 		{
 			"numb": 166,
@@ -2303,7 +2327,7 @@
 				"Reflectómetro"
 			],
 			"correctIndex": 3,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p18</a>)"
 		},
 		{
 			"numb": 167,
@@ -2363,7 +2387,7 @@
 				"Em nenhum dos sítios referidos nas três hipóteses anteriores"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p11</a>)"
 		},
 		{
 			"numb": 172,
@@ -2411,7 +2435,7 @@
 				"Todas as respostas anteriores estão corretas"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p2</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p2</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p6</a>)"
 		},
 		{
 			"numb": 176,
@@ -2471,7 +2495,7 @@
 				"CR0"
 			],
 			"correctIndex": 4,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p4</a>)"
 		},
 		{
 			"numb": 179,
@@ -2531,7 +2555,7 @@
 				"5725 - 5830 MHz"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p6</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p6</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p2</a>)"
 		},
 		{
 			"numb": 182.1,
@@ -2611,11 +2635,11 @@
 			"answers": [
 				"Um amador da categoria 2 poderá utilizar estações de outro amador de acordo com os privilégios da categoria 2",
 				"Um amador da categoria 2 só pode usar a sua estação em modo de receção",
-				"Um amador da categoria 2 poderá utilizar a estação de outro amador de acordo com os privilégios que estedetém",
+				"Um amador da categoria 2 poderá utilizar a estação de outro amador de acordo com os privilégios que este detém",
 				"Para utilizar uma estação do serviço de amador um amador da categoria 2 precisa de uma licença de estação"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p5</a>)"
 		},
 		{
 			"question": "Porque é que os sinais de VHF e UHF não se propagam a longa distância?",
@@ -2698,7 +2722,7 @@
 				"60 Ohm"
 			],
 			"numb": 196,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p8</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p8</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p8</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -2734,7 +2758,7 @@
 				"Não ligar"
 			],
 			"numb": 12,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p13</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p13</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p13</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p13</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p12</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -2746,7 +2770,7 @@
 				"a frequência"
 			],
 			"numb": 13,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p14</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p14</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p14</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p14</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p14</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -2854,7 +2878,7 @@
 				"Todas as respostas estão correctas"
 			],
 			"numb": 36,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p37</a>) As valvulas são lineares am amps de audio.os dispositivos a valvulas nao sao necessariamente perigosos,a 3 ª é a verdadeira.",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p37</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p37</a>) As valvulas são lineares am amps de audio.os dispositivos a valvulas nao sao necessariamente perigosos,a 3 ª é a verdadeira.",
 			"correctIndex": 3
 		},
 		{
@@ -2906,18 +2930,6 @@
 			"correctIndex": 2
 		},
 		{
-			"question": "Quatro resistências estão montadas em série. A tensão aplicada ao conjunto é de 50 V. As quedas de tensão nos bornes das três primeiras são, respectivamente: 25 V; 10,2 V e 12,8 V. Qual é a queda de tensão nos bornes da última resistência?",
-			"answers": [
-				"10 V",
-				"5 V",
-				"2 V",
-				"1 V"
-			],
-			"numb": 6,
-			"notes": "0000_00_01p7",
-			"correctIndex": 3
-		},
-		{
 			"question": "Se duas resistências de igual valor, estão associadas em paralelo, a resistência total será",
 			"answers": [
 				"de igual valor",
@@ -2954,6 +2966,18 @@
 			"correctIndex": 1
 		},
 		{
+			"question": "O refletor e o(s) diretor(es) de uma antena Yagi designam-se por",
+			"answers": [
+				"osciladores",
+				"(stubs) de sintonia",
+				"elementos parasitas",
+				"unidades de adaptação"
+			],
+			"numb": 11,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p10</a>)",
+			"correctIndex": 3
+		},
+		{
 			"question": "Qual é um dos efeitos do aumento do comprimento do (boom) e da adição de directores a uma antena Yagi?",
 			"answers": [
 				"Aumento do ganho",
@@ -2964,18 +2988,6 @@
 			"numb": 11,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p10</a>)",
 			"correctIndex": 1
-		},
-		{
-			"question": "Que equipamento mede com maior precisão uma dada frequência:",
-			"answers": [
-				"Wave meter",
-				"Voltímetro",
-				"Frequencímetro",
-				"Reflectómetro"
-			],
-			"numb": 14,
-			"notes": "",
-			"correctIndex": 3
 		},
 		{
 			"question": "Num emissor de FM a malha de captura de fase contém obrigatoriamente",
@@ -3034,7 +3046,7 @@
 				"Numa ponte de díodos"
 			],
 			"numb": 23,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p25</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -3046,7 +3058,7 @@
 				"evitar interferências rádio no circuito a alimentar"
 			],
 			"numb": 24,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p25</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p25</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p26</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p25</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p25</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p26</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p26</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -3082,7 +3094,7 @@
 				"0,000 433 010 Hz"
 			],
 			"numb": 33,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p33</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p33</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p33</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p33</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p33</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -3287,7 +3299,7 @@
 				"F3E"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p18</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p18</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p20</a>)"
 		},
 		{
 			"numb": 110,
@@ -3343,7 +3355,7 @@
 				"O dobro da sua frequência",
 				"Metade da sua frequência",
 				"O inverso da sua frequência",
-				"O produto da sua frequ~encia pelo seu comprimento de onda"
+				"O produto da sua frequência pelo seu comprimento de onda"
 			],
 			"numb": 32,
 			"notes": "",
@@ -3658,7 +3670,7 @@
 				"É um campo numa dada região do espaço, tendo necessariamente ar, onde se manifesta a acção de fontes de luz coerente."
 			],
 			"numb": 23,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p21</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p21</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p21</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p21</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p21</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -3742,7 +3754,7 @@
 				"Corrente eléctrica oscilante."
 			],
 			"numb": 34,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p31</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p31</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p31</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -4250,18 +4262,6 @@
 			"correctIndex": 4
 		},
 		{
-			"question": "Como se designa o processo de alteração do ângulo de fase de uma onda de RF para transmissão de informação?",
-			"answers": [
-				"Convolução de fase.",
-				"Modulação de fase.",
-				"Convolução de ângulo.",
-				"Inversão de radianos."
-			],
-			"numb": 16,
-			"notes": "",
-			"correctIndex": 2
-		},
-		{
 			"question": "Como se designa o processo de alteração da frequência de uma onda de RF para transmissão de informação?",
 			"answers": [
 				"Convolução de frequência.",
@@ -4658,18 +4658,6 @@
 			"correctIndex": 3
 		},
 		{
-			"question": "A associação série de três resistências de 20 ohms cada uma, equivale a uma resistência de",
-			"answers": [
-				"10 ohms",
-				"15 ohms",
-				"20 ohms",
-				"60 ohms"
-			],
-			"numb": 15,
-			"notes": "",
-			"correctIndex": 4
-		},
-		{
 			"question": "A associação que resulta numa resistência equivalente de 200 ohms é a série das seguintes resistências:",
 			"answers": [
 				"100 ohms, 80 ohms, 20 ohms.",
@@ -4810,7 +4798,7 @@
 				"4 700 µF."
 			],
 			"numb": 32,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p20</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p20</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p15</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -4895,7 +4883,7 @@
 				"Os amadores da categoria 2 têm direito a licensas CEPT em função dos exames em que tiverem aproveitamento"
 			],
 			"numb": 40,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p5</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p5</a>) Consulte os documentos:<a target='_blank' href='docs/Rec0506.pdf'>ECC_Recommendation_05_06</a> & <a target='_blank' href='docs/TR6101.pdf'>Recommendation_T/R_61-01</a> ",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p5</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p5</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p3</a>) Consulte os documentos:<a target='_blank' href='docs/Rec0506.pdf'>ECC_Recommendation_05_06</a> & <a target='_blank' href='docs/TR6101.pdf'>Recommendation_T/R_61-01</a> ",
 			"correctIndex": 3
 	
 		},
@@ -4938,18 +4926,6 @@
 			"correctIndex": 3
 		},
 		{
-			"question": "A potência aparente radiada (p.a.r.) emitida por uma antena de 5 dBd de ganho (no máximo do seu diagrama de radiação) quando lhe é entregue uma potência de 10 dBW é",
-			"answers": [
-				"15 dBW",
-				"50 dBW",
-				"15 W",
-				"50 W"
-			],
-			"numb": 12,
-			"notes": "0000_00_01p16",
-			"correctIndex": 1
-		},
-		{
 			"question": "Qual é a relação de potência entre a saída e a entrada de um amplificador cujo ganho de potência é de 14,1 dB?",
 			"answers": [
 				"25,7",
@@ -4958,7 +4934,7 @@
 				"3,0"
 			],
 			"numb": 12,
-			"notes": "0000_00_01p28",
+			"notes": "Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p28</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p28</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p30</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -4972,18 +4948,6 @@
 			"numb": 47,
 			"notes": "",
 			"correctIndex": 2
-		},
-		{
-			"numb": 110,
-			"question": "Os receptores de SSB-SC estão associados a que tipo de modulação?",
-			"answers": [
-				"A1A",
-				"A3E",
-				"J3E",
-				"F3E"
-			],
-			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p18</a>)"
 		},
 		{
 			"numb": 110,
@@ -5068,18 +5032,6 @@
 			],
 			"correctIndex": 2,
 			"notes": "0000_00_02p27"
-		},
-		{
-			"numb": 110,
-			"question": "Qual é a relação de potência entre a saída e a entrada de um amplificador cujo ganho de potência é de 14,1dB?",
-			"answers": [
-				"25,7",
-				"10,1",
-				"5,1",
-				"3,0"
-			],
-			"correctIndex": 1,
-			"notes": "0000_00_02p28"
 		},
 		{
 			"numb": 110,
