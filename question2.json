@@ -1,6 +1,5 @@
 {
-	"questions": [
-		{
+	"questions": [{
 			"numb": 1,
 			"question": "Por um circuito resistivo de 120 Ohm circula uma corrente de 0,15 A, quando alimentado por uma tensão de 18 V. Se for alimentado por uma tensão de 36 V, a corrente :",
 			"answers": [
@@ -10,7 +9,7 @@
 				"Aumenta para 4 vezes o valor"
 			],
 			"correctIndex": 2,
-			"TEMA":"ohm",
+			"TEMA": "ohm",
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p7</a>) Lei de ohm, V=RI, 36=120*I, I=36/120, I=0.3A, logo resposta 2."
 		},
 		{
@@ -1083,7 +1082,7 @@
 		},
 		{
 			"numb": 78,
-			"question": "No díodo apresentado na figura, o valor da máxima tensão inversa é aproximadamente<img   src='image-48.png'>",
+			"question": "No díodo apresentado na figura, o valor da máxima tensão inversa é aproximadamente<img   src='images/cat2/image-48.png'>",
 			"answers": [
 				"0V",
 				"70V",
@@ -2709,7 +2708,7 @@
 				"Porque, de uma forma geral, os sinais nestas gamas de frequências não se reflectem na ionosfera",
 				"Porque colidem facilmente com árvores e outros obstáculos, a menos que sejam emitidos na vertical para a ionosfera"
 			],
-			"numb":190,
+			"numb": 190,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p1</a>)",
 			"correctIndex": 3
 		},
@@ -3338,17 +3337,17 @@
 			"correctIndex": 1
 		},
 		{
-            "numb": 56,
-            "question": "Tenho sido interferido de forma intermitente. Mas após aturada investigação, com a ajuda de outros colegas amadores, parece-me que a fonte interferente estará no prédio defronte de mim, onde não existe nenhuma estação de amador. O que é mais correto fazer?",
-            "answers": [
-                "Aumentar a potência de emissão nas faixas onde sou interferido, para melhorar a relação sinal/ruído",
-                "Comunicar a situação à ANACOM, fornecendo toda a informação que tiver e solicitando a resolução do problema de acordo com os procedimentos definidos",
-                "Esperar que a interferência passe",
-                "Queixar-me à Junta de Freguesia"
-            ],
-            "correctIndex": 2,
-            "notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p12</a>)"
-        },
+			"numb": 56,
+			"question": "Tenho sido interferido de forma intermitente. Mas após aturada investigação, com a ajuda de outros colegas amadores, parece-me que a fonte interferente estará no prédio defronte de mim, onde não existe nenhuma estação de amador. O que é mais correto fazer?",
+			"answers": [
+				"Aumentar a potência de emissão nas faixas onde sou interferido, para melhorar a relação sinal/ruído",
+				"Comunicar a situação à ANACOM, fornecendo toda a informação que tiver e solicitando a resolução do problema de acordo com os procedimentos definidos",
+				"Esperar que a interferência passe",
+				"Queixar-me à Junta de Freguesia"
+			],
+			"correctIndex": 2,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p12</a>)"
+		},
 		{
 			"numb": 110,
 			"question": "Os receptores de SSB-SC estão associados a que tipo de modulação?",
@@ -4920,7 +4919,7 @@
 			"numb": 39,
 			"notes": "",
 			"correctIndex": 3
-	
+
 		},
 		{
 			"question": "Qual das afirmações é verdadeira?",
@@ -4933,7 +4932,7 @@
 			"numb": 40,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p5</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p5</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p3</a>) Consulte os documentos:<a target='_blank' href='docs/Rec0506.pdf'>ECC_Recommendation_05_06</a> & <a target='_blank' href='docs/TR6101.pdf'>Recommendation_T/R_61-01</a> ",
 			"correctIndex": 3
-	
+
 		},
 		{
 			"question": "Define-se potência aparente radiada (p.a.r.)",
@@ -4946,7 +4945,7 @@
 			"numb": 40,
 			"notes": "0000_00_01p6",
 			"correctIndex": 1
-	
+
 		},
 		{
 			"question": "As medidas de intensidade de campo permitem avaliar",
@@ -4959,7 +4958,7 @@
 			"numb": 40,
 			"notes": "0000_00_01p9",
 			"correctIndex": 2
-	
+
 		},
 		{
 			"question": "Qual a força electromotriz de duas baterias de 12 V ligadas em série?",
