@@ -1117,6 +1117,18 @@
 			"notes": " (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p32</a>) O simbolo correcto é o D4,resposta 4."
 		},
 		{
+			"numb": 79,
+			"question": "O símbolo indicado na figura como D4 representa um:<img  src='images/cat2/image-49.png'>",
+			"answers": [
+				"transístor NPN",
+				"transístor PNP",
+				"díodo Zener",
+				"díodo Túnel"
+			],
+			"correctIndex": 4,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p31</a>)"
+		},
+		{
 			"numb": 80,
 			"question": "Os díodos de junção não ideais quando polarizados diretamente têm tipicamente uma queda de tensão aos seus terminais",
 			"answers": [
@@ -1318,7 +1330,7 @@
 				"a deixar passar as frequências mais baixas e as frequências mais altas, rejeitando uma dada gama de frequências"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p19</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p16</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p16</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p16</a>) Resposta 4. Serve por exemplo para bloquear estações de rádio muito fortes nas imediações."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p19</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p16</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p16</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p16</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p18</a>) Resposta 4. Serve por exemplo para bloquear estações de rádio muito fortes nas imediações."
 		},
 		{
 			"numb": 95,
@@ -2566,7 +2578,7 @@
 				"CR0"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p4</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p1</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p1</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p4</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p1</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p1</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p01</a>)"
 		},
 		{
 			"numb": 179,
@@ -2638,7 +2650,7 @@
 				"24 - 24,05 GHz"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p4</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p5</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p5</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p2</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p4</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p5</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p5</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p2</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p02</a>)"
 		},
 		{
 			"numb": 183,
@@ -3249,7 +3261,7 @@
 				"24-24,05 GHz"
 			],
 			"numb": 5,
-			"notes": "0000_00_02p6",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p6</a>)(<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p03</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -3585,7 +3597,7 @@
 				"As três afirmações são correctas."
 			],
 			"numb": 13,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p16</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p14</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p16</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p14</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p16</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -3910,6 +3922,18 @@
 			],
 			"numb": 12,
 			"notes": "",
+			"correctIndex": 3
+		},
+		{
+			"question": "Qual das seguintes opções é uma característica de um bo voltímetro DC?",
+			"answers": [
+				"Elevada resolução de entrada",
+				"Baixa resolução de entrada",
+				"Elevada impedância de entrada",
+				"Baixa impedância de entrada"
+			],
+			"numb": 12,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p17</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -4894,7 +4918,7 @@
 				"Os amadores da categoria 2 têm direito a licensas CEPT em função dos exames em que tiverem aproveitamento"
 			],
 			"numb": 40,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p5</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p5</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p3</a>) Consulte os documentos:<a target='_blank' href='docs/Rec0506.pdf'>ECC_Recommendation_05_06</a> & <a target='_blank' href='docs/TR6101.pdf'>Recommendation_T/R_61-01</a> ",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p5</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p5</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p3</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p4</a>) Consulte os documentos:<a target='_blank' href='docs/Rec0506.pdf'>ECC_Recommendation_05_06</a> & <a target='_blank' href='docs/TR6101.pdf'>Recommendation_T/R_61-01</a> ",
 			"correctIndex": 3
 
 		},
