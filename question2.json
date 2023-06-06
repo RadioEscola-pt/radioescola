@@ -142,7 +142,7 @@
 				"Nenhuma das respostas está correta"
 			],
 			"correctIndex": 2,
-			"notes": "O truque desta pergunta está nas fontes de tensão, não confundir com fontes de alimentação, assim, devido as fontes puderem ter valores muito diferentes quer em tensão quer em resistência interna, deve-se ter cuidado ao colocar em paralelo, devido á discrepância destes valores poder resultar em valores de Intensidade de corrente muito altos. Referencia : http://www.ufrgs.br/eng04030/Aulas/teoria/cap_04/assocfon.htm – Obrigado ao Sérgio Matias."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p16</a>) O truque desta pergunta está nas fontes de tensão, não confundir com fontes de alimentação, assim, devido as fontes puderem ter valores muito diferentes quer em tensão quer em resistência interna, deve-se ter cuidado ao colocar em paralelo, devido á discrepância destes valores poder resultar em valores de Intensidade de corrente muito altos. Referencia : http://www.ufrgs.br/eng04030/Aulas/teoria/cap_04/assocfon.htm – Obrigado ao Sérgio Matias."
 		},
 		{
 			"numb": 11,
@@ -154,7 +154,7 @@
 				"Volt"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p21</a>) Volt por Metro, resposta 2. (no SI também se usa o Newton por Coulomb"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p21</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p21</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p23</a>) Volt por Metro, resposta 2. (no SI também se usa o Newton por Coulomb"
 		},
 		{
 			"numb": 12,
@@ -322,7 +322,7 @@
 				"passa para metade"
 			],
 			"correctIndex": 4,
-			"notes": "Como o periodo é o tempo decorrido até se completar um ciclo, se a frequencia duplica, o periodo passa para metade.Opção 4!"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p34</a>) Como o periodo é o tempo decorrido até se completar um ciclo, se a frequencia duplica, o periodo passa para metade.Opção 4!"
 		},
 		{
 			"numb": 24,
@@ -346,7 +346,7 @@
 				"metros por segundo"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p34</a>) Como já vimos acima, o periodo é o tempo que dura um ciclo, logo como a unica unidade de tempo é segundos, a resposta certa é a 2."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p34</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p35</a>) Como já vimos acima, o periodo é o tempo que dura um ciclo, logo como a unica unidade de tempo é segundos, a resposta certa é a 2."
 		},
 		{
 			"numb": 25,
@@ -382,7 +382,7 @@
 				"metros"
 			],
 			"correctIndex": 3,
-			"notes": "Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p36</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p36</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p36</a>) As ondas são medidas em Hertz, independentemente da sua forma. A opção correcta é a 3."
+			"notes": "Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p36</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p36</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p36</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p37</a>) As ondas são medidas em Hertz, independentemente da sua forma. A opção correcta é a 3."
 		},
 		{
 			"numb": 28,
@@ -454,7 +454,7 @@
 				"A todas as frequências que o recetor possa receber simultaneamente com a portadora"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p39</a>)"
 		},
 		{
 			"numb": 34,
@@ -658,7 +658,7 @@
 				"Inversão de radianos"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p39</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p38</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p39</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p38</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p38</a>)"
 		},
 		{
 			"numb": 48,
@@ -813,7 +813,7 @@
 				"10 resistências de 100 ohms em paralelo."
 			],
 			"numb": 18,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p8</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p8</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p9</a>) 1 KiloOhm são 1000 Ohm logo resposta 3 5X200 ohm=1000 ohm",
 			"correctIndex": 3
 		},
 		{
@@ -897,8 +897,8 @@
 				"0,01 µF = 10 000 pF",
 				"0,01 nF = 10 000 pF"
 			],
-			"correctIndex": 2,
-			"notes": ""
+			"correctIndex": 3,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p20</a>)"
 		},
 		{
 			"numb": 65,
@@ -969,8 +969,8 @@
 				"Bobina de armazenamento de energia",
 				"Bobina de filtragem"
 			],
-			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p26</a>)"
+			"correctIndex": 4,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p26</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p21</a>)"
 		},
 		{
 			"numb": 70,
@@ -982,7 +982,7 @@
 				"1 µH = 0,001 H"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p23</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p23</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p24</a>) Utilizando a imagem seguinte tirada do google: (Podemos ver que a única afirmação verdadeira é a 2) 1 mH = 0,001 H"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p23</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p23</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p24</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p22</a>) Utilizando a imagem seguinte tirada do google: (Podemos ver que a única afirmação verdadeira é a 2) 1 mH = 0,001 H"
 		},
 		{
 			"numb": 70,
@@ -1054,7 +1054,7 @@
 				"uma junção entre uma substância condutora e outra semicondutora"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p32</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p31</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p32</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p31</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p31</a>)"
 		},
 		{
 			"numb": 75,
@@ -1174,7 +1174,7 @@
 				"Não há base"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p35</a>)  Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p35</a>) A base é o terminal A,resposta 1."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p35</a>)  Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p35</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p33</a>) A base é o terminal A,resposta 1."
 		},
 		{
 			"numb": 84,
@@ -1426,7 +1426,7 @@
 				"40"
 			],
 			"correctIndex": 2,
-			"notes": " Resposta 45/1.5=30 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p28</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p28</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p30</a>) Resposta 45/1.5=30"
 		},
 		{
 			"numb": 102,
@@ -1546,7 +1546,7 @@
 				"Filtragem"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p9</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p9</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p9</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p9</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p10</a>)"
 		},
 		{
 			"numb": 108,
@@ -1849,6 +1849,18 @@
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p29</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p29</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p29</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p29</a>) Banda lateral única. (SSB – Single Side Band)"
 		},
 		{
+			"numb": 128,
+			"question": "Qual das seguintes emissões utiliza, duma forma geral, menor largura de banda?",
+			"answers": [
+				"Banda lateral única",
+				"CW",
+				"Dupla banda lateral",
+				"Modulação de fase"
+			],
+			"correctIndex": 2,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p29</a>)"
+		},
+		{
 			"numb": 129,
 			"question": "O que acontece ao sinal de um emissor de banda lateral única de fonia se estiver sobremodulado?",
 			"answers": [
@@ -1965,7 +1977,7 @@
 				"Uma antena Yagi"
 			],
 			"numb": 200,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p12</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p12</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p12</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p12</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p13</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -2014,7 +2026,7 @@
 				"200 W"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p16</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p17</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p17</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p15</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p16</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p17</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p17</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p15</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p15</a>)"
 		},
 		{
 			"question": "A potência aparente radiada (p.a.r.) emitida por uma antena de 5 dBd de ganho (no máximo do seu diagrama de radiação) quando lhe é entregue uma potência de 10 dBW é",
@@ -2122,7 +2134,7 @@
 				"uma malha e um condutor central enrolados em conjunto e revestidos por um dielétrico"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p24</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p24</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p24</a>)"
 		},
 		{
 			"numb": 148,
@@ -2278,7 +2290,7 @@
 				"troposfera"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p6</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p6</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p6</a>)"
 		},
 		{
 			"numb": 158,
@@ -2386,7 +2398,7 @@
 				"A potência aparente radiada não pode ser medida de forma direta por nenhum equipamento "
 			],
 			"correctIndex": 4,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p12</a>)"
 		},
 		{
 			"numb": 165,
@@ -2404,13 +2416,13 @@
 			"numb": 165,
 			"question": "O que signifia o processo (flat-topping) de uma transmissão de fonia de banda lateral única?",
 			"answers": [
-				"Distorção do sinal causado por insuficiência de corente no coletor",
+				"Distorção do sinal causado por insuficiência de corrente no coletor",
 				"O controlo automático de nível (ALC) do transmissor está devidamente ajustado",
 				"Distorção do sinal causado por saturação devido a um nível excessivo",
 				"A portadora do transmissor está devidamente suprimida"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p19</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p19</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p19</a>)"
 		},
 		{
 			"numb": 166,
@@ -2554,7 +2566,7 @@
 				"Só se emitirem acima de 1 GHz"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p5</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p5</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p5</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p5</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p5</a>)"
 		},
 		{
 			"numb": 176,
@@ -2590,7 +2602,7 @@
 				".-.-.-"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p4</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p4</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p4</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p4</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p1</a>)"
 		},
 		{
 			"numb": 178,
@@ -2662,7 +2674,7 @@
 				"5725 - 5830 MHz"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p6</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p2</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p6</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p2</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p3</a>)"
 		},
 		{
 			"numb": 182.1,
@@ -2746,7 +2758,7 @@
 				"Para utilizar uma estação do serviço de amador um amador da categoria 2 precisa de uma licença de estação"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p5</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p2</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p5</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p2</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p2</a>)"
 		},
 		{
 			"question": "Porque é que os sinais de VHF e UHF não se propagam a longa distância?",
@@ -2985,7 +2997,7 @@
 				"Todas as respostas estão correctas"
 			],
 			"numb": 36,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p37</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p37</a>) As valvulas são lineares am amps de audio.os dispositivos a valvulas nao sao necessariamente perigosos,a 3 ª é a verdadeira.",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p37</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p37</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p36</a>) As valvulas são lineares am amps de audio.os dispositivos a valvulas nao sao necessariamente perigosos,a 3 ª é a verdadeira.",
 			"correctIndex": 3
 		},
 		{
@@ -3297,7 +3309,7 @@
 				"1,2 Kilo Ohm"
 			],
 			"numb": 6,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p7</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p7</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p8</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -3382,7 +3394,7 @@
 				"Queixar-me à Junta de Freguesia"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p12</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p12</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p7</a>)"
 		},
 		{
 			"numb": 110,
@@ -3394,7 +3406,7 @@
 				"F3E"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p18</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p20</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p14</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p14</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p18</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p20</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p14</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p14</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p14</a>)"
 		},
 		{
 			"numb": 110,
@@ -3443,18 +3455,6 @@
 			"numb": 31,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p32</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p32</a>) (Consulte <a target='_blank' href='images/cat2/syb_diodos.jpg'>Simbolos de Diodos</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p32</a>)",
 			"correctIndex": 3
-		},
-		{
-			"question": "A uma determinada frequência f corresponde um determinado período T. Se a frequência duplicar o periodo",
-			"answers": [
-				"Duplica",
-				"Não se altera",
-				"Passa para um quarto",
-				"Passa para metade"
-			],
-			"numb": 33,
-			"notes": "",
-			"correctIndex": 4
 		},
 		{
 			"question": "Na figura 8 (acima), a que terminais correspondem as letras indicadas no seguinte transistor",
@@ -3529,18 +3529,6 @@
 			"correctIndex": 2
 		},
 		{
-			"question": "Determinado circuito precisa ser alimentado com 60 V e 0,2 A. Dispondo-se de uma fonte de 300 V, deve colocar-se em série com o circuito uma resistência de:",
-			"answers": [
-				"12 ohms",
-				"60 ohms",
-				"300 ohms",
-				"1,2 kohms"
-			],
-			"numb": 1,
-			"notes": "",
-			"correctIndex": 4
-		},
-		{
 			"question": "Quatro resistências estão montadas em série. As quedas de tensão em cada uma delas são as seguintes: 9,2 V; 12,5 V; 10 V e 3,4 V. A tensão aplicada ao circuito é:",
 			"answers": [
 				"35,1 V",
@@ -3597,7 +3585,7 @@
 				"a energia é duplicada."
 			],
 			"numb": 31,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p40</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p40</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p40</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p40</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p40</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p40</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p40</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -3709,18 +3697,6 @@
 			"correctIndex": 3
 		},
 		{
-			"question": "A intensidade de campo eléctrico é expressa em:",
-			"answers": [
-				"metro.",
-				"volt por metro.",
-				"Watt",
-				"Volt "
-			],
-			"numb": 21,
-			"notes": "0000_00_01p21",
-			"correctIndex": 2
-		},
-		{
 			"question": "Uma carga eléctrica fixa num ponto do espaço cria em torno de si:",
 			"answers": [
 				"Um campo eléctrico.",
@@ -3825,7 +3801,7 @@
 				"Corrente eléctrica oscilante."
 			],
 			"numb": 34,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p31</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p31</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p31</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p31</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p32</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -3923,18 +3899,6 @@
 			"numb": 9,
 			"notes": "",
 			"correctIndex": 2
-		},
-		{
-			"question": "A uma determinada frequência f corresponde um determinado período T. Se a frequência duplicar, o período:",
-			"answers": [
-				"duplica.",
-				"não se altera.",
-				"passa para um quarto.",
-				"passa para metade."
-			],
-			"numb": 11,
-			"notes": "",
-			"correctIndex": 4
 		},
 		{
 			"question": "Qual das seguintes opções é equivalente ao valor quadrático médio de uma tensão AC?",
@@ -4861,18 +4825,6 @@
 			"correctIndex": 1
 		},
 		{
-			"question": "Qual das igualdades é verdadeira?",
-			"answers": [
-				"0,01 F = 10 000 pF",
-				"0,01 mF = 10 000 pF",
-				"0,01 µF = 10 000 pF",
-				"0,01 nF = 10 000 pF"
-			],
-			"numb": 33,
-			"notes": "",
-			"correctIndex": 3
-		},
-		{
 			"question": "Qual das seguintes afirmações é falsa?",
 			"answers": [
 				"Os condensadores electrolíticos utilizam-se fundamentalmente em fontes de alimentação.",
@@ -5042,7 +4994,7 @@
 				"Terá que solicitar uma licença à CEPT"
 			],
 			"correctIndex": 2,
-			"notes": "0000_00_02p5"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p5</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p4</a>)"
 		},
 		{
 			"numb": 110,
@@ -5138,7 +5090,7 @@
 				"Três: interferência prejudicial, interferência permissível e interferência aceitável"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p10</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p11</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p10</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p10</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p11</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p10</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p11</a>)"
 		},
 		{
 			"numb": 110,
@@ -5162,7 +5114,7 @@
 				"Campo electromagnético recebido na antena da nossa estação"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p15</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p15</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p17</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p18</a>)"
 		}
 	]
 }
