@@ -214,7 +214,7 @@
 				"As linhas do campo magnético de um condutor onde flui uma corrente elétrica, formam círculos concêntricos ao redor do condutor"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p27</a>) Opção 4, formam circulos concentricos em redor do condutor.Imagem do campo magnético, (obtida na internet)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p27</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p27</a>) Opção 4, formam circulos concentricos em redor do condutor.Imagem do campo magnético, (obtida na internet)"
 		},
 		{
 			"numb": 16,
@@ -250,7 +250,7 @@
 				"Temperatura"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p31</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p31</a>) Polarização Amplitude e Frequência são caracteristicas das ondas, logo a resposta certa é a 4, a temperatura."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p31</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p31</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p32</a>) Polarização Amplitude e Frequência são caracteristicas das ondas, logo a resposta certa é a 4, a temperatura."
 		},
 		{
 			"numb": 19,
@@ -286,7 +286,7 @@
 				"0, 0754 kHz"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p33</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p35</a>) 1 MHz são 1000 KHz, logo 7.54 MHz são 7540 KHz"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p33</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p35</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p35</a>) 1 MHz são 1000 KHz, logo 7.54 MHz são 7540 KHz"
 		},
 		{
 			"numb": 21,
@@ -442,7 +442,7 @@
 				"um desmodulador de 145 kHz"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p38</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p38</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p38</a>) Devemos usar um oscilador de 2465,ao misturar os sinais,vamos obter a soma das frequencias e a diferença das mesmas,assim obtemos 5075 KHz e 145 KHz,depois podemos usar um filtro para seleccionar apenas a pretendida,assim a resposta correcta é a 1."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p38</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p38</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p38</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p39</a>) Devemos usar um oscilador de 2465,ao misturar os sinais,vamos obter a soma das frequencias e a diferença das mesmas,assim obtemos 5075 KHz e 145 KHz,depois podemos usar um filtro para seleccionar apenas a pretendida,assim a resposta correcta é a 1."
 		},
 		{
 			"numb": 33,
@@ -706,7 +706,7 @@
 				"200 W"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p40</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p40</a>) A formula da potencia com a intensidade e resistencia é: P = R * I ^ 2,assim P = 10 * 4 = 40 W,Opção 3"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p40</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p40</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p40</a>) A formula da potencia com a intensidade e resistencia é: P = R * I ^ 2,assim P = 10 * 4 = 40 W,Opção 3"
 		},
 		{
 			"numb": 52,
@@ -1006,7 +1006,7 @@
 				"Os transformadores são utilizados fundamentalmente para transformar uma tensão contínua dum dado valor numa tensão contínua de valor mais elevado"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p30</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p30</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p28</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p28</a>) Os transformadores não funcionam em corrente continua.Em corrente continua funcionam como curtos circuitos ou resistências,visto que são fios enrolados a volta de algo.Assim a 1,2 e 4 estão erradas,sobra a única certa que é a 3."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p30</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p30</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p28</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p28</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p28</a>) Os transformadores não funcionam em corrente continua.Em corrente continua funcionam como curtos circuitos ou resistências,visto que são fios enrolados a volta de algo.Assim a 1,2 e 4 estão erradas,sobra a única certa que é a 3."
 		},
 		{
 			"numb": 72,
@@ -1078,7 +1078,7 @@
 				"à tensão de saturação"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p32</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p32</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p32</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p32</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p31</a>)"
 		},
 		{
 			"numb": 77,
@@ -1198,7 +1198,7 @@
 				"Todas as hipóteses estão corretas"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p33</a>) Resposta 4, os transistores podem ser utilizados como amplificadores, comutadores e osciladores."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p33</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p33</a>) Resposta 4, os transistores podem ser utilizados como amplificadores, comutadores e osciladores."
 		},
 		{
 			"numb": 85,
@@ -1282,7 +1282,7 @@
 				"6 elementos"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p37</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p37</a>) 4 Elementos: Ânodo,Cátodo e duas grades.a resposta certa é a 2."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p37</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p37</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p36</a>) 4 Elementos: Ânodo,Cátodo e duas grades.a resposta certa é a 2."
 		},
 		{
 			"numb": 92,
@@ -1487,6 +1487,18 @@
 			],
 			"correctIndex": 2,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p30</a>)"
+		},
+		{
+			"numb": 104,
+			"question": "Num emissor de RF qual a função do amplificador linear de saída?",
+			"answers": [
+				"É um amplificador destinado a elminar a distorção dos sinais resultantes do proceso de modulação",
+				"É um amplificador destinado a aumentar a potência de saída do emissor",
+				"É um amplificador com os seus componentes instalados em linha",
+				"É um amplificador (push-pull) destinado a eliminar a distorção da segunda harmónica do sinal"
+			],
+			"correctIndex": 2,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p25</a>)"
 		},
 		{
 			"numb": 104,
@@ -1714,7 +1726,7 @@
 				"Limita o desvio de fase do sinal"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p26</a>)"
 		},
 		{
 			"numb": 119,
@@ -1834,7 +1846,7 @@
 				"Facilidade na mudança de frequência"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p29</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_01p29</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p29</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_01p29</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p29</a>)"
 		},
 		{
 			"numb": 128,
@@ -3225,7 +3237,7 @@
 				"As frequências associadas às ondas da nossa voz raramente ultrapassam os 15 kHz"
 			],
 			"numb": 35,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p37</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -3491,6 +3503,18 @@
 			"numb": 37,
 			"notes": "",
 			"correctIndex": 2
+		},
+		{
+			"question": "A percentagem de modulação em FM é",
+			"answers": [
+				"o quociente entre o desvio da portadora e o período associado",
+				"o produto da frequência da portadora pelo desvio associado",
+				"o produto do desvio instantâneo pelo desvio da portadora",
+				"o quociente entre o desvio instantâneo e o desvio máximo definido"
+			],
+			"numb": 38,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p38</a>)",
+			"correctIndex": 4
 		},
 		{
 			"question": "A percentagem de modulação da onda portadora de um emissor em modulação de frequência depende",
@@ -3837,7 +3861,7 @@
 				"184 V"
 			],
 			"numb": 0,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p34</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p34</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p34</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p34</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p34</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -4933,7 +4957,7 @@
 				"3,0"
 			],
 			"numb": 12,
-			"notes": "Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p28</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p28</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p30</a>)",
+			"notes": "Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p28</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p28</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p30</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p30</a>)",
 			"correctIndex": 1
 		},
 		{
