@@ -82,7 +82,7 @@
 				"10 horas"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p7</a>) Se temos 20Ah de capacidade e usamos 2A , podemos então usar esse circuito por : 20Ah/2A = 10h"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p7</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p8</a>) Se temos 20Ah de capacidade e usamos 2A , podemos então usar esse circuito por : 20Ah/2A = 10h"
 		},
 		{
 			"numb": 7,
@@ -875,7 +875,7 @@
 				"25 Ohm"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p8</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p8</a>) O valor associacao de resistencias em paralelo pode ser calculando dividindo o valor das resistencias pela quantidade delas,logo 10 resistencias de 100 Ohm em paralelo é 100 / 10 = 10 Ohm,atenção que só se pode usar esta formula para resistencias de igual valor."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p8</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p8</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p9</a>) O valor associacao de resistencias em paralelo pode ser calculando dividindo o valor das resistencias pela quantidade delas,logo 10 resistencias de 100 Ohm em paralelo é 100 / 10 = 10 Ohm,atenção que só se pode usar esta formula para resistencias de igual valor."
 		},
 		{
 			"numb": 61,
@@ -1559,7 +1559,7 @@
 				"Detetor"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p11</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p9</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p9</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p10</a>) https://www.youtube.com/watch?v=hz_mMLhUinw https://www.youtube.com/watch?v=dk6DdG4vs4Y"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p11</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p9</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p9</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p10</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p10</a>) https://www.youtube.com/watch?v=hz_mMLhUinw https://www.youtube.com/watch?v=dk6DdG4vs4Y"
 		},
 		{
 			"numb": 105,
@@ -2351,7 +2351,7 @@
 				"troposfera"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p6</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p6</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p6</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p6</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p6</a>)"
 		},
 		{
 			"numb": 158,
@@ -2639,7 +2639,7 @@
 				"Só se emitirem acima de 1 GHz"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p6</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p6</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p5</a>)"
 		},
 		{
 			"numb": 177,
@@ -2663,7 +2663,7 @@
 				".-.-.-"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p4</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p4</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p1</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p4</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p4</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p1</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p1</a>)"
 		},
 		{
 			"numb": 178,
@@ -2699,7 +2699,7 @@
 				"Investigar a situação e resolvê-la ou ajudá-la a resolver se o problema for da instalação de receção"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p13</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p12</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p7</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p7</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p13</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p12</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p7</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p7</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p7</a>)"
 		},
 		{
 			"numb": 181,
@@ -2711,7 +2711,7 @@
 				"é uma emissão numa frequência ou em frequências fora da largura de faixa necessária, mas na sua vizinhança imediata, originada por desaptação de impedância no cabo de alimentação da antena"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p2</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p2</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p3</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p2</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p2</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p3</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p3</a>)"
 		},
 		{
 			"numb": 181,
@@ -2783,7 +2783,7 @@
 				"CT7 se estiver a operar numa estação de amador, situada na área geográfica POR"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p5</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p3</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p5</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p3</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p4</a>)"
 		},
 		{
 			"numb": 187,
@@ -2819,7 +2819,7 @@
 				"Para utilizar uma estação do serviço de amador um amador da categoria 2 precisa de uma licença de estação"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p5</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p2</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p2</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p5</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p2</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p2</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p2</a>)"
 		},
 		{
 			"question": "Porque é que os sinais de VHF e UHF não se propagam a longa distância?",
@@ -3418,7 +3418,7 @@
 				"Usar uma frequência que não seja usada por repetidores"
 			],
 			"numb": 9,
-			"notes": "0000_00_02p10",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p10</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p11</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -4776,18 +4776,6 @@
 			"numb": 21,
 			"notes": "",
 			"correctIndex": 1
-		},
-		{
-			"question": "A resistência equivalente a uma associação de 10 resistências de 100 ohms cada uma, em paralelo, é de:",
-			"answers": [
-				"1 ohm",
-				"10 ohms",
-				"12,5 ohms",
-				"25 ohms"
-			],
-			"numb": 25,
-			"notes": "",
-			"correctIndex": 2
 		},
 		{
 			"question": "A resistência equivalente a uma associação de 100 resistências de 100 ohms cada uma, em paralelo, é de:",
