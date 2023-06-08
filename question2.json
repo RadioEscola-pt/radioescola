@@ -142,7 +142,7 @@
 				"Nenhuma das respostas está correta"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p16</a>) O truque desta pergunta está nas fontes de tensão, não confundir com fontes de alimentação, assim, devido as fontes puderem ter valores muito diferentes quer em tensão quer em resistência interna, deve-se ter cuidado ao colocar em paralelo, devido á discrepância destes valores poder resultar em valores de Intensidade de corrente muito altos. Referencia : http://www.ufrgs.br/eng04030/Aulas/teoria/cap_04/assocfon.htm – Obrigado ao Sérgio Matias."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p16</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p16</a>) O truque desta pergunta está nas fontes de tensão, não confundir com fontes de alimentação, assim, devido as fontes puderem ter valores muito diferentes quer em tensão quer em resistência interna, deve-se ter cuidado ao colocar em paralelo, devido á discrepância destes valores poder resultar em valores de Intensidade de corrente muito altos. Referencia : http://www.ufrgs.br/eng04030/Aulas/teoria/cap_04/assocfon.htm – Obrigado ao Sérgio Matias."
 		},
 		{
 			"numb": 11,
@@ -154,7 +154,7 @@
 				"Volt"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p21</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p21</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p23</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p23</a>) Volt por Metro, resposta 2. (no SI também se usa o Newton por Coulomb"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p21</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p21</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p23</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p23</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p23</a>) Volt por Metro, resposta 2. (no SI também se usa o Newton por Coulomb"
 		},
 		{
 			"question": "As medidas de intensidade de campo permitem avaliar",
@@ -215,7 +215,7 @@
 				"A intensidade de corrente"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p27</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p27</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p27</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p27</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p27</a>)"
 		},
 		{
 			"numb": 15,
@@ -239,7 +239,7 @@
 				"7, 000 MHz"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p31</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p31</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p32</a>) Divide - se a velocidade da luz no vazio por 14, 117 e dá o valor que corresponde a 21, 250 MHz.Opção 3."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p31</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p31</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p32</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p31</a>) Divide - se a velocidade da luz no vazio por 14, 117 e dá o valor que corresponde a 21, 250 MHz.Opção 3."
 		},
 		{
 			"numb": 17,
@@ -371,7 +371,7 @@
 				"A amplitude da onda"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p33</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p33</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p35</a>)"
 		},
 		{
 			"numb": 26,
@@ -419,7 +419,7 @@
 				"56 kHz"
 			],
 			"correctIndex": 4,
-			"notes": "Aplicação directa da Regra de Carson,Largura = 2 * (desvio + fm) =>Largura = 2 * (25 + 3) = 56 kHz,opção 4."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p38</a>) Aplicação directa da Regra de Carson,Largura = 2 * (desvio + fm) =>Largura = 2 * (25 + 3) = 56 kHz,opção 4. Ou FM=25+25=50 + FM 3+3=6 total 56kHz"
 		},
 		{
 			"numb": 30,
@@ -755,7 +755,7 @@
 				"Um amplificador é tanto mais eficiente quanto maior for o consumo para uma dada potência de saída"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p40</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p40</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p40</a>) A eficiencia é a relacao entre o consumo e a saida,logo quanto mais eficiente,maior a potencia de saida com o menor sonsumo,logo opção 3 está correcta,"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p40</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p40</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p40</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p40</a>) A eficiencia é a relacao entre o consumo e a saida,logo quanto mais eficiente,maior a potencia de saida com o menor sonsumo,logo opção 3 está correcta,"
 		},
 		{
 			"numb": 54,
@@ -935,7 +935,7 @@
 				"Condensador RF de custo reduzido"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p15</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p15</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p20</a>)"
 		},
 		{
 			"numb": 67,
@@ -995,7 +995,7 @@
 				"1 µH = 0,001 H"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p23</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p23</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p24</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p22</a>) Utilizando a imagem seguinte tirada do google: (Podemos ver que a única afirmação verdadeira é a 2) 1 mH = 0,001 H"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p23</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p23</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p24</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p22</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p22</a>) Utilizando a imagem seguinte tirada do google: (Podemos ver que a única afirmação verdadeira é a 2) 1 mH = 0,001 H"
 		},
 		{
 			"numb": 70,
@@ -1067,7 +1067,7 @@
 				"Capacidade mútua"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p28</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p28</a>) Indutância mútua.Resposta 3."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p28</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p28</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p28</a>) Indutância mútua.Resposta 3."
 		},
 		{
 			"numb": 75,
@@ -1091,7 +1091,7 @@
 				"condensador"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p32</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p32</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p31</a>)"
 		},
 		{
 			"numb": 76,
@@ -1259,7 +1259,7 @@
 				"Na zona inversa de saturação e na zona ativa"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p35</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p35</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p33</a>)"
 		},
 		{
 			"numb": 86,
@@ -1319,7 +1319,7 @@
 				"6 elementos"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p37</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p37</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p36</a>) 4 Elementos: Ânodo,Cátodo e duas grades.a resposta certa é a 2."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p37</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p37</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p36</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p36</a>) 4 Elementos: Ânodo,Cátodo e duas grades.a resposta certa é a 2."
 		},
 		{
 			"numb": 92,
@@ -1571,7 +1571,7 @@
 				"O sinal modulante e a portadora não modulada"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p17</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p19</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p19</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p17</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p19</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p19</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p19</a>)"
 		},
 		{
 			"numb": 106,
@@ -1715,7 +1715,7 @@
 				"Potência do transmissor"
 			],
 			"correctIndex": 3,
-			"notes": "https://en.wikipedia.org/wiki/S_meter"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p26</a>) https://en.wikipedia.org/wiki/S_meter"
 		},
 		{
 			"numb": 115,
@@ -1847,7 +1847,7 @@
 				"No microfone"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p23</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p23</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p23</a>) Como as espurias são emitidas na saida de RF, o local logico é a seguir ao andar de saída do emissor, logo, resposta 2."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p23</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p23</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p23</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p25</a>) Como as espurias são emitidas na saida de RF, o local logico é a seguir ao andar de saída do emissor, logo, resposta 2."
 		},
 		{
 			"numb": 124,
@@ -1931,7 +1931,7 @@
 				"Ficará distorcido e terá uma maior largura de banda"
 			],
 			"correctIndex": 4,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p29</a>)"
 		},
 		{
 			"numb": 130,
@@ -2045,13 +2045,13 @@
 			"numb": 138,
 			"question": "No sentido de caracterizar o diagrama de radiação de uma antena, quando há dificuldade na sua representação tridimensional,  ",
 			"answers": [
-				"apresenta-se o diagrama de radiação vertical e o diagrama de radiaçãi horizontal da antena",
+				"apresenta-se o diagrama de radiação vertical e o diagrama de radiação horizontal da antena",
 				"apresentam-se fotografias da antena de três ângulos ortogonais entre si",
 				"apresentam-se as medições do campo eletromagnético em três pontos do tereno a 3 metros da antena",
 				"apresentam-se as medições do campo eletromagnético em no sentido da máxima radiação a 3, 9 e 25 metros da antena"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p15</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p15</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p15</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p15</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p15</a>)"
 		},
 		{
 			"numb": 138,
@@ -2159,7 +2159,7 @@
 				"Dobro da impedância da linha de trasnmissão"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p19</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p16</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p18</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p18</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p19</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p16</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p18</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p18</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p18</a>)"
 		},
 		{
 			"numb": 145,
@@ -2243,7 +2243,7 @@
 				"É mais barato que qualquer outro tipo de linha de transmissão"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p22</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p22</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p24</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p22</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p22</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p24</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p24</a>)"
 		},
 		{
 			"numb": 151,
@@ -2456,10 +2456,10 @@
 				"Um voltímetro seletivo que deverá ter uma precisão superior a 1/1 000 000",
 				"Um amperímetro que deverá ser colocado a medir a potência de alimentação da estação",
 				"Um frequencímetro, tendo o cuidado de evitar que ele sature",
-				"A potência aparente radiada não pode ser medida de forma direta por nenhum equipamento "
+				"A potência aparente radiada não pode ser medida de forma direta por nenhum equipamento"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p12</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p12</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p12</a>)"
 		},
 		{
 			"numb": 165,
@@ -2962,7 +2962,7 @@
 				"Uma ponte de Wheatstone"
 			],
 			"numb": 14,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p18</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p18</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p17</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -3130,7 +3130,7 @@
 				"Foram inventadas em 1990"
 			],
 			"numb": 11,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p12</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p10</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p12</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p10</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p13</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -3226,7 +3226,7 @@
 				"evitar interferências rádio no circuito a alimentar"
 			],
 			"numb": 24,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p25</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p25</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p26</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p26</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p21</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p25</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p25</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p26</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p26</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p21</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p21</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -3398,18 +3398,6 @@
 			"correctIndex": 4
 		},
 		{
-			"question": "Pretende-se medir a potência aparente irradiada de uma estação numa dada frequência. Que instrumento se deve utilizar?",
-			"answers": [
-				"Um voltímetro selectivo que deverá ter uma precisão superior a 1/1 000 000",
-				"Um amperímetro que deverá ser colocado a medir a potência de alimentação da estação",
-				"Um frequencimetro, tendo o cuidado de evitar que ele sature",
-				"A potência aparente irradiada não pode ser medida de forma directa por nenhum equipamento"
-			],
-			"numb": 8,
-			"notes": "",
-			"correctIndex": 4
-		},
-		{
 			"question": "Qual a melhor maneira de reduzir a possibilidade de causar interferências quando se testa um emissor?",
 			"answers": [
 				"Usar uma pequena antena no interior de um edificio",
@@ -3479,7 +3467,7 @@
 				"F3E"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p18</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p14</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p18</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p14</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p14</a>)"
 		},
 		{
 			"question": "Nas linhas de força de um campo eléctrico provocadas por uma carga eléctrica",
@@ -3946,7 +3934,7 @@
 				"1 000 kHz"
 			],
 			"numb": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p33</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p34</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p33</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p34</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p34</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -4066,7 +4054,7 @@
 				"Numa onda quadrada as harmónicas possuem frequências mais elevadas que a fundamental."
 			],
 			"numb": 17,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p36</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p36</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p37</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p36</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p36</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p37</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p37</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -4354,7 +4342,7 @@
 				"Modulação de frequência."
 			],
 			"numb": 17,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p39</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p39</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p39</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -4366,7 +4354,7 @@
 				"Fica distorcido e ocupa maior largura de banda."
 			],
 			"numb": 21,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p29</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -4945,7 +4933,7 @@
 				"3,0"
 			],
 			"numb": 12,
-			"notes": "Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p28</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p28</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p30</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p30</a>)",
+			"notes": "Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p28</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p28</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p30</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p30</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p30</a>)",
 			"correctIndex": 1
 		},
 		{
