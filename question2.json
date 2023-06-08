@@ -58,7 +58,7 @@
 				"V/h"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p7</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p7</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p7</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p7</a>) A capacidade de uma bateria é dada em A.h"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p7</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p7</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p7</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p7</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p8</a>) A capacidade de uma bateria é dada em A.h"
 		},
 		{
 			"numb": 5,
@@ -2627,7 +2627,7 @@
 				"Só se emitirem acima de 1 GHz"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p5</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p5</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p5</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p5</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p5</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p5</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p5</a>)"
 		},
 		{
 			"numb": 176,
@@ -2675,7 +2675,7 @@
 				"CR0"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p4</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p1</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p1</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p01</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p4</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p1</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p1</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p01</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p1</a>)"
 		},
 		{
 			"numb": 179,
@@ -2747,7 +2747,7 @@
 				"24 - 24,05 GHz"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p4</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p5</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p5</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p2</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p02</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p2</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p4</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p5</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p5</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p2</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p02</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p2</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p2</a>)"
 		},
 		{
 			"numb": 183,
@@ -2831,6 +2831,18 @@
 			],
 			"numb": 190,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p1</a>)",
+			"correctIndex": 3
+		},
+		{
+			"question": "Porque é que duma forma geral os sinais de VHF e UHF não se propagam muito longa distância?",
+			"answers": [
+				"Porque, duma forma geral, são demasiado fracos para se propagarem até muito longe",
+				"Porque a regulamentação nacional e internacional não permite que sejam utilizadas potências superiores a 20 W (p.a.r.)",
+				"Porque, de uma forma geral, os sinais nestas gamas de frequências não se reflectem na ionosfera",
+				"Porque, duma forma geral, colidem facilmente com árvores e outros obstáculos, a menos que sejam emitidos na vertical para a ionosfera"
+			],
+			"numb": 190,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p3</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -3358,7 +3370,7 @@
 				"24-24,05 GHz"
 			],
 			"numb": 5,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p6</a>)(<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p03</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p6</a>)(<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p03</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p3</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -3443,7 +3455,7 @@
 				"Queixar-me à Junta de Freguesia"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p12</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p7</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p12</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p7</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p7</a>)"
 		},
 		{
 			"numb": 110,
@@ -4994,7 +5006,7 @@
 				"Terá que solicitar uma licença à CEPT"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p5</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p4</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p5</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p4</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p4</a>)"
 		},
 		{
 			"numb": 110,
