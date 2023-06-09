@@ -142,7 +142,7 @@
 				"Nenhuma das respostas está correta"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p16</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p16</a>) O truque desta pergunta está nas fontes de tensão, não confundir com fontes de alimentação, assim, devido as fontes puderem ter valores muito diferentes quer em tensão quer em resistência interna, deve-se ter cuidado ao colocar em paralelo, devido á discrepância destes valores poder resultar em valores de Intensidade de corrente muito altos. Referencia : http://www.ufrgs.br/eng04030/Aulas/teoria/cap_04/assocfon.htm – Obrigado ao Sérgio Matias."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p16</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p16</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p16</a>) O truque desta pergunta está nas fontes de tensão, não confundir com fontes de alimentação, assim, devido as fontes puderem ter valores muito diferentes quer em tensão quer em resistência interna, deve-se ter cuidado ao colocar em paralelo, devido á discrepância destes valores poder resultar em valores de Intensidade de corrente muito altos. Referencia : http://www.ufrgs.br/eng04030/Aulas/teoria/cap_04/assocfon.htm – Obrigado ao Sérgio Matias."
 		},
 		{
 			"numb": 11,
@@ -191,7 +191,7 @@
 				"uma região luminosa"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p27</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p27</a>) Um campo magnético.Opção 2"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p27</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p27</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p27</a>) Um campo magnético.Opção 2"
 		},
 		{
 			"numb": 14,
@@ -204,6 +204,18 @@
 			],
 			"correctIndex": 3,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p27</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p27</a>)  Opção 3. É criado pelo movimento da carga elétrica num condutor."
+		},
+		{
+			"question": "O que é o campo eléctrico?",
+			"answers": [
+				"É um campo numa dada região do espaço onde se manifesta a acção de um campo magnético.",
+				"É um campo numa dada região do espaço onde se manifesta a acção de cargas eléctricas.",
+				"É um campo numa dada região do espaço onde se manifesta a acção do efeito gravitacional",
+				"É um campo numa dada região do espaço, tendo necessariamente ar, onde se manifesta a acção de fontes de luz coerente."
+			],
+			"numb": 23,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p21</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p21</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p21</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p23</a>)",
+			"correctIndex": 2
 		},
 		{
 			"numb": 14,
@@ -251,7 +263,7 @@
 				"18 m"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p31</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p31</a>) Divide - se a velocidade da luz em kilometros pela frequencia em Kilohertz 300000 / 25000 = 12 m, Opção 2."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p31</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p31</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p32</a>) Divide - se a velocidade da luz em kilometros pela frequencia em Kilohertz 300000 / 25000 = 12 m, Opção 2."
 		},
 		{
 			"numb": 18,
@@ -275,7 +287,7 @@
 				"Watt"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p33</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p35</a>) Resposta: Opção 3, Hertz"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p33</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p35</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p34</a>) Resposta: Opção 3, Hertz"
 		},
 		{
 			"numb": 63,
@@ -288,6 +300,18 @@
 			],
 			"correctIndex": 1,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p20</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p20</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p20</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p20</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p20</a>) A capacidade é medida em Farad,opção 1."
+		},
+		{
+			"question": "Qual a unidade de medida do coeficiente de auto-indução?",
+			"answers": [
+				"Farad",
+				"Henry",
+				"Hertz",
+				"Volt"
+			],
+			"numb": 22,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p23</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p23</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p24</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p22</a>) A unidade de medida de autoindução é o Henry,resposta 2.",
+			"correctIndex": 2
 		},
 		{
 			"numb": 20,
@@ -377,13 +401,13 @@
 			"numb": 26,
 			"question": "Qual das afirmações está correta?",
 			"answers": [
-				"Uma onda quadrada pode ser representada por um conjunto de ondas sinusoidais   ",
-				"Obtém - se a onda sinusoidal fundamental de uma onda quadrada, aplicando um filtro passa - baixo ",
+				"Uma onda quadrada pode ser representada por um conjunto de ondas sinusoidais",
+				"Obtém - se a onda sinusoidal fundamental de uma onda quadrada, aplicando um filtro passa-baixo",
 				"As ondas quadradas são fundamentais na representação e processamento dos sinais digitais",
 				"Todas as respostas anteriores estão corretas"
 			],
 			"correctIndex": 4,
-			"notes": "Podemos criar uma onda quadrada utilizando uma onda sinosoidal e adicionando lhe as suas harmonicas imparescom a amplitude 1 / n onde n é o numero da harmonica.logo a 1 é correcta, um filtro passa baixo bloqueia tudo acima de uma certa frequencia(deixa passar o que é‘ abaixo’) assim se o filtro pode deixar passar a fundamental e bloquear as harmonicas que são frequencias superiores assim a 2 ª é correcta.No dominio do digital, as ondas quadradas são usadas para quase tudo, logo a 3 ª também é correcta.Podemos assim selecciona a opção 4 que diz que toda as respostas anteriores são correctas,"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p37</a>) Podemos criar uma onda quadrada utilizando uma onda sinosoidal e adicionando lhe as suas harmonicas imparescom a amplitude 1 / n onde n é o numero da harmonica.logo a 1 é correcta, um filtro passa baixo bloqueia tudo acima de uma certa frequencia(deixa passar o que é‘ abaixo’) assim se o filtro pode deixar passar a fundamental e bloquear as harmonicas que são frequencias superiores assim a 2 ª é correcta.No dominio do digital, as ondas quadradas são usadas para quase tudo, logo a 3 ª também é correcta.Podemos assim selecciona a opção 4 que diz que toda as respostas anteriores são correctas,"
 		},
 		{
 			"numb": 27,
@@ -419,7 +443,7 @@
 				"56 kHz"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p38</a>) Aplicação directa da Regra de Carson,Largura = 2 * (desvio + fm) =>Largura = 2 * (25 + 3) = 56 kHz,opção 4. Ou FM=25+25=50 + FM 3+3=6 total 56kHz"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p38</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p38</a>) Aplicação directa da Regra de Carson,Largura = 2 * (desvio + fm) =>Largura = 2 * (25 + 3) = 56 kHz,opção 4. Ou FM=25+25=50 + FM 3+3=6 total 56kHz"
 		},
 		{
 			"numb": 30,
@@ -923,7 +947,7 @@
 				"ao quociente da capacidade maior pela capacidade menor"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p20</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p20</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p15</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p15</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p15</a>) É a soma das capacidades.Opção 2. Ceq = C1 + C2 + … +Cn"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p20</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p20</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p15</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p15</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p15</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p20</a>) É a soma das capacidades.Opção 2. Ceq = C1 + C2 + … +Cn"
 		},
 		{
 			"numb": 66,
@@ -948,18 +972,6 @@
 			],
 			"correctIndex": 4,
 			"notes": "Um condensador simplificando são 2 placas condutoras separadas por um isolador,assim,num circuito de corrente continua um condensador comporta - se como um circuito aberto,resposta 4."
-		},
-		{
-			"question": "Qual a unidade de medida do coeficiente de auto-indução?",
-			"answers": [
-				"Farad",
-				"Henry",
-				"Hertz",
-				"Volt"
-			],
-			"numb": 22,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p23</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p23</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p24</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p22</a>) A unidade de medida de autoindução é o Henry,resposta 2.",
-			"correctIndex": 2
 		},
 		{
 			"numb": 69,
@@ -1007,7 +1019,7 @@
 				"1 µH = 0,000 001 H"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p24</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p22</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p24</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p22</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p22</a>)"
 		},
 		{
 			"numb": 71,
@@ -1067,7 +1079,7 @@
 				"Capacidade mútua"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p28</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p28</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p28</a>) Indutância mútua.Resposta 3."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p28</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p28</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p28</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p28</a>) Indutância mútua.Resposta 3."
 		},
 		{
 			"numb": 75,
@@ -1283,7 +1295,7 @@
 				"Na zona inversa de saturação"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p33</a>)"
 		},
 		{
 			"numb": 88,
@@ -1319,7 +1331,7 @@
 				"6 elementos"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p37</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p37</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p36</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p36</a>) 4 Elementos: Ânodo,Cátodo e duas grades.a resposta certa é a 2."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p37</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p37</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p36</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p36</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p36</a>) 4 Elementos: Ânodo,Cátodo e duas grades.a resposta certa é a 2."
 		},
 		{
 			"numb": 92,
@@ -1403,7 +1415,7 @@
 				"não provoca qualquer efeito, não sendo adequada se o circuito de carga necessitar de uma tensão contínua"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p25</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p25</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p21</a>)"
 		},
 		{
 			"numb": 97,
@@ -1463,7 +1475,7 @@
 				"40"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p28</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p30</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p30</a>) Resposta 45/1.5=30"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p28</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p30</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p30</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p30</a>) Resposta 45/1.5=30"
 		},
 		{
 			"numb": 102,
@@ -1535,7 +1547,7 @@
 				"É um amplificador (push-pull) destinado a eliminar a distorção da segunda harmónica do sinal"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p25</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p25</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p25</a>)"
 		},
 		{
 			"numb": 104,
@@ -1547,7 +1559,7 @@
 				"potência da portadora não modulada"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p29</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p29</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p29</a>)"
 		},
 		{
 			"numb": 105,
@@ -1583,7 +1595,7 @@
 				"Um recetor de conversão direta"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p10</a>) validar pois em formação foi considerada resposta 1 > texto original: super-regenerativo ou tfr  </br> o super-heterodino e conversão direta  tem misturador"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p10</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p10</a>) validar pois em formação foi considerada resposta 1 > texto original: super-regenerativo ou tfr  </br> o super-heterodino e conversão direta  tem misturador"
 		},
 		{
 			"numb": 107,
@@ -1607,7 +1619,7 @@
 				"F3E"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p20</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p18</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p20</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p20</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p18</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p20</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p14</a>)"
 		},
 		{
 			"question": "Os receptores de FM estão associados a que tipo de modulação?",
@@ -1643,7 +1655,7 @@
 				"Mistura de ruído com o sinal recebido"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p26</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p26</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p26</a>)"
 		},
 		{
 			"numb": 111,
@@ -1811,7 +1823,7 @@
 				"da variação do ruído da portadora em função do sinal que a modula."
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p19</a>)"
 		},
 		{
 			"numb": 121,
@@ -2051,7 +2063,7 @@
 				"apresentam-se as medições do campo eletromagnético em no sentido da máxima radiação a 3, 9 e 25 metros da antena"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p15</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p15</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p15</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p15</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p15</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p15</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p15</a>)"
 		},
 		{
 			"numb": 138,
@@ -2231,7 +2243,7 @@
 				"1"
 			],
 			"correctIndex": 1,
-			"notes": "R=(ZL-ZS)/(ZL+ZS)=>(50-25)/(50-25)=25/75=1/3 </br>VRMS=(1+R)/(1-R)=>(1+(1/3))/(1-(1/3))=2"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p24</a>) R=(ZL-ZS)/(ZL+ZS)=>(50-25)/(50-25)=25/75=1/3 </br>VRMS=(1+R)/(1-R)=>(1+(1/3))/(1-(1/3))=2"
 		},
 		{
 			"numb": 150,
@@ -2531,7 +2543,7 @@
 				"Porque apresenta um baixo efeito de carga no circuito a medir"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p18</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p18</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p18</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p18</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p18</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p18</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p17</a>)"
 		},
 		{
 			"numb": 169,
@@ -2544,6 +2556,18 @@
 			],
 			"correctIndex": 1,
 			"notes": ""
+		},
+		{
+			"numb": 169,
+			"question": "Que tipo de medidor deve ser usado para monitorar o sinal à saída de um transmissor modulado por voz de banda lateral única, de forma a assegurar que não se excede a potência máxima admitida?",
+			"answers": [
+				"Um medidor SWR",
+				"Um medidor de modulação",
+				"Um wattímetro de potência média",
+				"Um wattímetro de potência de pico"
+			],
+			"correctIndex": 4,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p12</a>)"
 		},
 		{
 			"numb": 170,
@@ -2567,7 +2591,7 @@
 				"Em nenhum dos sítios referidos nas três hipóteses anteriores"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p11</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p11</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p11</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p11</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p11</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p11</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p11</a>)"
 		},
 		{
 			"numb": 172,
@@ -3010,7 +3034,7 @@
 				"a deixar passar as frequências mais baixas e as frequências mais altas, rejeitando uma dada gama de frequências"
 			],
 			"numb": 18,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p19</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p19</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p18</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -3166,7 +3190,7 @@
 				"Diminuição da resistência ao vento"
 			],
 			"numb": 11,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p10</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p13</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p10</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p13</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p13</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -3262,7 +3286,7 @@
 				"Ao ânodo e ao cátodo"
 			],
 			"numb": 31,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p31</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -3406,7 +3430,7 @@
 				"16,5 Ohm"
 			],
 			"numb": 7,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p8</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p8</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p9</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -3782,18 +3806,6 @@
 			"correctIndex": 1
 		},
 		{
-			"question": "O que é o campo eléctrico?",
-			"answers": [
-				"É um campo numa dada região do espaço onde se manifesta a acção de um campo magnético.",
-				"É um campo numa dada região do espaço onde se manifesta a acção de cargas eléctricas.",
-				"É um campo numa dada região do espaço onde se manifesta a acção do efeito gravitacional",
-				"É um campo numa dada região do espaço, tendo necessariamente ar, onde se manifesta a acção de fontes de luz coerente."
-			],
-			"numb": 23,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p21</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p21</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p21</a>)",
-			"correctIndex": 2
-		},
-		{
 			"question": "Em condições de propagação normais, a intensidade do campo eléctrico:",
 			"answers": [
 				"Cresce com a raiz quadrada da distância.",
@@ -3926,7 +3938,7 @@
 			"correctIndex": 4
 		},
 		{
-			"question": "Exprima em Hz: 900 kHz ",
+			"question": "Exprima 900 kHz em Hz.",
 			"answers": [
 				"900 000 Hz",
 				"0,900 Hz",
@@ -3934,7 +3946,7 @@
 				"90 000 Hz"
 			],
 			"numb": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p33</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p33</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p34</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p33</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p33</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p34</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p35</a>) ",
 			"correctIndex": 1
 		},
 		{
@@ -4080,18 +4092,6 @@
 			"numb": 20,
 			"notes": "",
 			"correctIndex": 3
-		},
-		{
-			"question": "Qual é a largura de faixa necessária numa emissão de modulação de frequência em que o desvio de frequência é 25 kHz e a máxima frequência moduladora é 3 kHz?",
-			"answers": [
-				"22 kHz",
-				"25 kHz",
-				"28 kHz",
-				"56 kHz"
-			],
-			"numb": 21,
-			"notes": "",
-			"correctIndex": 4
 		},
 		{
 			"question": "Define-se índice de modulação em frequência modulada como a relação entre:",
@@ -4330,7 +4330,7 @@
 				"Menor susceptibilidade aos choques de electricidade estática (atmosféricos)."
 			],
 			"numb": 12,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p39</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -4702,7 +4702,7 @@
 				"-200 dB "
 			],
 			"numb": 11,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p40</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p40</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p38</a>)",
 			"correctIndex": 3
 		},
 		{
