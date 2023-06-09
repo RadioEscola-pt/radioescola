@@ -34,7 +34,7 @@
 				"1 V"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p7</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p8</a>) Usando a lei das malhas,A soma da fonte com as quedas de tensão tem de ser 0,logo: 50 - 25 - 10 - 13 - x = 0 <= > x = 2. Opção 3 "
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p7</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p8</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p8</a>) Usando a lei das malhas,A soma da fonte com as quedas de tensão tem de ser 0,logo: 50 - 25 - 10 - 13 - x = 0 <= > x = 2. Opção 3 "
 		},
 		{
 			"question": "Quatro resistências estão montadas em série. A tensão aplicada ao conjunto é de 50 V. As quedas de tensão nos bornes das três primeiras são, respectivamente: 25 V; 10,2 V e 12,8 V. Qual é a queda de tensão nos bornes da última resistência?",
@@ -2375,7 +2375,7 @@
 				"esporádica"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p6</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p6</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p6</a>)"
 		},
 		{
 			"numb": 158,
@@ -2639,7 +2639,7 @@
 				"Todas as respostas anteriores estão corretas"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p2</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p6</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p5</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p2</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p6</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p5</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p5</a>)"
 		},
 		{
 			"numb": 176,
@@ -2687,7 +2687,7 @@
 				".-.-.-"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p4</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p4</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p1</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p1</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p4</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p4</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p1</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p1</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p1</a>)"
 		},
 		{
 			"numb": 178,
@@ -2735,7 +2735,7 @@
 				"é uma emissão numa frequência ou em frequências fora da largura de faixa necessária, mas na sua vizinhança imediata, originada por desaptação de impedância no cabo de alimentação da antena"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p2</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p2</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p3</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p3</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p2</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p2</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p3</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p3</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p3</a>)"
 		},
 		{
 			"numb": 181,
@@ -2807,7 +2807,7 @@
 				"CT7 se estiver a operar numa estação de amador, situada na área geográfica POR"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p5</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p3</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p4</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p5</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p3</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p4</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p4</a>)"
 		},
 		{
 			"numb": 187,
@@ -2843,7 +2843,7 @@
 				"Para utilizar uma estação do serviço de amador um amador da categoria 2 precisa de uma licença de estação"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p5</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p2</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p2</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p2</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p5</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p2</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p2</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p2</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p2</a>)"
 		},
 		{
 			"question": "Porque é que os sinais de VHF e UHF não se propagam a longa distância?",
@@ -3479,7 +3479,7 @@
 				"Queixar-me à Junta de Freguesia"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p12</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p7</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p7</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p12</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p7</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p7</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p7</a>)"
 		},
 		{
 			"numb": 110,
