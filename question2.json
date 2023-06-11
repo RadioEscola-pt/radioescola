@@ -443,7 +443,7 @@
 				"Volt"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p20</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p20</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p20</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p20</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p20</a>) A capacidade é medida em Farad,opção 1."
+			"notes": "A63 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p20</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p20</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p20</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p20</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p20</a>) A capacidade é medida em Farad,opção 1."
 		},
 		{
 			"question": "Qual a unidade de medida do coeficiente de auto-indução?",
@@ -454,7 +454,7 @@
 				"Volt"
 			],
 			"numb": 22,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p23</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p23</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p24</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p22</a>) A unidade de medida de autoindução é o Henry,resposta 2.",
+			"notes": "A68 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p23</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p23</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p24</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p22</a>) A unidade de medida de autoindução é o Henry,resposta 2.",
 			"correctIndex": 2
 		},
 		{
@@ -683,7 +683,7 @@
 				"um filtro rejeita banda"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p19</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p19</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p18</a>) As harmonicas ocorrem nos multiplos inteiros da fundamental, logo são sempre de frequência superior,assim podemos usar um filtro passa baixo."
+			"notes": "A95 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p19</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p19</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p18</a>) As harmonicas ocorrem nos multiplos inteiros da fundamental, logo são sempre de frequência superior,assim podemos usar um filtro passa baixo."
 		},
 		{
 			"numb": 133,
@@ -695,7 +695,7 @@
 				"Nos manuais de eletrónica"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": "A133"
 		},
 		{
 			"question": "Num emissor de modulação de frequência modulado a ± 5 kHz, a segunda harmónica tem o desvio de:",
@@ -719,7 +719,7 @@
 				"um desmodulador de 145 kHz"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p38</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p38</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p38</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p39</a>) Devemos usar um oscilador de 2465,ao misturar os sinais,vamos obter a soma das frequencias e a diferença das mesmas,assim obtemos 5075 KHz e 145 KHz,depois podemos usar um filtro para seleccionar apenas a pretendida,assim a resposta correcta é a 1."
+			"notes": "A32 Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p38</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p38</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p38</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p39</a>) Devemos usar um oscilador de 2465,ao misturar os sinais,vamos obter a soma das frequencias e a diferença das mesmas,assim obtemos 5075 KHz e 145 KHz,depois podemos usar um filtro para seleccionar apenas a pretendida,assim a resposta correcta é a 1."
 		},
 		{
 			"numb": 33,
@@ -731,7 +731,7 @@
 				"A todas as frequências que o recetor possa receber simultaneamente com a portadora"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p39</a>)"
+			"notes": "A33 Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p39</a>)"
 		},
 		{
 			"numb": 34,
@@ -743,7 +743,7 @@
 				"Ao número de kHz que a frequência da portadora se afasta do seu valor nominal devido à falta de estabilidade do oscilador, na ausência de modulação"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p38</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p39</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p39</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p38</a>)"
+			"notes": "A34 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p38</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p39</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p39</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p38</a>)"
 		},
 		{
 			"numb": 34,
@@ -767,7 +767,7 @@
 				"Provoca uma saturação na antena do emissor"
 			],
 			"correctIndex": 2,
-			"notes": "0000_00_01p38"
+			"notes": "A35 Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p38</a>)"
 		},
 		{
 			"numb": 36,
@@ -779,7 +779,7 @@
 				"a portadora"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p38</a>) A Portadora,resposta 4."
+			"notes": "A36 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p38</a>) A Portadora,resposta 4."
 		},
 		{
 			"numb": 36,
@@ -803,7 +803,7 @@
 				"o maior consumo de energia"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p39</a>)"
+			"notes": "A37 Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p39</a>)"
 		},
 		{
 			"numb": 38,
@@ -815,7 +815,7 @@
 				"somente a portadora e as duas faixas laterais"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p38</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p39</a>) AM nao ssb"
+			"notes": "A38 Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p38</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p39</a>) AM nao ssb"
 		},
 		{
 			"numb": 39,
@@ -827,7 +827,7 @@
 				"25 kHz"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p39</a>)"
+			"notes": "A39 Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p39</a>)"
 		},
 		{
 			"numb": 40,
@@ -839,7 +839,7 @@
 				"mais ruído se nota no recetor e menor é a faixa de frequências ocupada  "
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p38</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p38</a>)"
+			"notes": "A40 Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p38</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p38</a>)"
 		},
 		{
 			"numb": 41,
@@ -851,7 +851,7 @@
 				"outro tipo"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p38</a>)"
+			"notes": "A41 Exames:(<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p38</a>)"
 		},
 		{
 			"numb": 42,
@@ -863,7 +863,7 @@
 				"há uma maior economia do espectro"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p38</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p39</a>) A unica correcta é a 4,há uma maior economia do espectro."
+			"notes": "A42 Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p38</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p39</a>) A unica correcta é a 4,há uma maior economia do espectro."
 		},
 		{
 			"numb": 42,
@@ -887,7 +887,7 @@
 				"Coil in Water"
 			],
 			"correctIndex": 3,
-			"notes": "A sigla CW quer dizer continuous Wave,tal nome deriva de ser o modo que substituiu o anterior,dumped wave,que era gerado através de‘spark gap’ essas ondas iam desvanecendo rapidamente,ao contrário do CW que era continuo."
+			"notes": "A43 A sigla CW quer dizer continuous Wave,tal nome deriva de ser o modo que substituiu o anterior,dumped wave,que era gerado através de‘spark gap’ essas ondas iam desvanecendo rapidamente,ao contrário do CW que era continuo."
 		},
 		{
 			"numb": 44,
@@ -899,7 +899,7 @@
 				"só pode ser medida nos Centros de Monitorização e Controlo do Espectro da ANACOM"
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": "A44 falta validar esta resposta noutros exemplos foi assinalada respost 1"
 		},
 		{
 			"numb": 45,
@@ -911,7 +911,7 @@
 				"uma emissão em qualquer tipo de modulação"
 			],
 			"correctIndex": 3,
-			"notes": ""
+			"notes": "A45"
 		},
 		{
 			"numb": 46,
@@ -923,7 +923,19 @@
 				"É o único tipo de modulação de voz autorizado para operar em faixas HF entre os 14 e 30 MHz"
 			],
 			"correctIndex": 1,
-			"notes": "https://pt.wikipedia.org/wiki/Modula%C3%A7%C3%A3o_em_banda_lateral_%C3%BAnica "
+			"notes": "A46 https://pt.wikipedia.org/wiki/Modula%C3%A7%C3%A3o_em_banda_lateral_%C3%BAnica "
+		},
+		{
+			"question": "Qual das seguintes afirmações é verdadeira no que respeita à modulação de voz em banda lateral única?",
+			"answers": [
+				"Transmissão de uma banda lateral e da portadora; supressão da outra banda lateral.",
+				"Transmissão de uma banda lateral; supressão da outra banda lateral e da portadora.",
+				"As transmissões de voz em banda lateral única têm uma potência média mais elevada do que qualquer outro tipo de modulação.",
+				"A banda lateral única é o único tipo de modulação autorizado a operar nas faixas de radioamador dos 160, 75 e 40 metro"
+			],
+			"numb": 47,
+			"notes": "",
+			"correctIndex": 2
 		},
 		{
 			"numb": 47,
@@ -935,7 +947,7 @@
 				"Inversão de radianos"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p39</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p38</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p38</a>)"
+			"notes": "A47 Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p39</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p38</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p38</a>)"
 		},
 		{
 			"numb": 48,
@@ -947,7 +959,7 @@
 				"Modulação de amplitude"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p38</a>)"
+			"notes": "A48 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p38</a>)"
 		},
 		{
 			"numb": 49,
@@ -959,7 +971,31 @@
 				"Modulação de frequência"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": "A49"
+		},
+		{
+			"numb": 128,
+			"question": "Qual das seguintes emissões utiliza menor largura de banda?",
+			"answers": [
+				"Banda lateral única",
+				"Modulação de frequência",
+				"Dupla banda lateral",
+				"Modulação de fase"
+			],
+			"correctIndex": 1,
+			"notes": "A128 Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p29</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p29</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p29</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p29</a>) Banda lateral única. (SSB – Single Side Band)"
+		},
+		{
+			"numb": 128,
+			"question": "Qual das seguintes emissões utiliza, duma forma geral, menor largura de banda?",
+			"answers": [
+				"Banda lateral única",
+				"CW",
+				"Dupla banda lateral",
+				"Modulação de fase"
+			],
+			"correctIndex": 2,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p29</a>)"
 		},
 		{
 			"numb": 50,
@@ -971,7 +1007,19 @@
 				"12"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p38</a>) O indice de modulação é o desvio maximo dividido pela freqeuncia máxima,log 6 /2 = 3,resposta 2."
+			"notes": "A50 Exames:(<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p38</a>) O indice de modulação é o desvio maximo dividido pela freqeuncia máxima,log 6 /2 = 3,resposta 2."
+		},
+		{
+			"question": "Qual é o índice de modulação de um sinal de fonia FM com um desvio máximo de frequência de 3000 Hz de cada lado da frequência da portadora, quando a frequência de modulação é 1000 Hz?",
+			"answers": [
+				"3",
+				"0,3",
+				"3000",
+				"1000"
+			],
+			"numb": 24,
+			"notes": "",
+			"correctIndex": 1
 		},
 		{
 			"numb": 51,
@@ -983,7 +1031,7 @@
 				"200 W"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p40</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p40</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p40</a>) A formula da potencia com a intensidade e resistencia é: P = R * I ^ 2,assim P = 10 * 4 = 40 W,Opção 3"
+			"notes": "A51 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p40</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p40</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p40</a>) A formula da potencia com a intensidade e resistencia é: P = R * I ^ 2,assim P = 10 * 4 = 40 W,Opção 3"
 		},
 		{
 			"numb": 52,
@@ -995,7 +1043,7 @@
 				"5 W"
 			],
 			"correctIndex": 4,
-			"notes": "(0000_00_02p40) 10 dB correspondem a uma atenuação de 10 x,assim a saida terá 5 W.Õpção 4."
+			"notes": "A52 Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p40</a>) 10 dB correspondem a uma atenuação de 10 x,assim a saida terá 5 W.Õpção 4."
 		},
 		{
 			"numb": 55,
@@ -1007,7 +1055,7 @@
 				"20 dB"
 			],
 			"correctIndex": 3,
-			"notes": "Temos um ganho de 10 x assim o valor são 10 dB,para calcular este valor deve se usar a seguinte formula Ganho = 10 * log(v1 / v2) => Ganho = 10 * log(10 / 1) = 10 dB,opção 3."
+			"notes": "A55 Temos um ganho de 10 x assim o valor são 10 dB,para calcular este valor deve se usar a seguinte formula Ganho = 10 * log(v1 / v2) => Ganho = 10 * log(10 / 1) = 10 dB,opção 3."
 		},
 		{
 			"numb": 53,
@@ -1019,7 +1067,7 @@
 				"Um amplificador é tanto mais eficiente quanto maior for o consumo para uma dada potência de saída"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p40</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p40</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p40</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p40</a>) A eficiencia é a relacao entre o consumo e a saida,logo quanto mais eficiente,maior a potencia de saida com o menor sonsumo,logo opção 3 está correcta,"
+			"notes": "A53 Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p40</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p40</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p40</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p40</a>) A eficiencia é a relacao entre o consumo e a saida,logo quanto mais eficiente,maior a potencia de saida com o menor sonsumo,logo opção 3 está correcta,"
 		},
 		{
 			"numb": 54,
@@ -1031,7 +1079,7 @@
 				"12 dB"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p40</a>) duplicar ou dividir por 2 resulta numa variação de 3 dB,ora vejamos um exemplo entrada 5 W Saida 10 W Ganho = 10 * log(v1 / v2),Ganho = 10 * log(10 / 5) <= > Ganho = 3 dB."
+			"notes": "A54 Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p40</a>) duplicar ou dividir por 2 resulta numa variação de 3 dB,ora vejamos um exemplo entrada 5 W Saida 10 W Ganho = 10 * log(v1 / v2),Ganho = 10 * log(10 / 5) <= > Ganho = 3 dB."
 		},
 		{
 			"numb": 56,
@@ -1043,7 +1091,7 @@
 				"400 dB"
 			],
 			"correctIndex": 3,
-			"notes": "Devem - se somar os valores,assim 10 + 40 = 50,logo a opção correcta é a 3."
+			"notes": "A56 Devem - se somar os valores,assim 10 + 40 = 50,logo a opção correcta é a 3."
 		},
 		{
 			"numb": 57,
@@ -1055,7 +1103,7 @@
 				"37,5 Ohm"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p8</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p8</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p9</a>) Para calcular a resistência Equivalente a resistências em série basta somar os valores das mesmas,assim 12,5+ 12,5 = 25,logo a opção 2 é a correcta."
+			"notes": "A57 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p8</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p8</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p9</a>) Para calcular a resistência Equivalente a resistências em série basta somar os valores das mesmas,assim 12,5+ 12,5 = 25,logo a opção 2 é a correcta."
 		},
 		{
 			"numb": 58,
@@ -1067,7 +1115,19 @@
 				"600 Ohm, 600 Ohm, 600 Ohm"
 			],
 			"correctIndex": 3,
-			"notes": "Para calcular a resistência Equivalente a resistências em série basta somar os valores das mesmas,das alíneas a que a soma sao 600 Ohm é a alínea 3."
+			"notes": "A58 Para calcular a resistência Equivalente a resistências em série basta somar os valores das mesmas,das alíneas a que a soma sao 600 Ohm é a alínea 3."
+		},
+		{
+			"question": "A associação que resulta numa resistência equivalente de 200 ohms é a série das seguintes resistências:",
+			"answers": [
+				"100 ohms, 80 ohms, 20 ohms.",
+				"200 ohms, 150 ohms, 50 ohms.",
+				"200 ohms, 200 ohms, 200 ohms.",
+				"600 ohms, 600 ohms, 600 ohms."
+			],
+			"numb": 16,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p9</a>)",
+			"correctIndex": 1
 		},
 		{
 			"numb": 59,
@@ -1079,7 +1139,7 @@
 				"10 resistências de 10 Ohm em paralelo"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p8</a>)"
+			"notes": "A59 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p8</a>)"
 		},
 		{
 			"question": "Para obter uma resistência equivalente de 1 kohm é necessário associar:",
@@ -1127,7 +1187,7 @@
 				"um quarto do valor de cada uma delas"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p9</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p09</a>)"
+			"notes": "A60 Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p9</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p09</a>)"
 		},
 		{
 			"numb": 61,
@@ -1139,7 +1199,7 @@
 				"25 Ohm"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p8</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p8</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p9</a>) O valor associacao de resistencias em paralelo pode ser calculando dividindo o valor das resistencias pela quantidade delas,logo 10 resistencias de 100 Ohm em paralelo é 100 / 10 = 10 Ohm,atenção que só se pode usar esta formula para resistencias de igual valor."
+			"notes": "A61 Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p8</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p8</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p9</a>) O valor associacao de resistencias em paralelo pode ser calculando dividindo o valor das resistencias pela quantidade delas,logo 10 resistencias de 100 Ohm em paralelo é 100 / 10 = 10 Ohm,atenção que só se pode usar esta formula para resistencias de igual valor."
 		},
 		{
 			"numb": 61,
@@ -1163,7 +1223,7 @@
 				"a tensão e a corrente estão em fase"
 			],
 			"correctIndex": 4,
-			"notes": "Exames:(<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p9</a>)"
+			"notes": "A62 Exames:(<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p9</a>)"
 		},
 		{
 			"numb": 64,
@@ -1175,7 +1235,7 @@
 				"0,01 nF = 10 000 pF"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p20</a>)"
+			"notes": "A64 Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p20</a>)"
 		},
 		{
 			"numb": 65,
@@ -1187,7 +1247,7 @@
 				"ao quociente da capacidade maior pela capacidade menor"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p20</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p20</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p15</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p15</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p15</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p20</a>) É a soma das capacidades.Opção 2. Ceq = C1 + C2 + … +Cn"
+			"notes": "A65 Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p20</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p20</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p15</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p15</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p15</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p20</a>) É a soma das capacidades.Opção 2. Ceq = C1 + C2 + … +Cn"
 		},
 		{
 			"numb": 66,
@@ -1199,7 +1259,19 @@
 				"Condensador RF de custo reduzido"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p15</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p20</a>)"
+			"notes": "A66 Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p15</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p20</a>)"
+		},
+		{
+			"question": "Qual a vantagem de um condensador electrolítico?",
+			"answers": [
+				"Tolerância reduzida.",
+				"Não polarização.",
+				"capacidade elevada para um volume determinado.",
+				"Condensador RF de custo reduzido."
+			],
+			"numb": 37,
+			"notes": "",
+			"correctIndex": 3
 		},
 		{
 			"numb": 67,
@@ -1211,7 +1283,7 @@
 				"Comporta-se como um circuito aberto"
 			],
 			"correctIndex": 4,
-			"notes": "Um condensador simplificando são 2 placas condutoras separadas por um isolador,assim,num circuito de corrente continua um condensador comporta - se como um circuito aberto,resposta 4."
+			"notes": "A67 Um condensador simplificando são 2 placas condutoras separadas por um isolador,assim,num circuito de corrente continua um condensador comporta - se como um circuito aberto,resposta 4."
 		},
 		{
 			"numb": 69,
@@ -1223,7 +1295,7 @@
 				"Comporta-se como um circuito aberto"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p24</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p22</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p22</a>)  Uma bobina é um fio enrolado sobre algo, esse algo pode ser ar,normalmente encontramos as mesmas num circuito enroladas em ferrite. Para um circuito de corrente continua, a bobina comporta-se como um curto circuito."
+			"notes": "A69 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p24</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p22</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p22</a>)  Uma bobina é um fio enrolado sobre algo, esse algo pode ser ar,normalmente encontramos as mesmas num circuito enroladas em ferrite. Para um circuito de corrente continua, a bobina comporta-se como um curto circuito."
 		},
 		{
 			"numb": 69,
@@ -1247,7 +1319,7 @@
 				"1 µH = 0,001 H"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p23</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p23</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p24</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p22</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p22</a>) Utilizando a imagem seguinte tirada do google: (Podemos ver que a única afirmação verdadeira é a 2) 1 mH = 0,001 H"
+			"notes": "A70 Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p23</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p23</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p24</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p22</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p22</a>) Utilizando a imagem seguinte tirada do google: (Podemos ver que a única afirmação verdadeira é a 2) 1 mH = 0,001 H"
 		},
 		{
 			"numb": 70,
@@ -1271,7 +1343,7 @@
 				"Os transformadores são utilizados fundamentalmente para transformar uma tensão contínua dum dado valor numa tensão contínua de valor mais elevado"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p30</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p30</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p28</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p28</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p28</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p28</a>)Os transformadores não funcionam em corrente continua.Em corrente continua funcionam como curtos circuitos ou resistências,visto que são fios enrolados a volta de algo.Assim a 1,2 e 4 estão erradas,sobra a única certa que é a 3."
+			"notes": "A71 Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p30</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p30</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p28</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p28</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p28</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p28</a>)Os transformadores não funcionam em corrente continua.Em corrente continua funcionam como curtos circuitos ou resistências,visto que são fios enrolados a volta de algo.Assim a 1,2 e 4 estão erradas,sobra a única certa que é a 3."
 		},
 		{
 			"numb": 72,
@@ -1283,7 +1355,7 @@
 				"de tensão retificada em apenas metade do período"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p30</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p30</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p28</a>) A resposta certa é a 2,tensão alternada.a retificação não tem nada a ver com os transformadores,apesar de nas fontes de alimentação encontrarmos o retificador após o transformador."
+			"notes": "A72 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p30</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p30</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p28</a>) A resposta certa é a 2,tensão alternada.a retificação não tem nada a ver com os transformadores,apesar de nas fontes de alimentação encontrarmos o retificador após o transformador."
 		},
 		{
 			"question": "Um tranformador, projectado para o efeito, com o primário ligado à rede eléctrica, apresenta nos terminais do secundário em vazio 5,2 V",
@@ -1307,7 +1379,7 @@
 				"Os transformadores só são utilizados em frequências abaixo de 5 Hz"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p28</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p28</a>) A resposta verdadeira é a 1. Os transformadores podem ser utilizados abaixo dos 1 kHz,por exemplo na rede eletrica que funciona a 50 Hz,os transformadores não transformam correntes contínuas.!"
+			"notes": "A73 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p28</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p28</a>) A resposta verdadeira é a 1. Os transformadores podem ser utilizados abaixo dos 1 kHz,por exemplo na rede eletrica que funciona a 50 Hz,os transformadores não transformam correntes contínuas.!"
 		},
 		{
 			"numb": 73,
@@ -1331,7 +1403,7 @@
 				"Capacidade mútua"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p28</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p28</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p28</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p28</a>) Indutância mútua.Resposta 3."
+			"notes": "A74 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p28</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p28</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p28</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p28</a>) Indutância mútua.Resposta 3."
 		},
 		{
 			"numb": 75,
@@ -1343,7 +1415,7 @@
 				"uma junção entre uma substância condutora e outra semicondutora"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p32</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p31</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p31</a>)"
+			"notes": "A75 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p32</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p31</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p31</a>)"
 		},
 		{
 			"numb": 75,
@@ -1367,7 +1439,7 @@
 				"à tensão de saturação"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p32</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p32</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p31</a>)"
+			"notes": "A76 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p32</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p32</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p31</a>)"
 		},
 		{
 			"numb": 76,
@@ -1391,7 +1463,7 @@
 				"os fotões"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p32</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p32</a>)"
+			"notes": "A77 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p32</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p32</a>)"
 		},
 		{
 			"numb": 78,
@@ -1403,7 +1475,7 @@
 				"141V"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p32</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p31</a>)"
+			"notes": "A78 Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p32</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p31</a>)"
 		},
 		{
 			"numb": 79,
@@ -1415,7 +1487,7 @@
 				"D4 "
 			],
 			"correctIndex": 4,
-			"notes": " (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p32</a>) O simbolo correcto é o D4,resposta 4."
+			"notes": "A79 Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p32</a>) O simbolo correcto é o D4,resposta 4."
 		},
 		{
 			"numb": 79,
@@ -1439,7 +1511,7 @@
 				"entre 1 V e 2 V"
 			],
 			"correctIndex": 3,
-			"notes": ""
+			"notes": "A80"
 		},
 		{
 			"numb": 81,
@@ -1451,7 +1523,7 @@
 				"díodos"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p31</a>) A ponte rectificadora é constituida por diodos."
+			"notes": "A81 Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p31</a>) A ponte rectificadora é constituida por diodos."
 		},
 		{
 			"numb": 82,
@@ -1463,7 +1535,7 @@
 				"um emissor e uma base, podendo ter ou não ter coletor"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p35</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p33</a>) A resposta correcta é a 2."
+			"notes": "A82 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p35</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p33</a>) A resposta correcta é a 2."
 		},
 		{
 			"numb": 83,
@@ -1475,7 +1547,19 @@
 				"Não há base"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p35</a>)  Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p35</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p33</a>) A base é o terminal A,resposta 1."
+			"notes": "A83 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p35</a>)  Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p35</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p33</a>) A base é o terminal A,resposta 1."
+		},
+		{
+			"numb": 110,
+			"question": "Na figura 7, identifique o terminal colector <img src='images/cat2/tran_fig_7.jpg'>",
+			"answers": [
+				"A",
+				"B",
+				"C",
+				"Não há colector"
+			],
+			"correctIndex": 3,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p35</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p35</a>)"
 		},
 		{
 			"numb": 84,
@@ -1487,7 +1571,7 @@
 				"A – coletor, B – emissor e C – base"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p35</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p33</a>) Coletor é o C,Base o A e B o emissor,logo a resposta certa é a 3."
+			"notes": "A84 Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p35</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p33</a>) Coletor é o C,Base o A e B o emissor,logo a resposta certa é a 3."
 		},
 		{
 			"numb": 85,
@@ -1499,7 +1583,7 @@
 				"Todas as hipóteses estão corretas"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p33</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p33</a>) Resposta 4, os transistores podem ser utilizados como amplificadores, comutadores e osciladores."
+			"notes": "A85 Exames:(<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p33</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p33</a>) Resposta 4, os transistores podem ser utilizados como amplificadores, comutadores e osciladores."
 		},
 		{
 			"numb": 85,
@@ -1535,7 +1619,7 @@
 				"ativa, saturação e inversa"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p33</a>) Corte,ativa e saturação.Resposta 3."
+			"notes": "A86 Exames:(<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p33</a>) Corte,ativa e saturação.Resposta 3."
 		},
 		{
 			"numb": 87,
@@ -1547,7 +1631,7 @@
 				"Na zona inversa de saturação"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p33</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p33</a>)"
+			"notes": "A87 Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p33</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p33</a>)"
 		},
 		{
 			"numb": 88,
@@ -1559,7 +1643,7 @@
 				"à determinação das tensões e correntes contínuas (DC) que garantem o funcionamento do transístor na zona ativa"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p35</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p35</a>)"
+			"notes": "A88 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p35</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p35</a>)"
 		},
 		{
 			"numb": 89,
@@ -1571,7 +1655,7 @@
 				"duma forma geral, reduz ligeiramente o sinal de entrada, mantendo a fase"
 			],
 			"correctIndex": 1,
-			"notes": "Vendo a seguinte imagem:<img  src='images/cat2/image-53.png'> Podemos concluir que inverte e amplifica,assim a resposta correta é a 1. "
+			"notes": "A89 Vendo a seguinte imagem:<img  src='images/cat2/image-53.png'> Podemos concluir que inverte e amplifica,assim a resposta correta é a 1. "
 		},
 		{
 			"numb": 90,
@@ -1583,7 +1667,7 @@
 				"6 elementos"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p37</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p37</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p36</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p36</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p36</a>) 4 Elementos: Ânodo,Cátodo e duas grades.a resposta certa é a 2."
+			"notes": "A90 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p37</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p37</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p36</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p36</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p36</a>) 4 Elementos: Ânodo,Cátodo e duas grades.a resposta certa é a 2."
 		},
 		{
 			"numb": 92,
@@ -1595,7 +1679,7 @@
 				"Todas as hipóteses estão corretas"
 			],
 			"correctIndex": 3,
-			"notes": "https://web.fe.up.pt/~vgt/dados/E3/apontamentos/ampl_sinto.pdf"
+			"notes": "A92 necessario validar na bateria de exames é considerada a resposta 2 https://web.fe.up.pt/~vgt/dados/E3/apontamentos/ampl_sinto.pdf"
 		},
 		{
 			"numb": 92,
@@ -1619,7 +1703,7 @@
 				"a deixar passar as frequências mais baixas e as frequências mais altas, rejeitando uma dada gama de frequências"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p16</a>) Rejeitar as frequências mais altas,resposta 2."
+			"notes": "A93 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p16</a>) Rejeitar as frequências mais altas,resposta 2."
 		},
 		{
 			"numb": 94,
@@ -1631,7 +1715,7 @@
 				"a deixar passar as frequências mais baixas e as frequências mais altas, rejeitando uma dada gama de frequências"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p19</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p16</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p16</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p16</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p18</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p18</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p18</a>) Resposta 4. Serve por exemplo para bloquear estações de rádio muito fortes nas imediações."
+			"notes": "A94 Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p19</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p16</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p16</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p16</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p18</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p18</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p18</a>) Resposta 4. Serve por exemplo para bloquear estações de rádio muito fortes nas imediações."
 		},
 		{
 			"numb": 94,
@@ -1655,7 +1739,7 @@
 				"não provoca qualquer efeito, não sendo adequada se o circuito de carga necessitar de uma tensão contínua"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p25</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p21</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p21</a>)"
+			"notes": "A96 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p25</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p21</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p21</a>)"
 		},
 		{
 			"numb": 97,
@@ -1667,7 +1751,7 @@
 				"Sim se se tiver também uma resistência em série com cada um dos díodos"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p25</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p21</a>)"
+			"notes": "A97 Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p25</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p21</a>)"
 		},
 		{
 			"numb": 98,
@@ -1679,7 +1763,7 @@
 				"uma retificação de onda completa"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p25</a>)"
+			"notes": "A98 Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p25</a>)"
 		},
 		{
 			"numb": 99,
@@ -1691,7 +1775,7 @@
 				"condensador supressor de picos"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p26</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p21</a>)"
+			"notes": "A99 Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p26</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p21</a>)"
 		},
 		{
 			"numb": 100,
@@ -1703,7 +1787,7 @@
 				"Elimina a corrente do “loop” de terra"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p26</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p21</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p21</a>)"
+			"notes": "A100 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p26</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p21</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p21</a>)"
 		},
 		{
 			"numb": 101,
@@ -1715,7 +1799,7 @@
 				"40"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p28</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p30</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p30</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p30</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p30</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p30</a>) Resposta 45/1.5=30"
+			"notes": "A101 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p28</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p30</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p30</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p30</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p30</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p30</a>) Resposta 45/1.5=30"
 		},
 		{
 			"numb": 102,
@@ -1727,7 +1811,7 @@
 				"se uma tensão de audiofrequência aplicada à entrada de um circuito , corresponde uma tensão de radiofrequência na saída do mesmo circuito"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p28</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p30</a>)"
+			"notes": "A102 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p28</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p30</a>)"
 		},
 		{
 			"numb": 103,
@@ -1739,7 +1823,7 @@
 				"0,8 A"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p30</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p30</a>)"
+			"notes": "A103 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p30</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p30</a>)"
 		},
 		{
 			"question": "A corrente que circula entre o colector e o emissor de um transistor é 8 mA, e a corrente que circula entre a base e o emissor do mesmo transistor é 400 uA. Qual é o ganho de corrente apresentado?",
@@ -1775,7 +1859,7 @@
 				"Um amplificador usado como multiplicador de frequências"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p30</a>)"
+			"notes": "A104 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p30</a>)"
 		},
 		{
 			"numb": 104,
@@ -1811,7 +1895,7 @@
 				"Detetor"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p11</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p9</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p9</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p10</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p10</a>) https://www.youtube.com/watch?v=hz_mMLhUinw https://www.youtube.com/watch?v=dk6DdG4vs4Y"
+			"notes": "A105 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p11</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p9</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p9</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p10</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p10</a>) https://www.youtube.com/watch?v=hz_mMLhUinw https://www.youtube.com/watch?v=dk6DdG4vs4Y"
 		},
 		{
 			"numb": 105,
@@ -1835,7 +1919,7 @@
 				"Um recetor de conversão direta"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p10</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p10</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p10</a>) validar pois em formação foi considerada resposta 1 > texto original: super-regenerativo ou tfr  </br> o super-heterodino e conversão direta  tem misturador"
+			"notes": "A106 Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p10</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p10</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p10</a>) validar pois em formação foi considerada resposta 1 > texto original: super-regenerativo ou tfr  </br> o super-heterodino e conversão direta  tem misturador"
 		},
 		{
 			"numb": 107,
@@ -1847,7 +1931,7 @@
 				"Filtragem"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p9</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p9</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p10</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p10</a>)"
+			"notes": "A107 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p9</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p9</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p10</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p10</a>)"
 		},
 		{
 			"numb": 108,
@@ -1859,7 +1943,7 @@
 				"F3E"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p20</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p18</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p20</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p14</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p14</a>)"
+			"notes": "A108 Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p20</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p18</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p20</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p14</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p14</a>)"
 		},
 		{
 			"question": "Os receptores de FM estão associados a que tipo de modulação?",
@@ -1870,7 +1954,7 @@
 				"F3E"
 			],
 			"numb": 17,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p18</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p20</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p14</a>)",
+			"notes": "A109 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p18</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p20</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p14</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -1883,7 +1967,7 @@
 				"É um circuito de deteção de sinais FM"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p20</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p14</a>) https://www.youtube.com/watch?v=afnTVUmVK5I"
+			"notes": "A110 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p20</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p14</a>) https://www.youtube.com/watch?v=afnTVUmVK5I"
 		},
 		{
 			"numb": 110,
@@ -1907,7 +1991,7 @@
 				"Multiplicador"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p24</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p24</a>)"
+			"notes": "A111 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p24</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p24</a>)"
 		},
 		{
 			"numb": 112,
@@ -1919,7 +2003,7 @@
 				"Aproximadamente 2 vezes"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p24</a>) https://www.youtube.com/watch?v=0rRs75Kdwq8 1s=3db 3db=2x"
+			"notes": "A112 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p24</a>) https://www.youtube.com/watch?v=0rRs75Kdwq8 1s=3db 3db=2x"
 		},
 		{
 			"question": "Quanto é que a potência de um emissor tem que aumentar para que num receptor distante a leitura do indicador de nível (unidades S) mude de S8 ara S9?",
@@ -1943,7 +2027,7 @@
 				"Numa ponte de díodos"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p26</a>) https://en.wikipedia.org/wiki/S_meter"
+			"notes": "A113 Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p26</a>) https://en.wikipedia.org/wiki/S_meter"
 		},
 		{
 			"numb": 113,
@@ -1967,7 +2051,7 @@
 				"Potência do transmissor"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p26</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p26</a>) https://en.wikipedia.org/wiki/S_meter"
+			"notes": "A114 Exames:(<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p26</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p26</a>) https://en.wikipedia.org/wiki/S_meter"
 		},
 		{
 			"numb": 115,
@@ -1979,7 +2063,7 @@
 				"Pela verificação da variação da reactância no díodo em relação à frequência"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": "A115"
 		},
 		{
 			"numb": 116,
@@ -1991,7 +2075,7 @@
 				"insere uma portadora para obter um verdadeiro sinal FM"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": "A116"
 		},
 		{
 			"numb": 117,
@@ -2003,7 +2087,7 @@
 				"oscilador da banda de filtragem"
 			],
 			"correctIndex": 3,
-			"notes": ""
+			"notes": "A117"
 		},
 		{
 			"numb": 117,
@@ -2022,12 +2106,12 @@
 			"question": "Num recetor de FM, o andar designado por “limitador”",
 			"answers": [
 				"Limita o sinal a uma amplitude constante.",
-				"Rejeita sinais SSB e CW",
+				"Rejeita sinais SS B e CW",
 				"Limita o desvio de frequência do sinal",
 				"Limita o desvio de fase do sinal"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p26</a>)"
+			"notes": "A118 Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p26</a>)"
 		},
 		{
 			"numb": 119,
@@ -2039,7 +2123,7 @@
 				"Modulador balanceado"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p17</a>)"
+			"notes": "A119 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p17</a>)"
 		},
 		{
 			"numb": 120,
@@ -2051,7 +2135,7 @@
 				"onda contínua"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p19</a>) Modulador de frequencia, Resposta 2."
+			"notes": "A120 Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p19</a>) Modulador de frequencia, Resposta 2."
 		},
 		{
 			"numb": 121,
@@ -2063,7 +2147,7 @@
 				"da variação do ruído da portadora em função do sinal que a modula."
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p19</a>)"
+			"notes": "A121 Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p19</a>)"
 		},
 		{
 			"numb": 121,
@@ -2087,7 +2171,7 @@
 				"da variação do ruído da portadora em função do sinal que a modula."
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p19</a>)"
+			"notes": "A 122 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p19</a>)"
 		},
 		{
 			"numb": 123,
@@ -2099,7 +2183,7 @@
 				"No microfone"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p23</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p23</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p23</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p25</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p25</a>) Como as espurias são emitidas na saida de RF, o local logico é a seguir ao andar de saída do emissor, logo, resposta 2."
+			"notes": "A123 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p23</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p23</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p23</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p25</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p25</a>) Como as espurias são emitidas na saida de RF, o local logico é a seguir ao andar de saída do emissor, logo, resposta 2."
 		},
 		{
 			"numb": 124,
@@ -2111,7 +2195,7 @@
 				"É um circuito que, de uma forma geral, serve de filtro."
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p26</a>) Um buffer é, de forma geral um circuito que serve de isolador. Resposta 3."
+			"notes": "A124 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p26</a>) Um buffer é, de forma geral um circuito que serve de isolador. Resposta 3."
 		},
 		{
 			"numb": 125,
@@ -2123,7 +2207,7 @@
 				"É um oscilador de frequência variável"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p25</a>) Variable Frequency Oscillator, resposta 4."
+			"notes": "A125 Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p25</a>) Variable Frequency Oscillator, resposta 4."
 		},
 		{
 			"numb": 126,
@@ -2135,7 +2219,7 @@
 				"Todas as afirmações anteriores estão corretas"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p25</a>) Resposta 3. Notar que as vezes estas frequencias e/ou os seus harmonicos elevadas coincidem com as frequencias de amador, causando assim interferencias."
+			"notes": "A126 Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p25</a>) Resposta 3. Notar que as vezes estas frequencias e/ou os seus harmonicos elevadas coincidem com as frequencias de amador, causando assim interferencias."
 		},
 		{
 			"numb": 127,
@@ -2147,31 +2231,7 @@
 				"Facilidade na mudança de frequência"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p29</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_01p29</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p29</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p29</a>)"
-		},
-		{
-			"numb": 128,
-			"question": "Qual das seguintes emissões utiliza menor largura de banda?",
-			"answers": [
-				"Banda lateral única",
-				"Modulação de frequência",
-				"Dupla banda lateral",
-				"Modulação de fase"
-			],
-			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p29</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p29</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p29</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p29</a>) Banda lateral única. (SSB – Single Side Band)"
-		},
-		{
-			"numb": 128,
-			"question": "Qual das seguintes emissões utiliza, duma forma geral, menor largura de banda?",
-			"answers": [
-				"Banda lateral única",
-				"CW",
-				"Dupla banda lateral",
-				"Modulação de fase"
-			],
-			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p29</a>)"
+			"notes": "A127 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p29</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_01p29</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p29</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p29</a>)"
 		},
 		{
 			"numb": 129,
@@ -2183,7 +2243,7 @@
 				"Ficará distorcido e terá uma maior largura de banda"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p29</a>)"
+			"notes": "A129 Exames:(<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p29</a>)"
 		},
 		{
 			"numb": 130,
@@ -2195,7 +2255,7 @@
 				"deve-se às correntes oscilantes"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p29</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p29</a>)"
+			"notes": "A130 Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p29</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p29</a>)"
 		},
 		{
 			"numb": 131,
@@ -2207,7 +2267,7 @@
 				"A estabilidade da frequência não seria apropriada"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p29</a>)"
+			"notes": "A131 Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p29</a>)"
 		},
 		{
 			"numb": 132,
@@ -2219,7 +2279,7 @@
 				"Infinita"
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": "A132"
 		},
 		{
 			"numb": 134,
@@ -2231,7 +2291,7 @@
 				"É uma antena instalada a bordo de uma aeronave para enviar sinais para a Terra"
 			],
 			"correctIndex": 3,
-			"notes": "(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p12</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p13</a>)"
+			"notes": "A134 (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p12</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p13</a>)"
 		},
 		{
 			"numb": 135,
@@ -2243,7 +2303,7 @@
 				"Uma antena Yagi"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p13</a>)"
+			"notes": "A135 Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p13</a>)"
 		},
 		{
 			"numb": 136,
@@ -2255,7 +2315,7 @@
 				"Deve tornar-se mais pequeno quando a frequência aumenta"
 			],
 			"correctIndex": 4,
-			"notes": "Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p10</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p12</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p12</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p10</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p13</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p13</a>)"
+			"notes": "A136 Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p10</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p12</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p12</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p10</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p13</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p13</a>)"
 		},
 		{
 			"numb": 137,
@@ -2267,7 +2327,7 @@
 				"pode ser usada para mais do que uma banda de frequências"
 			],
 			"correctIndex": 3,
-			"notes": "Exames:(<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p13</a>)"
+			"notes": "A137 Exames:(<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p13</a>)"
 		},
 		{
 			"question": "Como se designa uma antena que consiste num simples dipolo montado de forma que os elementos são paralelos à superfície da Terra?",
@@ -2303,7 +2363,7 @@
 				"200 W"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p16</a>)"
+			"notes": "A138 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p16</a>)"
 		},
 		{
 			"numb": 139,
@@ -2315,7 +2375,7 @@
 				"4,3"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p16</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p16</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p16</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p15</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p15</a>)"
+			"notes": "A139 Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p16</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p16</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p16</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p15</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p15</a>)"
 		},
 		{
 			"numb": 140,
@@ -2327,7 +2387,7 @@
 				"200 W"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p16</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p17</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p17</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p15</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p15</a>)"
+			"notes": "A140 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p16</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p17</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p17</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p15</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p15</a>)"
 		},
 		{
 			"question": "A potência aparente radiada (p.a.r.) emitida por uma antena de 5 dBd de ganho (no máximo do seu diagrama de radiação) quando lhe é entregue uma potência de 10 dBW é",
@@ -2351,7 +2411,7 @@
 				"A relação entre o ganho direto e o ganho do dipolo"
 			],
 			"correctIndex": 3,
-			"notes": ""
+			"notes": "A141"
 		},
 		{
 			"numb": 142,
@@ -2363,7 +2423,7 @@
 				"Antena isotrópica"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p15</a>)"
+			"notes": "A142 Exames:(<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p15</a>)"
 		},
 		{
 			"numb": 143,
@@ -2375,7 +2435,7 @@
 				"A constante dielétrica"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p22</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p22</a>)"
+			"notes": "A143 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p22</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p22</a>)"
 		},
 		{
 			"numb": 144,
@@ -2387,7 +2447,7 @@
 				"Num aumento de distorção do sinal"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p22</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p22</a>)"
+			"notes": "A144 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p22</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p22</a>)"
 		},
 		{
 			"numb": 144,
@@ -2411,7 +2471,7 @@
 				"50 Ohm"
 			],
 			"correctIndex": 4,
-			"notes": ""
+			"notes": "A145"
 		},
 		{
 			"numb": 146,
@@ -2423,7 +2483,7 @@
 				"uma perda de modulação no sinal emitido"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p24</a>)"
+			"notes": "A146 Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p24</a>)"
 		},
 		{
 			"numb": 147,
@@ -2435,11 +2495,11 @@
 				"uma malha e um condutor central enrolados em conjunto e revestidos por um dielétrico"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p24</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p24</a>)"
+			"notes": "A147 Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p24</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p24</a>)"
 		},
 		{
 			"numb": 148,
-			"question": "Verificou-se que uma linha de transmissão de 200 metros possuía uma atenuação total de 26 dB. Qual é asua atenuação por metro?",
+			"question": "Verificou-se que uma linha de transmissão de 200 metros possuía uma atenuação total de 26 dB. Qual é a sua atenuação por metro?",
 			"answers": [
 				"0,13 dB/m",
 				"0,26 dB/m",
@@ -2447,7 +2507,7 @@
 				"26 dB/m"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": "A148"
 		},
 		{
 			"numb": 149,
@@ -2459,7 +2519,7 @@
 				"que nunca poderão ser utilizadas com linhas de transmissão de sinais de RF"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p22</a>)"
+			"notes": "A149 Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p22</a>)"
 		},
 		{
 			"numb": 150,
@@ -2471,7 +2531,7 @@
 				"1"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p24</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p24</a>) R=(ZL-ZS)/(ZL+ZS)=>(50-25)/(50-25)=25/75=1/3 </br>VRMS=(1+R)/(1-R)=>(1+(1/3))/(1-(1/3))=2"
+			"notes": "A150 Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p24</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p24</a>) R=(ZL-ZS)/(ZL+ZS)=>(50-25)/(50-25)=25/75=1/3 </br>VRMS=(1+R)/(1-R)=>(1+(1/3))/(1-(1/3))=2"
 		},
 		{
 			"numb": 150,
@@ -2495,7 +2555,7 @@
 				"é cerca de metade da potência que lhe é transmitida"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p1</a>)"
+			"notes": "A151 Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p1</a>)"
 		},
 		{
 			"numb": 152,
@@ -2507,7 +2567,7 @@
 				"Ocorreu uma reflexão na camada esporádica-E da ionosfera"
 			],
 			"correctIndex": 4,
-			"notes": ""
+			"notes": "A152"
 		},
 		{
 			"numb": 153,
@@ -2519,7 +2579,7 @@
 				"Só tem vantagens pois atenua o multipercurso"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p1</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p6</a>)"
+			"notes": "A153 Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p1</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p6</a>)"
 		},
 		{
 			"numb": 154,
@@ -2531,7 +2591,7 @@
 				"Deslocarmo-nos uns metros para o lado, pois a perda de sinal pode ser devida a reflexões (multipercurso)"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p1</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p1</a>)"
+			"notes": "A154 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p1</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p1</a>)"
 		},
 		{
 			"numb": 155,
@@ -2543,7 +2603,7 @@
 				"220 - 450 MHz"
 			],
 			"correctIndex": 3,
-			"notes": ""
+			"notes": "A155 falta validar na bateria de perguntas esta sinalizada a resposta 4"
 		},
 		{
 			"numb": 156,
@@ -2555,7 +2615,7 @@
 				"manchas solares"
 			],
 			"correctIndex": 3,
-			"notes": ""
+			"notes": "A156"
 		},
 		{
 			"numb": 156,
@@ -2579,7 +2639,7 @@
 				"é uma cintura esférica de radiação solar à volta da terra"
 			],
 			"correctIndex": 3,
-			"notes": ""
+			"notes": "A157"
 		},
 		{
 			"numb": 157,
@@ -2603,7 +2663,7 @@
 				"esporádica"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p6</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p6</a>)"
+			"notes": "A158 Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p6</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p6</a>)"
 		},
 		{
 			"numb": 158,
@@ -2627,7 +2687,7 @@
 				"F"
 			],
 			"correctIndex": 4,
-			"notes": ""
+			"notes": "A159"
 		},
 		{
 			"numb": 160,
@@ -2639,7 +2699,7 @@
 				"A camada F2"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p1</a>)"
+			"notes": "A160 Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p1</a>)"
 		},
 		{
 			"numb": 161,
@@ -2651,7 +2711,7 @@
 				"É uma condição de propagação ionosférica, em que estas camadas são atravessadas facilmente nas !faixas de HF"
 			],
 			"correctIndex": 2,
-			"notes": ""
+			"notes": "A161"
 		},
 		{
 			"numb": 162,
@@ -2663,7 +2723,7 @@
 				"Relação de onda estacionária de tensão (VSWR) maior que 1"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p9</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p12</a>)"
+			"notes": "A162 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p9</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p12</a>)"
 		},
 		{
 			"numb": 162,
@@ -2699,7 +2759,7 @@
 				"A potência aparente radiada não pode ser medida de forma direta por nenhum equipamento"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p12</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p12</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p12</a>)"
+			"notes": "A164 Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p12</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p12</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p12</a>)"
 		},
 		{
 			"numb": 165,
@@ -2711,7 +2771,7 @@
 				"Permite a determinação da presença de ondas com 'flat-topping'em momentos de pico de modulação"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p13</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p13</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p13</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p12</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p12</a>)"
+			"notes": "A165 Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p13</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p13</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p13</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p12</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p12</a>)"
 		},
 		{
 			"numb": 165,
@@ -2735,7 +2795,7 @@
 				"Todas as opções anteriores estão corretas"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p13</a>)"
+			"notes": "A166 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p13</a>)"
 		},
 		{
 			"numb": 167,
@@ -2747,7 +2807,7 @@
 				"Reflectómetro"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p18</a>)"
+			"notes": "A167 Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p18</a>)"
 		},
 		{
 			"numb": 167,
@@ -2762,6 +2822,18 @@
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p9</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p9</a>)"
 		},
 		{
+			"question": "Como se deve ligar um amperímetro num circuito (no qual se pretende efectuar a medida)?",
+			"answers": [
+				"Em série",
+				"Em paralelo",
+				"Indiscriminadamente",
+				"Em série-paralelo"
+			],
+			"numb": 8,
+			"notes": "A163 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p9</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p9</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p13</a>)",
+			"correctIndex": 1
+		},
+		{
 			"numb": 168,
 			"question": "Porque é desejável que um voltímetro tenha uma elevada impedância de entrada?",
 			"answers": [
@@ -2771,7 +2843,7 @@
 				"Porque apresenta um baixo efeito de carga no circuito a medir"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p18</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p18</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p18</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p17</a>)"
+			"notes": "A168 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p18</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p18</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p18</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p17</a>)"
 		},
 		{
 			"numb": 169,
@@ -2783,7 +2855,7 @@
 				"Propagação de ondas de rádio"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": "A189"
 		},
 		{
 			"numb": 169,
@@ -2807,7 +2879,7 @@
 				"Podem ser criadas no cabo tensões muito elevadas quando a estação de amador emite"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p11</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p11</a>)"
+			"notes": "A170 Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p11</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p11</a>)"
 		},
 		{
 			"numb": 171,
@@ -2819,7 +2891,7 @@
 				"Em nenhum dos sítios referidos nas três hipóteses anteriores"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p11</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p11</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p11</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p11</a>)"
+			"notes": "A171 Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p11</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p11</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p11</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p11</a>)"
 		},
 		{
 			"numb": 172,
@@ -2831,7 +2903,7 @@
 				"Todas as hipóteses anteriores estão corretas"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p11</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p11</a>)"
+			"notes": "A172 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p11</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p11</a>)"
 		},
 		{
 			"numb": 173,
@@ -2843,7 +2915,7 @@
 				"Robustez"
 			],
 			"correctIndex": 1,
-			"notes": ""
+			"notes": "A173"
 		},
 		{
 			"numb": 174,
@@ -2855,7 +2927,7 @@
 				"uma tensão DC"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p6</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p6</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p05</a>)"
+			"notes": "A174 Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p6</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p6</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p05</a>)"
 		},
 		{
 			"numb": 175,
@@ -2870,6 +2942,18 @@
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p2</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p6</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p5</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p5</a>)"
 		},
 		{
+			"numb": 175,
+			"question": "Quais os fatores que afetam a maior ou menor exposição da população a campos eletromagnéticos perto de uma estação de amador?",
+			"answers": [
+				"Potência emitida",
+				"Distância às antenas",
+				"Diagrama de radiação das antenas",
+				"Todas as respostas anteriores estão corretas"
+			],
+			"correctIndex": 4,
+			"notes": "A175"
+		},
+		{
 			"numb": 176,
 			"question": "De acordo com a regulamentação em vigor, é obrigatória a sinalização das estações individuais de amador, no âmbito da proteção da população em geral a campos eletromagnéticos?",
 			"answers": [
@@ -2879,7 +2963,7 @@
 				"Só se emitirem acima de 1 GHz"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p5</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p5</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p5</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p5</a>)"
+			"notes": "A176 Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p5</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p5</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p5</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p5</a>)"
 		},
 		{
 			"numb": 176,
@@ -2903,7 +2987,7 @@
 				"AJUDA"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p3</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p3</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p4</a>)"
+			"notes": "A177 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p3</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p3</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p4</a>)"
 		},
 		{
 			"numb": 177,
@@ -2927,7 +3011,7 @@
 				"CR0"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p4</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p1</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p1</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p01</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p1</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p01</a>)"
+			"notes": "A178 Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p4</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p1</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p1</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p01</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p1</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p01</a>)"
 		},
 		{
 			"numb": 179,
@@ -2939,7 +3023,7 @@
 				"Recorrer a instâncias internacionais, no sentido destas entrarem em contacto com à ANACOM"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p13</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p12</a>)"
+			"notes": "A179 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p13</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p12</a>)"
 		},
 		{
 			"numb": 180,
@@ -2951,7 +3035,7 @@
 				"Investigar a situação e resolvê-la ou ajudá-la a resolver se o problema for da instalação de receção"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p13</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p12</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p7</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p7</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p7</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p07</a>)"
+			"notes": "A180 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p13</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p12</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p7</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p7</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p7</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p07</a>)"
 		},
 		{
 			"numb": 181,
@@ -2963,7 +3047,7 @@
 				"é uma emissão numa frequência ou em frequências fora da largura de faixa necessária, mas na sua vizinhança imediata, originada por desaptação de impedância no cabo de alimentação da antena"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p2</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p2</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p3</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p3</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p3</a>)"
+			"notes": "A181 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p2</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p2</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p3</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p3</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p3</a>)"
 		},
 		{
 			"numb": 181,
@@ -2987,7 +3071,7 @@
 				"5725 - 5830 MHz"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p6</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p2</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p3</a>)"
+			"notes": "A182 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p6</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p2</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p3</a>)"
 		},
 		{
 			"numb": 182.1,
@@ -3011,7 +3095,7 @@
 				"Durante as suas comunicações, as estações de amador devem transmitir o seu indicativo de chamada de acordo com o definido na regulamentação aplicável"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p6</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p2</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p2</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p3</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p3</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p3</a>)"
+			"notes": "A183 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p6</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p2</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p2</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p3</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p3</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p3</a>)"
 		},
 		{
 			"numb": 184,
@@ -3023,7 +3107,7 @@
 				"Certificado internacional HAREC, nos termos da Recomendação CEPT T/R 61-02"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p5</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p3</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p4</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p4</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p04</a>)"
+			"notes": "A184 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p5</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p3</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p4</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p4</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p04</a>)"
 		},
 		{
 			"numb": 185,
@@ -3035,7 +3119,7 @@
 				"CT7 se estiver a operar numa estação de amador, situada na área geográfica POR"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p5</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p3</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p4</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p4</a>)"
+			"notes": "A185 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p5</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p3</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p4</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p4</a>)"
 		},
 		{
 			"numb": 187,
@@ -3047,7 +3131,7 @@
 				"100 W"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p2</a>)"
+			"notes": "A187 Exames:(<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p2</a>)"
 		},
 		{
 			"numb": 188,
@@ -3059,7 +3143,7 @@
 				"A estação que emitir com a potência mais baixa"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p4</a>) (<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p4</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p4</a>) Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf'>ADENDA_2013_QNAF</a>"
+			"notes": "A188 Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p4</a>) (<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p4</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p4</a>) Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf'>ADENDA_2013_QNAF</a>"
 		},
 		{
 			"numb": 189,
@@ -3071,7 +3155,7 @@
 				"Para utilizar uma estação do serviço de amador um amador da categoria 2 precisa de uma licença de estação"
 			],
 			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p5</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p2</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p2</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p2</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p2</a>)"
+			"notes": "A189 Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p5</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p2</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p2</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p2</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p2</a>)"
 		},
 		{
 			"question": "Porque é que os sinais de VHF e UHF não se propagam a longa distância?",
@@ -3310,7 +3394,7 @@
 				"Todas as respostas estão correctas"
 			],
 			"numb": 36,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p37</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p37</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p36</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p36</a>) As valvulas são lineares am amps de audio.os dispositivos a valvulas nao sao necessariamente perigosos,a 3 ª é a verdadeira.",
+			"notes": "A91 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p37</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p37</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p36</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p36</a>) As valvulas são lineares am amps de audio.os dispositivos a valvulas nao sao necessariamente perigosos,a 3 ª é a verdadeira.",
 			"correctIndex": 3
 		},
 		{
@@ -3360,18 +3444,6 @@
 			"numb": 5,
 			"notes": "",
 			"correctIndex": 2
-		},
-		{
-			"question": "Como se deve ligar um amperímetro num circuito (no qual se pretende efectuar a medida)?",
-			"answers": [
-				"Em série",
-				"Em paralelo",
-				"Indiscriminadamente",
-				"Em série-paralelo"
-			],
-			"numb": 8,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p9</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p9</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p13</a>)",
-			"correctIndex": 1
 		},
 		{
 			"question": "As antenas Yagi:",
@@ -3506,18 +3578,6 @@
 			"correctIndex": 2
 		},
 		{
-			"question": "Na figura 8, a que terminais correspondem as letras indicadas no seguinte transístor:",
-			"answers": [
-				"A - emissor, B - base e C - colector",
-				"A - base, B - colector e C - emissor",
-				"A - base, B - emissor e C - colector",
-				"A - colector, B - emissor e C – base"
-			],
-			"numb": 34,
-			"notes": "",
-			"correctIndex": 3
-		},
-		{
 			"question": "Qual das afirmações está incorrecta?",
 			"answers": [
 				"A nossa voz é um conjunto de ondas acústicas",
@@ -3528,18 +3588,6 @@
 			"numb": 35,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p37</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p37</a>)",
 			"correctIndex": 2
-		},
-		{
-			"question": "Por precaução tive que pôr um atenuador de 10 dB entre o meu préamplificador e o amplificador. Sabendo que o valor máximo na saída do pré-amplificador é 50 W, qual a potência máxima à entrada do amplificador?",
-			"answers": [
-				"60 W",
-				"10 W",
-				"1 W",
-				"5 W"
-			],
-			"numb": 39,
-			"notes": "",
-			"correctIndex": 4
 		},
 		{
 			"question": " O que pode estar a acontecer quando recebemos sinais de VHF a longas distâncias?",
@@ -3574,7 +3622,7 @@
 				"Utilizar estações de amador em todos os países da CEPT, nos Estados Unidos e na Austrália"
 			],
 			"numb": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p5</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p3</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p3</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p4</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p4</a>)",
+			"notes": "A186 Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p5</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p3</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p3</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p4</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p4</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -3722,18 +3770,6 @@
 			"correctIndex": 3
 		},
 		{
-			"question": "Na figura 8 (acima), a que terminais correspondem as letras indicadas no seguinte transistor",
-			"answers": [
-				"A - emissor, B - base e C - colector",
-				"A - base, B - colector e C - emissor",
-				"A - base, B - emissor e C - colector",
-				"A - colector, B - emissor e C - base"
-			],
-			"numb": 34,
-			"notes": "",
-			"correctIndex": 3
-		},
-		{
 			"question": "Um pêntodo possui",
 			"answers": [
 				"3 elementos",
@@ -3778,18 +3814,6 @@
 				"Da amplitude da tensão de modulação"
 			],
 			"numb": 38,
-			"notes": "",
-			"correctIndex": 4
-		},
-		{
-			"question": "Por precaução tive que pôr um atenuador de 10 dB entre o meu pré-amplificador e o amplificador. Sabendo que o valor máximo na saida do pré-amplificador é 50 W, qual a potência máxima à entrada do amplificador?",
-			"answers": [
-				"60 W",
-				"10 W",
-				"1 W",
-				"5 W"
-			],
-			"numb": 39,
 			"notes": "",
 			"correctIndex": 4
 		},
@@ -4370,18 +4394,6 @@
 			"correctIndex": 4
 		},
 		{
-			"question": "Qual é o índice de modulação de um sinal de fonia FM com um desvio máximo de frequência de 3000 Hz de cada lado da frequência da portadora, quando a frequência de modulação é 1000 Hz?",
-			"answers": [
-				"3",
-				"0,3",
-				"3000",
-				"1000"
-			],
-			"numb": 24,
-			"notes": "",
-			"correctIndex": 1
-		},
-		{
 			"question": "Qual a razão de desvio de um sinal de fonia FM com um máximo de frequência de oscilação de ± 5 kHz, assumindo uma taxa máxima de modulação de 3 kHz?",
 			"answers": [
 				"60",
@@ -4452,30 +4464,6 @@
 			"numb": 33,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p40</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p40</a>)",
 			"correctIndex": 1
-		},
-		{
-			"question": "Por precaução tive que pôr um atenuador de 10 dB entre o meu pré-amplificar e o amplificador. Sabendo que o valor máximo na saída do pré-amplificador é 50 W, qual a potência máxima à entrada do amplificador?",
-			"answers": [
-				"60 W",
-				"10 W",
-				"1 W",
-				"5 W"
-			],
-			"numb": 34,
-			"notes": "",
-			"correctIndex": 4
-		},
-		{
-			"question": "Um aumento de potência para o dobro ou a redução da mesma para metade resulta na alteração de quantos dB?",
-			"answers": [
-				"2 dB",
-				"3 dB",
-				"6 dB",
-				"12 dB"
-			],
-			"numb": 36,
-			"notes": "",
-			"correctIndex": 2
 		},
 		{
 			"question": "Qual é a potência de pico envolvente à saída de um transmissor se um osciloscópio medir 200 V pico a pico numa carga fictícia de 50 ohms ligada à potência de saída?",
@@ -4598,30 +4586,6 @@
 			"correctIndex": 2
 		},
 		{
-			"question": "O sinal na entrada de um amplificador é de 1 V rms e à saída de 10 V rms. Este amplificador tem um ganho de: ",
-			"answers": [
-				"3 dB ",
-				"6 dB ",
-				"10 dB ",
-				"20 dB "
-			],
-			"numb": 6,
-			"notes": "",
-			"correctIndex": 4
-		},
-		{
-			"question": "O sinal na entrada de um amplificador é de 1 V rms e à saída de 10 V rms. Este amplificador tem um ganho de: ",
-			"answers": [
-				"10 dB ",
-				"20 dB ",
-				"40 dB ",
-				"100 dB "
-			],
-			"numb": 7,
-			"notes": "",
-			"correctIndex": 2
-		},
-		{
 			"question": "Num atenuador constituído por duas resistências de 100 ohms em série o sinal de entrada é aplicado no conjunto das duas e a saída é retirada do ponto médio. A atenuação da malha é de: ",
 			"answers": [
 				"3 dB ",
@@ -4644,18 +4608,6 @@
 			"numb": 9,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p40</a>)",
 			"correctIndex": 1
-		},
-		{
-			"question": "Dois amplificadores com ganhos de 10 dB e de 40 db estão ligados em cascata. O ganho do conjunto é de: ",
-			"answers": [
-				"8 dB",
-				"30 dB",
-				"50 dB",
-				"400 dB"
-			],
-			"numb": 10,
-			"notes": "",
-			"correctIndex": 3
 		},
 		{
 			"question": "Um amplificador com um ganho de 20 dB tem a saída ligada a um atenuador de 10 dB O ganho do conjunto é de: ",
@@ -4706,30 +4658,6 @@
 			"correctIndex": 3
 		},
 		{
-			"question": "A associação que resulta numa resistência equivalente de 200 ohms é a série das seguintes resistências:",
-			"answers": [
-				"100 ohms, 80 ohms, 20 ohms.",
-				"200 ohms, 150 ohms, 50 ohms.",
-				"200 ohms, 200 ohms, 200 ohms.",
-				"600 ohms, 600 ohms, 600 ohms."
-			],
-			"numb": 16,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p9</a>)",
-			"correctIndex": 1
-		},
-		{
-			"question": "A associação que resulta numa resistência equivalente de 600 ohms é a série das seguintes resistências:",
-			"answers": [
-				"100 ohms, 80 ohms, 20 ohms.",
-				"200 ohms, 150 ohms, 50 ohms.",
-				"200 ohms, 200 ohms, 200 ohms.",
-				"600 ohms, 600 ohms, 600 ohms."
-			],
-			"numb": 17,
-			"notes": "",
-			"correctIndex": 3
-		},
-		{
 			"question": "Qual a resistência total de duas resistências de 33 ohms quando ligadas em paralelo?",
 			"answers": [
 				"33 ohms",
@@ -4750,18 +4678,6 @@
 				"16,5 ohms"
 			],
 			"numb": 21,
-			"notes": "",
-			"correctIndex": 1
-		},
-		{
-			"question": "A resistência equivalente a uma associação de 100 resistências de 100 ohms cada uma, em paralelo, é de:",
-			"answers": [
-				"1 ohm",
-				"10 ohms",
-				"12,5 ohms",
-				"25 ohms"
-			],
-			"numb": 26,
 			"notes": "",
 			"correctIndex": 1
 		},
@@ -4850,18 +4766,6 @@
 			"correctIndex": 4
 		},
 		{
-			"question": "Qual a vantagem de um condensador electrolítico?",
-			"answers": [
-				"Tolerância reduzida.",
-				"Não polarização.",
-				"capacidade elevada para um volume determinado.",
-				"Condensador RF de custo reduzido."
-			],
-			"numb": 37,
-			"notes": "",
-			"correctIndex": 3
-		},
-		{
 			"question": "Que dispositivo se utiliza para armazenar energia eléctrica num campo electrostático?",
 			"answers": [
 				"Uma bateria.",
@@ -4923,18 +4827,6 @@
 			"numb": 12,
 			"notes": "Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p28</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p28</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p30</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p30</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p30</a>)",
 			"correctIndex": 1
-		},
-		{
-			"question": "Qual das seguintes afirmações é verdadeira no que respeita à modulação de voz em banda lateral única?",
-			"answers": [
-				"Transmissão de uma banda lateral e da portadora; supressão da outra banda lateral.",
-				"Transmissão de uma banda lateral; supressão da outra banda lateral e da portadora.",
-				"As transmissões de voz em banda lateral única têm uma potência média mais elevada do que qualquer outro tipo de modulação.",
-				"A banda lateral única é o único tipo de modulação autorizado a operar nas faixas de radioamador dos 160, 75 e 40 metro"
-			],
-			"numb": 47,
-			"notes": "",
-			"correctIndex": 2
 		},
 		{
 			"numb": 110,
@@ -5019,18 +4911,6 @@
 			],
 			"correctIndex": 4,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p30</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p30</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p28</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p28</a>)"
-		},
-		{
-			"numb": 110,
-			"question": "Na figura 7, identifique o terminal colector <img src='images/cat2/tran_fig_7.jpg'>",
-			"answers": [
-				"A",
-				"B",
-				"C",
-				"Não há colector"
-			],
-			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p35</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p35</a>)"
 		},
 		{
 			"numb": 110,
