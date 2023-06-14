@@ -1943,7 +1943,7 @@
 				"F3E"
 			],
 			"correctIndex": 1,
-			"notes": "A108 Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p20</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p18</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p20</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p14</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p14</a>)"
+			"notes": "A108 Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p20</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p18</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p20</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p14</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p14</a>) Consulte os vários tipos de emissão definidos pela UIT (União Internacional de Telecomunicações) fonte: https://en.wikipedia.org/wiki/Types_of_radio_emissions#Common_examples <a target='_blank' href='docs/Types_of_radio_emissions.pdf'>tipos_emissão</a>"
 		},
 		{
 			"question": "Os receptores de FM estão associados a que tipo de modulação?",
@@ -1954,7 +1954,7 @@
 				"F3E"
 			],
 			"numb": 17,
-			"notes": "A109 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p18</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p20</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p14</a>)",
+			"notes": "A109 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p18</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p20</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p14</a>) Consulte os vários tipos de emissão definidos pela UIT (União Internacional de Telecomunicações) fonte: https://en.wikipedia.org/wiki/Types_of_radio_emissions#Common_examples <a target='_blank' href='docs/Types_of_radio_emissions.pdf'>tipos_emissão</a>",
 			"correctIndex": 4
 		},
 		{
@@ -1967,7 +1967,7 @@
 				"É um circuito de deteção de sinais FM"
 			],
 			"correctIndex": 4,
-			"notes": "A110 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p20</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p14</a>) https://www.youtube.com/watch?v=afnTVUmVK5I"
+			"notes": "A110 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p20</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p14</a>) Consulte os vários tipos de detetores e especificamente o Foster–Seeley discriminator e Ratio detector > fonte: https://en.wikipedia.org/wiki/Detector_(radio) <a target='_blank' href='docs/Detector_(radio).pdf'>detetores</a> e um <a target='_blank' href='https://www.youtube.com/watch?v=afnTVUmVK5I'>video</a>"
 		},
 		{
 			"numb": 110,
@@ -1979,7 +1979,7 @@
 				"Mistura de ruído com o sinal recebido"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p26</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p26</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p26</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p26</a>) Consulte o que é um detetor > fonte: https://en.wikipedia.org/wiki/Detector_(radio) <a target='_blank' href='docs/Detector_(radio).pdf'>detetores</a>"
 		},
 		{
 			"numb": 111,
@@ -1991,7 +1991,7 @@
 				"Multiplicador"
 			],
 			"correctIndex": 1,
-			"notes": "A111 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p24</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p24</a>)"
+			"notes": "A111 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p24</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p24</a>) O que combina é o misturador. Consulte a imagem do exemplo > Mixer=Misturador onde se combina com o oscilador local 14,250 MHz (a entrada do misturador) menos 13,795 MHz (oscilador local) = 455kHz e <a target='_blank' href='images/cat2/recetor_super_heterodino.png'>imagem diagrama de blocos</a>"
 		},
 		{
 			"numb": 112,
