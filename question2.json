@@ -1498,7 +1498,7 @@
 				"díodo Zener",
 				"díodo Túnel"
 			],
-			"correctIndex": 4,
+			"correctIndex": 3,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p31</a>)"
 		},
 		{
@@ -2003,7 +2003,7 @@
 				"Aproximadamente 2 vezes"
 			],
 			"correctIndex": 2,
-			"notes": "A112 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p24</a>) https://www.youtube.com/watch?v=0rRs75Kdwq8 1s=3db 3db=2x"
+			"notes": "A112 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p24</a>) Para baixar uma unidade no S Meter, cooresponde a uma diferença de 6 dB de atenuação que coorresponde a 4 vezes a potência. Tanto serve para atenuação como amplificação. https://www.youtube.com/watch?v=0rRs75Kdwq8"
 		},
 		{
 			"question": "Quanto é que a potência de um emissor tem que aumentar para que num receptor distante a leitura do indicador de nível (unidades S) mude de S8 ara S9?",
