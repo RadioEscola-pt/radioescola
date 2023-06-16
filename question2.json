@@ -2027,7 +2027,7 @@
 				"Numa ponte de díodos"
 			],
 			"correctIndex": 3,
-			"notes": "A113 Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p26</a>) https://en.wikipedia.org/wiki/S_meter"
+			"notes": "A113 O “squelch” é usado para evitar que se escute o ruido de fundo quando não há emissão. Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p26</a>) https://en.wikipedia.org/wiki/S_meter"
 		},
 		{
 			"numb": 113,
@@ -2063,7 +2063,7 @@
 				"Pela verificação da variação da reactância no díodo em relação à frequência"
 			],
 			"correctIndex": 1,
-			"notes": "A115"
+			"notes": "A115 É filtro mais simples para deteção de AM > no sinal RF que entra modulado e sai filtrado só considerando a envolvente do sinal de RF <img  src='images/cat2/detetor_am.png'>."
 		},
 		{
 			"numb": 116,
@@ -2075,7 +2075,7 @@
 				"insere uma portadora para obter um verdadeiro sinal FM"
 			],
 			"correctIndex": 1,
-			"notes": "A116"
+			"notes": "A116 Combina o oscilador local com a frequencia que nós queremos receber para fazer aparecer uma frequência intermédia <img  src='images/cat2/recetor_super_heterodino.png'>"
 		},
 		{
 			"numb": 117,
@@ -2087,7 +2087,7 @@
 				"oscilador da banda de filtragem"
 			],
 			"correctIndex": 3,
-			"notes": "A117"
+			"notes": "A117 Tambem designado por VFO, pode ser feito através de um condensador variavel como nos antigos radio receptores, ou através de um sintetizador de frequência, de um sistema PLL ou DDS onde é um sistema que gera frequências sobre um sinal de cristal de quartzo qe é bem definido."
 		},
 		{
 			"numb": 117,
@@ -2111,7 +2111,7 @@
 				"Limita o desvio de fase do sinal"
 			],
 			"correctIndex": 1,
-			"notes": "A118 Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p26</a>)"
+			"notes": "A118 FM modulação de frequência ex: imaginando um sinal em FM em um determinada frequencia, se não falar a ampplitude é constante, quando se começa a falar, o sinal é modulado em frequência sendo que a amplitude se mantem. Consulte a imagem a baixo. fonte: https://en.wikipedia.org/wiki/Frequency_modulation Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p26</a>) <img  src='images/cat2/AMvsFM.gif'>"
 		},
 		{
 			"numb": 119,
@@ -2123,7 +2123,7 @@
 				"Modulador balanceado"
 			],
 			"correctIndex": 4,
-			"notes": "A119 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p17</a>)"
+			"notes": "A119 Single Sideband Modulation (SSB) can he obtained by passing the output of a carrier suppressor (product modulator) through filter circuits that are selective to transmit one sideband while suppressing the other. However, this method is suitable only for obtaining Single Sideband Modulation corresponding to low or moderate carrier frequencies. The other method is the phase shift method which avoids filter and instead uses two balanced modulators and two phase shifting networks. (Fonte: https://www.eeeguide.com/single-sideband-modulation-ssb/) Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p17</a>)"
 		},
 		{
 			"numb": 120,
@@ -2255,7 +2255,7 @@
 				"deve-se às correntes oscilantes"
 			],
 			"correctIndex": 2,
-			"notes": "A130 Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p29</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p29</a>)"
+			"notes": "A130 De toda a corrente aplicada ao amplificador a sua rentabilidade nunca chega a 100%, dissipando a diferença através de calor. Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p29</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p29</a>)"
 		},
 		{
 			"numb": 131,
@@ -2267,7 +2267,7 @@
 				"A estabilidade da frequência não seria apropriada"
 			],
 			"correctIndex": 3,
-			"notes": "A131 Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p29</a>)"
+			"notes": "A131 Na realidade as bandas de HF são bandas muito estreitas Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p29</a>)"
 		},
 		{
 			"numb": 132,
@@ -2279,7 +2279,7 @@
 				"Infinita"
 			],
 			"correctIndex": 2,
-			"notes": "A132"
+			"notes": "A132 Os emsissores estão preparados para uma impedancia de 50 Ohm porque foi escolhido e determinado assim"
 		},
 		{
 			"numb": 134,
