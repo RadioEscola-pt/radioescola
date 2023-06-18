@@ -2291,7 +2291,7 @@
 				"É uma antena instalada a bordo de uma aeronave para enviar sinais para a Terra"
 			],
 			"correctIndex": 3,
-			"notes": "A134 (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p12</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p13</a>)"
+			"notes": "A134 É uma antena totalmente teórica, é uma antena que na verdade é um ponto só serve para fazer uma análise de forma a comparar outras antenas. Antena isotrópica ou radiador isotrópico é uma entidade hipotética que assume a forma de uma fonte pontual de energia, irradiando ondas eletromagnéticas da mesma intensidade em todas as direções do espaço. Trata- se realmente de entidade hipotética uma vez que prática não é possível obter um dispositivo capaz de irradiar energia de forma absolutamente uniforme em todas as direções. Mas é usado para comparar antenas reais entre si. Contudo, a influência apenas da superfície da terra alteraria o diagrama e causaria a formação de mínimos e máximos. Uma antena isotrópica, no entanto, não tem o máximo. O diagrama horizontal é o mesmo que o diagrama vertical. Embora todas as outras propriedades características sejam iguais à antena real a ser comparada, assume-se que a potência total radiada é distribuída uniformemente sobre uma superfície esférica. De acordo com as equações de Maxwell, mesmo isto não é teoricamente possível para ondas electromagnéticas.Assim, é apenas uma construção hipotética como base para uma quantidade físico-matemática que é utilizada para comparação. Fonte:https://www.radartutorial.eu/06.antennas/an10.pt.html (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p12</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p13</a>) <img  src='images/cat2/isovsdip.png'>"
 		},
 		{
 			"numb": 135,
@@ -2315,7 +2315,7 @@
 				"Deve tornar-se mais pequeno quando a frequência aumenta"
 			],
 			"correctIndex": 4,
-			"notes": "A136 Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p10</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p12</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p12</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p10</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p13</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p13</a>)"
+			"notes": "A136 Se aumentarmos a frequência o dipolo será mais pequeno, se diminuirmos a frequencia o comprimento do dipolo devera ser maior. Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p10</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p12</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p12</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p10</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p13</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p13</a>)"
 		},
 		{
 			"numb": 137,
@@ -2363,7 +2363,7 @@
 				"200 W"
 			],
 			"correctIndex": 2,
-			"notes": "A138 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p16</a>)"
+			"notes": "A138 20dBi quer dizer que a antena tem 20 dBs de ganho face a uma antena isotropica,  Aplicando a formula temos que primeiramente converter os 10 dBw em dBm (Output power of the transmitter) e depois somamos os 20dBi da antena e dá um valor de 60 dBm que para converter novamente em dBw subtraimos 30 ficando com 30dBw ou 1000W concentrados nessa direção ignoramos as percas com o cabo Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p16</a>) <img src='images/cat2/pire.png'>"
 		},
 		{
 			"numb": 139,
@@ -2507,7 +2507,7 @@
 				"26 dB/m"
 			],
 			"correctIndex": 1,
-			"notes": "A148"
+			"notes": "A148 Basta dividir os 6dB por 200 metros que dá 0,13 dB por metro"
 		},
 		{
 			"numb": 149,
