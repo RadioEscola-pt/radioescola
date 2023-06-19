@@ -10,7 +10,7 @@
 			],
 			"correctIndex": 2,
 			"TEMA": "ohm",
-			"notes": "A1 Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p7</a>) Lei de ohm, V=RI, 36=120*I, I=36/120, I=0.3A, logo resposta 2."
+			"notes": "A1 Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p7</a>) Lei de ohm, V=RI, 36=120*I, I=36/120, I=0.3A, logo resposta 2. <img src='images/cat2/ohm_law.png'>"
 		},
 		{
 			"numb": 2,
@@ -22,7 +22,7 @@
 				"1,2 kilo Ohm"
 			],
 			"correctIndex": 3,
-			"notes": "A2 Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p8</a>) Temos então de passar de 300 para 60 volts,calculamos a diferença,VF = 300 - 60 = 240 V usamos agora a lei de ohm com 240 = R * 0,8,R = 240 / 0,8,R = 300 Ohm ou seja resposta 3. "
+			"notes": "A2 Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p8</a>) Temos então de passar de 300 para 60 volts,calculamos a diferença, VF = 300 - 60 = 240 V usamos agora a lei de ohm com 240 = R * 0,8, R = 240 / 0,8, R = 300 Ohm ou seja resposta 3.<img src='images/cat2/ohm_law.png'>"
 		},
 		{
 			"question": "Determinado circuito precisa ser alimentado com 60 V e 0,2 A. Dispondo-se de uma fonte de 300 V, deve-se colocar em série com o circuito uma resistência de",
@@ -33,7 +33,7 @@
 				"1,2 Kilo Ohm"
 			],
 			"numb": 6,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p7</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p8</a>)",
+			"notes": "VF = 300 - 60 = 240 V usamos agora a lei de ohm com 240 = R * 0,2, R = 240 / 0,2, R = 1200 Ohm ou seja 1,2 Kilo Ohm ou seja resposta 4.<img src='images/cat2/ohm_law.png'> Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p7</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p8</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -46,7 +46,7 @@
 				"1 V"
 			],
 			"correctIndex": 3,
-			"notes": "A3 Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p7</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p8</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p8</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p8</a>) Usando a lei das malhas,A soma da fonte com as quedas de tensão tem de ser 0,logo: 50 - 25 - 10 - 13 - x = 0 <= > x = 2. Opção 3 "
+			"notes": "A3 Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p7</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p8</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p8</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p8</a>) Usando a lei das malhas, A soma da fonte com as quedas de tensão tem de ser 0, logo: 50 - 25 - 10 - 13 - x = 0 <= > x = 2. Opção 3 "
 		},
 		{
 			"question": "Quatro resistências estão montadas em série. A tensão aplicada ao conjunto é de 50 V. As quedas de tensão nos bornes das três primeiras são, respectivamente: 25 V; 10,2 V e 12,8 V. Qual é a queda de tensão nos bornes da última resistência?",
@@ -190,7 +190,7 @@
 				"100 V"
 			],
 			"correctIndex": 3,
-			"notes": "A7 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p14</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p16</a>) Temos de subtrair á voltagem gerada a quebra dada pela resistencia interna, assim, usando a lei de ohm: Vt=V-RI <=> Vt=100-10*0,5 <=> Vt= 95V, Opção 3."
+			"notes": "A7 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p14</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p16</a>) Temos de subtrair á voltagem gerada a quebra dada pela resistencia interna, assim, usando a lei de ohm: Vt=V-RI <=> Vt=100-10*0,5 <=> Vt= 95V, Funciona um pouco como as quedas de tensão  nas resitências em série Opção 3."
 		},
 		{
 			"question": "Um gerador com a f.e.m. de 100 V e com 0,25 Ohm de resistência interna, debita sobre um circuito exterior uma corrente de 40 A. Qual é a tensão aos terminais do gerador?",
@@ -201,7 +201,7 @@
 				"100 V"
 			],
 			"numb": 13,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p14</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p14</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p14</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p16</a>)",
+			"notes": "Vt=100-40*0,25 =90 V Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p14</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p14</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p14</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p16</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -263,7 +263,7 @@
 				"cresce com o quadrado da distância"
 			],
 			"correctIndex": 3,
-			"notes": "A12 Decresce com o quadrado da distância – Ver Lei do Inverso do quadrado – opção 3."
+			"notes": "A12 Decresce com o quadrado da distância – Ver <a target='_blank' href='docs/Lei_do_Inverso_do_Quadrado.pdf'>Lei_do_Inverso_do_Quadrado</a> – opção 3."
 		},
 		{
 			"question": "A intensidade do campo magnético é expressa em:",
@@ -274,7 +274,7 @@
 				"Ampere."
 			],
 			"numb": 27,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p27</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p27</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p27</a>)  Exames:(<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p27</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p27</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p27</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p27</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p27</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -287,7 +287,7 @@
 				"uma região luminosa"
 			],
 			"correctIndex": 2,
-			"notes": "A13 Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p27</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p27</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p27</a>) Um campo magnético.Opção 2"
+			"notes": "A13 Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p27</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p27</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p27</a>) Um campo magnético. Opção 2 <img src='images/cat2/campo_mag.png'>"
 		},
 		{
 			"numb": 14,
