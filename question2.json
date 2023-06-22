@@ -665,8 +665,8 @@
 			"numb": 31,
 			"question": "Num emissor de modulação de frequência, modulado a ± 5 kHz, a segunda harmónica tem o desvio de:",
 			"answers": [
-				"±2, 5 kHz",
-				"± 5, 0 kHz",
+				"± 2,5 kHz",
+				"± 5,0 kHz",
 				"± 10 kHz",
 				"± 20 kHz"
 			],
@@ -696,18 +696,6 @@
 			],
 			"correctIndex": 1,
 			"notes": "A133  Exames:(<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p29</a>)"
-		},
-		{
-			"question": "Num emissor de modulação de frequência modulado a ± 5 kHz, a segunda harmónica tem o desvio de:",
-			"answers": [
-				"± 2,5 kHz",
-				"± 5,0 kHz",
-				"± 10 kHz",
-				"± 20 kHz"
-			],
-			"numb": 25,
-			"notes": "",
-			"correctIndex": 3
 		},
 		{
 			"numb": 32,
@@ -827,7 +815,7 @@
 				"25 kHz"
 			],
 			"correctIndex": 2,
-			"notes": "A39 Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p39</a>)"
+			"notes": "A39 Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p39</a>) Consultar Carson rule 2x(5+3)"
 		},
 		{
 			"numb": 40,
@@ -898,8 +886,8 @@
 				"pode ser desconhecida, sem inconveniente",
 				"só pode ser medida nos Centros de Monitorização e Controlo do Espectro da ANACOM"
 			],
-			"correctIndex": 2,
-			"notes": "A44 falta validar esta resposta noutros exemplos foi assinalada respost 1"
+			"correctIndex": 1,
+			"notes": "A44"
 		},
 		{
 			"numb": 45,
@@ -1022,6 +1010,18 @@
 			"correctIndex": 1
 		},
 		{
+			"question": "Num emissor de FM, cujo desvio máximo de frequência é de 5 kHz e a frequência máxima de modulação 3 kHz, qual é o indice de modulação?",
+			"answers": [
+				"0,6",
+				"1,67",
+				"15",
+				"18"
+			],
+			"numb": 37,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p39</a>)",
+			"correctIndex": 2
+		},
+		{
 			"numb": 51,
 			"question": "Qual a potência associada a um sinal sinusoidal que faz passar uma corrente eficaz de 2 A numa resistência de 10 Ohm?",
 			"answers": [
@@ -1043,7 +1043,7 @@
 				"5 W"
 			],
 			"correctIndex": 4,
-			"notes": "A52 Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p40</a>) 10 dB correspondem a uma atenuação de 10 x,assim a saida terá 5 W.Õpção 4."
+			"notes": "A52 Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p40</a>) 10 dB correspondem a uma atenuação de 10 x, assim a saida terá 5 W.Opção 4 <img src='images/cat2/dbtable.png'>."
 		},
 		{
 			"numb": 55,
@@ -1067,7 +1067,7 @@
 				"Um amplificador é tanto mais eficiente quanto maior for o consumo para uma dada potência de saída"
 			],
 			"correctIndex": 3,
-			"notes": "A53 Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p40</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p40</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p40</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p40</a>) A eficiencia é a relacao entre o consumo e a saida,logo quanto mais eficiente,maior a potencia de saida com o menor sonsumo,logo opção 3 está correcta,"
+			"notes": "A53 Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p40</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p40</a>) (<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p40</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p40</a>) A eficiencia é a relacao entre o consumo e a saida,logo quanto mais eficiente, maior a potencia de saida com o menor consumo, logo opção 3 está correcta,"
 		},
 		{
 			"numb": 54,
@@ -2531,7 +2531,7 @@
 				"1"
 			],
 			"correctIndex": 1,
-			"notes": "A150 Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p24</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p24</a>) R=(ZL-ZS)/(ZL+ZS)=>(50-25)/(50-25)=25/75=1/3 </br>VRMS=(1+R)/(1-R)=>(1+(1/3))/(1-(1/3))=2"
+			"notes": "A150 Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p24</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p24</a>) R=(ZL-ZS)/(ZL+ZS)=>(50-25)/(50-25)=25/75=1/3 </br>VRMS=(1+R)/(1-R)=>(1+(1/3))/(1-(1/3))=2 <a target='_blank' href='docs/vswr_calc.pdf'>calcular_vswr</a>"
 		},
 		{
 			"numb": 150,
@@ -3792,18 +3792,6 @@
 			"numb": 36,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p37</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p37</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p37</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p36</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p36</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p36</a>)",
 			"correctIndex": 3
-		},
-		{
-			"question": "Num emissor de FM, cujo desvio máximo de frequência é de 5 kHz e a frequência máxima de modulação 3 kHz, qual é o indice de modulação?",
-			"answers": [
-				"0,6",
-				"1,67",
-				"15",
-				"18"
-			],
-			"numb": 37,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p39</a>)",
-			"correctIndex": 2
 		},
 		{
 			"question": "A percentagem de modulação em FM é",
