@@ -1054,8 +1054,8 @@
 				"10 dB",
 				"20 dB"
 			],
-			"correctIndex": 3,
-			"notes": "A55 Temos um ganho de 10 x assim o valor são 10 dB,para calcular este valor deve se usar a seguinte formula Ganho = 10 * log(v1 / v2) => Ganho = 10 * log(10 / 1) = 10 dB,opção 3."
+			"correctIndex": 4,
+			"notes": "A55 Temos um ganho de 10 x assim o valor são 10 dB,para calcular este valor deve se usar a seguinte formula Ganho = 20 * log(v2 / v1) (é 20 log(v2/v1) porque é tensão se fosse potência era 10log(v2/v1)  => Ganho = 20 * log(10 / 1) = 20 dB,opção 3."
 		},
 		{
 			"numb": 53,
@@ -1223,7 +1223,7 @@
 				"a tensão e a corrente estão em fase"
 			],
 			"correctIndex": 4,
-			"notes": "A62 Exames:(<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p9</a>)"
+			"notes": "A62 Verificar a seguinte menmonica $$ELI the ICE man$$ signific a que (ELI > se tivermos uma indutania L no circuito, a tensão E vem antes da corrente I) e que (ICE > se tivermos um condensador C no circuito, a tensão E está em atraso face a corrente I) Exames:(<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p9</a>)"
 		},
 		{
 			"numb": 64,
@@ -1235,7 +1235,7 @@
 				"0,01 nF = 10 000 pF"
 			],
 			"correctIndex": 3,
-			"notes": "A64 Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p20</a>)"
+			"notes": "A64 Exames:(<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p20</a>) <img src='images/cat2/farad_table.png'>"
 		},
 		{
 			"numb": 65,
@@ -1319,7 +1319,7 @@
 				"1 µH = 0,001 H"
 			],
 			"correctIndex": 2,
-			"notes": "A70 Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p23</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p23</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p24</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p22</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p22</a>) Utilizando a imagem seguinte tirada do google: (Podemos ver que a única afirmação verdadeira é a 2) 1 mH = 0,001 H"
+			"notes": "A70 Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p23</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p23</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p24</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p22</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p22</a>) Utilizando a imagem seguinte tirada do google: (Podemos ver que a única afirmação verdadeira é a 2) 1 mH = 0,001 H <img src='images/cat2/inductance_table.png'>"
 		},
 		{
 			"numb": 70,
@@ -1403,7 +1403,7 @@
 				"Capacidade mútua"
 			],
 			"correctIndex": 3,
-			"notes": "A74 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p28</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p28</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p28</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p28</a>) Indutância mútua.Resposta 3."
+			"notes": "A74 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p28</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p28</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p28</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p28</a>) Indutância mútua. Resposta 3."
 		},
 		{
 			"numb": 75,
@@ -1415,7 +1415,7 @@
 				"uma junção entre uma substância condutora e outra semicondutora"
 			],
 			"correctIndex": 1,
-			"notes": "A75 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p32</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p31</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p31</a>)"
+			"notes": "A75 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p32</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p31</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p31</a>) Composto por duas partes uma P e uma N semicondutoras. Consulte o seguinte documento: <a target='_blank' href='docs/P–n_junction.pdf'>diodo_juncao</a>"
 		},
 		{
 			"numb": 75,
@@ -1439,7 +1439,7 @@
 				"à tensão de saturação"
 			],
 			"correctIndex": 3,
-			"notes": "A76 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p32</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p32</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p31</a>)"
+			"notes": "A76 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p32</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p32</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p31</a>) <img src='images/cat2/zener_diode.png'>"
 		},
 		{
 			"numb": 76,
@@ -1463,7 +1463,19 @@
 				"os fotões"
 			],
 			"correctIndex": 1,
-			"notes": "A77 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p32</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p32</a>)"
+			"notes": "A77 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p32</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p32</a>) <a target='_blank' href='docs/Diodo_semicondutor.pdf'>diodo</a>"
+		},
+		{
+			"numb": 77,
+			"question": "Os portadores maioritários num material tipo N são",
+			"answers": [
+				"as lacunas",
+				"os eletrões",
+				"os neutrões",
+				"os fotões"
+			],
+			"correctIndex": 2,
+			"notes": ""
 		},
 		{
 			"numb": 78,
@@ -1511,7 +1523,7 @@
 				"entre 1 V e 2 V"
 			],
 			"correctIndex": 3,
-			"notes": "A80"
+			"notes": "A80 Nos diodos de Gremanio e de Silicio apresentam respetivamente as quedas de tensão de cada um dos materias de (0,3V) e (0,7V)"
 		},
 		{
 			"numb": 81,
@@ -1523,7 +1535,7 @@
 				"díodos"
 			],
 			"correctIndex": 4,
-			"notes": "A81 Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p31</a>) A ponte rectificadora é constituida por diodos."
+			"notes": "A81 Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p31</a>) A ponte rectificadora é constituida por diodos. <img src='images/cat2/ponte.png'>"
 		},
 		{
 			"numb": 82,
@@ -1619,7 +1631,7 @@
 				"ativa, saturação e inversa"
 			],
 			"correctIndex": 3,
-			"notes": "A86 Exames:(<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p33</a>) Corte,ativa e saturação.Resposta 3."
+			"notes": "A86 Exames:(<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p33</a>) Na verdade são quatro zonas: Forward-active;Reverse-active; Saturation e Cut-off, mas podemos considerar a zona activa como uma só, consulte o documento:<a target='_blank' href='docs/Bipolar_junction_transistor.pdf'>transistor_bipolar</a>   Corte,ativa e saturação. Resposta 3."
 		},
 		{
 			"numb": 87,
@@ -1643,7 +1655,7 @@
 				"à determinação das tensões e correntes contínuas (DC) que garantem o funcionamento do transístor na zona ativa"
 			],
 			"correctIndex": 4,
-			"notes": "A88 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p35</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p35</a>)"
+			"notes": "A88 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p35</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p35</a>) Sempre em corrente continua para ter a polarização do transistor e tem que funcionar na zona activa"
 		},
 		{
 			"numb": 89,
@@ -4126,7 +4138,7 @@
 				"0,45"
 			],
 			"numb": 24,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p39</a>)",
+			"notes": " Pm= 3kHz/15kHz=1/5=0,2 ou seja 20% Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p39</a>)",
 			"correctIndex": 2
 		},
 		{
