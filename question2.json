@@ -490,7 +490,7 @@
 				"90 000 Hz"
 			],
 			"numb": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p33</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p33</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p34</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p35</a>) ",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p33</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p33</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p34</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p35</a>) <img src='images/cat2/hertz_table.png'>",
 			"correctIndex": 1
 		},
 		{
@@ -598,7 +598,7 @@
 				"0,005 s"
 			],
 			"numb": 9,
-			"notes": "",
+			"notes": "<img src='images/cat2/freq_tensao.png'>",
 			"correctIndex": 2
 		},
 		{
@@ -1835,7 +1835,7 @@
 				"0,8 A"
 			],
 			"correctIndex": 4,
-			"notes": "A103 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p30</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p30</a>)"
+			"notes": "A103 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p30</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p30</a>) Resposta 20 mA X 40 = 800 mA = 0,8 A"
 		},
 		{
 			"question": "A corrente que circula entre o colector e o emissor de um transistor é 8 mA, e a corrente que circula entre a base e o emissor do mesmo transistor é 400 uA. Qual é o ganho de corrente apresentado?",
@@ -1846,7 +1846,7 @@
 				"200"
 			],
 			"numb": 27,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p28</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p30</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p30</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p28</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p30</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p30</a>) Podemos converter os 8 mA em 8000 uA e dividir por 400 = 20",
 			"correctIndex": 2
 		},
 		{
@@ -1858,7 +1858,7 @@
 				"200"
 			],
 			"numb": 27,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p28</a>) (<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p30</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p28</a>) (<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p30</a>) Podemos converter os 80 mA em 80000 uA e dividir por 400 = 200",
 			"correctIndex": 4
 		},
 		{
