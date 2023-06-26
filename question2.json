@@ -22,7 +22,7 @@
 				"1,2 kilo Ohm"
 			],
 			"correctIndex": 3,
-			"notes": "A2 Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p8</a>) (<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p8</a>) Temos então de passar de 300 para 60 volts,calculamos a diferença, VF = 300 - 60 = 240 V usamos agora a lei de ohm com 240 = R * 0,8, R = 240 / 0,8, R = 300 Ohm ou seja resposta 3.<img src='images/cat2/ohm_law.png'>"
+			"notes": "A2 Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p8</a>) (<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p8</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p8</a>) Temos então de passar de 300 para 60 volts,calculamos a diferença, VF = 300 - 60 = 240 V usamos agora a lei de ohm com 240 = R * 0,8, R = 240 / 0,8, R = 300 Ohm ou seja resposta 3.<img src='images/cat2/ohm_law.png'>"
 		},
 		{
 			"question": "Determinado circuito precisa ser alimentado com 60 V e 0,2 A. Dispondo-se de uma fonte de 300 V, deve-se colocar em série com o circuito uma resistência de",
@@ -299,7 +299,7 @@
 				"A intensidade de corrente"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p27</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p27</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p27</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p27</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p27</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p27</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p27</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p27</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p27</a>)"
 		},
 		{
 			"question": "A força que provoca o movimento de cargas num condutor é",
@@ -383,7 +383,7 @@
 				"7, 000 MHz"
 			],
 			"correctIndex": 3,
-			"notes": "A16 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p31</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p31</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p32</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p31</a>) Divide - se a velocidade da luz no vazio por 14,117 e dá o valor que corresponde a 21,250 MHz.Opção 3."
+			"notes": "A16 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p31</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p31</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p32</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p31</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p32</a>) Divide - se a velocidade da luz no vazio por 14,117 e dá o valor que corresponde a 21,250 MHz.Opção 3."
 		},
 		{
 			"numb": 17,
@@ -502,7 +502,7 @@
 				"9 300 000 GHz"
 			],
 			"numb": 8,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p34</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p34</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p34</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p34</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p34</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -515,7 +515,7 @@
 				"o produto da sua frequência pelo seu comprimento de onda"
 			],
 			"correctIndex": 3,
-			"notes": "A21 Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p34</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p34</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p34</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p34</a>) T=1/f (f=frequência) O periodo é o inverso da frequencia, ora vejamos, se a frequencia é medida em ciclos por segundo, invertemos e temos o numero de segundos para completar um ciclo ou seja o periodo que é dado em segundos. Logo opção 3."
+			"notes": "A21 Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p34</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p34</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p34</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p34</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p35</a>) T=1/f (f=frequência) O periodo é o inverso da frequencia, ora vejamos, se a frequencia é medida em ciclos por segundo, invertemos e temos o numero de segundos para completar um ciclo ou seja o periodo que é dado em segundos. Logo opção 3."
 		},
 		{
 			"numb": 25,
@@ -623,7 +623,7 @@
 				"metros"
 			],
 			"correctIndex": 3,
-			"notes": "A27 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p36</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p36</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p36</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p37</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p37</a>) As ondas são medidas em Hertz, independentemente da sua forma. A opção correcta é a 3."
+			"notes": "A27 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p36</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p36</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p36</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p37</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p37</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p37</a>) As ondas são medidas em Hertz, independentemente da sua forma. A opção correcta é a 3."
 		},
 		{
 			"numb": 28,
@@ -779,7 +779,7 @@
 				"4"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p29</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p29</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p29</a>)"
 		},
 		{
 			"numb": 37,
@@ -1162,7 +1162,7 @@
 				"4 resistências de 16 ohms em série."
 			],
 			"numb": 23,
-			"notes": "Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p8</a>)",
+			"notes": "Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p8</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p9</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -1331,7 +1331,7 @@
 				"1 µH = 0,000 001 H"
 			],
 			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p24</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p22</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p22</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p22</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p24</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p22</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p22</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p22</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p22</a>)"
 		},
 		{
 			"numb": 71,
@@ -1379,7 +1379,7 @@
 				"Os transformadores só são utilizados em frequências abaixo de 5 Hz"
 			],
 			"correctIndex": 1,
-			"notes": "A73 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p28</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p28</a>) A resposta verdadeira é a 1. Os transformadores podem ser utilizados abaixo dos 1 kHz,por exemplo na rede eletrica que funciona a 50 Hz,os transformadores não transformam correntes contínuas.!"
+			"notes": "A73 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p28</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p28</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p28</a>) A resposta verdadeira é a 1. Os transformadores podem ser utilizados abaixo dos 1 kHz,por exemplo na rede eletrica que funciona a 50 Hz,os transformadores não transformam correntes contínuas.!"
 		},
 		{
 			"numb": 73,
@@ -1754,6 +1754,18 @@
 			"notes": "A96 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p25</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p21</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p21</a>)"
 		},
 		{
+			"numb": 96,
+			"question": "Qual o número mínimo necessário de díodos para realizar um retificador de meia onda?",
+			"answers": [
+				"4",
+				"3",
+				"2",
+				"1"
+			],
+			"correctIndex": 1,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p31</a>)"
+		},
+		{
 			"numb": 97,
 			"question": "É possível fazer uma retificação de onda completa a partir de um sinal de corrente alternada, proveniente de um transformador, só com dois díodos?",
 			"answers": [
@@ -1799,7 +1811,7 @@
 				"Elimina a corrente do “loop” de terra"
 			],
 			"correctIndex": 2,
-			"notes": "A100 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p26</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p21</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p21</a>)"
+			"notes": "A100 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p26</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p21</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p21</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p21</a>)"
 		},
 		{
 			"numb": 101,
@@ -1846,7 +1858,7 @@
 				"200"
 			],
 			"numb": 27,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p28</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p30</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p30</a>) Podemos converter os 8 mA em 8000 uA e dividir por 400 = 20",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p28</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p30</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p30</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p30</a>) https://github.com/dirtybug/radioAmadorCat2exame/tree/main/examsPodemos converter os 8 mA em 8000 uA e dividir por 400 = 20",
 			"correctIndex": 2
 		},
 		{
@@ -1907,7 +1919,7 @@
 				"Detetor"
 			],
 			"correctIndex": 3,
-			"notes": "A105 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p11</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p9</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p9</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p10</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p10</a>) https://www.youtube.com/watch?v=hz_mMLhUinw https://www.youtube.com/watch?v=dk6DdG4vs4Y"
+			"notes": "A105 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p11</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p9</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p9</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p10</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p10</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p10</a>) https://www.youtube.com/watch?v=hz_mMLhUinw https://www.youtube.com/watch?v=dk6DdG4vs4Y"
 		},
 		{
 			"numb": 105,
@@ -2303,7 +2315,7 @@
 				"É uma antena instalada a bordo de uma aeronave para enviar sinais para a Terra"
 			],
 			"correctIndex": 3,
-			"notes": "A134 É uma antena totalmente teórica, é uma antena que na verdade é um ponto só serve para fazer uma análise de forma a comparar outras antenas. Antena isotrópica ou radiador isotrópico é uma entidade hipotética que assume a forma de uma fonte pontual de energia, irradiando ondas eletromagnéticas da mesma intensidade em todas as direções do espaço. Trata- se realmente de entidade hipotética uma vez que prática não é possível obter um dispositivo capaz de irradiar energia de forma absolutamente uniforme em todas as direções. Mas é usado para comparar antenas reais entre si. Contudo, a influência apenas da superfície da terra alteraria o diagrama e causaria a formação de mínimos e máximos. Uma antena isotrópica, no entanto, não tem o máximo. O diagrama horizontal é o mesmo que o diagrama vertical. Embora todas as outras propriedades características sejam iguais à antena real a ser comparada, assume-se que a potência total radiada é distribuída uniformemente sobre uma superfície esférica. De acordo com as equações de Maxwell, mesmo isto não é teoricamente possível para ondas electromagnéticas.Assim, é apenas uma construção hipotética como base para uma quantidade físico-matemática que é utilizada para comparação. Fonte:https://www.radartutorial.eu/06.antennas/an10.pt.html (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p12</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p13</a>) <img  src='images/cat2/isovsdip.png'>"
+			"notes": "A134 Exames:(<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p13</a>) É uma antena totalmente teórica, é uma antena que na verdade é um ponto só serve para fazer uma análise de forma a comparar outras antenas. Antena isotrópica ou radiador isotrópico é uma entidade hipotética que assume a forma de uma fonte pontual de energia, irradiando ondas eletromagnéticas da mesma intensidade em todas as direções do espaço. Trata- se realmente de entidade hipotética uma vez que prática não é possível obter um dispositivo capaz de irradiar energia de forma absolutamente uniforme em todas as direções. Mas é usado para comparar antenas reais entre si. Contudo, a influência apenas da superfície da terra alteraria o diagrama e causaria a formação de mínimos e máximos. Uma antena isotrópica, no entanto, não tem o máximo. O diagrama horizontal é o mesmo que o diagrama vertical. Embora todas as outras propriedades características sejam iguais à antena real a ser comparada, assume-se que a potência total radiada é distribuída uniformemente sobre uma superfície esférica. De acordo com as equações de Maxwell, mesmo isto não é teoricamente possível para ondas electromagnéticas.Assim, é apenas uma construção hipotética como base para uma quantidade físico-matemática que é utilizada para comparação. Fonte:https://www.radartutorial.eu/06.antennas/an10.pt.html (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p12</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p13</a>) <img  src='images/cat2/isovsdip.png'>"
 		},
 		{
 			"numb": 135,
@@ -2375,7 +2387,7 @@
 				"200 W"
 			],
 			"correctIndex": 2,
-			"notes": "A138 20dBi quer dizer que a antena tem 20 dBs de ganho face a uma antena isotropica,  Aplicando a formula temos que primeiramente converter os 10 dBw em dBm (Output power of the transmitter) e depois somamos os 20dBi da antena e dá um valor de 60 dBm que para converter novamente em dBw subtraimos 30 ficando com 30dBw ou 1000W concentrados nessa direção ignoramos as percas com o cabo Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p16</a>) <img src='images/cat2/pire.png'>"
+			"notes": "A138 20dBi quer dizer que a antena tem 20 dBs de ganho face a uma antena isotropica,  Aplicando a formula temos que primeiramente converter os 10 dBw em dBm (Output power of the transmitter) e depois somamos os 20dBi da antena e dá um valor de 60 dBm que para converter novamente em dBw subtraimos 30 ficando com 30dBw ou 1000W concentrados nessa direção ignoramos as percas com o cabo Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p16</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p15</a>) <img src='images/cat2/pire.png'>"
 		},
 		{
 			"numb": 139,
@@ -2447,7 +2459,7 @@
 				"A constante dielétrica"
 			],
 			"correctIndex": 2,
-			"notes": "A143 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p22</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p22</a>)"
+			"notes": "A143 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p22</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p22</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p24</a>)"
 		},
 		{
 			"numb": 144,
@@ -2471,7 +2483,7 @@
 				"Dobro da impedância da linha de trasnmissão"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p19</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p16</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p18</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p18</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p18</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p19</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p16</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p18</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p18</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p18</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p18</a>)"
 		},
 		{
 			"numb": 145,
@@ -2651,7 +2663,7 @@
 				"é uma cintura esférica de radiação solar à volta da terra"
 			],
 			"correctIndex": 3,
-			"notes": "A157"
+			"notes": "A157 Exames:(<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p6</a>)"
 		},
 		{
 			"numb": 157,
@@ -2807,7 +2819,7 @@
 				"Todas as opções anteriores estão corretas"
 			],
 			"correctIndex": 4,
-			"notes": "A166 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p13</a>)"
+			"notes": "A166 Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p13</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p12</a>)"
 		},
 		{
 			"numb": 166,
@@ -2879,7 +2891,7 @@
 				"Propagação de ondas de rádio"
 			],
 			"correctIndex": 1,
-			"notes": "A189"
+			"notes": "A189 Exames:(<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p17</a>)"
 		},
 		{
 			"numb": 169,
@@ -2987,7 +2999,7 @@
 				"Só se emitirem acima de 1 GHz"
 			],
 			"correctIndex": 1,
-			"notes": "A176 Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p5</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p5</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p5</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p5</a>)"
+			"notes": "A176 Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p5</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p5</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p5</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p5</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p5</a>)"
 		},
 		{
 			"numb": 176,
@@ -3035,7 +3047,7 @@
 				"CR0"
 			],
 			"correctIndex": 4,
-			"notes": "A178 Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p4</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p1</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p1</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p01</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p1</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p01</a>)"
+			"notes": "A178 Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p4</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p1</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p1</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p01</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p1</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p01</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p1</a>)"
 		},
 		{
 			"numb": 179,
@@ -3119,7 +3131,7 @@
 				"Durante as suas comunicações, as estações de amador devem transmitir o seu indicativo de chamada de acordo com o definido na regulamentação aplicável"
 			],
 			"correctIndex": 2,
-			"notes": "A183 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p6</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p2</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p2</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p3</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p3</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p3</a>)"
+			"notes": "A183 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p6</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p2</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p2</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p3</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p3</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p3</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p3</a>)"
 		},
 		{
 			"numb": 184,
@@ -3298,7 +3310,7 @@
 				"Não ligar"
 			],
 			"numb": 12,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p13</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p13</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p12</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p12</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p7</a>) (<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p7</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p13</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p13</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p12</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p12</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p7</a>) (<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p7</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p7</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -3346,7 +3358,7 @@
 				"Pode ser usado equipamento de recepção de menor complexidade."
 			],
 			"numb": 19,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p19</a>) (<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p38</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p19</a>) (<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p38</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p38</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -3562,7 +3574,7 @@
 				"Numa ponte de díodos"
 			],
 			"numb": 23,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p25</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p25</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p26</a>)",
 			"correctIndex": 1
 		},
 		{
@@ -3586,7 +3598,7 @@
 				"é simples, mas só se aplica aos emissores com baixa potência de saída e com pequena profundidade de modulação."
 			],
 			"numb": 25,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p26</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p26</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p26</a>) (<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p25</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p26</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p26</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p26</a>) (<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p25</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p25</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -3634,7 +3646,7 @@
 				"Respeitando as condicionantes expressas na regulamentação aplicavél"
 			],
 			"numb": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p4</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p5</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p5</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p4</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p5</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p5</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p2</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -3646,7 +3658,7 @@
 				"Utilizar estações de amador em todos os países da CEPT, nos Estados Unidos e na Austrália"
 			],
 			"numb": 4,
-			"notes": "A186 Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p5</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p3</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p3</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p4</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p4</a>)",
+			"notes": "A186 Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p5</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p3</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p3</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p4</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p4</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p4</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -3694,7 +3706,7 @@
 				"Usar uma frequência que não seja usada por repetidores"
 			],
 			"numb": 9,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p10</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p11</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p10</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p11</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p11</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -3755,7 +3767,7 @@
 				"F3E"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p18</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p14</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p14</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p18</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p14</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p14</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p14</a>)"
 		},
 		{
 			"question": "Nas linhas de força de um campo eléctrico provocadas por uma carga eléctrica",
@@ -3766,7 +3778,7 @@
 				"Todas as respostas anteriores estão correctas"
 			],
 			"numb": 20,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p21</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p21</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p21</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p23</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p23</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p23</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p21</a>) (<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p21</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p21</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p23</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p23</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p23</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p23</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -3802,7 +3814,7 @@
 				"6 elementos"
 			],
 			"numb": 36,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p37</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p37</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p37</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p36</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p36</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p36</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p37</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p37</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p37</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p36</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p36</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p36</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p36</a>)",
 			"correctIndex": 3
 		},
 		{
@@ -3886,7 +3898,7 @@
 				"As três afirmações são correctas."
 			],
 			"numb": 13,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p16</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p14</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p16</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p16</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p14</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p16</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p16</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -4258,7 +4270,7 @@
 				"Um número infinito de frequências."
 			],
 			"numb": 0,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p39</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p39</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p39</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -4654,7 +4666,7 @@
 				"125 dB "
 			],
 			"numb": 12,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p40</a>)",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p40</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p40</a>)",
 			"correctIndex": 2
 		},
 		{
@@ -4774,7 +4786,7 @@
 				"Custo relativamente reduzido."
 			],
 			"numb": 36,
-			"notes": "",
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p20</a>)",
 			"correctIndex": 4
 		},
 		{
@@ -4934,7 +4946,7 @@
 				"díodo Zener"
 			],
 			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p35</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p35</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p33</a>)"
 		},
 		{
 			"numb": 110,
@@ -5007,6 +5019,18 @@
 			],
 			"correctIndex": 3,
 			"notes": " Exames:(<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p9</a>)"
+		},
+		{
+			"numb": 110,
+			"question": "O sinal de um emissor CW consiste:",
+			"answers": [
+				"num sinal de RF em que a frequência varia segundo as regras de um determinado código, nomeadamente o código Morse",
+				"num sinal de RF modulado com um sinal de 800 Hz segundo as regras de um determinado código, nomeadamente o código Morse",
+				"num sinal de RF que é ligado e desligado segundo as regras de um determinado código, nomeadamente o código Morse",
+				"num sinal de RF em que a fase varia segundo as regras de um determinado código, nomeadamente o código Morse"
+			],
+			"correctIndex": 3,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p19</a>)"
 		}
 	]
 }
