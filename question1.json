@@ -22,7 +22,7 @@
                 "lei das resistências"
             ],
             "correctIndex": 2,
-            "notes": "A2"
+            "notes": "A2 Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p6</a>)"
         },
         {
             "numb": 3,
@@ -94,7 +94,7 @@
                 "Reflexão e aumento da velocidade de propagação"
             ],
             "correctIndex": 1,
-            "notes": "A8"
+            "notes": "A8  Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p17</a>)"
         },
         {
             "numb": 9,
@@ -346,7 +346,7 @@
                 "Todas as respostas estão corretas"
             ],
             "correctIndex": 4,
-            "notes": "A29"
+            "notes": "A29  Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p16</a>)"
         },
         {
             "numb": 30,
@@ -371,6 +371,18 @@
             ],
             "correctIndex": 2,
             "notes": "A31"
+        },
+		 {
+            "numb": 31,
+            "question": "Que razão importante existe para que numa bobina se usem toróides de ferro pulverizado em vez de toróides de ferrite?",
+            "answers": [
+                "Os toróides de fero pulverizado têm normalmente maior permeabilidade inicial",
+                "Os toróides de fero pulverizado têm normalmente maior estabilidade de temperatura",
+                "Os toróides de fero pulverizado requerem normalmente um menor número de espiras para produzir uma determinada indutância",
+                "Os toróides de fero pulverizado apresentam a maior potência nominal"
+            ],
+            "correctIndex": 2,
+            "notes": " Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p20</a>)"
         },
         {
             "numb": 32,
@@ -823,6 +835,18 @@
             ],
             "notes": "A69"
         },
+		{
+            "numb": 69,
+            "question": "Qual a frequência de ressonância aproximada de um circuito em série RLC se R=56 Ohm, L=0,04 mH e C=200 pF?",
+            "answers": [
+                "3,76 MHz",
+                "1,78 MHz",
+                "11,18 MHz",
+                "22,36 MHz"
+            ],
+			"correctIndex": 2,
+            "notes": " Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p15</a>)"
+        },
         {
             "numb": 70,
             "question": "Qual a frequência de ressonância de um circuito em paralelo RLC se R=47 Ohm, L=0,025 mH e C=10 pF?",
@@ -901,7 +925,8 @@
                 "Reduzida, em comparação com a resistência do circuito",
                 "Aproximadamente igual à reactância capacitiva"
             ],
-            "notes": "A76"
+			"correctIndex": 1,
+            "notes": "A76 Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p11</a>)"
         },
         {
             "numb": 77,
@@ -958,6 +983,17 @@
                 "Filtra a tensão de alimentação"
             ],
             "notes": "A81"
+        },
+		 {
+            "numb": 81,
+            "question": "Qual o objetivo de C3 no circuito da figura? <img src='images/cat1/fig2a.png'>",
+            "answers": [
+                "Impede a oscilação própria",
+                "Funciona como filtro de entrada do circuito",
+                "Fornece uma polarização fixa a Q1",
+                "Aumenta os picos da ondulação"
+            ],
+            "notes": " Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p22</a>)"
         },
         {
             "numb": 82,
@@ -1315,6 +1351,18 @@
             ],
             "correctIndex": 4,
             "notes": "A112"
+        },
+		 {
+            "numb": 112,
+            "question": "Duma forma geral para que serve o contrlo automático de ganho no processamento de sinais?",
+            "answers": [
+                "Para manter o tratamento dos sinais numa zona linear",
+                "Para evitar saturações no tratamento dos sinais",
+                "Para que os sinais sejam ajustados de forma a manter um nível médio na saída",
+                "Todas as hióteses de resposta estão correctas"
+            ],
+            "correctIndex": 4,
+            "notes": " Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p21</a>)"
         },
         {
             "numb": 113,
@@ -1873,9 +1921,21 @@
             "correctIndex": 3,
             "notes": "A159"
         },
+		{
+            "numb": 159,
+            "question": "Qual a alteração sofrida pela atenuação do cabo coaxial à medida que aumenta a frequência do sinal transmitido",
+            "answers": [
+                "A atenuação é independente da frequência",
+                "Aumenta",
+                "Diminui",
+                "Atinge o máximo próximo dos 18 MHz"
+            ],
+            "correctIndex": 2,
+            "notes": " Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p18</a>)"
+        },
         {
             "numb": 160,
-            "question": "Duna forma geral como varia a atenuação de um cabo coaxial à medida que aumenta a frequência do sinal transmitido?",
+            "question": "Duma forma geral como varia a atenuação de um cabo coaxial à medida que aumenta a frequência do sinal transmitido?",
             "answers": [
                 "A atenuação é independente da frequência",
                 "Aumenta",
@@ -1883,7 +1943,7 @@
                 "Atinge um máximo próximo dos 18 MHz"
             ],
             "correctIndex": 2,
-            "notes": "A160"
+            "notes": "A160  Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p18</a>)"
         },
         {
             "numb": 161,
@@ -1896,6 +1956,18 @@
             ],
             "correctIndex": 3,
             "notes": "A161"
+        },
+		 {
+            "numb": 161,
+            "question": "Qual o comprimento físico de uma linha de transmissão coaxial que a nível elétrico apresenta 1/4 do comprimento de onda à frequência de 7,2 MHz (para um fator de velocidade de 0,66)?",
+            "answers": [
+                "10 m",
+                "6,9 m",
+                "24 m",
+                "50 m"
+            ],
+            "correctIndex": 2,
+            "notes": " Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p19</a>)"
         },
         {
             "numb": 162,
@@ -2109,6 +2181,18 @@
             "correctIndex": 1,
             "notes": "A179"
         },
+		{
+            "numb": 179,
+            "question": "O que acontece normalmente às ondas de rádio com frequências inferiores à frequência máxima utilizável (MUF) que são enviadas para a ionosfera?",
+            "answers": [
+                "São devlvidas à Terra.",
+                "Atravessam a ionosfera. ",
+                "São totalmente absorvidas pela ionosfera",
+                "São refractadas, fica presas na camada ionosférica e circulam em torn da Terra."
+            ],
+            "correctIndex": 1,
+            "notes": " Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p2</a>)"
+        },
         {
             "numb": 180,
             "question": "Nas comunicações em onda curta, qual o significado da sigla NVIS?",
@@ -2202,7 +2286,7 @@
                 "1,4652 kHz"
             ],
             "correctIndex": 1,
-            "notes": "A187"
+            "notes": "A187  Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p7</a>)"
         },
         {
             "numb": 188,
@@ -2308,7 +2392,7 @@
                 "Todas as opções são válidas"
             ],
             "correctIndex": 2,
-            "notes": "A196"
+            "notes": "A196  Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p13</a>)"
         },
         {
             "numb": 197,
@@ -2356,7 +2440,7 @@
                 "Realimentação positiva"
             ],
             "correctIndex": 3,
-            "notes": "A200"
+            "notes": "A200  Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p8</a>)"
         },
         {
             "numb": 201,
@@ -2391,7 +2475,7 @@
                 "Não ligar"
             ],
             "correctIndex": 2,
-            "notes": "A203"
+            "notes": "A203 Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p12</a>)"
         },
         {
             "numb": 204,
@@ -2415,7 +2499,7 @@
                 "CT7, se estiver a operar a estação na área geográfica POR"
             ],
             "correctIndex": 4,
-            "notes": "A205"
+            "notes": "A205  Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p5</a>)"
         },
         {
             "numb": 206,
@@ -2439,7 +2523,7 @@
                 "100 W"
             ],
             "correctIndex": 1,
-            "notes": "A207"
+            "notes": "A207 Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p4</a>)"
         },
         {
             "numb": 208,
@@ -2452,6 +2536,78 @@
             ],
             "correctIndex": 1,
 			"notes": "A208"
-        }
+        },
+		{
+            "numb": 208,
+            "question": "Qual o tipo de polarização mais comum na propagação de ondas terrestres?",
+            "answers": [
+                "Vertical",
+                "Horizontal",
+                "Circular",
+                "Elíptica"
+            ],
+            "correctIndex": 1,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p1</a>)"
+        },
+		{
+            "numb": 208,
+            "question": "Qual é provavelmente o tipo de propagação a decorrer quando os sinais de rádio percorrem a linha onde termina a luz do dia e começa a escuridão?",
+            "answers": [
+                "Propagação transequatorial.",
+                "Propagação Esporádica E",
+                "Propagação long-path",
+                "Propagação pela grey-line"
+            ],
+            "correctIndex": 4,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p3</a>)"
+        },
+		{
+            "numb": 208,
+            "question": "Qual a vantagem de uso de uma antena com traps?",
+            "answers": [
+                "Tem uma maior directividade nas bandas de HF",
+                "Tem um ganho elevado",
+                "Minimiza as radiações de harmónicos",
+                "Pode ser usada para o funcionamento em multibandas"
+            ],
+            "correctIndex": 4,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p9</a>)"
+        },
+		{
+			"numb": 120,
+			"question": "Uma malha de captura de fase que contém um oscilador controlado por tensão, está associada a um modulador de:",
+			"answers": [
+				"amplitude",
+				"frequência",
+				"amplitude com portadora suprimida",
+				"onda contínua"
+			],
+			"correctIndex": 2,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p19</a>) (<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p10</a>) Pergunta de cat2 que volta a aparecer em cat1  > Modulador de frequencia, Resposta 2."
+		},
+		{
+			"numb": 120,
+			"question": "qual o princípio fundamental de um modulador de fase",
+			"answers": [
+				"Varia a sintonização do pré-amplificador de microfone para gerar sinais modulados em fase",
+				"Varia a sintonização do circuito de tanque do amplificador para gerar sinais modulados em amplitude",
+				"Varia a sintonização do circuito de tanque do amplificador para gerar sinais modulados em fase",
+				"Varia a sintonização do pré-amplificador de microfone para gerar sinais modulados em amplitude"
+			],
+			"correctIndex": 3,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p23</a>)"
+		},
+		{
+			"numb": 120,
+			"question": "Por que razão é que a resistência de um condutor não é a mesma para correntes de RF e para correntes contínuas? ",
+			"answers": [
+				"Porque o isolamento conduz a corrente a frequências altas.",
+				"Devido ao efeito Heisenberg",
+				"Devido ao efeito pelicular",
+				"Porque os condutores são dispositivos não lineares"
+			],
+			"correctIndex": 2,
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2011_12_13.pdf'>2011_12_13p14</a>)"
+		}
 	]  
 }
