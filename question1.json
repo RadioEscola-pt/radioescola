@@ -2702,10 +2702,22 @@
 				"ASCII",
 				"AX25",
 				"Baudot",
-				"Código MOrse"
+				"Código Morse"
 			],
 			"correctIndex": 4,
 			"notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p38</a>)"
+		},
+		{
+			"numb": 120,
+			"question": "Que característica apresentam os sinais de HF scatter?",
+			"answers": [
+				"Alta inteligibilidade",
+				"Som oscilante",
+				"Grandes flutuações da intensidade do sinal",
+				"Todas as opções são válidas"
+			],
+			"correctIndex": 2,
+			"notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p1</a>)"
 		}
 	]  
 }
