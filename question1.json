@@ -22,7 +22,7 @@
                 "lei das resistências"
             ],
             "correctIndex": 2,
-            "notes": "A2 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p6</a>)"
+            "notes": "A2 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p6</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p6</a>)"
         },
         {
             "numb": 3,
@@ -762,7 +762,7 @@
                 "Uma bobina ligada em série"
             ],
             "correctIndex": 4,
-            "notes": "A62"
+            "notes": "A62 Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p11</a>)"
         },
         {
             "numb": 63,
@@ -1745,6 +1745,18 @@
             "correctIndex": 4,
             "notes": "A139"
         },
+		{
+            "numb": 139,
+            "question": "De que forma se pode aumentar a tensão de saída de uma antena loop de recepção?",
+            "answers": [
+                "Diminuindo a permeabilidade da blindagem do loop",
+                "Aumentando o numero de espiras de arame no loop e reduzindo a área da estrutura do loop",
+                "Diminuindo o numero de espiras de arame no loop ou a área da estrutura do loop",
+                "Aumentando o numero de espiras de arame no loop ou a área da estrutura do loop"
+            ],
+            "correctIndex": 4,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p9</a>)"
+        },
         {
             "numb": 140,
             "question": "Qual deverá ser aproximadamente o comprimento físico de uma antena dipolo de meia onda ajustada a uma frequência de 3,55 MHz?",
@@ -2079,6 +2091,18 @@
             "correctIndex": 3,
             "notes": "A165"
         },
+		{
+            "numb": 165,
+            "question": "Qual das seguintes camadas ionosféricas absorve mais sinais de grandes saltos durante o dia nas frequências inferiores aos 10 MHz?",
+            "answers": [
+                "A camada F2",
+                "A camada F1",
+                "A camada E",
+                "A camada D"
+            ],
+            "correctIndex": 4,
+            "notes": "Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p2</a>)"
+        },
         {
             "numb": 166,
             "question": "Numa ligação hertziana, utilizando o modelo de propagação em espaço livre, a potência na antena de receção é",
@@ -2090,6 +2114,18 @@
             ],
             "correctIndex": 3,
             "notes": "A166"
+        },
+		{
+            "numb": 166,
+            "question": "À medida que aumenta a frequência do sinal, como se altera a propagação de ondas terrestres?",
+            "answers": [
+                "aumenta",
+                "diminui",
+                "Não se altera",
+                "As ondas de rádio não se propagam pela superficie terrestre"
+            ],
+            "correctIndex": 2,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p2</a>)"
         },
         {
             "numb": 167,
@@ -2336,7 +2372,7 @@
                 "Permite a determinação da presença de ondas com \"flat-topping\" em momentos de pico de modulação"
             ],
             "correctIndex": 2,
-            "notes": "A186"
+            "notes": "A186 Pergunta cat2 saiu nos Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p13</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p13</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p13</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p12</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p12</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p7</a>)"
         },
         {
             "numb": 187,
@@ -2502,7 +2538,7 @@
                 "Realimentação positiva"
             ],
             "correctIndex": 3,
-            "notes": "A200  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p8</a>)"
+            "notes": "A200  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p8</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p8</a>)"
         },
         {
             "numb": 201,
@@ -2561,7 +2597,7 @@
                 "CT7, se estiver a operar a estação na área geográfica POR"
             ],
             "correctIndex": 4,
-            "notes": "A205  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p5</a>)"
+            "notes": "A205  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p5</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p5</a>)"
         },
         {
             "numb": 206,
@@ -2585,7 +2621,7 @@
                 "100 W"
             ],
             "correctIndex": 1,
-            "notes": "A207 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p4</a>)"
+            "notes": "A207 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p4</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p4</a>)"
         },
         {
             "numb": 208,
@@ -2645,7 +2681,7 @@
 				"onda contínua"
 			],
 			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p19</a>) (<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p10</a>) Pergunta de cat2 que volta a aparecer em cat1  > Modulador de frequencia, Resposta 2."
+			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p19</a>) (<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p10</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p10</a>)  Pergunta de cat2 que volta a aparecer em cat1  > Modulador de frequencia, Resposta 2."
 		},
 		{
 			"numb": 120,
@@ -2718,6 +2754,42 @@
 			],
 			"correctIndex": 2,
 			"notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p1</a>)"
+		},
+		{
+			"numb": 179,
+			"question": "Não concordo com determinadas disposições regulamentares aplicáveis aos Serviços de Amador e de Amador por Satélite. O que é correto fazer?",
+			"answers": [
+				"Não as respeitar",
+				"Incentivar a que outros amadores não as respeitem",
+				"Apresentar fundamentadamente a discordância à ANACOM, propondo alterações",
+				"Recorrer a instâncias internacionais, no sentido destas entrarem em contacto com à ANACOM"
+			],
+			"correctIndex": 3,
+			"notes": "Perg cat2 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p13</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p12</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p12</a>)"
+		},
+		{
+			"numb": 179,
+			"question": "Qual a vantagem de um analisador de antena sobre uma ponte SWR para efeitos da medida do coeficiente de onda estacionária da antena?",
+			"answers": [
+				"Os analisadores de antena sintonizam automaticamente a antena para qualquer tipo de ressonância",
+				"Os analisadores de antena  dispensam normalmente fontes externas de RF",
+				"Os analisadores de antena apresentam normalmente variações no tempo da modulação envolvente ",
+				"Todas as opções são válidas"
+			],
+			"correctIndex": 3,
+			"notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p13</a>)"
+		},
+		{
+			"numb": 179,
+			"question": "Qual o maior inconveniente de uma antena lop de fio para efeitos de radiogoniometria?",
+			"answers": [
+				"Tem um padrão bidireccional",
+				"Não é giratória",
+				"Recebe bem em todas as direcções",
+				"O seu uso é prático unicamente em bandas de VHF"
+			],
+			"correctIndex": 1,
+			"notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p14</a>)"
 		}
 	]  
 }
