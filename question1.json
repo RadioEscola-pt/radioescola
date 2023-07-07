@@ -82,7 +82,7 @@
                 "A ionosfera constitui uma blindagem à volta da Terra, a campos eletromagnéticos em determinadas frequências"
             ],
             "correctIndex": 4,
-            "notes": "A7  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p24</a>)"
+            "notes": "A7  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p24</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p24</a>)"
         },
         {
             "numb": 8,
@@ -96,6 +96,18 @@
             "correctIndex": 1,
             "notes": "A8  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p17</a>)"
         },
+		{
+            "numb": 8,
+            "question": "Quais são os materiais mais usados na blindagem de campos elétricos?",
+            "answers": [
+                "Alumínio e esferovite",
+                "Almínio e aço",
+                "Teflon e aço",
+                "Teflon e alumínio"
+            ],
+            "correctIndex": 2,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p17</a>)"
+        },
         {
             "numb": 9,
             "question": "Qual o equipamento mais adequado para efetuar a medição da diferença de fase entre dois sinais sinusoidais?",
@@ -106,7 +118,7 @@
                 "Medidor de onda estacionária"
             ],
             "correctIndex": 2,
-            "notes": "A9"
+            "notes": "A9  Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p32</a>)"
         },
         {
             "numb": 10,
@@ -345,8 +357,8 @@
                 "aumenta a constante dielétrica do isolante",
                 "Todas as respostas estão corretas"
             ],
-            "correctIndex": 4,
-            "notes": "A29  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p16</a>)"
+            "correctIndex": 2,
+            "notes": "A29  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p16</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p16</a>)"
         },
         {
             "numb": 30,
@@ -468,6 +480,30 @@
             "correctIndex": 2,
             "notes": "A38  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p29</a>)"
         },
+		{
+			"numb": 74,
+			"question": "Qual razão para a existência de tensão no secundário de um transformador quando está ligada uma fonte de tensão alternada ao primário do transformador?",
+			"answers": [
+				"Acoplamento capacitivo",
+				"Acoplamento através de corrente dielétrica",
+				"Indutância mútua",
+				"Capacidade mútua"
+			],
+			"correctIndex": 3,
+			"notes": "Pergunta de categoria 2 Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p29</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p28</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p28</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p28</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p28</a>) Indutância mútua. Resposta 3."
+		},
+		{
+            "numb": 38,
+            "question": "Qual o objectivo de um circuito step-start numa fonte de alientação da alta tensão?",
+            "answers": [
+                "Fornecer uma tensão dupla à saída para aplicações de potência reduzida.",
+                "Compensar as variações da tensã da linha de entrada",
+                "Permitir o contrlo remoto da fonte de alimentação",
+                "Permitir o caregamento gradual do filtro dos condensadores"
+            ],
+            "correctIndex": 4,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p22</a>)"
+        },
         {
             "numb": 39,
             "question": "O primário de um transformador com 100 espiras é percorrido por uma corrente de 10 A. Qual será a corrente no secundário do transformador se este tiver 1000 espiras?",
@@ -540,6 +576,18 @@
             "correctIndex": 4,
             "notes": "A44"
         },
+		{
+            "numb": 44,
+            "question": "Que tipo de polarização é necessária para um LED se iluminar?",
+            "answers": [
+                "Polarização inversa",
+                "Polarização directa",
+                "Polarização nula",
+                "Polarização inductiva"
+            ],
+            "correctIndex": 2,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p31</a>)"
+        },
         {
             "numb": 45,
             "question": "O que é corrente de fuga num díodo bipolar de germânio?",
@@ -573,7 +621,7 @@
                 "Medir a tensão entre a base e o emissor com um voltímetro - a medida deve ser cerca de 0,6 a 0,7 Volt"
             ],
             "correctIndex": 4,
-            "notes": "A47"
+            "notes": "A47  Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p33</a>)"
         },
         {
             "numb": 48,
@@ -824,6 +872,18 @@
             "correctIndex": 4,
             "notes": "A67"
         },
+		{
+            "numb": 67,
+            "question": "Qual dos seguintes modos é mais afectado por uma resposta em fase não-linear num filtro IF de um receptor?",
+            "answers": [
+                "Dispersão por meteoros",
+                "Voz em banda lateral única",
+                "Digital",
+                "Video"
+            ],
+            "correctIndex": 3,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p15</a>)"
+        },
         {
             "numb": 68,
             "question": "Qual a largura de banda a -3 dB de um circuito ressonante em paralelo com frequência de ressonância de 7,1 MHz e fator Q=150?",
@@ -916,6 +976,18 @@
                 "Aproximadamente igual à resistência do circuito"
             ],
             "notes": "A74"
+        },
+		{
+            "numb": 74,
+            "question": "Qual o objectivo de uma condensador em série numa rede de antenas de adaptação do tipo gama?",
+            "answers": [
+                "Fornece islamento DC entre a linha de alimentação e a antena",
+                "Compensa a reactância indutiva da rede de adaptação",
+                "Fornece um notch de rejeição que evite a radiação de harmónicos ",
+                "Altera a impedância da antena para um valor superior"
+            ],
+			"correctIndex": 2,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p19</a>)"
         },
         {
             "numb": 75,
@@ -1273,6 +1345,18 @@
             ],
             "notes": "A103"
         },
+		{
+            "numb": 103,
+            "question": "Quais os componentes básicos de grande parte dos osciladores",
+            "answers": [
+                "Um amplificador e divisor",
+                "Um multiplicador e um misturador de frequências",
+                "Um circulador e um filtro que funcione num lop por antecipaçaõ (feed-forward)",
+                "U filtro e um amplificador que funcione num lop por realimentação (feed-back)"
+            ],
+			"correctIndex": 4,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p34</a>) "
+        },
         {
             "numb": 104,
             "question": "Como é fornecida a realimentação positiva a um oscilador Hartley?",
@@ -1317,7 +1401,7 @@
                 "Verificando a variação da reactância no díodo em relação à frequência."
             ],
 			"correctIndex": 1,
-            "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p30</a>)"
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p30</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p30</a>) (pergunta de categoria 2) É filtro mais simples para deteção de AM > no sinal RF que entra modulado e sai filtrado só considerando a envolvente do sinal de RF <img  src='images/cat2/detetor_am.png'>."
         },
         {
             "numb": 107,
@@ -1483,7 +1567,7 @@
                 "É 100 vezes mais forte"
             ],
             "correctIndex": 4,
-            "notes": "A118"
+            "notes": "A118  Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p21</a>)"
         },
         {
             "numb": 119,
@@ -1533,6 +1617,18 @@
             "correctIndex": 4,
             "notes": "A122"
         },
+		{
+            "numb": 122,
+            "question": "Que tipo de circuito se agrega a um transmissor de FM para restabelecer as frequências de áudio mais baixas atenuadas ou as frequências de áudio mais altas amplificadas?",
+            "answers": [
+                "Ua rede de de-ênfase",
+                "Um supressor heterodino",
+                "Um prescaler de áudio",
+                "Uma rede de pré-ênfase"
+            ],
+            "correctIndex": 1,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p23</a>)"
+        },
         {
             "numb": 123,
             "question": "Como se designa a redução da sensibilidade do recetor causada por um sinal forte próximo da frequência recebida?",
@@ -1543,7 +1639,7 @@
                 "Squelch gain rollback"
             ],
             "correctIndex": 1,
-            "notes": "A123  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p26</a>)"
+            "notes": "A123  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p26</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p26</a>)"
         },
         {
             "numb": 124,
@@ -1662,7 +1758,7 @@
                 "16 kHz"
             ],
             "correctIndex": 2,
-            "notes": "A133"
+            "notes": "A133  Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p27</a>)"
         },
         {
             "numb": 134,
@@ -1673,7 +1769,8 @@
                 "A largura de banda excede os limites recomendados",
                 "A estabilidade da frequência não seria apropriada"
             ],
-            "notes": "A134"
+			"correctIndex": 3,
+            "notes": "A134 Na realidade as bandas de HF são bandas muito estreitas (pergunta de cat2) Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p29</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p27</a>)"
         },
         {
             "numb": 135,
@@ -1803,6 +1900,18 @@
             ],
             "correctIndex": 1,
             "notes": "A143"
+        },
+		{
+            "numb": 143,
+            "question": "Por que razão é necesário saber a importância do ponto de alimentação de uma antena?",
+            "answers": [
+                "Para adaptar as impedâncias e assim obter as máxima transferência de potência da linha de alimentação",
+                "Para medir a densidade de radiação d campo próximo de uma antena de transmissão",
+                "Para calcular a relação frente/lado de uma antena",
+                "Para calcular a relação frente/costas de uma antena"
+            ],
+            "correctIndex": 1,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p18</a>)"
         },
         {
             "numb": 144,
@@ -2444,6 +2553,18 @@
             "correctIndex": 2,
             "notes": "A192"
         },
+		{
+            "numb": 192,
+            "question": "Como é que se trsnaforma uma impedância complexa numa impedância resistiva?",
+            "answers": [
+                "Introduzindo uma resistência negativa para anular a componente resistiva de uma impedância",
+                "Introduzindo uma transcondutância para cancelar a componente reactiva de uma impedância",
+                "Anulando a componente reactiva de uma impedância",
+                "Substituindo as resistências da rede por resistências de carga"
+            ],
+            "correctIndex": 3,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p20</a>)"
+        },
         {
             "numb": 193,
             "question": "Qual das seguintes afirmações está correta?",
@@ -2670,6 +2791,18 @@
             ],
             "correctIndex": 4,
 			"notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p9</a>)"
+        },
+		{
+            "numb": 208,
+            "question": "Qual dos seguintes tipos de amplificadores reduz ou elimina os harmónicos pares?",
+            "answers": [
+                "Amplificador push-push",
+                "Amplificador push-pull",
+                "Classe C",
+                "Classe AB"
+            ],
+            "correctIndex": 2,
+			"notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p25</a>)"
         },
 		{
 			"numb": 120,
