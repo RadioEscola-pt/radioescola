@@ -166,7 +166,7 @@
                 "Constante de Boltzman"
             ],
             "correctIndex": 4,
-            "notes": "A13"
+            "notes": "A13  Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p35</a>)"
         },
         {
             "numb": 14,
@@ -227,6 +227,18 @@
             ],
             "correctIndex": 4,
             "notes": "A18"
+        },
+		{
+            "numb": 18,
+            "question": "Qual das seguintes técncicas costuma ser usada para converter sinais analógicos em digitais?",
+            "answers": [
+                "Amostragem sequêncial",
+                "Regeneração de harmónicos",
+                "Mudança de nível",
+                "Inversão de fase"
+            ],
+            "correctIndex": 1,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p38</a>)"
         },
         {
             "numb": 19,
@@ -715,7 +727,7 @@
                 "Não varia com a frequência"
             ],
             "correctIndex": 4,
-            "notes": "A55"
+            "notes": "A55  Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p36</a>)"
         },
 		{
             "numb": 55,
@@ -1293,10 +1305,11 @@
             "answers": [
                 "Um amplificador e um divisor",
                 "Um multiplicador e um misturador de frequências",
-                "Um circulador e um filtro que funcione num \"loop\" por realimentação (\"feed-back\")",
+                "Um circulador e um filtro que funcione num loop por realimentação (feed-back)",
                 "Um amplificador e um circuito de realimentação"
             ],
-            "notes": "A100"
+			"correctIndex": 3,
+            "notes": "A100  Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p34</a>)"
         },
 		{
             "numb": 100,
@@ -1355,7 +1368,7 @@
                 "U filtro e um amplificador que funcione num lop por realimentação (feed-back)"
             ],
 			"correctIndex": 4,
-            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p34</a>) "
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p34</a>)"
         },
         {
             "numb": 104,
@@ -1462,6 +1475,18 @@
             "correctIndex": 2,
             "notes": "A111"
         },
+		{
+            "numb": 111,
+            "question": "Qual a vantagem de um receptor com filtro de frequencia intermédia criado com processamento digital de sinal (DSP) relativamente a um receptor com filtro analógico?",
+            "answers": [
+                "Pode-se pbter uma vasta gama de largura de banda e de formatos de filtros",
+                "São necessários menos componentes digitais",
+                "Grande redução de dados misturados",
+                "O filtro com processamento digital de sinal é mais eficaz em frequências VHF"
+            ],
+            "correctIndex": 1,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p39</a>)"
+        },
 		 {
             "numb": 111,
             "question": "Qual a vantagem de um receptor co fltro de frequência intermédia criado com processamento digital de sinal (DSP) relativamente a um receptor com filtro analógico?",
@@ -1545,6 +1570,18 @@
             ],
             "correctIndex": 2,
             "notes": "A116"
+        },
+		 {
+            "numb": 116,
+            "question": "Por que razão se costuma usar um oscilador estável de referência como parte de u sintetizador de frequência com malha de captura de fase?",
+            "answers": [
+                "Porque qualquer variação de amplitude no sinal do oscilador de referência  vai evitar que o loop se feche no sinal desejado",
+                "Porque qualquer variação de amplitude no sinal do oscilador de referência  vai produzir ruído de fase à sída do sintetizador",
+                "Porque qualquer variação de amplitude no sinal do oscilador de referência  vai produzir distorção harmónica no sinal modulado",
+                "Porque qualquer variação de amplitude no sinal do oscilador de referência  vai evitar que o loop mude de frequência"
+            ],
+            "correctIndex": 2,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p37</a>)"
         },
         {
             "numb": 117,
