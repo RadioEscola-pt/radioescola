@@ -24,6 +24,18 @@
             "correctIndex": 2,
             "notes": "A2 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p6</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p6</a>)"
         },
+		 {
+            "numb": 2,
+            "question": "A lei dos nós de Kirchhoff, também se designa por",
+            "answers": [
+                "lei das potências",
+                "lei das resistências",
+                "lei das tensões",
+                "lei das correntes"
+            ],
+            "correctIndex": 4,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p6</a>)"
+        },
         {
             "numb": 3,
             "question": "Num circuito em paralelo, como se relaciona a corrente total com a corrente individual em cada uma das ramificações do referido circuito?",
@@ -2333,6 +2345,18 @@
             "correctIndex": 4,
             "notes": "A171"
         },
+		{
+            "numb": 171,
+            "question": "Em que consiste o índice K do fluxo (K-index??",
+            "answers": [
+                "índice da posição relativa das manchas solares na superfície solar",
+                "Medida da da estabilidade de curta duração do campo magnético solar",
+                "Medida da estabiliadde do campo magnético solar",
+                "índicedo fluxo de ondas rádio solares medido"
+            ],
+            "correctIndex": 2,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p1</a>)"
+        },
         {
             "numb": 172,
             "question": "Em que consistem os distúrbios geomagnéticos?",
@@ -2377,6 +2401,18 @@
                 "7 MHz"
             ],
             "notes": "A175"
+        },
+		 {
+            "numb": 175,
+            "question": "Qual a faixa que permite melhores possibilidades de uma boa ligação, se a frequência máxima utilizável (MUF) entre duas estações for de 16 MHz?",
+            "answers": [
+                "3,5 MHz",
+                "7 MHz",
+                "14 MHz",
+                "144 MHz"
+            ],
+			"correctIndex": 3,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p3</a>)"
         },
         {
             "numb": 176,
@@ -2926,6 +2962,18 @@
 			"notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p1</a>)"
 		},
 		{
+			"numb": 120,
+			"question": "Qual a causa para a  frequente distorção dos sinais de HF scatter?",
+			"answers": [
+				"Instablidade da camada ionosférica envolvida",
+				"Absorção de grande parte do sinal por ondas terrestres",
+				"Ausência da camada E",
+				"Dispersão da energia pela zona de silêncio através de vários percursos de ondas de rádio"
+			],
+			"correctIndex": 4,
+			"notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p2</a>)"
+		},
+		{
 			"numb": 179,
 			"question": "Não concordo com determinadas disposições regulamentares aplicáveis aos Serviços de Amador e de Amador por Satélite. O que é correto fazer?",
 			"answers": [
@@ -2960,6 +3008,42 @@
 			],
 			"correctIndex": 1,
 			"notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p14</a>)"
+		},
+		{
+			"numb": 188,
+			"question": "Se uma estação de amador interferir uma estação de pequena potência e de curto alcance na frequência 433,5 MHz, quem tem prioridade?",
+			"answers": [
+				"A estação de pequena potência",
+				"A estação de amador",
+				"Nem uma nem outra",
+				"A estação que emitir com a potência mais baixa"
+			],
+			"correctIndex": 2,
+			"notes": "A188 Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p4</a>) (<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p4</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p4</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p4</a>) Pergunta categoria 2 que surge na cat1 > Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf'>ADENDA_2013_QNAF</a>"
+		},
+		{
+			"numb": 184,
+			"question": "Qual dos documentos não é considerado habilitante para a utilização de estações de amador, quando em estadas temporárias em Portugal?",
+			"answers": [
+				"Licença CEPT emitida por outra Administração que tenha adotado a Recomendação CEPT T/R 61-01",
+				"Licença CEPT novice, emitida por outra Administração que tenha adotado a Recomendação CEPT ECC/REC/(05)06",
+				"Certificado de Operador de Estação de Radioamador (COER), das classes A e B, emitido pela Administração da República Federativa do Brasil",
+				"Certificado internacional HAREC, nos termos da Recomendação CEPT T/R 61-02"
+			],
+			"correctIndex": 4,
+			"notes": "A184 categoria 2 que surge na cat1 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p5</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p3</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p4</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p4</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p04</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p5</a>)"
+		},
+		{
+			"numb": 169,
+			"question": "Que tipo de medidor deve ser usado para monitorar o sinal à saída de um transmissor modulado por voz de banda lateral única, de forma a assegurar que não se excede a potência máxima admitida?",
+			"answers": [
+				"Um medidor SWR",
+				"Um medidor de modulação",
+				"Um wattímetro de potência média",
+				"Um wattímetro de potência de pico"
+			],
+			"correctIndex": 4,
+			"notes": " Pergunta de cateoria 2 > Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p12</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p7</a>)"
 		}
 	]  
 }
