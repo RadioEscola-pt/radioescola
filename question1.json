@@ -1024,6 +1024,18 @@
             ],
             "notes": "A75"
         },
+		{
+            "numb": 76,
+            "question": "Em que consiste a ressonância num circuito eléctrico?",
+            "answers": [
+                "A frequência máxima a que passa a corrente",
+                "A frequência mínima a que passa a corrente",
+                "A frequência à qual a reactância capacitiva iguala a reactância indutiva",
+                "A frequência à qual a impedância reactiva iguala a impedância resistiva"
+            ],
+			"correctIndex": 3,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p11</a>)"
+        },
         {
             "numb": 76,
             "question": "Qual o valor da impedância de um circuito com um resistência, uma bobina e um condensador todos em paralelo, em ressonância?",
@@ -1286,6 +1298,18 @@
                 "Todas as hipóteses de resposta estão erradas"
             ],
             "notes": "A97"
+        },
+		 {
+            "numb": 97,
+            "question": "Qual é a razão aproximada da potência de pico envolvente em relação à potência média num sinal de fonia comum com modulação de voz em banda lateral única?",
+            "answers": [
+                "2,5 para 1",
+                "25 para 1",
+                "1 para 1",
+                "100 para 1"
+            ],
+			"correctIndex": 1,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p10</a>)"
         },
         {
             "numb": 98,
@@ -1914,6 +1938,18 @@
             ],
             "correctIndex": 2,
             "notes": "A140"
+        },
+		{
+            "numb": 140,
+            "question": "Qual deverá ser aproximadamente o comprimento físico de uma antena dipolo de meia onda ajustada a uma frequência de 14,2 MHz?",
+            "answers": [
+                "21,5 m",
+                "5,5 m",
+                "7,5 m",
+                "10,5 m"
+            ],
+            "correctIndex": 4,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p9</a>)"
         },
         {
             "numb": 141,
@@ -3037,13 +3073,25 @@
 			"numb": 169,
 			"question": "Que tipo de medidor deve ser usado para monitorar o sinal à saída de um transmissor modulado por voz de banda lateral única, de forma a assegurar que não se excede a potência máxima admitida?",
 			"answers": [
-				"Um medidor SWR",
+				"Um medidor SWR que realize leituras na direcção directa",
 				"Um medidor de modulação",
 				"Um wattímetro de potência média",
 				"Um wattímetro de potência de pico"
 			],
 			"correctIndex": 4,
-			"notes": " Pergunta de cateoria 2 > Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p12</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p7</a>)"
+			"notes": " Pergunta de cateoria 2 > Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p12</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p7</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p7</a>) "
+		},
+		{
+			"numb": 169,
+			"question": "Qual das seguintes opções resulta do efeito de captura num receptor de FM??",
+			"answers": [
+				"Todos os sinais a uma dada frequência são desmodulados",
+				"Não é possível ouvir qualquer dos sinais",
+				"O sinal mais forte a ser recebido é o único sinal desmodulado",
+				"O sinal mais débil a ser recebido é o único sinal desmodulado"
+			],
+			"correctIndex": 3,
+			"notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p8</a>)"
 		}
 	]  
 }
