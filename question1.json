@@ -10,7 +10,7 @@
                 "Nenhuma das afirmações está correta"
             ],
             "correctIndex": 1,
-            "notes": "A1"
+            "notes": "A1 Consulte <a target='_blank' href='docs/Leis_de_Kirchhoff.pdf'>Leis_de_Kirchhoff</a>"
         },
         {
             "numb": 2,
@@ -46,7 +46,7 @@
                 "A corrente total é igual à soma do inverso de cada queda individual de tensão"
             ],
             "correctIndex": 3,
-            "notes": "A3"
+            "notes": "A3 It=I1+I2+I3 Consulte circutos em paralelo <a target='_blank' href='images/cat1/parallel_circuit.png'>parallel_circuit</a>"
         },
         {
             "numb": 4,
@@ -370,7 +370,7 @@
                 "À medida que aumenta a amplitude da corrente alternada aplicada a reactância diminui"
             ],
             "correctIndex": 1,
-            "notes": "A28"
+            "notes": "A28  Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p16</a>)"
         },
         {
             "numb": 29,
@@ -381,8 +381,8 @@
                 "aumenta a constante dielétrica do isolante",
                 "Todas as respostas estão corretas"
             ],
-            "correctIndex": 2,
-            "notes": "A29  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p16</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p16</a>)"
+            "correctIndex": 3,
+            "notes": "A29"
         },
         {
             "numb": 30,
@@ -954,6 +954,18 @@
             ],
             "notes": "A70"
         },
+		{
+            "numb": 70,
+            "question": "Qual a frequência de ressonância de um circuito em paralelo RLC se R=33 Ohm, L=0,05 mH e C=10 pF?",
+            "answers": [
+                "23,5 MHz",
+                "23,5 kHz",
+                "7,12 kHz",
+                "7,12 MHz"
+            ],
+			"correctIndex": 4,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p15</a>)"
+        },
         {
             "numb": 71,
             "question": "O fator de qualidade (Q) de um filtro passivo com uma dada frequência de ressonância (fr) é tanto maior",
@@ -1320,7 +1332,7 @@
                 "Detetor de envolvente",
                 "Todas as hipóteses de resposta estão erradas"
             ],
-            "correctIndex": 1,
+            "correctIndex": 4,
             "notes": "A98"
         },
         {
@@ -2155,7 +2167,7 @@
         },
         {
             "numb": 157,
-            "question": "O que é um \"balun\"?",
+            "question": "O que é um balun?",
             "answers": [
                 "É um dispositivo que permite a interligação entre estações instaladas em balões e satélites não- geoestacionários",
                 "É um dispositivo que permite a interligação entre a saída dos emissores e os cabos coaxiais",
@@ -2164,6 +2176,18 @@
             ],
             "correctIndex": 3,
             "notes": "A157"
+        },
+		{
+            "numb": 157,
+            "question": "Que razão existe para a frequante utilização de uma antena Yagi em radiocomunicações na faixa dos 14 MHz?",
+            "answers": [
+                "Permite uma excelente cobertura omnidireccional no plano horizontal",
+                "É mais pequena, menos dispendiosa e mais fácil de montar do que uma antena dipolo ou vertical",
+                "Ajuda a reduzir a interferência oriunda de outras estações localizadas ao lado ou por detrás da antena",
+                "Permite o maior ângulo possível de radição para faixas HF"
+            ],
+            "correctIndex": 3,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p14</a>)"
         },
         {
             "numb": 158,
@@ -2698,6 +2722,18 @@
             "correctIndex": 2,
             "notes": "A194"
         },
+		{
+            "numb": 194,
+            "question": "Qual dos seguintes instrumentos de ensaio é utilizado para apresentar sinais  espúrios de um emissor de rádio, a uma determinada distância desse, emissor?",
+            "answers": [
+                "Um analisador de espectro",
+                "Um wattímetro",
+                "Um analisador lógico",
+                "Um refletómetro no domínio do tempo"
+            ],
+            "correctIndex": 1,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p13</a>)"
+        },
         {
             "numb": 195,
             "question": "Em que domínio são apresentados os sinais num osciloscópio?",
@@ -3092,6 +3128,18 @@
 			],
 			"correctIndex": 3,
 			"notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p8</a>)"
+		},
+		{
+			"numb": 180,
+			"question": "Uma vizinha minha diz que de vez em quando tem interferências na receção de televisão e veio perguntar-me se não seria das minhas emissões. O que é correto fazer?",
+			"answers": [
+				"Nada, pois eu estou a trabalhar nas faixas corretas e o problema deve ser da instalação de receção de televisão",
+				"Investigar a situação e se for problema dela, caberá a ela a resolução do problema",
+				"Investigar a situação e se se concluir que o problema é das minhas emissões, emitir às horas em que ela não vê televisão",
+				"Investigar a situação e resolvê-la ou ajudá-la a resolver se o problema for da instalação de receção"
+			],
+			"correctIndex": 4,
+			"notes": "Pergunta cat 2 > Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p13</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p12</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p7</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p7</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p7</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p07</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p12</a>)"
 		}
 	]  
 }
