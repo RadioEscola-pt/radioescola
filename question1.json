@@ -1,6 +1,5 @@
 {
-	"questions": [
-        {
+    "questions": [{
             "numb": 1,
             "question": "No que respeita às Leis de Kirchhoff qual das seguintes afirmações é verdadeira?",
             "answers": [
@@ -24,7 +23,7 @@
             "correctIndex": 2,
             "notes": "A2 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p6</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p6</a>)"
         },
-		 {
+        {
             "numb": 2,
             "question": "A lei dos nós de Kirchhoff, também se designa por",
             "answers": [
@@ -108,7 +107,7 @@
             "correctIndex": 1,
             "notes": "A8  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p17</a>)"
         },
-		{
+        {
             "numb": 8,
             "question": "Quais são os materiais mais usados na blindagem de campos elétricos?",
             "answers": [
@@ -240,7 +239,7 @@
             "correctIndex": 4,
             "notes": "A18"
         },
-		{
+        {
             "numb": 18,
             "question": "Qual das seguintes técncicas costuma ser usada para converter sinais analógicos em digitais?",
             "answers": [
@@ -408,7 +407,7 @@
             "correctIndex": 2,
             "notes": "A31"
         },
-		 {
+        {
             "numb": 31,
             "question": "Que razão importante existe para que numa bobina se usem toróides de ferro pulverizado em vez de toróides de ferrite?",
             "answers": [
@@ -435,7 +434,7 @@
         {
             "numb": 33,
             "question": "O fator de qualidade (Q) de uma bobina é tanto maior",
-			"answers": [
+            "answers": [
                 "quanto maior for a sua resistência parasita",
                 "quanto menor for a sua resistência parasita",
                 "quanto menor for o seu afastamento aos limites físicos do circuito em que está inserida",
@@ -504,19 +503,19 @@
             "correctIndex": 2,
             "notes": "A38  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p29</a>)"
         },
-		{
-			"numb": 74,
-			"question": "Qual razão para a existência de tensão no secundário de um transformador quando está ligada uma fonte de tensão alternada ao primário do transformador?",
-			"answers": [
-				"Acoplamento capacitivo",
-				"Acoplamento através de corrente dielétrica",
-				"Indutância mútua",
-				"Capacidade mútua"
-			],
-			"correctIndex": 3,
-			"notes": "Pergunta de categoria 2 Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p29</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p28</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p28</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p28</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p28</a>) Indutância mútua. Resposta 3."
-		},
-		{
+        {
+            "numb": 74,
+            "question": "Qual razão para a existência de tensão no secundário de um transformador quando está ligada uma fonte de tensão alternada ao primário do transformador?",
+            "answers": [
+                "Acoplamento capacitivo",
+                "Acoplamento através de corrente dielétrica",
+                "Indutância mútua",
+                "Capacidade mútua"
+            ],
+            "correctIndex": 3,
+            "notes": "Pergunta de categoria 2 Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p29</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p28</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p28</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p28</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p28</a>) Indutância mútua. Resposta 3."
+        },
+        {
             "numb": 38,
             "question": "Qual o objectivo de um circuito step-start numa fonte de alientação da alta tensão?",
             "answers": [
@@ -600,7 +599,7 @@
             "correctIndex": 4,
             "notes": "A44"
         },
-		{
+        {
             "numb": 44,
             "question": "Que tipo de polarização é necessária para um LED se iluminar?",
             "answers": [
@@ -741,7 +740,7 @@
             "correctIndex": 4,
             "notes": "A55  Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p36</a>)"
         },
-		{
+        {
             "numb": 55,
             "question": "Qual a vantagem do recurso a circuitos  com AMPOP em comparação com a utilização de elementos LC num filtro de áudio?",
             "answers": [
@@ -896,7 +895,7 @@
             "correctIndex": 4,
             "notes": "A67"
         },
-		{
+        {
             "numb": 67,
             "question": "Qual dos seguintes modos é mais afectado por uma resposta em fase não-linear num filtro IF de um receptor?",
             "answers": [
@@ -931,7 +930,7 @@
             ],
             "notes": "A69"
         },
-		{
+        {
             "numb": 69,
             "question": "Qual a frequência de ressonância aproximada de um circuito em série RLC se R=56 Ohm, L=0,04 mH e C=200 pF?",
             "answers": [
@@ -940,7 +939,7 @@
                 "11,18 MHz",
                 "22,36 MHz"
             ],
-			"correctIndex": 2,
+            "correctIndex": 2,
             "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p15</a>)"
         },
         {
@@ -954,7 +953,7 @@
             ],
             "notes": "A70"
         },
-		{
+        {
             "numb": 70,
             "question": "Qual a frequência de ressonância de um circuito em paralelo RLC se R=33 Ohm, L=0,05 mH e C=10 pF?",
             "answers": [
@@ -963,7 +962,7 @@
                 "7,12 kHz",
                 "7,12 MHz"
             ],
-			"correctIndex": 4,
+            "correctIndex": 4,
             "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p15</a>)"
         },
         {
@@ -1013,7 +1012,7 @@
             ],
             "notes": "A74"
         },
-		{
+        {
             "numb": 74,
             "question": "Qual o objectivo de uma condensador em série numa rede de antenas de adaptação do tipo gama?",
             "answers": [
@@ -1022,7 +1021,7 @@
                 "Fornece um notch de rejeição que evite a radiação de harmónicos ",
                 "Altera a impedância da antena para um valor superior"
             ],
-			"correctIndex": 2,
+            "correctIndex": 2,
             "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p19</a>)"
         },
         {
@@ -1036,7 +1035,7 @@
             ],
             "notes": "A75"
         },
-		{
+        {
             "numb": 76,
             "question": "Em que consiste a ressonância num circuito eléctrico?",
             "answers": [
@@ -1045,7 +1044,7 @@
                 "A frequência à qual a reactância capacitiva iguala a reactância indutiva",
                 "A frequência à qual a impedância reactiva iguala a impedância resistiva"
             ],
-			"correctIndex": 3,
+            "correctIndex": 3,
             "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p11</a>)"
         },
         {
@@ -1057,7 +1056,7 @@
                 "Reduzida, em comparação com a resistência do circuito",
                 "Aproximadamente igual à reactância capacitiva"
             ],
-			"correctIndex": 1,
+            "correctIndex": 1,
             "notes": "A76 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p11</a>)"
         },
         {
@@ -1116,7 +1115,7 @@
             ],
             "notes": "A81"
         },
-		 {
+        {
             "numb": 81,
             "question": "Qual o objetivo de C3 no circuito da figura? <img src='images/cat1/fig2a.png'>",
             "answers": [
@@ -1125,7 +1124,7 @@
                 "Fornece uma polarização fixa a Q1",
                 "Aumenta os picos da ondulação"
             ],
-			"correctIndex": 1,
+            "correctIndex": 1,
             "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p22</a>)"
         },
         {
@@ -1311,7 +1310,7 @@
             ],
             "notes": "A97"
         },
-		 {
+        {
             "numb": 97,
             "question": "Qual é a razão aproximada da potência de pico envolvente em relação à potência média num sinal de fonia comum com modulação de voz em banda lateral única?",
             "answers": [
@@ -1320,7 +1319,7 @@
                 "1 para 1",
                 "100 para 1"
             ],
-			"correctIndex": 1,
+            "correctIndex": 1,
             "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p10</a>)"
         },
         {
@@ -1356,10 +1355,10 @@
                 "Um circulador e um filtro que funcione num loop por realimentação (feed-back)",
                 "Um amplificador e um circuito de realimentação"
             ],
-			"correctIndex": 3,
+            "correctIndex": 3,
             "notes": "A100  Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p34</a>)"
         },
-		{
+        {
             "numb": 100,
             "question": "O que acontece quando uma quantidade excessiva de enrgia de sinal atinge um circuito misturador?",
             "answers": [
@@ -1368,7 +1367,7 @@
                 "Produzem-se limitações automáticas",
                 "Produzem-se frequências de batimento"
             ],
-			"correctIndex": 1,
+            "correctIndex": 1,
             "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p28</a>)"
         },
         {
@@ -1406,7 +1405,7 @@
             ],
             "notes": "A103"
         },
-		{
+        {
             "numb": 103,
             "question": "Quais os componentes básicos de grande parte dos osciladores",
             "answers": [
@@ -1415,7 +1414,7 @@
                 "Um circulador e um filtro que funcione num lop por antecipaçaõ (feed-forward)",
                 "U filtro e um amplificador que funcione num lop por realimentação (feed-back)"
             ],
-			"correctIndex": 4,
+            "correctIndex": 4,
             "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p34</a>)"
         },
         {
@@ -1438,7 +1437,7 @@
                 "Através de um condensador de neutralização",
                 "Através de um cristal de quartzo"
             ],
-			"correctIndex": 4,
+            "correctIndex": 4,
             "notes": "A105  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p34</a>)"
         },
         {
@@ -1452,7 +1451,7 @@
             ],
             "notes": "A106"
         },
-		{
+        {
             "numb": 106,
             "question": "Como funciona um detector de díodo ?",
             "answers": [
@@ -1461,7 +1460,7 @@
                 "Pela mistura de sinais com ruído na zona de transição do díodo.",
                 "Verificando a variação da reactância no díodo em relação à frequência."
             ],
-			"correctIndex": 1,
+            "correctIndex": 1,
             "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p30</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p30</a>) (pergunta de categoria 2) É filtro mais simples para deteção de AM > no sinal RF que entra modulado e sai filtrado só considerando a envolvente do sinal de RF <img  src='images/cat2/detetor_am.png'>."
         },
         {
@@ -1523,7 +1522,7 @@
             "correctIndex": 2,
             "notes": "A111"
         },
-		{
+        {
             "numb": 111,
             "question": "Qual a vantagem de um receptor com filtro de frequencia intermédia criado com processamento digital de sinal (DSP) relativamente a um receptor com filtro analógico?",
             "answers": [
@@ -1535,7 +1534,7 @@
             "correctIndex": 1,
             "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p39</a>)"
         },
-		 {
+        {
             "numb": 111,
             "question": "Qual a vantagem de um receptor co fltro de frequência intermédia criado com processamento digital de sinal (DSP) relativamente a um receptor com filtro analógico?",
             "answers": [
@@ -1559,7 +1558,7 @@
             "correctIndex": 4,
             "notes": "A112"
         },
-		 {
+        {
             "numb": 112,
             "question": "Duma forma geral para que serve o contrlo automático de ganho no processamento de sinais?",
             "answers": [
@@ -1619,7 +1618,7 @@
             "correctIndex": 2,
             "notes": "A116"
         },
-		 {
+        {
             "numb": 116,
             "question": "Por que razão se costuma usar um oscilador estável de referência como parte de u sintetizador de frequência com malha de captura de fase?",
             "answers": [
@@ -1702,7 +1701,7 @@
             "correctIndex": 4,
             "notes": "A122"
         },
-		{
+        {
             "numb": 122,
             "question": "Que tipo de circuito se agrega a um transmissor de FM para restabelecer as frequências de áudio mais baixas atenuadas ou as frequências de áudio mais altas amplificadas?",
             "answers": [
@@ -1854,7 +1853,7 @@
                 "A largura de banda excede os limites recomendados",
                 "A estabilidade da frequência não seria apropriada"
             ],
-			"correctIndex": 3,
+            "correctIndex": 3,
             "notes": "A134 Na realidade as bandas de HF são bandas muito estreitas (pergunta de cat2) Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p29</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p27</a>)"
         },
         {
@@ -1868,7 +1867,7 @@
             ],
             "notes": "A135"
         },
-		{
+        {
             "numb": 135,
             "question": "Qual a principal vantagem de se utilizar amplificadores em classe C?",
             "answers": [
@@ -1877,7 +1876,7 @@
                 "Baixo ruído",
                 "A classe C não apresenta nenhuma vantagem em relação a outras classes de amplificação"
             ],
-			"correctIndex": 2,
+            "correctIndex": 2,
             "notes": "A135 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p27</a>)"
         },
         {
@@ -1927,7 +1926,7 @@
             "correctIndex": 4,
             "notes": "A139"
         },
-		{
+        {
             "numb": 139,
             "question": "De que forma se pode aumentar a tensão de saída de uma antena loop de recepção?",
             "answers": [
@@ -1951,7 +1950,7 @@
             "correctIndex": 2,
             "notes": "A140"
         },
-		{
+        {
             "numb": 140,
             "question": "Qual deverá ser aproximadamente o comprimento físico de uma antena dipolo de meia onda ajustada a uma frequência de 14,2 MHz?",
             "answers": [
@@ -1998,7 +1997,7 @@
             "correctIndex": 1,
             "notes": "A143"
         },
-		{
+        {
             "numb": 143,
             "question": "Por que razão é necesário saber a importância do ponto de alimentação de uma antena?",
             "answers": [
@@ -2177,7 +2176,7 @@
             "correctIndex": 3,
             "notes": "A157"
         },
-		{
+        {
             "numb": 157,
             "question": "Que razão existe para a frequante utilização de uma antena Yagi em radiocomunicações na faixa dos 14 MHz?",
             "answers": [
@@ -2213,7 +2212,7 @@
             "correctIndex": 3,
             "notes": "A159"
         },
-		{
+        {
             "numb": 159,
             "question": "Qual a alteração sofrida pela atenuação do cabo coaxial à medida que aumenta a frequência do sinal transmitido",
             "answers": [
@@ -2249,7 +2248,7 @@
             "correctIndex": 3,
             "notes": "A161"
         },
-		 {
+        {
             "numb": 161,
             "question": "Qual o comprimento físico de uma linha de transmissão coaxial que a nível elétrico apresenta 1/4 do comprimento de onda à frequência de 7,2 MHz (para um fator de velocidade de 0,66)?",
             "answers": [
@@ -2309,7 +2308,7 @@
             "correctIndex": 3,
             "notes": "A165"
         },
-		{
+        {
             "numb": 165,
             "question": "Qual das seguintes camadas ionosféricas absorve mais sinais de grandes saltos durante o dia nas frequências inferiores aos 10 MHz?",
             "answers": [
@@ -2333,7 +2332,7 @@
             "correctIndex": 3,
             "notes": "A166"
         },
-		{
+        {
             "numb": 166,
             "question": "À medida que aumenta a frequência do sinal, como se altera a propagação de ondas terrestres?",
             "answers": [
@@ -2405,7 +2404,7 @@
             "correctIndex": 4,
             "notes": "A171"
         },
-		{
+        {
             "numb": 171,
             "question": "Em que consiste o índice K do fluxo (K-index??",
             "answers": [
@@ -2462,7 +2461,7 @@
             ],
             "notes": "A175"
         },
-		 {
+        {
             "numb": 175,
             "question": "Qual a faixa que permite melhores possibilidades de uma boa ligação, se a frequência máxima utilizável (MUF) entre duas estações for de 16 MHz?",
             "answers": [
@@ -2471,7 +2470,7 @@
                 "14 MHz",
                 "144 MHz"
             ],
-			"correctIndex": 3,
+            "correctIndex": 3,
             "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p3</a>)"
         },
         {
@@ -2521,7 +2520,7 @@
             "correctIndex": 1,
             "notes": "A179"
         },
-		{
+        {
             "numb": 179,
             "question": "O que acontece normalmente às ondas de rádio com frequências inferiores à frequência máxima utilizável (MUF) que são enviadas para a ionosfera?",
             "answers": [
@@ -2686,7 +2685,7 @@
             "correctIndex": 2,
             "notes": "A192"
         },
-		{
+        {
             "numb": 192,
             "question": "Como é que se trsnaforma uma impedância complexa numa impedância resistiva?",
             "answers": [
@@ -2722,7 +2721,7 @@
             "correctIndex": 2,
             "notes": "A194"
         },
-		{
+        {
             "numb": 194,
             "question": "Qual dos seguintes instrumentos de ensaio é utilizado para apresentar sinais  espúrios de um emissor de rádio, a uma determinada distância desse, emissor?",
             "answers": [
@@ -2899,9 +2898,9 @@
                 "Para utilizar uma estação do serviço de amador um amador da categoria 1 precisa de uma licença de estação"
             ],
             "correctIndex": 1,
-			"notes": "A208"
+            "notes": "A208"
         },
-		{
+        {
             "numb": 208,
             "question": "Qual o tipo de polarização mais comum na propagação de ondas terrestres?",
             "answers": [
@@ -2911,9 +2910,9 @@
                 "Elíptica"
             ],
             "correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p1</a>)"
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p1</a>)"
         },
-		{
+        {
             "numb": 208,
             "question": "Qual é provavelmente o tipo de propagação a decorrer quando os sinais de rádio percorrem a linha onde termina a luz do dia e começa a escuridão?",
             "answers": [
@@ -2923,9 +2922,9 @@
                 "Propagação pela grey-line"
             ],
             "correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p3</a>)"
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p3</a>)"
         },
-		{
+        {
             "numb": 208,
             "question": "Qual a vantagem de uso de uma antena com traps?",
             "answers": [
@@ -2935,9 +2934,9 @@
                 "Pode ser usada para o funcionamento em multibandas"
             ],
             "correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p9</a>)"
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p9</a>)"
         },
-		{
+        {
             "numb": 208,
             "question": "Qual dos seguintes tipos de amplificadores reduz ou elimina os harmónicos pares?",
             "answers": [
@@ -2947,199 +2946,199 @@
                 "Classe AB"
             ],
             "correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p25</a>)"
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p25</a>)"
         },
-		{
-			"numb": 120,
-			"question": "Uma malha de captura de fase que contém um oscilador controlado por tensão, está associada a um modulador de:",
-			"answers": [
-				"amplitude",
-				"frequência",
-				"amplitude com portadora suprimida",
-				"onda contínua"
-			],
-			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p19</a>) (<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p10</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p10</a>)  Pergunta de cat2 que volta a aparecer em cat1  > Modulador de frequencia, Resposta 2."
-		},
-		{
-			"numb": 120,
-			"question": "Qual a gama de captura de u circuito com malha de captura de fase",
-			"answers": [
-				"A gama de frequências que permite fechar o circuito",
-				"A gama de tensões que permite fechar o circuito",
-				"A gama de impedâncias à entrada que permite fechar o circuito",
-				"O período de tempo que o circuito leva a fechar"
-			],
-			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p37</a>)"
-		},
-		{
-			"numb": 120,
-			"question": "qual o princípio fundamental de um modulador de fase",
-			"answers": [
-				"Varia a sintonização do pré-amplificador de microfone para gerar sinais modulados em fase",
-				"Varia a sintonização do circuito de tanque do amplificador para gerar sinais modulados em amplitude",
-				"Varia a sintonização do circuito de tanque do amplificador para gerar sinais modulados em fase",
-				"Varia a sintonização do pré-amplificador de microfone para gerar sinais modulados em amplitude"
-			],
-			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p23</a>)"
-		},
-		{
-			"numb": 120,
-			"question": "Por que razão é que a resistência de um condutor não é a mesma para correntes de RF e para correntes contínuas? ",
-			"answers": [
-				"Porque o isolamento conduz a corrente a frequências altas.",
-				"Devido ao efeito Heisenberg",
-				"Devido ao efeito pelicular",
-				"Porque os condutores são dispositivos não lineares"
-			],
-			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p14</a>)"
-		},
-		{
-			"numb": 120,
-			"question": "Na figura, qual o objectivo de R1 e R2? <img src='images/cat1/fig7.png'>",
-			"answers": [
-				"Resistências de carga",
-				"Polarização fixa",
-				"Polarização própria",
-				"Realimentação"
-			],
-			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p25</a>)"
-		},
-		{
-			"numb": 120,
-			"question": "Qual dos seguintes códigos digitais se compõem de elementos de comprimentos diferentes",
-			"answers": [
-				"ASCII",
-				"AX25",
-				"Baudot",
-				"Código Morse"
-			],
-			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p38</a>)"
-		},
-		{
-			"numb": 120,
-			"question": "Que característica apresentam os sinais de HF scatter?",
-			"answers": [
-				"Alta inteligibilidade",
-				"Som oscilante",
-				"Grandes flutuações da intensidade do sinal",
-				"Todas as opções são válidas"
-			],
-			"correctIndex": 2,
-			"notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p1</a>)"
-		},
-		{
-			"numb": 120,
-			"question": "Qual a causa para a  frequente distorção dos sinais de HF scatter?",
-			"answers": [
-				"Instablidade da camada ionosférica envolvida",
-				"Absorção de grande parte do sinal por ondas terrestres",
-				"Ausência da camada E",
-				"Dispersão da energia pela zona de silêncio através de vários percursos de ondas de rádio"
-			],
-			"correctIndex": 4,
-			"notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p2</a>)"
-		},
-		{
-			"numb": 179,
-			"question": "Não concordo com determinadas disposições regulamentares aplicáveis aos Serviços de Amador e de Amador por Satélite. O que é correto fazer?",
-			"answers": [
-				"Não as respeitar",
-				"Incentivar a que outros amadores não as respeitem",
-				"Apresentar fundamentadamente a discordância à ANACOM, propondo alterações",
-				"Recorrer a instâncias internacionais, no sentido destas entrarem em contacto com à ANACOM"
-			],
-			"correctIndex": 3,
-			"notes": "Perg cat2 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p13</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p12</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p12</a>)"
-		},
-		{
-			"numb": 179,
-			"question": "Qual a vantagem de um analisador de antena sobre uma ponte SWR para efeitos da medida do coeficiente de onda estacionária da antena?",
-			"answers": [
-				"Os analisadores de antena sintonizam automaticamente a antena para qualquer tipo de ressonância",
-				"Os analisadores de antena  dispensam normalmente fontes externas de RF",
-				"Os analisadores de antena apresentam normalmente variações no tempo da modulação envolvente ",
-				"Todas as opções são válidas"
-			],
-			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p13</a>)"
-		},
-		{
-			"numb": 179,
-			"question": "Qual o maior inconveniente de uma antena lop de fio para efeitos de radiogoniometria?",
-			"answers": [
-				"Tem um padrão bidireccional",
-				"Não é giratória",
-				"Recebe bem em todas as direcções",
-				"O seu uso é prático unicamente em bandas de VHF"
-			],
-			"correctIndex": 1,
-			"notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p14</a>)"
-		},
-		{
-			"numb": 188,
-			"question": "Se uma estação de amador interferir uma estação de pequena potência e de curto alcance na frequência 433,5 MHz, quem tem prioridade?",
-			"answers": [
-				"A estação de pequena potência",
-				"A estação de amador",
-				"Nem uma nem outra",
-				"A estação que emitir com a potência mais baixa"
-			],
-			"correctIndex": 2,
-			"notes": "A188 Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p4</a>) (<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p4</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p4</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p4</a>) Pergunta categoria 2 que surge na cat1 > Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf'>ADENDA_2013_QNAF</a>"
-		},
-		{
-			"numb": 184,
-			"question": "Qual dos documentos não é considerado habilitante para a utilização de estações de amador, quando em estadas temporárias em Portugal?",
-			"answers": [
-				"Licença CEPT emitida por outra Administração que tenha adotado a Recomendação CEPT T/R 61-01",
-				"Licença CEPT novice, emitida por outra Administração que tenha adotado a Recomendação CEPT ECC/REC/(05)06",
-				"Certificado de Operador de Estação de Radioamador (COER), das classes A e B, emitido pela Administração da República Federativa do Brasil",
-				"Certificado internacional HAREC, nos termos da Recomendação CEPT T/R 61-02"
-			],
-			"correctIndex": 4,
-			"notes": "A184 categoria 2 que surge na cat1 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p5</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p3</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p4</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p4</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p04</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p5</a>)"
-		},
-		{
-			"numb": 169,
-			"question": "Que tipo de medidor deve ser usado para monitorar o sinal à saída de um transmissor modulado por voz de banda lateral única, de forma a assegurar que não se excede a potência máxima admitida?",
-			"answers": [
-				"Um medidor SWR que realize leituras na direcção directa",
-				"Um medidor de modulação",
-				"Um wattímetro de potência média",
-				"Um wattímetro de potência de pico"
-			],
-			"correctIndex": 4,
-			"notes": " Pergunta de cateoria 2 > Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p12</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p7</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p7</a>) "
-		},
-		{
-			"numb": 169,
-			"question": "Qual das seguintes opções resulta do efeito de captura num receptor de FM??",
-			"answers": [
-				"Todos os sinais a uma dada frequência são desmodulados",
-				"Não é possível ouvir qualquer dos sinais",
-				"O sinal mais forte a ser recebido é o único sinal desmodulado",
-				"O sinal mais débil a ser recebido é o único sinal desmodulado"
-			],
-			"correctIndex": 3,
-			"notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p8</a>)"
-		},
-		{
-			"numb": 180,
-			"question": "Uma vizinha minha diz que de vez em quando tem interferências na receção de televisão e veio perguntar-me se não seria das minhas emissões. O que é correto fazer?",
-			"answers": [
-				"Nada, pois eu estou a trabalhar nas faixas corretas e o problema deve ser da instalação de receção de televisão",
-				"Investigar a situação e se for problema dela, caberá a ela a resolução do problema",
-				"Investigar a situação e se se concluir que o problema é das minhas emissões, emitir às horas em que ela não vê televisão",
-				"Investigar a situação e resolvê-la ou ajudá-la a resolver se o problema for da instalação de receção"
-			],
-			"correctIndex": 4,
-			"notes": "Pergunta cat 2 > Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p13</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p12</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p7</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p7</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p7</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p07</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p12</a>)"
-		}
-	]  
+        {
+            "numb": 120,
+            "question": "Uma malha de captura de fase que contém um oscilador controlado por tensão, está associada a um modulador de:",
+            "answers": [
+                "amplitude",
+                "frequência",
+                "amplitude com portadora suprimida",
+                "onda contínua"
+            ],
+            "correctIndex": 2,
+            "notes": " Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p19</a>) (<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p10</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p10</a>)  Pergunta de cat2 que volta a aparecer em cat1  > Modulador de frequencia, Resposta 2."
+        },
+        {
+            "numb": 120,
+            "question": "Qual a gama de captura de u circuito com malha de captura de fase",
+            "answers": [
+                "A gama de frequências que permite fechar o circuito",
+                "A gama de tensões que permite fechar o circuito",
+                "A gama de impedâncias à entrada que permite fechar o circuito",
+                "O período de tempo que o circuito leva a fechar"
+            ],
+            "correctIndex": 1,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p37</a>)"
+        },
+        {
+            "numb": 120,
+            "question": "qual o princípio fundamental de um modulador de fase",
+            "answers": [
+                "Varia a sintonização do pré-amplificador de microfone para gerar sinais modulados em fase",
+                "Varia a sintonização do circuito de tanque do amplificador para gerar sinais modulados em amplitude",
+                "Varia a sintonização do circuito de tanque do amplificador para gerar sinais modulados em fase",
+                "Varia a sintonização do pré-amplificador de microfone para gerar sinais modulados em amplitude"
+            ],
+            "correctIndex": 3,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p23</a>)"
+        },
+        {
+            "numb": 120,
+            "question": "Por que razão é que a resistência de um condutor não é a mesma para correntes de RF e para correntes contínuas? ",
+            "answers": [
+                "Porque o isolamento conduz a corrente a frequências altas.",
+                "Devido ao efeito Heisenberg",
+                "Devido ao efeito pelicular",
+                "Porque os condutores são dispositivos não lineares"
+            ],
+            "correctIndex": 2,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p14</a>)"
+        },
+        {
+            "numb": 120,
+            "question": "Na figura, qual o objectivo de R1 e R2? <img src='images/cat1/fig7.png'>",
+            "answers": [
+                "Resistências de carga",
+                "Polarização fixa",
+                "Polarização própria",
+                "Realimentação"
+            ],
+            "correctIndex": 2,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p25</a>)"
+        },
+        {
+            "numb": 120,
+            "question": "Qual dos seguintes códigos digitais se compõem de elementos de comprimentos diferentes",
+            "answers": [
+                "ASCII",
+                "AX25",
+                "Baudot",
+                "Código Morse"
+            ],
+            "correctIndex": 4,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p38</a>)"
+        },
+        {
+            "numb": 120,
+            "question": "Que característica apresentam os sinais de HF scatter?",
+            "answers": [
+                "Alta inteligibilidade",
+                "Som oscilante",
+                "Grandes flutuações da intensidade do sinal",
+                "Todas as opções são válidas"
+            ],
+            "correctIndex": 2,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p1</a>)"
+        },
+        {
+            "numb": 120,
+            "question": "Qual a causa para a  frequente distorção dos sinais de HF scatter?",
+            "answers": [
+                "Instablidade da camada ionosférica envolvida",
+                "Absorção de grande parte do sinal por ondas terrestres",
+                "Ausência da camada E",
+                "Dispersão da energia pela zona de silêncio através de vários percursos de ondas de rádio"
+            ],
+            "correctIndex": 4,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p2</a>)"
+        },
+        {
+            "numb": 179,
+            "question": "Não concordo com determinadas disposições regulamentares aplicáveis aos Serviços de Amador e de Amador por Satélite. O que é correto fazer?",
+            "answers": [
+                "Não as respeitar",
+                "Incentivar a que outros amadores não as respeitem",
+                "Apresentar fundamentadamente a discordância à ANACOM, propondo alterações",
+                "Recorrer a instâncias internacionais, no sentido destas entrarem em contacto com à ANACOM"
+            ],
+            "correctIndex": 3,
+            "notes": "Perg cat2 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p13</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p12</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p12</a>)"
+        },
+        {
+            "numb": 179,
+            "question": "Qual a vantagem de um analisador de antena sobre uma ponte SWR para efeitos da medida do coeficiente de onda estacionária da antena?",
+            "answers": [
+                "Os analisadores de antena sintonizam automaticamente a antena para qualquer tipo de ressonância",
+                "Os analisadores de antena  dispensam normalmente fontes externas de RF",
+                "Os analisadores de antena apresentam normalmente variações no tempo da modulação envolvente ",
+                "Todas as opções são válidas"
+            ],
+            "correctIndex": 3,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p13</a>)"
+        },
+        {
+            "numb": 179,
+            "question": "Qual o maior inconveniente de uma antena lop de fio para efeitos de radiogoniometria?",
+            "answers": [
+                "Tem um padrão bidireccional",
+                "Não é giratória",
+                "Recebe bem em todas as direcções",
+                "O seu uso é prático unicamente em bandas de VHF"
+            ],
+            "correctIndex": 1,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p14</a>)"
+        },
+        {
+            "numb": 188,
+            "question": "Se uma estação de amador interferir uma estação de pequena potência e de curto alcance na frequência 433,5 MHz, quem tem prioridade?",
+            "answers": [
+                "A estação de pequena potência",
+                "A estação de amador",
+                "Nem uma nem outra",
+                "A estação que emitir com a potência mais baixa"
+            ],
+            "correctIndex": 2,
+            "notes": "A188 Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p4</a>) (<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p4</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p4</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p4</a>) Pergunta categoria 2 que surge na cat1 > Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf'>ADENDA_2013_QNAF</a>"
+        },
+        {
+            "numb": 184,
+            "question": "Qual dos documentos não é considerado habilitante para a utilização de estações de amador, quando em estadas temporárias em Portugal?",
+            "answers": [
+                "Licença CEPT emitida por outra Administração que tenha adotado a Recomendação CEPT T/R 61-01",
+                "Licença CEPT novice, emitida por outra Administração que tenha adotado a Recomendação CEPT ECC/REC/(05)06",
+                "Certificado de Operador de Estação de Radioamador (COER), das classes A e B, emitido pela Administração da República Federativa do Brasil",
+                "Certificado internacional HAREC, nos termos da Recomendação CEPT T/R 61-02"
+            ],
+            "correctIndex": 4,
+            "notes": "A184 categoria 2 que surge na cat1 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p5</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p3</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p4</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p4</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p04</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p5</a>)"
+        },
+        {
+            "numb": 169,
+            "question": "Que tipo de medidor deve ser usado para monitorar o sinal à saída de um transmissor modulado por voz de banda lateral única, de forma a assegurar que não se excede a potência máxima admitida?",
+            "answers": [
+                "Um medidor SWR que realize leituras na direcção directa",
+                "Um medidor de modulação",
+                "Um wattímetro de potência média",
+                "Um wattímetro de potência de pico"
+            ],
+            "correctIndex": 4,
+            "notes": " Pergunta de cateoria 2 > Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p12</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p7</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p7</a>) "
+        },
+        {
+            "numb": 169,
+            "question": "Qual das seguintes opções resulta do efeito de captura num receptor de FM??",
+            "answers": [
+                "Todos os sinais a uma dada frequência são desmodulados",
+                "Não é possível ouvir qualquer dos sinais",
+                "O sinal mais forte a ser recebido é o único sinal desmodulado",
+                "O sinal mais débil a ser recebido é o único sinal desmodulado"
+            ],
+            "correctIndex": 3,
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p8</a>)"
+        },
+        {
+            "numb": 180,
+            "question": "Uma vizinha minha diz que de vez em quando tem interferências na receção de televisão e veio perguntar-me se não seria das minhas emissões. O que é correto fazer?",
+            "answers": [
+                "Nada, pois eu estou a trabalhar nas faixas corretas e o problema deve ser da instalação de receção de televisão",
+                "Investigar a situação e se for problema dela, caberá a ela a resolução do problema",
+                "Investigar a situação e se se concluir que o problema é das minhas emissões, emitir às horas em que ela não vê televisão",
+                "Investigar a situação e resolvê-la ou ajudá-la a resolver se o problema for da instalação de receção"
+            ],
+            "correctIndex": 4,
+            "notes": "Pergunta cat 2 > Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p13</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p12</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p7</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p7</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p7</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p07</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p12</a>)"
+        }
+    ]
 }
