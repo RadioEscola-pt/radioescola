@@ -620,7 +620,8 @@
                 "É a corrente que passa no díodo quando está inversamente polarizado",
                 "É a corrente que passa no díodo quando está diretamente polarizado"
             ],
-            "notes": "A45"
+            "correctIndex": 3,
+            "notes": "A corrente de fuga em um diodo bipolar de germânio é uma corrente elétrica muito pequena que flui através do diodo mesmo quando ele está polarizado de forma inversa (ou seja, aplicando uma tensão reversa). Essa corrente ocorre devido às características intrínsecas do diodo de germânio e é chamada de ."
         },
         {
             "numb": 46,
@@ -715,7 +716,8 @@
                 "impedância de saída baixa",
                 "Todas as respostas anteriores estão corretas"
             ],
-            "notes": "A53"
+            "correctIndex": 3,
+            "notes": "Ganho Unitário: Nessa configuração, o ganho de corrente é próximo de 1, o que significa que a corrente de saída é quase igual à corrente de entrada. O sinal de entrada é seguido pelo sinal de saída sem amplificação significativa</br>Impedância de Entrada Elevada: O seguidor de emissor tem alta impedância de entrada, o que significa que ele apresenta uma carga mínima no circuito de entrada. Isso é útil quando se deseja conectar o seguidor de emissor a uma fonte de sinal de baixa impedância sem afetar significativamente a fonte original.</br>Impedância de Saída Baixa: O seguidor de emissor tem baixa impedância de saída, o que significa que ele pode fornecer uma corrente relativamente alta ao circuito de carga conectado à sua saída. Isso é útil para acionar cargas que exigem alta corrente, mas pode não ser adequado para acionar cargas de alta impedância"
         },
         {
             "numb": 54,
@@ -726,7 +728,8 @@
                 "Melhor resposta em alta-frequência",
                 "Redução da resistência da placa"
             ],
-            "notes": "A54"
+            "correctIndex": 4,
+            "notes": "A grelha de blindagem é uma estrutura metálica inserida entre a grade de controle e a placa (ou cátodo) em um tubo de vácuo. Ela é projetada para reduzir a capacitância entre a grade de controle e a placa, o que melhora a resposta de alta frequência do tubo e evita oscilações indesejadas. A grelha de blindagem também ajuda a melhorar o isolamento elétrico entre os elementos internos do tubo, contribuindo para um desempenho mais estável e eficiente."
         },
         {
             "numb": 55,
@@ -928,7 +931,7 @@
                 "3,56 MHz",
                 "1,78 MHz"
             ],
-            "notes": "A69"
+            "notes": "A69  pi (aproximadamente 3.14159).(f) = 1 / (2 * π * √(L * C)) f ≈ 112,58 Hz"
         },
         {
             "numb": 69,
@@ -951,7 +954,8 @@
                 "10,07 kHz",
                 "63,24 kHz"
             ],
-            "notes": "A70"
+            "correctIndex": 4,
+            "notes": "A70 Frequência de Ressonância (f) = 1 / (2 * π * √(L * C)) f ≈ 636,62 MHz"
         },
         {
             "numb": 70,
@@ -3610,13 +3614,13 @@
     "notes": "",
     "correctIndex": 1
 }, {
-    "question": "39) Qual é normalmente a impedância de entrada de um circuito integrado AMPOP?",
+    "question": "Qual é normalmente a impedância de entrada de um circuito integrado AMPOP?",
     "answers": ["100 ohms", "1000 ohms.", "Muito baixa.", "Muito alta."],
     "num": 38,
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "40) Qual é normalmente a impedância de saída de um circuito integrado AMPOP?",
+    "question": "Qual é normalmente a impedância de saída de um circuito integrado AMPOP?",
     "answers": ["Muito baixa.", "Muito alta.", "100 ohms", "1000 ohms"],
     "num": 39,
     "notes": "",
