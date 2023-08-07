@@ -33,7 +33,7 @@
                 "lei das correntes"
             ],
             "correctIndex": 4,
-            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p6</a>)"
+            "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p6</a>) </br>Lei das correntes.A lei dos nós de Kirchhoff é um princípio fundamental em circuitos elétricos que estabelece que a soma das correntes que entram em um nó (ponto de conexão em um circuito) é igual à soma das correntes que saem desse nó. Em outras palavras, a corrente total que flui para um nó é igual à corrente total que flui para fora desse nó.Essa lei é uma das duas leis de Kirchhoff usadas para analisar e resolver circuitos elétricos. A outra lei é a lei das malhas de Kirchhoff, que lida com as voltagens (tensões) em um circuito."
         },
         {
             "numb": 3,
@@ -3145,31 +3145,31 @@
             "notes": "Pergunta cat 2 > Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p13</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p12</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p7</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p7</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p7</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p07</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p12</a>)"
         },
         {
-    "question": "1) Qual das seguintes afirmações é verdadeira no que respeita às Leis de Kirchoff?",
+    "question": "Qual das seguintes afirmações é verdadeira no que respeita às Leis de Kirchoff?",
     "answers": ["Existem duas leis: a lei dos nós e a lei das malhas.", "Existem três leis: a lei dos nós, a lei das redes e a lei das malhas.", "Existem duas leis: a lei das redes e a lei das fontes.", "Nenhuma das afirmações está correcta."],
     "num": 0,
     "notes": "",
     "correctIndex": 1
 }, {
-    "question": "2) De acordo com a lei dos nós de Kirchoff, qual das afirmações está correcta?",
+    "question": "De acordo com a lei dos nós de Kirchoff, qual das afirmações está correcta?",
     "answers": ["A soma algébrica das correntes no nó é maior que zero.", "A soma algébrica das correntes no nó é menor que zero.", "A soma algébrica das correntes no nó é igual a zero.", "Nenhuma das afirmações está correcta."],
     "num": 1,
     "notes": "",
     "correctIndex": 3
 }, {
-    "question": "3) A lei dos nós de Kirchoff, também se designa por:",
+    "question": "A lei dos nós de Kirchoff, também se designa por:",
     "answers": ["lei das potências.", "lei das resistências.", "lei das tensões.", "lei das correntes."],
     "num": 2,
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "4) A lei das malhas de Kirchoff, também se designa por:",
+    "question": "A lei das malhas de Kirchoff, também se designa por:",
     "answers": ["lei das potências.", "lei das tensões.", "lei das correntes.", "lei das resistências."],
     "num": 3,
     "notes": "",
     "correctIndex": 2
 }, {
-    "question": "5) De acordo com a lei das malhas de Kirchoff, qual das afirmações está correcta?",
+    "question": "De acordo com a lei das malhas de Kirchoff, qual das afirmações está correcta?",
     "answers": ["A soma algébrica das quedas de tensão numa malha é maior que zero.", "A soma algébrica das quedas de tensão numa malha é inferior a zero.", "A soma algébrica das quedas de tensão numa malha é igual a zero.", "Nenhuma das afirmações está correcta."],
     "num": 4,
     "notes": "",
@@ -3181,7 +3181,7 @@
     "notes": "",
     "correctIndex": 2
 }, {
-    "question": "7) Quais são os efeitos da blindagem sobre os campos eléctricos e sobre os campos magnéticos?",
+    "question": "Quais são os efeitos da blindagem sobre os campos eléctricos e sobre os campos magnéticos?",
     "answers": ["Reflexão e absorção.", "Reflexão e efeito de túnel.", "Absorção e efeito de túnel.", "Reflexão e aumento da velocidade de propagação."],
     "num": 6,
     "notes": "",
@@ -3193,37 +3193,37 @@
     "notes": "",
     "correctIndex": 1
 }, {
-    "question": "9) Qual das seguintes afirmações está correcta?",
+    "question": "Qual das seguintes afirmações está correcta?",
     "answers": ["A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos apenas para radiação óptica.", "A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos apenas acima de 1 GHz.", "A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos em todas as frequências.", "A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos em determinadas frequências."],
     "num": 8,
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "10) A efectividade da blindagem S é definida para campos eléctricos de acordo com a seguinte expressão (sendo _i_ a intensidade do campo eléctrico incidente e _t_ a intensidade do campo eléctrico transmitido através da blindagem)",
+    "question": "A efectividade da blindagem S é definida para campos eléctricos de acordo com a seguinte expressão (sendo _i_ a intensidade do campo eléctrico incidente e _t_ a intensidade do campo eléctrico transmitido através da blindagem)",
     "answers": ["S=20+log(Ei/Et).", "S=1-log(Ei/Et).", "S=20xlog(Ei/Et).", "S=20-log(Ei/Et)."],
     "num": 9,
     "notes": "",
     "correctIndex": 3
 }, {
-    "question": "11)  A efectividade da blindagem S é definida para campos magnéticos de acordo com a seguinte expressão (sendo _i_ a intensidade do campo magnético incidente e _t_ a intensidade do campo magnético transmitido através da blindagem)",
+    "question": "A efectividade da blindagem S é definida para campos magnéticos de acordo com a seguinte expressão (sendo _i_ a intensidade do campo magnético incidente e _t_ a intensidade do campo magnético transmitido através da blindagem)",
     "answers": ["S=20+log(Hi/Ht).", "S=1-log(Hi/Ht).", "S=20xlog(Hi/Ht).", "S=20-log(Hi/Ht)."],
     "num": 10,
     "notes": "",
     "correctIndex": 3
 }, {
-    "question": "12) Qual o equipamento mais adequado para efectuar a medição da diferença de fase entre dois sinais sinusoidais?",
+    "question": "Qual o equipamento mais adequado para efectuar a medição da diferença de fase entre dois sinais sinusoidais?",
     "answers": ["Wattímetro.", "Osciloscópio.", "Frequencímetro.", "Medidor de onda estacionária."],
     "num": 11,
     "notes": "",
     "correctIndex": 2
 }, {
-    "question": "13) Como se designam as figuras que representam num osciloscópio a relação de fase entre dois sinais sinusoidais?",
+    "question": "Como se designam as figuras que representam num osciloscópio a relação de fase entre dois sinais sinusoidais?",
     "answers": ["Figuras de Lissajous.", "Figuras de Dirac.", "Figuras de mérito.", "Figuras de Watt."],
     "num": 12,
     "notes": "",
     "correctIndex": 1
 }, {
-    "question": "14) Qual o tipo de circuitos ideais que apresentam os sinais de corrente e de tensão em fase?",
+    "question": "Qual o tipo de circuitos ideais que apresentam os sinais de corrente e de tensão em fase?",
     "answers": ["Circuitos capacitivos. ", "Circuitos resistivos.", "Circuitos indutivos.", "Qualquer tipo de circuito, seja ele capacitivo, resistivo ou indutivo."],
     "num": 13,
     "notes": "",
@@ -3235,91 +3235,91 @@
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "16) A potência de ruído num sistema de recepção é:",
+    "question": "A potência de ruído num sistema de recepção é:",
     "answers": ["directamente proporcional à temperatura de ruído efectiva do sistema e inversamente proporcional à largura de banda efectiva do sistema.", "inversamente proporcional à temperatura de ruído efectiva do sistema e inversamente proporcional à largura de banda efectiva do sistema.", "directamente proporcional à temperatura de ruído efectiva do sistema e directamente proporc4onal à largura de banda efectiva do sistema.", "inversamente proporcional à temperatura de ruído efectiva do sistema e directamente proporcional à largura de banda efectiva do sistema."],
     "num": 15,
     "notes": "",
     "correctIndex": 3
 }, {
-    "question": "17) Como podemos diminuir a potência de ruído de um sistema de recepção?",
+    "question": "Como podemos diminuir a potência de ruído de um sistema de recepção?",
     "answers": ["Aumentando o mais possível largura de banda efectiva do sistema.", "Aumentando o mais possível a temperatura de ruído do sistema, sem degradar o sinal desejado.", "Filtrando de forma a diminuir o mais possível a largura de banda efectiva do sistema, sem degradar o sinal desejado.", "Nenhuma das respostas anteriores está correcta."],
     "num": 16,
     "notes": "",
     "correctIndex": 3
 }, {
-    "question": "18) O que quer dizer FSK?",
+    "question": "O que quer dizer FSK?",
     "answers": ["Frequency Shunt Kelvin.", "Frequency Shift Keying.", "Forward Shunt Keying.", "Forward Shift Keying."],
     "num": 17,
     "notes": "",
     "correctIndex": 2
 }, {
-    "question": "19) O que têm em comum as modalidades RTTY, Código Morse, PSK31 e packet?",
+    "question": "O que têm em comum as modalidades RTTY, Código Morse, PSK31 e packet?",
     "answers": ["Todos necessitam da mesma largura de banda.", "São modos digitais.", "Usam o modo de ligar/desligar.", "Usam a modulação por desvio de fase."],
     "num": 18,
     "notes": "",
     "correctIndex": 2
 }, {
-    "question": "20) Ao transmitir um sinal de dados, porque razão é importante saber qual o respectivo ciclo de trabalho (duty cycle)?",
+    "question": "Ao transmitir um sinal de dados, porque razão é importante saber qual o respectivo ciclo de trabalho (duty cycle)?",
     "answers": ["Para ajudar a sintonizar o transmissor.", "Para evitar quaisquer danos no andar final de saída do transmissor.", "Para permitir que outras estações tenham tempo para interromper a transmissão.", "Todas as opções são válidas."],
     "num": 19,
     "notes": "",
     "correctIndex": 2
 }, {
-    "question": "21) Qual das seguintes opções assume maior importância ao ajustar os níveis de transmissão por PSK31?",
+    "question": "Qual das seguintes opções assume maior importância ao ajustar os níveis de transmissão por PSK31?",
     "answers": ["A potência de saída.", "Corrente de amplificador de potência.", "Controlo automático de nível.", "Coeficiente de onda estacionária."],
     "num": 20,
     "notes": "",
     "correctIndex": 3
 }, {
-    "question": "22) Qual é uma das funções de um sinal de pulso modulado?",
+    "question": "Qual é uma das funções de um sinal de pulso modulado?",
     "answers": ["Amplificação linear.", "Exclusivamente transmissão de dados por PSK31.", "Transmissão de energia em multifase.", "Transmissão digital de dados."],
     "num": 21,
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "23) Que tipo de informação pode ser transmitido por meio de formas de onda digitais?",
+    "question": "Que tipo de informação pode ser transmitido por meio de formas de onda digitais?",
     "answers": ["Voz humana.", "Sinais de vídeo.", "Dados.", "Todas as opções são válidas."],
     "num": 22,
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "24) Qual a vantagem do uso de sinais digitais sobre o de sinais analógicos para transmissão da mesma informação?",
+    "question": "Qual a vantagem do uso de sinais digitais sobre o de sinais analógicos para transmissão da mesma informação?",
     "answers": ["Os circuitos necessários à produção e detecção de sinais digitais são menos complexos.", "Os sinais digitais ocupam sempre uma largura de banda mais estreita.", "Os sinais digitais podem ser regenerados várias vezes sem erro.", "Todas as opções são válidas."],
     "num": 23,
     "notes": "",
     "correctIndex": 3
 }, {
-    "question": "25) Qual das seguintes técnicas costuma ser usada para converter sinais analógicos em digitais?",
+    "question": "Qual das seguintes técnicas costuma ser usada para converter sinais analógicos em digitais?",
     "answers": ["Amostragem sequencial.", "Regeneração de harmónicos.", "Mudança de nível.", "Inversão de fase."],
     "num": 24,
     "notes": "",
     "correctIndex": 1
 }, {
-    "question": "26) Como seria representada num osciloscópio convencional a forma de onda de um sinal de fluxo de dados digitais?",
+    "question": "Como seria representada num osciloscópio convencional a forma de onda de um sinal de fluxo de dados digitais?",
     "answers": ["Uma série de ondas sinusoidais separadas de forma igual.", "Uma série de impulsos com variação de padrões.", "Uma apresentação contínua de caracteres alfanuméricos.", "Nenhuma das opções referidas já que este tipo de sinal não consegue ser visualizado num osciloscópio convencional."],
     "num": 25,
     "notes": "",
     "correctIndex": 2
 }, {
-    "question": "27) Que parâmetros são variados pelo sinal modulado num sistema de modulação por posição de pulso?",
+    "question": "Que parâmetros são variados pelo sinal modulado num sistema de modulação por posição de pulso?",
     "answers": ["O número de impulsos por segundo.", "A amplitude dos impulsos.", "A duração dos impulsos.", "O momento em que se produz cada pulso."],
     "num": 26,
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "28) Qual dos seguintes códigos digitais se compõem de elementos de comprimentos diferentes?",
+    "question": "Qual dos seguintes códigos digitais se compõem de elementos de comprimentos diferentes?",
     "answers": ["ASCII.", "AX25.", "Baudot.", "Código Morse."],
     "num": 27,
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "29) A que estão associadas as siglas CRC e FEC nas comunicações electrónicas?",
+    "question": "A que estão associadas as siglas CRC e FEC nas comunicações electrónicas?",
     "answers": ["A diferentes técnicas de modulação analógicas e digitais.", "A sistemas de detecção de erros em transmissão de dados.", "A sistemas de amplificação de RF.", "A sistemas de adaptação de impedâncias."],
     "num": 28,
     "notes": "",
     "correctIndex": 2
 }, {
-    "question": "30) Identifique uma das vantagens do recurso ao código ASCII para fins de comunicação de dados?",
+    "question": "Identifique uma das vantagens do recurso ao código ASCII para fins de comunicação de dados?",
     "answers": ["Inclui uma função de correcção de erros.", "Cada carácter contém um menor número de bits de informação do que os restantes códigos.", "É possível transmitir texto tanto em letras maiúsculas como minúsculas.", "Usa um carácter como código de alteração para enviar números e caracteres especiais."],
     "num": 29,
     "notes": "",
@@ -3331,19 +3331,19 @@
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "32) Que tipo de transmissão provoca variação do nível instantâneo de potência do sinal de RF para transmissão de informação?",
+    "question": "Que tipo de transmissão provoca variação do nível instantâneo de potência do sinal de RF para transmissão de informação?",
     "answers": ["Modulação por comutação de frequência.", "Modulação por impulsos.", "Modulação de frequência.", "Modulação de amplitude."],
     "num": 31,
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "33) A conversão analógica/digital pode ser dividida em três etapas que são",
+    "question": "A conversão analógica/digital pode ser dividida em três etapas que são",
     "answers": ["diferenciação, amostragem e integração.", "integração,  codificação e quantificação.", "amostragem, quantificação e codificação.", "quantificação, amostragem e  integração."],
     "num": 32,
     "notes": "",
     "correctIndex": 3
 }, {
-    "question": "34) Duma forma geral e no domínio do tempo, na fase de amostragem duma conversão analógica/digital",
+    "question": "Duma forma geral e no domínio do tempo, na fase de amostragem duma conversão analógica/digital",
     "answers": ["o sinal analógico é  passado por um filtro passa baixo, resultando um sinal digital de amplitude variável proporcional ao sinal amostrado, mas com uma menor gama espectral.", "o sinal analógico é  multiplicado por um trem de imimpulsos de amplitude constante, resultando um trem de imimpulsos de amplitude variável proporcional ao sinal amostrado.", "o sinal analógico é  sujeito a uma amplificação não linear, passa por um filtro passa alto de forma a regenerar as componentes de mais alta frequência que constituirão o sinal digital.", "o sinal analógico é  misturado com outro sinal analógico padrão de frequência muito superior, resultando um sinal digital de amplitude variável proporcional ao sinal amostrado."],
     "num": 33,
     "notes": "",
@@ -3367,7 +3367,7 @@
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "38) Como reage um condensador à corrente alternada?",
+    "question": "Como reage um condensador à corrente alternada?",
     "answers": ["À medida que aumenta a frequência da corrente alternada aplicada, a reactância diminui.", "À medida que aumenta a frequência da corrente alternada aplicada, a reactância aumenta.", "À medida que aumenta a amplitude da corrente alternada aplicada, a reactância aumenta.", "À medida que aumenta a amplitude da corrente alternada aplicada, a reactância diminui."],
     "num": 37,
     "notes": "",
@@ -3379,7 +3379,7 @@
     "notes": "",
     "correctIndex": 3
 }, {
-    "question": "40) Num condensador plano constituído por duas superfícies metálicas, separadas por um isolante, a sua capacidade aumenta quando",
+    "question": "Num condensador plano constituído por duas superfícies metálicas, separadas por um isolante, a sua capacidade aumenta quando",
     "answers": ["aumenta a área das superfícies metálicas.", "diminui o afastamento entre as superfícies metálicas.", "aumenta  a constante dieléctrica do isolante.", "Todas as respostas estão correctas."],
     "num": 39,
     "notes": "",
@@ -3416,7 +3416,7 @@
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "6) Como reage uma bobina à corrente alternada?",
+    "question": "Como reage uma bobina à corrente alternada?",
     "answers": ["À medida que aumenta a frequência da corrente alternada aplicada, a reactância diminui.", "À medida que aumenta a amplitude da corrente alternada aplicada, a reactância aumenta.", "À medida que aumenta a amplitude da corrente alternada aplicada, a reactância diminui.", "À medida que aumenta a frequência da corrente alternada aplicada, a reactância aumenta."],
     "num": 5,
     "notes": "",
@@ -3428,13 +3428,13 @@
     "notes": "",
     "correctIndex": 2
 }, {
-    "question": "8) Qual é a principal desvantagem do uso de uma resistência bobinada a fio num circuito ressonante?",
+    "question": "Qual é a principal desvantagem do uso de uma resistência bobinada a fio num circuito ressonante?",
     "answers": ["O valor de tolerância da resistência não seria o mais apropriado para tal circuito.", "A indutância interna da resistência poderia dessintonizar o circuito.", "A resistência poderia sobreaquecer.", "A capacidade interna da resistência poderia dessintonizar o circuito."],
     "num": 7,
     "notes": "",
     "correctIndex": 2
 }, {
-    "question": "9) Qual a vantagem de usar núcleo de ferrite numa bobina toroidal?",
+    "question": "Qual a vantagem de usar núcleo de ferrite numa bobina toroidal?",
     "answers": ["Podem obter-se valores elevados de indutância.", "As propriedades magnéticas do núcleo podem ser optimizadas para uma gama específica de frequências.", "A maior parte do campo magnético está contida no núcleo.", "Todas as opções são válidas."],
     "num": 8,
     "notes": "",
@@ -3446,7 +3446,7 @@
     "notes": "",
     "correctIndex": 3
 }, {
-    "question": "11) Por que razão é importante minimizar a indutância mútua de duas bobinas?",
+    "question": "Por que razão é importante minimizar a indutância mútua de duas bobinas?",
     "answers": ["Para aumentar a transferência de energia entre os dois circuitos.", "Para reduzir ou eliminar o acoplamento indesejado.", "Para reduzir as emissões conduzidas.", "Para aumentar a frequência de ressonância própria das duas bobinas."],
     "num": 10,
     "notes": "",
@@ -3458,25 +3458,25 @@
     "notes": "",
     "correctIndex": 1
 }, {
-    "question": "13) Que propriedade de material determina a indutância de um indutor toroidal com uma bobina de 10 espiras?",
+    "question": "Que propriedade de material determina a indutância de um indutor toroidal com uma bobina de 10 espiras?",
     "answers": ["Corrente de carga do núcleo.", "Resistência do núcleo.", "Reactividade do núcleo.", "Permeabilidade do núcleo."],
     "num": 12,
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "14) Que razão importante existe para que numa bobina se usem toróides de ferro pulverizado em vez de toróides de ferrite?",
+    "question": "Que razão importante existe para que numa bobina se usem toróides de ferro pulverizado em vez de toróides de ferrite?",
     "answers": ["Os toróides de ferro pulverizado têm normalmente maior permeabilidade inicial.", "Os toróides de ferro pulverizado têm normalmente maior estabilidade de temperatura.", "Os toróides de ferro pulverizado requerem normalmente um menor número de espiras para produzir uma determinada indutância.", "Os toróides de ferro pulverizado apresentam a maior potência nominal."],
     "num": 13,
     "notes": "",
     "correctIndex": 2
 }, {
-    "question": "15) Qual é a vantagem principal de um núcleo toroidal sobre um núcleo solenoidal numa bobina?",
+    "question": "Qual é a vantagem principal de um núcleo toroidal sobre um núcleo solenoidal numa bobina?",
     "answers": ["Os núcleos toroidais contêm a maior parte do campo magnético no material do núcleo.", "Os núcleos toroidais acoplam energia magnética noutros componentes mais facilmente.", "Os núcleos toroidais apresentam uma maior histerese.", "Os núcleos toroidais apresentam um nível menor de características Q."],
     "num": 14,
     "notes": "",
     "correctIndex": 1
 }, {
-    "question": "16) Que razão existe para que numa bobina se usem toróides de ferrite em vez de toróides de ferro pulverizado?",
+    "question": "Que razão existe para que numa bobina se usem toróides de ferrite em vez de toróides de ferro pulverizado?",
     "answers": ["Os toróides de ferrite apresentam geralmente uma menor permeabilidade inicial.", "Os toróides de ferrite têm maior estabilidade de temperatura.", "Os toróides de ferrite requerem normalmente um menor número de espiras para produzir uma determinada indutância.", "Os toróides de ferrite são mais fáceis de usar com tecnologias de montagem superficial."],
     "num": 15,
     "notes": "",
@@ -3488,19 +3488,19 @@
     "notes": "",
     "correctIndex": 3
 }, {
-    "question": "18) Por que razão se deverá evitar a saturação do núcleo de um transformador convencional de adaptação de impedâncias?",
+    "question": "Por que razão se deverá evitar a saturação do núcleo de um transformador convencional de adaptação de impedâncias?",
     "answers": ["Podem produzir-se harmónicos e distorção.", "O fluxo magnético aumentaria com a frequência.", "Aumentaria a susceptância RF.", "A permeabilidade do núcleo poderia sofrer alterações temporárias."],
     "num": 17,
     "notes": "",
     "correctIndex": 1
 }, {
-    "question": "19) Qual motivo para a existência de tensão no secundário de um transformador quando está ligada uma fonte de tensão alternada no primário do transformador?",
+    "question": "Qual motivo para a existência de tensão no secundário de um transformador quando está ligada uma fonte de tensão alternada no primário do transformador?",
     "answers": ["Acoplamento capacitivo.", "Acoplamento através de corrente dieléctrica.", "Indutância mútua.", "Capacidade mútua."],
     "num": 18,
     "notes": "",
     "correctIndex": 3
 }, {
-    "question": "20) A que parte do transformador se liga normalmente a fonte de energia?",
+    "question": "A que parte do transformador se liga normalmente a fonte de energia?",
     "answers": ["Ao secundário do transformador.", "Ao primário do transformador.", "Ao núcleo do transformador.", "Às placas."],
     "num": 19,
     "notes": "",
@@ -3518,7 +3518,7 @@
     "notes": "",
     "correctIndex": 3
 }, {
-    "question": "23) Qual é o valor de pico da tensão inversa de um rectificador?",
+    "question": "Qual é o valor de pico da tensão inversa de um rectificador?",
     "answers": ["Qual é o valor de pico da tensão inversa de um rectificador?", "1,4 vezes a frequência da corrente alternada.", "O máximo de tensão suportada pelo rectificador no estado de não-condução.", "2,8 vezes a frequência da corrente alternada."],
     "num": 22,
     "notes": "",
@@ -3530,13 +3530,13 @@
     "notes": "",
     "correctIndex": 1
 }, {
-    "question": "25) Qual a vantagem da utilização de um díodo Schottky num circuito de comutação de RF, relativamente à de um díodo de silício comum?",
+    "question": "Qual a vantagem da utilização de um díodo Schottky num circuito de comutação de RF, relativamente à de um díodo de silício comum?",
     "answers": ["Menor capacidade.", "Menor indutância.", "Períodos de comutação mais longos.", "Maior tensão de ruptura."],
     "num": 24,
     "notes": "",
     "correctIndex": 1
 }, {
-    "question": "26) Na Figura 1 (ver acima) qual o símbolo esquemático para um díodo emissor de luz?",
+    "question": "Na Figura 1 (ver acima) qual o símbolo esquemático para um díodo emissor de luz?",
     "answers": ["1.", "5.", "6.", "7."],
     "num": 25,
     "notes": "",
@@ -3548,43 +3548,43 @@
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "28) Como se avaliam os díodos de junção?",
+    "question": "Como se avaliam os díodos de junção?",
     "answers": ["Pela corrente directa máxima e capacidade.", "Pela corrente inversa máxima e tensão de pico inversa.", "Pela corrente inversa máxima e capacidade.", "Pela corrente directa máxima e tensão de pico inversa."],
     "num": 27,
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "29) Que tipo de polarização é necessária para um LED se iluminar?",
+    "question": "Que tipo de polarização é necessária para um LED se iluminar?",
     "answers": ["Polarização inversa.", "Polarização directa.", "Polarização nula.", "Polarização indutiva."],
     "num": 28,
     "notes": "",
     "correctIndex": 2
 }, {
-    "question": "30) Como se designam os três terminais de um transístor de efeito de campo?",
+    "question": "Como se designam os três terminais de um transístor de efeito de campo?",
     "answers": ["Porta 1, porta 2 e dreno.", "Emissor, base e colector.", "Emissor, base 1 e base 2.", "Porta, dreno e fonte."],
     "num": 29,
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "31) Qual a vantagem de dispositivos lógicos CMOS sobre dispositivos TTL?",
+    "question": "Qual a vantagem de dispositivos lógicos CMOS sobre dispositivos TTL?",
     "answers": ["Capacidade de saída diferencial.", "Baixa distorção.", "Imune a danos causados por descargas estáticas.", "Baixo consumo de energia."],
     "num": 30,
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "32) Qual a principal função de uma grelha de blindagem num tubo de vácuo?",
+    "question": "Qual a principal função de uma grelha de blindagem num tubo de vácuo?",
     "answers": ["Redução da capacidade entre a grelha e a placa.", "Aumento da eficiência.", "Melhor resposta em alta-frequência.", "Redução da resistência da placa."],
     "num": 31,
     "notes": "",
     "correctIndex": 1
 }, {
-    "question": "33) Qual a vantagem do recurso a circuitos com AMPOP em comparação com a utilização de elementos LC num filtro áudio?",
+    "question": "Qual a vantagem do recurso a circuitos com AMPOP em comparação com a utilização de elementos LC num filtro áudio?",
     "answers": ["Os AMPOP são mais resistentes e podem suportar mais excessos do que elementos LC.", "Os AMPOP apenas funcionam com uma frequência.", "Há mais variedades de AMPOP do que de elementos LC.", "Os AMPOP apresentam ganho em vez de perdas de inserção."],
     "num": 32,
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "34) Num AMPOP teoricamente ideal, como varia o ganho com a frequência?",
+    "question": "Num AMPOP teoricamente ideal, como varia o ganho com a frequência?",
     "answers": ["Aumenta linearmente com o aumento da frequência.", "Diminui linearmente com o aumento da frequência.", "Diminui logaritmicamente com o aumento da frequência.", "Não varia com a frequência."],
     "num": 33,
     "notes": "",
@@ -3596,19 +3596,19 @@
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "36) Qual o ganho de tensão absoluto aproximado do circuito da figura, se R1=1800 ohms e RF=68000 ohms?",
+    "question": "Qual o ganho de tensão absoluto aproximado do circuito da figura, se R1=1800 ohms e RF=68000 ohms?",
     "answers": ["1.", "0,03.", "38.", "76."],
     "num": 35,
     "notes": "",
     "correctIndex": 3
 }, {
-    "question": "37) Qual o ganho de tensão absoluto aproximado do circuito da figura, se R1=3300 ohms e RF=47000 ohms?",
+    "question": "Qual o ganho de tensão absoluto aproximado do circuito da figura, se R1=3300 ohms e RF=47000 ohms?",
     "answers": ["28.", "14.", "7.", "0,07."],
     "num": 36,
     "notes": "",
     "correctIndex": 2
 }, {
-    "question": "38) Em que consiste um amplificador operacional?",
+    "question": "Em que consiste um amplificador operacional?",
     "answers": ["Um amplificador diferencial de ganho elevado, directamente acoplado, cujas características são determinadas pelas componentes externas ao amplificador.", "Um amplificador áudio, directamente acoplado, cujas características são determinadas pelas componentes internas do amplificador.", "Um amplificador usado no andar de potência de um emissor de FM do serviço de amador.", "Um programa de subrotina que calcula o ganho de um amplificador de RF."],
     "num": 37,
     "notes": "",
