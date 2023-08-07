@@ -3410,7 +3410,7 @@
     "notes": "",
     "correctIndex": 2
 }, {
-    "question": "5) - Qual das seguintes opções causa oposição ao fluxo de corrente alternada numa bobina?",
+    "question": "Qual das seguintes opções causa oposição ao fluxo de corrente alternada numa bobina?",
     "answers": ["Condutância.", "Relutância.", "Admitância.", "Reactância."],
     "num": 4,
     "notes": "",
@@ -3440,7 +3440,7 @@
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "10) Como devem ser posicionadas duas bobinas de forma a minimizar a indutância mútua?",
+    "question": "Como devem ser posicionadas duas bobinas de forma a minimizar a indutância mútua?",
     "answers": ["Alinhados com os seus eixos de enrolamento.", "Com os eixos de enrolamento em paralelo entre si.", "Com os eixos de enrolamento na perpendicular entre si.", "Resguardados num mesmo espaço blindado."],
     "num": 9,
     "notes": "",
@@ -3506,13 +3506,13 @@
     "notes": "",
     "correctIndex": 2
 }, {
-    "question": "21) Como se denomina a corrente no primário de um transformador se não houver carga no secundário?",
+    "question": "Como se denomina a corrente no primário de um transformador se não houver carga no secundário?",
     "answers": ["Corrente de magnetização.", "Corrente contínua.", "Corrente de excitação.", "Corrente estacionária."],
     "num": 20,
     "notes": "",
     "correctIndex": 1
 }, {
-    "question": "22) Qual é a tensão no secundário de 500 espiras de um transformador se o primário de 2250 espiras do transformador tiver uma tensão de 120 VAC?",
+    "question": "Qual é a tensão no secundário de 500 espiras de um transformador se o primário de 2250 espiras do transformador tiver uma tensão de 120 VAC?",
     "answers": ["2,37 kV.", "540 V.", "26,7 V.", "5,9 V."],
     "num": 21,
     "notes": "",
@@ -3590,7 +3590,7 @@
     "notes": "",
     "correctIndex": 4
 }, {
-    "question": "35) Qual a tensão à saída do circuito da figura, se R1=1000 ohms, RF=10000 ohms e, à entrada, for aplicada uma tensão de 0,23 V?",
+    "question": "Qual a tensão à saída do circuito da figura, se R1=1000 ohms, RF=10000 ohms e, à entrada, for aplicada uma tensão de 0,23 V?",
     "answers": ["0,23 V.", "2,3 V.", "-0,23 V.", "-2,3 V."],
     "num": 34,
     "notes": "",
