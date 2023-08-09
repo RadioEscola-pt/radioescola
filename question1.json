@@ -1432,7 +1432,8 @@
 				"Devido às limitações de resposta em frequência dos AMPlificadoes OPeracionais - AMPOP",
 				"Todas as hipóteses de resposta estão erradas"
 			],
-			"notes": "A103"
+			 "correctIndex": 3,
+    "notes": "A103: Os Amplificadores Operacionais (AmpOps) possuem limitações de resposta em frequência que podem afetar a estabilidade e a precisão dos osciladores RC ativos em frequências mais altas. Além disso, a presença de componentes parasitas também pode contribuir para limitações nas frequências de operação."
 		},
 		{
 			"numb": 103,
