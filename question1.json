@@ -1456,7 +1456,8 @@
 				"Através de uma ligação acoplada",
 				"Através de um condensador de neutralização"
 			],
-			"notes": "A104"
+			"correctIndex": 1,
+    "notes": "A104: No oscilador Hartley, a realimentação positiva é fornecida através de um divisor indutivo, que consiste em uma bobina (indutor) que conecta a saída do amplificador de RF de volta à entrada, resultando na geração de um sinal oscilante."
 		},
 		{
 			"numb": 105,
@@ -1468,7 +1469,7 @@
 				"Através de um cristal de quartzo"
 			],
 			"correctIndex": 4,
-			"notes": "A105  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p34</a>)"
+			"notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p34</a>)"
 		},
 		{
 			"numb": 106,
@@ -1479,7 +1480,8 @@
 				"Um oscilador de referência muito estável baseado no princípio \"tee-notch\"",
 				"Um oscilador de referência muito estável baseado no efeito de portadora quente"
 			],
-			"notes": "A106"
+			"correctIndex": 0,
+            "notes": "Um oscilador de díodo Gunn é um tipo de oscilador que funciona com base nas propriedades de resistência negativa de semicondutores adequadamente dopados, como o díodo Gunn. Esse efeito permite a geração de sinais de radiofrequência."
 		},
 		{
 			"numb": 106,
@@ -1538,7 +1540,8 @@
 				"Comparador de fase",
 				"Filtro passa-baixo"
 			],
-			"notes": "A110"
+			"correctIndex": 2,
+            "notes": "Um detetor de envolvente não é comumente utilizado em uma malha de captura de fase. Os outros elementos, como VCO, comparador de fase e filtro passa-baixo, são componentes essenciais em uma malha de captura de fase."
 		},
 		{
 			"numb": 111,
