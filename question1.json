@@ -933,7 +933,7 @@
 				"1,78 MHz"
 			],
 			"correctIndex": 1,
-          "notes": ": A frequência de ressonância em um circuito série RLC é dada por: \( f = \\frac{1}{2\\pi\\sqrt{LC}} \\). Substituindo os valores, obtemos \( f \\approx 22,36 \\, \\text{MHz} \\)."
+			"notes": "A frequência de ressonância em um circuito série RLC é dada por: f = 1 / (2 * pi * sqrt(L * C)). Substituindo os valores, obtemos f ≈ 22,36 MHz."
 		},
 		{
 			"numb": 69,
@@ -1337,7 +1337,7 @@
 				"Todas as hipóteses de resposta estão erradas"
 			],
 			"correctIndex": 2,
-             "notes": "Um detetor de produto é mais eficaz em sinais sobre-modulados e possui uma melhor relação sinal/ruído do que um detetor de envolvente. Além disso, o detetor de produto é mais simples e possui menos componentes discretos em comparação com o detetor de envolvente."
+			"notes": "Um detetor de produto é mais eficaz em sinais sobre-modulados e possui uma melhor relação sinal/ruído do que um detetor de envolvente. Além disso, o detetor de produto é mais simples e possui menos componentes discretos em comparação com o detetor de envolvente."
 		},
 		{
 			"numb": 97,
@@ -1432,8 +1432,8 @@
 				"Devido às limitações de resposta em frequência dos AMPlificadoes OPeracionais - AMPOP",
 				"Todas as hipóteses de resposta estão erradas"
 			],
-			 "correctIndex": 3,
-    "notes": "A103: Os Amplificadores Operacionais (AmpOps) possuem limitações de resposta em frequência que podem afetar a estabilidade e a precisão dos osciladores RC ativos em frequências mais altas. Além disso, a presença de componentes parasitas também pode contribuir para limitações nas frequências de operação."
+			"correctIndex": 3,
+			"notes": "A103: Os Amplificadores Operacionais (AmpOps) possuem limitações de resposta em frequência que podem afetar a estabilidade e a precisão dos osciladores RC ativos em frequências mais altas. Além disso, a presença de componentes parasitas também pode contribuir para limitações nas frequências de operação."
 		},
 		{
 			"numb": 103,
@@ -1457,7 +1457,7 @@
 				"Através de um condensador de neutralização"
 			],
 			"correctIndex": 1,
-    "notes": "A104: No oscilador Hartley, a realimentação positiva é fornecida através de um divisor indutivo, que consiste em uma bobina (indutor) que conecta a saída do amplificador de RF de volta à entrada, resultando na geração de um sinal oscilante."
+			"notes": "A104: No oscilador Hartley, a realimentação positiva é fornecida através de um divisor indutivo, que consiste em uma bobina (indutor) que conecta a saída do amplificador de RF de volta à entrada, resultando na geração de um sinal oscilante."
 		},
 		{
 			"numb": 105,
@@ -1481,7 +1481,7 @@
 				"Um oscilador de referência muito estável baseado no efeito de portadora quente"
 			],
 			"correctIndex": 0,
-            "notes": "Um oscilador de díodo Gunn é um tipo de oscilador que funciona com base nas propriedades de resistência negativa de semicondutores adequadamente dopados, como o díodo Gunn. Esse efeito permite a geração de sinais de radiofrequência."
+			"notes": "Um oscilador de díodo Gunn é um tipo de oscilador que funciona com base nas propriedades de resistência negativa de semicondutores adequadamente dopados, como o díodo Gunn. Esse efeito permite a geração de sinais de radiofrequência."
 		},
 		{
 			"numb": 106,
@@ -1541,7 +1541,7 @@
 				"Filtro passa-baixo"
 			],
 			"correctIndex": 2,
-            "notes": "Um detetor de envolvente não é comumente utilizado em uma malha de captura de fase. Os outros elementos, como VCO, comparador de fase e filtro passa-baixo, são componentes essenciais em uma malha de captura de fase."
+			"notes": "Um detetor de envolvente não é comumente utilizado em uma malha de captura de fase. Os outros elementos, como VCO, comparador de fase e filtro passa-baixo, são componentes essenciais em uma malha de captura de fase."
 		},
 		{
 			"numb": 111,
