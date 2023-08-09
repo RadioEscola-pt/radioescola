@@ -1,0 +1,127 @@
+    <p>As resistências eletrônicas possuem um código de cores que indica seu valor de resistência. Esse código é composto por faixas coloridas que representam os dígitos e multiplicadores.</p>
+    
+    <h2>Interpretação do Código de Cores</h2>
+    <p>O código de cores de uma resistência é composto por faixas que representam dígitos e multiplicadores:</p>
+    <ul>
+        <li>1ª faixa: Primeiro dígito</li>
+        <li>2ª faixa: Segundo dígito</li>
+        <li>3ª faixa (Somente 5 Faixas): Terceiro dígito</li>
+        <li>4ª faixa: Multiplicador</li>
+        <li>5ª faixa: Tolerância</li>
+    </ul>
+    
+    <h2>Exemplo de Resistência de 4 Faixas</h2>
+    <p>Código de cores: 1234</p>
+    <ul>
+        <li>1ª faixa: 1 (Marrom)</li>
+        <li>2ª faixa: 2 (Vermelho)</li>
+        <li>3ª faixa: 10^2 = 100 (Preto)</li>
+        <li>4ª faixa: ±5% (Dourado)</li>
+    </ul>
+    <p>Isso resulta em um valor de resistência de 12 * 100 = 1200 ohms ou 1.2 kΩ com uma tolerância de ±5%.</p>
+    
+    <h2>Exemplo de Resistência de 5 Faixas</h2>
+    <p>Código de cores: 12345</p>
+    <ul>
+        <li>1ª faixa: 1 (Marrom)</li>
+        <li>2ª faixa: 2 (Vermelho)</li>
+        <li>3ª faixa: 3 (Laranja)</li>
+        <li>4ª faixa: 10^4 = 10000 (Amarelo)</li>
+        <li>5ª faixa: ±5% (Dourado)</li>
+    </ul>
+    <p>Isso resulta em um valor de resistência de 123 * 10000 = 1230000 ohms ou 1.23 MΩ com uma tolerância de ±5%.</p>
+    
+    <h2>Tabela de Cores</h2>
+    <table border="1">
+        <tr>
+            <th>1ª Faixa</th>
+            <th>2ª Faixa</th>
+            <th>3ª Faixa</th>
+            <th>4ª Faixa</th>
+            <th>5ª Faixa</th>
+        </tr>
+        <tr>
+            <td>Preto (0)</td>
+            <td>Preto (0)</td>
+            <td>Preto (0)</td>
+            <td>Preto (10^0)</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Marrom (1)</td>
+            <td>Marrom (1)</td>
+            <td>Marrom (1)</td>
+            <td>Marrom (10^1)</td>
+            <td>±1%</td>
+        </tr>
+        <tr>
+            <td>Vermelho (2)</td>
+            <td>Vermelho (2)</td>
+            <td>Vermelho (2)</td>
+            <td>Vermelho (10^2)</td>
+            <td>±2%</td>
+        </tr>
+        <tr>
+            <td>Laranja (3)</td>
+            <td>Laranja (3)</td>
+            <td>Laranja (3)</td>
+            <td>Laranja (10^3)</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Amarelo (4)</td>
+            <td>Amarelo (4)</td>
+            <td>Amarelo (4)</td>
+            <td>Amarelo (10^4)</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Verde (5)</td>
+            <td>Verde (5)</td>
+            <td>Verde (5)</td>
+            <td>Verde (10^5)</td>
+            <td>±0.5%</td>
+        </tr>
+        <tr>
+            <td>Azul (6)</td>
+            <td>Azul (6)</td>
+            <td>Azul (6)</td>
+            <td>Azul (10^6)</td>
+            <td>±0.25%</td>
+        </tr>
+        <tr>
+            <td>Violeta (7)</td>
+            <td>Violeta (7)</td>
+            <td>Violeta (7)</td>
+            <td>Violeta (10^7)</td>
+            <td>±0.1%</td>
+        </tr>
+        <tr>
+            <td>Cinza (8)</td>
+            <td>Cinza (8)</td>
+            <td>Cinza (8)</td>
+            <td>Cinza (10^8)</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Branco (9)</td>
+            <td>Branco (9)</td>
+            <td>Branco (9)</td>
+            <td>Branco (10^9)</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Dourado</td>
+            <td>Dourado</td>
+            <td>Dourado</td>
+            <td>0.1</td>
+            <td>±5%</td>
+        </tr>
+        <tr>
+            <td>Prateado</td>
+            <td>Prateado</td>
+            <td>Prateado</td>
+            <td>0.01</td>
+            <td>±10%</td>
+        </tr>
+    </table>
