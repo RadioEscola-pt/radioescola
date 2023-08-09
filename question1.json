@@ -932,7 +932,8 @@
 				"3,56 MHz",
 				"1,78 MHz"
 			],
-			"notes": "A69  pi (aproximadamente 3.14159).(f) = 1 / (2 * π * √(L * C)) f ≈ 112,58 Hz"
+			"correctIndex": 1,
+          "notes": ": A frequência de ressonância em um circuito série RLC é dada por: \( f = \\frac{1}{2\\pi\\sqrt{LC}} \\). Substituindo os valores, obtemos \( f \\approx 22,36 \\, \\text{MHz} \\)."
 		},
 		{
 			"numb": 69,
@@ -1112,7 +1113,7 @@
 				"É o elemento regulador ou de controlo do circuito",
 				"Fornece corrente a D1"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": "O transistor Q1 atua como um elemento que fornece realimentação negativa ao circuito, ajudando a melhorar a regulação da tensão de saída."
 		},
 		{
