@@ -1326,8 +1326,8 @@
 				"um detetor de de envolvente",
 				"um detetor de fase"
 			],
-			"notes": "A96"
-			"correctIndex": 0,
+			"notes": "A96",
+			"correctIndex": 0
 		},
 		{
 			"numb": 97,
@@ -1674,8 +1674,8 @@
 				"Limitador",
 				"Fonte de alimentação"
 			],
-		    "correctIndex": 3,
-    		"notes": "O circuito apresentado na figura é um limitador. Ele utiliza os diodos D1 e D2 para limitar a amplitude do sinal de entrada, resultando em um sinal de saída limitado em amplitude. Os resistores R1 e R2 juntamente com o amplificador operacional A formam um circuito limitador."
+			"correctIndex": 3,
+			"notes": "O circuito apresentado na figura é um limitador. Ele utiliza os diodos D1 e D2 para limitar a amplitude do sinal de entrada, resultando em um sinal de saída limitado em amplitude. Os resistores R1 e R2 juntamente com o amplificador operacional A formam um circuito limitador."
 
 		},
 		{
@@ -1868,7 +1868,7 @@
 				"Malha de entrada com VCO, transístores de amplificação e malha de saída com PLL"
 			],
 			"correctIndex": 1,
-            "notes": "O andar final de um emissor de frequência modulada em classe C é dividido, de forma simplificada, em três partes: uma malha de adaptação de entrada, os transístores de amplificação e uma malha de adaptação de saída. A malha de adaptação de entrada ajuda a casar a impedância do estágio anterior com a impedância do amplificador, os transístores de amplificação amplificam o sinal modulado e a malha de adaptação de saída ajuda a casar a impedância do amplificador com a carga de saída."
+			"notes": "O andar final de um emissor de frequência modulada em classe C é dividido, de forma simplificada, em três partes: uma malha de adaptação de entrada, os transístores de amplificação e uma malha de adaptação de saída. A malha de adaptação de entrada ajuda a casar a impedância do estágio anterior com a impedância do amplificador, os transístores de amplificação amplificam o sinal modulado e a malha de adaptação de saída ajuda a casar a impedância do amplificador com a carga de saída."
 
 		},
 		{
@@ -1904,8 +1904,8 @@
 				"Elevado ruído",
 				"A classe C não apresenta nenhuma desvantagem relativamente a outras classes de amplificação"
 			],
-			    "correctIndex": 1,
-    "notes": "A principal desvantagem de se utilizar amplificadores em classe C é a elevada distorção harmónica. Devido à sua condução não linear e limitada durante menos que meio ciclo da forma de onda, os amplificadores em classe C geram uma quantidade significativa de harmónicos na saída, resultando em distorção do sinal amplificado."
+			"correctIndex": 1,
+			"notes": "A principal desvantagem de se utilizar amplificadores em classe C é a elevada distorção harmónica. Devido à sua condução não linear e limitada durante menos que meio ciclo da forma de onda, os amplificadores em classe C geram uma quantidade significativa de harmónicos na saída, resultando em distorção do sinal amplificado."
 
 		},
 		{
@@ -1954,7 +1954,7 @@
 				"A classe A não apresenta nenhuma vantagem em relação a outras classes de amplificação"
 			],
 			"correctIndex": 1,
-    		"notes": "A principal vantagem de se utilizarem amplificadores em classe A é a baixa distorção harmónica. Amplificadores em classe A operam com uma corrente de polarização constante, o que permite que a saída siga de forma precisa a entrada, resultando em baixa distorção harmónica e alta qualidade de amplificação. No entanto, eles têm baixa eficiência de conversão de energia."
+			"notes": "A principal vantagem de se utilizarem amplificadores em classe A é a baixa distorção harmónica. Amplificadores em classe A operam com uma corrente de polarização constante, o que permite que a saída siga de forma precisa a entrada, resultando em baixa distorção harmónica e alta qualidade de amplificação. No entanto, eles têm baixa eficiência de conversão de energia."
 
 		},
 		{
@@ -2027,7 +2027,7 @@
 				"O ganho aumenta 3 dB"
 			],
 			"correctIndex": 3,
-            "notes": "Quando a frequência de funcionamento de uma antena parabólica é duplicada, o ganho da antena aumenta em 6 dB. Isso ocorre devido à relação direta entre a frequência e o tamanho efetivo da antena."
+			"notes": "Quando a frequência de funcionamento de uma antena parabólica é duplicada, o ganho da antena aumenta em 6 dB. Isso ocorre devido à relação direta entre a frequência e o tamanho efetivo da antena."
 
 		},
 		{
@@ -2111,8 +2111,8 @@
 				"mantém-se resistiva pura",
 				"Todas as opções estão incorretas"
 			],
-			 "correctIndex": 1,
-    		"notes": "Se um dipolo de meia onda ressonante for encurtado fisicamente, sua impedância se tornará capacitiva para a frequência de ressonância. Isso ocorre porque o encurtamento da antena resulta em uma diminuição do comprimento efetivo da antena e afeta suas propriedades de impedância."
+			"correctIndex": 1,
+			"notes": "Se um dipolo de meia onda ressonante for encurtado fisicamente, sua impedância se tornará capacitiva para a frequência de ressonância. Isso ocorre porque o encurtamento da antena resulta em uma diminuição do comprimento efetivo da antena e afeta suas propriedades de impedância."
 
 		},
 		{
@@ -2533,7 +2533,7 @@
 				"Selecionar uma frequência imediatamente superior à frequência crítica"
 			],
 			"correctIndex": 1,
-   			 "notes": "Para obter uma atenuação baixa nas transmissões de HF, deve-se selecionar uma frequência imediatamente inferior à frequência máxima utilizável (MUF - Maximum Usable Frequency). Isso permite evitar os efeitos da absorção da camada D da ionosfera e garante uma melhor propagação do sinal."
+			"notes": "Para obter uma atenuação baixa nas transmissões de HF, deve-se selecionar uma frequência imediatamente inferior à frequência máxima utilizável (MUF - Maximum Usable Frequency). Isso permite evitar os efeitos da absorção da camada D da ionosfera e garante uma melhor propagação do sinal."
 
 		},
 		{
