@@ -2016,7 +2016,9 @@
 				"O ganho aumenta 6 dB",
 				"O ganho aumenta 3 dB"
 			],
-			"notes": "A142"
+			"correctIndex": 3,
+            "notes": "Quando a frequência de funcionamento de uma antena parabólica é duplicada, o ganho da antena aumenta em 6 dB. Isso ocorre devido à relação direta entre a frequência e o tamanho efetivo da antena."
+
 		},
 		{
 			"numb": 143,
@@ -2099,7 +2101,9 @@
 				"mantém-se resistiva pura",
 				"Todas as opções estão incorretas"
 			],
-			"notes": "A148"
+			 "correctIndex": 1,
+    		"notes": "Se um dipolo de meia onda ressonante for encurtado fisicamente, sua impedância se tornará capacitiva para a frequência de ressonância. Isso ocorre porque o encurtamento da antena resulta em uma diminuição do comprimento efetivo da antena e afeta suas propriedades de impedância."
+
 		},
 		{
 			"numb": 149,
