@@ -1672,7 +1672,9 @@
 				"Limitador",
 				"Fonte de alimentação"
 			],
-			"notes": "A117"
+		    "correctIndex": 3,
+    		"notes": "O circuito apresentado na figura é um limitador. Ele utiliza os diodos D1 e D2 para limitar a amplitude do sinal de entrada, resultando em um sinal de saída limitado em amplitude. Os resistores R1 e R2 juntamente com o amplificador operacional A formam um circuito limitador."
+
 		},
 		{
 			"numb": 118,
@@ -1863,7 +1865,9 @@
 				"Malha de entrada com VCO, transístores de amplificação e malha de adaptação de saída",
 				"Malha de entrada com VCO, transístores de amplificação e malha de saída com PLL"
 			],
-			"notes": "A132"
+			"correctIndex": 1,
+            "notes": "O andar final de um emissor de frequência modulada em classe C é dividido, de forma simplificada, em três partes: uma malha de adaptação de entrada, os transístores de amplificação e uma malha de adaptação de saída. A malha de adaptação de entrada ajuda a casar a impedância do estágio anterior com a impedância do amplificador, os transístores de amplificação amplificam o sinal modulado e a malha de adaptação de saída ajuda a casar a impedância do amplificador com a carga de saída."
+
 		},
 		{
 			"numb": 133,
@@ -1898,7 +1902,9 @@
 				"Elevado ruído",
 				"A classe C não apresenta nenhuma desvantagem relativamente a outras classes de amplificação"
 			],
-			"notes": "A135"
+			    "correctIndex": 1,
+    "notes": "A principal desvantagem de se utilizar amplificadores em classe C é a elevada distorção harmónica. Devido à sua condução não linear e limitada durante menos que meio ciclo da forma de onda, os amplificadores em classe C geram uma quantidade significativa de harmónicos na saída, resultando em distorção do sinal amplificado."
+
 		},
 		{
 			"numb": 135,
@@ -1945,7 +1951,9 @@
 				"Baixa linearidade",
 				"A classe A não apresenta nenhuma vantagem em relação a outras classes de amplificação"
 			],
-			"notes": "A138"
+			"correctIndex": 1,
+    		"notes": "A principal vantagem de se utilizarem amplificadores em classe A é a baixa distorção harmónica. Amplificadores em classe A operam com uma corrente de polarização constante, o que permite que a saída siga de forma precisa a entrada, resultando em baixa distorção harmónica e alta qualidade de amplificação. No entanto, eles têm baixa eficiência de conversão de energia."
+
 		},
 		{
 			"numb": 139,
