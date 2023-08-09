@@ -1271,7 +1271,7 @@
 		},
 		{
 			"numb": 92,
-			"question": "Na figura, qual o objetivo de R1 e R2? <img src='images/cat1/fig3.png'>",
+			"question": "Na figura, qual o objetivo de R1 e R2?<\br> <img src='images/cat1/fig3.png'>",
 			"answers": [
 				"Resistências de carga",
 				"Polarização fixa",
@@ -1283,13 +1283,14 @@
 		},
 		{
 			"numb": 93,
-			"question": "Que tipo de circuito é apresentado na figura? <img src='images/cat1/fig3.png'>",
+			"question": "Que tipo de circuito é apresentado na figura?<\br> <img src='images/cat1/fig3.png'>",
 			"answers": [
 				"Regulador de tensão com comutação",
 				"Regulador de tensão linear",
 				"Amplificador com emissor comum",
 				"Amplificador seguidor de emissor"
 			],
+			"correctIndex": 0,
 			"notes": "A93"
 		},
 		{
@@ -1318,7 +1319,7 @@
 		},
 		{
 			"numb": 96,
-			"question": "A figura representa <img src='images/cat1/fig4.png'>",
+			"question": "A figura representa <\br> <img src='images/cat1/fig4.png'>",
 			"answers": [
 				"um detetor de produto",
 				"um detetor de frequência modulada",
@@ -1326,6 +1327,7 @@
 				"um detetor de fase"
 			],
 			"notes": "A96"
+			"correctIndex": 0,
 		},
 		{
 			"numb": 97,
@@ -2530,7 +2532,9 @@
 				"Selecionar uma frequência imediatamente inferior à frequência crítica",
 				"Selecionar uma frequência imediatamente superior à frequência crítica"
 			],
-			"notes": "A176"
+			"correctIndex": 1,
+   			 "notes": "Para obter uma atenuação baixa nas transmissões de HF, deve-se selecionar uma frequência imediatamente inferior à frequência máxima utilizável (MUF - Maximum Usable Frequency). Isso permite evitar os efeitos da absorção da camada D da ionosfera e garante uma melhor propagação do sinal."
+
 		},
 		{
 			"numb": 177,
