@@ -1335,7 +1335,8 @@
 				"O detetor de produto desmodula todos os tipos de sinais, incluindo os sinais digitais e efetua em simultâneo a correção de erros, que o detetor de envolvente não faz",
 				"Todas as hipóteses de resposta estão erradas"
 			],
-			"notes": "A97"
+			"correctIndex": 2,
+             "notes": "Um detetor de produto é mais eficaz em sinais sobre-modulados e possui uma melhor relação sinal/ruído do que um detetor de envolvente. Além disso, o detetor de produto é mais simples e possui menos componentes discretos em comparação com o detetor de envolvente."
 		},
 		{
 			"numb": 97,
