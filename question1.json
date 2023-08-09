@@ -2470,7 +2470,8 @@
 				"os satélites deslocam-se demasiado depressa para serem seguidos por ondas de HF",
 				"o efeito Doppler faz com que as ondas HF sofram uma translação na frequência para SHF, tornando difícil a receção do sinal"
 			],
-			"notes": "A173"
+			"correctIndex": 1,
+            "notes": " As faixas de VHF e UHF são menos afetadas pela ionosfera, o que facilita a comunicação via satélite, pois as ondas eletromagnéticas nessas frequências são pouco atenuadas e desviadas pelo ambiente ionosférico."
 		},
 		{
 			"numb": 174,
@@ -2481,7 +2482,8 @@
 				"Melhoria da propagação de longo percurso de sinais de alta-frequência",
 				"Redução dos ecos de longo atraso"
 			],
-			"notes": "A174"
+			 "correctIndex": 3,
+            "notes": "A elevada atividade geomagnética pode melhorar a propagação de longo percurso de sinais de alta-frequência, resultando em melhores condições para as radiocomunicações nessa faixa."
 		},
 		{
 			"numb": 175,
@@ -2492,7 +2494,8 @@
 				"14 MHz",
 				"7 MHz"
 			],
-			"notes": "A175"
+			"correctIndex": 1,
+    "notes": "A MUF indica a frequência máxima utilizável para comunicações via propagação ionosférica. Se a MUF é de 22 MHz, a melhor faixa para uma boa ligação será a mais próxima dessa frequência, que é a faixa de 28 MHz."
 		},
 		{
 			"numb": 175,
@@ -2610,7 +2613,8 @@
 				"é praticamente igual à atenuação em espaço livre",
 				"Não existe qualquer relação entre a desobstrução do primeiro elipsoide de Fresnel e a atenuação do sinal na ligação entre as duas estações"
 			],
-			"notes": "A183"
+			"correctIndex": 1,
+            "notes": "Quando o primeiro elipsoide de Fresnel está desobstruído, isso significa que a maior parte do caminho entre as estações não possui obstáculos significativos. Isso resulta em uma atenuação muito menor em comparação com a atenuação em espaço livre, onde o sinal precisa superar obstáculos ao longo do caminho."
 		},
 		{
 			"numb": 184,
