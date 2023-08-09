@@ -1480,7 +1480,7 @@
 				"Um oscilador de referência muito estável baseado no princípio \"tee-notch\"",
 				"Um oscilador de referência muito estável baseado no efeito de portadora quente"
 			],
-			"correctIndex": 0,
+			"correctIndex": 1,
 			"notes": "Um oscilador de díodo Gunn é um tipo de oscilador que funciona com base nas propriedades de resistência negativa de semicondutores adequadamente dopados, como o díodo Gunn. Esse efeito permite a geração de sinais de radiofrequência."
 		},
 		{
