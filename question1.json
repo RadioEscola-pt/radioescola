@@ -812,8 +812,8 @@
                 "3,33 mH",
                 "33 mH"
             ],
-            "correctIndex": 1,
-            "notes": "A60"
+            "correctIndex": 4,
+            "notes": "<p>L<sub>total</sub> = L<sub>1</sub> + L<sub>2</sub> + L<sub>3</sub> + &#8230;</p> <p>L<sub>total</sub> = 10 \, mH + 10 \, mH + 10 \, mH = 30 \, mH</p>"
         },
         {
             "numb": 61,
@@ -824,8 +824,8 @@
                 "70 microfarad",
                 "1 mF"
             ],
-            "notes": "A61"
-        },
+            "correctIndex": 2,
+            "notes": "<p>1 / C<sub>total</sub> = 1 / C<sub>1</sub> + 1 / C<sub>2</sub></p> <p>1 / C<sub>total</sub> = 1 / 20 \, \mu F + 1 / 50 \, \mu F</p><p>1 / C<sub>total</sub> = 5 / 100 \, \mu F + 2 / 100 \, \mu F</p><p>1 / C<sub>total</sub> = 7 / 100 \, \mu F</p><p>C<sub>total</sub> = 100 \, \mu F / 7 ≈ 14.29 \, \mu F</p>"
         {
             "numb": 62,
             "question": "Que componente se deverá adicionar a uma bobina de forma a aumentar a indutância do circuito?",
@@ -1014,7 +1014,8 @@
                 "Aproximadamente igual à reactância indutiva",
                 "Aproximadamente igual à resistência do circuito"
             ],
-            "notes": "A74"
+            "correctIndex": 4,
+            "notes": "Nesse estado de ressonância, a reatância capacitiva e a reatância indutiva se cancelam mutuamente, resultando em um circuito onde a impedância dominante é a resistência. As outras opções não estão corretas."
         },
         {
             "numb": 74,
@@ -1037,6 +1038,7 @@
                 "A tensão e a corrente estão em fase",
                 "A tensão e a corrente estão em oposição de fase"
             ],
+            "correctIndex": 2,
             "notes": "A75"
         },
         {
