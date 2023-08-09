@@ -2471,7 +2471,7 @@
 				"o efeito Doppler faz com que as ondas HF sofram uma translação na frequência para SHF, tornando difícil a receção do sinal"
 			],
 			"correctIndex": 1,
-            "notes": " As faixas de VHF e UHF são menos afetadas pela ionosfera, o que facilita a comunicação via satélite, pois as ondas eletromagnéticas nessas frequências são pouco atenuadas e desviadas pelo ambiente ionosférico."
+			"notes": " As faixas de VHF e UHF são menos afetadas pela ionosfera, o que facilita a comunicação via satélite, pois as ondas eletromagnéticas nessas frequências são pouco atenuadas e desviadas pelo ambiente ionosférico."
 		},
 		{
 			"numb": 174,
@@ -2482,8 +2482,8 @@
 				"Melhoria da propagação de longo percurso de sinais de alta-frequência",
 				"Redução dos ecos de longo atraso"
 			],
-			 "correctIndex": 3,
-            "notes": "A elevada atividade geomagnética pode melhorar a propagação de longo percurso de sinais de alta-frequência, resultando em melhores condições para as radiocomunicações nessa faixa."
+			"correctIndex": 3,
+			"notes": "A elevada atividade geomagnética pode melhorar a propagação de longo percurso de sinais de alta-frequência, resultando em melhores condições para as radiocomunicações nessa faixa."
 		},
 		{
 			"numb": 175,
@@ -2495,7 +2495,7 @@
 				"7 MHz"
 			],
 			"correctIndex": 1,
-    "notes": "A MUF indica a frequência máxima utilizável para comunicações via propagação ionosférica. Se a MUF é de 22 MHz, a melhor faixa para uma boa ligação será a mais próxima dessa frequência, que é a faixa de 28 MHz."
+			"notes": "A MUF indica a frequência máxima utilizável para comunicações via propagação ionosférica. Se a MUF é de 22 MHz, a melhor faixa para uma boa ligação será a mais próxima dessa frequência, que é a faixa de 28 MHz."
 		},
 		{
 			"numb": 175,
@@ -2614,7 +2614,7 @@
 				"Não existe qualquer relação entre a desobstrução do primeiro elipsoide de Fresnel e a atenuação do sinal na ligação entre as duas estações"
 			],
 			"correctIndex": 1,
-            "notes": "Quando o primeiro elipsoide de Fresnel está desobstruído, isso significa que a maior parte do caminho entre as estações não possui obstáculos significativos. Isso resulta em uma atenuação muito menor em comparação com a atenuação em espaço livre, onde o sinal precisa superar obstáculos ao longo do caminho."
+			"notes": "Quando o primeiro elipsoide de Fresnel está desobstruído, isso significa que a maior parte do caminho entre as estações não possui obstáculos significativos. Isso resulta em uma atenuação muito menor em comparação com a atenuação em espaço livre, onde o sinal precisa superar obstáculos ao longo do caminho."
 		},
 		{
 			"numb": 184,
@@ -2697,7 +2697,8 @@
 				"Amperímetro",
 				"Osciloscópio"
 			],
-			"notes": "A190"
+			"correctIndex": 4,
+			"notes": "O osciloscópio é o equipamento de teste que inclui amplificadores tanto no sistema horizontal (eixo X) quanto no sistema vertical (eixo Y), permitindo a visualização de formas de onda em um gráfico."
 		},
 		{
 			"numb": 191,
@@ -2708,7 +2709,9 @@
 				"um gerador de frequência variável",
 				"um gerador de corrente contínua com amplitude variável"
 			],
-			"notes": "A191"
+			"correctIndex": 3,
+			"notes": " Um \"dip-meter\" utiliza um gerador de frequência variável para determinar a frequência de ressonância ou a frequência de \"dip\" de circuitos ressonantes."
+
 		},
 		{
 			"numb": 192,
@@ -2851,7 +2854,8 @@
 				"na fonte de alimentação dos equipamentos",
 				"nos filtros de saída do andar final do amplificador de radiofrequência do emissor"
 			],
-			"notes": "A201"
+			"correctIndex": 2,
+			"notes": "O efeito de bloqueio ocorre no recetor de um sistema de radiocomunicações. Ele ocorre quando um sinal forte em uma frequência próxima satura o amplificador de entrada do recetor, tornando-o incapaz de receber sinais mais fracos na mesma faixa de frequência."
 		},
 		{
 			"numb": 202,
