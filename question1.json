@@ -1271,7 +1271,7 @@
 		},
 		{
 			"numb": 92,
-			"question": "Na figura, qual o objetivo de R1 e R2?<\br> <img src='images/cat1/fig3.png'>",
+			"question": "Na figura, qual o objetivo de R1 e R2?<br> <img src='images/cat1/fig3.png'>",
 			"answers": [
 				"Resistências de carga",
 				"Polarização fixa",
@@ -1283,15 +1283,15 @@
 		},
 		{
 			"numb": 93,
-			"question": "Que tipo de circuito é apresentado na figura?<\br> <img src='images/cat1/fig3.png'>",
+			"question": "Que tipo de circuito é apresentado na figura?<br> <img src='images/cat1/fig3.png'>",
 			"answers": [
 				"Regulador de tensão com comutação",
 				"Regulador de tensão linear",
 				"Amplificador com emissor comum",
 				"Amplificador seguidor de emissor"
 			],
-			"correctIndex": 0,
-			"notes": "A93"
+			"correctIndex": 2,
+			"notes": "https://www.youtube.com/watch?v=zI5S8N_sVLE"
 		},
 		{
 			"numb": 94,
@@ -1319,15 +1319,15 @@
 		},
 		{
 			"numb": 96,
-			"question": "A figura representa <\br> <img src='images/cat1/fig4.png'>",
+			"question": "A figura representa <br> <img src='images/cat1/fig4.png'>",
 			"answers": [
 				"um detetor de produto",
 				"um detetor de frequência modulada",
 				"um detetor de de envolvente",
 				"um detetor de fase"
 			],
-			"notes": "A96",
-			"correctIndex": 0
+			"notes": "https://www.youtube.com/watch?v=0mmNai39NrA",
+			"correctIndex": 3
 		},
 		{
 			"numb": 97,
