@@ -141,7 +141,7 @@
 				"Figuras de Watt"
 			],
 			"correctIndex": 1,
-			"notes": "A10  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p32</a>)"
+			"notes": "As figuras de Lissajous são padrões geométricos que aparecem quando dois sinais sinusoidais estão em relação de fase. Elas são frequentemente usadas para visualizar e entender a diferença de fase entre dois sinais quando exibidos em um osciloscópio. Esses padrões podem variar dependendo das frequências e amplitudes dos sinais, bem como da relação de fase entre eles. Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p32</a>)"
 		},
 		{
 			"numb": 11,
@@ -177,7 +177,7 @@
 				"Constante de Boltzman"
 			],
 			"correctIndex": 4,
-			"notes": "A13  Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p35</a>)"
+			"notes": " A constante k  na expressão Pn = kTB representa a Constante de Boltzmann, que é uma constante fundamental na física e é usada para relacionar a temperatura de um sistema com a energia térmica média das partículas que o compõem. Ela é frequentemente denotada por k e tem o valor aproximado de 1.380649 × 10^-23 joules por kelvin (J/K). Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p35</a>)"
 		},
 		{
 			"numb": 14,
@@ -225,7 +225,7 @@
 				"Todas as opções são válidas"
 			],
 			"correctIndex": 2,
-			"notes": "A17"
+			"notes": "O ciclo de trabalho (ou duty cycle, em inglês) se refere à proporção do tempo durante o qual um sinal está ativo (transmitindo) em relação ao tempo total. É importante saber o ciclo de trabalho ao transmitir sinais de dados, pois permite que outras estações tenham oportunidade de transmitir entre os pulsos do sinal de dados. Isso ajuda a evitar colisões e interferências entre transmissões, garantindo que o espectro de frequência seja usado de maneira eficiente e que outras estações também possam se comunicar sem interrupções."
 		},
 		{
 			"numb": 18,
