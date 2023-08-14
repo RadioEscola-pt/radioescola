@@ -310,7 +310,7 @@
         "Duma forma geral, para um dado tipo de comunicação e para um dado bit rate, a largura de faixa necessária apenas depende da potência refletida pela antena"
       ],
       "correctIndex": 2,
-      "notes": "A23"
+      "notes": "Em geral, à medida que a taxa de bits (bit rate) aumenta em uma comunicação, a largura de banda necessária para transmitir os dados também tende a aumentar. Isso ocorre porque taxas de bits mais altas implicam em mais mudanças de sinal por unidade de tempo, o que requer uma largura de banda mais ampla para acomodar essas mudanças.\n\nA relação entre bit rate e largura de banda está relacionada à teoria da modulação e ao teorema de Nyquist-Shannon. De acordo com o teorema de Nyquist, para evitar interferência entre os símbolos transmitidos, a largura de banda necessária para transmitir um sinal digital está relacionada ao dobro da taxa de bits (2 vezes o bit rate). No entanto, na prática, devido a considerações como formas de onda reais, espectros e outros fatores, é frequentemente necessário um pouco mais de largura de banda do que o mínimo teórico."
     },
     {
       "numb": 24,
