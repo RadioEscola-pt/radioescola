@@ -298,7 +298,7 @@
         "16"
       ],
       "correctIndex": 1,
-      "notes": "A22"
+      "notes": "Quando se trata de comunicação digital, o \"bit rate\" (taxa de bits) e o \"baud rate\" (taxa de bauds) são dois conceitos importantes, mas eles podem não ser iguais, especialmente em esquemas de modulação onde mais de um bit é transmitido por símbolo. O número de bits por símbolo/palavra pode variar dependendo do tipo de modulação utilizada.No caso que você mencionou, o bit rate é 9600 e o baud rate é 4800. Isso indica que, em cada baud, dois bits estão sendo transmitidos. Isso ocorre porque o baud rate representa a taxa de mudanças do sinal (ou seja, a frequência com que os símbolos são transmitidos), enquanto o bit rate é a quantidade de bits transmitidos por unidade de tempo."
     },
     {
       "numb": 24,
