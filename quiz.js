@@ -4,7 +4,7 @@ class Quiz {
     static currentPage = 0;
     constructor(json) {
         this.jsonFile = json;
-		pageBlocks = [];
+		Quiz.pageBlocks = [];
         this.createQuiz();
     }
 
