@@ -375,18 +375,6 @@
       "notes": "A28  Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p16</a>)"
     },
     {
-      "numb": 29,
-      "question": "Num condensador plano constituído por duas superfícies metálicas, separadas por um isolante, a sua capacidade aumenta quando",
-      "answers": [
-        "aumenta a área das superfícies metálicas",
-        "diminui o afastamento entre as superfícies metálicas",
-        "aumenta a constante dielétrica do isolante",
-        "Todas as respostas estão corretas"
-      ],
-      "correctIndex": 3,
-      "notes": "A29"
-    },
-    {
       "numb": 30,
       "question": "A reactância de um condensador é tanto maior quanto",
       "answers": [
@@ -1043,7 +1031,7 @@
         "A tensão e a corrente estão em fase",
         "A tensão e a corrente estão em oposição de fase"
       ],
-      "correctIndex": 2,
+      "correctIndex": 3,
       "notes": "A75"
     },
     {
@@ -1152,7 +1140,7 @@
         "Fornece uma carga mínima constante a Q1"
       ],
       "correctIndex": 4,
-      "notes": "O resistor R2 tem como objetivo fornecer uma carga mínima constante à base de Q1, garantindo o funcionamento adequado do transistor e contribuindo para a regulação do circuito."
+      "notes": "A82 O resistor R2 tem como objetivo fornecer uma carga mínima constante à base de Q1, garantindo o funcionamento adequado do transistor e contribuindo para a regulação do circuito."
     },
     {
       "numb": 83,
@@ -3697,6 +3685,18 @@
       "num": 3,
       "notes": "",
       "correctIndex": 2
+    },
+	{
+      "numb": 29,
+      "question": "Num condensador plano constituído por duas superfícies metálicas, separadas por um isolante, a sua capacidade aumenta quando",
+      "answers": [
+        "aumenta a área das superfícies metálicas",
+        "diminui o afastamento entre as superfícies metálicas",
+        "aumenta a constante dielétrica do isolante",
+        "Todas as respostas estão corretas"
+      ],
+      "correctIndex": 3,
+      "notes": "A29"
     },
     {
       "question": "Qual das seguintes opções causa oposição ao fluxo de corrente alternada numa bobina?",
