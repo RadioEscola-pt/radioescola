@@ -1,6 +1,6 @@
 class Quiz {
     static messagesArray = {};
-    static pageBlocks = [];
+    var pageBlocks = [];
     static currentPage = 0;
     constructor(json) {
         this.jsonFile = json;
