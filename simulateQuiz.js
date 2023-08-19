@@ -166,6 +166,7 @@ class simulateQuiz {
                     let btn = document.createElement("button");
                     btn.innerHTML = "Finalizar";
                     simulateQuiz.timeout = simulateQuiz.COUINTERTIMEOT;
+					window.clearTimeout(simulateQuiz.timer);
                     simulateQuiz.timer = window.setInterval(simulateQuiz.checkTimer, 1000);
                     btn.onclick = simulateQuiz.checkQuestions;
                     indexBlock.appendChild(btn);
