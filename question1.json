@@ -556,7 +556,7 @@
     },
     {
       "numb": 42,
-      "question": "Um \"display\"de sete segmentos poderá ser contruído com um determinado tipo de díodos. A que tipo de díodos nos referimos?",
+      "question": "Um display de sete segmentos poderá ser contruído com um determinado tipo de díodos. A que tipo de díodos nos referimos?",
       "answers": [
         "Díodos varicaps",
         "Díodos Schottky",
@@ -1788,7 +1788,7 @@
         "Nenhuma das respostas está correta"
       ],
       "correctIndex": 2,
-      "notes": "A127"
+      "notes": "A127 Para trasmitir informaçao de voz numa distancia elevada, só é possivel utilizando a modulação"
     },
     {
       "numb": 128,
@@ -1836,7 +1836,7 @@
         "têm um elevado Q"
       ],
       "correctIndex": 4,
-      "notes": "A131"
+      "notes": "A131 elevado Q (frequencia fixa ou muito reduzida em largura de banda muito estreita) > cristal é o componente para estabilizar a frequência"
     },
     {
       "numb": 132,
@@ -2483,8 +2483,8 @@
         "14 MHz",
         "7 MHz"
       ],
-      "correctIndex": 1,
-      "notes": "A MUF indica a frequência máxima utilizável para comunicações via propagação ionosférica. Se a MUF é de 22 MHz, a melhor faixa para uma boa ligação será a mais próxima dessa frequência, que é a faixa de 28 MHz."
+      "correctIndex": 2,
+      "notes": "A175 A MUF indica a frequência máxima utilizável para comunicações via propagação ionosférica. Se a MUF é de 22 MHz, a melhor faixa para uma boa ligação será a mais próxima dessa frequência, que é a faixa de 21 MHz."
     },
     {
       "numb": 175,
