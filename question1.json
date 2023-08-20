@@ -551,7 +551,7 @@
         "O número de espiras no primário deverá ser igual ao número de espiras no secundário",
         "Nenhuma das hipóteses anteriores está correta, pois um transformador nunca poderá servir como transformador de impedâncias"
       ],
-      "correctIndex": 2,
+      "correctIndex": 1,
       "notes": "A41"
     },
     {
@@ -1884,7 +1884,7 @@
         "A classe C não apresenta nenhuma desvantagem relativamente a outras classes de amplificação"
       ],
       "correctIndex": 1,
-      "notes": "A principal desvantagem de se utilizar amplificadores em classe C é a elevada distorção harmónica. Devido à sua condução não linear e limitada durante menos que meio ciclo da forma de onda, os amplificadores em classe C geram uma quantidade significativa de harmónicos na saída, resultando em distorção do sinal amplificado."
+      "notes": "A135 A principal desvantagem de se utilizar amplificadores em classe C é a elevada distorção harmónica. Devido à sua condução não linear e limitada durante menos que meio ciclo da forma de onda, os amplificadores em classe C geram uma quantidade significativa de harmónicos na saída, resultando em distorção do sinal amplificado."
     },
     {
       "numb": 135,
@@ -1896,7 +1896,7 @@
         "A classe C não apresenta nenhuma vantagem em relação a outras classes de amplificação"
       ],
       "correctIndex": 2,
-      "notes": "A135 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p27</a>)"
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p27</a>)"
     },
     {
       "numb": 136,
