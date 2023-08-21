@@ -2387,7 +2387,7 @@
         "foE",
         "flE"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "notes": "A168"
     },
     {
@@ -2409,7 +2409,7 @@
         "Por aumento da potência da estação emissora",
         "Por filtragem na receção, nomeadamente se estiverem situados em zonas com elevado ruído térmico",
         "Por aumento da altura das torres que suportam as antenas de emissão e de receção",
-        "Por arrefecimento dos equipamentos de receção, se estiverem situados a altitudes acima dos 800 m"
+        "Por arrefecimento dos equipamentos receção, se estiverem situados a altitudes acima dos 800 m"
       ],
       "correctIndex": 3,
       "notes": "A170"
@@ -2872,7 +2872,7 @@
     },
     {
       "numb": 204,
-      "question": "Qual das afirmações é verdadeira?",
+      "question": "Qual das git é verdadeira?",
       "answers": [
         "Aos amadores da categoria 1 é emitida licença CEPT nos termos expressos na Recomendação CEPT T/R 61-01",
         "Os amadores da categoria 1 não têm direito a qualquer tipo de licença CEPT",
@@ -3674,6 +3674,18 @@
       "notes": "",
       "correctIndex": 2
     },
+		{
+      "numb": 29,
+      "question": "Num condensador plano constituído por duas superfícies metálicas, separadas por um isolante, a sua capacidade aumenta quando",
+      "answers": [
+        "aumenta a área das superfícies metálicas",
+        "diminui o afastamento entre as superfícies metálicas",
+        "aumenta a constante dielétrica do isolante",
+        "Todas as respostas estão corretas"
+      ],
+      "correctIndex": 4,
+      "notes": "A29"
+    },
     {
       "question": "Em que consiste a reactância?",
       "answers": [
@@ -3685,18 +3697,6 @@
       "num": 3,
       "notes": "",
       "correctIndex": 2
-    },
-	{
-      "numb": 29,
-      "question": "Num condensador plano constituído por duas superfícies metálicas, separadas por um isolante, a sua capacidade aumenta quando",
-      "answers": [
-        "aumenta a área das superfícies metálicas",
-        "diminui o afastamento entre as superfícies metálicas",
-        "aumenta a constante dielétrica do isolante",
-        "Todas as respostas estão corretas"
-      ],
-      "correctIndex": 3,
-      "notes": "A29"
     },
     {
       "question": "Qual das seguintes opções causa oposição ao fluxo de corrente alternada numa bobina?",
