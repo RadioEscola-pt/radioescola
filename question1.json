@@ -300,7 +300,7 @@
         "16"
       ],
       "correctIndex": 1,
-      "notes": "Quando se trata de comunicação digital, o \"bit rate\" (taxa de bits) e o \"baud rate\" (taxa de bauds) são dois conceitos importantes, mas eles podem não ser iguais, especialmente em esquemas de modulação onde mais de um bit é transmitido por símbolo. O número de bits por símbolo/palavra pode variar dependendo do tipo de modulação utilizada.No caso que você mencionou, o bit rate é 9600 e o baud rate é 4800. Isso indica que, em cada baud, dois bits estão sendo transmitidos. Isso ocorre porque o baud rate representa a taxa de mudanças do sinal (ou seja, a frequência com que os símbolos são transmitidos), enquanto o bit rate é a quantidade de bits transmitidos por unidade de tempo."
+      "notes": "A22 Quando se trata de comunicação digital, o \"bit rate\" (taxa de bits) e o \"baud rate\" (taxa de bauds) são dois conceitos importantes, mas eles podem não ser iguais, especialmente em esquemas de modulação onde mais de um bit é transmitido por símbolo. O número de bits por símbolo/palavra pode variar dependendo do tipo de modulação utilizada.No caso que você mencionou, o bit rate é 9600 e o baud rate é 4800. Isso indica que, em cada baud, dois bits estão sendo transmitidos. Isso ocorre porque o baud rate representa a taxa de mudanças do sinal (ou seja, a frequência com que os símbolos são transmitidos), enquanto o bit rate é a quantidade de bits transmitidos por unidade de tempo."
     },
     {
       "numb": 24,
@@ -522,7 +522,7 @@
       "numb": 39,
       "question": "O primário de um transformador com 100 espiras é percorrido por uma corrente de 10 A. Qual será a corrente no secundário do transformador se este tiver 1000 espiras?",
       "answers": [
-        "1:00 AM",
+        "1 A",
         "10 A",
         "100 A",
         "0,1 A"
@@ -736,7 +736,7 @@
     },
     {
       "numb": 55,
-      "question": "Qual a vantagem do recurso a circuitos  com AMPOP em comparação com a utilização de elementos LC num filtro de áudio?",
+      "question": "Qual a vantagem do recurso a circuitos com AMPOP em comparação com a utilização de elementos LC num filtro de áudio?",
       "answers": [
         "Os AMPOP são mais resistentes e podem suportar mais excessos do que elementos LC",
         "Os AMPOP apenas funcionam com uma frequência",
@@ -1261,6 +1261,18 @@
       ],
       "correctIndex": 2,
       "notes": "A92"
+    },
+	{
+      "numb": 120,
+      "question": "Na figura, qual o objectivo de R1 e R2? <img src='images/cat1/fig7.png'>",
+      "answers": [
+        "Resistências de carga",
+        "Polarização fixa",
+        "Polarização própria",
+        "Realimentação"
+      ],
+      "correctIndex": 2,
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p25</a>)"
     },
     {
       "numb": 93,
@@ -3025,18 +3037,6 @@
       ],
       "correctIndex": 2,
       "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p14</a>)"
-    },
-    {
-      "numb": 120,
-      "question": "Na figura, qual o objectivo de R1 e R2? <img src='images/cat1/fig7.png'>",
-      "answers": [
-        "Resistências de carga",
-        "Polarização fixa",
-        "Polarização própria",
-        "Realimentação"
-      ],
-      "correctIndex": 2,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p25</a>)"
     },
     {
       "numb": 120,
