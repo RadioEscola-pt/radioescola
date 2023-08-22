@@ -528,7 +528,7 @@
         "0,1 A"
       ],
       "correctIndex": 1,
-      "notes": "A39"
+      "notes": "A39  "
     },
     {
       "numb": 40,
@@ -2884,7 +2884,7 @@
     },
     {
       "numb": 204,
-      "question": "Qual das git é verdadeira?",
+      "question": "Qual das afirmações é verdadeira?",
       "answers": [
         "Aos amadores da categoria 1 é emitida licença CEPT nos termos expressos na Recomendação CEPT T/R 61-01",
         "Os amadores da categoria 1 não têm direito a qualquer tipo de licença CEPT",
