@@ -93,11 +93,12 @@ class Quiz {
                         }
                         questionCounter++;
                         var questionBlock = document.createElement("div");
+                        questionBlock.className = "questionBlock";
                         var questiontxt = document.createElement("div");
 						questiontxt.className = "question";
                         var noteBlock = document.createElement("div");
                         noteBlock.id = "note" + Quiz.messagesArray.questions[qindex].index;
-                        questiontxt.innerHTML = Quiz.messagesArray.questions[qindex].index + ")" + Quiz.messagesArray.questions[qindex].question;
+                        questiontxt.innerHTML = Quiz.messagesArray.questions[qindex].index + 1 + ") " + Quiz.messagesArray.questions[qindex].question;
 
                         questionBlock.appendChild(questiontxt);
                         let i = 1;
