@@ -3178,7 +3178,7 @@
         "Existem duas leis: a lei das redes e a lei das fontes.",
         "Nenhuma das afirmações está correcta."
       ],
-      "num": 0,
+      "numb": 0,
       "notes": "",
       "correctIndex": 1
     },
@@ -3190,7 +3190,7 @@
         "A soma algébrica das correntes no nó é igual a zero.",
         "Nenhuma das afirmações está correcta."
       ],
-      "num": 1,
+      "numb": 1,
       "notes": "",
       "correctIndex": 3
     },
@@ -3202,7 +3202,7 @@
         "lei das tensões.",
         "lei das correntes."
       ],
-      "num": 2,
+      "numb": 2,
       "notes": "",
       "correctIndex": 4
     },
@@ -3214,7 +3214,7 @@
         "lei das correntes.",
         "lei das resistências."
       ],
-      "num": 3,
+      "numb": 3,
       "notes": "",
       "correctIndex": 2
     },
@@ -3226,7 +3226,7 @@
         "A soma algébrica das quedas de tensão numa malha é igual a zero.",
         "Nenhuma das afirmações está correcta."
       ],
-      "num": 4,
+      "numb": 4,
       "notes": "",
       "correctIndex": 3
     },
@@ -3238,7 +3238,7 @@
         "Teflon e aço.",
         "Teflon e alumínio."
       ],
-      "num": 5,
+      "numb": 5,
       "notes": "",
       "correctIndex": 2
     },
@@ -3250,7 +3250,7 @@
         "Absorção e efeito de túnel.",
         "Reflexão e aumento da velocidade de propagação."
       ],
-      "num": 6,
+      "numb": 6,
       "notes": "",
       "correctIndex": 1
     },
@@ -3262,7 +3262,7 @@
         "Par telefónico.",
         "Todas possuem blindagem."
       ],
-      "num": 7,
+      "numb": 7,
       "notes": "",
       "correctIndex": 1
     },
@@ -3274,7 +3274,7 @@
         "A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos em todas as frequências.",
         "A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos em determinadas frequências."
       ],
-      "num": 8,
+      "numb": 8,
       "notes": "",
       "correctIndex": 4
     },
@@ -3286,7 +3286,7 @@
         "S=20xlog(Ei/Et).",
         "S=20-log(Ei/Et)."
       ],
-      "num": 9,
+      "numb": 9,
       "notes": "",
       "correctIndex": 3
     },
@@ -3298,7 +3298,7 @@
         "S=20xlog(Hi/Ht).",
         "S=20-log(Hi/Ht)."
       ],
-      "num": 10,
+      "numb": 10,
       "notes": "",
       "correctIndex": 3
     },
@@ -3310,7 +3310,7 @@
         "Frequencímetro.",
         "Medidor de onda estacionária."
       ],
-      "num": 11,
+      "numb": 11,
       "notes": "",
       "correctIndex": 2
     },
@@ -3322,7 +3322,7 @@
         "Figuras de mérito.",
         "Figuras de Watt."
       ],
-      "num": 12,
+      "numb": 12,
       "notes": "",
       "correctIndex": 1
     },
@@ -3334,7 +3334,7 @@
         "Circuitos indutivos.",
         "Qualquer tipo de circuito, seja ele capacitivo, resistivo ou indutivo."
       ],
-      "num": 13,
+      "numb": 13,
       "notes": "",
       "correctIndex": 2
     },
@@ -3346,7 +3346,7 @@
         "Constante de Dirac.",
         "Constante de Boltzman."
       ],
-      "num": 14,
+      "numb": 14,
       "notes": "",
       "correctIndex": 4
     },
@@ -3358,7 +3358,7 @@
         "directamente proporcional à temperatura de ruído efectiva do sistema e directamente proporc4onal à largura de banda efectiva do sistema.",
         "inversamente proporcional à temperatura de ruído efectiva do sistema e directamente proporcional à largura de banda efectiva do sistema."
       ],
-      "num": 15,
+      "numb": 15,
       "notes": "",
       "correctIndex": 3
     },
@@ -3370,7 +3370,7 @@
         "Filtrando de forma a diminuir o mais possível a largura de banda efectiva do sistema, sem degradar o sinal desejado.",
         "Nenhuma das respostas anteriores está correcta."
       ],
-      "num": 16,
+      "numb": 16,
       "notes": "",
       "correctIndex": 3
     },
@@ -3382,7 +3382,7 @@
         "Forward Shunt Keying.",
         "Forward Shift Keying."
       ],
-      "num": 17,
+      "numb": 17,
       "notes": "",
       "correctIndex": 2
     },
@@ -3394,7 +3394,7 @@
         "Usam o modo de ligar/desligar.",
         "Usam a modulação por desvio de fase."
       ],
-      "num": 18,
+      "numb": 18,
       "notes": "",
       "correctIndex": 2
     },
@@ -3406,7 +3406,7 @@
         "Controlo automático de nível.",
         "Coeficiente de onda estacionária."
       ],
-      "num": 20,
+      "numb": 20,
       "notes": "",
       "correctIndex": 3
     },
@@ -3418,7 +3418,7 @@
         "Transmissão de energia em multifase.",
         "Transmissão digital de dados."
       ],
-      "num": 21,
+      "numb": 21,
       "notes": "",
       "correctIndex": 4
     },
@@ -3430,7 +3430,7 @@
         "Dados.",
         "Todas as opções são válidas."
       ],
-      "num": 22,
+      "numb": 22,
       "notes": "",
       "correctIndex": 4
     },
@@ -3442,7 +3442,7 @@
         "Os sinais digitais podem ser regenerados várias vezes sem erro.",
         "Todas as opções são válidas."
       ],
-      "num": 23,
+      "numb": 23,
       "notes": "",
       "correctIndex": 3
     },
@@ -3454,7 +3454,7 @@
         "Mudança de nível.",
         "Inversão de fase."
       ],
-      "num": 24,
+      "numb": 24,
       "notes": "",
       "correctIndex": 1
     },
@@ -3466,7 +3466,7 @@
         "Uma apresentação contínua de caracteres alfanuméricos.",
         "Nenhuma das opções referidas já que este tipo de sinal não consegue ser visualizado num osciloscópio convencional."
       ],
-      "num": 25,
+      "numb": 25,
       "notes": "",
       "correctIndex": 2
     },
@@ -3478,7 +3478,7 @@
         "A duração dos impulsos.",
         "O momento em que se produz cada pulso."
       ],
-      "num": 26,
+      "numb": 26,
       "notes": "",
       "correctIndex": 4
     },
@@ -3490,7 +3490,7 @@
         "Baudot.",
         "Código Morse."
       ],
-      "num": 27,
+      "numb": 27,
       "notes": "",
       "correctIndex": 4
     },
@@ -3502,7 +3502,7 @@
         "A sistemas de amplificação de RF.",
         "A sistemas de adaptação de impedâncias."
       ],
-      "num": 28,
+      "numb": 28,
       "notes": "",
       "correctIndex": 2
     },
@@ -3514,7 +3514,7 @@
         "É possível transmitir texto tanto em letras maiúsculas como minúsculas.",
         "Usa um carácter como código de alteração para enviar números e caracteres especiais."
       ],
-      "num": 29,
+      "numb": 29,
       "notes": "",
       "correctIndex": 3
     },
@@ -3526,7 +3526,7 @@
         "Podem ser enviados caracteres de idiomas estrangeiros.",
         "Podem ser detectados alguns tipos de erro."
       ],
-      "num": 30,
+      "numb": 30,
       "notes": "",
       "correctIndex": 4
     },
@@ -3538,7 +3538,7 @@
         "Modulação de frequência.",
         "Modulação de amplitude."
       ],
-      "num": 31,
+      "numb": 31,
       "notes": "",
       "correctIndex": 4
     },
@@ -3550,7 +3550,7 @@
         "amostragem, quantificação e codificação.",
         "quantificação, amostragem e  integração."
       ],
-      "num": 32,
+      "numb": 32,
       "notes": "",
       "correctIndex": 3
     },
@@ -3562,7 +3562,7 @@
         "o sinal analógico é  sujeito a uma amplificação não linear, passa por um filtro passa alto de forma a regenerar as componentes de mais alta frequência que constituirão o sinal digital.",
         "o sinal analógico é  misturado com outro sinal analógico padrão de frequência muito superior, resultando um sinal digital de amplitude variável proporcional ao sinal amostrado."
       ],
-      "num": 33,
+      "numb": 33,
       "notes": "",
       "correctIndex": 2
     },
@@ -3574,7 +3574,7 @@
         "a frequência de amostragem deve ser no mínimo quatro vezes superior à maior frequência associada ao sinal amostrado.",
         "a frequência de amostragem deve ser no mínimo dez vezes superior à maior frequência associada ao sinal amostrado."
       ],
-      "num": 34,
+      "numb": 34,
       "notes": "",
       "correctIndex": 2
     },
@@ -3586,7 +3586,7 @@
         "Aumentar a relação sinal/ruído.",
         "Aumentar a relação potência transmitida/potência recebida."
       ],
-      "num": 35,
+      "numb": 35,
       "notes": "",
       "correctIndex": 3
     },
@@ -3598,7 +3598,7 @@
         "É uma distorção relacionada com não linearidades dos amplificadores utilizados no processo.",
         "É a distorção resultante do não cumprimento do teorema de Nyquist."
       ],
-      "num": 36,
+      "numb": 36,
       "notes": "",
       "correctIndex": 4
     },
@@ -3610,7 +3610,7 @@
         "À medida que aumenta a amplitude da corrente alternada aplicada, a reactância aumenta.",
         "À medida que aumenta a amplitude da corrente alternada aplicada, a reactância diminui."
       ],
-      "num": 37,
+      "numb": 37,
       "notes": "",
       "correctIndex": 1
     },
@@ -3622,7 +3622,7 @@
         "A tensão e a corrente estão desfasadas 90º.",
         "A tensão e a corrente estão desfasadas 270º."
       ],
-      "num": 38,
+      "numb": 38,
       "notes": "",
       "correctIndex": 3
     },
@@ -3634,7 +3634,7 @@
         "aumenta  a constante dieléctrica do isolante.",
         "Todas as respostas estão correctas."
       ],
-      "num": 39,
+      "numb": 39,
       "notes": "",
       "correctIndex": 4
     },
@@ -3646,7 +3646,7 @@
         "diminui  a constante dieléctrica do isolante.",
         "Todas as respostas estão correctas."
       ],
-      "num": 0,
+      "numb": 0,
       "notes": "",
       "correctIndex": 1
     },
@@ -3658,7 +3658,7 @@
         "aumenta a constante dieléctrica do isolante.",
         "Todas as respostas estão correctas."
       ],
-      "num": 1,
+      "numb": 1,
       "notes": "",
       "correctIndex": 3
     },
@@ -3670,7 +3670,7 @@
         "diminui a constante dieléctrica do isolante.",
         "Todas as respostas estão correctas."
       ],
-      "num": 2,
+      "numb": 2,
       "notes": "",
       "correctIndex": 2
     },
@@ -3694,7 +3694,7 @@
         "Uma propriedade de resistências ideais em circuitos de corrente alternada.",
         "Produção de uma grande faísca nos contactos do interruptor quando a alimentação de energia da bobina é desligada."
       ],
-      "num": 3,
+      "numb": 3,
       "notes": "",
       "correctIndex": 2
     },
@@ -3706,7 +3706,7 @@
         "Admitância.",
         "Reactância."
       ],
-      "num": 4,
+      "numb": 4,
       "notes": "",
       "correctIndex": 4
     },
@@ -3718,7 +3718,7 @@
         "À medida que aumenta a amplitude da corrente alternada aplicada, a reactância diminui.",
         "À medida que aumenta a frequência da corrente alternada aplicada, a reactância aumenta."
       ],
-      "num": 5,
+      "numb": 5,
       "notes": "",
       "correctIndex": 4
     },
@@ -3730,7 +3730,7 @@
         "Ampere.",
         "Siemens."
       ],
-      "num": 6,
+      "numb": 6,
       "notes": "",
       "correctIndex": 2
     },
@@ -3742,7 +3742,7 @@
         "A resistência poderia sobreaquecer.",
         "A capacidade interna da resistência poderia dessintonizar o circuito."
       ],
-      "num": 7,
+      "numb": 7,
       "notes": "",
       "correctIndex": 2
     },
@@ -3754,7 +3754,7 @@
         "A maior parte do campo magnético está contida no núcleo.",
         "Todas as opções são válidas."
       ],
-      "num": 8,
+      "numb": 8,
       "notes": "",
       "correctIndex": 4
     },
@@ -3766,7 +3766,7 @@
         "Com os eixos de enrolamento na perpendicular entre si.",
         "Resguardados num mesmo espaço blindado."
       ],
-      "num": 9,
+      "numb": 9,
       "notes": "",
       "correctIndex": 3
     },
@@ -3778,7 +3778,7 @@
         "Para reduzir as emissões conduzidas.",
         "Para aumentar a frequência de ressonância própria das duas bobinas."
       ],
-      "num": 10,
+      "numb": 10,
       "notes": "",
       "correctIndex": 2
     },
@@ -3790,7 +3790,7 @@
         "A tensão e a corrente estão em fase.",
         "A tensão e a corrente estão desfasadas 270º."
       ],
-      "num": 11,
+      "numb": 11,
       "notes": "",
       "correctIndex": 1
     },
@@ -3802,7 +3802,7 @@
         "Reactividade do núcleo.",
         "Permeabilidade do núcleo."
       ],
-      "num": 12,
+      "numb": 12,
       "notes": "",
       "correctIndex": 4
     },
@@ -3814,7 +3814,7 @@
         "Os toróides de ferro pulverizado requerem normalmente um menor número de espiras para produzir uma determinada indutância.",
         "Os toróides de ferro pulverizado apresentam a maior potência nominal."
       ],
-      "num": 13,
+      "numb": 13,
       "notes": "",
       "correctIndex": 2
     },
@@ -3826,7 +3826,7 @@
         "Os núcleos toroidais apresentam uma maior histerese.",
         "Os núcleos toroidais apresentam um nível menor de características Q."
       ],
-      "num": 14,
+      "numb": 14,
       "notes": "",
       "correctIndex": 1
     },
@@ -3838,7 +3838,7 @@
         "Os toróides de ferrite requerem normalmente um menor número de espiras para produzir uma determinada indutância.",
         "Os toróides de ferrite são mais fáceis de usar com tecnologias de montagem superficial."
       ],
-      "num": 15,
+      "numb": 15,
       "notes": "",
       "correctIndex": 3
     },
@@ -3850,7 +3850,7 @@
         "Anulando a componente reactiva de uma impedância.",
         "Substituindo as resistências da rede por resistências de carga."
       ],
-      "num": 16,
+      "numb": 16,
       "notes": "",
       "correctIndex": 3
     },
@@ -3862,7 +3862,7 @@
         "Aumentaria a susceptância RF.",
         "A permeabilidade do núcleo poderia sofrer alterações temporárias."
       ],
-      "num": 17,
+      "numb": 17,
       "notes": "",
       "correctIndex": 1
     },
@@ -3874,7 +3874,7 @@
         "Indutância mútua.",
         "Capacidade mútua."
       ],
-      "num": 18,
+      "numb": 18,
       "notes": "",
       "correctIndex": 3
     },
@@ -3886,7 +3886,7 @@
         "Ao núcleo do transformador.",
         "Às placas."
       ],
-      "num": 19,
+      "numb": 19,
       "notes": "",
       "correctIndex": 2
     },
@@ -3898,7 +3898,7 @@
         "Corrente de excitação.",
         "Corrente estacionária."
       ],
-      "num": 20,
+      "numb": 20,
       "notes": "",
       "correctIndex": 1
     },
@@ -3910,7 +3910,7 @@
         "26,7 V.",
         "5,9 V."
       ],
-      "num": 21,
+      "numb": 21,
       "notes": "",
       "correctIndex": 3
     },
@@ -3922,7 +3922,7 @@
         "O máximo de tensão suportada pelo rectificador no estado de não-condução.",
         "2,8 vezes a frequência da corrente alternada."
       ],
-      "num": 22,
+      "numb": 22,
       "notes": "",
       "correctIndex": 3
     },
@@ -3934,7 +3934,7 @@
         "Reactância capacitiva e tensão de avalanche.",
         "Pico da impedância de carga e tensão de pico."
       ],
-      "num": 23,
+      "numb": 23,
       "notes": "",
       "correctIndex": 1
     },
@@ -3946,7 +3946,7 @@
         "Períodos de comutação mais longos.",
         "Maior tensão de ruptura."
       ],
-      "num": 24,
+      "numb": 24,
       "notes": "",
       "correctIndex": 1
     },
@@ -3958,7 +3958,7 @@
         "6.",
         "7."
       ],
-      "num": 25,
+      "numb": 25,
       "notes": "P31  Exames:(<a target='_blank' href='exams/cat1/2013_08_30.pdf'>2013_08_30</a>)",
       "correctIndex": 2
     },
@@ -3970,7 +3970,7 @@
         "2",
         "5"
       ],
-      "num": 26,
+      "numb": 26,
       "notes": "",
       "correctIndex": 4
     },
@@ -3982,7 +3982,7 @@
         "Pela corrente inversa máxima e capacidade.",
         "Pela corrente directa máxima e tensão de pico inversa."
       ],
-      "num": 27,
+      "numb": 27,
       "notes": "",
       "correctIndex": 4
     },
@@ -3994,7 +3994,7 @@
         "Polarização nula.",
         "Polarização indutiva."
       ],
-      "num": 28,
+      "numb": 28,
       "notes": "",
       "correctIndex": 2
     },
@@ -4006,7 +4006,7 @@
         "Emissor, base 1 e base 2.",
         "Porta, dreno e fonte."
       ],
-      "num": 29,
+      "numb": 29,
       "notes": "",
       "correctIndex": 4
     },
@@ -4018,7 +4018,7 @@
         "Imune a danos causados por descargas estáticas.",
         "Baixo consumo de energia."
       ],
-      "num": 30,
+      "numb": 30,
       "notes": "",
       "correctIndex": 4
     },
@@ -4030,7 +4030,7 @@
         "Melhor resposta em alta-frequência.",
         "Redução da resistência da placa."
       ],
-      "num": 31,
+      "numb": 31,
       "notes": "",
       "correctIndex": 1
     },
@@ -4042,7 +4042,7 @@
         "Há mais variedades de AMPOP do que de elementos LC.",
         "Os AMPOP apresentam ganho em vez de perdas de inserção."
       ],
-      "num": 32,
+      "numb": 32,
       "notes": "",
       "correctIndex": 4
     },
@@ -4054,7 +4054,7 @@
         "Diminui logaritmicamente com o aumento da frequência.",
         "Não varia com a frequência."
       ],
-      "num": 33,
+      "numb": 33,
       "notes": "",
       "correctIndex": 4
     },
@@ -4066,7 +4066,7 @@
         "38.",
         "76."
       ],
-      "num": 35,
+      "numb": 35,
       "notes": "P36  Exames:(<a target='_blank' href='exams/cat1/2013_08_30.pdf'>2013_08_30</a>",
       "correctIndex": 3
     },
@@ -4078,7 +4078,7 @@
         "7.",
         "0,07."
       ],
-      "num": 36,
+      "numb": 36,
       "notes": "",
       "correctIndex": 2
     },
@@ -4090,7 +4090,7 @@
         "Um amplificador usado no andar de potência de um emissor de FM do serviço de amador.",
         "Um programa de subrotina que calcula o ganho de um amplificador de RF."
       ],
-      "num": 37,
+      "numb": 37,
       "notes": "",
       "correctIndex": 1
     },
@@ -4102,7 +4102,7 @@
         "Muito baixa.",
         "Muito alta."
       ],
-      "num": 38,
+      "numb": 38,
       "notes": "",
       "correctIndex": 4
     },
@@ -4114,7 +4114,7 @@
         "100 ohms",
         "1000 ohms"
       ],
-      "num": 39,
+      "numb": 39,
       "notes": "",
       "correctIndex": 1
     }
