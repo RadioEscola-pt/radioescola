@@ -3963,7 +3963,7 @@
       "correctIndex": 2
     },
     {
-      "question": "Na Figura 1 (ver acima) qual o símbolo esquemático para um LED?",
+      "question": "Na Figura 1 (ver acima) qual o símbolo esquemático para um LED?<img src='images/cat1/q25.png'>",
       "answers": [
         "8",
         "6",
@@ -3971,7 +3971,7 @@
         "5"
       ],
       "num": 26,
-      "notes": "TODO: FALTA FIGURA",
+      "notes": "",
       "correctIndex": 4
     },
     {
@@ -4059,18 +4059,6 @@
       "correctIndex": 4
     },
     {
-      "question": "Qual a tensão à saída do circuito da figura, se R1=1000 ohms, RF=10000 ohms e, à entrada, for aplicada uma tensão de 0,23 V?",
-      "answers": [
-        "0,23 V.",
-        "2,3 V.",
-        "-0,23 V.",
-        "-2,3 V."
-      ],
-      "num": 34,
-      "notes": "TODO: FALTA FIGURA",
-      "correctIndex": 4
-    },
-    {
       "question": "Qual o ganho de tensão absoluto aproximado do circuito da figura, se R1=1800 ohms e RF=68000 ohms?<img src='images/cat1/35.png'>",
       "answers": [
         "1.",
@@ -4083,7 +4071,7 @@
       "correctIndex": 3
     },
     {
-      "question": "Qual o ganho de tensão absoluto aproximado do circuito da figura, se R1=3300 ohms e RF=47000 ohms?",
+      "question": "Qual o ganho de tensão absoluto aproximado do circuito da figura, se R1=3300 ohms e RF=47000 ohms?<img src='images/cat1/35.png'>",
       "answers": [
         "28.",
         "14.",
@@ -4091,7 +4079,7 @@
         "0,07."
       ],
       "num": 36,
-      "notes": "TODO: FALTA FIGURA",
+      "notes": "",
       "correctIndex": 2
     },
     {
