@@ -150,7 +150,7 @@ class simulateQuiz {
                             label.innerHTML += key;
 
                             span.className = "checkmark";
-                            label.className = "container";
+                            label.className = "answer";
                             questionBlock.appendChild(label);
                             pageBlock.appendChild(questionBlock);
                             welcomeDiv.appendChild(pageBlock);
