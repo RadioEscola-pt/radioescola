@@ -93,11 +93,12 @@ class Quiz {
                         }
                         questionCounter++;
                         var questionBlock = document.createElement("div");
+                        questionBlock.className = "questionBlock";
                         var questiontxt = document.createElement("div");
 						questiontxt.className = "question";
                         var noteBlock = document.createElement("div");
                         noteBlock.id = "note" + Quiz.messagesArray.questions[qindex].index;
-                        questiontxt.innerHTML = Quiz.messagesArray.questions[qindex].index + ")" + Quiz.messagesArray.questions[qindex].question;
+                        questiontxt.innerHTML = Quiz.messagesArray.questions[qindex].index + 1 + ") " + Quiz.messagesArray.questions[qindex].question;
 
                         questionBlock.appendChild(questiontxt);
                         let i = 1;
@@ -105,7 +106,6 @@ class Quiz {
 
                             let label = document.createElement("label");
                             let span = document.createElement("span");
-                            label.innerText = key;
 
                             let input = document.createElement("input");
                             input.type = "radio";
@@ -114,6 +114,7 @@ class Quiz {
                             //input.questionIndex = messagesArray.questions[qindex].numb;
                             label.appendChild(input);
                             label.appendChild(span);
+                            label.innerHTML += key;
                             span.className = "checkmark";
                             label.className = "container";
                             questionBlock.appendChild(label);
