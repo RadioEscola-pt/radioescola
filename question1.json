@@ -3939,7 +3939,7 @@
       "correctIndex": 1
     },
     {
-      "question": "Qual a vantagem da utilização de um díodo Schottky num circuito de comutação de RF, relativamente à de um díodo de silício comum?",
+      "question": "Qual a vantagem da utilização de um díodo Schottky num circuito de comutação de RF, relativamente à de um díodo de silício comum? ",
       "answers": [
         "Menor capacidade.",
         "Menor indutância.",
@@ -3951,7 +3951,7 @@
       "correctIndex": 1
     },
     {
-      "question": "Na Figura 1 (ver acima) qual o símbolo esquemático para um díodo emissor de luz?",
+      "question": "Na Figura qual o símbolo esquemático para um díodo emissor de luz?<img src='images/cat1/q25.png'>",
       "answers": [
         "1.",
         "5.",
@@ -3959,7 +3959,7 @@
         "7."
       ],
       "num": 25,
-      "notes": "TODO: FALTA FIGURA",
+      "notes": "P31  Exames:(<a target='_blank' href='exams/cat1/2013_08_30.pdf'>2013_08_30</a>)",
       "correctIndex": 2
     },
     {
@@ -4071,7 +4071,7 @@
       "correctIndex": 4
     },
     {
-      "question": "Qual o ganho de tensão absoluto aproximado do circuito da figura, se R1=1800 ohms e RF=68000 ohms?",
+      "question": "Qual o ganho de tensão absoluto aproximado do circuito da figura, se R1=1800 ohms e RF=68000 ohms?<img src='images/cat1/35.png'>",
       "answers": [
         "1.",
         "0,03.",
@@ -4079,7 +4079,7 @@
         "76."
       ],
       "num": 35,
-      "notes": "TODO: FALTA FIGURA",
+      "notes": "P36  Exames:(<a target='_blank' href='exams/cat1/2013_08_30.pdf'>2013_08_30</a>",
       "correctIndex": 3
     },
     {
