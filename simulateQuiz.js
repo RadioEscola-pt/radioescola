@@ -125,11 +125,12 @@ class simulateQuiz {
                         }
                         questionCounter++;
                         var questionBlock = document.createElement("div");
+                        questionBlock.className = "questionBlock";
                         var questiontxt = document.createElement("div");
 						questiontxt.className = "question";
                         var noteBlock = document.createElement("div");
                         noteBlock.id = "note" + simulateQuiz.questions[qindex].index;
-                        questiontxt.innerHTML = simulateQuiz.questions[qindex].index+1 + ")" + simulateQuiz.questions[qindex].question
+                        questiontxt.innerHTML = simulateQuiz.questions[qindex].index+1 + ") " + simulateQuiz.questions[qindex].question
 
                         questionBlock.appendChild(questiontxt);
                         let i = 1;
@@ -137,15 +138,17 @@ class simulateQuiz {
 
                             let label = document.createElement("label");
                             let span = document.createElement("span");
-                            label.innerText = key;
+                            
 
                             let input = document.createElement("input");
                             input.type = "radio";
                             input.value = i;
                             input.name = "n" + simulateQuiz.questions[qindex].index;
 
-                            label.appendChild(input);
+                            span.appendChild(input);
                             label.appendChild(span);
+                            label.innerHTML += key;
+
                             span.className = "checkmark";
                             label.className = "container";
                             questionBlock.appendChild(label);
