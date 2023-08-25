@@ -818,6 +818,18 @@
       "correctIndex": 2,
       "notes": "<p>L<sub>total</sub> = L<sub>1</sub> + L<sub>2</sub> + L<sub>3</sub> + &#8230;</p> <p>L<sub>total</sub> = 10 mH + 10 mH + 10 mH = 30 mH</p>"
     },
+	{
+      "numb": 61,
+      "question": "Qual a capacidade de três condensadores de 100 microfarad ligados em série?",
+      "answers": [
+        "0,30 microfarad",
+        "0,33 microfarad",
+        "33,3 microfarad",
+        "300 microfarad"
+      ],
+      "correctIndex": 3,
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p10</a>)"
+    },
     {
       "numb": 62,
       "question": "Que componente se deverá adicionar a uma bobina de forma a aumentar a indutância do circuito?",
@@ -1588,7 +1600,7 @@
     },
     {
       "numb": 112,
-      "question": "Duma forma geral para que serve o contrlo automático de ganho no processamento de sinais?",
+      "question": "Duma forma geral para que serve o controlo automático de ganho no processamento de sinais?",
       "answers": [
         "Para manter o tratamento dos sinais numa zona linear",
         "Para evitar saturações no tratamento dos sinais",
@@ -1776,7 +1788,7 @@
         "Nenhuma das hipóteses está correta"
       ],
       "correctIndex": 3,
-      "notes": "A125"
+      "notes": "A125 Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p7</a>)"
     },
     {
       "numb": 126,
@@ -2005,6 +2017,17 @@
       ],
       "correctIndex": 1,
       "notes": "A141"
+    }, {
+      "numb": 141,
+      "question": "A impedância no ponto de alimentação de um dipolo dobrado é",
+      "answers": [
+        "quatro vezes maior que a impedância de um dipolo simples",
+        "um quinto da impedância de um dipolo simples",
+        "vinte vezes maior que a impedância de um dipolo simples",
+        "igual à impedância de um dipolo simples "
+      ],
+      "correctIndex": 1,
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p12</a>)"
     },
     {
       "numb": 142,
@@ -2053,6 +2076,18 @@
       ],
       "correctIndex": 3,
       "notes": "A144"
+    },
+	{
+      "numb": 144,
+      "question": "Para qualquer antena, a sua área efetiva é",
+      "answers": [
+        "numericamente igual à sua diretividade",
+        "inversamente proporcional à sua diretividade",
+        "diretamente proporcional à sua diretividade",
+        "um parâmetro independente e portanto não relacionável com a sua diretividade"
+      ],
+      "correctIndex": 3,
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p13</a>)"
     },
     {
       "numb": 145,
@@ -2412,7 +2447,7 @@
         "Todas as hipóteses estão corretas"
       ],
       "correctIndex": 4,
-      "notes": "A169"
+      "notes": "A169  Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p4</a>)"
     },
     {
       "numb": 170,
@@ -2520,7 +2555,7 @@
         "Selecionar uma frequência imediatamente superior à frequência crítica"
       ],
       "correctIndex": 1,
-      "notes": "Para obter uma atenuação baixa nas transmissões de HF, deve-se selecionar uma frequência imediatamente inferior à frequência máxima utilizável (MUF - Maximum Usable Frequency). Isso permite evitar os efeitos da absorção da camada D da ionosfera e garante uma melhor propagação do sinal."
+      "notes": "A176 Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p3</a>) Para obter uma atenuação baixa nas transmissões de HF, deve-se selecionar uma frequência imediatamente inferior à frequência máxima utilizável (MUF - Maximum Usable Frequency). Isso permite evitar os efeitos da absorção da camada D da ionosfera e garante uma melhor propagação do sinal."
     },
     {
       "numb": 177,
@@ -2652,7 +2687,7 @@
         "Permite a determinação da presença de ondas com \"flat-topping\" em momentos de pico de modulação"
       ],
       "correctIndex": 2,
-      "notes": "A186 Pergunta cat2 saiu nos Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p13</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p13</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p13</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p12</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p12</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p7</a>)"
+      "notes": "A186 Pergunta cat2 saiu nos Exames:(<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p13</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p13</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p13</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p12</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p12</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p7</a>) (<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p11</a>)"
     },
     {
       "numb": 187,
@@ -2724,7 +2759,7 @@
         "Para determinar as perdas de linha do sistema de antena"
       ],
       "correctIndex": 2,
-      "notes": "A192"
+      "notes": "A192 Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p14</a>)"
     },
     {
       "numb": 192,
@@ -2844,7 +2879,7 @@
         "Realimentação positiva"
       ],
       "correctIndex": 3,
-      "notes": "A200  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p8</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p8</a>)"
+      "notes": "A200  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p8</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p8</a>) (<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p9</a>)"
     },
     {
       "numb": 201,
@@ -2916,7 +2951,7 @@
         "utilizar estações de amador em todos os países da CEPT, nos Estados Unidos da América e na Austrália"
       ],
       "correctIndex": 2,
-      "notes": "A206"
+      "notes": "A206 Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p2</a>)"
     },
     {
       "numb": 207,
@@ -2940,7 +2975,7 @@
         "Para utilizar uma estação do serviço de amador um amador da categoria 1 precisa de uma licença de estação"
       ],
       "correctIndex": 1,
-      "notes": "A208"
+      "notes": "A208 Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p1</a>)"
     },
     {
       "numb": 208,
@@ -3074,6 +3109,18 @@
       "correctIndex": 4,
       "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p2</a>)"
     },
+	{
+      "numb": 120,
+      "question": "Qual a causa para a atividade auroral?",
+      "answers": [
+        "Reflexão no vento solar",
+        "Nível reduzido de manchas solares",
+        "Emissão pelo Sol de parttículas carregadas eletricamente",
+        "Chuva de meteoros concentrada em latitudes stentrionais"
+      ],
+      "correctIndex": 3,
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p5</a>)"
+    },
     {
       "numb": 179,
       "question": "Não concordo com determinadas disposições regulamentares aplicáveis aos Serviços de Amador e de Amador por Satélite. O que é correto fazer?",
@@ -3168,7 +3215,7 @@
         "Investigar a situação e resolvê-la ou ajudá-la a resolver se o problema for da instalação de receção"
       ],
       "correctIndex": 4,
-      "notes": "Pergunta cat 2 > Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p13</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p12</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p7</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p7</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p7</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p07</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p12</a>)"
+      "notes": "Pergunta cat 2 > Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p13</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p12</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p7</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p7</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p7</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p07</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p12</a>) (<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p6</a>)"
     },
     {
       "question": "Qual das seguintes afirmações é verdadeira no que respeita às Leis de Kirchoff?",
@@ -3227,7 +3274,7 @@
         "Nenhuma das afirmações está correcta."
       ],
       "numb": 4,
-      "notes": "",
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p8</a>)",
       "correctIndex": 3
     },
     {
