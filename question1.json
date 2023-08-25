@@ -2562,7 +2562,7 @@
       "numb": 179,
       "question": "O que acontece normalmente às ondas de rádio com frequências inferiores à frequência máxima utilizável (MUF) que são enviadas para a ionosfera?",
       "answers": [
-        "São devlvidas à Terra.",
+        "São devolvidas à Terra.",
         "Atravessam a ionosfera. ",
         "São totalmente absorvidas pela ionosfera",
         "São refractadas, fica presas na camada ionosférica e circulam em torn da Terra."
@@ -3004,7 +3004,7 @@
     },
     {
       "numb": 120,
-      "question": "Qual a gama de captura de u circuito com malha de captura de fase",
+      "question": "Qual a gama de captura de um circuito com malha de captura de fase",
       "answers": [
         "A gama de frequências que permite fechar o circuito",
         "A gama de tensões que permite fechar o circuito",
@@ -3016,7 +3016,7 @@
     },
     {
       "numb": 120,
-      "question": "qual o princípio fundamental de um modulador de fase",
+      "question": "Qual o princípio fundamental de um modulador de fase?",
       "answers": [
         "Varia a sintonização do pré-amplificador de microfone para gerar sinais modulados em fase",
         "Varia a sintonização do circuito de tanque do amplificador para gerar sinais modulados em amplitude",
@@ -3028,7 +3028,7 @@
     },
     {
       "numb": 120,
-      "question": "Por que razão é que a resistência de um condutor não é a mesma para correntes de RF e para correntes contínuas? ",
+      "question": "Por que razão é que a resistência de um condutor não é a mesma para correntes de RF e para correntes contínuas?",
       "answers": [
         "Porque o isolamento conduz a corrente a frequências altas.",
         "Devido ao efeito Heisenberg",
@@ -3040,7 +3040,7 @@
     },
     {
       "numb": 120,
-      "question": "Qual dos seguintes códigos digitais se compõem de elementos de comprimentos diferentes",
+      "question": "Qual dos seguintes códigos digitais se compõem de elementos de comprimentos diferentes?",
       "answers": [
         "ASCII",
         "AX25",
@@ -3064,7 +3064,7 @@
     },
     {
       "numb": 120,
-      "question": "Qual a causa para a  frequente distorção dos sinais de HF scatter?",
+      "question": "Qual a causa para a frequente distorção dos sinais de HF scatter?",
       "answers": [
         "Instablidade da camada ionosférica envolvida",
         "Absorção de grande parte do sinal por ondas terrestres",
@@ -3100,7 +3100,7 @@
     },
     {
       "numb": 179,
-      "question": "Qual o maior inconveniente de uma antena lop de fio para efeitos de radiogoniometria?",
+      "question": "Qual o maior inconveniente de uma antena loop de fio para efeitos de radiogoniometria?",
       "answers": [
         "Tem um padrão bidireccional",
         "Não é giratória",
@@ -3339,7 +3339,7 @@
       "correctIndex": 2
     },
     {
-      "question": "15) A potência de ruído é dada pela expressão Pn=kTB. Como se designa a constante k?",
+      "question": "A potência de ruído é dada pela expressão Pn=kTB. Como se designa a constante k?",
       "answers": [
         "Constante de Kelvin.",
         "Constante de Lissajous.",
@@ -3519,7 +3519,7 @@
       "correctIndex": 3
     },
     {
-      "question": "31) Qual a vantagem de se incluir um bit de paridade num fluxo de caracteres ASCII?",
+      "question": "Qual a vantagem de se incluir um bit de paridade num fluxo de caracteres ASCII?",
       "answers": [
         "Maior velocidade de transmissão.",
         "O sinal pode sobrepor-se aos sinais interferentes.",
@@ -3723,7 +3723,7 @@
       "correctIndex": 4
     },
     {
-      "question": "7) Qual a unidade de medida da reactância?",
+      "question": "Qual a unidade de medida da reactância?",
       "answers": [
         "Farad.",
         "Ohm.",
@@ -3783,7 +3783,7 @@
       "correctIndex": 2
     },
     {
-      "question": "12) Qual a relação entre a corrente e a tensão numa bobina, sujeita a corrente alternada?",
+      "question": "Qual a relação entre a corrente e a tensão numa bobina, sujeita a corrente alternada?",
       "answers": [
         "A tensão e a corrente estão desfasadas 90º.",
         "A tensão e a corrente estão em oposição de fase.",
@@ -3843,7 +3843,7 @@
       "correctIndex": 3
     },
     {
-      "question": "17) Como é que se transforma uma impedância complexa numa impedância resistiva?",
+      "question": "Como é que se transforma uma impedância complexa numa impedância resistiva?",
       "answers": [
         "Introduzindo uma resistência negativa para anular a componente resistiva de uma impedância.",
         "Introduzindo uma transcondutância para cancelar a componente reactiva de uma impedância.",
@@ -3927,7 +3927,7 @@
       "correctIndex": 3
     },
     {
-      "question": "24) Quais são as duas principais variáveis nominais que não devem ser excedidas em rectificadores com díodos de silício?",
+      "question": "Quais são as duas principais variáveis nominais que não devem ser excedidas em rectificadores com díodos de silício?",
       "answers": [
         "Tensão de pico inversa e corrente directa média.",
         "Potência média e tensão média.",
@@ -3959,11 +3959,11 @@
         "7."
       ],
       "num": 25,
-      "notes": "",
+      "notes": "TODO: FALTA FIGURA",
       "correctIndex": 2
     },
     {
-      "question": "27) Na Figura 1 (ver acima) qual o símbolo esquemático para um LED?",
+      "question": "Na Figura 1 (ver acima) qual o símbolo esquemático para um LED?",
       "answers": [
         "8",
         "6",
@@ -3971,7 +3971,7 @@
         "5"
       ],
       "num": 26,
-      "notes": "",
+      "notes": "TODO: FALTA FIGURA",
       "correctIndex": 4
     },
     {
@@ -4067,7 +4067,7 @@
         "-2,3 V."
       ],
       "num": 34,
-      "notes": "",
+      "notes": "TODO: FALTA FIGURA",
       "correctIndex": 4
     },
     {
@@ -4079,7 +4079,7 @@
         "76."
       ],
       "num": 35,
-      "notes": "",
+      "notes": "TODO: FALTA FIGURA",
       "correctIndex": 3
     },
     {
@@ -4091,7 +4091,7 @@
         "0,07."
       ],
       "num": 36,
-      "notes": "",
+      "notes": "TODO: FALTA FIGURA",
       "correctIndex": 2
     },
     {
