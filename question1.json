@@ -748,7 +748,7 @@
     },
     {
       "numb": 56,
-      "question": "Qual a tensão à saída do circuito da figura, em que R1=1000 Ohm e R2=10000 Ohm, se à entrada for aplicada uma tensão de 0,23 V? <img src='images/cat1/fig1.png'>",
+      "question": "Qual a tensão à saída do circuito da figura, em que R1=1000 Ohm e R2=10000 Ohm, se à entrada for aplicada uma tensão de 0,23 V?",
       "answers": [
         "0,23 V",
         "2,3 V",
@@ -756,6 +756,7 @@
         "-2,3 V"
       ],
       "correctIndex": 2,
+      "img": "images/cat1/fig1.png",
       "notes": "A56"
     },
     {
@@ -1108,7 +1109,7 @@
     },
     {
       "numb": 80,
-      "question": "Qual o objetivo de Q1 no circuito da figura? <img src='images/cat1/fig2.png'>",
+      "question": "Qual o objetivo de Q1 no circuito da figura?",
       "answers": [
         "Fornece realimentação negativa para melhorar a regulação",
         "Fornece uma carga constante à fonte de tensão",
@@ -1116,11 +1117,12 @@
         "Fornece corrente a D1"
       ],
       "correctIndex": 1,
+      "img": "images/cat1/fig2.png",
       "notes": "O transistor Q1 atua como um elemento que fornece realimentação negativa ao circuito, ajudando a melhorar a regulação da tensão de saída."
     },
     {
       "numb": 81,
-      "question": "Qual o objetivo de C1 no circuito da figura? <img src='images/cat1/fig2.png'>",
+      "question": "Qual o objetivo de C1 no circuito da figura?",
       "answers": [
         "Contribui para a ressonância do circuito à frequência de entrada",
         "Fornece uma polarização fixa a Q1",
@@ -1128,11 +1130,12 @@
         "Filtra a tensão de alimentação"
       ],
       "correctIndex": 3,
+      "img": "images/cat1/fig2.png",
       "notes": "O capacitor C1 é utilizado para filtrar a saída do circuito, removendo qualquer componente de alta frequência e fornecendo uma saída mais suave e estabilizada."
     },
     {
       "numb": 81,
-      "question": "Qual o objetivo de C3 no circuito da figura? <img src='images/cat1/fig2a.png'>",
+      "question": "Qual o objetivo de C3 no circuito da figura?",
       "answers": [
         "Impede a oscilação própria",
         "Funciona como filtro de entrada do circuito",
@@ -1140,11 +1143,12 @@
         "Aumenta os picos da ondulação"
       ],
       "correctIndex": 1,
+      "img": "images/cat1/fig2a.png",
       "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p22</a>)"
     },
     {
       "numb": 82,
-      "question": "Qual o objetivo de R2 no circuito da figura? <img src='images/cat1/fig2.png'>",
+      "question": "Qual o objetivo de R2 no circuito da figura?",
       "answers": [
         "Fornece uma polarização fixa a Q1",
         "Fornece uma polarização fixa a D1",
@@ -1152,6 +1156,7 @@
         "Fornece uma carga mínima constante a Q1"
       ],
       "correctIndex": 4,
+      "img": "images/cat1/fig2.png",
       "notes": "A82 O resistor R2 tem como objetivo fornecer uma carga mínima constante à base de Q1, garantindo o funcionamento adequado do transistor e contribuindo para a regulação do circuito."
     },
     {
@@ -1264,7 +1269,7 @@
     },
     {
       "numb": 92,
-      "question": "Na figura, qual o objetivo de R1 e R2?<br> <img src='images/cat1/fig3.png'>",
+      "question": "Na figura, qual o objetivo de R1 e R2?",
       "answers": [
         "Resistências de carga",
         "Polarização fixa",
@@ -1272,11 +1277,12 @@
         "Realimentação"
       ],
       "correctIndex": 2,
+      "img": "images/cat1/fig3.png",
       "notes": "A92"
     },
 	{
       "numb": 120,
-      "question": "Na figura, qual o objectivo de R1 e R2? <img src='images/cat1/fig7.png'>",
+      "question": "Na figura, qual o objectivo de R1 e R2?",
       "answers": [
         "Resistências de carga",
         "Polarização fixa",
@@ -1284,11 +1290,12 @@
         "Realimentação"
       ],
       "correctIndex": 2,
+      "img": "images/cat1/fig7.png",
       "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p25</a>)"
     },
     {
       "numb": 93,
-      "question": "Que tipo de circuito é apresentado na figura?<br> <img src='images/cat1/fig3.png'>",
+      "question": "Que tipo de circuito é apresentado na figura?",
       "answers": [
         "Regulador de tensão com comutação",
         "Regulador de tensão linear",
@@ -1296,6 +1303,7 @@
         "Amplificador seguidor de emissor"
       ],
       "correctIndex": 2,
+      "img": "images/cat1/fig3.png",
       "notes": "https://www.youtube.com/watch?v=zI5S8N_sVLE"
     },
     {
@@ -1324,7 +1332,7 @@
     },
     {
       "numb": 96,
-      "question": "A figura representa <br> <img src='images/cat1/fig4.png'>",
+      "question": "A figura representa: ",
       "answers": [
         "um detetor de produto",
         "um detetor de frequência modulada",
@@ -1332,6 +1340,7 @@
         "um detetor de fase"
       ],
       "notes": "https://www.youtube.com/watch?v=0mmNai39NrA",
+      "img": "images/cat1/fig4.png",
       "correctIndex": 3
     },
     {
@@ -1672,7 +1681,7 @@
     },
     {
       "numb": 117,
-      "question": "Que tipo de circuito é apresentado na figura (em que A é um amplificador operacional, R1 e R2 são resistências e D1 e D2 são díodos)? <img src='images/cat1/fig5.png'>",
+      "question": "Que tipo de circuito é apresentado na figura (em que A é um amplificador operacional, R1 e R2 são resistências e D1 e D2 são díodos)?",
       "answers": [
         "PLL",
         "VCO",
@@ -1680,6 +1689,7 @@
         "Fonte de alimentação"
       ],
       "correctIndex": 3,
+      "img": "images/cat1/fig5.png",
       "notes": "O circuito apresentado na figura é um limitador. Ele utiliza os diodos D1 e D2 para limitar a amplitude do sinal de entrada, resultando em um sinal de saída limitado em amplitude. Os resistores R1 e R2 juntamente com o amplificador operacional A formam um circuito limitador."
     },
     {
@@ -2175,7 +2185,7 @@
     },
     {
       "numb": 152,
-      "question": "No padrão de radiação de antena da figura, qual é a relação aproximada frente/costas? <img src='images/cat1/fig6.png'>",
+      "question": "No padrão de radiação de antena da figura, qual é a relação aproximada frente/costas?",
       "answers": [
         "10 dB",
         "20 dB",
@@ -2183,6 +2193,7 @@
         "40 dB"
       ],
       "correctIndex": 3,
+      "img": "images/cat1/fig6.png",
       "notes": "A152"
     },
     {
@@ -3998,7 +4009,7 @@
       "correctIndex": 1
     },
     {
-      "question": "Na Figura qual o símbolo esquemático para um díodo emissor de luz?<img src='images/cat1/q25.png'>",
+      "question": "Na Figura qual o símbolo esquemático para um díodo emissor de luz?",
       "answers": [
         "1.",
         "5.",
@@ -4006,11 +4017,12 @@
         "7."
       ],
       "numb": 25,
+      "img": "images/cat1/q25.png",
       "notes": "P31  Exames:(<a target='_blank' href='exams/cat1/2013_08_30.pdf'>2013_08_30</a>)",
       "correctIndex": 2
     },
     {
-      "question": "Na Figura 1 (ver acima) qual o símbolo esquemático para um LED?<img src='images/cat1/q25.png'>",
+      "question": "Na Figura 1 (ver acima) qual o símbolo esquemático para um LED?",
       "answers": [
         "8",
         "6",
@@ -4018,6 +4030,7 @@
         "5"
       ],
       "numb": 26,
+      "img": "images/cat1/q25.png",
       "notes": "",
       "correctIndex": 4
     },
@@ -4106,7 +4119,7 @@
       "correctIndex": 4
     },
     {
-      "question": "Qual o ganho de tensão absoluto aproximado do circuito da figura, se R1=1800 ohms e RF=68000 ohms?<img src='images/cat1/35.png'>",
+      "question": "Qual o ganho de tensão absoluto aproximado do circuito da figura, se R1=1800 ohms e RF=68000 ohms?",
       "answers": [
         "1.",
         "0,03.",
@@ -4114,11 +4127,12 @@
         "76."
       ],
       "numb": 35,
+      "img": "images/cat1/35.png",
       "notes": "P36  Exames:(<a target='_blank' href='exams/cat1/2013_08_30.pdf'>2013_08_30</a>",
       "correctIndex": 3
     },
     {
-      "question": "Qual o ganho de tensão absoluto aproximado do circuito da figura, se R1=3300 ohms e RF=47000 ohms?<img src='images/cat1/35.png'>",
+      "question": "Qual o ganho de tensão absoluto aproximado do circuito da figura, se R1=3300 ohms e RF=47000 ohms?",
       "answers": [
         "28.",
         "14.",
@@ -4126,6 +4140,7 @@
         "0,07."
       ],
       "numb": 36,
+      "img": "images/cat1/35.png",
       "notes": "",
       "correctIndex": 2
     },
