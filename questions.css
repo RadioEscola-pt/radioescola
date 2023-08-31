@@ -1,0 +1,30 @@
+.questionBlock {
+    display: flex;
+    background-color: gray;
+    border-radius: 5px;
+    padding: 1%;
+    margin: 1%;
+    overflow: hidden;
+}
+
+.answers{
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    margin-top: 10px;
+}
+
+.questioncard {
+    flex: 3;
+}
+
+.questionImage {
+    flex: 1;
+}
+
+.question{
+    font-weight: bold;
+    font-size: x-large;
+    padding-bottom: 50px;
+    margin-top: 50px;
+}
