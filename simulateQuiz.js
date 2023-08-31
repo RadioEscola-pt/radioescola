@@ -56,7 +56,7 @@ class simulateQuiz {
             if (answers[questionIndex] != simulateQuiz.WRITE) {
                 noteDiv.innerHTML = "Resposta certa " + simulateQuiz.questions[questionIndex].correctIndex;
 				noteDiv.style.background = "red";
-				
+                noteDiv.innerHTML += "<br>" + simulateQuiz.questions[questionIndex].notes; 
             }
 
         }
@@ -142,7 +142,7 @@ class simulateQuiz {
 
                         var noteBlock = document.createElement("div");
                         noteBlock.id = "note" + simulateQuiz.questions[qindex].index;
-
+                        noteBlock.className = "questionImage";
 
                         let i = 1;
                         for (let key of simulateQuiz.questions[qindex].answers) {
@@ -159,7 +159,7 @@ class simulateQuiz {
                             answers.appendChild(label);
                             i++;
                         }
-                        
+
                         questionCard.appendChild(answers);
                         pageBlock.appendChild(questionBlock);
                        
