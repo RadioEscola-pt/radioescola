@@ -124,38 +124,56 @@ class simulateQuiz {
                             simulateQuiz.pageBlocks.push(pageBlock);
                         }
                         questionCounter++;
+
                         var questionBlock = document.createElement("div");
                         questionBlock.className = "questionBlock";
-                        var questiontxt = document.createElement("div");
+
+                        var questionCard = document.createElement("div");
+                        questionCard.className = "questionCard";
+                        questionBlock.appendChild(questionCard);
+                        
+                        var questiontxt = document.createElement("span");
 						questiontxt.className = "question";
+                        questiontxt.innerHTML = simulateQuiz.questions[qindex].index+1 + ") " + simulateQuiz.questions[qindex].question
+                        questionCard.appendChild(questiontxt); 
+
+                        var answers = document.createElement("div");
+                        answers.className = "answers";
+
                         var noteBlock = document.createElement("div");
                         noteBlock.id = "note" + simulateQuiz.questions[qindex].index;
-                        questiontxt.innerHTML = simulateQuiz.questions[qindex].index+1 + ") " + simulateQuiz.questions[qindex].question
 
-                        questionBlock.appendChild(questiontxt);
+
                         let i = 1;
                         for (let key of simulateQuiz.questions[qindex].answers) {
-
                             let label = document.createElement("label");
-                            let span = document.createElement("span");
                             
-
                             let input = document.createElement("input");
                             input.type = "radio";
                             input.value = i;
                             input.name = "n" + simulateQuiz.questions[qindex].index;
 
-                            span.appendChild(input);
-                            label.appendChild(span);
+                            label.appendChild(input);
                             label.innerHTML += key;
-
-                            span.className = "checkmark";
-                            label.className = "answer";
-                            questionBlock.appendChild(label);
-                            pageBlock.appendChild(questionBlock);
-                            welcomeDiv.appendChild(pageBlock);
+                            
+                            answers.appendChild(label);
                             i++;
                         }
+                        
+                        questionCard.appendChild(answers);
+                        pageBlock.appendChild(questionBlock);
+                       
+                        if (simulateQuiz.questions[qindex].img) {
+                            var image = document.createElement("img");
+                            image.className = "questionImage";
+                            image.src = simulateQuiz.questions[qindex].img;
+                        } else {
+                            var image = document.createElement("div");
+                            image.className = "questionImage";
+                        }
+
+                        questionBlock.appendChild(image);
+                        welcomeDiv.appendChild(pageBlock);
 
                         questionBlock.appendChild(noteBlock);
                         if (simulateQuiz.questions[qindex].correctIndex == null) {
