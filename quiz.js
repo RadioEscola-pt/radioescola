@@ -57,12 +57,15 @@ class Quiz {
                 //the request is completed, now check its status
                 if (ajaxRequest.status == 200) {
                     //turn JSON into array
+                    
 
                     Quiz.messagesArray = JSON.parse(ajaxRequest.responseText);
+                    this.quiz.questions=Quiz.messagesArray.questions;
                     var welcomeDiv = document.getElementById("welcome");
                     welcomeDiv.innerHTML = "";
                     var indexBlock = document.createElement("div");
                     indexBlock.id = "qIndex";
+                    
                     welcomeDiv.appendChild(indexBlock);
                     var index = 0;
                     for (var qindex in Quiz.messagesArray.questions) {
@@ -92,36 +95,57 @@ class Quiz {
                             Quiz.pageBlocks.push(pageBlock);
                         }
                         questionCounter++;
+
                         var questionBlock = document.createElement("div");
                         questionBlock.className = "questionBlock";
-                        var questiontxt = document.createElement("div");
-						questiontxt.className = "question";
-                        var noteBlock = document.createElement("div");
-                        noteBlock.id = "note" + Quiz.messagesArray.questions[qindex].index;
-                        questiontxt.innerHTML = Quiz.messagesArray.questions[qindex].index + 1 + ") " + Quiz.messagesArray.questions[qindex].question;
 
-                        questionBlock.appendChild(questiontxt);
+                        var questionCard = document.createElement("div");
+                        questionCard.className = "questionCard";
+                        questionBlock.appendChild(questionCard);
+                        
+                        var questiontxt = document.createElement("span");
+						questiontxt.className = "question";
+                        questiontxt.innerHTML = this.quiz.questions[qindex].index+1 + ") " + this.quiz.questions[qindex].question
+                        questionCard.appendChild(questiontxt); 
+
+                        var answers = document.createElement("div");
+                        answers.className = "answers";
+
+                        var noteBlock = document.createElement("div");
+                        noteBlock.id = "note" + this.quiz.questions[qindex].index;
+                        noteBlock.className = "questionImage";
+
                         let i = 1;
                         for (var key of Quiz.messagesArray.questions[qindex].answers) {
 
                             let label = document.createElement("label");
-                            let span = document.createElement("span");
-
+                            
                             let input = document.createElement("input");
                             input.type = "radio";
                             input.value = i;
-                            input.name = "n" + qindex;
-                            //input.questionIndex = messagesArray.questions[qindex].numb;
+                            input.name = "n" + this.quiz.questions[qindex].index;
+
                             label.appendChild(input);
-                            label.appendChild(span);
                             label.innerHTML += key;
-                            span.className = "checkmark";
-                            label.className = "container";
-                            questionBlock.appendChild(label);
-                            pageBlock.appendChild(questionBlock);
-                            welcomeDiv.appendChild(pageBlock);
+                            
+                            answers.appendChild(label);
                             i++;
                         }
+
+                        questionCard.appendChild(answers);
+                        pageBlock.appendChild(questionBlock);
+                       
+                        if (this.quiz.questions[qindex].img) {
+                            var image = document.createElement("img");
+                            image.className = "questionImage";
+                            image.src = this.quiz.questions[qindex].img;
+                        } else {
+                            var image = document.createElement("div");
+                            image.className = "questionImage";
+                        }
+
+                        questionBlock.appendChild(image);
+                        welcomeDiv.appendChild(pageBlock);
 
                         questionBlock.appendChild(noteBlock);
                         if (Quiz.messagesArray.questions[qindex].correctIndex == null) {
@@ -143,7 +167,7 @@ class Quiz {
                             btn.innerHTML = "Verificar";
                             btn.value = qindex;
                             btn.onclick = this.quiz.checkQuestion;
-                            questionBlock.appendChild(btn);
+                            questionCard.appendChild(btn);
                         }
                     }
                     console.log("Unaswered" + numberOfUnaswered);

@@ -72,7 +72,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
-
+#qIndex {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
 .navbar {
   overflow: hidden;
   background-color: #333; 
@@ -162,8 +171,21 @@ body {
 <script type="text/javascript" src="loadChapter.js"></script>
 
 <script>
-  window.onload = new loadChapter('home');
-  
+  window.onload = function(){
+  new loadChapter('home');
+  const searchParams = new URLSearchParams(window.location.search);
+  if (searchParams.has('loadChapter'))
+  {
+  new loadChapter(searchParams.get("loadChapter")); // bar, only returns the first value
+  }else if (searchParams.has('TEST'))
+  {
+   document.getElementById('TESTDIV').style.display = ''
+  }
+  else
+  {
+  new loadChapter('home');
+  }
+  }
   </script>
 
 <link rel="stylesheet" href="questions.css">
@@ -179,7 +201,7 @@ body {
 
   <a onclick="new loadChapter('EDN')" href="#EDN">Estado da Nação</a>
   <div class="subnav subnav3">
-    <button class="subnavbtn ">TEST</button>
+    <button style="display:none;" class="subnavbtn" id="TESTDIV">TEST</button>
     <div class="subnav-content subnav3">
       <a onclick="new Quiz('test.json')" href="#">todas as perguntas</a>
       <a onclick="new simulateQuiz('test.json')" href="#">Simulador de exame</a>
