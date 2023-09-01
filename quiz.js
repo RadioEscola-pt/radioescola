@@ -139,11 +139,12 @@ class Quiz {
                             var image = document.createElement("img");
                             image.className = "questionImage";
                             image.src = this.quiz.questions[qindex].img;
+                            questionBlock.appendChild(image);
                         } else {
                      
                         }
 
-                        questionBlock.appendChild(image);
+                        
                         welcomeDiv.appendChild(pageBlock);
 
                         questionBlock.appendChild(noteBlock);
