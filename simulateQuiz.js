@@ -168,8 +168,7 @@ class simulateQuiz {
                             image.className = "questionImage";
                             image.src = simulateQuiz.questions[qindex].img;
                         } else {
-                            var image = document.createElement("div");
-                            image.className = "questionImage";
+
                         }
 
                         questionBlock.appendChild(image);

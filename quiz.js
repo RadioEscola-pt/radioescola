@@ -140,8 +140,7 @@ class Quiz {
                             image.className = "questionImage";
                             image.src = this.quiz.questions[qindex].img;
                         } else {
-                            var image = document.createElement("div");
-                            image.className = "questionImage";
+                     
                         }
 
                         questionBlock.appendChild(image);
