@@ -163,6 +163,11 @@ body {
 
 <script>
   window.onload = new loadChapter('home');
+  const searchParams = new URLSearchParams(window.location.search);
+  if (searchParams.has('loadChapter'))
+  {
+  new loadChapter(searchParams.get("loadChapter")); // bar, only returns the first value
+  }
   
   </script>
 
