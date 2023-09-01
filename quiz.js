@@ -65,6 +65,7 @@ class Quiz {
                     welcomeDiv.innerHTML = "";
                     var indexBlock = document.createElement("div");
                     indexBlock.id = "qIndex";
+                    
                     welcomeDiv.appendChild(indexBlock);
                     var index = 0;
                     for (var qindex in Quiz.messagesArray.questions) {
