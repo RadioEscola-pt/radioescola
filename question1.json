@@ -2014,7 +2014,7 @@
         "16 kHz"
       ],
       "correctIndex": 2,
-      "notes": "A133  Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p27</a>)"
+      "notes": "Aplica se a  regra de Carson: considerando que (fm)= frequência máxima de modulação então temos que a Largura= 2*(desvio+fm => 2*(3+2,5) = 11 kHZ A133  Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p27</a>)"
     },
     {
       "numb": 134,
@@ -2026,7 +2026,7 @@
         "A estabilidade da frequência não seria apropriada"
       ],
       "correctIndex": 3,
-      "notes": "A134 Na realidade as bandas de HF são bandas muito estreitas (pergunta de cat2) Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p29</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p27</a>)"
+      "notes": "Na realidade as bandas de HF são bandas muito estreitas (pergunta de cat2) A134 Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p29</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p27</a>)"
     },
     {
       "numb": 135,
@@ -2038,7 +2038,7 @@
         "A classe C não apresenta nenhuma desvantagem relativamente a outras classes de amplificação"
       ],
       "correctIndex": 1,
-      "notes": "A135 A principal desvantagem de se utilizar amplificadores em classe C é a elevada distorção harmónica. Devido à sua condução não linear e limitada durante menos que meio ciclo da forma de onda, os amplificadores em classe C geram uma quantidade significativa de harmónicos na saída, resultando em distorção do sinal amplificado."
+      "notes": "A principal desvantagem de se utilizar amplificadores em classe C é a elevada distorção harmónica. Devido à sua condução não linear e limitada durante menos que meio ciclo da forma de onda, os amplificadores em classe C geram uma quantidade significativa de harmónicos na saída, resultando em distorção do sinal amplificado. A135"
     },
     {
       "numb": 135,
@@ -2062,7 +2062,7 @@
         "dBc/Ph"
       ],
       "correctIndex": 1,
-      "notes": "A136"
+      "notes": "dBc = dB relative to the carrier. This is used e. g. to specify the power of a sideband in a modulated signal relative to the carier. For example, -30 dBc means that the sideband is 30 dB below the carier, 1.e., it has a 1000 times lower power. dBc/Hz: this is used for noise and means dBc in a 1-Hz bandwidth. A136"
     },
     {
       "numb": 137,
@@ -2121,8 +2121,8 @@
         "40 m",
         "80 m"
       ],
-      "correctIndex": 2,
-      "notes": "A140"
+      "correctIndex": 3,
+      "notes": "3,5 mHz é a banda dos 80m logo a meia onda será 40m. A140"
     },
     {
       "numb": 140,
