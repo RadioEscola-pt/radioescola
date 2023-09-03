@@ -2146,7 +2146,7 @@
         "Todas as hipóteses estão corretas"
       ],
       "correctIndex": 1,
-      "notes": "A141"
+      "notes": "O Dipolo dobrado é espalmado sobre si proprio, logo é mais pequeno e tem amior impedância A141"
     }, {
       "numb": 141,
       "question": "A impedância no ponto de alimentação de um dipolo dobrado é",
@@ -2169,7 +2169,7 @@
         "O ganho aumenta 3 dB"
       ],
       "correctIndex": 3,
-      "notes": "Quando a frequência de funcionamento de uma antena parabólica é duplicada, o ganho da antena aumenta em 6 dB. Isso ocorre devido à relação direta entre a frequência e o tamanho efetivo da antena."
+      "notes": "É o mesmo principio utilizado numa end fed half wave, as freências mais altas têm ganho porque o fio é mais comprido. Quando a frequência de funcionamento de uma antena parabólica é duplicada, o ganho da antena aumenta em 6 dB. Isso ocorre devido à relação direta entre a frequência e o tamanho efetivo da antena. A142"
     },
     {
       "numb": 143,
@@ -2229,7 +2229,7 @@
         "Diminui"
       ],
       "correctIndex": 4,
-      "notes": "A145"
+      "notes": "Ganho é a concentração de energia e não a sua amplificação, se o ganho aumenta, a largura do feixe diminui, ex: uma lanterna a apontar para uma superficie faz um circulo que aumenta com a distancia e diminui o (ganho ou intensidade da luz) , o contrario também pode ocorrer. A145"
     },
     {
       "numb": 146,
@@ -2265,7 +2265,7 @@
         "Todas as opções estão incorretas"
       ],
       "correctIndex": 1,
-      "notes": "Se um dipolo de meia onda ressonante for encurtado fisicamente, sua impedância se tornará capacitiva para a frequência de ressonância. Isso ocorre porque o encurtamento da antena resulta em uma diminuição do comprimento efetivo da antena e afeta suas propriedades de impedância."
+      "notes": "Se um dipolo de meia onda ressonante for encurtado fisicamente, a sua impedância se tornará capacitiva para a frequência de ressonância. Isso ocorre porque o encurtamento da antena resulta em uma diminuição do comprimento efetivo da antena e afeta as suas propriedades de impedância. Se dminuirmos o tamanho o que podemos fazer para compensar o encurtamento é colocar uma bobine que tem que contrabalançar o efeito capacitivo da antena, se aumentasse o comprimento colocariamos um condensador. A148"
     },
     {
       "numb": 149,
@@ -2314,7 +2314,7 @@
       ],
       "correctIndex": 3,
       "img": "images/cat1/fig6.png",
-      "notes": "A152"
+      "notes": "Verifica se desde o centro da circunferêcia ate a periferia, neste caso -40 a 0 dB´s logo a resposta é 40 dB. A152"
     },
     {
       "numb": 153,
@@ -2326,7 +2326,7 @@
         "apresenta um diagrama de radiação omnidirecional num dado plano"
       ],
       "correctIndex": 4,
-      "notes": "A153"
+      "notes": "A antena omnidirecional apresenta um diagrama de radiação só num plano pois não irradia para cima, logo a ultima resposta está certa. A153"
     },
     {
       "numb": 154,
@@ -2350,7 +2350,7 @@
         "Vertical"
       ],
       "correctIndex": 4,
-      "notes": "A155"
+      "notes": "O campo elétrico é horizontal, logo o campo magnético será perpendicular logo vertical. A155"
     },
     {
       "numb": 156,
@@ -2362,7 +2362,7 @@
         "É a frequência cuja velocidade de propagação no guia de ondas é cerca de metade da velocidade da luz no vazio"
       ],
       "correctIndex": 2,
-      "notes": "A156"
+      "notes": "A partir de determinadas frequências não se usam cabos coaxiais e usam se guias de ondas, e também têm muito pucas perdas. A156"
     },
     {
       "numb": 157,
@@ -2398,7 +2398,7 @@
         "Consiste na razão entre a velocidade da onda na linha de transmissão e a velocidade da luz no vácuo"
       ],
       "correctIndex": 4,
-      "notes": "A158-Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p21</a>)"
+      "notes": "O factor de velocidade é algo que está relacionado com as propriedades fisicas do próprio cabo. A158-Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p21</a>)"
     },
     {
       "numb": 159,
@@ -2434,7 +2434,7 @@
         "Atinge um máximo próximo dos 18 MHz"
       ],
       "correctIndex": 2,
-      "notes": "A160  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p18</a>)"
+      "notes": "Aumenta pois o cabo no seu comprimento também vai ter um comportamento indutivo. A160 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p18</a>)"
     },
     {
       "numb": 161,
@@ -2446,7 +2446,7 @@
         "0,2 m"
       ],
       "correctIndex": 3,
-      "notes": "A161"
+      "notes": "(1/4)*(300/14,1)*0,66 = 0,25*21,2765*0,66 = 3,51m A161"
     },
     {
       "numb": 161,
@@ -2458,7 +2458,7 @@
         "50 m"
       ],
       "correctIndex": 2,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p19</a>)"
+      "notes": "(1/4)*(300/7,2)*0,66 = 0,25*41,66*0,66 = 6,87m Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p19</a>)"
     },
     {
       "numb": 162,
@@ -2482,7 +2482,7 @@
         "A topologia em (T) precisa de um mínimo de três componentes e a topologia em (Pi) precisa de um mínimo de cinco componentes"
       ],
       "correctIndex": 3,
-      "notes": "A163-Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p20</a>)"
+      "notes": "<img src='images/cat1/L-Pi-T-Antenna-Tuner-Circuits.png'> A163-Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p20</a>)"
     },
     {
       "numb": 164,
@@ -2529,8 +2529,8 @@
         "diretamente proporcional ao quadrado da distância que a separa da antena de emissão",
         "diretamente proporcional à distância que a separa da antena de emissão"
       ],
-      "correctIndex": 3,
-      "notes": "A166"
+      "correctIndex": 2,
+      "notes": "Imaginando a fonte isotropica, se a distancia duplica,a  area vai ser quatro vezes maior é inversamente proporcional ao quadrado da distância. A166"
     },
     {
       "numb": 166,
@@ -2566,7 +2566,7 @@
         "flE"
       ],
       "correctIndex": 3,
-      "notes": "A168"
+      "notes": "A partir do momento em que a camada E deixa de refletir. A168"
     },
     {
       "numb": 169,
