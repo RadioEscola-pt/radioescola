@@ -147,7 +147,7 @@ class Quiz {
                         
                         welcomeDiv.appendChild(pageBlock);
 
-                        questionBlock.appendChild(noteBlock);
+                        answers.appendChild(noteBlock);
                         if (Quiz.messagesArray.questions[qindex].correctIndex == null) {
                             console.log("ERROR Q" + Quiz.messagesArray.questions[qindex].numb);
                         }
