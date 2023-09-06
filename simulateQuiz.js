@@ -25,6 +25,7 @@ class simulateQuiz {
 		}
 	}
 	static showPage() {
+		window.scrollTo(0, 0);
 		for (var page of simulateQuiz.pageBlocks) {
 			page.style.display = "none";
 		}
