@@ -24,7 +24,7 @@
       ],
       "correctIndex": 2,
       
-      "notes": "A2 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p6</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p6</a>)"
+      "notes": "A2 Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p8</a>) (<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p6</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p6</a>)"
     },
     {
       "numb": 2,
@@ -67,12 +67,12 @@
       "question": "Duma forma geral, qual das seguintes linhas de transmissão possui a melhor blindagem a campos eletromagnéticos?",
       "answers": [
         "Cabo coaxial",
-        "PLC - \"Power Line Communications\"",
+        "PLC - (Power Line Communications)",
         "Par telefónico",
         "Todas possuem blindagem"
       ],
       "correctIndex": 1,
-      "notes": "A5"
+      "notes": "A5-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p19</a>)"
     },
 	{
       "numb": 5,
@@ -120,7 +120,19 @@
         "Reflexão e aumento da velocidade de propagação"
       ],
       "correctIndex": 1,
-      "notes": "A8-Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p17</a>) (<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p23</a>)"
+      "notes": "A8-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p24</a>) (<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p17</a>) (<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p23</a>)"
+    },
+	{
+      "question": "Quais são os efeitos da blindagem sobre os campos eléctricos e sobre os campos magnéticos?",
+      "answers": [
+        "Reflexão e absorção.",
+        "Reflexão e efeito de túnel.",
+        "Absorção e efeito de túnel.",
+        "Reflexão e aumento da velocidade de propagação."
+      ],
+      "numb": 6,
+      "notes": "",
+      "correctIndex": 1
     },
     {
       "numb": 8,
@@ -180,7 +192,7 @@
         "Todas a hipóteses anteriores não estão corretas"
       ],
       "correctIndex": 2,
-      "notes": "Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p34</a>)"
+      "notes": "Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p34</a>) (<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p34</a>)"
     },
     {
       "numb": 12,
@@ -204,7 +216,7 @@
         "Constante de Boltzman"
       ],
       "correctIndex": 4,
-      "notes": " A constante k  na expressão Pn = kTB representa a Constante de Boltzmann, que é uma constante fundamental na física e é usada para relacionar a temperatura de um sistema com a energia térmica média das partículas que o compõem. Ela é frequentemente denotada por k e tem o valor aproximado de 1.380649 × 10^-23 joules por kelvin (J/K). Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p35</a>)"
+      "notes": " A constante k  na expressão Pn = kTB representa a Constante de Boltzmann, que é uma constante fundamental na física e é usada para relacionar a temperatura de um sistema com a energia térmica média das partículas que o compõem. Ela é frequentemente denotada por k e tem o valor aproximado de 1.380649 × 10^-23 joules por kelvin (J/K). Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p37</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p35</a>)"
     },
     {
       "numb": 14,
@@ -271,12 +283,12 @@
       "question": "Qual das seguintes técncicas costuma ser usada para converter sinais analógicos em digitais?",
       "answers": [
         "Amostragem sequêncial",
-        "Regeneração de harmónicos",
+        "Regeneração de sinais harmónicos",
         "Mudança de nível",
         "Inversão de fase"
       ],
       "correctIndex": 1,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p38</a>)"
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p40</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p38</a>)"
     },
     {
       "numb": 20,
@@ -324,7 +336,7 @@
         "16"
       ],
       "correctIndex": 1,
-      "notes": "Quando se trata de comunicação digital, o \"bit rate\" (taxa de bits) e o \"baud rate\" (taxa de bauds) são dois conceitos importantes, mas eles podem não ser iguais, especialmente em esquemas de modulação onde mais de um bit é transmitido por símbolo. O número de bits por símbolo/palavra pode variar dependendo do tipo de modulação utilizada.No caso que você mencionou, o bit rate é 9600 e o baud rate é 4800. Isso indica que, em cada baud, dois bits estão sendo transmitidos. Isso ocorre porque o baud rate representa a taxa de mudanças do sinal (ou seja, a frequência com que os símbolos são transmitidos), enquanto o bit rate é a quantidade de bits transmitidos por unidade de tempo. A22-Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p39</a>)"
+      "notes": "Quando se trata de comunicação digital, o \"bit rate\" (taxa de bits) e o \"baud rate\" (taxa de bauds) são dois conceitos importantes, mas eles podem não ser iguais, especialmente em esquemas de modulação onde mais de um bit é transmitido por símbolo. O número de bits por símbolo/palavra pode variar dependendo do tipo de modulação utilizada.No caso que você mencionou, o bit rate é 9600 e o baud rate é 4800. Isso indica que, em cada baud, dois bits estão sendo transmitidos. Isso ocorre porque o baud rate representa a taxa de mudanças do sinal (ou seja, a frequência com que os símbolos são transmitidos), enquanto o bit rate é a quantidade de bits transmitidos por unidade de tempo. A22-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p39</a>) (<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p39</a>)"
     },
     {
       "numb": 24,
@@ -564,7 +576,7 @@
         "2 V"
       ],
       "correctIndex": 3,
-      "notes": "Aplicando a regra de (3 simples) 100*200/1000= 20V Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p26</a>)"
+      "notes": "Aplicando a regra de (3 simples) 100*200/1000= 20V Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p26</a>) (<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p26</a>)"
     },
     {
       "numb": 41,
@@ -636,7 +648,7 @@
         "É a corrente que passa no díodo quando está diretamente polarizado"
       ],
       "correctIndex": 3,
-      "notes": "A corrente de fuga em um diodo bipolar de germânio é uma corrente elétrica muito pequena que flui através do diodo mesmo quando ele está polarizado de forma inversa (ou seja, aplicando uma tensão reversa). Essa corrente ocorre devido às características intrínsecas do diodo de germânio e é chamada de ."
+      "notes": "A corrente de fuga em um diodo bipolar de germânio é uma corrente elétrica muito pequena que flui através do diodo mesmo quando ele está polarizado de forma inversa (ou seja, aplicando uma tensão reversa). Essa corrente ocorre devido às características intrínsecas do diodo de germânio e é chamada de...  Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p30</a>)"
     },
     {
       "numb": 46,
@@ -649,6 +661,18 @@
       ],
       "correctIndex": 2,
       "notes": "A46"
+    },
+	{
+      "numb": 46,
+      "question": "Por que razão é que diversos dispositivos MOSFET têm díodos de proteção Zener incorporados na porta?",
+      "answers": [
+        "Para fornecer uma tensão de referência à quantidade adequada de tensão de polarização inversa na porta",
+        "Para proteger o substrato de um excesso de tensão",
+        "Para manter a tensão da porta dentro das especificações estabelecidas e evitar o sobreaquecimento do dispositivo",
+        "Para evitar que o isolamento da porta seja perfurado por descargas estáticas ou tensões excessivas"
+      ],
+      "correctIndex": 4,
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p33</a>)"
     },
     {
       "numb": 47,
@@ -889,7 +913,7 @@
         "Nenhuma resposta está correta, pois estes efeitos nunca se manifestam"
       ],
       "correctIndex": 2,
-      "notes": "A64"
+      "notes": "A64- Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p10</a>)"
     },
     {
       "numb": 65,
@@ -951,6 +975,18 @@
       "correctIndex": 3,
       "notes": "A68"
     },
+	{
+      "numb": 68,
+      "question": "Qual a largura de banda a -3 dB de um circuito ressonante em paralelo com frequência de ressonância de 3,7 MHz e fator Q=118?",
+      "answers": [
+        "436,62 kHz",
+        "218,33 kHz",
+        "31,36 kHz",
+        "15,72 kHz"
+      ],
+      "correctIndex": 3,
+      "notes": "A68-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p15</a>)"
+    },
     {
       "numb": 69,
       "question": "Qual a frequência de ressonância aproximada de um circuito em série RLC se R=22 Ohm, L=0,05 mH e C=40 pF?",
@@ -1005,11 +1041,11 @@
       "answers": [
         "é um filtro que usa cristais de quartzo para a ressonância",
         "é um filtro que usa cristalografia transistorizada para a ressonância",
-        "é um filtro que us cristais de germânio para a ressonância",
+        "é um filtro que usa cristais de germânio para a ressonância",
         "Todas as hipóteses anteriores estão incorretas"
       ],
       "correctIndex": 1,
-      "notes": "A71-Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p22</a>)"
+      "notes": "A71-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p22</a>) (<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p22</a>)"
     },
     {
       "numb": 71,
@@ -1214,10 +1250,10 @@
         "Funciona como fusível da tensão em excesso",
         "Descarrega o condensador de filtragem",
         "Exclui os riscos de choques elétricos produzidos pelas bobinas de indução",
-        "Elimina a corrente do \"loop\" de terra"
+        "Elimina a corrente do (loop) de terra"
       ],
       "correctIndex": 2,
-      "notes": "A84"
+      "notes": "A84-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p17</a>)"
     },
     {
       "numb": 85,
@@ -1254,6 +1290,18 @@
       ],
       "correctIndex": 2,
       "notes": "Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p29</a>)"
+    },
+	 {
+      "numb": 86,
+      "question": "Num amplificador de classe A",
+      "answers": [
+        "o transístor conduz durante menos de meio periodo",
+        "o transístor conduz durante meio período",
+        "o transístor conduz durante mais de meio período",
+        "o transístor conduz durante todo o período"
+      ],
+      "correctIndex": 4,
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p29</a>)"
     },
     {
       "numb": 87,
@@ -1378,6 +1426,18 @@
       "correctIndex": 1,
       "notes": "A95"
     },
+	{
+      "numb": 95,
+      "question": "Num produto de intermodulação de terceira ordem, quantas ferquências estão envolvidas?",
+      "answers": [
+        "Pelo menos duas frequências",
+        "Obrigatoriamente três frequências",
+        "Uma frequência e as suas duas primeiras harmónicas ímpares",
+        "Uma frequência e as três primeiras harmónicas ímpares"
+      ],
+      "correctIndex": 1,
+      "notes": "A95- Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p27</a>)"
+    },
     {
       "numb": 96,
       "question": "A figura representa: ",
@@ -1401,7 +1461,7 @@
         "Todas as hipóteses de resposta estão erradas"
       ],
       "correctIndex": 2,
-      "notes": "Um detetor de produto é mais eficaz em sinais sobre-modulados e possui uma melhor relação sinal/ruído do que um detetor de envolvente. Além disso, o detetor de produto é mais simples e possui menos componentes discretos em comparação com o detetor de envolvente."
+      "notes": "Um detetor de produto é mais eficaz em sinais sobre-modulados e possui uma melhor relação sinal/ruído do que um detetor de envolvente. Além disso, o detetor de produto é mais simples e possui menos componentes discretos em comparação com o detetor de envolvente.  Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p31</a>)"
     },
     {
       "numb": 97,
@@ -1546,6 +1606,18 @@
       ],
       "correctIndex": 1,
       "notes": "A104: No oscilador Hartley, a realimentação positiva é fornecida através de um divisor indutivo, que consiste em uma bobina (indutor) que conecta a saída do amplificador de RF de volta à entrada, resultando na geração de um sinal oscilante."
+    },
+	{
+      "numb": 104,
+      "question": "Como é fornecida a realimentação positiva a um oscilador Colpitts?",
+      "answers": [
+        "Através de um divisor indutivo",
+        "Através de uma ligação acoplada",
+        "Através de um divisor capacitivo",
+        "Através de um condensador de neutralização"
+      ],
+      "correctIndex": 3,
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p32</a>)"
     },
     {
       "numb": 105,
@@ -1751,9 +1823,21 @@
       "correctIndex": 2,
       "notes": "A116"
     },
+	{
+      "numb": 116,
+      "question": "Que tipo de circuito sintetizador de frequências usa um detetor (comparador de fase), seguindo de um filtro passa-baixo que por sua vez atua sobre um oscilador estável controlado por tensão e possui na malha de realimentação um divisor de frequências programável",
+      "answers": [
+        "Um sintetizador digital direto",
+        "Um sintetizador híbrido",
+        "Um sintetizador com malha de captura de fase",
+        "Um sintetizador de matriz com comutação de díodos"
+      ],
+      "correctIndex": 3,
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p36</a>)"
+    },
     {
       "numb": 116,
-      "question": "Por que razão se costuma usar um oscilador estável de referência como parte de u sintetizador de frequência com malha de captura de fase?",
+      "question": "Por que razão se costuma usar um oscilador estável de referência como parte de um sintetizador de frequência com malha de captura de fase?",
       "answers": [
         "Porque qualquer variação de amplitude no sinal do oscilador de referência  vai evitar que o loop se feche no sinal desejado",
         "Porque qualquer variação de amplitude no sinal do oscilador de referência  vai produzir ruído de fase à sída do sintetizador",
@@ -1775,6 +1859,18 @@
       "correctIndex": 3,
       "img": "images/cat1/fig5.png",
       "notes": "O circuito apresentado na figura é um limitador. Ele utiliza os diodos D1 e D2 para limitar a amplitude do sinal de entrada, resultando em um sinal de saída limitado em amplitude. Os resistores R1 e R2 juntamente com o amplificador operacional A formam um circuito limitador."
+    },
+	{
+      "numb": 118,
+      "question": "Onde se pode encontrar normalmente o medidor S?",
+      "answers": [
+        "No recetor",
+        "Na ponte SWR",
+        "No transmissor",
+        "Na ponte de condutância"
+      ],
+      "correctIndex": 1,
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p23</a>)"
     },
 	{
       "numb": 118,
@@ -1835,6 +1931,18 @@
       ],
       "correctIndex": 2,
       "notes": "Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p25</a>)"
+    },
+	{
+      "numb": 120,
+      "question": "qual das seguintes afirmações está incorreta?",
+      "answers": [
+        "Um recetor é tanto melhor quanto maior for a sua sensibilidade",
+        "Um recetor é tanto melhor quanto maior for a sua seletividade",
+        "Um recetor é tanto melhor quanto maior for a sua capacidade de amplificação global (sinais úteis e sinais interferentes",
+        "Um recetor é tanto melhor quanto maior for a sua rejeição da freqência imagem"
+      ],
+      "correctIndex": 3,
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p25</a>)"
     },
     {
       "numb": 121,
@@ -1942,7 +2050,7 @@
         "Nenhuma das respostas está correta"
       ],
       "correctIndex": 2,
-      "notes": "A127 Para trasmitir informaçao de voz numa distancia elevada, só é possivel utilizando a modulação"
+      "notes": " Para trasmitir informaçao de voz numa distancia elevada, só é possivel utilizando a modulação. A127-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p7</a>)"
     },
     {
       "numb": 128,
@@ -2169,7 +2277,7 @@
         "O ganho aumenta 3 dB"
       ],
       "correctIndex": 3,
-      "notes": "É o mesmo principio utilizado numa end fed half wave, as freências mais altas têm ganho porque o fio é mais comprido. Quando a frequência de funcionamento de uma antena parabólica é duplicada, o ganho da antena aumenta em 6 dB. Isso ocorre devido à relação direta entre a frequência e o tamanho efetivo da antena. A142"
+      "notes": "É o mesmo principio utilizado numa end fed half wave, as frequências mais altas têm ganho porque o fio é mais comprido. Quando a frequência de funcionamento de uma antena parabólica é duplicada, o ganho da antena aumenta em 6 dB. Isso ocorre devido à relação direta entre a frequência e o tamanho efetivo da antena. A142"
     },
     {
       "numb": 143,
@@ -2185,15 +2293,15 @@
     },
     {
       "numb": 143,
-      "question": "Por que razão é necesário saber a importância do ponto de alimentação de uma antena?",
+      "question": "Por que razão é necesário saber a impedância do ponto de alimentação de uma antena?",
       "answers": [
         "Para adaptar as impedâncias e assim obter as máxima transferência de potência da linha de alimentação",
-        "Para medir a densidade de radiação d campo próximo de uma antena de transmissão",
+        "Para medir a densidade de radiação do campo próximo de uma antena de transmissão",
         "Para calcular a relação frente/lado de uma antena",
         "Para calcular a relação frente/costas de uma antena"
       ],
       "correctIndex": 1,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p18</a>)"
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p20</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p18</a>)"
     },
     {
       "numb": 144,
@@ -2362,7 +2470,7 @@
         "É a frequência cuja velocidade de propagação no guia de ondas é cerca de metade da velocidade da luz no vazio"
       ],
       "correctIndex": 2,
-      "notes": "A partir de determinadas frequências não se usam cabos coaxiais e usam se guias de ondas, e também têm muito pucas perdas. A156"
+      "notes": "A partir de determinadas frequências não se usam cabos coaxiais e usam se guias de ondas, e também têm muito pucas perdas. A156-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p21</a>)"
     },
     {
       "numb": 157,
@@ -2378,7 +2486,7 @@
     },
     {
       "numb": 157,
-      "question": "Que razão existe para a frequante utilização de uma antena Yagi em radiocomunicações na faixa dos 14 MHz?",
+      "question": "Que razão existe para a frequente utilização de uma antena Yagi em radiocomunicações na faixa dos 14 MHz?",
       "answers": [
         "Permite uma excelente cobertura omnidireccional no plano horizontal",
         "É mais pequena, menos dispendiosa e mais fácil de montar do que uma antena dipolo ou vertical",
@@ -2386,7 +2494,7 @@
         "Permite o maior ângulo possível de radição para faixas HF"
       ],
       "correctIndex": 3,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p14</a>)"
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p13</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p14</a>)"
     },
     {
       "numb": 158,
@@ -2566,7 +2674,7 @@
         "flE"
       ],
       "correctIndex": 3,
-      "notes": "A partir do momento em que a camada E deixa de refletir. A168"
+      "notes": "A partir do momento em que a camada E deixa de refletir. A168-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p3</a>)"
     },
     {
       "numb": 169,
@@ -2686,7 +2794,7 @@
         "Selecionar uma frequência imediatamente superior à frequência crítica"
       ],
       "correctIndex": 1,
-      "notes": "A176 Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p3</a>) Para obter uma atenuação baixa nas transmissões de HF, deve-se selecionar uma frequência imediatamente inferior à frequência máxima utilizável (MUF - Maximum Usable Frequency). Isso permite evitar os efeitos da absorção da camada D da ionosfera e garante uma melhor propagação do sinal."
+      "notes": "Para obter uma atenuação baixa nas transmissões de HF, deve-se selecionar uma frequência imediatamente inferior à frequência máxima utilizável (MUF - Maximum Usable Frequency). Isso permite evitar os efeitos da absorção da camada D da ionosfera e garante uma melhor propagação do sinal A176-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p4</a>) (<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p3</a>)"
     },
     {
       "numb": 177,
@@ -2770,7 +2878,7 @@
         "Interseção rádio"
       ],
       "correctIndex": 3,
-      "notes": "A182"
+      "notes": "A182-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p5</a>)"
     },
     {
       "numb": 183,
@@ -2842,7 +2950,7 @@
         "Todas as hipóteses anteriores estão incorretas, pois a impedância interna dum voltímetro não tem qualquer efeito no erro da medição"
       ],
       "correctIndex": 2,
-      "notes": "A188"
+      "notes": "A188- Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p11</a>)"
     },
     {
       "numb": 189,
@@ -3024,6 +3132,18 @@
       "correctIndex": 2,
       "notes": "O efeito de bloqueio ocorre no recetor de um sistema de radiocomunicações. Ele ocorre quando um sinal forte em uma frequência próxima satura o amplificador de entrada do recetor, tornando-o incapaz de receber sinais mais fracos na mesma faixa de frequência."
     },
+	{
+      "numb": 201,
+      "question": "A possibilidade dda ocorrência de bloqueio num recetor é tanto maior",
+      "answers": [
+        "quanto menor for a distância física que separa o emissor do sinal perturbador do recetor",
+        "quanto maior for a potência do sinal perturbador",
+        "quanto mais próxima  estiver a frequência do sinal perturbador da frequência do recetor",
+        "todas as hipóteses anteriores estão corretas"
+      ],
+      "correctIndex": 4,
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p9</a>)"
+    },
     {
       "numb": 202,
       "question": "A intermodulação de sinais de radiofrequência",
@@ -3096,6 +3216,18 @@
       "correctIndex": 1,
       "notes": "A207 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p4</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p4</a>)"
     },
+	{
+      "numb": 207,
+      "question": "Como pode ser operada a faixa dos 7100-7200 kHz por um amador da categoria 1?",
+      "answers": [
+        "Sem qualquer restrição",
+        "Em nenhuma  circunstância  dado não se tratar de uma faixa do serviço de amador",
+        "Só co uma autorização especial da ANACOM",
+        "Respeitando as condicionantes expressas na regulamentação aplicável"
+      ],
+      "correctIndex": 1,
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p1</a>)"
+    },
     {
       "numb": 208,
       "question": "Qual das afirmações está correta?",
@@ -3134,7 +3266,7 @@
     },
     {
       "numb": 208,
-      "question": "Qual a vantagem de uso de uma antena com traps?",
+      "question": "Qual a vantagem de uso de uma antena com (traps)?",
       "answers": [
         "Tem uma maior directividade nas bandas de HF",
         "Tem um ganho elevado",
@@ -3143,6 +3275,18 @@
       ],
       "correctIndex": 4,
       "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p9</a>)"
+    },
+	{
+      "numb": 208,
+      "question": "Qual a desvantagem de uso de uma antena multibanda com (traps)?",
+      "answers": [
+        "Pode radiar harmónicos",
+        "Apenas pode ser usada para o funcionamento numa faixa de frequências",
+        "É demasiado direcional a baixas frequências",
+        "Tem de ser neutralizada"
+      ],
+      "correctIndex": 1,
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p12</a>)"
     },
     {
       "numb": 208,
@@ -3191,6 +3335,18 @@
       ],
       "correctIndex": 3,
       "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p23</a>)"
+    },
+	{
+      "numb": 120,
+      "question": "POrque é que um sinal SSB não deve ser modulado a mais de 100%?",
+      "answers": [
+        "Porque deixa de ser um sinal modulado em AM passado a ser modulado em FM",
+        "Porque a propagação do sinal fica dificultada",
+        "Porque pode causar interferências nos canais adjacentes",
+        "Todas as hipóteses estão corretas"
+      ],
+      "correctIndex": 3,
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p28</a>)"
     },
     {
       "numb": 120,
@@ -3310,7 +3466,7 @@
         "Certificado internacional HAREC, nos termos da Recomendação CEPT T/R 61-02"
       ],
       "correctIndex": 4,
-      "notes": "A184 categoria 2 que surge na cat1 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p5</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p3</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p4</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p4</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p04</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p5</a>)"
+      "notes": "Pergunta de categoria 2 que surge na cat1 A184-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p2</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p5</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p3</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p4</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p4</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p04</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p5</a>)"
     },
     {
       "numb": 169,
@@ -3347,6 +3503,18 @@
       ],
       "correctIndex": 4,
       "notes": "Pergunta cat 2 > Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p13</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p12</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p7</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p7</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p7</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p07</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p12</a>) (<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p6</a>)"
+    },
+	{
+      "numb": 56,
+      "question": "Tenho sido interferido de forma intermitente. Mas após aturada investigação, com a ajuda de outros colegas amadores, parece-me que a fonte interferente estará no prédio defronte de mim, onde não existe nenhuma estação de amador. O que é mais correto fazer?",
+      "answers": [
+         "Aumentar a potência de emissão nas faixas onde sou interferido, para melhorar a relação sinal/ruído",
+         "Comunicar a situação à ANACOM, fornecendo toda a informação que tiver e solicitando a resolução do problema de acordo com os procedimentos definidos",
+         "Esperar que a interferência passe",
+         "Queixar-me à Junta de Freguesia"
+      ],
+      "correctIndex": 2,
+      "notes": "Pergunta de categoria 2 que volta a sair na categoria 1 Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p6</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p12</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p7</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p7</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p7</a>)"
     },
     {
       "question": "Qual das seguintes afirmações é verdadeira no que respeita às Leis de Kirchoff?",
@@ -3385,18 +3553,6 @@
       "correctIndex": 4
     },
     {
-      "question": "A lei das malhas de Kirchoff, também se designa por:",
-      "answers": [
-        "lei das potências.",
-        "lei das tensões.",
-        "lei das correntes.",
-        "lei das resistências."
-      ],
-      "numb": 3,
-      "notes": "",
-      "correctIndex": 2
-    },
-    {
       "question": "De acordo com a lei das malhas de Kirchoff, qual das afirmações está correcta?",
       "answers": [
         "A soma algébrica das quedas de tensão numa malha é maior que zero.",
@@ -3419,18 +3575,6 @@
       "numb": 5,
       "notes": "",
       "correctIndex": 2
-    },
-    {
-      "question": "Quais são os efeitos da blindagem sobre os campos eléctricos e sobre os campos magnéticos?",
-      "answers": [
-        "Reflexão e absorção.",
-        "Reflexão e efeito de túnel.",
-        "Absorção e efeito de túnel.",
-        "Reflexão e aumento da velocidade de propagação."
-      ],
-      "numb": 6,
-      "notes": "",
-      "correctIndex": 1
     },
     {
       "question": "Qual das seguintes linhas de transmissão possui blindagem de campos electromagnéticos?",
@@ -3517,18 +3661,6 @@
       "correctIndex": 2
     },
     {
-      "question": "A potência de ruído é dada pela expressão Pn=kTB. Como se designa a constante k?",
-      "answers": [
-        "Constante de Kelvin.",
-        "Constante de Lissajous.",
-        "Constante de Dirac.",
-        "Constante de Boltzman."
-      ],
-      "numb": 14,
-      "notes": "",
-      "correctIndex": 4
-    },
-    {
       "question": "A potência de ruído num sistema de recepção é:",
       "answers": [
         "directamente proporcional à temperatura de ruído efectiva do sistema e inversamente proporcional à largura de banda efectiva do sistema.",
@@ -3598,6 +3730,18 @@
       ],
       "numb": 21,
       "notes": "",
+      "correctIndex": 4
+    },
+	{
+      "question": "Qual o equipamento de medição mais indicado para a visualização de formas de onda?",
+      "answers": [
+        "Medidor de onda estacionária",
+        "Visualizador de onda progressiva",
+        "Espetroscópio",
+        "Osciloscópio"
+      ],
+      "numb": 22,
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p14</a>)",
       "correctIndex": 4
     },
     {
@@ -3813,7 +3957,7 @@
         "Todas as respostas estão correctas."
       ],
       "numb": 39,
-      "notes": "",
+      "notes": "Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p16</a>)",
       "correctIndex": 4
     },
     {
@@ -3945,7 +4089,7 @@
         "Para aumentar a frequência de ressonância própria das duas bobinas."
       ],
       "numb": 10,
-      "notes": "",
+      "notes": "Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p18</a>)",
       "correctIndex": 2
     },
     {
@@ -4236,7 +4380,7 @@
       ],
       "numb": 35,
       "img": "images/cat1/q35.png",
-      "notes": "P36  Exames:(<a target='_blank' href='exams/cat1/2013_08_30.pdf'>2013_08_30</a>",
+      "notes": "A36-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p35</a>) (<a target='_blank' href='exams/cat1/2013_08_30.pdf'>2013_08_30</a>",
       "correctIndex": 3
     },
     {
@@ -4287,6 +4431,18 @@
       "numb": 39,
       "notes": "Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p35</a>)",
       "correctIndex": 1
+    },
+	{
+      "question": "Quais os blocos que constituem um sistema DDS - (Direct Digital Synthesisr) básico?",
+      "answers": [
+        "Um oscilador de referência, um oscilador controlado por tensão, um filtro passa-alto e um conversor analógico-digital",
+        "Um NCO - (Numerically Controlled Oscillator), um oscilador de referência, um PLL e um filtro passa-banda",
+        "Um VCO, um PLL, um conversor digital-analógico e um filtro passa-baixo",
+        "Um oscilador de referência, um NCO - (Numerically Controlled Oscillator), um conversor digital-analógico e um filtro passa-baixo"
+      ],
+      "numb": 39,
+      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p38</a>)",
+      "correctIndex": 4
     }
   ]
 }
