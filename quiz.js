@@ -64,7 +64,8 @@ class Quiz {
 
 	}
 	plotAnswers(answers) {
-		const canvasDiv = document.getElementById('canvasDiv');
+		
+		const canvasDiv = document.getElementById('answerDisplay');
 		canvasDiv.style.display = 'block'; // Show the canvas div
 		canvasDiv.onclick = function() {
 			canvasDiv.style.display = 'none';
