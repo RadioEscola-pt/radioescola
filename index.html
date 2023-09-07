@@ -19,13 +19,21 @@
 		header {
 			background-color: #666;
 
-			text-align: center;
+
 			font-size: 35px;
 			color: white;
 			padding: 40px;
 		}
 
-		section {}
+		header h2 {
+
+			text-align: center;
+
+
+		}
+
+
+
 
 
 
@@ -125,13 +133,11 @@
 			width: 100%;
 			background-color: #f0f0f0;
 			text-align: center;
-			display:none;
+			display: none;
 		}
 
 		/* Style the canvas div with display: none initially */
-		#canvasDiv {
-
-		}
+		#canvasDiv {}
 
 		/* Style the canvas */
 		#canvas {
@@ -258,61 +264,61 @@
 		<h2>Escola de Radio Amador</h2>
 
 
-			<ul id="nav">
-				<li class="subnav0"><a onclick="new loadChapter('home')" href="#home">Página Inicial</a></li>
-				<li class="subnav0"><a onclick="new loadChapter('EDN')" href="#EDN">Estado da Nação</a></li>
-				<li class="subnav1"><a href="#">Categoria 3</a>
-					<ul class="subnav1">
-						<li><a onclick="new Quiz('question3.json')" href="#">todas as perguntas</a></li>
-						<li><a onclick="new simulateQuiz('question3.json')" href="#">Simulador de exame</a></li>
-						<li><a href="#">Tutorial</a>
-							<ul class="subnav1">
-								<li><a style="display:none;" href="#">Condutores</a></li>
-								<li> <a style="display:none;" href="#">Eletronica base</a></li>
-								<li> <a onclick="new loadChapter('ohm')">Lei de Ohm</a></li>
-								<li> <a style="display:none;" href="#">Potência</a></li>
-								<li> <a onclick="new loadChapter('AC')">AC </a></li>
-								<li> <a style="display:none;" href="#">Campo electromagnético </a></li>
-								<li> <a onclick="new loadChapter('codigoDecores')">Codigo de cores</a></li>
-								<li> <a onclick="new loadChapter('units')">Mult e SubMult. de Unidades</a></li>
+		<ul id="nav">
+			<li class="subnav0"><a onclick="new loadChapter('home')" href="#home">Página Inicial</a></li>
+			<li class="subnav0"><a onclick="new loadChapter('EDN')" href="#EDN">Estado da Nação</a></li>
+			<li class="subnav1"><a href="#">Categoria 3</a>
+				<ul class="subnav1">
+					<li><a onclick="new Quiz('question3.json')" href="#">todas as perguntas</a></li>
+					<li><a onclick="new simulateQuiz('question3.json')" href="#">Simulador de exame</a></li>
+					<li><a href="#">Tutorial</a>
+						<ul class="subnav1">
+							<li><a style="display:none;" href="#">Condutores</a></li>
+							<li> <a style="display:none;" href="#">Eletronica base</a></li>
+							<li> <a onclick="new loadChapter('ohm')">Lei de Ohm</a></li>
+							<li> <a style="display:none;" href="#">Potência</a></li>
+							<li> <a onclick="new loadChapter('AC')">AC </a></li>
+							<li> <a style="display:none;" href="#">Campo electromagnético </a></li>
+							<li> <a onclick="new loadChapter('codigoDecores')">Codigo de cores</a></li>
+							<li> <a onclick="new loadChapter('units')">Mult e SubMult. de Unidades</a></li>
 
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li class="subnav2"><a href="#">Categoria 2</a>
-					<ul class="subnav2">
-						<li><a onclick="new Quiz('question2.json')" href="#">todas as perguntas</a></li>
-						<li><a onclick="new simulateQuiz('question2.json')" href="#">Simulador de exame</a></li>
-						<li><a href="#">Tutorial</a>
-							<ul class="subnav2">
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li class="subnav2"><a href="#">Categoria 2</a>
+				<ul class="subnav2">
+					<li><a onclick="new Quiz('question2.json')" href="#">todas as perguntas</a></li>
+					<li><a onclick="new simulateQuiz('question2.json')" href="#">Simulador de exame</a></li>
+					<li><a href="#">Tutorial</a>
+						<ul class="subnav2">
 
-								<li> <a onclick="new loadChapter('SWR')">Onda estacionaria(SWR)</a></li>
-								<li> <a style="display:none;" href="#">bobines (henry)</a></li>
-								<li><a style="display:none;" href="#">Condensador(bobine)</a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
+							<li> <a onclick="new loadChapter('SWR')">Onda estacionaria(SWR)</a></li>
+							<li> <a style="display:none;" href="#">bobines (henry)</a></li>
+							<li><a style="display:none;" href="#">Condensador(bobine)</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
 
-				<li class="subnav3"><a href="#">Categoria 1</a>
-					<ul class="subnav3">
-						<li><a onclick="new Quiz('question1.json')" href="#">todas as perguntas</a></li>
-						<li><a onclick="new simulateQuiz('question1.json')" href="#">Simulador de exame</a></li>
-						<li><a href="#">Tutorial</a>
-							<ul class="subnav3">
+			<li class="subnav3"><a href="#">Categoria 1</a>
+				<ul class="subnav3">
+					<li><a onclick="new Quiz('question1.json')" href="#">todas as perguntas</a></li>
+					<li><a onclick="new simulateQuiz('question1.json')" href="#">Simulador de exame</a></li>
+					<li><a href="#">Tutorial</a>
+						<ul class="subnav3">
 
-								<li><a onclick="new loadChapter('gain')">Ganho (dB)</a> </li>
-								<li><a onclick="new loadChapter('tranformadores')">tranformadores </a> </li>
-								<li><a onclick="new loadChapter('bobines')">Reactância Indutiva </a> </li>
-								<li><a onclick="new loadChapter('condensadores')">Reactância Capacitiva</a> </li>
-								<li><a onclick="new loadChapter('receptores')">Receptores</a> </li>
-							</ul>
-						</li>
-					</ul>
-				</li>
+							<li><a onclick="new loadChapter('gain')">Ganho (dB)</a> </li>
+							<li><a onclick="new loadChapter('tranformadores')">tranformadores </a> </li>
+							<li><a onclick="new loadChapter('bobines')">Reactância Indutiva </a> </li>
+							<li><a onclick="new loadChapter('condensadores')">Reactância Capacitiva</a> </li>
+							<li><a onclick="new loadChapter('receptores')">Receptores</a> </li>
+						</ul>
+					</li>
+				</ul>
+			</li>
 
-			</ul>
+		</ul>
 
 
 
