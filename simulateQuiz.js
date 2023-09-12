@@ -12,12 +12,12 @@ class simulateQuiz {
 
 
 	static checkTimer() {
-		var counterDiv = document.getElementById("couter");
+		var counterDiv = document.getElementById("timer");
 		if (counterDiv == null) {
 			window.clearTimeout(simulateQuiz.timer);
 			return;
 		}
-		counterDiv.innerHTML = Math.floor(simulateQuiz.timeout / 60) + ":" + (simulateQuiz.timeout % 60) + " sec";
+		counterDiv.innerHTML = new Date(simulateQuiz.timeout * 1000).toISOString().slice(11, 19);
 		simulateQuiz.timeout--;
 		if (simulateQuiz.timeout < 0) {
 			simulateQuiz.checkQuestions();
@@ -30,7 +30,11 @@ class simulateQuiz {
 			page.style.display = "none";
 		}
 		var currentPage = document.getElementById("Page" + this.value);
+		document.querySelector('#qIndex button.active').classList.remove("active")
+		this.classList.add("active")
 		currentPage.style.display = "block";
+
+		console.log(currentPage)
 	}
 
 	static checkQuestions() {
@@ -65,7 +69,7 @@ class simulateQuiz {
 			total += answer;
 
 		}
-		var counterDiv = document.getElementById("couter");
+		var counterDiv = document.getElementById("timer");
 		counterDiv.innerHTML = "Pontos:" + total + " em 40  a classificação mínima de 20 pontos";
 	}
 
@@ -95,6 +99,10 @@ class simulateQuiz {
 					var indexBlock = document.createElement("div");
 					indexBlock.id = "qIndex";
 
+					let buttons = document.createElement('div')
+					buttons.id = 'pagination'
+
+
 					welcomeDiv.appendChild(indexBlock);
 					var index = 0;
 					for (var qindex in randomQ) {
@@ -106,10 +114,11 @@ class simulateQuiz {
 							pageBlock.id = "Page" + questionCounter;
 							pageBlock.style.display = "block";
 							let btn = document.createElement("button");
-							btn.innerHTML = questionCounter;
+							btn.innerText = questionCounter / 10 + 1;
+							btn.className = 'active';
 							btn.value = questionCounter;
 							btn.onclick = simulateQuiz.showPage;
-							indexBlock.appendChild(btn);
+							buttons.appendChild(btn);
 							simulateQuiz.pageBlocks.push(pageBlock);
 
 						} else if (questionCounter % 10 == 0) {
@@ -117,10 +126,10 @@ class simulateQuiz {
 							pageBlock.id = "Page" + questionCounter;
 							pageBlock.style.display = "none";
 							let btn = document.createElement("button");
-							btn.innerHTML = questionCounter;
+							btn.innerText = questionCounter / 10 + 1;
 							btn.value = questionCounter;
 							btn.onclick = simulateQuiz.showPage;
-							indexBlock.appendChild(btn);
+							buttons.appendChild(btn);
 							simulateQuiz.pageBlocks.push(pageBlock);
 						}
 						questionCounter++;
@@ -181,20 +190,26 @@ class simulateQuiz {
 						}
 						if (simulateQuiz.questions[qindex].notes == null) {
 							console.log("ERROR Q" + simulateQuiz.questions[qindex].numb);
-						}
+						}					
 
 					}
+
 					let btn = document.createElement("button");
 					btn.innerHTML = "Finalizar";
 					simulateQuiz.timeout = simulateQuiz.COUINTERTIMEOT;
 					window.clearTimeout(simulateQuiz.timer);
 					simulateQuiz.timer = window.setInterval(simulateQuiz.checkTimer, 1000);
 					btn.onclick = simulateQuiz.checkQuestions;
-					indexBlock.appendChild(btn);
+					buttons.appendChild(btn);
 
-					var couterBlock = document.createElement("div");
-					couterBlock.id = "couter";
-					indexBlock.appendChild(couterBlock);
+					indexBlock.append(buttons)
+
+
+
+					var timerBlock = document.createElement("div");
+					timerBlock.id = "timer";
+					timerBlock.textContent = '01:00:00';
+					indexBlock.appendChild(timerBlock);
 
 					console.log("Unaswered" + numberOfUnaswered);
 

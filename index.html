@@ -6,215 +6,8 @@
 	<title>Radio Escola</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-		* {
-			box-sizing: border-box;
-		}
 
-		body {
-			font-family: Arial, Helvetica, sans-serif;
-		}
-
-		/* Style the header */
-		header {
-			background-color: #666;
-			font-size: 30px;
-			color: white;
-			padding-left: 50px;
-			padding-top: 185px;
-			background-image: url(radioescola.png);
-			background-repeat: no-repeat;
-			background-size: cover;
-			
-		}
-
-		header h2 {
-
-			text-align: center;
-
-
-		}
-
-
-
-		/* Style the content */
-		article {
-			-webkit-flex: 3;
-			-ms-flex: 3;
-			flex: 3;
-			background-color: #f1f1f1;
-			padding: 10px;
-		}
-
-		/* Style the footer */
-		footer {
-			background-color: #777;
-			padding: 10px;
-			text-align: center;
-			color: white;
-		}
-
-		/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
-		@media (max-width: 600px) {
-			section {
-				-webkit-flex-direction: column;
-				flex-direction: column;
-			}
-		}
-
-		body {
-			font-family: Arial, Helvetica, sans-serif;
-			margin: 0;
-		}
-
-		#qIndex {
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-			border-radius: 5px;
-			margin: 1%;
-			overflow: hidden;
-			background-color: gray;
-			position: -webkit-sticky;
-			/* Safari */
-			position: sticky;
-			top: 0;
-			border-style: solid;
-			border-color: #92a8d1;
-		}
-
-
-		.subnav1 {
-			background-color: #3399ff;
-			margin-right: 5px;
-
-		}
-
-		.subnav2 {
-			background-color: #00cc99;
-			margin-right: 5px;
-
-		}
-
-		.subnav3 {
-			background-color: #731919;
-			margin-right: 5px;
-
-		}
-
-		.subnav0 {
-			background-color: #eb9021;
-			margin-right: 5px;
-		}
-
-		.subnav1 ul {
-
-			z-index: 2;
-		}
-
-		.subnav2 ul {
-
-			z-index: 2;
-		}
-
-		.subnav3 ul {
-
-			z-index: 2;
-		}
-
-
-
-
-		#answerDisplay {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			background-color: #f0f0f0;
-			text-align: center;
-			display: none;
-		}
-
-		/* Style the canvas div with display: none initially */
-		#canvasDiv {}
-
-		/* Style the canvas */
-		#canvas {
-			border: 1px solid #000;
-		}
-
-
-		#nav {
-			list-style: none inside;
-			margin: 0;
-			padding: 0;
-			text-align: center;
-			font-size: 16px;
-
-			display: inline-table;
-		}
-
-		#nav li {
-			display: block;
-			position: relative;
-			float: left;
-
-			/* menu background color */
-		}
-
-		#nav li a {
-			display: block;
-			padding: 0;
-			text-decoration: none;
-			width: 200px;
-			/* this is the width of the menu items */
-			line-height: 35px;
-			/* this is the hieght of the menu items */
-			color: #ffffff;
-			/* list item font color */
-		}
-
-		#nav li li a {
-			font-size: 80%;
-		}
-
-		/* smaller font size for sub menu items */
-
-		#nav li:hover {
-			background: #444444;
-		}
-
-		/* highlights current hovered list item and the parent list items when hovering over sub menues */
-
-		#nav ul {
-			position: absolute;
-			padding: 0;
-			left: 0;
-			display: none;
-			/* hides sublists */
-		}
-
-		#nav li:hover ul ul {
-			display: none;
-		}
-
-		/* hides sub-sublists */
-
-		#nav li:hover ul {
-			display: block;
-		}
-
-		/* shows sublist on hover */
-
-		#nav li li:hover ul {
-			display: block;
-			/* shows sub-sublist on hover */
-			margin-left: 200px;
-			/* this should be the same width as the parent list item */
-			margin-top: -35px;
-			/* aligns top of sub menu with top of list item */
-		}
-	</style>
+	<link rel="stylesheet" href="style.css">
 	<script type="text/javascript" src="quiz.js"></script>
 	<script type="text/javascript" src="simulateQuiz.js"></script>
 	<script type="text/javascript" src="loadChapter.js"></script>
@@ -264,7 +57,7 @@
 
 
 		<ul id="nav">
-		  <li class="subnav0"><a onclick="new loadChapter('home')" href="#home">Página Inicial</a></li>
+			<li class="subnav0"><a onclick="new loadChapter('home')" href="#home">Página Inicial</a></li>
 			<li class="subnav0"><a onclick="new loadChapter('EDN')" href="#EDN">Estado da Nação</a></li>
 			<li class="subnav1"><a href="#">Categoria 3</a>
 				<ul class="subnav1">
@@ -335,23 +128,24 @@
 	</section>
 
 	<footer>
-		<a href="https://github.com/dirtybug/radioAmadorCat2exame/issues" target="_blank">Reportar Problema erro
-			sugestao</a>
-		<a href="https://github.com/dirtybug/radioAmadorCat2exame/discussions" target="_blank">forum</a>
-		<a href="https://github.com/dirtybug/radioAmadorCat2exame" target="_blank">codigo</a>
-		<p>CS7AZE,CS7AXE,CS7BAX,CR7BCS </p>
+		<div>
+			<a href="https://github.com/dirtybug/radioAmadorCat2exame/issues" target="_blank">Reportar problemas / erros
+				/ sugestões</a>
+			<a href="https://github.com/dirtybug/radioAmadorCat2exame/discussions" target="_blank">Fórum</a>
+			<a href="https://github.com/dirtybug/radioAmadorCat2exame" target="_blank">Código</a>
+		</div>
+		<p>CS7AZE | CS7AXE | CS7BAX | CR7BCS </p>
 
+		<div>
+			<a href="https://t.me/+xQNzwNwb2JIxMWY8">
+				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png"
+					alt="Telegram" width="auto" height="55"></a>
 
-		<a href="https://t.me/+xQNzwNwb2JIxMWY8">
-			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png"
-				alt="Telegram" width="100" height="auto">
-		</a>
-
-		<a href="https://play.google.com/store/apps/details?id=com.andradator.escoladeradioamador">
-			<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-				alt="Get it on Google Play" width="200" height="auto">
-		</a>
-
+			<a href="https://play.google.com/store/apps/details?id=com.andradator.escoladeradioamador">
+				<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+					alt="Get it on Google Play" width="auto" height="75">
+			</a>
+		</div>
 	</footer>
 
 

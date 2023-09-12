@@ -118,7 +118,7 @@ class Quiz {
 	}
 	createQuiz() {
 
-		var numberOfUnaswered = 0;
+		var numberOfUnanswered = 0;
 		var questionCounter = 0;
 		var ajaxRequest = new XMLHttpRequest();
 		ajaxRequest.quiz = this;
@@ -147,8 +147,9 @@ class Quiz {
 							pageBlock = document.createElement("div");
 							pageBlock.id = "Page" + questionCounter;
 							pageBlock.style.display = "block";
+							pageBlock.className = 'page';
 							let btn = document.createElement("button");
-							btn.innerHTML = questionCounter;
+							btn.innerHTML = questionCounter / 10 + 1;
 							btn.value = questionCounter;
 							btn.onclick = this.quiz.showPage;
 							indexBlock.appendChild(btn);
@@ -158,8 +159,9 @@ class Quiz {
 							pageBlock = document.createElement("div");
 							pageBlock.id = "Page" + questionCounter;
 							pageBlock.style.display = "none";
+							pageBlock.className = 'page';
 							let btn = document.createElement("button");
-							btn.innerHTML = questionCounter;
+							btn.innerHTML = questionCounter / 10 + 1;
 							btn.value = questionCounter;
 							btn.onclick = this.quiz.showPage;
 							indexBlock.appendChild(btn);
@@ -231,7 +233,7 @@ class Quiz {
 							notAvailble.innerHTML = "resposta Indisponivel";
 							questionBlock.appendChild(notAvailble);
 							console.log(Quiz.messagesArray.questions[qindex].numb);
-							numberOfUnaswered++;
+							numberOfUnanswered++;
 						} else {
 
 							let btn = document.createElement("button");
@@ -242,7 +244,7 @@ class Quiz {
 							questionCard.appendChild(btn);
 						}
 					}
-					console.log("Unaswered" + numberOfUnaswered);
+					console.log("Unanswered" + numberOfUnanswered);
 
 				} else {
 					console.log("Status error: " + ajaxRequest.status);

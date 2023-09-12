@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: #F8FAFC;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  font-size: 30px;
+  color: white;
+  height: 300px;
+  background-image: url(radioescola.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+header h2 {
+  text-align: center;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #F8FAFC;
+  padding: 10px;
+  width: min(100%, 980px);
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #374151;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  padding: 40px;
+}
+
+footer a {
+    color: white;
+}
+
+footer > * {
+    display: flex;
+    align-items: center;
+}
+
+
+footer > div:first-child {
+    gap: 5px;
+    flex-direction: column;
+    align-items: start;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+
+#qIndex {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  background-color: #CBD5E1;
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+  top: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#qIndex button {
+  background-color: #F3F4F6;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#qIndex button:hover {
+  background-color: #94A3B8;
+}
+
+#qIndex button.active {
+  background-color: #475569;
+  color: white;
+}
+
+#timer {
+
+}
+
+.subnav1 {
+  background-color: #3399ff;
+  margin-right: 5px;
+}
+
+.subnav2 {
+  background-color: #00cc99;
+  margin-right: 5px;
+}
+
+.subnav3 {
+  background-color: #731919;
+  margin-right: 5px;
+}
+
+.subnav0 {
+  background-color: #eb9021;
+  margin-right: 5px;
+}
+
+.subnav1 ul {
+  z-index: 2;
+}
+
+.subnav2 ul {
+  z-index: 2;
+}
+
+.subnav3 ul {
+  z-index: 2;
+}
+
+#answerDisplay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  text-align: center;
+  display: none;
+}
+
+/* Style the canvas div with display: none initially */
+#canvasDiv {
+}
+
+/* Style the canvas */
+#canvas {
+  border: 1px solid #000;
+}
+
+#nav {
+  list-style: none inside;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 16px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: inline-table;
+}
+
+#nav li {
+  display: block;
+  position: relative;
+  float: left;
+
+  /* menu background color */
+}
+
+#nav li a {
+  display: block;
+  padding: 0;
+  text-decoration: none;
+  width: 200px;
+  /* this is the width of the menu items */
+  line-height: 35px;
+  /* this is the hieght of the menu items */
+  color: #ffffff;
+  /* list item font color */
+}
+
+#nav li li a {
+  font-size: 80%;
+}
+
+/* smaller font size for sub menu items */
+
+#nav li:hover {
+  background: #444444;
+}
+
+/* highlights current hovered list item and the parent list items when hovering over sub menues */
+
+#nav ul {
+  position: absolute;
+  padding: 0;
+  left: 0;
+  display: none;
+  /* hides sublists */
+}
+
+#nav li:hover ul ul {
+  display: none;
+}
+
+/* hides sub-sublists */
+
+#nav li:hover ul {
+  display: block;
+}
+
+/* shows sublist on hover */
+
+#nav li li:hover ul {
+  display: block;
+  /* shows sub-sublist on hover */
+  margin-left: 200px;
+  /* this should be the same width as the parent list item */
+  margin-top: -35px;
+  /* aligns top of sub menu with top of list item */
+}
