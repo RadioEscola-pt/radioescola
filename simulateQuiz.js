@@ -99,10 +99,9 @@ class simulateQuiz {
 					var indexBlock = document.createElement("div");
 					indexBlock.id = "qIndex";
 
-					var pagesLabel = document.createElement('span')
-					pagesLabel.innerText = "Páginas"
-					pagesLabel.id = "pagesLabel"
-					indexBlock.appendChild(pagesLabel);
+					let buttons = document.createElement('div')
+					buttons.id = 'pagination'
+
 
 					welcomeDiv.appendChild(indexBlock);
 					var index = 0;
@@ -119,7 +118,7 @@ class simulateQuiz {
 							btn.className = 'active';
 							btn.value = questionCounter;
 							btn.onclick = simulateQuiz.showPage;
-							indexBlock.appendChild(btn);
+							buttons.appendChild(btn);
 							simulateQuiz.pageBlocks.push(pageBlock);
 
 						} else if (questionCounter % 10 == 0) {
@@ -130,7 +129,7 @@ class simulateQuiz {
 							btn.innerText = questionCounter / 10 + 1;
 							btn.value = questionCounter;
 							btn.onclick = simulateQuiz.showPage;
-							indexBlock.appendChild(btn);
+							buttons.appendChild(btn);
 							simulateQuiz.pageBlocks.push(pageBlock);
 						}
 						questionCounter++;
@@ -194,16 +193,22 @@ class simulateQuiz {
 						}					
 
 					}
+
 					let btn = document.createElement("button");
 					btn.innerHTML = "Finalizar";
 					simulateQuiz.timeout = simulateQuiz.COUINTERTIMEOT;
 					window.clearTimeout(simulateQuiz.timer);
 					simulateQuiz.timer = window.setInterval(simulateQuiz.checkTimer, 1000);
 					btn.onclick = simulateQuiz.checkQuestions;
-					indexBlock.appendChild(btn);
+					buttons.appendChild(btn);
+
+					indexBlock.append(buttons)
+
+
 
 					var timerBlock = document.createElement("div");
 					timerBlock.id = "timer";
+					timerBlock.textContent = '01:00:00';
 					indexBlock.appendChild(timerBlock);
 
 					console.log("Unaswered" + numberOfUnaswered);

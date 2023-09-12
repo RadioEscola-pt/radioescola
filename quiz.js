@@ -147,8 +147,9 @@ class Quiz {
 							pageBlock = document.createElement("div");
 							pageBlock.id = "Page" + questionCounter;
 							pageBlock.style.display = "block";
+							pageBlock.className = 'page';
 							let btn = document.createElement("button");
-							btn.innerHTML = questionCounter;
+							btn.innerHTML = questionCounter / 10 + 1;
 							btn.value = questionCounter;
 							btn.onclick = this.quiz.showPage;
 							indexBlock.appendChild(btn);
@@ -158,8 +159,9 @@ class Quiz {
 							pageBlock = document.createElement("div");
 							pageBlock.id = "Page" + questionCounter;
 							pageBlock.style.display = "none";
+							pageBlock.className = 'page';
 							let btn = document.createElement("button");
-							btn.innerHTML = questionCounter;
+							btn.innerHTML = questionCounter / 10 + 1;
 							btn.value = questionCounter;
 							btn.onclick = this.quiz.showPage;
 							indexBlock.appendChild(btn);
