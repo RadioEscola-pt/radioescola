@@ -56,3 +56,10 @@
     display: flex;
     gap: 10px;
 }
+
+.incorrect {
+    background-color: #FECACA;
+    color: #7F1D1D;
+    padding: 10px;
+    margin-top: 10px;
+}
