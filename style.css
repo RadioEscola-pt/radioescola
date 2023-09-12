@@ -82,7 +82,8 @@ footer > div:first-child {
   padding: 10px;
   border-radius: 5px;
   margin: 10px;
-  overflow: hidden;
+  overflow-x: scroll;
+  overflow-y: hidden;
   background-color: #CBD5E1;
   position: -webkit-sticky;
   /* Safari */
