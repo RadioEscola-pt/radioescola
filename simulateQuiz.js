@@ -2,8 +2,8 @@
 class simulateQuiz {
 
 	static UNANSWERED = 0;
-	static WRITE = 1;
-	static WRONG = -0.25;
+	static CORRECT = 1;
+	static INCORRECT = -0.25;
 	static COUINTERTIMEOT = 60 * 60;
 	static questions = new Object();
 	static pageBlocks = [];
@@ -48,19 +48,24 @@ class simulateQuiz {
 			for (var i = 0; i < elements.length; i++) {
 
 				if (elements[i].checked) {
-
-					if (simulateQuiz.questions[questionIndex].correctIndex == i + 1) {
-						answers[questionIndex] = simulateQuiz.WRITE;
+					const correctIndex = parseInt(simulateQuiz.questions[questionIndex].correctIndex);
+					if (correctIndex == i + 1) {
+						answers[questionIndex] = simulateQuiz.CORRECT;
 					} else {
-						answers[questionIndex] = simulateQuiz.WRONG;
+						answers[questionIndex] = simulateQuiz.INCORRECT;
+						elements[i].parentElement.style.color = '#7F1D1D';
+						elements[correctIndex - 1].parentElement.style.color = '#22C55E';
 					}
 
 				}
 			}
-			if (answers[questionIndex] != simulateQuiz.WRITE) {
-				noteDiv.innerHTML = "Resposta certa " + simulateQuiz.questions[questionIndex].correctIndex;
-				noteDiv.style.background = "red";
+			if (answers[questionIndex] != simulateQuiz.CORRECT) {
+				noteDiv.innerHTML = "Resposta certa: " + simulateQuiz.questions[questionIndex].correctIndex;
+				noteDiv.className = "incorrect";
 				noteDiv.innerHTML += "<br>" + simulateQuiz.questions[questionIndex].notes;
+
+				noteDiv.parentElement.parentElement.parentElement.style.boxShadow = '0px 0px 5px #7F1D1D'
+				elements[parseInt(simulateQuiz.questions[questionIndex].correctIndex - 1)].parentElement.style.color = '#22C55E';
 			}
 
 		}
