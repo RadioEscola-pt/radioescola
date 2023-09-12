@@ -118,7 +118,7 @@ class Quiz {
 	}
 	createQuiz() {
 
-		var numberOfUnaswered = 0;
+		var numberOfUnanswered = 0;
 		var questionCounter = 0;
 		var ajaxRequest = new XMLHttpRequest();
 		ajaxRequest.quiz = this;
@@ -231,7 +231,7 @@ class Quiz {
 							notAvailble.innerHTML = "resposta Indisponivel";
 							questionBlock.appendChild(notAvailble);
 							console.log(Quiz.messagesArray.questions[qindex].numb);
-							numberOfUnaswered++;
+							numberOfUnanswered++;
 						} else {
 
 							let btn = document.createElement("button");
@@ -242,7 +242,7 @@ class Quiz {
 							questionCard.appendChild(btn);
 						}
 					}
-					console.log("Unaswered" + numberOfUnaswered);
+					console.log("Unanswered" + numberOfUnanswered);
 
 				} else {
 					console.log("Status error: " + ajaxRequest.status);
