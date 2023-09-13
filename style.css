@@ -114,7 +114,8 @@ footer > div:first-child {
 }
 
 #timer {
-
+  font-family: monospace;
+  font-size: large;
 }
 
 .subnav1 {
