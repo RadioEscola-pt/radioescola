@@ -44,12 +44,12 @@
         },
         {
             "numb": 4,
-            "question": "Qual dos seguintes factores não se aplica quando estamos a falar de influência indesejada nos equipamento de uma estação de amador?",
+            "question": "Qual dos seguintes factores não se aplica quando estamos a falar de influência indesejada nos equipamentos de uma estação de amador?",
             "answers": [
                 "Sinais indesejados na entrada da antena",
                 "Forte campo electromagnético no local onde os equipamentos estão instalados",
                 "Instabilidade na alimentação",
-                "Níveis de ondas acústicas extremamente forter no local onde os euipamentos estão instalados"
+                "Níveis de ondas acústicas extremamente fortes no local onde os euipamentos estão instalados"
             ],
             "correctIndex": 4,
             "notes": "Notas",
@@ -184,10 +184,10 @@
         },
         {
             "numb": 14,
-            "question": "Qual das seguints afirmações não está correcta?",
+            "question": "Qual das seguintes afirmações não está correcta?",
             "answers": [
                 "Os titulares de CAN, excepto da categoria 3, podem utilizar as suas estações individuais apenas em modo de receção",
-                "Os titulars de CAN podem utilizar estações de uso comum",
+                "Os titulares de CAN podem utilizar estações de uso comum",
                 "Os titulares de CAN podem utilizar, de acordo com a sua categoria, estações individuais de outros amadores, com exceção das estações de amadores da categoria 3",
                 "Os titulares de CAN, exceto da categoria 3, podem partilhar a utilização das suas estações individuais com outros amadores, de acordo com a sua categoria"
             ],
@@ -244,7 +244,7 @@
             "answers": [
                 "o indicativo de chamada da estação fixa adicional",
                 "o indicativo de chamada consignado a todas as estações de uma dada rede viária",
-                "o indicativo  de chamada da estação fixa principal",
+                "o indicativo de chamada da estação fixa principal",
                 "o indicativo de chamada consignado a todas as estações móveis da União Europeia"
             ],
             "correctIndex": 3,
@@ -270,7 +270,7 @@
             "numb": 20,
             "question": "Quantas estações individuais fixas podem ser utilizadas ao abrigo de um CAN?",
             "answers": [
-                "Apenas uma estaçao fixa",
+                "Apenas uma estação fixa",
                 "Duas: uma principal e outra adicional",
                 "Três uma principal e duas adicionais",
                 "As que pretendem, dado não haver limite para número de estações fixas"
@@ -284,10 +284,10 @@
             "numb": 21,
             "question": "O CAN pode ser suspenso",
             "answers": [
-                "Por um periodo superior a 6 meses e inferior ou igual a 3 anos",
-                "Por um periodo superior a 9 meses e inferior ou igual a 4 anos",
-                "Por um periodo superior a 12 meses e inferior ou igual a 5 anos",
-                "Por um periodo superior a 24 meses e inferior ou igual a 10 anos"
+                "Por um período superior a 6 meses e inferior ou igual a 3 anos",
+                "Por um período superior a 9 meses e inferior ou igual a 4 anos",
+                "Por um período superior a 12 meses e inferior ou igual a 5 anos",
+                "Por um período superior a 24 meses e inferior ou igual a 10 anos"
             ],
             "correctIndex": 3,
             "notes": "Notas",
@@ -355,9 +355,9 @@
             "question": "Qual das seguintes frases está incorrecta?",
             "answers": [
                 "Nas faixas em que os Serviços de Amador ou de Amador por Satélite têm estatuto secundário, as estações de amador não deverão provocar interferências nos serviços com estatuto primário",
-                "Nas faixas em que os serviços de Amador ou de Amador por Satélite têm estatuto secundário, as estações de amador poderão provocar interferências prejudiciais nos serviços com estatuto primário",
+                "Nas faixas em que os Serviços de Amador ou de Amador por Satélite têm estatuto secundário, as estações de amador poderão provocar interferências prejudiciais nos serviços com estatuto primário",
                 "Nas faixas em que os Serviços de Amador ou de Amador por Satélite têm estatuto secundário, as estações de amador não poderão reclamar protecção de interferências causadas por estações de serviços com estatuto primário",
-                "Nas faixas em que os Serviço de Amador ou de Amador por Satélite têm estatuto secundário, as estações de amador poderão apenas reclamar protecção de interferências causadas por estações de serviços com estatuto secundário, se as consignações feitas a estes serviços forem posteriores àquelas."
+                "Nas faixas em que os ServiçoS de Amador ou de Amador por Satélite têm estatuto secundário, as estações de amador poderão apenas reclamar protecção de interferências causadas por estações de serviços com estatuto secundário, se as consignações feitas a estes serviços forem posteriores àquelas."
             ],
             "correctIndex": 2,
             "notes": "Notas",
@@ -805,7 +805,7 @@
                 "Ruído de ignição",
                 "Ruído branco na banda larga",
                 "Interferência heteródina",
-                "Todas as opções são\n válidas"
+                "Todas as opções são válidas"
             ],
             "correctIndex": 1,
             "notes": "Notas",
@@ -833,7 +833,7 @@
                 "Ruído branco na banda larga",
                 "Ruído de ignição",
                 "Ruído na linha eléctrica",
-                "Todas as opções são\n válidas"
+                "Todas as opções são válidas"
             ],
             "correctIndex": 4,
             "notes": "Notas",
@@ -1349,8 +1349,8 @@
             "question": "Que efeito pode ter uma linha de transmissão de televisão por cabo, a radiar por deficiente instalação, numa estação de amador?",
             "answers": [
                 "Não afeta a estação de amador",
-                "As radiações produzidas pela linha de transmissão podem provocar isntabilidades na emissão da estação de amador",
-                "Além da possibilidade da estação de amador interferir na instalação de televisao",
+                "As radiações produzidas pela linha de transmissão podem provocar instabilidades na emissão da estação de amador",
+                "Além da possibilidade da estação de amador interferir na instalação de televisão",
                 "Podem ser criadas na linha de transmissão tensões muito elevadas quando a estação de amador emite, pondo em risco a segurança das pessoas"
             ],
             "correctIndex": 3,
