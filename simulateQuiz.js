@@ -245,10 +245,10 @@ class simulateQuiz {
 
 						answers.appendChild(noteBlock);
 						if (simulateQuiz.questions[qindex].correctIndex == null) {
-							console.log("ERROR Q" + simulateQuiz.questions[qindex].numb);
+							console.log("ERROR Q" + simulateQuiz.questions[qindex].uniqueID);
 						}
 						if (simulateQuiz.questions[qindex].notes == null) {
-							console.log("ERROR Q" + simulateQuiz.questions[qindex].numb);
+							console.log("ERROR Q" + simulateQuiz.questions[qindex].uniqueID);
 						}					
 
 					}
