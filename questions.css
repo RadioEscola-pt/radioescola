@@ -54,7 +54,8 @@
 
 #pagination {
     display: flex;
-    gap: 10px;
+    gap: 5px;
+    width: 100%;
 }
 
 .incorrect {
@@ -62,4 +63,13 @@
     color: #7F1D1D;
     padding: 10px;
     margin-top: 10px;
+}
+
+#qIndex button#submitQuiz {
+    border: 1px solid #84CC16;
+    padding: 5px 20px;
+}
+#qIndex button#submitQuiz:hover {
+    color:white;
+    background-color: #84CC16;
 }

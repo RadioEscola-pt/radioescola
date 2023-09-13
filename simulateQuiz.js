@@ -6,6 +6,8 @@ class simulateQuiz {
 	static INCORRECT = -0.25;
 	static COUINTERTIMEOT = 60 * 60;
 	static questions = new Object();
+	static PER_PAGE = 10;
+	static QUESTION_AMOUNT = 40;
 	static pageBlocks = [];
 	static timeout = 0;
 	static timer = 0;
@@ -28,13 +30,70 @@ class simulateQuiz {
 		window.scrollTo(0, 0);
 		for (var page of simulateQuiz.pageBlocks) {
 			page.style.display = "none";
+			page.classList.remove("active");
 		}
-		var currentPage = document.getElementById("Page" + this.value);
-		document.querySelector('#qIndex button.active').classList.remove("active")
-		this.classList.add("active")
-		currentPage.style.display = "block";
+		var currentPage = document.querySelector(`.page[data-page="${this.value}"]`);
 
-		console.log(currentPage)
+		if (document.querySelector('#qIndex button.active')) {
+			document.querySelector('#qIndex button.active').classList.remove("active")
+		}
+		
+		currentPage.style.display = "block";
+		currentPage.classList.add('active')
+
+		simulateQuiz.generatePagination()
+		
+		document.querySelector(`#qIndex button[value="${this.value}"]`).classList.add("active")
+	}
+
+	static generatePagination() {
+		var currentPage = parseInt(document.querySelector(`.page.active`).dataset.page);
+		let buttons = document.querySelector('#pagination')
+		buttons.innerHTML = ''
+
+		let previousButton = document.createElement('button');
+		previousButton.innerText = 'Anterior'
+		previousButton.value = currentPage - 1;
+		previousButton.onclick = simulateQuiz.showPage
+		previousButton.disabled = currentPage == 1
+		buttons.append(previousButton)
+
+		for (let i = 0 ; i < simulateQuiz.numberOfPages(); i++) {
+			
+			let pageBtn = document.createElement("button");
+			pageBtn.innerText = i + 1
+			pageBtn.value = i + 1;
+			pageBtn.onclick = simulateQuiz.showPage;
+			if (currentPage == i + 1) {
+				pageBtn.className = 'active';
+			}
+			buttons.appendChild(pageBtn);
+		}
+
+		let nextButton = document.createElement('button');
+		nextButton.innerText = 'Seguinte'
+		nextButton.value = currentPage + 1;
+		nextButton.onclick = simulateQuiz.showPage
+		nextButton.disabled = currentPage == simulateQuiz.numberOfPages()
+		buttons.append(nextButton)
+
+		let spacer = document.createElement('div')
+		spacer.style.display = 'flex';
+		spacer.style.flex = 1;
+		buttons.append(spacer)
+
+		let btn = document.createElement("button");
+		btn.innerHTML = "Finalizar";
+		simulateQuiz.timeout = simulateQuiz.COUINTERTIMEOT;
+		window.clearTimeout(simulateQuiz.timer);
+		simulateQuiz.timer = window.setInterval(simulateQuiz.checkTimer, 1000);
+		btn.onclick = simulateQuiz.checkQuestions;
+		btn.id = 'submitQuiz'
+		buttons.appendChild(btn);
+	}
+
+	static numberOfPages() {
+		return simulateQuiz.pageBlocks.length
 	}
 
 	static checkQuestions() {
@@ -93,7 +152,7 @@ class simulateQuiz {
 					var allMessagesArray = JSON.parse(ajaxRequest.responseText);
 					allMessagesArray = allMessagesArray.questions;
 					var randomQ = [];
-					for (let i = 0; i < 40; i++) {
+					for (let i = 0; i < simulateQuiz.QUESTION_AMOUNT; i++) {
 						var questionIndex = Math.floor(Math.random() * allMessagesArray.length);
 						randomQ.push(allMessagesArray[questionIndex]);
 						allMessagesArray.splice(questionIndex, 1);
@@ -116,25 +175,18 @@ class simulateQuiz {
 						index++;
 						if (questionCounter == 0) {
 							pageBlock = document.createElement("div");
-							pageBlock.id = "Page" + questionCounter;
+							pageBlock.className = "page active";
+							pageBlock.dataset.page =  questionCounter / simulateQuiz.PER_PAGE + 1;
 							pageBlock.style.display = "block";
-							let btn = document.createElement("button");
-							btn.innerText = questionCounter / 10 + 1;
-							btn.className = 'active';
-							btn.value = questionCounter;
-							btn.onclick = simulateQuiz.showPage;
-							buttons.appendChild(btn);
+
 							simulateQuiz.pageBlocks.push(pageBlock);
 
 						} else if (questionCounter % 10 == 0) {
 							pageBlock = document.createElement("div");
-							pageBlock.id = "Page" + questionCounter;
+							pageBlock.className = "page";
+							pageBlock.dataset.page =  questionCounter / simulateQuiz.PER_PAGE + 1;
 							pageBlock.style.display = "none";
-							let btn = document.createElement("button");
-							btn.innerText = questionCounter / 10 + 1;
-							btn.value = questionCounter;
-							btn.onclick = simulateQuiz.showPage;
-							buttons.appendChild(btn);
+
 							simulateQuiz.pageBlocks.push(pageBlock);
 						}
 						questionCounter++;
@@ -188,6 +240,7 @@ class simulateQuiz {
 
 
 						welcomeDiv.appendChild(pageBlock);
+						
 
 						answers.appendChild(noteBlock);
 						if (simulateQuiz.questions[qindex].correctIndex == null) {
@@ -199,15 +252,10 @@ class simulateQuiz {
 
 					}
 
-					let btn = document.createElement("button");
-					btn.innerHTML = "Finalizar";
-					simulateQuiz.timeout = simulateQuiz.COUINTERTIMEOT;
-					window.clearTimeout(simulateQuiz.timer);
-					simulateQuiz.timer = window.setInterval(simulateQuiz.checkTimer, 1000);
-					btn.onclick = simulateQuiz.checkQuestions;
-					buttons.appendChild(btn);
+
 
 					indexBlock.append(buttons)
+					simulateQuiz.generatePagination()
 
 
 
