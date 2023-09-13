@@ -141,6 +141,7 @@ class simulateQuiz {
 
 		var numberOfUnaswered = 0;
 		var questionCounter = 0;
+		simulateQuiz.pageBlocks = []
 		var ajaxRequest = new XMLHttpRequest();
 		ajaxRequest.onreadystatechange = function() {
 
@@ -255,6 +256,7 @@ class simulateQuiz {
 
 
 					indexBlock.append(buttons)
+
 					simulateQuiz.generatePagination()
 
 
