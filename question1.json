@@ -1,7 +1,6 @@
 {
     "questions": [
         {
-            "numb": 1,
             "question": "No que respeita às Leis de Kirchhoff qual das seguintes afirmações é verdadeira?",
             "answers": [
                 "Existem duas leis: a lei dos nós e a lei das malhas",
@@ -15,7 +14,6 @@
             "uniqueID": 1
         },
         {
-            "numb": 2,
             "question": "A lei das malhas de Kirchhoff, também se designa por",
             "answers": [
                 "lei das potências",
@@ -29,7 +27,6 @@
             "uniqueID": 2
         },
         {
-            "numb": 2,
             "question": "A lei dos nós de Kirchhoff, também se designa por",
             "answers": [
                 "lei das potências",
@@ -43,7 +40,6 @@
             "uniqueID": 3
         },
         {
-            "numb": 3,
             "question": "Num circuito em paralelo, como se relaciona a corrente total com a corrente individual em cada uma das ramificações do referido circuito?",
             "answers": [
                 "A corrente total é igual ao valor médio das correntes nas várias ramificações",
@@ -57,7 +53,6 @@
             "uniqueID": 4
         },
         {
-            "numb": 4,
             "question": "Uma gaiola de Faraday",
             "answers": [
                 "constitui uma proteção eficaz relativamente a campos eletromagnéticos",
@@ -71,7 +66,6 @@
             "uniqueID": 5
         },
         {
-            "numb": 5,
             "question": "Duma forma geral, qual das seguintes linhas de transmissão possui a melhor blindagem a campos eletromagnéticos?",
             "answers": [
                 "Cabo coaxial",
@@ -85,7 +79,6 @@
             "uniqueID": 6
         },
         {
-            "numb": 5,
             "question": "Qual das seguintes afirmações está correta?",
             "answers": [
                 "Duma forma geral, pode-se obter uma boa blindagem a campos elétricos com materiais semicondutores",
@@ -99,7 +92,6 @@
             "uniqueID": 7
         },
         {
-            "numb": 6,
             "question": "Qual das expressões define a efetividade da blindagem (S) para campos elétricos (sendo \"Ei\" a intensidade do campo elétrico incidente e \"Et\" a intensidade do campo elétrico transmitido através da blindagem)?",
             "answers": [
                 "S=20+log(Ei/Et)",
@@ -113,7 +105,6 @@
             "uniqueID": 8
         },
         {
-            "numb": 7,
             "question": "Qual das seguintes afirmações está correta?",
             "answers": [
                 "A ionosfera constitui uma blindagem à volta da Terra, a campos eletromagnéticos apenas para radiação ótica",
@@ -127,7 +118,6 @@
             "uniqueID": 9
         },
         {
-            "numb": 8,
             "question": "Quais são os efeitos da blindagem sobre os campos magnéticos?",
             "answers": [
                 "Reflexão e absorção",
@@ -148,14 +138,12 @@
                 "Absorção e efeito de túnel.",
                 "Reflexão e aumento da velocidade de propagação."
             ],
-            "numb": 6,
             "notes": "",
             "correctIndex": 1,
             "img": null,
             "uniqueID": 11
         },
         {
-            "numb": 8,
             "question": "Quais são os materiais mais usados na blindagem de campos elétricos?",
             "answers": [
                 "Alumínio e esferovite",
@@ -169,7 +157,6 @@
             "uniqueID": 12
         },
         {
-            "numb": 9,
             "question": "Qual o equipamento mais adequado para efetuar a medição da diferença de fase entre dois sinais sinusoidais?",
             "answers": [
                 "Wattímetro",
@@ -183,7 +170,6 @@
             "uniqueID": 13
         },
         {
-            "numb": 10,
             "question": "Como se designam as figuras que representam num osciloscópio a relação de fase entre dois sinais sinusoidais?",
             "answers": [
                 "Figuras de Lissajous",
@@ -197,7 +183,6 @@
             "uniqueID": 14
         },
         {
-            "numb": 11,
             "question": "Que tipo de circuitos ideais apresentam os sinais de corrente e de tensão em fase?",
             "answers": [
                 "Circuitos puramente capacitivos",
@@ -211,7 +196,6 @@
             "uniqueID": 15
         },
         {
-            "numb": 11,
             "question": "Que tipo de circuitos ideais apresentam os sinais de corrente e de tensão em quadratura?",
             "answers": [
                 "Circuitos puramente resistivos",
@@ -225,7 +209,6 @@
             "uniqueID": 16
         },
         {
-            "numb": 12,
             "question": "Diz-se que dois sinais sinusoidais estão em quadratura?",
             "answers": [
                 "Quando o desfasamento entre eles é de 0 graus",
@@ -239,7 +222,6 @@
             "uniqueID": 17
         },
         {
-            "numb": 13,
             "question": "A potência de ruído é dada pela expressão Pn=kTB Como se designa a constante k?",
             "answers": [
                 "Constante de Kelvin",
@@ -253,7 +235,6 @@
             "uniqueID": 18
         },
         {
-            "numb": 14,
             "question": "Como podemos diminuir a potência de ruído de um sistema de receção?",
             "answers": [
                 "Aumentando o mais possível a largura de banda efetiva do sistema",
@@ -267,7 +248,6 @@
             "uniqueID": 19
         },
         {
-            "numb": 15,
             "question": "O ruído térmico é um sinal",
             "answers": [
                 "sinusoidal",
@@ -281,7 +261,6 @@
             "uniqueID": 20
         },
         {
-            "numb": 16,
             "question": "O que quer dizer FSK?",
             "answers": [
                 "\"Frequency Shunt Kelvin\"",
@@ -295,7 +274,6 @@
             "uniqueID": 21
         },
         {
-            "numb": 17,
             "question": "Ao transmitir um sinal de dados, por que razão é importante saber qual o respetivo ciclo de trabalho (\"duty cycle\")?",
             "answers": [
                 "Para ajudar a sintonizar o transmissor",
@@ -309,7 +287,6 @@
             "uniqueID": 22
         },
         {
-            "numb": 18,
             "question": "Que tipo de informação pode ser transmitido por meio de formas de onda digitais?",
             "answers": [
                 "Voz humana",
@@ -323,7 +300,6 @@
             "uniqueID": 23
         },
         {
-            "numb": 19,
             "question": "Qual das seguintes técncicas costuma ser usada para converter sinais analógicos em digitais?",
             "answers": [
                 "Amostragem sequêncial",
@@ -337,7 +313,6 @@
             "uniqueID": 24
         },
         {
-            "numb": 20,
             "question": "O bit rate pode ser definido como",
             "answers": [
                 "o número de bits por segundo",
@@ -351,7 +326,6 @@
             "uniqueID": 25
         },
         {
-            "numb": 21,
             "question": "Que parâmetro varia no sinal modulado num sistema de modulação por posição de pulso, vulgarmente designado por PPM (\"Pulse-Position Modulation\")?",
             "answers": [
                 "O número de pulsos por segundo",
@@ -365,7 +339,6 @@
             "uniqueID": 26
         },
         {
-            "numb": 22,
             "question": "A que estão associadas as siglas CRC e FEC nas comunicações eletrónicas?",
             "answers": [
                 "A diferentes técnicas de modulação analógicas e digitais",
@@ -379,7 +352,6 @@
             "uniqueID": 27
         },
         {
-            "numb": 23,
             "question": "Numa comunicação o bit rate é de 9600. Sabendo que o baud rate é de 4800, qual o número de bits por símbolo/palavra (conjunto de bits com comprimento fixo)?",
             "answers": [
                 "2",
@@ -393,7 +365,6 @@
             "uniqueID": 28
         },
         {
-            "numb": 24,
             "question": "Qual das afirmações está correta?",
             "answers": [
                 "Duma forma geral e para um dado tipo de comunicação, quanto maior o bit rate menor é a largura de faixa necessária",
@@ -407,7 +378,6 @@
             "uniqueID": 29
         },
         {
-            "numb": 24,
             "question": "A conversão analógica/digital pode ser dividida em três etapas que são",
             "answers": [
                 "a diferenciação, a amostragem e a integração",
@@ -421,7 +391,6 @@
             "uniqueID": 30
         },
         {
-            "numb": 26,
             "question": "Numa conversão analógica/digital em que consiste o aliasing?",
             "answers": [
                 "É a distorção resultante de não se utilizar componentes de qualidade no circuito",
@@ -435,7 +404,6 @@
             "uniqueID": 31
         },
         {
-            "numb": 27,
             "question": "A convolução de dois pulsos retangulares tem como resultado",
             "answers": [
                 "um pulso retangular",
@@ -449,7 +417,6 @@
             "uniqueID": 32
         },
         {
-            "numb": 28,
             "question": "Como reage um condensador a uma corrente alternada?",
             "answers": [
                 "À medida que aumenta a frequência da corrente alternada aplicada a reactância diminui",
@@ -463,7 +430,6 @@
             "uniqueID": 33
         },
         {
-            "numb": 30,
             "question": "A reactância de um condensador é tanto maior quanto",
             "answers": [
                 "menor for a sua capacidade",
@@ -477,7 +443,6 @@
             "uniqueID": 34
         },
         {
-            "numb": 31,
             "question": "Em que consiste a reactância numa bobina?",
             "answers": [
                 "Oposição ao fluxo de corrente contínua causada pela resistência",
@@ -491,7 +456,6 @@
             "uniqueID": 35
         },
         {
-            "numb": 31,
             "question": "Que razão importante existe para que numa bobina se usem toróides de ferro pulverizado em vez de toróides de ferrite?",
             "answers": [
                 "Os toróides de fero pulverizado têm normalmente maior permeabilidade inicial",
@@ -505,7 +469,6 @@
             "uniqueID": 36
         },
         {
-            "numb": 32,
             "question": "Qual das seguintes frases está correta?",
             "answers": [
                 "Numa bobina, à medida que aumenta a frequência da corrente alternada aplicada a reactância diminui",
@@ -519,7 +482,6 @@
             "uniqueID": 37
         },
         {
-            "numb": 33,
             "question": "O fator de qualidade (Q) de uma bobina é tanto maior",
             "answers": [
                 "quanto maior for a sua resistência parasita",
@@ -533,7 +495,6 @@
             "uniqueID": 38
         },
         {
-            "numb": 34,
             "question": "Como devem ser posicionadas duas bobinas de forma a minimizar a indutância mútua?",
             "answers": [
                 "Com os seus eixos de enrolamento alinhados",
@@ -547,7 +508,6 @@
             "uniqueID": 39
         },
         {
-            "numb": 35,
             "question": "O valor do coeficiente de auto-indução de uma bobina cilíndrica é tanto maior quanto",
             "answers": [
                 "maior for a resistência interna da bobina",
@@ -561,7 +521,6 @@
             "uniqueID": 40
         },
         {
-            "numb": 36,
             "question": "O valor do coeficiente de auto-indução de uma bobina cilíndrica depende, entre outros fatores,",
             "answers": [
                 "do número de espiras e da permeabilidade magnética do material que constitui o seu núcleo",
@@ -575,7 +534,6 @@
             "uniqueID": 41
         },
         {
-            "numb": 37,
             "question": "Num transformador ideal qual a relação entre as potências do primário (potência fornecida ao transformador) e do secundário (potência fornecida pelo transformador ao circuito que se pretende alimentar)?",
             "answers": [
                 "São iguais",
@@ -589,7 +547,6 @@
             "uniqueID": 42
         },
         {
-            "numb": 38,
             "question": "A que parte do transformador se liga normalmente a fonte de energia?",
             "answers": [
                 "Ao secundário do transformador",
@@ -603,7 +560,6 @@
             "uniqueID": 43
         },
         {
-            "numb": 74,
             "question": "Qual razão para a existência de tensão no secundário de um transformador quando está ligada uma fonte de tensão alternada ao primário do transformador?",
             "answers": [
                 "Acoplamento capacitivo",
@@ -617,7 +573,6 @@
             "uniqueID": 44
         },
         {
-            "numb": 38,
             "question": "Qual o objectivo de um circuito step-start numa fonte de alientação da alta tensão?",
             "answers": [
                 "Fornecer uma tensão dupla à saída para aplicações de potência reduzida.",
@@ -631,7 +586,6 @@
             "uniqueID": 45
         },
         {
-            "numb": 39,
             "question": "O primário de um transformador com 100 espiras é percorrido por uma corrente de 10 A. Qual será a corrente no secundário do transformador se este tiver 1000 espiras?",
             "answers": [
                 "1 A",
@@ -645,7 +599,6 @@
             "uniqueID": 46
         },
         {
-            "numb": 40,
             "question": "Qual é a tensão no secundário de 500 espiras de um transformador se o primário de 2250 espiras do transformador tiver uma tensão alternada de 120 V?",
             "answers": [
                 "2,37 kV",
@@ -659,7 +612,6 @@
             "uniqueID": 47
         },
         {
-            "numb": 40,
             "question": "O primário de um transformador com 1000 espiras é alimentado com uma tensão de 200 V. Qual será a tensão no secundário do transformador se este tiver 100 espiras?",
             "answers": [
                 "2 kV",
@@ -673,7 +625,6 @@
             "uniqueID": 48
         },
         {
-            "numb": 41,
             "question": "Pretende-se adaptar um circuito cuja impedância de saída é de 15 Ohm, com a entrada de um amplificador cuja impedância de entrada é de 50 Ohm. Qual deverá ser a relação entre o número de\n espiras no primário e no secundário do transformador de impedâncias?",
             "answers": [
                 "O número de espiras no secundário deverá ser maior que o número de espiras no primário",
@@ -687,7 +638,6 @@
             "uniqueID": 49
         },
         {
-            "numb": 42,
             "question": "Um display de sete segmentos poderá ser contruído com um determinado tipo de díodos. A que tipo de díodos nos referimos?",
             "answers": [
                 "Díodos varicaps",
@@ -701,7 +651,6 @@
             "uniqueID": 50
         },
         {
-            "numb": 43,
             "question": "O que é um varicap?",
             "answers": [
                 "É um díodo que emite luz",
@@ -715,7 +664,6 @@
             "uniqueID": 51
         },
         {
-            "numb": 44,
             "question": "Quando é que ocorre a polarização inversa de um díodo?",
             "answers": [
                 "A polarização inversa de um díodo ocorre quando o ânodo fica submetido a um potencial positivo relativamente ao cátodo",
@@ -729,7 +677,6 @@
             "uniqueID": 52
         },
         {
-            "numb": 44,
             "question": "Que tipo de polarização é necessária para um LED se iluminar?",
             "answers": [
                 "Polarização inversa",
@@ -743,7 +690,6 @@
             "uniqueID": 53
         },
         {
-            "numb": 45,
             "question": "O que é corrente de fuga num díodo bipolar de germânio?",
             "answers": [
                 "É a corrente que passa no díodo a muito altas frequências, devido a efeitos capacitivos parasitas",
@@ -757,7 +703,6 @@
             "uniqueID": 54
         },
         {
-            "numb": 46,
             "question": "Qual das seguintes opções descreve a construção de um transístor MOSFET?",
             "answers": [
                 "A porta é formada por uma junção de tensão inversa",
@@ -771,7 +716,6 @@
             "uniqueID": 55
         },
         {
-            "numb": 46,
             "question": "Por que razão é que diversos dispositivos MOSFET têm díodos de proteção Zener incorporados na porta?",
             "answers": [
                 "Para fornecer uma tensão de referência à quantidade adequada de tensão de polarização inversa na porta",
@@ -785,7 +729,6 @@
             "uniqueID": 56
         },
         {
-            "numb": 47,
             "question": "Qual das seguintes opções constitui um teste de grande utilidade para um transístor de silício NPN, em que a junção PN está polarizada diretamente?",
             "answers": [
                 "Medir a resistência entre a base e o emissor com um ohmímetro - a medida deve ser cerca de 6 a 7 Ohm",
@@ -799,7 +742,6 @@
             "uniqueID": 57
         },
         {
-            "numb": 48,
             "question": "Em que consiste o beta de um transístor de junção bipolar?",
             "answers": [
                 "Na frequência na qual o ganho de corrente é reduzido a 1",
@@ -813,7 +755,6 @@
             "uniqueID": 58
         },
         {
-            "numb": 49,
             "question": "Que significa a sigla CMOS?",
             "answers": [
                 "Common Mode Oscillating System",
@@ -827,7 +768,6 @@
             "uniqueID": 59
         },
         {
-            "numb": 50,
             "question": "Como se compara a impedância de entrada DC na porta de um transístor de efeito de campo (FET) com a impedância de entrada DC de um transístor bipolar?",
             "answers": [
                 "Não podem ser comparadas sem se saber o valor de tensão da fonte",
@@ -841,7 +781,6 @@
             "uniqueID": 60
         },
         {
-            "numb": 51,
             "question": "Qual a vantagem de dispositivos lógicos CMOS sobre dispositivos TTL?",
             "answers": [
                 "Capacidade de saída diferencial",
@@ -855,7 +794,6 @@
             "uniqueID": 61
         },
         {
-            "numb": 52,
             "question": "A montagem em emissor comum caracteriza-se pela seguinte configuração:",
             "answers": [
                 "emissor à massa (em AC), sinal de entrada entre a base e o emissor e sinal de saída entre o coletor e o emissor (massa)",
@@ -869,7 +807,6 @@
             "uniqueID": 62
         },
         {
-            "numb": 53,
             "question": "A montagem com um transístor, designada como \"seguidor de emissor\" (ou \"coletor comum\"), caracteriza-se por ter",
             "answers": [
                 "ganho unitário",
@@ -883,7 +820,6 @@
             "uniqueID": 63
         },
         {
-            "numb": 54,
             "question": "Qual a principal função de uma grelha de blindagem num tubo de vácuo?",
             "answers": [
                 "Redução da capacidade entre a grelha e a placa",
@@ -897,7 +833,6 @@
             "uniqueID": 64
         },
         {
-            "numb": 55,
             "question": "Num AMPOP teoricamente ideal, como varia o ganho com a frequência, dentro da sua gama de frequências de operação?",
             "answers": [
                 "Aumenta linearmente com o aumento da frequência",
@@ -911,7 +846,6 @@
             "uniqueID": 65
         },
         {
-            "numb": 55,
             "question": "Qual a vantagem do recurso a circuitos com AMPOP em comparação com a utilização de elementos LC num filtro de áudio?",
             "answers": [
                 "Os AMPOP são mais resistentes e podem suportar mais excessos do que elementos LC",
@@ -925,7 +859,6 @@
             "uniqueID": 66
         },
         {
-            "numb": 56,
             "question": "Qual a tensão à saída do circuito da figura, em que R1=1000 Ohm e R2=10000 Ohm, se à entrada for aplicada uma tensão de 0,23 V?",
             "answers": [
                 "0,23 V",
@@ -939,7 +872,6 @@
             "uniqueID": 67
         },
         {
-            "numb": 57,
             "question": "Em que consiste um amplificador operacional?",
             "answers": [
                 "Um amplificador diferencial de ganho elevado, cujas características são determinadas pelos componentes externos ao amplificador",
@@ -953,7 +885,6 @@
             "uniqueID": 68
         },
         {
-            "numb": 58,
             "question": "Qual é normalmente a impedância de entrada de um circuito integrado AMPOP?",
             "answers": [
                 "100 Ohm",
@@ -967,7 +898,6 @@
             "uniqueID": 69
         },
         {
-            "numb": 59,
             "question": "Qual é a capacidade equivalente de dois condensadores de 5000 pF e um condensador de 750 pF todos ligados em paralelo?",
             "answers": [
                 "576,9 pF",
@@ -981,7 +911,6 @@
             "uniqueID": 70
         },
         {
-            "numb": 60,
             "question": "Qual a indutância de três bobinas de 10 mH ligados em paralelo?",
             "answers": [
                 "0,33 H",
@@ -995,7 +924,6 @@
             "uniqueID": 71
         },
         {
-            "numb": 61,
             "question": "Qual a capacidade de um condensador de 20 microfarad ligado em série a um condensador de 50 microfarad?",
             "answers": [
                 "70 nF",
@@ -1009,7 +937,6 @@
             "uniqueID": 72
         },
         {
-            "numb": 61,
             "question": "Qual a capacidade de três condensadores de 100 microfarad ligados em série?",
             "answers": [
                 "0,30 microfarad",
@@ -1023,7 +950,6 @@
             "uniqueID": 73
         },
         {
-            "numb": 62,
             "question": "Que componente se deverá adicionar a uma bobina de forma a aumentar a indutância do circuito?",
             "answers": [
                 "Um condensador ligado em série",
@@ -1037,7 +963,6 @@
             "uniqueID": 74
         },
         {
-            "numb": 63,
             "question": "O condensador real (portanto não ideal) pode ser modelado por uma associação de três componentes ideais. Quais são esses componentes?",
             "answers": [
                 "Condensador ideal, bobina ideal e resistência ideal",
@@ -1051,7 +976,6 @@
             "uniqueID": 75
         },
         {
-            "numb": 64,
             "question": "Os efeitos capacitivos parasitas entre as espiras das bobinas reais (portanto não ideais) manifestam-se mais",
             "answers": [
                 "em corrente contínua",
@@ -1065,7 +989,6 @@
             "uniqueID": 76
         },
         {
-            "numb": 65,
             "question": "Qual é o efeito provocado pelas capacidades parasitas entre as espiras numa bobina?",
             "answers": [
                 "O campo magnético pode sofrer uma inversão",
@@ -1079,7 +1002,6 @@
             "uniqueID": 77
         },
         {
-            "numb": 66,
             "question": "Qual a queda tensão aos terminais de uma ligação em série de dois díodos de junção de silício?",
             "answers": [
                 "É cerca de metade da tensão em cada um deles",
@@ -1093,7 +1015,6 @@
             "uniqueID": 78
         },
         {
-            "numb": 67,
             "question": "Qual das seguintes opções constitui um efeito indesejado da utilização de um filtro de largura de banda demasiado ampla na secção IF de um recetor?",
             "answers": [
                 "\"Overshoot\" (sobre-passagem) do \"offset\" de saída",
@@ -1107,7 +1028,6 @@
             "uniqueID": 79
         },
         {
-            "numb": 67,
             "question": "Qual dos seguintes modos é mais afectado por uma resposta em fase não-linear num filtro IF de um receptor?",
             "answers": [
                 "Dispersão por meteoros",
@@ -1121,7 +1041,6 @@
             "uniqueID": 80
         },
         {
-            "numb": 68,
             "question": "Qual a largura de banda a -3 dB de um circuito ressonante em paralelo com frequência de ressonância de 7,1 MHz e fator Q=150?",
             "answers": [
                 "157,82 Hz",
@@ -1135,7 +1054,6 @@
             "uniqueID": 81
         },
         {
-            "numb": 68,
             "question": "Qual a largura de banda a -3 dB de um circuito ressonante em paralelo com frequência de ressonância de 3,7 MHz e fator Q=118?",
             "answers": [
                 "436,62 kHz",
@@ -1149,7 +1067,6 @@
             "uniqueID": 82
         },
         {
-            "numb": 69,
             "question": "Qual a frequência de ressonância aproximada de um circuito em série RLC se R=22 Ohm, L=0,05 mH e C=40 pF?",
             "answers": [
                 "44,72 MHz",
@@ -1163,7 +1080,6 @@
             "uniqueID": 83
         },
         {
-            "numb": 69,
             "question": "Qual a frequência de ressonância aproximada de um circuito em série RLC se R=56 Ohm, L=0,04 mH e C=200 pF?",
             "answers": [
                 "3,76 MHz",
@@ -1177,7 +1093,6 @@
             "uniqueID": 84
         },
         {
-            "numb": 70,
             "question": "Qual a frequência de ressonância de um circuito em paralelo RLC se R=47 Ohm, L=0,025 mH e C=10 pF?",
             "answers": [
                 "10,07 MHz",
@@ -1191,7 +1106,6 @@
             "uniqueID": 85
         },
         {
-            "numb": 70,
             "question": "Qual a frequência de ressonância de um circuito em paralelo RLC se R=33 Ohm, L=0,05 mH e C=10 pF?",
             "answers": [
                 "23,5 MHz",
@@ -1205,7 +1119,6 @@
             "uniqueID": 86
         },
         {
-            "numb": 71,
             "question": "Um filtro a cristal",
             "answers": [
                 "é um filtro que usa cristais de quartzo para a ressonância",
@@ -1219,7 +1132,6 @@
             "uniqueID": 87
         },
         {
-            "numb": 71,
             "question": "O fator de qualidade (Q) de um filtro passivo com uma dada frequência de ressonância (fr) é tanto maior",
             "answers": [
                 "quanto maior for a largura de banda (B) a -3 dB",
@@ -1233,7 +1145,6 @@
             "uniqueID": 88
         },
         {
-            "numb": 72,
             "question": "Quais das seguintes características possui uma rede em T com condensadores em série e uma bobina de derivação (shunt) em paralelo?",
             "answers": [
                 "Transforma impedâncias e é um filtro passa-baixo",
@@ -1247,7 +1158,6 @@
             "uniqueID": 89
         },
         {
-            "numb": 73,
             "question": "Filtro de cristal de quartzo caracteriza-se por",
             "answers": [
                 "ter um elevado fator de qualidade (Q)",
@@ -1261,7 +1171,6 @@
             "uniqueID": 90
         },
         {
-            "numb": 74,
             "question": "Qual é o valor da impedância de um circuito em série RLC em ressonância?",
             "answers": [
                 "Elevada, em comparação com a resistência do circuito",
@@ -1275,7 +1184,6 @@
             "uniqueID": 91
         },
         {
-            "numb": 74,
             "question": "Qual o objectivo de uma condensador em série numa rede de antenas de adaptação do tipo gama?",
             "answers": [
                 "Fornece islamento DC entre a linha de alimentação e a antena",
@@ -1289,7 +1197,6 @@
             "uniqueID": 92
         },
         {
-            "numb": 75,
             "question": "Qual a relação de fase entre a corrente e a tensão através de um circuito ressonante em paralelo?",
             "answers": [
                 "A tensão tem um avanço de 90° em relação à corrente",
@@ -1303,7 +1210,6 @@
             "uniqueID": 93
         },
         {
-            "numb": 76,
             "question": "Em que consiste a ressonância num circuito eléctrico?",
             "answers": [
                 "A frequência máxima a que passa a corrente",
@@ -1317,7 +1223,6 @@
             "uniqueID": 94
         },
         {
-            "numb": 76,
             "question": "Qual o valor da impedância de um circuito com um resistência, uma bobina e um condensador todos em paralelo, em ressonância?",
             "answers": [
                 "Aproximadamente igual à resistência do circuito",
@@ -1331,7 +1236,6 @@
             "uniqueID": 95
         },
         {
-            "numb": 77,
             "question": "Qual a vantagem de uma fonte de alimentação comutada relativamente a uma fonte de alimentação linear?",
             "answers": [
                 "A fonte comutada permite valores mais elevados de tensão de saída",
@@ -1345,7 +1249,6 @@
             "uniqueID": 96
         },
         {
-            "numb": 78,
             "question": "Qual das seguintes características é apresentada por um regulador eletrónico linear de tensão?",
             "answers": [
                 "Tensão de saída em rampa",
@@ -1359,7 +1262,6 @@
             "uniqueID": 97
         },
         {
-            "numb": 79,
             "question": "Que dispositivo se costuma usar como referência estável de tensão num regulador linear de tensão?",
             "answers": [
                 "Um díodo de Zener",
@@ -1373,7 +1275,6 @@
             "uniqueID": 98
         },
         {
-            "numb": 80,
             "question": "Qual o objetivo de Q1 no circuito da figura?",
             "answers": [
                 "Fornece realimentação negativa para melhorar a regulação",
@@ -1387,7 +1288,6 @@
             "uniqueID": 99
         },
         {
-            "numb": 81,
             "question": "Qual o objetivo de C1 no circuito da figura?",
             "answers": [
                 "Contribui para a ressonância do circuito à frequência de entrada",
@@ -1401,7 +1301,6 @@
             "uniqueID": 100
         },
         {
-            "numb": 81,
             "question": "Qual o objetivo de C3 no circuito da figura?",
             "answers": [
                 "Impede a oscilação própria",
@@ -1415,7 +1314,6 @@
             "uniqueID": 101
         },
         {
-            "numb": 82,
             "question": "Qual o objetivo de R2 no circuito da figura?",
             "answers": [
                 "Fornece uma polarização fixa a Q1",
@@ -1429,7 +1327,6 @@
             "uniqueID": 102
         },
         {
-            "numb": 83,
             "question": "Qual a principal desvantagem das fontes de alimentação comutadas em relação às fontes lineares?",
             "answers": [
                 "Mais baixo rendimento",
@@ -1443,7 +1340,6 @@
             "uniqueID": 103
         },
         {
-            "numb": 84,
             "question": "Qual o fator de segurança que oferece uma resistência de drenagem da fonte de alimentação?",
             "answers": [
                 "Funciona como fusível da tensão em excesso",
@@ -1457,7 +1353,6 @@
             "uniqueID": 104
         },
         {
-            "numb": 85,
             "question": "Que tipo de condensador é normalmente utilizado em fontes de alimentação para filtrar os sinais retificados de corrente alternada?",
             "answers": [
                 "Condensador cerâmico de disco",
@@ -1471,7 +1366,6 @@
             "uniqueID": 105
         },
         {
-            "numb": 86,
             "question": "Num amplificador de classe B, o transístor conduz durante",
             "answers": [
                 "um quarto do período",
@@ -1485,7 +1379,6 @@
             "uniqueID": 106
         },
         {
-            "numb": 86,
             "question": "Num amplificador de classe B",
             "answers": [
                 "o transístor conduz durante um quarto do período",
@@ -1499,7 +1392,6 @@
             "uniqueID": 107
         },
         {
-            "numb": 86,
             "question": "Num amplificador de classe A",
             "answers": [
                 "o transístor conduz durante menos de meio periodo",
@@ -1513,7 +1405,6 @@
             "uniqueID": 108
         },
         {
-            "numb": 87,
             "question": "Qual a vantagem de um amplificador de classe C?",
             "answers": [
                 "Elevada eficiência",
@@ -1527,7 +1418,6 @@
             "uniqueID": 109
         },
         {
-            "numb": 88,
             "question": "Num amplificador de classe AB, o transístor conduz durante",
             "answers": [
                 "menos de meio período",
@@ -1535,13 +1425,11 @@
                 "mais de meio período",
                 "todo o período"
             ],
-            "correctIndex": 3,
             "notes": "Em um amplificador de classe AB, os transistores conduzem por mais de meio período (180 graus), mas menos do que todo o período. Isso visa a combinar eficiência (comparável à classe B) com menor distorção de cruzamento (crossover distortion) comum em amplificadores de classe B.",
             "img": null,
             "uniqueID": 110
         },
         {
-            "numb": 89,
             "question": "Num amplificador de classe A, o transístor conduz durante",
             "answers": [
                 "menos de meio período",
@@ -1555,7 +1443,6 @@
             "uniqueID": 111
         },
         {
-            "numb": 90,
             "question": "Qual dos seguintes tipos de amplificadores se caracteriza por ter uma zona morta de funcionamento que causa distorção de cruzamento (\"crossover distorsion\")?",
             "answers": [
                 "Amplificador \"push-push\"",
@@ -1569,7 +1456,6 @@
             "uniqueID": 112
         },
         {
-            "numb": 91,
             "question": "Os amplificadores sintonizados",
             "answers": [
                 "são úteis apenas para a amplificação de sinais óticos",
@@ -1583,7 +1469,6 @@
             "uniqueID": 113
         },
         {
-            "numb": 92,
             "question": "Na figura, qual o objetivo de R1 e R2?",
             "answers": [
                 "Resistências de carga",
@@ -1597,7 +1482,6 @@
             "uniqueID": 114
         },
         {
-            "numb": 120,
             "question": "Na figura, qual o objectivo de R1 e R2?",
             "answers": [
                 "Resistências de carga",
@@ -1611,7 +1495,6 @@
             "uniqueID": 115
         },
         {
-            "numb": 93,
             "question": "Que tipo de circuito é apresentado na figura?",
             "answers": [
                 "Regulador de tensão com comutação",
@@ -1625,7 +1508,6 @@
             "uniqueID": 116
         },
         {
-            "numb": 94,
             "question": "Duma forma geral, os amplificadores sintonizados apresentam uma resposta tipicamente",
             "answers": [
                 "passa-baixo",
@@ -1639,7 +1521,6 @@
             "uniqueID": 117
         },
         {
-            "numb": 95,
             "question": "Por que razão é que os produtos de intermodulação de 3ª ordem constituem um aspecto de interesse especial no que respeita aos amplificadores lineares de potência?",
             "answers": [
                 "Porque, duma forma geral, estão bastante próximos do sinal desejado em termos de frequência",
@@ -1653,7 +1534,6 @@
             "uniqueID": 118
         },
         {
-            "numb": 95,
             "question": "Num produto de intermodulação de terceira ordem, quantas ferquências estão envolvidas?",
             "answers": [
                 "Pelo menos duas frequências",
@@ -1667,7 +1547,6 @@
             "uniqueID": 119
         },
         {
-            "numb": 96,
             "question": "A figura representa: ",
             "answers": [
                 "um detetor de produto",
@@ -1681,7 +1560,6 @@
             "uniqueID": 120
         },
         {
-            "numb": 97,
             "question": "Quais as principais vantagens de um detetor de produto sobre um detetor de envolvente?",
             "answers": [
                 "O detetor de produto é mais simples que o detetor de envolvente e possui em geral menos componentes discretos",
@@ -1695,7 +1573,6 @@
             "uniqueID": 121
         },
         {
-            "numb": 97,
             "question": "Qual é a razão aproximada da potência de pico envolvente em relação à potência média num sinal de fonia comum com modulação de voz em banda lateral única?",
             "answers": [
                 "2,5 para 1",
@@ -1709,7 +1586,6 @@
             "uniqueID": 122
         },
         {
-            "numb": 98,
             "question": "Que tipo de circuito é utilizado em diversos recetores de FM para converter sinais de um amplificador de IF em áudio?",
             "answers": [
                 "Detetor do produto",
@@ -1723,7 +1599,6 @@
             "uniqueID": 123
         },
         {
-            "numb": 99,
             "question": "Em que consiste um discriminador de frequência?",
             "answers": [
                 "Um circuito gerador de FM",
@@ -1737,7 +1612,6 @@
             "uniqueID": 124
         },
         {
-            "numb": 99,
             "question": "Qual dos seguintes circuitos não permite a deteção/desmodulação de FM?",
             "answers": [
                 "Detetor do tipo (slope)",
@@ -1751,7 +1625,6 @@
             "uniqueID": 125
         },
         {
-            "numb": 100,
             "question": "Quais os componentes básicos de um oscilador?",
             "answers": [
                 "Um amplificador e um divisor",
@@ -1765,7 +1638,6 @@
             "uniqueID": 126
         },
         {
-            "numb": 100,
             "question": "O que acontece quando uma quantidade excessiva de enrgia de sinal atinge um circuito misturador?",
             "answers": [
                 "Geram-se produtos espúrios no misturador",
@@ -1779,7 +1651,6 @@
             "uniqueID": 127
         },
         {
-            "numb": 101,
             "question": "O que determina a frequência de um oscilador LC?",
             "answers": [
                 "O número de andares no contador",
@@ -1793,7 +1664,6 @@
             "uniqueID": 128
         },
         {
-            "numb": 102,
             "question": "Em eletrónica, duma forma geral, como pode ser definido um circuito oscilador?",
             "answers": [
                 "É um circuito que gera um sinal periódico a partir de um sinal externo que lhe é aplicado com uma frequência dez vezes inferior",
@@ -1807,7 +1677,6 @@
             "uniqueID": 129
         },
         {
-            "numb": 102,
             "question": "Duma forma geral, qual das condições é necessária para um circuito oscilar?",
             "answers": [
                 "Ter um mínimo de dois andares",
@@ -1821,7 +1690,6 @@
             "uniqueID": 130
         },
         {
-            "numb": 103,
             "question": "Os osciladores RC ativos (com AMPlificadores Operacionais - AMPOP) não devem ser utilizados para frequências superiores a 1 MHz (e idealmente as frequências de trabalho não deverão ultrapassar os 100 kHz). Porquê?",
             "answers": [
                 "Devido às indutâncias e capacidades parasitas das resistências",
@@ -1835,7 +1703,6 @@
             "uniqueID": 131
         },
         {
-            "numb": 103,
             "question": "Quais os componentes básicos de grande parte dos osciladores",
             "answers": [
                 "Um amplificador e divisor",
@@ -1849,7 +1716,6 @@
             "uniqueID": 132
         },
         {
-            "numb": 104,
             "question": "Como é fornecida a realimentação positiva a um oscilador Hartley?",
             "answers": [
                 "Através de um divisor indutivo",
@@ -1863,7 +1729,6 @@
             "uniqueID": 133
         },
         {
-            "numb": 104,
             "question": "Como é fornecida a realimentação positiva a um oscilador Colpitts?",
             "answers": [
                 "Através de um divisor indutivo",
@@ -1877,7 +1742,6 @@
             "uniqueID": 134
         },
         {
-            "numb": 105,
             "question": "Como é fornecida a realimentação positiva a um oscilador Pierce?",
             "answers": [
                 "Através de uma bobina de derivação",
@@ -1891,7 +1755,6 @@
             "uniqueID": 135
         },
         {
-            "numb": 106,
             "question": "Em que consiste um oscilador de díodo Gunn?",
             "answers": [
                 "Um oscilador cujo funcionamento se baseia nas propriedades de resistência negativa de semicondutores adequadamente dopados",
@@ -1905,7 +1768,6 @@
             "uniqueID": 136
         },
         {
-            "numb": 106,
             "question": "Como funciona um detector de díodo ?",
             "answers": [
                 "Pela rectificação e filtragem de sinais de RF.",
@@ -1919,7 +1781,6 @@
             "uniqueID": 137
         },
         {
-            "numb": 107,
             "question": "O que é um VCO?",
             "answers": [
                 "É um oscilador controlado por frequência",
@@ -1933,7 +1794,6 @@
             "uniqueID": 138
         },
         {
-            "numb": 108,
             "question": "Num analisador espectral em que se traduz o ruído de fase, relativamente a uma portadora \"ideal\" à saída de um emissor?",
             "answers": [
                 "Em sinais muito concentrados em torno da portadora, um pouco acima e um pouco abaixo desta",
@@ -1947,7 +1807,6 @@
             "uniqueID": 139
         },
         {
-            "numb": 109,
             "question": "Duma forma geral, o que é uma malha de captura de fase PLL (Phase Locked Loop)?",
             "answers": [
                 "É uma malha em que o sinal de realimentação é usado para sincronizar a frequência (ou fase) instantânea do sinal de saída com a frequência (ou fase) instantânea do sinal de entrada",
@@ -1961,7 +1820,6 @@
             "uniqueID": 140
         },
         {
-            "numb": 110,
             "question": "Qual dos seguintes circuitos não poderá fazer parte do diagrama de blocos de uma malha de captura de fase?",
             "answers": [
                 "VCO",
@@ -1975,7 +1833,6 @@
             "uniqueID": 141
         },
         {
-            "numb": 111,
             "question": "Que vantagem se obtém com o uso de um processador digital de sinais (DSP) numa estação de amador?",
             "answers": [
                 "Boa ligação à terra",
@@ -1989,7 +1846,6 @@
             "uniqueID": 142
         },
         {
-            "numb": 111,
             "question": "Que vantagem do processamento digital de sinais, relativamente ao processamento analógicos?",
             "answers": [
                 "O processamento digital de sinais pode ser decomposto numa sequência de operações elementares por exemplo somas e deslocamentos)",
@@ -2003,7 +1859,6 @@
             "uniqueID": 143
         },
         {
-            "numb": 111,
             "question": "Qual a vantagem de um receptor com filtro de frequencia intermédia criado com processamento digital de sinal (DSP) relativamente a um receptor com filtro analógico?",
             "answers": [
                 "Pode-se pbter uma vasta gama de largura de banda e de formatos de filtros",
@@ -2017,7 +1872,6 @@
             "uniqueID": 144
         },
         {
-            "numb": 111,
             "question": "Qual a vantagem de um receptor co fltro de frequência intermédia criado com processamento digital de sinal (DSP) relativamente a um receptor com filtro analógico?",
             "answers": [
                 "Pode-se obter uma vasta gama de largura de banda e de formatos de filtros",
@@ -2031,7 +1885,6 @@
             "uniqueID": 145
         },
         {
-            "numb": 112,
             "question": "No processamento digital de sinais, são muitas vezes utilizados filtros que se designam por FIR. O que representa esta sigla?",
             "answers": [
                 "\"Filter, Infinite, Radio\"",
@@ -2045,7 +1898,6 @@
             "uniqueID": 146
         },
         {
-            "numb": 112,
             "question": "Duma forma geral para que serve o controlo automático de ganho no processamento de sinais?",
             "answers": [
                 "Para manter o tratamento dos sinais numa zona linear",
@@ -2059,7 +1911,6 @@
             "uniqueID": 147
         },
         {
-            "numb": 113,
             "question": "No processamento digital de sinais, são muitas vezes utilizados filtros que se designam por IIR. O que representa esta sigla?",
             "answers": [
                 "\"Infinite Input Radio\"",
@@ -2073,7 +1924,6 @@
             "uniqueID": 148
         },
         {
-            "numb": 114,
             "question": "Duma forma simplificada, poderemos dizer que o resultado da transformada de Fourier",
             "answers": [
                 "é a representação no domínio da frequência S(f) dum sinal cuja representação no domínio do tempo é s(t)",
@@ -2087,7 +1937,6 @@
             "uniqueID": 149
         },
         {
-            "numb": 115,
             "question": "A transformada de Fourier de um sinal periódico",
             "answers": [
                 "é um sinal semelhante a ruído branco gaussiano",
@@ -2101,7 +1950,6 @@
             "uniqueID": 150
         },
         {
-            "numb": 116,
             "question": "Num recetor, para que os sinais sejam ajustados de forma a manter um nível médio na saída aproximadamente constante, devem utilizar-se circuitos",
             "answers": [
                 "de alimentação estabilizados",
@@ -2115,7 +1963,6 @@
             "uniqueID": 151
         },
         {
-            "numb": 116,
             "question": "Que tipo de circuito sintetizador de frequências usa um detetor (comparador de fase), seguindo de um filtro passa-baixo que por sua vez atua sobre um oscilador estável controlado por tensão e possui na malha de realimentação um divisor de frequências programável",
             "answers": [
                 "Um sintetizador digital direto",
@@ -2129,7 +1976,6 @@
             "uniqueID": 152
         },
         {
-            "numb": 116,
             "question": "Por que razão se costuma usar um oscilador estável de referência como parte de um sintetizador de frequência com malha de captura de fase?",
             "answers": [
                 "Porque qualquer variação de amplitude no sinal do oscilador de referência  vai evitar que o loop se feche no sinal desejado",
@@ -2143,7 +1989,6 @@
             "uniqueID": 153
         },
         {
-            "numb": 117,
             "question": "Que tipo de circuito é apresentado na figura (em que A é um amplificador operacional, R1 e R2 são resistências e D1 e D2 são díodos)?",
             "answers": [
                 "PLL",
@@ -2157,7 +2002,6 @@
             "uniqueID": 154
         },
         {
-            "numb": 118,
             "question": "Onde se pode encontrar normalmente o medidor S?",
             "answers": [
                 "No recetor",
@@ -2171,7 +2015,6 @@
             "uniqueID": 155
         },
         {
-            "numb": 118,
             "question": "O que mede o medidor S?",
             "answers": [
                 "Condutância",
@@ -2185,7 +2028,6 @@
             "uniqueID": 156
         },
         {
-            "numb": 118,
             "question": "Como é que uma medida de 20 dB acima de S9 lida num medidor S se compara a um sinal S9, assumindo uma calibração apropriada do medidor S?",
             "answers": [
                 "É 10 vezes mais fraco",
@@ -2199,7 +2041,6 @@
             "uniqueID": 157
         },
         {
-            "numb": 119,
             "question": "Em que medida é que a diminuição do fator de ruído afeita o desempenho do recetor?",
             "answers": [
                 "Reduz a relação sinal-ruído",
@@ -2213,7 +2054,6 @@
             "uniqueID": 158
         },
         {
-            "numb": 120,
             "question": "Como poderá ser definido, de forma simplificada, o conceito de seletividade de um recetor?",
             "answers": [
                 "É a capacidade que o recetor tem de rejeitar sinais em frequências muito próximas da largura de banda necessária do sinal útil",
@@ -2227,7 +2067,6 @@
             "uniqueID": 159
         },
         {
-            "numb": 120,
             "question": "Como poderá ser definido, de forma simplificada, o conceito de sensibilidade de um recetor?",
             "answers": [
                 "É a capacidade que o recetor tem de rejeitar sinais em frequências muito próximas da largura de banda necessária do sinal útil",
@@ -2241,7 +2080,6 @@
             "uniqueID": 160
         },
         {
-            "numb": 120,
             "question": "qual das seguintes afirmações está incorreta?",
             "answers": [
                 "Um recetor é tanto melhor quanto maior for a sua sensibilidade",
@@ -2255,7 +2093,6 @@
             "uniqueID": 161
         },
         {
-            "numb": 121,
             "question": "Qual a relação entre o fator de ruído e a figura de ruído?",
             "answers": [
                 "A figura de ruído é o fator de ruído expresso em dB",
@@ -2269,7 +2106,6 @@
             "uniqueID": 162
         },
         {
-            "numb": 122,
             "question": "Como se designa o processo pelo qual sinais de dois transmissores se misturam num ou em ambos os\n amplificadores finais e se geram sinais indesejados às frequências de soma e diferença dos sinais originais?",
             "answers": [
                 "Dessensibilização do amplificador",
@@ -2283,7 +2119,6 @@
             "uniqueID": 163
         },
         {
-            "numb": 122,
             "question": "Que tipo de circuito se agrega a um transmissor de FM para restabelecer as frequências de áudio mais baixas atenuadas ou as frequências de áudio mais altas amplificadas?",
             "answers": [
                 "Ua rede de de-ênfase",
@@ -2297,7 +2132,6 @@
             "uniqueID": 164
         },
         {
-            "numb": 123,
             "question": "Como se designa a redução da sensibilidade do recetor causada por um sinal forte próximo da frequência recebida?",
             "answers": [
                 "Dessensibilização",
@@ -2311,7 +2145,6 @@
             "uniqueID": 165
         },
         {
-            "numb": 124,
             "question": "De que forma se podem reduzir as probabilidades de dessensibilização do recetor?",
             "answers": [
                 "Diminuindo a largura de banda de RF do recetor",
@@ -2325,7 +2158,6 @@
             "uniqueID": 166
         },
         {
-            "numb": 125,
             "question": "Duma forma geral, uma modulação de frequência é",
             "answers": [
                 "uma rotação de frequência",
@@ -2339,7 +2171,6 @@
             "uniqueID": 167
         },
         {
-            "numb": 125,
             "question": "Qual das afirmações está correta?",
             "answers": [
                 "O índice de modulação dum sinal FM de banda estreita é maior que o de um sinal de FM de banda larga",
@@ -2353,7 +2184,6 @@
             "uniqueID": 168
         },
         {
-            "numb": 126,
             "question": "Qual a frase que é verdadeira?",
             "answers": [
                 "A modulação consiste na amostragem do sinal na sua banda base",
@@ -2367,7 +2197,6 @@
             "uniqueID": 169
         },
         {
-            "numb": 127,
             "question": "Porque é que nas radiocomunicações os sinais não são emitidos na sua banda base, carecendo de uma translação de frequências resultante do processo de modulação?",
             "answers": [
                 "Porque, duma forma geral, em banda base os sinais nunca poderiam ser recuperados",
@@ -2381,7 +2210,6 @@
             "uniqueID": 170
         },
         {
-            "numb": 128,
             "question": "Qual das seguintes opções constitui motivo para utilizar um transformador de adaptação de impedâncias?",
             "answers": [
                 "Para maximizar a relação sinal-ruído na emissão",
@@ -2395,7 +2223,6 @@
             "uniqueID": 171
         },
         {
-            "numb": 129,
             "question": "A modulação de fase",
             "answers": [
                 "nunca é utilizada em radiocomunicações",
@@ -2409,7 +2236,6 @@
             "uniqueID": 172
         },
         {
-            "numb": 130,
             "question": "Qual dos seguintes tipos de modulação designa uma modulação de fase?",
             "answers": [
                 "PSK",
@@ -2423,7 +2249,6 @@
             "uniqueID": 173
         },
         {
-            "numb": 131,
             "question": "Os filtros a cristal",
             "answers": [
                 "têm a sua frequência de ressonância facilmente alterável por ajuste dos potenciómetros que são parte integrante dos seus cristais",
@@ -2437,7 +2262,6 @@
             "uniqueID": 174
         },
         {
-            "numb": 132,
             "question": "O andar final, amplificador em classe C, de um emissor de frequência modulada pode, de forma simplificada, ser dividido em três partes:",
             "answers": [
                 "Malha de adaptação de entrada, transístores de amplificação e malha de adaptação de saída",
@@ -2451,7 +2275,6 @@
             "uniqueID": 175
         },
         {
-            "numb": 133,
             "question": "Qual a largura de banda total de uma transmissão de fonia FM com 3 kHz de desvio e frequência máxima de modulação de 2,5 kHz?",
             "answers": [
                 "3 kHz",
@@ -2465,7 +2288,6 @@
             "uniqueID": 176
         },
         {
-            "numb": 134,
             "question": "Por que razão não se deve usar a modulação de frequência em fonia abaixo dos 29,5 MHz?",
             "answers": [
                 "A eficiência do emissor é reduzida para este modo",
@@ -2479,7 +2301,6 @@
             "uniqueID": 177
         },
         {
-            "numb": 135,
             "question": "Qual a principal desvantagem de se utilizar amplificadores em classe C?",
             "answers": [
                 "Elevada distorção harmónica",
@@ -2493,7 +2314,6 @@
             "uniqueID": 178
         },
         {
-            "numb": 135,
             "question": "Qual a principal vantagem de se utilizar amplificadores em classe C?",
             "answers": [
                 "Baixa distorção harmónica",
@@ -2507,7 +2327,6 @@
             "uniqueID": 179
         },
         {
-            "numb": 136,
             "question": "Duma forma geral, o ruído de fase expressa-se em",
             "answers": [
                 "dBc/Hz",
@@ -2521,7 +2340,6 @@
             "uniqueID": 180
         },
         {
-            "numb": 137,
             "question": "Onde podem ser consultados os limites máximos para as espúrias aceitáveis para as emissões no serviço de amador?",
             "answers": [
                 "No manual do fabricante da antena de emissão",
@@ -2535,7 +2353,6 @@
             "uniqueID": 181
         },
         {
-            "numb": 138,
             "question": "Qual a principal vantagem de se utilizarem amplificadores em classe A?",
             "answers": [
                 "Baixa distorção harmónica",
@@ -2549,7 +2366,7 @@
             "uniqueID": 182
         },
         {
-            "numb": 139,
+
             "question": "Duma forma geral, as antenas parabólicas são mais utilizadas em",
             "answers": [
                 "LF",
@@ -2563,7 +2380,6 @@
             "uniqueID": 183
         },
         {
-            "numb": 139,
             "question": "De que forma se pode aumentar a tensão de saída de uma antena loop de recepção?",
             "answers": [
                 "Diminuindo a permeabilidade da blindagem do loop",
@@ -2577,7 +2393,6 @@
             "uniqueID": 184
         },
         {
-            "numb": 140,
             "question": "Qual deverá ser aproximadamente o comprimento físico de uma antena dipolo de meia onda ajustada a uma frequência de 3,55 MHz?",
             "answers": [
                 "12 m",
@@ -2591,7 +2406,6 @@
             "uniqueID": 185
         },
         {
-            "numb": 140,
             "question": "Qual deverá ser aproximadamente o comprimento físico de uma antena dipolo de meia onda ajustada a uma frequência de 14,2 MHz?",
             "answers": [
                 "21,5 m",
@@ -2605,7 +2419,6 @@
             "uniqueID": 186
         },
         {
-            "numb": 141,
             "question": "Qual a principal vantagem de um dipolo dobrado relativamente ao dipolo de Hertz?",
             "answers": [
                 "Ocupa menos espaço, sendo mais fácil a sua instalação",
@@ -2619,7 +2432,6 @@
             "uniqueID": 187
         },
         {
-            "numb": 141,
             "question": "A impedância no ponto de alimentação de um dipolo dobrado é",
             "answers": [
                 "quatro vezes maior que a impedância de um dipolo simples",
@@ -2633,7 +2445,6 @@
             "uniqueID": 188
         },
         {
-            "numb": 142,
             "question": "Como varia o ganho de uma antena parabólica com a duplicação da frequência de funcionamento?",
             "answers": [
                 "O ganho não varia",
@@ -2647,7 +2458,6 @@
             "uniqueID": 189
         },
         {
-            "numb": 143,
             "question": "Qual é aproximadamente a impedância do ponto de alimentação no centro de uma antena de dipolo dobrado?",
             "answers": [
                 "300 Ohm",
@@ -2661,7 +2471,6 @@
             "uniqueID": 190
         },
         {
-            "numb": 143,
             "question": "Por que razão é necesário saber a impedância do ponto de alimentação de uma antena?",
             "answers": [
                 "Para adaptar as impedâncias e assim obter as máxima transferência de potência da linha de alimentação",
@@ -2675,7 +2484,6 @@
             "uniqueID": 191
         },
         {
-            "numb": 144,
             "question": "Como se designa a razão entre a potência radiada por uma antena e a potência que lhe é entregue?",
             "answers": [
                 "Ganho de radiação da antena",
@@ -2689,7 +2497,6 @@
             "uniqueID": 192
         },
         {
-            "numb": 144,
             "question": "Para qualquer antena, a sua área efetiva é",
             "answers": [
                 "numericamente igual à sua diretividade",
@@ -2703,7 +2510,6 @@
             "uniqueID": 193
         },
         {
-            "numb": 145,
             "question": "Como varia a largura de feixe de uma antena com o aumento do ganho?",
             "answers": [
                 "Aumenta geometricamente",
@@ -2717,7 +2523,6 @@
             "uniqueID": 194
         },
         {
-            "numb": 146,
             "question": "A eficiência de radiação de uma antena pode ser expressa como o quociente entre a",
             "answers": [
                 "resistência de radiação e a resistência de perdas da antena",
@@ -2731,7 +2536,6 @@
             "uniqueID": 195
         },
         {
-            "numb": 147,
             "question": "Qual das seguintes afirmações está correta?",
             "answers": [
                 "A antena é um elemento recíproco, ou seja o seu princípio de funcionamento é idêntico na emissão e na receção",
@@ -2745,7 +2549,6 @@
             "uniqueID": 196
         },
         {
-            "numb": 148,
             "question": "Se um dipolo de meia onda ressonante a uma dada frequência for encurtado fisicamente, a sua impedância, para essa frequência,",
             "answers": [
                 "torna-se capacitiva",
@@ -2759,7 +2562,6 @@
             "uniqueID": 197
         },
         {
-            "numb": 149,
             "question": "Quais as componentes da resistência total de uma antena?",
             "answers": [
                 "Resistência de radiação e resistência característica de onda",
@@ -2773,7 +2575,6 @@
             "uniqueID": 198
         },
         {
-            "numb": 150,
             "question": "A antena isotrópica",
             "answers": [
                 "é utilizada em comunicações acima de 1 GHz",
@@ -2787,7 +2588,6 @@
             "uniqueID": 199
         },
         {
-            "numb": 151,
             "question": "De que forma se pode melhorar a eficiência de uma antena vertical HF de quarto de onda com ligação à terra?",
             "answers": [
                 "Instalando um bom sistema radial de terra",
@@ -2801,7 +2601,6 @@
             "uniqueID": 200
         },
         {
-            "numb": 152,
             "question": "No padrão de radiação de antena da figura, qual é a relação aproximada frente/costas?",
             "answers": [
                 "10 dB",
@@ -2815,7 +2614,6 @@
             "uniqueID": 201
         },
         {
-            "numb": 153,
             "question": "Uma antena omnidirecional real",
             "answers": [
                 "apresenta um diagrama de radiação omnidirecional em todos os planos",
@@ -2829,7 +2627,6 @@
             "uniqueID": 202
         },
         {
-            "numb": 154,
             "question": "Quando a polarização de uma antena de receção não é mesma que a polarização da onda eletromagnética incidente (que se pretende receber), diz-se que",
             "answers": [
                 "existe desadaptação de polarizações",
@@ -2843,7 +2640,6 @@
             "uniqueID": 203
         },
         {
-            "numb": 155,
             "question": "Qual a polarização de uma onda eletromagnética se o campo magnético for paralelo à superfície da Terra?",
             "answers": [
                 "Circular",
@@ -2857,7 +2653,6 @@
             "uniqueID": 204
         },
         {
-            "numb": 156,
             "question": "O que é a frequência de corte num guia de ondas?",
             "answers": [
                 "É a máxima frequência em que há propagação no guia de ondas",
@@ -2871,7 +2666,6 @@
             "uniqueID": 205
         },
         {
-            "numb": 157,
             "question": "O que é um balun?",
             "answers": [
                 "É um dispositivo que permite a interligação entre estações instaladas em balões e satélites não- geoestacionários",
@@ -2885,7 +2679,6 @@
             "uniqueID": 206
         },
         {
-            "numb": 157,
             "question": "Que razão existe para a frequente utilização de uma antena Yagi em radiocomunicações na faixa dos 14 MHz?",
             "answers": [
                 "Permite uma excelente cobertura omnidireccional no plano horizontal",
@@ -2899,7 +2692,6 @@
             "uniqueID": 207
         },
         {
-            "numb": 158,
             "question": "Em que consiste o fator de velocidade de uma linha de transmissão?",
             "answers": [
                 "Consiste na razão entre a impedância característica da linha e a impedância de terminação",
@@ -2913,7 +2705,6 @@
             "uniqueID": 208
         },
         {
-            "numb": 159,
             "question": "Um cabo coaxial é um elemento",
             "answers": [
                 "que é parte constituinte de um guia de ondas",
@@ -2927,7 +2718,6 @@
             "uniqueID": 209
         },
         {
-            "numb": 159,
             "question": "Qual a alteração sofrida pela atenuação do cabo coaxial à medida que aumenta a frequência do sinal transmitido",
             "answers": [
                 "A atenuação é independente da frequência",
@@ -2941,7 +2731,6 @@
             "uniqueID": 210
         },
         {
-            "numb": 160,
             "question": "Duma forma geral como varia a atenuação de um cabo coaxial à medida que aumenta a frequência do sinal transmitido?",
             "answers": [
                 "A atenuação é independente da frequência",
@@ -2955,7 +2744,6 @@
             "uniqueID": 211
         },
         {
-            "numb": 161,
             "question": "Qual o comprimento físico de uma linha de transmissão coaxial que a nível elétrico apresenta 1/4 do comprimento de onda à frequência de 14,1 MHz (para um fator de velocidade de 0,66)?",
             "answers": [
                 "20 m",
@@ -2969,7 +2757,6 @@
             "uniqueID": 212
         },
         {
-            "numb": 161,
             "question": "Qual o comprimento físico de uma linha de transmissão coaxial que a nível elétrico apresenta 1/4 do comprimento de onda à frequência de 7,2 MHz (para um fator de velocidade de 0,66)?",
             "answers": [
                 "10 m",
@@ -2983,7 +2770,6 @@
             "uniqueID": 213
         },
         {
-            "numb": 162,
             "question": "Como se designa a razão entre a velocidade real de um sinal numa linha de transmissão e a velocidade da luz no vácuo?",
             "answers": [
                 "Fator de velocidade",
@@ -2997,7 +2783,6 @@
             "uniqueID": 214
         },
         {
-            "numb": 163,
             "question": "Qual o número mínimo de componentes discretos (bobinas e condensadores) que utilizam os circuitos sintonizadores de antena em (T) e em (Pi)?",
             "answers": [
                 "A topologia em (T) precisa de um mínimo de três componentes e a topologia em (Pi) precisa de um mínimo de quatro componentes",
@@ -3011,7 +2796,6 @@
             "uniqueID": 215
         },
         {
-            "numb": 164,
             "question": "Que tipo de equipamento de receção é desejável para comunicações via reflexão lunar?",
             "answers": [
                 "Equipamento de grande largura de banda",
@@ -3025,7 +2809,6 @@
             "uniqueID": 216
         },
         {
-            "numb": 165,
             "question": "Como se designa a camada que se forma ocasionalmente na região E?",
             "answers": [
                 "Transitória E",
@@ -3039,7 +2822,6 @@
             "uniqueID": 217
         },
         {
-            "numb": 165,
             "question": "Qual das seguintes camadas ionosféricas absorve mais sinais de grandes saltos durante o dia nas frequências inferiores aos 10 MHz?",
             "answers": [
                 "A camada F2",
@@ -3053,7 +2835,6 @@
             "uniqueID": 218
         },
         {
-            "numb": 166,
             "question": "Numa ligação hertziana, utilizando o modelo de propagação em espaço livre, a potência na antena de receção é",
             "answers": [
                 "inversamente proporcional à distância que a separa da antena de emissão",
@@ -3067,7 +2848,6 @@
             "uniqueID": 219
         },
         {
-            "numb": 166,
             "question": "À medida que aumenta a frequência do sinal, como se altera a propagação de ondas terrestres?",
             "answers": [
                 "aumenta",
@@ -3081,7 +2861,6 @@
             "uniqueID": 220
         },
         {
-            "numb": 167,
             "question": "Quando nos referimos a ondas rádio, qual das seguintes afirmações está correta?",
             "answers": [
                 "A atenuação provocada pelos gases atmosféricos e pela chuva afeta significativamente a propagação abaixo de 1 GHz",
@@ -3095,7 +2874,6 @@
             "uniqueID": 221
         },
         {
-            "numb": 168,
             "question": "Como se costuma designar frequência crítica da camada E da ionosfera?",
             "answers": [
                 "fcE",
@@ -3109,7 +2887,6 @@
             "uniqueID": 222
         },
         {
-            "numb": 169,
             "question": "A receção satisfatória de comunicações nas faixas dos serviços de amador e de amador por satélite dependem da relação sinal/ruído. Qual dos seguintes tipos de ruído deve ser considerado?",
             "answers": [
                 "Ruído do recetor (gerado internamente)",
@@ -3123,7 +2900,6 @@
             "uniqueID": 223
         },
         {
-            "numb": 170,
             "question": "Numa ligação ponto a ponto, como se pode aumentar o horizonte rádio?",
             "answers": [
                 "Por aumento da potência da estação emissora",
@@ -3137,7 +2913,6 @@
             "uniqueID": 224
         },
         {
-            "numb": 171,
             "question": "Em que consiste o índice do fluxo solar?",
             "answers": [
                 "Medida da frequência mais elevada necessária à propagação ionosférica entre dois pontos na Terra",
@@ -3151,7 +2926,6 @@
             "uniqueID": 225
         },
         {
-            "numb": 171,
             "question": "Em que consiste o índice K do fluxo (K-index??",
             "answers": [
                 "índice da posição relativa das manchas solares na superfície solar",
@@ -3165,7 +2939,6 @@
             "uniqueID": 226
         },
         {
-            "numb": 172,
             "question": "Em que consistem os distúrbios geomagnéticos?",
             "answers": [
                 "Queda súbita do índice do fluxo solar",
@@ -3179,7 +2952,6 @@
             "uniqueID": 227
         },
         {
-            "numb": 173,
             "question": "Ao contrário das faixas de HF, as faixas de VHF e de UHF são frequentemente usadas para comunicações via satélite porque",
             "answers": [
                 "as ondas eletromagnéticas associadas às frequências de VHF e de UHF são pouco afetadas pela ionosfera no seu caminho de e para o satélite",
@@ -3193,7 +2965,6 @@
             "uniqueID": 228
         },
         {
-            "numb": 174,
             "question": "Qual das seguintes vantagens para as radiocomunicações resulta de períodos de elevada atividade geomagnética?",
             "answers": [
                 "Aurora que reflete sinais de VHF",
@@ -3207,7 +2978,6 @@
             "uniqueID": 229
         },
         {
-            "numb": 175,
             "question": "Qual a faixa que permite melhores possibilidades de uma boa ligação, se a frequência máxima utilizável (MUF) entre duas estações for de 22 MHz?",
             "answers": [
                 "28 MHz",
@@ -3221,7 +2991,6 @@
             "uniqueID": 230
         },
         {
-            "numb": 175,
             "question": "Qual a faixa que permite melhores possibilidades de uma boa ligação, se a frequência máxima utilizável (MUF) entre duas estações for de 16 MHz?",
             "answers": [
                 "3,5 MHz",
@@ -3235,7 +3004,6 @@
             "uniqueID": 231
         },
         {
-            "numb": 176,
             "question": "Que medida se deve tomar para obter uma atenuação baixa nas transmissões de HF?",
             "answers": [
                 "Selecionar uma frequência imediatamente inferior à frequência máxima utilizável (MUF)",
@@ -3249,7 +3017,6 @@
             "uniqueID": 232
         },
         {
-            "numb": 177,
             "question": "Numa ligação rádio, verifica-se que existe uma variação no tempo do nível do sinal na receção, ainda que potência se mantenha constante. Que nome se dá a este fenómeno?",
             "answers": [
                 "Atenuação em espaço livre",
@@ -3263,7 +3030,6 @@
             "uniqueID": 233
         },
         {
-            "numb": 178,
             "question": "O que significa a sigla LUF?",
             "answers": [
                 "\"Lowest Usable Frequency\"",
@@ -3277,7 +3043,6 @@
             "uniqueID": 234
         },
         {
-            "numb": 179,
             "question": "O que acontece à propagação de HF quando a frequência mínima utilizável (LUF) excede a frequência máxima utilizável (MUF)?",
             "answers": [
                 "Não será possível manter comunicações em HF no percurso em causa",
@@ -3291,7 +3056,6 @@
             "uniqueID": 235
         },
         {
-            "numb": 179,
             "question": "O que acontece normalmente às ondas de rádio com frequências inferiores à frequência máxima utilizável (MUF) que são enviadas para a ionosfera?",
             "answers": [
                 "São devolvidas à Terra.",
@@ -3305,7 +3069,6 @@
             "uniqueID": 236
         },
         {
-            "numb": 180,
             "question": "Nas comunicações em onda curta, qual o significado da sigla NVIS?",
             "answers": [
                 "\"Narrow Vertical Incidence Skywave\"",
@@ -3319,7 +3082,6 @@
             "uniqueID": 237
         },
         {
-            "numb": 181,
             "question": "O que significa \"ângulo crítico\" no contexto da propagação de ondas de rádio?",
             "answers": [
                 "Um percurso longo orientado em azimute de uma estação distante",
@@ -3333,7 +3095,6 @@
             "uniqueID": 238
         },
         {
-            "numb": 182,
             "question": "Como se designa a distância medida à superfície da Terra entre a base da antena e o ponto onde o raio emitido pela antena toca a superfície da Terra?",
             "answers": [
                 "Geo rádio",
@@ -3347,7 +3108,6 @@
             "uniqueID": 239
         },
         {
-            "numb": 183,
             "question": "Numa ligação hertziana, em que o primeiro elipsoide de Fresnel está desobstruído, a atenuação entre as duas estações envolvidas na ligação",
             "answers": [
                 "é muito menor que a atenuação em espaço livre",
@@ -3361,7 +3121,6 @@
             "uniqueID": 240
         },
         {
-            "numb": 184,
             "question": "Numa ligação rádio, a atenuação em espaço livre é tanto maior quanto",
             "answers": [
                 "maior for a potência de emissão",
@@ -3375,7 +3134,6 @@
             "uniqueID": 241
         },
         {
-            "numb": 185,
             "question": "Qual é a potência média medida num ciclo completo de RF com uma tensão de pico de 30 V, sobre uma carga resistiva de 50 Ohm?",
             "answers": [
                 "4,5 W",
@@ -3389,7 +3147,6 @@
             "uniqueID": 242
         },
         {
-            "numb": 186,
             "question": "Qual a vantagem do recurso a um wattímetro de leitura de pico para monitorizar a saída de um transmissor de fonia de banda lateral única?",
             "answers": [
                 "Facilita a determinação da sintonização correta do circuito à saída",
@@ -3403,7 +3160,6 @@
             "uniqueID": 243
         },
         {
-            "numb": 187,
             "question": "Se um frequencímetro com um precisão de ±0,1 ppm registar 146520000 Hz, qual seria o máximo de diferença entre a frequência real medida e a leitura respetiva?",
             "answers": [
                 "14,652 Hz",
@@ -3417,7 +3173,6 @@
             "uniqueID": 244
         },
         {
-            "numb": 188,
             "question": "De forma a minimizar o erro numa medição de tensão, um voltímetro deverá ter uma impedância interna",
             "answers": [
                 "o mais baixa possível, idealmente próxima de zero",
@@ -3431,7 +3186,6 @@
             "uniqueID": 245
         },
         {
-            "numb": 189,
             "question": "Pretende-se medir o valor eficaz de tensão de uma onda quadrada, sendo 10 MHz o valor da frequência principal. Dispondo-se de quatro equipamentos de medição de valor eficaz exatamente iguais, diferindo\n apenas na frequência máxima de operação: 1 MHz, 10 MHz, 20 MHz e 100 MHz. Qual dos equipamentos deverá ser utilizado?",
             "answers": [
                 "O equipamento cuja frequência máxima de operação é 1 MHz, pois a maior parte da energia do sinal situa- se abaixo desta frequência",
@@ -3445,7 +3199,6 @@
             "uniqueID": 246
         },
         {
-            "numb": 190,
             "question": "Que equipamento de teste inclui amplificadores no sistema horizontal e no sistema vertical?",
             "answers": [
                 "Ohmímetro",
@@ -3459,7 +3212,6 @@
             "uniqueID": 247
         },
         {
-            "numb": 191,
             "question": "Na sua operação um \"dip-meter\" utiliza",
             "answers": [
                 "uma ponte de díodos",
@@ -3473,7 +3225,6 @@
             "uniqueID": 248
         },
         {
-            "numb": 192,
             "question": "Para que efeito pode um medidor de impedância da antena ser usado?",
             "answers": [
                 "Para determinar o ganho da antena em FBI",
@@ -3487,7 +3238,6 @@
             "uniqueID": 249
         },
         {
-            "numb": 192,
             "question": "Como é que se trsnaforma uma impedância complexa numa impedância resistiva?",
             "answers": [
                 "Introduzindo uma resistência negativa para anular a componente resistiva de uma impedância",
@@ -3501,7 +3251,6 @@
             "uniqueID": 250
         },
         {
-            "numb": 193,
             "question": "Qual das seguintes afirmações está correta?",
             "answers": [
                 "Um analisador espectral mede a reflexão ionosférica; um osciloscópio apresenta graficamente os sinais elétricos",
@@ -3515,7 +3264,6 @@
             "uniqueID": 251
         },
         {
-            "numb": 194,
             "question": "Qual dos seguintes instrumentos de ensaio é utilizado para apresentar os produtos de distorção por intermodulação numa transmissão em banda lateral única, a uma determinada distância do emissor?",
             "answers": [
                 "Um wattímetro",
@@ -3529,7 +3277,6 @@
             "uniqueID": 252
         },
         {
-            "numb": 194,
             "question": "Qual dos seguintes instrumentos de ensaio é utilizado para apresentar sinais  espúrios de um emissor de rádio, a uma determinada distância desse, emissor?",
             "answers": [
                 "Um analisador de espectro",
@@ -3543,7 +3290,6 @@
             "uniqueID": 253
         },
         {
-            "numb": 195,
             "question": "Em que domínio são apresentados os sinais num osciloscópio?",
             "answers": [
                 "No domínio da frequência",
@@ -3557,7 +3303,6 @@
             "uniqueID": 254
         },
         {
-            "numb": 196,
             "question": "Qual dos seguintes procedimentos é uma precaução muito importante a tomar ao ligar um analisador espectral à saída de um transmissor?",
             "answers": [
                 "Utilizar cabos coaxiais de blindagem dupla de alta qualidade",
@@ -3571,7 +3316,6 @@
             "uniqueID": 255
         },
         {
-            "numb": 197,
             "question": "Que potência é absorvida pela carga se um medidor de potência direcional ligado entre um transmissor e uma carga terminal registar uma leitura de 100 W de potência transmitida e 25 W de potência refletida?",
             "answers": [
                 "100 W",
@@ -3585,7 +3329,6 @@
             "uniqueID": 256
         },
         {
-            "numb": 198,
             "question": "Que equipamento de medição deve ser ligado à baixada da antena de receção para se ter uma ideia dos sinais que são recebidos na referida antena?",
             "answers": [
                 "Um gerador de sinal",
@@ -3599,7 +3342,6 @@
             "uniqueID": 257
         },
         {
-            "numb": 199,
             "question": "Como se designa o bloqueio de um sinal de fonia FM por outro sinal de fonia FM mais forte?",
             "answers": [
                 "Dessensibilização",
@@ -3613,7 +3355,6 @@
             "uniqueID": 258
         },
         {
-            "numb": 200,
             "question": "O que provoca a intermodulação num circuito eletrónico?",
             "answers": [
                 "Um ganho demasiado baixo",
@@ -3627,7 +3368,6 @@
             "uniqueID": 259
         },
         {
-            "numb": 201,
             "question": "Em sistemas de radiocomunicações o efeito de bloqueio dá-se",
             "answers": [
                 "no emissor",
@@ -3641,7 +3381,6 @@
             "uniqueID": 260
         },
         {
-            "numb": 201,
             "question": "A possibilidade dda ocorrência de bloqueio num recetor é tanto maior",
             "answers": [
                 "quanto menor for a distância física que separa o emissor do sinal perturbador do recetor",
@@ -3655,7 +3394,6 @@
             "uniqueID": 261
         },
         {
-            "numb": 202,
             "question": "A intermodulação de sinais de radiofrequência",
             "answers": [
                 "é considerada uma distorção linear",
@@ -3669,7 +3407,6 @@
             "uniqueID": 262
         },
         {
-            "numb": 203,
             "question": "Numa comunicação senti-me ofendido pelas palavras que me foram dirigidas por um colega amador. O que é mais correto fazer?",
             "answers": [
                 "Queixar-me à ANACOM",
@@ -3683,7 +3420,6 @@
             "uniqueID": 263
         },
         {
-            "numb": 204,
             "question": "Qual das afirmações é verdadeira?",
             "answers": [
                 "Aos amadores da categoria 1 é emitida licença CEPT nos termos expressos na Recomendação CEPT T/R 61-01",
@@ -3697,7 +3433,6 @@
             "uniqueID": 264
         },
         {
-            "numb": 205,
             "question": "Sempre que um amador estabeleça comunicações em Portugal ao abrigo de uma licença CEPT emitida por outra Administração, deve emitir o IC da sua estação de amador antecedido do prefixo",
             "answers": [
                 "CS7, se estiver a operar a estação na área geográfica POR",
@@ -3711,7 +3446,6 @@
             "uniqueID": 265
         },
         {
-            "numb": 206,
             "question": "A licença CEPT, emitida nos termos da Recomendação CEPT T/R 61-01, permite",
             "answers": [
                 "utilizar estações de amador em todos os países da CEPT e nos países de língua oficial portuguesa",
@@ -3725,7 +3459,6 @@
             "uniqueID": 266
         },
         {
-            "numb": 207,
             "question": "Qual a potência de pico máxima permitida a um amador da categoria 1 que opere a frequência 14150 kHz?",
             "answers": [
                 "1500 W",
@@ -3739,7 +3472,6 @@
             "uniqueID": 267
         },
         {
-            "numb": 207,
             "question": "Como pode ser operada a faixa dos 7100-7200 kHz por um amador da categoria 1?",
             "answers": [
                 "Sem qualquer restrição",
@@ -3753,7 +3485,6 @@
             "uniqueID": 268
         },
         {
-            "numb": 208,
             "question": "Qual das afirmações está correta?",
             "answers": [
                 "Um amador da categoria 1 poderá utilizar estações de outro amador de acordo com os seus próprios privilégios da categoria 1",
@@ -3767,7 +3498,6 @@
             "uniqueID": 269
         },
         {
-            "numb": 208,
             "question": "Qual o tipo de polarização mais comum na propagação de ondas terrestres?",
             "answers": [
                 "Vertical",
@@ -3781,7 +3511,6 @@
             "uniqueID": 270
         },
         {
-            "numb": 208,
             "question": "Qual é provavelmente o tipo de propagação a decorrer quando os sinais de rádio percorrem a linha onde termina a luz do dia e começa a escuridão?",
             "answers": [
                 "Propagação transequatorial.",
@@ -3795,7 +3524,6 @@
             "uniqueID": 271
         },
         {
-            "numb": 208,
             "question": "Qual a vantagem de uso de uma antena com (traps)?",
             "answers": [
                 "Tem uma maior directividade nas bandas de HF",
@@ -3809,7 +3537,6 @@
             "uniqueID": 272
         },
         {
-            "numb": 208,
             "question": "Qual a desvantagem de uso de uma antena multibanda com (traps)?",
             "answers": [
                 "Pode radiar harmónicos",
@@ -3823,7 +3550,6 @@
             "uniqueID": 273
         },
         {
-            "numb": 208,
             "question": "Qual dos seguintes tipos de amplificadores reduz ou elimina os harmónicos pares?",
             "answers": [
                 "Amplificador push-push",
@@ -3837,7 +3563,6 @@
             "uniqueID": 274
         },
         {
-            "numb": 120,
             "question": "Uma malha de captura de fase que contém um oscilador controlado por tensão, está associada a um modulador de:",
             "answers": [
                 "amplitude",
@@ -3851,7 +3576,6 @@
             "uniqueID": 275
         },
         {
-            "numb": 120,
             "question": "Qual a gama de captura de um circuito com malha de captura de fase",
             "answers": [
                 "A gama de frequências que permite fechar o circuito",
@@ -3865,7 +3589,6 @@
             "uniqueID": 276
         },
         {
-            "numb": 120,
             "question": "Qual o princípio fundamental de um modulador de fase?",
             "answers": [
                 "Varia a sintonização do pré-amplificador de microfone para gerar sinais modulados em fase",
@@ -3879,7 +3602,6 @@
             "uniqueID": 277
         },
         {
-            "numb": 120,
             "question": "POrque é que um sinal SSB não deve ser modulado a mais de 100%?",
             "answers": [
                 "Porque deixa de ser um sinal modulado em AM passado a ser modulado em FM",
@@ -3893,7 +3615,6 @@
             "uniqueID": 278
         },
         {
-            "numb": 120,
             "question": "Por que razão é que a resistência de um condutor não é a mesma para correntes de RF e para correntes contínuas?",
             "answers": [
                 "Porque o isolamento conduz a corrente a frequências altas.",
@@ -3907,7 +3628,6 @@
             "uniqueID": 279
         },
         {
-            "numb": 120,
             "question": "Qual dos seguintes códigos digitais se compõem de elementos de comprimentos diferentes?",
             "answers": [
                 "ASCII",
@@ -3921,7 +3641,6 @@
             "uniqueID": 280
         },
         {
-            "numb": 120,
             "question": "Que característica apresentam os sinais de HF scatter?",
             "answers": [
                 "Alta inteligibilidade",
@@ -3935,7 +3654,6 @@
             "uniqueID": 281
         },
         {
-            "numb": 120,
             "question": "Qual a causa para a frequente distorção dos sinais de HF scatter?",
             "answers": [
                 "Instablidade da camada ionosférica envolvida",
@@ -3949,7 +3667,6 @@
             "uniqueID": 282
         },
         {
-            "numb": 120,
             "question": "Qual a causa para a atividade auroral?",
             "answers": [
                 "Reflexão no vento solar",
@@ -3963,7 +3680,6 @@
             "uniqueID": 283
         },
         {
-            "numb": 179,
             "question": "Não concordo com determinadas disposições regulamentares aplicáveis aos Serviços de Amador e de Amador por Satélite. O que é correto fazer?",
             "answers": [
                 "Não as respeitar",
@@ -3977,7 +3693,6 @@
             "uniqueID": 284
         },
         {
-            "numb": 179,
             "question": "Qual a vantagem de um analisador de antena sobre uma ponte SWR para efeitos da medida do coeficiente de onda estacionária da antena?",
             "answers": [
                 "Os analisadores de antena sintonizam automaticamente a antena para qualquer tipo de ressonância",
@@ -3991,7 +3706,6 @@
             "uniqueID": 285
         },
         {
-            "numb": 179,
             "question": "Qual o maior inconveniente de uma antena loop de fio para efeitos de radiogoniometria?",
             "answers": [
                 "Tem um padrão bidireccional",
@@ -4005,7 +3719,6 @@
             "uniqueID": 286
         },
         {
-            "numb": 188,
             "question": "Se uma estação de amador interferir uma estação de pequena potência e de curto alcance na frequência 433,5 MHz, quem tem prioridade?",
             "answers": [
                 "A estação de pequena potência",
@@ -4019,7 +3732,6 @@
             "uniqueID": 287
         },
         {
-            "numb": 184,
             "question": "Qual dos documentos não é considerado habilitante para a utilização de estações de amador, quando em estadas temporárias em Portugal?",
             "answers": [
                 "Licença CEPT emitida por outra Administração que tenha adotado a Recomendação CEPT T/R 61-01",
@@ -4033,7 +3745,6 @@
             "uniqueID": 288
         },
         {
-            "numb": 169,
             "question": "Que tipo de medidor deve ser usado para monitorar o sinal à saída de um transmissor modulado por voz de banda lateral única, de forma a assegurar que não se excede a potência máxima admitida?",
             "answers": [
                 "Um medidor SWR que realize leituras na direcção directa",
@@ -4047,7 +3758,6 @@
             "uniqueID": 289
         },
         {
-            "numb": 169,
             "question": "Qual das seguintes opções resulta do efeito de captura num receptor de FM??",
             "answers": [
                 "Todos os sinais a uma dada frequência são desmodulados",
@@ -4061,7 +3771,6 @@
             "uniqueID": 290
         },
         {
-            "numb": 180,
             "question": "Uma vizinha minha diz que de vez em quando tem interferências na receção de televisão e veio perguntar-me se não seria das minhas emissões. O que é correto fazer?",
             "answers": [
                 "Nada, pois eu estou a trabalhar nas faixas corretas e o problema deve ser da instalação de receção de televisão",
@@ -4075,7 +3784,6 @@
             "uniqueID": 291
         },
         {
-            "numb": 56,
             "question": "Tenho sido interferido de forma intermitente. Mas após aturada investigação, com a ajuda de outros colegas amadores, parece-me que a fonte interferente estará no prédio defronte de mim, onde não existe nenhuma estação de amador. O que é mais correto fazer?",
             "answers": [
                 "Aumentar a potência de emissão nas faixas onde sou interferido, para melhorar a relação sinal/ruído",
@@ -4096,7 +3804,6 @@
                 "Existem duas leis: a lei das redes e a lei das fontes.",
                 "Nenhuma das afirmações está correcta."
             ],
-            "numb": 0,
             "notes": "",
             "correctIndex": 1,
             "img": null,
@@ -4110,7 +3817,6 @@
                 "A soma algébrica das correntes no nó é igual a zero.",
                 "Nenhuma das afirmações está correcta."
             ],
-            "numb": 1,
             "notes": "",
             "correctIndex": 3,
             "img": null,
@@ -4124,7 +3830,6 @@
                 "lei das tensões.",
                 "lei das correntes."
             ],
-            "numb": 2,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -4138,7 +3843,6 @@
                 "A soma algébrica das quedas de tensão numa malha é igual a zero.",
                 "Nenhuma das afirmações está correcta."
             ],
-            "numb": 4,
             "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p8</a>)",
             "correctIndex": 3,
             "img": null,
@@ -4152,7 +3856,6 @@
                 "Teflon e aço.",
                 "Teflon e alumínio."
             ],
-            "numb": 5,
             "notes": "",
             "correctIndex": 2,
             "img": null,
@@ -4166,7 +3869,6 @@
                 "Par telefónico.",
                 "Todas possuem blindagem."
             ],
-            "numb": 7,
             "notes": "",
             "correctIndex": 1,
             "img": null,
@@ -4180,7 +3882,6 @@
                 "A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos em todas as frequências.",
                 "A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos em determinadas frequências."
             ],
-            "numb": 8,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -4194,7 +3895,6 @@
                 "S=20xlog(Ei/Et).",
                 "S=20-log(Ei/Et)."
             ],
-            "numb": 9,
             "notes": "",
             "correctIndex": 3,
             "img": null,
@@ -4208,7 +3908,6 @@
                 "S=20xlog(Hi/Ht).",
                 "S=20-log(Hi/Ht)."
             ],
-            "numb": 10,
             "notes": "",
             "correctIndex": 3,
             "img": null,
@@ -4222,7 +3921,6 @@
                 "Frequencímetro.",
                 "Medidor de onda estacionária."
             ],
-            "numb": 11,
             "notes": "",
             "correctIndex": 2,
             "img": null,
@@ -4236,7 +3934,6 @@
                 "Figuras de mérito.",
                 "Figuras de Watt."
             ],
-            "numb": 12,
             "notes": "",
             "correctIndex": 1,
             "img": null,
@@ -4250,7 +3947,6 @@
                 "Circuitos indutivos.",
                 "Qualquer tipo de circuito, seja ele capacitivo, resistivo ou indutivo."
             ],
-            "numb": 13,
             "notes": "",
             "correctIndex": 2,
             "img": null,
@@ -4264,7 +3960,6 @@
                 "directamente proporcional à temperatura de ruído efectiva do sistema e directamente proporc4onal à largura de banda efectiva do sistema.",
                 "inversamente proporcional à temperatura de ruído efectiva do sistema e directamente proporcional à largura de banda efectiva do sistema."
             ],
-            "numb": 15,
             "notes": "",
             "correctIndex": 3,
             "img": null,
@@ -4278,7 +3973,6 @@
                 "Filtrando de forma a diminuir o mais possível a largura de banda efectiva do sistema, sem degradar o sinal desejado.",
                 "Nenhuma das respostas anteriores está correcta."
             ],
-            "numb": 16,
             "notes": "",
             "correctIndex": 3,
             "img": null,
@@ -4292,7 +3986,6 @@
                 "Forward Shunt Keying.",
                 "Forward Shift Keying."
             ],
-            "numb": 17,
             "notes": "",
             "correctIndex": 2,
             "img": null,
@@ -4306,7 +3999,6 @@
                 "Usam o modo de ligar/desligar.",
                 "Usam a modulação por desvio de fase."
             ],
-            "numb": 18,
             "notes": "",
             "correctIndex": 2,
             "img": null,
@@ -4320,7 +4012,6 @@
                 "Controlo automático de nível.",
                 "Coeficiente de onda estacionária."
             ],
-            "numb": 20,
             "notes": "",
             "correctIndex": 3,
             "img": null,
@@ -4334,7 +4025,6 @@
                 "Transmissão de energia em multifase.",
                 "Transmissão digital de dados."
             ],
-            "numb": 21,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -4348,7 +4038,6 @@
                 "Espetroscópio",
                 "Osciloscópio"
             ],
-            "numb": 22,
             "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p14</a>)",
             "correctIndex": 4,
             "img": null,
@@ -4362,7 +4051,6 @@
                 "Dados.",
                 "Todas as opções são válidas."
             ],
-            "numb": 22,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -4376,7 +4064,6 @@
                 "Os sinais digitais podem ser regenerados várias vezes sem erro.",
                 "Todas as opções são válidas."
             ],
-            "numb": 23,
             "notes": "",
             "correctIndex": 3,
             "img": null,
@@ -4390,7 +4077,6 @@
                 "Mudança de nível.",
                 "Inversão de fase."
             ],
-            "numb": 24,
             "notes": "",
             "correctIndex": 1,
             "img": null,
@@ -4404,7 +4090,6 @@
                 "Uma apresentação contínua de caracteres alfanuméricos.",
                 "Nenhuma das opções referidas já que este tipo de sinal não consegue ser visualizado num osciloscópio convencional."
             ],
-            "numb": 25,
             "notes": "",
             "correctIndex": 2,
             "img": null,
@@ -4418,7 +4103,6 @@
                 "A duração dos impulsos.",
                 "O momento em que se produz cada pulso."
             ],
-            "numb": 26,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -4432,7 +4116,6 @@
                 "Baudot.",
                 "Código Morse."
             ],
-            "numb": 27,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -4446,7 +4129,6 @@
                 "A sistemas de amplificação de RF.",
                 "A sistemas de adaptação de impedâncias."
             ],
-            "numb": 28,
             "notes": "",
             "correctIndex": 2,
             "img": null,
@@ -4460,7 +4142,6 @@
                 "É possível transmitir texto tanto em letras maiúsculas como minúsculas.",
                 "Usa um carácter como código de alteração para enviar números e caracteres especiais."
             ],
-            "numb": 29,
             "notes": "",
             "correctIndex": 3,
             "img": null,
@@ -4474,7 +4155,6 @@
                 "Podem ser enviados caracteres de idiomas estrangeiros.",
                 "Podem ser detectados alguns tipos de erro."
             ],
-            "numb": 30,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -4488,7 +4168,6 @@
                 "Modulação de frequência.",
                 "Modulação de amplitude."
             ],
-            "numb": 31,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -4502,7 +4181,6 @@
                 "amostragem, quantificação e codificação.",
                 "quantificação, amostragem e  integração."
             ],
-            "numb": 32,
             "notes": "",
             "correctIndex": 3,
             "img": null,
@@ -4516,14 +4194,12 @@
                 "o sinal analógico é  sujeito a uma amplificação não linear, passa por um filtro passa alto de forma a regenerar as componentes de mais alta frequência que constituirão o sinal digital.",
                 "o sinal analógico é  misturado com outro sinal analógico padrão de frequência muito superior, resultando um sinal digital de amplitude variável proporcional ao sinal amostrado."
             ],
-            "numb": 33,
             "notes": "",
             "correctIndex": 2,
             "img": null,
             "uniqueID": 323
         },
         {
-            "numb": 25,
             "question": "O teorema de Nyquist ou da amostragem estabelece que",
             "answers": [
                 "a frequência de amostragem deve ser no mínimo igual à maior frequência associada ao sinal amostrado",
@@ -4544,7 +4220,6 @@
                 "Aumentar a relação sinal/ruído.",
                 "Aumentar a relação potência transmitida/potência recebida."
             ],
-            "numb": 35,
             "notes": "Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p40</a>)",
             "correctIndex": 3,
             "img": null,
@@ -4558,7 +4233,6 @@
                 "É uma distorção relacionada com não linearidades dos amplificadores utilizados no processo.",
                 "É a distorção resultante do não cumprimento do teorema de Nyquist."
             ],
-            "numb": 36,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -4572,7 +4246,6 @@
                 "À medida que aumenta a amplitude da corrente alternada aplicada, a reactância aumenta.",
                 "À medida que aumenta a amplitude da corrente alternada aplicada, a reactância diminui."
             ],
-            "numb": 37,
             "notes": "",
             "correctIndex": 1,
             "img": null,
@@ -4586,7 +4259,6 @@
                 "A tensão e a corrente estão desfasadas 90º.",
                 "A tensão e a corrente estão desfasadas 270º."
             ],
-            "numb": 38,
             "notes": "",
             "correctIndex": 3,
             "img": null,
@@ -4600,7 +4272,6 @@
                 "aumenta  a constante dieléctrica do isolante.",
                 "Todas as respostas estão correctas."
             ],
-            "numb": 39,
             "notes": "Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p16</a>)",
             "correctIndex": 4,
             "img": null,
@@ -4614,7 +4285,6 @@
                 "diminui  a constante dieléctrica do isolante.",
                 "Todas as respostas estão correctas."
             ],
-            "numb": 0,
             "notes": "",
             "correctIndex": 1,
             "img": null,
@@ -4628,7 +4298,6 @@
                 "aumenta a constante dieléctrica do isolante.",
                 "Todas as respostas estão correctas."
             ],
-            "numb": 1,
             "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p16</a>)",
             "correctIndex": 3,
             "img": null,
@@ -4642,7 +4311,6 @@
                 "diminui a constante dieléctrica do isolante.",
                 "Todas as respostas estão correctas."
             ],
-            "numb": 2,
             "notes": "",
             "correctIndex": 2,
             "img": null,
@@ -4656,7 +4324,6 @@
                 "Uma propriedade de resistências ideais em circuitos de corrente alternada.",
                 "Produção de uma grande faísca nos contactos do interruptor quando a alimentação de energia da bobina é desligada."
             ],
-            "numb": 3,
             "notes": "",
             "correctIndex": 2,
             "img": null,
@@ -4670,7 +4337,6 @@
                 "Admitância.",
                 "Reactância."
             ],
-            "numb": 4,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -4684,7 +4350,6 @@
                 "À medida que aumenta a amplitude da corrente alternada aplicada, a reactância diminui.",
                 "À medida que aumenta a frequência da corrente alternada aplicada, a reactância aumenta."
             ],
-            "numb": 5,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -4698,7 +4363,6 @@
                 "Ampere.",
                 "Siemens."
             ],
-            "numb": 6,
             "notes": "",
             "correctIndex": 2,
             "img": null,
@@ -4712,7 +4376,6 @@
                 "A resistência poderia sobreaquecer.",
                 "A capacidade interna da resistência poderia dessintonizar o circuito."
             ],
-            "numb": 7,
             "notes": "",
             "correctIndex": 2,
             "img": null,
@@ -4726,7 +4389,6 @@
                 "A maior parte do campo magnético está contida no núcleo.",
                 "Todas as opções são válidas."
             ],
-            "numb": 8,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -4740,7 +4402,6 @@
                 "Com os eixos de enrolamento na perpendicular entre si.",
                 "Resguardados num mesmo espaço blindado."
             ],
-            "numb": 9,
             "notes": "",
             "correctIndex": 3,
             "img": null,
@@ -4754,7 +4415,6 @@
                 "Para reduzir as emissões conduzidas.",
                 "Para aumentar a frequência de ressonância própria das duas bobinas."
             ],
-            "numb": 10,
             "notes": "Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p18</a>)",
             "correctIndex": 2,
             "img": null,
@@ -4768,7 +4428,6 @@
                 "A tensão e a corrente estão em fase.",
                 "A tensão e a corrente estão desfasadas 270º."
             ],
-            "numb": 11,
             "notes": "",
             "correctIndex": 1,
             "img": null,
@@ -4782,7 +4441,6 @@
                 "Reactividade do núcleo.",
                 "Permeabilidade do núcleo."
             ],
-            "numb": 12,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -4796,7 +4454,6 @@
                 "Os toróides de ferro pulverizado requerem normalmente um menor número de espiras para produzir uma determinada indutância.",
                 "Os toróides de ferro pulverizado apresentam a maior potência nominal."
             ],
-            "numb": 13,
             "notes": "",
             "correctIndex": 2,
             "img": null,
@@ -4810,7 +4467,6 @@
                 "Os núcleos toroidais apresentam uma maior histerese.",
                 "Os núcleos toroidais apresentam um nível menor de características Q."
             ],
-            "numb": 14,
             "notes": "",
             "correctIndex": 1,
             "img": null,
@@ -4824,7 +4480,6 @@
                 "Os toróides de ferrite requerem normalmente um menor número de espiras para produzir uma determinada indutância.",
                 "Os toróides de ferrite são mais fáceis de usar com tecnologias de montagem superficial."
             ],
-            "numb": 15,
             "notes": "",
             "correctIndex": 3,
             "img": null,
@@ -4838,7 +4493,6 @@
                 "Anulando a componente reactiva de uma impedância.",
                 "Substituindo as resistências da rede por resistências de carga."
             ],
-            "numb": 16,
             "notes": "",
             "correctIndex": 3,
             "img": null,
@@ -4852,7 +4506,6 @@
                 "Aumentaria a susceptância RF.",
                 "A permeabilidade do núcleo poderia sofrer alterações temporárias."
             ],
-            "numb": 17,
             "notes": "",
             "correctIndex": 1,
             "img": null,
@@ -4866,7 +4519,6 @@
                 "Indutância mútua.",
                 "Capacidade mútua."
             ],
-            "numb": 18,
             "notes": "",
             "correctIndex": 3,
             "img": null,
@@ -4880,7 +4532,6 @@
                 "Ao núcleo do transformador.",
                 "Às placas."
             ],
-            "numb": 19,
             "notes": "",
             "correctIndex": 2,
             "img": null,
@@ -4894,7 +4545,6 @@
                 "Corrente de excitação.",
                 "Corrente estacionária."
             ],
-            "numb": 20,
             "notes": "",
             "correctIndex": 1,
             "img": null,
@@ -4908,7 +4558,6 @@
                 "26,7 V.",
                 "5,9 V."
             ],
-            "numb": 21,
             "notes": "",
             "correctIndex": 3,
             "img": null,
@@ -4922,7 +4571,6 @@
                 "O máximo de tensão suportada pelo rectificador no estado de não-condução.",
                 "2,8 vezes a frequência da corrente alternada."
             ],
-            "numb": 22,
             "notes": "",
             "correctIndex": 3,
             "img": null,
@@ -4936,7 +4584,6 @@
                 "Reactância capacitiva e tensão de avalanche.",
                 "Pico da impedância de carga e tensão de pico."
             ],
-            "numb": 23,
             "notes": "",
             "correctIndex": 1,
             "img": null,
@@ -4950,7 +4597,6 @@
                 "Períodos de comutação mais longos.",
                 "Maior tensão de ruptura."
             ],
-            "numb": 24,
             "notes": "",
             "correctIndex": 1,
             "img": null,
@@ -4964,7 +4610,6 @@
                 "6.",
                 "7."
             ],
-            "numb": 25,
             "img": "images/cat1/q25.png",
             "notes": "A31-Exames:(<a target='_blank' href='exams/cat1/2013_08_30.pdf'>2013_08_30</a>) (<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p30</a>)",
             "correctIndex": 2,
@@ -4978,7 +4623,6 @@
                 "2",
                 "5"
             ],
-            "numb": 26,
             "img": "images/cat1/q25.png",
             "notes": "",
             "correctIndex": 4,
@@ -4992,7 +4636,6 @@
                 "Pela corrente inversa máxima e capacidade.",
                 "Pela corrente directa máxima e tensão de pico inversa."
             ],
-            "numb": 27,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -5006,7 +4649,6 @@
                 "Polarização nula.",
                 "Polarização indutiva."
             ],
-            "numb": 28,
             "notes": "",
             "correctIndex": 2,
             "img": null,
@@ -5020,7 +4662,6 @@
                 "Emissor, base 1 e base 2.",
                 "Porta, dreno e fonte."
             ],
-            "numb": 29,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -5034,7 +4675,6 @@
                 "Imune a danos causados por descargas estáticas.",
                 "Baixo consumo de energia."
             ],
-            "numb": 30,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -5048,7 +4688,6 @@
                 "Melhor resposta em alta-frequência.",
                 "Redução da resistência da placa."
             ],
-            "numb": 31,
             "notes": "",
             "correctIndex": 1,
             "img": null,
@@ -5062,7 +4701,6 @@
                 "Há mais variedades de AMPOP do que de elementos LC.",
                 "Os AMPOP apresentam ganho em vez de perdas de inserção."
             ],
-            "numb": 32,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -5076,7 +4714,6 @@
                 "Diminui logaritmicamente com o aumento da frequência.",
                 "Não varia com a frequência."
             ],
-            "numb": 33,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -5090,7 +4727,6 @@
                 "38.",
                 "76."
             ],
-            "numb": 35,
             "img": "images/cat1/q35.png",
             "notes": "A36-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p35</a>) (<a target='_blank' href='exams/cat1/2013_08_30.pdf'>2013_08_30</a>",
             "correctIndex": 3,
@@ -5104,7 +4740,6 @@
                 "7.",
                 "0,07."
             ],
-            "numb": 36,
             "img": "images/cat1/q35.png",
             "notes": "",
             "correctIndex": 2,
@@ -5118,7 +4753,6 @@
                 "Um amplificador usado no andar de potência de um emissor de FM do serviço de amador.",
                 "Um programa de subrotina que calcula o ganho de um amplificador de RF."
             ],
-            "numb": 37,
             "notes": "",
             "correctIndex": 1,
             "img": null,
@@ -5132,7 +4766,6 @@
                 "Muito baixa.",
                 "Muito alta."
             ],
-            "numb": 38,
             "notes": "",
             "correctIndex": 4,
             "img": null,
@@ -5146,7 +4779,6 @@
                 "100 ohms",
                 "1000 ohms"
             ],
-            "numb": 39,
             "notes": "Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p35</a>)",
             "correctIndex": 1,
             "img": null,
@@ -5160,7 +4792,6 @@
                 "Um VCO, um PLL, um conversor digital-analógico e um filtro passa-baixo",
                 "Um oscilador de referência, um NCO - (Numerically Controlled Oscillator), um conversor digital-analógico e um filtro passa-baixo"
             ],
-            "numb": 39,
             "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p38</a>)",
             "correctIndex": 4,
             "img": null,
