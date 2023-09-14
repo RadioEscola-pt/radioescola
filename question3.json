@@ -1474,7 +1474,8 @@
             "numb": 107,
             "question": "Dos seguintes tipos de antenas qual o que tem maior directividade",
             "answers": [
-                "Antena vertical de quarto de onda (ground plane)",
+                "Antena EFHW",
+				"Antena vertical de quarto de onda (ground plane)",
                 "Antena multi elementos (tipo yagi)",
                 "Antena de meio comprimento de onda"
             ],
