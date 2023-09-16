@@ -919,7 +919,7 @@
                 "33 mH"
             ],
             "correctIndex": 4,
-            "notes": "<p>L<sub>total</sub> = L<sub>1</sub> + L<sub>2</sub> + L<sub>3</sub> + &#8230;</p> <p>L<sub>total</sub> = 10 mH + 10 mH + 10 mH = 30 mH</p>",
+            "notes": "<p>L<sub>1/total</sub> = 1/L<sub>1</sub> + 1/L<sub>2</sub> + 1/L<sub>3</sub> + &#8230;</p> <p>L<sub>1/total</sub> = 1/10 mH + 1/10 mH + 1/10 mH </p><p>1/total= 3/10 mH</p><p>total= 1/(3/10) mH</p><p>total= 33 mH</p>",
             "img": null,
             "uniqueID": 71
         },
