@@ -9,8 +9,9 @@
 
 	<link rel="stylesheet" href="style.css">
 	<script type="text/javascript" src="quiz.js"></script>
-	<script type="text/javascript" src="simulateQuiz.js"></script>
 	<script type="text/javascript" src="loadChapter.js"></script>
+	<script type="text/javascript" src="MatomoOptOutManager.js"></script>
+
 
 	<script>
 
@@ -26,7 +27,7 @@
 
 		window.onload = function () {
 			reportWindowSize();
-
+			const optOutManager = new MatomoOptOutManager();
 			const searchParams = new URLSearchParams(window.location.search);
 			if (searchParams.has('loadChapter')) {
 				new loadChapter(searchParams.get("loadChapter")); // bar, only returns the first value
@@ -51,7 +52,6 @@
 			<canvas id="canvas" width="400" height="200"></canvas>
 		</div>
 	</div>
-	<meta name="google-site-verification" content="QPZvvVKoBQVlUclLvdWSfEXmJd2sbjQoBMWFfBEKB9c" />
 	<header>
 
 
@@ -125,7 +125,9 @@
 	</header>
 
 	<section>
-
+    <div id="matomo-opt-out">
+        <!-- This div will be used to display Matomo opt-out content -->
+    </div>
 		<article id="welcome">
 
 		</article>
