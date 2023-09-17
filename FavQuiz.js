@@ -1,4 +1,4 @@
-class Quiz {
+class FavQuiz {
 	static messagesArray = {};
 	static pageBlocks = [];
 	static currentPage = 0;
@@ -139,7 +139,11 @@ class Quiz {
 
 					welcomeDiv.appendChild(indexBlock);
 					var index = 0;
+					const parts = this.quiz.jsonFile.split('.');
+					const favoritesString = localStorage.getItem(parts[0] + "Fav") || '[]';
+					const favorites = JSON.parse(favoritesString);
 					for (var qindex in Quiz.messagesArray.questions) {
+						if (favorites.includes(this.quiz.questions[qindex].uniqueID) == false) continue;
 						var pageBlock;
 						Quiz.messagesArray.questions[qindex].index = index;
 						index++;
@@ -242,10 +246,10 @@ class Quiz {
 							btn.quiz = this.quiz;
 							btn.onclick = this.quiz.checkQuestion;
 							questionCard.appendChild(btn);
-							
+
 							let starIcon = document.createElement("img");
 							starIcon.unitqueId = Quiz.messagesArray.questions[qindex].uniqueID;
-							const parts = this.quiz.jsonFile.split('.');
+
 							starIcon.existingRecords = parts[0];
 							if (localStorage && localStorage.getItem(starIcon.existingRecords + "Fav") !== null) {
 								const favorites = JSON.parse(localStorage.getItem(starIcon.existingRecords + "Fav")) || [];
@@ -263,7 +267,7 @@ class Quiz {
 
 
 							// Add a click event listener to the star icon
-							starIcon.onclick= this.quiz.saveFav;
+							starIcon.onclick = this.quiz.saveFav;
 
 
 
@@ -284,7 +288,7 @@ class Quiz {
 	}
 
 	saveFav() {
-		var favorites=JSON.parse(localStorage.getItem(this.existingRecords + "Fav"));
+		var favorites = JSON.parse(localStorage.getItem(this.existingRecords + "Fav"));
 		// Get the unique ID of the question associated with the clicked star
 		const index = favorites.indexOf(this.unitqueId);
 		if (index === -1) {

@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="quiz.js"></script>
 	<script type="text/javascript" src="loadChapter.js"></script>
 	<script type="text/javascript" src="MatomoOptOutManager.js"></script>
-
+<script type="text/javascript" src="FavQuiz.js"></script>
 
 	<script>
 
@@ -46,12 +46,7 @@
 </head>
 
 <body>
-	<div id="answerDisplay">
-		<!-- Canvas div initially hidden -->
-		<div id="canvasDiv">
-			<canvas id="canvas" width="400" height="200"></canvas>
-		</div>
-	</div>
+
 	<header>
 
 
@@ -63,8 +58,9 @@
 			<li class="subnav0"><a onclick="new loadChapter('EDN')" href="#EDN">Estado da Nação</a></li>
 			<li class="subnav1"><a href="#">Categoria 3</a>
 				<ul class="subnav1">
-					<li><a onclick="new Quiz('question3.json')" href="#">Todas as perguntas</a></li>
 					<li><a onclick="new simulateQuiz('question3.json')" href="#">Simulador de exame</a></li>
+					<li><a onclick="new Quiz('question3.json')" href="#">Todas as perguntas</a></li>
+					<li><a onclick="new FavQuiz('question3.json')" href="#">Favoritas</a></li>
 					<li><a href="#">Tutoriais</a>
 						<ul class="subnav1">
 							<li> <a style="display:none;" href="#">Condutores</a></li>
@@ -125,6 +121,12 @@
 	</header>
 
 	<section>
+	<div id="answerDisplay">
+		<!-- Canvas div initially hidden -->
+		<div id="canvasDiv">
+			<canvas id="canvas" width="400" height="200"></canvas>
+		</div>
+	</div>
     <div id="matomo-opt-out">
         <!-- This div will be used to display Matomo opt-out content -->
     </div>
