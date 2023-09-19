@@ -242,7 +242,8 @@ class Quiz {
 							btn.quiz = this.quiz;
 							btn.onclick = this.quiz.checkQuestion;
 							questionCard.appendChild(btn);
-							
+							if(MatomoOptOutManager.hasConsent())
+							{
 							let starIcon = document.createElement("img");
 							starIcon.unitqueId = Quiz.messagesArray.questions[qindex].uniqueID;
 							const parts = this.quiz.jsonFile.split('.');
@@ -264,10 +265,11 @@ class Quiz {
 
 							// Add a click event listener to the star icon
 							starIcon.onclick= this.quiz.saveFav;
-
-
-
 							questionCard.appendChild(starIcon);
+							}
+
+
+							
 						}
 					}
 					console.log("Unanswered" + numberOfUnanswered);
@@ -299,6 +301,7 @@ class Quiz {
 
 		// Save the updated favorites array back to local storage
 		localStorage.setItem(this.existingRecords + "Fav", JSON.stringify(favorites));
+		MatomoOptOutManager.update();
 	}
 
 }

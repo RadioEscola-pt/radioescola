@@ -178,6 +178,7 @@ class FavQuiz {
 
 						var questionCard = document.createElement("div");
 						questionCard.className = "questionCard";
+						questionCard.id = "questionCardId"+qindex;
 						questionBlock.appendChild(questionCard);
 
 						var questiontxt = document.createElement("span");
@@ -263,13 +264,15 @@ class FavQuiz {
 								starIcon.src = "images/starnotfav.png"; // Set the path to your default star icon image
 								localStorage.setItem(starIcon.existingRecords + "Fav", JSON.stringify([]));
 							}
+							starIcon.value = qindex;
+							starIcon.jsonFile=this.quiz.jsonFile;
 
 
 
 							// Add a click event listener to the star icon
 							starIcon.onclick = this.quiz.saveFav;
 
-
+							
 
 							questionCard.appendChild(starIcon);
 						}
@@ -286,7 +289,25 @@ class FavQuiz {
 		ajaxRequest.open('GET', this.jsonFile);
 		ajaxRequest.send();
 	}
+	static showFavElement(cat, id) {
+	  
+	    const favorites = JSON.parse(localStorage.getItem(cat + "Fav")) ; // Parse and handle null/empty array
+	    const element = document.getElementById(id);
+	
+		if (favorites === null || favorites.length === 0) {
+	        element.style.display = "none"; // Hide the element if favorites is null or empty
+	      } else {
+	        element.style.display = "block"; // Show the element if it's in favorites
+	      }
+	    
+	  }
 
+	  static hideFavElement (cat, id) {
+	    const element = document.getElementById(id);
+	    element.style.display = "none"; // Hide the element if it's not in favorites
+	      
+	    
+	  }
 	saveFav() {
 		var favorites = JSON.parse(localStorage.getItem(this.existingRecords + "Fav"));
 		// Get the unique ID of the question associated with the clicked star
@@ -294,15 +315,27 @@ class FavQuiz {
 		if (index === -1) {
 			// If not in favorites, add it
 			favorites.push(this.unitqueId);
+
+			
 			this.src = "images/starfav.png"; // Set the path to your favorite star icon image
 		} else {
 			// If already in favorites, remove it
+			const elements = document.getElementById("questionCardId" + this.value);
+			elements.style.display = "none";
+			
+			
 			favorites.splice(index, 1);
 			this.src = "images/starnotfav.png"; // Set the path to your regular star icon image
+			if (favorites.length==0)
+			{
+				new Quiz(this.jsonFile);
+			}
 		}
 
 		// Save the updated favorites array back to local storage
 		localStorage.setItem(this.existingRecords + "Fav", JSON.stringify(favorites));
+		
+		MatomoOptOutManager.update();
 	}
 
 }

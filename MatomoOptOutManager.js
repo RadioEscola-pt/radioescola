@@ -7,17 +7,17 @@ class MatomoOptOutManager {
 		"cookieDomain": null,
 		"useCookiesIfNoTracker": 1,
 
-		"OptOutComplete": "Opt-out concluído; as suas visitas a este website não serão registadas pela ferramenta de Análise Web.",
+		"OptOutComplete": "As suas visitas a este website não serão registadas pela ferramenta de Análise Web.",
 		"OptOutCompleteBis": "Note que se limpar os seus cookies, eliminar o cookie de opt-out ou se mudar de computador ou navegador web, terá de realizar novamente o procedimento de opt-out.",
 		"YouMayOptOut2": "Pode optar por impedir este website de agregar e analisar as ações que realiza aqui.",
 		"YouMayOptOut3": "Fazê-lo protegerá a sua privacidade, mas também impedirá o proprietário de aprender com as suas ações e criar uma experiência melhor para si e outros utilizadores.",
-		"OptOutErrorNoCookies": "A funcionalidade de opt-out de rastreamento requer que os cookies estejam ativados.",
-		"OptOutErrorNotHttps": "A funcionalidade de opt-out de rastreamento pode não funcionar porque este site não foi carregado via HTTPS. Por favor, recarregue a página para verificar se o seu estado de opt-out foi alterado.",
-		"YouAreNotOptedOut": "Está optado por opt-in.",
-		"UncheckToOptOut": "Desmarque esta caixa para optar por opt-out.",
-		"YouAreOptedOut": "Está atualmente optado por opt-out.",
+		"OptOutErrorNoCookies": "A funcionalidade de rastreamento requer que os cookies estejam ativados.",
+		"OptOutErrorNotHttps": "A funcionalidade de rastreamento pode não funcionar porque este site não foi carregado via HTTPS. Por favor, recarregue a página para verificar se o seu estado de opt-out foi alterado.",
+		"YouAreNotOptedOut": "Está sem funcionalidade de rastreamento e memoria local",
+		"UncheckToOptOut": "Desmarque esta caixa para optar desligar rastreamento local e memoria local",
+		"YouAreOptedOut": "Está atualmente optado por desligar rastreamento local e memoria local",
 		"CheckToOptIn": "Marque esta caixa para optar por opt-in.",
-		"OptOutErrorNoTracker": "A funcionalidade de opt-out de rastreamento não conseguiu encontrar o código Matomo Tracker nesta página."
+		"OptOutErrorNoTracker": "A funcionalidade de  rastreamento não conseguiu encontrar o código Matomo Tracker nesta página."
 	};
 	constructor(settings) {
 
@@ -71,6 +71,10 @@ class MatomoOptOutManager {
 		this.initMatomoConsentManager();
 		MatomoOptOutManager.showContent(MatomoOptOutManager.hasConsent());
 	}
+	static update() {
+
+		MatomoOptOutManager.showContent(MatomoOptOutManager.hasConsent());
+	}
 
 	initMatomoConsentManager() {
 		MatomoOptOutManager.initMatomoConsentManager(
@@ -87,17 +91,15 @@ class MatomoOptOutManager {
 		MatomoOptOutManager.setCookie(MatomoOptOutManager.CONSENT_REMOVED_COOKIE_NAME, '', -129600000);
 		MatomoOptOutManager.setCookie(MatomoOptOutManager.CONSENT_COOKIE_NAME, new Date().getTime().toString(), 946080000000);
 
-
+		FavQuiz.showFavElement("question3","favQuiz3");
+		FavQuiz.showFavElement("question2","favQuiz2");
+		FavQuiz.showFavElement("question1","favQuiz1");
 		MatomoOptOutManager.showContent(true);
 
 	}
 
-	static consentRevoked() {
-		MatomoOptOutManager.setCookie(MatomoOptOutManager.CONSENT_COOKIE_NAME, '', -129600000);
-		MatomoOptOutManager.setCookie(MatomoOptOutManager.CONSENT_REMOVED_COOKIE_NAME, new Date().getTime().toString(), 946080000000);
 
-		MatomoOptOutManager.showContent(false);
-	}
+
 
 	static showContent(consent, errorMessage = null, useTracker = false) {
 		const errorBlock = '<p style="color: red; font-weight: bold;">';
@@ -119,6 +121,12 @@ class MatomoOptOutManager {
 
 		let content = '';
 		if (consent) {
+					
+
+					
+		FavQuiz.showFavElement("question3","favQuiz3");
+		FavQuiz.showFavElement("question2","favQuiz2");
+		FavQuiz.showFavElement("question1","favQuiz1");
 			if (MatomoOptOutManager.settings.showIntro) {
 				content += '<p>' + MatomoOptOutManager.settings.YouMayOptOut2 + ' ' + MatomoOptOutManager.settings.YouMayOptOut3 + '</p>';
 			}
@@ -129,6 +137,9 @@ class MatomoOptOutManager {
 			}
 			content += '<label for="trackVisits"><strong><span>' + MatomoOptOutManager.settings.YouAreNotOptedOut + ' ' + MatomoOptOutManager.settings.UncheckToOptOut + '</span></strong></label>';
 		} else {
+			FavQuiz.hideFavElement("question3","favQuiz3");
+		FavQuiz.hideFavElement("question2","favQuiz2");
+		FavQuiz.hideFavElement("question1","favQuiz1");
 			if (MatomoOptOutManager.settings.showIntro) {
 				content += '<p>' + MatomoOptOutManager.settings.OptOutComplete + ' ' + MatomoOptOutManager.settings.OptOutCompleteBis + '</p>';
 			}
@@ -168,10 +179,13 @@ class MatomoOptOutManager {
 		const removedCookie = MatomoOptOutManager.getCookie(MatomoOptOutManager.CONSENT_REMOVED_COOKIE_NAME);
 
 		if (!consentCookie && !removedCookie) {
+
+
 			return true;
 		}
 		if (removedCookie && consentCookie) {
 			MatomoOptOutManager.setCookie(MatomoOptOutManager.CONSENT_COOKIE_NAME, '', -129600000);
+
 			return false;
 		}
 		return (consentCookie || consentCookie !== null);
@@ -197,6 +211,15 @@ class MatomoOptOutManager {
 		if ((!msToExpire || msToExpire >= 0) && MatomoOptOutManager.getCookie(cookieName) !== String(value)) {
 			console.log('There was an error setting cookie `' + cookieName + '`. Please check domain and path.');
 		}
+	}
+	static consentRevoked() {
+		MatomoOptOutManager.setCookie(MatomoOptOutManager.CONSENT_COOKIE_NAME, '', -129600000);
+		MatomoOptOutManager.setCookie(MatomoOptOutManager.CONSENT_REMOVED_COOKIE_NAME, new Date().getTime().toString(), 946080000000);
+		localStorage.clear();
+		MatomoOptOutManager.showContent(false);
+		FavQuiz.hideFavElement("question3","favQuiz3");
+		FavQuiz.hideFavElement("question2","favQuiz2");
+		FavQuiz.hideFavElement("question1","favQuiz1");
 	}
 }
 

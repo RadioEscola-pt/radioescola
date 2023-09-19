@@ -241,3 +241,16 @@ footer > div:first-child {
   margin-top: -35px;
   /* aligns top of sub menu with top of list item */
 }
+
+button {
+  background-color: #04AA6D;
+  border: none;
+
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 2px;
+}
