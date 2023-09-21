@@ -4564,19 +4564,6 @@
             "uniqueID": 351
         },
         {
-            "question": "Qual é o valor de pico da tensão inversa de um rectificador?",
-            "answers": [
-                "Qual é o valor de pico da tensão inversa de um rectificador?",
-                "1,4 vezes a frequência da corrente alternada.",
-                "O máximo de tensão suportada pelo rectificador no estado de não-condução.",
-                "2,8 vezes a frequência da corrente alternada."
-            ],
-            "notes": "",
-            "correctIndex": 3,
-            "img": null,
-            "uniqueID": 352
-        },
-        {
             "question": "Quais são as duas principais variáveis nominais que não devem ser excedidas em rectificadores com díodos de silício?",
             "answers": [
                 "Tensão de pico inversa e corrente directa média.",

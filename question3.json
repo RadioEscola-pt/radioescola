@@ -40,12 +40,12 @@
             "uniqueID": 3
         },
         {
-            "question": "Qual dos seguintes factores não se aplica quando estamos a falar de influência indesejada nos equipamento de uma estação de amador?",
+            "question": "Qual dos seguintes factores não se aplica quando estamos a falar de influência indesejada nos equipamentos de uma estação de amador?",
             "answers": [
                 "Sinais indesejados na entrada da antena",
                 "Forte campo electromagnético no local onde os equipamentos estão instalados",
                 "Instabilidade na alimentação",
-                "Níveis de ondas acústicas extremamente forter no local onde os euipamentos estão instalados"
+                "Níveis de ondas acústicas extremamente fortes no local onde os equipamentos estão instalados"
             ],
             "correctIndex": 4,
             "notes": "Notas",
@@ -68,9 +68,9 @@
         {
             "question": "Que deverei fazer se tiver conhecimento que a minha estação está a provocar interferências?",
             "answers": [
-                "Devo investigar a situação mas não tendo a certeza se a culpa é minha, devo continuar as minhas emisões, apesar das reclamações",
+                "Devo investigar a situação mas não tendo a certeza se a culpa é minha, devo continuar as minhas emissões, apesar das reclamações",
                 "Sem prejuízo de investigar mais tarde as causas da interferência, devo continuar a fazer normalmente as minhas comunicações",
-                "Como medida preventiva, devo de imediato desligar a minha estação e só depois de entender a causa da interfrência recomeçar as emissões",
+                "Como medida preventiva, devo de imediato desligar a minha estação e só depois de entender a causa da interferência recomeçar as emissões",
                 "Nada terei que fazer até que me provem que realmente existem interferências"
             ],
             "correctIndex": 3,
@@ -82,8 +82,8 @@
             "question": "Que efeito pode ter um corte numa linha de transmissão de televisão por cabo numa estação de amador?",
             "answers": [
                 "Não afecta a estação de amador",
-                "A radiação das harmónicas pode provocar a emisão pela estação de amador de radiações espúrias",
-                "Além da possibilidade do amador interferir quando em emissão, pode causar inteferência na recepção da estação de amador",
+                "A radiação das harmónicas pode provocar a emissão pela estação de amador de radiações espúrias",
+                "Além da possibilidade do amador interferir quando em emissão, pode causar interferência na recepção da estação de amador",
                 "Podem ser criadas no cabo tensões muito elevadas quando a estação de amador emite"
             ],
             "correctIndex": 3,
@@ -135,7 +135,7 @@
             "answers": [
                 "Um amador deverá sempre respeitar as utilizações das várias frequências de acordo com o definido na regulamentação aplicável",
                 "Um amador deverá sempre ajudar os menos experientes de forma paciente, educada e desinteressada",
-                "Um amador deverá sempre, manter-se perfeitamete actualizado no que respeita ao conhecimento da legislação aplicável aos serviços de amador e de amador por satélite",
+                "Um amador deverá sempre, manter-se perfeitamente actualizado no que respeita ao conhecimento da legislação aplicável aos serviços de amador e de amador por satélite",
                 "Um amador deverá sempre, por solidariedade com outros, causar perturbações no espectro quando acha que os interesses do radioamadorismo estão e causa"
             ],
             "correctIndex": 4,
@@ -159,7 +159,7 @@
         {
             "question": "Duma forma geral, as ondas de rádio em espaço livre",
             "answers": [
-                "atenuam-se lineramente com a distância",
+                "atenuam-se linearmente com a distância",
                 "atenuam-se de acordo com a lei do inverso do quadrado da distância",
                 "não se atenuam com a distância",
                 "só se atenuam se se propagarem através do ar"
@@ -170,10 +170,10 @@
             "uniqueID": 13
         },
         {
-            "question": "Qual das seguints afirmações não está correcta?",
+            "question": "Qual das seguintes afirmações não está correcta?",
             "answers": [
                 "Os titulares de CAN, excepto da categoria 3, podem utilizar as suas estações individuais apenas em modo de receção",
-                "Os titulars de CAN podem utilizar estações de uso comum",
+                "Os titulares de CAN podem utilizar estações de uso comum",
                 "Os titulares de CAN podem utilizar, de acordo com a sua categoria, estações individuais de outros amadores, com exceção das estações de amadores da categoria 3",
                 "Os titulares de CAN, exceto da categoria 3, podem partilhar a utilização das suas estações individuais com outros amadores, de acordo com a sua categoria"
             ],
@@ -187,7 +187,7 @@
             "answers": [
                 "Assegurar que as estações emitem segundo uma elevação superior a 10º relativamente ao horizonte",
                 "Assegurar que as estações respeitam os limites definidos para as radiações não essenciais",
-                "Permitir a ficalização das estações",
+                "Permitir a fiscalização das estações",
                 "Colaborar com a ANACOM na resolução de interferências"
             ],
             "correctIndex": 1,
@@ -226,7 +226,7 @@
             "answers": [
                 "o indicativo de chamada da estação fixa adicional",
                 "o indicativo de chamada consignado a todas as estações de uma dada rede viária",
-                "o indicativo  de chamada da estação fixa principal",
+                "o indicativo de chamada da estação fixa principal",
                 "o indicativo de chamada consignado a todas as estações móveis da União Europeia"
             ],
             "correctIndex": 3,
@@ -250,7 +250,7 @@
         {
             "question": "Quantas estações individuais fixas podem ser utilizadas ao abrigo de um CAN?",
             "answers": [
-                "Apenas uma estaçao fixa",
+                "Apenas uma estação fixa",
                 "Duas: uma principal e outra adicional",
                 "Três uma principal e duas adicionais",
                 "As que pretendem, dado não haver limite para número de estações fixas"
@@ -263,10 +263,10 @@
         {
             "question": "O CAN pode ser suspenso",
             "answers": [
-                "Por um periodo superior a 6 meses e inferior ou igual a 3 anos",
-                "Por um periodo superior a 9 meses e inferior ou igual a 4 anos",
-                "Por um periodo superior a 12 meses e inferior ou igual a 5 anos",
-                "Por um periodo superior a 24 meses e inferior ou igual a 10 anos"
+                "Por um período superior a 6 meses e inferior ou igual a 3 anos",
+                "Por um período superior a 9 meses e inferior ou igual a 4 anos",
+                "Por um período superior a 12 meses e inferior ou igual a 5 anos",
+                "Por um período superior a 24 meses e inferior ou igual a 10 anos"
             ],
             "correctIndex": 3,
             "notes": "Notas",
@@ -313,7 +313,7 @@
             "uniqueID": 24
         },
         {
-            "question": "Ao abrigo da actual legislação quem tem direiro a um certificado HAREC após aproveitamento em exame?",
+            "question": "Ao abrigo da actual legislação quem tem direito a um certificado HAREC após aproveitamento em exame?",
             "answers": [
                 "Os amadores da categoria 1",
                 "Os amadores da categoria 2",
@@ -329,9 +329,9 @@
             "question": "Qual das seguintes frases está incorrecta?",
             "answers": [
                 "Nas faixas em que os Serviços de Amador ou de Amador por Satélite têm estatuto secundário, as estações de amador não deverão provocar interferências nos serviços com estatuto primário",
-                "Nas faixas em que os serviços de Amador ou de Amador por Satélite têm estatuto secundário, as estações de amador poderão provocar interferências prejudiciais nos serviços com estatuto primário",
+                "Nas faixas em que os Serviços de Amador ou de Amador por Satélite têm estatuto secundário, as estações de amador poderão provocar interferências prejudiciais nos serviços com estatuto primário",
                 "Nas faixas em que os Serviços de Amador ou de Amador por Satélite têm estatuto secundário, as estações de amador não poderão reclamar protecção de interferências causadas por estações de serviços com estatuto primário",
-                "Nas faixas em que os Serviço de Amador ou de Amador por Satélite têm estatuto secundário, as estações de amador poderão apenas reclamar protecção de interferências causadas por estações de serviços com estatuto secundário, se as consignações feitas a estes serviços forem posteriores àquelas."
+                "Nas faixas em que os ServiçoS de Amador ou de Amador por Satélite têm estatuto secundário, as estações de amador poderão apenas reclamar protecção de interferências causadas por estações de serviços com estatuto secundário, se as consignações feitas a estes serviços forem posteriores àquelas."
             ],
             "correctIndex": 2,
             "notes": "Notas",
@@ -747,7 +747,7 @@
                 "Ruído de ignição",
                 "Ruído branco na banda larga",
                 "Interferência heteródina",
-                "Todas as opções são\n válidas"
+                "Todas as opções são válidas"
             ],
             "correctIndex": 1,
             "notes": "Notas",
@@ -773,7 +773,7 @@
                 "Ruído branco na banda larga",
                 "Ruído de ignição",
                 "Ruído na linha eléctrica",
-                "Todas as opções são\n válidas"
+                "Todas as opções são válidas"
             ],
             "correctIndex": 4,
             "notes": "Notas",
@@ -940,8 +940,8 @@
             "question": "Qual a sequência correcta de ligação de uma estação emissora?",
             "answers": [
                 "Ligação de alimentação do emissor, comutação do interruptor \"on-off\" para \"on\", ligação do cabo da baixada ao emissor, ligação do cabo de baixada à antena",
-                "Comutação do interruptor on-off para \"on\", ligação do cabo da baixada ao emissor, ligação da alimentaçao do emissor, ligação do cabo da baixada à antena",
-                "Ligação do cabo da baixada à antena, ligação do cabo da baixada ao emissor, ligação da alimentação do emissor, comutação do interuptor on-off para \"on\"",
+                "Comutação do interruptor on-off para \"on\", ligação do cabo da baixada ao emissor, ligação da alimentação do emissor, ligação do cabo da baixada à antena",
+                "Ligação do cabo da baixada à antena, ligação do cabo da baixada ao emissor, ligação da alimentação do emissor, comutação do interruptor on-off para \"on\"",
                 "Qualquer das sequências anteriores estão correctas, pois é indiferente a forma como se liga"
             ],
             "correctIndex": 3,
@@ -1007,7 +1007,7 @@
                 "As ondas de rádio não precisam de suporte físico para se propagar, ou seja, propagam-se no vazio",
                 "As ondas de rádio precisam de suporte físico para se propagar, ou seja, não se propagam no vazio",
                 "As ondas de rádio duma forma geral atravessam a matéria, ou seja, podemos receber as referidas ondas no interior das nossas casas",
-                "As ondas de rádio duma forma geral propagam-se sem necesidade de guia artifical e por esse facto foram fundamentais no desenvolvimento de comunicações móveis"
+                "As ondas de rádio duma forma geral propagam-se sem necessidade de guia artificial e por esse facto foram fundamentais no desenvolvimento de comunicações móveis"
             ],
             "correctIndex": 2,
             "notes": "Notas",
@@ -1123,7 +1123,7 @@
             "answers": [
                 "Não emitir enquanto a situação não estiver resolvida, se necessário com a ajuda de amadores mais experientes",
                 "Nada, enquanto não tiver reclamações",
-                "Reduzir um pouco s potência a ver se ninguém reclama",
+                "Reduzir um pouco a potência a ver se ninguém reclama",
                 "Abandonar a actividade pois acho que nunca vou resolver este problema"
             ],
             "correctIndex": 1,
@@ -1252,8 +1252,8 @@
             "question": "Que efeito pode ter uma linha de transmissão de televisão por cabo, a radiar por deficiente instalação, numa estação de amador?",
             "answers": [
                 "Não afeta a estação de amador",
-                "As radiações produzidas pela linha de transmissão podem provocar isntabilidades na emissão da estação de amador",
-                "Além da possibilidade da estação de amador interferir na instalação de televisao",
+                "As radiações produzidas pela linha de transmissão podem provocar instabilidades na emissão da estação de amador",
+                "Além da possibilidade da estação de amador interferir na instalação de televisão",
                 "Podem ser criadas na linha de transmissão tensões muito elevadas quando a estação de amador emite, pondo em risco a segurança das pessoas"
             ],
             "correctIndex": 3,
@@ -1316,7 +1316,7 @@
         {
             "question": "Quais dos seguintes cuidados não é relevante do ponto de vista da segurança nas instalações onde estão os equipamentos da estação?",
             "answers": [
-                "Existência de mecanismos de proteção, tais como disjuntores dedicados, nas bancadas onde estão isntalados e são alimentados os equipamentos",
+                "Existência de mecanismos de proteção, tais como disjuntores dedicados, nas bancadas onde estão instalados e são alimentados os equipamentos",
                 "Sempre que os equipamentos são alimentados por baterias, verificar as polaridades quando se está a fazer a ligação",
                 "Nunca manusear os equipamentos com as mãos molhadas",
                 "Usar sempre máscara no nariz e na boca quando se estão a operar os equipamentos da estação para proteger as vias respiratórias"
@@ -1552,7 +1552,7 @@
             "answers": [
                 "Reclamar de imediato para o ICP-ANACOM",
                 "Emitir com a maior potência possível nessa frequência para manifestar o meu desagrado",
-                "Esperar que a intererência passo, pois podemos estar em presença de fenómenos anómalor de propagação",
+                "Esperar que a intererência passo, pois podemos estar em presença de fenómenos anómalos de propagação",
                 "Seguir os procedimentos publicados pelo ICP-ANACOM"
             ],
             "correctIndex": 4,
@@ -1563,7 +1563,7 @@
         {
             "question": "Uma vizinha minha diz que de vez em quando tem interferências na recepção de televisão e veio perguntar se não seria das minhas emisões. O que é correcto fazer?",
             "answers": [
-                "Nada, pois eu estou a trabalhar nas faixas corretcas e o problema deve ser da minha instalação de recepção de televisão",
+                "Nada, pois eu estou a trabalhar nas faixas correctas e o problema deve ser da minha instalação de recepção de televisão",
                 "Investigar a situação e se for problema dela, caberá a ela a resolução do problema",
                 "Investigar a situação e se concluir que o problema é das minhas emissões, emitir às horas que ela não vê televisão",
                 "Se o problema for na minha estação, investigar e resolver a situação ou ajudar a resolver a situação se o problema for da instalação de recepção."
@@ -1693,7 +1693,7 @@
         {
             "question": "Um receptor de radiocomunicações de amador destina-se a",
             "answers": [
-                "receber todas as comunicações nas faixas de amador em que é sintonizavel.",
+                "receber todas as comunicações nas faixas de amador em que é sintonizável.",
                 "receber todas as comunicações mesmo nas faixas de amador em que não é sintonizável",
                 "receber todo o tipo de comunicações em todas as faixas do espectro",
                 "nenhuma das respostas anteriores está correcta"
@@ -2046,7 +2046,7 @@
             "answers": [
                 "Mediante documento habilitante emitido por outro país",
                 "Mediante certificado do 6.º ano emitido por um estabelecimento de ensino reconhecido",
-                "Mediante exame realizado pela ANNACOM",
+                "Mediante exame realizado pela ANACOM",
                 "Mediante exame realizado pela IARU"
             ],
             "correctIndex": 3,
@@ -2315,7 +2315,7 @@
             "uniqueID": 178
         },
         {
-            "question": "O valor da potencia dissipada numa dada resistencia",
+            "question": "O valor da potência dissipada numa dada resistência",
             "answers": [
                 "aumenta quando a corrente diminui",
                 "aumenta quando a corrente aumenta",
@@ -2380,7 +2380,7 @@
             "uniqueID": 183
         },
         {
-            "question": "No Sistema Internancional de Unidades (SI) o valor de uma dada resistencia expressa-se em:",
+            "question": "No Sistema Internancional de Unidades (SI) o valor de uma dada resistência expressa-se em:",
             "answers": [
                 "Ampère",
                 "Volte",
@@ -2523,7 +2523,7 @@
             "uniqueID": 194
         },
         {
-            "question": "Qual o valor da resistencia apresentada na figura?",
+            "question": "Qual o valor da resistência apresentada na figura?",
             "answers": [
                 "1 Ohm",
                 "1 000 Ohm",
