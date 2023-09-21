@@ -241,7 +241,10 @@ footer > div:first-child {
   margin-top: -35px;
   /* aligns top of sub menu with top of list item */
 }
-
+#matomo-opt-out
+{
+	background-color: #046CAA;
+}
 button {
   background-color: #04AA6D;
   border: none;

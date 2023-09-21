@@ -175,6 +175,7 @@ class FavQuiz {
 
 						var questionBlock = document.createElement("div");
 						questionBlock.className = "questionBlock";
+						questionBlock.id = "questionBlock"+qindex;
 
 						var questionCard = document.createElement("div");
 						questionCard.className = "questionCard";
@@ -190,7 +191,7 @@ class FavQuiz {
 						answers.className = "answers";
 
 						var noteBlock = document.createElement("div");
-						noteBlock.id = "note" + this.quiz.questions[qindex].index;
+						noteBlock.id = "note" + qindex;
 						noteBlock.className = "questionImage";
 
 						let i = 1;
@@ -320,7 +321,7 @@ class FavQuiz {
 			this.src = "images/starfav.png"; // Set the path to your favorite star icon image
 		} else {
 			// If already in favorites, remove it
-			const elements = document.getElementById("questionCardId" + this.value);
+			const elements = document.getElementById("questionBlock" + this.value);
 			elements.style.display = "none";
 			
 			
