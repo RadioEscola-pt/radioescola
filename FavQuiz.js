@@ -202,7 +202,7 @@ class FavQuiz {
 							let input = document.createElement("input");
 							input.type = "radio";
 							input.value = i;
-							input.name = "n" + this.quiz.questions[qindex].index;
+							input.name = "n" +qindex;
 
 							label.appendChild(input);
 							label.innerHTML += key;
