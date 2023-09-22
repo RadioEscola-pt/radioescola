@@ -1,9 +1,9 @@
 
-class loadChapter {
-	static chapter="";
+class LoadChapter {
+
 
     constructor(chapter ) {
-		loadChapter.chapter=chapter;
+		chapter=chapter;
 
 
         var ajaxRequest = new XMLHttpRequest();
@@ -25,7 +25,7 @@ class loadChapter {
                 console.log("Ignored readyState: " + ajaxRequest.readyState);
             }
         };
-        ajaxRequest.open('GET', 'capitulos/'+loadChapter.chapter+'/index.html');
+        ajaxRequest.open('GET', 'capitulos/'+chapter+'/index.html');
         ajaxRequest.send();
     }
 }

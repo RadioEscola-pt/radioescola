@@ -1,9 +1,10 @@
-class FavQuiz {
+class Quiz extends Classes([Questions,Storage]) {
 	static messagesArray = {};
 	static pageBlocks = [];
 	static currentPage = 0;
 	static test = false;
 	constructor(json) {
+		super();
 		this.jsonFile = json;
 		Quiz.pageBlocks = [];
 		this.createQuiz();
@@ -41,28 +42,7 @@ class FavQuiz {
 
 
 	}
-	stroreAnswer(isCorrect, answerId) {
-		const parts = this.jsonFile.split('.');
-		// Check if there is an existing record in local storage
-		const existingRecords = JSON.parse(localStorage.getItem(parts[0])) || {};
 
-		// Check if a record already exists for the answerId
-		if (existingRecords.hasOwnProperty(answerId)) {
-			// If a record exists, append the new correctness value to the array
-			existingRecords[answerId].isCorrect.push(isCorrect);
-		} else {
-			// If no record exists, create a new one with an array containing the initial value
-			existingRecords[answerId] = {
-				isCorrect: [isCorrect],
-			};
-		}
-
-		// Save the updated records back to local storage
-		localStorage.setItem(parts[0], JSON.stringify(existingRecords));
-
-		this.plotAnswers(existingRecords[answerId].isCorrect);
-
-	}
 	plotAnswers(answers) {
 
 		const canvasDiv = document.getElementById('answerDisplay');
@@ -100,22 +80,7 @@ class FavQuiz {
 		}
 	}
 
-	showPage() {
-		var index = parseInt(this.value);
-		window.scrollTo(0, 0);
 
-		if (index == 0) {
-
-			index = 0;
-		} else {
-			index = index / 10;
-		}
-		for (const page of Quiz.pageBlocks) {
-			page.style.display = "none";
-		}
-		Quiz.pageBlocks[index].style.display = "block";
-		Quiz.currentPage = index;
-	}
 	createQuiz() {
 
 		var numberOfUnanswered = 0;
@@ -128,6 +93,7 @@ class FavQuiz {
 				//the request is completed, now check its status
 				if (ajaxRequest.status == 200) {
 					//turn JSON into array
+	
 
 
 					Quiz.messagesArray = JSON.parse(ajaxRequest.responseText);
@@ -139,11 +105,7 @@ class FavQuiz {
 
 					welcomeDiv.appendChild(indexBlock);
 					var index = 0;
-					const parts = this.quiz.jsonFile.split('.');
-					const favoritesString = localStorage.getItem(parts[0] + "Fav") || '[]';
-					const favorites = JSON.parse(favoritesString);
 					for (var qindex in Quiz.messagesArray.questions) {
-						if (favorites.includes(this.quiz.questions[qindex].uniqueID) == false) continue;
 						var pageBlock;
 						Quiz.messagesArray.questions[qindex].index = index;
 						index++;
@@ -175,11 +137,9 @@ class FavQuiz {
 
 						var questionBlock = document.createElement("div");
 						questionBlock.className = "questionBlock";
-						questionBlock.id = "questionBlock"+qindex;
 
 						var questionCard = document.createElement("div");
 						questionCard.className = "questionCard";
-						questionCard.id = "questionCardId"+qindex;
 						questionBlock.appendChild(questionCard);
 
 						var questiontxt = document.createElement("span");
@@ -191,7 +151,7 @@ class FavQuiz {
 						answers.className = "answers";
 
 						var noteBlock = document.createElement("div");
-						noteBlock.id = "note" + qindex;
+						noteBlock.id = "note" + this.quiz.questions[qindex].index;
 						noteBlock.className = "questionImage";
 
 						let i = 1;
@@ -202,7 +162,7 @@ class FavQuiz {
 							let input = document.createElement("input");
 							input.type = "radio";
 							input.value = i;
-							input.name = "n" +qindex;
+							input.name = "n" + this.quiz.questions[qindex].index;
 
 							label.appendChild(input);
 							label.innerHTML += key;
@@ -248,10 +208,11 @@ class FavQuiz {
 							btn.quiz = this.quiz;
 							btn.onclick = this.quiz.checkQuestion;
 							questionCard.appendChild(btn);
-
+							if(MatomoOptOutManager.hasConsent())
+							{
 							let starIcon = document.createElement("img");
 							starIcon.unitqueId = Quiz.messagesArray.questions[qindex].uniqueID;
-
+							const parts = this.quiz.jsonFile.split('.');
 							starIcon.existingRecords = parts[0];
 							if (localStorage && localStorage.getItem(starIcon.existingRecords + "Fav") !== null) {
 								const favorites = JSON.parse(localStorage.getItem(starIcon.existingRecords + "Fav")) || [];
@@ -265,17 +226,16 @@ class FavQuiz {
 								starIcon.src = "images/starnotfav.png"; // Set the path to your default star icon image
 								localStorage.setItem(starIcon.existingRecords + "Fav", JSON.stringify([]));
 							}
-							starIcon.value = qindex;
-							starIcon.jsonFile=this.quiz.jsonFile;
 
 
 
 							// Add a click event listener to the star icon
-							starIcon.onclick = this.quiz.saveFav;
+							starIcon.onclick= this.quiz.saveFav;
+							questionCard.appendChild(starIcon);
+							}
+
 
 							
-
-							questionCard.appendChild(starIcon);
 						}
 					}
 					console.log("Unanswered" + numberOfUnanswered);
@@ -290,52 +250,23 @@ class FavQuiz {
 		ajaxRequest.open('GET', this.jsonFile);
 		ajaxRequest.send();
 	}
-	static showFavElement(cat, id) {
-	  
-	    const favorites = JSON.parse(localStorage.getItem(cat + "Fav")) ; // Parse and handle null/empty array
-	    const element = document.getElementById(id);
-	
-		if (favorites === null || favorites.length === 0) {
-	        element.style.display = "none"; // Hide the element if favorites is null or empty
-	      } else {
-	        element.style.display = "block"; // Show the element if it's in favorites
-	      }
-	    
-	  }
 
-	  static hideFavElement (cat, id) {
-	    const element = document.getElementById(id);
-	    element.style.display = "none"; // Hide the element if it's not in favorites
-	      
-	    
-	  }
 	saveFav() {
-		var favorites = JSON.parse(localStorage.getItem(this.existingRecords + "Fav"));
+		var favorites=JSON.parse(localStorage.getItem(this.existingRecords + "Fav"));
 		// Get the unique ID of the question associated with the clicked star
 		const index = favorites.indexOf(this.unitqueId);
 		if (index === -1) {
 			// If not in favorites, add it
 			favorites.push(this.unitqueId);
-
-			
 			this.src = "images/starfav.png"; // Set the path to your favorite star icon image
 		} else {
 			// If already in favorites, remove it
-			const elements = document.getElementById("questionBlock" + this.value);
-			elements.style.display = "none";
-			
-			
 			favorites.splice(index, 1);
 			this.src = "images/starnotfav.png"; // Set the path to your regular star icon image
-			if (favorites.length==0)
-			{
-				new Quiz(this.jsonFile);
-			}
 		}
 
 		// Save the updated favorites array back to local storage
 		localStorage.setItem(this.existingRecords + "Fav", JSON.stringify(favorites));
-		
 		MatomoOptOutManager.update();
 	}
 
