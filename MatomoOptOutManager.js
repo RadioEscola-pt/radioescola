@@ -13,10 +13,10 @@ class MatomoOptOutManager {
 		"YouMayOptOut3": "Fazê-lo protegerá a sua privacidade, mas também impedirá o proprietário de aprender com as suas ações e criar uma experiência melhor para si e outros utilizadores.",
 		"OptOutErrorNoCookies": "A funcionalidade de rastreamento requer que os cookies estejam ativados.",
 		"OptOutErrorNotHttps": "A funcionalidade de rastreamento pode não funcionar porque este site não foi carregado via HTTPS. Por favor, recarregue a página para verificar se o seu estado de opt-out foi alterado.",
-		"YouAreNotOptedOut": "Está sem funcionalidade de rastreamento e memoria local",
-		"UncheckToOptOut": "Desmarque esta caixa para optar desligar rastreamento local e memoria local",
-		"YouAreOptedOut": "Está atualmente optado por desligar rastreamento local e memoria local",
-		"CheckToOptIn": "Marque esta caixa para optar por opt-in.",
+		"YouAreNotOptedOut": "Autoriza rastreamento e guardar dados no seu browser.",
+		"UncheckToOptOut": "Desmarque para não autorizar.",
+		"YouAreOptedOut": "Não autoriza rastreamento e guardar dados no seu browser.",
+		"CheckToOptIn": "Marque esta caixa para autorizar.",
 		"OptOutErrorNoTracker": "A funcionalidade de  rastreamento não conseguiu encontrar o código Matomo Tracker nesta página."
 	};
 	constructor(settings) {
