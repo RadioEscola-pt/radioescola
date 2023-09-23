@@ -25,7 +25,7 @@ $result = mysqli_stmt_get_result($query_pergunta);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo "<a href=editar.php?id=" . $row["pergunta_id"] . ">" . $row["question"] . "</a>";
-        if (isset($_POST["p_num"])){
+        if ($_POST["p_num"]){
             echo "&nbsp; &nbsp; <a href=editar.php?addsource&s_id=" .  $_SESSION["current_source_id"] . "&p_id=" . $row["pergunta_id"] . "&p_num=" . $_POST["p_num"] . "> Adicionar ao exame: " . $_SESSION["current_source_name"] . "</a><br>";
         } else echo "<br>";
 
