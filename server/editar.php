@@ -34,13 +34,6 @@ if (@$_POST["submit"] == "Atualizar"){
   }
   $query_update_pergunta = mysqli_prepare($mysqli, "UPDATE pergunta SET question = ?, notes = ? WHERE pergunta_id=?");
   mysqli_stmt_execute($query_update_pergunta, [$question, $notes, $id]);
-  
-  $query_update_fontes = mysqli_prepare($mysqli, "INSERT INTO pergunta_fonte (pergunta_id, fonte_id, pergunta_num) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE fonte_id=fonte_id");
-
-  // FIXME: Add question number 
-  foreach ($fontes as $fonte){
-    mysqli_stmt_execute($query_update_fontes, [$id, $fonte, 1]);
-  }
 
   //TODO: Check success of query
   echo "Atualizado com sucesso... Talvez...";
@@ -84,11 +77,10 @@ if ($result->num_rows > 0) {
       
       if ($row["img"] != "null") {echo "Imagem: <img src=\"" . $row["img"] . "\"></br>";}
       
-      echo "Fontes: <br><select name=fontes[] id=fontes multiple>";
+      echo "Fontes: <br>";
       while($fonte = $result_fonte->fetch_assoc()) {
-        echo "<option value=\"" . $fonte["f_id"] . "\" " . (($fonte["p_id"]) == $id ? "selected":"") . ">" . $fonte["fonte"] . " - " . $fonte["pn"] . "</option>";
+        if ($fonte["p_id"] == $id) echo $fonte["fonte"] . " - Pergunta nº" . $fonte["pn"] . "<br>";
       }
-      echo "</select><br>";
       echo "<input type=submit name=submit value=Atualizar>";
     }
     echo "</form>";
