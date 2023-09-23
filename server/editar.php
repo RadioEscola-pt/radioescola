@@ -14,6 +14,7 @@ if (@$_POST["submit"] == "Atualizar"){
   $id = $_POST["id"];
   $question = $_POST["question"];
   $respostas = $_POST["resposta"];
+  $fontes = $_POST["fontes"];
   $correta = $_POST["correta"];
   $notes = $_POST["notes"];
   $query_update_resposta = mysqli_prepare($mysqli, "UPDATE resposta SET resposta = ?, correta = ? WHERE resposta_id=?");
@@ -22,7 +23,14 @@ if (@$_POST["submit"] == "Atualizar"){
   }
   $query_update_pergunta = mysqli_prepare($mysqli, "UPDATE pergunta SET question = ?, notes = ? WHERE pergunta_id=?");
   mysqli_stmt_execute($query_update_pergunta, [$question, $notes, $id]);
-  //TODO: Update Sources
+  
+  $query_update_fontes = mysqli_prepare($mysqli, "INSERT INTO pergunta_fonte (pergunta_id, fonte_id, pergunta_num) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE fonte_id=fonte_id");
+
+  // FIXME: Add question number 
+  foreach ($fontes as $fonte){
+    mysqli_stmt_execute($query_update_fontes, [$id, $fonte, 1]);
+  }
+
   //TODO: Check success of query
   echo "Atualizado com sucesso... Talvez...";
 }
@@ -38,7 +46,7 @@ mysqli_stmt_bind_param($query_resposta, "d", $id);
 mysqli_stmt_execute($query_resposta);
 $result_res = mysqli_stmt_get_result($query_resposta);
 
-$query_fonte = mysqli_prepare($mysqli, "SELECT f.fonte as fonte, pf.pergunta_id as p_id  FROM fonte f LEFT JOIN pergunta_fonte pf ON (f.fonte_id = pf.fonte_id AND pf.pergunta_id=?)");
+$query_fonte = mysqli_prepare($mysqli, "SELECT f.fonte as fonte, f.fonte_id as f_id, pf.pergunta_id as p_id, pf.pergunta_num as pn  FROM fonte f LEFT JOIN pergunta_fonte pf ON (f.fonte_id = pf.fonte_id AND pf.pergunta_id=?)");
 mysqli_stmt_bind_param($query_fonte, "d", $id);
 mysqli_stmt_execute($query_fonte);
 $result_fonte = mysqli_stmt_get_result($query_fonte);
@@ -65,9 +73,9 @@ if ($result->num_rows > 0) {
       
       if ($row["img"] != "null") {echo "Imagem: <img src=\"" . $row["img"] . "\"></br>";}
       
-      echo "Fontes: <br><select name=fontes id=fontes multiple>";
+      echo "Fontes: <br><select name=fontes[] id=fontes multiple>";
       while($fonte = $result_fonte->fetch_assoc()) {
-        echo "<option value=\"" . $fonte["fonte"] . "\" " . (($fonte["p_id"]) == $id ? "selected":"") . ">" . $fonte["fonte"] . "</option>";
+        echo "<option value=\"" . $fonte["f_id"] . "\" " . (($fonte["p_id"]) == $id ? "selected":"") . ">" . $fonte["fonte"] . " - " . $fonte["pn"] . "</option>";
       }
       echo "</select><br>";
       echo "<input type=submit name=submit value=Atualizar>";
