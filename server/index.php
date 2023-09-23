@@ -5,6 +5,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM pergunta ORDER BY pergunta_id DES
 
 <form action="pesquisa.php" method="post">
   <input type="text" name="pesquisa">
+  <input type="number" size=5 name="p_num">
   <input type="submit" name="submit" value="Pesquisar">
 </form>
 

@@ -3,11 +3,22 @@
 //TODO: upload images
 
 include_once "config.php";
+include "header.html";
+
+if (isset($_GET["addsource"])){
+  $p_id = $_GET['p_id'];
+  $s_id = $_GET['s_id'];
+  $p_num = $_GET['p_num'];
+  $query_update_fontes = mysqli_prepare($mysqli, "INSERT INTO pergunta_fonte (pergunta_id, fonte_id, pergunta_num) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE fonte_id=fonte_id");
+  mysqli_stmt_execute($query_update_fontes, [$p_id, $s_id, $p_num]);
+  echo "Fonte Adicionada";
+  die();
+}
 
 if (!$_REQUEST['id']){
-    echo "Movimento invalido, falta ID <br> <a href=index.php>Listagem de perguntas</a>";
-    die();
-  }
+  echo "Movimento invalido, falta ID <br> <a href=index.php>Listagem de perguntas</a>";
+  die();
+}
 $id = $_GET['id'];
 
 if (@$_POST["submit"] == "Atualizar"){
