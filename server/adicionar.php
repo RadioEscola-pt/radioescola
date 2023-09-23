@@ -1,5 +1,7 @@
 <?php 
 //TODO: Add source
+include "header.html";
+session_start();
 if (!isset($_POST["submit"])){
 ?>
 
@@ -10,7 +12,7 @@ if (!isset($_POST["submit"])){
     <label for="resposta3">Resposta 3:</label> <input type=text size=100 name="resposta[]" id="resposta3"> <input type=radio name="correta" value="2"> <br>
     <label for="resposta4">Resposta 4:</label> <input type=text size=100 name="resposta[]" id="resposta4"> <input type=radio name="correta" value="3"> <br>
     <label for="notes">Notas:</label><input type=text size=150 name="notes" id="notes"> <br>
-    <label for="fonte">Fonte:</label> <input type=text size=50 name="fonte" id="fonte"> <br>
+    <label for="fonte">Fonte:</label> <input type=hidden name="fonte" id="fonte"> <?php echo $_SESSION["current_source_name"]; ?> <a href=fonte.php>Mudar fonte</a><br>
     <input type="submit" name="submit" value="Adicionar">
 </form>
 
