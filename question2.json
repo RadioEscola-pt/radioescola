@@ -192,7 +192,8 @@
                 "3600 J"
             ],
             "correctIndex": 4,
-            "notes": "A5 Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p8</a>) 1 Joule é 1W por Segundo, logo numa hora, que contem 3600 segundos, são consumidos 3600 Joules, resposta 4",
+            "notes": "1 Joule é 1W por Segundo, logo numa hora, que contem 3600 segundos, são consumidos 3600 Joules, resposta 4",
+			"fonte": "A5 2023_08_29p8 2022_02_03p8",
             "img": null,
             "uniqueID": 15
         },
@@ -217,8 +218,9 @@
                 "95 V",
                 "100 V"
             ],
-            "notes": "Vt=100-40*0,25 =90 V Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p14</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p14</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p14</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p16</a>)",
-            "correctIndex": 2,
+			"correctIndex": 2,
+            "notes": "Vt=100-40*0,25 =90V",
+            "fonte": "2023_08_29p16 2023_03_08p16 2012_04_10p14 2017_09_27p14 2018_03_08p14",
             "img": null,
             "uniqueID": 17
         },
@@ -1257,8 +1259,9 @@
                 "4 resistências de 8 ohms em série.",
                 "4 resistências de 16 ohms em série."
             ],
-            "notes": "Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p8</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p9</a>)",
-            "correctIndex": 2,
+			"correctIndex": 2,
+            "notes": "",
+            "fonte": "2023_08_29p9 0000_00_03p8 2023_06_26p9",
             "img": null,
             "uniqueID": 97
         },
@@ -1883,7 +1886,8 @@
                 "a deixar passar as frequências mais baixas e as frequências mais altas, rejeitando uma dada gama de frequências"
             ],
             "correctIndex": 3,
-            "notes": " Exames:(<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p18</a>)",
+            "notes": "",
+			"fonte": "2023_08_29p18 2022_02_03p18",
             "img": null,
             "uniqueID": 145
         },
@@ -2118,7 +2122,8 @@
                 "Filtragem"
             ],
             "correctIndex": 1,
-            "notes": "A107 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p9</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p9</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p10</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p10</a>)",
+            "notes": "",
+			"fonte": "A107 2023_08_29p9 2022_07_20p10 2022_06_27p10 2016_01_00p9 2017_09_27p9",
             "img": null,
             "uniqueID": 163
         },
@@ -3132,7 +3137,8 @@
                 "Propagação de ondas de rádio"
             ],
             "correctIndex": 1,
-            "notes": "A189 Exames:(<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p17</a>)",
+            "notes": "",
+			"fonte": "A189 2023_08_29p17 2023_06_26p17",
             "img": null,
             "uniqueID": 241
         },
@@ -3275,7 +3281,8 @@
                 "AJUDA"
             ],
             "correctIndex": 3,
-            "notes": "A177 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p3</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p3</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p4</a>) (<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p1</a>)",
+            "notes": "",
+			"fonte": "A177 2023_08_29p1 2012_04_10p3 0000_00_02p3 2016_01_00p4 2023_06_15p1",
             "img": null,
             "uniqueID": 252
         },
@@ -3288,7 +3295,8 @@
                 ".-.-.-"
             ],
             "correctIndex": 1,
-            "notes": " Exames:(<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p4</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p4</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p1</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p1</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p1</a>)",
+            "notes": "",
+			"fonte": "2023_08_29p1 2023_01_27p1 2022_08_26p1 2022_06_27p1 2018_06_19p4 2017_09_27p4",
             "img": null,
             "uniqueID": 253
         },
@@ -3392,8 +3400,8 @@
                 "Durante as suas comunicações, as estações de amador devem transmitir o seu indicativo de chamada de acordo com o definido na regulamentação aplicável"
             ],
             "correctIndex": 2,
-            "notes": "A183 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p6</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p2</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p2</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p3</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p3</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p3</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p3</a>)",
-            "img": null,
+            "notes": "",
+			"fonte": "A183 2023_08_29p3 2023_06_26p3 2022_02_03p3 2022_07_20p3 2011_11_00p6 2017_09_27p2 2018_03_08p2 2021_02_18p3",
             "uniqueID": 261
         },
         {
@@ -3444,7 +3452,8 @@
                 "A estação que emitir com a potência mais baixa"
             ],
             "correctIndex": 2,
-            "notes": "A188 Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p4</a>) (<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p4</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p4</a>) Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf'>ADENDA_2013_QNAF</a>",
+            "notes": "Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf'>ADENDA_2013_QNAF</a>",
+			"fonte": "A188 2023_08_29p2 0000_00_01p4 0000_00_03p4 2013_08_00p4",
             "img": null,
             "uniqueID": 265
         },
@@ -3512,19 +3521,6 @@
             "correctIndex": 2,
             "img": null,
             "uniqueID": 270
-        },
-        {
-            "question": "Qual das seguintes afirmações é falsa?",
-            "answers": [
-                "As potências máximas das emissões das estações de amador são fixadas pelas Administrações dos países signatários da Constituição e da Convenção da UIT",
-                "As potências máximas das emissões das estações de amador são fixadas pelo Regulamento das Radiocomunicações da UIT",
-                "Cabe às Administrações dos países signatários da Constituição e da Convenção da UIT, determinar se uma pessoa que quer ser amador tem as necessárias qualificações",
-                "Durante as suas comunicações, as estações de amador devem transmitir o seu indicativo de chamada de acordo com o definido na regulamentação aplicável"
-            ],
-            "notes": "",
-            "correctIndex": 2,
-            "img": null,
-            "uniqueID": 271
         },
         {
             "question": "A energia eléctrica (E) é definida pelo",
@@ -3759,19 +3755,6 @@
             "correctIndex": 2,
             "img": null,
             "uniqueID": 289
-        },
-        {
-            "question": "Qual das seguintes afirmações é falsa?",
-            "answers": [
-                "As potências máximas das emissões das estações de amador são fixadas pelas Administrações dos países signatários da Constituição e da Convenção da UIT",
-                "As potências máximas das emissões das estações de amador são fixadas pelo Regulamento das Radiocomunicações da UIT",
-                "Cabe às Administrações dos países signatários da Constituição e da Convenção da UIT, determinar se uma pessoa que quer ser amador tem as necessárias qualificações",
-                "Durante as suas comunicações, as estações de amador devem transmitir o seu indicativo de chamada de acordo com o definido na regulamentação aplicável"
-            ],
-            "notes": "",
-            "correctIndex": 2,
-            "img": null,
-            "uniqueID": 290
         },
         {
             "question": "As antenas Yagi:",
@@ -4028,8 +4011,9 @@
                 "Um díodo directamente polarizado",
                 "Um díodo inversamente polarizado"
             ],
-            "notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p10</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p11</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p11</a>)",
-            "correctIndex": 2,
+			"correctIndex": 2,
+            "notes": "",
+            "fonte": "2023_08_29p11 2023_03_08p11 0000_00_03p10 2018_03_08p11",
             "img": null,
             "uniqueID": 310
         },
