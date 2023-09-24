@@ -84,9 +84,7 @@ class simulateQuiz {
 
 		let btn = document.createElement("button");
 		btn.innerHTML = "Finalizar";
-		simulateQuiz.timeout = simulateQuiz.COUINTERTIMEOT;
-		window.clearTimeout(simulateQuiz.timer);
-		simulateQuiz.timer = window.setInterval(simulateQuiz.checkTimer, 1000);
+
 		btn.onclick = simulateQuiz.checkQuestions;
 		btn.id = 'submitQuiz'
 		buttons.appendChild(btn);
@@ -249,7 +247,11 @@ class simulateQuiz {
 						}
 						if (simulateQuiz.questions[qindex].notes == null) {
 							console.log("ERROR Q" + simulateQuiz.questions[qindex].numb);
-						}					
+						}
+
+						simulateQuiz.timeout = simulateQuiz.COUINTERTIMEOT;
+						window.clearTimeout(simulateQuiz.timer);
+						simulateQuiz.timer = window.setInterval(simulateQuiz.checkTimer, 1000);
 
 					}
 
