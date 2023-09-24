@@ -1427,6 +1427,7 @@
             ],
             "notes": "Em um amplificador de classe AB, os transistores conduzem por mais de meio período (180 graus), mas menos do que todo o período. Isso visa a combinar eficiência (comparável à classe B) com menor distorção de cruzamento (crossover distortion) comum em amplificadores de classe B.",
             "img": null,
+            "correctIndex": 4,
             "uniqueID": 110
         },
         {
