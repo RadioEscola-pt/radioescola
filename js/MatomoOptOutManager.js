@@ -1,5 +1,5 @@
 class MatomoOptOutManager {
-	static settings = {
+	 settings = {
 		"showIntro": 1,
 		"divId": "matomo-opt-out",
 		"useSecureCookies": 1,
@@ -19,19 +19,23 @@ class MatomoOptOutManager {
 		"CheckToOptIn": "Marque esta caixa para autorizar.",
 		"OptOutErrorNoTracker": "A funcionalidade de  rastreamento não conseguiu encontrar o código Matomo Tracker nesta página."
 	};
-	constructor(settings) {
+	constructor() {
 
 		this.checkForTrackerTried = 0;
 
 		this.checkForTrackerInterval = 250;
 		this.optOutDiv = null;
 		this.initialize();
+		if(MatomoOptOutManager.hasConsent()) {
+			const div = document.getElementById(this.settings.divId);
+			div.style.display = "none";
+		};
 	}
 
 	initialize() {
-		this.optOutDiv = document.getElementById(MatomoOptOutManager.settings.divId);
+		this.optOutDiv = document.getElementById(this.settings.divId);
 		if (!this.optOutDiv) {
-			MatomoOptOutManager.showContent(false, null, true);
+			this.showContent(false, null, true);
 			return;
 		}
 		this.checkForMatomoTracker();
@@ -43,7 +47,7 @@ class MatomoOptOutManager {
 			return;
 		}
 
-		if (MatomoOptOutManager.settings.useCookiesIfNoTracker) {
+		if (this.settings.useCookiesIfNoTracker) {
 			this.showOptOutDirect();
 			return;
 		}
@@ -53,65 +57,65 @@ class MatomoOptOutManager {
 
 	showOptOutTracker() {
 		_paq.push([() => {
-			if (MatomoOptOutManager.settings.cookieDomain) {
-				_paq.push(['setCookieDomain', MatomoOptOutManager.settings.cookieDomain]);
+			if (this.settings.cookieDomain) {
+				_paq.push(['setCookieDomain', this.settings.cookieDomain]);
 			}
-			if (MatomoOptOutManager.settings.cookiePath) {
-				_paq.push(['setCookiePath', MatomoOptOutManager.settings.cookiePath]);
+			if (this.settings.cookiePath) {
+				_paq.push(['setCookiePath', this.settings.cookiePath]);
 			}
 			if (this.isUserOptedOut()) {
-				MatomoOptOutManager.showContent(false, null, true);
+				this.showContent(false, null, true);
 			} else {
-				MatomoOptOutManager.showContent(true, null, true);
+				this.showContent(true, null, true);
 			}
 		}]);
 	}
 
 	showOptOutDirect() {
 		this.initMatomoConsentManager();
-		MatomoOptOutManager.showContent(MatomoOptOutManager.hasConsent());
+		this.showContent(MatomoOptOutManager.hasConsent());
 	}
-	static update() {
+	 update() {
 
-		MatomoOptOutManager.showContent(MatomoOptOutManager.hasConsent());
+		this.showContent(MatomoOptOutManager.hasConsent());
 	}
 
 	initMatomoConsentManager() {
 		MatomoOptOutManager.initMatomoConsentManager(
-			MatomoOptOutManager.settings.useSecureCookies,
-			MatomoOptOutManager.settings.cookiePath,
-			MatomoOptOutManager.settings.cookieDomain,
-			MatomoOptOutManager.settings.cookieSameSite
+			this.settings.useSecureCookies,
+			this.settings.cookiePath,
+			this.settings.cookieDomain,
+			this.settings.cookieSameSite
 		);
 	}
 
 
 
-	static consentGiven() {
+	consentGiven() {
 		MatomoOptOutManager.setCookie(MatomoOptOutManager.CONSENT_REMOVED_COOKIE_NAME, '', -129600000);
 		MatomoOptOutManager.setCookie(MatomoOptOutManager.CONSENT_COOKIE_NAME, new Date().getTime().toString(), 946080000000);
 
 		FavQuiz.showFavElement("question3","favQuiz3");
 		FavQuiz.showFavElement("question2","favQuiz2");
 		FavQuiz.showFavElement("question1","favQuiz1");
-		MatomoOptOutManager.showContent(true);
+		this.showContent(true);
 
 	}
 
 
 
 
-	static showContent(consent, errorMessage = null, useTracker = false) {
+	showContent(consent, errorMessage = null, useTracker = false) {
 		const errorBlock = '<p style="color: red; font-weight: bold;">';
-		const div = document.getElementById(MatomoOptOutManager.settings.divId);
+		const div = document.getElementById(this.settings.divId);
 
 		if (!navigator || !navigator.cookieEnabled) {
-			div.innerHTML = errorBlock + MatomoOptOutManager.settings.OptOutErrorNoCookies + '</p>';
+			div.innerHTML = errorBlock + this.settings.OptOutErrorNoCookies + '</p>';
 			return;
 		}
 		/*
 		if (location.protocol !== 'https:') {
-			div.innerHTML = errorBlock + MatomoOptOutManager.settings.OptOutErrorNotHttps + '</p>';
+			div.innerHTML = errorBlock + this.settings.OptOutErrorNotHttps + '</p>';
 			return;
 		}*/
 		if (errorMessage !== null) {
@@ -127,34 +131,34 @@ class MatomoOptOutManager {
 		FavQuiz.showFavElement("question3","favQuiz3");
 		FavQuiz.showFavElement("question2","favQuiz2");
 		FavQuiz.showFavElement("question1","favQuiz1");
-			if (MatomoOptOutManager.settings.showIntro) {
-				content += '<p>' + MatomoOptOutManager.settings.YouMayOptOut2 + ' ' + MatomoOptOutManager.settings.YouMayOptOut3 + '</p>';
+			if (this.settings.showIntro) {
+				content += '<p>' + this.settings.YouMayOptOut2 + ' ' + this.settings.YouMayOptOut3 + '</p>';
 			}
 			if (useTracker) {
 				content += '<input onclick="_paq.push([\'optUserOut\']); MatomoOptOutManager.consentRevoked();" id="trackVisits" type="checkbox" checked="checked" />';
 			} else {
 				content += '<input onclick="MatomoOptOutManager.consentRevoked();" id="trackVisits" type="checkbox" checked="checked" />';
 			}
-			content += '<label for="trackVisits"><strong><span>' + MatomoOptOutManager.settings.YouAreNotOptedOut + ' ' + MatomoOptOutManager.settings.UncheckToOptOut + '</span></strong></label>';
+			content += '<label for="trackVisits"><strong><span>' + this.settings.YouAreNotOptedOut + ' ' + this.settings.UncheckToOptOut + '</span></strong></label>';
 		} else {
 			FavQuiz.hideFavElement("question3","favQuiz3");
 		FavQuiz.hideFavElement("question2","favQuiz2");
 		FavQuiz.hideFavElement("question1","favQuiz1");
-			if (MatomoOptOutManager.settings.showIntro) {
-				content += '<p>' + MatomoOptOutManager.settings.OptOutComplete + ' ' + MatomoOptOutManager.settings.OptOutCompleteBis + '</p>';
+			if (this.settings.showIntro) {
+				content += '<p>' + this.settings.OptOutComplete + ' ' + this.settings.OptOutCompleteBis + '</p>';
 			}
 			if (useTracker) {
 				content += '<input onclick="_paq.push([\'forgetUserOptOut\']); MatomoOptOutManager.consentGiven();" id="trackVisits" type="checkbox" />';
 			} else {
 				content += '<input onclick="MatomoOptOutManager.consentGiven();" id="trackVisits" type="checkbox" />';
 			}
-			content += '<label for="trackVisits"><strong><span>' + MatomoOptOutManager.settings.YouAreOptedOut + ' ' + MatomoOptOutManager.settings.CheckToOptIn + '</span></strong></label>';
+			content += '<label for="trackVisits"><strong><span>' + this.settings.YouAreOptedOut + ' ' + this.settings.CheckToOptIn + '</span></strong></label>';
 		}
 		div.innerHTML = content;
 		const hideButton = document.createElement("button");
 		hideButton.textContent = "esconder";
 		hideButton.onclick = () => {
-			const div = document.getElementById(MatomoOptOutManager.settings.divId);
+			const div = document.getElementById(this.settings.divId);
 			div.style.display = "none";
 		};
 		div.appendChild(hideButton);
@@ -216,7 +220,7 @@ class MatomoOptOutManager {
 		MatomoOptOutManager.setCookie(MatomoOptOutManager.CONSENT_COOKIE_NAME, '', -129600000);
 		MatomoOptOutManager.setCookie(MatomoOptOutManager.CONSENT_REMOVED_COOKIE_NAME, new Date().getTime().toString(), 946080000000);
 		localStorage.clear();
-		MatomoOptOutManager.showContent(false);
+		this.showContent(false);
 		FavQuiz.hideFavElement("question3","favQuiz3");
 		FavQuiz.hideFavElement("question2","favQuiz2");
 		FavQuiz.hideFavElement("question1","favQuiz1");

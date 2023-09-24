@@ -23,8 +23,26 @@ class Storage {
 		// Save the updated records back to local storage
 		localStorage.setItem(parts[0], JSON.stringify(existingRecords));
 
-		this.plotAnswers(existingRecords[answerId].isCorrect);
 
+
+	}
+	saveFav() {
+		var favorites=JSON.parse(localStorage.getItem(this.existingRecords + "Fav"));
+		// Get the unique ID of the question associated with the clicked star
+		const index = favorites.indexOf(this.unitqueId);
+		if (index === -1) {
+			// If not in favorites, add it
+			favorites.push(this.unitqueId);
+			this.src = "images/starfav.png"; // Set the path to your favorite star icon image
+		} else {
+			// If already in favorites, remove it
+			favorites.splice(index, 1);
+			this.src = "images/starnotfav.png"; // Set the path to your regular star icon image
+		}
+
+		// Save the updated favorites array back to local storage
+		localStorage.setItem(this.existingRecords + "Fav", JSON.stringify(favorites));
+		MatomoOptOutManager.update();
 	}
 
 }
