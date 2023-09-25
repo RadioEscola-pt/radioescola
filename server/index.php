@@ -1,5 +1,6 @@
 <?php
 include_once "config.php";
+include "header.html";
 $result = mysqli_query($mysqli, "SELECT * FROM pergunta ORDER BY pergunta_id DESC");
 ?>
 
