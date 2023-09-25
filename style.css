@@ -242,6 +242,7 @@ footer > div:first-child {
   /* aligns top of sub menu with top of list item */
 }
 
+
 table {
   border: 1px solid #1E293B;
   padding: 0;
@@ -293,4 +294,34 @@ h2 {
 
 p + h2 {
   margin-top: 2rem;
+}
+#matomo-opt-out
+{
+	background-color: #e2e8f0;
+	width: min(100%, 980px);
+	margin: 0 auto;
+	padding: 10px;
+	border-radius: 8px;
+	margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+#matomo-opt-out button {
+  background-color: #bbf7d0;
+  border: none;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 2px;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+#matomo-opt-out button:hover {
+  background-color: #86efac;
 }
