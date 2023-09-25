@@ -110,12 +110,12 @@ class Questions {
 			questionCard.appendChild(btn);
 
 			let starIcon = document.createElement("img");
-			starIcon.unitqueId = questions.uniqueID;
+			starIcon.uniqueID = questions.uniqueID;
 
 			starIcon.existingRecords = this.parts[0];
 			if (localStorage && localStorage.getItem(starIcon.existingRecords + "Fav") !== null) {
 				const favorites = JSON.parse(localStorage.getItem(starIcon.existingRecords + "Fav")) || [];
-				if (favorites.includes(starIcon.unitqueId)) {
+				if (favorites.includes(starIcon.uniqueID)) {
 					starIcon.src = "images/starfav.png"; // Set the path to your star icon image
 				} else {
 					starIcon.src = "images/starnotfav.png"; // Set the path to your star icon image

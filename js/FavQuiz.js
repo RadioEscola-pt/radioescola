@@ -118,10 +118,10 @@ class FavQuiz extends Classes([Questions,Storage]) {
 	saveFav() {
 		var favorites = JSON.parse(localStorage.getItem(this.existingRecords + "Fav"));
 		// Get the unique ID of the question associated with the clicked star
-		const index = favorites.indexOf(this.unitqueId);
+		const index = favorites.indexOf(this.uniqueID);
 		if (index === -1) {
 			// If not in favorites, add it
-			favorites.push(this.unitqueId);
+			favorites.push(this.uniqueID);
 
 			
 			this.src = "images/starfav.png"; // Set the path to your favorite star icon image
