@@ -39,6 +39,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 		
 		var currentPage=this.pageBlocks[this.simulateQuiz.currentPage];
 
+
 		if (document.querySelector('#qIndex button.active')) {
 			document.querySelector('#qIndex button.active').classList.remove("active")
 		}
