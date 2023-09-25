@@ -135,14 +135,17 @@ class FavQuiz extends Classes([Questions,Storage]) {
 			this.src = "images/starnotfav.png"; // Set the path to your regular star icon image
 			if (favorites.length==0)
 			{
+				
 				new Quiz(this.jsonFile);
 			}
 		}
 
 		// Save the updated favorites array back to local storage
 		localStorage.setItem(this.existingRecords + "Fav", JSON.stringify(favorites));
+		FavQuiz.showFavElement("question3","favQuiz3");
+		FavQuiz.showFavElement("question2","favQuiz2");
+		FavQuiz.showFavElement("question1","favQuiz1");
 		
-		MatomoOptOutManager.update();
 	}
 
 }

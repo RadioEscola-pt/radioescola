@@ -79,7 +79,10 @@ class Storage {
 
 		// Save the updated favorites array back to local storage
 		localStorage.setItem(this.existingRecords + "Fav", JSON.stringify(favorites));
-		MatomoOptOutManager.update();
+		FavQuiz.showFavElement("question3","favQuiz3");
+		FavQuiz.showFavElement("question2","favQuiz2");
+		FavQuiz.showFavElement("question1","favQuiz1");
+		
 	}
 
 }
