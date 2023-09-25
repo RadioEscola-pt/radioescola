@@ -8,9 +8,9 @@ class MatomoOptOutManager {
 		"useCookiesIfNoTracker": 1,
 
 		"OptOutComplete": "As suas visitas a este website não serão registadas pela ferramenta de Análise Web.",
-		"OptOutCompleteBis": "Note que se limpar os seus cookies, eliminar o cookie de opt-out ou se mudar de computador ou navegador web, terá de realizar novamente o procedimento de opt-out.",
-		"YouMayOptOut2": "Pode optar por impedir este website de agregar e analisar as ações que realiza aqui.",
-		"YouMayOptOut3": "Fazê-lo protegerá a sua privacidade, mas também impedirá o proprietário de aprender com as suas ações e criar uma experiência melhor para si e outros utilizadores.",
+		"OptOutCompleteNextLine": "Note que se limpar os seus cookies, eliminar o cookie de opt-out ou se mudar de computador ou navegador web, terá de realizar novamente o procedimento de opt-out.",
+		"YouMayOptOutPart1": "Pode optar por impedir este website de agregar e analisar as ações que realiza aqui.",
+		"YouMayOptOutPart2": "Fazê-lo protegerá a sua privacidade, mas também impedirá o proprietário de aprender com as suas ações e criar uma experiência melhor para si e outros utilizadores.",
 		"OptOutErrorNoCookies": "A funcionalidade de rastreamento requer que os cookies estejam ativados.",
 		"OptOutErrorNotHttps": "A funcionalidade de rastreamento pode não funcionar porque este site não foi carregado via HTTPS. Por favor, recarregue a página para verificar se o seu estado de opt-out foi alterado.",
 		"YouAreNotOptedOut": "Autoriza rastreamento e guardar dados no seu browser.",
@@ -132,7 +132,7 @@ class MatomoOptOutManager {
 		FavQuiz.showFavElement("question2","favQuiz2");
 		FavQuiz.showFavElement("question1","favQuiz1");
 			if (this.settings.showIntro) {
-				content += '<p>' + this.settings.YouMayOptOut2 + ' ' + this.settings.YouMayOptOut3 + '</p>';
+				content += '<p>' + this.settings.YouMayOptOutPart1 + ' ' + this.settings.YouMayOptOutPart2 + '</p>';
 			}
 			if (useTracker) {
 				content += '<input onclick="_paq.push([\'optUserOut\']); MatomoOptOutManager.consentRevoked();" id="trackVisits" type="checkbox" checked="checked" />';
@@ -145,7 +145,7 @@ class MatomoOptOutManager {
 		FavQuiz.hideFavElement("question2","favQuiz2");
 		FavQuiz.hideFavElement("question1","favQuiz1");
 			if (this.settings.showIntro) {
-				content += '<p>' + this.settings.OptOutComplete + ' ' + this.settings.OptOutCompleteBis + '</p>';
+				content += '<p>' + this.settings.OptOutComplete + ' ' + this.settings.OptOutCompleteNextLine + '</p>';
 			}
 			if (useTracker) {
 				content += '<input onclick="_paq.push([\'forgetUserOptOut\']); MatomoOptOutManager.consentGiven();" id="trackVisits" type="checkbox" />';
