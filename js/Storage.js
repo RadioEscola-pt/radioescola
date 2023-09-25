@@ -26,6 +26,43 @@ class Storage {
 
 
 	}
+	plotAnswers(answers) {
+
+		const canvasDiv = document.getElementById('answerDisplay');
+		canvasDiv.style.display = 'block'; // Show the canvas div
+		canvasDiv.onclick = function() {
+			canvasDiv.style.display = 'none';
+		}
+
+		const canvas = document.getElementById('canvas');
+		const ctx = canvas.getContext('2d');
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+		const trueColor = 'green';
+		const falseColor = 'red';
+
+		const answerWidth = 30; // Width of each answer box
+		const spacing = 10; // Spacing between answer boxes
+
+		let x = 10;
+		let y = 10;
+
+		for (const answer of answers) {
+			const color = answer ? trueColor : falseColor;
+
+			ctx.fillStyle = color;
+			ctx.fillRect(x, y, answerWidth, answerWidth);
+
+			x += answerWidth + spacing;
+
+			// Move to the next row if the canvas width is reached
+			if (x + answerWidth > canvas.width) {
+				x = 10;
+				y += answerWidth + spacing;
+			}
+		}
+	}
+
 	saveFav() {
 		var favorites=JSON.parse(localStorage.getItem(this.existingRecords + "Fav"));
 		// Get the unique ID of the question associated with the clicked star
