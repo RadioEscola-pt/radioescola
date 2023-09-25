@@ -66,7 +66,15 @@ class Storage {
 	saveFav() {
 		var favorites=JSON.parse(localStorage.getItem(this.existingRecords + "Fav"));
 		// Get the unique ID of the question associated with the clicked star
-		const index = favorites.indexOf(this.uniqueID);
+		var index = -1;
+		if (favorites==null)
+		{
+			favorites=[];	
+		}
+		else
+		{
+			index = favorites.indexOf(this.uniqueID);
+		}
 		if (index === -1) {
 			// If not in favorites, add it
 			favorites.push(this.uniqueID);

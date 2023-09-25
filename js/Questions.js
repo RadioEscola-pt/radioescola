@@ -110,32 +110,26 @@ class Questions {
 			questionCard.appendChild(btn);
 
 			let starIcon = document.createElement("img");
-			starIcon.uniqueID = questions.uniqueID;
-
 			starIcon.existingRecords = this.parts[0];
-			if (localStorage && localStorage.getItem(starIcon.existingRecords + "Fav") !== null) {
+
+			
+			if (MatomoOptOutManager.hasConsent()) {
+
+				starIcon.uniqueID = questions.uniqueID;
 				const favorites = JSON.parse(localStorage.getItem(starIcon.existingRecords + "Fav")) || [];
+
 				if (favorites.includes(starIcon.uniqueID)) {
 					starIcon.src = "images/starfav.png"; // Set the path to your star icon image
 				} else {
 					starIcon.src = "images/starnotfav.png"; // Set the path to your star icon image
 				}
-			} else {
-				// Handle the case where localStorage is not available or favorites array is null
-				starIcon.src = "images/starnotfav.png"; // Set the path to your default star icon image
-				localStorage.setItem(starIcon.existingRecords + "Fav", JSON.stringify([]));
-			}
-			starIcon.value = qindex;
-			starIcon.jsonFile=this.jsonFile;
+				starIcon.value = qindex;
+				starIcon.jsonFile=this.jsonFile;
+				// Add a click event listener to the star icon
+				starIcon.onclick = this.saveFav;
+				questionCard.appendChild(starIcon);
+			} 
 
-
-
-			// Add a click event listener to the star icon
-			starIcon.onclick = this.saveFav;
-
-			
-
-			questionCard.appendChild(starIcon);
 			}
 		}
 
