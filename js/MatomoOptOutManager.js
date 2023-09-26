@@ -184,12 +184,16 @@ class MatomoOptOutManager {
 		span.appendChild(labelText);
 		strong.appendChild(span);
 		label.appendChild(strong);
-		div.appendChild(trackVisitsCheckbox);
-		div.appendChild(label);
+
+		let container = document.createElement('div')
+
+		container.appendChild(trackVisitsCheckbox);
+		container.appendChild(label);
 		
 
-		const hideButton = document.createElement("button");
-		hideButton.textContent = "esconder";
+		const hideButton = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+		hideButton.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />`
+		hideButton.setAttribute('id', 'close');
 		hideButton.onclick = () => {
 			const div = document.getElementById(this.settings.divId);
 			div.style.display = "none";
@@ -199,6 +203,7 @@ class MatomoOptOutManager {
 			const div = document.getElementById(this.settings.divId);
 			div.style.display = "";
 		};
+		div.appendChild(container)
 		div.appendChild(hideButton);
 	}
 
@@ -209,7 +214,7 @@ class MatomoOptOutManager {
 		MatomoOptOutManager.cookieSameSite = cookieSameSite;
 		MatomoOptOutManager.CONSENT_COOKIE_NAME = 'mtm_consent';
 		MatomoOptOutManager.CONSENT_REMOVED_COOKIE_NAME = 'mtm_consent_removed';
-		if (useSecureCookies && location.protocol !== 'https:') {
+		if (useSecureCookies && location.protocol !== 'https:' && !(location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
 			console.log('Error with setting useSecureCookies: You cannot use this option on http.');
 		} else {
 			MatomoOptOutManager.cookieIsSecure = useSecureCookies;
@@ -221,9 +226,7 @@ class MatomoOptOutManager {
 		const removedCookie = MatomoOptOutManager.getCookie(MatomoOptOutManager.CONSENT_REMOVED_COOKIE_NAME);
 
 		if (!consentCookie && !removedCookie) {
-
-
-			return true;
+			return false;
 		}
 		if (removedCookie && consentCookie) {
 			MatomoOptOutManager.setCookie(MatomoOptOutManager.CONSENT_COOKIE_NAME, '', -129600000);
