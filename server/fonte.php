@@ -15,10 +15,18 @@ if (isset($_GET["finish"])){
 
 if (isset($_GET["newsource"])){
 ?>
-
+<br>
 <form action="fonte.php" method="post" enctype="multipart/form-data">
     <label for="nome">Nome: </label><input type="text" name="nome" id="nome"><br>
-    <label for="file">Ficheiro: </label><input type="file" name="file" id="file"><br>
+    <label for="categoria">Categoria: </label>
+    <select name="categoria" id="categoria">
+        <option value="-1">Selecione</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+<br>
+        <label for="file">Ficheiro: </label><input type="file" name="file" id="file"><br>
     <input type="submit" name="submit" value="Adicionar"> 
 
 </form>
