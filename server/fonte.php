@@ -8,6 +8,11 @@ if (isset($_GET["setsource"])){
     $_SESSION["current_source_name"] = $_GET["nome"];
 }
 
+if (isset($_GET["finish"])){
+    unset($_SESSION["current_source_id"]);
+    unset($_SESSION["current_source_name"]);
+}
+
 if (isset($_GET["newsource"])){
 ?>
 
@@ -45,7 +50,7 @@ if (@$_POST["submit"] == "Adicionar"){
 }
 
 if (isset($_SESSION["current_source_id"]) && !isset($_GET["newsource"]) ){
-    echo "A editar " . $_SESSION["current_source_name"] . "<br><br>";
+    echo "A editar " . $_SESSION["current_source_name"] . " <a href=\"fonte.php?finish\"> Terminar edição</a> <br><br>";
 }
 
 echo "<a href=fonte.php?newsource> Criar Novo </a> <br><br>";

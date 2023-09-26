@@ -3,6 +3,7 @@ include_once "config.php";
 include "header.html";
 session_start();
 $result = mysqli_query($mysqli, "SELECT * FROM pergunta ORDER BY pergunta_id DESC");
+if ($_SESSION['current_source_id']) echo "A editar: " . ($_SESSION['current_source_name']) . " <a href=\"fonte.php?finish\"> Terminar edição</a>"; 
 ?>
 
 <form action="pesquisa.php" method="post">
