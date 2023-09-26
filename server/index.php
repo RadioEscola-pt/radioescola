@@ -21,7 +21,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM pergunta ORDER BY pergunta_id DES
 <?php
 
 if ($result->num_rows > 0) {
-    echo "<table><tr><th>ID</th> <th>questão</th> <th>Editar</th></tr>";
+    echo "<table border=1><tr><th>ID</th> <th>questão</th> <th>Editar</th></tr>";
     while($row = $result->fetch_assoc()) {
       echo "<tr><td>" . $row["pergunta_id"] . "</td> <td>" . $row["question"]. "</td> <td><a href=editar.php?p_id=" . $row["pergunta_id"]. ">editar</a></td> </tr>";
     }
