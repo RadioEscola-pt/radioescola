@@ -1,12 +1,15 @@
 <?php
 include_once "config.php";
 include "header.html";
+session_start();
 $result = mysqli_query($mysqli, "SELECT * FROM pergunta ORDER BY pergunta_id DESC");
 ?>
 
 <form action="pesquisa.php" method="post">
   <input type="text" name="pesquisa">
-  <input type="number" size=5 name="p_num">
+    <?php if ($_SESSION['current_source_id']){ ?>
+        <input type="number" size=5 name="p_num">
+    <?php } ?>
   <input type="submit" name="submit" value="Pesquisar">
 </form>
 
