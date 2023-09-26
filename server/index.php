@@ -4,7 +4,7 @@ include "header.html";
 include_once "functions.php";
 
 session_start();
-print_current_source();
+printCurrentSource();
 
 $result = mysqli_query($mysqli, "SELECT * FROM pergunta ORDER BY pergunta_id DESC");
 
