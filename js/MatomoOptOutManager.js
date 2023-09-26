@@ -76,7 +76,6 @@ class MatomoOptOutManager {
 		this.showContent(MatomoOptOutManager.hasConsent());
 	}
 	 update() {
-
 		this.showContent(MatomoOptOutManager.hasConsent());
 	}
 
@@ -89,8 +88,6 @@ class MatomoOptOutManager {
 		);
 	}
 
-
-
 	consentGiven() {
 		MatomoOptOutManager.setCookie(MatomoOptOutManager.CONSENT_REMOVED_COOKIE_NAME, '', -129600000);
 		MatomoOptOutManager.setCookie(MatomoOptOutManager.CONSENT_COOKIE_NAME, new Date().getTime().toString(), 946080000000);
@@ -101,9 +98,6 @@ class MatomoOptOutManager {
 		this.matomoOptOutManager.showContent(true);
 
 	}
-
-
-
 
 	showContent(consent,  useTracker = false) {
 		const errorBlock = '<p style="color: red; font-weight: bold;">';
@@ -142,7 +136,6 @@ class MatomoOptOutManager {
 			  
 			}
 			
-			
 			if (useTracker) {
 				
 				trackVisitsCheckbox.onclick=function(){
@@ -162,13 +155,11 @@ class MatomoOptOutManager {
 			FavQuiz.hideFavElement("question2","favQuiz2");
 			FavQuiz.hideFavElement("question1","favQuiz1");
 			if (this.settings.showIntro) {
-
 				const introText = document.createTextNode(this.settings.OptOutComplete + ' ' + this.settings.OptOutCompleteNextLine);
 				introParagraph.appendChild(introText);
 			 	div.appendChild(introParagraph);
 			}
 			if (useTracker) {
-
 				trackVisitsCheckbox.onclick=function(){
 				  _paq.push(['forgetUserOptOut']); 
 				  this.consentGiven();
@@ -178,19 +169,15 @@ class MatomoOptOutManager {
 			  trackVisitsCheckbox.onclick=this.consentGiven;
 			}
 			labelText = document.createTextNode(this.settings.YouAreOptedOut + ' ' + this.settings.CheckToOptIn);
-			 
-			
 		}
 		span.appendChild(labelText);
 		strong.appendChild(span);
 		label.appendChild(strong);
 
 		let container = document.createElement('div')
-
 		container.appendChild(trackVisitsCheckbox);
 		container.appendChild(label);
 		
-
 		const hideButton = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 		hideButton.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />`
 		hideButton.setAttribute('id', 'close');
@@ -198,11 +185,13 @@ class MatomoOptOutManager {
 			const div = document.getElementById(this.settings.divId);
 			div.style.display = "none";
 		};
-		const showPrivaceDiv = document.getElementById("ShowPrivacyBar");
-		showPrivaceDiv.onclick = () => {
+
+		const showPrivacyBar = document.getElementById("ShowPrivacyBar");
+		showPrivacyBar.onclick = () => {
 			const div = document.getElementById(this.settings.divId);
 			div.style.display = "";
 		};
+
 		div.appendChild(container)
 		div.appendChild(hideButton);
 	}
@@ -267,5 +256,3 @@ class MatomoOptOutManager {
 		FavQuiz.hideFavElement("question1","favQuiz1");
 	}
 }
-
-
