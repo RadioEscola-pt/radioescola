@@ -10,6 +10,7 @@
             ],
             "correctIndex": 3,
             "notes": "Notas",
+			"fonte": "2023_08_18p17",
             "img": null,
             "uniqueID": 1
         },
@@ -62,6 +63,7 @@
             ],
             "correctIndex": 2,
             "notes": "Notas",
+			"fonte": "2023_08_18p10",
             "img": null,
             "uniqueID": 5
         },
@@ -127,6 +129,21 @@
             ],
             "correctIndex": 4,
             "notes": "Notas",
+			"fonte": "2023_08_18p14",
+            "img": null,
+            "uniqueID": 10
+        },
+		{
+            "question": "Os planos de frequências da IARU",
+            "answers": [
+                "deverão ser sempre utilizados desde que não colidam com disposições nacionais",
+                "deverão ser respeitados sem restrições",
+                "constituem apenas uma referência, não sendo obrigatória a sua utilização",
+                "estão a cair em desuso tendo e conta a evlução das radiocomunicações"
+            ],
+            "correctIndex": 1,
+            "notes": "Notas",
+			"fonte": "2023_08_18p15",
             "img": null,
             "uniqueID": 10
         },
@@ -247,6 +264,20 @@
             "img": null,
             "uniqueID": 19
         },
+		{
+            "question": "Duma forma geral e de acordo com as regras em vigor, ao utilizar uma estação de amador da qual não é titular, o amador deve",
+            "answers": [
+                "transmitir o Indicativo de Chamada (IC) da sua estação seguido do IC da estação operada",
+                "transmitir apenas o Indicativo de Chamada (IC) da sua estação, mesmo que não esteja em concursos",
+                "transmitir apenas o Indicativo de Chamada (IC) da sua estação operada, mesmo que não esteja em concursos",
+                "transmitir apenas o Indicativo de Chamada (IC) da estação operada seguido do IC da sua estação"
+            ],
+            "correctIndex": 4,
+            "notes": "Notas",
+			"fonte": "2023_08_18p4",
+            "img": null,
+            "uniqueID": 19
+        },
         {
             "question": "Quantas estações individuais fixas podem ser utilizadas ao abrigo de um CAN?",
             "answers": [
@@ -335,6 +366,7 @@
             ],
             "correctIndex": 2,
             "notes": "Notas",
+			"fonte": "2023_08_18p19",
             "img": null,
             "uniqueID": 26
         },
@@ -387,6 +419,7 @@
             ],
             "correctIndex": 1,
             "notes": "Notas",
+			"fonte": "2023_08_18p18",
             "img": null,
             "uniqueID": 30
         },
@@ -478,6 +511,7 @@
             ],
             "correctIndex": 3,
             "notes": "Notas",
+			"fonte": "2023_08_18p1",
             "img": null,
             "uniqueID": 37
         },
@@ -491,6 +525,7 @@
             ],
             "correctIndex": 4,
             "notes": "Notas",
+			"fonte": "2023_08_18p12",
             "img": null,
             "uniqueID": 38
         },
@@ -608,6 +643,7 @@
             ],
             "correctIndex": 1,
             "notes": "Notas",
+			"fonte": "2023_08_18p20",
             "img": null,
             "uniqueID": 47
         },
@@ -933,6 +969,7 @@
             ],
             "correctIndex": 1,
             "notes": "Notas",
+			"fonte": "2023_08_18p3",
             "img": null,
             "uniqueID": 72
         },
@@ -1193,6 +1230,7 @@
             ],
             "correctIndex": 3,
             "notes": "Notas",
+			"fonte": "2023_08_18p16",
             "img": null,
             "uniqueID": 92
         },
@@ -1349,6 +1387,7 @@
             ],
             "correctIndex": 2,
             "notes": "Notas",
+			"fonte": "2023_08_18p2",
             "img": null,
             "uniqueID": 104
         },
@@ -1368,13 +1407,14 @@
         {
             "question": "Dos seguintes tipos de antenas qual o que tem maior directividade",
             "answers": [
-                "Antena EFHW",
+                "Dipolo dobrado",
 				"Antena vertical de quarto de onda (ground plane)",
                 "Antena multi elementos (tipo yagi)",
                 "Antena de meio comprimento de onda"
             ],
-            "correctIndex": 2,
+            "correctIndex": 3,
             "notes": "Notas",
+			"fonte": "2023_08_18p13",
             "img": null,
             "uniqueID": 106
         },
@@ -1730,19 +1770,6 @@
             "uniqueID": 133
         },
         {
-            "question": "O Regulamento das Radiocomunicações é um publicação",
-            "answers": [
-                "da IARU",
-                "da CEPT",
-                "da UIT",
-                "da NATO"
-            ],
-            "correctIndex": 3,
-            "notes": "Notas",
-            "img": null,
-            "uniqueID": 134
-        },
-        {
             "question": "Qual a entidade que consigna indicativos de chamada às estações dos Serviços de Amador e de Amador  por Satélite?",
             "answers": [
                 "IARU",
@@ -1856,6 +1883,7 @@
             ],
             "correctIndex": 2,
             "notes": "Notas",
+			"fonte": "2023_08_18p6",
             "img": null,
             "uniqueID": 143
         },
@@ -1960,6 +1988,7 @@
             ],
             "correctIndex": 4,
             "notes": "Notas",
+			"fonte": "2023_08_18p5",
             "img": null,
             "uniqueID": 151
         },
@@ -2051,6 +2080,7 @@
             ],
             "correctIndex": 3,
             "notes": "Notas",
+			"fonte": "2023_08_18p9",
             "img": null,
             "uniqueID": 158
         },
@@ -2064,6 +2094,7 @@
             ],
             "correctIndex": 2,
             "notes": "Notas",
+			"fonte": "2023_08_18p11",
             "img": null,
             "uniqueID": 159
         },
@@ -2077,6 +2108,7 @@
             ],
             "correctIndex": 1,
             "notes": "Notas",
+			"fonte": "2023_08_18p7",
             "img": null,
             "uniqueID": 160
         },
@@ -2103,6 +2135,7 @@
             ],
             "correctIndex": 2,
             "notes": "Notas",
+			"fonte": "2023_08_18p8",
             "img": null,
             "uniqueID": 162
         },
