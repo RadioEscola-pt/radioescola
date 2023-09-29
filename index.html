@@ -7,7 +7,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	
+	<link rel="stylesheet" href="css/login.css">
 	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="js/Authentication.js"></script>
 	<script type="text/javascript" src="js/classUtils.js"></script>
 	<script type="text/javascript" src="js/Questions.js"></script>
 	<script type="text/javascript" src="js/Storage.js"></script>
@@ -25,6 +28,7 @@
 
 
 		window.onload = function () {
+			new Authentication();
 
 			const optOutManager = new MatomoOptOutManager();
 			const searchParams = new URLSearchParams(window.location.search);
@@ -47,10 +51,41 @@
 <body>
 
 	<header>
+		
+<div id="login" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" id="loginHide">&times;</a>
+    <button id="show-registration-form">Show Registration Form</button>
+    <form id="registration-form" style="display: none;">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required><br>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" required><br>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <h1>Login</h1>
+    <form id="login-form">
+        <label for="login-email">Email:</label>
+        <input type="email" id="login-email" required><br>
+
+        <label for="login-password">Password:</label>
+        <input type="password" id="login-password" required><br>
+
+        <input type="submit" value="Login">
+    </form>
+    <div id="message"></div>
+</div>
 
 
 
 		<ul id="nav">
+			<span style="font-size:30px;cursor:pointer" id="loginShow">login</span>
+			
 			<li class="subnav0"><a onclick="new LoadChapter('home')" href="#home">Página Inicial</a></li>
 			<li class="subnav0"><a onclick="new LoadChapter('equipa')" href="#home">Equipa</a></li>
 
