@@ -1,23 +1,60 @@
 <h1>Condensadores e Reatância Capacitiva</h1>
-<p>Um condensador é um componente elétrico que armazena energia em um campo elétrico criado entre duas placas condutoras separadas por um material isolante chamado dielétrico. Quando uma tensão é aplicada ao condensador, ele acumula cargas elétricas nas placas, armazenando energia.</p>
-<p>A capacidade de armazenamento de um condensador é medida em Farads (F). Quanto maior a capacidade, mais carga elétrica ele pode armazenar para uma dada tensão.</p>
-<p>A reatância capacitiva (<i>X<sub>C</sub></i>) é a oposição oferecida por um condensador à corrente alternada. Ela é determinada pela fórmula:</p>
-<p><i>X<sub>C</sub> = 1 / (2&pi; f C)</i></p>
+<p>
+  Um condensador é um componente elétrico que armazena energia em um campo
+  elétrico criado entre duas placas condutoras separadas por um material
+  isolante chamado dielétrico. Quando uma tensão é aplicada ao condensador, ele
+  acumula cargas elétricas nas placas, armazenando energia.
+</p>
+<p>
+  A capacidade de armazenamento de um condensador é medida em Farads (F). Quanto
+  maior a capacidade, mais carga elétrica ele pode armazenar para uma dada
+  tensão.
+</p>
+<p>
+  A reatância capacitiva (<i>X<sub>C</sub></i
+  >) é a oposição oferecida por um condensador à corrente alternada. Ela é
+  determinada pela fórmula:
+</p>
+<p>
+  <i>X<sub>C</sub> = 1 / (2&pi; f C)</i>
+</p>
 <p>Onde:</p>
 <ul>
-  <li><i>X<sub>C</sub></i> é a reatância capacitiva</li>
+  <li>
+    <i>X<sub>C</sub></i> é a reatância capacitiva
+  </li>
   <li><i>f</i> é a frequência da corrente alternada</li>
   <li><i>C</i> é a capacidade do condensador</li>
 </ul>
-<p>A reatância capacitiva diminui à medida que a frequência da corrente alternada aumenta. Isso significa que o condensador permite mais corrente em frequências mais altas.</p>
+<p>
+  A reatância capacitiva diminui à medida que a frequência da corrente alternada
+  aumenta. Isso significa que o condensador permite mais corrente em frequências
+  mais altas.
+</p>
 <h2>Exemplo de Cálculo de Reatância Capacitiva</h2>
-<p>Suponhamos que temos um condensador de <i>100 &micro;F</i> e uma frequência de <i>50 Hz</i>. A reatância capacitiva pode ser calculada:</p>
-<p><i>X<sub>C</sub> = 1 / (2&pi; &times; 50 &times; 100 &times; 10<sup>-6</sup>)</i></p>
-<p><i>X<sub>C</sub> &asymp; 318.31 &Omega;</i></p>
-<p>Isso significa que a reatância capacitiva do condensador a essa frequência é aproximadamente <i>318.31 &Omega;</i>.</p>
+<p>
+  Suponhamos que temos um condensador de <i>100 &micro;F</i> e uma frequência de
+  <i>50 Hz</i>. A reatância capacitiva pode ser calculada:
+</p>
+<p>
+  <i
+    >X<sub>C</sub> = 1 / (2&pi; &times; 50 &times; 100 &times;
+    10<sup>-6</sup>)</i
+  >
+</p>
+<p>
+  <i>X<sub>C</sub> &asymp; 318.31 &Omega;</i>
+</p>
+<p>
+  Isso significa que a reatância capacitiva do condensador a essa frequência é
+  aproximadamente <i>318.31 &Omega;</i>.
+</p>
 
 <h1>Cálculo de Circuito em Série com Condensador e Resistência</h1>
-<p>Neste exemplo, vamos calcular a impedância total e as quedas de tensão em um circuito em série composto por um condensador e uma resistência.</p>
+<p>
+  Neste exemplo, vamos calcular a impedância total e as quedas de tensão em um
+  circuito em série composto por um condensador e uma resistência.
+</p>
 <p>Suponha que temos os seguintes valores:</p>
 <ul>
   <li>Resistência (<i>R</i>): <i>100 &Omega;</i></li>
@@ -27,37 +64,103 @@
 </ul>
 <h2>Impedância Total</h2>
 <p>A impedância total (<i>Z</i>) de um circuito em série é dada por:</p>
-<p><i>Z = &radic;(R<sup>2</sup> + X<sub>C</sub><sup>2</sup>)</i></p>
-<p>Calculando a reatância capacitiva (<i>X<sub>C</sub></i>):</p>
-<p><i>X<sub>C</sub> = 1 / (2&pi; f C)</i></p>
-<p><i>X<sub>C</sub> &asymp; 636.62 &Omega;</i></p>
-<p>Substituindo os valores de <i>R</i> e <i>X<sub>C</sub></i> na fórmula da impedância:</p>
-<p><i>Z = &radic;(100<sup>2</sup> + 636.62<sup>2</sup>) &asymp; 637.18 &Omega;</i></p>
+<p>
+  <i>Z = &radic;(R<sup>2</sup> + X<sub>C</sub><sup>2</sup>)</i>
+</p>
+<p>
+  Calculando a reatância capacitiva (<i>X<sub>C</sub></i
+  >):
+</p>
+<p>
+  <i>X<sub>C</sub> = 1 / (2&pi; f C)</i>
+</p>
+<p>
+  <i>X<sub>C</sub> &asymp; 636.62 &Omega;</i>
+</p>
+<p>
+  Substituindo os valores de <i>R</i> e <i>X<sub>C</sub></i> na fórmula da
+  impedância:
+</p>
+<p>
+  <i
+    >Z = &radic;(100<sup>2</sup> + 636.62<sup>2</sup>) &asymp; 637.18 &Omega;</i
+  >
+</p>
 <h2>Quedas de Tensão</h2>
 <p>A corrente total (<i>I</i>) é dada por:</p>
 <p><i>I = V / Z</i></p>
 <p>Substituindo o valor de <i>V</i> e <i>Z</i>:</p>
 <p><i>I = 220 / 637.18 &asymp; 0.345 A</i></p>
-<p>A queda de tensão na resistência (<i>V<sub>R</sub></i>) é calculada por:</p>
-<p><i>V<sub>R</sub> = I &times; R</i></p>
-<p><i>V<sub>R</sub> &asymp; 34.5 V</i></p>
-<p>A queda de tensão no condensador (<i>V<sub>C</sub></i>) é calculada por:</p>
-<p><i>V<sub>C</sub> = I &times; X<sub>C</sub></i></p>
-<p><i>V<sub>C</sub> &asymp; 219.99 V</i></p>
-<p>Portanto, no circuito em série, a queda de tensão na resistência é de <i>34.5 V</i> e no condensador é de <i>219.99 V</i>.</p>
-
+<p>
+  A queda de tensão na resistência (<i>V<sub>R</sub></i
+  >) é calculada por:
+</p>
+<p>
+  <i>V<sub>R</sub> = I &times; R</i>
+</p>
+<p>
+  <i>V<sub>R</sub> &asymp; 34.5 V</i>
+</p>
+<p>
+  A queda de tensão no condensador (<i>V<sub>C</sub></i
+  >) é calculada por:
+</p>
+<p>
+  <i>V<sub>C</sub> = I &times; X<sub>C</sub></i>
+</p>
+<p>
+  <i>V<sub>C</sub> &asymp; 219.99 V</i>
+</p>
+<p>
+  Portanto, no circuito em série, a queda de tensão na resistência é de
+  <i>34.5 V</i> e no condensador é de <i>219.99 V</i>.
+</p>
 
 <h1>Fórmula para Cálculo da Tensão Total em Circuitos em Série</h1>
-<p>Quando analisamos um circuito em série com componentes como resistências, condensadores e possíveis fontes de tensão adicionais, podemos calcular a tensão total (<i>V<sub>total</sub></i>) usando a seguinte fórmula:</p>
-<p><i>V<sub>total</sub> = &radic;(V<sub>R</sub><sup>2</sup> + (V<sub>C</sub> - V<sub>I</sub>)<sup>2</sup>)</i></p>
+<p>
+  Quando analisamos um circuito em série com componentes como resistências,
+  condensadores e possíveis fontes de tensão adicionais, podemos calcular a
+  tensão total (<i>V<sub>total</sub></i
+  >) usando a seguinte fórmula:
+</p>
+<p>
+  <i
+    >V<sub>total</sub> = &radic;(V<sub>R</sub><sup>2</sup> + (V<sub>C</sub> -
+    V<sub>I</sub>)<sup>2</sup>)</i
+  >
+</p>
 <p>Onde:</p>
 <ul>
-  <li><i>V<sub>R</sub></i> é a queda de tensão na resistência;</li>
-  <li><i>V<sub>C</sub></i> é a queda de tensão no condensador;</li>
-  <li><i>V<sub>I</sub></i> é uma possível queda de tensão adicional devido a uma fonte de tensão indutiva (reatância indutiva)</li>
+  <li>
+    <i>V<sub>R</sub></i> é a queda de tensão na resistência;
+  </li>
+  <li>
+    <i>V<sub>C</sub></i> é a queda de tensão no condensador;
+  </li>
+  <li>
+    <i>V<sub>I</sub></i> é uma possível queda de tensão adicional devido a uma
+    fonte de tensão indutiva (reatância indutiva)
+  </li>
 </ul>
-<p>Esta fórmula considera as quedas de tensão nos componentes individuais e a possível variação de tensão de outras fontes no circuito.</p>
-<p>Se tivermos <i>V<sub>R</sub></i> = 34.4 V e <i>V<sub>C</sub></i> = 219.9 V, podemos calcular a tensão total:</p>
-<p><i>V<sub>total</sub> = &radic;(34.4<sup>2</sup> + (219.9 - V<sub>I</sub>)<sup>2</sup>)</i></p>
-<p>Ao substituir os valores e possíveis <i>V<sub>I</sub></i>, obtemos a tensão total no circuito.</p>
-<p>Esta fórmula nos ajuda a entender como as quedas de tensão individuais se somam para dar a tensão total no circuito em série.</p>
+<p>
+  Esta fórmula considera as quedas de tensão nos componentes individuais e a
+  possível variação de tensão de outras fontes no circuito.
+</p>
+<p>
+  Se tivermos <i>V<sub>R</sub></i> = 34.4 V e <i>V<sub>C</sub></i> = 219.9 V,
+  podemos calcular a tensão total:
+</p>
+<p>
+  <i
+    >V<sub>total</sub> = &radic;(34.4<sup>2</sup> + (219.9 -
+    V<sub>I</sub>)<sup>2</sup>)</i
+  >
+</p>
+<p>
+  Ao substituir os valores e possíveis <i>V<sub>I</sub></i
+  >, obtemos a tensão total no circuito.
+</p>
+<p>
+  Esta fórmula nos ajuda a entender como as quedas de tensão individuais se
+  somam para dar a tensão total no circuito em série.
+</p>
