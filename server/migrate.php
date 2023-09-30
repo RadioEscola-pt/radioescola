@@ -6,17 +6,17 @@
 
 include "config.php";
 
-$json = json_decode(file_get_contents('../question2.json'), true);
-$category = 2;
+$json = json_decode(file_get_contents('../question3.json'), true);
+$category = 3;
 $query_insert_pergunta = mysqli_prepare($mysqli, "INSERT INTO pergunta (question, notes, img, categoria) VALUES (?, ?, ?, ?)");
 $query_insert_resposta = mysqli_prepare($mysqli, "INSERT INTO resposta (pergunta_id, resposta, correta) VALUES (?, ?, ?)");
 
 foreach ($json["questions"] as $index => $question){
 
     $question_text = $question["question"];
-    $notes = $question["notes"];
+    if ($question["notes"]) $notes = $question["notes"]; else $notes = null;
     $correct_index = $question["correctIndex"];
-    $img = $question["img"]; 
+    if ($question["img"]) $img = $question["img"]; else $img = null;
 
     mysqli_stmt_execute($query_insert_pergunta, [$question_text, $notes, $img, $category]);
     $id = mysqli_insert_id($mysqli);
