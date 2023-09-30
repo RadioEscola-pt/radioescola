@@ -4,7 +4,7 @@ class Storage {
 		}
 
 
-	stroreAnswer(isCorrect, answerId) {
+	storeAnswer(isCorrect, answerId) {
 		const parts = this.jsonFile.split('.');
 		// Check if there is an existing record in local storage
 		const existingRecords = JSON.parse(localStorage.getItem(parts[0])) || {};
