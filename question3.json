@@ -133,7 +133,7 @@
             "notes": "Notas",
 			"fonte": "2023_08_18p14",
             "img": null,
-            "uniqueID": 10
+            "uniqueID": 210
         },
 		{
             "question": "Os planos de frequências da IARU",
@@ -279,7 +279,7 @@
             "notes": "Notas",
 			"fonte": "2023_08_18p4",
             "img": null,
-            "uniqueID": 19
+            "uniqueID": 211
         },
         {
             "question": "Quantas estações individuais fixas podem ser utilizadas ao abrigo de um CAN?",
@@ -450,7 +450,7 @@
             "correctIndex": 1,
             "notes": "Notas",
             "img": null,
-            "uniqueID": 32
+            "uniqueID": 212
         },
 		{
             "question": "Se ouvir um indicativo de uma estação seguido por /1, o que posso concluir?",

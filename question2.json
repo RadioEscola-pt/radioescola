@@ -419,7 +419,7 @@
             "notes": "",
 			"fonte": "2023_08_29p32",
             "img": null,
-            "uniqueID": 32
+            "uniqueID": 420
         },
         {
             "question": "Qual a frequência cujo comprimento de onda é 14,117 metro?",
@@ -2885,7 +2885,7 @@
             "correctIndex": 1,
             "notes": " Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p1</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p06</a>)",
             "img": null,
-            "uniqueID": 221
+            "uniqueID": 222
         },
         {
             "question": "A ionosfera",
@@ -2898,7 +2898,7 @@
             "correctIndex": 3,
             "notes": "A157 Exames:(<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p6</a>)",
             "img": null,
-            "uniqueID": 222
+            "uniqueID": 422
         },
         {
             "question": "O meio que reflete os sinais de onda curta de volta para a superfície da terra chama-se:",
@@ -3812,7 +3812,7 @@
             "notes": "Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p19</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p17</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p19</a>)",
             "correctIndex": 3,
             "img": null,
-            "uniqueID": 294
+            "uniqueID": 421
         },
 		 {
             "question": "Num emissor qual a função dos multiplicadores de frequência",
