@@ -50,6 +50,7 @@
             ],
             "correctIndex": 4,
             "notes": "Notas",
+			"fonte": "2023_08_18p33",
             "img": null,
             "uniqueID": 4
         },
@@ -77,6 +78,7 @@
             ],
             "correctIndex": 3,
             "notes": "Notas",
+			"fonte": "2023_08_18p37",
             "img": null,
             "uniqueID": 6
         },
@@ -170,6 +172,7 @@
             ],
             "correctIndex": 3,
             "notes": "Notas",
+			"fonte": "2023_08__18p29",
             "img": null,
             "uniqueID": 12
         },
@@ -449,6 +452,20 @@
             "img": null,
             "uniqueID": 32
         },
+		{
+            "question": "Se ouvir um indicativo de uma estação seguido por /1, o que posso concluir?",
+            "answers": [
+                "Que a emissão é proveniente de uma estação móvel",
+                "Que a emissão é proveniente de uma estação portátil",
+                "Que a emissão é proveniente de uma estação fixa principal",
+                "Que a emissão é proveniente de uma estação fixa adicional"
+            ],
+            "correctIndex": 4,
+            "notes": "Notas",
+			"fonte": "2023_08_18p34",
+            "img": null,
+            "uniqueID": 32
+        },
         {
             "question": "Qual é a base da elaboração dos planos da IARU?",
             "answers": [
@@ -657,6 +674,7 @@
             ],
             "correctIndex": 4,
             "notes": "Notas",
+			"fonte": "2023_08_18p26",
             "img": null,
             "uniqueID": 48
         },
@@ -748,6 +766,7 @@
             ],
             "correctIndex": 2,
             "notes": "Notas",
+			"fonte": "2023_08_18p36",
             "img": null,
             "uniqueID": 55
         },
@@ -891,6 +910,7 @@
             ],
             "correctIndex": 3,
             "notes": "Notas",
+			"fonte": "2023_08_18p25",
             "img": null,
             "uniqueID": 66
         },
@@ -1035,6 +1055,7 @@
             ],
             "correctIndex": 4,
             "notes": "Notas",
+			"fonte": "2023_08_18p27",
             "img": null,
             "uniqueID": 77
         },
@@ -1178,6 +1199,7 @@
             ],
             "correctIndex": 1,
             "notes": "Notas",
+			"fonte": "2023_08_18p38",
             "img": null,
             "uniqueID": 88
         },
@@ -1348,6 +1370,7 @@
             ],
             "correctIndex": 2,
             "notes": "Notas",
+			"fonte": "2023_08_18p28",
             "img": null,
             "uniqueID": 101
         },
@@ -1361,6 +1384,7 @@
             ],
             "correctIndex": 4,
             "notes": "Notas",
+			"fonte": "2023_08_18p22",
             "img": null,
             "uniqueID": 102
         },
@@ -1623,6 +1647,7 @@
             ],
             "correctIndex": 2,
             "notes": "Notas",
+			"fonte": "2023_08_18p35",
             "img": null,
             "uniqueID": 122
         },
@@ -1714,6 +1739,7 @@
             ],
             "correctIndex": 3,
             "notes": "Notas",
+			"fonte": "2023_08_18p30",
             "img": null,
             "uniqueID": 129
         },
@@ -2162,6 +2188,7 @@
             ],
             "correctIndex": 1,
             "notes": "Notas",
+			"fonte": "2028_08_18p21",
             "img": null,
             "uniqueID": 164
         },
@@ -2253,6 +2280,7 @@
             ],
             "correctIndex": 4,
             "notes": "Notas",
+			"fonte": "2023_08_18p24",
             "img": null,
             "uniqueID": 171
         },
@@ -2370,6 +2398,7 @@
             ],
             "correctIndex": 3,
             "notes": "Notas",
+			"fonte": "2023_08_18p31",
             "img": null,
             "uniqueID": 180
         },
@@ -2461,6 +2490,7 @@
             ],
             "correctIndex": 4,
             "notes": "Notas",
+			"fonte": "2023_08_18p39",
             "img": null,
             "uniqueID": 187
         },
@@ -2526,6 +2556,7 @@
             ],
             "correctIndex": 1,
             "notes": "Notas",
+			"fonte": "2023_08_18p23", 
             "img": null,
             "uniqueID": 192
         },
@@ -2630,6 +2661,7 @@
             ],
             "correctIndex": 3,
             "notes": "Notas",
+			"fonte": "2023_08_18p40",
             "img": "images/cat3/sinusoidal.png",
             "uniqueID": 200
         },
@@ -2747,6 +2779,7 @@
             ],
             "correctIndex": 3,
             "notes": "Notas",
+			"fonte": "2023_08_18p32",
             "img": "images/cat3/simbolos.png",
             "uniqueID": 209
         }
