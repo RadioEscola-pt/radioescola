@@ -15,7 +15,7 @@ class Questions {
 				if (answer - 1 === i) {
 					this.style.background = "#00FF00";
 					this.innerHTML = "CERTO";
-					this.quiz.stroreAnswer(true, uniqueId);
+					this.quiz.storeAnswer(true, uniqueId);
 					
 					return;
 				}
@@ -27,7 +27,7 @@ class Questions {
 		this.style.background = "#FF0000";
 		this.innerHTML = "ERRADO";
 		noteDiv.className = "incorrect";
-		this.quiz.stroreAnswer(false, uniqueId);
+		this.quiz.storeAnswer(false, uniqueId);
 
 
 
