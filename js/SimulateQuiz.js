@@ -119,7 +119,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 
 				if (elements[i].checked) {
 					const correctIndex = parseInt(this.questions[questionIndex].correctIndex);
-					if (correctIndex == i + 1) {
+					if (correctIndex == elements[i].value) {
 						answers[questionIndex] = SimulateQuiz.CORRECT;
 						this.stroreAnswer(true, this.questions[questionIndex].uniqueID);
 					} else {
@@ -246,6 +246,11 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 
 							answers.appendChild(label);
 							i++;
+						}
+
+						// Shuffle order of answers
+						for (var x = answers.children.length; x >= 0; x--) {
+							answers.appendChild(answers.children[Math.random() * x | 0]);
 						}
 
 						questionCard.appendChild(answers);
