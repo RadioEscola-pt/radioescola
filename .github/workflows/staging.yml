@@ -3,7 +3,7 @@ on: [workflow_dispatch]
 jobs:
 
   build:
-    name: Build
+    name: Copy files
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -15,4 +15,4 @@ jobs:
         key: ${{ secrets.STAGING_KEY }}
         port: ${{ secrets.STAGING_PORT }}
         source: "*"
-        target: /var/www/staging/
+        target: ${{ secrets.STAGING_PATH }}
