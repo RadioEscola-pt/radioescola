@@ -1,30 +1,7 @@
 class ComponentAdder {
     constructor() {
-        const ajaxRequest = new XMLHttpRequest();
-        ajaxRequest.loadChapter=this;
-        ajaxRequest.onreadystatechange = function () {
+        new LoadChapter("ComponentAdder", this);
 
-            if (this.readyState == 4) {
-                //the request is completed, now check its status
-                if (this.status == 200) {
-                    //turn JSON into array
-
-                    var welcomeDiv = document.getElementById("welcome");
-                    welcomeDiv.innerHTML =this.responseText;
-                    this.loadChapter.endRequest();
-
-
-                   
-
-                } else {
-                    console.log("Status error: " + ajaxRequest.status);
-                }
-            } else {
-                console.log("Ignored readyState: " + ajaxRequest.readyState);
-            }
-        };
-        ajaxRequest.open('GET', 'capitulos/ComponentAdder/index.html');
-        ajaxRequest.send();
        
 
         
