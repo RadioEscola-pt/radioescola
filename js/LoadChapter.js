@@ -3,19 +3,19 @@ class LoadChapter {
 
 
     constructor(chapter ) {
-		chapter=chapter;
-
-
-        var ajaxRequest = new XMLHttpRequest();
+        const ajaxRequest = new XMLHttpRequest();
+        ajaxRequest.loadChapter=this;
         ajaxRequest.onreadystatechange = function () {
 
-            if (ajaxRequest.readyState == 4) {
+            if (this.readyState == 4) {
                 //the request is completed, now check its status
-                if (ajaxRequest.status == 200) {
+                if (this.status == 200) {
                     //turn JSON into array
 
                     var welcomeDiv = document.getElementById("welcome");
-                    welcomeDiv.innerHTML =ajaxRequest.responseText;
+                    welcomeDiv.innerHTML =this.responseText;
+
+
                    
 
                 } else {
@@ -28,4 +28,5 @@ class LoadChapter {
         ajaxRequest.open('GET', 'capitulos/'+chapter+'/index.html');
         ajaxRequest.send();
     }
+
 }

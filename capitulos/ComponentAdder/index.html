@@ -1,0 +1,64 @@
+<button id="addRowBtn">Adicionar</button>
+<button id="removeRowBtn">Remover</button>
+
+<label for="componentType">Componente:</label>
+<select id="componentType">
+    <option value="Capacitor">Condensador</option>
+    <option value="Resistor">Resistencia</option>
+    <option value="Inductor">Bobine</option>
+</select>
+
+<label for="seriesParallel">Serie/Paralelo:</label>
+<select id="seriesParallel">
+    <option value="series">Serie</option>
+    <option value="parallel">Paralelo</option>
+</select>
+
+<table id="componentsTable">
+    <thead>
+        <tr>
+            <th>Number</th>
+            <th>Units</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="text" class="number" value="1"></td>
+            <td>
+                <select class="units">
+                    <option value="MEGA">MEGA</option>
+                    <option value="KILO">KILO</option>
+                    <option value="MILI">MILI</option>
+                    <option value="MICRO">MICRO</option>
+                    <option value="NANO">NANO</option>
+                    <option value="NONE">NONE</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="text" class="number" value="2"></td>
+            <td>
+                <select class="units">
+                    <option value="MEGA">MEGA</option>
+                    <option value="KILO">KILO</option>
+                    <option value="MILI">MILI</option>
+                    <option value="MICRO">MICRO</option>
+                    <option value="NANO">NANO</option>
+                    <option value="NONE">NONE</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<button id="calculateBtn">Calculate</button>
+
+<select id="ResultIn" class="units">
+    <option value="MEGA">MEGA</option>
+    <option value="KILO">KILO</option>
+    <option value="MILI">MILI</option>
+    <option value="MICRO">MICRO</option>
+    <option value="NANO">NANO</option>
+    <option value="NONE">NONE</option>
+</select>
+<div id="totalValue">Total Value: 0</div>
