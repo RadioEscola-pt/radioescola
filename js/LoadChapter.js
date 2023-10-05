@@ -11,7 +11,7 @@ class LoadChapter {
                     welcomeDiv.innerHTML = this.responseText;
 
                     // Check if a callback function is provided and not null
-                    if (callback && typeof callback === "function") {
+                    if (callback && typeof callback.endRequest === "function") {
                         callback.endRequest(); // Execute the endRequest method
                     }
                 } else {
