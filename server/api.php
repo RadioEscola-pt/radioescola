@@ -34,13 +34,30 @@ function generateExam($type, $category){
     include "config.php";
     switch ($type){
         case 1:
-            $query_get_questions = mysqli_prepare($mysqli, "SELECT * FROM pergunta WHERE categoria = ? ORDER BY RAND() LIMIT 40");
+            $question_arr = Array();
+            $i = 0;
+        
+            $query_get_questions = mysqli_prepare($mysqli, "SELECT * FROM pergunta WHERE categoria = ? ORDER BY RAND() LIMIT 2");
             mysqli_stmt_bind_param($query_get_questions, "s", $category);
             mysqli_stmt_execute($query_get_questions);
-            $result = mysqli_stmt_get_result($query_get_questions);
-            while($row = $result->fetch_assoc()) {
-                echo $row['question'];
+            $result_question = mysqli_stmt_get_result($query_get_questions);
+            while($row = $result_question->fetch_assoc()) {
+                
+                $question_arr[$i]['question'] = $row['question'];
+
+                $query_get_answers = mysqli_prepare($mysqli, "SELECT * FROM resposta WHERE pergunta_id = ?");
+                mysqli_stmt_bind_param($query_get_answers, "s", $row['pergunta_id']);
+                mysqli_stmt_execute($query_get_answers);
+                $result_answer = mysqli_stmt_get_result($query_get_answers);
+                $z = 0;
+                while($row_answ = $result_answer->fetch_assoc()) {
+                    $question_arr[$i]['answers'][$z] = $row_answ['resposta'];
+                    if ($row_answ['correta'] == 1) $question_arr[$i]['resposta_correta'] = $z;
+                    $z++;   
+                }
+                $i++;
             }
+            echo json_encode($question_arr);
 
     }
 }
