@@ -1,5 +1,6 @@
-class OhmsLawCalculator {
+class OhmsLawCalculator extends ElectricalUnits{
     constructor() {
+        super();
         new LoadChapter("OhmsLawCalculator", this);
 
        
@@ -18,6 +19,11 @@ class OhmsLawCalculator {
         this.missingUnitsUnit1Div = document.getElementById('missingUnitsUnit1');
         this.missingUnitsUnit2Div = document.getElementById('missingUnitsUnit2');
         this.calculateButton = document.getElementById('calculateButton');
+        this.loadOptions(this.unit1Select);
+        this.loadOptions(this.unit2Select);
+        this.loadOptions(this.resultUnitSelect);
+
+
 
         // Add event listeners
         this.calculateButton.addEventListener('click', () => this.calculate());
@@ -39,18 +45,11 @@ class OhmsLawCalculator {
         let result = 0;
 
         // Define unit multipliers
-        const unitMultipliers = {
-            'MEGA': 1e6,
-            'Kilo': 1e3,
-            'NONE': 1,
-            'MILI': 1e-3,
-            'micro': 1e-6,
-            'pic': 1e-12,
-        };
+
 
         // Convert known values to base units (NONE)
-        const baseValue1 = knownValue1 * unitMultipliers[unit1];
-        const baseValue2 = knownValue2 * unitMultipliers[unit2];
+        const baseValue1 = knownValue1 * this.unitMultipliers[unit1];
+        const baseValue2 = knownValue2 * this.unitMultipliers[unit2];
 
         if (!isNaN(knownValue1) && !isNaN(knownValue2)) {
             switch (calculationType) {
@@ -75,7 +74,7 @@ class OhmsLawCalculator {
         }
 
         // Apply unit conversion for the result based on resultUnit
-        result /= unitMultipliers[resultUnit];
+        result /= this.unitMultipliers[resultUnit];
 
         this.resultInput.value = result;
     }

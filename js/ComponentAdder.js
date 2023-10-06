@@ -1,5 +1,6 @@
-class ComponentAdder {
+class ComponentAdder extends ElectricalUnits{
     constructor() {
+        super();
         new LoadChapter("ComponentAdder", this);
 
        
@@ -16,6 +17,7 @@ class ComponentAdder {
         this.seriesParallelSelect = document.getElementById("seriesParallel");
         this.componentTypeSelect = document.getElementById("componentType");
         this.resultIn = document.getElementById("ResultIn");
+        this.loadOptions(this.resultIn);
 
         
         
@@ -26,6 +28,14 @@ class ComponentAdder {
         this.removeRowBtn.onclick=this.removeRow.bind(this);
         this.calculateBtn.onclick=this.calculateTotal.bind(this);
         this.componentsTable = document.getElementById("componentsTable").getElementsByTagName('tbody')[0];
+        let rows = this.componentsTable.getElementsByTagName("tr");
+
+        for (let i = 0; i < rows.length; i++) {
+
+            let row = rows[i];
+            let unitsSelect = row.querySelector("select");
+            this.loadOptions(unitsSelect);
+        }
 
     }
 
@@ -38,17 +48,11 @@ class ComponentAdder {
             const unitsCell = newRow.insertCell(1);
 
             numberCell.innerHTML = `<input type="text"  value="${rowNumber}">`;
-            unitsCell.innerHTML = `
-                <select>
-                    <option value="MEGA">MEGA</option>
-                    <option value="KILO">KILO</option>
-                    <option value="MILI">MILI</option>
-                    <option value="MICRO">MICRO</option>
-                    <option value="NANO">NANO</option>
-                    <option value="NONE">NONE</option>
-                </select>
-            `;
+            var selectElement = document.createElement('select');
+            this.loadOptions(selectElement);
+            unitsCell.append(selectElement);
         }
+
     }
 
     removeRow() {
@@ -95,31 +99,8 @@ class ComponentAdder {
             let selectedUnits = unitsSelect.value;
             let numberValue = parseFloat(numberInput.value);
 
-            // Replace this logic with your specific calculation formula
-            
 
-
-
-            // Adjust the calculated value based on selected units
-            switch (selectedUnits) {
-                case "KILO":
-                    numberValue *= 1000;
-                    break;
-                case "MEGA":
-                    numberValue *= 1000000;
-                    break;
-                case "MILI":
-                    numberValue /= 1000;
-                    break;
-                case "MICRO":
-                    numberValue /= 1000000;
-                    break;
-                case "NANO":
-                    numberValue /= 1000000000;
-                    break;
-                case "NONE":
-                    break;
-            }
+            numberValue *=  this.unitMultipliers[selectedUnits];
             if (isInverted ==false) {
                 totalValue += numberValue; // Replace with your calculation
             } else {
@@ -133,40 +114,21 @@ class ComponentAdder {
 
         }
         let selectedresultUnits = this.resultIn.value;
-        let resultMult =0; 
+        let unit1 = this.resultIn.value;
 
 
-        switch (selectedresultUnits) {
-            case "KILO":
-                resultMult = 1/1000;
-                break;
-            case "MEGA":
-                resultMult = 1/1000000;
-                break;
-            case "MILI":
-                resultMult = 1000;
-                break;
-            case "MICRO":
-                resultMult = 1000000;
-                break;
-            case "NANO":
-                resultMult = 1000000000;
-                break;
-            case "NONE":
-                break;
-        }
 
 
         
 
 
         if (isInverted ==false) {
-            totalValue*=resultMult;
+            totalValue/=this.unitMultipliers[unit1];;
 
             this.totalValueDisplay.textContent = `Total Value: ${totalValue.toFixed(2)}`;
         } else {
             invertedValue=1/invertedValue;
-            invertedValue*=resultMult;
+            invertedValue*=this.unitMultipliers[unit1];;
             this.totalValueDisplay.textContent = `Total Value: ${invertedValue.toFixed(2)}`;
         }
        

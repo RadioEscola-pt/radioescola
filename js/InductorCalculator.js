@@ -1,5 +1,6 @@
-class InductorCalculator {
+class InductorCalculator extends ElectricalUnits{
     constructor() {
+        super();
         new LoadChapter("InductorCalculator", this);
 
        
@@ -17,11 +18,14 @@ class InductorCalculator {
         this.frequencyInput = document.getElementById("frequency");
         this.formulaDiv = document.getElementById("formula");
         this.resultDiv = document.getElementById("result");
+        this.loadOptions(this.unitInput);
+
 
         // Add onchange event listener to the calculationType dropdown
         this.calculationType.addEventListener("change", this.showFormula.bind(this));
 
         this.showFormula();
+        
     }
 
     showFormula() {
@@ -39,7 +43,7 @@ class InductorCalculator {
         this.showFormula();
         const calculationType = this.calculationType.value;
         const inductance = parseFloat(this.inductanceInput.value);
-        const unitValue = parseFloat(this.unitInput.value);
+        const unitValue  = unitMultipliers[this.unitInput.value];
         const frequency = parseFloat(this.frequencyInput.value);
 
         if (isNaN(inductance) || isNaN(unitValue) || isNaN(frequency)) {
