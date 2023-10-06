@@ -1,0 +1,38 @@
+<table>
+    <tr>
+        <td><label for="calculationType">Select Calculation:</label></td>
+        <td>
+            <select id="calculationType" name="calculationType">
+                <option value="reactance">Reactance (X)</option>
+                <option value="inductance">Inductance (L)</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><label for="inductance">Inductance (H):</label></td>
+        <td><input type="number" id="inductance" name="inductance" required></td>
+    </tr>
+    <tr>
+        <td><label for="unit">Select Unit:</label></td>
+        <td>
+            <select id="unit" name="unit">
+                <option value="0.001">Milli (m)</option>
+                <option value="0.000001">Micro (µ)</option>
+                <option value="1000">Kilo (k)</option>
+                <option value="1000000">Mega (M)</option>
+                <option value="1">None</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><label for="frequency">Frequency (Hz):</label></td>
+        <td><input type="number" id="frequency" name="frequency" required></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="button" value="Calcular" id="calculateButton"></td>
+    </tr>
+</table>
+<br><br>
+<div id="formula"></div>
+<div id="result"></div>

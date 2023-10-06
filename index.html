@@ -17,7 +17,10 @@
 	<script type="text/javascript" src="js/LoadChapter.js"></script>
 	<script type="text/javascript" src="js/MatomoOptOutManager.js"></script>
 	<script type="text/javascript" src="js/ComponentAdder.js"></script>
+	<script type="text/javascript" src="js/OhmsLawCalculator.js"></script>
+	<script type="text/javascript" src="js/InductorCalculator.js"></script>
 
+	
 	
 	
 	
@@ -58,7 +61,19 @@
 			<li class="subnav0"><a onclick="new LoadChapter('equipa')" href="#home">Equipa</a></li>
 
 			<li class="subnav0"><a onclick="new LoadChapter('EDN')" href="#EDN">Estado da Nação</a></li>
-			<li class="subnav0"><a onclick="new ComponentAdder()" href="#CALC">Cacluadora</a></li>
+			<li class="subnav1"><a href="#">Cacluadoras</a>
+				<ul class="subnav1">
+					<li><a onclick="new ComponentAdder()" href="#">Somar componetes</a></li>
+					<li><a onclick="new OhmsLawCalculator()" href="#">Lei de Ohm</a></li>
+					<li><a onclick="new InductorCalculator()" href="#">impedancia</a></li>
+
+
+
+			
+			</ul>
+		</li>
+
+
 			<li class="subnav1"><a href="#">Categoria 3</a>
 				<ul class="subnav1">
 					<li><a onclick="new SimulateQuiz('question3.json')" href="#">Simulador de exame</a></li>
