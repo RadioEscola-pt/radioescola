@@ -1,42 +1,46 @@
-class ElectricalUnits{
-    
+class ElectricalUnits {
 
-    constructor()
-    {
+
+    constructor() {
         this.unitMultipliers = {
             'MEGA': 1e6,
             'KILO': 1e3,
             'NONE': 1,
             'MILI': 1e-3,
             'MICRO': 1e-6,
+            'NANO': 1e-9, // Adding Nano
             'PICO': 1e-12,
         };
-
     }
 
-
-    loadOptions(selectElement) {
-
-
+    loadOptions(selectElement, unit) {
         const options = [
-            { value: "PICO", text: "Pico (p)" },
-            { value: "NANO", text: "Nano (n)" },
-            { value: "MILI", text: "Mili (m)" },
-            { value: "MICRO", text: "Micro (µ)" },
-            { value: "KILO", text: "Kilo (k)" },
-            { value: "MEGA", text: "Mega (M)" },
-            { value: "NONE", text: "None" }
+            { value: "PICO", text: "Pico (p%s)" },
+            { value: "NANO", text: "Nano (n%s)" },
+            { value: "MICRO", text: "Micro (µ%s)" },
+            { value: "MILI", text: "Mili (m%s)" },
+            { value: "KILO", text: "Kilo (k%s)" },
+            { value: "MEGA", text: "Mega (M%s)" },
+            { value: "NONE", text: "%s" }
         ];
 
         // Clear existing options
         selectElement.innerHTML = '';
 
-        // Add new options
-        options.forEach(option => {
+        // Use a for loop to iterate through options
+        for (let i = 0; i < options.length; i++) {
+            const option = options[i];
             const optionElement = document.createElement('option');
             optionElement.value = option.value;
-            optionElement.text = option.text;
+            optionElement.text = option.text.replace("%s", unit);
+
+
+            if (optionElement.text === unit) {
+                
+                optionElement.selected = true; // Set this option as selected
+            } 
+
             selectElement.appendChild(optionElement);
-        });
+        }
     }
 }

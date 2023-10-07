@@ -1,14 +1,13 @@
-class InductorCalculator extends ElectricalUnits{
+class ReactanceCalculator extends ElectricalUnits {
     constructor() {
         super();
-        new LoadChapter("InductorCalculator", this);
+        new LoadChapter("ReactanceCalculator", this);
 
-       
 
-        
+
+
     }
-    endRequest()
-    {
+    endRequest() {
         this.calculateButton = document.getElementById("calculateButton");
         this.calculateButton.addEventListener("click", this.calculate.bind(this));
 
@@ -18,22 +17,31 @@ class InductorCalculator extends ElectricalUnits{
         this.frequencyInput = document.getElementById("frequency");
         this.formulaDiv = document.getElementById("formula");
         this.resultDiv = document.getElementById("result");
-        this.loadOptions(this.unitInput);
+
+
 
 
         // Add onchange event listener to the calculationType dropdown
         this.calculationType.addEventListener("change", this.showFormula.bind(this));
 
         this.showFormula();
-        
+
     }
 
     showFormula() {
         const calculationType = this.calculationType.value;
-        if (calculationType === "reactance") {
-            this.formulaDiv.innerHTML = "Formula: X = 2πfL";
-        } else if (calculationType === "inductance") {
-            this.formulaDiv.innerHTML = "Formula: L = X / (2πf)";
+        let inductanceText = document.getElementById("inductance");
+
+        if (calculationType === "F") {
+            this.formulaDiv.innerHTML = "Formula: X = 2πfC";
+            inductanceText.innerHTML = "Reactancia (F)";
+
+
+            this.loadOptions(this.unitInput, "F");
+        } else if (calculationType === "H") {
+            inductanceText.innerHTML = "Inductacia (H)";
+            this.formulaDiv.innerHTML = "Formula:X   = 1/ (2πfL)";
+            this.loadOptions(this.unitInput, "H");
         } else {
             this.formulaDiv.innerHTML = "";
         }
@@ -43,7 +51,7 @@ class InductorCalculator extends ElectricalUnits{
         this.showFormula();
         const calculationType = this.calculationType.value;
         const inductance = parseFloat(this.inductanceInput.value);
-        const unitValue  = unitMultipliers[this.unitInput.value];
+        const unitValue = this.unitMultipliers[this.unitInput.value];
         const frequency = parseFloat(this.frequencyInput.value);
 
         if (isNaN(inductance) || isNaN(unitValue) || isNaN(frequency)) {
@@ -51,12 +59,12 @@ class InductorCalculator extends ElectricalUnits{
             return;
         }
 
-        if (calculationType === "reactance") {
+        if (calculationType === "F") {
             const reactance = 2 * Math.PI * frequency * inductance * unitValue;
-            this.resultDiv.innerHTML = `Reactance (X) = ${reactance} ohms`;
-        } else if (calculationType === "inductance") {
-            const inductanceResult = inductance / (2 * Math.PI * frequency * unitValue);
-            this.resultDiv.innerHTML = `Inductance (L) = ${inductanceResult} H`;
+            this.resultDiv.innerHTML = `Reactancia (X) = ${reactance} ohms`;
+        } else if (calculationType === "H") {
+            const inductanceResult = 1 / (2 * Math.PI * frequency * inductance * unitValue);
+            this.resultDiv.innerHTML = `Reactancia (X) = ${inductanceResult} ohms`;
         }
     }
 }

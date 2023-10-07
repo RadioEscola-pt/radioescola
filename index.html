@@ -19,31 +19,77 @@
 	<script type="text/javascript" src="js/MatomoOptOutManager.js"></script>
 	<script type="text/javascript" src="js/ComponentAdder.js"></script>
 	<script type="text/javascript" src="js/OhmsLawCalculator.js"></script>
-	<script type="text/javascript" src="js/InductorCalculator.js"></script>
-	
+	<script type="text/javascript" src="js/ReactanceCalculator.js"></script>
 
-	
-	
-	
-	
-    
+
+
+
+
+
+
 	<script>
 
 		// Keep a record of all running timers since we need to clear them later on
 		window.timers = []
+		function hashChecker() {
+
+
+			const fragment = window.location.hash;
+
+			// Check if there is a fragment
+			if (fragment) {
+				// Remove the '#' symbol from the fragment
+				const cleanFragment = fragment.substring(1);
+
+				// Use a switch statement to handle different cases
+				switch (cleanFragment) {
+					case 'COPADDER':
+						new ComponentAdder();
+						break;
+					case "OHMCALC":
+						new OhmsLawCalculator();
+
+
+						break;
+
+					case "REACTANCE":
+						new ReactanceCalculator();
+						break;
+
+					default:
+						console.log('Unknown case');
+
+						break;
+				}
+			} else {
+				console.log('No fragment found in the URL.');
+				new LoadChapter('home');
+			}
+
+		}
+
+
+		window.addEventListener('hashchange', hashChecker);
 
 		window.onload = function () {
 
 			const optOutManager = new MatomoOptOutManager();
 			const searchParams = new URLSearchParams(window.location.search);
+
+
+
+
 			if (searchParams.has('LoadChapter')) {
 				new LoadChapter(searchParams.get("LoadChapter")); // bar, only returns the first value
 			} else if (searchParams.has('TEST')) {
 				document.getElementById('TESTDIV').style.display = ''
 			}
 			else {
-				new LoadChapter('home');
+
 			}
+			hashChecker();
+
+
 		}
 	</script>
 
@@ -59,41 +105,41 @@
 
 
 		<ul id="nav">
-			<li class="subnav0"><a onclick="new LoadChapter('home')" href="#home">Página Inicial</a></li>
-			<li class="subnav0"><a onclick="new LoadChapter('equipa')" href="#home">Equipa</a></li>
+			<li class="subnav0"><a onclick="new LoadChapter('home')">Página Inicial</a></li>
+			<li class="subnav0"><a onclick="new LoadChapter('equipa')">Equipa</a></li>
 
-			<li class="subnav0"><a onclick="new LoadChapter('EDN')" href="#EDN">Estado da Nação</a></li>
-			<li class="subnav1"><a href="#">Cacluadoras</a>
+			<li class="subnav0"><a onclick="new LoadChapter('EDN')">Estado da Nação</a></li>
+			<li class="subnav1"><a>Cacluadoras</a>
 				<ul class="subnav1">
-					<li><a onclick="new ComponentAdder()" href="#">Somar componetes</a></li>
-					<li><a onclick="new OhmsLawCalculator()" href="#">Lei de Ohm</a></li>
-					<li><a onclick="new InductorCalculator()" href="#">impedancia</a></li>
+					<li><a href="#COPADDER">Somar componetes</a></li>
+					<li><a href="#OHMCALC">Lei de Ohm</a></li>
+					<li><a href="#REACTANCE">Reactancia</a></li>
 
 
 
-			
-			</ul>
-		</li>
+
+				</ul>
+			</li>
 
 
-			<li class="subnav1"><a href="#">Categoria 3</a>
+			<li class="subnav1"><a >Categoria 3</a>
 				<ul class="subnav1">
-					<li><a onclick="new SimulateQuiz('question3.json')" href="#">Simulador de exame</a></li>
-					<li><a onclick="new Quiz('question3.json')" href="#">Todas as perguntas</a></li>
-					<li><a id="favQuiz3" onclick="new FavQuiz('question3.json')" href="#">Favoritas</a></li>
+					<li><a onclick="new SimulateQuiz('question3.json')" >Simulador de exame</a></li>
+					<li><a onclick="new Quiz('question3.json')">Todas as perguntas</a></li>
+					<li><a id="favQuiz3" onclick="new FavQuiz('question3.json')" >Favoritas</a></li>
 					<li><a href="#">Tutoriais</a>
 						<ul class="subnav1">
-							<li> <a style="display:none;" href="#">Condutores</a></li>
-							<li> <a style="display:none;" href="#">Eletrónica base</a></li>
+							<li> <a style="display:none;">Condutores</a></li>
+							<li> <a style="display:none;">Eletrónica base</a></li>
 							<li> <a onclick="new LoadChapter('marcar_exame_anacom')">Marcar exame na Anacom</a></li>
 							<li> <a onclick="new LoadChapter('alfabeto')">Alfabeto Fonético</a></li>
 							<li> <a onclick="new LoadChapter('entidades')">Entidades e Competências</a></li>
 							<li> <a onclick="new LoadChapter('codigoq')">Código Q</a></li>
 							<li> <a onclick="new LoadChapter('prefixos')">Prefixos de indicativos</a></li>
 							<li> <a onclick="new LoadChapter('ohm')">Lei de Ohm</a></li>
-							<li> <a style="display:none;" href="#">Potência</a></li>
+							<li> <a style="display:none;" >Potência</a></li>
 							<li> <a onclick="new LoadChapter('AC')">Corrente Alternada / AC </a></li>
-							<li> <a style="display:none;" href="#">Campo electromagnético </a></li>
+							<li> <a style="display:none;" >Campo electromagnético </a></li>
 							<li> <a onclick="new LoadChapter('codigoDecores')">Código de cores</a></li>
 							<li> <a onclick="new LoadChapter('units')">Mult e SubMult. de Unidades</a></li>
 
@@ -101,28 +147,28 @@
 					</li>
 				</ul>
 			</li>
-			<li class="subnav2"><a href="#">Categoria 2</a>
+			<li class="subnav2"><a >Categoria 2</a>
 				<ul class="subnav2">
-					<li><a id="favQuiz2" onclick="new FavQuiz('question2.json')" href="#">Favoritas</a></li>
-					<li><a onclick="new Quiz('question2.json')" href="#">Todas as perguntas</a></li>
-					<li><a onclick="new SimulateQuiz('question2.json')" href="#">Simulador de exame</a></li>
-					<li><a href="#">Tutoriais</a>
+					<li><a id="favQuiz2" onclick="new FavQuiz('question2.json')" >Favoritas</a></li>
+					<li><a onclick="new Quiz('question2.json')">Todas as perguntas</a></li>
+					<li><a onclick="new SimulateQuiz('question2.json')">Simulador de exame</a></li>
+					<li><a >Tutoriais</a>
 						<ul class="subnav2">
 
 							<li> <a onclick="new LoadChapter('SWR')">Onda estacionaria(SWR)</a></li>
-							<li> <a style="display:none;" href="#">Bobines (henry)</a></li>
-							<li><a style="display:none;" href="#">Condensador(bobine)</a></li>
+							<li> <a style="display:none;" >Bobines (henry)</a></li>
+							<li><a style="display:none;" >Condensador(bobine)</a></li>
 						</ul>
 					</li>
 				</ul>
 			</li>
 
-			<li class="subnav3"><a href="#">Categoria 1</a>
+			<li class="subnav3"><a >Categoria 1</a>
 				<ul class="subnav3">
-					<li><a id="favQuiz1" onclick="new FavQuiz('question1.json')" href="#">Favoritas</a></li>
-					<li><a onclick="new Quiz('question1.json')" href="#">Todas as perguntas</a></li>
-					<li><a onclick="new SimulateQuiz('question1.json')" href="#">Simulador de exame</a></li>
-					<li><a href="#">Tutoriais</a>
+					<li><a id="favQuiz1" onclick="new FavQuiz('question1.json')" >Favoritas</a></li>
+					<li><a onclick="new Quiz('question1.json')">Todas as perguntas</a></li>
+					<li><a onclick="new SimulateQuiz('question1.json')">Simulador de exame</a></li>
+					<li><a>Tutoriais</a>
 						<ul class="subnav3">
 
 							<li><a onclick="new LoadChapter('gain')">Ganho (dB)</a> </li>
@@ -144,15 +190,15 @@
 	</header>
 
 	<section>
-	<div id="answerDisplay">
-		<!-- Canvas div initially hidden -->
-		<div id="canvasDiv">
-			<canvas id="canvas" width="400" height="200"></canvas>
+		<div id="answerDisplay">
+			<!-- Canvas div initially hidden -->
+			<div id="canvasDiv">
+				<canvas id="canvas" width="400" height="200"></canvas>
+			</div>
 		</div>
-	</div>
-    <div id="matomo-opt-out">
-        <!-- This div will be used to display Matomo opt-out content -->
-    </div>
+		<div id="matomo-opt-out">
+			<!-- This div will be used to display Matomo opt-out content -->
+		</div>
 		<article id="welcome">
 
 		</article>
@@ -164,10 +210,10 @@
 				/ sugestões</a>
 			<a href="https://github.com/RadioEscola-pt/radioescola/discussions" target="_blank">Fórum</a>
 			<a href="https://github.com/RadioEscola-pt/radioescola" target="_blank">Código</a>
-			<a href="#" id="ShowPrivacyBar" >Politica de Privacidade</a>
-			
-			
-			
+			<a href="#" id="ShowPrivacyBar">Politica de Privacidade</a>
+
+
+
 		</div>
 		<p>CS7AZE | CS7AXE | CS7BAX | CR7BCS </p>
 

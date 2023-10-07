@@ -3,9 +3,7 @@ class ComponentAdder extends ElectricalUnits{
         super();
         new LoadChapter("ComponentAdder", this);
 
-       
 
-        
     }
     endRequest()
     {
@@ -17,29 +15,37 @@ class ComponentAdder extends ElectricalUnits{
         this.seriesParallelSelect = document.getElementById("seriesParallel");
         this.componentTypeSelect = document.getElementById("componentType");
         this.resultIn = document.getElementById("ResultIn");
-        this.loadOptions(this.resultIn);
-
         
-        
-
-        
-
+  
+        this.componentTypeSelect.addEventListener("change", this.changeUnit.bind(this));
         this.addRowBtn.onclick=this.addRow.bind(this);
         this.removeRowBtn.onclick=this.removeRow.bind(this);
         this.calculateBtn.onclick=this.calculateTotal.bind(this);
         this.componentsTable = document.getElementById("componentsTable").getElementsByTagName('tbody')[0];
+        this.changeUnit();
+
+
+    }
+    changeUnit()
+    {
+        let componentType = this.componentTypeSelect.value;
+        this.totalValueDisplay.textContent ="";
+
+        this.loadOptions(this.resultIn, componentType);
         let rows = this.componentsTable.getElementsByTagName("tr");
 
         for (let i = 0; i < rows.length; i++) {
 
             let row = rows[i];
             let unitsSelect = row.querySelector("select");
-            this.loadOptions(unitsSelect);
+            this.loadOptions(unitsSelect, componentType);
         }
+  
 
     }
 
     addRow() {
+        let componentType = this.componentTypeSelect.value;
         if (this.componentsTable.rows.length < 10) {
             const newRow = this.componentsTable.insertRow(-1);
             const rowNumber = this.componentsTable.rows.length;
@@ -49,7 +55,7 @@ class ComponentAdder extends ElectricalUnits{
 
             numberCell.innerHTML = `<input type="text"  value="${rowNumber}">`;
             var selectElement = document.createElement('select');
-            this.loadOptions(selectElement);
+            this.loadOptions(selectElement,componentType);
             unitsCell.append(selectElement);
         }
 
@@ -68,21 +74,23 @@ class ComponentAdder extends ElectricalUnits{
         let rows = this.componentsTable.getElementsByTagName("tr");
         let seriesParallelType = this.seriesParallelSelect.value;
         let componentType = this.componentTypeSelect.value;
-        if (componentType === "Resistor") {
+
+
+        if (componentType === "Ω") {
             // Example: For resistors, calculate the value based on series or parallel
             if (seriesParallelType === "series") {
                 isInverted=false;
             } else {
                 isInverted=true;
             }
-        } else if (componentType === "Capacitor") {
+        } else if (componentType === "F") {
             // Example: For capacitors, calculate the value based on series or parallel
             if (seriesParallelType === "series") {
                 isInverted=true;
             } else {
                 isInverted=false;
             }
-        } else if (componentType === "Inductor") {
+        } else if (componentType === "H") {
             // Example: For inductors, calculate the value based on series or parallel
             if (seriesParallelType === "series") {
                 isInverted=false;
@@ -115,12 +123,6 @@ class ComponentAdder extends ElectricalUnits{
         }
         let selectedresultUnits = this.resultIn.value;
         let unit1 = this.resultIn.value;
-
-
-
-
-        
-
 
         if (isInverted ==false) {
             totalValue/=this.unitMultipliers[unit1];;

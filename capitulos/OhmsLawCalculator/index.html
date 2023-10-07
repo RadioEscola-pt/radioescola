@@ -1,9 +1,10 @@
 <table>
 
     <tr>
-        <td><label for="knownValue1">valor:</label></td>
+        <td><label for="knownValue1">Tensão:</label></td>
         <td><input type="number" id="knownValue1"></td>
-        <td><div id="missingUnitsUnit1"></div></td>
+
+
         <td>
             <select id="unit1">
 
@@ -11,10 +12,10 @@
         </td>
     </tr>
     <tr>
-        <td><label for="knownValue2">valor:</label></td>
+        <td><label for="knownValue2">Currente:</label></td>
         <td><input type="number" id="knownValue2"></td>
 
-        <td><div id="missingUnitsUnit2"></div></td>
+
         <td>
             <select id="unit2">
 
@@ -22,17 +23,26 @@
         </td>
     </tr>
     <tr>
-        <td><label for="calculationType">Calculation Type:</label></td>
+        <td><label for="knownValue3">Resistencia:</label></td>
+
+        <td><input type="number" id="knownValue3"></td>
+
+
         <td>
-            <select id="calculationType">
-                <option value="Ω">Ω (Ohms)</option>
-                <option value="A">A (Amperes)</option>
-                <option value="V">V (Volts)</option>
+            <select id="unit3">
+
             </select>
         </td>
-        <td><label for="resultUnit">Result Unit:</label></td>
+
+    </tr>
+    <tr>
+        <td><label for="knownValue3">Potencia:</label></td>
+
+        <td><input type="number" id="knownValue4" readonly></td>
+
+
         <td>
-            <select id="resultUnit">
+            <select id="unit4">
 
             </select>
         </td>
@@ -40,11 +50,9 @@
     </tr>
     <tr>
 
-        <td><label for="result">Resultado:</label></td>
-        <td><input type="text" id="result" readonly></td>
+        <td>Resultado:</td>
+        <td><div id="result" ></div></td>
 
-
-        <td></td>
         <td><button id="calculateButton">Calcular</button></td>
     </tr>
 </table>
