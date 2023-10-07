@@ -29,6 +29,10 @@ class Quiz extends Classes([Questions,Storage]) {
 		}
 		this.pageBlocks[index].style.display = "block";
 		this.quiz.storePage(index);
+		if (document.querySelector('#qIndex button.active')) {
+			document.querySelector('#qIndex button.active').classList.remove("active")
+		}
+		this.className = 'active';
 	}
 
 
@@ -45,6 +49,7 @@ class Quiz extends Classes([Questions,Storage]) {
 				//the request is completed, now check its status
 				if (ajaxRequest.status == 200) {
 					//turn JSON into array
+					let storedPage=this.quiz.getStorePage();
 	
 
 
@@ -68,6 +73,18 @@ class Quiz extends Classes([Questions,Storage]) {
 							pageBlock.className = 'page';
 							let btn = document.createElement("button");
 							btn.innerHTML = questionCounter / 10 + 1;
+							let currentPageIndex=0;
+							if (questionCounter == 0) {
+
+								currentPageIndex = 0;
+							} else {
+								currentPageIndex = questionCounter / 10;
+							}
+							if (storedPage==currentPageIndex)
+							{
+								btn.className = 'active';
+							}
+
 							btn.value = questionCounter;
 							btn.onclick = this.quiz.showPageWithStorage;
 							btn.pageBlocks=this.quiz.pageBlocks; 
@@ -82,7 +99,7 @@ class Quiz extends Classes([Questions,Storage]) {
 						
 
 					}
-					let storedPage=this.quiz.getStorePage();
+					
 					for (const page of this.quiz.pageBlocks) {
 						page.style.display = "none";
 					}

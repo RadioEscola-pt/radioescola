@@ -32,7 +32,12 @@ class FavQuiz extends Classes([Questions,Storage]) {
 			page.style.display = "none";
 		}
 		this.pageBlocks[index].style.display = "block";
-		this.quiz.storeFavPage(index);
+		this.quiz.storeFavPage(index);		if (document.querySelector('#qIndex button.active')) {
+			document.querySelector('#qIndex button.active').classList.remove("active")
+		}
+
+		this.className = 'active';
+
 	}
 
 
@@ -64,6 +69,7 @@ class FavQuiz extends Classes([Questions,Storage]) {
 
 					welcomeDiv.appendChild(indexBlock);
 					var index = 0;
+					let storedPage=this.quiz.getStoreFavPage();
 					
 					const favoritesString = localStorage.getItem(this.quiz.parts[0] + "Fav") || '[]';
 					const favorites = JSON.parse(favoritesString);
@@ -79,7 +85,18 @@ class FavQuiz extends Classes([Questions,Storage]) {
 							pageBlock.className = 'page';
 							let btn = document.createElement("button");
 							btn.innerHTML = questionCounter / 10 + 1;
-							btn.value = questionCounter;
+							btn.value = questionCounter;						let currentPageIndex=0;
+							if (questionCounter == 0) {
+
+								currentPageIndex = 0;
+							} else {
+								currentPageIndex = questionCounter / 10;
+							}
+							if (storedPage==currentPageIndex)
+							{
+								btn.className = 'active';
+							}
+
 							btn.onclick = this.quiz.showPageWithStorage;
 							btn.pageBlocks=this.quiz.pageBlocks; 
 							indexBlock.appendChild(btn);
@@ -92,7 +109,7 @@ class FavQuiz extends Classes([Questions,Storage]) {
 
 						
 					}					
-					let storedPage=this.quiz.getStoreFavPage();
+					
 					for (const page of this.quiz.pageBlocks) {
 						page.style.display = "none";
 					}
