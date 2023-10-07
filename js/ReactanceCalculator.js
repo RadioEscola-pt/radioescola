@@ -1,4 +1,4 @@
-class ReactanceCalculator extends ElectricalUnits {
+class  ReactanceCalculator extends ElectricalUnits {
     constructor() {
         super();
         new LoadChapter("ReactanceCalculator", this);
@@ -30,7 +30,7 @@ class ReactanceCalculator extends ElectricalUnits {
 
     showFormula() {
         const calculationType = this.calculationType.value;
-        let inductanceText = document.getElementById("inductance");
+        let inductanceText = document.getElementById("inductanceTXT");
 
         if (calculationType === "F") {
             this.formulaDiv.innerHTML = "Formula: X = 2πfC";
@@ -48,7 +48,7 @@ class ReactanceCalculator extends ElectricalUnits {
     }
 
     calculate() {
-        this.showFormula();
+
         const calculationType = this.calculationType.value;
         const inductance = parseFloat(this.inductanceInput.value);
         const unitValue = this.unitMultipliers[this.unitInput.value];
