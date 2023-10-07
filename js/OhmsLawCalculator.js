@@ -8,23 +8,24 @@ class OhmsLawCalculator extends ElectricalUnits {
 
     }
     endRequest() {
-        this.knownValue1Input = document.getElementById('knownValue1');
-        this.unit1Select = document.getElementById('unit1');
-        this.knownValue2Input = document.getElementById('knownValue2');
-        this.unit2Select = document.getElementById('unit2');
-        this.knownValue3Input = document.getElementById('knownValue3');
+        this.voltageInput = document.getElementById('knownValue1');
+        this.voltageUnit = document.getElementById('unit1');
+        this.currentValue = document.getElementById('knownValue2');
+        this.currentUnit = document.getElementById('unit2');
+        this.ressistanceInput = document.getElementById('knownValue3');
+        this.resistanceUnit = document.getElementById('unit3');
         this.resultInput = document.getElementById('result');
-        this.unit3Select = document.getElementById('unit3');
-        this.knownValue4Input = document.getElementById('knownValue4');
-        this.unit4Select = document.getElementById('unit4');
+        
+        this.powerInput = document.getElementById('knownValue4');
+        this.powerUnit = document.getElementById('unit4');
 
 
 
         this.calculateButton = document.getElementById('calculateButton');
-        this.loadOptions(this.unit1Select, "V");
-        this.loadOptions(this.unit2Select, "A");
-        this.loadOptions(this.unit3Select, "Ω");
-        this.loadOptions(this.unit4Select, "W");
+        this.loadOptions(this.voltageUnit, "V");
+        this.loadOptions(this.currentUnit, "A");
+        this.loadOptions(this.resistanceUnit, "Ω");
+        this.loadOptions(this.powerUnit, "W");
 
 
 
@@ -34,20 +35,20 @@ class OhmsLawCalculator extends ElectricalUnits {
     }
 
     calculate() {
-        let knownValue1 = parseFloat(this.knownValue1Input.value);
-        const unit1 = this.unitMultipliers[this.unit1Select.value];
-        let knownValue2 = parseFloat(this.knownValue2Input.value);
-        const unit2 = this.unitMultipliers[this.unit2Select.value];
-        let knownValue3 = parseFloat(this.knownValue3Input.value);
-        const unit3 = this.unitMultipliers[this.unit3Select.value];
+        let voltage = parseFloat(this.voltageInput.value);
+        const voltageRatio = this.unitMultipliers[this.voltageUnit.value];
+        let current = parseFloat(this.currentValue.value);
+        const currentRatio = this.unitMultipliers[this.currentUnit.value];
+        let resistance = parseFloat(this.ressistanceInput.value);
+        const resistanceRatio = this.unitMultipliers[this.resistanceUnit.value];
 
-        const unit4 = this.unitMultipliers[this.unit4Select.value];
+        const powerRatio = this.unitMultipliers[this.powerUnit.value];
 
 
         let result = 0;
 
         // Check how many values are populated
-        const populatedValues = [knownValue1 , knownValue2 , knownValue3 ].filter(value => !isNaN(value));
+        const populatedValues = [voltage , current , resistance ].filter(value => !isNaN(value));
 
         if (populatedValues.length === 3) {
             // Error: All three values are populated
@@ -56,39 +57,35 @@ class OhmsLawCalculator extends ElectricalUnits {
         } else if (populatedValues.length === 2) {
             this.resultInput.innerHTML = "";
             // Calculate the missing value
-            if (isNaN(knownValue1)) {
+            if (isNaN(voltage)) {
                 // R*I
-                knownValue2*=unit2;
-                knownValue3*=unit3;
+                current*=currentRatio;
+                resistance*=resistanceRatio;
 
-                result = (knownValue2 * knownValue3) / unit1;
+                voltage = (current * resistance) / voltageRatio;
 
-                this.knownValue1Input.value = result;
-                knownValue1 = parseFloat(this.knownValue1Input.value);
-
-                
+                this.voltageInput.value = voltage;
                
 
-
                
-            } else if (isNaN(knownValue2)) {
-                knownValue1*=unit1;
-                knownValue3*=unit3;
+            } else if (isNaN(current)) {
+                voltage*=voltageRatio;
+                resistance*=resistanceRatio;
                 // U/R
-                result = (knownValue1 / knownValue3) / unit2;
+                current = (voltage / resistance) / currentRatio;
 
-                this.knownValue2Input.value = result;
+                this.currentValue.value = current;
 
             } else {
                 // U/I
-                knownValue2*=unit2;
-                knownValue1*=unit1;
-                result = (knownValue1 / knownValue2) / unit3;
+                current*=currentRatio;
+                voltage*=voltageRatio;
+                result = (voltage / current) / resistanceRatio;
 
-                this.knownValue3Input.value = result;
+                this.ressistanceInput.value = result;
 
             }
-            this.knownValue4Input.innerHTML=(knownValue1 * knownValue2)/unit4;
+            this.powerInput.innerHTML=(voltage * current)/powerRatio;
 
 
         } else {
