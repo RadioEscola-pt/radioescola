@@ -88,7 +88,7 @@ class OhmsLawCalculator extends ElectricalUnits {
                 this.knownValue3Input.value = result;
 
             }
-            this.knownValue4Input.value=(knownValue1 * knownValue2)/unit4;
+            this.knownValue4Input.innerHTML=(knownValue1 * knownValue2)/unit4;
 
 
         } else {
