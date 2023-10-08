@@ -33,14 +33,14 @@ class  ReactanceCalculator extends ElectricalUnits {
         let inductanceText = document.getElementById("inductanceTXT");
 
         if (calculationType === "F") {
-            this.formulaDiv.innerHTML = "Formula: X = 2πfC";
+            this.formulaDiv.innerHTML = "Formula:X   = 1/ (2πfL)";
             inductanceText.innerHTML = "Reactancia (F)";
 
 
             this.loadOptions(this.unitInput, "F");
         } else if (calculationType === "H") {
             inductanceText.innerHTML = "Inductacia (H)";
-            this.formulaDiv.innerHTML = "Formula:X   = 1/ (2πfL)";
+            this.formulaDiv.innerHTML ="Formula: X = 2πfC"; 
             this.loadOptions(this.unitInput, "H");
         } else {
             this.formulaDiv.innerHTML = "";
@@ -60,10 +60,10 @@ class  ReactanceCalculator extends ElectricalUnits {
         }
 
         if (calculationType === "F") {
-            const reactance = 2 * Math.PI * frequency * inductance * unitValue;
+            const reactance = 1 / (2 * Math.PI * frequency * inductance * unitValue); 
             this.resultDiv.innerHTML = `Reactancia (X) = ${reactance} ohms`;
         } else if (calculationType === "H") {
-            const inductanceResult = 1 / (2 * Math.PI * frequency * inductance * unitValue);
+            const inductanceResult =2 * Math.PI * frequency * inductance * unitValue;
             this.resultDiv.innerHTML = `Reactancia (X) = ${inductanceResult} ohms`;
         }
     }
