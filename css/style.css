@@ -2021,7 +2021,7 @@ tr:nth-child(even) {
 }
 
 .bg-header {
-  background-image: url('/images/header2.jpg');
+  background-image: url('../images/header2.jpg');
 }
 
 .decoration-slice {
