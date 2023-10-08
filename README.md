@@ -25,10 +25,8 @@ Podes enviar uma cópia do teu exame para exames@radioescola.pt. Assim podemos a
 
 ### Programadores
 
-- Instalar pacotes:  
-`npm install`
-- Build do CSS:  
-` npx tailwindcss -i style.css -o ./css/style.css --watch`
+1. `npm install` (instalar dependências)
+2. `npm run dev` (correr http server e watcher tailwindcss)
 
 
 
