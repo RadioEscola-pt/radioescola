@@ -35,7 +35,7 @@ class Questions {
 	}
 	addQuestion(welcomeDiv, pageBlock, questions, qindex) {
 		var questionBlock = document.createElement("div");
-		questionBlock.className = "w-full p-6 mb-8 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700";
+		questionBlock.className = "max-w-screen-md m-auto p-6 mb-8 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700";
 		questionBlock.id = "questionBlock" + qindex;
 
 		var questionCard = document.createElement("div");

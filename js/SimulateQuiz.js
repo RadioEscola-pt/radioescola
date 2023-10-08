@@ -187,7 +187,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 					welcomeDiv.innerHTML = "";
 					var indexBlock = document.createElement("div");
 					indexBlock.id = "qIndex";
-					indexBlock.className = "list-none m-0 p-2 rounded mb-5 overflow-x-scroll overflow-y-hidden bg-slate-200 dark:bg-slate-600 sticky flex items-center justify-between top-[10px] gap-[10px]";
+					indexBlock.className = "max-w-screen-md m-auto list-none m-0 p-2 rounded mb-5 overflow-x-scroll overflow-y-hidden bg-slate-200 dark:bg-slate-600 sticky flex items-center justify-between top-[10px] gap-[10px]";
 
 					let buttons = document.createElement('div')
 					buttons.id = 'pagination'
@@ -218,7 +218,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 						questionCounter++;
 
 						var questionBlock = document.createElement("div");
-						questionBlock.className = "w-full p-6 mb-8 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700";
+						questionBlock.className = "max-w-screen-md m-auto p-6 mb-8 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700";
 
 						var questionCard = document.createElement("div");
 						questionCard.className = "questionCard";
