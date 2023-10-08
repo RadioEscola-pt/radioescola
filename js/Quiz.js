@@ -12,6 +12,29 @@ class Quiz extends Classes([Questions,Storage]) {
 		const searchParams = new URLSearchParams(window.location.search);
 
 	}
+	showPageWithStorage()
+	{
+		var index = parseInt(this.value);
+		this.pageIndex = index;
+		window.scrollTo(0, 0);
+
+		if (index == 0) {
+
+			index = 0;
+		} else {
+			index = index / 10;
+		}
+		for (const page of this.pageBlocks) {
+			page.style.display = "none";
+		}
+		this.pageBlocks[index].style.display = "block";
+		this.quiz.storePage(index);
+		if (document.querySelector('#qIndex button.active')) {
+			document.querySelector('#qIndex button.active').classList.remove("active")
+		}
+		this.className = 'active';
+	}
+
 
 
 	createQuiz() {
@@ -26,6 +49,7 @@ class Quiz extends Classes([Questions,Storage]) {
 				//the request is completed, now check its status
 				if (ajaxRequest.status == 200) {
 					//turn JSON into array
+					let storedPage=this.quiz.getStorePage();
 	
 
 
@@ -42,29 +66,29 @@ class Quiz extends Classes([Questions,Storage]) {
 						var pageBlock;
 						Quiz.messagesArray.questions[qindex].index = index;
 						index++;
-						if (questionCounter == 0) {
-							pageBlock = document.createElement("div");
-							pageBlock.id = "Page" + questionCounter;
-							pageBlock.style.display = "block";
-							pageBlock.className = 'page';
-							let btn = document.createElement("button");
-							btn.innerHTML = questionCounter / 10 + 1;
-							btn.value = questionCounter;
-							btn.onclick = this.quiz.showPage;
-							indexBlock.appendChild(btn);
-							btn.pageBlocks=this.quiz.pageBlocks; 
-							this.quiz.pageBlocks.push(pageBlock);
-
-						} else if (questionCounter % 10 == 0) {
+						 if ((questionCounter % 10 == 0) || (questionCounter == 0) ) {
 							pageBlock = document.createElement("div");
 							pageBlock.id = "Page" + questionCounter;
 							pageBlock.style.display = "none";
 							pageBlock.className = 'page';
 							let btn = document.createElement("button");
 							btn.innerHTML = questionCounter / 10 + 1;
+							let currentPageIndex=0;
+							if (questionCounter == 0) {
+
+								currentPageIndex = 0;
+							} else {
+								currentPageIndex = questionCounter / 10;
+							}
+							if (storedPage==currentPageIndex)
+							{
+								btn.className = 'active';
+							}
+
 							btn.value = questionCounter;
-							btn.onclick = this.quiz.showPage;
+							btn.onclick = this.quiz.showPageWithStorage;
 							btn.pageBlocks=this.quiz.pageBlocks; 
+							btn.quiz=this.quiz;
 							indexBlock.appendChild(btn);
 							this.quiz.pageBlocks.push(pageBlock);
 						}
@@ -75,6 +99,13 @@ class Quiz extends Classes([Questions,Storage]) {
 						
 
 					}
+					
+					for (const page of this.quiz.pageBlocks) {
+						page.style.display = "none";
+					}
+					this.quiz.pageBlocks[storedPage].style.display = "block";
+
+
 					console.log("Unanswered" + numberOfUnanswered);
 
 				} else {
