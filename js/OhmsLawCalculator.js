@@ -1,7 +1,7 @@
 class OhmsLawCalculator extends ElectricalUnits {
     constructor() {
         super();
-        new LoadChapter("OhmsLawCalculator", this);
+        new Popup("OhmsLawCalculator", this);
 
 
 

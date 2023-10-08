@@ -11,6 +11,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/questions.css" />
+  <script type="text/javascript" src="js/Popup.js"></script>
 
 	<script type="text/javascript" src="js/ElectricalUnits.js"></script>
 	<script type="text/javascript" src="js/classUtils.js"></script>
@@ -58,10 +59,7 @@
 
 						break;
 				}
-			} else {
-				console.log('No fragment found in the URL.');
-				new LoadChapter('home');
-			}
+			} 
 
 		}
 
@@ -78,6 +76,7 @@
         } else {
           new LoadChapter("home");
         }
+        hashChecker();
       };
 
       function toggleDarkMode() {
@@ -139,7 +138,7 @@
             <li>
               <a
                 onclick="new LoadChapter('home')"
-                href="#home"
+                href="#"
                 class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 aria-current="page"
                 >Início</a
@@ -148,7 +147,7 @@
             <li>
               <a
                 onclick="new LoadChapter('equipa')"
-                href="#equipa"
+                href="#"
                 class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 aria-current="page"
                 >Equipa</a
@@ -157,11 +156,38 @@
             <li>
               <a
                 onclick="new LoadChapter('EDN')"
-                href="#edn"
+                href="#"
                 class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 aria-current="page"
                 >Estado da Nação</a
               >
+            </li>
+            <li>
+              <button id="questionsDropdownLink" data-dropdown-toggle="questionsDropdown"
+                class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">calculadora
+                <img src="images/arrow-down.svg" class="w-2.5 h-2.5 ml-2.5" />
+              </button>
+              <div id="questionsDropdown"
+                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                  <li aria-labelledby="examsDropdownLink">
+                  <li>
+                    <a onclick="" href="#COPADDER"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">adicionar
+                      Componetes</a>
+                  </li>
+                  <li>
+                    <a onclick="" href="#REACTANCE"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Impedancia</a>
+                  </li>
+                  <li>
+                    <a onclick="" href="#OHMCALC"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> Lei de OHM</a>
+                  </li>
+            </li>
+            </ul>
+            
+            </div>
             </li>
             <li>
               <button
@@ -207,7 +233,7 @@
                           <a
                             id="favQuiz3"
                             onclick="new FavQuiz('question3.json')"
-                            href=""
+                            href="#"
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Favoritas</a
                           >
@@ -215,7 +241,7 @@
                         <li>
                           <a
                             onclick="new Quiz('question3.json')"
-                            href=""
+                            href="#"
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Todas as perguntas</a
                           >
@@ -223,7 +249,7 @@
                         <li>
                           <a
                             onclick="new SimulateQuiz('question3.json')"
-                            href=""
+                            href="#"
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Simulador de exame</a
                           >
@@ -257,7 +283,7 @@
                           <a
                             id="favQuiz2"
                             onclick="new FavQuiz('question2.json')"
-                            href=""
+                            href="#"
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Favoritas</a
                           >
@@ -265,7 +291,7 @@
                         <li>
                           <a
                             onclick="new Quiz('question2.json')"
-                            href=""
+                            href="#"
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Todas as perguntas</a
                           >
@@ -273,7 +299,7 @@
                         <li>
                           <a
                             onclick="new SimulateQuiz('question2.json')"
-                            href=""
+                            href="#"
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Simulador de exame</a
                           >
@@ -307,7 +333,7 @@
                           <a
                             id="favQuiz1"
                             onclick="new FavQuiz('question1.json')"
-                            href=""
+                            href="#"
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Favoritas</a
                           >
@@ -315,7 +341,7 @@
                         <li>
                           <a
                             onclick="new Quiz('question1.json')"
-                            href=""
+                            href="#"
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Todas as perguntas</a
                           >
@@ -323,7 +349,7 @@
                         <li>
                           <a
                             onclick="new SimulateQuiz('question1.json')"
-                            href=""
+                            href="#"
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Simulador de exame</a
                           >
@@ -334,7 +360,7 @@
                   <li>
                     <a
                       onclick="new LoadChapter('marcar_exame_anacom')"
-                      href=""
+                      href="#"
                       class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >Ir a exame</a
                     >
@@ -473,7 +499,7 @@
                         <li>
                           <a
                             style="display: none"
-                            href=""
+                            href="#"
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Bobines (henry)</a
                           >
@@ -481,7 +507,7 @@
                         <li>
                           <a
                             style="display: none"
-                            href=""
+                            href="#"
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Condensador(bobine)</a
                           >
@@ -618,7 +644,7 @@
           class="text-white"
           >Código</a
         >
-        <a href="" id="ShowPrivacyBar">Politica de Privacidade</a>
+        <a href="#" id="ShowPrivacyBar">Politica de Privacidade</a>
       </div>
 
       <div class="flex flex-col items-end">

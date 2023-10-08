@@ -1,7 +1,7 @@
 class ComponentAdder extends ElectricalUnits{
     constructor() {
         super();
-        new LoadChapter("ComponentAdder", this);
+        new Popup("OhmsLawCalculator", this);
 
 
     }
