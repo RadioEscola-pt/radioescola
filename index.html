@@ -4,8 +4,8 @@
     <title>Radio Escola</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" />
+    <link rel="stylesheet" href="/css/style.css" />
     <script type="text/javascript" src="js/classUtils.js"></script>
     <script type="text/javascript" src="js/Questions.js"></script>
     <script type="text/javascript" src="js/Storage.js"></script>
@@ -14,7 +14,6 @@
     <script type="text/javascript" src="js/Quiz.js"></script>
     <script type="text/javascript" src="js/LoadChapter.js"></script>
     <script type="text/javascript" src="js/MatomoOptOutManager.js"></script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 
     <script>
       window.onload = function () {
@@ -30,23 +29,25 @@
       };
     </script>
 
-    <link rel="stylesheet" href="questions.css" />
+    <link rel="stylesheet" href="/css/questions.css" />
   </head>
 
   <body>
-    <header></header>
-
+    <header class="flex justify-center font-header h-[25vh] bg-header bg-center bg-cover">
+      <div
+        class="w-full h-full flex justify-center items-center bg-[rgba(0,0,0,0.3)] backdrop-blur-sm"
+      >
+        <span
+          class="self-center font-header text-[#ff9a17] text-2xl md:text-5xl drop-shadow-[0px_2px_0px_#b26b10]"
+          >Rádio Escola</span
+        >
+      </div>
+    </header>
     <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
       <div
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
       >
-        <a href="#" class="flex items-center">
-          <span class="text-xl mr-3">📻</span>
-          <span
-            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-            >Rádio Escola</span
-          >
-        </a>
+        <span></span>
         <button
           data-collapse-toggle="navbar-multi-level"
           type="button"
@@ -131,7 +132,7 @@
                         <li>
                           <a
                             id="favQuiz3"
-						 	onclick="new FavQuiz('question3.json')"
+                            onclick="new FavQuiz('question3.json')"
                             href="#"
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Favoritas</a
@@ -180,7 +181,7 @@
                       >
                         <li>
                           <a
-						  	id="favQuiz2"
+                            id="favQuiz2"
                             onclick="new FavQuiz('question2.json')"
                             href="#"
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
@@ -230,7 +231,7 @@
                       >
                         <li>
                           <a
-						  	id="favQuiz1"
+                            id="favQuiz1"
                             onclick="new FavQuiz('question1.json')"
                             href="#"
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
@@ -525,10 +526,7 @@
 
       <div>
         <a href="https://t.me/+xQNzwNwb2JIxMWY8">
-          <img
-            src="/images/telegram.svg"
-            alt="Telegram"
-            class="h-8"
+          <img src="/images/telegram.svg" alt="Telegram" class="h-8"
         /></a>
 
         <a

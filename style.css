@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   box-sizing: border-box;
@@ -8,23 +10,6 @@ body {
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   margin: 0;
   background-color: #F8FAFC;
-}
-
-/* Style the header */
-header {
-  background-color: #666;
-  font-size: 30px;
-  color: white;
-  height: 230px;
-  width: 100%;
-  background-image: url(radioescola.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-header h2 {
-  text-align: center;
 }
 
 /* Style the content */
