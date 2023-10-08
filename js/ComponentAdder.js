@@ -125,12 +125,11 @@ class ComponentAdder extends ElectricalUnits{
         let unit1 = this.resultIn.value;
 
         if (isInverted ==false) {
-            totalValue/=this.unitMultipliers[unit1];;
-
+            totalValue/=this.unitMultipliers[unit1];
             this.totalValueDisplay.textContent = `Total Value: ${totalValue.toFixed(2)}`;
         } else {
             invertedValue=1/invertedValue;
-            invertedValue*=this.unitMultipliers[unit1];;
+            invertedValue/=this.unitMultipliers[unit1];
             this.totalValueDisplay.textContent = `Total Value: ${invertedValue.toFixed(2)}`;
         }
        
