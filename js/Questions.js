@@ -1,8 +1,8 @@
 class Questions {
-		constructor() {
+	constructor() {
 
-	
-		}
+
+	}
 	checkQuestion() {
 		const index = parseInt(this.value);
 		const question = Quiz.messagesArray.questions[index];
@@ -16,7 +16,7 @@ class Questions {
 					this.style.background = "#00FF00";
 					this.innerHTML = "CERTO";
 					this.quiz.storeAnswer(true, uniqueId);
-					
+
 					return;
 				}
 			}
@@ -26,20 +26,20 @@ class Questions {
 		noteElement.innerHTML = question.notes;
 		this.style.background = "#FF0000";
 		this.innerHTML = "ERRADO";
-		noteDiv.className = "incorrect";
+		noteElement.className = "incorrect";
 		this.quiz.storeAnswer(false, uniqueId);
 
 
 
 	}
-	addQuestion(welcomeDiv,pageBlock,questions,qindex){
+	addQuestion(welcomeDiv, pageBlock, questions, qindex) {
 		var questionBlock = document.createElement("div");
 		questionBlock.className = "questionBlock";
-		questionBlock.id = "questionBlock"+qindex;
+		questionBlock.id = "questionBlock" + qindex;
 
 		var questionCard = document.createElement("div");
 		questionCard.className = "questionCard";
-		questionCard.id = "questionCardId"+qindex;
+		questionCard.id = "questionCardId" + qindex;
 		questionBlock.appendChild(questionCard);
 
 		var questiontxt = document.createElement("span");
@@ -62,7 +62,7 @@ class Questions {
 			let input = document.createElement("input");
 			input.type = "radio";
 			input.value = i;
-			input.name = "n" +qindex;
+			input.name = "n" + qindex;
 
 			label.appendChild(input);
 			label.innerHTML += key;
@@ -112,7 +112,7 @@ class Questions {
 			let starIcon = document.createElement("img");
 			starIcon.existingRecords = this.parts[0];
 
-			
+
 			if (MatomoOptOutManager.hasConsent()) {
 
 				starIcon.uniqueID = questions.uniqueID;
@@ -124,17 +124,18 @@ class Questions {
 					starIcon.src = "images/starnotfav.png"; // Set the path to your star icon image
 				}
 				starIcon.value = qindex;
-				starIcon.jsonFile=this.jsonFile;
+				starIcon.jsonFile = this.jsonFile;
 				// Add a click event listener to the star icon
 				starIcon.onclick = this.saveFav;
 				questionCard.appendChild(starIcon);
-			} 
-
 			}
+
 		}
+	}
 
 	showPage() {
 		var index = parseInt(this.value);
+		this.pageIndex = index;
 		window.scrollTo(0, 0);
 
 		if (index == 0) {
@@ -147,6 +148,7 @@ class Questions {
 			page.style.display = "none";
 		}
 		this.pageBlocks[index].style.display = "block";
-		this.currentPage = index;
+	
+
 	}
 }
