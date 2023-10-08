@@ -9,7 +9,7 @@
     }
 
     table {
-        @apply w-full border border-slate-800;
+        @apply w-full border border-slate-800 dark:border-slate-200;
     }
 
     thead {
@@ -25,7 +25,7 @@
     }
 
     tr:nth-child(even) {
-        @apply bg-slate-200;
+        @apply bg-slate-200 dark:bg-slate-600;
     }
   }
 
