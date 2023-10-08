@@ -1,0 +1,62 @@
+
+<p>
+
+
+<label for="componentType">Componente:</label>
+<select id="componentType">
+    <option value="F">Condensador(F)</option>
+    <option value="Ω">Resistencia Ω (Ohms)</option>
+    <option value="H">Bobine(H)</option>
+</select>
+</p>
+<p>
+<label for="seriesParallel">Serie/Paralelo:</label>
+<select id="seriesParallel">
+    <option value="series">Serie</option>
+    <option value="parallel">Paralelo</option>
+</select>
+</p>
+
+<table id="componentsTable">
+    <thead>
+        <tr>
+            <th>Number</th>
+            <th>Units</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="text" class="number" value="1"></td>
+            <td>
+                <select >
+
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="text" class="number" value="2"></td>
+            <td>
+                <select >
+
+                </select>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <button id="addRowBtn">Adicionar</button>
+<button id="removeRowBtn">Remover</button>
+</p>
+<p>
+
+    <label for="ResultIn">Resultado em:</label>
+
+<select id="ResultIn" >
+
+</select>
+</p>
+<p>
+<button id="calculateBtn">Calcular</button>
+
+</p>
+<div id="totalValue">Total Value: 0</div>

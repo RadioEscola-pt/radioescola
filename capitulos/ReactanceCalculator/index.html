@@ -1,0 +1,34 @@
+<table>
+    <tr>
+        <td><label for="calculationType">Seleccione Calculo:</label></td>
+        <td>
+            <select id="calculationType" name="calculationType">
+                <option value="H">Inductancia (X)</option>
+                <option value="F">Capacitancia (X)</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><label id="inductanceTXT" for="inductance">Inductance (H):</label></td>
+        <td><input type="number" id="inductance" name="inductance" required></td>
+    </tr>
+    <tr>
+        <td><label for="unit">Seleccione Unidade:</label></td>
+        <td>
+            <select id="unit" name="unit">
+
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><label for="frequency">Frequencia (Hz):</label></td>
+        <td><input type="number" id="frequency" name="frequency" required></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="button" value="Calcular" id="calculateButton"></td>
+    </tr>
+</table>
+<br><br>
+<div id="formula"></div>
+<div id="result"></div>

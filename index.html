@@ -10,20 +10,65 @@
       href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <script type="text/javascript" src="js/classUtils.js"></script>
-    <script type="text/javascript" src="js/Questions.js"></script>
-    <script type="text/javascript" src="js/Storage.js"></script>
-    <script type="text/javascript" src="js/SimulateQuiz.js"></script>
-    <script type="text/javascript" src="js/FavQuiz.js"></script>
-    <script type="text/javascript" src="js/Quiz.js"></script>
-    <script type="text/javascript" src="js/LoadChapter.js"></script>
-    <script type="text/javascript" src="js/MatomoOptOutManager.js"></script>
+	<link rel="stylesheet" href="css/questions.css" />
 
+	<script type="text/javascript" src="js/ElectricalUnits.js"></script>
+	<script type="text/javascript" src="js/classUtils.js"></script>
+	<script type="text/javascript" src="js/Questions.js"></script>
+	<script type="text/javascript" src="js/Storage.js"></script>
+	<script type="text/javascript" src="js/SimulateQuiz.js"></script>
+	<script type="text/javascript" src="js/FavQuiz.js"></script>
+	<script type="text/javascript" src="js/Quiz.js"></script>
+	<script type="text/javascript" src="js/LoadChapter.js"></script>
+	<script type="text/javascript" src="js/MatomoOptOutManager.js"></script>
+	<script type="text/javascript" src="js/ComponentAdder.js"></script>
+	<script type="text/javascript" src="js/OhmsLawCalculator.js"></script>
+	<script type="text/javascript" src="js/ReactanceCalculator.js"></script>
     <script>
-      // Keep a record of all running timers since we need to clear them later on
-      window.timers = [];
 
-      window.onload = function () {
+
+
+		function hashChecker() {
+
+
+			const fragment = window.location.hash;
+
+			// Check if there is a fragment
+			if (fragment) {
+				// Remove the '#' symbol from the fragment
+				const cleanFragment = fragment.substring(1);
+
+				// Use a switch statement to handle different cases
+				switch (cleanFragment) {
+					case 'COPADDER':
+						new ComponentAdder();
+						break;
+					case "OHMCALC":
+						new OhmsLawCalculator();
+
+
+						break;
+
+					case "REACTANCE":
+						new ReactanceCalculator();
+						break;
+
+					default:
+						console.log('Unknown case');
+
+						break;
+				}
+			} else {
+				console.log('No fragment found in the URL.');
+				new LoadChapter('home');
+			}
+
+		}
+
+
+		window.addEventListener('hashchange', hashChecker);
+		
+		      window.onload = function () {
         const optOutManager = new MatomoOptOutManager();
         const searchParams = new URLSearchParams(window.location.search);
         if (searchParams.has("LoadChapter")) {
@@ -34,11 +79,8 @@
           new LoadChapter("home");
         }
       };
-    </script>
-
-    <link rel="stylesheet" href="css/questions.css" />
+  </script>
   </head>
-
   <body class="bg-slate-50">
     <header
       class="flex justify-center font-header h-[25vh] bg-header bg-center bg-cover"
@@ -145,7 +187,7 @@
                           <a
                             id="favQuiz3"
                             onclick="new FavQuiz('question3.json')"
-                            href="#"
+                            href=""
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Favoritas</a
                           >
@@ -153,7 +195,7 @@
                         <li>
                           <a
                             onclick="new Quiz('question3.json')"
-                            href="#"
+                            href=""
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Todas as perguntas</a
                           >
@@ -161,7 +203,7 @@
                         <li>
                           <a
                             onclick="new SimulateQuiz('question3.json')"
-                            href="#"
+                            href=""
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Simulador de exame</a
                           >
@@ -195,7 +237,7 @@
                           <a
                             id="favQuiz2"
                             onclick="new FavQuiz('question2.json')"
-                            href="#"
+                            href=""
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Favoritas</a
                           >
@@ -203,7 +245,7 @@
                         <li>
                           <a
                             onclick="new Quiz('question2.json')"
-                            href="#"
+                            href=""
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Todas as perguntas</a
                           >
@@ -211,7 +253,7 @@
                         <li>
                           <a
                             onclick="new SimulateQuiz('question2.json')"
-                            href="#"
+                            href=""
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Simulador de exame</a
                           >
@@ -245,7 +287,7 @@
                           <a
                             id="favQuiz1"
                             onclick="new FavQuiz('question1.json')"
-                            href="#"
+                            href=""
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Favoritas</a
                           >
@@ -253,7 +295,7 @@
                         <li>
                           <a
                             onclick="new Quiz('question1.json')"
-                            href="#"
+                            href=""
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Todas as perguntas</a
                           >
@@ -261,7 +303,7 @@
                         <li>
                           <a
                             onclick="new SimulateQuiz('question1.json')"
-                            href="#"
+                            href=""
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Simulador de exame</a
                           >
@@ -272,7 +314,7 @@
                   <li>
                     <a
                       onclick="new LoadChapter('marcar_exame_anacom')"
-                      href="#"
+                      href=""
                       class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >Ir a exame</a
                     >
@@ -411,7 +453,7 @@
                         <li>
                           <a
                             style="display: none"
-                            href="#"
+                            href=""
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Bobines (henry)</a
                           >
@@ -419,7 +461,7 @@
                         <li>
                           <a
                             style="display: none"
-                            href="#"
+                            href=""
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Condensador(bobine)</a
                           >
@@ -537,7 +579,7 @@
           class="text-white"
           >Código</a
         >
-        <a href="#" id="ShowPrivacyBar">Politica de Privacidade</a>
+        <a href="" id="ShowPrivacyBar">Politica de Privacidade</a>
       </div>
 
       <div class="flex flex-col items-end">

@@ -1,23 +1,19 @@
-
 class LoadChapter {
-
-
-    constructor(chapter ) {
-		chapter=chapter;
-
-
-        var ajaxRequest = new XMLHttpRequest();
+    constructor(chapter, callback = null) {
+        const ajaxRequest = new XMLHttpRequest();
+        ajaxRequest.loadChapter = this;
+        
         ajaxRequest.onreadystatechange = function () {
-
-            if (ajaxRequest.readyState == 4) {
-                //the request is completed, now check its status
-                if (ajaxRequest.status == 200) {
-                    //turn JSON into array
-
+            if (this.readyState == 4) {
+                // The request is completed, now check its status
+                if (this.status == 200) {
                     var welcomeDiv = document.getElementById("welcome");
-                    welcomeDiv.innerHTML =ajaxRequest.responseText;
-                   
+                    welcomeDiv.innerHTML = this.responseText;
 
+                    // Check if a callback function is provided and not null
+                    if (callback && typeof callback.endRequest === "function") {
+                        callback.endRequest(); // Execute the endRequest method
+                    }
                 } else {
                     console.log("Status error: " + ajaxRequest.status);
                 }
@@ -25,7 +21,8 @@ class LoadChapter {
                 console.log("Ignored readyState: " + ajaxRequest.readyState);
             }
         };
-        ajaxRequest.open('GET', 'capitulos/'+chapter+'/index.html');
+        
+        ajaxRequest.open('GET', 'capitulos/' + chapter + '/index.html');
         ajaxRequest.send();
     }
 }
