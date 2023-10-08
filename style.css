@@ -67,7 +67,7 @@ footer > div:first-child {
   margin: 0;
   padding: 10px;
   border-radius: 5px;
-  margin: 10px;
+  margin-bottom: 20px;
   overflow-x: scroll;
   overflow-y: hidden;
   background-color: #CBD5E1;

@@ -1,28 +1,9 @@
-.questionBlock {
-    display: flex;
-    background-color: #ffffff;
-    border-radius: 5px;
-    margin: 40px 10px;
-    padding: 20px;
-    overflow: hidden;
-    flex-direction: column;
-    box-shadow: 0px 0px 20px #E2E8F0;
-    object-fit: none;
-    place-items: flex-start;
-}
 
 @media screen and (min-width: 600px) {
     .questionBlock {
         flex-direction: row;
     }
     
-}
-
-.answers{
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    line-height: 150%;
 }
 
 .questionCard {
@@ -36,16 +17,6 @@
     margin-top: 10px;
     max-width: 100%;
   }
-
-.question{
-    font-weight: 700;
-    font-size: 1.2rem;
-}
-
-
-.answers input[type=radio] {
-    margin-right: 10px;
-}
 
 #pagesLabel {
     display: flex;

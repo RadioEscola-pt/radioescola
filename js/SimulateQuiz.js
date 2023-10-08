@@ -139,7 +139,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 				noteDiv.className = "incorrect";
 				noteDiv.innerHTML += "<br>" + this.questions[questionIndex].notes;
 
-				noteDiv.parentElement.parentElement.parentElement.style.boxShadow = '0px 0px 5px #7F1D1D'
+				noteDiv.parentElement.parentElement.parentElement.style.border = '1px solid #aa1d1d'
 				elements[parseInt(this.questions[questionIndex].correctIndex - 1)].parentElement.style.color = '#22C55E';
 			}
 
@@ -213,19 +213,19 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 						questionCounter++;
 
 						var questionBlock = document.createElement("div");
-						questionBlock.className = "questionBlock";
+						questionBlock.className = "w-full p-6 mb-8 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700";
 
 						var questionCard = document.createElement("div");
 						questionCard.className = "questionCard";
 						questionBlock.appendChild(questionCard);
 
 						var questiontxt = document.createElement("span");
-						questiontxt.className = "question";
+						questiontxt.className = "text-xl font-bold";
 						questiontxt.innerHTML = index+ ") " + this.simulateQuiz.questions[qindex].question
 						questionCard.appendChild(questiontxt);
 
 						var answers = document.createElement("div");
-						answers.className = "answers";
+						answers.className = "flex flex-col mt-5 leading-normal";
 
 						var noteBlock = document.createElement("div");
 						noteBlock.id = "note" + this.simulateQuiz.questions[qindex].index;
@@ -239,6 +239,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 							input.type = "radio";
 							input.value = i;
 							input.name = "n" + this.simulateQuiz.questions[qindex].index;
+							input.className = "mr-4";
 
 							label.appendChild(input);
 							label.innerHTML += key;

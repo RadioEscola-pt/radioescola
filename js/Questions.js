@@ -14,6 +14,7 @@ class Questions {
 			if (elements[i].checked) {
 				if (answer - 1 === i) {
 					this.style.background = "#00FF00";
+					this.style.color = "#000000";
 					this.innerHTML = "CERTO";
 					this.quiz.storeAnswer(true, uniqueId);
 
@@ -34,7 +35,7 @@ class Questions {
 	}
 	addQuestion(welcomeDiv, pageBlock, questions, qindex) {
 		var questionBlock = document.createElement("div");
-		questionBlock.className = "questionBlock";
+		questionBlock.className = "w-full p-6 mb-8 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700";
 		questionBlock.id = "questionBlock" + qindex;
 
 		var questionCard = document.createElement("div");
@@ -43,12 +44,12 @@ class Questions {
 		questionBlock.appendChild(questionCard);
 
 		var questiontxt = document.createElement("span");
-		questiontxt.className = "question";
+		questiontxt.className = "text-xl font-bold";
 		questiontxt.innerHTML = questions.index + 1 + ") " + questions.question
 		questionCard.appendChild(questiontxt);
 
 		var answers = document.createElement("div");
-		answers.className = "answers";
+		answers.className = "flex flex-col mt-5 leading-normal";
 
 		var noteBlock = document.createElement("div");
 		noteBlock.id = "note" + qindex;
@@ -63,6 +64,7 @@ class Questions {
 			input.type = "radio";
 			input.value = i;
 			input.name = "n" + qindex;
+			input.className = "mr-4";
 
 			label.appendChild(input);
 			label.innerHTML += key;
@@ -104,6 +106,7 @@ class Questions {
 
 			let btn = document.createElement("button");
 			btn.innerHTML = "Verificar";
+			btn.className = "inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
 			btn.value = qindex;
 			btn.quiz = this;
 			btn.onclick = this.checkQuestion;
