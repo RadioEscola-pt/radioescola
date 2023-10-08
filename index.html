@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Radio Escola</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <script type="text/javascript" src="js/classUtils.js"></script>
-    <script type="text/javascript" src="js/Questions.js"></script>
-    <script type="text/javascript" src="js/Storage.js"></script>
-    <script type="text/javascript" src="js/SimulateQuiz.js"></script>
-    <script type="text/javascript" src="js/FavQuiz.js"></script>
-    <script type="text/javascript" src="js/Quiz.js"></script>
-    <script type="text/javascript" src="js/LoadChapter.js"></script>
-    <script type="text/javascript" src="js/MatomoOptOutManager.js"></script>
 
-    <script>
-      window.onload = function () {
-        const optOutManager = new MatomoOptOutManager();
-        const searchParams = new URLSearchParams(window.location.search);
-        if (searchParams.has("LoadChapter")) {
-          new LoadChapter(searchParams.get("LoadChapter")); // bar, only returns the first value
-        } else if (searchParams.has("TEST")) {
-          document.getElementById("TESTDIV").style.display = "";
-        } else {
-          new LoadChapter("home");
-        }
-      };
-    </script>
+<head>
+
+	<title>Radio Escola</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" />
+  <link rel="stylesheet" href="/css/style.css" />
+	<script type="text/javascript" src="js/classUtils.js"></script>
+	<script type="text/javascript" src="js/Questions.js"></script>
+	<script type="text/javascript" src="js/Storage.js"></script>
+	<script type="text/javascript" src="js/SimulateQuiz.js"></script>
+	<script type="text/javascript" src="js/FavQuiz.js"></script>
+	<script type="text/javascript" src="js/Quiz.js"></script>
+	<script type="text/javascript" src="js/LoadChapter.js"></script>
+	<script type="text/javascript" src="js/MatomoOptOutManager.js"></script>
+	
+	
+    
+	<script>
+
+		// Keep a record of all running timers since we need to clear them later on
+		window.timers = []
+
+		window.onload = function () {
+
+			const optOutManager = new MatomoOptOutManager();
+			const searchParams = new URLSearchParams(window.location.search);
+			if (searchParams.has('LoadChapter')) {
+				new LoadChapter(searchParams.get("LoadChapter")); // bar, only returns the first value
+			} else if (searchParams.has('TEST')) {
+				document.getElementById('TESTDIV').style.display = ''
+			}
+			else {
+				new LoadChapter('home');
+			}
+		}
+	</script>
 
     <link rel="stylesheet" href="/css/questions.css" />
   </head>
