@@ -29,10 +29,10 @@ class Quiz extends Classes([Questions,Storage]) {
 		}
 		this.pageBlocks[index].style.display = "block";
 		this.quiz.storePage(index);
-		if (document.querySelector('#qIndex button.active')) {
-			document.querySelector('#qIndex button.active').classList.remove("active")
+		if (document.querySelector('#qIndex button.bg-slate-400')) {
+			document.querySelector('#qIndex button.bg-slate-400').classList.replace('bg-slate-400', 'bg-slate-300');
 		}
-		this.className = 'active';
+		this.className = 'bg-slate-400 hover:bg-slate-400 p-2 rounded cursor-pointer';
 	}
 
 
@@ -59,6 +59,7 @@ class Quiz extends Classes([Questions,Storage]) {
 					welcomeDiv.innerHTML = "";
 					var indexBlock = document.createElement("div");
 					indexBlock.id = "qIndex";
+					indexBlock.className = "list-none m-0 p-2 rounded mb-5 overflow-x-scroll overflow-y-hidden bg-slate-200 sticky flex items-center justify-start top-[10px] gap-[5px]";
 
 					welcomeDiv.appendChild(indexBlock);
 					var index = 0;
@@ -73,6 +74,7 @@ class Quiz extends Classes([Questions,Storage]) {
 							pageBlock.className = 'page';
 							let btn = document.createElement("button");
 							btn.innerHTML = questionCounter / 10 + 1;
+							btn.className = "bg-slate-300 hover:bg-slate-400 p-2 rounded cursor-pointer";
 							let currentPageIndex=0;
 							if (questionCounter == 0) {
 
@@ -82,7 +84,7 @@ class Quiz extends Classes([Questions,Storage]) {
 							}
 							if (storedPage==currentPageIndex)
 							{
-								btn.className = 'active';
+								btn.classList.replace('bg-slate-300', 'bg-slate-400');
 							}
 
 							btn.value = questionCounter;

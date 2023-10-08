@@ -2,252 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  box-sizing: border-box;
-}
 
-body {
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  margin: 0;
-  background-color: #F8FAFC;
-}
+@layer components {
+    h1 {
+      @apply text-2xl font-bold mb-4 mt-8;
+    }
 
-/* Style the content */
-article {
-  -webkit-flex: 3;
-  -ms-flex: 3;
-  flex: 3;
-  background-color: #F8FAFC;
-  padding: 10px;
-  width: min(100%, 980px);
-  margin: 0 auto;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
+    table {
+        @apply w-full border border-slate-800;
+    }
 
-/* Style the footer */
-footer {
-  background-color: #374151;
-  padding: 10px;
-  text-align: center;
-  color: white;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
-  padding: 40px;
-}
+    thead {
+        @apply bg-slate-800 text-white;
+    }
 
-footer a {
-    color: white;
-}
+    th {
+        @apply p-2;
+    }
+    
+    td {
+        @apply p-2;
+    }
 
-footer > * {
-    display: flex;
-    align-items: center;
-}
-
-
-footer > div:first-child {
-    gap: 5px;
-    flex-direction: column;
-    align-items: start;
-}
-
-/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
-@media (max-width: 600px) {
-  section {
-    -webkit-flex-direction: column;
-    flex-direction: column;
+    tr:nth-child(even) {
+        @apply bg-slate-200;
+    }
   }
-}
-
-
-#qIndex {
-  list-style-type: none;
-  margin: 0;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  background-color: #CBD5E1;
-  position: -webkit-sticky;
-  /* Safari */
-  position: sticky;
-  top: 10px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#qIndex button {
-  background-color: #F3F4F6;
-  border: none;
-  padding: 8px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#qIndex button:hover {
-  background-color: #94A3B8;
-}
-
-#qIndex button.active {
-  background-color: #475569;
-  color: white;
-}
-
-#timer {
-  font-family: monospace;
-  font-size: large;
-}
-
-.subnav1 {
-  background-color: #3399ff;
-  margin-right: 5px;
-  box-shadow: 0px 0px 10px #00000052;
-}
-
-.subnav2 {
-  background-color: #00cc99;
-  margin-right: 5px;
-  box-shadow: 0px 0px 10px #00000052;
-}
-
-.subnav3 {
-  background-color: #731919;
-  margin-right: 5px;
-  box-shadow: 0px 0px 10px #00000052;
-}
-
-.subnav0 {
-  background-color: #eb9021;
-  margin-right: 5px;
-}
-
-.subnav1 ul {
-  z-index: 2;
-}
-
-.subnav2 ul {
-  z-index: 2;
-}
-
-.subnav3 ul {
-  z-index: 2;
-}
 
 #answerDisplay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f0f0f0;
-  text-align: center;
-  display: none;
-}
-
-/* Style the canvas div with display: none initially */
-#canvasDiv {
-}
-
-/* Style the canvas */
-#canvas {
-  border: 1px solid #000;
-}
-
-table {
-  border: 1px solid #1E293B;
-  padding: 0;
-  margin: 0;
-  border-collapse: collapse;
-}
-
-thead th {
-  padding: 12px 24px;
-  text-align: center;
-  background: #1E293B;
-  color: white;
-}
-tr:nth-child(2n+1) {
-  background: #E2E8F0;
-}
-
-td {
-  margin: 0;
-  padding: 12px;
-}
-
-.card {
-  border: 1px solid #CACACA;
-  padding: 12px 24px;
-  border-radius: 12px;
-  box-shadow: 0px 0px 6px #27272A29;
-  background: #F1F5F9;
-  margin: 2rem 0;
-}
-
-.card-title {
-  margin-top: 0.5rem;
-  font-size: 1.4rem;
-}
-
-h1 {
-  font-size: 1.4rem;
-}
-
-h1.page-title {
-  margin-bottom: 3rem;
-  font-size: 1.6rem;
-}
-
-h2 {
-  font-size: 1.2rem;
-}
-
-p + h2 {
-  margin-top: 2rem;
-}
-#matomo-opt-out
-{
-	background-color: #e2e8f0;
-	width: min(100%, 980px);
-	margin: 0 auto;
-	padding: 10px;
-	border-radius: 8px;
-	margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-}
-
-#matomo-opt-out button {
-  background-color: #bbf7d0;
-  border: none;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 2px;
-  border-radius: 4px;
-  margin-top: 20px;
-}
-
-#matomo-opt-out button:hover {
-  background-color: #86efac;
-}
-
-@media screen and (max-width: 980px) {
-
-  footer {
-    grid-template-columns: 1fr;
-    font-size: 0.8rem;
-  }
-  
-  #matomo-opt-out {
-    width: 95%;
-  }
+    display: none;
 }

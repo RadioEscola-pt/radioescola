@@ -64,6 +64,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 		previousButton.pageBlocks = this.pageBlocks;
 		previousButton.simulateQuiz=this;
 		previousButton.disabled = this.currentPage == 0;
+		previousButton.className = 'bg-slate-300 p-2 rounded cursor-pointer hover:bg-slate-400';
 		buttons.append(previousButton)
 
 		for (let i = 0 ; i < this.numberOfPages(); i++) {
@@ -73,8 +74,9 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 			pageBtn.onclick =  this.showPage;
 			pageBtn.pageBlocks = this.pageBlocks;
 			pageBtn.simulateQuiz=this;
+			pageBtn.className = 'bg-slate-300 p-2 rounded cursor-pointer'
 			if (this.currentPage == i ) {
-				pageBtn.className = 'active';
+				pageBtn.className = 'bg-slate-400 p-2 rounded cursor-pointer';
 			}
 			buttons.appendChild(pageBtn);
 		}
@@ -86,6 +88,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 		nextButton.simulateQuiz=this;
 		nextButton.pageBlocks = this.pageBlocks;
 		nextButton.disabled = this.currentPage == this.numberOfPages()-1;
+		nextButton.className = 'bg-slate-300 hover:bg-slate-400 p-2 rounded cursor-pointer';
 		buttons.append(nextButton);
 
 		let spacer = document.createElement('div')
@@ -95,6 +98,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 
 		let btn = document.createElement("button");
 		btn.innerHTML = "Finalizar";
+		btn.className = "bg-lime-50 hover:bg-lime-200 px-4 rounded shadow text-lime-700 font-bold cursor-pointer";
 
 		btn.onclick = this.stoptimer;
 		btn.simulateQuiz = this;
@@ -183,10 +187,11 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 					welcomeDiv.innerHTML = "";
 					var indexBlock = document.createElement("div");
 					indexBlock.id = "qIndex";
+					indexBlock.className = "list-none m-0 p-2 rounded mb-5 overflow-x-scroll overflow-y-hidden bg-slate-200 sticky flex items-center justify-between top-[10px] gap-[10px]";
 
 					let buttons = document.createElement('div')
 					buttons.id = 'pagination'
-
+					buttons.className = 'flex w-full gap-[5px]'
 
 					welcomeDiv.appendChild(indexBlock);
 					var index = 0;
@@ -279,6 +284,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 					var timerBlock = document.createElement("div");
 					timerBlock.id = "timer";
 					timerBlock.textContent = '01:00:00';
+					timerBlock.className = "font-mono text-lg";
 					indexBlock.appendChild(timerBlock);
 
 					//console.log("Unanswered" + numberOfUnaswered);

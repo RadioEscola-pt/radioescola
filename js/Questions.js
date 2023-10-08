@@ -27,7 +27,7 @@ class Questions {
 		noteElement.innerHTML = question.notes;
 		this.style.background = "#FF0000";
 		this.innerHTML = "ERRADO";
-		noteElement.className = "incorrect";
+		noteElement.className = "bg-red-200 text-red-900 p-2 mt-2";
 		this.quiz.storeAnswer(false, uniqueId);
 
 
@@ -119,6 +119,7 @@ class Questions {
 			if (MatomoOptOutManager.hasConsent()) {
 
 				starIcon.uniqueID = questions.uniqueID;
+				starIcon.style.float = "right";
 				const favorites = JSON.parse(localStorage.getItem(starIcon.existingRecords + "Fav")) || [];
 
 				if (favorites.includes(starIcon.uniqueID)) {
