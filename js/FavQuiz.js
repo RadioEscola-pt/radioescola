@@ -9,10 +9,7 @@ class FavQuiz extends Classes([Questions,Storage]) {
 		this.pageBlocks = [];
 		this.createQuiz();
 		this.parts = this.jsonFile.split('.');
-		const searchParams = new URLSearchParams(window.location.search);
-		if (searchParams.has('TEST')) {
-			Quiz.test = true;
-		}
+
 	}
 
 
