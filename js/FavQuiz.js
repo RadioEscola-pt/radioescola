@@ -86,7 +86,9 @@ class FavQuiz extends Classes([Questions,Storage]) {
 							pageBlock.className = 'page';
 							let btn = document.createElement("button");
 							btn.innerHTML = questionCounter / 10 + 1;
-							btn.value = questionCounter;						let currentPageIndex=0;
+							btn.className = "bg-slate-300 hover:bg-slate-400 p-2 rounded cursor-pointer";
+							btn.value = questionCounter;						
+							let currentPageIndex=0;
 							if (questionCounter == 0) {
 
 								currentPageIndex = 0;
@@ -95,7 +97,8 @@ class FavQuiz extends Classes([Questions,Storage]) {
 							}
 							if (storedPage==currentPageIndex)
 							{
-								btn.className = 'active';
+								btn.classList.replace('bg-slate-300', 'bg-slate-400');
+
 							}
 
 							btn.onclick = this.quiz.showPageWithStorage;
