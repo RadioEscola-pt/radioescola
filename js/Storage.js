@@ -2,6 +2,25 @@ class Storage {
 	constructor() {
 
 	}
+	
+    static storeDarkMode(isDark) {
+        // Check if there is an existing record in local storage
+        let existingRecords = JSON.parse(localStorage.getItem("DarkMode")) || {};
+
+        // Set the dark mode setting
+        existingRecords.isDark = isDark;
+
+        // Save the updated records back to local storage
+        localStorage.setItem("DarkMode", JSON.stringify(existingRecords));
+    }
+
+    static getDarkMode() {
+        // Check if there is an existing record in local storage
+        const existingRecords = JSON.parse(localStorage.getItem("DarkMode")) || {};
+
+        // Return the dark mode setting if it exists, or false if not
+        return existingRecords.hasOwnProperty("isDark") ? existingRecords.isDark : false;
+    }
 
 
 	storePage(page) {

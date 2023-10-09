@@ -29,74 +29,86 @@
 
 
 
-		function hashChecker() {
+      function hashChecker() {
 
 
-			const fragment = window.location.hash;
+        const fragment = window.location.hash;
 
-			// Check if there is a fragment
-			if (fragment) {
-				// Remove the '#' symbol from the fragment
-				const cleanFragment = fragment.substring(1);
+        // Check if there is a fragment
+        if (fragment) {
+          // Remove the '#' symbol from the fragment
+          const cleanFragment = fragment.substring(1);
 
-				// Use a switch statement to handle different cases
-				switch (cleanFragment) {
-					case 'COPADDER':
-						new ComponentAdder();
-						break;
-					case "OHMCALC":
-						new OhmsLawCalculator();
-
-
-						break;
-
-					case "REACTANCE":
-						new ReactanceCalculator();
-						break;
-
-					default:
-						console.log('Unknown case');
-
-						break;
-				}
-			} 
-
-		}
+          // Use a switch statement to handle different cases
+          switch (cleanFragment) {
+            case 'COPADDER':
+              new ComponentAdder();
+              break;
+            case "OHMCALC":
+              new OhmsLawCalculator();
 
 
-		window.addEventListener('hashchange', hashChecker);
-		
-	window.onload = function () {
-        const optOutManager = new MatomoOptOutManager();
-        const searchParams = new URLSearchParams(window.location.search);
-        if (searchParams.has("LoadChapter")) {
-          new LoadChapter(searchParams.get("LoadChapter")); // bar, only returns the first value
-        } else if (searchParams.has("TEST")) {
-          document.getElementById("TESTDIV").style.display = "";
-        } else {
-          new LoadChapter("home");
+              break;
+
+            case "REACTANCE":
+              new ReactanceCalculator();
+              break;
+
+            default:
+              console.log('Unknown case');
+
+              break;
+          }
         }
-        hashChecker();
-      };
 
-      function toggleDarkMode() {
-        if (document.documentElement.classList.contains("dark")) {
-          document.getElementById(
-            "theme-toggle"
-          ).innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      }
+
+
+      window.addEventListener('hashchange', hashChecker);
+
+        window.onload = function () {
+          const optOutManager = new MatomoOptOutManager();
+          const searchParams = new URLSearchParams(window.location.search);
+          if (searchParams.has("LoadChapter")) {
+            new LoadChapter(searchParams.get("LoadChapter")); // bar, only returns the first value
+          } else if (searchParams.has("TEST")) {
+            document.getElementById("TESTDIV").style.display = "";
+          } else {
+            new LoadChapter("home");
+          }
+          hashChecker();
+          if (Storage.getDarkMode()) {
+            document.getElementById(
+              "theme-toggle"
+            ).innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
 </svg>
 `;
-        } else {
-          document.getElementById(
-            "theme-toggle"
-          ).innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            document.documentElement.classList.add("dark");
+          }
+        };
+
+        function toggleDarkMode() {
+
+          if (document.documentElement.classList.contains("dark")) {
+            Storage.storeDarkMode(false);
+            document.getElementById(
+              "theme-toggle"
+            ).innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+</svg>
+`;
+          } else {
+            Storage.storeDarkMode(true);
+            document.getElementById(
+              "theme-toggle"
+            ).innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
 </svg>
 `;
+          }
+          document.documentElement.classList.toggle("dark");
         }
-        document.documentElement.classList.toggle("dark");
-      }
     </script>
 
     <link rel="stylesheet" href="css/questions.css" />
