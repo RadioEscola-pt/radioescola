@@ -1,58 +1,56 @@
-<table class="mt-8 w-full">
+<div class="grid grid-cols-3 gap-x-4 gap-y-3 w-full">
+  <label for="knownValue1">Tensão</label>
+  <input
+    type="number"
+    id="knownValue1"
+    class="w-full rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50"
+  />
 
-    <tr>
-        <td><label for="knownValue1">Tensão:</label></td>
-        <td><input type="number" id="knownValue1"></td>
+  <select
+    id="unit1"
+    class="w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50"
+  ></select>
 
+  <label for="knownValue1">Corrente</label>
+  <input
+    type="number"
+    id="knownValue2"
+    class="w-full rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50"
+  />
 
-        <td>
-            <select id="unit1">
+  <select
+    id="unit2"
+    class="w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50"
+  ></select>
 
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <td><label for="knownValue2">Currente:</label></td>
-        <td><input type="number" id="knownValue2"></td>
+  <label for="knownValue3">Resistência</label>
 
+  <input
+    type="number"
+    id="knownValue3"
+    class="w-full rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50"
+  />
 
-        <td>
-            <select id="unit2">
+  <select
+    id="unit3"
+    class="w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50"
+  ></select>
 
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <td><label for="knownValue3">Resistencia:</label></td>
+  <label for="knownValue3">Potência</label>
 
-        <td><input type="number" id="knownValue3"></td>
+  <div id="knownValue4"></div>
 
+  <select
+    id="unit4"
+    class="w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50"
+  ></select>
+</div>
 
-        <td>
-            <select id="unit3">
+<div id="result"></div>
 
-            </select>
-        </td>
-
-    </tr>
-    <tr>
-        <td><label for="knownValue3">Potencia:</label></td>
-
-        <td><div id="knownValue4" ></div></td>
-
-
-        <td>
-            <select id="unit4">
-
-            </select>
-        </td>
-
-    </tr>
-    <tr>
-
-        <td></td>
-        <td><div id="result" ></div></td>
-
-        <td><button id="calculateButton">Calcular</button></td>
-    </tr>
-</table>
+<button
+  id="calculateButton"
+  class="mt-8 text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800"
+>
+  Calcular
+</button>
