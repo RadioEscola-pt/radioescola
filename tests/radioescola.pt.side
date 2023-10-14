@@ -1,0 +1,122 @@
+{
+  "id": "a6830783-41be-4489-adc1-26b587f9fa54",
+  "version": "2.0",
+  "name": "radioescola.pt",
+  "url": "http://127.0.0.1/radioescola/",
+  "tests": [{
+    "id": "dbbf6db3-d960-49c2-99f8-d12a035a5126",
+    "name": "add 2 caps",
+    "commands": [{
+      "id": "804ed694-b781-4618-9ed3-3ed885318a51",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1/radioescola/#COPADDER",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d5614aff-78fb-4e68-bb8e-41d0d6861e67",
+      "comment": "",
+      "command": "click",
+      "target": "css=#seriesParallel > option:nth-child(1)",
+      "targets": [
+        ["css=#seriesParallel > option:nth-child(1)", "css:finder"],
+        ["xpath=//option[@value='series']", "xpath:attributes"],
+        ["xpath=//select[@id='seriesParallel']/option", "xpath:idRelative"],
+        ["xpath=//p[2]/select/option", "xpath:position"],
+        ["xpath=//option[contains(.,'Serie')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f15d5ff-658b-4d14-b9e1-24aec7102541",
+      "comment": "",
+      "command": "type",
+      "target": "css=tr:nth-child(1) .number",
+      "targets": [
+        ["css=tr:nth-child(1) .number", "css:finder"],
+        ["xpath=//input[@value='1']", "xpath:attributes"],
+        ["xpath=//table[@id='componentsTable']/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "5"
+    }, {
+      "id": "15be8414-566a-4123-b16a-b3f572cefbd8",
+      "comment": "",
+      "command": "type",
+      "target": "css=tr:nth-child(2) .number",
+      "targets": [
+        ["css=tr:nth-child(1) .number", "css:finder"],
+        ["xpath=//input[@value='1']", "xpath:attributes"],
+        ["xpath=//table[@id='componentsTable']/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "5"
+    }, {
+      "id": "922d9274-3d42-402f-a99f-3375c6986537",
+      "comment": "",
+      "command": "click",
+      "target": "id=calculateBtn",
+      "targets": [
+        ["id=calculateBtn", "id"],
+        ["css=#calculateBtn", "css:finder"],
+        ["xpath=//button[@id='calculateBtn']", "xpath:attributes"],
+        ["xpath=//p[5]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Calcular')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "37f24bf4-8fae-437c-ae45-e7fd33940db8",
+      "comment": "",
+      "command": "click",
+      "target": "id=componentType",
+      "targets": [
+        ["id=componentType", "id"],
+        ["css=#componentType", "css:finder"],
+        ["xpath=//select[@id='componentType']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8fc4a760-71cf-4fc2-8518-448330aaee38",
+      "comment": "",
+      "command": "click",
+      "target": "css=#componentType > option:nth-child(1)",
+      "targets": [
+        ["css=#componentType > option:nth-child(1)", "css:finder"],
+        ["xpath=//option[@value='F']", "xpath:attributes"],
+        ["xpath=//select[@id='componentType']/option", "xpath:idRelative"],
+        ["xpath=//option", "xpath:position"],
+        ["xpath=//option[contains(.,'Condensador(F)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2708472-909b-4f20-99e1-adf93e2cdf9d",
+      "comment": "",
+      "command": "click",
+      "target": "id=seriesParallel",
+      "targets": [
+        ["id=seriesParallel", "id"],
+        ["css=#seriesParallel", "css:finder"],
+        ["xpath=//select[@id='seriesParallel']", "xpath:attributes"],
+        ["xpath=//p[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "24a79d35-7b77-4a0b-ad58-e2ff5f62adff",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=totalValue",
+      "targets": [],
+      "value": "Total Value: 2.50"
+    }]
+  }],
+  "suites": [{
+    "id": "c5f1e5c9-40ca-4614-a1f7-fbac47490417",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://127.0.0.1/", "http://127.0.0.1/radioescola", "http://127.0.0.1/radioescola/#REACTANCE", "http://127.0.0.1/radioescola/"],
+  "plugins": []
+}
