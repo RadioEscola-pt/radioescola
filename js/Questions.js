@@ -111,29 +111,35 @@ class Questions {
 			btn.quiz = this;
 			btn.onclick = this.checkQuestion;
 			questionCard.appendChild(btn);
-
-			let starIcon = document.createElement("img");
-			starIcon.existingRecords = this.parts[0];
+			btn.quiz.addStar( questionCard,qindex,questions.uniqueID);
 
 
-			if (MatomoOptOutManager.hasConsent()) {
 
-				starIcon.uniqueID = questions.uniqueID;
-				starIcon.style.float = "right";
-				const favorites = JSON.parse(localStorage.getItem(starIcon.existingRecords + "Fav")) || [];
+		}
+	}
 
-				if (favorites.includes(starIcon.uniqueID)) {
-					starIcon.src = "images/starfav.png"; // Set the path to your star icon image
-				} else {
-					starIcon.src = "images/starnotfav.png"; // Set the path to your star icon image
-				}
-				starIcon.value = qindex;
-				starIcon.jsonFile = this.jsonFile;
-				// Add a click event listener to the star icon
-				starIcon.onclick = this.saveFav;
-				questionCard.appendChild(starIcon);
+	addStar( questionCard,qindex, uniqueID)
+	{
+		let starIcon = document.createElement("img");
+		starIcon.existingRecords = this.parts[0];
+
+
+		if (MatomoOptOutManager.hasConsent()) {
+
+			starIcon.uniqueID = uniqueID;
+			starIcon.style.float = "right";
+			const favorites = JSON.parse(localStorage.getItem(starIcon.existingRecords + "Fav")) || [];
+
+			if (favorites.includes(starIcon.uniqueID)) {
+				starIcon.src = "images/starfav.png"; // Set the path to your star icon image
+			} else {
+				starIcon.src = "images/starnotfav.png"; // Set the path to your star icon image
 			}
-
+			starIcon.value = qindex;
+			starIcon.jsonFile = this.jsonFile;
+			// Add a click event listener to the star icon
+			starIcon.onclick = this.saveFav;
+			questionCard.appendChild(starIcon);
 		}
 	}
 
@@ -154,5 +160,37 @@ class Questions {
 		this.pageBlocks[index].style.display = "block";
 	
 
+	}
+	saveFav() {
+		var favorites = JSON.parse(localStorage.getItem(this.existingRecords + "Fav"));
+		// Get the unique ID of the question associated with the clicked star
+		const index = favorites.indexOf(this.uniqueID);
+		if (index === -1) {
+			// If not in favorites, add it
+			favorites.push(this.uniqueID);
+
+			
+			this.src = "images/starfav.png"; // Set the path to your favorite star icon image
+		} else {
+			// If already in favorites, remove it
+			const elements = document.getElementById("questionBlock" + this.value);
+			elements.style.display = "none";
+			
+			
+			favorites.splice(index, 1);
+			this.src = "images/starnotfav.png"; // Set the path to your regular star icon image
+			if (favorites.length==0)
+			{
+				
+				new Quiz(this.jsonFile);
+			}
+		}
+
+		// Save the updated favorites array back to local storage
+		localStorage.setItem(this.existingRecords + "Fav", JSON.stringify(favorites));
+		FavQuiz.showFavElement("question3","favQuiz3");
+		FavQuiz.showFavElement("question2","favQuiz2");
+		FavQuiz.showFavElement("question1","favQuiz1");
+		
 	}
 }

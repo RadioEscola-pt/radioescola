@@ -160,6 +160,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 	constructor(json) {
 		super();
 		this.jsonFile=json;
+		this.parts = this.jsonFile.split('.');
 		var numberOfUnaswered = 0;
 		var questionCounter = 0;
 		this.pageBlocks = []
@@ -254,6 +255,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 						}
 
 						questionCard.appendChild(answers);
+						this.simulateQuiz.addStar( questionCard,qindex, this.simulateQuiz.questions[qindex].uniqueID);
 						pageBlock.appendChild(questionBlock);
 
 						if (this.simulateQuiz.questions[qindex].img) {
