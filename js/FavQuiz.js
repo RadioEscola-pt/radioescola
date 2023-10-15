@@ -9,10 +9,8 @@ class FavQuiz extends Classes([Questions,Storage]) {
 		this.pageBlocks = [];
 		this.createQuiz();
 		this.parts = this.jsonFile.split('.');
-		const searchParams = new URLSearchParams(window.location.search);
-		if (searchParams.has('TEST')) {
-			Quiz.test = true;
-		}
+		super.hideOnUnselect=true;
+
 	}
 
 
@@ -86,7 +84,9 @@ class FavQuiz extends Classes([Questions,Storage]) {
 							pageBlock.className = 'page';
 							let btn = document.createElement("button");
 							btn.innerHTML = questionCounter / 10 + 1;
-							btn.value = questionCounter;						let currentPageIndex=0;
+							btn.className = "bg-slate-300 hover:bg-slate-400 p-2 rounded cursor-pointer";
+							btn.value = questionCounter;						
+							let currentPageIndex=0;
 							if (questionCounter == 0) {
 
 								currentPageIndex = 0;
@@ -95,7 +95,8 @@ class FavQuiz extends Classes([Questions,Storage]) {
 							}
 							if (storedPage==currentPageIndex)
 							{
-								btn.className = 'active';
+								btn.classList.replace('bg-slate-300', 'bg-slate-400');
+
 							}
 
 							btn.onclick = this.quiz.showPageWithStorage;
@@ -147,37 +148,6 @@ class FavQuiz extends Classes([Questions,Storage]) {
 	      
 	    
 	  }
-	saveFav() {
-		var favorites = JSON.parse(localStorage.getItem(this.existingRecords + "Fav"));
-		// Get the unique ID of the question associated with the clicked star
-		const index = favorites.indexOf(this.uniqueID);
-		if (index === -1) {
-			// If not in favorites, add it
-			favorites.push(this.uniqueID);
 
-			
-			this.src = "images/starfav.png"; // Set the path to your favorite star icon image
-		} else {
-			// If already in favorites, remove it
-			const elements = document.getElementById("questionBlock" + this.value);
-			elements.style.display = "none";
-			
-			
-			favorites.splice(index, 1);
-			this.src = "images/starnotfav.png"; // Set the path to your regular star icon image
-			if (favorites.length==0)
-			{
-				
-				new Quiz(this.jsonFile);
-			}
-		}
-
-		// Save the updated favorites array back to local storage
-		localStorage.setItem(this.existingRecords + "Fav", JSON.stringify(favorites));
-		FavQuiz.showFavElement("question3","favQuiz3");
-		FavQuiz.showFavElement("question2","favQuiz2");
-		FavQuiz.showFavElement("question1","favQuiz1");
-		
-	}
 
 }

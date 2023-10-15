@@ -9,7 +9,6 @@ class Quiz extends Classes([Questions,Storage]) {
 		this.pageBlocks = [];
 		this.parts = this.jsonFile.split('.');
 		this.createQuiz();
-		const searchParams = new URLSearchParams(window.location.search);
 
 	}
 	showPageWithStorage()
