@@ -53,8 +53,9 @@ class ComponentAdder extends ElectricalUnits{
             const numberCell = newRow.insertCell(0);
             const unitsCell = newRow.insertCell(1);
 
-            numberCell.innerHTML = `<input type="text"  value="${rowNumber}">`;
+            numberCell.innerHTML = `<input type="text"  value="${rowNumber}" class="w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50">`;
             var selectElement = document.createElement('select');
+            selectElement.className = "w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50";
             this.loadOptions(selectElement,componentType);
             unitsCell.append(selectElement);
         }
