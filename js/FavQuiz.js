@@ -9,6 +9,7 @@ class FavQuiz extends Classes([Questions,Storage]) {
 		this.pageBlocks = [];
 		this.createQuiz();
 		this.parts = this.jsonFile.split('.');
+		super.hideOnUnselect=true;
 
 	}
 

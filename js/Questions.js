@@ -1,5 +1,7 @@
 class Questions {
+
 	constructor() {
+		this.hideOnUnselect=false;
 
 
 	}
@@ -111,7 +113,7 @@ class Questions {
 			btn.quiz = this;
 			btn.onclick = this.checkQuestion;
 			questionCard.appendChild(btn);
-			btn.quiz.addStar( questionCard,qindex,questions.uniqueID);
+			this.addStar( questionCard,qindex,questions.uniqueID, );
 
 
 
@@ -137,6 +139,7 @@ class Questions {
 			}
 			starIcon.value = qindex;
 			starIcon.jsonFile = this.jsonFile;
+			starIcon.hideOnUnselect=this.hideOnUnselect;
 			// Add a click event listener to the star icon
 			starIcon.onclick = this.saveFav;
 			questionCard.appendChild(starIcon);
@@ -162,35 +165,39 @@ class Questions {
 
 	}
 	saveFav() {
-		var favorites = JSON.parse(localStorage.getItem(this.existingRecords + "Fav"));
+		// Retrieve the favorites array from local storage
+		var favoritesJSON = localStorage.getItem(this.existingRecords + "Fav");
+		var favorites = favoritesJSON ? JSON.parse(favoritesJSON) : [];
+	
 		// Get the unique ID of the question associated with the clicked star
 		const index = favorites.indexOf(this.uniqueID);
+	
 		if (index === -1) {
 			// If not in favorites, add it
 			favorites.push(this.uniqueID);
-
-			
 			this.src = "images/starfav.png"; // Set the path to your favorite star icon image
 		} else {
 			// If already in favorites, remove it
 			const elements = document.getElementById("questionBlock" + this.value);
-			elements.style.display = "none";
-			
+			if (elements!=null)
+			{
+				if (this.hideOnUnselect==true)
+					elements.style.display = "none";
+			}
 			
 			favorites.splice(index, 1);
 			this.src = "images/starnotfav.png"; // Set the path to your regular star icon image
-			if (favorites.length==0)
-			{
-				
+			if (favorites.length === 0) {
 				new Quiz(this.jsonFile);
 			}
 		}
-
+	
 		// Save the updated favorites array back to local storage
 		localStorage.setItem(this.existingRecords + "Fav", JSON.stringify(favorites));
-		FavQuiz.showFavElement("question3","favQuiz3");
-		FavQuiz.showFavElement("question2","favQuiz2");
-		FavQuiz.showFavElement("question1","favQuiz1");
-		
+	
+		// Call the showFavElement function for specific HTML elements
+		FavQuiz.showFavElement("question3", "favQuiz3");
+		FavQuiz.showFavElement("question2", "favQuiz2");
+		FavQuiz.showFavElement("question1", "favQuiz1");
 	}
 }
