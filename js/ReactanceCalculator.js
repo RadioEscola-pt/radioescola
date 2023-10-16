@@ -34,7 +34,7 @@ class  ReactanceCalculator extends ElectricalUnits {
 
         if (calculationType === "F") {
             this.formulaDiv.innerHTML = "Fórmula: X = 1/(2πfC)";
-            inductanceText.innerHTML = "Reatância (F)";
+            inductanceText.innerHTML = "Capacitância (F)";
 
 
             this.loadOptions(this.unitInput, "F");
