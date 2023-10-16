@@ -11,28 +11,25 @@ class Quiz extends Classes([Questions,Storage]) {
 		this.createQuiz();
 
 	}
-	showPageWithStorage()
-	{
-		var index = parseInt(this.value);
-		this.pageIndex = index;
-		window.scrollTo(0, 0);
+showPageWithStorage() {
+  const index = parseInt(this.value);
+  this.pageIndex = index;
+  window.scrollTo(0, 0);
 
-		if (index == 0) {
+  const normalizedIndex = index == 0 ? 0 : index / 10;
+  this.pageBlocks.forEach(page => page.style.display = "none");
+  this.pageBlocks[normalizedIndex].style.display = "block";
+  this.quiz.storePage(normalizedIndex);
 
-			index = 0;
-		} else {
-			index = index / 10;
-		}
-		for (const page of this.pageBlocks) {
-			page.style.display = "none";
-		}
-		this.pageBlocks[index].style.display = "block";
-		this.quiz.storePage(index);
-		if (document.querySelector('#qIndex button.bg-slate-400')) {
-			document.querySelector('#qIndex button.bg-slate-400').classList.replace('bg-slate-400', 'bg-slate-300');
-		}
-		this.className = 'bg-slate-400 hover:bg-slate-400 p-2 rounded cursor-pointer';
-	}
+  const button = document.querySelector('#qIndex button.bg-slate-400');
+
+  if (button) {
+    button.classList.replace('bg-slate-400', 'bg-slate-300');
+    button.classList.replace('dark:bg-slate-800', 'dark:bg-slate-700');
+  }
+
+  this.className = 'bg-slate-400 dark:bg-slate-800 hover:bg-slate-400 dark:hover:bg-slate-900 p-2 rounded cursor-pointer';
+}
 
 
 
@@ -73,7 +70,7 @@ class Quiz extends Classes([Questions,Storage]) {
 							pageBlock.className = 'page';
 							let btn = document.createElement("button");
 							btn.innerHTML = questionCounter / 10 + 1;
-							btn.className = "bg-slate-300 hover:bg-slate-400 p-2 rounded cursor-pointer";
+							btn.className = "bg-slate-300 hover:bg-slate-400 p-2 rounded cursor-pointer dark:bg-slate-700 dark:hover:bg-slate-800";
 							let currentPageIndex=0;
 							if (questionCounter == 0) {
 
@@ -84,6 +81,7 @@ class Quiz extends Classes([Questions,Storage]) {
 							if (storedPage==currentPageIndex)
 							{
 								btn.classList.replace('bg-slate-300', 'bg-slate-400');
+								btn.classList.replace('dark:bg-slate-700', 'dark:bg-slate-800');
 							}
 
 							btn.value = questionCounter;

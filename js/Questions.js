@@ -127,13 +127,12 @@ class Questions {
   addStar(questionCard, qindex, uniqueID) {
     let starIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 	starIcon.setAttribute('viewBox', '0 0 24 24');
-	starIcon.setAttribute('fill', '#fefce8');
 	starIcon.setAttribute('stroke', '#fcd34d');
     starIcon.existingRecords = this.parts[0];
 
     if (MatomoOptOutManager.hasConsent()) {
       starIcon.uniqueID = uniqueID;
-      starIcon.setAttribute('class', 'w-6 h-6 block');
+      starIcon.setAttribute('class', 'w-6 h-6 block fill-[#fefce8] dark:fill-slate-700');
       const favorites =
         JSON.parse(localStorage.getItem(starIcon.existingRecords + "Fav")) ||
         [];
@@ -145,7 +144,7 @@ class Questions {
 		`;
 
       if (favorites.includes(starIcon.uniqueID)) {
-        starIcon.setAttribute('fill', '#fcd34d');
+        starIcon.setAttribute('class', 'w-6 h-6 block fill-[#fcd34d]');
       }
 
       starIcon.value = qindex;
@@ -187,7 +186,7 @@ class Questions {
     if (index === -1) {
       // If not in favorites, add it
       favorites.push(this.uniqueID);
-      this.setAttribute('fill', '#fcd34d');
+      this.setAttribute('class', 'w-6 h-6 block fill-[#fcd34d]');
     } else {
       // If already in favorites, remove it
       const elements = document.getElementById("questionBlock" + this.value);
@@ -196,7 +195,7 @@ class Questions {
       }
 
       favorites.splice(index, 1);
-      this.setAttribute('fill', '#fefce8');
+      this.setAttribute('class', 'w-6 h-6 block fill-[#fefce8]');
       if (favorites.length === 0) {
         new Quiz(this.jsonFile);
       }
