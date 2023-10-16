@@ -1,203 +1,216 @@
 class Questions {
+  constructor() {
+    this.hideOnUnselect = false;
+  }
+  checkQuestion() {
+    const index = parseInt(this.value);
+    const question = Quiz.messagesArray.questions[index];
+    const answer = question.correctIndex;
+    const elements = document.getElementsByName("n" + index);
+    var uniqueId = question.uniqueID;
 
-	constructor() {
-		this.hideOnUnselect=false;
+    for (let i = 0; i < elements.length; i++) {
+      if (elements[i].checked) {
+        if (answer - 1 === i) {
+          this.style.background = "#00FF00";
+          this.style.color = "#000000";
+          this.innerHTML = "CERTO";
+          this.quiz.storeAnswer(true, uniqueId);
 
+          return;
+        }
+      }
+    }
 
-	}
-	checkQuestion() {
-		const index = parseInt(this.value);
-		const question = Quiz.messagesArray.questions[index];
-		const answer = question.correctIndex;
-		const elements = document.getElementsByName('n' + index);
-		var uniqueId = question.uniqueID;
+    const noteElement = document.getElementById("note" + index);
+    noteElement.innerHTML = question.notes;
+    this.style.background = "#FF0000";
+    this.innerHTML = "ERRADO";
+    noteElement.className = "bg-red-200 text-red-900 p-2 mt-2";
+    this.quiz.storeAnswer(false, uniqueId);
+  }
+  /**
+   * Adds a question to the page.
+   *
+   * @param {HTMLElement} welcomeDiv - The welcome div element.
+   * @param {HTMLElement} pageBlock - The page block element.
+   * @param {Array} questions - The array of questions.
+   * @param {number} qindex - The index of the question.
+   */
+  addQuestion(welcomeDiv, pageBlock, questions, qindex) {
+    var questionBlock = document.createElement("div");
+    questionBlock.className =
+      "max-w-screen-md m-auto p-6 mb-8 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700";
+    questionBlock.id = "questionBlock" + qindex;
 
-		for (let i = 0; i < elements.length; i++) {
-			if (elements[i].checked) {
-				if (answer - 1 === i) {
-					this.style.background = "#00FF00";
-					this.style.color = "#000000";
-					this.innerHTML = "CERTO";
-					this.quiz.storeAnswer(true, uniqueId);
+    var questionCard = document.createElement("div");
+    questionCard.className = "questionCard";
+    questionCard.id = "questionCardId" + qindex;
+    questionBlock.appendChild(questionCard);
 
-					return;
-				}
-			}
-		}
+    var questiontxt = document.createElement("span");
+    questiontxt.className = "text-xl font-bold";
+    questiontxt.innerHTML = questions.index + 1 + ") " + questions.question;
+    questionCard.appendChild(questiontxt);
 
-		const noteElement = document.getElementById('note' + index);
-		noteElement.innerHTML = question.notes;
-		this.style.background = "#FF0000";
-		this.innerHTML = "ERRADO";
-		noteElement.className = "bg-red-200 text-red-900 p-2 mt-2";
-		this.quiz.storeAnswer(false, uniqueId);
+    var answers = document.createElement("div");
+    answers.className = "flex flex-col mt-5 leading-normal";
 
+    var noteBlock = document.createElement("div");
+    noteBlock.id = "note" + qindex;
+    noteBlock.className = "questionImage";
 
+    let i = 1;
+    for (var key of questions.answers) {
+      let label = document.createElement("label");
 
-	}
-	addQuestion(welcomeDiv, pageBlock, questions, qindex) {
-		var questionBlock = document.createElement("div");
-		questionBlock.className = "max-w-screen-md m-auto p-6 mb-8 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700";
-		questionBlock.id = "questionBlock" + qindex;
+      let input = document.createElement("input");
+      input.type = "radio";
+      input.value = i;
+      input.name = "n" + qindex;
+      input.className = "mr-4";
 
-		var questionCard = document.createElement("div");
-		questionCard.className = "questionCard";
-		questionCard.id = "questionCardId" + qindex;
-		questionBlock.appendChild(questionCard);
+      label.appendChild(input);
+      label.innerHTML += key;
 
-		var questiontxt = document.createElement("span");
-		questiontxt.className = "text-xl font-bold";
-		questiontxt.innerHTML = questions.index + 1 + ") " + questions.question
-		questionCard.appendChild(questiontxt);
+      answers.appendChild(label);
+      i++;
+    }
 
-		var answers = document.createElement("div");
-		answers.className = "flex flex-col mt-5 leading-normal";
+    questionCard.appendChild(answers);
+    pageBlock.appendChild(questionBlock);
 
-		var noteBlock = document.createElement("div");
-		noteBlock.id = "note" + qindex;
-		noteBlock.className = "questionImage";
+    if (questions.img) {
+      var image = document.createElement("img");
+      image.className = "questionImage";
+      image.src = questions.img;
+      questionBlock.appendChild(image);
+    } else {
+    }
 
-		let i = 1;
-		for (var key of questions.answers) {
+    welcomeDiv.appendChild(pageBlock);
 
-			let label = document.createElement("label");
+    questionCard.appendChild(noteBlock);
+    if (questions.correctIndex == null) {
+      console.log("ERROR Q" + questions.uniqueID);
+    }
+    if (questions.notes == null) {
+      console.log("ERROR Q" + questions.uniqueID);
+    }
 
-			let input = document.createElement("input");
-			input.type = "radio";
-			input.value = i;
-			input.name = "n" + qindex;
-			input.className = "mr-4";
+    if (Quiz.messagesArray.questions[qindex].correctIndex == 0) {
+      let notAvailble = document.createElement("div");
+      notAvailble.innerHTML = "resposta Indisponivel";
+      questionBlock.appendChild(notAvailble);
+      console.log(questions.numb);
+      numberOfUnanswered++;
+    } else {
+      let btn = document.createElement("button");
+      btn.innerHTML = "Verificar";
+      btn.className =
+        "inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800";
+      btn.value = qindex;
+      btn.quiz = this;
+      btn.onclick = this.checkQuestion;
+      questionCard.appendChild(btn);
+      this.addStar(questionCard, qindex, questions.uniqueID);
+    }
+  }
 
-			label.appendChild(input);
-			label.innerHTML += key;
+  /**
+   * Adds a star icon to a question card.
+   *
+   * @param {object} questionCard - The question card DOM element.
+   * @param {number} qindex - The index of the question.
+   * @param {string} uniqueID - The unique ID of the star icon.
+   */
+  addStar(questionCard, qindex, uniqueID) {
+    let starIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+	starIcon.setAttribute('viewBox', '0 0 24 24');
+	starIcon.setAttribute('fill', '#fefce8');
+	starIcon.setAttribute('stroke', '#fcd34d');
+    starIcon.existingRecords = this.parts[0];
 
-			answers.appendChild(label);
-			i++;
-		}
+    if (MatomoOptOutManager.hasConsent()) {
+      starIcon.uniqueID = uniqueID;
+      starIcon.setAttribute('class', 'w-6 h-6 block');
+      const favorites =
+        JSON.parse(localStorage.getItem(starIcon.existingRecords + "Fav")) ||
+        [];
 
-		questionCard.appendChild(answers);
-		pageBlock.appendChild(questionBlock);
+		starIcon.innerHTML = `
+		
+		<path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+		
+		`;
 
-		if (questions.img) {
-			var image = document.createElement("img");
-			image.className = "questionImage";
-			image.src = questions.img;
-			questionBlock.appendChild(image);
-		} else {
+      if (favorites.includes(starIcon.uniqueID)) {
+        starIcon.setAttribute('fill', '#fcd34d');
+      }
 
-		}
+      starIcon.value = qindex;
+      starIcon.jsonFile = this.jsonFile;
+      starIcon.hideOnUnselect = this.hideOnUnselect;
+      // Add a click event listener to the star icon
+      starIcon.onclick = this.saveFav;
+      //questionCard.appendChild(starIcon);
+	  var cardFooter = document.createElement("div");
+	  cardFooter.className = "flex justify-end";
+	  cardFooter.appendChild(starIcon);
+	  questionCard.appendChild(cardFooter);
+    }
+  }
 
+  showPage() {
+    var index = parseInt(this.value);
+    this.pageIndex = index;
+    window.scrollTo(0, 0);
 
-		welcomeDiv.appendChild(pageBlock);
+    if (index == 0) {
+      index = 0;
+    } else {
+      index = index / 10;
+    }
+    for (const page of this.pageBlocks) {
+      page.style.display = "none";
+    }
+    this.pageBlocks[index].style.display = "block";
+  }
+  saveFav() {
+    // Retrieve the favorites array from local storage
+    var favoritesJSON = localStorage.getItem(this.existingRecords + "Fav");
+    var favorites = favoritesJSON ? JSON.parse(favoritesJSON) : [];
 
-		questionCard.appendChild(noteBlock);
-		if (questions.correctIndex == null) {
-			console.log("ERROR Q" + questions.uniqueID);
-		}
-		if (questions.notes == null) {
-			console.log("ERROR Q" + questions.uniqueID);
-		}
+    // Get the unique ID of the question associated with the clicked star
+    const index = favorites.indexOf(this.uniqueID);
 
-		if (Quiz.messagesArray.questions[qindex].correctIndex == 0) {
-			let notAvailble = document.createElement("div");
-			notAvailble.innerHTML = "resposta Indisponivel";
-			questionBlock.appendChild(notAvailble);
-			console.log(questions.numb);
-			numberOfUnanswered++;
-		} else {
+    if (index === -1) {
+      // If not in favorites, add it
+      favorites.push(this.uniqueID);
+      this.setAttribute('fill', '#fcd34d');
+    } else {
+      // If already in favorites, remove it
+      const elements = document.getElementById("questionBlock" + this.value);
+      if (elements != null) {
+        if (this.hideOnUnselect == true) elements.style.display = "none";
+      }
 
-			let btn = document.createElement("button");
-			btn.innerHTML = "Verificar";
-			btn.className = "inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-			btn.value = qindex;
-			btn.quiz = this;
-			btn.onclick = this.checkQuestion;
-			questionCard.appendChild(btn);
-			this.addStar( questionCard,qindex,questions.uniqueID, );
+      favorites.splice(index, 1);
+      this.setAttribute('fill', '#fefce8');
+      if (favorites.length === 0) {
+        new Quiz(this.jsonFile);
+      }
+    }
 
+    // Save the updated favorites array back to local storage
+    localStorage.setItem(
+      this.existingRecords + "Fav",
+      JSON.stringify(favorites)
+    );
 
-
-		}
-	}
-
-	addStar( questionCard,qindex, uniqueID)
-	{
-		let starIcon = document.createElement("img");
-		starIcon.existingRecords = this.parts[0];
-
-
-		if (MatomoOptOutManager.hasConsent()) {
-
-			starIcon.uniqueID = uniqueID;
-			starIcon.style.float = "right";
-			const favorites = JSON.parse(localStorage.getItem(starIcon.existingRecords + "Fav")) || [];
-
-			if (favorites.includes(starIcon.uniqueID)) {
-				starIcon.src = "images/starfav.png"; // Set the path to your star icon image
-			} else {
-				starIcon.src = "images/starnotfav.png"; // Set the path to your star icon image
-			}
-			starIcon.value = qindex;
-			starIcon.jsonFile = this.jsonFile;
-			starIcon.hideOnUnselect=this.hideOnUnselect;
-			// Add a click event listener to the star icon
-			starIcon.onclick = this.saveFav;
-			questionCard.appendChild(starIcon);
-		}
-	}
-
-	showPage() {
-		var index = parseInt(this.value);
-		this.pageIndex = index;
-		window.scrollTo(0, 0);
-
-		if (index == 0) {
-
-			index = 0;
-		} else {
-			index = index / 10;
-		}
-		for (const page of this.pageBlocks) {
-			page.style.display = "none";
-		}
-		this.pageBlocks[index].style.display = "block";
-	
-
-	}
-	saveFav() {
-		// Retrieve the favorites array from local storage
-		var favoritesJSON = localStorage.getItem(this.existingRecords + "Fav");
-		var favorites = favoritesJSON ? JSON.parse(favoritesJSON) : [];
-	
-		// Get the unique ID of the question associated with the clicked star
-		const index = favorites.indexOf(this.uniqueID);
-	
-		if (index === -1) {
-			// If not in favorites, add it
-			favorites.push(this.uniqueID);
-			this.src = "images/starfav.png"; // Set the path to your favorite star icon image
-		} else {
-			// If already in favorites, remove it
-			const elements = document.getElementById("questionBlock" + this.value);
-			if (elements!=null)
-			{
-				if (this.hideOnUnselect==true)
-					elements.style.display = "none";
-			}
-			
-			favorites.splice(index, 1);
-			this.src = "images/starnotfav.png"; // Set the path to your regular star icon image
-			if (favorites.length === 0) {
-				new Quiz(this.jsonFile);
-			}
-		}
-	
-		// Save the updated favorites array back to local storage
-		localStorage.setItem(this.existingRecords + "Fav", JSON.stringify(favorites));
-	
-		// Call the showFavElement function for specific HTML elements
-		FavQuiz.showFavElement("question3", "favQuiz3");
-		FavQuiz.showFavElement("question2", "favQuiz2");
-		FavQuiz.showFavElement("question1", "favQuiz1");
-	}
+    // Call the showFavElement function for specific HTML elements
+    FavQuiz.showFavElement("question3", "favQuiz3");
+    FavQuiz.showFavElement("question2", "favQuiz2");
+    FavQuiz.showFavElement("question1", "favQuiz1");
+  }
 }

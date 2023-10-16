@@ -138,7 +138,7 @@ window.timers=[];
         <button
           data-collapse-toggle="navbar-multi-level"
           type="button"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-multi-level"
           aria-expanded="false"
         >
@@ -153,7 +153,7 @@ window.timers=[];
               <a
                 onclick="new LoadChapter('home')"
                 href="#"
-                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="block py-1 px-2 text-gray-900 rounded hover:bg-slate-300 md:border-0 md:hover:text-slate-800 dark:text-white md:dark:hover:text-slate-50 dark:hover:bg-slate-800 dark:hover:text-white"
                 aria-current="page"
                 >Início</a
               >
@@ -162,7 +162,7 @@ window.timers=[];
               <a
                 onclick="new LoadChapter('equipa')"
                 href="#"
-                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="block py-1 px-2 text-gray-900 rounded hover:bg-slate-300 md:border-0 md:hover:text-slate-800 dark:text-white md:dark:hover:text-slate-50 dark:hover:bg-slate-800 dark:hover:text-white"
                 aria-current="page"
                 >Equipa</a
               >
@@ -171,14 +171,14 @@ window.timers=[];
               <a
                 onclick="new LoadChapter('EDN')"
                 href="#"
-                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="block py-1 px-2 text-gray-900 rounded hover:bg-slate-300 md:border-0 md:hover:text-slate-800 dark:text-white md:dark:hover:text-slate-50 dark:hover:bg-slate-800 dark:hover:text-white"
                 aria-current="page"
                 >Estado da Nação</a
               >
             </li>
             <li>
               <button id="questionsDropdownLink" data-dropdown-toggle="questionsDropdown"
-                class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                class="rounded flex items-center justify-between w-full py-1 px-2 text-gray-700 border-b border-gray-100 hover:bg-slate-300 md:border-0 md:hover:text-slate-800 md:w-auto dark:text-white dark:focus:text-white dark:border-gray-700 md:dark:hover:text-slate-50 dark:hover:bg-slate-800">
                 Calculadoras
                 <img src="images/arrow-down.svg" class="w-2.5 h-2.5 ml-2.5" />
               </button>
@@ -188,16 +188,16 @@ window.timers=[];
                   <li aria-labelledby="examsDropdownLink">
                   <li>
                     <a onclick="" href="#COPADDER"
-                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Adicionar
+                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Adicionar
                       Componentes</a>
                   </li>
                   <li>
                     <a onclick="" href="#REACTANCE"
-                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Impedância</a>
+                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Impedância</a>
                   </li>
                   <li>
                     <a onclick="" href="#OHMCALC"
-                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> Lei de Ohm</a>
+                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"> Lei de Ohm</a>
                   </li>
             </li>
             </ul>
@@ -208,8 +208,7 @@ window.timers=[];
               <button
                 id="examsDropdownLink"
                 data-dropdown-toggle="examsDropdown"
-                class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
-              >
+                class="rounded flex items-center justify-between w-full py-1 px-2 text-gray-700 border-b border-gray-100 hover:bg-slate-300 md:border-0 md:hover:text-slate-800 md:w-auto dark:text-white dark:focus:text-white dark:border-gray-700 md:dark:hover:text-slate-50 dark:hover:bg-slate-800">
                 Exames
                 <img src="images/arrow-down.svg" class="w-2.5 h-2.5 ml-2.5" />
               </button>
@@ -228,7 +227,7 @@ window.timers=[];
                       data-dropdown-toggle="cat3exams"
                       data-dropdown-placement="right-start"
                       type="button"
-                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                       Categoria 3
                       <img
@@ -249,7 +248,7 @@ window.timers=[];
                             id="favQuiz3"
                             onclick="new FavQuiz('question3.json')"
                             href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Favoritas</a
                           >
                         </li>
@@ -257,7 +256,7 @@ window.timers=[];
                           <a
                             onclick="new Quiz('question3.json')"
                             href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Todas as perguntas</a
                           >
                         </li>
@@ -265,7 +264,7 @@ window.timers=[];
                           <a
                             onclick="new SimulateQuiz('question3.json')"
                             href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Simulador de exame</a
                           >
                         </li>
@@ -278,7 +277,7 @@ window.timers=[];
                       data-dropdown-toggle="cat2exams"
                       data-dropdown-placement="right-start"
                       type="button"
-                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                       Categoria 2
                       <img
@@ -299,7 +298,7 @@ window.timers=[];
                             id="favQuiz2"
                             onclick="new FavQuiz('question2.json')"
                             href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Favoritas</a
                           >
                         </li>
@@ -307,7 +306,7 @@ window.timers=[];
                           <a
                             onclick="new Quiz('question2.json')"
                             href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Todas as perguntas</a
                           >
                         </li>
@@ -315,7 +314,7 @@ window.timers=[];
                           <a
                             onclick="new SimulateQuiz('question2.json')"
                             href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Simulador de exame</a
                           >
                         </li>
@@ -328,7 +327,7 @@ window.timers=[];
                       data-dropdown-toggle="cat1exams"
                       data-dropdown-placement="right-start"
                       type="button"
-                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                       Categoria 1
                       <img
@@ -349,7 +348,7 @@ window.timers=[];
                             id="favQuiz1"
                             onclick="new FavQuiz('question1.json')"
                             href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Favoritas</a
                           >
                         </li>
@@ -357,7 +356,7 @@ window.timers=[];
                           <a
                             onclick="new Quiz('question1.json')"
                             href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Todas as perguntas</a
                           >
                         </li>
@@ -365,7 +364,7 @@ window.timers=[];
                           <a
                             onclick="new SimulateQuiz('question1.json')"
                             href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Simulador de exame</a
                           >
                         </li>
@@ -376,7 +375,7 @@ window.timers=[];
                     <a
                       onclick="new LoadChapter('marcar_exame_anacom')"
                       href="#"
-                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                       >Ir a exame</a
                     >
                   </li>
@@ -387,8 +386,7 @@ window.timers=[];
               <button
                 id="studyLink"
                 data-dropdown-toggle="studyNavbar"
-                class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
-              >
+                class="rounded flex items-center justify-between w-full py-1 px-2 text-gray-700 border-b border-gray-100 hover:bg-slate-300 md:border-0 md:hover:text-slate-800 md:w-auto dark:text-white dark:focus:text-white dark:border-gray-700 md:dark:hover:text-slate-50 dark:hover:bg-slate-800">
                 Estudo
                 <img src="images/arrow-down.svg" class="w-2.5 h-2.5 ml-2.5" />
               </button>
@@ -407,7 +405,7 @@ window.timers=[];
                       data-dropdown-toggle="study3Dropdown"
                       data-dropdown-placement="right-start"
                       type="button"
-                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                       Categoria 3
                       <img
@@ -426,56 +424,56 @@ window.timers=[];
                         <li>
                           <a
                             onclick="new LoadChapter('alfabeto')"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Alfabeto Fonético</a
                           >
                         </li>
                         <li>
                           <a
                             onclick="new LoadChapter('entidades')"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Entidades e Competências</a
                           >
                         </li>
                         <li>
                           <a
                             onclick="new LoadChapter('codigoq')"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Código Q</a
                           >
                         </li>
                         <li>
                           <a
                             onclick="new LoadChapter('prefixos')"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Prefixos de indicativos</a
                           >
                         </li>
                         <li>
                           <a
                             onclick="new LoadChapter('ohm')"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Lei de Ohm</a
                           >
                         </li>
                         <li>
                           <a
                             onclick="new LoadChapter('AC')"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Corrente Alternada / AC
                           </a>
                         </li>
                         <li>
                           <a
                             onclick="new LoadChapter('codigoDecores')"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Código de cores</a
                           >
                         </li>
                         <li>
                           <a
                             onclick="new LoadChapter('units')"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Mult e SubMult. de Unidades</a
                           >
                         </li>
@@ -488,7 +486,7 @@ window.timers=[];
                       data-dropdown-toggle="study2Dropdown"
                       data-dropdown-placement="right-start"
                       type="button"
-                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                       Categoria 2
                       <img
@@ -507,7 +505,7 @@ window.timers=[];
                         <li>
                           <a
                             onclick="new LoadChapter('SWR')"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Onda estacionária (SWR)</a
                           >
                         </li>
@@ -515,7 +513,7 @@ window.timers=[];
                           <a
                             style="display: none"
                             href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Bobines (henry)</a
                           >
                         </li>
@@ -523,7 +521,7 @@ window.timers=[];
                           <a
                             style="display: none"
                             href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Condensador(bobine)</a
                           >
                         </li>
@@ -536,7 +534,7 @@ window.timers=[];
                       data-dropdown-toggle="study1Dropdown"
                       data-dropdown-placement="right-start"
                       type="button"
-                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                       Categoria 1
                       <img
@@ -555,42 +553,42 @@ window.timers=[];
                         <li>
                           <a
                             onclick="new LoadChapter('gain')"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Ganho (dB)</a
                           >
                         </li>
                         <li>
                           <a
                             onclick="new LoadChapter('tranformadores')"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Tranformadores
                           </a>
                         </li>
                         <li>
                           <a
                             onclick="new LoadChapter('opamps')"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Amplificadores operacionais
                           </a>
                         </li>
                         <li>
                           <a
                             onclick="new LoadChapter('bobines')"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Reactância Indutiva
                           </a>
                         </li>
                         <li>
                           <a
                             onclick="new LoadChapter('condensadores')"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Reactância Capacitiva</a
                           >
                         </li>
                         <li>
                           <a
                             onclick="new LoadChapter('receptores')"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Receptores</a
                           >
                         </li>
@@ -600,7 +598,7 @@ window.timers=[];
                 </ul>
               </div>
             </li>
-            <li id="theme-toggle" onclick="toggleDarkMode()" class="flex">
+            <li id="theme-toggle" onclick="toggleDarkMode()" class="flex py-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
