@@ -50,7 +50,7 @@ class ElectricalUnits {
             const mantissa = (absNumber / Math.pow(10, exponent)).toFixed(3);
             return mantissa + "e" + (exponent >= 0 ? '+' : '') + exponent;
         } else {
-          return number;
+          return number.toFixed(4);;
         }
       }
 }

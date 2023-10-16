@@ -1,34 +1,40 @@
 class Popup {
-    constructor(chapter, callback = null) {
+    constructor(chapter=null, callback = null) {
         const ajaxRequest = new XMLHttpRequest();
-        ajaxRequest.loadChapter = this;
+
         this.createPopup();
+        if (chapter != null) {
 
-        
-        ajaxRequest.onreadystatechange = function () {
-            if (this.readyState == 4) {
-                // The request is completed, now check its status
-                if (this.status == 200) {
+            ajaxRequest.loadChapter = this;
+            ajaxRequest.onreadystatechange = function () {
+                if (this.readyState == 4) {
+                    // The request is completed, now check its status
+                    if (this.status == 200) {
 
-                    this.loadChapter.popupContent.innerHTML  = this.responseText;
+                        this.loadChapter.popupContent.innerHTML = this.responseText;
 
-                    // Check if a callback function is provided and not null
-                    if (callback && typeof callback.endRequest === "function") {
-                        callback.endRequest(); // Execute the endRequest method
-                        
+                        // Check if a callback function is provided and not null
+                        if (callback && typeof callback.endRequest === "function") {
+                            callback.endRequest(); // Execute the endRequest method
+
+                        }
+                    } else {
+                        console.log("Status error: " + ajaxRequest.status);
                     }
                 } else {
-                    console.log("Status error: " + ajaxRequest.status);
+                    console.log("Ignored readyState: " + ajaxRequest.readyState);
                 }
-            } else {
-                console.log("Ignored readyState: " + ajaxRequest.readyState);
-            }
-        };
-        
-        ajaxRequest.open('GET', 'capitulos/' + chapter + '/index.html');
-        ajaxRequest.send();
+            };
+
+            ajaxRequest.open('GET', 'capitulos/' + chapter + '/index.html');
+            ajaxRequest.send();
+        }
 
 
+
+    }
+    loadToPopup(data) {
+        this.popupContent.append(data);
     }
     createPopup() {
         this.overlay = document.createElement("div");
@@ -50,6 +56,11 @@ class Popup {
         this.overlay.style.display = "block";
         this.popup.style.display = "block";
         this.isOpen = true;
+    }
+    clearPopup()
+    {
+        this.popupContent.innerHTML="";
+        this.popupContent.remove();
     }
 
     closePopup() {
