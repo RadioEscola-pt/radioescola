@@ -2733,6 +2733,10 @@ td {
   padding-bottom: 2rem;
 }
 
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -3533,6 +3537,10 @@ td {
   border-color: rgb(75 85 99 / var(--tw-divide-opacity));
 }
 
+:is(.dark .dark\:border-none) {
+  border-style: none;
+}
+
 :is(.dark .dark\:border-gray-700) {
   --tw-border-opacity: 1;
   border-color: rgb(55 65 81 / var(--tw-border-opacity));
@@ -3541,6 +3549,21 @@ td {
 :is(.dark .dark\:border-slate-600) {
   --tw-border-opacity: 1;
   border-color: rgb(71 85 105 / var(--tw-border-opacity));
+}
+
+:is(.dark .dark\:border-red-100) {
+  --tw-border-opacity: 1;
+  border-color: rgb(254 226 226 / var(--tw-border-opacity));
+}
+
+:is(.dark .dark\:border-slate-950) {
+  --tw-border-opacity: 1;
+  border-color: rgb(2 6 23 / var(--tw-border-opacity));
+}
+
+:is(.dark .dark\:border-slate-700) {
+  --tw-border-opacity: 1;
+  border-color: rgb(51 65 85 / var(--tw-border-opacity));
 }
 
 :is(.dark .dark\:bg-blue-600) {

@@ -23,7 +23,7 @@
   </div>
 </div>
 
-<table class="mt-8 w-full" id="componentsTable">
+<table class="mt-8 w-full dark:border-none" id="componentsTable">
   <thead>
     <tr>
       <th>Valor</th>
@@ -35,11 +35,11 @@
       <td>
         <input
           type="text"
-          class="w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+          class="w-full rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
           value="1"
         />
       </td>
-      <td>
+      <td class="text-center">
         <select
           class="w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
         ></select>
@@ -49,19 +49,32 @@
       <td>
         <input
           type="text"
-          class="w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+          class="w-full rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
           value="2"
         />
       </td>
-      <td>
+      <td class="text-center">
         <select
           class="w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
         ></select>
       </td>
     </tr>
   </tbody>
+  <tfoot>
+    <tr>
+      <th>Resultado</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td><div id="totalValue">Valor: 0</div></td>
+      <td class="text-center">  <select
+        id="ResultIn"
+        class="w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+      ></select></td>
+    </tr>
+  </tfoot>
 </table>
-<div class="flex flex-row mt-4 mb-8 w-1/2 mx-auto gap-2">
+<div class="flex flex-row mt-8 mb-8 w-1/2 mx-auto gap-2">
   <button
     id="addRowBtn"
     class="w-full text-white bg-green-500 hover:bg-green-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm p-1 dark:bg-green-800 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-slate-800"
@@ -75,20 +88,13 @@
     Remover
   </button>
 </div>
-<div class="flex flex-col gap-1">
-  <label for="ResultIn">Unidades do resultado</label>
 
-  <select
-    id="ResultIn"
-    class="w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
-  ></select>
-</div>
-<p>
+
   <button
     id="calculateBtn"
     class="mt-8 text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800"
   >
     Calcular
   </button>
-</p>
-<div id="totalValue">Valor: 0</div>
+
+
