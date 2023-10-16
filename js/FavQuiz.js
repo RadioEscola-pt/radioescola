@@ -84,7 +84,7 @@ class FavQuiz extends Classes([Questions,Storage]) {
 							pageBlock.className = 'page';
 							let btn = document.createElement("button");
 							btn.innerHTML = questionCounter / 10 + 1;
-							btn.className = "bg-slate-300 hover:bg-slate-400 p-2 rounded cursor-pointer";
+							btn.className = "bg-slate-300 hover:bg-slate-400 p-2 rounded cursor-pointer dark:bg-slate-700 dark:hover:bg-slate-800";
 							btn.value = questionCounter;						
 							let currentPageIndex=0;
 							if (questionCounter == 0) {
@@ -96,7 +96,7 @@ class FavQuiz extends Classes([Questions,Storage]) {
 							if (storedPage==currentPageIndex)
 							{
 								btn.classList.replace('bg-slate-300', 'bg-slate-400');
-
+								btn.classList.replace('dark:bg-slate-700', 'dark:bg-slate-800');
 							}
 
 							btn.onclick = this.quiz.showPageWithStorage;
@@ -107,7 +107,6 @@ class FavQuiz extends Classes([Questions,Storage]) {
 						}
 						questionCounter++;
 						this.quiz.addQuestion(welcomeDiv,pageBlock,Quiz.messagesArray.questions[qindex],qindex);
-						
 
 						
 					}					
