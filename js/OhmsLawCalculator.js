@@ -52,7 +52,7 @@ class OhmsLawCalculator extends ElectricalUnits {
 
         if (populatedValues.length === 3) {
             // Error: All three values are populated
-            this.resultInput.innerHTML = "Erro: Apenas pode carregar  2 valores.";
+            this.resultInput.innerHTML = "Erro: Apenas pode introduzir 2 valores.";
             return;
         } else if (populatedValues.length === 2) {
             this.resultInput.innerHTML = "";
@@ -62,7 +62,7 @@ class OhmsLawCalculator extends ElectricalUnits {
                 current*=currentRatio;
                 resistance*=resistanceRatio;
 
-                voltage = (current * resistance) / voltageRatio;
+                voltage = ((current * resistance) / voltageRatio).toFixed(3);
 
                 this.voltageInput.value = voltage;
                
@@ -72,7 +72,7 @@ class OhmsLawCalculator extends ElectricalUnits {
                 voltage*=voltageRatio;
                 resistance*=resistanceRatio;
                 // U/R
-                current = (voltage / resistance) / currentRatio;
+                current = ((voltage / resistance) / currentRatio).toFixed(3);
 
                 this.currentValue.value = current;
 
@@ -80,17 +80,17 @@ class OhmsLawCalculator extends ElectricalUnits {
                 // U/I
                 current*=currentRatio;
                 voltage*=voltageRatio;
-                result = (voltage / current) / resistanceRatio;
+                result = ((voltage / current) / resistanceRatio).toFixed(3);
 
                 this.ressistanceInput.value = result;
 
             }
-            this.powerInput.innerHTML=(voltage * current)/powerRatio;
+            this.powerInput.innerHTML=((voltage * current)/powerRatio).toFixed(3);
 
 
         } else {
             // Error: Less than two values are populated
-            this.resultInput.innerHTML = "Erro: tem de carregar pelo menus 2 valores.";
+            this.resultInput.innerHTML = "Erro: tem de introduzir pelo menos 2 valores.";
         }
     }
 
