@@ -34,7 +34,7 @@ class Popup {
         this.overlay = document.createElement("div");
         this.overlay.className = "w-full h-full fixed top-0 left-0 z-50 bg-black bg-opacity-50"; 
         this.popup = document.createElement("div");
-        this.popup.className = "w-1/2 h-fit fixed top-1/4 left-1/4 z-50 bg-gray-50 rounded-lg shadow-lg p-8 shadow-lg";
+        this.popup.className = "w-1/2 h-fit fixed top-1/4 left-1/4 z-50 bg-gray-50 rounded-lg shadow-lg p-8 shadow-lg dark:bg-slate-800";
         this.closeBtn = document.createElement("span");
         this.closeBtn.className = "flex justify-end cursor-pointer absolute top-2 right-2";
         this.closeBtn.innerHTML = "&times;";
