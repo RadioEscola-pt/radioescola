@@ -124,14 +124,17 @@ class ComponentAdder extends ElectricalUnits{
         }
         let selectedresultUnits = this.resultIn.value;
         let unit1 = this.resultIn.value;
+        
 
         if (isInverted ==false) {
             totalValue/=this.unitMultipliers[unit1];
-            this.totalValueDisplay.textContent = `Total Value: ${totalValue.toFixed(2)}`;
+            let result=this.formatNumberWithExponent(totalValue);
+            this.totalValueDisplay.textContent = `Valor Total: `+result;
         } else {
             invertedValue=1/invertedValue;
             invertedValue/=this.unitMultipliers[unit1];
-            this.totalValueDisplay.textContent = `Total Value: ${invertedValue.toFixed(2)}`;
+            let result=this.formatNumberWithExponent(invertedValue);
+            this.totalValueDisplay.textContent = `Total Value: `+result;
         }
        
 

@@ -61,10 +61,12 @@ class  ReactanceCalculator extends ElectricalUnits {
 
         if (calculationType === "F") {
             const reactance = 1 / (2 * Math.PI * frequency * inductance * unitValue); 
-            this.resultDiv.innerHTML = `Reatância (X) = ${reactance} ohms`;
+            let result=this.formatNumberWithExponent(reactance);
+            this.resultDiv.innerHTML = "Reatância (X) = "+result+" ohms";
         } else if (calculationType === "H") {
             const inductanceResult =2 * Math.PI * frequency * inductance * unitValue;
-            this.resultDiv.innerHTML = `Reatância (X) = ${inductanceResult} ohms`;
+            let result=this.formatNumberWithExponent(inductanceResult);
+            this.resultDiv.innerHTML = "Reatância (X) = "+result+" ohms";
         }
     }
 }

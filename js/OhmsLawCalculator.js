@@ -62,9 +62,10 @@ class OhmsLawCalculator extends ElectricalUnits {
                 current*=currentRatio;
                 resistance*=resistanceRatio;
 
-                voltage = ((current * resistance) / voltageRatio).toFixed(3);
+                voltage = ((current * resistance) / voltageRatio);
+                result=formatNumberWithExponent(voltage);
 
-                this.voltageInput.value = voltage;
+                this.voltageInput.value = result;
                
 
                
@@ -72,20 +73,22 @@ class OhmsLawCalculator extends ElectricalUnits {
                 voltage*=voltageRatio;
                 resistance*=resistanceRatio;
                 // U/R
-                current = ((voltage / resistance) / currentRatio).toFixed(3);
-
-                this.currentValue.value = current;
+                current = ((voltage / resistance) / currentRatio);
+                result=this.formatNumberWithExponent(resistance);
+                this.currentValue.value = result;
 
             } else {
                 // U/I
                 current*=currentRatio;
                 voltage*=voltageRatio;
-                result = ((voltage / current) / resistanceRatio).toFixed(3);
+                let resistance = ((voltage / current) / resistanceRatio);
+                result=this.formatNumberWithExponent(resistance);
 
                 this.ressistanceInput.value = result;
 
             }
-            this.powerInput.innerHTML=((voltage * current)/powerRatio).toFixed(3);
+            let power=this.formatNumberWithExponent((voltage * current)/powerRatio);
+            this.powerInput.innerHTML=power;
 
 
         } else {
