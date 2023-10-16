@@ -43,4 +43,14 @@ class ElectricalUnits {
             selectElement.appendChild(optionElement);
         }
     }
+    formatNumberWithExponent(number) {
+        if (Math.abs(number) < 1e-3 ) {
+            const absNumber = Math.abs(number);
+            const exponent = Math.floor(Math.log10(absNumber));
+            const mantissa = (absNumber / Math.pow(10, exponent)).toFixed(3);
+            return mantissa + "e" + (exponent >= 0 ? '+' : '') + exponent;
+        } else {
+          return number;
+        }
+      }
 }
