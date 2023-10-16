@@ -1,154 +1,215 @@
 class Questions {
-	constructor() {
+  constructor() {
+    this.hideOnUnselect = false;
+  }
+  checkQuestion() {
+    const index = parseInt(this.value);
+    const question = Quiz.messagesArray.questions[index];
+    const answer = question.correctIndex;
+    const elements = document.getElementsByName("n" + index);
+    var uniqueId = question.uniqueID;
 
+    for (let i = 0; i < elements.length; i++) {
+      if (elements[i].checked) {
+        if (answer - 1 === i) {
+          this.style.background = "#00FF00";
+          this.style.color = "#000000";
+          this.innerHTML = "CERTO";
+          this.quiz.storeAnswer(true, uniqueId);
 
-	}
-	checkQuestion() {
-		const index = parseInt(this.value);
-		const question = Quiz.messagesArray.questions[index];
-		const answer = question.correctIndex;
-		const elements = document.getElementsByName('n' + index);
-		var uniqueId = question.uniqueID;
+          return;
+        }
+      }
+    }
 
-		for (let i = 0; i < elements.length; i++) {
-			if (elements[i].checked) {
-				if (answer - 1 === i) {
-					this.style.background = "#00FF00";
-					this.innerHTML = "CERTO";
-					this.quiz.storeAnswer(true, uniqueId);
+    const noteElement = document.getElementById("note" + index);
+    noteElement.innerHTML = question.notes;
+    this.style.background = "#FF0000";
+    this.innerHTML = "ERRADO";
+    noteElement.className = "bg-red-200 text-red-900 p-2 mt-2";
+    this.quiz.storeAnswer(false, uniqueId);
+  }
+  /**
+   * Adds a question to the page.
+   *
+   * @param {HTMLElement} welcomeDiv - The welcome div element.
+   * @param {HTMLElement} pageBlock - The page block element.
+   * @param {Array} questions - The array of questions.
+   * @param {number} qindex - The index of the question.
+   */
+  addQuestion(welcomeDiv, pageBlock, questions, qindex) {
+    var questionBlock = document.createElement("div");
+    questionBlock.className =
+      "max-w-screen-md m-auto p-6 mb-8 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700";
+    questionBlock.id = "questionBlock" + qindex;
 
-					return;
-				}
-			}
-		}
+    var questionCard = document.createElement("div");
+    questionCard.className = "questionCard";
+    questionCard.id = "questionCardId" + qindex;
+    questionBlock.appendChild(questionCard);
 
-		const noteElement = document.getElementById('note' + index);
-		noteElement.innerHTML = question.notes;
-		this.style.background = "#FF0000";
-		this.innerHTML = "ERRADO";
-		noteElement.className = "incorrect";
-		this.quiz.storeAnswer(false, uniqueId);
+    var questiontxt = document.createElement("span");
+    questiontxt.className = "text-xl font-bold";
+    questiontxt.innerHTML = questions.index + 1 + ") " + questions.question;
+    questionCard.appendChild(questiontxt);
 
+    var answers = document.createElement("div");
+    answers.className = "flex flex-col mt-5 leading-normal";
 
+    var noteBlock = document.createElement("div");
+    noteBlock.id = "note" + qindex;
+    noteBlock.className = "questionImage";
 
-	}
-	addQuestion(welcomeDiv, pageBlock, questions, qindex) {
-		var questionBlock = document.createElement("div");
-		questionBlock.className = "questionBlock";
-		questionBlock.id = "questionBlock" + qindex;
+    let i = 1;
+    for (var key of questions.answers) {
+      let label = document.createElement("label");
 
-		var questionCard = document.createElement("div");
-		questionCard.className = "questionCard";
-		questionCard.id = "questionCardId" + qindex;
-		questionBlock.appendChild(questionCard);
+      let input = document.createElement("input");
+      input.type = "radio";
+      input.value = i;
+      input.name = "n" + qindex;
+      input.className = "mr-4";
 
-		var questiontxt = document.createElement("span");
-		questiontxt.className = "question";
-		questiontxt.innerHTML = questions.index + 1 + ") " + questions.question
-		questionCard.appendChild(questiontxt);
+      label.appendChild(input);
+      label.innerHTML += key;
 
-		var answers = document.createElement("div");
-		answers.className = "answers";
+      answers.appendChild(label);
+      i++;
+    }
 
-		var noteBlock = document.createElement("div");
-		noteBlock.id = "note" + qindex;
-		noteBlock.className = "questionImage";
+    questionCard.appendChild(answers);
+    pageBlock.appendChild(questionBlock);
 
-		let i = 1;
-		for (var key of questions.answers) {
+    if (questions.img) {
+      var image = document.createElement("img");
+      image.className = "questionImage";
+      image.src = questions.img;
+      questionBlock.appendChild(image);
+    } else {
+    }
 
-			let label = document.createElement("label");
+    welcomeDiv.appendChild(pageBlock);
 
-			let input = document.createElement("input");
-			input.type = "radio";
-			input.value = i;
-			input.name = "n" + qindex;
+    questionCard.appendChild(noteBlock);
+    if (questions.correctIndex == null) {
+      console.log("ERROR Q" + questions.uniqueID);
+    }
+    if (questions.notes == null) {
+      console.log("ERROR Q" + questions.uniqueID);
+    }
 
-			label.appendChild(input);
-			label.innerHTML += key;
+    if (Quiz.messagesArray.questions[qindex].correctIndex == 0) {
+      let notAvailble = document.createElement("div");
+      notAvailble.innerHTML = "resposta Indisponivel";
+      questionBlock.appendChild(notAvailble);
+      console.log(questions.numb);
+      numberOfUnanswered++;
+    } else {
+      let btn = document.createElement("button");
+      btn.innerHTML = "Verificar";
+      btn.className =
+        "inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800";
+      btn.value = qindex;
+      btn.quiz = this;
+      btn.onclick = this.checkQuestion;
+      questionCard.appendChild(btn);
+      this.addStar(questionCard, qindex, questions.uniqueID);
+    }
+  }
 
-			answers.appendChild(label);
-			i++;
-		}
+  /**
+   * Adds a star icon to a question card.
+   *
+   * @param {object} questionCard - The question card DOM element.
+   * @param {number} qindex - The index of the question.
+   * @param {string} uniqueID - The unique ID of the star icon.
+   */
+  addStar(questionCard, qindex, uniqueID) {
+    let starIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+	starIcon.setAttribute('viewBox', '0 0 24 24');
+	starIcon.setAttribute('stroke', '#fcd34d');
+    starIcon.existingRecords = this.parts[0];
 
-		questionCard.appendChild(answers);
-		pageBlock.appendChild(questionBlock);
+    if (MatomoOptOutManager.hasConsent()) {
+      starIcon.uniqueID = uniqueID;
+      starIcon.setAttribute('class', 'w-6 h-6 block fill-[#fefce8] dark:fill-slate-700');
+      const favorites =
+        JSON.parse(localStorage.getItem(starIcon.existingRecords + "Fav")) ||
+        [];
 
-		if (questions.img) {
-			var image = document.createElement("img");
-			image.className = "questionImage";
-			image.src = questions.img;
-			questionBlock.appendChild(image);
-		} else {
+		starIcon.innerHTML = `
+		
+		<path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+		
+		`;
 
-		}
+      if (favorites.includes(starIcon.uniqueID)) {
+        starIcon.setAttribute('class', 'w-6 h-6 block fill-[#fcd34d]');
+      }
 
+      starIcon.value = qindex;
+      starIcon.jsonFile = this.jsonFile;
+      starIcon.hideOnUnselect = this.hideOnUnselect;
+      // Add a click event listener to the star icon
+      starIcon.onclick = this.saveFav;
+      //questionCard.appendChild(starIcon);
+	  var cardFooter = document.createElement("div");
+	  cardFooter.className = "flex justify-end";
+	  cardFooter.appendChild(starIcon);
+	  questionCard.appendChild(cardFooter);
+    }
+  }
 
-		welcomeDiv.appendChild(pageBlock);
+  showPage() {
+    var index = parseInt(this.value);
+    this.pageIndex = index;
+    window.scrollTo(0, 0);
 
-		questionCard.appendChild(noteBlock);
-		if (questions.correctIndex == null) {
-			console.log("ERROR Q" + questions.uniqueID);
-		}
-		if (questions.notes == null) {
-			console.log("ERROR Q" + questions.uniqueID);
-		}
+    if (index == 0) {
+      index = 0;
+    } else {
+      index = index / 10;
+    }
+    for (const page of this.pageBlocks) {
+      page.style.display = "none";
+    }
+    this.pageBlocks[index].style.display = "block";
+  }
+  saveFav() {
+    // Retrieve the favorites array from local storage
+    var favoritesJSON = localStorage.getItem(this.existingRecords + "Fav");
+    var favorites = favoritesJSON ? JSON.parse(favoritesJSON) : [];
 
-		if (Quiz.messagesArray.questions[qindex].correctIndex == 0) {
-			let notAvailble = document.createElement("div");
-			notAvailble.innerHTML = "resposta Indisponivel";
-			questionBlock.appendChild(notAvailble);
-			console.log(questions.numb);
-			numberOfUnanswered++;
-		} else {
+    // Get the unique ID of the question associated with the clicked star
+    const index = favorites.indexOf(this.uniqueID);
 
-			let btn = document.createElement("button");
-			btn.innerHTML = "Verificar";
-			btn.value = qindex;
-			btn.quiz = this;
-			btn.onclick = this.checkQuestion;
-			questionCard.appendChild(btn);
+    if (index === -1) {
+      // If not in favorites, add it
+      favorites.push(this.uniqueID);
+      this.setAttribute('class', 'w-6 h-6 block fill-[#fcd34d]');
+    } else {
+      // If already in favorites, remove it
+      const elements = document.getElementById("questionBlock" + this.value);
+      if (elements != null) {
+        if (this.hideOnUnselect == true) elements.style.display = "none";
+      }
 
-			let starIcon = document.createElement("img");
-			starIcon.existingRecords = this.parts[0];
+      favorites.splice(index, 1);
+      this.setAttribute('class', 'w-6 h-6 block fill-[#fefce8]');
+      if (favorites.length === 0) {
+        new Quiz(this.jsonFile);
+      }
+    }
 
+    // Save the updated favorites array back to local storage
+    localStorage.setItem(
+      this.existingRecords + "Fav",
+      JSON.stringify(favorites)
+    );
 
-			if (MatomoOptOutManager.hasConsent()) {
-
-				starIcon.uniqueID = questions.uniqueID;
-				const favorites = JSON.parse(localStorage.getItem(starIcon.existingRecords + "Fav")) || [];
-
-				if (favorites.includes(starIcon.uniqueID)) {
-					starIcon.src = "images/starfav.png"; // Set the path to your star icon image
-				} else {
-					starIcon.src = "images/starnotfav.png"; // Set the path to your star icon image
-				}
-				starIcon.value = qindex;
-				starIcon.jsonFile = this.jsonFile;
-				// Add a click event listener to the star icon
-				starIcon.onclick = this.saveFav;
-				questionCard.appendChild(starIcon);
-			}
-
-		}
-	}
-
-	showPage() {
-		var index = parseInt(this.value);
-		this.pageIndex = index;
-		window.scrollTo(0, 0);
-
-		if (index == 0) {
-
-			index = 0;
-		} else {
-			index = index / 10;
-		}
-		for (const page of this.pageBlocks) {
-			page.style.display = "none";
-		}
-		this.pageBlocks[index].style.display = "block";
-	
-
-	}
+    // Call the showFavElement function for specific HTML elements
+    FavQuiz.showFavElement("question3", "favQuiz3");
+    FavQuiz.showFavElement("question2", "favQuiz2");
+    FavQuiz.showFavElement("question1", "favQuiz1");
+  }
 }

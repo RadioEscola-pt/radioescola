@@ -2,6 +2,25 @@ class Storage {
 	constructor() {
 
 	}
+	
+    static storeDarkMode(isDark) {
+        // Check if there is an existing record in local storage
+        let existingRecords = JSON.parse(localStorage.getItem("DarkMode")) || {};
+
+        // Set the dark mode setting
+        existingRecords.isDark = isDark;
+
+        // Save the updated records back to local storage
+        localStorage.setItem("DarkMode", JSON.stringify(existingRecords));
+    }
+
+    static getDarkMode() {
+        // Check if there is an existing record in local storage
+        const existingRecords = JSON.parse(localStorage.getItem("DarkMode")) || {};
+
+        // Return the dark mode setting if it exists, or false if not
+        return existingRecords.hasOwnProperty("isDark") ? existingRecords.isDark : false;
+    }
 
 
 	storePage(page) {
@@ -133,32 +152,5 @@ class Storage {
 		}
 	}
 
-	saveFav() {
-		var favorites = JSON.parse(localStorage.getItem(this.existingRecords + "Fav"));
-		// Get the unique ID of the question associated with the clicked star
-		var index = -1;
-		if (favorites == null) {
-			favorites = [];
-		}
-		else {
-			index = favorites.indexOf(this.uniqueID);
-		}
-		if (index === -1) {
-			// If not in favorites, add it
-			favorites.push(this.uniqueID);
-			this.src = "images/starfav.png"; // Set the path to your favorite star icon image
-		} else {
-			// If already in favorites, remove it
-			favorites.splice(index, 1);
-			this.src = "images/starnotfav.png"; // Set the path to your regular star icon image
-		}
-
-		// Save the updated favorites array back to local storage
-		localStorage.setItem(this.existingRecords + "Fav", JSON.stringify(favorites));
-		FavQuiz.showFavElement("question3", "favQuiz3");
-		FavQuiz.showFavElement("question2", "favQuiz2");
-		FavQuiz.showFavElement("question1", "favQuiz1");
-
-	}
 
 }

@@ -1,168 +1,698 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Radio Escola</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/questions.css" />
+    <script type="text/javascript" src="js/Popup.js"></script>
 
-	<title>Radio Escola</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="js/ElectricalUnits.js"></script>
+    <script type="text/javascript" src="js/classUtils.js"></script>
+    <script type="text/javascript" src="js/Questions.js"></script>
+    <script type="text/javascript" src="js/Storage.js"></script>
+    <script type="text/javascript" src="js/SimulateQuiz.js"></script>
+    <script type="text/javascript" src="js/FavQuiz.js"></script>
+    <script type="text/javascript" src="js/Quiz.js"></script>
+    <script type="text/javascript" src="js/LoadChapter.js"></script>
+    <script type="text/javascript" src="js/MatomoOptOutManager.js"></script>
+    <script type="text/javascript" src="js/ComponentAdder.js"></script>
+    <script type="text/javascript" src="js/OhmsLawCalculator.js"></script>
+    <script type="text/javascript" src="js/ReactanceCalculator.js"></script>
+    <script>
+      window.timers = [];
 
-	<link rel="stylesheet" href="style.css">
-	<script type="text/javascript" src="js/classUtils.js"></script>
-	<script type="text/javascript" src="js/Questions.js"></script>
-	<script type="text/javascript" src="js/Storage.js"></script>
-	<script type="text/javascript" src="js/SimulateQuiz.js"></script>
-	<script type="text/javascript" src="js/FavQuiz.js"></script>
-	<script type="text/javascript" src="js/Quiz.js"></script>
-	<script type="text/javascript" src="js/LoadChapter.js"></script>
-	<script type="text/javascript" src="js/MatomoOptOutManager.js"></script>
-	
-	
-    
-	<script>
+      function hashChecker() {
+        const fragment = window.location.hash;
 
-		// Keep a record of all running timers since we need to clear them later on
-		window.timers = []
+        // Check if there is a fragment
+        if (fragment) {
+          // Remove the '#' symbol from the fragment
+          const cleanFragment = fragment.substring(1);
 
-		window.onload = function () {
+          // Use a switch statement to handle different cases
+          switch (cleanFragment) {
+            case "COPADDER":
+              new ComponentAdder();
+              break;
+            case "OHMCALC":
+              new OhmsLawCalculator();
 
-			const optOutManager = new MatomoOptOutManager();
-			const searchParams = new URLSearchParams(window.location.search);
-			if (searchParams.has('LoadChapter')) {
-				new LoadChapter(searchParams.get("LoadChapter")); // bar, only returns the first value
-			} else if (searchParams.has('TEST')) {
-				document.getElementById('TESTDIV').style.display = ''
-			}
-			else {
-				new LoadChapter('home');
-			}
-		}
-	</script>
+              break;
 
-	<link rel="stylesheet" href="questions.css">
+            case "REACTANCE":
+              new ReactanceCalculator();
+              break;
 
+            default:
+              console.log("Unknown case");
 
-</head>
+              break;
+          }
+        }
+      }
 
-<body>
+      window.addEventListener("hashchange", hashChecker);
 
-	<header>
+      window.onload = function () {
+        const optOutManager = new MatomoOptOutManager();
+        const searchParams = new URLSearchParams(window.location.search);
+        if (searchParams.has("LoadChapter")) {
+          new LoadChapter(searchParams.get("LoadChapter")); // bar, only returns the first value
+        } else if (searchParams.has("TEST")) {
+          document.getElementById("TESTDIV").style.display = "";
+        } else {
+          new LoadChapter("home");
+        }
+        hashChecker();
+        if (Storage.getDarkMode()) {
+          document.getElementById(
+            "theme-toggle"
+          ).innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+</svg>
+`;
+          document.documentElement.classList.add("dark");
+        }
+      };
 
+      function toggleDarkMode() {
+        if (document.documentElement.classList.contains("dark")) {
+          Storage.storeDarkMode(false);
+          document.getElementById(
+            "theme-toggle"
+          ).innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+</svg>
+`;
+        } else {
+          Storage.storeDarkMode(true);
+          document.getElementById(
+            "theme-toggle"
+          ).innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+</svg>
+`;
+        }
+        document.documentElement.classList.toggle("dark");
+      }
+    </script>
 
+    <link rel="stylesheet" href="css/questions.css" />
+  </head>
 
-		<ul id="nav">
-			<li class="subnav0"><a onclick="new LoadChapter('home')" href="#home">Página Inicial</a></li>
-			<li class="subnav0"><a onclick="new LoadChapter('equipa')" href="#home">Equipa</a></li>
+  <body class="bg-slate-50 dark:bg-slate-800 dark:text-white">
+    <header
+      class="flex justify-center font-header h-[25vh] bg-header bg-center bg-cover"
+    >
+      <div
+        class="w-full h-full flex justify-center items-center bg-[rgba(0,0,0,0.3)] backdrop-blur-sm"
+      >
+        <a
+          href="/"
+          class="self-center font-header text-[#ff9a17] text-2xl md:text-5xl drop-shadow-[0px_2px_0px_#b26b10]"
+          >Rádio Escola</a
+        >
+      </div>
+    </header>
+    <nav
+      class="bg-slate-100 border-gray-200 dark:bg-gray-900 dark:border-gray-700"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <span></span>
+        <button
+          data-collapse-toggle="navbar-multi-level"
+          type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-multi-level"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <img src="images/menu.svg" class="w-5 h-5" alt="menu" />
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
+          <ul
+            class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          >
+            <li>
+              <a
+                onclick="new LoadChapter('home')"
+                href="#"
+                class="block py-1 px-2 text-gray-900 rounded hover:bg-slate-300 md:border-0 md:hover:text-slate-800 dark:text-white md:dark:hover:text-slate-50 dark:hover:bg-slate-800 dark:hover:text-white"
+                aria-current="page"
+                >Início</a
+              >
+            </li>
+            <li>
+              <a
+                onclick="new LoadChapter('equipa')"
+                href="#"
+                class="block py-1 px-2 text-gray-900 rounded hover:bg-slate-300 md:border-0 md:hover:text-slate-800 dark:text-white md:dark:hover:text-slate-50 dark:hover:bg-slate-800 dark:hover:text-white"
+                aria-current="page"
+                >Equipa</a
+              >
+            </li>
+            <li>
+              <a
+                onclick="new LoadChapter('EDN')"
+                href="#"
+                class="block py-1 px-2 text-gray-900 rounded hover:bg-slate-300 md:border-0 md:hover:text-slate-800 dark:text-white md:dark:hover:text-slate-50 dark:hover:bg-slate-800 dark:hover:text-white"
+                aria-current="page"
+                >Estado da Nação</a
+              >
+            </li>
+            <li>
+              <button
+                id="questionsDropdownLink"
+                data-dropdown-toggle="questionsDropdown"
+                class="rounded flex items-center justify-between w-full py-1 px-2 text-gray-700 border-b border-gray-100 hover:bg-slate-300 md:border-0 md:hover:text-slate-800 md:w-auto dark:text-white dark:focus:text-white dark:border-gray-700 md:dark:hover:text-slate-50 dark:hover:bg-slate-800"
+              >
+                Calculadoras
+                <img src="images/arrow-down.svg" class="w-2.5 h-2.5 ml-2.5" />
+              </button>
+              <div
+                id="questionsDropdown"
+                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+              >
+                <ul
+                  class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li aria-labelledby="examsDropdownLink"></li>
+                  <li>
+                    <a
+                      onclick=""
+                      href="#COPADDER"
+                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Adicionar Componentes</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      onclick=""
+                      href="#REACTANCE"
+                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Impedância</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      onclick=""
+                      href="#OHMCALC"
+                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Lei de Ohm</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <button
+                id="examsDropdownLink"
+                data-dropdown-toggle="examsDropdown"
+                class="rounded flex items-center justify-between w-full py-1 px-2 text-gray-700 border-b border-gray-100 hover:bg-slate-300 md:border-0 md:hover:text-slate-800 md:w-auto dark:text-white dark:focus:text-white dark:border-gray-700 md:dark:hover:text-slate-50 dark:hover:bg-slate-800"
+              >
+                Exames
+                <img src="images/arrow-down.svg" class="w-2.5 h-2.5 ml-2.5" />
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="examsDropdown"
+                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+              >
+                <ul
+                  class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li aria-labelledby="examsDropdownLink">
+                    <button
+                      id="cat3examsButton"
+                      data-dropdown-toggle="cat3exams"
+                      data-dropdown-placement="right-start"
+                      type="button"
+                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Categoria 3
+                      <img
+                        src="images/arrow-down.svg"
+                        class="w-2.5 h-2.5 ml-2.5"
+                      />
+                    </button>
+                    <div
+                      id="cat3exams"
+                      class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+                    >
+                      <ul
+                        class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                        aria-labelledby="cat3examsButton"
+                      >
+                        <li>
+                          <a
+                            id="favQuiz3"
+                            onclick="new FavQuiz('question3.json')"
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Favoritas</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            onclick="new Quiz('question3.json')"
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Todas as perguntas</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            onclick="new SimulateQuiz('question3.json')"
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Simulador de exame</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li aria-labelledby="examsDropdownLink">
+                    <button
+                      id="cat2examsButton"
+                      data-dropdown-toggle="cat2exams"
+                      data-dropdown-placement="right-start"
+                      type="button"
+                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Categoria 2
+                      <img
+                        src="images/arrow-down.svg"
+                        class="w-2.5 h-2.5 ml-2.5"
+                      />
+                    </button>
+                    <div
+                      id="cat2exams"
+                      class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+                    >
+                      <ul
+                        class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                        aria-labelledby="cat2examsButton"
+                      >
+                        <li>
+                          <a
+                            id="favQuiz2"
+                            onclick="new FavQuiz('question2.json')"
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Favoritas</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            onclick="new Quiz('question2.json')"
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Todas as perguntas</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            onclick="new SimulateQuiz('question2.json')"
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Simulador de exame</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li aria-labelledby="examsDropdownLink">
+                    <button
+                      id="cat1examsButton"
+                      data-dropdown-toggle="cat1exams"
+                      data-dropdown-placement="right-start"
+                      type="button"
+                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Categoria 1
+                      <img
+                        src="images/arrow-down.svg"
+                        class="w-2.5 h-2.5 ml-2.5"
+                      />
+                    </button>
+                    <div
+                      id="cat1exams"
+                      class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+                    >
+                      <ul
+                        class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                        aria-labelledby="cat1examsButton"
+                      >
+                        <li>
+                          <a
+                            id="favQuiz1"
+                            onclick="new FavQuiz('question1.json')"
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Favoritas</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            onclick="new Quiz('question1.json')"
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Todas as perguntas</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            onclick="new SimulateQuiz('question1.json')"
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Simulador de exame</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <a
+                      onclick="new LoadChapter('marcar_exame_anacom')"
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Ir a exame</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <button
+                id="studyLink"
+                data-dropdown-toggle="studyNavbar"
+                class="rounded cursor-pointer flex items-center justify-between w-full py-1 px-2 text-gray-700 border-b border-gray-100 hover:bg-slate-300 md:border-0 md:hover:text-slate-800 md:w-auto dark:text-white dark:focus:text-white dark:border-gray-700 md:dark:hover:text-slate-50 dark:hover:bg-slate-800"
+              >
+                Estudo
+                <img src="images/arrow-down.svg" class="w-2.5 h-2.5 ml-2.5" />
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="studyNavbar"
+                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+              >
+                <ul
+                  class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li aria-labelledby="studyLink">
+                    <button
+                      id="study3Button"
+                      data-dropdown-toggle="study3Dropdown"
+                      data-dropdown-placement="right-start"
+                      type="button"
+                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Categoria 3
+                      <img
+                        src="images/arrow-down.svg"
+                        class="w-2.5 h-2.5 ml-2.5"
+                      />
+                    </button>
+                    <div
+                      id="study3Dropdown"
+                      class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+                    >
+                      <ul
+                        class="py-2 text-sm text-gray-700 dark:text-gray-200 cursor-pointer"
+                        aria-labelledby="study3Button"
+                      >
+                        <li>
+                          <a
+                            onclick="new LoadChapter('alfabeto')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Alfabeto Fonético</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            onclick="new LoadChapter('entidades')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Entidades e Competências</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            onclick="new LoadChapter('codigoq')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Código Q</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            onclick="new LoadChapter('prefixos')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Prefixos de indicativos</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            onclick="new LoadChapter('ohm')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Lei de Ohm</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            onclick="new LoadChapter('AC')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Corrente Alternada / AC
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            onclick="new LoadChapter('codigoDecores')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Código de cores</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            onclick="new LoadChapter('units')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Mult e SubMult. de Unidades</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li aria-labelledby="dropdownNavbarLink">
+                    <button
+                      id="study2Button"
+                      data-dropdown-toggle="study2Dropdown"
+                      data-dropdown-placement="right-start"
+                      type="button"
+                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Categoria 2
+                      <img
+                        src="images/arrow-down.svg"
+                        class="w-2.5 h-2.5 ml-2.5"
+                      />
+                    </button>
+                    <div
+                      id="study2Dropdown"
+                      class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+                    >
+                      <ul
+                        class="py-2 text-sm text-gray-700 dark:text-gray-200 cursor-pointer"
+                        aria-labelledby="study2Button"
+                      >
+                        <li>
+                          <a
+                            onclick="new LoadChapter('SWR')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Onda estacionária (SWR)</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            style="display: none"
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Bobines (henry)</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            style="display: none"
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Condensador(bobine)</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li aria-labelledby="dropdownNavbarLink">
+                    <button
+                      id="study1Button"
+                      data-dropdown-toggle="study1Dropdown"
+                      data-dropdown-placement="right-start"
+                      type="button"
+                      class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Categoria 1
+                      <img
+                        src="images/arrow-down.svg"
+                        class="w-2.5 h-2.5 ml-2.5"
+                      />
+                    </button>
+                    <div
+                      id="study1Dropdown"
+                      class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+                    >
+                      <ul
+                        class="py-2 text-sm text-gray-700 dark:text-gray-200 cursor-pointer"
+                        aria-labelledby="study1Button"
+                      >
+                        <li>
+                          <a
+                            onclick="new LoadChapter('gain')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Ganho (dB)</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            onclick="new LoadChapter('tranformadores')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Tranformadores
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            onclick="new LoadChapter('opamps')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Amplificadores operacionais
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            onclick="new LoadChapter('bobines')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Reactância Indutiva
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            onclick="new LoadChapter('condensadores')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Reactância Capacitiva</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            onclick="new LoadChapter('receptores')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Receptores</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li id="theme-toggle" onclick="toggleDarkMode()" class="flex py-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                />
+              </svg>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-			<li class="subnav0"><a onclick="new LoadChapter('EDN')" href="#EDN">Estado da Nação</a></li>
-			<li class="subnav1"><a href="#">Categoria 3</a>
-				<ul class="subnav1">
-					<li><a onclick="new SimulateQuiz('question3.json')" href="#">Simulador de exame</a></li>
-					<li><a onclick="new Quiz('question3.json')" href="#">Todas as perguntas</a></li>
-					<li><a id="favQuiz3" onclick="new FavQuiz('question3.json')" href="#">Favoritas</a></li>
-					<li><a href="#">Tutoriais</a>
-						<ul class="subnav1">
-							<li> <a style="display:none;" href="#">Condutores</a></li>
-							<li> <a style="display:none;" href="#">Eletrónica base</a></li>
-							<li> <a onclick="new LoadChapter('marcar_exame_anacom')">Marcar exame na Anacom</a></li>
-							<li> <a onclick="new LoadChapter('alfabeto')">Alfabeto Fonético</a></li>
-							<li> <a onclick="new LoadChapter('entidades')">Entidades e Competências</a></li>
-							<li> <a onclick="new LoadChapter('codigoq')">Código Q</a></li>
-							<li> <a onclick="new LoadChapter('prefixos')">Prefixos de indicativos</a></li>
-							<li> <a onclick="new LoadChapter('ohm')">Lei de Ohm</a></li>
-							<li> <a style="display:none;" href="#">Potência</a></li>
-							<li> <a onclick="new LoadChapter('AC')">Corrente Alternada / AC </a></li>
-							<li> <a style="display:none;" href="#">Campo electromagnético </a></li>
-							<li> <a onclick="new LoadChapter('codigoDecores')">Código de cores</a></li>
-							<li> <a onclick="new LoadChapter('units')">Mult e SubMult. de Unidades</a></li>
-
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li class="subnav2"><a href="#">Categoria 2</a>
-				<ul class="subnav2">
-					<li><a id="favQuiz2" onclick="new FavQuiz('question2.json')" href="#">Favoritas</a></li>
-					<li><a onclick="new Quiz('question2.json')" href="#">Todas as perguntas</a></li>
-					<li><a onclick="new SimulateQuiz('question2.json')" href="#">Simulador de exame</a></li>
-					<li><a href="#">Tutoriais</a>
-						<ul class="subnav2">
-
-							<li> <a onclick="new LoadChapter('SWR')">Onda estacionaria(SWR)</a></li>
-							<li> <a style="display:none;" href="#">Bobines (henry)</a></li>
-							<li><a style="display:none;" href="#">Condensador(bobine)</a></li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-
-			<li class="subnav3"><a href="#">Categoria 1</a>
-				<ul class="subnav3">
-					<li><a id="favQuiz1" onclick="new FavQuiz('question1.json')" href="#">Favoritas</a></li>
-					<li><a onclick="new Quiz('question1.json')" href="#">Todas as perguntas</a></li>
-					<li><a onclick="new SimulateQuiz('question1.json')" href="#">Simulador de exame</a></li>
-					<li><a href="#">Tutoriais</a>
-						<ul class="subnav3">
-
-							<li><a onclick="new LoadChapter('gain')">Ganho (dB)</a> </li>
-							<li><a onclick="new LoadChapter('tranformadores')">Tranformadores </a> </li>
-							<li><a onclick="new LoadChapter('opamps')">Amplificadores operacionais </a> </li>
-							<li><a onclick="new LoadChapter('bobines')">Reactância Indutiva </a> </li>
-							<li><a onclick="new LoadChapter('condensadores')">Reactância Capacitiva</a> </li>
-							<li><a onclick="new LoadChapter('receptores')">Receptores</a> </li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-
-		</ul>
-
-
-
-
-	</header>
-
-	<section>
-	<div id="answerDisplay">
-		<!-- Canvas div initially hidden -->
-		<div id="canvasDiv">
-			<canvas id="canvas" width="400" height="200"></canvas>
-		</div>
-	</div>
-    <div id="matomo-opt-out">
+    <section>
+      <div id="answerDisplay">
+        <!-- Canvas div initially hidden -->
+        <div id="canvasDiv">
+          <canvas id="canvas" width="400" height="200"></canvas>
+        </div>
+      </div>
+      <div id="matomo-opt-out">
         <!-- This div will be used to display Matomo opt-out content -->
-    </div>
-		<article id="welcome">
+      </div>
+      <article
+        id="welcome"
+        class="max-w-screen-md m-auto mt-12 mb-12"
+      ></article>
+    </section>
 
-		</article>
-	</section>
+    <footer
+      class="bg-gray-800 p-10 text-center text-white grid grid-cols-2 items-center"
+    >
+      <div class="flex gap-1 flex-col items-start text-sm">
+        <a
+          href="https://github.com/RadioEscola-pt/radioescola/issues"
+          target="_blank"
+          class="text-white"
+          >Reportar problemas / erros / sugestões</a
+        >
+        <a
+          href="https://github.com/RadioEscola-pt/radioescola/discussions"
+          target="_blank"
+          class="text-white"
+          >Fórum</a
+        >
+        <a
+          href="https://github.com/RadioEscola-pt/radioescola"
+          target="_blank"
+          class="text-white"
+          >Código</a
+        >
+        <a href="#" id="ShowPrivacyBar">Politica de Privacidade</a>
+      </div>
 
-	<footer>
-		<div>
-			<a href="https://github.com/RadioEscola-pt/radioescola/issues" target="_blank">Reportar problemas / erros
-				/ sugestões</a>
-			<a href="https://github.com/RadioEscola-pt/radioescola/discussions" target="_blank">Fórum</a>
-			<a href="https://github.com/RadioEscola-pt/radioescola" target="_blank">Código</a>
-			<a href="#" id="ShowPrivacyBar" >Politica de Privacidade</a>
-			
-			
-			
-		</div>
-		<p>CS7AZE | CS7AXE | CS7BAX | CR7BCS </p>
-
-		<div>
-			<a href="https://t.me/+xQNzwNwb2JIxMWY8">
-				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png"
-					alt="Telegram" width="auto" height="55"></a>
-
-			<a href="https://play.google.com/store/apps/details?id=com.andradator.escoladeradioamador">
-				<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-					alt="Get it on Google Play" width="auto" height="75">
-			</a>
-		</div>
-	</footer>
-
-
-</body>
-
+      <div class="flex flex-col items-end">
+        <div class="flex flex-row items-center">
+          <a href="https://t.me/+xQNzwNwb2JIxMWY8">
+            <img src="images/telegram.svg" alt="Telegram" class="h-8"
+          /></a>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.andradator.escoladeradioamador"
+          >
+            <img
+              src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+              alt="Get it on Google Play"
+              class="h-12"
+            />
+          </a>
+        </div>
+        <span class="text-xs"
+          >Feito por radioamadores, para (futuros) radioamadores</span
+        >
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+  </body>
 </html>

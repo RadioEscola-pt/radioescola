@@ -64,6 +64,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 		previousButton.pageBlocks = this.pageBlocks;
 		previousButton.simulateQuiz=this;
 		previousButton.disabled = this.currentPage == 0;
+		previousButton.className = 'bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-800 p-2 rounded cursor-pointer hover:bg-slate-400';
 		buttons.append(previousButton)
 
 		for (let i = 0 ; i < this.numberOfPages(); i++) {
@@ -73,8 +74,9 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 			pageBtn.onclick =  this.showPage;
 			pageBtn.pageBlocks = this.pageBlocks;
 			pageBtn.simulateQuiz=this;
+			pageBtn.className = 'bg-slate-300 p-2 rounded cursor-pointer dark:bg-slate-700 dark:hover:bg-slate-800'
 			if (this.currentPage == i ) {
-				pageBtn.className = 'active';
+				pageBtn.className = 'bg-slate-400 dark:bg-slate-800 p-2 rounded cursor-pointer dark:hover:bg-slate-800';
 			}
 			buttons.appendChild(pageBtn);
 		}
@@ -86,6 +88,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 		nextButton.simulateQuiz=this;
 		nextButton.pageBlocks = this.pageBlocks;
 		nextButton.disabled = this.currentPage == this.numberOfPages()-1;
+		nextButton.className = 'bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-800 p-2 rounded cursor-pointer';
 		buttons.append(nextButton);
 
 		let spacer = document.createElement('div')
@@ -95,6 +98,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 
 		let btn = document.createElement("button");
 		btn.innerHTML = "Finalizar";
+		btn.className = "bg-lime-50 hover:bg-lime-200 px-4 rounded shadow text-lime-700 font-bold cursor-pointer";
 
 		btn.onclick = this.stoptimer;
 		btn.simulateQuiz = this;
@@ -139,7 +143,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 				noteDiv.className = "incorrect";
 				noteDiv.innerHTML += "<br>" + this.questions[questionIndex].notes;
 
-				noteDiv.parentElement.parentElement.parentElement.style.boxShadow = '0px 0px 5px #7F1D1D'
+				noteDiv.parentElement.parentElement.parentElement.style.border = '1px solid #aa1d1d'
 				elements[parseInt(this.questions[questionIndex].correctIndex - 1)].parentElement.style.color = '#22C55E';
 			}
 
@@ -156,6 +160,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 	constructor(json) {
 		super();
 		this.jsonFile=json;
+		this.parts = this.jsonFile.split('.');
 		var numberOfUnaswered = 0;
 		var questionCounter = 0;
 		this.pageBlocks = []
@@ -183,10 +188,11 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 					welcomeDiv.innerHTML = "";
 					var indexBlock = document.createElement("div");
 					indexBlock.id = "qIndex";
+					indexBlock.className = "max-w-screen-md m-auto list-none m-0 p-2 rounded mb-5 overflow-x-scroll overflow-y-hidden bg-slate-200 dark:bg-slate-600 sticky flex items-center justify-between top-[10px] gap-[10px]";
 
 					let buttons = document.createElement('div')
 					buttons.id = 'pagination'
-
+					buttons.className = 'flex w-full gap-[5px]'
 
 					welcomeDiv.appendChild(indexBlock);
 					var index = 0;
@@ -213,19 +219,19 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 						questionCounter++;
 
 						var questionBlock = document.createElement("div");
-						questionBlock.className = "questionBlock";
+						questionBlock.className = "max-w-screen-md m-auto p-6 mb-8 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700";
 
 						var questionCard = document.createElement("div");
 						questionCard.className = "questionCard";
 						questionBlock.appendChild(questionCard);
 
 						var questiontxt = document.createElement("span");
-						questiontxt.className = "question";
+						questiontxt.className = "text-xl font-bold";
 						questiontxt.innerHTML = index+ ") " + this.simulateQuiz.questions[qindex].question
 						questionCard.appendChild(questiontxt);
 
 						var answers = document.createElement("div");
-						answers.className = "answers";
+						answers.className = "flex flex-col mt-5 leading-normal";
 
 						var noteBlock = document.createElement("div");
 						noteBlock.id = "note" + this.simulateQuiz.questions[qindex].index;
@@ -239,6 +245,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 							input.type = "radio";
 							input.value = i;
 							input.name = "n" + this.simulateQuiz.questions[qindex].index;
+							input.className = "mr-4";
 
 							label.appendChild(input);
 							label.innerHTML += key;
@@ -248,6 +255,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 						}
 
 						questionCard.appendChild(answers);
+						this.simulateQuiz.addStar( questionCard,qindex, this.simulateQuiz.questions[qindex].uniqueID);
 						pageBlock.appendChild(questionBlock);
 
 						if (this.simulateQuiz.questions[qindex].img) {
@@ -278,6 +286,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 					var timerBlock = document.createElement("div");
 					timerBlock.id = "timer";
 					timerBlock.textContent = '01:00:00';
+					timerBlock.className = "font-mono text-lg";
 					indexBlock.appendChild(timerBlock);
 
 					//console.log("Unanswered" + numberOfUnaswered);
