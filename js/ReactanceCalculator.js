@@ -33,14 +33,14 @@ class  ReactanceCalculator extends ElectricalUnits {
         let inductanceText = document.getElementById("inductanceTXT");
 
         if (calculationType === "F") {
-            this.formulaDiv.innerHTML = "Fórmula: X = 1/(2πfL)";
+            this.formulaDiv.innerHTML = "Fórmula: X = 1/(2πfC)";
             inductanceText.innerHTML = "Reatância (F)";
 
 
             this.loadOptions(this.unitInput, "F");
         } else if (calculationType === "H") {
             inductanceText.innerHTML = "Indutância (H)";
-            this.formulaDiv.innerHTML ="Fórmula: X = 2πfC"; 
+            this.formulaDiv.innerHTML ="Fórmula: X = 2πfL"; 
             this.loadOptions(this.unitInput, "H");
         } else {
             this.formulaDiv.innerHTML = "";
