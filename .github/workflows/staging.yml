@@ -1,8 +1,12 @@
 name: update staging
-on: [workflow_dispatch]
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 jobs:
   build:
-    name: Copy files
+    name: Build and deploy
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
