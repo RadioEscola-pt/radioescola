@@ -20,5 +20,6 @@ jobs:
           SOURCE: "/"
           REMOTE_HOST: ${{ secrets.STAGING_HOST }}
           REMOTE_USER: ${{ secrets.STAGING_USERNAME }}
+          REMOTE_PORT: ${{ secrets.STAGING_PORT }}
           TARGET: ${{ secrets.STAGING_PATH }}
           EXCLUDE: "/node_modules/, .git/"
