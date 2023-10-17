@@ -25,6 +25,11 @@
     <script type="text/javascript" src="js/ComponentAdder.js"></script>
     <script type="text/javascript" src="js/OhmsLawCalculator.js"></script>
     <script type="text/javascript" src="js/ReactanceCalculator.js"></script>
+    <script type="text/javascript" src="js/TransformerCalculator.js"></script>
+    <script type="text/javascript" src="js/LRCBridgeCalculator.js"></script>
+
+    
+
     <script>
       window.timers = [];
 
@@ -48,6 +53,14 @@
 
             case "REACTANCE":
               new ReactanceCalculator();
+              break;
+            case "TRANSFORMER":
+              new TransformerCalculator();
+
+              break;
+            case "LRC":
+              new LRCBridgeCalculator();
+
               break;
 
             default:
@@ -210,6 +223,24 @@
                       class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                       Lei de Ohm</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      onclick=""
+                      href="#LRC"
+                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      LRC</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      onclick=""
+                      href="#TRANSFORMER"
+                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Tranformadores</a
                     >
                   </li>
                 </ul>

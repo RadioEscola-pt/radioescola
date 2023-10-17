@@ -1,0 +1,69 @@
+<table>
+        <tr>
+            <td><label for="frequency">Frequency (Hz):</label></td>
+            <td><input type="number" id="frequency" step="any" required></td>
+            <td><select id="frequencyDropdown"></select></td>
+        </tr>
+        <tr>
+            <td><label for="resistor">Resistor Value (Ohms):</label></td>
+            <td><input type="number" id="resistor" step="any" required></td>
+            <td><select id="resistorDropdown"></select></td>
+        </tr>
+        <tr>
+            <td><label for="voltageSource">Voltage of the Source (V):</label></td>
+            <td><input type="number" id="voltageSource" step="any" required></td>
+            <td><select id="voltageSourceDropdown"></select></td>
+        </tr>
+        <tr>
+            <td><label for="capacitor">Capacitor Value (Farads):</label></td>
+            <td><input type="number" id="capacitor" step="any" required></td>
+            <td><select id="capacitorDropdown"></select></td>
+        </tr>
+        <tr>
+            <td><label for="coil">Coil Value (Henrys):</label></td>
+            <td><input type="number" id="coil" step="any" required></td>
+            <td><select id="coilDropdown"></select></td>
+        </tr>
+
+    <tr>
+        <td>Total Impedance (Z):</td>
+        <td><span id="resultTotalImpedance">N/A</span> Ohms</td>
+        <td><select id="resultTotalImpedanceDropdown"></select></td>
+    </tr>
+    <tr>
+        <td>Inductive Reactance (XL):</td>
+        <td><span id="resultXL">N/A</span> Ohms</td>
+        <td><select id="resultXLDropdown"></select></td>
+    </tr>
+    <tr>
+        <td>Capacitive Reactance (XC):</td>
+        <td><span id="resultXC">N/A</span> Ohms</td>
+        <td><select id="resultXCDropdown"></select></td>
+    </tr>
+    <tr>
+        <td>Resistive Impedance (XR):</td>
+        <td><span id="resultXR">N/A</span> Ohms</td>
+        <td><select id="resultXRDropdown"></select></td>
+    </tr>
+    <tr>
+        <td>Total Current (I):</td>
+        <td><span id="resultTotalCurrent">N/A</span> Amperes</td>
+        <td><select id="resultTotalCurrentDropdown"></select></td>
+    </tr>
+    <tr>
+        <td>Voltage Drop Across Capacitor (Vc):</td>
+        <td><span id="resultVc">N/A</span> Volts</td>
+        <td><select id="resultVcDropdown"></select></td>
+    </tr>
+    <tr>
+        <td>Voltage Drop Across Resistor (Vr):</td>
+        <td><span id="resultVr">N/A</span> Volts</td>
+        <td><select id="resultVrDropdown"></select></td>
+    </tr>
+    <tr>
+        <td>Voltage Drop Across Inductor (VL):</td>
+        <td><span id="resultVL">N/A</span> Volts</td>
+        <td><select id="resultVLDropdown"></select></td>
+    </tr>
+</table>
+<button type="button" id="calculateButton">Calculate</button>
