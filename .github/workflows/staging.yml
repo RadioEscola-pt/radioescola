@@ -10,7 +10,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '20.x'
-      - run: npm run tailwind:build
+    - run: npm run tailwind:build
     - name: copy file via ssh password
       uses: appleboy/scp-action@v0.1.4
       with:
