@@ -14,6 +14,13 @@ class TransformerCalculator extends ElectricalUnits {
         this.secondaryCurrentInput = document.getElementById("secondaryCurrent");
         this.turnsPrimaryInput = document.getElementById("turnsPrimary");
         this.turnsSecondaryInput = document.getElementById("turnsSecondary");
+        
+        // New variables for select boxes
+        this.primaryVoltageSelect = document.getElementById("primaryVoltageSelect");
+        this.secondaryVoltageSelect = document.getElementById("secondaryVoltageSelect");
+        this.primaryCurrentSelect = document.getElementById("primaryCurrentSelect");
+        this.secondaryCurrentSelect = document.getElementById("secondaryCurrentSelect");
+
 
         this.primaryVoltageInput.className=this.classStyle;
         this.secondaryVoltageInput.className=this.classStyle;
@@ -23,17 +30,28 @@ class TransformerCalculator extends ElectricalUnits {
         this.turnsPrimaryInput.className=this.classStyle;
         this.turnsSecondaryInput.className=this.classStyle;
 
+        this.primaryVoltageSelect.className=this.classStyle;
+        this.secondaryVoltageSelect.className=this.classStyle;
+        this.primaryCurrentSelect.className=this.classStyle;
+        this.secondaryCurrentSelect.className=this.classStyle;
 
-        
+
+        this.loadOptions(this.primaryVoltageSelect, "V");
+        this.loadOptions(this.secondaryVoltageSelect, "V");
+        this.loadOptions(this.primaryCurrentSelect, "A");
+        this.loadOptions(this.secondaryCurrentSelect, "A");
+
+               
+
 
         this.calculateButton = document.getElementById("calculateButton");
         this.calculateButton.addEventListener("click", () => this.calculateValues());
-
-
     }
 
     calculateValues() {
+
         const primaryVoltage = parseFloat(this.primaryVoltageInput.value);
+            
         const secondaryVoltage = parseFloat(this.secondaryVoltageInput.value);
         const primaryCurrent = parseFloat(this.primaryCurrentInput.value);
         const secondaryCurrent = parseFloat(this.secondaryCurrentInput.value);
