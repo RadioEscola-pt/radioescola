@@ -4,17 +4,17 @@
 
 
 @layer components {
-    h1 {
+    /* h1 {
       @apply text-2xl font-bold mb-4 mt-8;
-    }
+    } */
 
-    table {
+    /* table {
         @apply w-full border border-slate-800 dark:border-slate-200;
     }
 
     thead {
         @apply bg-slate-800 text-white;
-    }
+    } */
 
     th {
         @apply p-2;
