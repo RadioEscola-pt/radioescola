@@ -1,6 +1,5 @@
 import { PrismaClient } from '.prisma/client'
-
-  import QuestionCard from './questionCard'
+import QuestionCard from './questionCard'
 async function getAllQuestions(categoria : number){
 
       const prisma = new PrismaClient()
@@ -15,13 +14,14 @@ async function getAllQuestions(categoria : number){
 
 export default async function AllQuestions({ params }: { params: { id: number } }) {
   const questions = await getAllQuestions(params.id)
+
+  let checkAnswers: Boolean = false
   return (
     <div>
     <ol className='list-decimal'>
-
     {questions.map((question) => {
       return (
-    <QuestionCard question={question} />
+    <QuestionCard question={question} check={checkAnswers}/>
       )  
     })}
     </ol>

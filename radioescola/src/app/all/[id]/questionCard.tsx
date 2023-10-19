@@ -11,15 +11,30 @@ type PerguntaWithRespostas = Prisma.PerguntaGetPayload<typeof perguntaWithRespos
 
 
 
-export default function QuestionCard({ question }: {question: PerguntaWithRespostas}) {
+
+export default function QuestionCard({ question, check }: {question: PerguntaWithRespostas, check: Boolean}) {
   let [resultado, setResultado] = React.useState<Number>(-1)
-  let [selected, setSelected] = React.useState<Number>(0)
+  let [selected, setSelected] = React.useState<String>("")
+
+  let correta : String = ""
+  function componentDidUpdate(){
+    if (check === true) {
+      checkAnswers()
+      check = false;
+    }
+  }
+
+function checkAnswers(){
+
+}
+
   function checkAnswer(event: React.MouseEvent<HTMLElement>) {
-    if ((event.target as HTMLElement).id === "certa") { 
-      setResultado(1)
+    if ((event.target as HTMLElement).id === correta) { 
+      setResultado(1) 
     } else {
       setResultado(0)
     }
+    setSelected((event.target as HTMLElement).id)
     return true
   }
 
@@ -28,8 +43,9 @@ export default function QuestionCard({ question }: {question: PerguntaWithRespos
             {question.pergunta} 
             <ul className='list-disc'>
             {question.resposta.map(resposta => {
+            if (resposta.correta) correta = String(resposta.id)
             return (
-              <li key={resposta.id} id={resposta.correta ? "certa" : ""} onClick={e => checkAnswer(e)} className={selected == resposta.id ? "bg-blue-500" : ""}>
+              <li key={resposta.id} id={String(resposta.id)} onClick={e => checkAnswer(e)} className={selected == String(resposta.id) ? "bg-blue-500" : ""}>
                 {resposta.resposta} 
               </li>
             )
