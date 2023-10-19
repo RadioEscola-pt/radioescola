@@ -1,0 +1,134 @@
+<h1>Requisitos Prévios</h1>
+<p>Antes de mergulharmos no tópico de adicionar impedância reativa com resistência em circuitos de corrente alternada
+    (CA), é importante entender alguns conceitos básicos:</p>
+<ul>
+    <li><a href="?LoadChapter=AC">Conceito de corrente alternada (CA) e suas propriedades.</a></li>
+    <li><a href="?LoadChapter=ohm">Conhecimento sobre resistores e como eles afetam a corrente em um circuito.</a></li>
+    <li><a href="?LoadChapter=ReatanciaIndutiva">Compreensão das propriedades de componentes reativos.</a></li>
+    <li><a href="?LoadChapter=bobinesSomar">Adicionar bobinas em série e paralelo.</a></li>
+</ul>
+<p>Ter uma base sólida nesses conceitos será fundamental para entender como a impedância reativa e a resistência estão
+    inter-relacionadas em circuitos CA.</p>
+<a href="#LRC">Para auciliar nos calculos use a calcuador RLC pono o valor da capcidade a 0.</a>
+
+
+<h1>Introdução aos Circuitos RL</h1>
+
+<p>Em eletrônica e engenharia elétrica, um circuito RL é um tipo de circuito elétrico que combina componentes indutivos
+    (L), como bobinas, com componentes resistivos (R), como resistores. Essa combinação cria um circuito que responde de
+    maneira única a sinais de corrente alternada (CA).</p>
+<p>Em um circuito RL, a bobina (L) representa a reatância indutiva, enquanto o resistor (R) representa a resistência
+    elétrica. A interação entre a reatância indutiva e a resistência em um circuito RL cria uma resposta que depende da
+    frequência do sinal de entrada.</p>
+<p>Os circuitos RL são amplamente utilizados em eletrônica para aplicações que envolvem campos magnéticos, filtragem de
+    sinais, temporização e outras áreas. Compreender a impedância, as quedas de tensão e as propriedades dos circuitos
+    RL é fundamental para projetar e analisar circuitos em corrente alternada (CA).</p>
+<img src="capitulos\circuitosRL\RLcircuit.png" />
+<h1>Fórmula para Cálculo da Tensão Total em Circuitos em Série</h1>
+<p>Quando analisamos um circuito em série com componentes como resistências, indutores e possíveis fontes de tensão
+    adicionais, podemos calcular a tensão total (V<sub>Total</sub> ) usando a seguinte fórmula:</p>
+<p>V<sub>Total</sub> = √(V<sub>R</sub> <sup>2</sup> + V<sub>R</sub> <sup>2</sup>)</p>
+<p>Onde:</p>
+<ul>
+    <li>V<sub>R</sub> é a queda de tensão na resistência.</li>
+    <li>V<sub>R</sub> é a queda de tensão no indutor.</li>
+</ul>
+<p>Esta fórmula considera as quedas de tensão nos componentes individuais e a possível variação de tensão de outras
+    fontes no circuito. O cálculo da impedância total pode ser usado para calcular a corrente do circuito, o que é
+    fundamental para a análise de circuitos de CA.</p>
+<p>Além disso, é importante notar que a tensão na bobina pode estar defasada em 90 graus (quadratura) em relação à
+    tensão na resistência.</p>
+
+
+<h1>Adicionando Impedância Reativa com Resistência</h1>
+<p>Em circuitos de corrente alternada (CA), muitas vezes encontramos a necessidade de adicionar uma componente de
+    impedância reativa juntamente com uma resistência. Isso pode ser feito usando componentes como bobinas (para
+    reatância indutiva) e capacitores (para reatância capacitiva) em combinação com resistores.</p>
+<p>Essa combinação de resistência e reatância reativa é fundamental para entender como os circuitos CA se comportam em
+    situações da vida real.</p>
+<p>Para calcular a impedância total desse tipo de circuito, utilizamos a fórmula:</p>
+<p>Z = √(R<sup>2</sup> + X<sub>L</sub> <sup>2</sup>)</p>
+<p>Onde:</p>
+<ul>
+    <li>Z é a impedância total do circuito.</li>
+    <li>R é a resistência.</li>
+    <li>X<sub>L</sub> é a reatância da bobina (componente indutivo).</li>
+</ul>
+<p>A Lei de Ohm (V = RI) é aplicável às quedas de tensão nas bobinas, onde V é a queda de tensão, R é a resistência da
+    bobina e I é a corrente que passa por ela. Isso nos permite calcular as quedas de tensão nas bobinas de forma
+    semelhante à queda de tensão em resistores.</p>
+
+
+
+
+<h1>Problema 1</h1>
+<p><strong>Enunciado:</strong> Você tem um circuito de CA com uma resistência de 20 Ω e uma bobina com uma reatância de
+    30 Ω. Calcule a impedância total do circuito.
+
+<h2>Solução</h2>
+<p>Use a fórmula para calcular a impedância total em um circuito com resistência (R) e reatância reativa (X):</p>
+<p>Z = √(R<sup>2</sup> + X<sup>2</sup>) Substitua os valores:</p>
+<p>Z = √(20<sup>2</sup> + 30<sup>2</sup>) = √(400 + 900) = √1300 ≈ 36.06 Ω Portanto, a impedância total do circuito é
+    aproximadamente 36.06 Ω.</p>
+
+
+
+<h1>Problema 2</h1>
+<p><strong>Enunciado:</strong>Considere um circuito em série que consiste em uma bobina com uma indutância de 0.1 H e
+    uma resistência de 20 Ω. Uma fonte de corrente alternada de 50 Hz é conectada a este circuito. Qual é a impedância
+    total do circuito?</p>
+
+<h3>Solução</h3>
+
+<p>Para encontrar a impedância total (Z) do circuito em série que consiste em uma bobina e uma resistência, usamos a fórmula:</p>
+<p>Z = √(R<sup>2</sup> + (X<sub>R</sub> - X<sub>C</sub> )<sup>2</sup></p>
+
+<p>Substituindo os valores:</p>
+<p>X<sub>R</sub> = 2π * 50Hz * 0.1H = 31.42Ω</p>
+
+<p>Agora, podemos calcular a impedância total:</p>
+<p>Z = √(20<sup>2</sup> + 31.42<sup>2</sup>) ≈ √(400 + 985.87) ≈ √(1385.87) ≈ 37.26 Ohms</p>
+
+<p>Portanto, a impedância total do circuito é aproximadamente 37.26Ω.</p>
+
+<h1>Problema 3</h1>
+<p><strong>Enunciado:</strong> Considere um circuito em série que consiste em uma bobina com uma indutância de 0.2 H e uma resistência de 30 Ω. Uma fonte de corrente alternada de 60 Hz é conectada a este circuito. Determine:</p>
+<p>a) A impedância total do circuito.</p>
+<p>b) A queda de tensão na bobina.</p>
+
+
+<h3>Solução</h3>
+<p>Para calcular a impedância total (Z) do circuito em série que consiste em uma bobina e uma resistência, usamos a fórmula: Z = √(R<sup>2</sup> + X<sub>R</sub> <sup>2</sup></p>
+<p>Onde: R é a resistência do circuito (30 Ω), X<sub>C</sub> é a reatância capacitiva (zero para este caso).</p>
+<p>Substituindo os valores:</p>
+<p>X<sub>R</sub> = 2π * 60Hz * 0.2H = 75.40Ω</p>
+<p>Agora, podemos calcular a impedância total:</p>
+<p>Z = √(30<sup>2</sup> + 75.40<sup>2</sup>) ≈ √(900 + 5680.16) ≈ √(6580.16) ≈ 81.11 Ohms</p>
+<p>Portanto, a impedância total do circuito é aproximadamente 81.11Ω.</p>
+
+<p>Para calcular pela lei de Ohm a corrente no circuito:</p>
+<p>Como o circuito, a bobina e a resistência estão em série, a corrente que passa pela bobina é igual à corrente que passa pela resistência.</p>
+<p>I = V / Z ≈ 120V / 81.11Ω ≈ 1.48A</p>
+
+<p>A queda de tensão na bobina (V<sub>R</sub> ) pode ser calculada usando a Lei de Ohm:</p>
+<p>V<sub>R</sub> = I * X<sub>R</sub></p>
+<p>Onde: I é a corrente que passa pelo circuito (a mesma corrente que passa pela bobina), X<sub>R</sub> é a reatância indutiva da bobina (2πfL).</p>
+<p>Agora, podemos calcular V<sub>R</sub> :</p>
+<p>V<sub>R</sub> = 1.48A * 75.40Ω ≈ 111.89V</p>
+<p>Portanto, a queda de tensão na bobina é aproximadamente 111.89V.</p>
+
+<h1>Problema 4</h1>
+<p><strong>Enunciado:</strong>  Considere um circuito que consiste em uma resistência em série com uma bobina, alimentado por uma fonte de
+    corrente alternada. A tensão eficaz da fonte de corrente alternada é de 120V, e a queda de tensão na resistência é
+    de 40V.</p>
+
+<h3>Solução</h3>
+<p>Para calcular a queda de tensão na bobina, usamos a fórmula correta da queda de tensão em componentes em
+    série em um circuito de corrente alternada:</p>
+<p>V<sub>Total</sub> = √(V<sub>R</sub><sup>2</sup> + V<sub>c</sub><sup>2</sup>)</p>
+
+<p>Substituindo os valores conhecidos:</p>
+<p>120 = √(40<sup>2</sup> + V<sub>C</sub> <sup>2</sup>)</p>
+<p>Resolvendo para V<sub>C</sub> :</p>
+<p>V<sub>C</sub> = √(120<sup>2</sup> - 40<sup>2</sup>) ≈ 104.4V</p>
+<p>Portanto, a queda de tensão na bobina é aproximadamente 104.4V.</p>

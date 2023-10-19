@@ -12,6 +12,11 @@ class ElectricalUnits {
             'PICO': 1e-12,
         };
     }
+    /**
+     * @brief load the options for the select element witht the given unit
+     * @param {*} selectElement 
+     * @param {*} unit 
+     */
 
     loadOptions(selectElement, unit) {
         const options = [
@@ -43,13 +48,26 @@ class ElectricalUnits {
             selectElement.appendChild(optionElement);
         }
     }
+    /**
+     * @brief format a number with an exponent if the number is too small or too big
+     * @param {*} number  
+     * @returns 
+     */
     formatNumberWithExponent(number) {
         if (Math.abs(number) < 1e-3 ) {
             const absNumber = Math.abs(number);
             const exponent = Math.floor(Math.log10(absNumber));
             const mantissa = (absNumber / Math.pow(10, exponent)).toFixed(3);
             return mantissa + "e" + (exponent >= 0 ? '+' : '') + exponent;
-        } else {
+        } else  if (Math.abs(number) > 1e3 ) {
+            const absNumber = Math.abs(number);
+            const exponent = Math.floor(Math.log10(absNumber));
+            const mantissa = (absNumber / Math.pow(10, exponent)).toFixed(3);
+            return mantissa + "e" + (exponent >= 0 ? '+' : '') + exponent;
+        } 
+        
+        
+        else {
           return number.toFixed(4);;
         }
       }
