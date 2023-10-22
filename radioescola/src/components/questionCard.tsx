@@ -1,8 +1,8 @@
 'use client'
 
 import { getGlobalContext } from '@/context';
-import { Pergunta, Prisma, PrismaClient, Resposta } from '@prisma/client';
-import React, { ReactNode, useEffect, useState } from 'react'
+import { Prisma} from '@prisma/client';
+import React, { useEffect, useState } from 'react'
 
 const perguntaWithRespostas = Prisma.validator<Prisma.PerguntaDefaultArgs>()({
   include: { resposta: true },

@@ -1,6 +1,6 @@
 'use client'
 import { Prisma } from '@prisma/client'
-import React, { createContext, useState } from 'react'
+import React, { useState } from 'react'
 import QuestionCard from '../../../components/questionCard'
 import ContextProvider from '@/context'
 import Score from './score'
