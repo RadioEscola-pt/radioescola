@@ -27,7 +27,7 @@ export default function QuestionCard({ question, check }: { question: PerguntaWi
 
   function checkAnswers() {
     setResultado(1)
-    setContext(context + 1)
+    setContext((current) => ( current + 1 ))
     setSelected(correta)
   }
 
