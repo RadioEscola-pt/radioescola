@@ -1,8 +1,8 @@
 'use client'
 
+import { getGlobalContext } from '@/context';
 import { Pergunta, Prisma, PrismaClient, Resposta } from '@prisma/client';
-import React, { ReactNode, useEffect } from 'react'
-import { getScoreContext } from './context';
+import React, { ReactNode, useEffect, useState } from 'react'
 
 const perguntaWithRespostas = Prisma.validator<Prisma.PerguntaDefaultArgs>()({
   include: { resposta: true },
@@ -11,37 +11,47 @@ const perguntaWithRespostas = Prisma.validator<Prisma.PerguntaDefaultArgs>()({
 type PerguntaWithRespostas = Prisma.PerguntaGetPayload<typeof perguntaWithRespostas>
 
 
-export default function QuestionCard({ question, check }: { question: PerguntaWithRespostas, check: Boolean }) {
+export default function QuestionCard({ question, check, mode }: { question: PerguntaWithRespostas, check: Boolean, mode: String}) {
   let [resultado, setResultado] = React.useState<Number>(-1)
   let [selected, setSelected] = React.useState<String>("")
-  let {context, setContext} = getScoreContext()
+  let {score, setScore} = getGlobalContext() //score state
   let correta: String = ""
+  let [checked, setChecked] = useState<Boolean>(false)
 
+  //check if parent asked to check the answers
   useEffect(() => {
-
-    if (check == true) {
+    if (check === true) {
       checkAnswers()
       check = false;
     }
   }, [check])
 
+
+  //check all answers
   function checkAnswers() {
-    setResultado(1)
-    setContext((current) => ( current + 1 ))
-    setSelected(correta)
+    //setContext((current) => ( current + 1 )) //Score may not be needed in this case
+    if (selected == correta)
+      setResultado(1)
+    else
+      setResultado(0)
   }
 
-  function checkAnswer(event: React.MouseEvent<HTMLElement>) {
-    if ((event.target as HTMLElement).id === correta) {
-      setResultado(1)
-      setContext(context + 1)
-    } else {
-      setContext(context - 1)
-      setResultado(0)
-    }
+  //OnClick answer
+  function clickAnswer(event: React.MouseEvent<HTMLElement>) {
+    if (mode == "all")  {
+      if ((event.target as HTMLElement).id === correta) {
+        setResultado(1)
+        !checked ? setScore((current) => ( current + 1 )) : true
+      } else {
+        !checked ? setScore((current) => ( current - 1 )) : true
+        setResultado(0)
+      }
+      setChecked(true)
+    } 
     setSelected((event.target as HTMLElement).id)
-    return true
+
   }
+  
 
   return (
     <li key={question.id} className='my-5 p-5 border bg-gray-300 rounded-md border-gray-500'>
@@ -50,7 +60,7 @@ export default function QuestionCard({ question, check }: { question: PerguntaWi
         {question.resposta.map(resposta => {
           if (resposta.correta) correta = String(resposta.id)
           return (
-            <li key={resposta.id} id={String(resposta.id)} onClick={e => checkAnswer(e)} className={selected == String(resposta.id) ? "bg-blue-500" : ""}>
+            <li key={resposta.id} id={String(resposta.id)} onClick={e => clickAnswer(e)} className={selected == String(resposta.id) ? "bg-blue-500" : ""}>
               {resposta.resposta}
             </li>
           )

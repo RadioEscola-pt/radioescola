@@ -1,5 +1,6 @@
 import { PrismaClient } from '.prisma/client'
 import AllQuestions from './allQuestions'
+import { GlobalContext } from '@/context'
 
 
 async function getAllQuestions(categoria : number){

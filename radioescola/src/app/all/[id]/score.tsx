@@ -1,12 +1,11 @@
 'use client'
 import React, { useContext } from 'react'
-import { ScoreContext } from './context'
+import { GlobalContext } from '../../../context'
 
 
 export default function Score() {
-    const {context, setContext} = useContext(ScoreContext)
-
+    const {score, setScore} = useContext(GlobalContext);
   return (
-    <div>{String(context)}</div>
+    <div>{String(score)}</div>
   )
 }
