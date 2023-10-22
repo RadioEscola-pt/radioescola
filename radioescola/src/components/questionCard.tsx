@@ -54,20 +54,20 @@ export default function QuestionCard({ question, check, mode }: { question: Perg
   
 
   return (
-    <li key={question.id} className='my-5 p-5 border bg-gray-300 rounded-md border-gray-500'>
+    <div key={question.id} className='my-5 p-5 border bg-gray-300 rounded-md border-gray-500'>
       {question.pergunta}
-      <ul className='list-disc'>
+      <div className='list-disc'>
         {question.resposta.map(resposta => {
           if (resposta.correta) correta = String(resposta.id)
           return (
-            <li key={resposta.id} id={String(resposta.id)} onClick={e => clickAnswer(e)} className={selected == String(resposta.id) ? "bg-blue-500" : ""}>
+            <div key={resposta.id} id={String(resposta.id)} onClick={e => clickAnswer(e)} className={selected == String(resposta.id) ? "bg-blue-500" : ""}>
               {resposta.resposta}
-            </li>
+            </div>
           )
         })}
-      </ul>
+      </div>
       <span className={`whitespace-pre ${resultado == 1 ? 'bg-green-400' : ''} ${resultado == 0 ? 'bg-red-500' : ''}`}>{resultado == 1 ? "Resposta Certa!" : ''} {resultado == 0 ? "Resposta Errada!" : ''} </span>
-    </li>
+    </div>
   )
 
 }
