@@ -1,7 +1,7 @@
 class LRCBridgeCalculator extends ElectricalUnits {
     constructor() {
         super();
-        this.classStyle = "w-52 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600";
+        
 
 
         new Popup("LRCBridgeCalculator", this);
@@ -50,29 +50,6 @@ class LRCBridgeCalculator extends ElectricalUnits {
       
 
 
-
-
-        this.frequencyInput.className = this.classStyle;
-        this.resistorInput.className = this.classStyle;
-        this.voltageSourceInput.className = this.classStyle;
-        this.capacitorInput.className = this.classStyle;
-        this.coilInput.className = this.classStyle;
-
-
-        this.frequencyDropdown.className = this.classStyle;
-        this.resistorDropdown.className = this.classStyle;
-        this.voltageSourceDropdown.className = this.classStyle;
-        this.capacitorDropdown.className = this.classStyle;
-        this.coilDropdown.className = this.classStyle;
-
-        this.resultTotalImpedanceDropdown.className = this.classStyle;
-        this.resultXLDropdown.className = this.classStyle;
-        this.resultXCDropdown.className = this.classStyle;
-        this.resultXRDropdown.className = this.classStyle;
-        this.resultTotalCurrentDropdown.className = this.classStyle;
-        this.resultVcDropdown.className = this.classStyle;
-        this.resultVrDropdown.className = this.classStyle;
-        this.resultVLDropdown.className = this.classStyle;
 
         
 
@@ -143,13 +120,13 @@ class LRCBridgeCalculator extends ElectricalUnits {
         const VLConverted = VL / vlUnit;
 
 
-        document.getElementById("resultTotalImpedance").textContent = this.formatNumberWithExponent(ZConverted);
-        document.getElementById("resultXL").textContent = this.formatNumberWithExponent(XLConverted);
-        document.getElementById("resultXC").textContent = this.formatNumberWithExponent(XCConverted);
-        document.getElementById("resultXR").textContent = this.formatNumberWithExponent(XRConverted);
-        document.getElementById("resultTotalCurrent").textContent = this.formatNumberWithExponent(totalCurrentConverted);
-        document.getElementById("resultVc").textContent = this.formatNumberWithExponent(VcConverted);
-        document.getElementById("resultVr").textContent = this.formatNumberWithExponent(VrConverted);
-        document.getElementById("resultVL").textContent = this.formatNumberWithExponent(VLConverted);
+        document.getElementById("resultTotalImpedance").value = this.formatNumberWithExponent(ZConverted);
+        document.getElementById("resultXL").value = this.formatNumberWithExponent(XLConverted);
+        document.getElementById("resultXC").value = this.formatNumberWithExponent(XCConverted);
+        document.getElementById("resultXR").value = this.formatNumberWithExponent(XRConverted);
+        document.getElementById("resultTotalCurrent").value = this.formatNumberWithExponent(totalCurrentConverted);
+        document.getElementById("resultVc").value = this.formatNumberWithExponent(VcConverted);
+        document.getElementById("resultVr").value = this.formatNumberWithExponent(VrConverted);
+        document.getElementById("resultVL").value = this.formatNumberWithExponent(VLConverted);
     }
 }
