@@ -6,6 +6,6 @@ import { GlobalContext } from '../../../context'
 export default function Score() {
     const {score, setScore} = useContext(GlobalContext);
   return (
-    <div>{String(score)}</div>
+    <div>Score: {String(score)}</div>
   )
 }
