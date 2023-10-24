@@ -8,7 +8,6 @@ import UserAuth from '@/components/UserAuth';
 export default async function Home() {
 
   const session = await getServerSession(authOptions);
-  console.log(session)
   return (
   <div>
       <h2>RadioEscola</h2>
