@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
+import AuthSessionProvider from '@/components/AuthSessionProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,6 +18,7 @@ export default function RootLayout({
 }) {
 
   return (
+    <AuthSessionProvider>
     <html lang="en">
 
       <body className="bg-slate-50 dark:bg-slate-800 dark:text-white">
@@ -366,5 +368,6 @@ export default function RootLayout({
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
   </body>
     </html>
+    </AuthSessionProvider>
   )
 }
