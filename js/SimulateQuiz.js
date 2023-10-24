@@ -4,7 +4,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 	static UNANSWERED = 0;
 	static CORRECT = 1;
 	static INCORRECT = -0.25;
-	static COUINTERTIMEOT = 60 * 60;
+	static COUNTER_TIMEOUT = 60 * 60;
 	static questions = new Object();
 	static PER_PAGE = 10;
 	static QUESTION_AMOUNT = 40;
@@ -67,7 +67,6 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 		buttons.append(previousButton)
 
 		for (let i = 0 ; i < this.numberOfPages(); i++) {
-			
 			var pageBtn = document.createElement("button");
 			pageBtn.innerText = i + 1
 			pageBtn.value = i ;
@@ -121,18 +120,18 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 					const correctIndex = parseInt(this.questions[questionIndex].correctIndex);
 					if (correctIndex == i + 1) {
 						answers[questionIndex] = SimulateQuiz.CORRECT;
-						this.stroreAnswer(true, this.questions[questionIndex].uniqueID);
+						this.storeAnswer(true, this.questions[questionIndex].uniqueID);
 					} else {
 						answers[questionIndex] = SimulateQuiz.INCORRECT;
 						elements[i].parentElement.style.color = '#7F1D1D';
 						elements[correctIndex - 1].parentElement.style.color = '#22C55E';
-						this.stroreAnswer(false, this.questions[questionIndex].uniqueID);
+						this.storeAnswer(false, this.questions[questionIndex].uniqueID);
 					}
 
 				}
 				else
 				{
-					this.stroreAnswer(false, this.questions[questionIndex].uniqueID);
+					this.storeAnswer(false, this.questions[questionIndex].uniqueID);
 				}
 			}
 			if (answers[questionIndex] != SimulateQuiz.CORRECT) {
@@ -151,7 +150,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 
 		}
 		var counterDiv = document.getElementById("timer");
-		counterDiv.innerHTML = "Pontos:" + total + " em 40  a classificação mínima de 20 pontos";
+		counterDiv.innerHTML = "Pontos:" + total + " em 40. Classificação mínima para aprovação: 20 pontos";
 	}
 
 	constructor(json) {
@@ -262,7 +261,6 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 
 
 						welcomeDiv.appendChild(pageBlock);
-						
 
 						answers.appendChild(noteBlock);
 						if (this.simulateQuiz.questions[qindex].correctIndex == null) {
@@ -282,11 +280,15 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 					timerBlock.textContent = '01:00:00';
 					indexBlock.appendChild(timerBlock);
 
-					console.log("Unaswered" + numberOfUnaswered);
-					this.simulateQuiz.timeout = SimulateQuiz.COUINTERTIMEOT;
-					window.clearTimeout(this.simulateQuiz.timer);
-					this.simulateQuiz.timer = window.setInterval(this.simulateQuiz.checkTimer, 1000,this.simulateQuiz);
+					//console.log("Unanswered" + numberOfUnaswered);
+					this.simulateQuiz.timeout = SimulateQuiz.COUNTER_TIMEOUT;
 					
+					window.timers.forEach(element => {
+						window.clearInterval(element);
+					});
+
+					this.simulateQuiz.timer = window.setInterval(this.simulateQuiz.checkTimer, 1000,this.simulateQuiz);
+					window.timers.push(this.simulateQuiz.timer)
 
 				} else {
 					console.log("Status error: " + ajaxRequest.status);
