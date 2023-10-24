@@ -16,8 +16,6 @@ async function getAllQuestions(categoria : number){
 
 export default async function Quest({ params }: { params: { id: number } }) {
   const questions = await getAllQuestions(params.id)
-
-  let checkAnswers: Boolean = false
   return (
     <div>
         <AllQuestions question = {questions} />

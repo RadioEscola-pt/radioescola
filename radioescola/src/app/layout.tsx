@@ -15,8 +15,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <html lang="en">
+
       <body className="bg-slate-50 dark:bg-slate-800 dark:text-white">
     <header
       className="flex justify-center font-header h-[25vh] bg-header bg-center bg-cover"
