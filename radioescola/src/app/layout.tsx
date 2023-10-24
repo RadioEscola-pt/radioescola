@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
 import AuthSessionProvider from '@/components/AuthSessionProvider'
+import UserAuth from '@/components/UserAuth'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -40,7 +41,9 @@ export default function RootLayout({
             <div
               className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
             >
-              <span></span>
+              <span>
+                <UserAuth/>
+              </span>
               <button
                 data-collapse-toggle="navbar-multi-level"
                 type="button"

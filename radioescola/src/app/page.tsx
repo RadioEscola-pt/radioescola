@@ -11,17 +11,6 @@ export default async function Home() {
   return (
   <div>
       <h2>RadioEscola</h2>
-      <UserAuth />
-      {session && (
-        <div>
-          <p>Server - Signed in as {session.user && session.user.email|| session.user && session.user.name }</p>
-          <a href="/api/auth/signout">Sign out by link</a>
-        </div>
-      )}
-
-      {!session && (
-        <p>Not signed in</p>
-      )}
 
     </div>
   )
