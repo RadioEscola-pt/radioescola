@@ -256,7 +256,7 @@ export default function RootLayout({
                               className="py-2 text-sm text-gray-700 dark:text-gray-200"
                               aria-labelledby="study2Button"
                             >
-                              <ListItem name='Onda Estacionaria (SWR)' page='/tutorial/swr' />
+                              <ListItem name='Onda Estacionaria (SWR)' page='/tutorial/SWR' />
 
 
                             </ul>
@@ -286,7 +286,8 @@ export default function RootLayout({
                             >
                               <ListItem name='Ganho (dB)' page='/tutorial/ganho' />
 
-                              <ListItem name='Transformadores' page='/tutorial/transformadores' />
+                              <ListItem name='Transformadores' page='/tutorial/tranformadores' /> 
+                              {/* FIXME: Transformadores - tranformadores */}
 
                               <ListItem name='(...)' />
 
