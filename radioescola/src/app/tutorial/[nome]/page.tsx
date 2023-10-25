@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { promises as fs } from 'fs';
+import SWR from './tutoriais/SWR';
+import Alfabeto from './tutoriais/Alfabeto';
+import Entidades from './tutoriais/Entidades';
 
 
-export default async function Page({ params }: { params: { nome: string } }) {
+export default function Page({ params }: { params: { nome: string } }) {
 
-  const file = await fs.readFile(process.cwd()  + '/../capitulos/' + params.nome + "/index.html", 'utf8');
+  const tutoriais : {[key: string]: React.JSX.Element}  =  {
+    "SWR": <SWR/>,
+    "alfabeto": <Alfabeto/>,
+    "entidades": <Entidades/>
+  }
     
   return (
-    <div dangerouslySetInnerHTML={{__html: file}}></div>
+    <div>{tutoriais[params.nome]}</div>
   )
 }
