@@ -9,10 +9,33 @@ class FavQuiz extends Classes([Questions,Storage]) {
 		this.pageBlocks = [];
 		this.createQuiz();
 		this.parts = this.jsonFile.split('.');
-		const searchParams = new URLSearchParams(window.location.search);
-		if (searchParams.has('TEST')) {
-			Quiz.test = true;
+		super.hideOnUnselect=true;
+
+	}
+
+
+	showPageWithStorage()
+	{
+		var index = parseInt(this.value);
+		this.pageIndex = index;
+		window.scrollTo(0, 0);
+
+		if (index == 0) {
+
+			index = 0;
+		} else {
+			index = index / 10;
 		}
+		for (const page of this.pageBlocks) {
+			page.style.display = "none";
+		}
+		this.pageBlocks[index].style.display = "block";
+		this.quiz.storeFavPage(index);		if (document.querySelector('#qIndex button.active')) {
+			document.querySelector('#qIndex button.active').classList.remove("active")
+		}
+
+		this.className = 'active';
+
 	}
 
 
@@ -41,9 +64,11 @@ class FavQuiz extends Classes([Questions,Storage]) {
 					welcomeDiv.innerHTML = "";
 					var indexBlock = document.createElement("div");
 					indexBlock.id = "qIndex";
-
+					indexBlock.className = "list-none m-0 p-2 rounded mb-5 overflow-x-scroll overflow-y-hidden bg-slate-200 sticky flex items-center justify-between top-[10px] gap-[10px]";
+					
 					welcomeDiv.appendChild(indexBlock);
 					var index = 0;
+					let storedPage=this.quiz.getStoreFavPage();
 					
 					const favoritesString = localStorage.getItem(this.quiz.parts[0] + "Fav") || '[]';
 					const favorites = JSON.parse(favoritesString);
@@ -52,38 +77,45 @@ class FavQuiz extends Classes([Questions,Storage]) {
 						var pageBlock;
 						Quiz.messagesArray.questions[qindex].index = index;
 						index++;
-						if (questionCounter == 0) {
-							pageBlock = document.createElement("div");
-							pageBlock.id = "Page" + questionCounter;
-							pageBlock.style.display = "block";
-							pageBlock.className = 'page';
-							let btn = document.createElement("button");
-							btn.innerHTML = questionCounter / 10 + 1;
-							btn.value = questionCounter;
-							btn.onclick = this.quiz.showPage;
-							btn.pageBlocks=this.quiz.pageBlocks; 
-							indexBlock.appendChild(btn);
-							this.quiz.pageBlocks.push(pageBlock);
-
-						} else if (questionCounter % 10 == 0) {
+						 if ((questionCounter % 10 == 0)||(questionCounter==0)) {
 							pageBlock = document.createElement("div");
 							pageBlock.id = "Page" + questionCounter;
 							pageBlock.style.display = "none";
 							pageBlock.className = 'page';
 							let btn = document.createElement("button");
 							btn.innerHTML = questionCounter / 10 + 1;
-							btn.value = questionCounter;
-							btn.onclick = this.quiz.showPage;
+							btn.className = "bg-slate-300 hover:bg-slate-400 p-2 rounded cursor-pointer dark:bg-slate-700 dark:hover:bg-slate-800";
+							btn.value = questionCounter;						
+							let currentPageIndex=0;
+							if (questionCounter == 0) {
+
+								currentPageIndex = 0;
+							} else {
+								currentPageIndex = questionCounter / 10;
+							}
+							if (storedPage==currentPageIndex)
+							{
+								btn.classList.replace('bg-slate-300', 'bg-slate-400');
+								btn.classList.replace('dark:bg-slate-700', 'dark:bg-slate-800');
+							}
+
+							btn.onclick = this.quiz.showPageWithStorage;
 							btn.pageBlocks=this.quiz.pageBlocks; 
 							indexBlock.appendChild(btn);
 							this.quiz.pageBlocks.push(pageBlock);
+							btn.quiz=this.quiz;
 						}
 						questionCounter++;
 						this.quiz.addQuestion(welcomeDiv,pageBlock,Quiz.messagesArray.questions[qindex],qindex);
-						
 
 						
+					}					
+					
+					for (const page of this.quiz.pageBlocks) {
+						page.style.display = "none";
 					}
+					this.quiz.pageBlocks[storedPage].style.display = "block";
+
 					console.log("Unanswered" + numberOfUnanswered);
 
 				} else {
@@ -115,37 +147,6 @@ class FavQuiz extends Classes([Questions,Storage]) {
 	      
 	    
 	  }
-	saveFav() {
-		var favorites = JSON.parse(localStorage.getItem(this.existingRecords + "Fav"));
-		// Get the unique ID of the question associated with the clicked star
-		const index = favorites.indexOf(this.uniqueID);
-		if (index === -1) {
-			// If not in favorites, add it
-			favorites.push(this.uniqueID);
 
-			
-			this.src = "images/starfav.png"; // Set the path to your favorite star icon image
-		} else {
-			// If already in favorites, remove it
-			const elements = document.getElementById("questionBlock" + this.value);
-			elements.style.display = "none";
-			
-			
-			favorites.splice(index, 1);
-			this.src = "images/starnotfav.png"; // Set the path to your regular star icon image
-			if (favorites.length==0)
-			{
-				
-				new Quiz(this.jsonFile);
-			}
-		}
-
-		// Save the updated favorites array back to local storage
-		localStorage.setItem(this.existingRecords + "Fav", JSON.stringify(favorites));
-		FavQuiz.showFavElement("question3","favQuiz3");
-		FavQuiz.showFavElement("question2","favQuiz2");
-		FavQuiz.showFavElement("question1","favQuiz1");
-		
-	}
 
 }

@@ -1,0 +1,48 @@
+<div class="grid grid-cols-2 gap-x-4 gap-y-3 w-full">
+  <label for="calculationType">Cálculo</label>
+
+  <select
+    id="calculationType"
+    name="calculationType"
+    class="w-52 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+  >
+    <option value="H">Reatância Indutiva (X)</option>
+    <option value="F">Reatância Capacitiva (X)</option>
+  </select>
+
+  <label id="inductanceTXT" for="inductance">Indutância (H):</label>
+  <input
+    type="number"
+    id="inductance"
+    name="inductance"
+    required
+    class="w-52 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+  />
+
+  <label for="unit">Unidade</label>
+
+  <select
+    id="unit"
+    name="unit"
+    class="w-52 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+  ></select>
+
+  <label for="frequency">Frequência (Hz):</label>
+  <input
+    type="number"
+    id="frequency"
+    name="frequency"
+    required
+    class="w-52 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+  />
+</div>
+
+<input
+  type="button"
+  value="Calcular"
+  id="calculateButton"
+  class="text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800"
+/>
+
+<div id="formula" class="mt-8"></div>
+<div id="result"></div>

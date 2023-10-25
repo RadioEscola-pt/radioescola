@@ -15,32 +15,6 @@
             "uniqueID": 1
         },
         {
-            "question": "Qual a validade dos Certificados de Amador Nacional (CAN)?",
-            "answers": [
-                "1 ano",
-                "5 anos",
-                "10 anos",
-                "20 anos"
-            ],
-            "correctIndex": 3,
-            "notes": "Notas",
-            "img": null,
-            "uniqueID": 2
-        },
-        {
-            "question": "Se quiser fazer uma chamada geral a todas as estações que abreviatura de operação devo utilizar?",
-            "answers": [
-                "CW",
-                "CQ",
-                "TX",
-                "UR"
-            ],
-            "correctIndex": 2,
-            "notes": "Notas",
-            "img": null,
-            "uniqueID": 3
-        },
-        {
             "question": "Qual dos seguintes factores não se aplica quando estamos a falar de influência indesejada nos equipamentos de uma estação de amador?",
             "answers": [
                 "Sinais indesejados na entrada da antena",
@@ -130,24 +104,10 @@
                 "Destinam-se a harmonizar numa dada região as utilizações por parte dos Serviço de Amador e de Amador por Satélite"
             ],
             "correctIndex": 4,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=entidades'>Entidades</a>",
 			"fonte": "2023_08_18p14",
             "img": null,
             "uniqueID": 210
-        },
-		{
-            "question": "Os planos de frequências da IARU",
-            "answers": [
-                "deverão ser sempre utilizados desde que não colidam com disposições nacionais",
-                "deverão ser respeitados sem restrições",
-                "constituem apenas uma referência, não sendo obrigatória a sua utilização",
-                "estão a cair em desuso tendo e conta a evlução das radiocomunicações"
-            ],
-            "correctIndex": 1,
-            "notes": "Notas",
-			"fonte": "2023_08_18p15",
-            "img": null,
-            "uniqueID": 10
         },
         {
             "question": "Qual das seguintes afirmações é incorreta?",
@@ -303,7 +263,8 @@
                 "Por um período superior a 24 meses e inferior ou igual a 10 anos"
             ],
             "correctIndex": 3,
-            "notes": "Notas",
+            "notes": "Consulte o <a target='_blank' href='docs/Decreto-Lei_53-2009.pdf'>Decreto-Lei_53-2009</a> CAPÍTULO II-Acesso e exercício da actividade de amador o Artigo 6.º-Certificado de amador nacional",
+			"fonte": "2023_09_21p10",
             "img": null,
             "uniqueID": 21
         },
@@ -319,19 +280,6 @@
             "notes": "Notas",
             "img": null,
             "uniqueID": 22
-        },
-        {
-            "question": "Qual a validade do Certificado de Amador Nacional (CAN)?",
-            "answers": [
-                "1 ano",
-                "5 anos",
-                "10 anos",
-                "20 anos"
-            ],
-            "correctIndex": 3,
-            "notes": "Notas",
-            "img": null,
-            "uniqueID": 23
         },
         {
             "question": "Quem é responsável pelo funcionamento das estações de uso comum?",
@@ -382,7 +330,8 @@
                 "Estatutos primário ou secundário"
             ],
             "correctIndex": 4,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='docs/RR-2020-00013-Vol.I-EA5.pdf' class='underline'>Regulamento das Radiocomunicações da UIT</a> | CHAPTER II - Frequencies > ARTICLE 5 - Frequency allocations Section II – Categories of services and allocations 5.23) <strong>Resposta correcta: Primary and secondary services</strong> <a href='docs/R-REG-RR-2020-ZPF-E.zip'class='underline'>poderá descarregar todo o regulamento aqui.</a>",
+			"fonte": "2023_09_21p19",
             "img": null,
             "uniqueID": 27
         },
@@ -408,7 +357,8 @@
                 "A Administração do país em causa"
             ],
             "correctIndex": 4,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='docs/RR-2020-00013-Vol.I-EA5.pdf' class='underline'>Regulamento das Radiocomunicações da UIT</a> | CHAPTER III Coordination, notification and recording of frequency assignments and Plan modifications > ARTICLE 25 Amateur services - Section I − Amateur service > 25.6 2) <strong>Resposta correcta: Administrations shall verify the operational and technical qualifications of any person wishing to operate an amateur station. Guidance for standards of competence may be found in the most recent version of Recommendation ITU-R M.1544. (WRC-03)</strong> <a href='docs/R-REG-RR-2020-ZPF-E.zip'class='underline'>poderá descarregar todo o regulamento aqui.</a>",
+			"fonte": "2023_09_21p18",
             "img": null,
             "uniqueID": 29
         },
@@ -475,7 +425,8 @@
                 "Um trabalho realizado em 1995 por amadores num grupo de trabalho de gestão de frequências"
             ],
             "correctIndex": 1,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=entidades'>Entidades</a>",
+			"fonte": "2023_09_21p15",
             "img": null,
             "uniqueID": 33
         },
@@ -488,7 +439,7 @@
                 "Um trabalho realizado em 1995 por amadores num grupo de trabalho de gestão de frequências"
             ],
             "correctIndex": 1,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=entidades'>Entidades</a>",
             "img": null,
             "uniqueID": 34
         },
@@ -505,18 +456,19 @@
             "img": null,
             "uniqueID": 35
         },
-        {
+		{
             "question": "Os planos de frequências da IARU",
             "answers": [
-                "Deverão ser sempre utilizados desde que não colidam com disposições nacionais",
-                "Deverão ser respeitados sem restrições",
-                "Constituem apenas uma referência, não sendo obrigatória utilização",
-                "Estão a cair em desuso tendo em conta a evolução das radiocomunicações"
+                "deverão ser sempre utilizados desde que não colidam com disposições nacionais",
+                "deverão ser respeitados sem restrições",
+                "constituem apenas uma referência, não sendo obrigatória a sua utilização",
+                "estão a cair em desuso tendo e conta a evlução das radiocomunicações"
             ],
             "correctIndex": 1,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=entidades'>Entidades</a>",
+			"fonte": "2023_08_18p15 2023_09_21p14",
             "img": null,
-            "uniqueID": 36
+            "uniqueID": 10
         },
         {
             "question": "As estações de amador podem participar em exercícios de proteção civil?",
@@ -528,9 +480,23 @@
             ],
             "correctIndex": 3,
             "notes": "Notas",
-			"fonte": "2023_08_18p1",
+			"fonte": "2023_08_18p1 2023_09_21p2",
             "img": null,
             "uniqueID": 37
+        },
+		{
+            "question": "Se quiser fazer uma chamada geral a todas as estações que abreviatura de operação devo utilizar?",
+            "answers": [
+                "CW",
+                "CQ",
+                "TX",
+                "UR"
+            ],
+            "correctIndex": 2,
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=AbreviaturasOperacao' class='underline'>Abreviaturas de Operação</a>",
+			"fonte": "",
+            "img": null,
+            "uniqueID": 3
         },
         {
             "question": "O que significa a abreviatura de operação MSG?",
@@ -555,7 +521,7 @@
                 "Mensagem"
             ],
             "correctIndex": 3,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=AbreviaturasOperacao' class='underline'>Abreviaturas de Operação</a>",
             "img": null,
             "uniqueID": 39
         },
@@ -568,7 +534,7 @@
                 "Quando tornará a chamar-me?"
             ],
             "correctIndex": 1,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=AbreviaturasOperacao' class='underline'>Abreviaturas de Operação</a>",
             "img": null,
             "uniqueID": 40
         },
@@ -581,7 +547,7 @@
                 "Quando tornará a chamar-me?"
             ],
             "correctIndex": 2,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=codigoq' class='underline'>Código Q</a>",
             "img": null,
             "uniqueID": 41
         },
@@ -594,7 +560,7 @@
                 "Mensagem"
             ],
             "correctIndex": 1,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=AbreviaturasOperacao' class='underline'>Abreviaturas de Operação</a>",
             "img": null,
             "uniqueID": 42
         },
@@ -607,7 +573,8 @@
                 "Quando tornará a chamar-me?"
             ],
             "correctIndex": 3,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=codigoq' class='underline'>Código Q</a>",
+			"fonte": " 2023_09_21p20",
             "img": null,
             "uniqueID": 43
         },
@@ -620,7 +587,8 @@
                 "Mensagem"
             ],
             "correctIndex": 2,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=AbreviaturasOperacao' class='underline'>Abreviaturas de Operação</a>",
+			"fonte": "2023_09_21p12",
             "img": null,
             "uniqueID": 44
         },
@@ -633,7 +601,7 @@
                 "Mensagem"
             ],
             "correctIndex": 3,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=AbreviaturasOperacao' class='underline'>Abreviaturas de Operação</a>",
             "img": null,
             "uniqueID": 45
         },
@@ -646,7 +614,7 @@
                 "Quando tornará a chamar-me?"
             ],
             "correctIndex": 4,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=codigoq' class='underline'>Código Q</a>",
             "img": null,
             "uniqueID": 46
         },
@@ -659,7 +627,7 @@
                 "Quando tornará a chamar-me?"
             ],
             "correctIndex": 1,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=codigoq' class='underline'>Código Q</a>",
 			"fonte": "2023_08_18p20",
             "img": null,
             "uniqueID": 47
@@ -673,7 +641,7 @@
                 "Alpha, November, Quebec"
             ],
             "correctIndex": 4,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=alfabeto' class='underline'>Alfabeto Fonético</a>",
 			"fonte": "2023_08_18p26",
             "img": null,
             "uniqueID": 48
@@ -687,7 +655,7 @@
                 "Alpha, Mouse, Time"
             ],
             "correctIndex": 1,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=alfabeto' class='underline'>Alfabeto Fonético</a>",
             "img": null,
             "uniqueID": 49
         },
@@ -700,7 +668,7 @@
                 "Alpha, Esquilo, Unit"
             ],
             "correctIndex": 2,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=alfabeto' class='underline'>Alfabeto Fonético</a>",
             "img": null,
             "uniqueID": 50
         },
@@ -713,7 +681,7 @@
                 "Alpha, Papa, Yack"
             ],
             "correctIndex": 3,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=alfabeto' class='underline'>Alfabeto Fonético</a>",
             "img": null,
             "uniqueID": 51
         },
@@ -726,7 +694,7 @@
                 "Alpha, Bravo, Fox"
             ],
             "correctIndex": 3,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=alfabeto' class='underline'>Alfabeto Fonético</a>",
             "img": null,
             "uniqueID": 52
         },
@@ -949,7 +917,8 @@
                 "apenas da potência de saída do emissor e dos sistemas de filtragem que lhe podem estar associados"
             ],
             "correctIndex": 1,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=defs_genericas'>Definições Genéricas</a> significado de p.a.r e p.i.r.e.",
+			"fonte": "2023_09_21p13",
             "img": null,
             "uniqueID": 69
         },
@@ -1163,8 +1132,8 @@
             "img": null,
             "uniqueID": 85
         },
-        {
-            "question": "Qua a validade das licenças de amador de uso comum?",
+		 {
+            "question": "Qual a validade do Certificado de Amador Nacional (CAN)?",
             "answers": [
                 "1 ano",
                 "5 anos",
@@ -1174,34 +1143,34 @@
             "correctIndex": 3,
             "notes": "Notas",
             "img": null,
+            "uniqueID": 23
+        },
+		{
+            "question": "Qual a validade dos Certificados de Amador Nacional (CAN)?",
+            "answers": [
+                "1 ano",
+                "5 anos",
+                "10 anos",
+                "20 anos"
+            ],
+            "correctIndex": 3,
+            "notes": "Notas",
+            "img": null,
+            "uniqueID": 2
+        },
+        {
+            "question": "Qua a validade das licenças de amador de uso comum?",
+            "answers": [
+                "1 ano",
+                "5 anos",
+                "10 anos",
+                "20 anos"
+            ],
+            "correctIndex": 3,
+            "notes": "Consulte o <a target='_blank' href='docs/Decreto-Lei_53-2009.pdf'>Decreto-Lei_53-2009</a> CAPÍTULO III-Regime geral de licenciamento e responsabilidade pelo funcionamento das estações de amador o Artigo 10.º-Licenças de estação de uso comum",
+			"fonte": "2023_09_21p8",
+            "img": null,
             "uniqueID": 86
-        },
-        {
-            "question": "Estive a fazer uma análise espectral das minhas emissões e parece-me que tenho uma espúrias não conformes com a regulamentação aplicável. O que devo fazer?",
-            "answers": [
-                "Não emitir enquanto a situação não estiver resolvida, se necessário com a ajuda de amadores mais experientes",
-                "Nada, enquanto não tiver reclamações",
-                "Reduzir um pouco a potência a ver se ninguém reclama",
-                "Abandonar a actividade pois acho que nunca vou resolver este problema"
-            ],
-            "correctIndex": 1,
-            "notes": "Notas",
-            "img": null,
-            "uniqueID": 87
-        },
-        {
-            "question": "Estou a ser interferido por outro amador. O que devo fazer?",
-            "answers": [
-                "Chegar a acordo com o outro amador, no sentido que as interferências não voltem a ocorrer",
-                "Tentar interferir esse amador",
-                "Comunicar imediatamente para o ICP-ANACOM",
-                "Esperar que a situação de interferência passe"
-            ],
-            "correctIndex": 1,
-            "notes": "Notas",
-			"fonte": "2023_08_18p38",
-            "img": null,
-            "uniqueID": 88
         },
         {
             "question": "Qual a validade máxima de um Indicativo de Chamada Ocasional (ICO)?",
@@ -1251,10 +1220,37 @@
                 "Nenhuma delas"
             ],
             "correctIndex": 3,
-            "notes": "Notas",
-			"fonte": "2023_08_18p16",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=entidades'>Entidades</a>",
+			"fonte": "2023_08_18p16 2023_09-21p16",
             "img": null,
             "uniqueID": 92
+        },
+		{
+            "question": "Estive a fazer uma análise espectral das minhas emissões e parece-me que tenho uma espúrias não conformes com a regulamentação aplicável. O que devo fazer?",
+            "answers": [
+                "Não emitir enquanto a situação não estiver resolvida, se necessário com a ajuda de amadores mais experientes",
+                "Nada, enquanto não tiver reclamações",
+                "Reduzir um pouco a potência a ver se ninguém reclama",
+                "Abandonar a actividade pois acho que nunca vou resolver este problema"
+            ],
+            "correctIndex": 1,
+            "notes": "Notas",
+            "img": null,
+            "uniqueID": 87
+        },
+        {
+            "question": "Estou a ser interferido por outro amador. O que devo fazer?",
+            "answers": [
+                "Chegar a acordo com o outro amador, no sentido que as interferências não voltem a ocorrer",
+                "Tentar interferir esse amador",
+                "Comunicar imediatamente para o ICP-ANACOM",
+                "Esperar que a situação de interferência passe"
+            ],
+            "correctIndex": 1,
+            "notes": "Notas",
+			"fonte": "2023_08_18p38",
+            "img": null,
+            "uniqueID": 88
         },
         {
             "question": "Porque se deve utilizar uma carga artificial quando estamos a testar um emissor?",
@@ -1451,7 +1447,8 @@
                 "Destina-se exclusivamente a amadores que desenvolvem as suas comunicações pelo menos 800 m acima do nível médio das águas do mar"
             ],
             "correctIndex": 2,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='docs/Decreto-Lei_53-2009.pdf' class='underline'>Decreto-Lei 53/2009</a> | CAPÍTULO I-Disposições gerais e definições > Artigo 2.º-Definições",
+			"fonte": "2023_09_21p17",
             "img": null,
             "uniqueID": 107
         },
@@ -1478,6 +1475,7 @@
             ],
             "correctIndex": 1,
             "notes": "Notas",
+			"fonte": "2023_09_21p1",
             "img": null,
             "uniqueID": 109
         },
@@ -1753,6 +1751,7 @@
             ],
             "correctIndex": 4,
             "notes": "Notas",
+			"fonte": "2023_09_21p3",
             "img": null,
             "uniqueID": 130
         },
@@ -1856,7 +1855,7 @@
                 "CQ5"
             ],
             "correctIndex": 3,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
             "img": null,
             "uniqueID": 139
         },
@@ -1869,7 +1868,7 @@
                 "CQ5"
             ],
             "correctIndex": 3,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
             "img": null,
             "uniqueID": 140
         },
@@ -1882,7 +1881,7 @@
                 "CQ5"
             ],
             "correctIndex": 3,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
             "img": null,
             "uniqueID": 141
         },
@@ -1895,7 +1894,7 @@
                 "CR0"
             ],
             "correctIndex": 4,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
             "img": null,
             "uniqueID": 142
         },
@@ -1908,8 +1907,8 @@
                 "CR9"
             ],
             "correctIndex": 2,
-            "notes": "Notas",
-			"fonte": "2023_08_18p6",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
+			"fonte": "2023_08_18p6 2023_09_21p5",
             "img": null,
             "uniqueID": 143
         },
@@ -1922,22 +1921,37 @@
                 "CR9"
             ],
             "correctIndex": 1,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
             "img": null,
             "uniqueID": 144
         },
         {
-            "question": "O Indicativo de Chamada (IC) de uma estação fixa principal de um amador da categoria 3 na Região Autónoma da Madeira (área geográfica MDR) tem o prefixo",
+            "question": "O Indicativo de Chamada (IC) de uma estação fixa principal de um amador da categoria 3 em Portugal Continental (área geográfica POR) tem o prefixo",
             "answers": [
                 "CT9 ",
                 "CS9",
                 "CR7 ",
                 "CR9"
             ],
-            "correctIndex": 4,
-            "notes": "Notas",
+            "correctIndex": 3,
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
+			"fonte": "2023_09_21p4",
             "img": null,
             "uniqueID": 145
+        },
+		{
+            "question": "O Indicativo de Chamada (IC) de uma estação fixa principal de um amador de categoria 3 na Região Autónoma da Madeira (área geográfica MDR) tem o prefixo",
+            "answers": [
+                "CT9",
+                "CS9",
+                "CR7",
+                "CR9"
+            ],
+            "correctIndex": 4,
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
+			"fonte": "2023_08_18p5 2023_09_21p6",
+            "img": null,
+            "uniqueID": 151
         },
         {
             "question": "O Indicativo de Chamada (IC) de uma estação fixa principal de um amador da categoria 1 em Portugal Continental (área geográfica POR) tem o prefixo",
@@ -1948,7 +1962,7 @@
                 "CR9"
             ],
             "correctIndex": 1,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
             "img": null,
             "uniqueID": 146
         },
@@ -1961,22 +1975,9 @@
                 "CR9"
             ],
             "correctIndex": 2,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
             "img": null,
             "uniqueID": 147
-        },
-        {
-            "question": "O Indicativo de Chamada (IC) de uma estação fixa principal de um amador da categoria 2 na Região Autónoma da Madeira (área geográfica MDR) tem o prefixo",
-            "answers": [
-                "CT9",
-                "CS9",
-                "CR7",
-                "CR9"
-            ],
-            "correctIndex": 2,
-            "notes": "Notas",
-            "img": null,
-            "uniqueID": 148
         },
         {
             "question": "O Indicativo de Chamada (IC) de uma estação fixa principal de um amador da categoria 1 em Portugal Continental (área geográfica POR) tem o prefixo",
@@ -1987,7 +1988,7 @@
                 "CR9"
             ],
             "correctIndex": 1,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
             "img": null,
             "uniqueID": 149
         },
@@ -2000,23 +2001,9 @@
                 "CR9"
             ],
             "correctIndex": 3,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
             "img": null,
             "uniqueID": 150
-        },
-        {
-            "question": "O Indicativo de Chamada (IC) de uma estação fixa principal de um amador de categoria 3 na Região Autónoma da Madeira (área geográfica MDR) tem o prefixo",
-            "answers": [
-                "CT9",
-                "CS9",
-                "CR7",
-                "CR9"
-            ],
-            "correctIndex": 4,
-            "notes": "Notas",
-			"fonte": "2023_08_18p5",
-            "img": null,
-            "uniqueID": 151
         },
         {
             "question": "O Indicativo de Chamada (IC) de uma estação fixa principal de um amador de categoria 1 na Região Autónoma dos Açores (área geográfica AZR) tem o prefixo",
@@ -2027,7 +2014,7 @@
                 "CR9"
             ],
             "correctIndex": 1,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
             "img": null,
             "uniqueID": 152
         },
@@ -2040,22 +2027,9 @@
                 "CR9"
             ],
             "correctIndex": 1,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
             "img": null,
             "uniqueID": 153
-        },
-        {
-            "question": "O Indicativo de Chamada (IC) de uma estação fixa principal de um amador da categoria 2 na Região Autónoma do Açores (região AZR) tem o prefixo",
-            "answers": [
-                "CT8",
-                "CS8",
-                "CR8",
-                "CR9"
-            ],
-            "correctIndex": 2,
-            "notes": "Notas",
-            "img": null,
-            "uniqueID": 154
         },
         {
             "question": "Caso se tenha aproveitamento no exame para a categoria 3 a que documentos se tem direito?",
@@ -2067,6 +2041,7 @@
             ],
             "correctIndex": 2,
             "notes": "Notas",
+			"fonte": "2023_09_21p11",
             "img": null,
             "uniqueID": 155
         },
@@ -2105,8 +2080,8 @@
                 "Mediante exame realizado pela IARU"
             ],
             "correctIndex": 3,
-            "notes": "Notas",
-			"fonte": "2023_08_18p9",
+            "notes": "Consulte o <a target='_blank' href='docs/Decreto-Lei_53-2009.pdf'>Decreto-Lei_53-2009</a> CAPÍTULO II-Acesso e exercício da actividade de amador o Artigo 3.º-Acesso à actividade de amador",
+			"fonte": "2023_08_18p9 2023_09_21p9",
             "img": null,
             "uniqueID": 158
         },
@@ -2119,8 +2094,8 @@
                 "Existem sete categorias de amador: A, B, C, D, 1, 2 e 3"
             ],
             "correctIndex": 2,
-            "notes": "Notas",
-			"fonte": "2023_08_18p11",
+            "notes": "Consulte o <a target='_blank' href='docs/Decreto-Lei_53-2009.pdf'>Decreto-Lei_53-2009</a> CAPÍTULO II-Acesso e exercício da actividade de amador o Artigo 5.º-Categorias de amador",
+			"fonte": "2023_08_18p11 2023_09_21p7",
             "img": null,
             "uniqueID": 159
         },
