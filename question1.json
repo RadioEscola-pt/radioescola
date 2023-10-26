@@ -576,9 +576,9 @@
             "question": "Qual o objectivo de um circuito step-start numa fonte de alientação da alta tensão?",
             "answers": [
                 "Fornecer uma tensão dupla à saída para aplicações de potência reduzida.",
-                "Compensar as variações da tensã da linha de entrada",
-                "Permitir o contrlo remoto da fonte de alimentação",
-                "Permitir o caregamento gradual do filtro dos condensadores"
+                "Compensar as variações da tensão da linha de entrada",
+                "Permitir o controlo remoto da fonte de alimentação",
+                "Permitir o carregamento gradual do filtro dos condensadores"
             ],
             "correctIndex": 4,
             "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p22</a>)",
@@ -1074,7 +1074,7 @@
                 "3,56 MHz",
                 "1,78 MHz"
             ],
-            "correctIndex": 1,
+            "correctIndex": 3,
             "notes": "A frequência de ressonância em um circuito série RLC é dada por: f = 1 / (2 * pi * sqrt(L * C)). Substituindo os valores, obtemos f ≈ 22,36 MHz.",
             "img": null,
             "uniqueID": 83
