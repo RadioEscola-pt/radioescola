@@ -4,30 +4,8 @@
 
 
 @layer components {
-    h1 {
-      @apply text-2xl font-bold mb-4 mt-8;
-    }
 
-    table {
-        @apply w-full border border-slate-800 dark:border-slate-200;
-    }
-
-    thead {
-        @apply bg-slate-800 text-white;
-    }
-
-    th {
-        @apply p-2;
-    }
-    
-    td {
-        @apply p-2;
-    }
-
-    /* tr:nth-child(even) {
-        @apply bg-slate-200 dark:bg-slate-600;
-    } */
-  }
+}
 
 #answerDisplay {
     display: none;
