@@ -642,7 +642,7 @@
             ],
             "correctIndex": 4,
             "notes": "Consulte: <a target='_blank' href='?LoadChapter=alfabeto' class='underline'>Alfabeto Fonético</a>",
-			"fonte": "2023_08_18p26",
+			"fonte": "2023_08_18p26 2023_09_21p26",
             "img": null,
             "uniqueID": 48
         },
@@ -965,13 +965,13 @@
         {
             "question": "Qual a sequência correcta de ligação de uma estação emissora?",
             "answers": [
-                "Ligação de alimentação do emissor, comutação do interruptor \"on-off\" para \"on\", ligação do cabo da baixada ao emissor, ligação do cabo de baixada à antena",
-                "Comutação do interruptor on-off para \"on\", ligação do cabo da baixada ao emissor, ligação da alimentação do emissor, ligação do cabo da baixada à antena",
-                "Ligação do cabo da baixada à antena, ligação do cabo da baixada ao emissor, ligação da alimentação do emissor, comutação do interruptor on-off para \"on\"",
+                "Ligação de alimentação do emissor, comutação do interruptor (on-off) para (on), ligação do cabo da baixada ao emissor, ligação do cabo de baixada à antena",
+                "Comutação do interruptor on-off para (on), ligação do cabo da baixada ao emissor, ligação da alimentação do emissor, ligação do cabo da baixada à antena",
+                "Ligação do cabo da baixada à antena, ligação do cabo da baixada ao emissor, ligação da alimentação do emissor, comutação do interruptor on-off para (on)",
                 "Qualquer das sequências anteriores estão correctas, pois é indiferente a forma como se liga"
             ],
             "correctIndex": 3,
-            "notes": "Notas",
+            "notes": "2023_09_23p23",
             "img": null,
             "uniqueID": 73
         },
@@ -1024,7 +1024,7 @@
             ],
             "correctIndex": 4,
             "notes": "Notas",
-			"fonte": "2023_08_18p27",
+			"fonte": "2023_08_18p27 2023_09_21p27",
             "img": null,
             "uniqueID": 77
         },
@@ -1528,6 +1528,7 @@
             ],
             "correctIndex": 1,
             "notes": "Notas",
+			"fonte": "2023_09_21p25",
             "img": null,
             "uniqueID": 113
         },
@@ -2255,7 +2256,7 @@
             ],
             "correctIndex": 4,
             "notes": "Notas",
-			"fonte": "2023_08_18p24",
+			"fonte": "2023_08_18p24 2023_09_21p21",
             "img": null,
             "uniqueID": 171
         },
@@ -2517,7 +2518,7 @@
                 "Para evitar choques elétricos"
             ],
             "correctIndex": 2,
-            "notes": "Notas",
+            "notes": "2023_09_21p24",
             "img": null,
             "uniqueID": 191
         },
@@ -2531,7 +2532,7 @@
             ],
             "correctIndex": 1,
             "notes": "Notas",
-			"fonte": "2023_08_18p23", 
+			"fonte": "2023_08_18p23 2023_09_22", 
             "img": null,
             "uniqueID": 192
         },
