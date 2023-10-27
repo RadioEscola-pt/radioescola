@@ -22,28 +22,3 @@
     align-self: center;
 }
 
-#welcome h1 {
-    font-size: 28px; /* Font size for H1 */
-    font-weight: bold; /* Make H1 text bold */
-}
-
-#welcome h2 {
-    font-size: 24px; /* Font size for H2 */
-    font-weight: bold; /* Make H2 text bold */
-}
-
-#welcome h3 {
-    font-size: 20px; /* Font size for H3 */
-    font-weight: bold; /* Make H3 text bold */
-}
-
-#welcome a {
-    text-decoration: none; /* Remove underline for links inside "welcome" */
-    color: #0077b6; /* Link color for links inside "welcome" */
-    font-weight: bold; /* Make link text bold */
-}
-
-#welcome {
-    background-color: #f7f7f7; /* Background color for "welcome" div */
-    padding: 20px; /* Padding around the content inside "welcome" */
-}
