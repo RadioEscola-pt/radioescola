@@ -1168,6 +1168,10 @@ select {
   margin-top: 0.5rem;
 }
 
+.mt-20 {
+  margin-top: 5rem;
+}
+
 .mt-28 {
   margin-top: 7rem;
 }
@@ -1186,10 +1190,6 @@ select {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mt-20 {
-  margin-top: 5rem;
 }
 
 .box-border {
@@ -3082,6 +3082,11 @@ select {
   color: rgb(77 124 15 / var(--tw-text-opacity));
 }
 
+.text-orange-800 {
+  --tw-text-opacity: 1;
+  color: rgb(154 52 18 / var(--tw-text-opacity));
+}
+
 .text-orange-900 {
   --tw-text-opacity: 1;
   color: rgb(124 45 18 / var(--tw-text-opacity));
@@ -3095,16 +3100,6 @@ select {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-orange-950 {
-  --tw-text-opacity: 1;
-  color: rgb(67 20 7 / var(--tw-text-opacity));
-}
-
-.text-orange-800 {
-  --tw-text-opacity: 1;
-  color: rgb(154 52 18 / var(--tw-text-opacity));
 }
 
 .underline {
