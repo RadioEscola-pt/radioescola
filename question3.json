@@ -122,6 +122,20 @@
             "img": null,
             "uniqueID": 11
         },
+		{
+            "question": "Qual das seguintes afirmações é incorreta?",
+            "answers": [
+                "Um amador nunca deve interromper uma comunicação, a menos que se trate duma situação de emergência",
+                "Um amador nunca deve ocupar uma dada frequência por longos períodos de tempo em detrimento de outros utilizadores",
+                "Um amador nunca deve ser correcto e educado para os amadores que o estão a ofender, pois eles não o merecem",
+                "Um amador nunca deve deixar de identificar a estação através dos seu indicativo de chamada"
+            ],
+            "correctIndex": 4,
+            "notes": "Notas",
+			"fonte": "2023_09_21p28",
+            "img": null,
+            "uniqueID": 213
+        },
         {
             "question": "Não concordo com determinadas disposições regulamentares aplicáveis aos Serviços de Amador e de Amador por Satélite. O que é correto fazer?",
             "answers": [
@@ -412,7 +426,7 @@
             ],
             "correctIndex": 4,
             "notes": "Notas",
-			"fonte": "2023_08_18p34",
+			"fonte": "2023_08_18p34 2023_09_21p34",
             "img": null,
             "uniqueID": 32
         },
@@ -839,6 +853,7 @@
             ],
             "correctIndex": 3,
             "notes": "Notas",
+			"fonte": "2023_09_21p33",
             "img": null,
             "uniqueID": 63
         },
@@ -1248,7 +1263,7 @@
             ],
             "correctIndex": 1,
             "notes": "Notas",
-			"fonte": "2023_08_18p38",
+			"fonte": "2023_08_18p38 2023_09_21p36",
             "img": null,
             "uniqueID": 88
         },
@@ -1309,11 +1324,12 @@
             "answers": [
                 "Não afeta a estação de amador",
                 "As radiações produzidas pela linha de transmissão podem provocar instabilidades na emissão da estação de amador",
-                "Além da possibilidade da estação de amador interferir na instalação de televisão",
+                "Além da possibilidade da estação de amador interferir na instalação de televisão por cabo, esta instalação pode causar interferências na receção da estação de amador",
                 "Podem ser criadas na linha de transmissão tensões muito elevadas quando a estação de amador emite, pondo em risco a segurança das pessoas"
             ],
             "correctIndex": 3,
             "notes": "Notas",
+			"fonte": "2023_09_21p37",
             "img": null,
             "uniqueID": 97
         },
@@ -1633,6 +1649,7 @@
             ],
             "correctIndex": 4,
             "notes": "Notas",
+			"fonte": "2023_09_21p38",
             "img": null,
             "uniqueID": 121
         },
@@ -1646,7 +1663,7 @@
             ],
             "correctIndex": 2,
             "notes": "Notas",
-			"fonte": "2023_08_18p35",
+			"fonte": "2023_08_18p35 2023_09_21p35",
             "img": null,
             "uniqueID": 122
         },
@@ -1712,6 +1729,7 @@
             ],
             "correctIndex": 3,
             "notes": "Notas",
+			"fonte": "2023_09_21p29",
             "img": null,
             "uniqueID": 127
         },
@@ -1738,7 +1756,7 @@
             ],
             "correctIndex": 3,
             "notes": "Notas",
-			"fonte": "2023_08_18p30",
+			"fonte": "2023_08_18p30 2023_09_21p30",
             "img": null,
             "uniqueID": 129
         },
@@ -2348,6 +2366,7 @@
             ],
             "correctIndex": 2,
             "notes": "Notas",
+			"fonte": "2023_09_21p32",
             "img": null,
             "uniqueID": 178
         },
@@ -2374,7 +2393,7 @@
             ],
             "correctIndex": 3,
             "notes": "Notas",
-			"fonte": "2023_08_18p31",
+			"fonte": "2023_08_18p31 2023_09_21p31",
             "img": null,
             "uniqueID": 180
         },
@@ -2610,7 +2629,7 @@
                 "Valor pico a pico do sinal"
             ],
             "correctIndex": 1,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
             "img": "images/cat3/sinusoidal.png",
             "uniqueID": 198
         },
@@ -2623,7 +2642,7 @@
                 "Valor pico a pico do sinal"
             ],
             "correctIndex": 4,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
             "img": "images/cat3/sinusoidal.png",
             "uniqueID": 199
         },
@@ -2636,7 +2655,7 @@
                 "Valor pico a pico do sinal"
             ],
             "correctIndex": 3,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
 			"fonte": "2023_08_18p40",
             "img": "images/cat3/sinusoidal.png",
             "uniqueID": 200
@@ -2650,7 +2669,8 @@
                 "Valor pico a pico do sinal"
             ],
             "correctIndex": 2,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
+			"fonte": "2023_09_21p40",
             "img": "images/cat3/sinusoidal.png",
             "uniqueID": 201
         },
@@ -2663,7 +2683,7 @@
                 "2 Volt"
             ],
             "correctIndex": 4,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
             "img": "images/cat3/sinusoidal.png",
             "uniqueID": 202
         },
@@ -2676,7 +2696,7 @@
                 "2 Volt"
             ],
             "correctIndex": 3,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
             "img": "images/cat3/sinusoidal.png",
             "uniqueID": 203
         },
@@ -2689,7 +2709,7 @@
                 "2 Volt"
             ],
             "correctIndex": 1,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
             "img": "images/cat3/sinusoidal.png",
             "uniqueID": 204
         },
@@ -2702,7 +2722,7 @@
                 "Valor pico a pico do sinal"
             ],
             "correctIndex": 1,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
             "img": "images/cat3/sinusoidal.png",
             "uniqueID": 205
         },
@@ -2715,7 +2735,7 @@
                 "2 Volt"
             ],
             "correctIndex": 2,
-            "notes": "Notas",
+            "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
             "img": "images/cat3/sinusoidal.png",
             "uniqueID": 206
         },
@@ -2729,6 +2749,7 @@
             ],
             "correctIndex": 4,
             "notes": "Notas",
+			"fonte": "2023_09_21p39",
             "img": "images/cat3/frequencia.png",
             "uniqueID": 207
         },
