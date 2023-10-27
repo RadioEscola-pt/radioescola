@@ -1291,6 +1291,10 @@ select {
   display: none;
 }
 
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
 .h-10 {
   height: 2.5rem;
 }
