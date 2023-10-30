@@ -2,7 +2,7 @@
 
 <p class="my-4">Um circuito RLC é um tipo de circuito elétrico que consiste em três componentes principais: resistência (R), indutância (L) e capacitância (C). Esses elementos são conectados em série ou em paralelo, criando um circuito com propriedades elétricas únicas.</p>
 
-<h2 class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 w-fit px-2 rounded">Impedância Total em um Circuito RLC</h2>
+<h2 class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 dark:bg-blue-900 dark:border-l-blue-950 w-fit px-2 rounded">Impedância Total em um Circuito RLC</h2>
 <p class="my-4">A impedância total <span class="font-bold font-mono">Z</span> num circuito RLC é a oposição total ao fluxo de corrente alternada. Ela é calculada usando a fórmula:</p>
 
 <p class="my-4 text-lg font-bold font-mono">Z = √(R<sup>2</sup> + (X<sub>L</sub> - X<sub>C</sub>)<sup>2</sup>) </p>
@@ -14,7 +14,7 @@
     <li>X<sub>C</sub>  é a reatância capacitiva, calculada como X<sub>C</sub> = 1/(2π fC) , onde f  é a frequência e C  é a capacitância.</li>
 </ul>
 
-<h2 class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 w-fit px-2 rounded">Soma Vetorial das Quedas de Tensão</h2>
+<h2 class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 dark:bg-blue-900 dark:border-l-blue-950 w-fit px-2 rounded">Soma Vetorial das Quedas de Tensão</h2>
 <p class="my-4">A soma vetorial das quedas de tensão em um circuito RLC em série é calculada pela raiz quadrada da soma dos quadrados das quedas de tensão em cada componente:</p>
 
 
@@ -24,17 +24,20 @@
     <p class="my-4">A queda de tensão total V é calculada como:</p>
     <p class="my-4 text-lg font-bold font-mono">V = √(V<sub>R</sub><sup>2</sup> + (V<sub>L</sub> - V<sub>C</sub>)<sup>2</sup>)</p>
 
-<h2 class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 w-fit px-2 rounded">Ressonância em um Circuito RLC</h2>
+<h2 class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 dark:bg-blue-900 dark:border-l-blue-950 w-fit px-2 rounded">Ressonância em um Circuito RLC</h2>
 <p class="my-4">A ressonância em um circuito RLC ocorre quando a impedância total Z  é mínima, e a corrente é máxima. Isso ocorre quando as reatâncias indutivas e capacitivas são iguais em magnitude, cancelando uma à outra. A frequência de ressonância f<sub>R</sub>  pode ser calculada como:</p>
 <p class="my-4 text-lg font-bold font-mono">f<sub>R</sub> = 1/(2π √(LC)) </p>
 <p class="my-4">Quando o circuito opera na frequência de ressonância, a impedância é minimizada, resultando em uma maior corrente e maior transferência de energia para o circuito.</p>
 <p class="my-4">Esperamos que esta explicação tenha esclarecido o conceito de um circuito RLC, a impedância total, a queda de tensão total e a ressonância em tal circuito.</p>
 
+
+<h2 class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 dark:bg-blue-900 dark:border-l-blue-950 w-fit px-2 rounded">Problemas e soluções</h2>
+
 <h2 class="text-xl mb-4 mt-12 text-orange-800">Pergunta 1</h2>
 <p class="my-4">Suponha que num circuito RLC, tem R = 10Ω, L = 0.1H, C = 100muF e a frequência de operação é f = 1000Hz. Calcule a impedância total Z .</p>
 <a href="#" linkedDiv="resposta1" class="text-gray-600 italic decoration-dashed underline cursor-help dark:text-gray-200">Resposta</a>
 
-<div id="resposta1" style="display: none;" class="bg-gray-100 p-4 mt-4 ml-4 rounded-md">
+<div id="resposta1" style="display: none;" class="bg-gray-100 p-4 mt-4 ml-4 rounded-md dark:bg-gray-900">
     <p class="my-4">Primeiro, calcule X<sub>L</sub>  e X<sub>C</sub> :</p>
     <p class="my-4" font-mono>X<sub>L</sub> = 2π fL = 2π * 1000 * 0.1 = 628.32Ω </p>
     <p class="my-4 font-mono">X<sub>C</sub> = 1/(2π fC) = 1/(2π * 1000 * 0.0001) = 15.92Ω </p>
@@ -44,10 +47,10 @@
 </div>
 
 <h2 class="text-xl mb-4 mt-12 text-orange-800">Pergunta 2</h2>
-<p class="my-4">Em outro circuito RLC, os valores são R = 20Ω, L = 0.05H, C = 50 nF e a frequência de operação é f = 500 kHz. Calcule a impedância total Z para este circuito.</p>
+<p class="my-4">Noutro circuito RLC, os valores são R = 20Ω, L = 0.05H, C = 50 nF e a frequência de operação é f = 500 kHz. Calcule a impedância total Z para este circuito.</p>
 <a href="#" linkedDiv="resposta2" class="text-gray-600 italic decoration-dashed underline cursor-help dark:text-gray-200">Resposta</a>
 
-<div id="resposta2" style="display: none;" class="bg-gray-100 p-4 mt-4 ml-4 rounded-md">
+<div id="resposta2" style="display: none;" class="bg-gray-100 p-4 mt-4 ml-4 rounded-md dark:bg-gray-900">
     <p class="my-4">Primeiro, calcule X<sub>L</sub> e X<sub>C</sub> :</p>
     <p class="my-4">X<sub>L</sub> = 2π fL = 2π * 500000 * 0.05 = 157079.63Ω </p>
     <p class="my-4">X<sub>C</sub> = 1/(2π fC) = 1/(2π * 500000 * 0.00000005) = 636.62Ω </p>
@@ -63,7 +66,7 @@
 <p class="my-4">Em um circuito RLC com R = 15Ω, L = 0.2H, C = 50 μF, f = 100 Hz e uma corrente de 2 A, calcule a queda de tensão total V .</p>
 <a href="#" linkedDiv="resposta3" class="text-gray-600 italic decoration-dashed underline cursor-help dark:text-gray-200">Resposta</a>
 
-<div id="resposta3" style="display: none;" class="bg-gray-100 p-4 mt-4 ml-4 rounded-md">
+<div id="resposta3" style="display: none;" class="bg-gray-100 p-4 mt-4 ml-4 rounded-md dark:bg-gray-900">
     <p class="my-4">Primeiro, calcule Z como no exemplo da Pergunta 1:</p>
     <p class="my-4">X<sub>L</sub> = 2πfL = 2π × 100 × 0.2 = 125.66Ω</p>
     <p class="my-4">X<sub>C</sub> = 1 / (2πfC) = 1 / (2π × 100 × 0.00005) ≈ 318.31Ω</p>
@@ -77,7 +80,7 @@
 <p class="my-4">Em outro circuito RLC com R = 30 Ω , L = 0.1 H, C = 100 nF, f = 1 MHz e uma corrente de 0.5 A , calcule a queda de tensão total V.</p>
 <a href="#" linkedDiv="resposta4" class="text-gray-600 italic decoration-dashed underline cursor-help dark:text-gray-200">Resposta</a>
 
-<div id="resposta4" style="display: none;" class="bg-gray-100 p-4 mt-4 ml-4 rounded-md">
+<div id="resposta4" style="display: none;" class="bg-gray-100 p-4 mt-4 ml-4 rounded-md dark:bg-gray-900">
     <p class="my-4">Primeiro, calcule Z  como no exemplo da Pergunta 2, que é aproximadamente 94260.16 Ω.</p>
     <p class="my-4">Agora, use a Lei de Ohm para calcular a queda de tensão:</p>
     <p class="my-4">V = IZ = 0.5 * 94260.16 = 47130.08 V</p>
@@ -87,7 +90,7 @@
 <h3>Problema da Ressonância num Circuito RLC</h3>
 
 <p class="my-4">Dado um circuito RLC em série com os seguintes componentes:</p>
-<ul>
+<ul class="ml-4">
     <li>Resistência R : 10 Ω</li>
     <li>Indutância L : 0.2 Henrys</li>
     <li>Capacitância C : 50 µF</li>
@@ -98,7 +101,7 @@
 
 <p class="my-4">Qual é a frequência de ressonância f<sub>R</sub>  deste circuito RLC e qual é a impedância total Z  nessa frequência?</p>
 <a href="#" linkedDiv="resposta5" class="text-gray-600 italic decoration-dashed underline cursor-help dark:text-gray-200">Resposta</a>
-<div id="resposta5" style="display: none;">
+<div id="resposta5" style="display: none;" class="bg-gray-100 p-4 mt-4 ml-4 rounded-md dark:bg-gray-900">
     <p class="my-4">Para calcular a frequência de ressonância f<sub>R</sub> , usamos a fórmula:</p>
     <p class="my-4">f<sub>R</sub> = 1/(2π √(LC)) </p>
     <p class="my-4">f<sub>R</sub> = 1/(2π √(0.2H* 0.000050 F)) =1000 Hz </p>
@@ -126,7 +129,7 @@
 <p class="my-4">Calcule a queda de tensão em cada componente do circuito (resistência, indutância e capacitância) em volts, levando em consideração as reatâncias. Lembre-se de que a voltagem total é a soma das quedas de tensão em cada componente.</p>
 <a href="#" linkedDiv="resposta6" class="text-gray-600 italic decoration-dashed underline cursor-help dark:text-gray-200">Resposta</a>
 
-<div id="resposta6" style="display: none;">
+<div id="resposta6" style="display: none;" class="bg-gray-100 p-4 mt-4 ml-4 rounded-md dark:bg-gray-900">
     <p class="my-4">Primeiro, calcule a impedância total Z como no exemplo da Pergunta 2:</p>
     <p class="my-4">Impedância Total Z= √(R<sup>2</sup> + (X<sub>L</sub> - X<sub>C</sub>)<sup>2</sup></p>
     
