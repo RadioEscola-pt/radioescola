@@ -1,47 +1,130 @@
-<h1>O que é uma Bobina?</h1>
+<h1 class="text-2xl mb-4">O que é uma Bobina?</h1>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/x19C1QXmloA" frameborder="0" allowfullscreen></iframe>
-<p>Uma bobina é um componente eletrónico que consiste em um fio condutor enrolado em espiral em torno de um núcleo. Ela é projetada para armazenar energia na forma de um campo magnético. As bobinas são frequentemente usadas em eletrónica para várias aplicações, incluindo filtragem, transformadores e circuitos de sintonia.</p>
-<p>A indutância de uma bobina (L) é uma medida da sua capacidade de armazenar energia magnética.</p>
-<p>O número de espiras (N) e o material do núcleo afetam as propriedades da bobina.</p>
+<p class="my-4">
+  Uma bobina é um componente eletrónico que consiste em um fio condutor enrolado
+  em espiral em torno de um núcleo. Ela é projetada para armazenar energia na
+  forma de um campo magnético. As bobinas são frequentemente usadas em
+  eletrónica para várias aplicações, incluindo filtragem, transformadores e
+  circuitos de sintonia.
+</p>
+<p class="my-4">
+  A indutância de uma bobina (L) é uma medida da sua capacidade de armazenar
+  energia magnética.
+</p>
+<p class="my-4">
+  O número de espiras (N) e o material do núcleo afetam as propriedades da
+  bobina.
+</p>
 
-<h1>Bobinas em Série</h1>
-<p>Quando você conecta duas ou mais bobinas em série, a indutância total (L<sub>total</sub>) é a soma das indutâncias individuais. A reatância total é a soma das reatâncias das bobinas individuais.</p>
+<div class="flex flex-row gap-4 items-center mb-4 mt-12">
+    <img src="images/camera.svg" class="h-8 w-8 dark:invert" />
+    <h2 class="text-2xl">Vídeo-Aula</h2>
+  </div>
+  
+  <iframe
+    width="100%"
+    class="aspect-video"
+    src="https://www.youtube.com/embed/x19C1QXmloA"
+    frameborder="0"
+    allowfullscreen
+  ></iframe>
 
-<img src="capitulos\bobinesSomar\Inductors_in_Series.png" />
-<p>Indutância Total em Série A indutância total (L<sub>total</sub>) de bobinas em série é calculada como:</p>
-<p>L<sub>total</sub> = L<sub>1</sub> + L<sub>2</sub> + … + L<sub>n</sub>.</p>
-<p>Onde: L<sub>total</sub> é a indutância total em Henry (H).</p>
-<p>L<sub>1</sub>, L<sub>2</sub>, …, L<sub>n</sub> são as indutâncias das bobinas individuais.</p>
 
-<h1>Bobinas em Paralelo</h1>
-<p>Quando você conecta duas ou mais bobinas em paralelo, a indutância total (L<sub>total</sub>) é calculada de forma diferente da soma das indutâncias individuais.</p>
-<img src="capitulos\bobinesSomar\Inductors_in_Parallel.png" />
-<p>Indutância Total em Paralelo A indutância total (L<sub>total</sub>) de bobinas em paralelo é calculada como:</p>
-<p>1/L<sub>total</sub> = 1/L<sub>1</sub> + 1/L<sub>2</sub> + … + 1/L<sub>n</sub>.</p>
-<p>Onde: L<sub>total</sub> é a indutância total em Henry (H). L<sub>1</sub>, L<sub>2</sub>, …, L<sub>n</sub> são as indutâncias das bobinas individuais.</p>
+<h2 class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 w-fit px-2 rounded">Bobinas em Série</h2>
+<p class="my-4">
+  Quando você conecta duas ou mais bobinas em série, a indutância total
+  (L<sub>total</sub>) é a soma das indutâncias individuais. A reatância total é
+  a soma das reatâncias das bobinas individuais.
+</p>
 
-<h1>Problema 1: Bobinas em Série</h1>
-<p><strong>Enunciado:</strong> Você tem duas bobinas em série, uma com uma indutância de 0.1 H e a outra com 0.2 H. Qual é a indutância total do circuito?</p>
-<a href="#" linkedDiv="respostaDiv1">Resposta</a>
-<div id="respostaDiv1" style="display: none;">
-<p>Primeiro, calcule a indutância total das bobinas em série:</p>
-<p>L<sub>total</sub> = L<sub>1</sub> + L<sub>2</sub> = 0.1 H + 0.2 H = 0.3 H</p>
-<p>Portanto, a indutância total do circuito é 0.3 H.</p>
+<img src="capitulos\bobinesSomar\Inductors_in_Series.png" class="dark:invert" />
+<p class="my-4">
+  Indutância Total em Série A indutância total (L<sub>total</sub>) de bobinas em
+  série é calculada como:
+</p>
+<p class="my-4 font-mono text-lg font-bold">
+  L<sub>total</sub> = L<sub>1</sub> + L<sub>2</sub> + … + L<sub>n</sub>.
+</p>
+<p class="my-4">Onde: L<sub>total</sub> é a indutância total em Henry (H).</p>
+<p class="my-4">
+  L<sub>1</sub>, L<sub>2</sub>, …, L<sub>n</sub> são as indutâncias das bobinas
+  individuais.
+</p>
+
+<h2 class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 w-fit px-2 rounded">Bobinas em Paralelo</h2>
+<p class="my-4">
+  Quando você conecta duas ou mais bobinas em paralelo, a indutância total
+  (L<sub>total</sub>) é calculada de forma diferente da soma das indutâncias
+  individuais.
+</p>
+<img
+  src="capitulos\bobinesSomar\Inductors_in_Parallel.png"
+  class="dark:invert"
+/>
+<p class="my-4">
+  Indutância Total em Paralelo A indutância total (L<sub>total</sub>) de bobinas
+  em paralelo é calculada como:
+</p>
+<p class="my-4">
+  1/L<sub>total</sub> = 1/L<sub>1</sub> + 1/L<sub>2</sub> + … + 1/L<sub>n</sub>.
+</p>
+<p class="my-4">
+  Onde: L<sub>total</sub> é a indutância total em Henry (H). L<sub>1</sub>,
+  L<sub>2</sub>, …, L<sub>n</sub> são as indutâncias das bobinas individuais.
+</p>
+
+
+<h2 class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 w-fit px-2 rounded">Exercícios</h2>
+
+
+<h2 class="text-xl mb-4 mt-12 text-orange-600">Problema 1: Bobinas em Série</h2>
+<p class="my-4">
+  <strong>Enunciado:</strong> Você tem duas bobinas em série, uma com uma
+  indutância de 0.1 H e a outra com 0.2 H. Qual é a indutância total do
+  circuito?
+</p>
+<a
+  href="#"
+  linkedDiv="respostaDiv1"
+  class="text-gray-600 italic decoration-dashed underline cursor-help dark:text-gray-200"
+  >Resposta</a
+>
+<div
+  id="respostaDiv1"
+  style="display: none"
+  class="bg-gray-100 p-4 mt-4 ml-4 rounded-md dark:bg-gray-900"
+>
+  <p class="my-4">Primeiro, calcule a indutância total das bobinas em série:</p>
+  <p class="my-4">
+    L<sub>total</sub> = L<sub>1</sub> + L<sub>2</sub> = 0.1 H + 0.2 H = 0.3 H
+  </p>
+  <p class="my-4">Portanto, a indutância total do circuito é 0.3 H.</p>
 </div>
 
-<h1>Problema 2: Indutância de Bobinas em Paralelo</h1>
-<p><strong>Enunciado:</strong> Você tem duas bobinas em paralelo, a primeira com uma indutância de 0.05 H e a segunda com 0.1 H. Qual é a indutância total do circuito?</p>
-<a href="#" linkedDiv="respostaDiv2">Resposta</a>
-<div id="respostaDiv2" style="display: none;">
-<p>A indutância total de bobinas em paralelo é calculada usando a fórmula:</p>
-<p>1/L<sub>total</sub> = 1/L<sub>1</sub> + 1/L<sub>2</sub></p>
-<p>Substituindo os valores:</p>
-<p>1/L<sub>total</sub> = 1/0.05 H + 1/0.1 H = 0.03</p>
-<p>Portanto, a indutância total do circuito é 0.03 H.</p>
+<h2 class="text-xl mb-4 mt-12 text-orange-600">
+  Problema 2: Indutância de Bobinas em Paralelo
+</h2>
+<p class="my-4">
+  <strong>Enunciado:</strong> Você tem duas bobinas em paralelo, a primeira com
+  uma indutância de 0.05 H e a segunda com 0.1 H. Qual é a indutância total do
+  circuito?
+</p>
+<a
+  href="#"
+  linkedDiv="respostaDiv2"
+  class="text-gray-600 italic decoration-dashed underline cursor-help dark:text-gray-200"
+  >Resposta</a
+>
+<div
+  id="respostaDiv2"
+  style="display: none"
+  class="bg-gray-100 p-4 mt-4 ml-4 rounded-md dark:bg-gray-900"
+>
+  <p class="my-4">
+    A indutância total de bobinas em paralelo é calculada usando a fórmula:
+  </p>
+  <p class="my-4">1/L<sub>total</sub> = 1/L<sub>1</sub> + 1/L<sub>2</sub></p>
+  <p class="my-4">Substituindo os valores:</p>
+  <p class="my-4">1/L<sub>total</sub> = 1/0.05 H + 1/0.1 H = 0.03</p>
+  <p class="my-4">Portanto, a indutância total do circuito é 0.03 H.</p>
 </div>
-
-
-
-
-
