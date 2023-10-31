@@ -4,10 +4,10 @@ class TransformerCalculator extends ElectricalUnits {
         super();
 
         new Popup("TransformerCalculator", this);
-        this.classStyle = "w-52 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600";
+        //this.classStyle = "w-52 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600";
     }
     /**
-     * @brief  This function is called when the parrent ajax callbak is completed.This works assyncrronously
+     * @brief  This function is called when the parent ajax callback is completed. This works asynchronously.
      */
     endRequest() {
         this.primaryVoltageInput = document.getElementById("primaryVoltage");
@@ -16,8 +16,7 @@ class TransformerCalculator extends ElectricalUnits {
         this.secondaryCurrentInput = document.getElementById("secondaryCurrent");
         this.turnsPrimaryInput = document.getElementById("turnsPrimary");
         this.turnsSecondaryInput = document.getElementById("turnsSecondary");
-        this.result= document.getElementById("calcuadorResult");
-
+        this.result= document.getElementById("calculatorResult");
 
 
         // New variables for select boxes
@@ -26,28 +25,10 @@ class TransformerCalculator extends ElectricalUnits {
         this.primaryCurrentSelect = document.getElementById("primaryCurrentSelect");
         this.secondaryCurrentSelect = document.getElementById("secondaryCurrentSelect");
 
-
-        this.primaryVoltageInput.className = this.classStyle;
-        this.secondaryVoltageInput.className = this.classStyle;
-        this.primaryCurrentInput.className = this.classStyle;
-        this.secondaryCurrentInput.className = this.classStyle;
-        this.turnsPrimaryInput.className = this.classStyle;
-        this.turnsPrimaryInput.className = this.classStyle;
-        this.turnsSecondaryInput.className = this.classStyle;
-
-        this.primaryVoltageSelect.className = this.classStyle;
-        this.secondaryVoltageSelect.className = this.classStyle;
-        this.primaryCurrentSelect.className = this.classStyle;
-        this.secondaryCurrentSelect.className = this.classStyle;
-
-
         this.loadOptions(this.primaryVoltageSelect, "V");
         this.loadOptions(this.secondaryVoltageSelect, "V");
         this.loadOptions(this.primaryCurrentSelect, "A");
         this.loadOptions(this.secondaryCurrentSelect, "A");
-
-
-
 
         this.calculateButton = document.getElementById("calculateButton");
         this.calculateButton.addEventListener("click", () => this.calculateValues());
@@ -77,8 +58,6 @@ class TransformerCalculator extends ElectricalUnits {
         let turnsRatio = null;
         let currentRatio = null;
 
-
-
         if (!isNaN(primaryVoltage) && !isNaN(secondaryVoltage)) {
             primaryVoltage *= primaryVoltageRatio;
             secondaryVoltage *= secondaryVoltageRatio;
@@ -98,27 +77,28 @@ class TransformerCalculator extends ElectricalUnits {
 
         }
 
+        this.result.className = "mt-8 font-bold";
+
         if (voltageRatio === null && turnsRatio === null && currentRatio === null) {
-            this.result.innerHTML="pelo menus um dos valores deve ser conhecido";
+            this.result.innerHTML="Pelo menos um dos valores deve ser conhecido";
+            this.result.classList.add("text-red-500");
             return;
         }
         if (voltageRatio != null && turnsRatio != null ){
             if (voltageRatio != turnsRatio ) {
-                this.result.innerHTML="O ratio da bobinagem e do voltage nao sao iguais";
+                this.result.innerHTML="O rácio da bobinagem e da tensão são diferentes.";
                 return;
             }
         }
         if (voltageRatio != null && currentRatio != null ){
             if (voltageRatio != currentRatio ) {
-                this.result.innerHTML="O ratio da voltagem e da current nao sao iguais";
+                this.result.innerHTML="O rácio da voltagem e da corrente são diferentes.";
                 return;
- 
-
             }   
         }
         if (turnsRatio != null && currentRatio != null ){
             if (turnsRatio != currentRatio ) {
-                this.result.innerHTML="O ratio da bobinagem e do current nao sao iguais";
+                this.result.innerHTML="O rácio da bobinagem e da corrente são diferentes.";
                 return;
             }
         }
@@ -143,13 +123,7 @@ class TransformerCalculator extends ElectricalUnits {
 
             this.turnsCheck(turnsPrimary, turnsSecondary, currentRatio);
 
-
         } 
-
-
-        
-
-
 
 
     }
