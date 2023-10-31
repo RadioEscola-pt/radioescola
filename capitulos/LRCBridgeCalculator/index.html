@@ -1,5 +1,5 @@
 <div class="grid grid-cols-3 gap-3">
-  <div class="col-span-1">
+  <div class="col-span-3 sm:col-span-1">
     <label for="frequency">Frequência</label>
     <div class="border shadow-sm flex border-slate-600 rounded overflow-hidden">
       <input
@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <div class="col-span-1">
+  <div class="col-span-3 sm:col-span-1">
     <label for="frequency">Resistência</label>
     <div class="border shadow-sm flex border-slate-600 rounded overflow-hidden">
       <input
@@ -33,7 +33,7 @@
     </div>
   </div>
 
-  <div class="col-span-1">
+  <div class="col-span-3 sm:col-span-1">
     <label for="frequency">Tensão da fonte</label>
     <div class="border shadow-sm flex border-slate-600 rounded overflow-hidden">
       <input
@@ -50,7 +50,7 @@
     </div>
   </div>
 
-  <div class="col-span-1">
+  <div class="col-span-3 sm:col-span-1">
     <label for="frequency">Condensador</label>
     <div class="border shadow-sm flex border-slate-600 rounded overflow-hidden">
       <input
@@ -67,7 +67,7 @@
     </div>
   </div>
 
-  <div class="col-span-1">
+  <div class="col-span-3 sm:col-span-1">
     <label for="frequency">Bobine</label>
     <div class="border shadow-sm flex border-slate-600 rounded overflow-hidden">
       <input
@@ -85,9 +85,12 @@
   </div>
 </div>
 
-<div class="grid grid-cols-2 gap-3 mt-8 bg-gray-100 p-4 border border-gray-400 shadow-sm rounded">
-<h1 class="col-span-2 font-bold">Resultados</h1>
-  <div class="flex flex-col content-between">
+<div
+  class="grid grid-cols-2 gap-3 mt-8 bg-gray-100 p-4 border border-gray-400 shadow-sm rounded"
+>
+  <h1 class="col-span-2 font-bold">Resultados</h1>
+  
+  <div class="flex flex-col content-between col-span-2 sm:col-span-1">
     <label for="resultTotalImpedance">Impedância total (Z)</label>
     <div class="flex flex-row gap-1">
       <input
@@ -103,7 +106,7 @@
     </div>
   </div>
 
-  <div class="flex flex-col content-between">
+  <div class="flex flex-col content-between col-span-2 sm:col-span-1">
     <label for="resultXL">Reatância indutiva (XL)</label>
     <div class="flex flex-row gap-1">
       <input
@@ -119,7 +122,7 @@
     </div>
   </div>
 
-  <div class="flex flex-col content-between">
+  <div class="flex flex-col content-between col-span-2 sm:col-span-1">
     <label for="resultXC">Reatância capacitiva (XC)</label>
     <div class="flex flex-row gap-1">
       <input
@@ -135,7 +138,7 @@
     </div>
   </div>
 
-  <div class="flex flex-col content-between">
+  <div class="flex flex-col content-between col-span-2 sm:col-span-1">
     <label for="resultXR">Impedância resistiva (XR)</label>
     <div class="flex flex-row gap-1">
       <input
@@ -151,7 +154,7 @@
     </div>
   </div>
 
-  <div class="flex flex-col content-between">
+  <div class="flex flex-col content-between col-span-2 sm:col-span-1">
     <label for="resultTotalCurrent">Corrente Total (I)</label>
     <div class="flex flex-row gap-1">
       <input
@@ -167,7 +170,7 @@
     </div>
   </div>
 
-  <div class="flex flex-col content-between">
+  <div class="flex flex-col content-between col-span-2 sm:col-span-1">
     <label for="resultVc">Queda de tensão no condensador (Vc)</label>
     <div class="flex flex-row gap-1">
       <input
@@ -183,7 +186,7 @@
     </div>
   </div>
 
-  <div class="flex flex-col content-between">
+  <div class="flex flex-col content-between col-span-2 sm:col-span-1">
     <label for="resultVr">Queda de tensão na resistência (Vr)</label>
     <div class="flex flex-row gap-1">
       <input
@@ -199,7 +202,7 @@
     </div>
   </div>
 
-  <div class="flex flex-col content-between">
+  <div class="flex flex-col content-between col-span-2 sm:col-span-1">
     <label for="resultVL">Queda de tensão no indutor (VL)</label>
     <div class="flex flex-row gap-1">
       <input
