@@ -1,31 +1,31 @@
 <h1 class="text-2xl mb-4">Ondas estacionárias</h1>
 
-<p>
+<p class="my-4">
   VSWR é definido como a razão entre as ondas estacionárias de tensão
   transmitida e refletida em um frequência de rádio (RF) sistema de transmissão
   elétrica.
 </p>
-<p>
-  Se a impedancia da entrana e o cabo sao diferentes parte do sinal e
-  reflectido.
+<p class="my-4">
+  Se a impedância da entrada e o cabo são diferentes, parte do sinal é
+  refletido.
 </p>
-<p>
+<p class="my-4">
   O sinal refletido mistura-se com o sinal emitido chamado "standing wave".O
   sinal de entrada e refletido vem desfasados criando uma nova onda.
 </p>
 
-<p><img src="capitulos/SWR/standingWave.gif" /></p>
+<img src="capitulos/SWR/standingWave.gif" class="dark:invert my-8" />
 
-<p>
+<p class="my-4">
   O rácio entre o valor mais alto e baixo da "standing wave" é chamado de VSWR.
 </p>
 
-O Γ (gamma) e o coofeciente de refleccao, impedancia da carga(ZL) e impedância
+O Γ (gamma) é o coeficiente de reflexão, impedância da carga(ZL) e impedância
 da fonte (Zo)
 
 <img src="capitulos/SWR/b.svg" class="my-4 dark:invert" />
 
-V(max)voltagem máxima da linha, e V(min) voltagem mínima da linha. Ou também
+V(max) voltagem máxima da linha, e V(min) voltagem mínima da linha. Ou também
 pode ser calculado atraves das impedâncias, usando a fórmula anterior.
 
 <img src="capitulos/SWR/c.svg" class="my-4 dark:invert" />
@@ -39,21 +39,22 @@ pode ser calculado atraves das impedâncias, usando a fórmula anterior.
   Consulte alguns exemplos práticos</a
 >
 
-<section class="bg-gray-100 dark:bg-gray-900 px-4 py-2 shadow-inner rounded">
-  <h2 class="text-xl mb-4 mt-2">Exemplos</h2>
 
-  <h2 class="font-semibold mt-8">Cabo coaxial com 50Ω e antena com 25Ω:</h2>
-  <p>Γ = (25 - 50) / (25 + 50) = -25 / 75 = -1/3</p>
-  <p>VSWR = 1 + |-1/3| / (1 - |-1/3|) = 2</p>
+  <h2 class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 dark:bg-blue-900 dark:border-l-blue-950 w-fit px-2 rounded">Exemplos</h2>
 
-  <h2 class="font-semibold mt-8">Cabo coaxial com 50Ω e antena com 75Ω:</h2>
-  <p>Γ = (75 - 50) / (75 + 50) = 25 / 125 = 1/5</p>
-  <p>VSWR = 1 + |1/5| / (1 - |1/5|) = 1.5</p>
+  
+  <h2 class="text-xl mb-4 mt-12 text-orange-600">Cabo coaxial com 50 Ω e antena com 25 Ω:</h2>
+  <p class="my-4 font-mono text-lg">Γ = (25 - 50) / (25 + 50) = -25 / 75 = -1/3</p>
+  <p class="my-4 font-mono text-lg">VSWR = 1 + |-&frac13;| / (1 - |-&frac13;|) = 2</p>
 
-  <h2 class="font-semibold mt-8">Cabo coaxial com 50Ω e antena com 100Ω:</h2>
-  <p>Γ = (100 - 50) / (100 + 50) = 50 / 150 = 1/3</p>
-  <p>VSWR = 1 + |1/3| / (1 - |1/3|) = 2</p>
-</section>
+  <h2 class="text-xl mb-4 mt-12 text-orange-600">Cabo coaxial com 50 Ω e antena com 75 Ω:</h2>
+  <p class="my-4 font-mono text-lg">Γ = (75 - 50) / (75 + 50) = 25 / 125 = 1/5</p>
+  <p class="my-4 font-mono text-lg">VSWR = 1 + |&frac15;| / (1 - |&frac15;|) = 1.5</p>
+
+  <h2 class="text-xl mb-4 mt-12 text-orange-600">Cabo coaxial com 50 Ω e antena com 100 Ω:</h2>
+  <p class="my-4 font-mono text-lg">Γ = (100 - 50) / (100 + 50) = 50 / 150 = 1/3</p>
+  <p class="my-4 font-mono text-lg">VSWR = 1 + |&frac13;| / (1 - |&frac13;|) = 2</p>
+
 
 <p class="mt-12">
   Estes são os cálculos do VSWR com base nas impedâncias fornecidas nos
