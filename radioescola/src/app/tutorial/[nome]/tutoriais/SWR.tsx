@@ -8,11 +8,11 @@ export default function SWR() {
 
 <p>VSWR é definido como a razão entre as ondas estacionárias de tensão transmitida e refletida em um frequência de rádio (RF) sistema de transmissão elétrica. </p>
 <p>Se a impedancia da entrana e o cabo sao diferentes parte do sinal e reflectido.</p>
-<p>O sinal reflectido mistura-se com o sinal emitido chamado "standing wave".O sinal de entrada e reflectido vem desfasados criando uma nova onda </p>
+<p>O sinal reflectido mistura-se com o sinal emitido chamado &quot;standing wave&quot;.O sinal de entrada e reflectido vem desfasados criando uma nova onda </p>
 
 <p><img src="capitulos\SWR\standingWave.gif" /></p>
 
-<p>O ratio entre o valor mais alto e baixo da "standing wave" e chamado de VSWR.</p>
+<p>O ratio entre o valor mais alto e baixo da &quot;standing wave&quot; e chamado de VSWR.</p>
 
 
 

@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import Link from 'next/link'
 import AuthSessionProvider from '@/components/AuthSessionProvider'
 import UserAuth from '@/components/UserAuth'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -369,7 +370,7 @@ export default function RootLayout({
               </div>
             </div>
           </footer>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+          <Script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js" />
         </body>
       </html>
     </AuthSessionProvider>

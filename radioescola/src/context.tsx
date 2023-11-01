@@ -16,7 +16,7 @@ const iContextState = {
 
 export const GlobalContext = createContext<ContextType>(iContextState)
 
-export const getGlobalContext = () => useContext(GlobalContext)
+export const useGlobalContext = () => useContext(GlobalContext)
 
 
 export default function ContextProvider({children}: any) {

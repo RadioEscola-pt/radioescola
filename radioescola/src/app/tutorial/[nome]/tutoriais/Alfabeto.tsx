@@ -8,7 +8,7 @@ export default function Alfabeto() {
 
 <p>
   O alfabeto fonético da NATO é o alfabeto de soletração mais utilizado no
-  mundo. Embora chamados de "alfabetos fonéticos", alfabetos de soletração não
+  mundo. Embora chamados de &quot;alfabetos fonéticos&quot;, alfabetos de soletração não
   têm conexão com sistemas de transcrição fonética como o alfabeto fonético
   internacional. Ao invés disso, o alfabeto da NATO define palavras-chave para
   letras do alfabeto inglês por meio de um princípio acrofônico (Alpha para A,

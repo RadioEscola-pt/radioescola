@@ -1,6 +1,6 @@
 'use client'
 
-import { getGlobalContext } from '@/context';
+import { useGlobalContext } from '@/context';
 import { Prisma} from '@prisma/client';
 import React, { useEffect, useState } from 'react'
 
@@ -14,7 +14,7 @@ type PerguntaWithRespostas = Prisma.PerguntaGetPayload<typeof perguntaWithRespos
 export default function QuestionCard({ question, check, mode }: { question: PerguntaWithRespostas, check: Boolean, mode: String}) {
   let [resultado, setResultado] = React.useState<Number>(-1)
   let [selected, setSelected] = React.useState<String>("")
-  let {score, setScore} = getGlobalContext() //score state
+  let {score, setScore} = useGlobalContext() //score state
   let correta: String = ""
   let [checked, setChecked] = useState<Boolean>(false)
 

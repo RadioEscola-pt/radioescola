@@ -22,7 +22,7 @@ export default function AllQuestions({ question }: { question: PerguntasWithResp
             <Score />
             <button onClick={() => (setCheckAnswers(true))}>Verificar</button>
             {question.map((question) => (
-                <QuestionCard question={question} check={checkAnswers} mode="all"/>
+                <QuestionCard key={question.id} question={question} check={checkAnswers} mode="all"/>
             ))}
             </ContextProvider>
         </div>
