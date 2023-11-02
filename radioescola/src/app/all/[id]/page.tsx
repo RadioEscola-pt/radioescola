@@ -1,6 +1,9 @@
 import { PrismaClient } from '.prisma/client'
 import AllQuestions from './allQuestions'
 
+export async function generateStaticParams() {
+  return [{ categoria: '1' }, { categoria: '2' }, { categoria: '3' }]
+}
 
 async function getAllQuestions(categoria : number){
 
