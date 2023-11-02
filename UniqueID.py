@@ -12,24 +12,31 @@ def find_and_print_highest_uniqueID_in_current_directory():
 
             # Read the JSON file with 'utf-8' encoding
             with open(json_file_path, "r", encoding="utf-8") as file:
-                data = json.load(file)
+                try:
+                    data = json.load(file)
+                except json.JSONDecodeError:
+                    print(f"Error reading JSON in file '{filename}'")
+                    continue  # Skip to the next file
 
-            # Find the highest `uniqueID` in this JSON file
-            max_uniqueID_in_file = max([q["uniqueID"] for q in data["questions"]])
+            if "questions" in data:
+                # Find the highest `uniqueID` in this JSON file
+                max_uniqueID_in_file = max([q["uniqueID"] for q in data["questions"]])
 
-            # Print the filename and the maximum `uniqueID`
-            print(f"The file '{filename}' has the highest uniqueID, which is {max_uniqueID_in_file}.")
+                # Print the filename and the maximum `uniqueID`
+                print(f"The file '{filename}' has the highest uniqueID, which is {max_uniqueID_in_file}.")
 
-            # Count the `uniqueID` occurrences in this JSON file
-            unique_ids_in_file = [q["uniqueID"] for q in data["questions"]]
-            unique_id_counts = Counter(unique_ids_in_file)
+                # Count the `uniqueID` occurrences in this JSON file
+                unique_ids_in_file = [q["uniqueID"] for q in data["questions"]]
+                unique_id_counts = Counter(unique_ids_in_file)
 
-            # Find and print repeated `uniqueID` in this file
-            repeated_uniqueIDs = [unique_id for unique_id, count in unique_id_counts.items() if count > 1]
-            if repeated_uniqueIDs:
-                print(f"In the file '{filename}':")
-                for uniqueID in repeated_uniqueIDs:
-                    print(f"  UniqueID: {uniqueID}, Number of occurrences: {unique_id_counts[uniqueID]}")
+                # Find and print repeated `uniqueID` in this file
+                repeated_uniqueIDs = [unique_id for unique_id, count in unique_id_counts.items() if count > 1]
+                if repeated_uniqueIDs:
+                    print(f"In the file '{filename}':")
+                    for uniqueID in repeated_uniqueIDs:
+                        print(f"  UniqueID: {uniqueID}, Number of occurrences: {unique_id_counts[uniqueID]}")
+            else:
+                print(f"The file '{filename}' does not contain 'questions' key.")
 
 if __name__ == "__main__":
     find_and_print_highest_uniqueID_in_current_directory()
