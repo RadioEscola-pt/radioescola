@@ -74,8 +74,9 @@
                 "50 V",
                 "Não se pode saber."
             ],
-            "notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p7</a>) o Resultado é a soma de todas as tensões",
             "correctIndex": 1,
+			"notes": "O Resultado é a soma de todas as tensões",
+			"fonte": "0000_00_03p7 2023_09-25p8",
             "img": null,
             "uniqueID": 6
         },
