@@ -1,0 +1,28 @@
+name: release
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+jobs:
+  build:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build tailwind css
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.x'
+    - run: npm install
+    - run: npm run tailwind:build
+    - name: Deploy to Server
+      uses: easingthemes/ssh-deploy@main
+      with:
+          SSH_PRIVATE_KEY: ${{ secrets.STAGING_KEY }}
+          ARGS: "-rlgoDzvc -i --delete"
+          SOURCE: "/"
+          REMOTE_HOST: ${{ secrets.STAGING_HOST }}
+          REMOTE_USER: ${{ secrets.STAGING_USERNAME }}
+          REMOTE_PORT: ${{ secrets.STAGING_PORT }}
+          TARGET: ${{ secrets.RELEASE_PATH }}
+          EXCLUDE: "/node_modules/, .git/"

@@ -74,8 +74,9 @@
                 "50 V",
                 "Não se pode saber."
             ],
-            "notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p7</a>) o Resultado é a soma de todas as tensões",
             "correctIndex": 1,
+			"notes": "O Resultado é a soma de todas as tensões",
+			"fonte": "0000_00_03p7 2023_09-25p8",
             "img": null,
             "uniqueID": 6
         },
@@ -2870,7 +2871,8 @@
                 "manchas solares"
             ],
             "correctIndex": 3,
-            "notes": "A156",
+            "notes": "Notas",
+			"fonte": "A156 2023_09_25p6",
             "img": null,
             "uniqueID": 220
         },
@@ -3261,7 +3263,8 @@
                 "Só se emitirem acima de 1 GHz"
             ],
             "correctIndex": 1,
-            "notes": "A176 Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p5</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p5</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p5</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p5</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p5</a>)",
+            "notes": "Consulte o documento:<a target='_blank' href='docs/Decreto-Lei_53-2009' class='underline'>Decreto-Lei n.º 53/2009 > Artigo 13.º > 1 — Constituem obrigações dos responsáveis pelo funcionamento das estações, sem prejuízo de outras decorrentes do presente decreto -lei e demais legislação aplicável:d) Garantir a afixação da identificação da estação e da sinalização informativa que alerte sobre os riscos da instalação da estação fixa de amador e respectivos acessórios,quando necessária, conforme legislação e regulamentação aplicáveis",
+			"fonte": "A176 2020_07_16p5 2021_02_18p5 2022_06_27p5 2022_12_27p5 2023_06_26p5 2023_09_25p5",
             "img": null,
             "uniqueID": 250
         },
@@ -3287,8 +3290,8 @@
                 "AJUDA"
             ],
             "correctIndex": 3,
-            "notes": "",
-			"fonte": "A177 2023_08_29p1 2012_04_10p3 0000_00_02p3 2016_01_00p4 2023_06_15p1",
+            "notes": "Consulte: <a target='_blank' href='docs/decisaoamador27052009.pdf' class='underline'>PROCEDIMENTOS PREVISTOS NO DECRETO-LEI N.º 53/2009, DE 2 DE MARÇO QUE DEFINE AS REGRAS APLICÁVEIS AO SERVIÇO DE AMADOR E AMADOR POR SATÉLITE - Descrição detalhada das matérias de exame (Parte B número-4 SINAIS DE PERIGO INTERNACIONAIS, COMUNICAÇÕES DE EMERGÊNCIA E COMUNICAÇÕES EM CASO DE CATÁSTROFES NATURAIS</a>",
+			"fonte": "A177 2023_08_29p1 2012_04_10p3 0000_00_02p3 2016_01_00p4 2023_06_15p1 2023_09_25p1",
             "img": null,
             "uniqueID": 252
         },
@@ -3301,7 +3304,7 @@
                 ".-.-.-"
             ],
             "correctIndex": 1,
-            "notes": "",
+            "notes": "Consulte: <a target='_blank' href='docs/decisaoamador27052009.pdf' class='underline'>PROCEDIMENTOS PREVISTOS NO DECRETO-LEI N.º 53/2009, DE 2 DE MARÇO QUE DEFINE AS REGRAS APLICÁVEIS AO SERVIÇO DE AMADOR E AMADOR POR SATÉLITE - Descrição detalhada das matérias de exame (Parte B número-4 SINAIS DE PERIGO INTERNACIONAIS, COMUNICAÇÕES DE EMERGÊNCIA E COMUNICAÇÕES EM CASO DE CATÁSTROFES NATURAIS</a>",
 			"fonte": "2023_08_29p1 2023_01_27p1 2022_08_26p1 2022_06_27p1 2018_06_19p4 2017_09_27p4",
             "img": null,
             "uniqueID": 253
@@ -3380,7 +3383,8 @@
                 "5725 - 5830 MHz"
             ],
             "correctIndex": 2,
-            "notes": "A182 Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p6</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p2</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p3</a>) (<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p3</a>)",
+            "notes": "Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf' class='underline'>ADENDA_2013_QNAF</a>",
+			"fonte": "A182 2012_04_10p6 2018_05_00p2 2022_06_27p3 2023_06_15p3 2023_09_25p3",
             "img": null,
             "uniqueID": 259
         },
@@ -3393,7 +3397,8 @@
                 "24 - 24,05 GHz"
             ],
             "correctIndex": 2,
-            "notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p4</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p5</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p5</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p2</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p02</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p2</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p2</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p02</a>)",
+            "notes": "Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf' class='underline'>ADENDA_2013_QNAF</a>",
+			"fonte": "2011_11_00p4 2018_03_08p5 2018_06_19p5 2020_07_16p2 2021_09_06p02 2022_02_03p2 2022_12_27p2 2023_03_08p02",
             "img": null,
             "uniqueID": 260
         },
@@ -3419,7 +3424,8 @@
                 "Certificado internacional HAREC, nos termos da Recomendação CEPT T/R 61-02"
             ],
             "correctIndex": 4,
-            "notes": "A184 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p5</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p3</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p4</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p4</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p04</a>)",
+            "notes": "Consulte o documento:<a target='_blank' href='docs/Rec0506.pdf' class='underline'>ECC Recommendation (05)06",
+			"fonte": "A184 2013_08_00p5 2016_01_00p3 2021_02_18p4 2022_02_03p4 2023_03_08p04",
             "img": null,
             "uniqueID": 262
         },
@@ -3432,7 +3438,8 @@
                 "CT7 se estiver a operar numa estação de amador, situada na área geográfica POR"
             ],
             "correctIndex": 1,
-            "notes": "A185 Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p5</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p3</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p4</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p4</a>) (<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p4</a>)",
+            "notes": "Consulte o documento:<a target='_blank' href='docs/Rec0506.pdf' class='underline'>ECC Recommendation (05)06 > ANNEX 2: TABLE OF EQUIVALENCE BETWEEN CEPT NOVICE LICENCE AND NATIONAL NOVICE LICENCES OF CEPT COUNTRIES > Table 1: CEPT countries",
+			"fonte": "A185 2011_11_00p5 2018_06_19p3 2022_08_26p4 2023_01_27p4 2023_06_15p4",
             "img": null,
             "uniqueID": 263
         },
@@ -3459,7 +3466,7 @@
             ],
             "correctIndex": 2,
             "notes": "Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf'>ADENDA_2013_QNAF</a>",
-			"fonte": "A188 2023_08_29p2 0000_00_01p4 0000_00_03p4 2013_08_00p4",
+			"fonte": "A188 2023_08_29p2 0000_00_01p4 0000_00_03p4 2013_08_00p4 2023_09_25p2",
             "img": null,
             "uniqueID": 265
         },
@@ -3588,8 +3595,9 @@
                 "Queixar-me a uma força policial",
                 "Não ligar"
             ],
-            "notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p13</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p13</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p12</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p12</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p7</a>) (<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p7</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p7</a>)",
-            "correctIndex": 2,
+			"correctIndex": 2,
+            "notes": "Notas",
+            "fonte": "2011_11_00p13 0000_00_01p13 2018_05_00p12 2018_06_19p12 2020_07_16p7 2023_06_15p7 2023_06_26p7 2023_09_25p7",
             "img": null,
             "uniqueID": 276
         },
@@ -3965,7 +3973,7 @@
                 "Utilizar estações de amador nos países cuja Adminstração tenha adoptado a Recomendação CEPT ECC/REC/(05)06",
                 "Utilizar estações de amador em todos os países da CEPT, nos Estados Unidos e na Austrália"
             ],
-            "notes": "A186 Exames:(<a target='_blank' href='exams/cat2/0000_00_03.pdf'>0000_00_03p5</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p3</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p3</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p4</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p4</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p4</a>)",
+            "notes": "Consulte o documento:<a target='_blank' href='docs/Rec0506.pdf' class='underline'>ANNEX 1: GENERAL CONDITIONS FOR THE ISSUE OF THE CEPT NOVICE RADIO AMATEUR LICENCE > 1 GENERAL PROVISIONS RELATING TO (CEPT NOVICE RADIO AMATEUR LICENCE) > The CEPT Novice Licence can be included in the national novice licence or be a special document issued by the same authority, and will be drafted in the national language and in German, English and French; it will be valid for non-residents only, for the duration of their temporary stays in countries having adopted this Recommendation, and within the limit of validity of the national licence. Radio amateurs holding a temporary licence issued in a foreign country may not benefit from the provisions of this Recommendation.",
             "correctIndex": 3,
             "img": null,
             "uniqueID": 305
@@ -3978,7 +3986,8 @@
                 "10,45-10,5 GHz",
                 "24-24,05 GHz"
             ],
-            "notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p6</a>)(<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p03</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p3</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p03</a>)",
+            "notes": "Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf' class='underline'>ADENDA_2013_QNAF</a>",
+			"fonte": "0000_00_02p6 2021_09_06p03 2022_12_27p3 2023_03_08p03",
             "correctIndex": 3,
             "img": null,
             "uniqueID": 306
@@ -5228,7 +5237,8 @@
                 "Aos amadores da categoria 2 são emitidas licenças CEPT novice nos termos expressos na recomendação CEPT ECC/REC/(05)06",
                 "Os amadores da categoria 2 têm direito a licensas CEPT em função dos exames em que tiverem aproveitamento"
             ],
-            "notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p5</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p5</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p3</a>) (<a target='_blank' href='exams/cat2/2021_09_06.pdf'>2021_09_06p4</a>) Consulte os documentos:<a target='_blank' href='docs/Rec0506.pdf'>ECC_Recommendation_05_06</a> & <a target='_blank' href='docs/TR6101.pdf'>Recommendation_T/R_61-01</a> ",
+            "notes": "Consulte os documentos:<a target='_blank' href='docs/Rec0506.pdf'>ECC_Recommendation_05_06</a> & <a target='_blank' href='docs/TR6101.pdf'>Recommendation_T/R_61-01</a>",
+			"fonte": "2012_04_10p5 0000_00_01p5 2018_05_00p3 2021_09_06p4</a>",
             "correctIndex": 3,
             "img": null,
             "uniqueID": 402
@@ -5302,12 +5312,13 @@
             "question": "Sempre que um amador de categoria 2 pretenda exercer a actividade temporariamente num país cuja Administração tenha adoptado a Recomendação CEPT ECC/REC (05) 06 (licença CEPT novice)",
             "answers": [
                 "Poderá utilizar estações nas faixas que utiliza em Portugal",
-                "Sem prejuízo de respeitar as condicionantes expressa na Recomendação referida, deverá respeitar as condicionantes aplicáveis desse país",
+                "Sem prejuízo de respeitar as condicionantes expressa na Recomefndação referida, deverá respeitar as condicionantes aplicáveis desse país",
                 "Terá que solicitar uma licença a ANACOM",
                 "Terá que solicitar uma licença à CEPT"
             ],
             "correctIndex": 2,
-            "notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p5</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p4</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p4</a>)",
+            "notes": "Consulte o documento:<a target='_blank' href='docs/Rec0506.pdf' class='underline'>ECC Recommendation (05)06 > ponto 2 > CONDITIONS OF UTILISATION > 2.2 > The licence holder shall observe the provisions of the ITU Radio Regulations, this Recommendation and the regulations in force in the country visited. Furthermore, any restrictions concerning national and local conditions of a technical nature or regarding the public authorities must be respected. Special attention should be paid to the difference in frequency allocations to the radio amateur services in the three ITU Regions.",
+			"fonte": "0000_00_02p5 2022_06_27p4 2022_12_27p4 2023_09_25p4",
             "img": null,
             "uniqueID": 408
         },

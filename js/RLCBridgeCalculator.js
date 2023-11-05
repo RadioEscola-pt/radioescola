@@ -1,10 +1,10 @@
-class LRCBridgeCalculator extends ElectricalUnits {
+class RLCBridgeCalculator extends ElectricalUnits {
     constructor() {
         super();
         
 
 
-        new Popup("LRCBridgeCalculator", this);
+        new Popup("RLCBridgeCalculator", this);
     }
     endRequest() {
         this.frequencyInput = document.getElementById("frequency");
