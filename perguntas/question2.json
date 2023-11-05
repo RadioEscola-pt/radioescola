@@ -1331,7 +1331,8 @@
                 "a tensão e a corrente estão em fase"
             ],
             "correctIndex": 4,
-            "notes": "A62 Verificar a seguinte menmonica $$ELI the ICE man$$ signific a que (ELI > se tivermos uma indutania L no circuito, a tensão E vem antes da corrente I) e que (ICE > se tivermos um condensador C no circuito, a tensão E está em atraso face a corrente I) Exames:(<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p9</a>)",
+            "notes": "Verificar a seguinte menmonica (ELI the ICE man) significa que (ELI > se tivermos uma indutania L no circuito, a tensão E vem antes da corrente I) e que (ICE > se tivermos um condensador C no circuito, a tensão E está em atraso face a corrente I) <img src='images/cat2/eli_the_ice_man.png'>",
+			"fonte": "A62 2023_01_27p9",
             "img": null,
             "uniqueID": 102
         },
