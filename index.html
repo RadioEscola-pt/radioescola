@@ -25,6 +25,11 @@
     <script type="text/javascript" src="js/ComponentAdder.js"></script>
     <script type="text/javascript" src="js/OhmsLawCalculator.js"></script>
     <script type="text/javascript" src="js/ReactanceCalculator.js"></script>
+    <script type="text/javascript" src="js/TransformerCalculator.js"></script>
+    <script type="text/javascript" src="js/LRCBridgeCalculator.js"></script>
+
+    
+
     <script>
       window.timers = [];
 
@@ -48,6 +53,14 @@
 
             case "REACTANCE":
               new ReactanceCalculator();
+              break;
+            case "TRANSFORMER":
+              new TransformerCalculator();
+
+              break;
+            case "LRC":
+              new LRCBridgeCalculator();
+
               break;
 
             default:
@@ -210,6 +223,27 @@
                       class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                       Lei de Ohm</a
+                    >
+                  </li>
+                  <li>
+
+                    <!-- FIXME: Corrigir script para atuar com #RLC em vez de #LRC -->
+
+                    <a
+                      onclick=""
+                      href="#LRC"
+                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      RLC</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      onclick=""
+                      href="#TRANSFORMER"
+                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Transformadores</a
                     >
                   </li>
                 </ul>
@@ -531,17 +565,17 @@
                       >
                         <li>
                           <a
-                            onclick="new LoadChapter('SWR')"
+
+                            onclick="new LoadChapter('bobinesSomar')"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
-                            >Onda estacionária (SWR)</a
+                            > Bobines </a
                           >
                         </li>
                         <li>
                           <a
-                            style="display: none"
-                            href="#"
+                            onclick="new LoadChapter('batteries')"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
-                            >Bobines (henry)</a
+                            >Capacidade de baterias</a
                           >
                         </li>
                         <li>
@@ -550,6 +584,13 @@
                             href="#"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Condensador(bobine)</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            onclick="new LoadChapter('SWR')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Onda estacionária (SWR)</a
                           >
                         </li>
                       </ul>
@@ -600,16 +641,31 @@
                         </li>
                         <li>
                           <a
-                            onclick="new LoadChapter('bobines')"
+                            onclick="new LoadChapter('ReatanciaIndutiva')"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Reactância Indutiva
                           </a>
+                        </li>
+
+                        <li>
+                          <a
+                            onclick="new LoadChapter('circuitosRL')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Circuitos RL</a
+                          >
                         </li>
                         <li>
                           <a
                             onclick="new LoadChapter('condensadores')"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Reactância Capacitiva</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            onclick="new LoadChapter('RLC')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >RLC</a
                           >
                         </li>
                         <li>
@@ -658,7 +714,7 @@
       </div>
       <article
         id="welcome"
-        class="max-w-screen-md m-auto mt-12 mb-12"
+        class="max-w-screen-md m-auto mt-12 mb-12 p-4 sm:p-0"
       ></article>
     </section>
 

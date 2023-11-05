@@ -34,6 +34,9 @@ class MatomoOptOutManager {
 		if(MatomoOptOutManager.hasConsent()==false) {
 			this.initialize();
 		}
+		FavQuiz.showFavElement("question3","favQuiz3");
+		FavQuiz.showFavElement("question2","favQuiz2");
+		FavQuiz.showFavElement("question1","favQuiz1");
 	}
 
 	initialize() {
