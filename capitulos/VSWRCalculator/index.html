@@ -1,0 +1,27 @@
+
+    <label>Selecione o método de cálculo:</label><br>
+    <input type="radio" name="calcMethod" value="voltages" id="voltagesRadio" checked>
+    <label for="voltagesRadio">Calcular com Voltagens</label>
+    <input type="radio" name="calcMethod" value="impedances" id="impedancesRadio">
+    <label for="impedancesRadio">Calcular com Impedâncias</label>
+
+    <div class="voltages-fields">
+        <label>Valores máximos da voltagem (Vmax):</label>
+        <input type="text" id="vmax" placeholder="Insira Vmax">
+
+        <label>Valores mínimos da voltagem (Vmin):</label>
+        <input type="text" id="vmin" placeholder="Insira Vmin">
+    </div>
+
+    <div class="impedances-fields hidden">
+        <label>Impedância da carga (ZL):</label>
+        <input type="text" id="zl" placeholder="Insira ZL">
+
+        <label>Impedância da fonte (Zo):</label>
+        <input type="text" id="zo" placeholder="Insira Zo">
+    </div>
+
+    <div id="vswrResult"></div>
+
+
+    <input type="button" value="Calcular" id="calculateButton">
