@@ -1,3 +1,4 @@
 node_modules
 .project
 dist/style.css
+css/style.css
