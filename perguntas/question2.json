@@ -2870,7 +2870,8 @@
                 "manchas solares"
             ],
             "correctIndex": 3,
-            "notes": "A156",
+            "notes": "Notas",
+			"fonte": "A156 2023_09_25p6",
             "img": null,
             "uniqueID": 220
         },
@@ -3593,8 +3594,9 @@
                 "Queixar-me a uma força policial",
                 "Não ligar"
             ],
-            "notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p13</a>) (<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p13</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p12</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p12</a>) (<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p7</a>) (<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p7</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p7</a>)",
-            "correctIndex": 2,
+			"correctIndex": 2,
+            "notes": "Notas",
+            "fonte": "2011_11_00p13 0000_00_01p13 2018_05_00p12 2018_06_19p12 2020_07_16p7 2023_06_15p7 2023_06_26p7 2023_09_25p7",
             "img": null,
             "uniqueID": 276
         },
