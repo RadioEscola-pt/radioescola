@@ -7,9 +7,10 @@ class FavQuiz extends Classes([Questions,Storage]) {
 		super();
 		this.jsonFile = json;
 		this.pageBlocks = [];
-		this.createQuiz();
-		this.parts = this.jsonFile.split('.');
+		
+		this.filename = this.getfilename();
 		super.hideOnUnselect=true;
+		this.createQuiz();
 
 	}
 
@@ -70,7 +71,7 @@ class FavQuiz extends Classes([Questions,Storage]) {
 					var index = 0;
 					let storedPage=this.quiz.getStoreFavPage();
 					
-					const favoritesString = localStorage.getItem(this.quiz.parts[0] + "Fav") || '[]';
+					const favoritesString = localStorage.getItem(this.quiz.filename + "Fav") || '[]';
 					const favorites = JSON.parse(favoritesString);
 					for (var qindex in Quiz.messagesArray.questions) {
 						if (favorites.includes(this.quiz.questions[qindex].uniqueID) == false) continue;
