@@ -21,7 +21,6 @@ class VSWRCalculator extends ElectricalUnits {
         this.impedancesRadio.addEventListener("click", () => this.showImpedancesFields());
 
         this.calculateButton.addEventListener("click", () => this.calculateVSWR());
-        this.calculateVSWR(); // Chama o cálculo ao carregar a página
     }
 
     showVoltagesFields() {

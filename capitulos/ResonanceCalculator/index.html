@@ -1,18 +1,22 @@
 
     <label for="inductance">Indutância (L) em Henrys (H):</label>
-    <input type="number" id="inductance" step="0.001" required><br>
-    <select
+    <input class="w-full border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-900" type="number" id="inductance" step="0.001" required><br>
+    <select class="w-36 text-sm bg-gray-100 border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-950"
     id="inductanceUnit"
 
     class="w-52 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
   ></select>
-    <label for "capacitance">Capacitância (C) em Farads (F):</label>
-    <input type="number" id="capacitance" step="0.001" required><br>
-    <select
+    <label for="capacitance">Capacitância (C) em Farads (F):</label>
+    <input class="w-full border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-900" type="number" id="capacitance" step="0.001" required><br>
+    <select class="w-36 text-sm bg-gray-100 border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-950"
     id="capacitanceUnit"
     class="w-52 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
   ></select>
-    <input type="button" value="Calcular Frequência de Ressonância">
+
+    <input  type="button"
+    id="ReesunaceCalculatorCalculateButton"
+    class="text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800"
+    value="Calcular Frequência de Ressonância">
 
 
-<p id="result"></p>
+<p class="mt-12" id="result"></p>
