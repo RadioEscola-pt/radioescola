@@ -160,7 +160,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 	constructor(json) {
 		super();
 		this.jsonFile=json;
-		this.parts = this.jsonFile.split('.');
+		this.filename = this.getfilename();
 		var numberOfUnaswered = 0;
 		var questionCounter = 0;
 		this.pageBlocks = []
