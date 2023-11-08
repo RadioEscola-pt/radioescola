@@ -1,25 +1,229 @@
 <h1 class="text-2xl mb-4">Antenas</h1>
+<p>&nbsp;</p>
+
+<p>A antena é o dispositivo que interliga as ondas  de rádio que se propagam pelo espaço e as correntes elétricas que se movem em  condutores metálicos, usadas quer em modo receção, quer em modo de transmissão.</p>
+<p><br />
+Podemos definir que são o meio para irradiar ou  receber a energia eletromagnética.</p>
+
+<p class="my-4">
+Devido as características das ondas  eletromagnéticas, as antenas são desenhadas e projetadas de forma a conseguirem  receber e transmitir essa energia de forma mais eficiente e eficaz possível,  influenciando na sua<strong> forma</strong> e principalmente na sua <strong>dimensão</strong>.</p>
+
+<p>
+  A ondas eletromagnéticas possuem algumas características  sendo uma delas o <strong> comprimento de onda</strong>; que se pode definir como sendo a &nbsp;distância  entre valores repetidos sucessivos num padrão de onda sendo geralmente representado  pela&nbsp;letra&nbsp;<strong>grega&nbsp;<em>lambda</em> (λ)</strong>. </p>
+  
+<br />
+  
+<p align="center"><img src="capitulos/antenas/comprimento_onda.png" width="582" height="477" alt="comp_onda" /></p>
+
+<br />
+
+<p>Uma característica interessante do &ldquo;comprimento  de onda é que este é inversamente proporcional a frequência, logo á medida que  a frequência aumenta o comprimento de onda diminui e vice-versa.</p>
+<p>&nbsp;</p>
+
+
+<p class="my-4">
+A dimensão das antenas de uma forma geral está diretamente relacionada com a frequência em que se quer operar sendo importante calcular o “comprimento de onda” de forma a se otimizar a antena para a frequência que se quer trabalhar.</p>
+
+<p><br />
+  Geralmente utilizam-se antenas maiores para um  comprimento de onda maior e utilizam-se antenas mais pequenas, para um comprimento  de onda menor. (Existem exceções nomeadamente nas antenas de maior dimensão que  devido a seu grande tamanho acabam por ser &ldquo;encurtadas&rdquo; através de vária técnicas)</p>
+<p>&nbsp; </p>
+<p>A relação entre o comprimento de onda e a frequência  é dada pela seguinte fórmula:</p>
+
+<h2 align="center"
+  class="text-xl mb-4 mt-20 border-l-4 border-l-green-400 bg-green-100 dark:bg-blue-900 dark:border-l-blue-950 w-fit px-2 rounded align:center"
+>
+  λ = c / f
+</h2>
+<p>em que:<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;λ = Comprimento da onda eletromagnética;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  c = velocidade da luz no vácuo = 299.792,458 km/s ≈ 300.000 km/s<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  f = frequência da onda Hertz.</p>
+<p>Assim, para calcularmos o  comprimento de uma onda de rádio basta dividirmos a velocidade da luz (300.000  Km por segundo) pela frequência desejada, em Hertz.</p>
+<p><br />
+  Para efeitos  de simplificação, cortamos  os três zeros  e temos uma fórmula padrão: <br />
+  <strong>300/F=1λ</strong> (uma onda completa em &ldquo;metros&rdquo;)</p>
+  
+<br />
+
+
+<p>Aplicando a  fórmula a várias frequências podemos calcular o seu comprimento de onda em  metros:</p>
+<p>&nbsp;</p>
+
+<table width="603" class="w-full my-12 shadow border-2">
+  <thead class="bg-slate-800 dark:bg-slate-950 text-white">
+    <tr class="even:bg-neutral-100 dark:even:bg-slate-900">
+      <th width="142" class="p-2"><div align="center">Velocidade da Luz</div></th>
+      <th width="8"><div align="center">/</div></th>
+      <th width="127"><div align="center">Frequência em MHz</div></th>
+      <th width="7"><div align="center">=</div></th>
+      <th width="205"><div align="center">Comprimento de onda em metros</div></th>
+      <th width="74"><div align="center">Banda</div></th>
+    </tr>
+  </thead>
+
+  <tbody class="divide-x divide-y">
+    <tr class="divide-x divide-y">
+      <td><div align="center">300</div></td>
+      <td><div align="center">/</div></td>
+      <td><div align="center">3.500</div></td>
+      <td><div align="center">=</div></td>
+      <td><div align="center">85,71</div></td>
+      <td><div align="center">80m</div></td>
+    </tr>
+    <tr class="divide-x divide-y">
+      <td><div align="center">300</div></td>
+      <td><div align="center">/</div></td>
+      <td><div align="center">7.100</div></td>
+      <td><div align="center">=</div></td>
+      <td><div align="center">42,25</div></td>
+      <td><div align="center">40m</div></td>
+    </tr>
+    <tr class="divide-x divide-y">
+      <td><div align="center">300</div></td>
+      <td><div align="center">/</div></td>
+      <td><div align="center">14.150</div></td>
+      <td><div align="center">=</div></td>
+      <td><div align="center">21,20</div></td>
+      <td><div align="center">20m</div></td>
+    </tr>
+    <tr class="divide-x divide-y">
+      <td><div align="center">300</div></td>
+      <td><div align="center">/</div></td>
+      <td><div align="center">21.000</div></td>
+      <td><div align="center">=</div></td>
+      <td><div align="center">14,28</div></td>
+      <td><div align="center">15m</div></td>
+    </tr>
+    <tr class="divide-x divide-y">
+      <td><div align="center">300</div></td>
+      <td>/</td>
+      <td><div align="center">28.500</div></td>
+      <td><div align="center">=</div></td>
+      <td><div align="center">10,53</div></td>
+      <td><div align="center">10m</div></td>
+    </tr>
+    <tr class="divide-x divide-y">
+      <td><div align="center">300</div></td>
+      <td>/</td>
+      <td><div align="center">50.500</div></td>
+      <td><div align="center">=</div></td>
+      <td><div align="center">5,94</div></td>
+      <td><div align="center">6m</div></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Se  reparamos os rádios de HF já vêm com présselectores para cada banda e operação,  basta apertar o botão específico para escolhermos a banda que vamos operar.</p>
+
+<br />
+
+<p align="center"><img src="capitulos/antenas/bandas_button.png" width="324" height="324" alt="bandas" /></p>
+
+
 
 <h2
   class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 dark:bg-blue-900 dark:border-l-blue-950 w-fit px-2 rounded"
 >
-  Categorias de antenas
+  Qualquer tipo de antena é  influenciada pelas seguintes grandezas elétricas:<u><strong> Ressonância, reatância, impedância e resistência</strong></u><strong></strong>
 </h2>
-<p class="my-4">
-  Existem duas categorias de antenas: <strong>direcionais</strong> e
-  <strong>omnidirecionais</strong>.
-</p>
-<p class="my-4">
-  As direcionais projetam o sinal numa determinada direção. As antenas deste
-  tipo têm sinais fortes porque concentram toda a potência na direção em que
-  estão orientadas. Um exemplo é a antena Yagi-Uda, mais conhecida por Yagi.
-</p>
-<p class="my-4">
-  As omnidirecionais conseguem transmitir sinal em todas as direções, mas por
-  via dessa característica, não o fazem com uma força de sinal tão grande quanto
-  as direcionais. Estas antenas são, normalmente, de polarização vertical.
+<p
+><strong>Ressonância</strong> é  quando a antena tem o comprimento exato e funciona na frequência para a qual foi desenhada. </p>
+
+<br />
+
+<p
+><strong>Resitência</strong> é a capacidade física de um corpo qualquer se opor à passagem de corrente elétrica.</p>
+
+<br />
+<p
+>Quando a antena é usada em frequências para a qual não foi cortada, aparecem  outras grandezas complexas, como a <strong>reatância</strong>, sendo esta  uma oposição natural  à variação de corrente elétrica e tensão elétrica, respectivamente em circuitos de corrente alternada.</p>
+
+<br />
+
+<p
+>A <strong>reatância</strong> pode ser indutiva ou  capacitiva conforme seja originada em indutores ou condensadores.</p>
+<p>Ex: Ao utilizarmos um analisador de antenas podemos deparar-nos com as seguintes medições: R 50 +j123. R é a parte resistiva medida em ohms. O símbolo  &ldquo;+&rdquo;j indica uma reatância indutiva. Se o sinal fosse &ldquo;-&rdquo;, seria reatância capacitiva.</p>
+
+<br />
+
+<p>
+<strong>Impedância </strong>é aquela que se espera que  o sinal de RF flua sem restrições para o éter e é medida em ohms (Ω). impedancia é composta pela soma da Reactâcia + a Resistência.</p>
+<p
+>Por exemplo  se uma antena for desenhada para 7.100 KHz, ela não irá funcionar bem em  8.000. Haverá ROE ou 
+<a target='_blank' href='?LoadChapter=SWR'><u><strong>SWR</strong></u></a>, e RF voltando pelo cabo  para o rádio.
 </p>
 
+<br />
+
+<p>Outra  característica das antenas é que elas podem ser alimentadas por tensão ou  corrente. No caso do dipolo alimentado no centro, dizemos que a alimentação é  em corrente e no caso de ser na extremidade, a alimentação é em tensão.</p>
+
+<br />
+
+<h2
+  class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 dark:bg-blue-900 dark:border-l-blue-950 w-fit px-2 rounded"
+>
+  O desempenho elétrico de uma antena pode ser caracterizado de acordo com as seguintes propriedades:<br />
+</h2>
+<ol>
+  <li><strong>Impedancia no  ponto de alimentação</strong></li>
+</ol>
+
+<br />
+
+<p>A característica principal que define uma antena ésua impedância no ponto de alimentação. Maior parte das antenas que usamos são baseadas numa antena de meia onda (½λ). Foi estabelecido assim porque os equipamentos de rádio de hoje em dia têm uma saída de 50 Ω e a antena de meia onda, apresenta no seu centro, esta impedância. <br />
+Na prática, os valores de uma antena de meia onda podem variar entre 50 Ω a quase 80 Ω e a de onda completa, de 100 Ω a 120 Ω. É comum alimentar algmas antenas não no centro mas a mais para um dos lados d que para o outro e até mesmo no extremo da meia onda a fim de ter antenas multibanda isto é que sejam ressonates e várias bandas, mas nessse cenário já ser+ necessário usar dipositivos adaptadores e impedância pois quanto vais se vai para um doa extremso da antena a impedencia vai aumentando e divergindo muito dos 50 Ω  que o radio necessita.</p>
+
+<br />
+
+<ol>
+  <li><strong>Directividade, Ganho e Eficiência</strong></li>
+</ol>
+
+<br />
+
+<p>Em termos de <strong>directividade</strong> podemos identificar duas categorias de antenas: <strong>direcionais</strong> e antenas <strong>omnidirecionais</strong>. </p>
+
+<br />
+
+<p> As direcionais projetam o sinal numa determinada direção. As antenas deste    tipo têm sinais fortes porque concentram toda a potência na direção em que    estão orientadas. Um exemplo é a antena Yagi-Uda, mais conhecida por Yagi. </p>
+
+<br />
+
+<p> As omnidirecionais conseguem transmitir sinal em todas as direções, mas por    via dessa característica, não o fazem com uma força de sinal tão grande quanto    as direcionais. Estas antenas são, normalmente, de polarização vertical. </p>
+<p>&nbsp;</p>
+<p>A <strong>eficência</strong> de uma antena é a razão entre  a potência que lhe é entregue e a que é convertida em radiação e representa-se  pela seguinte expressão: </p>
+<p align="center"><img src="capitulos/antenas/eficiencia.png" width="146" height="109" alt="eficiencia" /></p>
+<p align="left">O <strong>ganho</strong> de antena refere-se ao ganho  de densidade de potência que uma antena dá em uma determinada direção  relativa a uma antena isotrópica ideal com a mesma potência  de alimentação.</p>
+<p align="center">&nbsp;</p>
+<ol>
+  <li><strong>Polarização</strong> </li>
+</ol>
+<p>Polarização é uma medida da orientação espacial dos dois vetores que compõem a ona electro magnética (campo elétrico e campo magnético).</p>
+
+<br />
+
+<p align="center"><img src="capitulos/antenas/onda_electo_mag.png" width="321" height="266" alt="onda_electo_mag" /></p>
+<p>&nbsp;</p>
+<p>As ondas eletromagnéticas podem ser polarizadas de três formas distintas: <strong>polarização linear, circular e elíptica.</strong></p>
+<p>&nbsp;</p>
+<p align="center"><img src="capitulos/antenas/polarizacao.png" width="538" height="474" alt="polarizacao" /></p>
+
+<p>&nbsp;</p>
+<p>As formas  de polarização mais usadas em antenas de radioamador são a <strong>polarização linear</strong> que poderá ser <u>Vertical ou Horizontal</u>, sendo comumente utilizada em várias  bandas desde HF ao UHF, e a<strong> polarização elíptica</strong> (usada normalmente para operar  satéites ex:QO-100) podendo esta ser <u>Polarização Circular Direita ou  Anti-horária e Polarização Circular Esquerda ou Horária</u></p>
 <h2
   class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 dark:bg-blue-900 dark:border-l-blue-950 w-fit px-2 rounded"
 >
@@ -33,22 +237,19 @@
 
 <ul class="ml-4">
   <li>Dipolo - De meia onda com polarização vertical ou horizontal.</li>
-  <li>Dipolo dobrado - Melhor largura de banda que um dipolo normal.</li>
+  <li>Dipolo dobrado (fechado) - Melhor largura de banda que um dipolo normal.</li>
   <li>
     Yagi - Antena direcional com ganho e boa rejeição de sinais indesejados.
   </li>
   <li>
-    Loop magnético - Antena de loop quadrado que oferece ganho e diretividade.
-  </li>
-  <li>
-    Onda completa - Antena vertical que utiliza radiação em todas as direções.
+    Loop magnético - Antena de loop que oferece ganho e diretividade.
   </li>
   <li>
     Quarto de onda (ground plane) - Antena vertical com radiais para melhorar
     desempenho.
   </li>
   <li>
-    Meia onda alimentada pelo topo - Antena simples de construir, e bastante
+    Meia onda alimentada pelo extremo (EFHW)- Antena simples de construir, e bastante
     eficiente.
   </li>
   <li>Dipolo multibanda (trap) - Antena dipolo ressonante em várias bandas</li>
@@ -67,9 +268,10 @@
   um fio ou elemento metálico. O dipolo é conhecido pela sua polarização
   vertical ou horizontal e possui uma largura de banda relativamente ampla.
 </p>
+<p align="center" class="my-4"><img src="capitulos/antenas/dipolo.png" width="488" height="189" alt="dipolo" /></p>
 
 <h3 class="text-xl mb-4 mt-12">
-  Dipolo dobrado
+  Dipolo dobrado (fechado)
   <span
     class="text-sm bg-red-100 text-red-500 dark:bg-red-950 dark:text-red-300 py-1 px-2 rounded-2xl"
     >Categoria 1</span
@@ -85,6 +287,7 @@
   são ideais para uso onde é necessária uma transferência de potência ideal e
   grande impedância de entrada.
 </p>
+<p align="center" class="my-4"><img src="capitulos/antenas/Folded_Dipole.JPG" width="545" height="370" alt="folde_dipole" /></p>
 
 <h3 class="text-xl mb-4 mt-12">
   Antena Yagi
@@ -99,19 +302,19 @@
   elementos metálicos, incluindo um elemento ativo (normalmente um dipolo) e um
   ou mais elementos diretores e refletores. A antena Yagi é amplamente utilizada
   em comunicações de rádio devido à sua capacidade de focar o sinal em uma
-  direção específica, aumentando o alcance e a qualidade da comunicação. Têm uma
-  baixa impedância de entrada e uma relação frente-costas acima de 13dB.
-</p>
+direção específica, isto é a chamada relação frente/costas que se define como (a  potência radiada no lóbulo principal de radiação comparada com a potência  radiada na direção exatamente oposta) o que aumenta o alcance e a qualidade da comunicação. Têm uma
+  baixa impedância de entrada e uma relação frente-costas acima de 13dB. </p>
+<p align="center" class="my-4"><img src="capitulos/antenas/antena-yagi.png" width="385" height="385" alt="antena-yagi" /></p>
+<p class="my-4">&nbsp;</p>
 
 <h3 class="text-xl mb-4 mt-12">Loop Magnético</h3>
 <p class="my-4">
   As antenas do tipo loop magnético são conhecidas pela sua capacidade de
-  receber sinais de rádio com baixo ruído e alta eficiência. Elas consistem em
-  um loop de fio condutor que forma uma bobina, capaz de captar o campo
-  magnético das ondas eletromagnéticas. Essas antenas são amplamente utilizadas
-  em aplicações de comunicação de curta distância, como rádios de ondas médias e
-  curtas.
-</p>
+  receber sinais de rádio com baixo ruído de alta eficiência. Elas consistem em
+  um loop de fio condutor ou metal, capaz de captar o campo
+  magnético das ondas eletromagnéticas rejeitando a parte elétrica da onda eletromagnética dessa forma ficam &quot;surdas&quot; as interferências provocadas pelos outros dispositivos elétricos e que geralmente afetam outros tipos de antenas.</p>
+<p align="center" class="my-4"><img src="capitulos/antenas/loop_mag.jpg" width="394" height="283" alt="loop_mag" /></p>
+<p class="my-4">&nbsp;</p>
 
 <h3 class="text-xl mb-4 mt-12">
   Antena de quarto de onda (ground plane)
@@ -121,16 +324,18 @@
   >
 </h3>
 <p class="my-4">
-  A antena de quarto de onda (ground plane) é uma antena vertical que opera em
-  frequências de VHF (Very High Frequency) e UHF (Ultra High Frequency). Ela é
+  A antena de quarto de onda (ground plane) é uma antena vertical. Ela é
   chamada "quarto de onda" porque o seu comprimento vertical corresponde a um
   quarto do comprimento de onda da frequência em que está sintonizada.
   Geralmente consiste em um elemento vertical (o quarto de onda) e um plano de
   terra horizontal (os radiais) que ajudam a melhorar seu desempenho.
 </p>
+<p class="my-4">&nbsp;</p>
+<p align="center" class="my-4"><img src="capitulos/antenas/ground_plane.png" width="382" height="329" alt="ground_plane" /></p>
+<p class="my-4">&nbsp;</p>
 
 <h3 class="text-xl mb-4 mt-12">
-  Antenas de meio comprimento de onda alimentadas pelo topo (EFHW: End-fed
+  Antenas de meio comprimento de onda alimentadas pelo extremo (EFHW: End-fed
   half-wave)
   <span
     class="text-sm bg-orange-100 text-orange-500 dark:bg-orange-950 dark:text-orange-300 py-1 px-2 rounded-2xl"
@@ -144,6 +349,9 @@
   extremidade. Tornou-se popular entre os operadores portáteis porque é muito
   simples na sua construção e implantação.
 </p>
+<p class="my-4">&nbsp;</p>
+<p align="center" class="my-4"><img src="capitulos/antenas/efhw.png" width="640" height="480" alt="efhw" /></p>
+<p class="my-4">&nbsp;</p>
 
 <h3 class="text-xl mb-4 mt-12">
   Dipolo multibanda (trap)
@@ -153,8 +361,5 @@
   >
 </h3>
 <p class="my-4">
-  A antena dipolo trap usa um circuito ressonante paralelo ou trap, que ressoa
-  em uma frequência específica, isolando assim uma seção da antena. Isto permite
-  que a seção interna da antena seja usada na frequência onde a armadilha ressoa
-  e toda a antena onde ela não ressoa.
-</p>
+A antena dipolo &quot;trap&quot; usa tipicamente um circuito LC ressonante paralelo ou trap, que está ajustado a uma frequência específica, isolando assim uma seção da antena. Isto permite que o equipamento tranceptor só consiga &quot;vêr&quot; um detrminado comprimento de radiate adequado para cada banda.</p>
+<p align="center" class="my-4"><img src="capitulos/antenas/trap_dipole.png" width="640" height="129" alt="trap_dipole" /></p>
