@@ -29,7 +29,8 @@
     <script type="text/javascript" src="js/RLCBridgeCalculator.js"></script>
     <script type="text/javascript" src="js/VSWRCalculator.js"></script>
     <script type="text/javascript" src="js/ResonanceCalculator.js"></script>
-
+    <script type="text/javascript" src="js/LocalStorageManager.js"></script>
+    
     
     <script>
       window.timers = [];
@@ -84,7 +85,8 @@
 
       window.onload = function () {
         const optOutManager = new MatomoOptOutManager();
-        const searchParams = new URLSearchParams(window.location.search);
+        const searchParams = new URLSearchParams(window.location.search);~
+        new LocalStorageManager();
         if (searchParams.has("LoadChapter")) {
           new LoadChapter(searchParams.get("LoadChapter")); // bar, only returns the first value
         } else if (searchParams.has("TEST")) {
@@ -782,7 +784,12 @@
           >Código</a
         >
         <a href="#" id="ShowPrivacyBar">Politica de Privacidade</a>
+        <label id="fileLabel" for="fileInput" >Carregar Definições</label>
+        <input type="file" id="fileInput" style="display: none;"> 
+  
+        <button id="exportButton">Exportar Definições</button>
       </div>
+
 
       <div class="flex flex-col items-end">
         <div class="flex flex-row items-center">
