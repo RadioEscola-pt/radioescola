@@ -30,6 +30,7 @@
     <script type="text/javascript" src="js/VSWRCalculator.js"></script>
     <script type="text/javascript" src="js/ResonanceCalculator.js"></script>
     <script type="text/javascript" src="js/LocalStorageManager.js"></script>
+    <script type="text/javascript" src="js/GainCalculator.js"></script>
     
     
     <script>
@@ -68,8 +69,12 @@
             case "VSWRC":
               new VSWRCalculator();
               break;
-              case "RLCRESS":
+            case "RLCRESS":
               new ResonanceCalculator();
+              break;
+
+            case "GAIN":
+              new GainCalculator();
               break;
 
 
@@ -263,7 +268,20 @@
                 >
                 VSWRC</a
                 >
+                                  <a
+                  onclick=""
+                  href="#GAIN"
+                  class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                GAIN</a
+                >
+
+
+
+                
               </li>
+
+              
 
 
                   
