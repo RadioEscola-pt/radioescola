@@ -30,8 +30,7 @@
     <script type="text/javascript" src="js/VSWRCalculator.js"></script>
     <script type="text/javascript" src="js/ResonanceCalculator.js"></script>
     <script type="text/javascript" src="js/LocalStorageManager.js"></script>
-    
-    
+
     <script>
       window.timers = [];
 
@@ -68,10 +67,9 @@
             case "VSWRC":
               new VSWRCalculator();
               break;
-              case "RLCRESS":
+            case "RLCRESS":
               new ResonanceCalculator();
               break;
-
 
             default:
               console.log("Unknown case");
@@ -85,8 +83,8 @@
 
       window.onload = function () {
         const optOutManager = new MatomoOptOutManager();
-        const searchParams = new URLSearchParams(window.location.search);~
-        new LocalStorageManager();
+        const searchParams = new URLSearchParams(window.location.search);
+        ~new LocalStorageManager();
         if (searchParams.has("LoadChapter")) {
           new LoadChapter(searchParams.get("LoadChapter")); // bar, only returns the first value
         } else if (searchParams.has("TEST")) {
@@ -237,7 +235,6 @@
                     >
                   </li>
                   <li>
-
                     <a
                       onclick=""
                       href="#RLC"
@@ -245,28 +242,27 @@
                     >
                       RLC</a
                     >
+                  </li>
+
                   <li>
                     <a
                       onclick=""
                       href="#RLCRESS"
                       class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
-                      Ressonacia RL</a
+                      Ressonância RLC</a
                     >
                   </li>
                   <li>
-         
-                  <a
-                  onclick=""
-                  href="#VSWRC"
-                  class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                >
-                VSWRC</a
-                >
-              </li>
+                    <a
+                      onclick=""
+                      href="#VSWRC"
+                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      VSWRC</a
+                    >
+                  </li>
 
-
-                  
                   <li>
                     <a
                       onclick=""
@@ -505,14 +501,14 @@
                             >Alfabeto Fonético</a
                           >
                         </li>
-						<li>
+                        <li>
                           <a
                             onclick="new LoadChapter('AbreviaturasOperacao')"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Abreviaturas de Operação</a
                           >
                         </li>
-						<li>
+                        <li>
                           <a
                             onclick="new LoadChapter('defs_genericas')"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
@@ -595,11 +591,11 @@
                       >
                         <li>
                           <a
-
                             onclick="new LoadChapter('bobinesSomar')"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
-                            > Bobines </a
                           >
+                            Bobines
+                          </a>
                         </li>
                         <li>
                           <a
@@ -656,9 +652,6 @@
                           >
                         </li>
 
-
-
-
                         <li>
                           <a
                             onclick="new LoadChapter('tranformadores')"
@@ -703,7 +696,6 @@
                           >
                         </li>
 
-
                         <li>
                           <a
                             onclick="new LoadChapter('RessonaciaRLC')"
@@ -711,6 +703,8 @@
                           >
                             Ressonacia de RL</a
                           >
+                        </li>
+
                         <li>
                           <a
                             onclick="new LoadChapter('receptores')"
@@ -784,12 +778,11 @@
           >Código</a
         >
         <a href="#" id="ShowPrivacyBar">Politica de Privacidade</a>
-        <label id="fileLabel" for="fileInput" >Carregar Definições</label>
-        <input type="file" id="fileInput" style="display: none;"> 
-  
+        <label id="fileLabel" for="fileInput">Carregar Definições</label>
+        <input type="file" id="fileInput" style="display: none" />
+
         <button id="exportButton">Exportar Definições</button>
       </div>
-
 
       <div class="flex flex-col items-end">
         <div class="flex flex-row items-center">
