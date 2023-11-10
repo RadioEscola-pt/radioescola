@@ -1,6 +1,7 @@
 class Questions {
   constructor() {
     this.hideOnUnselect = false;
+    this.filename="";
   }
   checkQuestion() {
     const index = parseInt(this.value);
@@ -128,7 +129,7 @@ class Questions {
     let starIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 	starIcon.setAttribute('viewBox', '0 0 24 24');
 	starIcon.setAttribute('stroke', '#fcd34d');
-    starIcon.existingRecords = this.parts[0];
+    starIcon.existingRecords = this.filename;
 
     if (MatomoOptOutManager.hasConsent()) {
       starIcon.uniqueID = uniqueID;

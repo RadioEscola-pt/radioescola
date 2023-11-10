@@ -7,7 +7,7 @@ class Quiz extends Classes([Questions, Storage]) {
 		super();
 		this.jsonFile = json;
 		this.pageBlocks = [];
-		this.parts = this.jsonFile.split('.');
+		this.filename = this.getfilename();
 		this.createQuiz();
 
 	}
