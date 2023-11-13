@@ -6,13 +6,13 @@ import { join } from 'path'
 export async function create(prevState: any, formData: FormData) {
     const prisma = new PrismaClient()
 
-    if (formData.get("fonte") !== null) 
-        fonte = formData.get("fonte").toString() 
+    let fonte : string = ""
+    let categoria = 1
+    let link = ""
 
-    const questions = prisma.fonte.create({data: {
-        fonte: fonte
-    }})
-   //TODO: add remaining fields
+    fonte  = formData.get("exam")!.toString() 
+    categoria = Number(formData.get("categoria")!)
+
     const file: File | null = formData.get('ficheiro') as File
     if (file.size == 0 && file.name == "undefined") {
         console.log("no file selected")
@@ -23,9 +23,13 @@ export async function create(prevState: any, formData: FormData) {
         const path = join('/', 'tmp/', 'exam',  file.name)
         await writeFile(path, buffer)
         console.log(`open ${path} to see the uploaded file`)
+        link = path
     }
-    
+    const questions = await prisma.fonte.create({data: {
+        fonte: fonte,
+        categoria: categoria,
+        link: link
+    }})
 
-    // await new Promise(resolve => setTimeout(resolve, 1000));
     return {message: "Sent!"}
   }
