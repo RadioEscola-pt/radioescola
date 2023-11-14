@@ -932,7 +932,7 @@
                 "1 mF"
             ],
             "correctIndex": 2,
-            "notes": "<p>L<sub>total</sub> = L<sub>1</sub> + L<sub>2</sub> + L<sub>3</sub> + &#8230;</p> <p>L<sub>total</sub> = 10 mH + 10 mH + 10 mH = 30 mH</p>",
+            "notes": "No caso de termos só 2 condensadores de valores diferentes ligados em série podemos aplicar a fórmula simplificada, <p>C<sub>eq</sub> = C1.C2/C1+C2 ou seja 20X50 / 20+50 = 14,285 microfarad",
             "img": null,
             "uniqueID": 72
         },
@@ -945,7 +945,8 @@
                 "300 microfarad"
             ],
             "correctIndex": 3,
-            "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p10</a>)",
+            "notes": "NOTAS",
+			"fonte": "2023_07_03p10",
             "img": null,
             "uniqueID": 73
         },
