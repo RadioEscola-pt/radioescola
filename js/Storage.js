@@ -24,9 +24,8 @@ class Storage {
 
 
 	storePage(page) {
-		const parts = this.jsonFile.split('.');
 		// Check if there is an existing record in local storage
-		const existingRecords = JSON.parse(localStorage.getItem(parts[0])) || {};
+		const existingRecords = JSON.parse(localStorage.getItem(this.getfilename())) || {};
 
 
 		// If a record exists, append the new correctness value to the array
@@ -34,7 +33,7 @@ class Storage {
 
 
 		// Save the updated records back to local storage
-		localStorage.setItem(parts[0], JSON.stringify(existingRecords));
+		localStorage.setItem(this.getfilename(), JSON.stringify(existingRecords));
 
 
 
@@ -43,9 +42,9 @@ class Storage {
 	}
 	storeFavPage(page)
 	{
-		const parts = this.jsonFile.split('.');
+	
 		// Check if there is an existing record in local storage
-		const existingRecords = JSON.parse(localStorage.getItem(parts[0])) || {};
+		const existingRecords = JSON.parse(localStorage.getItem(this.getfilename())) || {};
 
 
 		// If a record exists, append the new correctness value to the array
@@ -53,17 +52,24 @@ class Storage {
 
 
 		// Save the updated records back to local storage
-		localStorage.setItem(parts[0], JSON.stringify(existingRecords));
+		localStorage.setItem(this.getfilename(), JSON.stringify(existingRecords));
 
 
 
 
 	}
+	getfilename() {
+		let parts = this.jsonFile.split('.');
+		parts = parts[0].split('/');
+		const filename = parts[parts.length - 1];
+		return filename;
+	}
+
 
 	getStorePage() {
-		const parts = this.jsonFile.split('.');
+
 		// Check if there is an existing record in local storage
-		const existingRecords = JSON.parse(localStorage.getItem(parts[0])) || {};
+		const existingRecords = JSON.parse(localStorage.getItem(this.getfilename())) || {};
 
 
 		if (existingRecords.hasOwnProperty("page")) {
@@ -78,9 +84,8 @@ class Storage {
 	}
 
 	getStoreFavPage() {
-		const parts = this.jsonFile.split('.');
 		// Check if there is an existing record in local storage
-		const existingRecords = JSON.parse(localStorage.getItem(parts[0])) || {};
+		const existingRecords = JSON.parse(localStorage.getItem(this.getfilename())) || {};
 
 
 		if (existingRecords.hasOwnProperty("favPage")) {
@@ -94,9 +99,8 @@ class Storage {
 
 	}
 	storeAnswer(isCorrect, answerId) {
-		const parts = this.jsonFile.split('.');
 		// Check if there is an existing record in local storage
-		const existingRecords = JSON.parse(localStorage.getItem(parts[0])) || {};
+		const existingRecords = JSON.parse(localStorage.getItem(this.getfilename())) || {};
 
 		// Check if a record already exists for the answerId
 		if (existingRecords.hasOwnProperty(answerId)) {
@@ -110,7 +114,7 @@ class Storage {
 		}
 
 		// Save the updated records back to local storage
-		localStorage.setItem(parts[0], JSON.stringify(existingRecords));
+		localStorage.setItem(this.getfilename(), JSON.stringify(existingRecords));
 
 
 

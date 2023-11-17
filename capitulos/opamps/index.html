@@ -1,29 +1,53 @@
-<h1 class="page-title">Amplificadores Operacionais</h1>
+<h1 class="text-2xl mb-4">Amplificadores Operacionais</h1>
 
-<h2>O que são Amplificadores Operacionais (Op-Amps)?</h2>
-<p>
-  Os amplificadores operacionais são dispositivos eletrônicos que amplificam uma
+<h2 class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 dark:bg-blue-900 dark:border-l-blue-950 w-fit px-2 rounded">
+  O que são Amplificadores Operacionais (Op-Amps)?
+</h2>
+<p class="my-4">
+  Os amplificadores operacionais são dispositivos eletrónicos que amplificam uma
   diferença de tensão entre dois terminais de entrada. Eles são amplamente
-  usados em eletrônica para realizar uma variedade de tarefas, como amplificação
+  usados em eletronica para realizar uma variedade de tarefas, como amplificação
   de sinais, filtragem, integração, diferenciação e muito mais.
 </p>
 
-<h3>Exemplo 1 - Amplificador Inversor</h3>
+<p>
+  <div class="flex">
+    <div class="flex-1">
+      Para efeito de cálculos é usado o modelo ideal de um opamp, algumas das suas características são:
+      <ul class="list-disc p-4 pl-10">
+        <li>Impedância de entrada infinita</li>
+        <li>Corrente de entrada nula</li>
+        <li>Ganho de tensão infinito</li>
+        <li>Impedânciade saida nula</li>
+        <li>Largura de banda inifinita </li>
+        <li>Tensão de desvio de entrada é nula</li>
+      </ul>
+    </div>
+    <img class="flex-initial w-64 h-auto dark:invert" src="capitulos/opamps/Op-Amp_Internal.svg" />
+
+  </div>
+</p>
+
+<h3 class="text-xl mb-4 mt-12 text-orange-800">
+  Exemplo 1 - Amplificador Inversor
+</h3>
 <div class="example">
-  <p>Considere o seguinte circuito de amplificador inversor:</p>
-  <img src="capitulos\opamps\inversor.png" />
-  <p>
-    Para calcular a tensão de saída (Vout), você pode usar a seguinte fórmula:
+  <p class="my-4">Considere o seguinte circuito de amplificador inversor:</p>
+  <img class="dark:invert" src="capitulos/opamps/inversor.png" />
+  <p class="my-4">
+    Para calcular a tensão de saída (Vout), pode usar a seguinte fórmula:
   </p>
-  <p>Vout = - (Rf / R1) * Vin</p>
+  <p class="my-4 font-mono bold text-lg">Vout = - (Rf / R1) * Vin</p>
 </div>
 
-<h3>Exemplo 2 - Amplificador Não-Inversor</h3>
+<h3 class="text-xl mb-4 mt-12 text-orange-800">
+  Exemplo 2 - Amplificador Não-Inversor
+</h3>
 <div class="example">
-  <p>Aqui está um circuito de amplificador não-inversor:</p>
-  <img src="capitulos\opamps\ninversor.png" />
-  <p>
+  <p class="my-4">Aqui está um circuito de amplificador não-inversor:</p>
+  <img class="dark:invert" src="capitulos/opamps/ninversor.png" />
+  <p class="my-4">
     Para calcular a tensão de saída (Vout) neste caso, use a seguinte fórmula:
   </p>
-  <p>Vout = (1 + Rf / R1) * Vin</p>
+  <p class="my-4 font-mono bold text-lg">Vout = (1 + Rf / R1) * Vin</p>
 </div>

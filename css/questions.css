@@ -1,9 +1,8 @@
-
 @media screen and (min-width: 600px) {
     .questionBlock {
         flex-direction: row;
     }
-    
+
 }
 
 .questionCard {
@@ -16,9 +15,10 @@
     width: auto;
     margin-top: 10px;
     max-width: 100%;
-  }
+}
 
 #pagesLabel {
     display: flex;
     align-self: center;
 }
+

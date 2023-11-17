@@ -25,6 +25,9 @@
     <script type="text/javascript" src="js/ComponentAdder.js"></script>
     <script type="text/javascript" src="js/OhmsLawCalculator.js"></script>
     <script type="text/javascript" src="js/ReactanceCalculator.js"></script>
+    <script type="text/javascript" src="js/TransformerCalculator.js"></script>
+    <script type="text/javascript" src="js/RLCBridgeCalculator.js"></script>
+
     <script>
       window.timers = [];
 
@@ -48,6 +51,14 @@
 
             case "REACTANCE":
               new ReactanceCalculator();
+              break;
+            case "TRANSFORMER":
+              new TransformerCalculator();
+
+              break;
+            case "RLC":
+              new RLCBridgeCalculator();
+
               break;
 
             default:
@@ -212,6 +223,24 @@
                       Lei de Ohm</a
                     >
                   </li>
+                  <li>
+                    <a
+                      onclick=""
+                      href="#RLC"
+                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      RLC</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      onclick=""
+                      href="#TRANSFORMER"
+                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Transformadores</a
+                    >
+                  </li>
                 </ul>
               </div>
             </li>
@@ -258,7 +287,7 @@
                         <li>
                           <a
                             id="favQuiz3"
-                            onclick="new FavQuiz('question3.json')"
+                            onclick="new FavQuiz('perguntas/question3.json')"
                             href="#"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Favoritas</a
@@ -266,7 +295,7 @@
                         </li>
                         <li>
                           <a
-                            onclick="new Quiz('question3.json')"
+                            onclick="new Quiz('perguntas/question3.json')"
                             href="#"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Todas as perguntas</a
@@ -274,7 +303,7 @@
                         </li>
                         <li>
                           <a
-                            onclick="new SimulateQuiz('question3.json')"
+                            onclick="new SimulateQuiz('perguntas/question3.json')"
                             href="#"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Simulador de exame</a
@@ -308,7 +337,7 @@
                         <li>
                           <a
                             id="favQuiz2"
-                            onclick="new FavQuiz('question2.json')"
+                            onclick="new FavQuiz('perguntas/question2.json')"
                             href="#"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Favoritas</a
@@ -316,7 +345,7 @@
                         </li>
                         <li>
                           <a
-                            onclick="new Quiz('question2.json')"
+                            onclick="new Quiz('perguntas/question2.json')"
                             href="#"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Todas as perguntas</a
@@ -324,7 +353,7 @@
                         </li>
                         <li>
                           <a
-                            onclick="new SimulateQuiz('question2.json')"
+                            onclick="new SimulateQuiz('perguntas/question2.json')"
                             href="#"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Simulador de exame</a
@@ -358,7 +387,7 @@
                         <li>
                           <a
                             id="favQuiz1"
-                            onclick="new FavQuiz('question1.json')"
+                            onclick="new FavQuiz('perguntas/question1.json')"
                             href="#"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Favoritas</a
@@ -366,7 +395,7 @@
                         </li>
                         <li>
                           <a
-                            onclick="new Quiz('question1.json')"
+                            onclick="new Quiz('perguntas/question1.json')"
                             href="#"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Todas as perguntas</a
@@ -374,7 +403,7 @@
                         </li>
                         <li>
                           <a
-                            onclick="new SimulateQuiz('question1.json')"
+                            onclick="new SimulateQuiz('perguntas/question1.json')"
                             href="#"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Simulador de exame</a
@@ -441,14 +470,14 @@
                             >Alfabeto Fonético</a
                           >
                         </li>
-						<li>
+                        <li>
                           <a
                             onclick="new LoadChapter('AbreviaturasOperacao')"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Abreviaturas de Operação</a
                           >
                         </li>
-						<li>
+                        <li>
                           <a
                             onclick="new LoadChapter('defs_genericas')"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
@@ -531,17 +560,25 @@
                       >
                         <li>
                           <a
-                            onclick="new LoadChapter('SWR')"
+                            onclick="new LoadChapter('antenas')"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
-                            >Onda estacionária (SWR)</a
                           >
+                            Antenas
+                          </a>
                         </li>
                         <li>
                           <a
-                            style="display: none"
-                            href="#"
+                            onclick="new LoadChapter('bobinesSomar')"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
-                            >Bobines (henry)</a
+                          >
+                            Bobines
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            onclick="new LoadChapter('batteries')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Capacidade de baterias</a
                           >
                         </li>
                         <li>
@@ -550,6 +587,13 @@
                             href="#"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Condensador(bobine)</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            onclick="new LoadChapter('SWR')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Onda estacionária (SWR)</a
                           >
                         </li>
                       </ul>
@@ -579,6 +623,14 @@
                       >
                         <li>
                           <a
+                            onclick="new LoadChapter('antenas')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                          >
+                            Antenas
+                          </a>
+                        </li>
+                        <li>
+                          <a
                             onclick="new LoadChapter('gain')"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Ganho (dB)</a
@@ -600,16 +652,31 @@
                         </li>
                         <li>
                           <a
-                            onclick="new LoadChapter('bobines')"
+                            onclick="new LoadChapter('ReatanciaIndutiva')"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Reactância Indutiva
                           </a>
+                        </li>
+
+                        <li>
+                          <a
+                            onclick="new LoadChapter('circuitosRL')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Circuitos RL</a
+                          >
                         </li>
                         <li>
                           <a
                             onclick="new LoadChapter('condensadores')"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Reactância Capacitiva</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            onclick="new LoadChapter('RLC')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >RLC</a
                           >
                         </li>
                         <li>
@@ -658,7 +725,7 @@
       </div>
       <article
         id="welcome"
-        class="max-w-screen-md m-auto mt-12 mb-12"
+        class="max-w-screen-md m-auto mt-12 mb-12 p-4 sm:p-0"
       ></article>
     </section>
 
@@ -689,7 +756,8 @@
 
       <div class="flex flex-col items-end">
         <div class="flex flex-row items-center">
-          <a href="https://t.me/+xQNzwNwb2JIxMWY8">
+          <a
+   		    href="https://t.me/+xQNzwNwb2JIxMWY8">
             <img src="images/telegram.svg" alt="Telegram" class="h-8"
           /></a>
           <a
