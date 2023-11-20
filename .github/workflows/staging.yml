@@ -5,7 +5,7 @@ on:
       - main
   workflow_dispatch:
 jobs:
-  build:
+  staging:
     name: Build and deploy
     runs-on: ubuntu-latest
     steps:
@@ -27,3 +27,21 @@ jobs:
           REMOTE_PORT: ${{ secrets.STAGING_PORT }}
           TARGET: ${{ secrets.STAGING_PATH }}
           EXCLUDE: "/node_modules/, .git/"
+  pages:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          # Upload entire repository
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
