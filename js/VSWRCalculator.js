@@ -48,7 +48,7 @@ class VSWRCalculator extends ElectricalUnits {
 
             if (!isNaN(vmax) && !isNaN(vmin)) {
                 var vswr = vmax / vmin;
-                this.vswrResult.innerText = "VSWR = " + vswr.toFixed(2);
+                this.vswrResult.innerText = "VSWR = " + this.formatNumberWithExponent(vswr);
             } else {
                 alert("Por favor, insira valores numéricos válidos para Vmax e Vmin.");
             }
@@ -59,7 +59,7 @@ class VSWRCalculator extends ElectricalUnits {
             if (!isNaN(zl) && !isNaN(zo)) {
                 var reflectionCoefficient = (zl - zo) / (zl + zo);
                 var vswr = (1 + Math.abs(reflectionCoefficient)) / (1 - Math.abs(reflectionCoefficient));
-                this.vswrResult.innerText = "VSWR = " + vswr.toFixed(2);
+                this.vswrResult.innerText = "VSWR = " + this.formatNumberWithExponent(vswr);
             } else {
                 alert("Por favor, insira valores numéricos válidos para ZL e Zo.");
             }
