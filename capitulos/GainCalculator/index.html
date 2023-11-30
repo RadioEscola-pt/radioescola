@@ -1,0 +1,92 @@
+
+
+<label for="measurementType">Selecione o tipo de medida:</label>
+<select id="measurementType">
+    <option value="power">Potência (W)</option>
+    <option value="current">Corrente (A)</option>
+    <option value="voltage">Tensão (V)</option>
+</select><br>
+<div >
+    <table id="voltageTable" style="display: none;">
+        <tr>
+            <th>Tensão 1 (V)</th>
+            <th>Tensão 2 (V)</th>
+        </tr>
+        <tr>
+            <td><input class="w-full border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-900" type="number" step="0.01" id="voltage1"></td>
+            <td><input class="w-full border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-900" type="number" step="0.01" id="voltage2"></td>
+        </tr>
+        <tr>
+            <td>´
+                <select
+                id="voltage1Unit"
+                class="w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+              ></select>
+            </td>
+            <td>´
+                <select
+                id="voltage2Unit"
+                class="w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+              ></select>
+            </td>
+        
+        </tr>
+
+    </table>
+
+    <table id="currentTable" style="display: none;">
+        <tr>
+            <th>Corrente 1 (A)</th>
+            <th>Corrente 2 (A)</th>
+        </tr>
+        <tr>
+            <td><input class="w-full border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-900" type="number" step="0.01" id="current1"></td>
+            <td><input class="w-full border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-900" type="number" step="0.01" id="current2"></td>
+        </tr>
+        <tr>
+            <td>´
+                <select
+                id="current1Unit"
+                class="w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+              ></select>
+            </td>
+            <td>´
+                <select
+                id="current2Unit"
+                class="w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+              ></select>
+            </td>
+        
+        </tr>
+    </table>
+
+    <table id="powerTable">
+        <tr>
+            <th>Potência 1 (W)</th>
+            <th>Potência 2 (W)</th>
+        </tr>
+        <tr>
+            <td><input class="w-full border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-900" type="number" step="0.01" id="power1"></td>
+            <td><input class="w-full border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-900" type="number" step="0.01" id="power2"></td>
+        </tr>
+        <tr>
+            <td>´
+                <select
+                id="Power1Unit"
+                class="w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+              ></select>
+            </td>
+            <td>´
+                <select
+                id="Power2Unit"
+                class="w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+              ></select>
+            </td>
+        
+        </tr>
+    </table>
+</div>
+
+<input class="w-full border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-900" type="button" value="Calcular Ganho" id="calculateButton">
+
+<p class="mt-12" id="result"></p>

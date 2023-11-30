@@ -27,10 +27,13 @@
     <script type="text/javascript" src="js/ReactanceCalculator.js"></script>
     <script type="text/javascript" src="js/TransformerCalculator.js"></script>
     <script type="text/javascript" src="js/RLCBridgeCalculator.js"></script>
+  
     <script type="text/javascript" src="js/VSWRCalculator.js"></script>
     <script type="text/javascript" src="js/ResonanceCalculator.js"></script>
     <script type="text/javascript" src="js/LocalStorageManager.js"></script>
-
+    <script type="text/javascript" src="js/GainCalculator.js"></script>
+    
+    
     <script>
       window.timers = [];
 
@@ -64,12 +67,18 @@
 
               break;
 
+
             case "VSWRC":
               new VSWRCalculator();
               break;
             case "RLCRESS":
               new ResonanceCalculator();
               break;
+
+            case "GAIN":
+              new GainCalculator();
+              break;
+
 
             default:
               console.log("Unknown case");
@@ -242,28 +251,120 @@
                     >
                       RLC</a
                     >
-                  </li>
-
                   <li>
                     <a
                       onclick=""
                       href="#RLCRESS"
                       class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
-                      Ressonância RLC</a
+                      Ressonacia RL</a
                     >
                   </li>
                   <li>
                     <!-- FIXME: Corrigir script e alterar href -->
-                    <a
-                      onclick=""
-                      href="#VSWRC"
-                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      VSWR</a
-                    >
-                  </li>
+         
+                  <a
+                  onclick=""
+                  href="#VSWRC"
+                  class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                VSWRC</a
+                >
+                                  <a
+                  onclick=""
+                  href="#GAIN"
+                  class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                GAIN</a
+                >
 
+
+
+                
+              </li>
+
+              
+
+
+                  
+                  <li>
+         
+                  <a
+                  onclick=""
+                  href="#VSWRC"
+                  class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                VSWRC</a
+                >
+                                  <a
+                  onclick=""
+                  href="#GAIN"
+                  class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                GAIN</a
+                >
+
+
+
+                
+              </li>
+
+              
+
+
+                  
+                  <li>
+         
+                  <a
+                  onclick=""
+                  href="#VSWRC"
+                  class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                VSWRC</a
+                >
+                                  <a
+                  onclick=""
+                  href="#GAIN"
+                  class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                GAIN</a
+                >
+
+
+
+                
+              </li>
+
+              
+
+
+                  
+                  <li>
+         
+                  <a
+                  onclick=""
+                  href="#VSWRC"
+                  class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                VSWRC</a
+                >
+                                  <a
+                  onclick=""
+                  href="#GAIN"
+                  class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                GAIN</a
+                >
+
+
+
+                
+              </li>
+
+              
+
+
+                  
                   <li>
                     <a
                       onclick=""
@@ -668,7 +769,6 @@
                             >Ganho (dB)</a
                           >
                         </li>
-
                         <li>
                           <a
                             onclick="new LoadChapter('tranformadores')"
@@ -722,6 +822,15 @@
                           >
                         </li>
 
+                     
+                        <li>
+                          <a
+                            onclick="new LoadChapter('RessonaciaRLC')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                          >
+                            Ressonacia de RL</a
+                          >
+                         </li>
                         <li>
                           <a
                             onclick="new LoadChapter('receptores')"
