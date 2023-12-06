@@ -3483,8 +3483,9 @@
                 "Só co uma autorização especial da ANACOM",
                 "Respeitando as condicionantes expressas na regulamentação aplicável"
             ],
-            "correctIndex": 1,
-            "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p1</a>)",
+            "correctIndex": 4,
+            "notes": "Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf'> ADENDA_2013_QNAF",
+			"fonte": "2023_08_00p1",
             "img": null,
             "uniqueID": 268
         },
