@@ -6,7 +6,7 @@ describe("Impedance Calculator", () => {
     cy.get("#questionsDropdown a").contains("Impedância").click();
     cy.get("#inductance").click().clear().type("10");
     cy.get("#frequency").click().clear().type("1");
-    cy.get("#calculateButton").click();
+    cy.get("#calculate").click();
 
     cy.get("#result").should("have.text", "Reatância (X) = 62.8319 ohms");
   });
@@ -19,7 +19,7 @@ describe("Impedance Calculator", () => {
     cy.get("#unit").select("PICO");
     cy.get("#inductance").click().clear().type("324");
     cy.get("#frequency").click().clear().type("678");
-    cy.get("#calculateButton").click();
+    cy.get("#calculate").click();
 
     cy.get("#result").should("have.text", "Reatância (X) = 1.380e-6 ohms");
   });
@@ -32,7 +32,7 @@ describe("Impedance Calculator", () => {
     cy.get("#unit").select("NANO");
     cy.get("#inductance").click().clear().type("400");
     cy.get("#frequency").click().clear().type("500");
-    cy.get("#calculateButton").click();
+    cy.get("#calculate").click();
 
     cy.get("#result").should("have.text", "Reatância (X) = 0.0013 ohms");
   });
@@ -45,7 +45,7 @@ describe("Impedance Calculator", () => {
     cy.get("#unit").select("MICRO");
     cy.get("#inductance").click().clear().type("500");
     cy.get("#frequency").click().clear().type("600");
-    cy.get("#calculateButton").click();
+    cy.get("#calculate").click();
 
     cy.get("#result").should("have.text", "Reatância (X) = 1.8850 ohms");
   });
@@ -58,7 +58,7 @@ describe("Impedance Calculator", () => {
     cy.get("#unit").select("MILI");
     cy.get("#inductance").click().clear().type("1");
     cy.get("#frequency").click().clear().type("10");
-    cy.get("#calculateButton").click();
+    cy.get("#calculate").click();
 
     cy.get("#result").should("have.text", "Reatância (X) = 0.0628 ohms");
   });
@@ -71,7 +71,7 @@ describe("Impedance Calculator", () => {
     cy.get("#unit").select("KILO");
     cy.get("#inductance").click().clear().type("3");
     cy.get("#frequency").click().clear().type("1090");
-    cy.get("#calculateButton").click();
+    cy.get("#calculate").click();
 
     cy.get("#result").should("have.text", "Reatância (X) = 2.055e+7 ohms");
   });
@@ -84,7 +84,7 @@ describe("Impedance Calculator", () => {
     cy.get("#unit").select("MEGA");
     cy.get("#inductance").click().clear().type("23");
     cy.get("#frequency").click().clear().type("311");
-    cy.get("#calculateButton").click();
+    cy.get("#calculate").click();
 
     cy.get("#result").should("have.text", "Reatância (X) = 4.494e+10 ohms");
   });
@@ -97,7 +97,7 @@ describe("Impedance Calculator", () => {
     cy.get("#calculationType").select("F");
     cy.get("#inductance").click().clear().type("1");
     cy.get("#frequency").click().clear().type("1");
-    cy.get("#calculateButton").click();
+    cy.get("#calculate").click();
 
     cy.get("#result").should("have.text", "Reatância (X) = 0.1592 ohms");
   });
@@ -111,7 +111,7 @@ describe("Impedance Calculator", () => {
     cy.get("#unit").select("PICO");
     cy.get("#inductance").click().clear().type("1");
     cy.get("#frequency").click().clear().type("1");
-    cy.get("#calculateButton").click();
+    cy.get("#calculate").click();
 
     cy.get("#result").should("have.text", "Reatância (X) = 1.592e+11 ohms");
   });
@@ -125,7 +125,7 @@ describe("Impedance Calculator", () => {
     cy.get("#unit").select("NANO");
     cy.get("#inductance").click().clear().type("1");
     cy.get("#frequency").click().clear().type("1");
-    cy.get("#calculateButton").click();
+    cy.get("#calculate").click();
 
     cy.get("#result").should("have.text", "Reatância (X) = 1.592e+8 ohms");
   });
@@ -139,7 +139,7 @@ describe("Impedance Calculator", () => {
     cy.get("#unit").select("MICRO");
     cy.get("#inductance").click().clear().type("1");
     cy.get("#frequency").click().clear().type("1");
-    cy.get("#calculateButton").click();
+    cy.get("#calculate").click();
 
     cy.get("#result").should("have.text", "Reatância (X) = 1.592e+5 ohms");
   });
@@ -153,7 +153,7 @@ describe("Impedance Calculator", () => {
     cy.get("#unit").select("MILI");
     cy.get("#inductance").click().clear().type("1");
     cy.get("#frequency").click().clear().type("1");
-    cy.get("#calculateButton").click();
+    cy.get("#calculate").click();
 
     cy.get("#result").should("have.text", "Reatância (X) = 159.1549 ohms");
   });
@@ -167,7 +167,7 @@ describe("Impedance Calculator", () => {
     cy.get("#unit").select("KILO");
     cy.get("#inductance").click().clear().type("1");
     cy.get("#frequency").click().clear().type("1");
-    cy.get("#calculateButton").click();
+    cy.get("#calculate").click();
 
     cy.get("#result").should("have.text", "Reatância (X) = 1.592e-4 ohms");
   });
@@ -181,7 +181,7 @@ describe("Impedance Calculator", () => {
     cy.get("#unit").select("MEGA");
     cy.get("#inductance").click().clear().type("1");
     cy.get("#frequency").click().clear().type("1");
-    cy.get("#calculateButton").click();
+    cy.get("#calculate").click();
 
     cy.get("#result").should("have.text", "Reatância (X) = 1.592e-7 ohms");
   });
