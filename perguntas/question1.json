@@ -3607,7 +3607,7 @@
             "uniqueID": 277
         },
         {
-            "question": "POrque é que um sinal SSB não deve ser modulado a mais de 100%?",
+            "question": "Porque é que um sinal SSB não deve ser modulado a mais de 100%?",
             "answers": [
                 "Porque deixa de ser um sinal modulado em AM passado a ser modulado em FM",
                 "Porque a propagação do sinal fica dificultada",
@@ -3627,7 +3627,7 @@
                 "Devido ao efeito pelicular",
                 "Porque os condutores são dispositivos não lineares"
             ],
-            "correctIndex": 2,
+            "correctIndex": 3,
             "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p14</a>)",
             "img": null,
             "uniqueID": 279
