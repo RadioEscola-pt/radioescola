@@ -11,9 +11,11 @@ class ResonanceCalculator extends ElectricalUnits {
     );
     this.inductanceUnitInput = document.getElementById("inductanceUnit");
     this.capacitanceUnitInput = document.getElementById("capacitanceUnit");
+    this.frequencyUnitInput = document.getElementById("resultUnit");
     this.hertzUnitInput = document.getElementById("hertzUnit");
     this.loadOptions(this.inductanceUnitInput, "F");
     this.loadOptions(this.capacitanceUnitInput, "H");
+    this.loadOptions(this.frequencyUnitInput, "Hz");
   }
 
   calculateResonance() {
@@ -34,9 +36,9 @@ class ResonanceCalculator extends ElectricalUnits {
 
       document.getElementById(
         "result"
-      ).textContent = `Frequência de ressonância: ${this.formatNumberWithExponent(
-        resonanceFrequency
-      )} Hz.`;
+      ).textContent = "Frequência de ressonância:"+this.formatNumberWithExponent(
+        resonanceFrequency/this.unitMultipliers[this.frequencyUnitInput.value]
+      ) ;
     } else {
       document.getElementById("result").textContent =
         "Por favor, insira valores válidos para L e C.";
