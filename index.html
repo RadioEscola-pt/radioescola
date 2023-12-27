@@ -27,7 +27,7 @@
     <script type="text/javascript" src="js/ReactanceCalculator.js"></script>
     <script type="text/javascript" src="js/TransformerCalculator.js"></script>
     <script type="text/javascript" src="js/RLCBridgeCalculator.js"></script>
-  
+    <script type="text/javascript" src="js/QCalculator.js"></script>
     <script type="text/javascript" src="js/VSWRCalculator.js"></script>
     <script type="text/javascript" src="js/ResonanceCalculator.js"></script>
     <script type="text/javascript" src="js/LocalStorageManager.js"></script>
@@ -66,6 +66,11 @@
               new RLCBridgeCalculator();
 
               break;
+            case "QFACTOR":
+              new QCalculator();
+
+              break;
+
 
 
             case "VSWRC":
@@ -258,6 +263,15 @@
                       class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                       Ressonacia RL</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      onclick=""
+                      href="#QFACTOR"
+                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Factor Q</a
                     >
                   </li>
                   <li>
@@ -739,6 +753,14 @@
                             >RLC</a
                           >
                         </li>
+                        <li>
+                          <a
+                            onclick="new LoadChapter('Qfactor')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Factor Q</a
+                          >
+                        </li>
+
 
                         <li>
                           <a
