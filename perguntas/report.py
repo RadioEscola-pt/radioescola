@@ -1,57 +1,50 @@
 import json
 
-# List of hardcoded JSON files
-input_json_files = ['question1.json', 'question2.json', 'question3.json']
+# Lista dos arquivos JSON codificados diretamente
+arquivos_json_input = ['question1.json', 'question2.json', 'question3.json']
 
-# Initialize lists to store counts and file names
-file_names = []
-question_counts = []
-questions_with_exames_counts = []
 
-# Iterate through each JSON file
-total_questions = 0  # Variable to store total questions count
-total_questions_with_exames = 0  # Variable to store total questions with 'Exames:(' count
 
-for input_json in input_json_files:
-    # Load JSON data from file
+
+# Itera por cada arquivo JSON
+total_questoes = 0  # Variável para armazenar a contagem total de questões
+# Prepare conteúdo HTML para a tabela
+html_conteudo = "<!DOCTYPE html>\n<html>\n<head>\n<title>Resumo das Questões</title>\n</head>\n<body>\n"
+html_conteudo += "<h1>Resumo das Questões</h1>\n<table border='1'>\n"
+html_conteudo += "<tr><th>Nome do Arquivo</th><th>Total de Questões</th><th>Questões Verificadas</th></tr>\n"
+
+for arquivo_input_json in arquivos_json_input:
+    # Carrega os dados JSON do arquivo
     try:
-        with open(input_json, 'r') as file:
-            data = json.load(file)
+        with open(arquivo_input_json, 'r') as arquivo:
+            dados = json.load(arquivo)
     except FileNotFoundError:
-        print(f"File '{input_json}' not found.")
+        print(f"Arquivo '{arquivo_input_json}' não encontrado.")
         continue
 
-    # Find questions with 'Exames:(' in notes
-    questions_with_exames = [question['question'] for question in data['questions'] if 'Exames:(' in question['notes']]
-    num_questions_with_exames = len(questions_with_exames)
-    total_questions_with_exames += num_questions_with_exames
 
-    # Count total number of questions
-    num_total_questions = len(data['questions'])
-    total_questions += num_total_questions
 
-    # Append file name and counts to respective lists
-    file_names.append(input_json)
-    question_counts.append(num_total_questions)
-    questions_with_exames_counts.append(num_questions_with_exames)
+    # Conta o número total de questões
+    num_total_questoes = len(dados['questions'])
+    # Conta questões verificadas
+    questoes_verificadas = [questao for questao in dados['questions'] if questao.get('fonte') is not None]
+    contagem_questoes_verificadas = len(questoes_verificadas)
 
-# Prepare HTML content for table
-html_content = "<!DOCTYPE html>\n<html>\n<head>\n<title>Questions Summary</title>\n</head>\n<body>\n"
-html_content += "<h1>Questions Summary</h1>\n<table border='1'>\n"
-html_content += "<tr><th>File Name</th><th>Total Questions</th><th>Questions with 'Exames:('</th></tr>\n"
+    html_conteudo += f"<tr><td>{arquivo_input_json}</td><td>{num_total_questoes}</td><td>{contagem_questoes_verificadas}</td></tr>\n"
 
-# Add data to the table
-for i in range(len(file_names)):
-    html_content += f"<tr><td>{file_names[i]}</td><td>{question_counts[i]}</td><td>{questions_with_exames_counts[i]}</td></tr>\n"
 
-# Add row for total counts
-html_content += f"<tr><td>Total</td><td>{total_questions}</td><td>{total_questions_with_exames}</td></tr>\n"
 
-html_content += "</table>\n</body>\n</html>"
 
-# Write HTML content to a file
-output_html = "questions_summary_report.html"
-with open(output_html, 'w') as html_file:
-    html_file.write(html_content)
 
-print(f"Report written to '{output_html}'")
+
+
+
+
+html_conteudo += "</table>\n</body>\n</html>"
+
+# Escreve conteúdo HTML em um arquivo
+arquivo_output_html = "relatorio_resumo_questoes.html"
+with open(arquivo_output_html, 'w') as arquivo_html:
+    arquivo_html.write(html_conteudo)
+
+print(f"Relatório escrito em '{arquivo_output_html}'")

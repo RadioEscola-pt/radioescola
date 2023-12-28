@@ -115,7 +115,18 @@ class Questions {
       btn.onclick = this.checkQuestion;
       questionCard.appendChild(btn);
       this.addStar(questionCard, qindex, questions.uniqueID);
+      
     }
+    let infoDiv=document.createElement("div");
+    if (questions.fonte!=null){
+      infoDiv.innerHTML="ID:"+questions.uniqueID+"Em "+questions.fonte.length+ " exames";
+    }
+    else{
+      infoDiv.innerHTML="ID:"+questions.uniqueID+"Em 0 exames";
+    }
+ 
+
+    questionCard.appendChild(infoDiv);
   }
 
   /**
