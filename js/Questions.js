@@ -119,10 +119,11 @@ class Questions {
     }
     let infoDiv=document.createElement("div");
     if (questions.fonte!=null){
-      infoDiv.innerHTML="ID:"+questions.uniqueID+"Em "+questions.fonte.length+ " exames";
+      infoDiv.innerHTML="ID:"+questions.uniqueID+"Em "+questions.fonte.length+ " exames "+ this.calculateTruePercentageForQuestion(questions.uniqueID);
+      ;
     }
     else{
-      infoDiv.innerHTML="ID:"+questions.uniqueID+"Em 0 exames";
+      infoDiv.innerHTML="ID:"+questions.uniqueID+"Em 0 exames "+this.calculateTruePercentageForQuestion(questions.uniqueID);;
     }
  
 
