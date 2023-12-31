@@ -136,6 +136,9 @@ class Questions {
 
     console.log(`Using base URL: ${updatedBaseUrl}`);
 
+    const linksContainer = document.createElement('div'); // Create a div to hold links
+    linksContainer.style.display = 'none'; // Initially hide the container
+
     for (let i = 0; i < fontes.length; i++) {
         const source = fontes[i];
         const parts = source.split('p');
@@ -144,19 +147,39 @@ class Questions {
             const pdffileName = parts[0] + '.pdf';
             const urlLink = `${updatedBaseUrl}/${pdffileName}`;
             console.log(`Link for ${urlLink}`);
-            const link = document.createElement('a');
             
+            const link = document.createElement('a');
             link.setAttribute('target', '_blank');
-            link.setAttribute('href', `${urlLink}`);
-            link.textContent = "Exame "+parts[0]+" Pergunta "+parts[1];
-            infoDiv.appendChild(link);
+            link.setAttribute('href', urlLink);
+            link.textContent = "Exame " + parts[0] + " Pergunta " + parts[1];
 
+            const br = document.createElement('br'); // Create a line break element
 
-        } else {
+            linksContainer.appendChild(link); // Append link to the container
+            linksContainer.appendChild(br); // Append line break to create a new line
+            
+          } else {
             console.log(`Invalid source format: ${source}`);
         }
     }
-  }
+
+    const showText = document.createElement('span'); // Create a text element to show/hide
+    showText.textContent = 'mostrar Exames'; // Text to display
+
+    // Show/hide functionality when clicked
+    showText.addEventListener('click', () => {
+        if (linksContainer.style.display === 'none') {
+            linksContainer.style.display = 'block';
+            showText.textContent = 'esconder Exames'; // Change text when shown
+        } else {
+            linksContainer.style.display = 'none';
+            showText.textContent = 'mostrar Exames'; // Change text when hidden
+        }
+    });
+
+    infoDiv.appendChild(showText); // Append the show/hide text to the provided infoDiv
+    infoDiv.appendChild(linksContainer); // Append the container to the provided infoDiv
+}
 
   loadQuestionInfo(infoDiv, questions, showPercentage = true)
   {
@@ -164,7 +187,7 @@ class Questions {
     {
       if (questions.fonte!=null ){
         infoDiv.innerHTML="ID:"+questions.uniqueID+"Comfirmada em  "+questions.fonte.length;
-        this.LinkFontes(questions.fonte, infoDiv);
+        //this.LinkFontes(questions.fonte, infoDiv);
         
       }
       else{
