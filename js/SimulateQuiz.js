@@ -234,7 +234,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 						answers.className = "flex flex-col mt-5 leading-normal";
 
 						var noteBlock = document.createElement("div");
-						noteBlock.id = "note" + this.simulateQuiz.questions[qindex].index;
+						noteBlock.id = "note" + this.simulateQuiz.questions[qindex].uniqueID;
 						noteBlock.className = "questionImage";
 
 						let i = 1;
@@ -244,7 +244,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 							let input = document.createElement("input");
 							input.type = "radio";
 							input.value = i;
-							input.name = "n" + this.simulateQuiz.questions[qindex].index;
+							input.name = "n" + this.simulateQuiz.questions[qindex].uniqueID;
 							input.className = "mr-4";
 
 							label.appendChild(input);
@@ -276,7 +276,11 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 						}
 						if (this.simulateQuiz.questions[qindex].notes == null) {
 							console.log("ERROR Q" + this.simulateQuiz.questions[qindex].uniqueID);
-						}					
+						}
+						let infoDiv=document.createElement("div");
+						infoDiv.id="infoDiv"+this.simulateQuiz.questions[qindex].uniqueID;
+						this.simulateQuiz.loadQuestionInfo(infoDiv, this.simulateQuiz.questions[qindex], false);
+						questionCard.appendChild(infoDiv);					
 
 					}
 
