@@ -1072,7 +1072,7 @@
         "impedância de saída baixa",
         "Todas as respostas anteriores estão corretas"
       ],
-      "correctIndex": 3,
+      "correctIndex": 4,
       "notes": "Ganho Unitário: Nessa configuração, o ganho de corrente é próximo de 1, o que significa que a corrente de saída é quase igual à corrente de entrada. O sinal de entrada é seguido pelo sinal de saída sem amplificação significativa</br>Impedância de Entrada Elevada: O seguidor de emissor tem alta impedância de entrada, o que significa que ele apresenta uma carga mínima no circuito de entrada. Isso é útil quando se deseja conectar o seguidor de emissor a uma fonte de sinal de baixa impedância sem afetar significativamente a fonte original.</br>Impedância de Saída Baixa: O seguidor de emissor tem baixa impedância de saída, o que significa que ele pode fornecer uma corrente relativamente alta ao circuito de carga conectado à sua saída. Isso é útil para acionar cargas que exigem alta corrente, mas pode não ser adequado para acionar cargas de alta impedância",
       "img": null,
       "uniqueID": 63,
@@ -2095,7 +2095,7 @@
         "Um circuito com comutação de bandas automático",
         "Um circuito de deteção de sinais FM"
       ],
-      "correctIndex": 2,
+      "correctIndex": 4,
       "notes": "A99",
       "img": null,
       "uniqueID": 124,
