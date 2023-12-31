@@ -27,7 +27,13 @@
     <script type="text/javascript" src="js/ReactanceCalculator.js"></script>
     <script type="text/javascript" src="js/TransformerCalculator.js"></script>
     <script type="text/javascript" src="js/RLCBridgeCalculator.js"></script>
-
+    <script type="text/javascript" src="js/QCalculator.js"></script>
+    <script type="text/javascript" src="js/VSWRCalculator.js"></script>
+    <script type="text/javascript" src="js/ResonanceCalculator.js"></script>
+    <script type="text/javascript" src="js/LocalStorageManager.js"></script>
+    <script type="text/javascript" src="js/GainCalculator.js"></script>
+    
+    
     <script>
       window.timers = [];
 
@@ -60,6 +66,24 @@
               new RLCBridgeCalculator();
 
               break;
+            case "QFACTOR":
+              new QCalculator();
+
+              break;
+
+
+
+            case "VSWRC":
+              new VSWRCalculator();
+              break;
+            case "RLCRESS":
+              new ResonanceCalculator();
+              break;
+
+            case "GAIN":
+              new GainCalculator();
+              break;
+
 
             default:
               console.log("Unknown case");
@@ -74,6 +98,7 @@
       window.onload = function () {
         const optOutManager = new MatomoOptOutManager();
         const searchParams = new URLSearchParams(window.location.search);
+        ~new LocalStorageManager();
         if (searchParams.has("LoadChapter")) {
           new LoadChapter(searchParams.get("LoadChapter")); // bar, only returns the first value
         } else if (searchParams.has("TEST")) {
@@ -231,7 +256,46 @@
                     >
                       RLC</a
                     >
+                  <li>
+                    <a
+                      onclick=""
+                      href="#RLCRESS"
+                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Ressonacia RL</a
+                    >
                   </li>
+                  <li>
+                    <a
+                      onclick=""
+                      href="#QFACTOR"
+                      class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Factor Q</a
+                    >
+                  </li>
+                  <li>
+             
+    
+
+
+                
+         
+                  <a
+                  onclick=""
+                  href="#VSWRC"
+                  class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                VSWRC</a>
+              </li>
+              <li>
+                 <a
+                  onclick=""
+                  href="#GAIN"
+                  class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                GAIN</a         >
+              </li>
                   <li>
                     <a
                       onclick=""
@@ -240,7 +304,17 @@
                     >
                       Transformadores</a
                     >
-                  </li>
+                  </li>   
+
+
+
+                
+     
+
+              
+
+
+
                 </ul>
               </div>
             </li>
@@ -681,6 +755,25 @@
                         </li>
                         <li>
                           <a
+                            onclick="new LoadChapter('Qfactor')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                            >Factor Q</a
+                          >
+                        </li>
+
+
+                        <li>
+                          <a
+                            onclick="new LoadChapter('RessonaciaRLC')"
+                            class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                          >
+                            Ressonacia de RL</a
+                          >
+                        </li>
+
+
+                        <li>
+                          <a
                             onclick="new LoadChapter('receptores')"
                             class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                             >Receptores</a
@@ -752,6 +845,10 @@
           >Código</a
         >
         <a href="#" id="ShowPrivacyBar">Politica de Privacidade</a>
+        <label id="fileLabel" for="fileInput">Carregar Definições</label>
+        <input type="file" id="fileInput" style="display: none" />
+
+        <button id="exportButton">Exportar Definições</button>
       </div>
 
       <div class="flex flex-col items-end">

@@ -119,6 +119,24 @@ class Storage {
 
 
 	}
+	calculateTruePercentageForQuestion(answerId) {
+		const existingRecords = JSON.parse(localStorage.getItem(this.getfilename())) || {};
+	
+		if (existingRecords.hasOwnProperty(answerId)) {
+			const record = existingRecords[answerId];
+			const total = record.isCorrect.length;
+			const trueCount = record.isCorrect.filter(value => value === true).length;
+	
+			if (total > 0) {
+				const truePercentage = (trueCount / total) * 100;
+				return truePercentage.toFixed(2)+"%";
+			} else {
+				return 'No records available for this question.';
+			}
+		} else {
+			return 'No records available for this question.';
+		}
+	}
 	plotAnswers(answers) {
 
 		const canvasDiv = document.getElementById('answerDisplay');

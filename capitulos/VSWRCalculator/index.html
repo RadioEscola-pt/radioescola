@@ -1,0 +1,64 @@
+<div class="space-y-4">
+  <h1 class="font-bold mb-6">VSWR</h1>
+  <div class="grid grid-cols-3 gap-3">
+    <div class="col-span-3 sm:col-span-1 space-y-2">
+      <label for="calculationType">Método</label>
+      <select
+        id="calculationType"
+        class="w-full rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+      >
+        <option value="tension">Tensão</option>
+        <option value="impedance">Impedância</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 gap-3" id="tensions">
+    <div class="col-span-2 sm:col-span-1 space-y-2">
+      <label for="knownValue1">Tensão máxima</label>
+      <input
+        type="number"
+        id="vmax"
+        class="w-full rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+      />
+    </div>
+    <div class="col-span-2 sm:col-span-1 space-y-2">
+      <label for="knownValue1">Tensão mínima</label>
+      <input
+        type="number"
+        id="vmin"
+        class="w-full rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+      />
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 gap-3 hidden" id="impedances">
+    <div class="col-span-2 sm:col-span-1 space-y-2">
+      <label for="knownValue1">Impedância da carga (ZL)(ex: antena)</label>
+      <input
+        type="number"
+        id="zl"
+        class="w-full rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+      />
+    </div>
+    <div class="col-span-2 sm:col-span-1 space-y-2">
+      <label for="knownValue1"
+        >Impedância da fonte (Zo)(ex: cabo coaxial):</label
+      >
+      <input
+        type="number"
+        id="zo"
+        class="w-full rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+      />
+    </div>
+  </div>
+
+  <div id="vswrResult" class="mt-8 text-xl font-mono font-bold"></div>
+
+  <button
+    id="calculateBtn"
+    class="mt-4 text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800"
+  >
+    Calcular
+  </button>
+</div>

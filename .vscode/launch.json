@@ -1,0 +1,60 @@
+{
+    "configurations": [
+        {
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "name": "Launch localhost",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Docker: Build",
+            "type": "shell",
+            "request": "launch",
+            "command": "echo",
+            "args": [
+                "Building Docker Image: radioescola"
+            ],
+            "preLaunchTask": "Docker: Build",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "dedicated"
+            }
+        },
+        {
+            "name": "Docker: Refresh",
+            "type": "shell",
+            "request": "launch",
+            "command": "echo",
+            "args": [
+                "Refreshing Docker Container: radioescola_container"
+            ],
+            "preLaunchTask": "Docker: Refresh",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "dedicated"
+            }
+        },
+        {
+            "name": "Docker: Launch",
+            "type": "shell",
+            "request": "launch",
+            "command": "echo",
+            "args": [
+                "Launching Docker Container: radioescola_container"
+            ],
+            "preLaunchTask": "Docker: Launch",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "dedicated"
+            }
+        }
+    ]
+}

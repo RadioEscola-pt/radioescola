@@ -9,6 +9,7 @@ class Questions {
     const answer = question.correctIndex;
     const elements = document.getElementsByName("n" + index);
     var uniqueId = question.uniqueID;
+    let infoDiv=document.getElementById("infoDiv"+uniqueId);
 
     for (let i = 0; i < elements.length; i++) {
       if (elements[i].checked) {
@@ -17,6 +18,7 @@ class Questions {
           this.style.color = "#000000";
           this.innerHTML = "CERTO";
           this.quiz.storeAnswer(true, uniqueId);
+          this.quiz.loadQuestionInfo(infoDiv, question)
 
           return;
         }
@@ -29,6 +31,10 @@ class Questions {
     this.innerHTML = "ERRADO";
     noteElement.className = "bg-red-200 text-red-900 p-2 mt-2";
     this.quiz.storeAnswer(false, uniqueId);
+    
+
+
+    this.quiz.loadQuestionInfo(infoDiv, question)
   }
   /**
    * Adds a question to the page.
@@ -115,7 +121,95 @@ class Questions {
       btn.onclick = this.checkQuestion;
       questionCard.appendChild(btn);
       this.addStar(questionCard, qindex, questions.uniqueID);
+      
     }
+    let infoDiv=document.createElement("div");
+    infoDiv.id="infoDiv"+questions.uniqueID;
+    this.loadQuestionInfo(infoDiv, questions);
+    questionCard.appendChild(infoDiv);
+
+  }
+  LinkFontes(fontes, infoDiv) {
+    const baseUrl = 'exams/cat';
+    const fileNumber = this.filename.match(/\d+/)[0]; // Extract the number from the filename
+    const updatedBaseUrl = `${baseUrl}${fileNumber}`; // Construct the updated base URL
+
+    console.log(`Using base URL: ${updatedBaseUrl}`);
+
+    const linksContainer = document.createElement('div'); // Create a div to hold links
+    linksContainer.style.display = 'none'; // Initially hide the container
+
+    for (let i = 0; i < fontes.length; i++) {
+        const source = fontes[i];
+        const parts = source.split('p');
+
+        if (parts.length === 2) {
+            const pdffileName = parts[0] + '.pdf';
+            const urlLink = `${updatedBaseUrl}/${pdffileName}`;
+            console.log(`Link for ${urlLink}`);
+            
+            const link = document.createElement('a');
+            link.setAttribute('target', '_blank');
+            link.setAttribute('href', urlLink);
+            link.textContent = "Exame " + parts[0] + " Pergunta " + parts[1];
+
+            const br = document.createElement('br'); // Create a line break element
+
+            linksContainer.appendChild(link); // Append link to the container
+            linksContainer.appendChild(br); // Append line break to create a new line
+            
+          } else {
+            console.log(`Invalid source format: ${source}`);
+        }
+    }
+
+    const showText = document.createElement('span'); // Create a text element to show/hide
+    showText.textContent = 'mostrar Exames'; // Text to display
+
+    // Show/hide functionality when clicked
+    showText.addEventListener('click', () => {
+        if (linksContainer.style.display === 'none') {
+            linksContainer.style.display = 'block';
+            showText.textContent = 'esconder Exames'; // Change text when shown
+        } else {
+            linksContainer.style.display = 'none';
+            showText.textContent = 'mostrar Exames'; // Change text when hidden
+        }
+    });
+
+    infoDiv.appendChild(showText); // Append the show/hide text to the provided infoDiv
+    infoDiv.appendChild(linksContainer); // Append the container to the provided infoDiv
+}
+
+  loadQuestionInfo(infoDiv, questions, showPercentage = true)
+  {
+    if (showPercentage==false)
+    {
+      if (questions.fonte!=null ){
+        infoDiv.innerHTML="ID:"+questions.uniqueID+"Comfirmada em  "+questions.fonte.length;
+        //this.LinkFontes(questions.fonte, infoDiv);
+        
+      }
+      else{
+        infoDiv.innerHTML="ID:"+questions.uniqueID+"Em 0 exames ";
+      }
+      
+      return;
+    }
+
+    if (questions.fonte!=null ){
+      infoDiv.innerHTML="<p>ID:"+questions.uniqueID+" Comfirmada em "+questions.fonte.length+ " exames</p><p> Acertou:"+ this.calculateTruePercentageForQuestion(questions.uniqueID)+"</p>";
+      this.LinkFontes(questions.fonte, infoDiv);
+    }
+    else{
+      infoDiv.innerHTML="<p>ID:"+questions.uniqueID+"Sem confirmacao </p><p> Acertou:"+this.calculateTruePercentageForQuestion(questions.uniqueID)+"</p>";
+    }
+    
+ 
+
+    
+
+
   }
 
   /**
