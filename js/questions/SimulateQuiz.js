@@ -29,28 +29,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 	{
 		this.simulateQuiz.timeout=0;
 	}
-	showPage() {
-		window.scrollTo(0, 0);
-		for (var page of this.pageBlocks) {
-			page.style.display = "none";
-			page.classList.remove("active");
-		}
-		this.simulateQuiz.currentPage = parseInt(this.value);
-		
-		var currentPage=this.pageBlocks[this.simulateQuiz.currentPage];
 
-
-		if (document.querySelector('#qIndex button.active')) {
-			document.querySelector('#qIndex button.active').classList.remove("active")
-		}
-		
-		currentPage.style.display = "block";
-		currentPage.classList.add('active')
-
-		this.simulateQuiz.generatePagination()
-		
-		//document.querySelector(`#qIndex button[value="${this.value}"]`).classList.add("active")
-	}
 
 	generatePagination() {
 		//var currentPage = parseInt(document.querySelector(`.page.active`).dataset.page);
@@ -59,10 +38,10 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 
 		let previousButton = document.createElement('button');
 		previousButton.innerText = 'Anterior'
-		previousButton.value = this.currentPage-1;
-		previousButton.onclick = this.showPage;
+		previousButton.value = (this.currentPage-1)*10;
+		previousButton.onclick = this.showPageWithStorage;
 		previousButton.pageBlocks = this.pageBlocks;
-		previousButton.simulateQuiz=this;
+		previousButton.quiz=this;
 		previousButton.disabled = this.currentPage == 0;
 		previousButton.className = 'bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-800 p-2 rounded cursor-pointer hover:bg-slate-400';
 		buttons.append(previousButton)
@@ -70,10 +49,10 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 		for (let i = 0 ; i < this.numberOfPages(); i++) {
 			var pageBtn = document.createElement("button");
 			pageBtn.innerText = i + 1
-			pageBtn.value = i ;
-			pageBtn.onclick =  this.showPage;
+			pageBtn.value = i*10 ;
+			pageBtn.onclick =  this.showPageWithStorage;
 			pageBtn.pageBlocks = this.pageBlocks;
-			pageBtn.simulateQuiz=this;
+			pageBtn.quiz=this;
 			pageBtn.className = 'bg-slate-300 p-2 rounded cursor-pointer dark:bg-slate-700 dark:hover:bg-slate-800'
 			if (this.currentPage == i ) {
 				pageBtn.className = 'bg-slate-400 dark:bg-slate-800 p-2 rounded cursor-pointer dark:hover:bg-slate-800';
@@ -83,9 +62,9 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 
 		let nextButton = document.createElement('button');
 		nextButton.innerText = 'Seguinte'
-		nextButton.value = this.currentPage + 1;
-		nextButton.onclick = this.showPage;
-		nextButton.simulateQuiz=this;
+		nextButton.value = (this.currentPage + 1)*10;
+		nextButton.onclick = this.showPageWithStorage
+		nextButton.quiz=this;
 		nextButton.pageBlocks = this.pageBlocks;
 		nextButton.disabled = this.currentPage == this.numberOfPages()-1;
 		nextButton.className = 'bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-800 p-2 rounded cursor-pointer';
@@ -114,9 +93,10 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 		var answers = Array();
 		window.clearTimeout(this.timer);
 		for (var questionIndex in this.questions) {
-			var elements = document.getElementsByName("n" + questionIndex);
+			let uID=this.questions[questionIndex].uniqueID;
+			var elements = document.getElementsByName("n" + uID);
 			answers[questionIndex] = SimulateQuiz.UNANSWERED;
-			var noteDiv = document.getElementById("note" + questionIndex);
+			var noteDiv = document.getElementById("note" + uID);
 
 			for (var i = 0; i < elements.length; i++) {
 
