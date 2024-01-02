@@ -15,31 +15,6 @@ class FavQuiz extends Classes([Questions,Storage]) {
 	}
 
 
-	showPageWithStorage()
-	{
-		var index = parseInt(this.value);
-		this.pageIndex = index;
-		window.scrollTo(0, 0);
-
-		if (index == 0) {
-
-			index = 0;
-		} else {
-			index = index / 10;
-		}
-		for (const page of this.pageBlocks) {
-			page.style.display = "none";
-		}
-		this.pageBlocks[index].style.display = "block";
-		this.quiz.storeFavPage(index);		if (document.querySelector('#qIndex button.active')) {
-			document.querySelector('#qIndex button.active').classList.remove("active")
-		}
-
-		this.className = 'active';
-
-	}
-
-
 
 
 

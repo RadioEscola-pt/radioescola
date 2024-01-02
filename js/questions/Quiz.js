@@ -11,25 +11,6 @@ class Quiz extends Classes([Questions, Storage]) {
 		this.createQuiz();
 
 	}
-	showPageWithStorage() {
-		const index = parseInt(this.value);
-		this.pageIndex = index;
-		window.scrollTo(0, 0);
-
-		const normalizedIndex = index == 0 ? 0 : index / 10;
-		this.pageBlocks.forEach(page => page.style.display = "none");
-		this.pageBlocks[normalizedIndex].style.display = "block";
-		this.quiz.storePage(normalizedIndex);
-
-		const button = document.querySelector('#qIndex button.bg-slate-400');
-
-		if (button) {
-			button.classList.replace('bg-slate-400', 'bg-slate-300');
-			button.classList.replace('dark:bg-slate-800', 'dark:bg-slate-700');
-		}
-
-		this.className = 'bg-slate-400 dark:bg-slate-800 hover:bg-slate-400 dark:hover:bg-slate-900 p-2 rounded cursor-pointer';
-	}
 
 
 
@@ -95,7 +76,7 @@ class Quiz extends Classes([Questions, Storage]) {
 
 
 
-
+						
 					}
 
 					for (const page of this.quiz.pageBlocks) {

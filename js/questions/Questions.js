@@ -1,7 +1,7 @@
 class Questions {
   constructor() {
     this.hideOnUnselect = false;
-    this.filename="";
+    this.filename = "";
   }
   checkQuestion() {
     const index = parseInt(this.value);
@@ -9,7 +9,7 @@ class Questions {
     const answer = question.correctIndex;
     const elements = document.getElementsByName("n" + index);
     var uniqueId = question.uniqueID;
-    let infoDiv=document.getElementById("infoDiv"+uniqueId);
+    let infoDiv = document.getElementById("infoDiv" + uniqueId);
 
     for (let i = 0; i < elements.length; i++) {
       if (elements[i].checked) {
@@ -31,7 +31,7 @@ class Questions {
     this.innerHTML = "ERRADO";
     noteElement.className = "bg-red-200 text-red-900 p-2 mt-2";
     this.quiz.storeAnswer(false, uniqueId);
-    
+
 
 
     this.quiz.loadQuestionInfo(infoDiv, question)
@@ -121,10 +121,10 @@ class Questions {
       btn.onclick = this.checkQuestion;
       questionCard.appendChild(btn);
       this.addStar(questionCard, qindex, questions.uniqueID);
-      
+
     }
-    let infoDiv=document.createElement("div");
-    infoDiv.id="infoDiv"+questions.uniqueID;
+    let infoDiv = document.createElement("div");
+    infoDiv.id = "infoDiv" + questions.uniqueID;
     this.loadQuestionInfo(infoDiv, questions);
     questionCard.appendChild(infoDiv);
 
@@ -134,33 +134,30 @@ class Questions {
     const fileNumber = this.filename.match(/\d+/)[0]; // Extract the number from the filename
     const updatedBaseUrl = `${baseUrl}${fileNumber}`; // Construct the updated base URL
 
-    console.log(`Using base URL: ${updatedBaseUrl}`);
-
     const linksContainer = document.createElement('div'); // Create a div to hold links
     linksContainer.style.display = 'none'; // Initially hide the container
 
     for (let i = 0; i < fontes.length; i++) {
-        const source = fontes[i];
-        const parts = source.split('p');
+      const source = fontes[i];
+      const parts = source.split('p');
 
-        if (parts.length === 2) {
-            const pdffileName = parts[0] + '.pdf';
-            const urlLink = `${updatedBaseUrl}/${pdffileName}`;
-            console.log(`Link for ${urlLink}`);
-            
-            const link = document.createElement('a');
-            link.setAttribute('target', '_blank');
-            link.setAttribute('href', urlLink);
-            link.textContent = "Exame " + parts[0] + " Pergunta " + parts[1];
+      if (parts.length === 2) {
+        const pdffileName = parts[0] + '.pdf';
+        const urlLink = `${updatedBaseUrl}/${pdffileName}`;
 
-            const br = document.createElement('br'); // Create a line break element
+        const link = document.createElement('a');
+        link.setAttribute('target', '_blank');
+        link.setAttribute('href', urlLink);
+        link.textContent = "Exame " + parts[0] + " Pergunta " + parts[1];
 
-            linksContainer.appendChild(link); // Append link to the container
-            linksContainer.appendChild(br); // Append line break to create a new line
-            
-          } else {
-            console.log(`Invalid source format: ${source}`);
-        }
+        const br = document.createElement('br'); // Create a line break element
+
+        linksContainer.appendChild(link); // Append link to the container
+        linksContainer.appendChild(br); // Append line break to create a new line
+
+      } else {
+        console.log(`Invalid source format: ${source}`);
+      }
     }
 
     const showText = document.createElement('span'); // Create a text element to show/hide
@@ -168,46 +165,78 @@ class Questions {
 
     // Show/hide functionality when clicked
     showText.addEventListener('click', () => {
-        if (linksContainer.style.display === 'none') {
-            linksContainer.style.display = 'block';
-            showText.textContent = 'esconder Exames'; // Change text when shown
-        } else {
-            linksContainer.style.display = 'none';
-            showText.textContent = 'mostrar Exames'; // Change text when hidden
-        }
+      if (linksContainer.style.display === 'none') {
+        linksContainer.style.display = 'block';
+        showText.textContent = 'esconder Exames'; // Change text when shown
+      } else {
+        linksContainer.style.display = 'none';
+        showText.textContent = 'mostrar Exames'; // Change text when hidden
+      }
     });
 
     infoDiv.appendChild(showText); // Append the show/hide text to the provided infoDiv
     infoDiv.appendChild(linksContainer); // Append the container to the provided infoDiv
-}
+  }
 
-  loadQuestionInfo(infoDiv, questions, showPercentage = true)
-  {
-    if (showPercentage==false)
-    {
-      if (questions.fonte!=null ){
-        infoDiv.innerHTML="ID:"+questions.uniqueID+"Comfirmada em  "+questions.fonte.length;
-        //this.LinkFontes(questions.fonte, infoDiv);
-        
-      }
-      else{
-        infoDiv.innerHTML="ID:"+questions.uniqueID+"Em 0 exames ";
-      }
+  showPageWithStorage() {
+    const index = parseInt(this.value);
+    this.pageIndex = index;
+    window.scrollTo(0, 0);
+
+    const normalizedIndex = index == 0 ? 0 : index / 10;
+    this.pageBlocks.forEach(page => page.style.display = "none");
+    this.pageBlocks[normalizedIndex].style.display = "block";
+
+
+    const button = document.querySelector('#qIndex button.bg-slate-400');
+    if (this.quiz.constructor.name === 'FavQuiz') {
+      this.quiz.storeFavPage(normalizedIndex);
+    }
+    else if (this.quiz.constructor.name === 'Quiz') {
+      this.quiz.storePage(normalizedIndex);
+
+    } else if (this.quiz.constructor.name === 'SimulateQuiz') {
+      this.quiz.currentPage = parseInt(normalizedIndex);
+      this.quiz.generatePagination();
       
+    }
+
+
+
+
+    if (button) {
+      button.classList.replace('bg-slate-400', 'bg-slate-300');
+      button.classList.replace('dark:bg-slate-800', 'dark:bg-slate-700');
+    }
+
+    this.className = 'bg-slate-400 dark:bg-slate-800 hover:bg-slate-400 dark:hover:bg-slate-900 p-2 rounded cursor-pointer';
+  }
+
+  loadQuestionInfo(infoDiv, questions, showPercentage = true) {
+    if (showPercentage == false) {
+      if (questions.fonte != null) {
+        infoDiv.innerHTML = "ID:" + questions.uniqueID + "Comfirmada em  " + questions.fonte.length;
+        //this.LinkFontes(questions.fonte, infoDiv);
+
+      }
+      else {
+        infoDiv.innerHTML = "ID:" + questions.uniqueID + "Em 0 exames ";
+      }
+
       return;
     }
 
-    if (questions.fonte!=null ){
-      infoDiv.innerHTML="<p>ID:"+questions.uniqueID+" Comfirmada em "+questions.fonte.length+ " exames</p><p> Acertou:"+ this.calculateTruePercentageForQuestion(questions.uniqueID)+"</p>";
+    if (questions.fonte != null) {
+      infoDiv.innerHTML = "<p>ID:" + questions.uniqueID + " Comfirmada em " + questions.fonte.length + " exames</p><p> Acertou:" + this.calculateTruePercentageForQuestion(questions.uniqueID) + "</p>";
       this.LinkFontes(questions.fonte, infoDiv);
     }
-    else{
-      infoDiv.innerHTML="<p>ID:"+questions.uniqueID+"Sem confirmacao </p><p> Acertou:"+this.calculateTruePercentageForQuestion(questions.uniqueID)+"</p>";
+    else {
+      infoDiv.innerHTML = "<p>ID:" + questions.uniqueID + "Sem confirmacao </p><p> Acertou:" + this.calculateTruePercentageForQuestion(questions.uniqueID) + "</p>";
     }
-    
- 
 
-    
+
+
+
 
 
   }
@@ -221,8 +250,8 @@ class Questions {
    */
   addStar(questionCard, qindex, uniqueID) {
     let starIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-	starIcon.setAttribute('viewBox', '0 0 24 24');
-	starIcon.setAttribute('stroke', '#fcd34d');
+    starIcon.setAttribute('viewBox', '0 0 24 24');
+    starIcon.setAttribute('stroke', '#fcd34d');
     starIcon.existingRecords = this.filename;
 
     if (MatomoOptOutManager.hasConsent()) {
@@ -232,7 +261,7 @@ class Questions {
         JSON.parse(localStorage.getItem(starIcon.existingRecords + "Fav")) ||
         [];
 
-		starIcon.innerHTML = `
+      starIcon.innerHTML = `
 		
 		<path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
 		
@@ -248,28 +277,14 @@ class Questions {
       // Add a click event listener to the star icon
       starIcon.onclick = this.saveFav;
       //questionCard.appendChild(starIcon);
-	  var cardFooter = document.createElement("div");
-	  cardFooter.className = "flex justify-end";
-	  cardFooter.appendChild(starIcon);
-	  questionCard.appendChild(cardFooter);
+      var cardFooter = document.createElement("div");
+      cardFooter.className = "flex justify-end";
+      cardFooter.appendChild(starIcon);
+      questionCard.appendChild(cardFooter);
     }
   }
 
-  showPage() {
-    var index = parseInt(this.value);
-    this.pageIndex = index;
-    window.scrollTo(0, 0);
 
-    if (index == 0) {
-      index = 0;
-    } else {
-      index = index / 10;
-    }
-    for (const page of this.pageBlocks) {
-      page.style.display = "none";
-    }
-    this.pageBlocks[index].style.display = "block";
-  }
   saveFav() {
     // Retrieve the favorites array from local storage
     var favoritesJSON = localStorage.getItem(this.existingRecords + "Fav");
