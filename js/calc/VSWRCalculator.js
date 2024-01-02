@@ -1,7 +1,7 @@
 class VSWRCalculator extends ElectricalUnits {
     constructor() {
         super();
-        new Popup("VSWRCalculator", this);
+        new Popup("calculator/VSWRCalculator", this);
 
     }
     endRequest() {

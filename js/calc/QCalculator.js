@@ -1,7 +1,7 @@
 class QCalculator extends ElectricalUnits {
     constructor() {
         super();
-        new Popup("QCalculator", this);
+        new Popup("calculator/QCalculator", this);
 
 
 

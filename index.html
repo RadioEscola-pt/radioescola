@@ -11,27 +11,46 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/questions.css" />
-    <script type="text/javascript" src="js/Popup.js"></script>
 
-    <script type="text/javascript" src="js/ElectricalUnits.js"></script>
-    <script type="text/javascript" src="js/classUtils.js"></script>
-    <script type="text/javascript" src="js/Questions.js"></script>
-    <script type="text/javascript" src="js/Storage.js"></script>
-    <script type="text/javascript" src="js/SimulateQuiz.js"></script>
-    <script type="text/javascript" src="js/FavQuiz.js"></script>
-    <script type="text/javascript" src="js/Quiz.js"></script>
+    
+
+    
+    
+
+    <script type="text/javascript" src="js/Popup.js"></script>
+    
+    
+
     <script type="text/javascript" src="js/LoadChapter.js"></script>
-    <script type="text/javascript" src="js/MatomoOptOutManager.js"></script>
-    <script type="text/javascript" src="js/ComponentAdder.js"></script>
-    <script type="text/javascript" src="js/OhmsLawCalculator.js"></script>
-    <script type="text/javascript" src="js/ReactanceCalculator.js"></script>
-    <script type="text/javascript" src="js/TransformerCalculator.js"></script>
-    <script type="text/javascript" src="js/RLCBridgeCalculator.js"></script>
-    <script type="text/javascript" src="js/QCalculator.js"></script>
-    <script type="text/javascript" src="js/VSWRCalculator.js"></script>
-    <script type="text/javascript" src="js/ResonanceCalculator.js"></script>
+  
     <script type="text/javascript" src="js/LocalStorageManager.js"></script>
-    <script type="text/javascript" src="js/GainCalculator.js"></script>
+    <script type="text/javascript" src="js/questions/Storage.js"></script>
+
+    <script type="text/javascript" src="js/questions/Questions.js"></script>
+    <script type="text/javascript" src="js/classUtils.js"></script>
+    <script type="text/javascript" src="js/questions/SimulateQuiz.js"></script>
+    <script type="text/javascript" src="js/questions/FavQuiz.js"></script>
+    <script type="text/javascript" src="js/questions/Quiz.js"></script>
+    
+    <script type="text/javascript" src="js/questions/QuestionStatus.js"></script>
+    
+   
+
+
+
+    <script type="text/javascript" src="js/calc/ElectricalUnits.js"></script>
+    <script type="text/javascript" src="js/calc/ComponentAdderCalculator.js"></script>
+    <script type="text/javascript" src="js/calc/OhmsLawCalculator.js"></script>
+    <script type="text/javascript" src="js/calc/ReactanceCalculator.js"></script>
+    <script type="text/javascript" src="js/calc/TransformerCalculator.js"></script>
+    <script type="text/javascript" src="js/calc/RLCBridgeCalculator.js"></script>
+    <script type="text/javascript" src="js/calc/QCalculator.js"></script>
+    <script type="text/javascript" src="js/calc/VSWRCalculator.js"></script>
+    <script type="text/javascript" src="js/calc/ResonanceCalculator.js"></script>
+  
+    <script type="text/javascript" src="js/calc/GainCalculator.js"></script>
+
+    <script type="text/javascript" src="js/MatomoOptOutManager.js"></script>
     
     
     <script>
@@ -48,7 +67,7 @@
           // Use a switch statement to handle different cases
           switch (cleanFragment) {
             case "COPADDER":
-              new ComponentAdder();
+              new ComponentAdderCalculator();
               break;
             case "OHMCALC":
               new OhmsLawCalculator();
@@ -98,7 +117,7 @@
       window.onload = function () {
         const optOutManager = new MatomoOptOutManager();
         const searchParams = new URLSearchParams(window.location.search);
-        ~new LocalStorageManager();
+        new LocalStorageManager();
         if (searchParams.has("LoadChapter")) {
           new LoadChapter(searchParams.get("LoadChapter")); // bar, only returns the first value
         } else if (searchParams.has("TEST")) {
@@ -205,6 +224,17 @@
                 >Estado da Nação</a
               >
             </li>
+            <li>
+              <a
+                onclick="new QuestionStatus()"
+                href="#"
+                class="block py-1 px-2 text-gray-900 rounded hover:bg-slate-300 md:border-0 md:hover:text-slate-800 dark:text-white md:dark:hover:text-slate-50 dark:hover:bg-slate-800 dark:hover:text-white"
+                aria-current="page"
+                >Estado da Escola</a
+              >
+            </li>
+
+
             <li>
               <button
                 id="questionsDropdownLink"

@@ -1,7 +1,7 @@
 class  ReactanceCalculator extends ElectricalUnits {
     constructor() {
         super();
-        new Popup("ReactanceCalculator", this);
+        new Popup("calculator/ReactanceCalculator", this);
 
 
 

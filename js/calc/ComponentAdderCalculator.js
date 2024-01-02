@@ -1,7 +1,7 @@
-class ComponentAdder extends ElectricalUnits{
+class ComponentAdderCalculator extends ElectricalUnits{
     constructor() {
         super();
-        new Popup("ComponentAdder", this);
+        new Popup("calculator/ComponentAdderCalculator", this);
 
 
     }

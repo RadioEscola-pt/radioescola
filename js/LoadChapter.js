@@ -37,8 +37,10 @@ class LoadChapter {
                 console.log("Ignored readyState: " + ajaxRequest.readyState);
             }
         };
-        
+
         ajaxRequest.open('GET', 'capitulos/' + chapter + '/index.html');
+        
+
         ajaxRequest.send();
 
         
