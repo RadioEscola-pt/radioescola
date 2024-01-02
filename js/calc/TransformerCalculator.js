@@ -3,7 +3,7 @@ class TransformerCalculator extends ElectricalUnits {
     constructor() {
         super();
 
-        new Popup("TransformerCalculator", this);
+        new Popup("calculator/TransformerCalculator", this);
         //this.classStyle = "w-52 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600";
     }
     /**

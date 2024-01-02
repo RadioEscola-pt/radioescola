@@ -4,7 +4,7 @@ class GainCalculator  extends ElectricalUnits {
     constructor() {
         super();
 
-        new Popup("GainCalculator", this);
+        new Popup("calculator/GainCalculator", this);
     }
     /**
      * @brief  This function is called when the parent ajax callback is completed. This works asynchronously.

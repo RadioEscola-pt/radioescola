@@ -1,7 +1,7 @@
 class ResonanceCalculator extends ElectricalUnits {
   constructor() {
     super();
-    new Popup("ResonanceCalculator", this);
+    new Popup("calculator/ResonanceCalculator", this);
   }
   endRequest() {
     const calculateButton = document.getElementById("calculate");

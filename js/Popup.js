@@ -26,7 +26,7 @@ class Popup {
                 }
             };
 
-            ajaxRequest.open('GET', 'capitulos/' + chapter + '/index.html');
+            ajaxRequest.open('GET',   chapter + '/index.html');
             ajaxRequest.send();
         }
 

@@ -1,4 +1,5 @@
 {
+  "ANACOMFILE":90,
   "questions": [
     {
       "question": "O Regulamento das Radiocomunicações é uma publicação",
@@ -183,7 +184,7 @@
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "2023_08__18p29"
+        "2023_08_18p29"
       ],
       "img": null,
       "uniqueID": 12,
@@ -1550,7 +1551,7 @@
       "notes": "Consulte: <a target='_blank' href='?LoadChapter=entidades'>Entidades</a>",
       "fonte": [
         "2023_08_18p16",
-        "2023_09-21p16"
+        "2023_09_21p16"
       ],
       "img": null,
       "uniqueID": 92,
