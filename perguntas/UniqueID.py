@@ -4,7 +4,7 @@ from collections import Counter
 def check_pdf_existence(fonte, catNum):
     parent_directory = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
     doc_directory = os.path.join(parent_directory, 'exams')
-    doc_directory = os.path.join(doc_directory, 'cat' + catNum)
+    
     print(doc_directory)
 
     checked_files = set()  # To keep track of checked files

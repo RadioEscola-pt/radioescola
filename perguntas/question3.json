@@ -1,5 +1,5 @@
 {
-  "ANACOMFILE":90,
+  "ANACOMFILE": 90,
   "questions": [
     {
       "question": "O Regulamento das Radiocomunicações é uma publicação",
@@ -12,7 +12,7 @@
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p17"
+        "cat3/2023_08_18p17"
       ],
       "img": null,
       "uniqueID": 1,
@@ -30,7 +30,7 @@
       "correctIndex": 4,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p33"
+        "cat3/2023_08_18p33"
       ],
       "img": null,
       "uniqueID": 4,
@@ -48,7 +48,7 @@
       "correctIndex": 2,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p10"
+        "cat3/2023_08_18p10"
       ],
       "img": null,
       "uniqueID": 5,
@@ -66,7 +66,7 @@
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p37"
+        "cat3/2023_08_18p37"
       ],
       "img": null,
       "uniqueID": 6,
@@ -132,7 +132,7 @@
       "correctIndex": 4,
       "notes": "Consulte: <a target='_blank' href='?LoadChapter=entidades'>Entidades</a>",
       "fonte": [
-        "2023_08_18p14"
+        "cat3/2023_08_18p14"
       ],
       "img": null,
       "uniqueID": 210,
@@ -166,7 +166,7 @@
       "correctIndex": 4,
       "notes": "Notas",
       "fonte": [
-        "2023_09_21p28"
+        "cat3/2023_09_21p28"
       ],
       "img": null,
       "uniqueID": 213,
@@ -184,7 +184,7 @@
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p29"
+        "cat3/2023_08_18p29"
       ],
       "img": null,
       "uniqueID": 12,
@@ -314,7 +314,7 @@
       "correctIndex": 4,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p4"
+        "cat3/2023_08_18p4"
       ],
       "img": null,
       "uniqueID": 211,
@@ -348,7 +348,7 @@
       "correctIndex": 3,
       "notes": "Consulte o <a target='_blank' href='docs/Decreto-Lei_53-2009.pdf'>Decreto-Lei_53-2009</a> CAPÍTULO II-Acesso e exercício da actividade de amador o Artigo 6.º-Certificado de amador nacional",
       "fonte": [
-        "2023_09_21p10"
+        "cat3/2023_09_21p10"
       ],
       "img": null,
       "uniqueID": 21,
@@ -414,7 +414,7 @@
       "correctIndex": 2,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p19"
+        "cat3/2023_08_18p19"
       ],
       "img": null,
       "uniqueID": 26,
@@ -432,7 +432,7 @@
       "correctIndex": 4,
       "notes": "Consulte: <a target='_blank' href='docs/RR-2020-00013-Vol.I-EA5.pdf' class='underline'>Regulamento das Radiocomunicações da UIT</a> | CHAPTER II - Frequencies > ARTICLE 5 - Frequency allocations Section II – Categories of services and allocations 5.23) <strong>Resposta correcta: Primary and secondary services</strong> <a href='docs/R-REG-RR-2020-ZPF-E.zip'class='underline'>poderá descarregar todo o regulamento aqui.</a>",
       "fonte": [
-        "2023_09_21p19"
+        "cat3/2023_09_21p19"
       ],
       "img": null,
       "uniqueID": 27,
@@ -466,7 +466,7 @@
       "correctIndex": 4,
       "notes": "Consulte: <a target='_blank' href='docs/RR-2020-00013-Vol.I-EA5.pdf' class='underline'>Regulamento das Radiocomunicações da UIT</a> | CHAPTER III Coordination, notification and recording of frequency assignments and Plan modifications > ARTICLE 25 Amateur services - Section I − Amateur service > 25.6 2) <strong>Resposta correcta: Administrations shall verify the operational and technical qualifications of any person wishing to operate an amateur station. Guidance for standards of competence may be found in the most recent version of Recommendation ITU-R M.1544. (WRC-03)</strong> <a href='docs/R-REG-RR-2020-ZPF-E.zip'class='underline'>poderá descarregar todo o regulamento aqui.</a>",
       "fonte": [
-        "2023_09_21p18"
+        "cat3/2023_09_21p18"
       ],
       "img": null,
       "uniqueID": 29,
@@ -484,7 +484,7 @@
       "correctIndex": 1,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p18"
+        "cat3/2023_08_18p18"
       ],
       "img": null,
       "uniqueID": 30,
@@ -534,8 +534,8 @@
       "correctIndex": 4,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p34",
-        "2023_09_21p34"
+        "cat3/2023_08_18p34",
+        "cat3/2023_09_21p34"
       ],
       "img": null,
       "uniqueID": 32,
@@ -553,7 +553,7 @@
       "correctIndex": 1,
       "notes": "Consulte: <a target='_blank' href='?LoadChapter=entidades'>Entidades</a>",
       "fonte": [
-        "2023_09_21p15"
+        "cat3/2023_09_21p15"
       ],
       "img": null,
       "uniqueID": 33,
@@ -603,8 +603,8 @@
       "correctIndex": 1,
       "notes": "Consulte: <a target='_blank' href='?LoadChapter=entidades'>Entidades</a>",
       "fonte": [
-        "2023_08_18p15",
-        "2023_09_21p14"
+        "cat3/2023_08_18p15",
+        "cat3/2023_09_21p14"
       ],
       "img": null,
       "uniqueID": 10,
@@ -622,8 +622,8 @@
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p1",
-        "2023_09_21p2"
+        "cat3/2023_08_18p1",
+        "cat3/2023_09_21p2"
       ],
       "img": null,
       "uniqueID": 37,
@@ -641,7 +641,7 @@
       "correctIndex": 2,
       "notes": "Consulte: <a target='_blank' href='?LoadChapter=AbreviaturasOperacao' class='underline'>Abreviaturas de Operação</a>",
       "fonte": [
-        ""
+        "cat3/"
       ],
       "img": null,
       "uniqueID": 3,
@@ -659,7 +659,7 @@
       "correctIndex": 4,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p12"
+        "cat3/2023_08_18p12"
       ],
       "img": null,
       "uniqueID": 38,
@@ -741,8 +741,8 @@
       "correctIndex": 3,
       "notes": "Consulte: <a target='_blank' href='?LoadChapter=codigoq' class='underline'>Código Q</a>",
       "fonte": [
-        "",
-        "2023_09_21p20"
+        "cat3/",
+        "cat3/2023_09_21p20"
       ],
       "img": null,
       "uniqueID": 43,
@@ -760,7 +760,7 @@
       "correctIndex": 2,
       "notes": "Consulte: <a target='_blank' href='?LoadChapter=AbreviaturasOperacao' class='underline'>Abreviaturas de Operação</a>",
       "fonte": [
-        "2023_09_21p12"
+        "cat3/2023_09_21p12"
       ],
       "img": null,
       "uniqueID": 44,
@@ -810,7 +810,7 @@
       "correctIndex": 1,
       "notes": "Consulte: <a target='_blank' href='?LoadChapter=codigoq' class='underline'>Código Q</a>",
       "fonte": [
-        "2023_08_18p20"
+        "cat3/2023_08_18p20"
       ],
       "img": null,
       "uniqueID": 47,
@@ -828,8 +828,8 @@
       "correctIndex": 4,
       "notes": "Consulte: <a target='_blank' href='?LoadChapter=alfabeto' class='underline'>Alfabeto Fonético</a>",
       "fonte": [
-        "2023_08_18p26",
-        "2023_09_21p26"
+        "cat3/2023_08_18p26",
+        "cat3/2023_09_21p26"
       ],
       "img": null,
       "uniqueID": 48,
@@ -943,7 +943,7 @@
       "correctIndex": 2,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p36"
+        "cat3/2023_08_18p36"
       ],
       "img": null,
       "uniqueID": 55,
@@ -1073,7 +1073,7 @@
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "2023_09_21p33"
+        "cat3/2023_09_21p33"
       ],
       "img": null,
       "uniqueID": 63,
@@ -1123,7 +1123,7 @@
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p25"
+        "cat3/2023_08_18p25"
       ],
       "img": null,
       "uniqueID": 66,
@@ -1173,7 +1173,7 @@
       "correctIndex": 1,
       "notes": "Consulte: <a target='_blank' href='?LoadChapter=defs_genericas'>Definições Genéricas</a> significado de p.a.r e p.i.r.e.",
       "fonte": [
-        "2023_09_21p13"
+        "cat3/2023_09_21p13"
       ],
       "img": null,
       "uniqueID": 69,
@@ -1223,7 +1223,7 @@
       "correctIndex": 1,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p3"
+        "cat3/2023_08_18p3"
       ],
       "img": null,
       "uniqueID": 72,
@@ -1305,8 +1305,8 @@
       "correctIndex": 4,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p27",
-        "2023_09_21p27"
+        "cat3/2023_08_18p27",
+        "cat3/2023_09_21p27"
       ],
       "img": null,
       "uniqueID": 77,
@@ -1484,7 +1484,7 @@
       "correctIndex": 3,
       "notes": "Consulte o <a target='_blank' href='docs/Decreto-Lei_53-2009.pdf'>Decreto-Lei_53-2009</a> CAPÍTULO III-Regime geral de licenciamento e responsabilidade pelo funcionamento das estações de amador o Artigo 10.º-Licenças de estação de uso comum",
       "fonte": [
-        "2023_09_21p8"
+        "cat3/2023_09_21p8"
       ],
       "img": null,
       "uniqueID": 86,
@@ -1550,8 +1550,8 @@
       "correctIndex": 3,
       "notes": "Consulte: <a target='_blank' href='?LoadChapter=entidades'>Entidades</a>",
       "fonte": [
-        "2023_08_18p16",
-        "2023_09_21p16"
+        "cat3/2023_08_18p16",
+        "cat3/2023_09_21p16"
       ],
       "img": null,
       "uniqueID": 92,
@@ -1585,8 +1585,8 @@
       "correctIndex": 1,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p38",
-        "2023_09_21p36"
+        "cat3/2023_08_18p38",
+        "cat3/2023_09_21p36"
       ],
       "img": null,
       "uniqueID": 88,
@@ -1668,7 +1668,7 @@
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "2023_09_21p37"
+        "cat3/2023_09_21p37"
       ],
       "img": null,
       "uniqueID": 97,
@@ -1734,7 +1734,7 @@
       "correctIndex": 2,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p28"
+        "cat3/2023_08_18p28"
       ],
       "img": null,
       "uniqueID": 101,
@@ -1752,7 +1752,7 @@
       "correctIndex": 4,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p22"
+        "cat3/2023_08_18p22"
       ],
       "img": null,
       "uniqueID": 102,
@@ -1786,7 +1786,7 @@
       "correctIndex": 2,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p2"
+        "cat3/2023_08_18p2"
       ],
       "img": null,
       "uniqueID": 104,
@@ -1820,7 +1820,7 @@
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p13"
+        "cat3/2023_08_18p13"
       ],
       "img": null,
       "uniqueID": 106,
@@ -1838,7 +1838,7 @@
       "correctIndex": 2,
       "notes": "Consulte: <a target='_blank' href='docs/Decreto-Lei_53-2009.pdf' class='underline'>Decreto-Lei 53/2009</a> | CAPÍTULO I-Disposições gerais e definições > Artigo 2.º-Definições",
       "fonte": [
-        "2023_09_21p17"
+        "cat3/2023_09_21p17"
       ],
       "img": null,
       "uniqueID": 107,
@@ -1872,7 +1872,7 @@
       "correctIndex": 1,
       "notes": "Consulte: <a target='_blank' href='docs/decisaoamador27052009.pdf' class='underline'>PROCEDIMENTOS PREVISTOS NO DECRETO-LEI N.º 53/2009, DE 2 DE MARÇO QUE DEFINE AS REGRAS APLICÁVEIS AO SERVIÇO DE AMADOR E AMADOR POR SATÉLITE - Descrição detalhada das matérias de exame (Parte B número-4 SINAIS DE PERIGO INTERNACIONAIS, COMUNICAÇÕES DE EMERGÊNCIA E COMUNICAÇÕES EM CASO DE CATÁSTROFES NATURAIS</a>",
       "fonte": [
-        "2023_09_21p1"
+        "cat3/2023_09_21p1"
       ],
       "img": null,
       "uniqueID": 109,
@@ -1938,7 +1938,7 @@
       "correctIndex": 1,
       "notes": "Notas",
       "fonte": [
-        "2023_09_21p25"
+        "cat3/2023_09_21p25"
       ],
       "img": null,
       "uniqueID": 113,
@@ -2068,7 +2068,7 @@
       "correctIndex": 4,
       "notes": "Notas",
       "fonte": [
-        "2023_09_21p38"
+        "cat3/2023_09_21p38"
       ],
       "img": null,
       "uniqueID": 121,
@@ -2086,8 +2086,8 @@
       "correctIndex": 2,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p35",
-        "2023_09_21p35"
+        "cat3/2023_08_18p35",
+        "cat3/2023_09_21p35"
       ],
       "img": null,
       "uniqueID": 122,
@@ -2169,7 +2169,7 @@
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "2023_09_21p29"
+        "cat3/2023_09_21p29"
       ],
       "img": null,
       "uniqueID": 127,
@@ -2203,8 +2203,8 @@
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p30",
-        "2023_09_21p30"
+        "cat3/2023_08_18p30",
+        "cat3/2023_09_21p30"
       ],
       "img": null,
       "uniqueID": 129,
@@ -2222,7 +2222,7 @@
       "correctIndex": 4,
       "notes": "Notas",
       "fonte": [
-        "2023_09_21p3"
+        "cat3/2023_09_21p3"
       ],
       "img": null,
       "uniqueID": 130,
@@ -2416,8 +2416,8 @@
       "correctIndex": 2,
       "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
       "fonte": [
-        "2023_08_18p6",
-        "2023_09_21p5"
+        "cat3/2023_08_18p6",
+        "cat3/2023_09_21p5"
       ],
       "img": null,
       "uniqueID": 143,
@@ -2451,7 +2451,7 @@
       "correctIndex": 3,
       "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
       "fonte": [
-        "2023_09_21p4"
+        "cat3/2023_09_21p4"
       ],
       "img": null,
       "uniqueID": 145,
@@ -2469,8 +2469,8 @@
       "correctIndex": 4,
       "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
       "fonte": [
-        "2023_08_18p5",
-        "2023_09_21p6"
+        "cat3/2023_08_18p5",
+        "cat3/2023_09_21p6"
       ],
       "img": null,
       "uniqueID": 151,
@@ -2584,7 +2584,7 @@
       "correctIndex": 2,
       "notes": "Notas",
       "fonte": [
-        "2023_09_21p11"
+        "cat3/2023_09_21p11"
       ],
       "img": null,
       "uniqueID": 155,
@@ -2634,8 +2634,8 @@
       "correctIndex": 3,
       "notes": "Consulte o <a target='_blank' href='docs/Decreto-Lei_53-2009.pdf'>Decreto-Lei_53-2009</a> CAPÍTULO II-Acesso e exercício da actividade de amador o Artigo 3.º-Acesso à actividade de amador",
       "fonte": [
-        "2023_08_18p9",
-        "2023_09_21p9"
+        "cat3/2023_08_18p9",
+        "cat3/2023_09_21p9"
       ],
       "img": null,
       "uniqueID": 158,
@@ -2653,8 +2653,8 @@
       "correctIndex": 2,
       "notes": "Consulte o <a target='_blank' href='docs/Decreto-Lei_53-2009.pdf'>Decreto-Lei_53-2009</a> CAPÍTULO II-Acesso e exercício da actividade de amador o Artigo 5.º-Categorias de amador",
       "fonte": [
-        "2023_08_18p11",
-        "2023_09_21p7"
+        "cat3/2023_08_18p11",
+        "cat3/2023_09_21p7"
       ],
       "img": null,
       "uniqueID": 159,
@@ -2672,7 +2672,7 @@
       "correctIndex": 1,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p7"
+        "cat3/2023_08_18p7"
       ],
       "img": null,
       "uniqueID": 160,
@@ -2706,7 +2706,7 @@
       "correctIndex": 2,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p8"
+        "cat3/2023_08_18p8"
       ],
       "img": null,
       "uniqueID": 162,
@@ -2740,7 +2740,8 @@
       "correctIndex": 1,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p21"
+        "cat3/2023_08_18p21"
+
       ],
       "img": null,
       "uniqueID": 164,
@@ -2854,8 +2855,8 @@
       "correctIndex": 4,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p24",
-        "2023_09_21p21"
+        "cat3/2023_08_18p24",
+        "cat3/2023_09_21p21"
       ],
       "img": null,
       "uniqueID": 171,
@@ -2969,7 +2970,7 @@
       "correctIndex": 2,
       "notes": "Notas",
       "fonte": [
-        "2023_09_21p32"
+        "cat3/2023_09_21p32"
       ],
       "img": null,
       "uniqueID": 178,
@@ -3003,8 +3004,8 @@
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p31",
-        "2023_09_21p31"
+        "cat3/2023_08_18p31",
+        "cat3/2023_09_21p31"
       ],
       "img": null,
       "uniqueID": 180,
@@ -3118,7 +3119,7 @@
       "correctIndex": 4,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p39"
+        "cat3/2023_08_18p39"
       ],
       "img": null,
       "uniqueID": 187,
@@ -3200,8 +3201,8 @@
       "correctIndex": 1,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p23",
-        "2023_09_22"
+        "cat3/2023_08_18p23",
+        "cat3/2023_09_22"
       ],
       "img": null,
       "uniqueID": 192,
@@ -3331,7 +3332,7 @@
       "correctIndex": 3,
       "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
       "fonte": [
-        "2023_08_18p40"
+        "cat3/2023_08_18p40"
       ],
       "img": "images/cat3/sinusoidal.png",
       "uniqueID": 200,
@@ -3349,7 +3350,7 @@
       "correctIndex": 2,
       "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
       "fonte": [
-        "2023_09_21p40"
+        "cat3/2023_09_21p40"
       ],
       "img": "images/cat3/sinusoidal.png",
       "uniqueID": 201,
@@ -3447,7 +3448,7 @@
       "correctIndex": 4,
       "notes": "Notas",
       "fonte": [
-        "2023_09_21p39"
+        "cat3/2023_09_21p39"
       ],
       "img": "images/cat3/frequencia.png",
       "uniqueID": 207,
@@ -3481,7 +3482,7 @@
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "2023_08_18p32"
+        "cat3/2023_08_18p32"
       ],
       "img": "images/cat3/simbolos.png",
       "uniqueID": 209,
