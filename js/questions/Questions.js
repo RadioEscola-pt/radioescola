@@ -130,9 +130,7 @@ class Questions {
 
   }
   LinkFontes(fontes, infoDiv) {
-    const baseUrl = 'exams/cat';
-    const fileNumber = this.filename.match(/\d+/)[0]; // Extract the number from the filename
-    const updatedBaseUrl = `${baseUrl}${fileNumber}`; // Construct the updated base URL
+    const updatedBaseUrl = `exams`; // Construct the updated base URL
 
     const linksContainer = document.createElement('div'); // Create a div to hold links
     linksContainer.style.display = 'none'; // Initially hide the container
