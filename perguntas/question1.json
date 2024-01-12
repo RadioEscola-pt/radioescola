@@ -1,5 +1,5 @@
 {
-  "ANACOMFILE":208,
+  "ANACOMFILE": 208,
   "questions": [
     {
       "question": "No que respeita às Leis de Kirchhoff qual das seguintes afirmações é verdadeira?",
@@ -30,9 +30,9 @@
       "img": null,
       "uniqueID": 2,
       "fonte": [
-        "2023_08_00p8",
-        "2011_12_13p6",
-        "2014_12_19p6"
+        "cat1/2023_08_00p8",
+        "cat1/2011_12_13p6",
+        "cat1/2014_12_19p6"
       ],
       "tutorial": null,
       "materia": null
@@ -50,7 +50,7 @@
       "img": null,
       "uniqueID": 3,
       "fonte": [
-        "2014_05_23p6"
+        "cat1/2014_05_23p6"
       ],
       "tutorial": null,
       "materia": null
@@ -100,7 +100,7 @@
       "img": null,
       "uniqueID": 6,
       "fonte": [
-        "2023_08_00p19"
+        "cat1/2023_08_00p19"
       ],
       "tutorial": null,
       "materia": null
@@ -118,7 +118,7 @@
       "img": null,
       "uniqueID": 7,
       "fonte": [
-        "2023_07_03p19"
+        "cat1/2023_07_03p19"
       ],
       "tutorial": null,
       "materia": null
@@ -152,8 +152,8 @@
       "img": null,
       "uniqueID": 9,
       "fonte": [
-        "2011_12_13p24",
-        "2014_12_19p24"
+        "cat1/2011_12_13p24",
+        "cat1/2014_12_19p24"
       ],
       "tutorial": null,
       "materia": null
@@ -171,9 +171,9 @@
       "img": null,
       "uniqueID": 10,
       "fonte": [
-        "2023_08_00p24",
-        "2011_12_13p17",
-        "2023_07_03p23"
+        "cat1/2023_08_00p24",
+        "cat1/2011_12_13p17",
+        "cat1/2023_07_03p23"
       ],
       "tutorial": null,
       "materia": null
@@ -207,7 +207,7 @@
       "img": null,
       "uniqueID": 12,
       "fonte": [
-        "2014_12_19p17"
+        "cat1/2014_12_19p17"
       ],
       "tutorial": null,
       "materia": null
@@ -225,7 +225,7 @@
       "img": null,
       "uniqueID": 13,
       "fonte": [
-        "2014_12_19p32"
+        "cat1/2014_12_19p32"
       ],
       "tutorial": null,
       "materia": null
@@ -243,7 +243,7 @@
       "img": null,
       "uniqueID": 14,
       "fonte": [
-        "2011_12_13p32"
+        "cat1/2011_12_13p32"
       ],
       "tutorial": null,
       "materia": null
@@ -277,8 +277,8 @@
       "img": null,
       "uniqueID": 16,
       "fonte": [
-        "2023_08_00p34",
-        "2023_07_03p34"
+        "cat1/2023_08_00p34",
+        "cat1/2023_07_03p34"
       ],
       "tutorial": null,
       "materia": null
@@ -312,8 +312,8 @@
       "img": null,
       "uniqueID": 18,
       "fonte": [
-        "2023_08_00p37",
-        "2014_12_19p35"
+        "cat1/2023_08_00p37",
+        "cat1/2014_12_19p35"
       ],
       "tutorial": null,
       "materia": null
@@ -331,7 +331,7 @@
       "img": null,
       "uniqueID": 19,
       "fonte": [
-        "2011_12_13p35"
+        "cat1/2011_12_13p35"
       ],
       "tutorial": null,
       "materia": null
@@ -349,7 +349,7 @@
       "img": null,
       "uniqueID": 20,
       "fonte": [
-        "2023_07_03p37"
+        "cat1/2023_07_03p37"
       ],
       "tutorial": null,
       "materia": null
@@ -415,8 +415,8 @@
       "img": null,
       "uniqueID": 24,
       "fonte": [
-        "2023_08_00p40",
-        "2014_12_19p38"
+        "cat1/2023_08_00p40",
+        "cat1/2014_12_19p38"
       ],
       "tutorial": null,
       "materia": null
@@ -482,8 +482,8 @@
       "img": null,
       "uniqueID": 28,
       "fonte": [
-        "2023_08_00p39",
-        "2023_07_03p39"
+        "cat1/2023_08_00p39",
+        "cat1/2023_07_03p39"
       ],
       "tutorial": null,
       "materia": null
@@ -533,7 +533,7 @@
       "img": null,
       "uniqueID": 31,
       "fonte": [
-        "2011_12_13p40"
+        "cat1/2011_12_13p40"
       ],
       "tutorial": null,
       "materia": null
@@ -567,7 +567,7 @@
       "img": null,
       "uniqueID": 33,
       "fonte": [
-        "2014_05_23p16"
+        "cat1/2014_05_23p16"
       ],
       "tutorial": null,
       "materia": null
@@ -617,7 +617,7 @@
       "img": null,
       "uniqueID": 36,
       "fonte": [
-        "2011_12_13p20"
+        "cat1/2011_12_13p20"
       ],
       "tutorial": null,
       "materia": null
@@ -699,7 +699,7 @@
       "img": null,
       "uniqueID": 41,
       "fonte": [
-        "2023_07_03p18"
+        "cat1/2023_07_03p18"
       ],
       "tutorial": null,
       "materia": null
@@ -733,7 +733,7 @@
       "img": null,
       "uniqueID": 43,
       "fonte": [
-        "2011_12_13p29"
+        "cat1/2011_12_13p29"
       ],
       "tutorial": null,
       "materia": null
@@ -751,11 +751,11 @@
       "img": null,
       "uniqueID": 44,
       "fonte": [
-        "2014_12_19p29",
-        "2017_09_27p28",
-        "2020_07_16p28",
-        "2022_08_26p28",
-        "2022_12_27p28"
+        "cat1/2014_12_19p29",
+        "cat1/2017_09_27p28",
+        "cat1/2020_07_16p28",
+        "cat1/2022_08_26p28",
+        "cat1/2022_12_27p28"
       ],
       "tutorial": null,
       "materia": null
@@ -773,7 +773,7 @@
       "img": null,
       "uniqueID": 45,
       "fonte": [
-        "2014_12_19p22"
+        "cat1/2014_12_19p22"
       ],
       "tutorial": null,
       "materia": null
@@ -823,8 +823,8 @@
       "img": null,
       "uniqueID": 48,
       "fonte": [
-        "2023_08_00p26",
-        "2023_07_03p26"
+        "cat1/2023_08_00p26",
+        "cat1/2023_07_03p26"
       ],
       "tutorial": null,
       "materia": null
@@ -906,7 +906,7 @@
       "img": null,
       "uniqueID": 53,
       "fonte": [
-        "2014_12_19p31"
+        "cat1/2014_12_19p31"
       ],
       "tutorial": null,
       "materia": null
@@ -924,7 +924,7 @@
       "img": null,
       "uniqueID": 54,
       "fonte": [
-        "2023_08_00p30"
+        "cat1/2023_08_00p30"
       ],
       "tutorial": null,
       "materia": null
@@ -958,7 +958,7 @@
       "img": null,
       "uniqueID": 56,
       "fonte": [
-        "2023_08_00p33"
+        "cat1/2023_08_00p33"
       ],
       "tutorial": null,
       "materia": null
@@ -976,7 +976,7 @@
       "img": null,
       "uniqueID": 57,
       "fonte": [
-        "2014_12_19p33"
+        "cat1/2014_12_19p33"
       ],
       "tutorial": null,
       "materia": null
@@ -994,7 +994,7 @@
       "img": null,
       "uniqueID": 58,
       "fonte": [
-        "2011_12_13p33"
+        "cat1/2011_12_13p33"
       ],
       "tutorial": null,
       "materia": null
@@ -1028,7 +1028,7 @@
       "img": null,
       "uniqueID": 60,
       "fonte": [
-        "2023_07_03p33"
+        "cat1/2023_07_03p33"
       ],
       "tutorial": null,
       "materia": null
@@ -1110,7 +1110,7 @@
       "img": null,
       "uniqueID": 65,
       "fonte": [
-        "2014_12_19p36"
+        "cat1/2014_12_19p36"
       ],
       "tutorial": null,
       "materia": null
@@ -1128,7 +1128,7 @@
       "img": null,
       "uniqueID": 66,
       "fonte": [
-        "2011_12_13p36"
+        "cat1/2011_12_13p36"
       ],
       "tutorial": null,
       "materia": null
@@ -1240,7 +1240,7 @@
       "correctIndex": 3,
       "notes": "NOTAS",
       "fonte": [
-        "2023_07_03p10"
+        "cat1/2023_07_03p10"
       ],
       "img": null,
       "uniqueID": 73,
@@ -1260,7 +1260,7 @@
       "img": null,
       "uniqueID": 74,
       "fonte": [
-        "2014_12_19p11"
+        "cat1/2014_12_19p11"
       ],
       "tutorial": null,
       "materia": null
@@ -1294,7 +1294,7 @@
       "img": null,
       "uniqueID": 76,
       "fonte": [
-        "2023_08_00p10"
+        "cat1/2023_08_00p10"
       ],
       "tutorial": null,
       "materia": null
@@ -1360,7 +1360,7 @@
       "img": null,
       "uniqueID": 80,
       "fonte": [
-        "2014_12_19p15"
+        "cat1/2014_12_19p15"
       ],
       "tutorial": null,
       "materia": null
@@ -1394,7 +1394,7 @@
       "img": null,
       "uniqueID": 82,
       "fonte": [
-        "2023_08_00p15"
+        "cat1/2023_08_00p15"
       ],
       "tutorial": null,
       "materia": null
@@ -1428,7 +1428,7 @@
       "img": null,
       "uniqueID": 84,
       "fonte": [
-        "2011_12_13p15"
+        "cat1/2011_12_13p15"
       ],
       "tutorial": null,
       "materia": null
@@ -1462,7 +1462,7 @@
       "img": null,
       "uniqueID": 86,
       "fonte": [
-        "2014_05_23p15"
+        "cat1/2014_05_23p15"
       ],
       "tutorial": null,
       "materia": null
@@ -1480,8 +1480,8 @@
       "img": null,
       "uniqueID": 87,
       "fonte": [
-        "2023_08_00p22",
-        "2023_07_03p22"
+        "cat1/2023_08_00p22",
+        "cat1/2023_07_03p22"
       ],
       "tutorial": null,
       "materia": null
@@ -1563,7 +1563,7 @@
       "img": null,
       "uniqueID": 92,
       "fonte": [
-        "2014_12_19p19"
+        "cat1/2014_12_19p19"
       ],
       "tutorial": null,
       "materia": null
@@ -1581,7 +1581,7 @@
       "img": null,
       "uniqueID": 93,
       "fonte": [
-        "2023_07_03p15"
+        "cat1/2023_07_03p15"
       ],
       "tutorial": null,
       "materia": null
@@ -1599,7 +1599,7 @@
       "img": null,
       "uniqueID": 94,
       "fonte": [
-        "2014_05_23p11"
+        "cat1/2014_05_23p11"
       ],
       "tutorial": null,
       "materia": null
@@ -1617,7 +1617,7 @@
       "img": null,
       "uniqueID": 95,
       "fonte": [
-        "2011_12_13p11"
+        "cat1/2011_12_13p11"
       ],
       "tutorial": null,
       "materia": null
@@ -1715,7 +1715,7 @@
       "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p22</a>)",
       "uniqueID": 101,
       "fonte": [
-        "2011_12_13p22"
+        "cat1/2011_12_13p22"
       ],
       "tutorial": null,
       "materia": null
@@ -1733,7 +1733,7 @@
       "notes": " O resistor R2 tem como objetivo fornecer uma carga mínima constante à base de Q1, garantindo o funcionamento adequado do transistor e contribuindo para a regulação do circuito. A82-Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p17</a>)",
       "uniqueID": 102,
       "fonte": [
-        "2023_07_03p17"
+        "cat1/2023_07_03p17"
       ],
       "tutorial": null,
       "materia": null
@@ -1767,7 +1767,7 @@
       "img": null,
       "uniqueID": 104,
       "fonte": [
-        "2023_08_00p17"
+        "cat1/2023_08_00p17"
       ],
       "tutorial": null,
       "materia": null
@@ -1817,7 +1817,7 @@
       "img": null,
       "uniqueID": 107,
       "fonte": [
-        "2023_07_03p29"
+        "cat1/2023_07_03p29"
       ],
       "tutorial": null,
       "materia": null
@@ -1835,7 +1835,7 @@
       "img": null,
       "uniqueID": 108,
       "fonte": [
-        "2023_08_00p29"
+        "cat1/2023_08_00p29"
       ],
       "tutorial": null,
       "materia": null
@@ -1949,7 +1949,7 @@
       "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p25</a>)",
       "uniqueID": 115,
       "fonte": [
-        "2011_12_13p25"
+        "cat1/2011_12_13p25"
       ],
       "tutorial": null,
       "materia": null
@@ -2015,7 +2015,7 @@
       "img": null,
       "uniqueID": 119,
       "fonte": [
-        "2023_08_00p27"
+        "cat1/2023_08_00p27"
       ],
       "tutorial": null,
       "materia": null
@@ -2049,7 +2049,7 @@
       "img": null,
       "uniqueID": 121,
       "fonte": [
-        "2023_08_00p31"
+        "cat1/2023_08_00p31"
       ],
       "tutorial": null,
       "materia": null
@@ -2067,7 +2067,7 @@
       "img": null,
       "uniqueID": 122,
       "fonte": [
-        "2014_05_23p10"
+        "cat1/2014_05_23p10"
       ],
       "tutorial": null,
       "materia": null
@@ -2117,7 +2117,7 @@
       "img": null,
       "uniqueID": 125,
       "fonte": [
-        "2023_07_03p31"
+        "cat1/2023_07_03p31"
       ],
       "tutorial": null,
       "materia": null
@@ -2135,7 +2135,7 @@
       "img": null,
       "uniqueID": 126,
       "fonte": [
-        "2014_12_19p34"
+        "cat1/2014_12_19p34"
       ],
       "tutorial": null,
       "materia": null
@@ -2153,7 +2153,7 @@
       "img": null,
       "uniqueID": 127,
       "fonte": [
-        "2011_12_13p28"
+        "cat1/2011_12_13p28"
       ],
       "tutorial": null,
       "materia": null
@@ -2203,7 +2203,7 @@
       "img": null,
       "uniqueID": 130,
       "fonte": [
-        "2023_07_03p32"
+        "cat1/2023_07_03p32"
       ],
       "tutorial": null,
       "materia": null
@@ -2237,7 +2237,7 @@
       "img": null,
       "uniqueID": 132,
       "fonte": [
-        "2014_12_19p34"
+        "cat1/2014_12_19p34"
       ],
       "tutorial": null,
       "materia": null
@@ -2271,7 +2271,7 @@
       "img": null,
       "uniqueID": 134,
       "fonte": [
-        "2023_08_00p32"
+        "cat1/2023_08_00p32"
       ],
       "tutorial": null,
       "materia": null
@@ -2289,7 +2289,7 @@
       "img": null,
       "uniqueID": 135,
       "fonte": [
-        "2011_12_13p34"
+        "cat1/2011_12_13p34"
       ],
       "tutorial": null,
       "materia": null
@@ -2323,8 +2323,8 @@
       "img": null,
       "uniqueID": 137,
       "fonte": [
-        "2011_12_13p30",
-        "2014_12_19p30"
+        "cat1/2011_12_13p30",
+        "cat1/2014_12_19p30"
       ],
       "tutorial": null,
       "materia": null
@@ -2374,7 +2374,7 @@
       "img": null,
       "uniqueID": 140,
       "fonte": [
-        "2023_07_03p36"
+        "cat1/2023_07_03p36"
       ],
       "tutorial": null,
       "materia": null
@@ -2424,7 +2424,7 @@
       "img": null,
       "uniqueID": 143,
       "fonte": [
-        "2023_07_03p38"
+        "cat1/2023_07_03p38"
       ],
       "tutorial": null,
       "materia": null
@@ -2442,7 +2442,7 @@
       "img": null,
       "uniqueID": 144,
       "fonte": [
-        "2014_12_19p39"
+        "cat1/2014_12_19p39"
       ],
       "tutorial": null,
       "materia": null
@@ -2460,7 +2460,7 @@
       "img": null,
       "uniqueID": 145,
       "fonte": [
-        "2011_12_13p39"
+        "cat1/2011_12_13p39"
       ],
       "tutorial": null,
       "materia": null
@@ -2494,7 +2494,7 @@
       "img": null,
       "uniqueID": 147,
       "fonte": [
-        "2011_12_13p21"
+        "cat1/2011_12_13p21"
       ],
       "tutorial": null,
       "materia": null
@@ -2576,7 +2576,7 @@
       "img": null,
       "uniqueID": 152,
       "fonte": [
-        "2023_08_00p36"
+        "cat1/2023_08_00p36"
       ],
       "tutorial": null,
       "materia": null
@@ -2594,7 +2594,7 @@
       "img": null,
       "uniqueID": 153,
       "fonte": [
-        "2014_12_19p37"
+        "cat1/2014_12_19p37"
       ],
       "tutorial": null,
       "materia": null
@@ -2628,7 +2628,7 @@
       "img": null,
       "uniqueID": 155,
       "fonte": [
-        "2023_08_00p23"
+        "cat1/2023_08_00p23"
       ],
       "tutorial": null,
       "materia": null
@@ -2646,7 +2646,7 @@
       "img": null,
       "uniqueID": 156,
       "fonte": [
-        "2023_07_03p23"
+        "cat1/2023_07_03p23"
       ],
       "tutorial": null,
       "materia": null
@@ -2664,7 +2664,7 @@
       "img": null,
       "uniqueID": 157,
       "fonte": [
-        "2014_12_19p21"
+        "cat1/2014_12_19p21"
       ],
       "tutorial": null,
       "materia": null
@@ -2714,7 +2714,7 @@
       "img": null,
       "uniqueID": 160,
       "fonte": [
-        "2023_07_03p25"
+        "cat1/2023_07_03p25"
       ],
       "tutorial": null,
       "materia": null
@@ -2732,7 +2732,7 @@
       "img": null,
       "uniqueID": 161,
       "fonte": [
-        "2023_08_00p25"
+        "cat1/2023_08_00p25"
       ],
       "tutorial": null,
       "materia": null
@@ -2782,7 +2782,7 @@
       "img": null,
       "uniqueID": 164,
       "fonte": [
-        "2014_12_19p23"
+        "cat1/2014_12_19p23"
       ],
       "tutorial": null,
       "materia": null
@@ -2800,8 +2800,8 @@
       "img": null,
       "uniqueID": 165,
       "fonte": [
-        "2011_12_13p26",
-        "2014_12_19p26"
+        "cat1/2011_12_13p26",
+        "cat1/2014_12_19p26"
       ],
       "tutorial": null,
       "materia": null
@@ -2835,7 +2835,7 @@
       "img": null,
       "uniqueID": 167,
       "fonte": [
-        "2023_07_03p7"
+        "cat1/2023_07_03p7"
       ],
       "tutorial": null,
       "materia": null
@@ -2853,7 +2853,7 @@
       "img": null,
       "uniqueID": 168,
       "fonte": [
-        "2023_07_03p28"
+        "cat1/2023_07_03p28"
       ],
       "tutorial": null,
       "materia": null
@@ -2887,7 +2887,7 @@
       "img": null,
       "uniqueID": 170,
       "fonte": [
-        "2023_08_00p7"
+        "cat1/2023_08_00p7"
       ],
       "tutorial": null,
       "materia": null
@@ -2985,7 +2985,7 @@
       "img": null,
       "uniqueID": 176,
       "fonte": [
-        "2014_12_19p27"
+        "cat1/2014_12_19p27"
       ],
       "tutorial": null,
       "materia": null
@@ -3003,8 +3003,8 @@
       "img": null,
       "uniqueID": 177,
       "fonte": [
-        "2018_06_19p29",
-        "2014_12_19p27"
+        "cat1/2018_06_19p29",
+        "cat1/2014_12_19p27"
       ],
       "tutorial": null,
       "materia": null
@@ -3038,7 +3038,7 @@
       "img": null,
       "uniqueID": 179,
       "fonte": [
-        "2011_12_13p27"
+        "cat1/2011_12_13p27"
       ],
       "tutorial": null,
       "materia": null
@@ -3072,7 +3072,7 @@
       "img": null,
       "uniqueID": 181,
       "fonte": [
-        "2023_07_03p27"
+        "cat1/2023_07_03p27"
       ],
       "tutorial": null,
       "materia": null
@@ -3122,7 +3122,7 @@
       "img": null,
       "uniqueID": 184,
       "fonte": [
-        "2014_12_19p9"
+        "cat1/2014_12_19p9"
       ],
       "tutorial": null,
       "materia": null
@@ -3156,7 +3156,7 @@
       "img": null,
       "uniqueID": 186,
       "fonte": [
-        "2014_05_23p9"
+        "cat1/2014_05_23p9"
       ],
       "tutorial": null,
       "materia": null
@@ -3190,7 +3190,7 @@
       "img": null,
       "uniqueID": 188,
       "fonte": [
-        "2023_07_03p12"
+        "cat1/2023_07_03p12"
       ],
       "tutorial": null,
       "materia": null
@@ -3240,8 +3240,8 @@
       "img": null,
       "uniqueID": 191,
       "fonte": [
-        "2023_08_00p20",
-        "2014_12_19p18"
+        "cat1/2023_08_00p20",
+        "cat1/2014_12_19p18"
       ],
       "tutorial": null,
       "materia": null
@@ -3275,7 +3275,7 @@
       "img": null,
       "uniqueID": 193,
       "fonte": [
-        "2023_07_03p13"
+        "cat1/2023_07_03p13"
       ],
       "tutorial": null,
       "materia": null
@@ -3469,7 +3469,7 @@
       "img": null,
       "uniqueID": 205,
       "fonte": [
-        "2023_08_00p21"
+        "cat1/2023_08_00p21"
       ],
       "tutorial": null,
       "materia": null
@@ -3503,8 +3503,8 @@
       "img": null,
       "uniqueID": 207,
       "fonte": [
-        "2023_08_00p13",
-        "2014_05_23p14"
+        "cat1/2023_08_00p13",
+        "cat1/2014_05_23p14"
       ],
       "tutorial": null,
       "materia": null
@@ -3522,7 +3522,7 @@
       "img": null,
       "uniqueID": 208,
       "fonte": [
-        "2023_07_03p21"
+        "cat1/2023_07_03p21"
       ],
       "tutorial": null,
       "materia": null
@@ -3556,7 +3556,7 @@
       "img": null,
       "uniqueID": 210,
       "fonte": [
-        "2011_12_13p18"
+        "cat1/2011_12_13p18"
       ],
       "tutorial": null,
       "materia": null
@@ -3574,7 +3574,7 @@
       "img": null,
       "uniqueID": 211,
       "fonte": [
-        "2011_12_13p18"
+        "cat1/2011_12_13p18"
       ],
       "tutorial": null,
       "materia": null
@@ -3608,7 +3608,7 @@
       "img": null,
       "uniqueID": 213,
       "fonte": [
-        "2011_12_13p19"
+        "cat1/2011_12_13p19"
       ],
       "tutorial": null,
       "materia": null
@@ -3642,7 +3642,7 @@
       "img": null,
       "uniqueID": 215,
       "fonte": [
-        "2023_07_03p20"
+        "cat1/2023_07_03p20"
       ],
       "tutorial": null,
       "materia": null
@@ -3692,7 +3692,7 @@
       "img": null,
       "uniqueID": 218,
       "fonte": [
-        "2014_12_19p2"
+        "cat1/2014_12_19p2"
       ],
       "tutorial": null,
       "materia": null
@@ -3726,7 +3726,7 @@
       "img": null,
       "uniqueID": 220,
       "fonte": [
-        "2014_12_19p2"
+        "cat1/2014_12_19p2"
       ],
       "tutorial": null,
       "materia": null
@@ -3760,7 +3760,7 @@
       "img": null,
       "uniqueID": 222,
       "fonte": [
-        "2023_08_00p3"
+        "cat1/2023_08_00p3"
       ],
       "tutorial": null,
       "materia": null
@@ -3778,7 +3778,7 @@
       "img": null,
       "uniqueID": 223,
       "fonte": [
-        "2023_07_03p4"
+        "cat1/2023_07_03p4"
       ],
       "tutorial": null,
       "materia": null
@@ -3828,7 +3828,7 @@
       "img": null,
       "uniqueID": 226,
       "fonte": [
-        "2014_05_23p1"
+        "cat1/2014_05_23p1"
       ],
       "tutorial": null,
       "materia": null
@@ -3910,7 +3910,7 @@
       "img": null,
       "uniqueID": 231,
       "fonte": [
-        "2014_05_23p3"
+        "cat1/2014_05_23p3"
       ],
       "tutorial": null,
       "materia": null
@@ -3928,8 +3928,8 @@
       "img": null,
       "uniqueID": 232,
       "fonte": [
-        "2023_08_00p4",
-        "2023_07_03p3"
+        "cat1/2023_08_00p4",
+        "cat1/2023_07_03p3"
       ],
       "tutorial": null,
       "materia": null
@@ -3995,7 +3995,7 @@
       "img": null,
       "uniqueID": 236,
       "fonte": [
-        "2011_12_13p2"
+        "cat1/2011_12_13p2"
       ],
       "tutorial": null,
       "materia": null
@@ -4045,7 +4045,7 @@
       "img": null,
       "uniqueID": 239,
       "fonte": [
-        "2023_08_00p5"
+        "cat1/2023_08_00p5"
       ],
       "tutorial": null,
       "materia": null
@@ -4111,13 +4111,13 @@
       "img": null,
       "uniqueID": 243,
       "fonte": [
-        "2018_03_08p13",
-        "2016_01_00p13",
-        "2018_05_00p13",
-        "2020_07_16p12",
-        "2023_01_27p12",
-        "2014_12_19p7",
-        "2023_07_03p11"
+        "cat1/2018_03_08p13",
+        "cat1/2016_01_00p13",
+        "cat1/2018_05_00p13",
+        "cat1/2020_07_16p12",
+        "cat1/2023_01_27p12",
+        "cat1/2014_12_19p7",
+        "cat1/2023_07_03p11"
       ],
       "tutorial": null,
       "materia": null
@@ -4135,7 +4135,7 @@
       "img": null,
       "uniqueID": 244,
       "fonte": [
-        "2011_12_13p7"
+        "cat1/2011_12_13p7"
       ],
       "tutorial": null,
       "materia": null
@@ -4153,7 +4153,7 @@
       "img": null,
       "uniqueID": 245,
       "fonte": [
-        "2023_08_00p11"
+        "cat1/2023_08_00p11"
       ],
       "tutorial": null,
       "materia": null
@@ -4219,7 +4219,7 @@
       "img": null,
       "uniqueID": 249,
       "fonte": [
-        "2023_07_03p14"
+        "cat1/2023_07_03p14"
       ],
       "tutorial": null,
       "materia": null
@@ -4237,7 +4237,7 @@
       "img": null,
       "uniqueID": 250,
       "fonte": [
-        "2014_12_19p20"
+        "cat1/2014_12_19p20"
       ],
       "tutorial": null,
       "materia": null
@@ -4287,7 +4287,7 @@
       "img": null,
       "uniqueID": 253,
       "fonte": [
-        "2014_05_23p13"
+        "cat1/2014_05_23p13"
       ],
       "tutorial": null,
       "materia": null
@@ -4321,7 +4321,7 @@
       "img": null,
       "uniqueID": 255,
       "fonte": [
-        "2011_12_13p13"
+        "cat1/2011_12_13p13"
       ],
       "tutorial": null,
       "materia": null
@@ -4387,9 +4387,9 @@
       "img": null,
       "uniqueID": 259,
       "fonte": [
-        "2011_12_13p8",
-        "2014_12_19p8",
-        "2023_07_03p9"
+        "cat1/2011_12_13p8",
+        "cat1/2014_12_19p8",
+        "cat1/2023_07_03p9"
       ],
       "tutorial": null,
       "materia": null
@@ -4423,7 +4423,7 @@
       "img": null,
       "uniqueID": 261,
       "fonte": [
-        "2023_08_00p9"
+        "cat1/2023_08_00p9"
       ],
       "tutorial": null,
       "materia": null
@@ -4457,7 +4457,7 @@
       "img": null,
       "uniqueID": 263,
       "fonte": [
-        "2011_12_13p12"
+        "cat1/2011_12_13p12"
       ],
       "tutorial": null,
       "materia": null
@@ -4491,8 +4491,8 @@
       "img": null,
       "uniqueID": 265,
       "fonte": [
-        "2011_12_13p5",
-        "2014_12_19p5"
+        "cat1/2011_12_13p5",
+        "cat1/2014_12_19p5"
       ],
       "tutorial": null,
       "materia": null
@@ -4510,7 +4510,7 @@
       "img": null,
       "uniqueID": 266,
       "fonte": [
-        "2023_07_03p2"
+        "cat1/2023_07_03p2"
       ],
       "tutorial": null,
       "materia": null
@@ -4528,8 +4528,8 @@
       "img": null,
       "uniqueID": 267,
       "fonte": [
-        "2011_12_13p4",
-        "2014_12_19p4"
+        "cat1/2011_12_13p4",
+        "cat1/2014_12_19p4"
       ],
       "tutorial": null,
       "materia": null
@@ -4545,7 +4545,7 @@
       "correctIndex": 4,
       "notes": "Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf'> ADENDA_2013_QNAF",
       "fonte": [
-        "2023_08_00p1"
+        "cat1/2023_08_00p1"
       ],
       "img": null,
       "uniqueID": 268,
@@ -4565,7 +4565,7 @@
       "img": null,
       "uniqueID": 269,
       "fonte": [
-        "2023_07_03p1"
+        "cat1/2023_07_03p1"
       ],
       "tutorial": null,
       "materia": null
@@ -4583,7 +4583,7 @@
       "img": null,
       "uniqueID": 270,
       "fonte": [
-        "2011_12_13p1"
+        "cat1/2011_12_13p1"
       ],
       "tutorial": null,
       "materia": null
@@ -4601,7 +4601,7 @@
       "img": null,
       "uniqueID": 271,
       "fonte": [
-        "2011_12_13p3"
+        "cat1/2011_12_13p3"
       ],
       "tutorial": null,
       "materia": null
@@ -4619,7 +4619,7 @@
       "img": null,
       "uniqueID": 272,
       "fonte": [
-        "2011_12_13p9"
+        "cat1/2011_12_13p9"
       ],
       "tutorial": null,
       "materia": null
@@ -4637,7 +4637,7 @@
       "img": null,
       "uniqueID": 273,
       "fonte": [
-        "2023_08_00p12"
+        "cat1/2023_08_00p12"
       ],
       "tutorial": null,
       "materia": null
@@ -4655,7 +4655,7 @@
       "img": null,
       "uniqueID": 274,
       "fonte": [
-        "2014_12_19p25"
+        "cat1/2014_12_19p25"
       ],
       "tutorial": null,
       "materia": null
@@ -4673,9 +4673,9 @@
       "img": null,
       "uniqueID": 275,
       "fonte": [
-        "2021_02_18p19",
-        "2011_12_13p10",
-        "2014_12_19p10"
+        "cat1/2021_02_18p19",
+        "cat1/2011_12_13p10",
+        "cat1/2014_12_19p10"
       ],
       "tutorial": null,
       "materia": null
@@ -4693,7 +4693,7 @@
       "img": null,
       "uniqueID": 276,
       "fonte": [
-        "2011_12_13p37"
+        "cat1/2011_12_13p37"
       ],
       "tutorial": null,
       "materia": null
@@ -4711,7 +4711,7 @@
       "img": null,
       "uniqueID": 277,
       "fonte": [
-        "2011_12_13p23"
+        "cat1/2011_12_13p23"
       ],
       "tutorial": null,
       "materia": null
@@ -4729,7 +4729,7 @@
       "img": null,
       "uniqueID": 278,
       "fonte": [
-        "2023_08_00p28"
+        "cat1/2023_08_00p28"
       ],
       "tutorial": null,
       "materia": null
@@ -4747,7 +4747,7 @@
       "img": null,
       "uniqueID": 279,
       "fonte": [
-        "2011_12_13p14"
+        "cat1/2011_12_13p14"
       ],
       "tutorial": null,
       "materia": null
@@ -4765,7 +4765,7 @@
       "img": null,
       "uniqueID": 280,
       "fonte": [
-        "2011_12_13p38"
+        "cat1/2011_12_13p38"
       ],
       "tutorial": null,
       "materia": null
@@ -4783,7 +4783,7 @@
       "img": null,
       "uniqueID": 281,
       "fonte": [
-        "2014_12_19p1"
+        "cat1/2014_12_19p1"
       ],
       "tutorial": null,
       "materia": null
@@ -4801,7 +4801,7 @@
       "img": null,
       "uniqueID": 282,
       "fonte": [
-        "2014_05_23p2"
+        "cat1/2014_05_23p2"
       ],
       "tutorial": null,
       "materia": null
@@ -4819,7 +4819,7 @@
       "img": null,
       "uniqueID": 283,
       "fonte": [
-        "2023_07_03p5"
+        "cat1/2023_07_03p5"
       ],
       "tutorial": null,
       "materia": null
@@ -4837,9 +4837,9 @@
       "img": null,
       "uniqueID": 284,
       "fonte": [
-        "2013_08_00p13",
-        "2016_01_00p12",
-        "2014_12_19p12"
+        "cat1/2013_08_00p13",
+        "cat1/2016_01_00p12",
+        "cat1/2014_12_19p12"
       ],
       "tutorial": null,
       "materia": null
@@ -4857,7 +4857,7 @@
       "img": null,
       "uniqueID": 285,
       "fonte": [
-        "2014_12_19p13"
+        "cat1/2014_12_19p13"
       ],
       "tutorial": null,
       "materia": null
@@ -4871,11 +4871,11 @@
         "O seu uso é prático unicamente em bandas de VHF"
       ],
       "correctIndex": 1,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p14</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 286,
       "fonte": [
-        "2014_12_19p14"
+        "cat2/2014_12_19p14"
       ],
       "tutorial": null,
       "materia": null
@@ -4893,10 +4893,10 @@
       "img": null,
       "uniqueID": 287,
       "fonte": [
-        "0000_00_01p4",
-        "0000_00_03p4",
-        "2013_08_00p4",
-        "2014_05_23p4"
+        "cat1/0000_00_01p4",
+        "cat1/0000_00_03p4",
+        "cat1/2013_08_00p4",
+        "cat1/2014_05_23p4"
       ],
       "tutorial": null,
       "materia": null
@@ -4914,13 +4914,13 @@
       "img": null,
       "uniqueID": 288,
       "fonte": [
-        "2023_08_00p2",
-        "2013_08_00p5",
-        "2016_01_00p3",
-        "2021_02_18p4",
-        "2022_02_03p4",
-        "2023_03_08p04",
-        "2014_05_23p5"
+        "cat1/2023_08_00p2",
+        "cat1/2013_08_00p5",
+        "cat1/2016_01_00p3",
+        "cat1/2021_02_18p4",
+        "cat1/2022_02_03p4",
+        "cat1/2023_03_08p04",
+        "cat1/2014_05_23p5"
       ],
       "tutorial": null,
       "materia": null
@@ -4938,9 +4938,9 @@
       "img": null,
       "uniqueID": 289,
       "fonte": [
-        "2022_12_27p12",
-        "2014_05_23p7",
-        "2014_05_23p7"
+        "cat1/2022_12_27p12",
+        "cat1/2014_05_23p7",
+        "cat1/2014_05_23p7"
       ],
       "tutorial": null,
       "materia": null
@@ -4958,7 +4958,7 @@
       "img": null,
       "uniqueID": 290,
       "fonte": [
-        "2014_05_23p8"
+        "cat1/2014_05_23p8"
       ],
       "tutorial": null,
       "materia": null
@@ -4976,14 +4976,14 @@
       "img": null,
       "uniqueID": 291,
       "fonte": [
-        "2012_04_10p13",
-        "2017_09_27p12",
-        "2021_02_18p7",
-        "2022_07_20p7",
-        "2022_08_26p7",
-        "2023_03_08p07",
-        "2014_05_23p12",
-        "2023_07_03p6"
+        "cat1/2012_04_10p13",
+        "cat1/2017_09_27p12",
+        "cat1/2021_02_18p7",
+        "cat1/2022_07_20p7",
+        "cat1/2022_08_26p7",
+        "cat1/2023_03_08p07",
+        "cat1/2014_05_23p12",
+        "cat1/2023_07_03p6"
       ],
       "tutorial": null,
       "materia": null
@@ -5001,11 +5001,11 @@
       "img": null,
       "uniqueID": 292,
       "fonte": [
-        "2023_08_00p6",
-        "2018_03_08p12",
-        "2022_06_27p7",
-        "2022_12_27p7",
-        "2023_01_27p7"
+        "cat1/2023_08_00p6",
+        "cat1/2018_03_08p12",
+        "cat1/2022_06_27p7",
+        "cat1/2022_12_27p7",
+        "cat1/2023_01_27p7"
       ],
       "tutorial": null,
       "materia": null
@@ -5071,7 +5071,7 @@
       "img": null,
       "uniqueID": 296,
       "fonte": [
-        "2023_07_03p8"
+        "cat1/2023_07_03p8"
       ],
       "tutorial": null,
       "materia": null
@@ -5313,7 +5313,7 @@
       "img": null,
       "uniqueID": 311,
       "fonte": [
-        "2023_08_00p14"
+        "cat1/2023_08_00p14"
       ],
       "tutorial": null,
       "materia": null
@@ -5539,7 +5539,7 @@
       "img": null,
       "uniqueID": 325,
       "fonte": [
-        "2023_07_03p40"
+        "cat1/2023_07_03p40"
       ],
       "tutorial": null,
       "materia": null
@@ -5605,7 +5605,7 @@
       "img": null,
       "uniqueID": 329,
       "fonte": [
-        "2023_08_00p16"
+        "cat1/2023_08_00p16"
       ],
       "tutorial": null,
       "materia": null
@@ -5639,7 +5639,7 @@
       "img": null,
       "uniqueID": 331,
       "fonte": [
-        "2023_07_03p16"
+        "cat1/2023_07_03p16"
       ],
       "tutorial": null,
       "materia": null
@@ -5785,7 +5785,7 @@
       "img": null,
       "uniqueID": 340,
       "fonte": [
-        "2023_08_00p18"
+        "cat1/2023_08_00p18"
       ],
       "tutorial": null,
       "materia": null
@@ -6011,7 +6011,7 @@
       "correctIndex": 2,
       "uniqueID": 355,
       "fonte": [
-        "2023_07_03p30"
+        "cat1/2023_07_03p30"
       ],
       "tutorial": null,
       "materia": null
@@ -6157,7 +6157,7 @@
       "correctIndex": 3,
       "uniqueID": 364,
       "fonte": [
-        "2023_08_00p35"
+        "cat1/2023_08_00p35"
       ],
       "tutorial": null,
       "materia": null
@@ -6223,7 +6223,7 @@
       "img": null,
       "uniqueID": 368,
       "fonte": [
-        "2023_07_03p35"
+        "cat1/2023_07_03p35"
       ],
       "tutorial": null,
       "materia": null
@@ -6241,7 +6241,7 @@
       "img": null,
       "uniqueID": 369,
       "fonte": [
-        "2023_08_00p38"
+        "cat1/2023_08_00p38"
       ],
       "tutorial": null,
       "materia": null
