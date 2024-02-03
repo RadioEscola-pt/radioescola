@@ -131,10 +131,10 @@ class Storage {
 				const truePercentage = (trueCount / total) * 100;
 				return truePercentage.toFixed(2)+"%";
 			} else {
-				return 'Sem confirmação';
+				return 'Sem historia';
 			}
 		} else {
-			return 'Sem confirmação';
+			return 'Sem historia';
 		}
 	}
 	plotAnswers(answers) {
