@@ -1679,7 +1679,7 @@
         "Altera a impedância da antena para um valor superior"
       ],
       "correctIndex": 2,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p19</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 92,
       "fonte": [
@@ -1698,7 +1698,7 @@
         "A tensão e a corrente estão em oposição de fase"
       ],
       "correctIndex": 3,
-      "notes": "A75 Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p15</a>)",
+      "notes": "A75",
       "img": null,
       "uniqueID": 93,
       "fonte": [
@@ -1717,7 +1717,7 @@
         "A frequência à qual a impedância reactiva iguala a impedância resistiva"
       ],
       "correctIndex": 3,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p11</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 94,
       "fonte": [
@@ -1736,7 +1736,7 @@
         "Aproximadamente igual à reactância capacitiva"
       ],
       "correctIndex": 1,
-      "notes": "A76 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p11</a>)",
+      "notes": "A76 ",
       "img": null,
       "uniqueID": 95,
       "fonte": [
@@ -1860,7 +1860,7 @@
       ],
       "correctIndex": 1,
       "img": "images/cat1/fig2a.png",
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p22</a>)",
+      "notes": "",
       "uniqueID": 101,
       "fonte": [
         "cat1/2011_12_13p22"
@@ -1879,7 +1879,7 @@
       ],
       "correctIndex": 4,
       "img": "images/cat1/fig2.png",
-      "notes": " O resistor R2 tem como objetivo fornecer uma carga mínima constante à base de Q1, garantindo o funcionamento adequado do transistor e contribuindo para a regulação do circuito. A82-Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p17</a>)",
+      "notes": " O resistor R2 tem como objetivo fornecer uma carga mínima constante à base de Q1, garantindo o funcionamento adequado do transistor e contribuindo para a regulação do circuito. A82",
       "uniqueID": 102,
       "fonte": [
         "cat1/2023_07_03p17"
@@ -1914,7 +1914,7 @@
         "Elimina a corrente do (loop) de terra"
       ],
       "correctIndex": 2,
-      "notes": "A84-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p17</a>)",
+      "notes": "A84",
       "img": null,
       "uniqueID": 104,
       "fonte": [
@@ -1986,7 +1986,7 @@
         "o transístor conduz durante todo o período"
       ],
       "correctIndex": 4,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p29</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 108,
       "fonte": [
@@ -2290,7 +2290,7 @@
         "Detetor de envolvente"
       ],
       "correctIndex": 4,
-      "notes": "Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p31</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 125,
       "fonte": [
@@ -2309,7 +2309,7 @@
         "Um amplificador e um circuito de realimentação"
       ],
       "correctIndex": 3,
-      "notes": "A100  Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p34</a>)",
+      "notes": "A100 ",
       "img": null,
       "uniqueID": 126,
       "fonte": [
@@ -2328,7 +2328,7 @@
         "Produzem-se frequências de batimento"
       ],
       "correctIndex": 1,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p28</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 127,
       "fonte": [
@@ -2381,7 +2381,7 @@
         "Ter uma realimentação regativa suficiente para anular o sinal à entrada"
       ],
       "correctIndex": 3,
-      "notes": "Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p32</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 130,
       "fonte": [
@@ -2417,7 +2417,7 @@
         "U filtro e um amplificador que funcione num lop por realimentação (feed-back)"
       ],
       "correctIndex": 4,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p34</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 132,
       "fonte": [
@@ -2453,7 +2453,7 @@
         "Através de um condensador de neutralização"
       ],
       "correctIndex": 3,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p32</a>)",
+      "notes": " ",
       "img": null,
       "uniqueID": 134,
       "fonte": [
@@ -2472,7 +2472,7 @@
         "Através de um cristal de quartzo"
       ],
       "correctIndex": 4,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p34</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 135,
       "fonte": [
@@ -2508,7 +2508,7 @@
         "Verificando a variação da reactância no díodo em relação à frequência."
       ],
       "correctIndex": 1,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p30</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p30</a>) (pergunta de categoria 2) É filtro mais simples para deteção de AM > no sinal RF que entra modulado e sai filtrado só considerando a envolvente do sinal de RF <img  src='images/cat2/detetor_am.png'>.",
+      "notes": " É filtro mais simples para deteção de AM > no sinal RF que entra modulado e sai filtrado só considerando a envolvente do sinal de RF <img  src='images/cat2/detetor_am.png'>.",
       "img": null,
       "uniqueID": 137,
       "fonte": [
@@ -2564,7 +2564,7 @@
         "É uma malha em que o sinal de realimentação é usado para maximizar a frequência instantânea do sinal de saída, em função duma tensão em fase aplicada como sinal de entrada"
       ],
       "correctIndex": 1,
-      "notes": "A109-Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p36</a>)",
+      "notes": "A109",
       "img": null,
       "uniqueID": 140,
       "fonte": [
@@ -2655,7 +2655,7 @@
         "O filtro com processamento digital de sinal é mais eficaz em frequências VHF"
       ],
       "correctIndex": 1,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p39</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 144,
       "fonte": [
@@ -2674,7 +2674,7 @@
         "O filtro com processamento digital de sinal é mais eficaz em frequências VHF"
       ],
       "correctIndex": 1,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p39</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 145,
       "fonte": [
@@ -2710,7 +2710,7 @@
         "Todas as hióteses de resposta estão correctas"
       ],
       "correctIndex": 4,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p21</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 147,
       "fonte": [
@@ -2797,7 +2797,7 @@
         "Um sintetizador de matriz com comutação de díodos"
       ],
       "correctIndex": 3,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p36</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 152,
       "fonte": [
@@ -2816,7 +2816,7 @@
         "Porque qualquer variação de amplitude no sinal do oscilador de referência  vai evitar que o loop mude de frequência"
       ],
       "correctIndex": 2,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p37</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 153,
       "fonte": [
@@ -2852,7 +2852,7 @@
         "Na ponte de condutância"
       ],
       "correctIndex": 1,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p23</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 155,
       "fonte": [
@@ -2872,7 +2872,7 @@
         "Potência do transmissor"
       ],
       "correctIndex": 3,
-      "notes": "Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p23</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 156,
       "fonte": [
@@ -2891,7 +2891,7 @@
         "É 100 vezes mais forte"
       ],
       "correctIndex": 4,
-      "notes": "A118  Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p21</a>)",
+      "notes": "A118",
       "img": null,
       "uniqueID": 157,
       "fonte": [
@@ -2946,7 +2946,7 @@
         "É a capacidade que um recetor tem de rejeitar o ruído da fonte da alimentação do próprio recetor"
       ],
       "correctIndex": 2,
-      "notes": "Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p25</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 160,
       "fonte": [
@@ -2965,7 +2965,7 @@
         "Um recetor é tanto melhor quanto maior for a sua rejeição da freqência imagem"
       ],
       "correctIndex": 3,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p25</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 161,
       "fonte": [
@@ -3018,7 +3018,7 @@
         "Uma rede de pré-ênfase"
       ],
       "correctIndex": 1,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p23</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 164,
       "fonte": [
@@ -3037,7 +3037,7 @@
         "Squelch gain rollback"
       ],
       "correctIndex": 1,
-      "notes": "A123  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p26</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p26</a>)",
+      "notes": "A123",
       "img": null,
       "uniqueID": 165,
       "fonte": [
@@ -3074,7 +3074,7 @@
         "Nenhuma das hipóteses está correta"
       ],
       "correctIndex": 3,
-      "notes": "A125 Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p7</a>)",
+      "notes": "A125",
       "img": null,
       "uniqueID": 167,
       "fonte": [
@@ -3493,7 +3493,7 @@
         "igual à impedância de um dipolo simples "
       ],
       "correctIndex": 1,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p12</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 188,
       "fonte": [
@@ -3546,7 +3546,7 @@
         "Para calcular a relação frente/costas de uma antena"
       ],
       "correctIndex": 1,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p20</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p18</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 191,
       "fonte": [
@@ -3583,7 +3583,7 @@
         "um parâmetro independente e portanto não relacionável com a sua diretividade"
       ],
       "correctIndex": 3,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p13</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 193,
       "fonte": [
@@ -3809,7 +3809,7 @@
         "É a frequência cuja velocidade de propagação no guia de ondas é cerca de metade da velocidade da luz no vazio"
       ],
       "correctIndex": 2,
-      "notes": "A partir de determinadas frequências não se usam cabos coaxiais e usam se guias de ondas, e também têm muito pucas perdas. A156-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p21</a>)",
+      "notes": "A partir de determinadas frequências não se usam cabos coaxiais e usam se guias de ondas, e também têm muito pucas perdas. A156",
       "img": null,
       "uniqueID": 205,
       "fonte": [
@@ -3845,7 +3845,7 @@
         "Permite o maior ângulo possível de radição para faixas HF"
       ],
       "correctIndex": 3,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p13</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p14</a>)",
+      "notes": " ",
       "img": null,
       "uniqueID": 207,
       "fonte": [
@@ -3865,7 +3865,7 @@
         "Consiste na razão entre a velocidade da onda na linha de transmissão e a velocidade da luz no vácuo"
       ],
       "correctIndex": 4,
-      "notes": "O factor de velocidade é algo que está relacionado com as propriedades fisicas do próprio cabo. A158-Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p21</a>)",
+      "notes": "O factor de velocidade é algo que está relacionado com as propriedades fisicas do próprio cabo. A158",
       "img": null,
       "uniqueID": 208,
       "fonte": [
@@ -3901,7 +3901,7 @@
         "Atinge o máximo próximo dos 18 MHz"
       ],
       "correctIndex": 2,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p18</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 210,
       "fonte": [
@@ -4212,7 +4212,7 @@
         "índicedo fluxo de ondas rádio solares medido"
       ],
       "correctIndex": 2,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p1</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 226,
       "fonte": [
@@ -4299,7 +4299,7 @@
         "144 MHz"
       ],
       "correctIndex": 3,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p3</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 231,
       "fonte": [
@@ -4391,7 +4391,7 @@
         "São refractadas, fica presas na camada ionosférica e circulam em torn da Terra."
       ],
       "correctIndex": 1,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p2</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 236,
       "fonte": [
@@ -4444,7 +4444,7 @@
         "Interseção rádio"
       ],
       "correctIndex": 3,
-      "notes": "A182-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p5</a>)",
+      "notes": "A182",
       "img": null,
       "uniqueID": 239,
       "fonte": [
@@ -4558,7 +4558,7 @@
         "Todas as hipóteses anteriores estão incorretas, pois a impedância interna dum voltímetro não tem qualquer efeito no erro da medição"
       ],
       "correctIndex": 2,
-      "notes": "A188- Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p11</a>)",
+      "notes": "A188",
       "img": null,
       "uniqueID": 245,
       "fonte": [
@@ -4719,7 +4719,7 @@
         "Um refletómetro no domínio do tempo"
       ],
       "correctIndex": 1,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p13</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 253,
       "fonte": [
@@ -4865,7 +4865,7 @@
         "todas as hipóteses anteriores estão corretas"
       ],
       "correctIndex": 4,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p9</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 261,
       "fonte": [
@@ -4901,7 +4901,7 @@
         "Não ligar"
       ],
       "correctIndex": 2,
-      "notes": "A203 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p12</a>)",
+      "notes": "A203",
       "img": null,
       "uniqueID": 263,
       "fonte": [
@@ -4937,7 +4937,7 @@
         "CT7, se estiver a operar a estação na área geográfica POR"
       ],
       "correctIndex": 4,
-      "notes": "A205  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p5</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p5</a>)",
+      "notes": "A205",
       "img": null,
       "uniqueID": 265,
       "fonte": [
@@ -4957,7 +4957,7 @@
         "utilizar estações de amador em todos os países da CEPT, nos Estados Unidos da América e na Austrália"
       ],
       "correctIndex": 2,
-      "notes": "A206 Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p2</a>)",
+      "notes": "A206",
       "img": null,
       "uniqueID": 266,
       "fonte": [
@@ -4976,7 +4976,7 @@
         "100 W"
       ],
       "correctIndex": 1,
-      "notes": "A207 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p4</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p4</a>)",
+      "notes": "A207",
       "img": null,
       "uniqueID": 267,
       "fonte": [
@@ -5130,7 +5130,7 @@
         "onda contínua"
       ],
       "correctIndex": 2,
-      "notes": " Exames:(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p19</a>) (<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p10</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p10</a>)  Pergunta de cat2 que volta a aparecer em cat1  > Modulador de frequencia, Resposta 2.",
+      "notes": " Pergunta de cat2 que volta a aparecer em cat1  > Modulador de frequencia, Resposta 2.",
       "img": null,
       "uniqueID": 275,
       "fonte": [
@@ -5151,7 +5151,7 @@
         "O período de tempo que o circuito leva a fechar"
       ],
       "correctIndex": 1,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p37</a>)",
+      "notes": " ",
       "img": null,
       "uniqueID": 276,
       "fonte": [
@@ -5170,7 +5170,7 @@
         "Varia a sintonização do pré-amplificador de microfone para gerar sinais modulados em amplitude"
       ],
       "correctIndex": 3,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p23</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 277,
       "fonte": [
@@ -5189,7 +5189,7 @@
         "Todas as hipóteses estão corretas"
       ],
       "correctIndex": 3,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p28</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 278,
       "fonte": [
@@ -5208,7 +5208,7 @@
         "Porque os condutores são dispositivos não lineares"
       ],
       "correctIndex": 2,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p14</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 279,
       "fonte": [
@@ -5227,7 +5227,7 @@
         "Código Morse"
       ],
       "correctIndex": 4,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p38</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 280,
       "fonte": [
@@ -5246,7 +5246,7 @@
         "Todas as opções são válidas"
       ],
       "correctIndex": 2,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p1</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 281,
       "fonte": [
@@ -5265,7 +5265,7 @@
         "Dispersão da energia pela zona de silêncio através de vários percursos de ondas de rádio"
       ],
       "correctIndex": 4,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p2</a>)",
+      "notes": " ",
       "img": null,
       "uniqueID": 282,
       "fonte": [
@@ -5284,7 +5284,7 @@
         "Chuva de meteoros concentrada em latitudes stentrionais"
       ],
       "correctIndex": 3,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p5</a>)",
+      "notes": " ",
       "img": null,
       "uniqueID": 283,
       "fonte": [
@@ -5324,7 +5324,7 @@
         "Todas as opções são válidas"
       ],
       "correctIndex": 3,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p13</a>)",
+      "notes": "",
       "img": null,
       "uniqueID": 285,
       "fonte": [
@@ -5410,7 +5410,7 @@
         "Um wattímetro de potência de pico"
       ],
       "correctIndex": 4,
-      "notes": " Pergunta de cateoria 2 > Exames:(<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p12</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p7</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p7</a>) ",
+      "notes": " ",
       "img": null,
       "uniqueID": 289,
       "fonte": [
@@ -5431,7 +5431,7 @@
         "O sinal mais débil a ser recebido é o único sinal desmodulado"
       ],
       "correctIndex": 3,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p8</a>)",
+      "notes": " ",
       "img": null,
       "uniqueID": 290,
       "fonte": [
@@ -5568,7 +5568,7 @@
         "A soma algébrica das quedas de tensão numa malha é igual a zero.",
         "Nenhuma das afirmações está correcta."
       ],
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p8</a>)",
+      "notes": "",
       "correctIndex": 3,
       "img": null,
       "uniqueID": 296,
