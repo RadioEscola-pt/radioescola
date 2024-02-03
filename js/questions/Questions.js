@@ -239,6 +239,7 @@ class Questions {
         linkElement.href = link;
         linkElement.textContent = "Abrir Calculadora";
         infoDiv.appendChild(linkElement);
+        infoDiv.appendChild(document.createElement("br"));
       }
     }
     if (questions.tutorial != null) {
