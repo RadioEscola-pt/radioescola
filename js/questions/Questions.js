@@ -159,16 +159,16 @@ class Questions {
     }
 
     const showText = document.createElement('span'); // Create a text element to show/hide
-    showText.textContent = 'mostrar Exames'; // Text to display
+    showText.textContent = 'Mostrar exames'; // Text to display
 
     // Show/hide functionality when clicked
     showText.addEventListener('click', () => {
       if (linksContainer.style.display === 'none') {
         linksContainer.style.display = 'block';
-        showText.textContent = 'esconder Exames'; // Change text when shown
+        showText.textContent = 'Esconder exames'; // Change text when shown
       } else {
         linksContainer.style.display = 'none';
-        showText.textContent = 'mostrar Exames'; // Change text when hidden
+        showText.textContent = 'Mostrar exames'; // Change text when hidden
       }
     });
 
@@ -213,7 +213,7 @@ class Questions {
   loadQuestionInfo(infoDiv, questions, showPercentage = true) {
     if (showPercentage == false) {
       if (questions.fonte != null) {
-        infoDiv.innerHTML = "ID:" + questions.uniqueID + "Comfirmada em  " + questions.fonte.length;
+        infoDiv.innerHTML = "ID:" + questions.uniqueID + "Confirmada em  " + questions.fonte.length;
         //this.LinkFontes(questions.fonte, infoDiv);
 
       }
@@ -225,7 +225,7 @@ class Questions {
     }
 
     if (questions.fonte != null) {
-      infoDiv.innerHTML = "<p>ID:" + questions.uniqueID + " Comfirmada em " + questions.fonte.length + " exames</p><p> Acertou:" + this.calculateTruePercentageForQuestion(questions.uniqueID) + "</p>";
+      infoDiv.innerHTML = "<p>ID:" + questions.uniqueID + " Confirmada em " + questions.fonte.length + " exames</p><p> Acertou:" + this.calculateTruePercentageForQuestion(questions.uniqueID) + "</p>";
       this.LinkFontes(questions.fonte, infoDiv);
     }
     else {

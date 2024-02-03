@@ -67,7 +67,9 @@
       "notes": "A3 It=I1+I2+I3 Consulte circutos em paralelo <a target='_blank' href='images/cat1/parallel_circuit.png'>parallel_circuit</a>",
       "img": null,
       "uniqueID": 4,
-      "fonte": null,
+      "fonte": [
+        "cat1/2023_12_22p8"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -124,7 +126,7 @@
       "materia": null
     },
     {
-      "question": "Qual das expressões define a efetividade da blindagem (S) para campos elétricos (sendo \"Ei\" a intensidade do campo elétrico incidente e \"Et\" a intensidade do campo elétrico transmitido através da blindagem)?",
+      "question": "Qual das expressões define a efetividade da blindagem (S) para campos elétricos (sendo Ei a intensidade do campo elétrico incidente e Et a intensidade do campo elétrico transmitido através da blindagem)?",
       "answers": [
         "S=20+log(Ei/Et)",
         "S=1-log(Ei/Et)",
@@ -135,7 +137,9 @@
       "notes": "A6",
       "img": null,
       "uniqueID": 8,
-      "fonte": null,
+      "fonte":  [
+        "cat1/2023_12_22p19"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -239,11 +243,12 @@
         "Figuras de Watt"
       ],
       "correctIndex": 1,
-      "notes": "As figuras de Lissajous são padrões geométricos que aparecem quando dois sinais sinusoidais estão em relação de fase. Elas são frequentemente usadas para visualizar e entender a diferença de fase entre dois sinais quando exibidos em um osciloscópio. Esses padrões podem variar dependendo das frequências e amplitudes dos sinais, bem como da relação de fase entre eles. Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p32</a>)",
+      "notes": "As figuras de Lissajous são padrões geométricos que aparecem quando dois sinais sinusoidais estão em relação de fase. Elas são frequentemente usadas para visualizar e entender a diferença de fase entre dois sinais quando exibidos em um osciloscópio. Esses padrões podem variar dependendo das frequências e amplitudes dos sinais, bem como da relação de fase entre eles.",
       "img": null,
       "uniqueID": 14,
       "fonte": [
-        "cat1/2011_12_13p32"
+        "cat1/2011_12_13p32",
+		"cat1/2023_12_22p34"
       ],
       "tutorial": null,
       "materia": null
@@ -327,11 +332,12 @@
         "Nenhuma das respostas anteriores está correta"
       ],
       "correctIndex": 3,
-      "notes": "A14 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p35</a>)",
+      "notes": "A14",
       "img": null,
       "uniqueID": 19,
       "fonte": [
-        "cat1/2011_12_13p35"
+        "cat1/2011_12_13p35",
+		"cat1/2023_12_22p37"
       ],
       "tutorial": null,
       "materia": null
@@ -634,7 +640,9 @@
       "notes": "A32",
       "img": null,
       "uniqueID": 37,
-      "fonte": null,
+      "fonte": [
+        "cat1/2023_12_22p18"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -1077,7 +1085,9 @@
       "notes": "Ganho Unitário: Nessa configuração, o ganho de corrente é próximo de 1, o que significa que a corrente de saída é quase igual à corrente de entrada. O sinal de entrada é seguido pelo sinal de saída sem amplificação significativa</br>Impedância de Entrada Elevada: O seguidor de emissor tem alta impedância de entrada, o que significa que ele apresenta uma carga mínima no circuito de entrada. Isso é útil quando se deseja conectar o seguidor de emissor a uma fonte de sinal de baixa impedância sem afetar significativamente a fonte original.</br>Impedância de Saída Baixa: O seguidor de emissor tem baixa impedância de saída, o que significa que ele pode fornecer uma corrente relativamente alta ao circuito de carga conectado à sua saída. Isso é útil para acionar cargas que exigem alta corrente, mas pode não ser adequado para acionar cargas de alta impedância",
       "img": null,
       "uniqueID": 63,
-      "fonte": null,
+      "fonte":  [
+        "cat1/2023_12_22p33"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -1210,6 +1220,24 @@
       "img": null,
       "uniqueID": 71,
       "fonte": null,
+      "tutorial": null,
+      "materia": null
+    },
+	{
+      "question": "Qual a indutância de uma bobina de 20 mH ligado em série a uma bobina de 50 mH?",
+      "answers": [
+        "0,07 mH",
+        "14,3 mH",
+        "70 mH",
+        "1000 mH"
+      ],
+      "correctIndex": 3,
+      "notes": "none",
+      "img": null,
+      "uniqueID": 373,
+      "fonte": [
+        "cat1/2023_12_22p10"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -1390,11 +1418,12 @@
         "15,72 kHz"
       ],
       "correctIndex": 3,
-      "notes": "A68-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p15</a>)",
+      "notes": "A68",
       "img": null,
       "uniqueID": 82,
       "fonte": [
-        "cat1/2023_08_00p15"
+        "cat1/2023_08_00p15",
+		"cat1/2023_12_22p15"
       ],
       "tutorial": null,
       "materia": null
@@ -1651,6 +1680,24 @@
       "img": null,
       "uniqueID": 97,
       "fonte": null,
+      "tutorial": null,
+      "materia": null
+    },
+	{
+      "question": "Qual das seguintes características é apresentada por um regulador eletrónico comutado de tensão?",
+      "answers": [
+        "A resistência do elemento de controlo é variada na proporção direta da tensão na linha ou na corrente de carga",
+        "No geral é menos eficiente do que um regulador linear",
+        "O ciclo de trabalho do elemento de controlo é controlado de forma a produzir uma tensão média constante à saída",
+        "Produz tensão de saida em rampa"
+      ],
+      "correctIndex": 4,
+      "notes": "Os reguladores eletrônicos lineares de tensão mantêm uma tensão de saída constante ajustando a condução do elemento de controle, de modo a compensar variações nas condições da linha ou carga.",
+      "img": null,
+      "uniqueID": 375,
+      "fonte": [
+        "cat1/2023_12_22p17"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -1916,7 +1963,9 @@
       "notes": "A91",
       "img": null,
       "uniqueID": 113,
-      "fonte": null,
+      "fonte":  [
+        "cat1/2023_12_22p29"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -2011,11 +2060,12 @@
         "Uma frequência e as três primeiras harmónicas ímpares"
       ],
       "correctIndex": 1,
-      "notes": "A95- Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p27</a>)",
+      "notes": "A95",
       "img": null,
       "uniqueID": 119,
       "fonte": [
-        "cat1/2023_08_00p27"
+        "cat1/2023_08_00p27",
+		"cat1/2023_12_22p27"
       ],
       "tutorial": null,
       "materia": null
@@ -2100,7 +2150,9 @@
       "notes": "A99",
       "img": null,
       "uniqueID": 124,
-      "fonte": null,
+      "fonte":  [
+        "cat1/2023_12_22p31"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -2341,7 +2393,9 @@
       "notes": "A107",
       "img": null,
       "uniqueID": 138,
-      "fonte": null,
+      "fonte":  [
+        "cat1/2023_12_22p32"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -2375,6 +2429,24 @@
       "uniqueID": 140,
       "fonte": [
         "cat1/2023_07_03p36"
+      ],
+      "tutorial": null,
+      "materia": null
+    },
+	{
+      "question": "Em que consiste um circuito com malha de captura de fase?",
+      "answers": [
+        "Um circuito realimentado constituído por um detetor (comparador de corrente), seguido de um modulador de reactâncias que por sua vez atua sobre um oscilador controlado por tensão e que na malha de realimentação possui um transformador de fase",
+        "Um circuito elétrico realimentado, também conhecido por multivibrador astável",
+        "Um circuito realimentado constituído por um detetor (comparador de fase), seguido de um filtro passa-baixo que por sua vez atua sobre um oscilador estável controlado por tensão e possui na malha de realimentação um divisor de frequências programável?",
+        "Um circuito eletrónico realimentado, contituído por um amplificador de precisão (push-pull) (com entrada diferencial), seguido por um oscilador controlado por tensão e que na malha de realimentação possui um circuito que iguala a fase dos sinais envolvidos"
+      ],
+      "correctIndex": 3,
+      "notes": "none",
+      "img": null,
+      "uniqueID": 380,
+      "fonte": [
+        "cat1/2023_12_22p36"
       ],
       "tutorial": null,
       "materia": null
@@ -2628,7 +2700,8 @@
       "img": null,
       "uniqueID": 155,
       "fonte": [
-        "cat1/2023_08_00p23"
+        "cat1/2023_08_00p23",
+		"cat1/2023_12_22p23"
       ],
       "tutorial": null,
       "materia": null
@@ -2697,7 +2770,9 @@
       "notes": "A120",
       "img": null,
       "uniqueID": 159,
-      "fonte": null,
+      "fonte": [
+        "cat1/2023_12_22p25"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -2840,6 +2915,24 @@
       "tutorial": null,
       "materia": null
     },
+	 {
+      "question": "Qual a frase que é verdadeira",
+      "answers": [
+        "A modulação consiste na amostragem do sinal na sua banda base",
+        "A modulação traduz-se na translação de um sinal da sua gama de frequências para outra gama de frequências",
+        "Num processo de modulação nunca existe qualquer translação de frequências",
+        "A modulação traduz-se na rotação de um sinal da sua gama de frequências no espaço real para outra gama de frequências no espaço real para outra gama de frequências no espaço complexo"
+      ],
+      "correctIndex": 2,
+      "notes": "none",
+      "img": null,
+      "uniqueID": 372,
+      "fonte": [
+        "cat1/2023_12_22p7"
+      ],
+      "tutorial": null,
+      "materia": null
+    },
     {
       "question": "Qual das afirmações está correta?",
       "answers": [
@@ -2920,7 +3013,9 @@
       "notes": "A129",
       "img": null,
       "uniqueID": 172,
-      "fonte": null,
+      "fonte": [
+        "cat1/2023_12_22p22"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -2937,6 +3032,24 @@
       "img": null,
       "uniqueID": 173,
       "fonte": null,
+      "tutorial": null,
+      "materia": null
+    },
+	{
+      "question": "O que quer dizer QAM?",
+      "answers": [
+        "Quadrature Amplitude Modulation",
+        "Queue Amplitude Modulation",
+        "Quadrature Algorithm Modulation",
+        "Queue Algorithm Modulation"
+      ],
+      "correctIndex": 1,
+      "notes": "none",
+      "img": null,
+      "uniqueID": 306,
+      "fonte":  [
+        "cat1/2023_12_22p39"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -3034,11 +3147,12 @@
         "A classe C não apresenta nenhuma vantagem em relação a outras classes de amplificação"
       ],
       "correctIndex": 2,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p27</a>)",
+      "notes": "none",
       "img": null,
       "uniqueID": 179,
       "fonte": [
-        "cat1/2011_12_13p27"
+        "cat1/2011_12_13p27",
+		"cat1/2023_12_22p28"
       ],
       "tutorial": null,
       "materia": null
@@ -3139,7 +3253,9 @@
       "notes": "3,5 mHz é a banda dos 80m logo a meia onda será 40m. A140",
       "img": null,
       "uniqueID": 185,
-      "fonte": null,
+      "fonte": [
+        "cat1/2023_12_22p12"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -3275,7 +3391,8 @@
       "img": null,
       "uniqueID": 193,
       "fonte": [
-        "cat1/2023_07_03p13"
+        "cat1/2023_07_03p13",
+		"cat1/2023_12_22p13"
       ],
       "tutorial": null,
       "materia": null
@@ -3389,6 +3506,24 @@
       "img": null,
       "uniqueID": 200,
       "fonte": null,
+      "tutorial": null,
+      "materia": null
+    },
+	{
+      "question": "O que se designa normalmente por (loop) de terra?",
+      "answers": [
+        "São as perturbações que dão origem às auroras boreais",
+        "São as perturbações que resultam dum circuito ter pelo menos dois pontos ligados à terra em localizações distintas",
+        "São as perturbações resultantes de um circuito ter realimentação positiva",
+        "São as perturbações resultantes de um circuito ter realimentação negativa"
+      ],
+      "correctIndex": 2,
+      "notes": "none",
+      "img": null,
+      "uniqueID": 377,
+      "fonte": [
+        "cat1/2023_12_22p24"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -3595,6 +3730,24 @@
       "tutorial": null,
       "materia": null
     },
+	{
+      "question": "Por que razão é menor o comprimento físico de uma linha de transmissão de cabo coaxial do que o seu comprimento elétrico?",
+      "answers": [
+        "O efeito pelicular é menos significativo no cabo coaxial",
+        "A impedância característica é maior numa linha de alimentação paralela",
+        "Os sinais elétricos propagam-se mais rapidamente num cabo coaxial do que no ar",
+        "Os sinais elétricos propagam-se mais lenta,emte num cabo coaxial do que no ar"
+      ],
+      "correctIndex": 4,
+      "notes": "none",
+      "img": null,
+      "uniqueID": 376,
+      "fonte":  [
+        "cat1/2023_12_22p20"
+      ],
+      "tutorial": null,
+      "materia": null
+    },
     {
       "question": "Qual o comprimento físico de uma linha de transmissão coaxial que a nível elétrico apresenta 1/4 do comprimento de onda à frequência de 7,2 MHz (para um fator de velocidade de 0,66)?",
       "answers": [
@@ -3625,7 +3778,9 @@
       "notes": "A162",
       "img": null,
       "uniqueID": 214,
-      "fonte": null,
+      "fonte": [
+        "cat1/2023_12_22p21"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -3675,7 +3830,9 @@
       "notes": "A165",
       "img": null,
       "uniqueID": 217,
-      "fonte": null,
+      "fonte":  [
+        "cat1/2023_12_22p4"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -3978,7 +4135,9 @@
       "notes": "A179",
       "img": null,
       "uniqueID": 235,
-      "fonte": null,
+      "fonte": [
+        "cat1/2023_12_22p5"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -4158,6 +4317,24 @@
       "tutorial": null,
       "materia": null
     },
+	 {
+      "question": "De forma a minimizar o erro numa medição de corrente, um amperímetro deverá ter uma impedância interna",
+      "answers": [
+        "o mais baixa possível, idealmente próxima de zero",
+        "o mais alta possível, idealmente tendendo para infinito",
+        "da mesma ordem de grandeza da impedância do circuito a medir",
+        "Todas as hipóteses anteriores estão incorretas, pois a impedância interna dum amperímetro não tem qualquer efeito no erro da medição"
+      ],
+      "correctIndex": 1,
+      "notes": "none",
+      "img": null,
+      "uniqueID": 374,
+      "fonte": [
+        "cat1/2023_12_22p11"
+      ],
+      "tutorial": null,
+      "materia": null
+    },
     {
       "question": "Pretende-se medir o valor eficaz de tensão de uma onda quadrada, sendo 10 MHz o valor da frequência principal. Dispondo-se de quatro equipamentos de medição de valor eficaz exatamente iguais, diferindo\n apenas na frequência máxima de operação: 1 MHz, 10 MHz, 20 MHz e 100 MHz. Qual dos equipamentos deverá ser utilizado?",
       "answers": [
@@ -4317,11 +4494,12 @@
         "Todas as opções são válidas"
       ],
       "correctIndex": 2,
-      "notes": "A196  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p13</a>)",
+      "notes": "A196",
       "img": null,
       "uniqueID": 255,
       "fonte": [
-        "cat1/2011_12_13p13"
+        "cat1/2011_12_13p13",
+		"cat1/2023_12_22p14"
       ],
       "tutorial": null,
       "materia": null
@@ -4383,13 +4561,14 @@
         "Realimentação positiva"
       ],
       "correctIndex": 3,
-      "notes": "A200  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p8</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p8</a>) (<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p9</a>)",
+      "notes": "A200",
       "img": null,
       "uniqueID": 259,
       "fonte": [
         "cat1/2011_12_13p8",
         "cat1/2014_12_19p8",
-        "cat1/2023_07_03p9"
+        "cat1/2023_07_03p9",
+		"cat1/2023_12_22p9"
       ],
       "tutorial": null,
       "materia": null
@@ -4561,11 +4740,12 @@
         "Para utilizar uma estação do serviço de amador um amador da categoria 1 precisa de uma licença de estação"
       ],
       "correctIndex": 1,
-      "notes": "A208 Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p1</a>)",
+      "notes": "A208",
       "img": null,
       "uniqueID": 269,
       "fonte": [
-        "cat1/2023_07_03p1"
+        "cat1/2023_07_03p1",
+		"cat1/2023_12_22p1"
       ],
       "tutorial": null,
       "materia": null
@@ -4910,7 +5090,7 @@
         "Certificado internacional HAREC, nos termos da Recomendação CEPT T/R 61-02"
       ],
       "correctIndex": 4,
-      "notes": "Pergunta de categoria 2 que surge na cat1 A184-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p2</a>) (<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p5</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p3</a>) (<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p4</a>) (<a target='_blank' href='exams/cat2/2022_02_03.pdf'>2022_02_03p4</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p04</a>) (<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p5</a>)",
+      "notes": "Pergunta de categoria 2 que surge na cat1 A184",
       "img": null,
       "uniqueID": 288,
       "fonte": [
@@ -4920,7 +5100,8 @@
         "cat1/2021_02_18p4",
         "cat1/2022_02_03p4",
         "cat1/2023_03_08p04",
-        "cat1/2014_05_23p5"
+        "cat1/2014_05_23p5",
+		"cat1/2023_12_22p2"
       ],
       "tutorial": null,
       "materia": null
@@ -4997,7 +5178,7 @@
         "Queixar-me à Junta de Freguesia"
       ],
       "correctIndex": 2,
-      "notes": "Pergunta de categoria 2 que volta a sair na categoria 1 Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p6</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p12</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p7</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p7</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p7</a>)",
+      "notes": "Pergunta de categoria 2 que volta a sair na categoria 1",
       "img": null,
       "uniqueID": 292,
       "fonte": [
@@ -5006,6 +5187,24 @@
         "cat1/2022_06_27p7",
         "cat1/2022_12_27p7",
         "cat1/2023_01_27p7"
+      ],
+      "tutorial": null,
+      "materia": null
+    },
+	{
+      "question": "Estou a ser interferido por outro amador o que devo fazer?",
+      "answers": [
+        "Chegar a acordo com o outro amador no sentido de resolver as interferências",
+        "Tentar interferir esse amador",
+        "Comunicar a situação imediatamente à ANACOM",
+        "Esperar que a situação de inteferência passe"
+      ],
+      "correctIndex": 2,
+      "notes": "none",
+      "img": null,
+      "uniqueID": 371,
+      "fonte": [
+        "cat1/2023_12_22p6"
       ],
       "tutorial": null,
       "materia": null
@@ -5216,22 +5415,6 @@
       "correctIndex": 3,
       "img": null,
       "uniqueID": 305,
-      "fonte": null,
-      "tutorial": null,
-      "materia": null
-    },
-    {
-      "question": "Como podemos diminuir a potência de ruído de um sistema de recepção?",
-      "answers": [
-        "Aumentando o mais possível largura de banda efectiva do sistema.",
-        "Aumentando o mais possível a temperatura de ruído do sistema, sem degradar o sinal desejado.",
-        "Filtrando de forma a diminuir o mais possível a largura de banda efectiva do sistema, sem degradar o sinal desejado.",
-        "Nenhuma das respostas anteriores está correcta."
-      ],
-      "notes": "",
-      "correctIndex": 3,
-      "img": null,
-      "uniqueID": 306,
       "fonte": null,
       "tutorial": null,
       "materia": null
@@ -5495,10 +5678,10 @@
       "materia": null
     },
     {
-      "question": "Duma forma geral e no domínio do tempo, na fase de amostragem duma conversão analógica/digital",
+      "question": "Duma forma geral e no domínio do tempo, na fase de amostragem de uma conversão analógica/digital",
       "answers": [
         "o sinal analógico é  passado por um filtro passa baixo, resultando um sinal digital de amplitude variável proporcional ao sinal amostrado, mas com uma menor gama espectral.",
-        "o sinal analógico é  multiplicado por um trem de imimpulsos de amplitude constante, resultando um trem de imimpulsos de amplitude variável proporcional ao sinal amostrado.",
+        "o sinal analógico é  multiplicado por um trem de imimpulsos de amplitude constante, resultando um trem de impulsos de amplitude variável proporcional ao sinal amostrado.",
         "o sinal analógico é  sujeito a uma amplificação não linear, passa por um filtro passa alto de forma a regenerar as componentes de mais alta frequência que constituirão o sinal digital.",
         "o sinal analógico é  misturado com outro sinal analógico padrão de frequência muito superior, resultando um sinal digital de amplitude variável proporcional ao sinal amostrado."
       ],
@@ -5506,7 +5689,9 @@
       "correctIndex": 2,
       "img": null,
       "uniqueID": 323,
-      "fonte": null,
+      "fonte":  [
+        "cat1/2023_12_22p40"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -5656,7 +5841,9 @@
       "correctIndex": 2,
       "img": null,
       "uniqueID": 332,
-      "fonte": null,
+      "fonte": [
+        "cat1/2023_12_22p16"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -5950,6 +6137,24 @@
       "tutorial": null,
       "materia": null
     },
+	{
+      "question": "Como se designa o mecanismo que leva à existência de tensão no secundário de um transformador, quando no primário está ligada uma fonte de tensão alternada?",
+      "answers": [
+        "Acoplamento capacitivo",
+        "Acoplamento através de corrente dielétrica",
+        "Indutância mútua",
+        "Capacidade mútua."
+      ],
+      "notes": "",
+      "correctIndex": 3,
+      "img": null,
+      "uniqueID": 378,
+      "fonte": [
+        "cat1/2023_12_22p26"
+      ],
+      "tutorial": null,
+      "materia": null
+    },
     {
       "question": "Qual é a tensão no secundário de 500 espiras de um transformador se o primário de 2250 espiras do transformador tiver uma tensão de 120 VAC?",
       "answers": [
@@ -5995,6 +6200,24 @@
       "img": null,
       "uniqueID": 354,
       "fonte": null,
+      "tutorial": null,
+      "materia": null
+    },
+	{
+      "question": "Qual a vantagem da utilização de um díodo Schottky num circuito de comutação de RF, relativamente à de um díodo de silício comum? ",
+      "answers": [
+        "Maior rapidez na comutação",
+        "Menor rapidez na comutação",
+        "Emite luz por cada comutação efectuada",
+        "Comporta-se como um varicap"
+      ],
+      "notes": "",
+      "correctIndex": 1,
+      "img": null,
+      "uniqueID": 379,
+      "fonte":  [
+        "cat1/2023_12_22p30"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -6152,12 +6375,13 @@
         "38.",
         "76."
       ],
-      "img": "images/cat1/q35.png",
-      "notes": "A36-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p35</a>) (<a target='_blank' href='exams/cat1/2013_08_30.pdf'>2013_08_30</a>",
+      "img": "images/cat1/fig1.png",
+      "notes": "A36",
       "correctIndex": 3,
       "uniqueID": 364,
       "fonte": [
-        "cat1/2023_08_00p35"
+        "cat1/2023_08_00p35",
+		"cat1/2023_12_22p35"
       ],
       "tutorial": null,
       "materia": null
@@ -6236,12 +6460,31 @@
         "Um VCO, um PLL, um conversor digital-analógico e um filtro passa-baixo",
         "Um oscilador de referência, um NCO - (Numerically Controlled Oscillator), um conversor digital-analógico e um filtro passa-baixo"
       ],
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p38</a>)",
+      "notes": "none",
       "correctIndex": 4,
       "img": null,
       "uniqueID": 369,
       "fonte": [
-        "cat1/2023_08_00p38"
+        "cat1/2023_08_00p38",
+		"cat1/2023_12_22p38"
+      ],
+      "tutorial": null,
+      "materia": null
+    },
+	{
+      "question": "Qual a causa provável para o eco que ouve num sinal recebido de uma estação distante?",
+      "answers": [
+        "Absorção elevada da camada D",
+        "Dispersão de meteoros",
+        "A frequência de trasnmissão é superior à frequência máxima utilizável",
+        "Receção de sinal por mais do que um trajeto"
+      ],
+      "notes": "none",
+      "correctIndex": 4,
+      "img": null,
+      "uniqueID": 370,
+      "fonte": [
+        "cat1/2023_12_22p3"
       ],
       "tutorial": null,
       "materia": null
