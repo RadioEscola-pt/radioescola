@@ -131,10 +131,10 @@ class Storage {
 				const truePercentage = (trueCount / total) * 100;
 				return truePercentage.toFixed(2)+"%";
 			} else {
-				return 'No records available for this question.';
+				return 'Sem historia';
 			}
 		} else {
-			return 'No records available for this question.';
+			return 'Sem historia';
 		}
 	}
 	plotAnswers(answers) {

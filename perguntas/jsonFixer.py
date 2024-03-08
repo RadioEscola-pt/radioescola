@@ -8,17 +8,8 @@ for input_json in input_json_files:
         data = json.load(file)
     print(f"Processing file '{input_json}'")
     for question in data['questions']:
-        if 'fonte' not in question:
-            notes = question.get('notes', '')
-
-            # Check if notes contain HTML link
-            link_matches = re.findall(r"<a[^>]*>([^<]+)<\/a>", notes)
-            fonte_matches = [match for match in link_matches if re.search(r"\b\d{4}_\d{2}_\d{2}p\d+\b", match)]
-            if fonte_matches:
-                print(fonte_matches)
-                question['fonte'] = fonte_matches
-            else:
-                question['fonte'] = None
+        if 'calc' not in question:
+            question['calc'] = None
 
         if 'tutorial' not in question:
             question['tutorial'] = None

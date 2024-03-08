@@ -11,14 +11,15 @@
       ],
       "correctIndex": 2,
       "TEMA": "ohm",
-      "notes": "A1 Exames:(<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p7</a>) Lei de ohm, V=RI, 36=120*I, I=36/120, I=0.3A, logo resposta 2. <img src='images/cat2/ohm_law.png'>",
+      "notes": "A1  Lei de ohm, V=RI, 36=120*I, I=36/120, I=0.3A, logo resposta 2. <img src='images/cat2/ohm_law.png'>",
       "img": null,
       "uniqueID": 1,
       "fonte": [
         "cat2/2018_06_19p7"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Determinado circuito precisa ser alimentado com 60 V e 0,8 A. Dispondo-se de uma fonte de 300 V, deve-se colocar em série com o circuito uma resistência de :",
@@ -29,7 +30,7 @@
         "1,2 kilo Ohm"
       ],
       "correctIndex": 3,
-      "notes": "A2 Exames:(<a target='_blank' href='exams/cat2/2020_07_16.pdf'>2020_07_16p8</a>) (<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p8</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p8</a>) Temos então de passar de 300 para 60 volts,calculamos a diferença, VF = 300 - 60 = 240 V usamos agora a lei de ohm com 240 = R * 0,8, R = 240 / 0,8, R = 300 Ohm ou seja resposta 3.<img src='images/cat2/ohm_law.png'>",
+      "notes": "A2 23_06_15.pdf'>2023_06_15p8</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p8</a>) Temos então de passar de 300 para 60 volts,calculamos a diferença, VF = 300 - 60 = 240 V usamos agora a lei de ohm com 240 = R * 0,8, R = 240 / 0,8, R = 300 Ohm ou seja resposta 3.<img src='images/cat2/ohm_law.png'>",
       "img": null,
       "uniqueID": 2,
       "fonte": [
@@ -38,7 +39,8 @@
         "cat2/2023_06_26p8"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Determinado circuito precisa ser alimentado com 60 V e 0,2 A. Dispondo-se de uma fonte de 300 V, deve-se colocar em série com o circuito uma resistência de",
@@ -57,7 +59,8 @@
         "cat2/2022_06_27p8"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Quatro resistências estão ligadas em série. A tensão aplicada ao conjunto é de 50 V. As quedas de tensão nos terminais das três primeiras são, respetivamente: 25 V, 10 V e 13 V. Qual é a queda de tensão nos terminais da última resistência?",
@@ -78,7 +81,8 @@
         "cat2/2023_01_27p8"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Quatro resistências estão montadas em série. A tensão aplicada ao conjunto é de 50 V. As quedas de tensão nos bornes das três primeiras são, respectivamente: 25 V; 10,2 V e 12,8 V. Qual é a queda de tensão nos bornes da última resistência?",
@@ -96,7 +100,8 @@
         "cat2/0000_00_01p7"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Quatro resistências estão montadas em série. As quedas de tensão em cada uma delas são as seguintes: 9,2 V; 12,5 V; 10 V e 3,4 V. A tensão aplicada ao circuito é:",
@@ -111,12 +116,12 @@
       "fonte": [
         "cat2/0000_00_03p7",
         "cat2/2023_09_25p8"
-
       ],
       "img": null,
       "uniqueID": 6,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a unidade em que se expressa a capacidade de uma bateria?",
@@ -138,7 +143,8 @@
         "cat2/2022_12_27p8"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A capacidade de uma bateria é de 20 A.h. Esta bateria é aplicada a um circuito ao qual fornece uma corrente constante de 2 A. Qual a previsão teórica do tempo de funcionamento do referido circuito?",
@@ -158,7 +164,8 @@
         "cat2/2023_03_08p08"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a força eletromotriz de duas baterias de 12 V ligadas em série?",
@@ -178,7 +185,8 @@
         "cat2/2022_02_03p16"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a força electromotriz de duas baterias de automóvel quando ligadas em série?",
@@ -194,7 +202,8 @@
       "uniqueID": 10,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em que situação é que uma bateria de armazenamento de chumbo-ácido liberta gás de hidrogénio explosivo?",
@@ -210,7 +219,8 @@
       "uniqueID": 11,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a vantagem da resistência interna reduzida das baterias de níquel-cádmio?",
@@ -226,7 +236,8 @@
       "uniqueID": 12,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual o mínimo de tensão de descarga permitido para o máximo de vida útil de uma bateria comum de chumbo-ácido de 12 volt?",
@@ -242,7 +253,8 @@
       "uniqueID": 13,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes baterias é recarregável?",
@@ -258,7 +270,8 @@
       "uniqueID": 14,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual o consumo de energia associado a um equipamento de 1 W que opera durante uma hora?",
@@ -278,7 +291,8 @@
       "img": null,
       "uniqueID": 15,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um gerador com a f.e.m. de 100 V e com 0,5 Ohm de resistência interna, debita sobre um circuito exterior uma corrente de 10 A. Qual é a tensão aos terminais do gerador?",
@@ -298,7 +312,8 @@
         "cat2/2023_06_15p16"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um gerador com a f.e.m. de 100 V e com 0,25 Ohm de resistência interna, debita sobre um circuito exterior uma corrente de 40 A. Qual é a tensão aos terminais do gerador?",
@@ -320,7 +335,8 @@
       "img": null,
       "uniqueID": 17,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Teoricamente, num circuito de corrente contínua, poderemos afirmar que a corrente de curto-circuito é:",
@@ -336,7 +352,8 @@
       "uniqueID": 18,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das situações deveremos evitar ou ter cuidados especiais?",
@@ -356,7 +373,8 @@
         "cat2/2022_12_27p16"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A intensidade de campo elétrico é expressa em:",
@@ -380,7 +398,8 @@
         "cat2/2023_06_15p23"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "As medidas de intensidade de campo permitem avaliar",
@@ -400,7 +419,8 @@
         "cat2/2022_07_20p12"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A intensidade do campo elétrico,",
@@ -416,7 +436,8 @@
       "uniqueID": 22,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A intensidade do campo magnético é expressa em:",
@@ -437,7 +458,8 @@
         "cat2/2023_03_08p27"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma corrente a passar num condutor cria na sua proximidade:",
@@ -457,7 +479,8 @@
         "cat2/2022_12_27p27"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O que é que determina a intensidade do campo magnético em torno de um condutor onde flui uma corrente elétrica?",
@@ -480,7 +503,8 @@
       "img": null,
       "uniqueID": 25,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A força que provoca o movimento de cargas num condutor é",
@@ -503,7 +527,8 @@
         "cat2/2023_01_27p16"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em que sentido está orientado um campo magnético num condutor relativamente ao sentido do fluxo de electrões?",
@@ -519,7 +544,8 @@
       "uniqueID": 27,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O que é que determina a força do campo magnético à volta de um condutor?",
@@ -535,7 +561,8 @@
       "uniqueID": 28,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O que é o campo magnético?",
@@ -555,7 +582,8 @@
         "cat2/2023_06_15p27"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O que é o campo eléctrico?",
@@ -576,7 +604,8 @@
         "cat2/2022_12_27p23"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das afirmações está correta?",
@@ -596,7 +625,8 @@
         "cat2/2022_07_20p27"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O comprimento de onda exprime-se em",
@@ -614,7 +644,8 @@
       "img": null,
       "uniqueID": 420,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a frequência cujo comprimento de onda é 14,117 metro?",
@@ -636,7 +667,8 @@
         "cat2/2023_06_26p32"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O comprimento de onda da frequência de 25 MHz é:",
@@ -658,7 +690,8 @@
         "cat2/2023_06_15p32"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A frequência, cujo comprimento de onda é de 10 metro, é:",
@@ -678,7 +711,8 @@
         "cat2/2021_09_06p32"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes características não está associada às ondas eletromagnéticas?",
@@ -698,7 +732,8 @@
         "cat2/2022_06_27p32"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a unidade de medida de frequência?",
@@ -718,7 +753,8 @@
         "cat2/2022_12_27p34"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a unidade de medida da capacidade?",
@@ -740,7 +776,8 @@
         "cat2/2022_07_20p20"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a unidade de medida do coeficiente de auto-indução?",
@@ -761,7 +798,8 @@
         "cat2/2022_07_20p22"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Exprima 7,54 MHz em kHz.",
@@ -781,7 +819,8 @@
         "cat2/2022_06_27p35"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Exprima em Hz: 433,010 MHz",
@@ -803,7 +842,8 @@
         "cat2/2023_03_08p34"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Exprima 900 kHz em Hz.",
@@ -824,7 +864,8 @@
         "cat2/2022_12_27p35"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Exprima em GHz: 9 300 MHz",
@@ -844,7 +885,8 @@
         "cat2/2023_06_26p34"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O período T de uma onda sinusoidal é:",
@@ -867,7 +909,8 @@
       "img": null,
       "uniqueID": 43,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O período de uma onda sinusoidal exprime-se em",
@@ -886,7 +929,8 @@
         "cat2/2022_02_03p35"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O valor eficaz de uma onda sinusoidal com 1 Volt de amplitude máxima é:",
@@ -907,7 +951,8 @@
         "cat2/2023_06_15p34"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A uma determinada frequência f corresponde um determinado período T. Se a frequência duplicar o período",
@@ -928,7 +973,8 @@
         "cat2/2023_06_15p35"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Se um voltímetro indicar uma tensão de 34 volt r.m.s. na medição de uma onda sinusoidal, qual é aproximadamente a sua tensão de pico?",
@@ -948,7 +994,8 @@
       "img": null,
       "uniqueID": 47,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como pode ser defenido o período de uma onda sinusoidal",
@@ -968,7 +1015,8 @@
         "cat2/2023_01_27p34"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das afirmações está correta?",
@@ -986,7 +1034,8 @@
         "cat2/2022_12_27p37"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual o período de uma onda sinusoidal de 50 Hz?",
@@ -1002,7 +1051,8 @@
       "uniqueID": 50,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A frequência de uma onda quadrada expressa-se em",
@@ -1025,7 +1075,8 @@
         "cat2/2023_06_26p37"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O dispositivo que transforma os sinais de voz em sinais elétricos, designa-se por:",
@@ -1048,7 +1099,8 @@
         "cat2/2023_06_15p37"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual é a largura de faixa necessária numa emissão de modulação de frequência em que o desvio de frequência é 25 kHz e a máxima frequência de modulação é 3 kHz?",
@@ -1067,7 +1119,8 @@
         "cat2/2022_12_27p38"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Define-se índice de modulação em frequência modulada como a relação entre o:",
@@ -1083,7 +1136,8 @@
       "uniqueID": 55,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Num emissor de modulação de frequência, modulado a ± 5 kHz, a segunda harmónica tem o desvio de:",
@@ -1099,7 +1153,8 @@
       "uniqueID": 56,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Se num circuito se quiser filtrar as harmónicas de um dado sinal, deve-se utilizar:",
@@ -1119,7 +1174,8 @@
         "cat2/2021_02_18p18"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Onde se poderão consultar, de forma segura e universalmente aceite, as definições de emissões espúriase de emissões harmónicas?",
@@ -1137,7 +1193,8 @@
         "cat2/2023_06_15p29"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Para converter 2610 kHz em 145 kHz é necessário:",
@@ -1158,7 +1215,8 @@
         "cat2/2022_06_27p39"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em modulação de amplitude, a que se dá o nome de faixas laterais?",
@@ -1176,7 +1234,8 @@
         "cat2/2022_02_03p39"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em modulação de frequência, a que se dá o nome de desvio de frequência?",
@@ -1197,7 +1256,8 @@
         "cat2/2018_03_08p38"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O que acontece numa modulação de frequência?",
@@ -1217,7 +1277,8 @@
         "cat2/2023_03_08p29"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual é um dos inconvenientes da sobremodulação?",
@@ -1235,7 +1296,8 @@
         "cat2/0000_00_01p38"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Numa emissão em AM, a maior parte da potência é usada para transmitir",
@@ -1253,7 +1315,8 @@
         "cat2/2016_01_00p38"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Numa emissão em AM quantas bandas laterais existem?",
@@ -1272,7 +1335,8 @@
         "cat2/2023_06_26p29"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma desvantagem da receção em AM em relação à receção em FM é",
@@ -1290,7 +1354,8 @@
         "cat2/2020_07_16p39"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Numa comunicação em AM, transmite-se:",
@@ -1309,7 +1374,8 @@
         "cat2/2023_03_08p39"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em modulação de frequência nas faixas de UHF com espaçamento entre canais de 25 kHz, a largura defaixa necessária em geral para uma emissão radiofónica é de:",
@@ -1327,7 +1393,8 @@
         "cat2/2018_06_19p39"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em modulação de frequência, quanto maior é o desvio de frequência",
@@ -1346,7 +1413,8 @@
         "cat2/2021_02_18p38"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma modulação de faixa lateral única, ou SSB, é um tipo de modulação",
@@ -1364,7 +1432,8 @@
         "cat2/2023_03_08p38"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Na transmissão utilizando modulação em faixa lateral única, ou SSB, com portadora suprimida",
@@ -1383,7 +1452,8 @@
         "cat2/2021_02_18p39"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Na comunicação utilizando modulação em faixa lateral única, ou SSB, com portadora suprimida",
@@ -1401,7 +1471,8 @@
         "cat2/2017_09_27p39"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "No âmbito das radiocomunicações o que significa a sigla CW?",
@@ -1417,7 +1488,8 @@
       "uniqueID": 73,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A largura de faixa ocupada por uma emissão",
@@ -1433,7 +1505,8 @@
       "uniqueID": 74,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma emissão em dupla faixa lateral é:",
@@ -1449,7 +1522,8 @@
       "uniqueID": 75,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes afirmações é verdadeira no que respeita à modulação de voz em banda lateral única?",
@@ -1465,7 +1539,8 @@
       "uniqueID": 76,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes afirmações é verdadeira no que respeita à modulação de voz em banda lateral única?",
@@ -1481,7 +1556,8 @@
       "uniqueID": 77,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como se designa o processo de alteração do ângulo de fase de uma onda de RF para transmissão de informação?",
@@ -1501,7 +1577,8 @@
         "cat2/2022_02_03p38"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que tipo de transmissão provoca variação do nível instantâneo de potência do sinal de RF para transmissão de informação?",
@@ -1519,7 +1596,8 @@
         "cat2/2017_09_27p38"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes emissões de fonia usa uma largura de banda mais estreita?",
@@ -1535,7 +1613,8 @@
       "uniqueID": 80,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes emissões utiliza menor largura de banda?",
@@ -1556,7 +1635,8 @@
         "cat2/2016_01_00p29"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes emissões utiliza, duma forma geral, menor largura de banda?",
@@ -1574,7 +1654,8 @@
         "cat2/2022_02_03p29"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual é o índice de modulação de um sinal de fonia FM com um desvio máximo da portadora de ± 6kHz, quando modulada com uma frequência de modulação de 2kHz?",
@@ -1592,7 +1673,8 @@
         "cat2/2022_07_20p38"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual é o índice de modulação de um sinal de fonia FM com um desvio máximo de frequência de 3000 Hz de cada lado da frequência da portadora, quando a frequência de modulação é 1000 Hz?",
@@ -1608,7 +1690,8 @@
       "uniqueID": 84,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Num emissor de FM, cujo desvio máximo de frequência é de 5 kHz e a frequência máxima de modulação 3 kHz, qual é o indice de modulação?",
@@ -1626,7 +1709,8 @@
         "cat2/2022_07_20p39"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a potência associada a um sinal sinusoidal que faz passar uma corrente eficaz de 2 A numa resistência de 10 Ohm?",
@@ -1646,7 +1730,8 @@
         "cat2/2022_06_27p40"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Por precaução teve que se pôr um atenuador de 10 dB entre um pré-amplificador e um amplificador. Sabendo que o valor máximo na saída do pré-amplificador é de 50 W, qual a potência máxima à entrada do amplificador?",
@@ -1664,7 +1749,8 @@
         "cat2/0000_00_02p40"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O sinal na entrada de um amplificador é de 1 V rms e à saída de 10 V rms. Este amplificador tem um ganho de:",
@@ -1680,7 +1766,8 @@
       "uniqueID": 88,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes frases é verdadeira?",
@@ -1701,7 +1788,8 @@
         "cat2/2022_08_26p40"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um aumento de potência para o dobro ou a redução da mesma para metade resulta na variação de quantos dB?",
@@ -1720,7 +1808,8 @@
         "cat2/2023_06_15p40"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Dois amplificadores com ganhos de 10 dB e de 40 dB estão ligados em cascata. O ganho do conjunto é de",
@@ -1736,7 +1825,8 @@
       "uniqueID": 91,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a resistência total de duas resistências de 12,5 Ohm cada, quando ligadas em série?",
@@ -1756,7 +1846,8 @@
         "cat2/2020_07_16p9"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A associação que resulta numa resistência equivalente de 600 Ohm é a série das seguintes resistências",
@@ -1772,7 +1863,8 @@
       "uniqueID": 93,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A associação que resulta numa resistência equivalente de 200 ohms é a série das seguintes resistências:",
@@ -1790,7 +1882,8 @@
         "cat2/2022_02_03p9"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Para obter uma resistência equivalente de 62,5 Ohm é necessário associar",
@@ -1808,7 +1901,8 @@
         "cat2/2017_09_27p8"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Para obter uma resistência equivalente de 1 kohm é necessário associar:",
@@ -1827,7 +1921,8 @@
         "cat2/2022_06_27p9"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Para se obter uma resistência equivalente de 4 ohms devem ser associadas:",
@@ -1847,7 +1942,8 @@
       "img": null,
       "uniqueID": 97,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Para se obter uma resistência equivalente de 8 ohms devem ser associadas:",
@@ -1863,7 +1959,8 @@
       "uniqueID": 98,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Se duas resistências de igual valor, estão associadas em paralelo, a resistência total será",
@@ -1882,7 +1979,8 @@
         "cat2/2023_03_08p09"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A resistência equivalente a uma associação de 10 resistências de 100 Ohm cada uma, em paralelo, é de:",
@@ -1902,7 +2000,8 @@
         "cat2/2022_08_26p9"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A resistência equivalente a uma associação de 100 resistências de 100 Ohm cada uma, em paralelo, é de:",
@@ -1920,7 +2019,8 @@
         "cat2/2013_08_00p8"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Aplicando um sinal sinusoidal a uma resistência ideal",
@@ -1939,7 +2039,8 @@
       "img": null,
       "uniqueID": 102,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das igualdades é verdadeira?",
@@ -1957,7 +2058,8 @@
         "cat2/2022_06_27p20"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Numa associação de condensadores em paralelo, a capacidade resultante é igual",
@@ -1980,7 +2082,8 @@
         "cat2/2022_12_27p20"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a vantagem de um condensador eletrolítico?",
@@ -1999,7 +2102,8 @@
         "cat2/2022_08_26p20"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a vantagem de um condensador electrolítico?",
@@ -2015,7 +2119,8 @@
       "uniqueID": 106,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como se comporta um condensador num circuito de corrente contínua?",
@@ -2033,7 +2138,8 @@
         "cat2/2023_06_15p20"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como se comporta uma bobina num circuito de corrente contínua?",
@@ -2054,7 +2160,8 @@
         "cat2/2023_06_15p22"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como se costuma designar a bobina usada para estabilizar a corrente contínua de saida de um retificador ligado a uma fonte de energia comum?",
@@ -2073,7 +2180,8 @@
         "cat2/2022_06_27p21"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das igualdades é verdadeira?",
@@ -2095,7 +2203,8 @@
         "cat2/2022_08_26p22"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das igualdades é verdadeira?",
@@ -2117,7 +2226,8 @@
         "cat2/2023_06_26p22"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das afirmações é verdadeira?",
@@ -2140,7 +2250,8 @@
         "cat2/2023_01_27p28"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um transformador com o primário ligado à rede elétrica, apresenta nos terminais do secundário em vazio o valor de 5,2 V",
@@ -2160,7 +2271,8 @@
         "cat2/2022_07_20p28"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um tranformador, projectado para o efeito, com o primário ligado à rede eléctrica, apresenta nos terminais do secundário em vazio 5,2 V",
@@ -2180,7 +2292,8 @@
         "cat2/2022_07_20p28"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes afirmações é verdadeira?",
@@ -2200,7 +2313,8 @@
         "cat2/2023_06_26p28"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes afirmações é verdadeira?",
@@ -2219,7 +2333,8 @@
         "cat2/2023_06_15p28"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual razão para a existência de tensão no secundário de um transformador quando está ligada uma fonte de tensão alternada ao primário do transformador?",
@@ -2240,7 +2355,8 @@
         "cat2/2022_12_27p28"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um díodo de junção é constituído por",
@@ -2260,7 +2376,8 @@
         "cat2/2022_02_03p31"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um díodo de junção ideal inserido em série num circuito de corrente alternada comporta-se, num determinado ciclo da corrente como um",
@@ -2279,7 +2396,8 @@
         "cat2/2022_08_26p31"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Num díodo de junção, chama-se tensão de Zener",
@@ -2299,7 +2417,8 @@
         "cat2/2022_06_27p31"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a principal característica de um díodo Zener que trabalhe na zona de disrupção?",
@@ -2317,7 +2436,8 @@
         "cat2/2022_07_20p31"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Os portadores maioritários num material tipo P são",
@@ -2336,7 +2456,8 @@
         "cat2/2016_01_00p32"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Os portadores maioritários num material tipo N são",
@@ -2352,7 +2473,8 @@
       "uniqueID": 123,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "No díodo apresentado na figura, o valor da máxima tensão inversa é aproximadamente",
@@ -2371,7 +2493,8 @@
         "cat2/2023_03_08p31"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Na figura, identifique o símbolo que representa o díodo Zener:",
@@ -2390,7 +2513,8 @@
         "cat2/2023_06_15p31"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O símbolo indicado na figura como D4 representa um:",
@@ -2408,7 +2532,8 @@
         "cat2/2021_09_06p31"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Os díodos de junção não ideais quando polarizados diretamente têm tipicamente uma queda de tensão aos seus terminais",
@@ -2424,7 +2549,8 @@
       "uniqueID": 127,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma ponte retificadora é constituída duma forma geral por",
@@ -2442,7 +2568,8 @@
         "cat2/2020_07_16p31"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um transístor PNP pode ser formado por",
@@ -2461,7 +2588,8 @@
         "cat2/2023_03_08p33"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Na figura 8, identifique o terminal base",
@@ -2481,7 +2609,8 @@
         "cat2/2022_02_03p33"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Na figura 7, identifique o terminal colector ",
@@ -2501,7 +2630,8 @@
       "img": "images/cat2/tran_fig_7.jpg",
       "uniqueID": 131,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Na figura, a que terminais correspondem as letras indicadas no seguinte transístor:",
@@ -2520,7 +2650,8 @@
         "cat2/2021_02_18p33"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Os circuitos com transístores podem ser utilizados como",
@@ -2539,7 +2670,8 @@
         "cat2/2022_06_27p33"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Os transístores de junção bipolar são dispositivos",
@@ -2557,7 +2689,8 @@
         "cat2/2020_07_16p33"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um transístor de junção bipolar, a funcionar num circuito lógico em que zonas de funcionamento deverá operar",
@@ -2576,7 +2709,8 @@
         "cat2/2022_08_26p33"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Duma forma geral considera-se que os transístores de junção bipolar têm as seguintes três zonas de funcionamento:",
@@ -2594,7 +2728,8 @@
         "cat2/2022_07_20p33"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em que zona de funcionamento deverá trabalhar um transístor de junção bipolar que é o único elemento ativo num circuito amplificador?",
@@ -2613,7 +2748,8 @@
         "cat2/2023_01_27p33"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A polarização de um transístor corresponde",
@@ -2632,7 +2768,8 @@
         "cat2/2018_05_00p35"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma montagem de emissor comum, devidamente polarizada para garantir o funcionamento do transístor exclusivamente na zona ativa",
@@ -2650,7 +2787,8 @@
         "cat2/2023_06_15p33"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um tétrodo possui",
@@ -2672,7 +2810,8 @@
         "cat2/2022_12_27p36"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Os amplificadores sintonizados",
@@ -2688,7 +2827,8 @@
       "uniqueID": 141,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Num emissor que tipo de filtragem deverá estar à saida de um amplificador de potência",
@@ -2707,7 +2847,8 @@
         "cat2/2018_03_08p23"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um filtro passa baixo destina-se",
@@ -2726,7 +2867,8 @@
         "cat2/2023_06_15p18"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um filtro rejeita banda destina-se",
@@ -2750,7 +2892,8 @@
         "cat2/2023_03_08p18"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um filtro passa banda destina-se",
@@ -2769,7 +2912,8 @@
       "img": null,
       "uniqueID": 145,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Numa fonte de alimentação não comutada com transformador, a introdução de um díodo em série entre o secundário do transformador e um circuito de carga",
@@ -2789,7 +2933,8 @@
         "cat2/2023_01_27p21"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual o número mínimo necessário de díodos para realizar um retificador de meia onda?",
@@ -2807,7 +2952,8 @@
         "cat2/2023_06_26p31"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "É possível fazer uma retificação de onda completa a partir de um sinal de corrente alternada, proveniente de um transformador, só com dois díodos?",
@@ -2827,7 +2973,8 @@
         "cat2/2023_06_15p21"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma ponte rectificadora efetua",
@@ -2845,7 +2992,8 @@
         "cat2/0000_00_03p25"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um condensador ligado ao secundário de um transformador, usado para absorver picos de tensão de curta duração, designa-se:",
@@ -2864,7 +3012,8 @@
         "cat2/2023_03_08p21"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual o fator de segurança que oferece uma resistência de drenagem da fonte de alimentação?",
@@ -2885,7 +3034,8 @@
         "cat2/2023_06_26p21"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Se num amplificador de emissor à massa, a corrente no coletor for de 45 mA e a corrente na base 1,5 mA, qual é o ganho de corrente em regime contínuo?",
@@ -2908,7 +3058,8 @@
         "cat2/2023_03_08p30"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Diz-se que há amplificação de tensão",
@@ -2927,7 +3078,8 @@
         "cat2/2018_03_08p30"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma corrente de 20 mA circula entre a base e o emissor de um transístor que apresenta um ganho de 40.Em consequência, entre coletor e emissor circula uma corrente de:",
@@ -2946,7 +3098,8 @@
         "cat2/2018_06_19p30"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A corrente que circula entre o colector e o emissor de um transistor é 8 mA, e a corrente que circula entre a base e o emissor do mesmo transistor é 400 uA. Qual é o ganho de corrente apresentado?",
@@ -2967,7 +3120,8 @@
         "cat2/2023_06_26p30"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Num transístor a corrente que circula entre o colector e o emissor é de 80 mA. Se entre a base e  o emissor circular uma corrente de 400 µA, qual o seu ganho?",
@@ -2986,7 +3140,8 @@
         "cat2/2023_06_15p30"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes opções descreve um amplificador linear?",
@@ -3004,7 +3159,8 @@
         "cat2/2017_09_27p30"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Num emissor de RF qual a função do amplificador linear de saída?",
@@ -3024,7 +3180,8 @@
         "cat2/2023_01_27p25"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A potência de saída de um amplificador linear de um emissor SSB é definida pela",
@@ -3044,7 +3201,8 @@
         "cat2/2023_01_27p29"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que circuito é usado para processar os sinais provenientes do amplificador de RF e do oscilador local e que depois os envia para o filtro de IF num recetor super-heterodino?",
@@ -3067,7 +3225,8 @@
         "cat2/2023_06_26p10"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que sinal ou sinais podem ser encontrados na saída de um modulador balanceado adequadamente ajustado?",
@@ -3089,7 +3248,8 @@
         "cat2/2023_03_08p19"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que tipo de recetor é apropriado para a receção de CW ou de SSB mas que não necessita de um andar de mistura ou de um amplificador de IF?",
@@ -3109,7 +3269,8 @@
         "cat2/2023_01_27p10"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como se pode designar em alternativa a mistura de dois sinais de RF?",
@@ -3132,7 +3293,8 @@
       "img": null,
       "uniqueID": 163,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Os recetores de CW estão associados a que tipo de modulação?",
@@ -3154,7 +3316,8 @@
         "cat2/2023_03_08p14"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Os receptores de FM estão associados a que tipo de modulação?",
@@ -3174,7 +3337,8 @@
         "cat2/2023_01_27p14"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Num recetor de FM, qual a função do circuito designado como discriminador?",
@@ -3193,7 +3357,8 @@
         "cat2/2020_07_16p14"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Num recetor, em que consiste o processo de deteção",
@@ -3212,7 +3377,8 @@
         "cat2/2022_12_27p26"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que parte de um recetor combina um sinal de entrada de 14,250 MHz com um sinal de um oscilador local de 13,795 MHz, para produzir um sinal de frequência intermédia de 455 kHz?",
@@ -3231,7 +3397,8 @@
         "cat2/0000_00_01p24"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Quanto é que a potência de um emissor tem que reduzir para que num recetor distante a leitura do indicador de nível (unidades S) mude de S9 para S8?",
@@ -3249,7 +3416,8 @@
         "cat2/2013_08_00p24"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Quanto é que a potência de um emissor tem que aumentar para que num receptor distante a leitura do indicador de nível (unidades S) mude de S8 ara S9?",
@@ -3271,7 +3439,8 @@
         "cat2/2018_06_19p25"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Onde se encontra de uma forma geral o “squelch”?",
@@ -3289,7 +3458,8 @@
         "cat2/2021_02_18p26"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O circuito “squelch” de um recetor?",
@@ -3308,7 +3478,8 @@
         "cat2/2022_02_03p26"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O que mede o medidor S?",
@@ -3328,7 +3499,8 @@
         "cat2/2023_06_15p26"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Num recetor, como funciona um detetor de díodo?",
@@ -3344,7 +3516,8 @@
       "uniqueID": 174,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Num recetor super-heterodino, o andar designado como “misturador”",
@@ -3360,7 +3533,8 @@
       "uniqueID": 175,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Num recetor super-heterodino, o BFO é um",
@@ -3379,7 +3553,8 @@
       "img": null,
       "uniqueID": 176,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Num recetor super-heterodino, o andar designado como (amplificador de FI)",
@@ -3398,7 +3573,8 @@
         "cat2/2020_07_16p26"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Num recetor de FM, o andar designado por “limitador”",
@@ -3416,7 +3592,8 @@
         "cat2/2022_06_27p26"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que circuito é usado para combinar os sinais do oscilador de portadora e do amplificador de voz e enviar o resultado para o filtro num emissor de banda lateral única de fonia?",
@@ -3434,7 +3611,8 @@
         "cat2/2012_04_10p17"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma malha de captura de fase que contém um oscilador controlado por tensão, está associada a um modulador de:",
@@ -3452,7 +3630,8 @@
         "cat2/2021_02_18p19"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O sinal na saída de um emissor de modulação de frequência resulta",
@@ -3470,7 +3649,8 @@
         "cat2/2022_12_27p19"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O sinal na saída de um emissor de modulação de frequência consiste",
@@ -3488,7 +3668,8 @@
         "cat2/2016_01_00p19"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O sinal na saída de um emissor de modulação de amplitude resulta",
@@ -3506,7 +3687,8 @@
         "cat2/2017_09_27p19"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Num emissor, onde deve ser instalado um filtro para reduzir emissões espúrias?",
@@ -3528,7 +3710,8 @@
         "cat2/2023_03_08p25"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O que é um “buffer”?",
@@ -3546,7 +3729,8 @@
         "cat2/2013_08_00p26"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "No emissor o que é VFO ?",
@@ -3564,7 +3748,8 @@
         "cat2/2020_07_16p25"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes afirmações descreve uma vantagem de uma fonte de alimentação comutada relativamente a uma fonte linear convencional?",
@@ -3582,7 +3767,8 @@
         "cat2/2022_02_03p25"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual é a vantagem de um emissor controlado por cristal?",
@@ -3603,7 +3789,8 @@
         "cat2/2022_07_20p29"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O que acontece ao sinal de um emissor de banda lateral única de fonia se estiver sobremodulado?",
@@ -3621,7 +3808,8 @@
         "cat2/2022_08_26p29"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A diferença entre a potência de entrada de RF e a potência de alimentação por um lado e a potência RF de saída de um emissor por outro",
@@ -3640,7 +3828,8 @@
         "cat2/2018_05_00p29"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Por que razão não se deve usar a modulação de frequência em fonia abaixo dos 29,5 MHz?",
@@ -3658,7 +3847,8 @@
         "cat2/2018_06_19p29"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a impedância de saída ideal de um emissor que se vai ligar a um cabo de alimentação de uma antena, se o referido cabo tiver uma impedância de entrada 50 Ohm?",
@@ -3674,7 +3864,8 @@
       "uniqueID": 192,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O que é  uma antena isotrópica?",
@@ -3694,7 +3885,8 @@
         "cat2/2022_02_03p13"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como se designa uma antena que consiste num único elemento montado perpendicularmente à superfície da Terra?",
@@ -3712,7 +3904,8 @@
         "cat2/2021_02_18p13"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como deve variar o tamanho físico de dipolo de meia onda com a frequência de operação? ",
@@ -3735,7 +3928,8 @@
         "cat2/2023_03_08p13"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Diz-se usualmente que uma antena Yagi tem ganho de potência sobre uma antena dipolo para a mesma banda de frequências porque",
@@ -3754,7 +3948,8 @@
         "cat2/2023_06_15p13"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como se designa uma antena que consiste num simples dipolo montado de forma que os elementos são paralelos à superfície da Terra?",
@@ -3774,7 +3969,8 @@
         "cat2/2022_06_27p13"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "No sentido de caracterizar o diagrama de radiação de uma antena, quando há dificuldade na sua representação tridimensional,  ",
@@ -3795,7 +3991,8 @@
         "cat2/2022_12_27p15"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A potência isotrópica radiada equivalente (p.i.r.e.) emitida por uma antena de 20dBi de ganho (no máximo do seu diagrama de radiação) quando lhe é entregue uma potência de 10 dBW é ",
@@ -3814,7 +4011,8 @@
         "cat2/2023_06_26p15"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual o ganho teórico de um dipolo de meia onda relativamente a uma antena isotrópica?",
@@ -3836,7 +4034,8 @@
         "cat2/2023_01_27p15"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A potência aparente radiada (p.a.r.) emitida por uma antena de 10 dBd de ganho (no máximo do seu diagrama de radiação) quando lhe é entregue uma potência de 20 dBW é:",
@@ -3859,7 +4058,8 @@
         "cat2/2023_06_15p15"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A potência aparente radiada (p.a.r.) emitida por uma antena de 5 dBd de ganho (no máximo do seu diagrama de radiação) quando lhe é entregue uma potência de 10 dBW é",
@@ -3878,7 +4078,8 @@
         "cat2/2018_06_19p17"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O que significa relação frente/costas ruma antena Yagi?",
@@ -3894,7 +4095,8 @@
       "uniqueID": 203,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes antenas não tem ganho em qualquer direção?",
@@ -3912,7 +4114,8 @@
         "cat2/2023_03_08p15"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual o parâmetro que melhor descreve a interação de um cabo desadaptado com a carga a que é ligado?",
@@ -3932,7 +4135,8 @@
         "cat2/2023_06_26p24"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em que se traduzem as perdas de atenuação numa linha de transmissão?",
@@ -3951,7 +4155,8 @@
         "cat2/0000_00_01p22"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual deve ser a impedância de um filtro passa-baixo relativamente ao de uma linha de transmissão a que esteja ligado?",
@@ -3974,7 +4179,8 @@
         "cat2/2023_06_26p18"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual é a impedância característica das linhas de transmissão habitualmente utilizada nas estações de amador para ligar o emissor à antena? ",
@@ -3990,7 +4196,8 @@
       "uniqueID": 208,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma linha de alimentação degradada que liga a saída de um emissor a uma antena, apresentará uma impedância não adequada que poderá dar origem a",
@@ -4008,7 +4215,8 @@
         "cat2/2022_02_03p24"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma linha de alimentação coaxial é constituída por",
@@ -4027,7 +4235,8 @@
         "cat2/2022_06_27p24"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Verificou-se que uma linha de transmissão de 200 metros possuía uma atenuação total de 26 dB. Qual é a sua atenuação por metro?",
@@ -4043,7 +4252,8 @@
       "uniqueID": 211,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "As linhas de condutores paralelos são linhas",
@@ -4062,7 +4272,8 @@
         "cat2/2023_06_15p24"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual o coeficiente de onda estacionária que resulta da alimentação com um cabo coaxial de 50 Ohms de uma antena vertical com uma impedância de entrada de 25 Ohms?",
@@ -4081,7 +4292,8 @@
         "cat2/2023_03_08p24"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Porque é que o cabo coaxial é utilizado com maior frequência que outros tipos de cabos para alimentar antenas nas estações de amador?",
@@ -4102,7 +4314,8 @@
         "cat2/2022_08_26p24"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Diz-se que uma linha de alimentação está adaptada a uma antena quando a potência refletida pela antena",
@@ -4120,7 +4333,8 @@
         "cat2/2018_05_00p1"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O que pode estar a acontecer quando recebemos sinais de VHF provenientes de longas distâncias?",
@@ -4136,7 +4350,8 @@
       "uniqueID": 216,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O que poderá acontecer se as antenas duma ligação em linha de vista, na faixa de UHF, não tiverem a mesma polarização?",
@@ -4155,7 +4370,8 @@
         "cat2/2022_02_03p6"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O que devemos fazer se numa comunicação de UHF em portátil repararmos que o sinal que era recebido em boas condições fica, de um momento para o outro, fraco e com distorção?",
@@ -4174,7 +4390,8 @@
         "cat2/2013_08_00p1"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual gama de frequências adequada a comunicações por dispersão de meteoros?",
@@ -4190,7 +4407,8 @@
       "uniqueID": 219,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "As mudanças no nível do sinal recebido quando se usa propagação por onda ionosférica ('sky wave')chamam-se",
@@ -4209,7 +4427,8 @@
       "img": null,
       "uniqueID": 220,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Embora os sinais de HF de uma estação distante possam ser recebidos via onda ionoaférica (sky wave) numa dada altura, isso pode não ser possível uma hora depois. Isto deve-se a",
@@ -4228,7 +4447,8 @@
         "cat2/2023_03_08p06"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A ionosfera",
@@ -4246,7 +4466,8 @@
         "cat2/2023_06_26p6"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O meio que reflete os sinais de onda curta de volta para a superfície da terra chama-se:",
@@ -4266,7 +4487,8 @@
         "cat2/2022_08_26p6"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A posição da camada E da ionosfera é",
@@ -4285,7 +4507,8 @@
         "cat2/2023_01_27p6"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "As três camadas da ionosfera habitualmente consideradas no que respeita à sua influência na propagação dos sinais de radiocomunicações são as camadas",
@@ -4303,7 +4526,8 @@
         "cat2/2018_06_19p1"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A camada da ionosfera responsável pelas comunicações de longa distância é a camada",
@@ -4319,7 +4543,8 @@
       "uniqueID": 226,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes camadas ionosféricas está mais próxima da superfície terrestres?",
@@ -4337,7 +4562,8 @@
         "cat2/2018_03_08p1"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Ao nível da propagação de ondas eletromagnéticas nas faixas de frequências de radiocomunicações, o que se designa por 'ducto'?",
@@ -4353,7 +4579,8 @@
       "uniqueID": 228,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes medições descreve uma linha de transmissão desadaptada?",
@@ -4372,7 +4599,8 @@
         "cat2/2022_02_03p12"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma linha de trasnmissão que liga um emissor de RF à antena deve estar adaptada para",
@@ -4388,7 +4616,8 @@
       "uniqueID": 230,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Porque é importante temos um baixo valor de VSWR na alimentação de uma antena por um cabo coaxial?",
@@ -4406,7 +4635,8 @@
         "cat2/2013_08_00p22"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Pretende-se medir a potência aparente radiada de uma estação numa dada frequência. Que instrumento se deve utilizar?",
@@ -4426,7 +4656,8 @@
         "cat2/2023_03_08p12"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a vantagem do recurso a um wattímetro de leitura de pico para monitorizar a saída de um transmissor de fonia de banda lateral única?",
@@ -4448,7 +4679,8 @@
         "cat2/2023_01_27p12"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O que signifia o processo (flat-topping) de uma transmissão de fonia de banda lateral única?",
@@ -4469,7 +4701,8 @@
         "cat2/2023_06_15p19"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Para medir uma frequência pode ser usado",
@@ -4488,7 +4721,8 @@
         "cat2/2023_06_26p12"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Para medir uma resistência deve ser usado",
@@ -4506,7 +4740,8 @@
         "cat2/2023_06_15p12"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que equipamento mede com maior precisão uma dada frequência?",
@@ -4524,7 +4759,8 @@
         "cat2/2018_05_00p18"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como se deve ligar um voltímetro num circuito (no qual se pretende efectuar a medida?",
@@ -4543,7 +4779,8 @@
         "cat2/2013_08_00p9"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como se deve ligar um amperímetro num circuito (no qual se pretende efectuar a medida)?",
@@ -4563,7 +4800,8 @@
         "cat2/2018_06_19p13"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Porque é desejável que um voltímetro tenha uma elevada impedância de entrada?",
@@ -4584,7 +4822,8 @@
         "cat2/2022_12_27p17"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes medições pode ser efetuada direta ou indiretamente com um medidor de potência direcional?",
@@ -4604,7 +4843,8 @@
       "img": null,
       "uniqueID": 241,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que tipo de medidor deve ser usado para monitorar o sinal à saída de um transmissor modulado por voz de banda lateral única, de forma a assegurar que não se excede a potência máxima admitida?",
@@ -4622,7 +4862,8 @@
         "cat2/2022_12_27p12"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que efeito pode ter a degradação numa linha de transmissão de um sistema de televisão por cabo numa estação de amador?",
@@ -4641,7 +4882,8 @@
         "cat2/2022_07_20p11"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Onde se podem encontrar as definições que deverão ser consideradas como de referência para os vários tipos de interferências?",
@@ -4662,7 +4904,8 @@
         "cat2/2022_12_27p11"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Do ponto de vista de interferências em equipamentos eletrónicos, quais as influências indesejadas que deverão ser consideradas?",
@@ -4681,7 +4924,8 @@
         "cat2/2023_01_27p11"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Do ponto de vista de interferências em equipamentos eletrónicos, como se designa a capacidade que um equipamento tem de ser robusto à radiação direta que sobre ele poderá ser exercida?",
@@ -4697,7 +4941,8 @@
       "uniqueID": 246,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Num cabo de alimentação de rede de três condutores o fio verde e amarelo é",
@@ -4717,7 +4962,8 @@
         "cat2/2023_03_08p05"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Quais os fatores que afetam a maior ou menor exposição da população a campos eletromagnéticos perto de uma estação de amador?",
@@ -4738,7 +4984,8 @@
         "cat2/2023_01_27p5"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Quais os fatores que afetam a maior ou menor exposição da população a campos eletromagnéticos perto de uma estação de amador?",
@@ -4754,7 +5001,8 @@
       "uniqueID": 249,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "De acordo com a regulamentação em vigor, é obrigatória a sinalização das estações individuais de amador, no âmbito da proteção da população em geral a campos eletromagnéticos?",
@@ -4778,7 +5026,8 @@
       "img": null,
       "uniqueID": 250,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "De acordo com a regulamentação em vigor, é obrigatória a identificação das estações individuais de amador?",
@@ -4797,7 +5046,8 @@
         "cat2/2022_08_26p5"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a expressão usada em telefonia para sinal de perigo?",
@@ -4821,7 +5071,8 @@
       "img": null,
       "uniqueID": 252,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a sequência de símbolos usados em telegrafia para sinal de perigo?",
@@ -4844,7 +5095,8 @@
       "img": null,
       "uniqueID": 253,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual o prefixo designado para as estações de uso comum das entidades com responsabilidade na proteção civil?",
@@ -4868,7 +5120,8 @@
         "cat2/2023_06_26p1"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Não concordo com determinadas disposições regulamentares aplicáveis aos Serviços de Amador e de Amador por Satélite. O que é correto fazer?",
@@ -4887,7 +5140,8 @@
         "cat2/2016_01_00p12"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma vizinha minha diz que de vez em quando tem interferências na receção de televisão e veio perguntar-me se não seria das minhas emissões. O que é correto fazer?",
@@ -4910,7 +5164,8 @@
         "cat2/2023_03_08p07"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma emissão fora de faixa",
@@ -4932,7 +5187,8 @@
         "cat2/2023_01_27p3"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma emissão fora de faixa",
@@ -4950,7 +5206,8 @@
         "cat2/0000_00_03p6"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das faixas tem estatuto primário para o serviço de amador na Região 1?",
@@ -4973,7 +5230,8 @@
       "img": null,
       "uniqueID": 259,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das faixas não tem estatuto primário para o serviço de amador em Portugal?",
@@ -4998,7 +5256,8 @@
       "img": null,
       "uniqueID": 260,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes afirmações é falsa?",
@@ -5023,7 +5282,8 @@
       ],
       "uniqueID": 261,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual dos documentos não é considerado habilitante para a utilização de estações de amador, quando em estadas temporárias em Portugal?",
@@ -5046,7 +5306,8 @@
       "img": null,
       "uniqueID": 262,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Sempre que um amador estabeleça comunicações em Portugal ao abrigo de uma 'licença CEPT novice'emitida por uma outra Administração, deve emitir o IC da sua estação de amador antecedido do prefixo",
@@ -5069,7 +5330,8 @@
       "img": null,
       "uniqueID": 263,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a potência de pico máxima permitida a um amador da categoria 2 que opere a frequência 14260kHz?",
@@ -5087,7 +5349,8 @@
         "cat2/2022_07_20p2"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Se uma estação de amador interferir uma estação de pequena potência e de curto alcance na frequência 433,5 MHz, quem tem prioridade?",
@@ -5110,7 +5373,8 @@
       "img": null,
       "uniqueID": 265,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das afirmações está correta?",
@@ -5133,7 +5397,8 @@
         "cat2/2023_06_15p2"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Porque é que os sinais de VHF e UHF não se propagam a longa distância?",
@@ -5151,7 +5416,8 @@
         "cat2/2011_11_00p1"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Porque é que duma forma geral os sinais de VHF e UHF não se propagam muito longa distância?",
@@ -5170,7 +5436,8 @@
         "cat2/2023_06_15p6"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O que está ligado ao fio verde (e amarelo) numa tomada tripla?",
@@ -5188,7 +5455,8 @@
         "cat2/2011_11_00p2"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Existem frequências internacionais de emergência e de segurança no âmbito dos Serviços de Amador e de Amador por Satélite? Em caso afirmativo onde podem ser consultadas?",
@@ -5206,7 +5474,8 @@
         "cat2/2011_11_00p3"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A energia eléctrica (E) é definida pelo",
@@ -5224,7 +5493,8 @@
         "cat2/2011_11_00p7"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A associação em série de três resistências de 20 Ohm equivale a uma resistência de",
@@ -5243,7 +5513,8 @@
         "cat2/2018_05_00p8"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que efeito pode ter um corte numa linha de transmissão de televisão por cabo numa estação de amador?",
@@ -5263,7 +5534,8 @@
         "cat2/2013_08_00p10"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a mais simples combinação de andares que permite a implementação de um receptor super-heterodino?",
@@ -5288,7 +5560,8 @@
         "cat2/2023_06_15p10"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Numa comunicação senti-me ofendido pelas palavras que me foram dirigidas por um colega amador. O que é mais correcto fazer?",
@@ -5313,7 +5586,8 @@
       "img": null,
       "uniqueID": 276,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a vantagem de um voltímetro digital relativamente a um analógico?",
@@ -5335,7 +5609,8 @@
         "cat2/2023_03_08p17"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual dos seguintes instrumentos de ensaio pode ser utilizado para apresentar as condições dos pulsos num circuito digital?",
@@ -5354,7 +5629,8 @@
         "cat2/2022_08_26p17"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Identifique uma vantagem da supressão de portadora numa emissão de banda lateral única de fonia.",
@@ -5374,7 +5650,8 @@
         "cat2/2022_07_20p19"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a vantagem da supressão de portadora numa transmissão de fonia de banda lateral única?",
@@ -5394,7 +5671,8 @@
         "cat2/2023_06_26p38"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um filtro passa alto destina-se",
@@ -5413,7 +5691,8 @@
         "cat2/2022_12_27p18"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes afirmações é verdadeira?",
@@ -5432,7 +5711,8 @@
         "cat2/2023_01_27p22"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma fonte de alimentação não comutada com entrada a partir da rede, para alimentar um circuito que trabalha com 12 Volt DC",
@@ -5450,7 +5730,8 @@
         "cat2/2011_11_00p25"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Onde deve ser instalado um filtro par reduzir emissões espúrias?",
@@ -5468,7 +5749,8 @@
         "cat2/2011_11_00p26"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das afirmações está correcta?",
@@ -5487,7 +5769,8 @@
         "cat2/2016_01_00p27"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Porque é que as válvulas têm vindo a perder terreno relativamente aos elementos designados como de estado sólido (por exemplo transístores), na electrónica de consumo?",
@@ -5508,7 +5791,8 @@
         "cat2/2022_07_20p36"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Para que se usa um fusível num circuito eléctrico?",
@@ -5529,7 +5813,8 @@
         "cat2/2023_06_15p5"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "As estações de amador podem participar em exercícios de protecção civil?",
@@ -5552,7 +5837,8 @@
         "cat2/2022_07_20p1"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a potência de pico máxima permitida a um amador da categoria 2 que opere a frequência 14250 kHz?",
@@ -5568,7 +5854,8 @@
       "uniqueID": 289,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "As antenas Yagi:",
@@ -5588,7 +5875,8 @@
         "cat2/2022_08_26p13"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O refletor e o(s) diretor(es) de uma antena Yagi designam-se por",
@@ -5606,7 +5894,8 @@
         "cat2/2018_05_00p10"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual é um dos efeitos do aumento do comprimento do (boom) e da adição de directores a uma antena Yagi?",
@@ -5626,7 +5915,8 @@
         "cat2/2022_12_27p13"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Num emissor de FM a malha de captura de fase contém obrigatoriamente",
@@ -5646,7 +5936,8 @@
         "cat2/2020_07_16p19"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Num emissor qual a função dos multiplicadores de frequência",
@@ -5662,7 +5953,8 @@
       "uniqueID": 294,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que tipo de circuito é usado em vários receptores de FM para converter sinais provenientes do amplificador de frequência intermédia em áudio?",
@@ -5680,7 +5972,8 @@
         "cat2/0000_00_03p18"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Para que serve um circuito sintonizador de antena?",
@@ -5696,7 +5989,8 @@
       "uniqueID": 296,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Porque não são usadas bobinas em circuitos de corrente contínua?",
@@ -5712,7 +6006,8 @@
       "uniqueID": 297,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Onde se encontra, de uma forma geral, o indicador de nível (unidades S)",
@@ -5731,7 +6026,8 @@
         "cat2/2023_06_26p26"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "É típico nas fontes de alimentação não comutadas termos um condensador electrolítico de elevada capacidade com o objectivo de",
@@ -5754,7 +6050,8 @@
         "cat2/2022_08_26p21"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O método de modulação por díodo:",
@@ -5776,7 +6073,8 @@
         "cat2/2023_06_26p25"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Para utilizar o díodo de forma a bloquear o fluxo de corrente no circuito, onde deverá ser ligado o fio do positivo do circuito?",
@@ -5795,7 +6093,8 @@
         "cat2/2023_01_27p31"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das afirmações está incorrecta?",
@@ -5814,7 +6113,8 @@
         "cat2/2022_07_20p37"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": " O que pode estar a acontecer quando recebemos sinais de VHF a longas distâncias?",
@@ -5830,7 +6130,8 @@
       "uniqueID": 303,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como pode ser operada a faixa dos 7100-7200 kHz por um amador da categoria 2?",
@@ -5851,7 +6152,8 @@
         "cat2/2023_06_26p2"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A licença CEPT novice, permite",
@@ -5867,7 +6169,8 @@
       "uniqueID": 305,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das faixas tem estatuto secundário para o serviço de amador por satélite na região 1?",
@@ -5888,7 +6191,8 @@
       "img": null,
       "uniqueID": 306,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a resistência total de duas resistências de 66 Ohm quando ligadas em paralelo?",
@@ -5904,7 +6208,8 @@
       "uniqueID": 307,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a resistência total de duas resistências de 33 Ohm quando ligadas em paralelo?",
@@ -5923,7 +6228,8 @@
         "cat2/2022_12_27p9"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a melhor maneira de reduzir a possibilidade de causar interferências quando se testa um emissor?",
@@ -5943,7 +6249,8 @@
         "cat2/2023_06_26p11"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O que é que poderá ser eficaz na redução de interferências de RF em circuitos de áudio?",
@@ -5964,7 +6271,8 @@
       "img": null,
       "uniqueID": 310,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Estou a ser interferido por outro amador. O que devo fazer?",
@@ -5984,7 +6292,8 @@
         "cat2/2022_02_03p7"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Tenho sido interferido de forma intermitente. Mas após aturada investigação, com a ajuda de outros colegas amadores, parece-me que a fonte interferente estará no prédio defronte de mim, onde não existe nenhuma estação de amador. O que é mais correto fazer?",
@@ -6005,7 +6314,8 @@
         "cat2/2023_01_27p7"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Os receptores de SSB-SC estão associados a que tipo de modulação?",
@@ -6028,7 +6338,8 @@
         "cat2/2023_06_15p14"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Os receptores AM estão associados a que tipo de modulação?",
@@ -6049,7 +6360,8 @@
         "cat2/2023_06_26p14"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Nas linhas de força de um campo eléctrico provocadas por uma carga eléctrica",
@@ -6073,7 +6385,8 @@
         "cat2/2023_06_26p23"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual o parâmetro que melhor descreve a interacção do lado da carga de um cabo desaptado?",
@@ -6089,7 +6402,8 @@
       "uniqueID": 316,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O simbolo indicado em D, na figura 6 (acima), representa ",
@@ -6109,7 +6423,8 @@
         "cat2/2018_06_19p32"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um pêntodo possui",
@@ -6133,7 +6448,8 @@
         "cat2/2023_06_26p36"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A percentagem de modulação em FM é",
@@ -6151,7 +6467,8 @@
         "cat2/2022_06_27p38"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A percentagem de modulação da onda portadora de um emissor em modulação de frequência depende",
@@ -6167,7 +6484,8 @@
       "uniqueID": 320,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A energia eléctrica (W) é definida pelo:",
@@ -6185,7 +6503,8 @@
         "cat2/2022_07_20p8"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O que sucede quando a impedância de uma carga eléctrica é igual à impedância interna da fonte de energia?",
@@ -6201,7 +6520,8 @@
       "uniqueID": 322,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Por que razão é importante haver uma boa adaptação de impedâncias?",
@@ -6219,7 +6539,8 @@
         "cat2/2022_07_20p24"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Diz-se que existe adaptação quando:",
@@ -6241,7 +6562,8 @@
       "img": null,
       "uniqueID": 324,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das afirmações está correcta?",
@@ -6262,7 +6584,8 @@
         "cat2/2023_06_26p16"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que nome recebe o processo pelo qual a luz solar é directamente convertida em energia eléctrica?",
@@ -6278,7 +6601,8 @@
       "uniqueID": 326,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como se relaciona a corrente total com a corrente individual em cada ramificação de um circuito em paralelo?",
@@ -6294,7 +6618,8 @@
       "uniqueID": 327,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em que circunstância se torna aceitável recarregar uma célula primária de carbono-zinco?",
@@ -6310,7 +6635,8 @@
       "uniqueID": 328,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma carga eléctrica fixa num ponto do espaço cria em torno de si:",
@@ -6326,7 +6652,8 @@
       "uniqueID": 329,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em condições de propagação normais, a intensidade do campo eléctrico:",
@@ -6342,7 +6669,8 @@
       "uniqueID": 330,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma bússola reage:",
@@ -6361,7 +6689,8 @@
         "cat2/2018_06_19p27"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em que consiste um campo magnético?",
@@ -6377,7 +6706,8 @@
       "uniqueID": 332,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "As ondas electromagnéticas são produzidas por:",
@@ -6397,7 +6727,8 @@
         "cat2/2022_02_03p32"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a velocidade, aproximada, da propagação das ondas rádio no espaço?",
@@ -6418,7 +6749,8 @@
         "cat2/2023_01_27p32"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual o valor da tensão pico-a-pico de um sinal sinusoidal, se num voltímetro AC se obtiver uma tensão eficaz de 65 volt?",
@@ -6438,7 +6770,8 @@
         "cat2/2022_06_27p34"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes opções descreve melhor a forma como as ondas electromagnéticas viajam em espaço livre?",
@@ -6454,7 +6787,8 @@
       "uniqueID": 336,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "1 MHz equivale a:",
@@ -6474,7 +6808,8 @@
         "cat2/2022_08_26p34"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes opções é equivalente ao valor quadrático médio de uma tensão AC?",
@@ -6490,7 +6825,8 @@
       "uniqueID": 338,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes opções é uma característica de um bom voltímetro DC?",
@@ -6509,7 +6845,8 @@
         "cat2/2023_06_15p17"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em que consiste o período de uma onda?",
@@ -6525,7 +6862,8 @@
       "uniqueID": 340,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das afirmações está incorrecta?",
@@ -6541,7 +6879,8 @@
       "uniqueID": 341,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das afirmações está correcta?",
@@ -6557,7 +6896,8 @@
       "uniqueID": 342,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das afirmações está incorrecta?",
@@ -6577,7 +6917,8 @@
         "cat2/2012_04_10p36"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das afirmações está incorrecta?",
@@ -6598,7 +6939,8 @@
         "cat2/2022_08_26p37"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que tipo de onda é produzido pela voz humana?",
@@ -6614,7 +6956,8 @@
       "uniqueID": 345,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em modulação de frequência, uma emissão em que o desvio de frequência máximo é de 15 kHz e em que num dado instante o desvio de frequência é de 3 kHz, tem nesse instante uma percentagem de modulação de:",
@@ -6632,7 +6975,8 @@
         "cat2/2012_04_10p39"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em modulação de frequência, o índice de modulação:",
@@ -6648,7 +6992,8 @@
       "uniqueID": 347,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Numa emissão radiotelefónica deve utilizar-se a percentagem de modulação mais alta possível?",
@@ -6664,7 +7009,8 @@
       "uniqueID": 348,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual o inconveniente da sobremodulação?",
@@ -6680,7 +7026,8 @@
       "uniqueID": 349,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Numa emissão em FM:",
@@ -6696,7 +7043,8 @@
       "uniqueID": 350,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A recepção em AM tem desvantagens em relação à recepção em FM em:",
@@ -6712,7 +7060,8 @@
       "uniqueID": 351,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A conversão de frequência:",
@@ -6728,7 +7077,8 @@
       "uniqueID": 352,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Dá-se o nome de desmodulação (ou detecção):",
@@ -6746,7 +7096,8 @@
         "cat2/2016_01_00p39"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em modulação de amplitude, dupla faixa lateral, a largura de faixa necessária para uma emissão radiofónica é de:",
@@ -6762,7 +7113,8 @@
       "uniqueID": 354,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Além das interferências provocadas, a sobremodulação terá mais algum inconveniente?",
@@ -6781,7 +7133,8 @@
         "cat2/2023_01_27p38"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em modulação de frequência, por cada frequência modulante, a antena emissora radia:",
@@ -6800,7 +7153,8 @@
         "cat2/2023_06_26p39"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em relação à modulação de amplitude (dupla faixa lateral), a modulação de frequência tem a seguinte vantagem:",
@@ -6818,7 +7172,8 @@
         "cat2/2013_08_00p39"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Na transmissão pelo sistema SSB, com portadora suprimida:",
@@ -6834,7 +7189,8 @@
       "uniqueID": 358,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Na comunicação pelo sistema SSB, com portadora suprimida:",
@@ -6852,7 +7208,8 @@
         "cat2/2011_11_00p39"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Na comunicação pelo sistema faixa lateral única, em inglês SSB (single side band), transmite-se",
@@ -6868,7 +7225,8 @@
       "uniqueID": 360,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "A largura de faixa necessária:",
@@ -6884,7 +7242,8 @@
       "uniqueID": 361,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma emissão de faixa lateral única é:",
@@ -6900,7 +7259,8 @@
       "uniqueID": 362,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que vantagem resulta da utilização da banda lateral única, em comparação com outros tipos de modulação de voz nas faixas HF de radioamador?",
@@ -6918,7 +7278,8 @@
         "cat2/2022_12_27p39"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como se designa o processo de alteração de envolvente de uma onda de RF para transmissão de informação?",
@@ -6934,7 +7295,8 @@
       "uniqueID": 364,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como se designa o processo de alteração da frequência de uma onda de RF para transmissão de informação?",
@@ -6953,7 +7315,8 @@
         "cat2/2022_08_26p39"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O que sucede ao sinal de um transmissor de fonia sobremodulado de banda lateral única?",
@@ -6971,7 +7334,8 @@
         "cat2/2022_08_26p29"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como se designa a razão entre o desvio de frequência de uma portadora de RF e a frequência modulada do sinal de fonia FM correspondente?",
@@ -6987,7 +7351,8 @@
       "uniqueID": 367,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como varia o índice de modulação de uma emissão modulada em fase com a frequência da portadora de RF (a frequência modulada)?",
@@ -7003,7 +7368,8 @@
       "uniqueID": 368,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a razão de desvio de um sinal de fonia FM com um máximo de frequência de oscilação de ± 5 kHz, assumindo uma taxa máxima de modulação de 3 kHz?",
@@ -7019,7 +7385,8 @@
       "uniqueID": 369,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a razão de desvio de um sinal de fonia FM com um máximo de frequência de oscilação de ± 7.5 kHz, assumindo uma taxa máxima de modulação de 3.5 kHz?",
@@ -7035,7 +7402,8 @@
       "uniqueID": 370,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em que consiste a razão de desvio?",
@@ -7051,7 +7419,8 @@
       "uniqueID": 371,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "As emissões SSB:",
@@ -7067,7 +7436,8 @@
       "uniqueID": 372,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O processo de modulação permite:",
@@ -7083,7 +7453,8 @@
       "uniqueID": 373,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um amplificador tem um ganho de 20 dB Qual a potência na sua saída quando a sua entrada é excitada com 1 W? ",
@@ -7102,7 +7473,8 @@
         "cat2/2022_07_20p40"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual é a potência de pico envolvente à saída de um transmissor se um osciloscópio medir 200 V pico a pico numa carga fictícia de 50 ohms ligada à potência de saída?",
@@ -7118,7 +7490,8 @@
       "uniqueID": 375,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a relação entre a potência de pico evolvente e a potência média numa portadora não modulada?",
@@ -7134,7 +7507,8 @@
       "uniqueID": 376,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual seria a tensão numa carga fictícia de 50 ohms que dissipasse 1200 watt?",
@@ -7150,7 +7524,8 @@
       "uniqueID": 377,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Uma antena fictícia",
@@ -7169,7 +7544,8 @@
         "cat2/2018_03_08p17"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a percentagem de perda de potência que resulta de uma transmissão com perda de 1dB na linha",
@@ -7185,7 +7561,8 @@
       "uniqueID": 379,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual é a potência de pico envolvente à saída de um transmissor se um osciloscópio medir 500 V pico a pico num resistência de 50 ohms ligado à saída do transmissor?",
@@ -7201,7 +7578,8 @@
       "uniqueID": 380,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual é a potência de pico envolvente à saída de uma portadora não modulada se um wattímetro ligado à saída do transmissor indicar um valor médio de 1060 watt?",
@@ -7217,7 +7595,8 @@
       "uniqueID": 381,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como se designa a energia fora de fase e não produtiva associada a indutores e condensadores?",
@@ -7233,7 +7612,8 @@
       "uniqueID": 382,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Como se determina a potência activa num circuito AC em que a tensão e a corrente estão fora de fase?",
@@ -7249,7 +7629,8 @@
       "uniqueID": 383,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que potência é consumida num circuito com um factor de potência de 0.2 se a entrada é de 100V AC a 4 ampere?",
@@ -7265,7 +7646,8 @@
       "uniqueID": 384,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Num atenuador constituído por duas resistências de 100 ohms em série o sinal de entrada é aplicado no conjunto das duas e a saída é retirada do ponto médio. A atenuação da malha é de: ",
@@ -7281,7 +7663,8 @@
       "uniqueID": 385,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um atenuador tem 10 V rms aplicados à entrada obtendo-se 5 V rms na saída. A atenuação obtida é de: ",
@@ -7299,7 +7682,8 @@
         "cat2/2017_09_27p40"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um amplificador com um ganho de 20 dB tem a saída ligada a um atenuador de 10 dB O ganho do conjunto é de: ",
@@ -7315,7 +7699,8 @@
       "uniqueID": 387,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um amplificador com um ganho de 20 dB tem a saída ligada a um atenuador de 30 dB O ganho do conjunto é de: ",
@@ -7335,7 +7720,8 @@
         "cat2/2023_03_08p40"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Cada um dos andares de um amplificador de três andares tem um ganho de 5 dB O ganho do amplificador é de: ",
@@ -7354,7 +7740,8 @@
         "cat2/2023_06_26p40"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a resistência total de duas resistências de 25 ohms cada, quando ligadas em série?",
@@ -7372,7 +7759,8 @@
         "cat2/2022_07_20p9"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a resistência total de duas resistências de 33 ohms quando ligadas em paralelo?",
@@ -7388,7 +7776,8 @@
       "uniqueID": 391,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a resistência total de duas resistências de 66 ohms quando ligadas em paralelo?",
@@ -7404,7 +7793,8 @@
       "uniqueID": 392,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Em que consiste a impedância?",
@@ -7420,7 +7810,8 @@
       "uniqueID": 393,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual a resistência total de 3 resistencias ligados em paralelo, um de 10 ohms, o segundo de 20 ohms e o terceiro de 50 ohms?",
@@ -7436,7 +7827,8 @@
       "uniqueID": 394,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que componente se deverá adicionar a um resistência de forma a aumentar a resistência do circuito?",
@@ -7452,7 +7844,8 @@
       "uniqueID": 395,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que tipo de componente é um termístor?",
@@ -7468,7 +7861,8 @@
       "uniqueID": 396,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Exprima em microFarad uma capacidade de 470 pF (picoFarad):",
@@ -7488,7 +7882,8 @@
         "cat2/2023_01_27p20"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das seguintes afirmações é falsa?",
@@ -7507,7 +7902,8 @@
         "cat2/2023_03_08p20"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual é uma das principais vantagens dos condensadores cerâmicos?",
@@ -7525,7 +7921,8 @@
         "cat2/2023_06_26p20"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que dispositivo se utiliza para armazenar energia eléctrica num campo electrostático?",
@@ -7541,7 +7938,8 @@
       "uniqueID": 400,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual dos seguintes tipos de condensadores é mais apropriado para uso em circuitos com filtros activos RC ampop de elevada estabilidade?",
@@ -7557,7 +7955,8 @@
       "uniqueID": 401,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual das afirmações é verdadeira?",
@@ -7578,7 +7977,8 @@
       "img": null,
       "uniqueID": 402,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Define-se potência aparente radiada (p.a.r.)",
@@ -7594,7 +7994,8 @@
       "uniqueID": 403,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual é a relação de potência entre a saída e a entrada de um amplificador cujo ganho de potência é de 14,1 dB?",
@@ -7616,7 +8017,8 @@
         "cat2/2022_08_26p30"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "As válvulas tipo díodo",
@@ -7636,7 +8038,8 @@
         "cat2/2023_01_27p36"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Porque é que de uma forma geral os sinais de UHF (trabalham melhor) no interior de edifícios do que os sinais de VHF?",
@@ -7656,7 +8059,8 @@
         "cat2/2022_07_20p6"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "As bandas de VHF e UHF são muito frequentemente usadas para comunicações via satélite porque",
@@ -7674,7 +8078,8 @@
         "cat2/2017_09_27p1"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Sempre que um amador de categoria 2 pretenda exercer a actividade temporariamente num país cuja Administração tenha adoptado a Recomendação CEPT ECC/REC (05) 06 (licença CEPT novice)",
@@ -7695,7 +8100,8 @@
       "img": null,
       "uniqueID": 408,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Para que serve uma carga artificial?",
@@ -7717,7 +8123,8 @@
         "cat2/2022_07_20p17"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Qual é a melhor razão para se utilizar uma fonte de alimentação estabilizada em equipamentos de radiocomunicações",
@@ -7737,7 +8144,8 @@
         "cat2/2022_07_20p25"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Se considerarmos um transformador, projectado para o efeito, com o primário ligado à rede eléctrica e apresentando nos terminais do secundário em vazio 12,6 V, qual das afirmações está correcta?",
@@ -7758,7 +8166,8 @@
         "cat2/2021_02_18p28"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "identifique o símbolo representado na figura 7: ",
@@ -7777,7 +8186,8 @@
         "cat2/2023_06_26p33"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que precauções devem ser tomadas quando se prevê a ocorrência de uma trovoada?",
@@ -7797,7 +8207,8 @@
         "cat2/2022_07_20p5"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Um transístor NPN pode ser formado por?",
@@ -7815,7 +8226,8 @@
         "cat2/0000_00_03p35"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Nas definições do Reglamento das Radiocomunicações, além da definição geral de interferêncas são definidos quantos tipos  específicos de interferências?",
@@ -7836,7 +8248,8 @@
         "cat2/2022_06_27p11"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Designa-se por efeito termoiónico",
@@ -7856,7 +8269,8 @@
         "cat2/2023_06_15p36"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Que grandeza poderá ser calulada com base nas medições efectuadas com um Wattímetro direccional?",
@@ -7877,7 +8291,8 @@
         "cat2/2023_01_27p17"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "Na sua representação gráfica, a característica corrente/tensão numa resistência é",
@@ -7895,7 +8310,8 @@
         "cat2/2023_06_15p9"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     },
     {
       "question": "O sinal de um emissor CW consiste:",
@@ -7913,7 +8329,8 @@
         "cat2/2023_06_26p19"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": null
     }
   ]
 }

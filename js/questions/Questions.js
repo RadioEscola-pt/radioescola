@@ -221,20 +221,37 @@ class Questions {
         infoDiv.innerHTML = "ID:" + questions.uniqueID + "Em 0 exames ";
       }
 
-      return;
+
+      
+    }
+    else
+    {
+      if (questions.fonte != null) {
+        infoDiv.innerHTML = "<p>ID:" + questions.uniqueID + " Confirmada em " + questions.fonte.length + " exames</p><p> Acertou:" + this.calculateTruePercentageForQuestion(questions.uniqueID) + "</p>";
+        this.LinkFontes(questions.fonte, infoDiv);
+      }
+      else {
+        infoDiv.innerHTML = "<p>ID:" + questions.uniqueID + "Sem confirmacao </p><p> Acertou:" + this.calculateTruePercentageForQuestion(questions.uniqueID) + "</p>";
+      }
+      if (questions.calc != null) {
+        let link = "#" + questions.calc;
+        let linkElement = document.createElement("a");
+        linkElement.href = link;
+        linkElement.textContent = "Abrir Calculadora";
+        infoDiv.appendChild(linkElement);
+        infoDiv.appendChild(document.createElement("br"));
+      }
+    }
+    if (questions.tutorial != null) {
+      let link = "?LoadChapter=" + questions.tutorial;
+      let linkElement = document.createElement("a");
+      linkElement.href = link;
+      linkElement.target = "_blank";
+      linkElement.textContent = "Abrir Tutorial";
+      infoDiv.appendChild(linkElement);
     }
 
-    if (questions.fonte != null) {
-      infoDiv.innerHTML = "<p>ID:" + questions.uniqueID + " Confirmada em " + questions.fonte.length + " exames</p><p> Acertou:" + this.calculateTruePercentageForQuestion(questions.uniqueID) + "</p>";
-      this.LinkFontes(questions.fonte, infoDiv);
-    }
-    else {
-      infoDiv.innerHTML = "<p>ID:" + questions.uniqueID + "Sem confirmacao </p><p> Acertou:" + this.calculateTruePercentageForQuestion(questions.uniqueID) + "</p>";
-    }
-
-
-
-
+    
 
 
   }

@@ -31,6 +31,7 @@ def check_pdf_existence(fonte, catNum):
                 #print(f"PDF file '{pdf_name}' exists in the upper directory.")
             else:
                 print(f"PDF file '{pdf_name}' does not exist in the upper directory.")
+                print(f"'{item}' in question{catNum}.json")
 
 
 
