@@ -281,12 +281,13 @@
         "Todas a hipóteses anteriores não estão corretas"
       ],
       "correctIndex": 2,
-      "notes": "Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p34</a>) (<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p34</a>)",
+      "notes": "none",
       "img": null,
       "uniqueID": 16,
       "fonte": [
         "cat1/2023_08_00p34",
-        "cat1/2023_07_03p34"
+        "cat1/2023_07_03p34",
+		"cat1/2024_01_02p34"
       ],
       "tutorial": null,
       "materia": null
@@ -358,7 +359,8 @@
       "img": null,
       "uniqueID": 20,
       "fonte": [
-        "cat1/2023_07_03p37"
+        "cat1/2023_07_03p37",
+		"cat1/2024_01_02p37"
       ],
       "tutorial": null,
       "materia": null
@@ -542,7 +544,9 @@
       "img": null,
       "uniqueID": 31,
       "fonte": [
-        "cat1/2011_12_13p40"
+        "cat1/2011_12_13p40",
+		"cat1/2024_01_02p40"
+		
       ],
       "tutorial": null,
       "materia": null
@@ -875,6 +879,24 @@
       "tutorial": null,
       "materia": null
     },
+	{
+      "question": "Um tipo de optoacoplador consiste na interação dum LED com um",
+      "answers": [
+        "fotodópdo varicap",
+        "fotodópdo Zener",
+        "fotodópdo retificador",
+        "fototransistor"
+      ],
+      "correctIndex": 4,
+      "notes": "none",
+      "img": null,
+      "uniqueID": 389,
+      "fonte": [
+        "cat1/2024_01_02p30"
+      ],
+      "tutorial": null,
+      "materia": null
+    },
     {
       "question": "O que é um varicap?",
       "answers": [
@@ -1004,11 +1026,12 @@
         "Na velocidade de comutação do transístor"
       ],
       "correctIndex": 2,
-      "notes": "A48  Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p33</a>)",
+      "notes": "A48",
       "img": null,
       "uniqueID": 58,
       "fonte": [
-        "cat1/2011_12_13p33"
+        "cat1/2011_12_13p33",
+		"cat1/2024_01_02p33"
       ],
       "tutorial": null,
       "materia": null
@@ -2161,7 +2184,8 @@
       "img": null,
       "uniqueID": 124,
       "fonte":  [
-        "cat1/2023_12_22p31"
+        "cat1/2023_12_22p31",
+		"cat1/2024_01_02p31"
       ],
       "tutorial": null,
       "materia": null
@@ -2347,11 +2371,12 @@
         "Através de um cristal de quartzo"
       ],
       "correctIndex": 4,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p34</a>)",
+      "notes": "none",
       "img": null,
       "uniqueID": 135,
       "fonte": [
-        "cat1/2011_12_13p34"
+        "cat1/2011_12_13p34",
+		"cat1/2024_01_02p32"
       ],
       "tutorial": null,
       "materia": null
@@ -2658,7 +2683,8 @@
       "img": null,
       "uniqueID": 152,
       "fonte": [
-        "cat1/2023_08_00p36"
+        "cat1/2023_08_00p36",
+		"cat1/2024_01_02p36"
       ],
       "tutorial": null,
       "materia": null
@@ -3029,6 +3055,24 @@
       "uniqueID": 387,
       "fonte": [
         "cat1/2024_01_02p22"
+      ],
+      "tutorial": null,
+      "materia": null
+    },
+	{
+      "question": "Qual dos seguintes dispositivos costuma ser mais apropriado para as aplicações de um amplificador de potência UHF ou SHF",
+      "answers": [
+        "FET",
+        "Varicap",
+        "Retificador controlado de silício",
+        "Triac"
+      ],
+      "correctIndex": 1,
+      "notes": "none",
+      "img": null,
+      "uniqueID": 388,
+      "fonte": [
+        "cat1/2024_01_02p29"
       ],
       "tutorial": null,
       "materia": null
@@ -3586,7 +3630,7 @@
         "30 dB",
         "40 dB"
       ],
-      "correctIndex": 3,
+      "correctIndex": 4,
       "img": "images/cat1/fig6.png",
       "notes": "Verifica se desde o centro da circunferêcia ate a periferia, neste caso -40 a 0 dB´s logo a resposta é 40 dB. A152",
       "uniqueID": 201,
@@ -5810,7 +5854,9 @@
       "correctIndex": 4,
       "img": null,
       "uniqueID": 320,
-      "fonte": null,
+      "fonte": [
+        "cat1/2024_01_02p39"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -6535,7 +6581,8 @@
       "uniqueID": 364,
       "fonte": [
         "cat1/2023_08_00p35",
-		"cat1/2023_12_22p35"
+		"cat1/2023_12_22p35",
+		"cat1/2024_01_02p35"
       ],
       "tutorial": null,
       "materia": null
@@ -6620,7 +6667,8 @@
       "uniqueID": 369,
       "fonte": [
         "cat1/2023_08_00p38",
-		"cat1/2023_12_22p38"
+		"cat1/2023_12_22p38",
+		"cat1/2024_01_02p38"
       ],
       "tutorial": null,
       "materia": null
