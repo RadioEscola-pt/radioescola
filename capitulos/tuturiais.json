@@ -1,0 +1,130 @@
+{
+    "categories": [
+        {
+            "id": "categoria3",
+            "title": "Categoria 3",
+            "items": [
+                {
+                    "title": "Alfabeto Fonético",
+                    "action": "alfabeto"
+                },
+                {
+                    "title": "Abreviaturas de Operação",
+                    "action": "AbreviaturasOperacao"
+                },
+                {
+                    "title": "Definições Genéricas",
+                    "action": "defs_genericas"
+                },
+                {
+                    "title": "Entidades e Competências",
+                    "action": "entidades"
+                },
+                {
+                    "title": "Código Q",
+                    "action": "codigoq"
+                },
+                {
+                    "title": "Prefixos de indicativos",
+                    "action": "prefixos"
+                },
+                {
+                    "title": "Lei de Ohm",
+                    "action": "ohm"
+                },
+                {
+                    "title": "Corrente Alternada / AC",
+                    "action": "AC"
+                },
+                {
+                    "title": "Código de cores",
+                    "action": "codigoDecores"
+                },
+                {
+                    "title": "Mult e SubMult. de Unidades",
+                    "action": "units"
+                }
+            ]
+        },
+        {
+            "id": "categoria2",
+            "title": "Categoria 2",
+            "items": [
+                {
+                    "title": "Antenas",
+                    "action": "antenas"
+                },
+                {
+                    "title": "Bobines",
+                    "action": "bobinesSomar"
+                },
+                {
+                    "title": "Capacidade de baterias",
+                    "action": "batteries"
+                },
+                {
+                    "title": "Onda estacionária (SWR)",
+                    "action": "SWR"
+                }
+            ]
+        },
+        {
+            "id": "categoria1",
+            "title": "Categoria 1",
+            "items": [
+                {
+                    "title": "Antenas",
+                    "action": "antenas"
+                },
+                {
+                    "title": "Ganho (dB)",
+                    "action": "gain"
+                },
+                {
+                    "title": "Tranformadores",
+                    "action": "tranformadores"
+                },
+                {
+                    "title": "Amplificadores operacionais",
+                    "action": "opamps"
+                },
+                {
+                    "title": "Reactância Indutiva",
+                    "action": "ReatanciaIndutiva"
+                },
+                {
+                    "title": "Circuitos RL",
+                    "action": "circuitosRL"
+                },
+                {
+                    "title": "Reactância Capacitiva",
+                    "action": "condensadores"
+                },
+                {
+                    "title": "RLC",
+                    "action": "RLC"
+                },
+                {
+                    "title": "Factor Q",
+                    "action": "Qfactor"
+                },
+                {
+                    "title": "Ressonacia de RL",
+                    "action": "RessonaciaRLC"
+                },
+                {
+                    "title": "Receptores",
+                    "action": "receptores"
+                },
+                {
+                    "title": "Formulario",
+                    "action": null,
+                    "newTab": "docs/FormulasCAT1.pdf"
+
+                }
+                
+            ]
+        }
+    ]
+}
+  

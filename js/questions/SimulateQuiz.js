@@ -1,4 +1,4 @@
-
+window.timers = [];
 class SimulateQuiz extends  Classes([Questions,Storage])  {
 
 	static UNANSWERED = 0;

@@ -19,7 +19,7 @@
       ],
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": "OHMCALC"
     },
     {
       "question": "Determinado circuito precisa ser alimentado com 60 V e 0,8 A. Dispondo-se de uma fonte de 300 V, deve-se colocar em série com o circuito uma resistência de :",
@@ -40,7 +40,7 @@
       ],
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": "OHMCALC"
     },
     {
       "question": "Determinado circuito precisa ser alimentado com 60 V e 0,2 A. Dispondo-se de uma fonte de 300 V, deve-se colocar em série com o circuito uma resistência de",
@@ -60,7 +60,7 @@
       ],
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": "OHMCALC"
     },
     {
       "question": "Quatro resistências estão ligadas em série. A tensão aplicada ao conjunto é de 50 V. As quedas de tensão nos terminais das três primeiras são, respetivamente: 25 V, 10 V e 13 V. Qual é a queda de tensão nos terminais da última resistência?",
@@ -92,7 +92,7 @@
         "2 V",
         "1 V"
       ],
-      "notes": " Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p7</a>)",
+      "notes": "",
       "correctIndex": 3,
       "img": null,
       "uniqueID": 5,
@@ -132,7 +132,7 @@
         "V/h"
       ],
       "correctIndex": 2,
-      "notes": "A4 Exames:(<a target='_blank' href='exams/cat2/2013_08_00.pdf'>2013_08_00p7</a>) (<a target='_blank' href='exams/cat2/0000_00_02.pdf'>0000_00_02p7</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p7</a>) (<a target='_blank' href='exams/cat2/2018_03_08.pdf'>2018_03_08p7</a>) (<a target='_blank' href='exams/cat2/2022_12_27.pdf'>2022_12_27p8</a>) A capacidade de uma bateria é dada em A.h",
+      "notes": "A4  A capacidade de uma bateria é dada em A.h",
       "img": null,
       "uniqueID": 7,
       "fonte": [
@@ -385,7 +385,7 @@
         "Volt"
       ],
       "correctIndex": 2,
-      "notes": "A11 Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p21</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p21</a>) (<a target='_blank' href='exams/cat2/2022_06_27.pdf'>2022_06_27p23</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p23</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p23</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p23</a>) (<a target='_blank' href='exams/cat2/2023_06_15.pdf'>2023_06_15p23</a>) Volt por Metro, resposta 2. (no SI também se usa o Newton por Coulomb",
+      "notes": "A11  Volt por Metro, resposta 2. (no SI também se usa o Newton por Coulomb",
       "img": null,
       "uniqueID": 20,
       "fonte": [
@@ -409,7 +409,7 @@
         "a altura da antena da estação emissora",
         "a sensibildade do receptor"
       ],
-      "notes": "Exames:(<a target='_blank' href='exams/cat2/0000_00_01.pdf'>0000_00_01p9</a>)(<a target='_blank' href='exams/cat2/2021_02_18.pdf'>2021_02_18p12</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p12</a>)",
+      "notes": "",
       "correctIndex": 2,
       "img": null,
       "uniqueID": 21,
@@ -514,7 +514,7 @@
         "a força electromotriz",
         "a frequência"
       ],
-      "notes": " Exames:(<a target='_blank' href='exams/cat2/2011_11_00.pdf'>2011_11_00p14</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p14</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p14</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p14</a>) (<a target='_blank' href='exams/cat2/2022_07_20.pdf'>2022_07_20p16</a>) (<a target='_blank' href='exams/cat2/2023_01_27.pdf'>2023_01_27p16</a>)",
+      "notes": " ",
       "correctIndex": 3,
       "img": null,
       "uniqueID": 26,
@@ -993,7 +993,7 @@
       ],
       "img": null,
       "uniqueID": 47,
-      "tutorial": null,
+      "tutorial": "AC",
       "materia": null,
       "calc": null
     },
@@ -2020,7 +2020,7 @@
       ],
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": "COPADDER"
     },
     {
       "question": "Aplicando um sinal sinusoidal a uma resistência ideal",

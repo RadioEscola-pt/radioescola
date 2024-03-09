@@ -1054,7 +1054,7 @@
         "Na velocidade de comutação do transístor"
       ],
       "correctIndex": 2,
-      "notes": "A48 ",
+      "notes": "A48",
       "img": null,
       "uniqueID": 58,
       "fonte": [
@@ -1274,7 +1274,7 @@
       "fonte": null,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": "COPADDER"
     },
     {
       "question": "Qual a indutância de três bobinas de 10 mH ligados em paralelo?",
@@ -1310,7 +1310,7 @@
       ],
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": "COPADDER"
     },
     {
       "question": "Qual a capacidade de um condensador de 20 microfarad ligado em série a um condensador de 50 microfarad?",
@@ -1346,7 +1346,7 @@
       "uniqueID": 73,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": "COPADDER"
     },
     {
       "question": "Que componente se deverá adicionar a uma bobina de forma a aumentar a indutância do circuito?",

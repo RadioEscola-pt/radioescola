@@ -1,7 +1,6 @@
 class EditorApp {
     constructor() {
       
-
   
       const xhrWelcome = new XMLHttpRequest();
       xhrWelcome.onreadystatechange = () => this.handleWelcomeStateChange(xhrWelcome);
@@ -73,21 +72,35 @@ class EditorApp {
     loadFileList() {
       const xhr = new XMLHttpRequest();
       xhr.onreadystatechange = () => this.handleFileListStateChange(xhr);
-      xhr.open('GET', 'backEnd/file_list.json');
+      xhr.open('GET', 'capitulos/tuturiais.json');
       xhr.send();
     }
   
-    populateFileList(files) {
-      for (const file of files) {
-        const option = document.createElement('option');
-        option.value = file;
-        option.textContent = file;
-        this.fileListSelect.appendChild(option);
+    populateFileList(data) {
+      for (let i = 0; i < data.categories.length; i++) {
+        const category = data.categories[i];
+        console.log(`Category: ${category.title}`);
+      
+        for (let j = 0; j < category.items.length; j++) {
+
+          const item = category.items[j];
+          console.log(`  Title: ${item.title}, Action: ${item.action}`);
+          if (item.title!=null)
+          {
+            const option = document.createElement('option');
+
+            option.value = item.action;
+            option.textContent = item.title;
+            this.fileListSelect.appendChild(option);
+          }
+
+        }
       }
+
     }
   
     loadFile() {
-      const selectedFile = this.fileListSelect.value;
+      const selectedFile = "capitulos/"+this.fileListSelect.value+"/index.html";
       const xhr = new XMLHttpRequest();
       xhr.onreadystatechange = () => this.handleLoadFileStateChange(xhr);
       xhr.open('GET', selectedFile);
