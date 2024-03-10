@@ -52,7 +52,7 @@ describe("Impedance Calculator", () => {
 
   it("tests inductive reactance 1 mH, 10 Hz", () => {
     cy.viewport(1316, 1007);
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3000/");
     cy.get("#questionsDropdownLink").click();
     cy.get("#questionsDropdown a").contains("Impedância").click();
     cy.get("#unit").select("MILI");
@@ -65,7 +65,7 @@ describe("Impedance Calculator", () => {
 
   it("tests inductive reactance 3 kH, 1090 Hz", () => {
     cy.viewport(1316, 1007);
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3000/");
     cy.get("#questionsDropdownLink").click();
     cy.get("#questionsDropdown a").contains("Impedância").click();
     cy.get("#unit").select("KILO");
@@ -78,7 +78,7 @@ describe("Impedance Calculator", () => {
 
   it("tests inductive reactance 23 MH, 311 Hz", () => {
     cy.viewport(1316, 1007);
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3000/");
     cy.get("#questionsDropdownLink").click();
     cy.get("#questionsDropdown a").contains("Impedância").click();
     cy.get("#unit").select("MEGA");
@@ -91,7 +91,7 @@ describe("Impedance Calculator", () => {
 
   it("tests capacitive reactance 1 F, 1 Hz", () => {
     cy.viewport(1316, 1007);
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3000/");
     cy.get("#questionsDropdownLink").click();
     cy.get("#questionsDropdown a").contains("Impedância").click();
     cy.get("#calculationType").select("F");
@@ -104,7 +104,7 @@ describe("Impedance Calculator", () => {
 
   it("tests capacitive reactance 1 pF, 1 Hz", () => {
     cy.viewport(1316, 1007);
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3000/");
     cy.get("#questionsDropdownLink").click();
     cy.get("#questionsDropdown a").contains("Impedância").click();
     cy.get("#calculationType").select("F");
@@ -118,7 +118,7 @@ describe("Impedance Calculator", () => {
 
   it("tests capacitive reactance 1 nF, 1 Hz", () => {
     cy.viewport(1316, 1007);
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3000/");
     cy.get("#questionsDropdownLink").click();
     cy.get("#questionsDropdown a").contains("Impedância").click();
     cy.get("#calculationType").select("F");
@@ -132,7 +132,7 @@ describe("Impedance Calculator", () => {
 
   it("tests capacitive reactance 1 uF, 1 Hz", () => {
     cy.viewport(1316, 1007);
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3000/");
     cy.get("#questionsDropdownLink").click();
     cy.get("#questionsDropdown a").contains("Impedância").click();
     cy.get("#calculationType").select("F");
@@ -146,7 +146,7 @@ describe("Impedance Calculator", () => {
 
   it("tests capacitive reactance 1 mF, 1 Hz", () => {
     cy.viewport(1316, 1007);
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3000/");
     cy.get("#questionsDropdownLink").click();
     cy.get("#questionsDropdown a").contains("Impedância").click();
     cy.get("#calculationType").select("F");
@@ -160,7 +160,7 @@ describe("Impedance Calculator", () => {
 
   it("tests capacitive reactance 1 pF, 1 Hz", () => {
     cy.viewport(1316, 1007);
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3000/");
     cy.get("#questionsDropdownLink").click();
     cy.get("#questionsDropdown a").contains("Impedância").click();
     cy.get("#calculationType").select("F");
@@ -174,7 +174,7 @@ describe("Impedance Calculator", () => {
 
   it("tests capacitive reactance 1 MF, 1 Hz", () => {
     cy.viewport(1316, 1007);
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3000/");
     cy.get("#questionsDropdownLink").click();
     cy.get("#questionsDropdown a").contains("Impedância").click();
     cy.get("#calculationType").select("F");

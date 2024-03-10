@@ -69,8 +69,10 @@ class UserModel extends Connection {
      
       const hashedPassword = await bcrypt.hash(password, this.salt);
 
+
       const user = await this.model.create({ email, password: hashedPassword });
       console.log('User successfully created.');
+      this.findAllUsers();
       return true;
     } catch (error) {
       console.error('Error creating user:', error);
@@ -115,6 +117,20 @@ class UserModel extends Connection {
       }
     } catch (error) {
       console.error('Error finding user:', error);
+      throw error;
+    }
+  }
+  async findAllUsers() {
+    try {
+      const users = await this.model.findAll();
+      if (users.length > 0) {
+        console.log('All users:', users.map(user => user.toJSON()));
+      } else {
+        console.log('No users found');
+      }
+      return users;
+    } catch (error) {
+      console.error('Error retrieving users:', error);
       throw error;
     }
   }
