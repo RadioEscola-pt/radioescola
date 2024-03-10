@@ -1,0 +1,41 @@
+<div id="login" class="sidenav">
+    <a  class="closebtn" id="loginHide">&times;</a>
+      <button id="show-registration-form">Show Registration Form</button>
+      <button id="lost-password-button">lost pass</button>
+  
+  
+  
+      <form id="registration-form" style="display: none;">
+          <label for="email">Email:</label>
+          <input type="email" id="email" required><br>
+  
+          <label for="password">Password:</label>
+          <input type="password" id="password" required><br>
+  
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="password" id="confirm-password" required><br>
+  
+          <input type="submit" value="Register">
+      </form>
+  
+  
+      <form id="login-form">
+          <label for="login-email">Email:</label>
+          <input type="email" id="login-email" required><br>
+  
+          <label for="login-password">Password:</label>
+          <input type="password" id="login-password" required><br>
+  
+          <input type="submit" value="Login">
+      </form>
+  
+      <form id="lost-password-form" style="display: none;">
+          <label for="lost-password-email">Lost Password:</label>
+          <input type="email" id="lost-password-email" required><br>
+          <input type="button" value="Send Reset Email" id="lost-password-button">
+      </form>
+      <div id="logout-container" style="display: none;">
+          <button id="logout-button">Log Out</button>
+      </div>
+      <div id="login-message"></div>
+  </div>

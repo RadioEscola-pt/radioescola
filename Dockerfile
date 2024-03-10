@@ -49,6 +49,8 @@ RUN npm install cypress -g
 RUN npm install -g concurrently
 
 RUN npm install tailwindcss serve cypress -g
+
+
 # Copy the rest of the application files
 COPY . .
 
@@ -61,3 +63,6 @@ EXPOSE 3000
 # && cypress open
 # Command to run your application
 CMD ["npm", "run", "dev"]
+
+
+

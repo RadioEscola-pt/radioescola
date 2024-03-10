@@ -1,15 +1,27 @@
 {
+  "name": "Radio escola",
+  "version": "1.0.0",
+  "description": "Radio escola",
+
+  "dependencies": {
+    "sequelize": "^6.6.5",
+    "express": "^4.18.1",
+    "mariadb": "^2.5.4",
+    "bcrypt": "^5.0.1"
+  },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.6",
     "concurrently": "^8.2.1",
     "cypress": "^13.4.0",
     "serve": "^14.2.1",
+    "nodemon": "^2.0.15",
     "tailwindcss": "^3.3.3"
-  },
+  }, 
   "scripts": {
-    "serve": "serve",
-    "tailwind:watch": "tailwindcss -i style.css -o ./css/style.css --watch",
-    "tailwind:build": "tailwindcss -i style.css -o ./css/style.css",
+    "serve": "node server.js", 
+    "start": "node server.js",
+    "tailwind:watch": "tailwindcss -i style.css -o ./src/frontEnd/css/style.css --watch",
+    "tailwind:build": "tailwindcss -i style.css -o ./src/frontEnd/css/style.css",
     "dev": "concurrently 'npm:tailwind:watch' 'npm:serve'"
   }
 }

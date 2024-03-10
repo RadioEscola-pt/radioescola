@@ -1,0 +1,24 @@
+@media screen and (min-width: 600px) {
+    .questionBlock {
+        flex-direction: row;
+    }
+
+}
+
+.questionCard {
+    flex: 3;
+}
+
+.questionImage {
+    flex: 1;
+    height: 100%;
+    width: auto;
+    margin-top: 10px;
+    max-width: 100%;
+}
+
+#pagesLabel {
+    display: flex;
+    align-self: center;
+}
+

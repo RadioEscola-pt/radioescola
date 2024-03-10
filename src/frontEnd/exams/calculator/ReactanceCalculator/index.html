@@ -1,0 +1,75 @@
+<div class="space-y-4">
+  <h1 class="font-bold mb-6">Reatância</h1>
+
+  <div class="grid grid-cols-2 gap-3">
+    <div class="col-span-2 sm:col-span-1 space-y-2">
+      <label for="calculationType">Cálculo</label>
+      <select
+        id="calculationType"
+        class="w-full rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600"
+      >
+      <option value="H">Reatância Indutiva (X)</option>
+      <option value="F">Reatância Capacitiva (X)</option>
+      </select>
+    </div>
+
+    <div class="col-span-2 sm:col-span-1 space-y-2 flex flex-col">
+      <span class="block">Fórmula</span>
+      <span id="formula" class="mt-8 font-mono block align-middle"></span>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="grid grid-cols-2 gap-x-4 gap-y-3 w-full mt-4">
+
+
+  <div class="col-span-2 sm:col-span-1 space-y-2">
+    <label id="inductanceTXT" for="inductance">Indutância</label>
+    <div
+      class="border shadow-sm flex border-gray-400 rounded overflow-hidden"
+    >
+      <input
+        type="number"
+        id="inductance"
+        step="0.001"
+        required
+        class="w-full border-none shadow-transparent ring-transparent outline-0"
+      />
+      <select
+        id="unit"
+        class="w-36 text-sm bg-gray-100 border-none shadow-transparent ring-transparent outline-0"
+      ></select>
+    </div>
+  </div>
+
+  <div class="col-span-2 sm:col-span-1 space-y-2">
+    <label id="inductanceTXT" for="frequency">Frequência</label>
+    <div
+      class="border shadow-sm flex border-gray-400 rounded overflow-hidden"
+    >
+      <input
+        type="number"
+        id="frequency"
+        required
+        class="w-full border-none shadow-transparent ring-transparent outline-0"
+      />
+      <select
+        id="frequencyUnit"
+        class="w-36 text-sm bg-gray-100 border-none shadow-transparent ring-transparent outline-0"
+      ></select>
+    </div>
+  </div>
+
+</div>
+
+<div id="result" class="mt-8 text-xl font-mono font-bold"></div>
+
+<button
+id="calculate"
+class="mt-4 text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800"
+>
+Calcular
+</button>
