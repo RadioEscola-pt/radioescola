@@ -54,8 +54,8 @@ class UserModel extends Connection {
           defaultValue: 'NOHAM',
         },
         created_at: {
-          type: DataTypes.TIMESTAMP,
-          defaultValue: DataTypes.NOW,
+          type: DataTypes.DATE, // Use DataTypes.DATE for date/time columns
+          defaultValue: DataTypes.NOW, 
           // Make sure to use the correct SQL function for the default value in your DBMS
         },
       }, {
