@@ -4,14 +4,9 @@ FROM node:latest
 # Update npm to the latest version
 RUN npm install -g npm@latest
 
+
 # Install necessary packages for running GUI applications, including Cypress dependencies
 RUN apt-get update && apt-get install -y \
-    php \
-    php-pdo \
-    php-mysqli \
-    php-xml \
-    php-mbstring \
-    php-json \
     mariadb-server  \
     xvfb \
     libgtk-3-0 \
@@ -59,6 +54,7 @@ COPY . .
 
 # Expose the port the app runs on
 EXPOSE 3000
+
 
 # Start Xvfb, run the app, and then run Cypress
 #CMD Xvfb :99 -screen 0 1024x768x16 & npm run dev
