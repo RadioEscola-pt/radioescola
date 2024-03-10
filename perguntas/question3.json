@@ -3187,7 +3187,7 @@
       ],
       "img": null,
       "uniqueID": 180,
-      "tutorial": null,
+      "tutorial":"ohm" ,
       "materia": null,
       "calc": null
     },
@@ -3447,7 +3447,7 @@
       "img": "images/cat3/100k.png",
       "uniqueID": 195,
       "fonte": null,
-      "tutorial": null,
+      "tutorial": "codigoDecores",
       "materia": null,
       "calc": null
     },
@@ -3464,7 +3464,7 @@
       "img": "images/cat3/220ohm.png",
       "uniqueID": 196,
       "fonte": null,
-      "tutorial": null,
+      "tutorial": "codigoDecores",
       "materia": null,
       "calc": null
     },
@@ -3481,7 +3481,7 @@
       "img": "images/cat3/2k.png",
       "uniqueID": 197,
       "fonte": null,
-      "tutorial": null,
+      "tutorial": "codigoDecores",
       "materia": null,
       "calc": null
     },

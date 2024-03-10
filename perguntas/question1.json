@@ -1234,7 +1234,9 @@
       "uniqueID": 70,
       "fonte": null,
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": "COPADDER"
+
     },
     {
       "question": "Qual a indutância de três bobinas de 10 mH ligados em paralelo?",
@@ -1268,7 +1270,9 @@
         "cat1/2023_12_22p10"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": "COPADDER"
+
     },
     {
       "question": "Qual a capacidade de um condensador de 20 microfarad ligado em série a um condensador de 50 microfarad?",
@@ -1304,7 +1308,10 @@
       "img": null,
       "uniqueID": 73,
       "tutorial": null,
-      "materia": null
+
+      "materia": null,
+      "calc": "COPADDER"
+
     },
     {
       "question": "Que componente se deverá adicionar a uma bobina de forma a aumentar a indutância do circuito?",
