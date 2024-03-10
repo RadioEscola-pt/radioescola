@@ -6,6 +6,13 @@ RUN npm install -g npm@latest
 
 # Install necessary packages for running GUI applications, including Cypress dependencies
 RUN apt-get update && apt-get install -y \
+    php \
+    php-pdo \
+    php-mysqli \
+    php-xml \
+    php-mbstring \
+    php-json \
+    mariadb-server  \
     xvfb \
     libgtk-3-0 \
     libnotify-dev \
@@ -19,6 +26,14 @@ RUN apt-get update && apt-get install -y \
     libgbm1 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+# Configure MySQL
+# Note: For production environments, it's important to set root passwords and user accounts securely.
+RUN service mariadb start && \
+    mysql -e "CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';" && \
+    mysql -e "CREATE DATABASE mydb;" && \
+    mysql -e "GRANT ALL ON *.* TO 'user'@'localhost';" && \
+    mysql -e "FLUSH PRIVILEGES;"
 
 
 # Set environment variables for X11 display
