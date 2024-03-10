@@ -20,7 +20,7 @@
     "tailwindcss": "^3.3.3"
   }, 
   "scripts": {
-    "serve": "serve",
+    "serve": "serve -s ./src/frontEnd/",
     "start": "node server.js",
     "tailwind:watch": "tailwindcss -i style.css -o ./src/frontEnd/css/style.css --watch",
     "tailwind:build": "tailwindcss -i style.css -o ./src/frontEnd/css/style.css",
