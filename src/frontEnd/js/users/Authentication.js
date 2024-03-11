@@ -20,7 +20,7 @@ class Authentication {
 
                 // Bind event handlers
         this.lostPasswordButton.onclick = this.showLostPasswordForm;
-        this.showRegistrationFormButton.innerText ="Register";
+        this.showRegistrationFormButton.innerText ="Login";
         this.lostPasswordButton.authentication=this;
 
 
@@ -109,13 +109,16 @@ class Authentication {
         if (showRegistrationFormButton.innerText === "Register") {
             // Switch to Login
             showRegistrationFormButton.innerText = "Login";
+
             registrationForm.style.display = "none";
             loginForm.style.display = "block";
             lostPasswordForm.style.display = "none";
+
         } else {
             // Switch to Register
             showRegistrationFormButton.innerText = "Register";
-            registrationForm.style.display = "block";
+
+            registrationForm.style.display = "block"; 
             loginForm.style.display = "none";
             lostPasswordForm.style.display = "none";
         }
