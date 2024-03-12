@@ -12,6 +12,9 @@ jobs:
       - name: Change directory
         run: cd src/frontEnd
 
+      - name: Update NPM dependencies
+        run: npm install
+
       - name: Install NPM dependencies
         run: npm ci
 
