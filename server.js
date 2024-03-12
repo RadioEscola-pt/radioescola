@@ -1,8 +1,11 @@
 const express = require('express');
 const path = require('path');
 const Init = require('./src/backEnd/Init');
-const app = express();
+const bodyParser = require('body-parser'); // Import body-parser middleware
 
+const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, 'src/frontEnd')));
 

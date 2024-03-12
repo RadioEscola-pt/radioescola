@@ -15,7 +15,7 @@ class Init {
         switch (urlPath) {
             case '/register':
                 if (method === 'POST') {
-                    userModel=new UserModel();
+                    const userModel=new UserModel();
                     const { email, pass } = req.body;
         
                     userModel.createUser(email, pass);
@@ -23,7 +23,7 @@ class Init {
                 break;
             case '/login':  
                 if (method === 'POST') {
-                    userModel=new UserModel();
+                    const userModel=new UserModel();
                     const { email, pass } = req.body;
         
                     userModel.findUserByEmailAndPassword(email, pass);

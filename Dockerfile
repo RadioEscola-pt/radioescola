@@ -61,6 +61,7 @@ EXPOSE 3000
 # Start Xvfb, run the app, and then run Cypress
 #CMD Xvfb :99 -screen 0 1024x768x16 & npm run dev
 #&& cypress open
+#CMD Xvfb :99 -screen 0 1024x768x16 & npm run dev & cypress open
 # Command to run your application
 CMD ["npm", "run", "dev"]
 

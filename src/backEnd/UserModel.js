@@ -1,61 +1,66 @@
-const { DataTypes } = require('sequelize');
+const { Sequelize } = require('sequelize');
 const Connection = require('./Connection');
+const bcrypt = require('bcrypt');
+
+
 
 class UserModel extends Connection {
   constructor() {
     
     super(); // Call the parent class's constructor
+
     this.salt=10;
     this.model = this.defineModel();
     this.model.sync(); // Ensures the table matches the model. It creates the table if it does not exist (and does nothing if it already exists)
   }
 
   defineModel() {
-    this.sequelize.define('User', {
+    return this.sequelize.define('User', {
         email: {
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
           allowNull: false,
           unique: true,
+          
         },
         password: {
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
           allowNull: false,
         },
         call_sign: {
-          type: DataTypes.STRING(50),
+          type: Sequelize.STRING(50),
           // allowNull is true by default for all columns except primary key
         },
         Full_name: {
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
           // allowNull is true by default
         },
         birthday: {
-          type: DataTypes.DATE,
+          type: Sequelize.DATE,
           // allowNull is true by default
         },
         is_certified: {
-          type: DataTypes.BOOLEAN,
+          type: Sequelize.BOOLEAN,
           defaultValue: 0,
         },
         verification_code: {
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
           allowNull: false,
         },
         verified: {
-          type: DataTypes.BOOLEAN,
+          type: Sequelize.BOOLEAN,
           defaultValue: 0,
         },
         role: {
-          type: DataTypes.ENUM('pupil', 'contributor', 'admin'),
+          type: Sequelize.ENUM('pupil', 'contributor', 'admin'),
           defaultValue: 'pupil',
         },
         certification_level: {
-          type: DataTypes.ENUM('NOHAM', 'cat 3', 'cat 2', 'cat 1'),
+          type: Sequelize.ENUM('NOHAM', 'cat 3', 'cat 2', 'cat 1'),
           defaultValue: 'NOHAM',
         },
         created_at: {
-          type: DataTypes.DATE, // Use DataTypes.DATE for date/time columns
-          defaultValue: DataTypes.NOW, 
+          type: Sequelize.DATE, // Use Sequelize.DATE for date/time columns
+          defaultValue: Sequelize.NOW, 
           // Make sure to use the correct SQL function for the default value in your DBMS
         },
       }, {
@@ -65,20 +70,24 @@ class UserModel extends Connection {
   }
   async createUser(email, password) {
     try {
-      // Hash the password before storing it in the database
-     
-      const hashedPassword = await bcrypt.hash(password, this.salt);
+        const verificationCode = generateRandomCode(); // Generate a random code
+        
+        // Hash the password before storing it in the database
+        const hashedPassword = await bcrypt.hash(password, this.salt);
+        console.log('Email:', email);
+        console.log('Hashed password:', hashedPassword);
+        console.log('Verification code:', verificationCode);
 
 
-      const user = await this.model.create({ email, password: hashedPassword });
-      console.log('User successfully created.');
-      this.findAllUsers();
-      return true;
+        const user = await this.model.create({ email, password: hashedPassword, verification_code: verificationCode });
+        console.log('User successfully created.');
+        this.findAllUsers();
+        return true;
     } catch (error) {
-      console.error('Error creating user:', error);
-      return false;
+        console.error('Error creating user:', error);
+        return false;
     }
-  }
+}
 
   async findUserByEmailAndPassword(email, password) {
     try {
