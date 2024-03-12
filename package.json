@@ -20,11 +20,11 @@
     "tailwindcss": "^3.3.3"
   },
   "scripts": {
-    "test": "serve -s src/frontEnd",
+
     "start": "node server.js",
     "tailwind:watch": "tailwindcss -i style.css -o ./src/frontEnd/css/style.css --watch",
     "tailwind:build": "tailwindcss -i style.css -o ./src/frontEnd/css/style.css",
-    "dev": "concurrently 'npm:tailwind:watch' 'npm:start'",
-    "ci": "concurrently 'npm:tailwind:watch' 'npm:test'"
+    "dev": "concurrently 'npm:tailwind:watch' 'npm:start'"
+
   }
 }
