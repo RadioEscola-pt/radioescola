@@ -68,9 +68,18 @@ class UserModel extends Connection {
         tableName: 'users' // Specify the table name if it does not match the model name
       });
   }
+   generateRandomCode(length = 16) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let code = '';
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      code += characters.charAt(randomIndex);
+    }
+    return code;
+  }
   async createUser(email, password) {
     try {
-        const verificationCode = generateRandomCode(); // Generate a random code
+        const verificationCode = this.generateRandomCode(); // Generate a random code
         
         // Hash the password before storing it in the database
         const hashedPassword = await bcrypt.hash(password, this.salt);
