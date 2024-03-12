@@ -9,6 +9,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Change directory
+        run: cd src/frontEnd
+
       - name: Install NPM dependencies
         run: npm ci
 
