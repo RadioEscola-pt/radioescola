@@ -4,28 +4,22 @@
 	  {
 		"label": "Docker: Build",
 		"type": "shell",
-		"command": "docker",
-		"args": ["build", "-t", "radioescola", "."]
+		"command": "docker build -t radioescola -f docker/Dockerfile-nodejs . && docker build -t radioescoladb -f docker/Dockerfile-mariadb ."
 	  },
 	  {
 		"label": "Docker: Refresh",
 		"type": "shell",
-		"command": "docker",
-		"args": [
-		  "cp", ".", "radioescola_container:/usr/src/app",
-		  "&&", "docker", "exec", "-it", "radioescola_container",
-		  "bash", "-c", "npm install && npm run dev"
-		]
+		"command": "docker cp . radioescola_container:/usr/src/app && docker exec -it radioescola_container bash -c \"npm install\" && docker exec -it radioescola_container bash -c \"npm run dev\""
+	  },
+	  {
+		"label": "Docker: DB",
+		"type": "shell",
+		"command": "docker run -d -p 3306:3306 --name mariadb_container -e MYSQL_ROOT_PASSWORD=%MYSQL_ROOT_PASSWORD% -e MYSQL_DATABASE=%MYSQL_DATABASE% -e MYSQL_USER=%MYSQL_USER% -e MYSQL_PASSWORD=%MYSQL_PASSWORD% mariadb:latest"
 	  },
 	  {
 		"label": "Docker: Launch",
 		"type": "shell",
-		"command": "docker",
-		"args": [
-		  "run", "-it", "--rm", "--name", "radioescola_container",
-		  "-e", "DISPLAY=$DISPLAY", "-v", "/tmp/.X11-unix:/tmp/.X11-unix",
-		  "-p", "3000:3000", "radioescola"
-		]
+		"command": "docker run -d -p 3306:3306 --name mariadb_container -e MYSQL_ROOT_PASSWORD=%MYSQL_ROOT_PASSWORD% -e MYSQL_DATABASE=%MYSQL_DATABASE% -e MYSQL_USER=%MYSQL_USER% -e MYSQL_PASSWORD=%MYSQL_PASSWORD% mariadb:latest && timeout /t 10 >nul && docker run -it --rm --name radioescola_container -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -p 3000:3000 --link mariadb_container:mariadb radioescola"
 	  }
 	]
   }

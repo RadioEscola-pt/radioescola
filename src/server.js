@@ -12,10 +12,15 @@ app.use(express.static(path.join(__dirname, 'frontEnd')));
 // Redirect or handle /backend requests
 app.use('/ajax', (req, res) => {
 
-    console.log('This is the backend response!');
+    console.log({ success: true, message: "User registered successfully." });
+    //res.status(200).json({ success: true, message: "User registered successfully." });
     new Init(req, res);
+    return true;
 
 
+});
+app.get('/ajax', (req, res) => {
+    res.status(200).json({ success: true, message: "AJAX GET request received." });
 });
 
 

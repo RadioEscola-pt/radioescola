@@ -17,8 +17,16 @@ class Init {
                 if (method === 'POST') {
                     const userModel=new UserModel();
                     const { email, pass } = req.body;
+
         
-                    userModel.createUser(email, pass);
+                    userModel.createUser(res, email, pass);
+                   // res.status(200).send({ success: true, message: "User registered successfully." });
+
+
+
+                }
+                else {
+                    res.status(200).send({ success: false, message: "User registration failed." });
                 }
                 break;
             case '/login':  
@@ -26,14 +34,27 @@ class Init {
                     const userModel=new UserModel();
                     const { email, pass } = req.body;
         
-                    userModel.findUserByEmailAndPassword(email, pass);
+                    userModel.findUserByEmailAndPassword(res,email, pass);
+                }
+                break;
+            case '/deleteUser':  
+                if (method === 'POST') {
+                    const userModel=new UserModel();
+                    const { email, pass } = req.body;
+        
+                    userModel.deleteUser(res,email, pass);
                 }
                 break;
 
+                
             default:
                 // Handle other AJAX requests or default handler
                 console.log('This is the default handler!');
+                return { success: false, message: "Error deleting user." };
+
+                return false
         }
+        return true;
 
     }
 }

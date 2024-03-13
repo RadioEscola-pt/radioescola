@@ -17,20 +17,34 @@ if "%1" == "build" (
     echo Building Docker image...
     docker build -t radioescola -f docker/Dockerfile-nodejs .
     docker build -t radioescoladb -f docker/Dockerfile-mariadb .
+    docker run -d -p 3306:3306 --name my-mariadb-container radioescoladb
+
 
 ) else if "%1" == "refresh" (
     echo Refreshing container...
     docker cp . radioescola_container:/usr/src/app
     docker exec -it radioescola_container bash -c "npm install"
     docker exec -it radioescola_container bash -c "npm run dev"
-) else if "%1" == "launch" (
+ 
+) 
+) else if "%1" == "db" (
     echo Launching containers...
-    docker run -d --name mariadb_container ^
+    docker run -d -p 3306:3306 --name mariadb_container ^
         -e MYSQL_ROOT_PASSWORD=%MYSQL_ROOT_PASSWORD% ^
         -e MYSQL_DATABASE=%MYSQL_DATABASE% ^
         -e MYSQL_USER=%MYSQL_USER% ^
         -e MYSQL_PASSWORD=%MYSQL_PASSWORD% ^
         mariadb:latest
+    
+    )else if "%1" == "launch" (
+    echo Launching containers...
+    docker run -d -p 3306:3306 --name mariadb_container ^
+        -e MYSQL_ROOT_PASSWORD=%MYSQL_ROOT_PASSWORD% ^
+        -e MYSQL_DATABASE=%MYSQL_DATABASE% ^
+        -e MYSQL_USER=%MYSQL_USER% ^
+        -e MYSQL_PASSWORD=%MYSQL_PASSWORD% ^
+        mariadb:latest
+    
     timeout /t 10 >nul
     docker run -it --rm --name radioescola_container -e DISPLAY=%DISPLAY% ^
         -v /tmp/.X11-unix:/tmp/.X11-unix ^

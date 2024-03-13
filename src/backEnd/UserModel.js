@@ -77,7 +77,7 @@ class UserModel extends Connection {
     }
     return code;
   }
-  async createUser(email, password) {
+  async createUser(res,email, password) {
     try {
         const verificationCode = this.generateRandomCode(); // Generate a random code
         
@@ -89,16 +89,23 @@ class UserModel extends Connection {
 
 
         const user = await this.model.create({ email, password: hashedPassword, verification_code: verificationCode });
-        console.log('User successfully created.');
+        
+        
         this.findAllUsers();
+        console.log('User successfully created.');
+        res.status(200).json({ success: true, message: "User registration failed." });
+
+        
         return true;
     } catch (error) {
         console.error('Error creating user:', error);
+        res.status(200).json({ success: false, message: "User registration failed." });
+
         return false;
     }
 }
 
-  async findUserByEmailAndPassword(email, password) {
+  async findUserByEmailAndPassword(res,email, password) {
     try {
       const user = await this.model.findOne({ where: { email } });
       if (user) {
@@ -121,6 +128,37 @@ class UserModel extends Connection {
       throw error;
     }
   }
+  async deleteUser(res, email, password) {
+    try {
+        const user = await this.findUserByEmail(email);
+        if (!user) {
+            console.log('User not found.');
+            res.status(200).json( { success: false, message: "User not found." });
+            return false;
+        }
+
+        // Compare provided password with the stored hashed password
+        const match = await bcrypt.compare(password, user.password); // Assuming 'password' field stores the hashed password
+        if (!match) {
+            console.log('Password does not match.');
+            res.status(200).json( { success: false, message: "Password does not match." });
+            return	false;
+        }
+
+        // Assuming 'id' is the identifier used in your database
+        await this.model.destroy({
+          where: { id: user.id }
+      });
+        console.log('User successfully deleted.');
+        res.status(200).json( { success: true, message: "User successfully deleted." }) ;
+        return true;
+
+    } catch (error) {
+        console.error('Error deleting user:', error);
+        res.status(200).json( { success: false, message: "Error deleting user." });
+        return false;
+    }
+}
 
 
   async findUserByEmail(email) {
