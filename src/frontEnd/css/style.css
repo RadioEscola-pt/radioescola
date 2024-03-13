@@ -1012,6 +1012,10 @@ select {
   position: absolute;
 }
 
+.\!relative {
+  position: relative !important;
+}
+
 .relative {
   position: relative;
 }

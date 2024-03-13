@@ -110,22 +110,32 @@ class UserModel extends Connection {
       const user = await this.model.findOne({ where: { email } });
       if (user) {
         // Compare provided password with hashed password in the database
-        const hashedPassword = await bcrypt.hash(user.password, this.salt);
-        const isMatch = await bcrypt.compare(password, hashedPassword);
+        const hashedPassword = await bcrypt.hash(password, this.salt);
+        const isMatch = await bcrypt.compare(user.password, hashedPassword);
+        console.log('Hashed password:', hashedPassword  );
+        console.log ('Password:', user.password);
+        console.log('Is match:', isMatch);
+
         if (isMatch) {
           console.log('User authenticated successfully.');
-          return user.toJSON();
+           
+          res.status(200).json( { success: true, message: "Error deleting user.", user: user.toJSON()});
+          return false;
         } else {
           console.log('Authentication failed. Password does not match.');
-          return null;
+          res.status(200).json( { success: false, message: "Error deleting user." });
+          return false;
         }
       } else {
         console.log('User not found');
-        return null;
+        res.status(200).json( { success: false, message: "Error deleting user." });
+        return false;
       }
     } catch (error) {
       console.error('Error authenticating user:', error);
-      throw error;
+      res.status(200).json( { success: false, message: "Error deleting user." });
+      return false;
+
     }
   }
   async deleteUser(res, email, password) {
