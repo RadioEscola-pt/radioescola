@@ -11,8 +11,8 @@ fi
 
 if [ "$1" == "build" ]; then
     echo "Building Docker image..."
-    docker build -t radioescola -f Dockerfile-nodejs .
-    docker build -t radioescola-db -f Dockerfile-mariadb .
+    docker build -t radioescola -f docker/Dockerfile-nodejs .
+    docker build -t radioescola-db -f docker/Dockerfile-mariadb .
 elif [ "$1" == "refresh" ]; then
     echo "Refreshing container..."
     docker cp . radioescola_container:/usr/src/app
