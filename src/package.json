@@ -22,8 +22,8 @@
   },
   "scripts": {
     "start": "node server.js",
-    "tailwind:watch": "tailwindcss -i style.css -o ./src/frontEnd/css/style.css --watch",
-    "tailwind:build": "tailwindcss -i style.css -o ./src/frontEnd/css/style.css",
+    "tailwind:watch": "tailwindcss -i style.css -o ./frontEnd/css/style.css --watch",
+    "tailwind:build": "tailwindcss -i style.css -o ./frontEnd/css/style.css",
     "dev": "concurrently 'npm:tailwind:watch' 'npm:start'"
   }
 }
