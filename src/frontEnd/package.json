@@ -20,8 +20,8 @@
   },
   "scripts": {
     "test": "serve",
-    "tailwind:watch": "tailwindcss -i style.css -o ./css/style.css --watch",
-    "tailwind:build": "tailwindcss -i style.css -o ./css/style.css",
+    "tailwind:watch": "tailwindcss -i css/seedStyle.css -o css/style.css --watch",
+    "tailwind:build": "tailwindcss -i css/seedStyle.css -o css/style.css",
     "ci": "concurrently 'npm:tailwind:watch' 'npm:test'"
   }
 }
