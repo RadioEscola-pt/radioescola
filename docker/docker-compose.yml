@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  nodejs:
+    container_name: nodejs_container
+    build: 
+      context: .
+      dockerfile: Dockerfile-nodejs
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mariadb
+    networks:
+      - app-network
+
+  mariadb:
+    container_name: mariadb_container
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: your_root_password
+      MYSQL_DATABASE: your_database_name
+      MYSQL_USER: your_database_user
+      MYSQL_PASSWORD: your_database_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mariadb_data:

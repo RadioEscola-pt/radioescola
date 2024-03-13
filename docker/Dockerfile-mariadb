@@ -1,0 +1,5 @@
+# Use an official MariaDB image as the base image
+FROM mariadb:latest
+
+# Copy the custom configuration file to the container
+COPY docker/custom.cnf /etc/mysql/conf.d/

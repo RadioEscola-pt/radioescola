@@ -10,9 +10,7 @@
         },
         {
             "name": "Docker: Build",
-            "type": "shell",
             "request": "launch",
-            "command": "echo",
             "args": [
                 "Building Docker Image: radioescola"
             ],
@@ -26,9 +24,9 @@
         },
         {
             "name": "Docker: Refresh",
-            "type": "shell",
+        
             "request": "launch",
-            "command": "echo",
+
             "args": [
                 "Refreshing Docker Container: radioescola_container"
             ],
@@ -42,9 +40,9 @@
         },
         {
             "name": "Docker: Launch",
-            "type": "shell",
+
             "request": "launch",
-            "command": "echo",
+
             "args": [
                 "Launching Docker Container: radioescola_container"
             ],
