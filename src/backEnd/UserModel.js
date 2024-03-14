@@ -77,6 +77,7 @@ class UserModel extends Connection {
     }
     return code;
   }
+
   async createUser(res,email, password) {
     try {
         const verificationCode = this.generateRandomCode(); // Generate a random code
@@ -109,11 +110,12 @@ class UserModel extends Connection {
     try {
       const user = await this.model.findOne({ where: { email } });
       if (user) {
+        console.log('////////////////////////////////////////////////////////////////////////');
+
         // Compare provided password with hashed password in the database
-        const hashedPassword = await bcrypt.hash(password, this.salt);
-        const isMatch = await bcrypt.compare(user.password, hashedPassword);
-        console.log('Hashed password:', hashedPassword  );
-        console.log ('Password:', user.password);
+        const isMatch = await bcrypt.compare(password, user.password); // Assuming 'password' field stores the hashed password
+
+        
         console.log('Is match:', isMatch);
 
         if (isMatch) {
@@ -146,6 +148,7 @@ class UserModel extends Connection {
             res.status(200).json( { success: false, message: "User not found." });
             return false;
         }
+        
 
         // Compare provided password with the stored hashed password
         const match = await bcrypt.compare(password, user.password); // Assuming 'password' field stores the hashed password

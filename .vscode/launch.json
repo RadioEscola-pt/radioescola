@@ -17,12 +17,7 @@
                 "Building Docker Image: radioescola"
             ],
             "preLaunchTask": "Docker: Build",
-            "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "focus": false,
-                "panel": "dedicated"
-            }
+
         },
         {
             "name": "Docker: Refresh",
@@ -32,12 +27,7 @@
                 "Refreshing Docker Container: radioescola_container"
             ],
             "preLaunchTask": "Docker: Refresh",
-            "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "focus": false,
-                "panel": "dedicated"
-            }
+
         },
         {
             "name": "Docker: Launch",
@@ -47,16 +37,11 @@
                 "Launching Docker Container: radioescola_container"
             ],
             "preLaunchTask": "Docker: Launch",
-            "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "focus": false,
-                "panel": "dedicated"
-            }
+
         },
         {
             "name": "Docker: db Launch",
-
+            "type": "shell",
             "request": "launch",
             "args": [
                 "Launching Docker Container: radioescola_container"

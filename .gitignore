@@ -1,7 +1,7 @@
 node_modules
 .project
 dist/style.css
-css/style.css
+src/frontEnd/css/style.css
 docs/FormulasCAT1.synctex.gz
 docs/FormulasCAT1.log
 docs/FormulasCAT1.fls

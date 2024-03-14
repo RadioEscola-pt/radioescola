@@ -18,7 +18,6 @@ def docker_build():
     print("Building Docker image...")
     subprocess.Popen(["docker", "build", "-t", "radioescola", "-f", "docker/Dockerfile-nodejs", "."])
     subprocess.Popen(["docker", "build", "-t", "radioescoladb", "-f", "docker/Dockerfile-mariadb", "."])
-    subprocess.Popen(["docker", "run", "-d", "-p", "3306:3306", "--name", "my-mariadb-container", "radioescoladb"])
 
 def docker_refresh():
     print("Refreshing container...")
@@ -28,7 +27,7 @@ def docker_refresh():
 
 def docker_db():
     print("Launching containers...")
-    subprocess.Popen(["docker", "run", "-d", "-p", "3306:3306", "--name", "mariadb_container",
+    subprocess.Popen(["docker", "run", "-d", "-p", "3306:3306", "--name", "radioescoladb",
                     "-e", f"MYSQL_ROOT_PASSWORD={os.getenv('MYSQL_ROOT_PASSWORD')}",
                     "-e", f"MYSQL_DATABASE={os.getenv('MYSQL_DATABASE')}",
                     "-e", f"MYSQL_USER={os.getenv('MYSQL_USER')}",
@@ -37,15 +36,9 @@ def docker_db():
 
 def docker_launch():
     print("Launching containers...")
-    subprocess.Popen(["docker", "run", "-d", "-p", "3306:3306", "--name", "mariadb_container",
-                    "-e", f"MYSQL_ROOT_PASSWORD={os.getenv('MYSQL_ROOT_PASSWORD')}",
-                    "-e", f"MYSQL_DATABASE={os.getenv('MYSQL_DATABASE')}",
-                    "-e", f"MYSQL_USER={os.getenv('MYSQL_USER')}",
-                    "-e", f"MYSQL_PASSWORD={os.getenv('MYSQL_PASSWORD')}",
-                    "mariadb:latest"])
-    subprocess.Popen(["timeout", "/t", "10"], shell=True)
-    subprocess.Popen(["docker", "run", "-it", "--rm", "--name", "radioescola_container", "-e", "DISPLAY=" + os.getenv('DISPLAY'),
-                    "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "3000:3000", "--link", "mariadb_container:mariadb", "radioescola"])
+
+    subprocess.Popen(["docker", "run", "-it", "--rm", "--name", "radioescola_container", "-e", "DISPLAY=$DISPLAY",
+                    "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "3000:3000", "--link", "radioescoladb:mariadb", "radioescola"])
 
 if __name__ == "__main__":
     # Change to the parent directory
