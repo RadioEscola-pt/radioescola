@@ -11,6 +11,9 @@ jobs:
 
       - name: Change directory
         run: cd src/frontEnd
+        
+      - name: view directory
+        run: ls
 
       - name: Update NPM dependencies
         run: npm install
