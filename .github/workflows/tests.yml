@@ -22,8 +22,7 @@ jobs:
           working-directory: ./src
           spec: 'cypress/e2e/**/*.spec.js'
           group: 'Cypress Tests'
-          parallel: als
-          parallelism: 2
+          parallel: false
           tag: ${{ github.sha }}
           # Adjust start command if necessary, this assumes npm run ci in frontEnd starts the server
           start: npm --prefix ./frontEnd/ run ci
