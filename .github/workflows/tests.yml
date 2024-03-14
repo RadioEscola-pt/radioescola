@@ -9,17 +9,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Change directory
-        run: cd ./src/frontEnd
-        
-      - name: view directory
-        run: ls
+
 
       - name: Update NPM dependencies
         run: npm install
+        working-directory: ./src/frontEnd
+
 
       - name: Install NPM dependencies
         run: npm ci
+        working-directory: ./src/frontEnd
+
 
 
 
@@ -27,3 +27,4 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           start: npm run ci
+        working-directory: ./src/frontEnd
