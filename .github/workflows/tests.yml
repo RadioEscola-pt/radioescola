@@ -12,7 +12,7 @@ jobs:
       - name: Update NPM dependencies
         run: npm install
         working-directory: ./src/frontEnd
-        
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
@@ -26,7 +26,7 @@ jobs:
           parallelism: 2
           tag: ${{ github.sha }}
           # Adjust start command if necessary, this assumes npm run ci in frontEnd starts the server
-          start: npm run ci
+          start: npm --prefix ../frontEnd run ci
           # Make sure wait-on points to the correct URL where your app will be accessible
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 60 # seconds
