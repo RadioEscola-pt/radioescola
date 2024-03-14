@@ -17,14 +17,17 @@ jobs:
 
 
 
+
+
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
           record: true
-          start: npm start
+          start: npm run ci
           working-directory: ./src/frontEnd
-          spec: cypress/integration/*.spec.js
+          spec: ../cypress/e2e/*.spec.js
           group: 'Cypress Tests'
           parallel: true
           parallelism: 2
