@@ -15,11 +15,6 @@ jobs:
         run: npm install
         working-directory: ./src/frontEnd
 
-      - name: Update NPM dependencies
-        run: npm run ci
-        working-directory: ./src/frontEnd
-
-
 
 
       - name: Cypress run
