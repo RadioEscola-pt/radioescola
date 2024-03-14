@@ -110,7 +110,6 @@ class UserModel extends Connection {
     try {
       const user = await this.model.findOne({ where: { email } });
       if (user) {
-        console.log('////////////////////////////////////////////////////////////////////////');
 
         // Compare provided password with hashed password in the database
         const isMatch = await bcrypt.compare(password, user.password); // Assuming 'password' field stores the hashed password
