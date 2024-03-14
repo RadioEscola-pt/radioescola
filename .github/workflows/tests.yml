@@ -19,7 +19,7 @@ jobs:
           browser: chrome
           record: true
           # Since the dependencies are installed in frontEnd, set the working-directory accordingly
-          working-directory: ./src/frontEnd
+          working-directory: ./src
           spec: '../cypress/e2e/**/*.spec.js'
           group: 'Cypress Tests'
           parallel: true
