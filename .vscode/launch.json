@@ -11,6 +11,7 @@
         },
         {
             "name": "Docker: Build",
+            "type": "shell",
             "request": "launch",
             "args": [
                 "Building Docker Image: radioescola"
@@ -25,9 +26,8 @@
         },
         {
             "name": "Docker: Refresh",
-        
+            "type": "shell",
             "request": "launch",
-
             "args": [
                 "Refreshing Docker Container: radioescola_container"
             ],
@@ -41,9 +41,8 @@
         },
         {
             "name": "Docker: Launch",
-
+            "type": "shell",
             "request": "launch",
-
             "args": [
                 "Launching Docker Container: radioescola_container"
             ],
@@ -54,6 +53,16 @@
                 "focus": false,
                 "panel": "dedicated"
             }
+        },
+        {
+            "name": "Docker: db Launch",
+
+            "request": "launch",
+            "args": [
+                "Launching Docker Container: radioescola_container"
+            ],
+            "preLaunchTask": "Docker: Db Launch",
+           
         }
     ]
 }

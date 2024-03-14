@@ -1,4 +1,4 @@
-@echo off
+@echo on
 echo Radio Escola Docker Script
 
 rem Load environment variables from .env file in the ../src/backend directory
