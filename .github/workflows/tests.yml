@@ -27,4 +27,4 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           start: npm run ci
-        working-directory: ./src/frontEnd
+          working-directory: ./src/frontEnd
