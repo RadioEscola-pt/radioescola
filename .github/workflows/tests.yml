@@ -9,27 +9,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-
-
       - name: Update NPM dependencies
         run: npm install
         working-directory: ./src/frontEnd
-
-
-
-
-
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
           record: true
-          start: npm run ci
-          working-directory: ./src/frontEnd
-          spec: ../cypress/e2e/*.spec.js
+          # Set this to where your Cypress tests are located
+          working-directory: ./src/cypress
+          spec: 'integration/**/*.spec.js'
           group: 'Cypress Tests'
           parallel: true
           parallelism: 2
           tag: ${{ github.sha }}
+          # Start command adjusted to where your server needs to start
+          start: npm --prefix ../frontEnd run ci
+          # Assuming your server is accessible on a specific port; adjust as necessary
+          wait-on: 'http://localhost:3000'
+          wait-on-timeout: 60 # seconds
+
 
