@@ -14,9 +14,9 @@ jobs:
         working-directory: ./src/frontEnd
       
       # If there's any build step for your frontend, include it here
-      # - name: Build
-      #   run: npm run build
-      #   working-directory: ./src/frontEnd
+      - name: Build
+        run: npm run build
+        working-directory: ./src/frontEnd
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
