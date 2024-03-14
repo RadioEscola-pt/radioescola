@@ -17,12 +17,12 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          record: true
+          record: false
           # Since the dependencies are installed in frontEnd, set the working-directory accordingly
           working-directory: ./src
           spec: 'cypress/e2e/**/*.spec.js'
           group: 'Cypress Tests'
-          parallel: true
+          parallel: als
           parallelism: 2
           tag: ${{ github.sha }}
           # Adjust start command if necessary, this assumes npm run ci in frontEnd starts the server
