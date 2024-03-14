@@ -20,7 +20,7 @@ jobs:
           record: false
           # Since the dependencies are installed in frontEnd, set the working-directory accordingly
           working-directory: ./src
-          spec: 'cypress/e2e/**/*.spec.js'
+          spec: 'cypress/e2e/**/*.cy.js'
           # Adjust start command if necessary, this assumes npm run ci in frontEnd starts the server
           start: npm --prefix ./frontEnd/ run ci
           # Make sure wait-on points to the correct URL where your app will be accessible
