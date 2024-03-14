@@ -15,11 +15,23 @@ jobs:
         run: npm install
         working-directory: ./src/frontEnd
 
+      - name: Update NPM dependencies
+        run: npm run ci
+        working-directory: ./src/frontEnd
+
+
+
 
       - name: Cypress run
-        
         uses: cypress-io/github-action@v6
         with:
-          run: npm run ci
+          browser: chrome
+          record: true
+          start: npm start
           working-directory: ./src/frontEnd
-          spec: ../cypress/e2e/navigation.cy.js
+          spec: cypress/integration/*.spec.js
+          group: 'Cypress Tests'
+          parallel: true
+          parallelism: 2
+          tag: ${{ github.sha }}
+
