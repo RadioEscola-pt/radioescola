@@ -13,6 +13,7 @@ describe("Check navigation", () => {
     it("tests category 1 study links", () => {
         cy.viewport('macbook-13');
         cy.visit("http://localhost:3000");
+        cy.wait(1000);
 
         cy.get("#studyLink").click();
         cy.get("#categoria1Button").click();
@@ -65,6 +66,7 @@ describe("Check navigation", () => {
 
     it("tests category 2 study links", () => {
         cy.visit("http://localhost:3000");
+        cy.wait(1000);
 
         cy.get("#studyLink").click();
         cy.get("#categoria2Button").click();
@@ -89,6 +91,7 @@ describe("Check navigation", () => {
 
     it("tests category 3 study links", () => {
         cy.visit("http://localhost:3000");
+        cy.wait(1000);
 
         cy.get("#studyLink").click();
         cy.get("#categoria3Button").click();

@@ -87,14 +87,13 @@ class UserModel extends Connection {
         console.log('Email:', email);
         console.log('Hashed password:', hashedPassword);
         console.log('Verification code:', verificationCode);
+        this.findAllUsers();
 
 
         const user = await this.model.create({ email, password: hashedPassword, verification_code: verificationCode });
         
-        
-        this.findAllUsers();
         console.log('User successfully created.');
-        res.status(200).json({ success: true, message: "User registration failed." });
+        res.status(200).json({ success: true, message: "Conta Criada verifique o seu email" });
 
         
         return true;
@@ -109,6 +108,7 @@ class UserModel extends Connection {
   async findUserByEmailAndPassword(res,email, password) {
     try {
       const user = await this.model.findOne({ where: { email } });
+      const response = { success: false, message: "Utilizador nao encontrado ou password errada" };
       if (user) {
 
         // Compare provided password with hashed password in the database
@@ -119,32 +119,38 @@ class UserModel extends Connection {
 
         if (isMatch) {
           console.log('User authenticated successfully.');
-           
-          res.status(200).json( { success: true, message: "Error deleting user.", user: user.toJSON()});
-          return false;
+          console.log('User authenticated successfully.');
+          // Create a user object for response
+          const userResponse = user.toJSON();
+          delete userResponse.password; // Remove password from the response object
+          delete userResponse.verification_code; // Remove verification_code from the response object
+          res.status(200).json({ success: true, message: "Utilizador registado com sucesso", user: userResponse });
+
+          return true;
         } else {
           console.log('Authentication failed. Password does not match.');
-          res.status(200).json( { success: false, message: "Error deleting user." });
+          res.status(200).json(response);
           return false;
         }
       } else {
         console.log('User not found');
-        res.status(200).json( { success: false, message: "Error deleting user." });
+        res.status(200).json( response);
         return false;
       }
     } catch (error) {
       console.error('Error authenticating user:', error);
-      res.status(200).json( { success: false, message: "Error deleting user." });
+      res.status(200).json( response);
       return false;
 
     }
   }
   async deleteUser(res, email, password) {
+    const response = { success: false, message: "Utilizador nao encontrado ou password errada" };
     try {
         const user = await this.findUserByEmail(email);
         if (!user) {
             console.log('User not found.');
-            res.status(200).json( { success: false, message: "User not found." });
+            res.status(200).json( response);
             return false;
         }
         
@@ -153,7 +159,7 @@ class UserModel extends Connection {
         const match = await bcrypt.compare(password, user.password); // Assuming 'password' field stores the hashed password
         if (!match) {
             console.log('Password does not match.');
-            res.status(200).json( { success: false, message: "Password does not match." });
+            res.status(200).json(response);
             return	false;
         }
 
@@ -167,7 +173,7 @@ class UserModel extends Connection {
 
     } catch (error) {
         console.error('Error deleting user:', error);
-        res.status(200).json( { success: false, message: "Error deleting user." });
+        res.status(200).json(response);
         return false;
     }
 }

@@ -162,14 +162,15 @@ class Authentication {
                     if (response.success) {
 
                     } else {
-                        this.authentication.message.innerHTML = "Registration failed: " + response.message;
+                        
                     }
+                    this.authentication.message.innerHTML = response.message;
                 } else {
                     this.message.innerHTML = "Error: " + xhr.status;
                 }
             }
         };
-        xhr.send(`email=${email}&password=${password}`);
+        xhr.send(`email=${email}&pass=${password}`);
     }
 
     authenticateUser(event) {
@@ -192,23 +193,17 @@ class Authentication {
                 if (xhr.status === 200) {
                     const response = JSON.parse(xhr.responseText);
                     if (response.success) {
-                        this.authentication.closeNav();
-                        this.authentication.showRegistrationFormButton.style.display = "none";
-                        this.authentication.loginForm.style.display = "none";
-                        this.authentication.registrationForm.style.display = "none";
-                        this.authentication.lostPasswordForm.style.display = "none";
-                        this.authentication.lostPasswordButton.style.display = "none";
-                        document.getElementById("logout-container").style.display = "block";
-                        alert("User ID: " + response.user_id + "\nEmail: " + response.email);
+
 
                     } else {
-                        this.authentication.message.innerHTML = "Login failed: " + response.message;
                     }
+                    this.authentication.message.innerHTML =  response.message;
+
                 } else {
-                    this.authentication.message.innerHTML = "Error: " + xhr.status;
+                    this.authentication.message.innerHTML =  xhr.status;
                 }
             }
         };
-        xhr.send(`email=${loginEmail}&password=${loginPassword}`);
+        xhr.send(`email=${loginEmail}&pass=${loginPassword}`);
     }
 }

@@ -20,13 +20,17 @@ class Init {
 
         
                     userModel.createUser(res, email, pass);
-                   // res.status(200).send({ success: true, message: "User registered successfully." });
 
 
 
                 }
                 else {
                     res.status(200).send({ success: false, message: "User registration failed." });
+                }
+                break;
+            case '/check_session':
+                if (method === 'GET') {
+                    
                 }
                 break;
             case '/login':  
