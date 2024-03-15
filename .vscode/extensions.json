@@ -4,6 +4,11 @@
         "ms-vscode-remote.remote-containers",
         "firefox-devtools.vscode-firefox-debug",
         "tomoki1207.pdf",
-        "james-yu.latex-workshop"
+        "james-yu.latex-workshop",
+        "github.vscode-pull-request-github",
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-python.vscode-pylance",
+        "alefragnani.bookmarks"
     ]
 }

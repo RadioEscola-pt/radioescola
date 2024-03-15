@@ -21,9 +21,9 @@ def docker_build():
 
 def docker_refresh():
     print("Refreshing container...")
-    subprocess.Popen(["docker", "cp", ".", "radioescola_container:/usr/src/app"])
+    subprocess.Popen(["docker", "cp", "/src", "radioescola_container:/usr/src/app"])
     subprocess.Popen(["docker", "exec", "-it", "radioescola_container", "bash", "-c", "npm install"])
-    subprocess.Popen(["docker", "exec", "-it", "radioescola_container", "bash", "-c", "npm Popen dev"])
+    subprocess.Popen(["docker", "exec", "-it", "radioescola_container", "bash", "-c", "npm run dev"])
 
 def docker_db():
     print("Launching containers...")
@@ -38,7 +38,15 @@ def docker_launch():
     print("Launching containers...")
 
     subprocess.Popen(["docker", "run", "-it", "--rm", "--name", "radioescola_container", "-e", "DISPLAY=$DISPLAY",
-                    "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "3000:3000", "--link", "radioescoladb:mariadb", "radioescola"])
+                    "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "3000:3000", "radioescola", "--link", "radioescoladb:mariadb", "radioescola"])
+
+def docker_noDblaunch():
+    print("Launching containers...")
+
+    subprocess.Popen(["docker", "run", "-it", "--rm", "--name", "radioescola_container", "-e", "DISPLAY=$DISPLAY",
+                  "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "3000:3000", "radioescola"])
+
+
 
 if __name__ == "__main__":
     # Change to the parent directory
@@ -56,6 +64,8 @@ if __name__ == "__main__":
             docker_refresh()
         elif command == "db":
             docker_db()
+        elif command == "noDb":
+            docker_noDblaunch()
         elif command == "launch":
             docker_launch()
         else:

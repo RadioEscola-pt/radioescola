@@ -1,6 +1,49 @@
 {
     "configurations": [
+        {
+            "name": "Build Docker Image",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "docker.py",
+            "console": "integratedTerminal",
+            "args": "build",
+        },
+        {
+            "name": "Run Docker Image",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "docker.py",
+            "console": "integratedTerminal",
+            "args": "launch",
+        },
+        {
+            "name": "Run Docker Db Image",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "docker.py",
+            "console": "integratedTerminal",
+            "args": "db",
+
+        },
+        {
+            "name": "Update Docker Image",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "docker.py",
+            "console": "integratedTerminal",
+            "args": "refresh",
+        },
+        {
+            "name": "Update Docker no Database Image",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "docker.py",
+            "console": "integratedTerminal",
+            "args": "noDb",
+        },
         
+
+
         {
             "type": "firefox",
             "request": "launch",
@@ -8,46 +51,6 @@
             "name": "Launch localhost",
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}"
-        },
-        {
-            "name": "Docker: Build",
-            "type": "shell",
-            "request": "launch",
-            "args": [
-                "Building Docker Image: radioescola"
-            ],
-            "preLaunchTask": "Docker: Build",
-
-        },
-        {
-            "name": "Docker: Refresh",
-            "type": "shell",
-            "request": "launch",
-            "args": [
-                "Refreshing Docker Container: radioescola_container"
-            ],
-            "preLaunchTask": "Docker: Refresh",
-
-        },
-        {
-            "name": "Docker: Launch",
-            "type": "shell",
-            "request": "launch",
-            "args": [
-                "Launching Docker Container: radioescola_container"
-            ],
-            "preLaunchTask": "Docker: Launch",
-
-        },
-        {
-            "name": "Docker: db Launch",
-            "type": "shell",
-            "request": "launch",
-            "args": [
-                "Launching Docker Container: radioescola_container"
-            ],
-            "preLaunchTask": "Docker: Db Launch",
-           
         }
     ]
 }
