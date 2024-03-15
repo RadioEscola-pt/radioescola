@@ -1,0 +1,36 @@
+{
+    "categories": [
+        {
+            "id": "Utilizador",
+            "title": "Utilizador",
+            "items": [
+                {
+                    "title": "Mudar Password",
+                    "action": "mudarPassword"
+                },
+                {
+                    "title": "Canselar Conta",
+                    "action": "canselarConta"
+                }
+
+
+            ]
+        },
+        {
+            "id": "Editar",
+            "title": "Editar",
+            "items": [
+                {
+                    "title": "artigos",
+                    "action": "artigos"
+                },
+                {
+                    "title": "perguntas",
+                    "action": "peruntas"
+                }
+            ]
+
+        }
+    ]
+}
+  

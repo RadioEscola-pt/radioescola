@@ -43,6 +43,7 @@
     <script type="text/javascript" src="js/DarkModeToggle.js"></script>
     <script type="text/javascript" src="js/init.js"></script>
     <script type="text/javascript" src="js/users/Authentication.js"></script>
+    <script type="text/javascript" src="js/users/UserNavBar.js"></script>
     <script type="text/javascript" src="https://cdn.tiny.cloud/1/5m7ie2hdwukxj6x434zelmu35tonw38kh6ecuzc8rijm4ou5/tinymce/5/tinymce.min.js"></script>
     
 
@@ -434,6 +435,23 @@
                 aria-current="page"
                 >Login</a
               >
+            </li>
+            <li id="UserNavBarLi" style="display: none;">
+              <button
+                id="UserNavBarbutton"
+                
+                data-dropdown-toggle="UserNavBar"
+                class="rounded cursor-pointer flex items-center justify-between w-full py-1 px-2 text-gray-700 border-b border-gray-100 hover:bg-slate-300 md:border-0 md:hover:text-slate-800 md:w-auto dark:text-white dark:focus:text-white dark:border-gray-700 md:dark:hover:text-slate-50 dark:hover:bg-slate-800"
+              >
+                Utilizador
+                <img src="images/arrow-down.svg" class="w-2.5 h-2.5 ml-2.5" />
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="UserNavBar"
+                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+              >
+              </div>
             </li>
             <li id="theme-toggle" class="flex py-1">
               <svg

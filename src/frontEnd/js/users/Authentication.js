@@ -1,7 +1,7 @@
 class Authentication {
     constructor() {
 
-        new Popup("users/login", this);
+        this.popup=new Popup("users/login", this);
 
 
     }
@@ -27,17 +27,17 @@ class Authentication {
 
         this.showRegistrationFormButton.onclick=this.showRegistrationForm;
         this.registrationForm.addEventListener("submit", this.registerUser);
-        this.loginForm.addEventListener("submit", this.authenticateUser);
+        this.loginForm.addEventListener("submit", this.authenticateUser.bind(this));
         this.logoutButton = document.getElementById("logout-button");
-        this.logoutButton.onclick = this.logout;
-        this.logoutButton.authentication=this;
+        this.logoutButton.onclick = this.logout.bind(this);
+       
 
 
-        this.checkSession();
+        //this.checkSession();
     }
     logout() {
         // Make an AJAX request to destroy the session
-        const xhr = new XMLHttpRequest();
+        let xhr = new XMLHttpRequest();
         xhr.open("GET", "ajax/logout", true);
         xhr.onreadystatechange = () => {
             if (xhr.readyState === 4 && xhr.status === 200) {
@@ -59,7 +59,7 @@ class Authentication {
         xhr.send();
     }
     checkSession() {
-        const xhr = new XMLHttpRequest();
+        let xhr = new XMLHttpRequest();
         xhr.open("GET", "ajax/check_session", true);
         xhr.onreadystatechange = () => {
             if (xhr.readyState === 4) {
@@ -67,7 +67,7 @@ class Authentication {
                     const response = JSON.parse(xhr.responseText);
                     if (response.success) {
                         // Session is valid
-                        alert("User ID: " + response.user_id + "\nEmail: " + response.email);
+                        this.message.innerHTML +="User ID: " + response.user_id + "\nEmail: " + response.email;
                         document.getElementById("logout-container").style.display = "block";
                         this.showRegistrationFormButton.style.display = "none";
                         this.loginForm.style.display = "none";
@@ -77,11 +77,12 @@ class Authentication {
                     } else {
                         // Session is not valid
                         document.getElementById("logout-container").style.display = "none";
-                        alert("Session is not valid or has expired.");
+   
                     }
+                    this.message.innerHTML += response.message;
                 } else {
                     // Handle AJAX error
-                    alert("Error: " + xhr.status);
+                    this.message.innerHTML ="Error: " + xhr.status;
                 }
             }
         };
@@ -152,7 +153,7 @@ class Authentication {
         }
 
         // Make an AJAX request to the ajax to register the user
-        const xhr = new XMLHttpRequest();
+        let xhr = new XMLHttpRequest();
         xhr.open("POST", "ajax/register", true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.onreadystatechange = () => {
@@ -179,31 +180,36 @@ class Authentication {
         const loginEmail = document.getElementById("login-email").value;
         const loginPassword = document.getElementById("login-password").value;
 
-        if (!this.authentication.isEmailValid(loginEmail)) {
+        if (!this.isEmailValid(loginEmail)) {
             this.authentication.message.innerHTML = "Invalid email format.";
             return;
         }
 
         // Make an AJAX request to the ajax to authenticate the user
-        const xhr = new XMLHttpRequest();
-        xhr.open("POST", "ajax/login", true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState === 4) {
-                if (xhr.status === 200) {
-                    const response = JSON.parse(xhr.responseText);
-                    if (response.success) {
+        this.xhr = new XMLHttpRequest();
 
+        this.xhr.open("POST", "ajax/login", true);
+        this.xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        this.xhr.onreadystatechange = this.loginReply.bind(this);
 
-                    } else {
-                    }
-                    this.authentication.message.innerHTML =  response.message;
-
-                } else {
-                    this.authentication.message.innerHTML =  xhr.status;
-                }
-            }
-        };
-        xhr.send(`email=${loginEmail}&pass=${loginPassword}`);
+                     
+        this.xhr.send(`email=${loginEmail}&pass=${loginPassword}`);
     }
+    loginReply() {
+        if (this.xhr.readyState === 4) {
+          if (this.xhr.status === 200) {
+            const response = JSON.parse(this.xhr.responseText);
+            if (response.success) {
+              setTimeout(() => {
+                this.popup.closePopup();
+                new UserNavBar();
+              }, 1000);
+            } else {
+              this.message.innerHTML = response.message;
+            }
+          } else {
+            this.message.innerHTML = "Error: " + this.xhr.status;
+          }
+        }
+      }
 }
