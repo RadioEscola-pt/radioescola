@@ -2,7 +2,7 @@ describe("Component calculator", () => {
   it("Sums two series capacitors of 10F + 20F", () => {
     cy.visit("http://localhost:3000/");
     cy.get("#questionsDropdownLink").click();
-    cy.get("li:nth-of-type(4) li:nth-of-type(2) > a").click();
+    cy.get("#questionsDropdown a").contains("Lei de Ohm").click();
     cy.get("tr:nth-of-type(1) input").click().clear().type("10");
     cy.get("tr:nth-of-type(2) input").click().clear().type("20");
     cy.get("#calculateBtn").click();
@@ -13,7 +13,7 @@ describe("Component calculator", () => {
     cy.viewport(1920, 1080);
     cy.visit("http://localhost:3000/");
     cy.get("#questionsDropdownLink").click();
-    cy.get("li:nth-of-type(4) li:nth-of-type(2) > a").click();
+    cy.get("#questionsDropdown a").contains("Lei de Ohm").click();
     cy.get("#calculateBtn").click();
     cy.get("#totalValue").should('have.text', 'Total Value: 0.6667');
   });
@@ -22,7 +22,7 @@ describe("Component calculator", () => {
     cy.viewport(1920, 1080);
     cy.visit("http://localhost:3000/#");
     cy.get("#questionsDropdownLink").click();
-    cy.get("li:nth-of-type(4) li:nth-of-type(2) > a").click();
+    cy.get("#questionsDropdown a").contains("Lei de Ohm").click();
     cy.get("tr:nth-of-type(1) input").click().clear().type("10")
     cy.get("tr:nth-of-type(2) input").click().clear().type("20");
     cy.get("#seriesParallel").select("parallel");
@@ -35,7 +35,7 @@ describe("Component calculator", () => {
     cy.viewport(1920, 1080);
     cy.visit("http://localhost:3000/#");
     cy.get("#questionsDropdownLink").click();
-    cy.get("li:nth-of-type(4) li:nth-of-type(2) > a").click();
+    cy.get("#questionsDropdown a").contains("Lei de Ohm").click();
     cy.get("tr:nth-of-type(1) input").click();
     cy.get("tr:nth-of-type(1) select").select("MEGA");
     cy.get("tr:nth-of-type(2) select:first").select("KILO");
@@ -50,7 +50,7 @@ describe("Component calculator", () => {
     cy.viewport(1920, 1080);
     cy.visit("http://localhost:3000/#");
     cy.get("#questionsDropdownLink").click();
-    cy.get("li:nth-of-type(4) li:nth-of-type(2) > a").click();
+    cy.get("#questionsDropdown a").contains("Lei de Ohm").click();
     cy.get("tr:nth-of-type(1) input").click();
     cy.get("tr:nth-of-type(1) select").select("MEGA");
     cy.get("tr:nth-of-type(2) select:first").select("KILO");
@@ -65,7 +65,7 @@ describe("Component calculator", () => {
     cy.viewport(1920, 1080);
     cy.visit("http://localhost:3000/#");
     cy.get("#questionsDropdownLink").click();
-    cy.get("li:nth-of-type(4) li:nth-of-type(2) > a").click();
+    cy.get("#questionsDropdown a").contains("Lei de Ohm").click();
     cy.get("#addRowBtn").click();
     cy.get("#addRowBtn").click();
     cy.get("#seriesParallel").select("parallel");
@@ -87,7 +87,7 @@ describe("Component calculator", () => {
     cy.viewport(1920, 1080);
     cy.visit("http://localhost:3000/#");
     cy.get("#questionsDropdownLink").click();
-    cy.get("li:nth-of-type(4) li:nth-of-type(2) > a").click();
+    cy.get("#questionsDropdown a").contains("Lei de Ohm").click();
     cy.get("#componentType").select("Ω");
     cy.get("tr:nth-of-type(1) input").clear().type("10");
     cy.get("tr:nth-of-type(2) input").clear().type("20");
