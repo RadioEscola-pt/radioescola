@@ -90,61 +90,61 @@ describe("Check navigation", () => {
     it("tests category 3 study links", () => {
         cy.visit("http://localhost:3000");
 
-        cy.get("#studyLink > img").click();
+        cy.get("#studyLink").click();
         cy.get("#categoria3Button").click();
         
         cy.get("#categoria3Dropdown li a").contains("Alfabeto Fonético").click();
         cy.get("#welcome").should('contain.text', 'Alfabeto Fonético');
 
-        cy.get("#studyLink > img").click();
+        cy.get("#studyLink").click();
         cy.get("#categoria3Button").click();
         
         cy.get("#categoria3Dropdown li a").contains("Abreviaturas de Operação").click();
         cy.get("#welcome").should('contain.text', 'Abreviaturas de Operação');
 
-        cy.get("#studyLink > img").click();
+        cy.get("#studyLink").click();
         cy.get("#categoria3Button").click();
   
         cy.get("#categoria3Dropdown li a").contains("Definições Genéricas").click();
         cy.get("#welcome").should('contain.text', 'Definições genéricas');
 
-        cy.get("#studyLink > img").click();
+        cy.get("#studyLink").click();
         cy.get("#categoria3Button").click();
   
         cy.get("#categoria3Dropdown li a").contains("Entidades e Competências").click();
         cy.get("#welcome").should('contain.text', 'Entidades e suas competências');
 
-        cy.get("#studyLink > img").click();
+        cy.get("#studyLink").click();
         cy.get("#categoria3Button").click();
   
         cy.get("#categoria3Dropdown li a").contains("Código Q").click();
         cy.get("#welcome").should('contain.text', 'Código Q');
 
-        cy.get("#studyLink > img").click();
+        cy.get("#studyLink").click();
         cy.get("#categoria3Button").click();
   
         cy.get("#categoria3Dropdown li a").contains("Prefixos de indicativos").click();
         cy.get("#welcome").should('contain.text', 'Lista dos prefixos de indicativos de chamada');
 
-        cy.get("#studyLink > img").click();
+        cy.get("#studyLink").click();
         cy.get("#categoria3Button").click();
   
         cy.get("#categoria3Dropdown li a").contains("Lei de Ohm").click();
         cy.get("#welcome").should('contain.text', 'Lei de Ohm');
 
-        cy.get("#studyLink > img").click();
+        cy.get("#studyLink").click();
         cy.get("#categoria3Button").click();
   
         cy.get("#categoria3Dropdown li a").contains("Corrente Alternada / AC").click();
         cy.get("#welcome").should('contain.text', 'Corrente Alternada / AC');
 
-        cy.get("#studyLink > img").click();
+        cy.get("#studyLink").click();
         cy.get("#categoria3Button").click();
   
         cy.get("#categoria3Dropdown li a").contains("Código de cores").click();
         cy.get("#welcome").should('contain.text', 'Código de cores para resistências');
 
-        cy.get("#studyLink > img").click();
+        cy.get("#studyLink").click();
         cy.get("#categoria3Button").click();
   
         cy.get("#categoria3Dropdown li a").contains("Mult e SubMult. de Unidades").click();

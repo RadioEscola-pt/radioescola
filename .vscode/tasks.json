@@ -4,28 +4,37 @@
 		{
 			"label": "Docker: Build",
 			"type": "shell",
-			"command": "python",
+			"command": "python3",
 			"args": [
 				"docker.py",
 				"build"
-			]
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/"
+			  }
 		},
 		{
 			"label": "Docker: Refresh",
-			"command": "python",
+			"command": "python3",
 			"args": [
 				"docker.py",
 				"refresh"
-			]
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/"
+			  }
 		},
 		{
 			"label": "Docker: Launch",
 			"type": "shell",
-			"command": "python",
+			"command": "python3",
 			"args": [
 				"docker.py",
 				"launch"
-			]
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/"
+			  }
 		},
 		{
 			"label": "Docker: Db Launch",
