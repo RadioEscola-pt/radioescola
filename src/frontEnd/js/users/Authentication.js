@@ -204,6 +204,7 @@ class Authentication {
                 this.popup.closePopup();
                 new UserNavBar();
               }, 1000);
+              
             } else {
               this.message.innerHTML = response.message;
             }

@@ -2,7 +2,7 @@ class UserNavBar {
     constructor() {
         this.navbarElement = document.getElementById("UserNavBar");
         document.getElementById('UserNavBarLi').style.display = 'block';
-
+        document.getElementById('loginLinkLi').style.display = 'none';
         this.dataUrl = "users/navBar.json";
         this.loadData();
     }
