@@ -23,70 +23,11 @@ class Authentication {
         this.showRegistrationFormButton.innerText ="Login";
         this.lostPasswordButton.authentication=this;
 
-
-
         this.showRegistrationFormButton.onclick=this.showRegistrationForm;
         this.registrationForm.addEventListener("submit", this.registerUser);
         this.loginForm.addEventListener("submit", this.authenticateUser.bind(this));
-        this.logoutButton = document.getElementById("logout-button");
-        this.logoutButton.onclick = this.logout.bind(this);
-       
 
 
-        //this.checkSession();
-    }
-    logout() {
-        // Make an AJAX request to destroy the session
-        let xhr = new XMLHttpRequest();
-        xhr.open("GET", "ajax/logout", true);
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                // Session destroyed successfully
-                document.getElementById("logout-container").style.display = "none";
-                const showRegistrationFormButton = this.authentication.showRegistrationFormButton;
-                const loginForm = this.authentication.loginForm;
-                const registrationForm = this.authentication.registrationForm;
-                const lostPasswordForm = this.authentication.lostPasswordForm;            
-
-                showRegistrationFormButton.innerText = "Login";
-                registrationForm.style.display = "none";
-                loginForm.style.display = "block";
-                lostPasswordForm.style.display = "none";
-
-
-            }
-        };
-        xhr.send();
-    }
-    checkSession() {
-        let xhr = new XMLHttpRequest();
-        xhr.open("GET", "ajax/check_session", true);
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState === 4) {
-                if (xhr.status === 200) {
-                    const response = JSON.parse(xhr.responseText);
-                    if (response.success) {
-                        // Session is valid
-                        this.message.innerHTML +="User ID: " + response.user_id + "\nEmail: " + response.email;
-                        document.getElementById("logout-container").style.display = "block";
-                        this.showRegistrationFormButton.style.display = "none";
-                        this.loginForm.style.display = "none";
-                        this.registrationForm.style.display = "none";
-                        this.lostPasswordForm.style.display = "none";
-                        this.lostPasswordButton.style.display = "none";
-                    } else {
-                        // Session is not valid
-                        document.getElementById("logout-container").style.display = "none";
-   
-                    }
-                    this.message.innerHTML += response.message;
-                } else {
-                    // Handle AJAX error
-                    this.message.innerHTML ="Error: " + xhr.status;
-                }
-            }
-        };
-        xhr.send();
     }
 
 
@@ -202,9 +143,9 @@ class Authentication {
             if (response.success) {
               setTimeout(() => {
                 this.popup.closePopup();
-                new UserNavBar();
+                new UserNavBar(response.user);
               }, 1000);
-              
+
             } else {
               this.message.innerHTML = response.message;
             }

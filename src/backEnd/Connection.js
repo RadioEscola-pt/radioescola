@@ -17,6 +17,7 @@ class Connection {
 
       dialect: 'mariadb',
     });
+    this.salt=process.env.SALT
 
   }
 }

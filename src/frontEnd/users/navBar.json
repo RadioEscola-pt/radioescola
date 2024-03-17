@@ -1,6 +1,12 @@
 {
     "categories": [
         {
+            "id": "Logout",
+            "title": "logout",
+            "action": "logout"
+  
+        },
+        {
             "id": "Utilizador",
             "title": "Utilizador",
             "items": [
@@ -21,11 +27,11 @@
             "title": "Editar",
             "items": [
                 {
-                    "title": "artigos",
+                    "title": "Artigos",
                     "action": "artigos"
                 },
                 {
-                    "title": "perguntas",
+                    "title": "Perguntas",
                     "action": "peruntas"
                 }
             ]

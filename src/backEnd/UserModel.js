@@ -94,9 +94,7 @@ class UserModel extends Connection {
 
       // Hash the password before storing it in the database
       const hashedPassword = await bcrypt.hash(password, this.salt);
-      console.log('Email:', email);
-      console.log('Hashed password:', hashedPassword);
-      console.log('Verification code:', verificationCode);
+
       
       const user = await this.model.create({ email, password: hashedPassword, verification_code: verificationCode });
 
@@ -131,6 +129,7 @@ class UserModel extends Connection {
           delete userResponse.password; // Remove password from the response object
           delete userResponse.verification_code; // Remove verification_code from the response object
           console.log('User:', userResponse);
+          
 
           req.session.userId = userResponse.userId; // Store user ID in session
           req.session.email = userResponse.email; // Store user email in session
@@ -138,8 +137,29 @@ class UserModel extends Connection {
           req.session.certification_level = userResponse.certification_level; // Store user certification level in session
           req.session.is_certified = userResponse.is_certified; // Store user certification status in session
           req.session.verified = userResponse.verified; // Store user verification status in session
+          req.session.role = userResponse.role; // Store the entire user object in s
+          req.session.certification_level = userResponse.certification_level; // Store the entire user object in 
+          req.session.birthday = userResponse.birthday; // Store the entire user object in
+          req.session.call_sign = userResponse.call_sign; // Store the entire user object in
+          req.session.loggefIn = true; // Store the entire user object in
           req.session.save(); // Save the session
-          res.status(200).json({ success: true, message: "Utilizador registado com sucesso", user: userResponse });
+          let userSessionData = {
+            userId: req.session.userId,
+            email: req.session.email,
+            role: req.session.role,
+            certification_level: req.session.certification_level,
+            is_certified: req.session.is_certified,
+            verified: req.session.verified,
+            role: req.session.role,
+            certification_level: req.session.certification_level,
+            birthday: req.session.birthday,
+            call_sign: req.session.call_sign,
+
+            
+          };
+
+          
+          res.status(200).json({ success: true, message: "Utilizador registado com sucesso", user: userSessionData });
 
 
           return true;

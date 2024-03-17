@@ -6,7 +6,7 @@ class Init {
 
     initEventListeners() {
         window.addEventListener("hashchange", () => this.hashChecker());
-        
+
     }
 
     hashChecker() {
@@ -55,10 +55,36 @@ class Init {
                 break;
         }
     }
+    checkSessionForLogin() {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "/ajax/check_session", true); // Adjust the URL as necessary
+        xhr.onload = function () {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                const response = JSON.parse(xhr.responseText);
+                if (response.success) {
+                    response.user
+                    console.log("User is logged in.");
+                    // Handle logged-in user (e.g., update UI or redirect)
+                    new UserNavBar(response.user);
+                } else {
+                    console.log("User is not logged in.");
+                    // Handle not logged-in user (e.g., redirect to login page)
+                }
+            } else {
+                console.log("Failed to check login status.");
+            }
+        };
+        xhr.onerror = function () {
+            console.error("Error occurred while checking login status.");
+        };
+        xhr.send();
+    }
+
 
     load() {
+        this.checkSessionForLogin();
 
-        
+
         new DarkModeToggle();
         new MatomoOptOutManager();
         const searchParams = new URLSearchParams(window.location.search);
@@ -72,12 +98,8 @@ class Init {
         this.hashChecker();
         console.log("load complete");
         new StudyNavbar();
-        let scriptEle = document.createElement("script");
-        
-        scriptEle.src = "https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js";
-        scriptEle.type = "text/javascript";
-        scriptEle.async = true;
-        //document.head.appendChild(scriptEle);
+
+
 
     }
 
@@ -85,4 +107,4 @@ class Init {
 window.onload = function () {
 
     new Init();
-  };
+};

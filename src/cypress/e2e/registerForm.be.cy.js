@@ -37,14 +37,7 @@ describe('Authentication Tests', () => {
       cy.get('#login-message').should('contain.text', 'Reset email sent'); // Update based on actual message
     });
   
-    it('allows a user to log out', () => {
-      // Assuming the user is already logged in for this test
-      cy.get('#logout-button').click();
-      
-      // Assert logout success, e.g., by checking that the login form is visible again
-      cy.get('#login-form').should('be.visible');
-    });
-  
+
     // Add any additional tests as necessary for complete coverage
   });
   describe('Registration delete', () => {
