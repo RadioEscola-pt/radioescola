@@ -1,0 +1,7 @@
+# Use an official MariaDB image as the base image
+FROM mariadb:latest
+
+RUN apt-get update && apt-get install -y mariadb-client
+
+# Copy the custom configuration file to the container
+COPY docker/custom.cnf /etc/mysql/conf.d/

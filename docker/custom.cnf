@@ -1,0 +1,10 @@
+[mysqld]
+# Set the character set and collation
+character-set-server=utf8mb4
+collation-server=utf8mb4_unicode_ci
+
+# Set the timezone
+default-time-zone=UTC
+
+# Other configurations
+# Add your custom configurations here...

@@ -8,10 +8,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+
+      - name: Update NPM dependencies
+        run: npm install
+        working-directory: ./src/frontEnd
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          build: npm run tailwind:build
-          start: npm run serve
+          browser: chrome
+          record: false
+          # Since the dependencies are installed in frontEnd, set the working-directory accordingly
+          working-directory: ./src
+          spec: 'cypress/e2e/**/*.fe.cy.js'
+          # Adjust start command if necessary, this assumes npm run ci in frontEnd starts the server
+          start: npm --prefix ./frontEnd/ run ci
+          # Make sure wait-on points to the correct URL where your app will be accessible
+          wait-on: 'http://localhost:3000'
+          wait-on-timeout: 60 # seconds
