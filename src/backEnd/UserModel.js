@@ -87,7 +87,49 @@ class UserModel extends Connection {
     }
     return code;
   }
-
+  async changeUserPassword(req, res, currentPass, newPassword) {
+    if (!req.session.userId || !currentPass || !newPassword) {
+      // Bad Request for missing input
+       res.status(200).json({ success: false, message: "Missing information" });
+      return false;
+    }
+  
+    try {
+      // Find the user by the ID stored in the session
+      const user = await this.model.findByPk(req.session.userId);
+  
+      if (!user) {
+        // Not Found for non-existing user
+         res.status(200).json({ success: false, message: "User not found" });
+          return false;
+      }
+  
+      // Verify the current password
+      const isMatch = await bcrypt.compare(currentPass, user.password);
+      if (!isMatch) {
+        // Unauthorized for incorrect current password
+         res.status(200).json({ success: false, message: "Current password is incorrect" });
+         return false;
+      }
+  
+      // Hash the new password
+      const hashedPassword = await bcrypt.hash(newPassword, this.salt);
+  
+      // Update the user's password
+      await user.update({ password: hashedPassword });
+  
+      console.log('Password successfully updated.');
+      // OK for successful password update
+      res.status(200).json({ success: true, message: "Password successfully updated" });
+      return true;
+  
+    } catch (error) {
+      console.error('Error updating password:', error);
+      // Internal Server Error for any server-side issues
+      res.status(200).json({ success: false, message: "Error updating password" });
+    }
+  }
+  
   async createUser(res, email, password) {
     try {
       const verificationCode = this.generateRandomCode(); // Generate a random code
@@ -119,7 +161,6 @@ class UserModel extends Connection {
         // Compare provided password with hashed password in the database
         const isMatch = await bcrypt.compare(password, user.password); // Assuming 'password' field stores the hashed password
 
-
         console.log('Is match:', isMatch);
 
         if (isMatch) {
@@ -129,8 +170,6 @@ class UserModel extends Connection {
           delete userResponse.password; // Remove password from the response object
           delete userResponse.verification_code; // Remove verification_code from the response object
           console.log('User:', userResponse);
-          
-
           req.session.userId = userResponse.userId; // Store user ID in session
           req.session.email = userResponse.email; // Store user email in session
           req.session.role = userResponse.role; // Store user role in session
@@ -213,6 +252,19 @@ class UserModel extends Connection {
       return false;
     }
   }
+ async getAllUsers(req,res)
+  {
+    console.log("get all users ");
+    if (req.session.role === 'admin') {
+      let users = await this.findAllUsers();
+      res.status(200).json({ success: true, message: "Utilizadores", users });
+    }
+    else {
+      res.status(200).json({ success: false, message: "Acesso negado" });
+    }
+
+
+  }
 
 
   async findUserByEmail(email) {
@@ -232,12 +284,10 @@ class UserModel extends Connection {
   }
   async findAllUsers() {
     try {
-      const users = await this.model.findAll();
-      if (users.length > 0) {
-        console.log('All users:', users.map(user => user.toJSON()));
-      } else {
-        console.log('No users found');
-      }
+      const users = await this.model.findAll({
+        attributes: { exclude: ['password','verification_code'] }
+      });
+
       return users;
     } catch (error) {
       console.error('Error retrieving users:', error);

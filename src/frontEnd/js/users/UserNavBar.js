@@ -6,6 +6,7 @@ class UserNavBar {
         this.dataUrl = "users/navBar.json";
         this.loadData();
         this.setObjectInCookie('userInfo', user, 7);
+        this.user = user;
     }
     setObjectInCookie(cookieName, object, daysToExpire) {
         const d = new Date();
@@ -44,18 +45,24 @@ class UserNavBar {
         }
         if (actionEvent) {
             switch (actionEvent) {
+                case "userAccounts":
+                    new AllUsers();
+                    break;
                 case 'artigos':
-                    this.artigos();
+                    new EditorApp();
                     break;
                 case 'logout':
                     this.logout();
+                    break;
+                case 'mudarPassword':
+                    new ChangePass();
                     break;
                 default:
                     break;
             }
         }
     }
-    artigos() { new EditorApp(); }
+
     logout() {
         let xhr = new XMLHttpRequest();
         xhr.open("GET", "ajax/logout", true);
@@ -71,11 +78,6 @@ class UserNavBar {
     }
 
 
-
-
-
-
-
     populateNavbar(data) {
         // Create the main ul container
         let mainUl = document.createElement('ul');
@@ -84,6 +86,10 @@ class UserNavBar {
 
         for (let i = 0; i < data.categories.length; i++) {
             const category = data.categories[i];
+            if (!category.role.includes(this.user.role))
+            {
+                continue;
+            }
 
             // Create the li container for each category
             const categoryLi = document.createElement('li');
@@ -94,6 +100,8 @@ class UserNavBar {
 
 
             if (category.items == null) {
+                
+
                 categoryButton = document.createElement('a');
                 categoryButton.className = "block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white";
                 categoryButton.textContent = category.title;

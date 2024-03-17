@@ -71,6 +71,20 @@ class Init {
                     res.status(200).send({ success: true, message: "User logged out." });
                 }
                 break;
+            case '/allUsers':
+                if (method === 'GET') {
+                    const userModel = new UserModel();
+                    userModel.getAllUsers(req,res);
+                }
+                break;
+            case '/changePassword':
+                if (method === 'POST') {
+                    const userModel = new UserModel();
+                    const { email, pass, newPass } = req.body;
+                    userModel.changeUserPassword(req, res, pass, newPass);
+                }
+                break;
+                	
 
 
             default:

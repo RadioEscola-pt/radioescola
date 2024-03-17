@@ -3,12 +3,21 @@
         {
             "id": "Logout",
             "title": "logout",
-            "action": "logout"
-  
+            "action": "logout",
+            "role": [
+                "pupil",
+                "contributor",
+                "admin"
+            ]
         },
         {
             "id": "Utilizador",
             "title": "Utilizador",
+            "role": [
+                "pupil",
+                "contributor",
+                "admin"
+            ],
             "items": [
                 {
                     "title": "Mudar Password",
@@ -18,13 +27,15 @@
                     "title": "Cancelar Conta",
                     "action": "cancelarConta"
                 }
-
-
             ]
         },
         {
             "id": "Editar",
             "title": "Editar",
+            "role": [
+                "contributor",
+                "admin"
+            ],
             "items": [
                 {
                     "title": "Artigos",
@@ -35,8 +46,19 @@
                     "action": "peruntas"
                 }
             ]
-
+        },
+        {
+            "id": "administrador",
+            "title": "Administrador",
+            "role": [
+                "admin"
+            ],
+            "items": [
+                {
+                    "title": "Contas de Utilizadores",
+                    "action": "userAccounts"
+                }
+            ]
         }
     ]
 }
-  
