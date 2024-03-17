@@ -15,8 +15,8 @@
                     "action": "mudarPassword"
                 },
                 {
-                    "title": "Canselar Conta",
-                    "action": "canselarConta"
+                    "title": "Cancelar Conta",
+                    "action": "cancelarConta"
                 }
 
 
