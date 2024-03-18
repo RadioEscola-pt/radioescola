@@ -2,7 +2,7 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.6",
     "concurrently": "^8.2.1",
-    "cypress": "^13.4.0",
+    "cypress": "^3.4.1",
     "serve": "^14.2.1",
     "tailwindcss": "^3.3.3"
   },
