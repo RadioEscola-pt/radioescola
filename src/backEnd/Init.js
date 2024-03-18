@@ -1,4 +1,6 @@
 const UserModel = require('./UserModel');
+const fs = require('fs').promises; // Node's fs module with promise support
+
 
 class Init {
     constructor(req, res) {
@@ -25,7 +27,7 @@ class Init {
                 break;
             case '/check_session':
                 if (method === 'GET') {
-                    if (req.session.loggefIn === true) {
+                    if (req.session.loggedIn === true) {
                         let userSessionData = {
                             userId: req.session.userId,
                             email: req.session.email,
@@ -57,7 +59,7 @@ class Init {
                 }
                 break;
             case '/deleteUser':
-                if (method === 'POST') {
+                if ((method === 'POST') && (req.session.loggedIn === true) ) {
                     const userModel = new UserModel();
                     const { email, pass } = req.body;
                     userModel.deleteUser(res, email, pass);
@@ -72,19 +74,19 @@ class Init {
                 }
                 break;
             case '/allUsers':
-                if (method === 'GET') {
+                if ((method === 'GET') && (req.session.loggedIn === true) ) {
                     const userModel = new UserModel();
                     userModel.getAllUsers(req,res);
                 }
                 break;
             case '/changePassword':
-                if (method === 'POST') {
+                if  ((method === 'POST') && (req.session.loggedIn === true) ) {
                     const userModel = new UserModel();
-                    const { email, pass, newPass } = req.body;
-                    userModel.changeUserPassword(req, res, pass, newPass);
+                    const { currentPassword, newPassword } = req.body;
+                    userModel.changeUserPassword(req, res, currentPassword, newPassword);
                 }
                 break;
-                	
+
 
 
             default:

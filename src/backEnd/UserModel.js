@@ -1,6 +1,7 @@
 const { Sequelize } = require('sequelize');
 const Connection = require('./Connection');
 const session = require('express-session');
+const UserDocument = require('./UserDocument');
 
 const bcrypt = require('bcrypt');
 
@@ -10,6 +11,7 @@ class UserModel extends Connection {
   constructor() {
 
     super(); // Call the parent class's constructor
+    
 
     this.salt = 10;
     this.model = this.defineModel();
@@ -17,6 +19,13 @@ class UserModel extends Connection {
     this.model.sync({ alter: true }).then(() => {
       console.log("The table for the User model was just (re)created!");
     }).catch(error => console.error('Error syncing database:', error));
+    let userDoc=new UserDocument();
+    let docModel=userDoc.getModel();
+
+
+    this.model.hasMany(docModel, { foreignKey: 'userId' });
+    docModel.belongsTo(this.model, { foreignKey: 'userId' });
+
   }
 
   defineModel() {
@@ -180,7 +189,7 @@ class UserModel extends Connection {
           req.session.certification_level = userResponse.certification_level; // Store the entire user object in 
           req.session.birthday = userResponse.birthday; // Store the entire user object in
           req.session.call_sign = userResponse.call_sign; // Store the entire user object in
-          req.session.loggefIn = true; // Store the entire user object in
+          req.session.loggedIn = true; // Store the entire user object in
           req.session.save(); // Save the session
           let userSessionData = {
             userId: req.session.userId,
@@ -269,7 +278,16 @@ class UserModel extends Connection {
 
   async findUserByEmail(email) {
     try {
-      const user = await this.model.findOne({ where: { email } });
+      const user = await this.model.findOne({ 
+        
+        include: [{
+          model: UserDocument,
+          attributes: ['documentId'], // Specify attributes you want to include from the UserDocument
+        }],
+        attributes: { exclude: ['password'] },
+      
+      
+      });
       if (user) {
         console.log('User found:', user.toJSON());
         return user.toJSON();
@@ -285,6 +303,10 @@ class UserModel extends Connection {
   async findAllUsers() {
     try {
       const users = await this.model.findAll({
+        include: [{
+          model: UserDocument,
+          attributes: ['documentId'], // Specify attributes you want to include from the UserDocument
+        }],
         attributes: { exclude: ['password','verification_code'] }
       });
 

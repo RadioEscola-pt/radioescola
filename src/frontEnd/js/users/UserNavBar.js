@@ -57,6 +57,9 @@ class UserNavBar {
                 case 'mudarPassword':
                     new ChangePass();
                     break;
+                case 'Certificar':
+                    new UserDocuments();
+                    break;
                 default:
                     break;
             }

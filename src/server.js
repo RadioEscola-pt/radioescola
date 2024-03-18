@@ -1,5 +1,9 @@
 const express = require('express');
 const session = require('express-session');
+const UserDocument = require('./backEnd/UserDocument');
+const multer = require('multer');
+
+
 const path = require('path');
 const Init = require('./backEnd/Init');
 const bodyParser = require('body-parser'); // Import body-parser middleware
@@ -23,6 +27,28 @@ app.use(session({
 
     }
 }));
+
+const upload = multer({ dest: '/uploadDocument' });
+
+app.use('/uploadDocument', upload.single('document'), (req, res) => {
+    if (!req.file) {
+        return res.status(200).send('No file uploaded.');
+    }
+    if  (req.session.loggedIn === true) {
+
+
+        try {
+
+
+            // Instantiate your model (or use it directly if it's a static method)
+            const userDocument = new UserDocument();
+            userDocument.addUserDocument(req, res);
+        } catch (error) {
+            console.error('Error uploading document:', error);
+            res.status(500).send('Error uploading document');
+        }
+    }
+});
 
 
 // Redirect or handle /backend requests

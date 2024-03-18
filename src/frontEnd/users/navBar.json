@@ -20,6 +20,10 @@
             ],
             "items": [
                 {
+                    "title": "Certificar-se",
+                    "action": "Certificar"
+                },
+                {
                     "title": "Mudar Password",
                     "action": "mudarPassword"
                 },

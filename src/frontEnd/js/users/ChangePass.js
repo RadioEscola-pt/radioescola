@@ -45,12 +45,12 @@ class ChangePass {
                     this.form.reset();
                 }
             } else {
-                console.error('Error changing password:', xhr.statusText);
+                console.log('Error changing password:', xhr.statusText);
             }
         };
 
         xhr.onerror = () => {
-            console.error('Request failed');
+            console.log('Request failed');
         };
 
         xhr.send(data);

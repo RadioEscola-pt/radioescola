@@ -1,0 +1,22 @@
+<form id="uploadForm" enctype="multipart/form-data">
+    <h2>Upload Document</h2>
+    
+    <div class="form-group">
+        <label for="docType">Document Type:</label>
+        <select id="docType" name="docType">
+            <option value="identification">Identification</option>
+            <option value="cat 3">certificado Cat3</option>
+            <option value="cat 2">certificado Cat2</option>
+            <option value="cat 1">certificado Cat1</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="document">Document Image:</label>
+        <input type="file" id="document" name="document" required>
+    </div>
+    
+    <button type="submit">Upload</button>
+</form>
+<div id="message"></div>
+```
