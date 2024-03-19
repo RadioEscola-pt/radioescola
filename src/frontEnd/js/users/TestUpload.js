@@ -1,4 +1,4 @@
-class UserDocuments {
+class TestUpload {
     constructor() {
         this.popup = new Popup("users/TestUpload", this);
     }

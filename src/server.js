@@ -62,7 +62,7 @@ app.use('/TestUpload', upload.single('document'), (req, res) => {
             res.status(500).send('Error uploading document');
         }
     }
-}
+});
 
 // Redirect or handle /backend requests
 app.use('/ajax', (req, res) => {

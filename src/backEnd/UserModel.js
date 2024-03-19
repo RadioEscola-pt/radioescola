@@ -18,11 +18,12 @@ class UserModel extends Connection {
       console.log("The table for the User model was just (re)created!");
     }).catch(error => console.error('Error syncing database:', error));
     let userDoc=new UserDocument();
-    let docModel=userDoc.getModel();
+    this.docModel=userDoc.getModel();
 
 
-    this.model.hasMany(docModel, { foreignKey: 'userId' });
-    docModel.belongsTo(this.model, { foreignKey: 'userId' });
+    this.model.hasMany(this.docModel, { foreignKey: 'userId' });
+    this.docModel.belongsTo(this.model, { foreignKey: 'userId' });
+
 
   }
 
@@ -32,7 +33,7 @@ class UserModel extends Connection {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true // Automatically increment the value
-      },
+              },
       email: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -302,7 +303,7 @@ class UserModel extends Connection {
     try {
       const users = await this.model.findAll({
         include: [{
-          model: UserDocument,
+          model: this.docModel,
           attributes: ['documentId'], // Specify attributes you want to include from the UserDocument
         }],
         attributes: { exclude: ['password','verification_code'] }

@@ -15,6 +15,8 @@ class UserDocument extends Connection {
         console.log("The table for the UserDocument model was just (re)created!");
       })
       .catch(error => console.error('Error syncing database:', error));
+      
+
   }
   getModel() {
     return this.model;
