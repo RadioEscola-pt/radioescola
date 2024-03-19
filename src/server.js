@@ -36,10 +36,7 @@ app.use('/uploadDocument', upload.single('document'), (req, res) => {
     }
     if  (req.session.loggedIn === true) {
 
-
         try {
-
-
             // Instantiate your model (or use it directly if it's a static method)
             const userDocument = new UserDocument();
             userDocument.addUserDocument(req, res);
@@ -50,6 +47,22 @@ app.use('/uploadDocument', upload.single('document'), (req, res) => {
     }
 });
 
+app.use('/TestUpload', upload.single('document'), (req, res) => {
+    if (!req.file) {
+        return res.status(200).send('No file uploaded.');
+    }
+    if  (req.session.loggedIn === true) {
+
+        try {
+            // Instantiate your model (or use it directly if it's a static method)
+            const userDocument = new UserDocument();
+            userDocument.addTestDocument(req, res);
+        } catch (error) {
+            console.error('Error uploading document:', error);
+            res.status(500).send('Error uploading document');
+        }
+    }
+}
 
 // Redirect or handle /backend requests
 app.use('/ajax', (req, res) => {

@@ -11,9 +11,7 @@ class UserModel extends Connection {
   constructor() {
 
     super(); // Call the parent class's constructor
-    
 
-    this.salt = 10;
     this.model = this.defineModel();
     //this.model.sync(); // Ensures the table matches the model. It creates the table if it does not exist (and does nothing if it already exists)
     this.model.sync({ alter: true }).then(() => {

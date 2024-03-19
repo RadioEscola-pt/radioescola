@@ -60,6 +60,12 @@ class UserNavBar {
                 case 'Certificar':
                     new UserDocuments();
                     break;
+                case 'TestUpload':
+                    new TestUpload();
+                    break;
+                case 'EditarPerfil':    
+                    //new EditProfile();
+                    break;
                 default:
                     break;
             }

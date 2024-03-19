@@ -23,6 +23,15 @@
                     "title": "Certificar-se",
                     "action": "Certificar"
                 },
+                
+                {
+                    "title": "Test Upload",
+                    "action": "TestUpload"
+                },
+                {
+                    "title": "Editar Perfil",
+                    "action": "EditarPerfil"
+                },
                 {
                     "title": "Mudar Password",
                     "action": "mudarPassword"

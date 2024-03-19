@@ -85,7 +85,7 @@ class Init {
                     const { currentPassword, newPassword } = req.body;
                     userModel.changeUserPassword(req, res, currentPassword, newPassword);
                 }
-                break;
+                break;                
 
 
 
