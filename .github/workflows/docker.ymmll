@@ -9,10 +9,10 @@ jobs:
       mariadb:
         image: mariadb:latest
         env:
-          MYSQL_ROOT_PASSWORD: your_root_password
-          MYSQL_DATABASE: your_database_name
-          MYSQL_USER: your_database_user
-          MYSQL_PASSWORD: your_database_password
+          MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+          MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
+          MYSQL_USER: ${{ secrets.MYSQL_USER }}
+          MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
         ports:
           - 3306:3306
         # Set health checks to wait for DB to be ready
@@ -30,6 +30,19 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
+
+      # Clear and update src/password.env file with new content from GitHub Secrets
+      - name: Update src/password.env file
+        run: |
+          # Clear the content of the file
+          > src/password.env
+          
+          # Write new environment variables to the file
+          echo MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }} >> src/password.env
+          echo MYSQL_DATABASE=${{ secrets.MYSQL_DATABASE }} >> src/password.env
+          echo MYSQL_USER=${{ secrets.MYSQL_USER }} >> src/password.env
+          echo MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }} >> src/password.env
+          # Add other environment variables as needed
 
       # Install Node.js dependencies
       - name: Install dependencies
