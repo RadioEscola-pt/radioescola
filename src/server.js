@@ -46,7 +46,24 @@ app.use('/uploadDocument', upload.single('document'), (req, res) => {
         }
     }
 });
+app.get('/document/image', async (req, res) => {
+    try {
+        const documentId = req.params.documentId;
+        const userDocument = new UserDocument();
+        const documentData = await userDocument.getDocumentData(documentId);
 
+        if (!documentData) {
+            return res.status(404).send('Document not found.');
+        }
+
+        // Set the Content-Type to the document's MIME type
+        res.setHeader('Content-Type', documentData.mimeType);
+        res.send(documentData.buffer); // Send the binary data
+    } catch (error) {
+        console.error('Error serving document:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
 app.use('/TestUpload', upload.single('document'), (req, res) => {
     if (!req.file) {
         return res.status(200).send('No file uploaded.');

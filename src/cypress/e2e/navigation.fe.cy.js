@@ -19,13 +19,13 @@ describe("Check navigation", () => {
         cy.get("#categoria1Dropdown ul li a").contains("Ganho (dB)").click({force: true});
        
         cy.get("#welcome").should('contain.text', 'O decibel, cujo símbolo é dB,');
+        cy.log('This line 22');
 
         cy.get("#studyLink").click();
         cy.get("#categoria1Button").click();
         cy.get("#categoria1Dropdown ul li a").contains("Tranformadores").click({force: true});
-       
         cy.get("#welcome").should('contain.text', 'Um transformador é um dispositivo elétrico');
-
+        cy.log('This line 28');
         cy.get("#studyLink").click();
         cy.get("#categoria1Button").click();
         cy.get("#categoria1Dropdown ul li a").contains("Amplificadores operacionais").click({force: true});

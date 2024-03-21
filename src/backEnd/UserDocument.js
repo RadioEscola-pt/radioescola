@@ -81,6 +81,23 @@ class UserDocument extends Connection {
       throw error;
     }
   }
+  async getDocumentData(documentId) {
+    try {
+        const document = await this.model.findByPk(documentId, {
+            attributes: ['image', 'fileType', 'fileName'],
+        });
+
+        if (!document) {
+            console.log('No document found for ID:', documentId);
+            return null;
+        }
+
+        return document;
+    } catch (error) {
+        console.error('Error retrieving document:', error);
+        throw error;
+    }
+}
   async addUserDocument(req, res) {
     try {
       const  docType = req.body.docType;
