@@ -11,7 +11,7 @@ describe("Check navigation", () => {
 
 
     it("tests category 1 study links", () => {
-        cy.viewport('macbook-13');
+        cy.viewport(1280, 720);
         cy.visit("http://localhost:3000");
 
         cy.get("#studyLink").click();
