@@ -1,0 +1,48 @@
+name: Launch Node.js and MariaDB
+
+on: [push]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    services:
+      mariadb:
+        image: mariadb:latest
+        env:
+          MYSQL_ROOT_PASSWORD: your_root_password
+          MYSQL_DATABASE: your_database_name
+          MYSQL_USER: your_database_user
+          MYSQL_PASSWORD: your_database_password
+        ports:
+          - 3306:3306
+        # Set health checks to wait for DB to be ready
+        options: >-
+          --health-cmd "mysqladmin ping -h localhost"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # Setup Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      # Install Node.js dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # You might want to run tests or other checks here
+      - name: Run tests
+        run: npm test
+
+      # Build and run your Node.js app using Docker
+      - name: Build and run Node.js app
+        run: |
+          docker build -t nodejs_container -f Dockerfile-nodejs .
+          docker run -d --name nodejs_container -p 3000:3000 nodejs_container
+
+      # Add any other steps you need for deployment or testing
