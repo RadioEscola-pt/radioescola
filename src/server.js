@@ -40,28 +40,29 @@ app.use('/uploadDocument', upload.single('document'), (req, res) => {
             // Instantiate your model (or use it directly if it's a static method)
             const userDocument = new UserDocument();
             userDocument.addUserDocument(req, res);
+            
         } catch (error) {
             console.error('Error uploading document:', error);
             res.status(500).send('Error uploading document');
         }
     }
 });
-app.get('/document/image', async (req, res) => {
+app.get('/image', async (req, res) => {
     try {
-        const documentId = req.params.documentId;
+        const { id } = req.query;
         const userDocument = new UserDocument();
-        const documentData = await userDocument.getDocumentData(documentId);
+        const documentData = await userDocument.getDocumentData(id);
 
         if (!documentData) {
-            return res.status(404).send('Document not found.');
+            return res.status(200).send({ success: false, message:'Document not found.'});
         }
 
         // Set the Content-Type to the document's MIME type
-        res.setHeader('Content-Type', documentData.mimeType);
-        res.send(documentData.buffer); // Send the binary data
+        res.setHeader('Content-Type', documentData.fileType);
+        res.send(documentData.image); // Send the binary data
     } catch (error) {
         console.error('Error serving document:', error);
-        res.status(500).send('Internal Server Error');
+        res.status(200).send({ success: false, message:'Internal Server Error'});
     }
 });
 app.use('/TestUpload', upload.single('document'), (req, res) => {
@@ -76,7 +77,7 @@ app.use('/TestUpload', upload.single('document'), (req, res) => {
             userDocument.addTestDocument(req, res);
         } catch (error) {
             console.error('Error uploading document:', error);
-            res.status(500).send('Error uploading document');
+            res.status(200).send({ success: false, message:'Error uploading document'});
         }
     }
 });

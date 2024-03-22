@@ -47,7 +47,21 @@ class AllUsers {
             const tr = document.createElement('tr');
             for (let j = 0; j < userKeys.length; j++) {
                 const td = document.createElement('td');
-                td.textContent = users[i][userKeys[j]];
+                if (userKeys[j] === 'UserDocuments') {
+                    // Assuming UserDocuments is an array of objects {documentId, fileName}
+                    for (let k = 0; k < users[i][userKeys[j]].length; k++) {
+                        const doc = users[i][userKeys[j]][k];
+                        const a = document.createElement('a');
+                        a.href = `/image?id=`+doc.documentId; // Link to document
+                        a.textContent = doc.fileName; // Text is the fileName
+                        a.target = "_blank"; // Open in new tab/window
+                        td.appendChild(a);
+                        td.appendChild(document.createElement('br')); // New line for multiple documents
+                    }
+                } else {
+                    td.textContent = users[i][userKeys[j]];
+                }
+                
                 tr.appendChild(td);
             }
             tbody.appendChild(tr);

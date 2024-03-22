@@ -304,7 +304,7 @@ class UserModel extends Connection {
       const users = await this.model.findAll({
         include: [{
           model: this.docModel,
-          attributes: ['documentId'], // Specify attributes you want to include from the UserDocument
+          attributes: ['documentId','fileName' ], // Specify attributes you want to include from the UserDocument
         }],
         attributes: { exclude: ['password','verification_code'] }
       });

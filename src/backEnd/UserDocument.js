@@ -77,7 +77,7 @@ class UserDocument extends Connection {
 
       return document;
     } catch (error) {
-      console.error('Error adding document:', error);
+      console.log('Error adding document:', error);
       throw error;
     }
   }
