@@ -36,7 +36,7 @@ class StudyNavbar {
             categoryButton.setAttribute('data-dropdown-placement', "right-start");
             categoryButton.setAttribute('type', "button");
 
-            categoryButton.addEventListener('click', (event) => {
+categoryButton.addEventListener('click', (event) => {
                 //TODO there is somehting wrong here with the dropdowns this code is hacking an issue with taiwindcss
                 const dropdownID = event.currentTarget.getAttribute('data-dropdown-toggle');
                 const dropdown = document.getElementById(dropdownID);

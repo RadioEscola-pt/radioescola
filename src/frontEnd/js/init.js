@@ -99,6 +99,8 @@ class Init {
         console.log("load complete");
         new StudyNavbar();
 
+        initFlowbite();
+
 
 
     }

@@ -90,7 +90,7 @@ describe("Check navigation", () => {
 
     it("tests category 3 study links", () => {
         cy.visit("http://localhost:3000");
-        cy.wait(5000);
+
 
         cy.get("#studyLink").click({force: true});
         cy.get("#categoria3Button").click();

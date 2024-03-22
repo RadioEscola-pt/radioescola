@@ -26,7 +26,7 @@ class UserNavBar {
         //TODO there is somehting wrong here with the dropdowns this code is hacking an issue with taiwindcss
         const dropdownID = event.currentTarget.getAttribute('data-dropdown-toggle');
         let actionEvent = event.target.getAttribute('actionEvent');
-        const dropdown = document.getElementById(dropdownID);
+const dropdown = document.getElementById(dropdownID);
 
         // Close the current dropdown if it's not the one being clicked
         if (UserNavBar.currentDropdown && UserNavBar.currentDropdown !== dropdown) {
