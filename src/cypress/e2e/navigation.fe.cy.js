@@ -70,7 +70,7 @@ describe("Check navigation", () => {
 
         cy.get("#studyLink").click({force: true});
         cy.get("#categoria2Button").click();
-        cy.get("#categoria2Dropdown ul li a").contains("Bobines").click();
+        cy.get("#categoria2Dropdown ul li a").contains("Bobines").click({force: true} );
        
         cy.get("#welcome").should('contain.text', 'O que é uma Bobina?');
 
