@@ -11,10 +11,12 @@ describe("Check navigation", () => {
 
 
     it("tests category 1 study links", () => {
-        cy.viewport(1280, 720);
+
         cy.visit("http://localhost:3000");
 
-        cy.get("#studyLink").should('be.visible').click();
+        
+        cy.get('#studyLink').should('be.visible').and('not.be.covered').click();
+
         cy.get("#categoria1Button").click();
         cy.get("#categoria1Dropdown ul li a").contains("Ganho (dB)").click({force: true});
        
