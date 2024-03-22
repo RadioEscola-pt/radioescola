@@ -44,6 +44,7 @@ categoryButton.addEventListener('click', (event) => {
                 // Close the current dropdown if it's not the one being clicked
                 if (this.currentDropdown && this.currentDropdown !== dropdown) {
                     this.currentDropdown.classList.add('hidden');
+                    initFlowbite();
                 }
 
                 // Toggle the clicked dropdown
