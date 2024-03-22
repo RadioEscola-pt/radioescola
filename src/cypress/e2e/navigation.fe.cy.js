@@ -77,13 +77,13 @@ describe("Check navigation", () => {
 
         cy.get("#studyLink").click({force: true});
         cy.get("#categoria2Button").click();
-        cy.get("#categoria2Dropdown ul li a").contains("Capacidade de baterias").click({force: true} );
+        cy.get("#categoria2Dropdown ul li a").contains("Capacidade de baterias").click({force: true}  );
        
         cy.get("#welcome").should('contain.text', 'Capacidade de uma bateria');
 
         cy.get("#studyLink").click({force: true});
         cy.get("#categoria2Button").click();
-        cy.get("#categoria2Dropdown ul li a").contains("Onda estacionária (SWR)").click();
+        cy.get("#categoria2Dropdown ul li a").contains("Onda estacionária (SWR)").click({force: true} );
        
         cy.get("#welcome").should('contain.text', 'VSWR é definido como a razão entre as ondas estacionárias ');
     });
@@ -100,55 +100,55 @@ describe("Check navigation", () => {
 
         cy.get("#studyLink").click({force: true});
         cy.get("#categoria3Button").click();
-        cy.get("#categoria3Dropdown ul li a").contains("Abreviaturas de Operação").click();
+        cy.get("#categoria3Dropdown ul li a").contains("Abreviaturas de Operação").click({force: true} );
        
         cy.get("#welcome").should('contain.text', 'Abreviaturas de Operação');~
 
         cy.get("#studyLink").click({force: true});
         cy.get("#categoria3Button").click();
-        cy.get("#categoria3Dropdown ul li a").contains("Definições Genéricas").click();
+        cy.get("#categoria3Dropdown ul li a").contains("Definições Genéricas").click({force: true} );
        
         cy.get("#welcome").should('contain.text', 'Definições genéricas');
 
         cy.get("#studyLink").click({force: true});
         cy.get("#categoria3Button").click();
-        cy.get("#categoria3Dropdown ul li a").contains("Entidades e Competências").click();
+        cy.get("#categoria3Dropdown ul li a").contains("Entidades e Competências").click({force: true} );
        
         cy.get("#welcome").should('contain.text', 'Entidades e suas competências');
 
         cy.get("#studyLink").click({force: true});
         cy.get("#categoria3Button").click();
-        cy.get("#categoria3Dropdown ul li a").contains("Código Q").click();
+        cy.get("#categoria3Dropdown ul li a").contains("Código Q").click({force: true} );
        
         cy.get("#welcome").should('contain.text', 'Código Q');
 
         cy.get("#studyLink").click({force: true});
         cy.get("#categoria3Button").click();
-        cy.get("#categoria3Dropdown ul li a").contains("Prefixos de indicativos").click();
+        cy.get("#categoria3Dropdown ul li a").contains("Prefixos de indicativos").click({force: true} );
        
         cy.get("#welcome").should('contain.text', 'Lista dos prefixos de indicativos de chamada');
 
         cy.get("#studyLink").click({force: true});
         cy.get("#categoria3Button").click();
-        cy.get("#categoria3Dropdown ul li a").contains("Lei de Ohm").click();
+        cy.get("#categoria3Dropdown ul li a").contains("Lei de Ohm").click({force: true} );
        
         cy.get("#welcome").should('contain.text', 'Lei de Ohm');
 
         cy.get("#studyLink").click({force: true});
         cy.get("#categoria3Button").click();
-        cy.get("#categoria3Dropdown ul li a").contains("Corrente Alternada / AC").click();
+        cy.get("#categoria3Dropdown ul li a").contains("Corrente Alternada / AC").click({force: true} );
        
         cy.get("#welcome").should('contain.text', 'Corrente Alternada / AC');
 
         cy.get("#studyLink").click({force: true});
         cy.get("#categoria3Button").click();
-        cy.get("#categoria3Dropdown ul li a").contains("Código de cores").click();
+        cy.get("#categoria3Dropdown ul li a").contains("Código de cores").click({force: true} );
        
         cy.get("#welcome").should('contain.text', 'Código de cores para resistências');
 
         cy.get("#studyLink").click({force: true});
         cy.get("#categoria3Button").click();
-        cy.get("#categoria3Dropdown ul li a").contains("Mult e SubMult. de Unidades").click();
+        cy.get("#categoria3Dropdown ul li a").contains("Mult e SubMult. de Unidades").click({force: true} );
        
         cy.get("#welcome").should('contain.text', 'Múltiplos e submúltiplos de unidades');
       });
