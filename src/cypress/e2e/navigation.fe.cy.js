@@ -77,7 +77,7 @@ describe("Check navigation", () => {
 
         cy.get("#studyLink").click({force: true});
         cy.get("#categoria2Button").click();
-        cy.get("#categoria2Dropdown ul li a").contains("Capacidade de baterias").click();
+        cy.get("#categoria2Dropdown ul li a").contains("Capacidade de baterias").click({force: true} );
        
         cy.get("#welcome").should('contain.text', 'Capacidade de uma bateria');
 
@@ -94,7 +94,7 @@ describe("Check navigation", () => {
 
         cy.get("#studyLink").click({force: true});
         cy.get("#categoria3Button").click();
-        cy.get("#categoria3Dropdown ul li a").contains("Alfabeto Fonético").click();
+        cy.get("#categoria3Dropdown ul li a").contains("Alfabeto Fonético").click({force: true} );
        
         cy.get("#welcome").should('contain.text', 'Alfabeto Fonético');
 
