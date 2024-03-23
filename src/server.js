@@ -32,18 +32,20 @@ const upload = multer({ dest: '/uploadDocument' });
 
 app.use('/uploadDocument', upload.single('document'), (req, res) => {
     if (!req.file) {
-        return res.status(200).send('No file uploaded.');
+        return res.status(200).send({ success: false, message:'No file uploaded.'});
     }
     if  (req.session.loggedIn === true) {
 
         try {
+            const fs = require('fs').promises; // Use the Promise-based version of fs inside the method
+
             // Instantiate your model (or use it directly if it's a static method)
             const userDocument = new UserDocument();
             userDocument.addUserDocument(req, res);
             
         } catch (error) {
             console.error('Error uploading document:', error);
-            res.status(500).send('Error uploading document');
+            res.status(200).send({ success: false, message:'Error uploading document'});
         }
     }
 });
@@ -65,6 +67,7 @@ app.get('/image', async (req, res) => {
         res.status(200).send({ success: false, message:'Internal Server Error'});
     }
 });
+const uploadTest = multer({ dest: '/TestUpload' });
 app.use('/TestUpload', upload.single('document'), (req, res) => {
     if (!req.file) {
         return res.status(200).send('No file uploaded.');
@@ -72,6 +75,8 @@ app.use('/TestUpload', upload.single('document'), (req, res) => {
     if  (req.session.loggedIn === true) {
 
         try {
+            const fs = require('fs').promises; // Use the Promise-based version of fs inside the method
+
             // Instantiate your model (or use it directly if it's a static method)
             const userDocument = new UserDocument();
             userDocument.addTestDocument(req, res);
@@ -85,8 +90,7 @@ app.use('/TestUpload', upload.single('document'), (req, res) => {
 // Redirect or handle /backend requests
 app.use('/ajax', (req, res) => {
 
-    console.log({ success: true, message: "User registered successfully." });
-    //res.status(200).json({ success: true, message: "User registered successfully." });
+    console.log( "User registered successfully." );
     new Init(req, res);
     return true;
 

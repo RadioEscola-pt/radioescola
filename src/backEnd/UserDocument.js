@@ -44,7 +44,7 @@ class UserDocument extends Connection {
         allowNull: false,
       },
       image: {
-        type: Sequelize.BLOB,
+        type: Sequelize.BLOB('long'),
         allowNull: true,
       },
       fileType: {
@@ -63,7 +63,7 @@ class UserDocument extends Connection {
   async addTestDocument(req, res) {
     try {
 
-      const imageData = fs.readFile(req.file.path);
+      const imageData =await fs.readFile(req.file.path);
        
       const document = await this.model.create({
         userId: req.session.userId,
@@ -72,7 +72,8 @@ class UserDocument extends Connection {
         fileType: req.file.mimetype, // Add this line to store the file type
         fileName: req.file.originalname, // Add this line to store the file name
       });
-  
+      res.status(200).send({ success: true, message:'Upload completado com sucesso!'});
+
       console.log('Test added successfully:', document);
 
       return document;
@@ -100,11 +101,16 @@ class UserDocument extends Connection {
 }
   async addUserDocument(req, res) {
     try {
+
       const  docType = req.body.docType;
       if (!['identification', 'cat 3', 'cat 2', 'cat 1'].includes(docType)) {
         throw new Error('Invalid document type');
       }
-      const imageData = fs.readFile(req.file.path);
+      const imageData =await fs.readFile(req.file.path);
+      if (!imageData) {
+        return res.status(200).send({ success: true, message: 'Failed to read file' });
+      }
+  
        
       const document = await this.model.create({
         userId: req.session.userId,
@@ -113,14 +119,16 @@ class UserDocument extends Connection {
         fileType: req.file.mimetype, // Add this line to store the file type
         fileName: req.file.originalname, // Add this line to store the file name
       });
-  
-      console.log('Document added successfully:', document);
+       res.status(200).send({ success: true, message:'Upload completado com sucesso!'});
 
-      return document;
+
+
+      return true;
     } catch (error) {
       console.error('Error adding document:', error);
-      throw error;
+      return false;
     }
+    return false;
   }
   async getUserDocuments(userId) {
     try {

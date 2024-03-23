@@ -21,8 +21,15 @@ class UserDocuments {
         // Set up the callback for when the request completes
         xhr.onload = () => {
             if (xhr.status === 200) {
-                // Handle success
-                this.messageContainer.textContent = 'Document uploaded successfully';
+                const response = JSON.parse(xhr.responseText);
+                if (response.success) {
+
+                } else {
+                    
+                }       
+
+                this.messageContainer.textContent = response.message;
+
             } else {
                 // Handle error
                 this.messageContainer.textContent = 'Error uploading document';
