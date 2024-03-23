@@ -272,9 +272,7 @@ class Questions {
     if (MatomoOptOutManager.hasConsent()) {
       starIcon.uniqueID = uniqueID;
       starIcon.setAttribute('class', 'w-6 h-6 block fill-[#fefce8] dark:fill-slate-700');
-      const favorites =
-        JSON.parse(localStorage.getItem(starIcon.existingRecords + "Fav")) ||
-        [];
+      const favorites = this.getFavQuestions();
 
       starIcon.innerHTML = `
 		
@@ -289,6 +287,7 @@ class Questions {
       starIcon.value = qindex;
       starIcon.jsonFile = this.jsonFile;
       starIcon.hideOnUnselect = this.hideOnUnselect;
+      starIcon.question=this;
       // Add a click event listener to the star icon
       starIcon.onclick = this.saveFav;
       //questionCard.appendChild(starIcon);
@@ -302,8 +301,8 @@ class Questions {
 
   saveFav() {
     // Retrieve the favorites array from local storage
-    var favoritesJSON = localStorage.getItem(this.existingRecords + "Fav");
-    var favorites = favoritesJSON ? JSON.parse(favoritesJSON) : [];
+
+    var favorites =this.question.getFavQuestions();
 
     // Get the unique ID of the question associated with the clicked star
     const index = favorites.indexOf(this.uniqueID);
@@ -327,10 +326,7 @@ class Questions {
     }
 
     // Save the updated favorites array back to local storage
-    localStorage.setItem(
-      this.existingRecords + "Fav",
-      JSON.stringify(favorites)
-    );
+    this.question.saveFavQuestions(favorites);
 
     // Call the showFavElement function for specific HTML elements
     FavQuiz.showFavElement("question3", "favQuiz3");

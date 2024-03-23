@@ -3,61 +3,47 @@ class Storage {
 
 	}
 	
-    static storeDarkMode(isDark) {
-        // Check if there is an existing record in local storage
-        let existingRecords = JSON.parse(localStorage.getItem("DarkMode")) || {};
 
-        // Set the dark mode setting
-        existingRecords.isDark = isDark;
+	static storeDarkMode(isDark) {
+		// Check if there is an existing record in local storage
+		let existingRecords = JSON.parse(localStorage.getItem("DarkMode")) || {};
 
-        // Save the updated records back to local storage
-        localStorage.setItem("DarkMode", JSON.stringify(existingRecords));
-    }
+		// Set the dark mode setting
+		existingRecords.isDark = isDark;
 
-    static getDarkMode() {
-        // Check if there is an existing record in local storage
-        const existingRecords = JSON.parse(localStorage.getItem("DarkMode")) || {};
+		// Save the updated records back to local storage
+		localStorage.setItem("DarkMode", JSON.stringify(existingRecords));
+	}
 
-        // Return the dark mode setting if it exists, or false if not
-        return existingRecords.hasOwnProperty("isDark") ? existingRecords.isDark : false;
-    }
+	static getDarkMode() {
+		// Check if there is an existing record in local storage
+		const existingRecords = JSON.parse(localStorage.getItem("DarkMode")) || {};
+
+		// Return the dark mode setting if it exists, or false if not
+		return existingRecords.hasOwnProperty("isDark") ? existingRecords.isDark : false;
+	}
 
 
 	storePage(page) {
 		// Check if there is an existing record in local storage
 		const existingRecords = JSON.parse(localStorage.getItem(this.getfilename())) || {};
-
-
 		// If a record exists, append the new correctness value to the array
 		existingRecords.page = page;
-
-
 		// Save the updated records back to local storage
 		localStorage.setItem(this.getfilename(), JSON.stringify(existingRecords));
 
-
-
-
-
 	}
-	storeFavPage(page)
-	{
-	
+	storeFavPage(page) {
+
 		// Check if there is an existing record in local storage
 		const existingRecords = JSON.parse(localStorage.getItem(this.getfilename())) || {};
-
-
 		// If a record exists, append the new correctness value to the array
 		existingRecords.favPage = page;
-
-
 		// Save the updated records back to local storage
 		localStorage.setItem(this.getfilename(), JSON.stringify(existingRecords));
 
-
-
-
 	}
+
 	getfilename() {
 		let parts = this.jsonFile.split('.');
 		parts = parts[0].split('/');
@@ -65,7 +51,23 @@ class Storage {
 		return filename;
 	}
 
+	saveFavQuestions(favQuestions) {
+		// Save the updated records back to local storage
+		localStorage.setItem(this.getfilename() + "Fav", JSON.stringify(favQuestions));
+	}
 
+	static getFavQuestions(filename) {
+		const favoritesString = localStorage.getItem(filename+ "Fav") || '[]';
+		const favorites = JSON.parse(favoritesString);
+		return favorites;
+	}
+
+
+	getFavQuestions() {
+		const favoritesString = localStorage.getItem(this.getfilename() + "Fav") || '[]';
+		const favorites = JSON.parse(favoritesString);
+		return favorites;
+	}
 	getStorePage() {
 
 		// Check if there is an existing record in local storage
@@ -82,7 +84,6 @@ class Storage {
 
 
 	}
-
 	getStoreFavPage() {
 		// Check if there is an existing record in local storage
 		const existingRecords = JSON.parse(localStorage.getItem(this.getfilename())) || {};
@@ -121,15 +122,15 @@ class Storage {
 	}
 	calculateTruePercentageForQuestion(answerId) {
 		const existingRecords = JSON.parse(localStorage.getItem(this.getfilename())) || {};
-	
+
 		if (existingRecords.hasOwnProperty(answerId)) {
 			const record = existingRecords[answerId];
 			const total = record.isCorrect.length;
 			const trueCount = record.isCorrect.filter(value => value === true).length;
-	
+
 			if (total > 0) {
 				const truePercentage = (trueCount / total) * 100;
-				return truePercentage.toFixed(2)+"%";
+				return truePercentage.toFixed(2) + "%";
 			} else {
 				return 'Sem historia';
 			}

@@ -7,7 +7,7 @@ class Quiz extends Classes([Questions, Storage]) {
 		super();
 		this.jsonFile = json;
 		this.pageBlocks = [];
-		this.filename = this.getfilename();
+
 		this.createQuiz();
 
 	}
@@ -27,8 +27,6 @@ class Quiz extends Classes([Questions, Storage]) {
 				if (ajaxRequest.status == 200) {
 					//turn JSON into array
 					let storedPage = this.quiz.getStorePage();
-
-
 
 					Quiz.messagesArray = JSON.parse(ajaxRequest.responseText);
 					this.quiz.questions = Quiz.messagesArray.questions;

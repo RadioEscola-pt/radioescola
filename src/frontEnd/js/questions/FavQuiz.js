@@ -1,4 +1,4 @@
-class FavQuiz extends Classes([Questions,Storage]) {
+class FavQuiz extends Classes([Questions, Storage]) {
 	static messagesArray = {};
 
 	static currentPage = 0;
@@ -7,17 +7,12 @@ class FavQuiz extends Classes([Questions,Storage]) {
 		super();
 		this.jsonFile = json;
 		this.pageBlocks = [];
-		
-		this.filename = this.getfilename();
-		super.hideOnUnselect=true;
+
+
+		super.hideOnUnselect = true;
 		this.createQuiz();
 
 	}
-
-
-
-
-
 
 	createQuiz() {
 
@@ -25,7 +20,7 @@ class FavQuiz extends Classes([Questions,Storage]) {
 		var questionCounter = 0;
 		var ajaxRequest = new XMLHttpRequest();
 		ajaxRequest.quiz = this;
-		ajaxRequest.onreadystatechange = function() {
+		ajaxRequest.onreadystatechange = function () {
 
 			if (ajaxRequest.readyState == 4) {
 				//the request is completed, now check its status
@@ -36,24 +31,23 @@ class FavQuiz extends Classes([Questions,Storage]) {
 					Quiz.messagesArray = JSON.parse(ajaxRequest.responseText);
 					this.quiz.questions = Quiz.messagesArray.questions;
 					var welcomeDiv = document.getElementById("welcome");
-					
+
 					welcomeDiv.innerHTML = "";
 					var indexBlock = document.createElement("div");
 					indexBlock.id = "qIndex";
 					indexBlock.className = "list-none m-0 p-2 rounded mb-5 overflow-x-scroll overflow-y-hidden bg-slate-200 sticky flex items-center justify-between top-[10px] gap-[10px]";
-					
+
 					welcomeDiv.appendChild(indexBlock);
 					var index = 0;
-					let storedPage=this.quiz.getStoreFavPage();
-					
-					const favoritesString = localStorage.getItem(this.quiz.filename + "Fav") || '[]';
-					const favorites = JSON.parse(favoritesString);
+					let storedPage = this.quiz.getStoreFavPage();
+
+					const favorites = this.quiz.getFavQuestions();
 					for (var qindex in Quiz.messagesArray.questions) {
 						if (favorites.includes(this.quiz.questions[qindex].uniqueID) == false) continue;
 						var pageBlock;
 						Quiz.messagesArray.questions[qindex].index = index;
 						index++;
-						 if ((questionCounter % 10 == 0)||(questionCounter==0)) {
+						if ((questionCounter % 10 == 0) || (questionCounter == 0)) {
 							pageBlock = document.createElement("div");
 							pageBlock.id = "Page" + questionCounter;
 							pageBlock.style.display = "none";
@@ -61,32 +55,31 @@ class FavQuiz extends Classes([Questions,Storage]) {
 							let btn = document.createElement("button");
 							btn.innerHTML = questionCounter / 10 + 1;
 							btn.className = "bg-slate-300 hover:bg-slate-400 p-2 rounded cursor-pointer dark:bg-slate-700 dark:hover:bg-slate-800";
-							btn.value = questionCounter;						
-							let currentPageIndex=0;
+							btn.value = questionCounter;
+							let currentPageIndex = 0;
 							if (questionCounter == 0) {
 
 								currentPageIndex = 0;
 							} else {
 								currentPageIndex = questionCounter / 10;
 							}
-							if (storedPage==currentPageIndex)
-							{
+							if (storedPage == currentPageIndex) {
 								btn.classList.replace('bg-slate-300', 'bg-slate-400');
 								btn.classList.replace('dark:bg-slate-700', 'dark:bg-slate-800');
 							}
 
 							btn.onclick = this.quiz.showPageWithStorage;
-							btn.pageBlocks=this.quiz.pageBlocks; 
+							btn.pageBlocks = this.quiz.pageBlocks;
 							indexBlock.appendChild(btn);
 							this.quiz.pageBlocks.push(pageBlock);
-							btn.quiz=this.quiz;
+							btn.quiz = this.quiz;
 						}
 						questionCounter++;
-						this.quiz.addQuestion(welcomeDiv,pageBlock,Quiz.messagesArray.questions[qindex],qindex);
+						this.quiz.addQuestion(welcomeDiv, pageBlock, Quiz.messagesArray.questions[qindex], qindex);
 
-						
-					}					
-					
+
+					}
+
 					for (const page of this.quiz.pageBlocks) {
 						page.style.display = "none";
 					}
@@ -105,24 +98,24 @@ class FavQuiz extends Classes([Questions,Storage]) {
 		ajaxRequest.send();
 	}
 	static showFavElement(cat, id) {
-	  
-	    const favorites = JSON.parse(localStorage.getItem(cat + "Fav")) ; // Parse and handle null/empty array
-	    const element = document.getElementById(id);
-	
-		if (favorites === null || favorites.length === 0) {
-	        element.style.display = "none"; // Hide the element if favorites is null or empty
-	      } else {
-	        element.style.display = "block"; // Show the element if it's in favorites
-	      }
-	    
-	  }
 
-	  static hideFavElement (cat, id) {
-	    const element = document.getElementById(id);
-	    element.style.display = "none"; // Hide the element if it's not in favorites
-	      
-	    
-	  }
+		const favorites = Storage.getFavQuestions(cat); // Parse and handle null/empty array
+		const element = document.getElementById(id);
+
+		if (favorites === null || favorites.length === 0) {
+			element.style.display = "none"; // Hide the element if favorites is null or empty
+		} else {
+			element.style.display = "block"; // Show the element if it's in favorites
+		}
+
+	}
+
+	static hideFavElement(cat, id) {
+		const element = document.getElementById(id);
+		element.style.display = "none"; // Hide the element if it's not in favorites
+
+
+	}
 
 
 }
