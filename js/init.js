@@ -72,12 +72,8 @@ class Init {
         this.hashChecker();
         console.log("load complete");
         new StudyNavbar();
-        let scriptEle = document.createElement("script");
-        
-        scriptEle.src = "https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js";
-        scriptEle.type = "text/javascript";
-        scriptEle.async = true;
-        //document.head.appendChild(scriptEle);
+        initFlowbite();
+
 
     }
 
