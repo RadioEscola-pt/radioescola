@@ -1,7 +1,7 @@
 import os
 import subprocess
 import sys
-import bcrypt
+
 
 def load_env_variables(env_file_path):
     if os.path.exists(env_file_path):
@@ -15,17 +15,7 @@ def load_env_variables(env_file_path):
         print(f"Error: Environment file not found at {env_file_path}")
         exit(1)
 
-def hash_password(password):
-    # Fetch the salt rounds value from environment variables, with a default of 10 if not specified
-    salt_rounds = int(os.getenv("SALT_ROUNDS", 10))
-    
-    # Convert the password to bytes
-    password_bytes = password.encode('utf-8')
-    # Generate a salt with specified rounds
-    salt = bcrypt.gensalt(rounds=salt_rounds)
-    # Generate the hashed password
-    hashed_password = bcrypt.hashpw(password_bytes, salt)
-    return hashed_password
+
 
 def docker_build():
     print("Building Docker image...")
