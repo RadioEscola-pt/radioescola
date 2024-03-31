@@ -1,7 +1,6 @@
 class AllUsers {
 
     constructor() {
-       
         this.xhrWelcome = new XMLHttpRequest();
         this.xhrWelcome.onreadystatechange = this.handleWelcomeStateChange.bind(this);
         this.xhrWelcome.open('GET', 'ajax/allUsers');
@@ -9,16 +8,15 @@ class AllUsers {
     }
 
     handleWelcomeStateChange() {
-        if (this.xhrWelcome.status == 200 && this.xhrWelcome.readyState ==4) {
+        if (this.xhrWelcome.status == 200 && this.xhrWelcome.readyState == 4) {
             const response = JSON.parse(this.xhrWelcome.responseText);
             if (response.success && response.users) {
                 this.createUsersTable(response.users);
             } else {
                 console.log('Failed to load users:', response.message);
             }
-        } 
+        }
     }
-
 
     createUsersTable(users) {
         if (users.length === 0) {
@@ -40,36 +38,88 @@ class AllUsers {
             th.textContent = userKeys[i].replace(/_/g, ' ').toUpperCase();
             headerRow.appendChild(th);
         }
+        const th = document.createElement('th');
+        th.textContent = "Save";
+        headerRow.appendChild(th);
+
+        th.textContent = "Delete";
+        headerRow.appendChild(th);
+
         thead.appendChild(headerRow);
+        table.appendChild(thead);
 
         // Populate table rows
         for (let i = 0; i < users.length; i++) {
-            const tr = document.createElement('tr');
-            for (let j = 0; j < userKeys.length; j++) {
-                const td = document.createElement('td');
-                if (userKeys[j] === 'UserDocuments') {
-                    // Assuming UserDocuments is an array of objects {documentId, fileName}
-                    for (let k = 0; k < users[i][userKeys[j]].length; k++) {
-                        const doc = users[i][userKeys[j]][k];
-                        const a = document.createElement('a');
-                        a.href = `/image?id=`+doc.documentId; // Link to document
-                        a.textContent = doc.fileName; // Text is the fileName
-                        a.target = "_blank"; // Open in new tab/window
-                        td.appendChild(a);
-                        td.appendChild(document.createElement('br')); // New line for multiple documents
-                    }
-                } else {
-                    td.textContent = users[i][userKeys[j]];
-                }
-                
-                tr.appendChild(td);
-            }
+          const  tr=this.adduser(users[i], userKeys);
+          const td = document.createElement('td');
+
+            td.textContent = "Save";
+            tr.appendChild(td);
+    
+            td.textContent = "Delete";
+            tr.appendChild(td);
             tbody.appendChild(tr);
         }
 
-        table.appendChild(thead);
+
         table.appendChild(tbody);
         container.appendChild(table);
     }
 
+    adduser(user, userKeys) {
+        const tr = document.createElement('tr');
+        for (let i = 0; i < userKeys.length; i++) {
+            const key = userKeys[i];
+            const td = document.createElement('td');
+
+            if (key === 'is_certified' || key === 'verified') {
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.checked = user[key];
+                checkbox.name = `${key}[${user.id}]`;
+                td.appendChild(checkbox);
+            } else if (key === 'role') {
+                const select = document.createElement('select');
+                select.name = `${key}[${user.id}]`;
+                const roles = ['pupil', 'contributor', 'admin'];
+                for (let j = 0; j < roles.length; j++) {
+                    const option = document.createElement('option');
+                    option.value = roles[j];
+                    option.text = roles[j];
+                    option.selected = user[key] === roles[j];
+                    select.appendChild(option);
+                }
+                td.appendChild(select);
+            } else if (key === 'certification_level') {
+                const select = document.createElement('select');
+                select.name = `${key}[${user.id}]`;
+                const levels = ['NOHAM', 'cat 3', 'cat 2', 'cat 1'];
+                for (let j = 0; j < levels.length; j++) {
+                    const option = document.createElement('option');
+                    option.value = levels[j];
+                    option.text = levels[j];
+                    option.selected = user[key] === levels[j];
+                    select.appendChild(option);
+                }
+                td.appendChild(select);
+            } else if (key === 'UserDocuments') {
+                for (let j = 0; j < user[key].length; j++) {
+                    const doc = user[key][j];
+                    const a = document.createElement('a');
+                    a.href = `/image?id=${doc.documentId}`;
+                    a.textContent = doc.fileName;
+                    a.target = "_blank";
+                    td.appendChild(a);
+                    if (j < user[key].length - 1) {
+                        td.appendChild(document.createElement('br'));
+                    }
+                }
+            } else {
+                td.textContent = user[key];
+            }
+            tr.appendChild(td);
+        }
+
+        return tr;
+    }
 }

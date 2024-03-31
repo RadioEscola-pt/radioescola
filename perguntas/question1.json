@@ -1509,8 +1509,8 @@
         "10,07 kHz",
         "63,24 kHz"
       ],
-      "correctIndex":1 ,
-      "notes": "A70 Freq1uência de Ressonância (f) = 1 / (2 * π * √(L * C)) f ≈ 10.07 MHz",
+      "correctIndex": 1,
+      "notes": "A70 Frequência de Ressonância (f) = 1 / (2 * π * √(L * C)) f ≈ 10.07 MHz",
       "img": null,
       "uniqueID": 85,
       "fonte": null,

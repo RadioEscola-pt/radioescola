@@ -24,10 +24,9 @@ class FavQuestion extends Connection {
       userId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        unique: true, // Ensures userId is unique
         references: {
-          model: 'users', // Assumes you have a User table
-          key: 'id', // The column in the User table that userId references
+          model: 'users', // The name of the User table
+          key: 'userId', // Key in User table that we're referencing
         },
       },
       question1Fav: {
@@ -78,14 +77,14 @@ class FavQuestion extends Connection {
   async getFav(req, res) {
     try {
         // Attempt to find a favorite record by the provided userId
-        const fav =   await this.model.findOne({ where: { userId: req.body.userId } });
+        const fav =   await this.model.findOne({ where: { userId: req.session.userId } });
 
         if (fav) {
             // Return the found favorite record
-            return fav;
+            res.status(200).json({ success: true, message: "sem fav", data: fav});
         } else {
             // Or handle as you see fit if no record is found
-            return null;
+            res.status(200).json({ success: true, message: "sem fav", data: null});
         }
     } catch (error) {
         console.log('Error fetching favorite by userId:', error);

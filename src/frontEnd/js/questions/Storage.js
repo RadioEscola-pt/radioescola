@@ -55,6 +55,8 @@ class Storage {
 		// Save the updated records back to local storage
 		localStorage.setItem(this.getfilename() + "Fav", JSON.stringify(favQuestions));
 		Storage.storeFavQuestion();
+
+
 		
 
 	}
@@ -77,34 +79,42 @@ class Storage {
 				question2Fav: question2Fav ? JSON.parse(question2Fav) : [],
 				question3Fav: question3Fav ? JSON.parse(question3Fav) : [],
 			};
+			const xhr = new XMLHttpRequest();
 			xhr.open("POST", "ajax/updateUserFav", true);
 			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 			xhr.onreadystatechange = () => {	
+				
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					const response = JSON.parse(xhr.responseText);
+					if (response.success) {
+						console.log('Success:', response);
+					}
+				}
 			}
 			xhr.send(JSON.stringify(data));
 
-			console.log('Success:', result);
+
 		} catch (error) {
 			console.error('Error:', error);
 		}
 	}
-	
-	getFavQuestions() {
-		Storage.storeFavQuestion();
-		let xhr = new XMLHttpRequest();
-        xhr.open("POST", "ajax/getUserFav", true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = () => {	
-
+	static loadFavFromServer() {
+		const xhr = new XMLHttpRequest();
+		xhr.open("GET", "ajax/getUserFav", true);
+		xhr.onreadystatechange = () => {
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				const response = JSON.parse(xhr.responseText);
 				if (response.success) {
-					console.log('Success:', response);
+					console.log('Fav Questions:', response);
 				}
 			}
-
 		}
 		xhr.send();
+	
+	}
+	getFavQuestions() {
+
+
 		return Storage.getFavQuestions(this.getfilename());
 	}
 	getStorePage() {

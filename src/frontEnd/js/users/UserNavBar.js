@@ -7,6 +7,8 @@ class UserNavBar {
         this.loadData();
         this.setObjectInCookie('userInfo', user, 7);
         this.user = user;
+        Storage.loadFavFromServer();
+
     }
     setObjectInCookie(cookieName, object, daysToExpire) {
         const d = new Date();

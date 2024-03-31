@@ -1,4 +1,7 @@
+
 const UserModel = require('./UserModel');
+const FavQuestion = require('./FavQuestion');
+
 const fs = require('fs').promises; // Node's fs module with promise support
 
 
@@ -89,17 +92,24 @@ class Init {
                 break; 
             case '/updateUserFav':
                 if  ((method === 'POST') && (req.session.loggedIn === true) ) {
-                    fav=new FavQuestion();
+                    const fav=new FavQuestion();
                     fav.stroreFav(req, res);
 
+                }
+                else
+                {
+                    res.status(200).send({ success: false, message: "User not logged in." });
                 }
 
                 break;    
             case '/getUserFav':
                 if  ((method === 'GET') && (req.session.loggedIn === true) ) {
-                    fav=new FavQuestion();
+                    const fav=new FavQuestion();
                     fav.getFav(req, res);
 
+                }else
+                {
+                    res.status(200).send({ success: false, message: "User not logged in." });
                 }
 
                 break;
