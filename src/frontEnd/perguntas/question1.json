@@ -1128,7 +1128,7 @@
         "Melhor resposta em alta-frequência",
         "Redução da resistência da placa"
       ],
-      "correctIndex": 4,
+      "correctIndex": 1,
       "notes": "A grelha de blindagem é uma estrutura metálica inserida entre a grade de controle e a placa (ou cátodo) em um tubo de vácuo. Ela é projetada para reduzir a capacitância entre a grade de controle e a placa, o que melhora a resposta de alta frequência do tubo e evita oscilações indesejadas. A grelha de blindagem também ajuda a melhorar o isolamento elétrico entre os elementos internos do tubo, contribuindo para um desempenho mais estável e eficiente.",
       "img": null,
       "uniqueID": 64,
@@ -1196,7 +1196,7 @@
         "Um amplificador usado no andar de potência de um emissor de FM do serviço de amador na faixa dos 10 GHz",
         "Um programa que calcula o ganho de um amplificador de RF"
       ],
-      "correctIndex": 1,
+      "correctIndex": 4,
       "notes": "A57",
       "img": null,
       "uniqueID": 68,
@@ -1282,7 +1282,7 @@
         "70 microfarad",
         "1 mF"
       ],
-      "correctIndex": 2,
+      "correctIndex": 3,
       "notes": "No caso de termos só 2 condensadores de valores diferentes ligados em série podemos aplicar a fórmula simplificada, <p>C<sub>eq</sub> = C1.C2/C1+C2 ou seja 20X50 / 20+50 = 14,285 microfarad",
       "img": null,
       "uniqueID": 72,
@@ -1290,7 +1290,8 @@
         "cat1/2024_01_02p10"
       ],
       "tutorial": null,
-      "materia": null
+      "materia": null,
+      "calc": "COPADDER"
     },
     {
       "question": "Qual a capacidade de três condensadores de 100 microfarad ligados em série?",
@@ -1508,8 +1509,8 @@
         "10,07 kHz",
         "63,24 kHz"
       ],
-      "correctIndex": 4,
-      "notes": "A70 Frequência de Ressonância (f) = 1 / (2 * π * √(L * C)) f ≈ 636,62 MHz",
+      "correctIndex": ,
+      "notes": "A70 Frequência de Ressonância (f) = 1 / (2 * π * √(L * C)) f ≈ 10.07 MHz",
       "img": null,
       "uniqueID": 85,
       "fonte": null,
@@ -1577,7 +1578,7 @@
         "Transforma impedâncias e é um filtro passa-alto",
         "Transforma reactâncias e é um filtro notch de banda estreita"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "notes": "A72",
       "img": null,
       "uniqueID": 89,
@@ -1954,7 +1955,7 @@
       "notes": "Em um amplificador de classe AB, os transistores conduzem por mais de meio período (180 graus), mas menos do que todo o período. Isso visa a combinar eficiência (comparável à classe B) com menor distorção de cruzamento (crossover distortion) comum em amplificadores de classe B.",
       "img": null,
       "uniqueID": 110,
-      "correctIndex": 4,
+      "correctIndex": 3,
       "fonte": null,
       "tutorial": null,
       "materia": null
@@ -2035,7 +2036,7 @@
       ],
       "correctIndex": 2,
       "img": "images/cat1/fig7.png",
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p25</a>)",
+      "notes": "",
       "uniqueID": 115,
       "fonte": [
         "cat1/2011_12_13p25"
@@ -2051,7 +2052,7 @@
         "Amplificador com emissor comum",
         "Amplificador seguidor de emissor"
       ],
-      "correctIndex": 2,
+      "correctIndex": 3,
       "img": "images/cat1/fig3.png",
       "notes": "https://www.youtube.com/watch?v=zI5S8N_sVLE",
       "uniqueID": 116,
