@@ -60,6 +60,7 @@ class Init {
                 break;
             case '/deleteUser':
                 if ((method === 'POST') && (req.session.loggedIn === true) ) {
+                    //TODO only delete if user is admin or of the same account
                     const userModel = new UserModel();
                     const { email, pass } = req.body;
                     userModel.deleteUser(res, email, pass);
@@ -85,7 +86,24 @@ class Init {
                     const { currentPassword, newPassword } = req.body;
                     userModel.changeUserPassword(req, res, currentPassword, newPassword);
                 }
-                break;                
+                break; 
+            case '/updateUserFav':
+                if  ((method === 'POST') && (req.session.loggedIn === true) ) {
+                    fav=new FavQuestion();
+                    fav.stroreFav(req, res);
+
+                }
+
+                break;    
+            case '/getUserFav':
+                if  ((method === 'GET') && (req.session.loggedIn === true) ) {
+                    fav=new FavQuestion();
+                    fav.getFav(req, res);
+
+                }
+
+                break;
+                           
 
 
 

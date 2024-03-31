@@ -1,7 +1,9 @@
-const { Sequelize } = require('sequelize');
+const  Sequelize  = require('sequelize');
+
 const Connection = require('./Connection');
 const session = require('express-session');
 const UserDocument = require('./UserDocument');
+const FavQuestion = require('./FavQuestion');
 
 const bcrypt = require('bcrypt');
 
@@ -17,12 +19,17 @@ class UserModel extends Connection {
     this.model.sync({ alter: true }).then(() => {
       console.log("The table for the User model was just (re)created!");
     }).catch(error => console.error('Error syncing database:', error));
-    let userDoc=new UserDocument();
+    const userDoc=new UserDocument();
+    const userFav=new FavQuestion(); 
     this.docModel=userDoc.getModel();
+    this.favModel=userFav.getModel();
 
 
     this.model.hasMany(this.docModel, { foreignKey: 'userId' });
     this.docModel.belongsTo(this.model, { foreignKey: 'userId' });
+
+    this.model.hasOne(this.favModel, { foreignKey: 'userId' });
+    this.favModel.belongsTo(this.model, { foreignKey: 'userId' });
 
 
   }

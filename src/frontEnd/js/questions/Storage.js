@@ -54,31 +54,67 @@ class Storage {
 	saveFavQuestions(favQuestions) {
 		// Save the updated records back to local storage
 		localStorage.setItem(this.getfilename() + "Fav", JSON.stringify(favQuestions));
+		Storage.storeFavQuestion();
+		
+
 	}
 
 	static getFavQuestions(filename) {
+
 		const favoritesString = localStorage.getItem(filename+ "Fav") || '[]';
 		const favorites = JSON.parse(favoritesString);
 		return favorites;
 	}
 
+	static storeFavQuestion() {
+		try {
+			const question1Fav = localStorage.getItem('question1Fav');
+			const question2Fav = localStorage.getItem('question2Fav');
+			const question3Fav = localStorage.getItem('question3Fav');
+			
+			const data = {
+				question1Fav: question1Fav ? JSON.parse(question1Fav) : [],
+				question2Fav: question2Fav ? JSON.parse(question2Fav) : [],
+				question3Fav: question3Fav ? JSON.parse(question3Fav) : [],
+			};
+			xhr.open("POST", "ajax/updateUserFav", true);
+			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+			xhr.onreadystatechange = () => {	
+			}
+			xhr.send(JSON.stringify(data));
 
+			console.log('Success:', result);
+		} catch (error) {
+			console.error('Error:', error);
+		}
+	}
+	
 	getFavQuestions() {
-		const favoritesString = localStorage.getItem(this.getfilename() + "Fav") || '[]';
-		const favorites = JSON.parse(favoritesString);
-		return favorites;
+		Storage.storeFavQuestion();
+		let xhr = new XMLHttpRequest();
+        xhr.open("POST", "ajax/getUserFav", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = () => {	
+
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				const response = JSON.parse(xhr.responseText);
+				if (response.success) {
+					console.log('Success:', response);
+				}
+			}
+
+		}
+		xhr.send();
+		return Storage.getFavQuestions(this.getfilename());
 	}
 	getStorePage() {
 
 		// Check if there is an existing record in local storage
 		const existingRecords = JSON.parse(localStorage.getItem(this.getfilename())) || {};
-
-
 		if (existingRecords.hasOwnProperty("page")) {
 			return existingRecords.page ;
 
 		}
-
 		return 0;
 
 
