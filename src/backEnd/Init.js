@@ -93,7 +93,7 @@ class Init {
             case '/updateUserFav':
                 if  ((method === 'POST') && (req.session.loggedIn === true) ) {
                     const fav=new FavQuestion();
-                    fav.stroreFav(req, res);
+                    fav.storeFav(req, res);
 
                 }
                 else

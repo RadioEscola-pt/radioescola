@@ -64,21 +64,26 @@ class Storage {
 	static getFavQuestions(filename) {
 
 		const favoritesString = localStorage.getItem(filename+ "Fav") || '[]';
+		if (favoritesString === 'null') {
+			return [];
+		}
 		const favorites = JSON.parse(favoritesString);
 		return favorites;
 	}
 
 	static storeFavQuestion() {
 		try {
+			const time =new Date();
+			localStorage.setItem('currentTime',time );
 			const question1Fav = localStorage.getItem('question1Fav');
 			const question2Fav = localStorage.getItem('question2Fav');
 			const question3Fav = localStorage.getItem('question3Fav');
 			
-			const data = {
-				question1Fav: question1Fav ? JSON.parse(question1Fav) : [],
-				question2Fav: question2Fav ? JSON.parse(question2Fav) : [],
-				question3Fav: question3Fav ? JSON.parse(question3Fav) : [],
-			};
+			const data = `currentTime=${encodeURIComponent(time)}` +
+             `&question1Fav=${encodeURIComponent(question1Fav)}` +
+             `&question2Fav=${encodeURIComponent(question2Fav)}` +
+             `&question3Fav=${encodeURIComponent(question3Fav)}`;
+
 			const xhr = new XMLHttpRequest();
 			xhr.open("POST", "ajax/updateUserFav", true);
 			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -91,7 +96,7 @@ class Storage {
 					}
 				}
 			}
-			xhr.send(JSON.stringify(data));
+			xhr.send(data);
 
 
 		} catch (error) {
@@ -106,6 +111,18 @@ class Storage {
 				const response = JSON.parse(xhr.responseText);
 				if (response.success) {
 					console.log('Fav Questions:', response);
+					if (response.data) {
+						
+
+						localStorage.setItem('currentTime', new Date());
+						localStorage.setItem('question1Fav', JSON.stringify(response.data.question1Fav));
+						localStorage.setItem('question2Fav', JSON.stringify(response.data.question2Fav));
+						localStorage.setItem('question3Fav', JSON.stringify(response.data.question3Fav));
+					}
+					else {
+						Storage.storeFavQuestion();
+						console.log('No fav questions found');
+					}
 				}
 			}
 		}

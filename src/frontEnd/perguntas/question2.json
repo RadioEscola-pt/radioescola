@@ -284,7 +284,7 @@
       "correctIndex": 4,
       "notes": "1 Joule é 1W por Segundo, logo numa hora, que contem 3600 segundos, são consumidos 3600 Joules, resposta 4",
       "fonte": [
-        "cat2/A5",
+
         "cat2/2023_08_29p8",
         "cat2/2022_02_03p8"
       ],
@@ -899,7 +899,7 @@
       "correctIndex": 3,
       "notes": "T=1/f (f=frequência) O periodo é o inverso da frequencia, ora vejamos, se a frequencia é medida em ciclos por segundo, invertemos e temos o numero de segundos para completar um ciclo ou seja o periodo que é dado em segundos. Logo opção 3.",
       "fonte": [
-        "cat2/A21",
+
         "cat2/0000_00_01p34",
         "cat2/0000_00_02p34",
         "cat2/2018_06_19p34",
@@ -987,7 +987,6 @@
       "correctIndex": 4,
       "notes": "Temos Vrms = Vpp * SQRT(2), logo Vpp = Vrms / Sqrt(2) => Vpp = 34 / 0,707 = 48 V,Opção 4.",
       "fonte": [
-        "cat2/A24",
         "cat2/2016_01_00p34",
         "cat2/2018_03_08p34"
       ],
@@ -2033,7 +2032,7 @@
       "correctIndex": 4,
       "notes": "Verificar a seguinte menmonica (ELI the ICE man) significa que (ELI > se tivermos uma indutania L no circuito, a tensão E vem antes da corrente I) e que (ICE > se tivermos um condensador C no circuito, a tensão E está em atraso face a corrente I) <img src='images/cat2/eli_the_ice_man.png'>",
       "fonte": [
-        "cat2/A62",
+
         "cat2/2023_01_27p9"
       ],
       "img": null,
@@ -3283,7 +3282,7 @@
       "correctIndex": 1,
       "notes": "",
       "fonte": [
-        "cat2/A107",
+
         "cat2/2023_08_29p9",
         "cat2/2022_07_20p10",
         "cat2/2022_06_27p10",
@@ -3547,7 +3546,7 @@
       "correctIndex": 3,
       "notes": "Tambem designado por VFO, pode ser feito através de um condensador variavel como nos antigos radio receptores, ou através de um sintetizador de frequência, de um sistema PLL ou DDS onde é um sistema que gera frequências sobre um sinal de cristal de quartzo qe é bem definido.",
       "fonte": [
-        "cat2/A117",
+
         "cat2/2023_08_29p26"
       ],
       "img": null,
@@ -4421,7 +4420,7 @@
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "cat2/A156",
+
         "cat2/2023_09_25p6"
       ],
       "img": null,
@@ -4836,7 +4835,7 @@
       "correctIndex": 1,
       "notes": "",
       "fonte": [
-        "cat2/A189",
+
         "cat2/2023_08_29p17",
         "cat2/2023_06_26p17"
       ],
@@ -5015,7 +5014,7 @@
       "correctIndex": 1,
       "notes": "Consulte o documento:<a target='_blank' href='docs/Decreto-Lei_53-2009' class='underline'>Decreto-Lei n.º 53/2009 > Artigo 13.º > 1 — Constituem obrigações dos responsáveis pelo funcionamento das estações, sem prejuízo de outras decorrentes do presente decreto -lei e demais legislação aplicável:d) Garantir a afixação da identificação da estação e da sinalização informativa que alerte sobre os riscos da instalação da estação fixa de amador e respectivos acessórios,quando necessária, conforme legislação e regulamentação aplicáveis",
       "fonte": [
-        "cat2/A176",
+
         "cat2/2020_07_16p5",
         "cat2/2021_02_18p5",
         "cat2/2022_06_27p5",
@@ -5060,7 +5059,7 @@
       "correctIndex": 3,
       "notes": "Consulte: <a target='_blank' href='docs/decisaoamador27052009.pdf' class='underline'>PROCEDIMENTOS PREVISTOS NO DECRETO-LEI N.º 53/2009, DE 2 DE MARÇO QUE DEFINE AS REGRAS APLICÁVEIS AO SERVIÇO DE AMADOR E AMADOR POR SATÉLITE - Descrição detalhada das matérias de exame (Parte B número-4 SINAIS DE PERIGO INTERNACIONAIS, COMUNICAÇÕES DE EMERGÊNCIA E COMUNICAÇÕES EM CASO DE CATÁSTROFES NATURAIS</a>",
       "fonte": [
-        "cat2/A177",
+
         "cat2/2023_08_29p1",
         "cat2/2012_04_10p3",
         "cat2/0000_00_02p3",
@@ -5220,7 +5219,7 @@
       "correctIndex": 2,
       "notes": "Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf' class='underline'>ADENDA_2013_QNAF</a>",
       "fonte": [
-        "cat2/A182",
+
         "cat2/2012_04_10p6",
         "cat2/2018_05_00p2",
         "cat2/2022_06_27p3",
@@ -5270,7 +5269,7 @@
       "correctIndex": 2,
       "notes": "",
       "fonte": [
-        "cat2/A183",
+
         "cat2/2023_08_29p3",
         "cat2/2023_06_26p3",
         "cat2/2022_02_03p3",
@@ -5296,7 +5295,7 @@
       "correctIndex": 4,
       "notes": "Consulte o documento:<a target='_blank' href='docs/Rec0506.pdf' class='underline'>ECC Recommendation (05)06",
       "fonte": [
-        "cat2/A184",
+
         "cat2/2013_08_00p5",
         "cat2/2016_01_00p3",
         "cat2/2021_02_18p4",
@@ -5320,7 +5319,7 @@
       "correctIndex": 1,
       "notes": "Consulte o documento:<a target='_blank' href='docs/Rec0506.pdf' class='underline'>ECC Recommendation (05)06 > ANNEX 2: TABLE OF EQUIVALENCE BETWEEN CEPT NOVICE LICENCE AND NATIONAL NOVICE LICENCES OF CEPT COUNTRIES > Table 1: CEPT countries",
       "fonte": [
-        "cat2/A185",
+
         "cat2/2011_11_00p5",
         "cat2/2018_06_19p3",
         "cat2/2022_08_26p4",
@@ -5363,7 +5362,7 @@
       "correctIndex": 2,
       "notes": "Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf'>ADENDA_2013_QNAF</a>",
       "fonte": [
-        "cat2/A188",
+
         "cat2/2023_08_29p2",
         "cat2/0000_00_01p4",
         "cat2/0000_00_03p4",
