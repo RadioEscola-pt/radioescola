@@ -43,7 +43,7 @@ def docker_db():
 def docker_launch():
     print("Launching containers...")
 
-    subprocess.Popen(["docker", "run", "-it", "--rm", "--name", "radioescola_container", "-e", "DISPLAY=$DISPLAY",
+    subprocess.Popen(["docker", "run",  "--rm", "--name", "radioescola_container", "-e", "DISPLAY=$DISPLAY",
                     "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "3000:3000", "radioescola", "--link", "radioescoladb:mariadb", "radioescola"])
 
 def docker_noDblaunch():
