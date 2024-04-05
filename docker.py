@@ -31,6 +31,7 @@ def docker_refresh():
 def docker_db():
     print("Launching containers...")
     subprocess.Popen(["docker", "run", "-d", "-p", "3306:3306", "--name", "radioescoladb",
+                    "--network=radioescola_network", 
                     "-e", f"MARIADB_ROOT_PASSWORD={os.getenv('MYSQL_ROOT_PASSWORD')}",
                     "-e", f"MARIADB_DATABASE={os.getenv('MYSQL_DATABASE')}",
                     "-e", f"MARIADB_USER={os.getenv('MYSQL_USER')}",
@@ -43,8 +44,8 @@ def docker_db():
 def docker_launch():
     print("Launching containers...")
 
-    subprocess.Popen(["docker", "run",  "--rm", "--name", "radioescola_container", "-e", "DISPLAY=$DISPLAY",
-                    "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "3000:3000", "radioescola", "--link", "radioescoladb:mariadb", "radioescola"])
+    subprocess.Popen(["docker", "run", "--rm", "--name", "radioescola_container", "-e", "DISPLAY=$DISPLAY",
+                    "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "3000:3000", "--network=radioescola_network",  "radioescola"])
 
 def docker_noDblaunch():
     print("Launching containers...")
