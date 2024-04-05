@@ -18,7 +18,6 @@ def load_env_variables(env_file_path):
 def docker_stop():
     print("Stopping containers...")
     subprocess.Popen(["docker", "container", "prune"])
-    subprocess.Popen(["docker", "stop", "radioescola_container"])
     subprocess.Popen(["docker", "stop", "radioescoladb"])
     subprocess.Popen(["docker", "stop", "radioescola"])
 
@@ -70,6 +69,8 @@ if __name__ == "__main__":
         if command == "build":
             create_docker_network("radioescola_network")
             docker_build()
+        elif command == "stop":
+            docker_stop()
         elif command == "release":
             docker_release()
         elif command == "refresh":
