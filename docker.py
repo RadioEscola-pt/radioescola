@@ -31,10 +31,10 @@ def docker_refresh():
 def docker_db():
     print("Launching containers...")
     subprocess.Popen(["docker", "run", "-d", "-p", "3306:3306", "--name", "radioescoladb",
-                    "-e", f"MYSQL_ROOT_PASSWORD={os.getenv('MYSQL_ROOT_PASSWORD')}",
-                    "-e", f"MYSQL_DATABASE={os.getenv('MYSQL_DATABASE')}",
-                    "-e", f"MYSQL_USER={os.getenv('MYSQL_USER')}",
-                    "-e", f"MYSQL_PASSWORD={os.getenv('MYSQL_PASSWORD')}",
+                    "-e", f"MARIADB_ROOT_PASSWORD={os.getenv('MYSQL_ROOT_PASSWORD')}",
+                    "-e", f"MARIADB_DATABASE={os.getenv('MYSQL_DATABASE')}",
+                    "-e", f"MARIADB_USER={os.getenv('MYSQL_USER')}",
+                    "-e", f"MARIADB_PASSWORD={os.getenv('MYSQL_PASSWORD')}",
                     "mariadb:latest"])
 
 
