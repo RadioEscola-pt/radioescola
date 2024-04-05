@@ -42,16 +42,21 @@ def docker_db():
 
 
 def docker_launch():
-    print("Launching containers...")
 
-    subprocess.Popen(["docker", "run", "--rm", "--name", "radioescola_container", "-e", "DISPLAY=$DISPLAY",
-                    "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "3000:3000", "--network=radioescola_network",  "radioescola"])
+    print("Launching container...")
 
-def docker_noDblaunch():
-    print("Launching containers...")
+    subprocess.Popen(["docker", "run", "--rm", "--name", "radioescola", "-e", "DISPLAY=$DISPLAY",
+                      "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "3000:3000", "--network=radioescola_network", "radioescola"])
+    
+def docker_release():
 
-    subprocess.Popen(["docker", "run", "-it", "--rm", "--name", "radioescola_container", "-e", "DISPLAY=$DISPLAY",
-                  "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "3000:3000", "radioescola"])
+    print("Launching container...")
+
+    subprocess.Popen(["docker", "run", "--rm", "--name", "radioescola", 
+                      "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "3000:80", "--network=radioescola_network", "radioescola"])
+
+
+
 def create_docker_network(network_name):
     try:
         subprocess.run(["docker", "network", "create", network_name], check=True)
@@ -73,12 +78,12 @@ if __name__ == "__main__":
         if command == "build":
             create_docker_network("radioescola_network")
             docker_build()
+        if command == "release":
+            docker_release()
         elif command == "refresh":
             docker_refresh()
         elif command == "db":
             docker_db()
-        elif command == "noDb":
-            docker_noDblaunch()
         elif command == "launch":
             docker_launch()
         else:
