@@ -7,7 +7,10 @@ ENV_FILE="src/password.env"
 if [ -f "$ENV_FILE" ]; then
     while IFS='=' read -r key value
     do
-        export "$key"="$value"
+        key=$(echo "$key" | tr -d '[:space:]')  # Trim whitespace from key
+        value="${value//\"/}"  # Remove potential quotes around the value
+        value=$(echo "$value" | tr -d '[:space:]')  # Trim whitespace from value
+        export "$key=$value"
     done < "$ENV_FILE"
 else
     echo "Error: Environment file not found at $ENV_FILE"
@@ -28,7 +31,7 @@ if [ -z "$USER_ID" ]; then
 fi
 
 # Connect to the database and update user role
-mysql -h $MYSQL_SEVER -u $MYSQL_USER -p$MYSQL_ROOT_PASSWORD $MYSQL_DATABASE <<EOF
+mysql -h $MYSQL_SEVER -u $MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE <<EOF
 UPDATE users SET role='$NEW_ROLE' WHERE userId=$USER_ID;
 EOF
 
