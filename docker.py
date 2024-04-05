@@ -53,7 +53,7 @@ def docker_release():
     print("Launching container...")
 
     subprocess.Popen(["docker", "run", "--rm", "--name", "radioescola", 
-                      "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "3000:80", "--network=radioescola_network", "radioescola"])
+                      "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "80:3000", "--network=radioescola_network", "radioescola"])
 
 
 
