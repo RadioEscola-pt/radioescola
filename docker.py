@@ -2,7 +2,6 @@ import os
 import subprocess
 import sys
 
-
 def load_env_variables(env_file_path):
     if os.path.exists(env_file_path):
         print(f"Loading environment variables from {env_file_path}...")
@@ -17,9 +16,13 @@ def load_env_variables(env_file_path):
 
 def docker_stop():
     print("Stopping containers...")
-    subprocess.Popen(["docker", "container", "prune"])
+    # Stop specific containers
     subprocess.Popen(["docker", "stop", "radioescoladb"])
     subprocess.Popen(["docker", "stop", "radioescola"])
+    # Prune all stopped containers with force option
+    subprocess.Popen(["docker", "container", "prune", "-f"])
+    # Remove the network
+    subprocess.Popen(["docker", "network", "rm", "radioescola_network"])
 
 def docker_build():
     print("Building Docker images...")
@@ -56,7 +59,7 @@ def create_docker_network(network_name):
     try:
         subprocess.run(["docker", "network", "create", "--subnet", "172.18.0.0/16", network_name], check=True)
         print(f"Docker network '{network_name}' created successfully.")
-    except subprocess.CalledProcessError as e:
+    except subprocess.CalledProcessError:
         print(f"Failed to create Docker network '{network_name}'. It might already exist.")
 
 if __name__ == "__main__":
