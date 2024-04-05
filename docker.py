@@ -13,19 +13,17 @@ def load_env_variables(env_file_path):
                     os.environ[key] = value
     else:
         print(f"Error: Environment file not found at {env_file_path}")
-        exit(1)
+        sys.exit(1)
 
 def docker_stop():
     print("Stopping containers...")
     subprocess.Popen(["docker", "container", "prune"])
     subprocess.Popen(["docker", "stop", "radioescola_container"])
     subprocess.Popen(["docker", "stop", "radioescoladb"])
-    subprocess.Popen(["docker", "stop", "radioescoladb"])
-
-
+    subprocess.Popen(["docker", "stop", "radioescola"])
 
 def docker_build():
-    print("Building Docker image...")
+    print("Building Docker images...")
     subprocess.Popen(["docker", "build", "-t", "radioescola", "-f", "docker/Dockerfile-nodejs", "."])
     subprocess.Popen(["docker", "build", "-t", "radioescoladb", "-f", "docker/Dockerfile-mariadb", "."])
 
@@ -36,46 +34,33 @@ def docker_refresh():
     subprocess.Popen(["docker", "exec", "-it", "radioescola_container", "bash", "-c", "npm run dev"])
 
 def docker_db():
-    print("Launching containers...")
+    print("Launching database container...")
     subprocess.Popen(["docker", "run", "-d", "-p", "3306:3306", "--name", "radioescoladb",
-                    "--network=radioescola_network", 
-                    "-e", f"MARIADB_ROOT_PASSWORD={os.getenv('MYSQL_ROOT_PASSWORD')}",
-                    "-e", f"MARIADB_DATABASE={os.getenv('MYSQL_DATABASE')}",
-                    "-e", f"MARIADB_USER={os.getenv('MYSQL_USER')}",
-                    "-e", f"MARIADB_PASSWORD={os.getenv('MYSQL_PASSWORD')}",
-                    "mariadb:latest"])
-
-
-
+                      "--network=radioescola_network", "--ip", "172.18.0.2",
+                      "-e", f"MARIADB_ROOT_PASSWORD={os.getenv('MYSQL_ROOT_PASSWORD')}",
+                      "-e", f"MARIADB_DATABASE={os.getenv('MYSQL_DATABASE')}",
+                      "-e", f"MARIADB_USER={os.getenv('MYSQL_USER')}",
+                      "-e", f"MARIADB_PASSWORD={os.getenv('MYSQL_PASSWORD')}",
+                      "mariadb:latest"])
 
 def docker_launch():
-
-    print("Launching container...")
-
+    print("Launching application container...")
     subprocess.Popen(["docker", "run", "--rm", "--name", "radioescola", "-e", "DISPLAY=$DISPLAY",
-                      "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "3000:3000", "--network=radioescola_network", "radioescola"])
-    
+                      "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "3000:3000", "--network=radioescola_network", "--ip", "172.18.0.3", "radioescola"])
+
 def docker_release():
-
-    print("Launching container...")
-
+    print("Launching container with public access...")
     subprocess.Popen(["docker", "run", "--rm", "--name", "radioescola", 
-                      "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "80:3000", "--network=radioescola_network", "radioescola"])
-
-
+                      "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "80:3000", "--network=radioescola_network", "--ip", "172.18.0.4", "radioescola"])
 
 def create_docker_network(network_name):
     try:
-        subprocess.run(["docker", "network", "create", network_name], check=True)
+        subprocess.run(["docker", "network", "create", "--subnet", "172.18.0.0/16", network_name], check=True)
         print(f"Docker network '{network_name}' created successfully.")
     except subprocess.CalledProcessError as e:
         print(f"Failed to create Docker network '{network_name}'. It might already exist.")
 
-
 if __name__ == "__main__":
-    # Change to the parent directory
-    
-
     # Load environment variables
     env_file = "src/password.env"
     load_env_variables(env_file)
@@ -85,7 +70,7 @@ if __name__ == "__main__":
         if command == "build":
             create_docker_network("radioescola_network")
             docker_build()
-        if command == "release":
+        elif command == "release":
             docker_release()
         elif command == "refresh":
             docker_refresh()
@@ -94,6 +79,6 @@ if __name__ == "__main__":
         elif command == "launch":
             docker_launch()
         else:
-            print("Invalid option. Use 'python docker_script.py build' to build the image, 'python docker_script.py refresh' to refresh the container, or 'python docker_script.py launch' to start the application.")
+            print("Invalid option. Use 'build', 'release', 'refresh', 'db', or 'launch'.")
     else:
         print("No command provided.")

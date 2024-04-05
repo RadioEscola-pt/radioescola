@@ -12,7 +12,7 @@ const { Sequelize } = require('sequelize');
 class Connection {
   constructor() {
     this.sequelize = new Sequelize(process.env.MYSQL_DATABASE, process.env.MYSQL_USER, process.env.MYSQL_PASSWORD, {
-      host: 'localhost',
+      host: process.env.MYSQL_SEVER,
       port: '3306', // Change the port number to your desired port
 
       dialect: 'mariadb',
