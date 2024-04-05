@@ -52,7 +52,12 @@ def docker_noDblaunch():
 
     subprocess.Popen(["docker", "run", "-it", "--rm", "--name", "radioescola_container", "-e", "DISPLAY=$DISPLAY",
                   "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "3000:3000", "radioescola"])
-
+def create_docker_network(network_name):
+    try:
+        subprocess.run(["docker", "network", "create", network_name], check=True)
+        print(f"Docker network '{network_name}' created successfully.")
+    except subprocess.CalledProcessError as e:
+        print(f"Failed to create Docker network '{network_name}'. It might already exist.")
 
 
 if __name__ == "__main__":
@@ -66,6 +71,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         command = sys.argv[1]
         if command == "build":
+            create_docker_network("radioescola_network")
             docker_build()
         elif command == "refresh":
             docker_refresh()
