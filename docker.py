@@ -15,6 +15,13 @@ def load_env_variables(env_file_path):
         print(f"Error: Environment file not found at {env_file_path}")
         exit(1)
 
+def docker_stop():
+    print("Stopping containers...")
+    subprocess.Popen(["docker", "container", "prune"])
+    subprocess.Popen(["docker", "stop", "radioescola_container"])
+    subprocess.Popen(["docker", "stop", "radioescoladb"])
+    subprocess.Popen(["docker", "stop", "radioescoladb"])
+
 
 
 def docker_build():
