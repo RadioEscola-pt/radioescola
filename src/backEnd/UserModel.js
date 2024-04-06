@@ -1,4 +1,4 @@
-const  Sequelize  = require('sequelize');
+const Sequelize = require('sequelize');
 
 const Connection = require('./Connection');
 const session = require('express-session');
@@ -19,10 +19,10 @@ class UserModel extends Connection {
     this.model.sync({ alter: true }).then(() => {
       console.log("The table for the User model was just (re)created!");
     }).catch(error => console.error('Error syncing database:', error));
-    const userDoc=new UserDocument();
-    const userFav=new FavQuestion(); 
-    this.docModel=userDoc.getModel();
-    this.favModel=userFav.getModel();
+    const userDoc = new UserDocument();
+    const userFav = new FavQuestion();
+    this.docModel = userDoc.getModel();
+    this.favModel = userFav.getModel();
 
 
     this.model.hasMany(this.docModel, { foreignKey: 'userId' });
@@ -40,7 +40,7 @@ class UserModel extends Connection {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true // Automatically increment the value
-              },
+      },
       email: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -105,46 +105,91 @@ class UserModel extends Connection {
   async changeUserPassword(req, res, currentPass, newPassword) {
     if (!req.session.userId || !currentPass || !newPassword) {
       // Bad Request for missing input
-       res.status(200).json({ success: false, message: "Missing information" });
+      res.status(200).json({ success: false, message: "Missing information" });
       return false;
     }
-  
+
     try {
       // Find the user by the ID stored in the session
       const user = await this.model.findByPk(req.session.userId);
-  
+
       if (!user) {
         // Not Found for non-existing user
-         res.status(200).json({ success: false, message: "User not found" });
-          return false;
+        res.status(200).json({ success: false, message: "User not found" });
+        return false;
       }
-  
+
       // Verify the current password
       const isMatch = await bcrypt.compare(currentPass, user.password);
       if (!isMatch) {
         // Unauthorized for incorrect current password
-         res.status(200).json({ success: false, message: "Current password is incorrect" });
-         return false;
+        res.status(200).json({ success: false, message: "Current password is incorrect" });
+        return false;
       }
-  
+
       // Hash the new password
       const hashedPassword = await bcrypt.hash(newPassword, this.salt);
-  
+
       // Update the user's password
       await user.update({ password: hashedPassword });
-  
+
       console.log('Password successfully updated.');
       // OK for successful password update
       res.status(200).json({ success: true, message: "Password successfully updated" });
       return true;
-  
+
     } catch (error) {
       console.error('Error updating password:', error);
       // Internal Server Error for any server-side issues
       res.status(200).json({ success: false, message: "Error updating password" });
     }
   }
-  
+
+  async changeUserLostPassword(req, res, useID, key) {
+
+
+    try {
+      // Find the user by the ID stored in the session
+      const user = await this.model.findByPk(req.session.useID);
+
+
+
+      if (!user) {
+        // Not Found for non-existing user
+        res.status(200).json({ success: false, message: "User not found" });
+        return false;
+      }
+      const isMatch = await bcrypt.compare(key, user.verification_code);
+      if (!isMatch) {
+        // Unauthorized for incorrect current password
+        res.status(200).json({ success: false, message: "Current password is incorrect" });
+        return false;
+      }
+
+      const verificationCode = this.generateRandomCode(); // Generate a random code
+
+      const email = new EmailSender();
+      email.sendMail(user.email, 'Nova  password', `A sua nova +assword e  ${verificationCode}`);
+
+
+      // Hash the new password
+      const hashedPassword = await bcrypt.hash(verificationCode, this.salt);
+
+      // Update the user's password
+      await user.update({ verification_code: 0, password: hashedPassword });
+
+      console.log('Password successfully updated.');
+      // OK for successful password update
+      res.status(200).json({ success: true, message: "Password successfully updated" });
+      return true;
+
+    } catch (error) {
+      console.error('Error updating password:', error);
+      // Internal Server Error for any server-side issues
+      res.status(200).json({ success: false, message: "Error updating password" });
+    }
+  }
+
   async createUser(res, email, password) {
     try {
       const verificationCode = this.generateRandomCode(); // Generate a random code
@@ -152,8 +197,12 @@ class UserModel extends Connection {
       // Hash the password before storing it in the database
       const hashedPassword = await bcrypt.hash(password, this.salt);
 
-      
+
       const user = await this.model.create({ email, password: hashedPassword, verification_code: verificationCode });
+
+
+      const email = new EmailSender().
+        email.sendMail(email, 'Conta Criand<', `O seu código de activacao é: ${verificationCode}`, `O seu código de recuperação é: <strong>http://${this.server}/activate?userId=${user.userId}&key=${verificationCode}</strong>`);
 
       console.log('User successfully created.');
       res.status(200).json({ success: true, message: "Conta Criada verifique o seu email" });
@@ -209,10 +258,10 @@ class UserModel extends Connection {
             birthday: req.session.birthday,
             call_sign: req.session.call_sign,
 
-            
+
           };
 
-          
+
           res.status(200).json({ success: true, message: "Utilizador registado com sucesso", user: userSessionData });
 
 
@@ -267,8 +316,26 @@ class UserModel extends Connection {
       return false;
     }
   }
- async getAllUsers(req,res)
-  {
+  async lostPass(req,res, email) {
+    const response = { success: false, message: "Utilizador nao encontrado" };
+    const verificationCode = this.generateRandomCode(); // Generate a random code
+    const user = await this.findUserByEmail(email);
+    if (!user) {
+      console.log('User not found.');
+      res.status(200).json(response);
+      return false;
+    }
+
+    await user.update({ verification_code: verificationCode });
+
+    const emailSend = new EmailSender().
+    emailSend.sendMail(email, 'Recuperação de password', `O seu código de recuperação é: ${verificationCode}`, `O seu código de recuperação é: <strong>http://${this.server}/changeLostPass?userId=${user.userId}&key= ${verificationCode}</strong>`);
+
+
+
+
+  }
+  async getAllUsers(req, res) {
     console.log("get all users ");
     if (req.session.role === 'admin') {
       let users = await this.findAllUsers();
@@ -284,15 +351,15 @@ class UserModel extends Connection {
 
   async findUserByEmail(email) {
     try {
-      const user = await this.model.findOne({ 
-        
+      const user = await this.model.findOne({
+
         include: [{
           model: UserDocument,
           attributes: ['documentId'], // Specify attributes you want to include from the UserDocument
         }],
         attributes: { exclude: ['password'] },
-      
-      
+
+
       });
       if (user) {
         console.log('User found:', user.toJSON());
@@ -311,9 +378,9 @@ class UserModel extends Connection {
       const users = await this.model.findAll({
         include: [{
           model: this.docModel,
-          attributes: ['documentId','fileName' ], // Specify attributes you want to include from the UserDocument
+          attributes: ['documentId', 'fileName'], // Specify attributes you want to include from the UserDocument
         }],
-        attributes: { exclude: ['password','verification_code'] }
+        attributes: { exclude: ['password', 'verification_code'] }
       });
 
       return users;

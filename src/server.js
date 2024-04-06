@@ -86,7 +86,24 @@ app.use('/TestUpload', upload.single('document'), (req, res) => {
         }
     }
 });
+app.get('/activate', async (req, res) => {
+    if (method === 'GET') {
+        const userModel = new UserModel();
+        const { useID, key } = req.body;
+        userModel.changeUserLostPassword(req,res,useID,key);
+    }
 
+});
+
+app.get('/changeLostPass', async (req, res) => {
+    if (method === 'GET') {
+        const userModel = new UserModel();
+        const { email } = req.body;
+        userModel.changeUserLostPassword(req,res,email);
+    }
+
+
+});	
 // Redirect or handle /backend requests
 app.use('/ajax', (req, res) => {
 

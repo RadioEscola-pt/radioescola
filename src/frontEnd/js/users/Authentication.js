@@ -8,6 +8,7 @@ class Authentication {
     endRequest() {
 
         this.lostPasswordForm = document.getElementById("lost-password-form");
+        
 
         this.registrationForm = document.getElementById("registration-form");
         this.loginForm = document.getElementById("login-form");
@@ -20,12 +21,14 @@ class Authentication {
 
                 // Bind event handlers
         this.lostPasswordButton.onclick = this.showLostPasswordForm;
-        this.showRegistrationFormButton.innerText ="Login";
+        this.showRegistrationFormButton.innerText ="Registar";
         this.lostPasswordButton.authentication=this;
 
         this.showRegistrationFormButton.onclick=this.showRegistrationForm;
         this.registrationForm.addEventListener("submit", this.registerUser);
         this.loginForm.addEventListener("submit", this.authenticateUser.bind(this));
+
+        this.lostPasswordForm.addEventListener("submit", this.loastPassword.bind(this));
 
 
     }
@@ -48,7 +51,7 @@ class Authentication {
         const registrationForm = this.authentication.registrationForm;
         const lostPasswordForm = this.authentication.lostPasswordForm;
 
-        if (showRegistrationFormButton.innerText === "Register") {
+        if (showRegistrationFormButton.innerText === "Registar") {
             // Switch to Login
             showRegistrationFormButton.innerText = "Login";
 
@@ -58,7 +61,7 @@ class Authentication {
 
         } else {
             // Switch to Register
-            showRegistrationFormButton.innerText = "Register";
+            showRegistrationFormButton.innerText = "Registar";
 
             registrationForm.style.display = "block"; 
             loginForm.style.display = "none";
@@ -78,8 +81,7 @@ class Authentication {
         event.preventDefault();
 
         const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-        const confirmPassword = document.getElementById("confirm-password").value;
+
 
         // Check if email is valid
         if (!this.authentication.isEmailValid(email)) {
@@ -87,15 +89,11 @@ class Authentication {
             return;
         }
 
-        // Check if passwords match
-        if (password !== confirmPassword) {
-            this.authentication.message.innerHTML = "Passwords do not match.";
-            return;
-        }
+
 
         // Make an AJAX request to the ajax to register the user
         let xhr = new XMLHttpRequest();
-        xhr.open("POST", "ajax/register", true);
+        xhr.open("POST", "ajax/lostPass", true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.onreadystatechange = () => {
             if (xhr.readyState === 4) {
@@ -112,7 +110,29 @@ class Authentication {
                 }
             }
         };
-        xhr.send(`email=${email}&pass=${password}`);
+        xhr.send(`email=${email}`);
+    }
+
+    loastPassword(event) {
+        event.preventDefault();
+
+        const loginEmail = document.getElementById("login-email").value;
+        const loginPassword = document.getElementById("login-password").value;
+
+        if (!this.isEmailValid(loginEmail)) {
+            this.authentication.message.innerHTML = "Invalid email format.";
+            return;
+        }
+
+        // Make an AJAX request to the ajax to authenticate the user
+        this.xhr = new XMLHttpRequest();
+
+        this.xhr.open("POST", "ajax/changeLostPass", true);
+        this.xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        this.xhr.onreadystatechange = this.loginReply.bind(this);
+
+                     
+        this.xhr.send(`email=${loginEmail}&pass=${loginPassword}`);
     }
 
     authenticateUser(event) {

@@ -8,4 +8,6 @@ src/frontEnd/docs/FormulasCAT1.fls
 src/frontEnd/docs/FormulasCAT1.fdb_latexmk
 src/frontEnd/docs/FormulasCAT1.aux
 node_modules
+*.env2
+
 

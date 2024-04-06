@@ -34,6 +34,38 @@ def docker_refresh():
     subprocess.Popen(["docker", "cp", "/src", "radioescola_container:/usr/src/app"])
     subprocess.Popen(["docker", "exec", "-it", "radioescola_container", "bash", "-c", "npm install"])
     subprocess.Popen(["docker", "exec", "-it", "radioescola_container", "bash", "-c", "npm run dev"])
+def replace_env_file():
+    original_file = 'src/password.env'
+    replacement_file = 'src/password.env2'
+
+    # Check if the replacement file exists
+    if os.path.exists(replacement_file):
+        # Remove the original file if it exists
+        if os.path.exists(original_file):
+            os.remove(original_file)
+            print(f"Removed the original file: {original_file}")
+        
+        # Rename the replacement file to the original file's name
+        os.rename(replacement_file, original_file)
+        print(f"Renamed '{replacement_file}' to '{original_file}'")
+    else:
+        print(f"Replacement file '{replacement_file}' not found. No changes made.")
+
+def revert_and_pull_env_file():
+    file_path = 'src/password.env'
+
+    try:
+        # Revert changes to the specified file using git checkout
+        subprocess.run(['git', 'checkout', '--', file_path], check=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        print(f"Reverted changes to {file_path}")
+
+        # Pull updates from the remote repository
+        pull_result = subprocess.run(['git', 'pull'], check=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        print("Pulled updates successfully:")
+        print(pull_result.stdout)
+    except subprocess.CalledProcessError as e:
+        print("Failed to perform Git operations:")
+        print(e.stderr)
 
 def docker_db():
     print("Launching database container...")
@@ -70,6 +102,8 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         command = sys.argv[1]
         if command == "build":
+            revert_and_pull_env_file()
+            replace_env_file()
             create_docker_network("radioescola_network")
             docker_build()
         elif command == "stop":
