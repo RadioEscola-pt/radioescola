@@ -18,6 +18,7 @@ class Connection {
       dialect: 'mariadb',
     });
     this.salt=parseInt(process.env.SALT);
+    this.server=process.env.SEVER_ADD;
 
   }
 }

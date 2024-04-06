@@ -61,6 +61,14 @@ class Init {
                     userModel.findUserByEmailAndPassword(req, res, email, pass);
                 }
                 break;
+            
+            case '/lostPassReq':
+                    if (method === 'POST') {
+                        const userModel = new UserModel();
+                        const { email } = req.body;
+                        userModel.lostPass(res,email);
+                    }
+                    break;
             case '/deleteUser':
                 if ((method === 'POST') && (req.session.loggedIn === true) ) {
                     //TODO only delete if user is admin or of the same account
@@ -69,6 +77,7 @@ class Init {
                     userModel.deleteUser(res, email, pass);
                 }
                 break;
+            
             case '/logout':
                 console.log("logou out user");
                 if (method === 'GET') {
