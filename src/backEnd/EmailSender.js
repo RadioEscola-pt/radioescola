@@ -1,5 +1,7 @@
 require('dotenv').config(); // Load environment variables from .env file
 const nodemailer = require('nodemailer');
+const dotenv = require('dotenv');
+const path = require('path');
 
 // Specify the path to the .env file
 const envPath = path.resolve(__dirname, '..', 'password.env');
@@ -9,15 +11,22 @@ dotenv.config({ path: envPath });
 
 class EmailSender {
   constructor() {
-    this.transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: process.env.EMAIL_PORT,
-      secure: false, // true for 465, false for other ports
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+    try {
+      this.transporter = nodemailer.createTransport({
+        host: process.env.EMAIL_HOST,
+        port: process.env.EMAIL_PORT,
+        secure: false, // true for 465, false for other ports
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS,
+        },
+      });
+
+      console.log('Transporter created successfully');
+    } catch (error) {
+      console.error('Failed to create transporter:', error);
+      throw error; // Optionally rethrow if you want to handle this error upstream
+    }
   }
 
   async sendMail(to, subject, text, html) {

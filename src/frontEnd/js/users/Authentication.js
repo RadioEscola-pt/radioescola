@@ -25,7 +25,7 @@ class Authentication {
         this.lostPasswordButton.authentication=this;
 
         this.showRegistrationFormButton.onclick=this.showRegistrationForm;
-        this.registrationForm.addEventListener("submit", this.registerUser);
+        this.registrationForm.addEventListener("submit", this.registerUser.bind(this));
         this.loginForm.addEventListener("submit", this.authenticateUser.bind(this));
 
         this.lostPasswordForm.addEventListener("submit", this.loastPassword.bind(this));
@@ -77,10 +77,10 @@ class Authentication {
         return emailPattern.test(email);
     }
 
-    registerUser(event) {
+    loastPassword(event) {
         event.preventDefault();
 
-        const email = document.getElementById("email").value;
+        const email = document.getElementById("lost-password-email").value;
 
 
         // Check if email is valid
@@ -113,11 +113,11 @@ class Authentication {
         xhr.send(`email=${email}`);
     }
 
-    loastPassword(event) {
+    registerUser(event) {
         event.preventDefault();
 
-        const loginEmail = document.getElementById("login-email").value;
-        const loginPassword = document.getElementById("login-password").value;
+        const loginEmail = document.getElementById("email").value;
+        const loginPassword = document.getElementById("password").value;
 
         if (!this.isEmailValid(loginEmail)) {
             this.authentication.message.innerHTML = "Invalid email format.";
@@ -127,7 +127,7 @@ class Authentication {
         // Make an AJAX request to the ajax to authenticate the user
         this.xhr = new XMLHttpRequest();
 
-        this.xhr.open("POST", "ajax/changeLostPass", true);
+        this.xhr.open("POST", "ajax/register", true);
         this.xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         this.xhr.onreadystatechange = this.loginReply.bind(this);
 

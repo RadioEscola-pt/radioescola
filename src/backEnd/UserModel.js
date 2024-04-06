@@ -4,6 +4,7 @@ const Connection = require('./Connection');
 const session = require('express-session');
 const UserDocument = require('./UserDocument');
 const FavQuestion = require('./FavQuestion');
+const EmailSender = require('./EmailSender');
 
 const bcrypt = require('bcrypt');
 
@@ -102,6 +103,10 @@ class UserModel extends Connection {
     }
     return code;
   }
+
+
+
+  
   async changeUserPassword(req, res, currentPass, newPassword) {
     if (!req.session.userId || !currentPass || !newPassword) {
       // Bad Request for missing input
@@ -144,13 +149,12 @@ class UserModel extends Connection {
       res.status(200).json({ success: false, message: "Error updating password" });
     }
   }
-
-  async changeUserLostPassword(req, res, useID, key) {
+  async activateAccount(req, res, useID, key) {
 
 
     try {
       // Find the user by the ID stored in the session
-      const user = await this.model.findByPk(req.session.useID);
+      const user = await this.model.findByPk(useID);
 
 
 
@@ -159,8 +163,44 @@ class UserModel extends Connection {
         res.status(200).json({ success: false, message: "User not found" });
         return false;
       }
-      const isMatch = await bcrypt.compare(key, user.verification_code);
-      if (!isMatch) {
+     
+      if (key!= user.verification_code) {
+        // Unauthorized for incorrect current password
+        res.status(200).json({ success: false, message: "Current password is incorrect" });
+        return false;
+      }
+
+
+      // Update the user's password
+      await user.update({ verification_code: 0, verified: true });
+
+      console.log('Password successfully updated.');
+      // OK for successful password update
+      res.status(200).json({ success: true, message: "Password successfully updated" });
+      return true;
+
+    } catch (error) {
+      console.error('Error updating password:', error);
+      // Internal Server Error for any server-side issues
+      res.status(200).json({ success: false, message: "Error updating password" });
+    }
+  }
+  async changeUserLostPassword(req, res, useID, key) {
+
+
+    try {
+      // Find the user by the ID stored in the session
+      const user = await this.model.findByPk(useID);
+
+
+
+      if (!user) {
+        // Not Found for non-existing user
+        res.status(200).json({ success: false, message: "User not found" });
+        return false;
+      }
+     
+      if (key!= user.verification_code) {
         // Unauthorized for incorrect current password
         res.status(200).json({ success: false, message: "Current password is incorrect" });
         return false;
@@ -198,11 +238,11 @@ class UserModel extends Connection {
       const hashedPassword = await bcrypt.hash(password, this.salt);
 
 
-      const user = await this.model.create({ email, password: hashedPassword, verification_code: verificationCode });
+      const user = await this.model.create({ email:email, password: hashedPassword, verification_code: verificationCode });
 
 
-      const email = new EmailSender().
-        email.sendMail(email, 'Conta Criand<', `O seu código de activacao é: ${verificationCode}`, `O seu código de recuperação é: <strong>http://${this.server}/activate?userId=${user.userId}&key=${verificationCode}</strong>`);
+      const emailSender = new EmailSender();
+      emailSender.sendMail(email, 'Conta Criand<', `O seu código de activacao é: ${verificationCode}`, `O seu código de recuperação é: <strong>http://${this.server}/activate?userId=${user.userId}&key=${verificationCode}</strong>`);
 
       console.log('User successfully created.');
       res.status(200).json({ success: true, message: "Conta Criada verifique o seu email" });

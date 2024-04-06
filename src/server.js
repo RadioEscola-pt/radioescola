@@ -2,6 +2,8 @@ const express = require('express');
 const session = require('express-session');
 const UserDocument = require('./backEnd/UserDocument');
 const multer = require('multer');
+const UserModel = require('./backEnd/UserModel');
+
 
 
 const path = require('path');
@@ -87,15 +89,17 @@ app.use('/TestUpload', upload.single('document'), (req, res) => {
     }
 });
 app.get('/activate', async (req, res) => {
+    const method = req.method;
     if (method === 'GET') {
         const userModel = new UserModel();
-        const { useID, key } = req.body;
-        userModel.changeUserLostPassword(req,res,useID,key);
+        const { userId, key } = req.query;
+        userModel.activateAccount(req,res,userId,key);
     }
 
 });
 
 app.get('/changeLostPass', async (req, res) => {
+    const method = req.method;
     if (method === 'GET') {
         const userModel = new UserModel();
         const { email } = req.body;
