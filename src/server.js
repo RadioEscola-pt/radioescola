@@ -102,8 +102,8 @@ app.get('/changeLostPass', async (req, res) => {
     const method = req.method;
     if (method === 'GET') {
         const userModel = new UserModel();
-        const { email } = req.body;
-        userModel.changeUserLostPassword(req,res,email);
+        const { userId, key  } = req.query;
+        userModel.changeUserLostPassword(req,res,userId, key );
     }
 
 

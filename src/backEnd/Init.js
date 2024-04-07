@@ -62,11 +62,11 @@ class Init {
                 }
                 break;
             
-            case '/lostPassReq':
+            case '/lostPass':
                     if (method === 'POST') {
                         const userModel = new UserModel();
                         const { email } = req.body;
-                        userModel.lostPass(res,email);
+                        userModel.lostPass(req,res,email);
                     }
                     break;
             case '/deleteUser':

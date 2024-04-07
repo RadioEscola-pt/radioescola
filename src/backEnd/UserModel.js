@@ -359,7 +359,7 @@ class UserModel extends Connection {
   async lostPass(req,res, email) {
     const response = { success: false, message: "Utilizador nao encontrado" };
     const verificationCode = this.generateRandomCode(); // Generate a random code
-    const user = await this.findUserByEmail(email);
+    const user = await this.model.findOne({ where: { email } });
     if (!user) {
       console.log('User not found.');
       res.status(200).json(response);
@@ -368,8 +368,8 @@ class UserModel extends Connection {
 
     await user.update({ verification_code: verificationCode });
 
-    const emailSend = new EmailSender().
-    emailSend.sendMail(email, 'Recuperação de password', `O seu código de recuperação é: ${verificationCode}`, `O seu código de recuperação é: <strong>http://${this.server}/changeLostPass?userId=${user.userId}&key= ${verificationCode}</strong>`);
+    const emailSend = new EmailSender();
+    emailSend.sendMail(email, 'Recuperação de password', `O seu código de recuperação é: ${verificationCode}`, `O seu código de recuperação é: <strong>http://${this.server}/changeLostPass?userId=${user.userId}&key=${verificationCode}</strong>`);
 
 
 

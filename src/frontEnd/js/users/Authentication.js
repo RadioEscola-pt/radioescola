@@ -55,16 +55,16 @@ class Authentication {
             // Switch to Login
             showRegistrationFormButton.innerText = "Login";
 
-            registrationForm.style.display = "none";
-            loginForm.style.display = "block";
+            registrationForm.style.display = "block";
+            loginForm.style.display = "none";
             lostPasswordForm.style.display = "none";
 
         } else {
             // Switch to Register
             showRegistrationFormButton.innerText = "Registar";
 
-            registrationForm.style.display = "block"; 
-            loginForm.style.display = "none";
+            registrationForm.style.display = "none"; 
+            loginForm.style.display = "block";
             lostPasswordForm.style.display = "none";
         }
 
@@ -84,8 +84,8 @@ class Authentication {
 
 
         // Check if email is valid
-        if (!this.authentication.isEmailValid(email)) {
-            this.authentication.message.innerHTML = "Invalid email format.";
+        if (!this.isEmailValid(email)) {
+            this.message.innerHTML = "Invalid email format.";
             return;
         }
 
@@ -129,7 +129,7 @@ class Authentication {
 
         this.xhr.open("POST", "ajax/register", true);
         this.xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        this.xhr.onreadystatechange = this.loginReply.bind(this);
+        this.xhr.onreadystatechange = this.regReply.bind(this);
 
                      
         this.xhr.send(`email=${loginEmail}&pass=${loginPassword}`);
@@ -156,6 +156,24 @@ class Authentication {
                      
         this.xhr.send(`email=${loginEmail}&pass=${loginPassword}`);
     }
+    regReply() {
+        if (this.xhr.readyState === 4) {
+          if (this.xhr.status === 200) {
+            const response = JSON.parse(this.xhr.responseText);
+            if (response.success) {
+              setTimeout(() => {
+                this.popup.closePopup();
+                
+              }, 1000);
+
+            } else {
+              this.message.innerHTML = response.message;
+            }
+          } else {
+            this.message.innerHTML = "Error: " + this.xhr.status;
+          }
+        }
+      }
     loginReply() {
         if (this.xhr.readyState === 4) {
           if (this.xhr.status === 200) {
