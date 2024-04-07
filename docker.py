@@ -34,8 +34,8 @@ def docker_build():
 def docker_refresh():
     print("Refreshing container...")
     subprocess.Popen(["docker", "cp", "/src", "radioescola_container:/usr/src/app"])
-    subprocess.Popen(["docker", "exec", "-it", "radioescola_container", "bash", "-c", "npm install"])
-    subprocess.Popen(["docker", "exec", "-it", "radioescola_container", "bash", "-c", "npm run dev"])
+    subprocess.Popen(["docker", "exec", "-it", "radioescola", "bash", "-c", "npm install"])
+    subprocess.Popen(["docker", "exec", "-it", "radioescola", "bash", "-c", "npm run dev"])
 def replace_env_file():
     original_file = 'src/password.env'
     replacement_file = 'src/password.env2'
