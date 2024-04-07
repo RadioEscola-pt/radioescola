@@ -113,7 +113,9 @@ if __name__ == "__main__":
         elif command == "release":
             docker_release()
         elif command == "refresh":
+            replace_env_file()
             docker_refresh()
+            revert_and_pull_env_file()
         elif command == "db":
             docker_db()
         elif command == "launch":

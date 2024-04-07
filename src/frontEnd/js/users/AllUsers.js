@@ -1,5 +1,9 @@
 class AllUsers {
     constructor() {
+        this.populateUsers();
+
+    }
+    populateUsers() {
         this.xhrWelcome = new XMLHttpRequest();
         this.xhrWelcome.onreadystatechange = this.handleWelcomeStateChange.bind(this);
         this.xhrWelcome.open('GET', 'ajax/allUsers');
@@ -118,7 +122,7 @@ class AllUsers {
 
     saveUserData(user) {
         const userId = user.userId;
-        const data = new FormData();  // Use FormData to easily encode data as form fields
+        const data = new URLSearchParams();
         data.append('userId', userId);
 
         // Collect inputs for "is_certified" and "verified" checkboxes
@@ -144,6 +148,7 @@ class AllUsers {
         // Perform the AJAX request to save data
         const xhr = new XMLHttpRequest();
         xhr.open('POST', 'ajax/updateUser');
+        xhr.allUsers=this;
         // No need to set 'Content-Type' for FormData; the browser will set it with the correct boundary
         xhr.onload = function() {
             if (xhr.status === 200) {
@@ -151,6 +156,7 @@ class AllUsers {
             } else {
                 console.error('Error saving user data:', xhr.status);
             }
+            this.allUsers.populateUsers();
         };
         xhr.onerror = function() {
             console.error('Request failed');
@@ -162,12 +168,14 @@ class AllUsers {
         const xhr = new XMLHttpRequest();
         xhr.open('POST', 'ajax/deleteUser');
         xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.allUsers=this;
         xhr.onload = function() {
             if (xhr.status === 200) {
                 console.log('User deleted successfully');
             } else {
                 console.log('Error deleting user');
             }
+            this.allUsers.populateUsers();
         };
         xhr.send(JSON.stringify({ userId: user.userId }));
     }

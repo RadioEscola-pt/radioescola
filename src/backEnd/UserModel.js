@@ -324,7 +324,7 @@ class UserModel extends Connection {
     }
   }
   async updateUserDetails(req, res) {
-    const {userId, role, isCertified, certificationLevel } = req.body;
+    const {userId, role, is_certified, certification_level,verified } = req.body;
     if (req.session.role != 'admin') {
       return res.status(200).json({ success: false, message: "Not admin" });
 
@@ -341,11 +341,12 @@ class UserModel extends Connection {
 
         // Update user data
         await user.update({
-            email: email || user.email,
-            Full_name: fullName || user.Full_name,
-            role: role || user.role,
-            is_certified: isCertified === undefined ? user.is_certified : isCertified,
-            certification_level: certificationLevel || user.certification_level
+
+            role: role,
+            is_certified: is_certified,
+            verified: verified,
+            certification_level: certification_level
+
         });
 
         res.status(200).json({ success: true, message: "User updated successfully", user: user });
