@@ -323,6 +323,62 @@ class UserModel extends Connection {
 
     }
   }
+  async updateUserDetails(req, res) {
+    const {userId, role, isCertified, certificationLevel } = req.body;
+    if (req.session.role != 'admin') {
+      return res.status(200).json({ success: false, message: "Not admin" });
+
+    }
+    if (!userId) {
+        return res.status(200).json({ success: false, message: "No user ID provided" });
+    }
+
+    try {
+        const user = await this.model.findByPk(userId);
+        if (!user) {
+            return res.status(200).json({ success: false, message: "User not found" });
+        }
+
+        // Update user data
+        await user.update({
+            email: email || user.email,
+            Full_name: fullName || user.Full_name,
+            role: role || user.role,
+            is_certified: isCertified === undefined ? user.is_certified : isCertified,
+            certification_level: certificationLevel || user.certification_level
+        });
+
+        res.status(200).json({ success: true, message: "User updated successfully", user: user });
+    } catch (error) {
+        console.error('Error updating user:', error);
+        res.status(500).json({ success: false, message: "Error updating user" });
+    }
+}
+async deleteUserById(req, res, userId) {
+  const response = { success: false, message: "Utilizador nao encontrado ou password errada" };
+  if (req.session.role != 'admin') {
+    return res.status(200).json({ success: false, message: "Not admin" });
+
+  }
+  try {
+    const user = await this.model.findByPk(userId);
+    if (!user) {
+        return res.status(200).json({ success: false, message: "User not found" });
+    }
+
+    await this.model.destroy({
+      where: {  userId }
+    });
+    console.log('User successfully deleted.');
+    res.status(200).json({ success: true, message: "User successfully deleted." });
+    return true;
+
+  } catch (error) {
+    console.error('Error deleting user:', error);
+    res.status(200).json(response);
+    return false;
+  }
+}
   async deleteUser(res, email, password) {
     const response = { success: false, message: "Utilizador nao encontrado ou password errada" };
     try {
@@ -344,7 +400,7 @@ class UserModel extends Connection {
 
       // Assuming 'id' is the identifier used in your database
       await this.model.destroy({
-        where: { id: user.id }
+        where: { userId: user.id }
       });
       console.log('User successfully deleted.');
       res.status(200).json({ success: true, message: "User successfully deleted." });

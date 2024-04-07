@@ -58,7 +58,7 @@ class AllUsers {
 
     addUser(user, userKeys) {
         const tr = document.createElement('tr');
-        tr.setAttribute('data-user-id', user.id);
+        tr.setAttribute('data-user-id', user.userId);
 
         for (let i = 0; i < userKeys.length; i++) {
             const td = this.createCell(user, userKeys[i]);
@@ -84,11 +84,11 @@ class AllUsers {
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.checked = user[key];
-            checkbox.name = `${key}[${user.id}]`;
+            checkbox.name = `${key}[${user.userId}]`;
             td.appendChild(checkbox);
         } else if (key === 'role' || key === 'certification_level') {
             const select = document.createElement('select');
-            select.name = `${key}[${user.id}]`;
+            select.name = `${key}[${user.userId}]`;
             const options = key === 'role' ? ['pupil', 'contributor', 'admin'] : ['NOHAM', 'cat 3', 'cat 2', 'cat 1'];
             for (let j = 0; j < options.length; j++) {
                 const option = document.createElement('option');
@@ -117,12 +117,58 @@ class AllUsers {
     }
 
     saveUserData(user) {
-        console.log(`Saving data for user ID ${user.id}`);
-        // Add AJAX request logic here
+        const userId = user.userId;
+        const data = new FormData();  // Use FormData to easily encode data as form fields
+        data.append('userId', userId);
+
+        // Collect inputs for "is_certified" and "verified" checkboxes
+        const certified = document.getElementsByName(`is_certified[${userId}]`)[0];
+        const verified = document.getElementsByName(`verified[${userId}]`)[0];
+        if (certified) {
+            data.append('is_certified', certified.checked ? 'true' : 'false');  // Convert boolean to '1' or '0'
+        }
+        if (verified) {
+            data.append('verified', verified.checked ? 'true' : 'false');
+        }
+
+        // Collect inputs for "role" and "certification_level" dropdowns
+        const role = document.getElementsByName(`role[${userId}]`)[0];
+        const certificationLevel = document.getElementsByName(`certification_level[${userId}]`)[0];
+        if (role) {
+            data.append('role', role.value);
+        }
+        if (certificationLevel) {
+            data.append('certification_level', certificationLevel.value);
+        }
+
+        // Perform the AJAX request to save data
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'ajax/updateUser');
+        // No need to set 'Content-Type' for FormData; the browser will set it with the correct boundary
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                console.log('User data saved successfully:', xhr.responseText);
+            } else {
+                console.error('Error saving user data:', xhr.status);
+            }
+        };
+        xhr.onerror = function() {
+            console.error('Request failed');
+        };
+        xhr.send(data);  // Send the FormData object
     }
 
     deleteUserData(user) {
-        console.log(`Deleting user ID ${user.id}`);
-        // Add AJAX request logic here
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'ajax/deleteUser');
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                console.log('User deleted successfully');
+            } else {
+                console.log('Error deleting user');
+            }
+        };
+        xhr.send(JSON.stringify({ userId: user.userId }));
     }
 }

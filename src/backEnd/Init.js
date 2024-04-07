@@ -69,6 +69,21 @@ class Init {
                         userModel.lostPass(req,res,email);
                     }
                     break;
+            case '/deleteUserByID':
+                if ((method === 'POST') && (req.session.loggedIn === true) ) {
+                    //TODO only delete if user is admin or of the same account
+                    const userModel = new UserModel();
+                    const {userId } = req.body;
+                    userModel.deleteUserById(req, res, userId);
+                }
+                break;
+
+            case '/updateUser':
+                if ((method === 'POST') && (req.session.loggedIn === true) ) {
+                    const userModel = new UserModel();
+                    userModel.updateUserDetails(req, res);
+                }
+                break;
             case '/deleteUser':
                 if ((method === 'POST') && (req.session.loggedIn === true) ) {
                     //TODO only delete if user is admin or of the same account

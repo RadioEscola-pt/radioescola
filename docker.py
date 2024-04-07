@@ -1,6 +1,8 @@
 import os
 import subprocess
 import sys
+import shutil
+
 
 def load_env_variables(env_file_path):
     if os.path.exists(env_file_path):
@@ -45,8 +47,8 @@ def replace_env_file():
             os.remove(original_file)
             print(f"Removed the original file: {original_file}")
         
-        # Rename the replacement file to the original file's name
-        os.rename(replacement_file, original_file)
+        # the replacement file to the original file's name
+        shutil.copy2(replacement_file, original_file)
         print(f"Renamed '{replacement_file}' to '{original_file}'")
     else:
         print(f"Replacement file '{replacement_file}' not found. No changes made.")
