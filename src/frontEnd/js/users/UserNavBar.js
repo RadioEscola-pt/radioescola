@@ -65,7 +65,10 @@ class UserNavBar {
                     break;
                 case 'TestUpload':
                     new TestUpload();
-                    break;
+                    break;´
+                case 'perguntas':
+                    new QuestionEditor();
+                    break;  
                 case 'EditarPerfil':    
                     //new EditProfile();
                     break;

@@ -1,0 +1,52 @@
+<select id="fileSelector">
+    <option value="question1.json">Question File 1</option>
+    <option value="question2.json">Question File 2</option>
+    <option value="question3.json">Question File 3</option>
+</select>
+<input type="number" id="uniqueIdInput" placeholder="Enter unique ID">
+<button >Load Question</button>
+<form id="questionForm" style="display: none;">
+    <div>
+        <label>Question:</label>
+        <textarea id="questionText"></textarea>
+    </div>
+    <div id="answersContainer">
+        <div>
+            <label>Answer 1:</label>
+            <input type="text" id="answer1" />
+        </div>
+        <div>
+            <label>Answer 2:</label>
+            <input type="text" id="answer2" />
+        </div>
+        <div>
+            <label>Answer 3:</label>
+            <input type="text" id="answer3" />
+        </div>
+        <div>
+            <label>Answer 4:</label>
+            <input type="text" id="answer4" />
+        </div>
+    </div>
+    <div>
+        <label>Notes:</label>
+        <textarea id="questionNotes"></textarea>
+    </div>
+    <div>
+        <label>Image URL:</label>
+        <input type="text" id="questionImg" />
+    </div>
+    <div>
+        <label>Fonte:</label>
+        <textarea id="questionFonte"></textarea>
+    </div>
+    <div>
+        <label>Tutorial:</label>
+        <input type="text" id="questionTutorial" />
+    </div>
+    <div>
+        <label>Materia:</label>
+        <input type="text" id="questionMateria" />
+    </div>
+    <button type="button" >Save Changes</button>
+</form>
