@@ -31,11 +31,41 @@ def docker_build():
     subprocess.Popen(["docker", "build", "-t", "radioescola", "-f", "docker/Dockerfile-nodejs", "."])
     subprocess.Popen(["docker", "build", "-t", "radioescoladb", "-f", "docker/Dockerfile-mariadb", "."])
 
-def docker_refresh():
-    print("Refreshing container...")
-    subprocess.Popen(["docker", "cp", "/src", "radioescola_container:/usr/src/app"])
-    subprocess.Popen(["docker", "exec", "-it", "radioescola_container", "bash", "-c", "npm install"])
-    subprocess.Popen(["docker", "exec", "-it", "radioescola_container", "bash", "-c", "npm run dev"])
+def refresh_nodejs_container(port):
+    print("Checking for existing Node.js container...")
+    list_containers = subprocess.run(["docker", "ps", "-q", "-f", "name=radioescola"], capture_output=True, text=True)
+    if list_containers.stdout.strip():
+        print("Stopping existing Node.js container...")
+        stop_process = subprocess.run(["docker", "stop", "radioescola"], capture_output=True, text=True)
+        print(stop_process.stdout if stop_process.stdout else "Container stopped.")
+
+        print("Removing stopped Node.js container...")
+        remove_process = subprocess.run(["docker", "rm", "radioescola"], capture_output=True, text=True)
+        print(remove_process.stdout if remove_process.stdout else "Container removed.")
+    else:
+        print("No existing Node.js container to stop.")
+
+    print("Checking for existing Docker image...")
+    image_exists = subprocess.run(["docker", "images", "-q", "radioescola"], capture_output=True, text=True)
+    if image_exists.stdout.strip():
+        print("Removing existing Docker image...")
+        rmi_process = subprocess.run(["docker", "rmi", "radioescola"], capture_output=True, text=True)
+        print(rmi_process.stdout if rmi_process.stdout else "Image removed.")
+    else:
+        print("No existing Docker image to remove.")
+
+    print("Rebuilding Node.js Docker image...")
+    build_process = subprocess.run(["docker", "build", "-t", "radioescola", "-f", "docker/Dockerfile-nodejs", "."], capture_output=True, text=True)
+    if build_process.stdout:
+        print("Docker image rebuilt successfully.")
+        print(build_process.stdout)
+    else:
+        print("Error rebuilding Docker image:")
+        print(build_process.stderr)
+        return
+
+    docker_launchNode(port)
+
 def replace_env_file():
     original_file = 'src/password.env'
     replacement_file = 'src/password.env2'
@@ -79,15 +109,11 @@ def docker_db():
                       "-e", f"MARIADB_PASSWORD={os.getenv('MYSQL_PASSWORD')}",
                       "mariadb:latest"])
 
-def docker_launch():
-    print("Launching application container...")
-    subprocess.Popen(["docker", "run", "--rm", "--name", "radioescola", "-e", "DISPLAY=$DISPLAY",
-                      "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "3000:3000", "--network=radioescola_network", "--ip", "172.18.0.3", "radioescola"])
 
-def docker_release():
+def docker_launchNode(port):
     print("Launching container with public access...")
     subprocess.Popen(["docker", "run", "--rm", "--name", "radioescola", 
-                      "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "80:3000", "--network=radioescola_network", "--ip", "172.18.0.4", "radioescola"])
+                      "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", "{port}:3000", "--network=radioescola_network", "--ip", "172.18.0.4", "radioescola"])
 
 def create_docker_network(network_name):
     try:
@@ -96,6 +122,29 @@ def create_docker_network(network_name):
     except subprocess.CalledProcessError:
         print(f"Failed to create Docker network '{network_name}'. It might already exist.")
 
+def help_command():
+    help_text = """
+    Available Commands:
+    build     - Pulls updates from git, replaces the environment file, creates a Docker network, and builds Docker images for the Node.js app and MariaDB.
+    stop      - Stops all running containers related to the application and prunes them, including removing the Docker network.
+    nodejs    - Launches the Node.js application container on a specified port. Requires a port number as an argument.
+    refresh   - Stops the existing Node.js container, removes it, optionally removes the existing image, rebuilds the image, and relaunches the container on a specified port. Requires a port number as an argument.
+    db        - Launches the MariaDB container with network and environment configurations set.
+    help      - Displays the help text with available commands and descriptions.
+    
+    Usage:
+    python script_name.py [command] [options]
+    
+    Examples:
+    python script_name.py build
+    python script_name.py stop
+    python script_name.py nodejs 3000
+    python script_name.py refresh 3000
+    python script_name.py db
+    python script_name.py help
+    """
+    print(help_text)
+
 if __name__ == "__main__":
     # Load environment variables
     env_file = "src/password.env"
@@ -103,6 +152,11 @@ if __name__ == "__main__":
 
     if len(sys.argv) > 1:
         command = sys.argv[1]
+        if command in ["nodejs", "refresh"] and len(sys.argv) > 2:
+            port = sys.argv[2]
+        else:
+            print(f"Port required for the {command} operation.")
+            sys.exit(1)
         if command == "build":
             revert_and_pull_env_file()
             replace_env_file()
@@ -110,17 +164,18 @@ if __name__ == "__main__":
             docker_build()
         elif command == "stop":
             docker_stop()
-        elif command == "release":
-            docker_release()
+        elif command == "nodejs":
+            port = sys.argv[2]
+            docker_launchNode(port)
         elif command == "refresh":
+            port = sys.argv[2]
             replace_env_file()
-            docker_refresh()
+            refresh_nodejs_container(port)
             revert_and_pull_env_file()
         elif command == "db":
             docker_db()
-        elif command == "launch":
-            docker_launch()
+
         else:
-            print("Invalid option. Use 'build', 'release', 'refresh', 'db', or 'launch'.")
+            help_command()
     else:
-        print("No command provided.")
+        help_command()

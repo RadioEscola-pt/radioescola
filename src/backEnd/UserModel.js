@@ -186,49 +186,30 @@ class UserModel extends Connection {
     }
   }
   async changeUserLostPassword(req, res, useID, key) {
-
-
     try {
-      // Find the user by the ID stored in the session
-      const user = await this.model.findByPk(useID);
+        const user = await this.model.findByPk(useID);
+        if (!user) {
+            return res.status(200).json({ success: false, message: "User not found" });
+        }
+        
+        if (key !== user.verification_code) {
+            return res.status(200).json({ success: false, message: "Invalid verification code" });
+        }
 
+        const newPassword = this.generateRandomCode();
+        const hashedPassword = await bcrypt.hash(newPassword, this.salt);
+        
+        await user.update({ password: hashedPassword, verification_code: null });
 
+        const email = new EmailSender();
+        email.sendMail(user.email, 'New Password', `Your new password is ${newPassword}`);
 
-      if (!user) {
-        // Not Found for non-existing user
-        res.status(200).json({ success: false, message: "User not found" });
-        return false;
-      }
-     
-      if (key!= user.verification_code) {
-        // Unauthorized for incorrect current password
-        res.status(200).json({ success: false, message: "Current password is incorrect" });
-        return false;
-      }
-
-      const verificationCode = this.generateRandomCode(); // Generate a random code
-
-      const email = new EmailSender();
-      email.sendMail(user.email, 'Nova  password', `A sua nova +assword e  ${verificationCode}`);
-
-
-      // Hash the new password
-      const hashedPassword = await bcrypt.hash(verificationCode, this.salt);
-
-      // Update the user's password
-      await user.update({ verification_code: 0, password: hashedPassword });
-
-      console.log('Password successfully updated.');
-      // OK for successful password update
-      res.status(200).json({ success: true, message: "Password successfully updated" });
-      return true;
-
+        return res.status(200).json({ success: true, message: "Password successfully updated" });
     } catch (error) {
-      console.error('Error updating password:', error);
-      // Internal Server Error for any server-side issues
-      res.status(200).json({ success: false, message: "Error updating password" });
+        console.error('Error updating password:', error);
+        return res.status(500).json({ success: false, message: "Error updating password" });
     }
-  }
+}
 
   async createUser(res, email, password) {
     try {
