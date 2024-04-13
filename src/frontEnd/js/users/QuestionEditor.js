@@ -2,7 +2,7 @@ class QuestionEditor {
     constructor() {
         this.xhrWelcome = new XMLHttpRequest();
         this.xhrWelcome.onreadystatechange = this.setform.bind(this);
-        this.xhrWelcome.open('GET', 'QuestionEditor/index.html');
+        this.xhrWelcome.open('GET', 'users/QuestionEditor/index.html');
         this.xhrWelcome.send();
     }
     setform() {
@@ -39,7 +39,7 @@ class QuestionEditor {
     }
 
     loadQuestion() {
-        const fileName = this.fileSelector.value;
+        const fileName ="perguntas/"+ this.fileSelector.value;
         const xhr = new XMLHttpRequest();
         xhr.open('GET', fileName, true);
         xhr.onreadystatechange = () => {
