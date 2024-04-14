@@ -154,9 +154,7 @@ if __name__ == "__main__":
         command = sys.argv[1]
         if command in ["nodejs", "refresh"] and len(sys.argv) > 2:
             port = sys.argv[2]
-        else:
-            print(f"Port required for the {command} operation.")
-            sys.exit(1)
+        
         if command == "build":
             revert_and_pull_env_file()
             replace_env_file()
