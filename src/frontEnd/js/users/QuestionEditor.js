@@ -10,6 +10,7 @@ class QuestionEditor {
             var welcomeDiv = document.getElementById("welcome");
             welcomeDiv.innerHTML = this.xhrWelcome.responseText;
             this.fileSelector = document.getElementById('fileSelector');
+            this.currentAnswer = document.getElementById('correctAnswer');
             this.uniqueIdInput = document.getElementById('uniqueIdInput');
             this.loadButton = document.getElementById('loadButton');
             this.questionForm = document.getElementById('questionForm');
@@ -69,6 +70,10 @@ class QuestionEditor {
         this.questionFonte.value = (question.fonte || []).join(', ');
         this.questionTutorial.value = question.tutorial || '';
         this.questionMateria.value = question.materia || '';
+        this.currentAnswer.value = question.correctAnswer;
+        this.currentAnswer.selectedIndex = question.correctIndex; // Set the dropdown to the correct index
+        
+
 
         this.questionForm.style.display = 'block';
     }
@@ -81,6 +86,7 @@ class QuestionEditor {
 
         const question = this.data.questions[this.currentQuestionIndex];
         question.question = this.questionText.value;
+        
         for (let i = 0; i < question.answers.length; i++) {
             question.answers[i] = this.answers[i].value; // Directly update the answers
         }
