@@ -309,6 +309,7 @@ class Questions {
 
     if (index === -1) {
       // If not in favorites, add it
+      favorites=[];
       favorites.push(this.uniqueID);
       this.setAttribute('class', 'w-6 h-6 block fill-[#fcd34d]');
     } else {

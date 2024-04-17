@@ -1,7 +1,8 @@
 {
     "configurations": [
+    
         {
-            "name": "Build Docker Image",
+            "name": "Build Docker build",
             "type": "debugpy",
             "request": "launch",
             "program": "docker.py",

@@ -92,9 +92,16 @@ class Init {
 
         if (searchParams.has("LoadChapter")) {
             new LoadChapter(searchParams.get("LoadChapter"));
-        } else {
+        }else   if (searchParams.has("activate")) {
+            new UserEmailResponse(searchParams.get("userId"), searchParams.get("key"), "activate");
+        }
+        else if (searchParams.has("changeLostPass")) {
+            new UserEmailResponse(searchParams.get("userId"), searchParams.get("key"), "changeLostPass");   
+        }
+         else {
             new LoadChapter("home");
         }
+
         this.hashChecker();
         console.log("load complete");
         new StudyNavbar();

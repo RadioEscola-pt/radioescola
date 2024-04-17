@@ -199,7 +199,7 @@ class UserModel extends Connection {
         const newPassword = this.generateRandomCode();
         const hashedPassword = await bcrypt.hash(newPassword, this.salt);
         
-        await user.update({ password: hashedPassword, verification_code: null });
+        await user.update({ password: hashedPassword, verification_code: "" });
 
         const email = new EmailSender();
         email.sendMail(user.email, 'New Password', `Your new password is ${newPassword}`);
@@ -223,8 +223,12 @@ class UserModel extends Connection {
 
 
       const emailSender = new EmailSender();
-      emailSender.sendMail(email, 'Conta Criand<', `O seu código de activacao é: ${verificationCode}`, `O seu código de recuperação é: <strong>http://${this.server}/activate?userId=${user.userId}&key=${verificationCode}</strong>`);
-
+      emailSender.sendMail(
+        email, 
+        'Conta Criada com sucesso', 
+        `O seu link de activação é: http://${this.server}/index.html?userId=${user.userId}&key=${verificationCode}&activate=1`, 
+        `O seu código de recuperação é: <strong><a href="http://${this.server}/index.html?userId=${user.userId}&key=${verificationCode}&activate=1">http://${this.server}/index.html?userId=${user.userId}&key=${verificationCode}&activate=1</a></strong>`
+      );
       console.log('User successfully created.');
       res.status(200).json({ success: true, message: "Conta Criada verifique o seu email" });
       return true;
@@ -407,7 +411,7 @@ async deleteUserById(req, res, userId) {
     await user.update({ verification_code: verificationCode });
 
     const emailSend = new EmailSender();
-    emailSend.sendMail(email, 'Recuperação de password', `O seu código de recuperação é: ${verificationCode}`, `O seu código de recuperação é: <strong>http://${this.server}/changeLostPass?userId=${user.userId}&key=${verificationCode}</strong>`);
+    emailSend.sendMail(email, 'Recuperação de password', `O seu código de recuperação é: ${verificationCode}`, `O seu código de recuperação é: <strong>http://${this.server}/index.html?changeLostPass=1&userId=${user.userId}&key=${verificationCode}</strong>`);
 
 
 
