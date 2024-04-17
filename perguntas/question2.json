@@ -2821,11 +2821,11 @@
         "apresentam uma resposta tipicamente passa-banda",
         "Todas as hipóteses estão corretas"
       ],
-      "correctIndex": 3,
-      "notes": "A92 necessario validar na bateria de exames é considerada a resposta 2 https://web.fe.up.pt/~vgt/dados/E3/apontamentos/ampl_sinto.pdf",
+      "correctIndex": 4,
+      "notes": "A92 https://web.fe.up.pt/~vgt/dados/E3/apontamentos/ampl_sinto.pdf",
       "img": null,
       "uniqueID": 141,
-      "fonte": null,
+      "fonte": "cat2/2024_04_16p36",
       "tutorial": null,
       "materia": null,
       "calc": null
