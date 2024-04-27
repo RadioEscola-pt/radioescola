@@ -117,7 +117,7 @@ def docker_launchNode(port):
 
 def create_docker_network(network_name):
     try:
-        subprocess.Popen(["docker", "network", "create", "--subnet", "172.18.0.0/16", network_name], check=True)
+        subprocess.run(["docker", "network", "create", "--subnet", "172.18.0.0/16", network_name], check=True)
         print(f"Docker network '{network_name}' created successfully.")
     except subprocess.CalledProcessError:
         print(f"Failed to create Docker network '{network_name}'. It might already exist.")
