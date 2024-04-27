@@ -55,7 +55,7 @@ def refresh_nodejs_container(port):
         print("No existing Docker image to remove.")
 
     print("Rebuilding Node.js Docker image...")
-    build_process = subprocess.Popen(["docker", "build", "-t", "radioescola", "-f", "docker/Dockerfile-nodejs", "."], capture_output=True, text=True)
+    build_process = subprocess.run(["docker", "build", "-t", "radioescola", "-f", "docker/Dockerfile-nodejs", "."], capture_output=True, text=True)
     if build_process.stdout:
         print("Docker image rebuilt successfully.")
         print(build_process.stdout)
