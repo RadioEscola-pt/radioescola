@@ -101,7 +101,7 @@ def revert_and_pull_env_file():
 
 def docker_db():
     print("Launching database container...")
-    subprocess.Popen(["docker", "run", "-d", "-p", "3306:3306", "--name", "radioescoladb",
+    subprocess.run(["docker", "run", "-d", "-p", "3306:3306", "--name", "radioescoladb",
                       "--network=radioescola_network", "--ip", "172.18.0.2",
                       "-e", f"MARIADB_ROOT_PASSWORD={os.getenv('MYSQL_ROOT_PASSWORD')}",
                       "-e", f"MARIADB_DATABASE={os.getenv('MYSQL_DATABASE')}",
@@ -112,7 +112,7 @@ def docker_db():
 
 def docker_launchNode(port):
     print("Launching container with public access...")
-    subprocess.Popen(["docker", "run", "--rm", "--name", "radioescola", 
+    subprocess.run(["docker", "run", "--rm", "--name", "radioescola", 
                       "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", f"{port}:3000", "--network=radioescola_network", "--ip", "172.18.0.4", "radioescola"])
 
 def create_docker_network(network_name):
