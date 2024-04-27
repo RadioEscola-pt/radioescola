@@ -28,6 +28,8 @@ def docker_stop():
 
 def docker_build():
     print("Building Docker images...")
+    # Ensure the volume exists or create it
+    subprocess.Popen(["docker", "volume", "create", "radioescoladb_data"])
     subprocess.Popen(["docker", "build", "-t", "radioescola", "-f", "docker/Dockerfile-nodejs", "."])
     subprocess.Popen(["docker", "build", "-t", "radioescoladb", "-f", "docker/Dockerfile-mariadb", "."])
 
@@ -101,8 +103,7 @@ def revert_and_pull_env_file():
 
 def docker_db():
     print("Launching database container...")
-    # Ensure the volume exists or create it
-    subprocess.Popen(["docker", "volume", "create", "radioescoladb_data"])
+
     # Run the container with the volume mounted
     subprocess.Popen(["docker", "run", "-d", "-p", "3306:3306", "--name", "radioescoladb",
                       "--network=radioescola_network", "--ip", "172.18.0.2",
