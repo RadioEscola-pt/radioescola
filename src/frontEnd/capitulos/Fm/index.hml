@@ -1,0 +1,33 @@
+  <h1>Circuitos de Detecção e Modulação para FM</h1>
+    <h2>9.1 Tipos de detectores para sinais de FM</h2>
+    <p>Os detectores para sinais de FM podem ser classificados em várias categorias, dependendo do método de demodulação. Alguns dos principais tipos incluem:</p>
+    <ul>
+        <li><strong>Discriminadores de Frequência:</strong> Utilizados para converter a frequência do sinal FM em uma tensão proporcional.</li>
+        <li><strong>Detetores de Fase:</strong> Empregados para comparar a fase do sinal FM com a de um sinal de referência.</li>
+    </ul>
+
+    <h2>9.2 Discriminador de frequência</h2>
+    <p>Um discriminador de frequência é um tipo de circuito usado para demodular um sinal FM. Ele funciona detectando as variações de frequência no sinal e convertendo essas diferenças em variações de voltagem.</p>
+
+    <h2>9.3 Detetores de produto vs. Detetores de envolvente</h2>
+    <p>Detetores de produto e detetores de envolvente são dois tipos de circuitos utilizados na demodulação de sinais de FM:</p>
+    <ul>
+        <li><strong>Detetores de Produto:</strong> Estes circuitos multiplicam o sinal FM por uma versão deslocada em frequência de si mesmo, melhorando a detecção de mudanças de frequência.</li>
+        <li><strong>Detetores de Envolvente:</strong> Extraem a amplitude do sinal modulado, sendo mais simples mas menos eficazes em termos de precisão comparados aos detetores de produto.</li>
+    </ul>
+
+    <h2>9.4 Regra de Carson para a Largura de Banda de FM</h2>
+    <p>Para determinar a largura de banda de uma transmissão de Frequência Modulada (FM), utilizamos a regra de Carson, que estima a largura de banda necessária para sinais de FM de banda larga. A fórmula é:</p>
+    <p><strong>Largura de Banda = 2 × (Δf + fm)</strong></p>
+    <ul>
+        <li><strong>Δf</strong> representa o desvio máximo de frequência.</li>
+        <li><strong>fm</strong> é a frequência máxima de modulação.</li>
+    </ul>
+    <p>Para o exemplo dado:</p>
+    <ul>
+        <li><strong>Desvio de frequência (Δf):</strong> 3 kHz</li>
+        <li><strong>Frequência máxima de modulação (fm):</strong> 2,5 kHz</li>
+    </ul>
+    <p>Substituindo os valores na fórmula de Carson:</p>
+    <p><strong>Largura de Banda = 2 × (3 kHz + 2,5 kHz) = 2 × 5,5 kHz = 11 kHz</strong></p>
+    <p>Portanto, a largura de banda total para a transmissão de fonia FM descrita é de aproximadamente 11 kHz.</p>

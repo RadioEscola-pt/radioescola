@@ -1,0 +1,19 @@
+  <h1>Osciladores e Feedback</h1>
+    <p>Os osciladores são dispositivos fundamentais em eletrônica, usados para gerar sinais repetitivos, como ondas senoidais ou quadradas. Abaixo, exploramos os componentes básicos de um oscilador e descrevemos alguns tipos específicos.</p>
+
+    <h2>Componentes Básicos de um Oscilador</h2>
+    <ul>
+        <li><strong>Amplificador</strong>: Fornece o ganho necessário para a oscilação.</li>
+        <li><strong>Elemento de Feedback</strong>: Uma parte do sinal de saída é realimentada à entrada para manter a oscilação.</li>
+        <li><strong>Rede de Filtro</strong>: Determina a frequência de oscilação e ajuda a estabilizar o sinal.</li>
+    </ul>
+
+    <h2>Tipos Específicos de Osciladores</h2>
+    <h3>Oscilador Hartley</h3>
+    <p>O oscilador Hartley utiliza um indutor com tap ou dois indutores acoplados e um capacitor para formar sua rede de feedback. A frequência de oscilação é determinada pela relação entre o indutor e o capacitor.</p>
+
+    <h3>Oscilador Colpitts</h3>
+    <p>O oscilador Colpitts é similar ao Hartley, mas usa dois capacitores em série para o feedback e um indutor para determinar a frequência. É conhecido pela sua estabilidade e facilidade de implementação.</p>
+
+    <h3>Oscilador Pierce</h3>
+    <p>Comumente usado em circuitos de relógio de cristal, o oscilador Pierce utiliza um cristal de quartzo na rede de feedback para determinar a frequência. É altamente estável e preciso, ideal para aplicações que requerem cronometragem exata.</p>

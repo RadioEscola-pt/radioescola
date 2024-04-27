@@ -117,6 +117,36 @@
                     "action": "receptores"
                 },
                 {
+                    "title":"cabo coaxial",
+                    "action":"coax"
+
+                },
+                {
+                  "title":"Ajsute de Impedância",
+                    "action":"ImpedanceAdjust"  
+                },
+                {
+                  "title":"Blidagem",
+                    "action":"blindagem"  
+                },
+                {
+                    "title":"Classes de Amplificação",
+                    "action":"classAmp"
+                },
+                {
+                    "title":"frequencia modulada",
+                    "action":"fm"
+                },
+                {
+                    "title": "oscilador",
+                    "action": "Oscilator"
+                
+                },
+                {
+                    "title":"Digital",
+                    "action":"Digital"
+                },
+                {
                     "title": "Formulario",
                     "action": null,
                     "newTab": "docs/FormulasCAT1.pdf"
