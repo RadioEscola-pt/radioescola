@@ -19,19 +19,19 @@ def load_env_variables(env_file_path):
 def docker_stop():
     print("Stopping containers...")
     # Stop specific containers
-    subprocess.Popen(["docker", "stop", "radioescoladb"])
+    subprocess.run(["docker", "stop", "radioescoladb"])
     subprocess.Popen(["docker", "stop", "radioescola"])
     # Prune all stopped containers with force option
-    subprocess.Popen(["docker", "container", "prune", "-f"])
+    subprocess.run(["docker", "container", "prune", "-f"])
     # Remove the network
-    subprocess.Popen(["docker", "network", "rm", "radioescola_network"])
+    subprocess.run(["docker", "network", "rm", "radioescola_network"])
 
 def docker_build():
     print("Building Docker images...")
     # Ensure the volume exists or create it
-    subprocess.Popen(["docker", "volume", "create", "radioescoladb_data"])
-    subprocess.Popen(["docker", "build", "-t", "radioescola", "-f", "docker/Dockerfile-nodejs", "."])
-    subprocess.Popen(["docker", "build", "-t", "radioescoladb", "-f", "docker/Dockerfile-mariadb", "."])
+    subprocess.run(["docker", "volume", "create", "radioescoladb_data"])
+    subprocess.run(["docker", "build", "-t", "radioescola", "-f", "docker/Dockerfile-nodejs", "."])
+    subprocess.run(["docker", "build", "-t", "radioescoladb", "-f", "docker/Dockerfile-mariadb", "."])
 
 def refresh_nodejs_container(port):
     print("Checking for existing Node.js container...")
