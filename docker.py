@@ -101,8 +101,12 @@ def revert_and_pull_env_file():
 
 def docker_db():
     print("Launching database container...")
+    # Ensure the volume exists or create it
+    subprocess.Popen(["docker", "volume", "create", "radioescoladb_data"])
+    # Run the container with the volume mounted
     subprocess.Popen(["docker", "run", "-d", "-p", "3306:3306", "--name", "radioescoladb",
                       "--network=radioescola_network", "--ip", "172.18.0.2",
+                      "-v", "radioescoladb_data:/var/lib/mysql",
                       "-e", f"MARIADB_ROOT_PASSWORD={os.getenv('MYSQL_ROOT_PASSWORD')}",
                       "-e", f"MARIADB_DATABASE={os.getenv('MYSQL_DATABASE')}",
                       "-e", f"MARIADB_USER={os.getenv('MYSQL_USER')}",
