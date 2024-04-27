@@ -33,14 +33,14 @@ def docker_build():
 
 def refresh_nodejs_container(port):
     print("Checking for existing Node.js container...")
-    list_containers = subprocess.Popen(["docker", "ps", "-q", "-f", "name=radioescola"], capture_output=True, text=True)
+    list_containers = subprocess.run(["docker", "ps", "-q", "-f", "name=radioescola"], capture_output=True, text=True)
     if list_containers.stdout.strip():
         print("Stopping existing Node.js container...")
-        stop_process = subprocess.Popen(["docker", "stop", "radioescola"], capture_output=True, text=True)
+        stop_process = subprocess.run(["docker", "stop", "radioescola"], capture_output=True, text=True)
         print(stop_process.stdout if stop_process.stdout else "Container stopped.")
 
         print("Removing stopped Node.js container...")
-        remove_process = subprocess.Popen(["docker", "rm", "radioescola"], capture_output=True, text=True)
+        remove_process = subprocess.run(["docker", "rm", "radioescola"], capture_output=True, text=True)
         print(remove_process.stdout if remove_process.stdout else "Container removed.")
     else:
         print("No existing Node.js container to stop.")
