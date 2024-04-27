@@ -46,10 +46,10 @@ def refresh_nodejs_container(port):
         print("No existing Node.js container to stop.")
 
     print("Checking for existing Docker image...")
-    image_exists = subprocess.Popen(["docker", "images", "-q", "radioescola"], capture_output=True, text=True)
+    image_exists = subprocess.run(["docker", "images", "-q", "radioescola"], capture_output=True, text=True)
     if image_exists.stdout.strip():
         print("Removing existing Docker image...")
-        rmi_process = subprocess.Popen(["docker", "rmi", "radioescola"], capture_output=True, text=True)
+        rmi_process = subprocess.run(["docker", "rmi", "radioescola"], capture_output=True, text=True)
         print(rmi_process.stdout if rmi_process.stdout else "Image removed.")
     else:
         print("No existing Docker image to remove.")
