@@ -166,10 +166,13 @@ if __name__ == "__main__":
             port = sys.argv[2]
             docker_launchNode(port)
         elif command == "refresh":
+            revert_and_pull_env_file()
+            create_docker_network("radioescola_network")
             port = sys.argv[2]
             replace_env_file()
             refresh_nodejs_container(port)
-            revert_and_pull_env_file()
+            docker_db()
+            
         elif command == "db":
             docker_db()
 
