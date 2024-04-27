@@ -112,7 +112,7 @@ def docker_db():
 
 def docker_launchNode(port):
     print("Launching container with public access...")
-    subprocess.Popen(["docker", "run", "--rm", "--name", "radioescola", 
+    subprocess.run(["docker", "run", "--rm", "--name", "radioescola", 
                       "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", f"{port}:3000", "--network=radioescola_network", "--ip", "172.18.0.4", "radioescola"])
 
 def create_docker_network(network_name):
@@ -166,6 +166,7 @@ if __name__ == "__main__":
             port = sys.argv[2]
             docker_launchNode(port)
         elif command == "refresh":
+            docker_stop()
             revert_and_pull_env_file()
             create_docker_network("radioescola_network")
             port = sys.argv[2]
