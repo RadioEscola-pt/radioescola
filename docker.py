@@ -88,11 +88,11 @@ def revert_and_pull_env_file():
 
     try:
         # Revert changes to the specified file using git checkout
-        subprocess.Popen(['git', 'checkout', '--', file_path], check=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        subprocess.run(['git', 'checkout', '--', file_path], check=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         print(f"Reverted changes to {file_path}")
 
         # Pull updates from the remote repository
-        pull_result = subprocess.Popen(['git', 'pull'], check=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        pull_result = subprocess.run(['git', 'pull'], check=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         print("Pulled updates successfully:")
         print(pull_result.stdout)
     except subprocess.CalledProcessError as e:
