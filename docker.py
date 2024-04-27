@@ -180,6 +180,7 @@ if __name__ == "__main__":
             docker_db()
             
         elif command == "db":
+            create_docker_network("radioescola_network")
             docker_db()
 
         else:
