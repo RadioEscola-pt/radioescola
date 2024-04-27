@@ -135,10 +135,10 @@
                 },
                 {
                     "title":"frequencia modulada",
-                    "action":"fm"
+                    "action":"Fm"
                 },
                 {
-                    "title": "oscilador",
+                    "title": "Oscilador",
                     "action": "Oscilator"
                 
                 },
