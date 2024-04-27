@@ -33,29 +33,29 @@ def docker_build():
 
 def refresh_nodejs_container(port):
     print("Checking for existing Node.js container...")
-    list_containers = subprocess.run(["docker", "ps", "-q", "-f", "name=radioescola"], capture_output=True, text=True)
+    list_containers = subprocess.Popen(["docker", "ps", "-q", "-f", "name=radioescola"], capture_output=True, text=True)
     if list_containers.stdout.strip():
         print("Stopping existing Node.js container...")
-        stop_process = subprocess.run(["docker", "stop", "radioescola"], capture_output=True, text=True)
+        stop_process = subprocess.Popen(["docker", "stop", "radioescola"], capture_output=True, text=True)
         print(stop_process.stdout if stop_process.stdout else "Container stopped.")
 
         print("Removing stopped Node.js container...")
-        remove_process = subprocess.run(["docker", "rm", "radioescola"], capture_output=True, text=True)
+        remove_process = subprocess.Popen(["docker", "rm", "radioescola"], capture_output=True, text=True)
         print(remove_process.stdout if remove_process.stdout else "Container removed.")
     else:
         print("No existing Node.js container to stop.")
 
     print("Checking for existing Docker image...")
-    image_exists = subprocess.run(["docker", "images", "-q", "radioescola"], capture_output=True, text=True)
+    image_exists = subprocess.Popen(["docker", "images", "-q", "radioescola"], capture_output=True, text=True)
     if image_exists.stdout.strip():
         print("Removing existing Docker image...")
-        rmi_process = subprocess.run(["docker", "rmi", "radioescola"], capture_output=True, text=True)
+        rmi_process = subprocess.Popen(["docker", "rmi", "radioescola"], capture_output=True, text=True)
         print(rmi_process.stdout if rmi_process.stdout else "Image removed.")
     else:
         print("No existing Docker image to remove.")
 
     print("Rebuilding Node.js Docker image...")
-    build_process = subprocess.run(["docker", "build", "-t", "radioescola", "-f", "docker/Dockerfile-nodejs", "."], capture_output=True, text=True)
+    build_process = subprocess.Popen(["docker", "build", "-t", "radioescola", "-f", "docker/Dockerfile-nodejs", "."], capture_output=True, text=True)
     if build_process.stdout:
         print("Docker image rebuilt successfully.")
         print(build_process.stdout)
@@ -88,11 +88,11 @@ def revert_and_pull_env_file():
 
     try:
         # Revert changes to the specified file using git checkout
-        subprocess.run(['git', 'checkout', '--', file_path], check=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        subprocess.Popen(['git', 'checkout', '--', file_path], check=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         print(f"Reverted changes to {file_path}")
 
         # Pull updates from the remote repository
-        pull_result = subprocess.run(['git', 'pull'], check=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        pull_result = subprocess.Popen(['git', 'pull'], check=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         print("Pulled updates successfully:")
         print(pull_result.stdout)
     except subprocess.CalledProcessError as e:
@@ -101,7 +101,7 @@ def revert_and_pull_env_file():
 
 def docker_db():
     print("Launching database container...")
-    subprocess.run(["docker", "run", "-d", "-p", "3306:3306", "--name", "radioescoladb",
+    subprocess.Popen(["docker", "run", "-d", "-p", "3306:3306", "--name", "radioescoladb",
                       "--network=radioescola_network", "--ip", "172.18.0.2",
                       "-e", f"MARIADB_ROOT_PASSWORD={os.getenv('MYSQL_ROOT_PASSWORD')}",
                       "-e", f"MARIADB_DATABASE={os.getenv('MYSQL_DATABASE')}",
@@ -112,12 +112,12 @@ def docker_db():
 
 def docker_launchNode(port):
     print("Launching container with public access...")
-    subprocess.run(["docker", "run", "--rm", "--name", "radioescola", 
+    subprocess.Popen(["docker", "run", "--rm", "--name", "radioescola", 
                       "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-p", f"{port}:3000", "--network=radioescola_network", "--ip", "172.18.0.4", "radioescola"])
 
 def create_docker_network(network_name):
     try:
-        subprocess.run(["docker", "network", "create", "--subnet", "172.18.0.0/16", network_name], check=True)
+        subprocess.Popen(["docker", "network", "create", "--subnet", "172.18.0.0/16", network_name], check=True)
         print(f"Docker network '{network_name}' created successfully.")
     except subprocess.CalledProcessError:
         print(f"Failed to create Docker network '{network_name}'. It might already exist.")
