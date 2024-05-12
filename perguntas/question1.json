@@ -1196,7 +1196,7 @@
         "Um amplificador usado no andar de potência de um emissor de FM do serviço de amador na faixa dos 10 GHz",
         "Um programa que calcula o ganho de um amplificador de RF"
       ],
-      "correctIndex": 4,
+      "correctIndex": 1,
       "notes": "A57",
       "img": null,
       "uniqueID": 68,
@@ -1282,7 +1282,7 @@
         "70 microfarad",
         "1 mF"
       ],
-      "correctIndex": 3,
+      "correctIndex": 2,
       "notes": "No caso de termos só 2 condensadores de valores diferentes ligados em série podemos aplicar a fórmula simplificada, <p>C<sub>eq</sub> = C1.C2/C1+C2 ou seja 20X50 / 20+50 = 14,285 microfarad",
       "img": null,
       "uniqueID": 72,
@@ -4427,7 +4427,7 @@
         "18 W"
       ],
       "correctIndex": 2,
-      "notes": "A185",
+       "notes": "A185 <p>Primeiro, calculamos a tensão eficaz (RMS) e a corrente eficaz (RMS):</p><ul><li>Tensão eficaz (RMS): <strong>V<sub>RMS</sub> = V<sub>pico</sub> / √2 = 30 V / √2</strong></li><li>Corrente eficaz (RMS): <strong>I<sub>RMS</sub> = V<sub>RMS</sub> / R = (30 V / √2) / 50 Ohm</strong></li></ul><p>Então, usamos a tensão e a corrente para calcular a potência média:</p><p><strong>P = V<sub>RMS</sub> × I<sub>RMS</sub> = (30 V / √2) × ((30 V / √2) / 50 Ohm) = 9 Watts</strong></p>",
       "img": null,
       "uniqueID": 242,
       "fonte": null,
