@@ -102,14 +102,24 @@ class EditorApp {
 
   addHeading() {
       const heading = '<h2 class="text-xl mb-4 mt-12 text-orange-800">text</h2>';
-      this.htmlInput.value += heading;
+      this.insertAtCursor(heading);
       this.updatePreview();
   }
 
   addLink() {
       const link = '<a href="#" linkeddiv="resposta2" class="text-gray-600 italic decoration-dashed underline cursor-help dark:text-gray-200">Resposta</a>';
-      this.htmlInput.value += link;
+      this.insertAtCursor(link);
       this.updatePreview();
+  }
+
+  insertAtCursor(text) {
+      const start = this.htmlInput.selectionStart;
+      const end = this.htmlInput.selectionEnd;
+      const before = this.htmlInput.value.substring(0, start);
+      const after = this.htmlInput.value.substring(end);
+      this.htmlInput.value = before + text + after;
+      this.htmlInput.selectionStart = this.htmlInput.selectionEnd = start + text.length;
+      this.htmlInput.focus();
   }
 
   updatePreview() {
