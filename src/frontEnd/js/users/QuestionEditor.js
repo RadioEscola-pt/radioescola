@@ -26,6 +26,7 @@ class QuestionEditor {
             this.questionFonte = document.getElementById('questionFonte');
             this.questionTutorial = document.getElementById('questionTutorial');
             this.questionMateria = document.getElementById('questionMateria');
+            this.calcDropdown = document.getElementById('calcDropdown');
             this.saveButton = document.getElementById('saveButton');
             this.data = null; // Store the loaded data
             this.currentQuestionIndex = -1; // Store the index of the current loaded question
@@ -73,6 +74,7 @@ class QuestionEditor {
         this.currentAnswer.value = question.correctAnswer;
         this.currentAnswer.selectedIndex = question.correctIndex; // Set the dropdown to the correct index
         
+        this.calcDropdown.value = question.calc || 'null'; // Set the dropdown to the calc value or 'null'
 
 
         this.questionForm.style.display = 'block';
@@ -95,6 +97,7 @@ class QuestionEditor {
         question.fonte = this.questionFonte.value.split(', ');
         question.tutorial = this.questionTutorial.value;
         question.materia = this.questionMateria.value;
+        question.calc = this.calcDropdown.value === 'null' ? null : this.calcDropdown.value;
 
         console.log('Updated question:', question);
     }
