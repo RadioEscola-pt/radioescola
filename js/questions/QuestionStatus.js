@@ -37,14 +37,16 @@ class QuestionStatus {
     }
 
     updateTable(file, totalQuestions, verifiedQuestions, anacomFileValue) {
-        var row = this.table.insertRow(-1);
+        var row = this.table.tBodies[0].insertRow(-1);
+        this.table.tBodies[0].children.length == 2 ? this.table.tBodies[0].lastElementChild.className = 'bg-slate-100 dark:bg-slate-600' : '';
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
         var cell4 = row.insertCell(3);
         var cell5 = row.insertCell(4);
         const fileNumber = file.match(/\d+/)[0]; // Extracts the number from the file name
-        cell1.innerHTML = "CAT"+fileNumber;
+        cell1.innerHTML = `Categoria ${fileNumber}`;
+        cell1.className = 'p-2';
         cell2.innerHTML = totalQuestions;
         cell3.innerHTML = verifiedQuestions;
         cell4.innerHTML = anacomFileValue;
