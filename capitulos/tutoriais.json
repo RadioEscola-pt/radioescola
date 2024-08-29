@@ -117,10 +117,13 @@
                     "action": "receptores"
                 },
                 {
-                    "title": "Formulario",
+                    "title": "FEC e CRC",
+                    "action": "fec_crc"
+                },
+                {
+                    "title": "Formulário",
                     "action": null,
                     "newTab": "docs/FormulasCAT1.pdf"
-
                 }
                 
             ]
