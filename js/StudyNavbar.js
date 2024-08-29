@@ -1,7 +1,7 @@
 class StudyNavbar {
     constructor() {
         this.navbarElement = document.getElementById("studyNavbar");
-        this.dataUrl = "capitulos/tuturiais.json";
+        this.dataUrl = "capitulos/tutoriais.json";
         this.loadData();
     }
 

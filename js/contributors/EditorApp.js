@@ -72,7 +72,7 @@ class EditorApp {
     loadFileList() {
       const xhr = new XMLHttpRequest();
       xhr.onreadystatechange = () => this.handleFileListStateChange(xhr);
-      xhr.open('GET', 'capitulos/tuturiais.json');
+      xhr.open('GET', 'capitulos/tutoriais.json');
       xhr.send();
     }
   
