@@ -63,6 +63,18 @@
                     "action": "batteries"
                 },
                 {
+                    "title": "Campo Elétrico",
+                    "action": "campo_eletrico"
+                },
+                {
+                    "title": "Campo Magnético",
+                    "action": "campo_magnetico"
+                },
+                {
+                    "title": "Fontes Elétricas",
+                    "action": "fontes_eletricas"
+                },
+                {
                     "title": "Onda estacionária (SWR)",
                     "action": "SWR"
                 }
