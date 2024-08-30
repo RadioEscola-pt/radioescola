@@ -91,6 +91,10 @@
                     "action": "SWR"
                 },
                 {
+                    "title": "Sinais Modulados",
+                    "action": "sinais_modulados"
+                },
+                {
                     "title": "Sinais não-sinusoidais",
                     "action": "sinais_nao_sinusoidais"
                 },
