@@ -91,6 +91,10 @@
                     "action": "SWR"
                 },
                 {
+                    "title": "Sinais não-sinusoidais",
+                    "action": "sinais_nao_sinusoidais"
+                },
+                {
                     "title": "Sinais Sinusoidais",
                     "action": "sinais_sinusoidais"
                 }
@@ -143,6 +147,10 @@
                 {
                     "title": "RLC",
                     "action": "RLC"
+                },
+                {
+                    "title": "Sinais não-sinusoidais",
+                    "action": "sinais_nao_sinusoidais"
                 },
                 {
                     "title": "Sinais Sinusoidais",
