@@ -47,6 +47,10 @@
                 {
                     "title": "Mult e SubMult. de Unidades",
                     "action": "units"
+                },
+                {
+                    "title": "Sinais Sinusoidais",
+                    "action": "sinais_sinusoidais"
                 }
             ]
         },
@@ -85,6 +89,10 @@
                 {
                     "title": "Onda estacionária (SWR)",
                     "action": "SWR"
+                },
+                {
+                    "title": "Sinais Sinusoidais",
+                    "action": "sinais_sinusoidais"
                 }
             ]
         },
@@ -97,36 +105,28 @@
                     "action": "antenas"
                 },
                 {
-                    "title": "Ganho (dB)",
-                    "action": "gain"
-                },
-                {
-                    "title": "Transformadores",
-                    "action": "transformadores"
-                },
-                {
                     "title": "Amplificadores operacionais",
                     "action": "opamps"
-                },
-                {
-                    "title": "Reactância Indutiva",
-                    "action": "ReatanciaIndutiva"
                 },
                 {
                     "title": "Circuitos RL",
                     "action": "circuitosRL"
                 },
                 {
-                    "title": "Reactância Capacitiva",
-                    "action": "condensadores"
-                },
-                {
-                    "title": "RLC",
-                    "action": "RLC"
-                },
-                {
                     "title": "Factor Q",
                     "action": "Qfactor"
+                },
+                {
+                    "title": "FEC e CRC",
+                    "action": "fec_crc"
+                },
+                {
+                    "title": "Ganho (dB)",
+                    "action": "gain"
+                },
+                {
+                    "title": "Reactância Indutiva",
+                    "action": "ReatanciaIndutiva"
                 },
                 {
                     "title": "Ressonâcia de RL",
@@ -137,8 +137,20 @@
                     "action": "receptores"
                 },
                 {
-                    "title": "FEC e CRC",
-                    "action": "fec_crc"
+                    "title": "Reactância Capacitiva",
+                    "action": "condensadores"
+                },
+                {
+                    "title": "RLC",
+                    "action": "RLC"
+                },
+                {
+                    "title": "Sinais Sinusoidais",
+                    "action": "sinais_sinusoidais"
+                },
+                {
+                    "title": "Transformadores",
+                    "action": "transformadores"
                 },
                 {
                     "title": "Formulário",
