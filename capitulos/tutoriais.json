@@ -13,6 +13,10 @@
                     "action": "AbreviaturasOperacao"
                 },
                 {
+                    "title": "Campo Electromagnético",
+                    "action": "campo_eletromagnetico"
+                },
+                {
                     "title": "Definições Genéricas",
                     "action": "defs_genericas"
                 },
@@ -43,6 +47,10 @@
                 {
                     "title": "Mult e SubMult. de Unidades",
                     "action": "units"
+                },
+                {
+                    "title": "Sinais Sinusoidais",
+                    "action": "sinais_sinusoidais"
                 }
             ]
         },
@@ -63,8 +71,36 @@
                     "action": "batteries"
                 },
                 {
+                    "title": "Campo Elétrico",
+                    "action": "campo_eletrico"
+                },
+                {
+                    "title": "Campo Electromagnético",
+                    "action": "campo_eletromagnetico"
+                },
+                {
+                    "title": "Campo Magnético",
+                    "action": "campo_magnetico"
+                },
+                {
+                    "title": "Fontes Elétricas",
+                    "action": "fontes_eletricas"
+                },
+                {
                     "title": "Onda estacionária (SWR)",
                     "action": "SWR"
+                },
+                {
+                    "title": "Sinais Modulados",
+                    "action": "sinais_modulados"
+                },
+                {
+                    "title": "Sinais não-sinusoidais",
+                    "action": "sinais_nao_sinusoidais"
+                },
+                {
+                    "title": "Sinais Sinusoidais",
+                    "action": "sinais_sinusoidais"
                 }
             ]
         },
@@ -77,24 +113,36 @@
                     "action": "antenas"
                 },
                 {
-                    "title": "Ganho (dB)",
-                    "action": "gain"
-                },
-                {
-                    "title": "Tranformadores",
-                    "action": "tranformadores"
-                },
-                {
                     "title": "Amplificadores operacionais",
                     "action": "opamps"
+                },
+                {
+                    "title": "Circuitos RL",
+                    "action": "circuitosRL"
+                },
+                {
+                    "title": "Factor Q",
+                    "action": "Qfactor"
+                },
+                {
+                    "title": "FEC e CRC",
+                    "action": "fec_crc"
+                },
+                {
+                    "title": "Ganho (dB)",
+                    "action": "gain"
                 },
                 {
                     "title": "Reactância Indutiva",
                     "action": "ReatanciaIndutiva"
                 },
                 {
-                    "title": "Circuitos RL",
-                    "action": "circuitosRL"
+                    "title": "Ressonâcia de RL",
+                    "action": "RessonanciaRLC"
+                },
+                {
+                    "title": "Receptores",
+                    "action": "receptores"
                 },
                 {
                     "title": "Reactância Capacitiva",
@@ -105,22 +153,21 @@
                     "action": "RLC"
                 },
                 {
-                    "title": "Factor Q",
-                    "action": "Qfactor"
+                    "title": "Sinais não-sinusoidais",
+                    "action": "sinais_nao_sinusoidais"
                 },
                 {
-                    "title": "Ressonacia de RL",
-                    "action": "RessonaciaRLC"
+                    "title": "Sinais Sinusoidais",
+                    "action": "sinais_sinusoidais"
                 },
                 {
-                    "title": "Receptores",
-                    "action": "receptores"
+                    "title": "Transformadores",
+                    "action": "transformadores"
                 },
                 {
-                    "title": "Formulario",
+                    "title": "Formulário",
                     "action": null,
                     "newTab": "docs/FormulasCAT1.pdf"
-
                 }
                 
             ]

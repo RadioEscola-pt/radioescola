@@ -12,7 +12,7 @@ https://radioescola.pt
 ## Funcionalidades
 
 - Material de estudo para os exames
-- Bateria de perguntas e repostas retiradas de exames oficiais
+- Bateria de perguntas e respostas retiradas de exames oficiais
 - Simulador de exame para as 3 categorias
 
 

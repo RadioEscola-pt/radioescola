@@ -23,7 +23,7 @@ describe("Check navigation", () => {
         cy.get("#studyLink").click();
         cy.get("#categoria1Button").click();
         
-        cy.get("#categoria1Dropdown li a").contains("Tranformadores").click();
+        cy.get("#categoria1Dropdown li a").contains("Transformadores").click();
         cy.get("#welcome").should('contain.text', 'Um transformador é um dispositivo elétrico');
 
         cy.get("#studyLink").click();

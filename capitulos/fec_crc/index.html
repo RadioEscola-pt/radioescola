@@ -1,0 +1,53 @@
+<h1 class="text-2xl mb-4">FEC e CRC</h1>
+
+<h2 class="text-2xl mb-4 mt-12">Forward Error Correction (FEC)</h2>
+Forward Error Correction (FEC), ou Correção Antecipada de Erros, é uma técnica usada em comunicações digitais para melhorar a confiabilidade da transmissão de dados. No radioamadorismo, o FEC é particularmente útil em condições de sinal fraco ou com interferência.
+
+<h2 class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 dark:bg-blue-900 dark:border-l-blue-950 w-fit px-2 rounded">Funcionamento do FEC</h2>
+
+<ul>
+<li>Adiciona bits redundantes à mensagem original</li>
+<li>Permite que o receptor detecte e corrija erros sem solicitar retransmissão</li>
+<li>Aumenta a robustez da comunicação, especialmente em condições adversas</li>
+</ul>
+
+<div class="ml-8" >
+<h3 class="text-lg mb-4 mt-12">FEC no AMTOR (Amateur Teleprinting Over Radio):</h3>
+
+AMTOR é um modo de comunicação digital usado por radioamadores
+Utiliza uma forma simples de FEC chamada "Mode B" ou "FEC Mode"
+Cada caractere é transmitido três vezes, permitindo correção de erros no receptor
+Adequado para transmissões de boletins ou informações para múltiplos receptores
+
+</div>
+
+<h2 class="text-2xl mb-4 mt-12">Cyclic Redundancy Check (CRC)</h2>
+Cyclic Redundancy Check (CRC), ou Verificação de Redundância Cíclica, é um método de detecção de erros amplamente utilizado em comunicações digitais, incluindo o radioamadorismo.
+
+
+<h2 class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 dark:bg-blue-900 dark:border-l-blue-950 w-fit px-2 rounded">Funcionamento do CRC</h2>
+
+<ul>
+<li>Gera um valor de verificação curto a partir dos dados transmitidos</li>
+<li>O valor CRC é anexado à mensagem antes da transmissão</li>
+<li>O receptor recalcula o CRC e compara com o valor recebido</li>
+<li>Se os valores não coincidirem, indica que ocorreu um erro na transmissão</li>
+</ul>
+
+<div class="ml-8" >
+<h3 class="text-lg mb-4 mt-12">CRC no Packet Radio:</h3>
+
+Packet Radio é um modo digital popular entre radioamadores
+Utiliza o protocolo AX.25, que incorpora CRC para detecção de erros
+Cada pacote inclui um CRC de 16 bits para verificação de integridade
+Se um erro for detectado, o receptor solicita a retransmissão do pacote
+</div>
+
+<h2 class="text-2xl mb-4 mt-12">Comparação entre FEC e CRC</h2>
+
+<ul>
+<li>FEC: Permite correção de erros sem retransmissão, ideal para comunicações unidirecionais ou com alto atraso</li>
+<li>CRC: Detecta erros eficientemente, mas requer retransmissão para correção, adequado para comunicações bidirecionais rápidas</li>
+</ul>
+
+<img src="capitulos/fec_crc/FEC_CRC.svg" />
