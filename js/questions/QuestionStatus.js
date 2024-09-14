@@ -46,16 +46,11 @@ class QuestionStatus {
         var cell5 = row.insertCell(4);
         const fileNumber = file.match(/\d+/)[0]; // Extracts the number from the file name
         cell1.innerHTML = `Categoria ${fileNumber}`;
+        cell1.className = 'p-2';
         cell2.innerHTML = totalQuestions;
         cell3.innerHTML = verifiedQuestions;
         cell4.innerHTML = anacomFileValue;
         cell5.innerHTML = anacomFileValue*2;
-
-        cell1.className = 'p-2';
-        cell2.className = 'p-2';
-        cell3.className = 'p-2';
-        cell4.className = 'p-2';
-        cell5.className = 'p-2';
     }
 
     generateSummary() {
