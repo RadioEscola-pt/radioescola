@@ -82,7 +82,7 @@ class FavQuiz extends Classes([Questions,Storage]) {
 							btn.quiz=this.quiz;
 						}
 						questionCounter++;
-						this.quiz.addQuestion(welcomeDiv,pageBlock,Quiz.messagesArray.questions[qindex],qindex);
+						this.quiz.addQuestion(welcomeDiv,pageBlock,Quiz.messagesArray.questions[qindex],qindex, true);
 
 						
 					}					

@@ -44,7 +44,7 @@ class Questions {
    * @param {Array} questions - The array of questions.
    * @param {number} qindex - The index of the question.
    */
-  addQuestion(welcomeDiv, pageBlock, questions, qindex) {
+  addQuestion(welcomeDiv, pageBlock, questions, qindex, exitOnEmptyFav=false) {
     var questionBlock = document.createElement("div");
     questionBlock.className =
       "max-w-screen-md m-auto p-6 mb-8 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700";
@@ -120,7 +120,7 @@ class Questions {
       btn.quiz = this;
       btn.onclick = this.checkQuestion;
       questionCard.appendChild(btn);
-      this.addStar(questionCard, qindex, questions.uniqueID);
+      this.addStar(questionCard, qindex, questions.uniqueID,exitOnEmptyFav);
 
     }
     let infoDiv = document.createElement("div");
@@ -263,7 +263,7 @@ class Questions {
    * @param {number} qindex - The index of the question.
    * @param {string} uniqueID - The unique ID of the star icon.
    */
-  addStar(questionCard, qindex, uniqueID) {
+  addStar(questionCard, qindex, uniqueID, exitOnEmptyFav) {
     let starIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     starIcon.setAttribute('viewBox', '0 0 24 24');
     starIcon.setAttribute('stroke', '#fcd34d');
@@ -289,9 +289,11 @@ class Questions {
       starIcon.value = qindex;
       starIcon.jsonFile = this.jsonFile;
       starIcon.hideOnUnselect = this.hideOnUnselect;
+      starIcon.exitOnEmptyFav=exitOnEmptyFav;
+      
       // Add a click event listener to the star icon
       starIcon.onclick = this.saveFav;
-      //questionCard.appendChild(starIcon);
+      
       var cardFooter = document.createElement("div");
       cardFooter.className = "flex justify-end";
       cardFooter.appendChild(starIcon);
@@ -321,7 +323,7 @@ class Questions {
 
       favorites.splice(index, 1);
       this.setAttribute('class', 'w-6 h-6 block fill-[#fefce8]');
-      if (favorites.length === 0) {
+      if (favorites.length === 0 && this.exitOnEmptyFav==true) {
         new Quiz(this.jsonFile);
       }
     }
