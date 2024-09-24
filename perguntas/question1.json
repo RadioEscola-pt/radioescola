@@ -2891,7 +2891,7 @@
     {
       "question": "Que tipo de circuito se agrega a um transmissor de FM para restabelecer as frequências de áudio mais baixas atenuadas ou as frequências de áudio mais altas amplificadas?",
       "answers": [
-        "Ua rede de de-ênfase",
+        "Uma rede de de-ênfase",
         "Um supressor heterodino",
         "Um prescaler de áudio",
         "Uma rede de pré-ênfase"
