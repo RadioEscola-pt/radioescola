@@ -6574,7 +6574,7 @@
       "materia": null
     },
     {
-      "question": "Qual o ganho de tensão absoluto aproximado do circuito da figura, se R1=1800 ohms e RF=68000 ohms?",
+      "question": "Qual o ganho de tensão absoluto aproximado do circuito da figura, se R1=1800 ohms e R2=68000 ohms?",
       "answers": [
         "1.",
         "0,03.",
