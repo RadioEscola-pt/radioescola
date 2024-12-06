@@ -1758,7 +1758,7 @@
                 "20 dB"
             ],
             "correctIndex": 4,
-            "notes": "A55 Temos um ganho de 10 x assim o valor são 10 dB,para calcular este valor deve se usar a seguinte formula Ganho = 20 * log(v2 / v1) (é 20 log(v2/v1) porque é tensão se fosse potência era 10log(v2/v1)  => Ganho = 20 * log(10 / 1) = 20 dB,opção 3.",
+            "notes": "A55 Temos um ganho de 10 x assim o valor são 10 dB,para calcular este valor deve se usar a seguinte formula Ganho = 20 * log(v2 / v1) (é 20 log(v2/v1) porque é tensão se fosse potência era 10log(v2/v1)  => Ganho = 20 * log(10 / 1) = 20 dB,opção 4.",
             "img": null,
             "uniqueID": 88,
             "fonte": null,

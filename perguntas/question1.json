@@ -2560,24 +2560,7 @@
       "tutorial": null,
       "materia": null
     },
-    {
-      "question": "Qual a vantagem de um receptor co fltro de frequência intermédia criado com processamento digital de sinal (DSP) relativamente a um receptor com filtro analógico?",
-      "answers": [
-        "Pode-se obter uma vasta gama de largura de banda e de formatos de filtros",
-        "São necessários menos componentes digiais",
-        "Grande redução de dados misturados",
-        "O filtro com processamento digital de sinal é mais eficaz em frequências VHF"
-      ],
-      "correctIndex": 1,
-      "notes": " Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p39</a>)",
-      "img": null,
-      "uniqueID": 145,
-      "fonte": [
-        "cat1/2011_12_13p39"
-      ],
-      "tutorial": null,
-      "materia": null
-    },
+
     {
       "question": "No processamento digital de sinais, são muitas vezes utilizados filtros que se designam por FIR. O que representa esta sigla?",
       "answers": [
