@@ -1731,7 +1731,7 @@
         "O ciclo de trabalho do elemento de controlo é controlado de forma a produzir uma tensão média constante à saída",
         "Produz tensão de saida em rampa"
       ],
-      "correctIndex": 4,
+      "correctIndex": 3,
       "notes": "Os reguladores eletrônicos lineares de tensão mantêm uma tensão de saída constante ajustando a condução do elemento de controle, de modo a compensar variações nas condições da linha ou carga.",
       "img": null,
       "uniqueID": 375,
@@ -2224,12 +2224,12 @@
         "Um circulador e um filtro que funcione num loop por realimentação (feed-back)",
         "Um amplificador e um circuito de realimentação"
       ],
-      "correctIndex": 3,
+      "correctIndex": 4,
       "notes": "A100  Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p34</a>)",
       "img": null,
       "uniqueID": 126,
       "fonte": [
-        "cat1/2014_12_19p34"
+        "cat1/2019_07_08p32"
       ],
       "tutorial": null,
       "materia": null
