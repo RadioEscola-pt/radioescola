@@ -3693,7 +3693,7 @@
                 "No microfone"
             ],
             "correctIndex": 3,
-            "notes": "A123 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p23</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p23</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p23</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p25</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p25</a>) Como as espurias são emitidas na saida de RF, o local logico é a seguir ao andar de saída do emissor, logo, resposta 2.",
+            "notes": "A123 Exames:(<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p23</a>) (<a target='_blank' href='exams/cat2/2018_05_00.pdf'>2018_05_00p23</a>) (<a target='_blank' href='exams/cat2/2018_06_19.pdf'>2018_06_19p23</a>) (<a target='_blank' href='exams/cat2/2022_08_26.pdf'>2022_08_26p25</a>) (<a target='_blank' href='exams/cat2/2023_03_08.pdf'>2023_03_08p25</a>) Como as espurias são emitidas na saida de RF, o local logico é a seguir ao andar de saída do emissor, logo, resposta 3.",
             "img": null,
             "uniqueID": 184,
             "fonte": [
