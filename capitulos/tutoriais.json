@@ -121,8 +121,29 @@
                     "action": "opamps"
                 },
                 {
+                    "title": "Reactância Indutiva",
+                    "action": "ReatanciaIndutiva"
+                },
+                {
+                    "title": "Reactância Capacitiva",
+                    "action": "reactanciaCapacitiva"
+                },
+                {
+                    "title": "Ressonâcia de RL",
+                    "action": "RessonanciaRLC"
+                },
+                {
                     "title": "Circuitos RL",
                     "action": "circuitosRL"
+                },
+                {
+                    "title": "Circuitos RC",
+                    "action": "circuitosRC"
+                },
+
+                {
+                    "title": "Circuitos RLC",
+                    "action": "RLC"
                 },
                 {
                     "title": "Factor Q",
@@ -136,27 +157,13 @@
                     "title": "Ganho (dB)",
                     "action": "gain"
                 },
-                {
-                    "title": "Reactância Indutiva",
-                    "action": "ReatanciaIndutiva"
-                },
-                {
-                    "title": "Reactância Capacitiva",
-                    "action": "reactanciaCapacitiva"
-                },
-                {
-                    "title": "Ressonâcia de RL",
-                    "action": "RessonanciaRLC"
-                },
+
                 {
                     "title": "Receptores",
                     "action": "receptores"
                 },
 
-                {
-                    "title": "RLC",
-                    "action": "RLC"
-                },
+
                 {
                     "title": "Sinais não-sinusoidais",
                     "action": "sinais_nao_sinusoidais"

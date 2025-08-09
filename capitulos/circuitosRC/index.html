@@ -1,0 +1,166 @@
+<h1 class="text-2xl mb-4">Requisitos Prévios</h1>
+
+<p class="my-4">
+  Antes de mergulharmos no tópico de adicionar impedância capacitiva com
+  resistência em circuitos de corrente alternada (CA), é importante entender
+  alguns conceitos básicos:
+</p>
+
+<ul class="ml-4 font-bold space-y-2 text-gray-800">
+  <li class="p-2 bg-orange-200 w-fit rounded-xl hover:bg-orange-300 hover:underline">
+    <a href="?LoadChapter=AC">
+      Conceito de corrente alternada (CA) e suas propriedades.
+    </a>
+  </li>
+  <li class="p-2 bg-orange-200 w-fit rounded-xl hover:bg-orange-300 hover:underline">
+    <a href="?LoadChapter=ohm">
+      Conhecimento sobre resistores e como eles afetam a corrente em um
+      circuito.
+    </a>
+  </li>
+  <li class="p-2 bg-orange-200 w-fit rounded-xl hover:bg-orange-300 hover:underline">
+    <a href="?LoadChapter=reactanciaCapacitiva">
+      Compreensão das propriedades de componentes capacitivos.
+    </a>
+  </li>
+  <li class="p-2 bg-orange-200 w-fit rounded-xl hover:bg-orange-300 hover:underline">
+    <a href="?LoadChapter=condencadorSomar">
+      Adicionar condensadores em série e paralelo.
+    </a>
+  </li>
+</ul>
+
+<p class="my-4">
+  Ter uma base sólida nesses conceitos será fundamental para entender como a
+  impedância capacitiva e a resistência estão inter-relacionadas em circuitos CA.
+</p>
+
+<a href="#RC">
+  Para auxiliar nos cálculos pode utilizar a calculadora RC colocando o valor
+  da indutância a 0.
+</a>
+
+<h2 class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 dark:bg-blue-900 dark:border-l-blue-950 w-fit px-2 rounded">
+  Introdução aos Circuitos RC
+</h2>
+
+<p class="my-4">
+  Em eletrónica e engenharia elétrica, um circuito RC é um tipo de circuito
+  elétrico que combina componentes capacitivos (C), como condensadores, com componentes
+  resistivos (R), como resistores. Essa combinação cria um circuito que responde
+  de maneira única a sinais de corrente alternada (CA).
+</p>
+<p class="my-4">
+  Num circuito RC, o condensador (C) representa a reatância capacitiva, enquanto o
+  resistor (R) representa a resistência elétrica. A interação entre a reatância
+  capacitiva e a resistência em um circuito RC cria uma resposta que depende da
+  frequência do sinal de entrada.
+</p>
+<p class="my-4">
+  Os circuitos RC são amplamente utilizados em eletrónica para aplicações como
+  filtragem de sinais, temporização e desacoplamento. Compreender a impedância,
+  as quedas de tensão e as propriedades dos circuitos RC é fundamental para
+  projetar e analisar circuitos em corrente alternada (CA).
+</p>
+<img src="capitulos\circuitosRC\RCcircuit.png" />
+
+<h2 class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 dark:bg-blue-900 dark:border-l-blue-950 w-fit px-2 rounded">
+  Fórmula para Cálculo da Tensão Total em Circuitos em Série
+</h2>
+<p class="my-4">
+  Quando analisamos um circuito em série com resistência e capacitância, podemos
+  calcular a tensão total (V<sub>Total</sub>) usando a seguinte fórmula:
+</p>
+<p class="my-4 font-mono text-lg font-bold">
+  V<sub>Total</sub> = √(V<sub>R</sub><sup>2</sup> + V<sub>C</sub><sup>2</sup>)
+</p>
+<p class="my-4">Onde:</p>
+<ul>
+  <li>V<sub>R</sub> é a queda de tensão na resistência.</li>
+  <li>V<sub>C</sub> é a queda de tensão no condensador.</li>
+</ul>
+<p class="my-4">
+  Esta fórmula considera as quedas de tensão nos componentes individuais e a
+  defasagem entre tensão e corrente num circuito RC.
+</p>
+<p class="my-4">
+  Além disso, é importante notar que a tensão no condensador está defasada de
+  90 graus em relação à tensão na resistência.
+</p>
+
+<h2 class="text-xl mb-4 mt-12 border-l-4 border-l-blue-400 bg-blue-100 dark:bg-blue-900 dark:border-l-blue-950 w-fit px-2 rounded">
+  Adicionando Impedância Capacitiva com Resistência
+</h2>
+<p class="my-4">
+  Em circuitos de corrente alternada (CA), muitas vezes encontramos a necessidade
+  de adicionar uma componente de impedância capacitiva juntamente com
+  uma resistência. Isso pode ser feito usando condensadores (para reatância capacitiva)
+  em combinação com resistores.
+</p>
+<p class="my-4">
+  Para calcular a impedância total desse tipo de circuito, utilizamos a fórmula:
+</p>
+<p class="my-4 font-mono bold text-lg">
+  Z = √(R<sup>2</sup> + X<sub>C</sub><sup>2</sup>)
+</p>
+<p class="my-4">Onde:</p>
+<ul>
+  <li>Z é a impedância total do circuito.</li>
+  <li>R é a resistência.</li>
+  <li>X<sub>C</sub> é a reatância capacitiva.</li>
+</ul>
+<p class="my-4">
+  A reatância capacitiva é calculada por:
+</p>
+<p class="my-4 font-mono text-lg font-bold">
+  X<sub>C</sub> = 1 / (2π f C)
+</p>
+
+<h3 class="text-xl mb-4 mt-12 text-orange-800">Problema 1</h3>
+<p class="my-4">
+  <strong>Enunciado:</strong> Você tem um circuito de CA com uma resistência de
+  100 Ω e um condensador com reatância de 200 Ω. Calcule a impedância total do circuito.
+  <a href="#" linkedDiv="respostaRC1" class="text-gray-600 italic decoration-dashed underline cursor-help dark:text-gray-200">Resposta</a>
+</p>
+
+<div id="respostaRC1" style="display: none" class="bg-gray-100 p-4 mt-4 ml-4 rounded-md">
+  <p class="my-4">Z = √(100² + 200²) = √(10000 + 40000) = √50000 ≈ 223.61 Ω</p>
+</div>
+
+<h3 class="text-xl mb-4 mt-12 text-orange-800">Problema 2</h3>
+<p class="my-4">
+  <strong>Enunciado:</strong> Considere um circuito em série com R = 220 Ω e C = 47 µF,
+  ligado a uma fonte de 60 Hz. Calcule a reatância capacitiva e a impedância total.
+  <a href="#" linkedDiv="respostaRC2" class="text-gray-600 italic decoration-dashed underline cursor-help dark:text-gray-200">Resposta</a>
+</p>
+
+<div id="respostaRC2" style="display: none" class="bg-gray-100 p-4 mt-4 ml-4 rounded-md">
+  <p class="my-4">X<sub>C</sub> = 1 / (2π × 60 × 47×10⁻⁶) ≈ 56.48 Ω</p>
+  <p class="my-4">Z = √(220² + 56.48²) ≈ 227.12 Ω</p>
+</div>
+
+<h3 class="text-xl mb-4 mt-12 text-orange-800">Problema 3</h3>
+<p class="my-4">
+  <strong>Enunciado:</strong> Um circuito RC em série com R = 1 kΩ e C = 100 nF é alimentado
+  por uma fonte de 1 kHz e 10 V. Determine:
+</p>
+<p class="my-4">a) A impedância total</p>
+<p class="my-4">b) A queda de tensão no condensador</p>
+<a href="#" linkedDiv="respostaRC3" class="text-gray-600 italic decoration-dashed underline cursor-help dark:text-gray-200">Resposta</a>
+<div id="respostaRC3" style="display: none" class="bg-gray-100 p-4 mt-4 ml-4 rounded-md">
+  <p class="my-4">X<sub>C</sub> = 1 / (2π × 1000 × 100×10⁻⁹) ≈ 1591.55 Ω</p>
+  <p class="my-4">Z = √(1000² + 1591.55²) ≈ 1884.96 Ω</p>
+  <p class="my-4">I = 10 / 1884.96 ≈ 5.31 mA</p>
+  <p class="my-4">V<sub>C</sub> = I × X<sub>C</sub> ≈ 8.45 V</p>
+</div>
+
+<h3 class="text-xl mb-4 mt-12 text-orange-800">Problema 4</h3>
+<p class="my-4">
+  <strong>Enunciado:</strong> Um circuito RC em série é alimentado por uma tensão total de 50 V.
+  A queda de tensão na resistência é de 30 V. Calcule a queda de tensão no condensador.
+  <a href="#" linkedDiv="respostaRC4" class="text-gray-600 italic decoration-dashed underline cursor-help dark:text-gray-200">Resposta</a>
+</p>
+
+<div id="respostaRC4" style="display: none" class="bg-gray-100 p-4 mt-4 ml-4 rounded-md">
+  <p class="my-4">V<sub>C</sub> = √(50² - 30²) = √(2500 - 900) = √1600 = 40 V</p>
+</div>
