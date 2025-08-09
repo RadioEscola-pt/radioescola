@@ -67,6 +67,10 @@
                     "action": "bobinesSomar"
                 },
                 {
+                    "title": "Condencadores",
+                    "action": "condencadorSomar"
+                },
+                {
                     "title": "Capacidade de baterias",
                     "action": "batteries"
                 },
@@ -137,6 +141,10 @@
                     "action": "ReatanciaIndutiva"
                 },
                 {
+                    "title": "Reactância Capacitiva",
+                    "action": "reactanciaCapacitiva"
+                },
+                {
                     "title": "Ressonâcia de RL",
                     "action": "RessonanciaRLC"
                 },
@@ -144,10 +152,7 @@
                     "title": "Receptores",
                     "action": "receptores"
                 },
-                {
-                    "title": "Reactância Capacitiva",
-                    "action": "condensadores"
-                },
+
                 {
                     "title": "RLC",
                     "action": "RLC"

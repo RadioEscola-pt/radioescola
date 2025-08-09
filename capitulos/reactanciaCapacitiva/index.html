@@ -1,0 +1,89 @@
+<h1 class="text-2xl mb-8">Condensadores e Reatância Capacitiva</h1>
+
+<p class="my-4">
+  Um condensador é um componente elétrico que armazena energia em um campo
+  elétrico criado entre duas placas condutoras separadas por um material
+  isolante chamado dielétrico. Quando uma tensão é aplicada ao condensador, ele
+  acumula cargas elétricas nas placas, armazenando energia.
+</p>
+<p class="my-4">
+  A capacidade de armazenamento de um condensador é medida em Farads (F). Quanto
+  maior a capacidade, mais carga elétrica ele pode armazenar para uma dada
+  tensão (V).
+</p>
+<p class="my-4">
+  A reatância capacitiva (<i>X<sub>C</sub></i>) é a oposição oferecida por um
+  condensador à corrente alternada. Ela é determinada pela fórmula:
+</p>
+<p class="my-4 font-mono bold text-lg">X<sub>C</sub> = 1 / (2&pi; f C)</p>
+<p class="my-4">Onde:</p>
+<ul class="ml-4">
+  <li><i>X<sub>C</sub></i> é a reatância capacitiva (Ω);</li>
+  <li><i>f</i> é a frequência da corrente alternada (Hz);</li>
+  <li><i>C</i> é a capacidade do condensador (F);</li>
+</ul>
+<p class="my-4">
+  A reatância capacitiva diminui à medida que a frequência aumenta. Isso
+  significa que o condensador permite mais corrente (A) em frequências mais
+  elevadas.
+</p>
+
+<h2 class="text-xl mb-4 mt-20 text-orange-800">Problema 1: Reatância Capacitiva</h2>
+<p class="my-4">
+  <strong>Enunciado:</strong> Um condensador de 100 µF está ligado a uma fonte
+  de 50 Hz. Qual é a reatância capacitiva do condensador?
+</p>
+<a
+  href="#"
+  linkedDiv="respostaXC"
+  class="text-gray-600 italic decoration-dashed underline cursor-help dark:text-gray-200"
+>
+  Resposta
+</a>
+<div
+  id="respostaXC"
+  style="display: none"
+  class="bg-gray-100 p-4 mt-4 ml-4 rounded-md dark:bg-gray-900"
+>
+  <p class="my-4">
+    Aplicando a fórmula da reatância capacitiva:
+  </p>
+  <p class="my-4 font-mono bold text-lg">
+    X<sub>C</sub> = 1 / (2π × 50 × 100 × 10<sup>-6</sup>) ≈ 31.83 Ω
+  </p>
+  <p class="my-4">
+    Portanto, a reatância capacitiva do condensador é aproximadamente 31.83 Ω.
+  </p>
+</div>
+
+<h2 class="text-xl mb-4 mt-20 text-orange-800">Problema 2: Impedância e Corrente</h2>
+<p class="my-4">
+  <strong>Enunciado:</strong> Num circuito em série com uma resistência de 100 Ω
+  e um condensador de 50 µF ligado a 50 Hz com uma fonte de 220 V, calcule:
+  <br />a) a impedância total (Z) <br />b) a corrente (I)
+</p>
+<a
+  href="#"
+  linkedDiv="respostaZ"
+  class="text-gray-600 italic decoration-dashed underline cursor-help dark:text-gray-200"
+>
+  Resposta
+</a>
+<div
+  id="respostaZ"
+  style="display: none"
+  class="bg-gray-100 p-4 mt-4 ml-4 rounded-md dark:bg-gray-900"
+>
+  <p class="my-4">1. Cálculo da reatância capacitiva:</p>
+  <p class="my-4 font-mono bold text-lg">
+    X<sub>C</sub> = 1 / (2π × 50 × 50 × 10<sup>-6</sup>) ≈ 63.66 Ω
+  </p>
+  <p class="my-4">2. Cálculo da impedância total:</p>
+  <p class="my-4 font-mono bold text-lg">
+    Z = √(100² + 63.66²) ≈ 118.13 Ω
+  </p>
+  <p class="my-4">3. Cálculo da corrente total:</p>
+  <p class="my-4 font-mono bold text-lg">
+    I = 220 V / 118.13 Ω ≈ 1.86 A
+  </p>
+</div>
