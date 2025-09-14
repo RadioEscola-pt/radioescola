@@ -9,6 +9,12 @@ class LocalStorageManager {
             this.exportData();
         });
 
+        document.getElementById('clearStorageButton').addEventListener('click', () => {
+            if (confirm('Tem a certeza que deseja limpar as suas respostas? Esta ação não pode ser desfeita.')) {
+                localStorage.clear();
+            }
+        });
+
         document.getElementById('fileInput').addEventListener('change', () => {
             this.importData();
         });
