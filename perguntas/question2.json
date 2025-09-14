@@ -1375,7 +1375,7 @@
             "calc": null
         },
         {
-            "question": "Em modulação de frequência nas faixas de UHF com espaçamento entre canais de 25 kHz, a largura defaixa necessária em geral para uma emissão radiofónica é de:",
+            "question": "Em modulação de frequência nas faixas de UHF com espaçamento entre canais de 25 kHz, a largura de faixa necessária em geral para uma emissão radiofónica é de:",
             "answers": [
                 "500 Hz",
                 "16 kHz",
@@ -5297,7 +5297,7 @@
             "calc": null
         },
         {
-            "question": "Sempre que um amador estabeleça comunicações em Portugal ao abrigo de uma 'licença CEPT novice'emitida por uma outra Administração, deve emitir o IC da sua estação de amador antecedido do prefixo",
+            "question": "Sempre que um amador estabeleça comunicações em Portugal ao abrigo de uma 'licença CEPT novice' emitida por uma outra Administração, deve emitir o IC da sua estação de amador antecedido do prefixo",
             "answers": [
                 "CS7 se estiver a operar numa estação de amador, situada na área geográfica POR",
                 "CR8 se estiver a operar numa estação de amador, situada na área geográfica AZR",
@@ -6124,7 +6124,7 @@
                 "Sem qualquer restrição",
                 "Em nenhuma restrição dado não se tratar de uma faixa do serviço de amador",
                 "Só com uma autorização especial do ICP-ANACOM",
-                "Respeitando as condicionantes expressas na regulamentação aplicavél"
+                "Respeitando as condicionantes expressas na regulamentação aplicável"
             ],
             "notes": " Exames:(<a target='_blank' href='exams/cat2/2012_04_10.pdf'>2012_04_10p4</a>) (<a target='_blank' href='exams/cat2/2016_01_00.pdf'>2016_01_00p5</a>) (<a target='_blank' href='exams/cat2/2017_09_27.pdf'>2017_09_27p5</a>) (<a target='_blank' href='exams/cat2/2023_06_26.pdf'>2023_06_26p2</a>)",
             "correctIndex": 4,
