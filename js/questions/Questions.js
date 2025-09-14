@@ -14,7 +14,7 @@ class Questions {
     for (let i = 0; i < elements.length; i++) {
       if (elements[i].checked) {
         if (answer - 1 === i) {
-          this.className = "bg-green-500 text-white p-2 rounded";
+          this.className = "mt-8 px-4 text-xs bg-lime-400 p-2 font-bold cursor-pointer rounded";
           this.innerHTML = "CERTO";
           this.quiz.storeAnswer(true, uniqueId);
           this.quiz.loadQuestionInfo(infoDiv, question)
@@ -113,7 +113,7 @@ class Questions {
       let btn = document.createElement("button");
       btn.innerHTML = "Verificar";
       btn.className =
-        "mt-8 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800";
+        "mt-8 px-4 text-xs bg-slate-100 p-2 font-bold cursor-pointer";
       btn.value = qindex;
       btn.quiz = this;
       btn.onclick = this.checkQuestion;
@@ -287,7 +287,7 @@ class Questions {
 
     if (MatomoOptOutManager.hasConsent()) {
       starIcon.uniqueID = uniqueID;
-      starIcon.setAttribute('class', 'w-6 h-6 block fill-[#fefce8] dark:fill-slate-700');
+      starIcon.setAttribute('class', 'star w-6 h-6 block fill-[#fefce8] dark:fill-slate-700');
       const favorites =
         JSON.parse(localStorage.getItem(starIcon.existingRecords + "Fav")) ||
         [];
@@ -311,7 +311,7 @@ class Questions {
       starIcon.onclick = this.saveFav;
       
       var cardFooter = document.createElement("div");
-      cardFooter.className = "flex justify-end";
+      cardFooter.className = "flex flex-row justify-end";
       cardFooter.appendChild(starIcon);
       questionCard.appendChild(cardFooter);
     }
@@ -338,7 +338,7 @@ class Questions {
       }
 
       favorites.splice(index, 1);
-      this.setAttribute('class', 'w-6 h-6 block fill-[#fefce8]');
+      this.setAttribute('class', 'star w-6 h-6 block fill-[#fefce8]');
       if (favorites.length === 0 && this.exitOnEmptyFav==true) {
         new Quiz(this.jsonFile);
       }
