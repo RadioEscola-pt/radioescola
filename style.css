@@ -9,3 +9,11 @@
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+.bg-header {
+    background-image: url(/images/header2.jpg);
+}
+
+.font-header {
+    font-family: Rubik Mono One, sans-serif;
+}
