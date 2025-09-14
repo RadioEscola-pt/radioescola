@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
 import { Category } from '../../../lib/types';
 import { loadData } from '../../../lib/data';
 import ExamTimer from '../../../components/ExamTimer';
@@ -8,6 +8,7 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 
 export default function ExamPage() {
   const params = useParams();
+  const searchParams = useSearchParams();
   const [timeLeft, setTimeLeft] = useState(3600);
   const [score, setScore] = useState(0);
   const [category, setCategory] = useState<Category | null>(null);
@@ -89,12 +90,41 @@ export default function ExamPage() {
     setQuizEnded(false);
     setResultsOpen(false);
     setCurrentPage(1);
+    const qParam = searchParams.get('q');
+    const aParam = searchParams.get('a');
+    const tParam = searchParams.get('t');
     loadData().then((data) => {
       const base = data.categories[cat];
       if (!base) {
         setCategory(null);
         return;
       }
+      // If a replay URL is present, reconstruct exact exam/order/answers
+      if (qParam) {
+        const ids = qParam.split('-').map((s) => parseInt(s, 10)).filter((n) => !Number.isNaN(n));
+        const byId = new Map(base.questions.map((q) => [q.id, q] as const));
+        const chosen = ids.map((id) => byId.get(id)).filter((q): q is NonNullable<typeof q> => Boolean(q));
+        setCategory({ id: base.id, name: base.name, questions: chosen });
+        // Parse answers compact string (base36 for index, 'x' for unanswered)
+        const ans: Record<number, number> = {};
+        if (aParam) {
+          const chars = aParam.split('');
+          for (let i = 0; i < Math.min(chars.length, chosen.length); i++) {
+            const ch = chars[i];
+            if (ch && ch !== 'x') {
+              const idx = parseInt(ch, 36);
+              if (!Number.isNaN(idx)) ans[chosen[i].id] = idx;
+            }
+          }
+        }
+        setAnswers(ans);
+        const t = tParam ? parseInt(tParam, 10) : 0;
+        setTimeLeft(Number.isFinite(t) ? t : 0);
+        setQuizEnded(true);
+        setResultsOpen(false);
+        return;
+      }
+      // Otherwise, sample a fresh random exam
       const qs = [...base.questions];
       for (let i = qs.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -103,7 +133,7 @@ export default function ExamPage() {
       const sample = qs.slice(0, Math.min(40, qs.length));
       setCategory({ id: base.id, name: base.name, questions: sample });
     });
-  }, [params.category]);
+  }, [params.category, searchParams]);
 
   const startNewQuiz = () => {
     if (!category) return;
@@ -253,6 +283,48 @@ export default function ExamPage() {
               )}
             </p>
           </div>
+          {/* Shareable URL to revisit this exact exam */}
+          {(() => {
+            const buildUrl = () => {
+              try {
+                const origin = typeof window !== 'undefined' ? window.location.origin : '';
+                const catId = category.id;
+                const ids = category.questions.map((q) => q.id).join('-');
+                const ans = category.questions
+                  .map((q) => {
+                    const sel = answers[q.id];
+                    return sel === undefined ? 'x' : sel.toString(36);
+                  })
+                  .join('');
+                const t = timeLeft;
+                const url = `${origin}/exam/${encodeURIComponent(catId)}?q=${encodeURIComponent(ids)}&a=${encodeURIComponent(ans)}&t=${t}`;
+                return url;
+              } catch {
+                return '';
+              }
+            };
+            const url = buildUrl();
+            return (
+              <div className="mt-4">
+                <h4 className="font-semibold mb-2">Shareable Link</h4>
+                <div className="flex items-center gap-2">
+                  <input
+                    readOnly
+                    value={url}
+                    className="flex-1 px-3 py-2 border rounded font-mono text-xs"
+                  />
+                  <button
+                    className="px-3 py-2 border rounded"
+                    onClick={() => {
+                      if (url) navigator.clipboard?.writeText(url);
+                    }}
+                  >
+                    Copy
+                  </button>
+                </div>
+              </div>
+            );
+          })()}
           {/* Progress toward pass and perfection */}
           {(() => {
             const total = category.questions.length || 1;
