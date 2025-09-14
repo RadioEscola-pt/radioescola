@@ -9,8 +9,6 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 	static PER_PAGE = 10;
 	static QUESTION_AMOUNT = 40;
 
-
-
 	checkTimer(simulateQuiz) {
 		var counterDiv = document.getElementById("timer");
 		if (counterDiv == null) {
@@ -43,7 +41,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 		previousButton.pageBlocks = this.pageBlocks;
 		previousButton.quiz=this;
 		previousButton.disabled = this.currentPage == 0;
-		previousButton.className = 'bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-800 p-2 rounded cursor-pointer hover:bg-slate-400';
+		previousButton.className = 'bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-800 p-2 rounded cursor-pointer hover:bg-slate-400 transition';
 		buttons.append(previousButton)
 
 		for (let i = 0 ; i < this.numberOfPages(); i++) {
@@ -53,9 +51,9 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 			pageBtn.onclick =  this.showPageWithStorage;
 			pageBtn.pageBlocks = this.pageBlocks;
 			pageBtn.quiz=this;
-			pageBtn.className = 'bg-slate-300 p-2 rounded cursor-pointer dark:bg-slate-700 dark:hover:bg-slate-800'
+			pageBtn.className = 'bg-slate-300 p-2 rounded cursor-pointer dark:bg-slate-700 dark:hover:bg-slate-800 transition'
 			if (this.currentPage == i ) {
-				pageBtn.className = 'bg-slate-400 dark:bg-slate-800 p-2 rounded cursor-pointer dark:hover:bg-slate-800';
+				pageBtn.className = 'text-white bg-slate-800 dark:bg-slate-800 p-2 rounded cursor-pointer dark:hover:bg-slate-800 transition';
 			}
 			buttons.appendChild(pageBtn);
 		}
@@ -67,7 +65,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 		nextButton.quiz=this;
 		nextButton.pageBlocks = this.pageBlocks;
 		nextButton.disabled = this.currentPage == this.numberOfPages()-1;
-		nextButton.className = 'bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-800 p-2 rounded cursor-pointer';
+		nextButton.className = 'bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-800 p-2 rounded cursor-pointer transition';
 		buttons.append(nextButton);
 
 		let spacer = document.createElement('div')
@@ -199,7 +197,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 						questionCounter++;
 
 						var questionBlock = document.createElement("div");
-						questionBlock.className = "max-w-screen-md m-auto p-6 mb-8 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700";
+						questionBlock.className = "max-w-screen-md m-auto p-6 mb-8 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700";
 
 						var questionCard = document.createElement("div");
 						questionCard.className = "questionCard";
@@ -223,6 +221,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 
 							let input = document.createElement("input");
 							input.type = "radio";
+							input.id = "q" + this.simulateQuiz.questions[qindex].uniqueID + "a" + i;
 							input.value = i;
 							input.name = "n" + this.simulateQuiz.questions[qindex].uniqueID;
 							input.className = "mr-4";
@@ -234,8 +233,24 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 							i++;
 						}
 
+
 						questionCard.appendChild(answers);
+						
+						const clearAnswer = document.createElement("button");
+						clearAnswer.innerHTML = "Não responder";
+						clearAnswer.className = "px-4 text-xs bg-slate-100 p-2 font-bold cursor-pointer";	
+						clearAnswer.dataset.uniqueID = this.simulateQuiz.questions[qindex].uniqueID;
+						clearAnswer.onclick = function() {
+							const group = document.getElementsByName('n' + this.dataset.uniqueID);
+							for (let radio of group) {
+								radio.checked = false;
+							}
+						}
+						
+						
 						this.simulateQuiz.addStar( questionCard,qindex, this.simulateQuiz.questions[qindex].uniqueID);
+						questionCard.appendChild(clearAnswer);
+						
 						pageBlock.appendChild(questionBlock);
 
 						if (this.simulateQuiz.questions[qindex].img) {
@@ -258,7 +273,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 							console.log("ERROR Q" + this.simulateQuiz.questions[qindex].uniqueID);
 						}
 						let infoDiv=document.createElement("div");
-						infoDiv.className = "questionInfo items-center flex flex-row gap-4 mt-4 text-sm text-gray-500 dark:text-gray-400";
+						infoDiv.className = "questionInfo border-t-1 border-gray-100 pt-4 items-center flex flex-row gap-4 mt-4 text-sm text-gray-500 dark:text-gray-400";
 						infoDiv.id="infoDiv"+this.simulateQuiz.questions[qindex].uniqueID;
 						this.simulateQuiz.loadQuestionInfo(infoDiv, this.simulateQuiz.questions[qindex], false);
 						questionCard.appendChild(infoDiv);					
