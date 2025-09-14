@@ -1,7 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+@import "tailwindcss";
 
 @layer components {
 
@@ -10,3 +7,5 @@
 #answerDisplay {
     display: none;
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
