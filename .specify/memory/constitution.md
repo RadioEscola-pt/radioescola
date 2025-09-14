@@ -1,50 +1,42 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Next.js 15.5 App Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. App Router Mandatory
+All routing must utilize the app directory structure introduced in Next.js 13+. The legacy pages directory is not permitted. Routes should be organized in the app/ directory with layout.tsx and page.tsx files as appropriate.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Server Components First
+Prefer server components for optimal performance and SEO. Client components should only be used when interactivity is required, such as for event handlers or browser APIs. Mark client components with 'use client' directive.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. TypeScript Required
+All source code must be written in TypeScript. Strict type checking is enabled. No JavaScript files are allowed in the codebase.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Test-First Development
+Adopt Test-Driven Development (TDD) practices. Write unit tests for components and integration tests for pages before implementing features. Use Jest and React Testing Library.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Accessibility Standards
+Ensure all components meet WCAG 2.1 AA standards. Use semantic HTML, proper ARIA attributes, and test with screen readers. Include alt text for images and sufficient color contrast.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Technology Stack
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+- **Framework**: Next.js 15.5 with App Router
+- **Language**: TypeScript 5+
+- **Styling**: Tailwind CSS, Shadcn
+- **Testing**: Jest + React Testing Library
+- **Linting**: ESLint with Next.js config
+- **Package Manager**: npm or yarn
+- **Deployment**: self-hosted
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Development Workflow
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- Use Git for version control with feature branches
+- Create pull requests for all changes
+- Require code reviews and passing CI checks
+- Follow conventional commit messages
+- Deploy to staging environment for testing before production
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution defines the foundational principles for the Next.js application. All development must adhere to these principles. Amendments require consensus and documentation of rationale.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0 | **Ratified**: 2025-09-14 | **Last Amended**: 2025-09-14
