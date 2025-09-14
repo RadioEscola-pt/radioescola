@@ -258,6 +258,7 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 							console.log("ERROR Q" + this.simulateQuiz.questions[qindex].uniqueID);
 						}
 						let infoDiv=document.createElement("div");
+						infoDiv.className = "questionInfo items-center flex flex-row gap-4 mt-4 text-sm text-gray-500 dark:text-gray-400";
 						infoDiv.id="infoDiv"+this.simulateQuiz.questions[qindex].uniqueID;
 						this.simulateQuiz.loadQuestionInfo(infoDiv, this.simulateQuiz.questions[qindex], false);
 						questionCard.appendChild(infoDiv);					

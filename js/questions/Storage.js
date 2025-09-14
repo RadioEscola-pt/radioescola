@@ -129,12 +129,13 @@ class Storage {
 	
 			if (total > 0) {
 				const truePercentage = (trueCount / total) * 100;
-				return truePercentage.toFixed(2)+"%";
+				// Format to two decimal places, but keep a Number type
+				return Number(truePercentage.toFixed(2));
 			} else {
-				return 'Sem historia';
+				return undefined;
 			}
 		} else {
-			return 'Sem historia';
+			return undefined;
 		}
 	}
 	plotAnswers(answers) {

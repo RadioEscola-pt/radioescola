@@ -14,12 +14,10 @@ class Questions {
     for (let i = 0; i < elements.length; i++) {
       if (elements[i].checked) {
         if (answer - 1 === i) {
-          this.style.background = "#00FF00";
-          this.style.color = "#000000";
+          this.className = "bg-green-500 text-white p-2 rounded";
           this.innerHTML = "CERTO";
           this.quiz.storeAnswer(true, uniqueId);
           this.quiz.loadQuestionInfo(infoDiv, question)
-
           return;
         }
       }
@@ -47,7 +45,7 @@ class Questions {
   addQuestion(welcomeDiv, pageBlock, questions, qindex, exitOnEmptyFav=false) {
     var questionBlock = document.createElement("div");
     questionBlock.className =
-      "max-w-screen-md m-auto p-6 mb-8 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700";
+      "max-w-screen-md m-auto p-6 mb-8 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700";
     questionBlock.id = "questionBlock" + qindex;
 
     var questionCard = document.createElement("div");
@@ -56,7 +54,7 @@ class Questions {
     questionBlock.appendChild(questionCard);
 
     var questiontxt = document.createElement("span");
-    questiontxt.className = "text-xl font-bold";
+    questiontxt.className = "text-lg md:text-xl font-bold";
     questiontxt.innerHTML = questions.index + 1 + ") " + questions.question;
     questionCard.appendChild(questiontxt);
 
@@ -115,7 +113,7 @@ class Questions {
       let btn = document.createElement("button");
       btn.innerHTML = "Verificar";
       btn.className =
-        "inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800";
+        "mt-8 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800";
       btn.value = qindex;
       btn.quiz = this;
       btn.onclick = this.checkQuestion;
@@ -124,6 +122,7 @@ class Questions {
 
     }
     let infoDiv = document.createElement("div");
+    infoDiv.className = "questionInfo border-t-1 border-gray-100 pt-2 items-center flex flex-row gap-4 mt-4 text-sm text-gray-500 dark:text-gray-400";
     infoDiv.id = "infoDiv" + questions.uniqueID;
     this.loadQuestionInfo(infoDiv, questions);
     questionCard.appendChild(infoDiv);
@@ -158,21 +157,18 @@ class Questions {
       }
     }
 
-    const showText = document.createElement('span'); // Create a text element to show/hide
-    showText.textContent = 'Mostrar exames'; // Text to display
+    const toggle = infoDiv.querySelector('.checked');
 
     // Show/hide functionality when clicked
-    showText.addEventListener('click', () => {
+    toggle.addEventListener('click', () => {
       if (linksContainer.style.display === 'none') {
         linksContainer.style.display = 'block';
-        showText.textContent = 'Esconder exames'; // Change text when shown
       } else {
         linksContainer.style.display = 'none';
-        showText.textContent = 'Mostrar exames'; // Change text when hidden
       }
     });
 
-    infoDiv.appendChild(showText); // Append the show/hide text to the provided infoDiv
+    // infoDiv.appendChild(toggle); // Append the show/hide text to the provided infoDiv
     infoDiv.appendChild(linksContainer); // Append the container to the provided infoDiv
   }
 
@@ -199,9 +195,6 @@ class Questions {
       
     }
 
-
-
-
     if (button) {
       button.classList.replace('bg-slate-400', 'bg-slate-300');
       button.classList.replace('dark:bg-slate-800', 'dark:bg-slate-700');
@@ -210,50 +203,73 @@ class Questions {
     this.className = 'bg-slate-400 dark:bg-slate-800 hover:bg-slate-400 dark:hover:bg-slate-900 p-2 rounded cursor-pointer';
   }
 
+  checkedStatusIcon(source){
+    if (source != null) {
+      return `<span title="Confirmada em ${source.length} exames" class="inline text-slate-400 dark:text-white cursor-pointer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="inline w-5 h-5 checked">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M3.37752 5.08241C3 5.62028 3 7.21907 3 10.4167V11.9914C3 17.6294 7.23896 20.3655 9.89856 21.5273C10.62 21.8424 10.9807 22 12 22C13.0193 22 13.38 21.8424 14.1014 21.5273C16.761 20.3655 21 17.6294 21 11.9914V10.4167C21 7.21907 21 5.62028 20.6225 5.08241C20.245 4.54454 18.7417 4.02996 15.7351 3.00079L15.1623 2.80472C13.595 2.26824 12.8114 2 12 2C11.1886 2 10.405 2.26824 8.83772 2.80472L8.26491 3.00079C5.25832 4.02996 3.75503 4.54454 3.37752 5.08241ZM15.0595 10.4995C15.3353 10.1905 15.3085 9.71642 14.9995 9.44055C14.6905 9.16467 14.2164 9.19151 13.9405 9.50049L10.9286 12.8739L10.0595 11.9005C9.78358 11.5915 9.30947 11.5647 9.00049 11.8405C8.69151 12.1164 8.66467 12.5905 8.94055 12.8995L10.3691 14.4995C10.5114 14.6589 10.7149 14.75 10.9286 14.75C11.1422 14.75 11.3457 14.6589 11.488 14.4995L15.0595 10.4995Z" fill="currentColor"/>
+        </svg>
+      </span>`;
+    } else {
+      return '<img title="Sem confirmação" src="./images/icons/shield-cross.svg" class="inline w-5 h-5" alt="Unchecked">';
+    }
+  }
+
+  correctAnswersBadge(percentage) {
+    let badgeColor;
+
+    if (percentage >= 90) {
+      badgeColor = 'bg-lime-400';
+    } else if (percentage >= 75) {
+      badgeColor = 'bg-yellow-400';
+    } else {
+      badgeColor = 'bg-red-400';
+    }
+    if (percentage === undefined) {
+      return
+    }
+    return `<span title="Percentagem de vezes que acertou a resposta." class="inline-block px-2 py-1 text-xs text-white ${badgeColor} rounded-full">${percentage}%</span>`;
+  }
+
   loadQuestionInfo(infoDiv, questions, showPercentage = true) {
-    if (showPercentage == false) {
-      if (questions.fonte != null) {
-        infoDiv.innerHTML = "ID:" + questions.uniqueID + "Confirmada em  " + questions.fonte.length;
-        //this.LinkFontes(questions.fonte, infoDiv);
+    // Clear existing content
+    infoDiv.innerHTML = '';
 
-      }
-      else {
-        infoDiv.innerHTML = "ID:" + questions.uniqueID + "Em 0 exames ";
+    const uniqueID = questions.uniqueID;
+    const fonte = questions.fonte;
+    const checkedIcon = this.checkedStatusIcon(fonte);
+    const confirmationText = checkedIcon
+
+    if (!showPercentage) {
+      infoDiv.innerHTML = `<p class="text-xs">ID ${uniqueID}</p>${confirmationText}`;
+    } else {
+      const percentage = this.calculateTruePercentageForQuestion(uniqueID);
+      infoDiv.innerHTML = `<p class="text-xs">ID ${uniqueID}</p>${confirmationText}`;
+
+      if (percentage !== undefined) {
+        infoDiv.innerHTML += this.correctAnswersBadge(percentage);
       }
 
+      if (fonte != null) {
+        this.LinkFontes(fonte, infoDiv);
+      }
 
-      
-    }
-    else
-    {
-      if (questions.fonte != null) {
-        infoDiv.innerHTML = "<p>ID:" + questions.uniqueID + " Confirmada em " + questions.fonte.length + " exames</p><p> Acertou:" + this.calculateTruePercentageForQuestion(questions.uniqueID) + "</p>";
-        this.LinkFontes(questions.fonte, infoDiv);
-      }
-      else {
-        infoDiv.innerHTML = "<p>ID:" + questions.uniqueID + "Sem confirmacao </p><p> Acertou:" + this.calculateTruePercentageForQuestion(questions.uniqueID) + "</p>";
-      }
       if (questions.calc != null) {
-        let link = "#" + questions.calc;
-        let linkElement = document.createElement("a");
-        linkElement.href = link;
-        linkElement.textContent = "Abrir Calculadora";
-        infoDiv.appendChild(linkElement);
-        infoDiv.appendChild(document.createElement("br"));
+        const calcLink = document.createElement('a');
+        calcLink.href = `#${questions.calc}`;
+        calcLink.textContent = 'Abrir Calculadora';
+        infoDiv.appendChild(calcLink);
+        infoDiv.appendChild(document.createElement('br'));
       }
     }
+
     if (questions.tutorial != null) {
-      let link = "?LoadChapter=" + questions.tutorial;
-      let linkElement = document.createElement("a");
-      linkElement.href = link;
-      linkElement.target = "_blank";
-      linkElement.textContent = "Abrir Tutorial";
-      infoDiv.appendChild(linkElement);
+      const tutorialLink = document.createElement('a');
+      tutorialLink.href = `?LoadChapter=${questions.tutorial}`;
+      tutorialLink.target = '_blank';
+      tutorialLink.textContent = 'Abrir Tutorial';
+      infoDiv.appendChild(tutorialLink);
     }
-
-    
-
-
   }
 
   /**
