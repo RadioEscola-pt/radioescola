@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { BookOpen, ClipboardCheck, IdCard, Radio, ExternalLink, Building2 } from 'lucide-react';
 
 export default function HomePage() {
   const categories = [
@@ -77,6 +78,88 @@ export default function HomePage() {
             </div>
             );
           })}
+        </div>
+      </section>
+
+      <section className="mt-10 rounded-2xl border bg-gradient-to-br from-indigo-50 to-purple-50 overflow-hidden">
+        <div className="p-6 md:p-8">
+          <div className="flex items-center gap-3">
+            <Radio className="h-6 w-6 text-indigo-600" aria-hidden />
+            <h2 className="text-2xl font-bold text-gray-900">Ham Radio in Portugal: Due Process</h2>
+          </div>
+          <p className="mt-2 text-gray-700">
+            A quick, practical path to get on the air legally in Portugal.
+          </p>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-xl bg-white/70 backdrop-blur border p-4 flex items-start gap-3">
+              <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-indigo-700">
+                <BookOpen className="h-5 w-5" aria-hidden />
+              </span>
+              <div>
+                <h3 className="font-semibold text-gray-900">1) Study & Practice</h3>
+                <p className="text-sm text-gray-700">Cover the syllabus for Cat 3, 2, or 1. Use browse and simulation exams here.</p>
+              </div>
+            </div>
+
+            <div className="rounded-xl bg-white/70 backdrop-blur border p-4 flex items-start gap-3">
+              <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                <ClipboardCheck className="h-5 w-5" aria-hidden />
+              </span>
+              <div>
+                <h3 className="font-semibold text-gray-900">2) Take the Exam</h3>
+                <p className="text-sm text-gray-700">Register with ANACOM and pass the exam to obtain the aptitude certificate.</p>
+              </div>
+            </div>
+
+            <div className="rounded-xl bg-white/70 backdrop-blur border p-4 flex items-start gap-3">
+              <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700">
+                <IdCard className="h-5 w-5" aria-hidden />
+              </span>
+              <div>
+                <h3 className="font-semibold text-gray-900">3) License & Callsign</h3>
+                <p className="text-sm text-gray-700">Apply for your amateur radio license and callsign with ANACOM and pay fees.</p>
+              </div>
+            </div>
+
+            <div className="rounded-xl bg-white/70 backdrop-blur border p-4 flex items-start gap-3">
+              <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-700">
+                <Radio className="h-5 w-5" aria-hidden />
+              </span>
+              <div>
+                <h3 className="font-semibold text-gray-900">4) Operate Responsibly</h3>
+                <p className="text-sm text-gray-700">Follow your category privileges and comply with national and CEPT rules.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-5 flex items-start gap-2 text-sm text-gray-700">
+            <Building2 className="h-4 w-4 text-indigo-600 mt-0.5" aria-hidden />
+            <p>
+              Tip: Check official forms on ANACOM and consider a local club for mentoring.
+            </p>
+          </div>
+
+          <div className="mt-5 flex flex-wrap gap-3">
+            <a
+              href="https://www.anacom.pt"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg bg-white/80 border border-indigo-200 text-indigo-700 hover:bg-white"
+            >
+              ANACOM
+              <ExternalLink className="h-4 w-4" aria-hidden />
+            </a>
+            <a
+              href="https://www.rep.pt"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg bg-white/80 border border-indigo-200 text-indigo-700 hover:bg-white"
+            >
+              REP
+              <ExternalLink className="h-4 w-4" aria-hidden />
+            </a>
+          </div>
         </div>
       </section>
     </main>

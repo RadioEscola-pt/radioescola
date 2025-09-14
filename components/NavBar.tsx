@@ -1,6 +1,6 @@
 "use client";
 import Link from 'next/link';
-import { Home, BookOpen, FileText, Radio } from 'lucide-react';
+import { Home, BookOpen, FileText, Radio, Info } from 'lucide-react';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -29,9 +29,27 @@ const exams: { title: string; href: string; description: string }[] = [
   },
 ]
 
+const browse: { title: string; href: string; description: string }[] = [
+  {
+    title: "Category 3",
+    href: "/browse/3",
+    description: "Technician Class",
+  },
+  {
+    title: "Category 2",
+    href: "/browse/2",
+    description: "General Class",
+  },
+  {
+    title: "Category 1",
+    href: "/browse/1",
+    description: "Amateur Extra Class",
+  },
+]
+
 export default function NavBar() {
   return (
-    <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-bold text-lg">
           <Radio className="h-6 w-6" />
@@ -50,14 +68,34 @@ export default function NavBar() {
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>
+                  <BookOpen className="mr-2 h-4 w-4" />
+                  Browse
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid gap-3 p-4 w-[200px]">
+                  {browse.map((item) => (
+                    <ListItem
+                      key={item.title}
+                      title={item.title}
+                      href={item.href}
+                    >
+                      {item.description}
+                    </ListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link
-                  href="/browse/3"
+                  href="/study"
                   className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50"
                 >
                   <BookOpen className="mr-2 h-4 w-4" />
-                  Browse
+                  Study
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
@@ -79,6 +117,17 @@ export default function NavBar() {
                   ))}
                 </ul>
               </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild>
+                <Link
+                  href="/about"
+                  className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50"
+                >
+                  <Info className="mr-2 h-4 w-4" />
+                  About
+                </Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
@@ -109,4 +158,3 @@ function ListItem({
     </li>
   )
 }
-
