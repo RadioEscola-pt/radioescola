@@ -10,6 +10,18 @@ interface QuestionCardProps {
   showId?: boolean; // show unique ID label
   ended?: boolean; // when true, show correctness styling like exam review
   disabled?: boolean; // disable interaction
+  showCalcHint?: boolean; // show calculator suggestion badge
+}
+
+function buildFonteLink(entry: string) {
+  const match = entry.match(/^([^\/]+)\/(.+?)p(\d+)$/i);
+  if (!match) {
+    return { label: entry, href: null };
+  }
+  const [, folder, file, page] = match;
+  const href = `/exams/${folder}/${file}.pdf#page=${page}`;
+  const label = `${folder.toUpperCase()} ${file} (p${page})`;
+  return { label, href };
 }
 
 const QuestionCard: React.FC<QuestionCardProps> = ({
@@ -21,10 +33,16 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   showId = false,
   ended = false,
   disabled = false,
+  showCalcHint = false,
 }) => {
   const isAnswered = selectedOption !== undefined;
   return (
     <div className="p-4 border rounded-md mb-4 bg-white">
+      {showCalcHint && question.calc && (
+        <div className="mb-2 inline-flex items-center rounded bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700">
+          Suggested calculator: <span className="ml-1 font-semibold">{question.calc}</span>
+        </div>
+      )}
       <h2 className="font-semibold mb-1">
         {indexNumber ? `${indexNumber}. ` : ''}{question.question}
       </h2>
@@ -68,13 +86,50 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
         </div>
       )}
       {ended && (
-        <p className="mt-2 text-sm">
-          {selectedOption === question.correctIndex ? (
-            <span className="text-green-700">Correct</span>
-          ) : (
-            <span className="text-red-700">{isAnswered ? 'Incorrect' : 'Unanswered'}</span>
+        <div className="mt-3 space-y-2 text-sm">
+          <p>
+            {selectedOption === question.correctIndex ? (
+              <span className="text-green-700">Correct</span>
+            ) : (
+              <span className="text-red-700">{isAnswered ? 'Incorrect' : 'Unanswered'}</span>
+            )}
+          </p>
+          {question.notes && (
+            <div
+              className="text-gray-700 [&_a]:text-blue-600 [&_a]:underline"
+              dangerouslySetInnerHTML={{ __html: question.notes }}
+            />
           )}
-        </p>
+          {question.tutorial && (
+            <div>
+              <span className="font-semibold text-gray-700">Related tutorial:</span>{' '}
+              <a className="text-blue-600 underline" href={`/study/${question.tutorial}`}>
+                {question.tutorial}
+              </a>
+            </div>
+          )}
+          {question.fonte && question.fonte.length > 0 && (
+            <div>
+              <span className="font-semibold text-gray-700">Fonte oficial:</span>
+              <ul className="mt-1 space-y-1 list-disc list-inside text-gray-700">
+                {question.fonte.map((entry, idx) => {
+                  const { href, label } = buildFonteLink(entry);
+                  return (
+                    <li key={`${entry}-${idx}`}>
+                      {href ? (
+                        <a className="text-blue-600 underline" href={href} target="_blank" rel="noreferrer">
+                          {label}
+                        </a>
+                      ) : (
+                        entry
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
+        </div>
       )}
     </div>
   );

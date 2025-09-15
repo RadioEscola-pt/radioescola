@@ -4,6 +4,11 @@ export interface Question {
   options: string[];
   correctIndex: number;
   img?: string | null;
+  notes?: string | null;
+  fonte?: string[] | null;
+  tutorial?: string | null;
+  materia?: string | null;
+  calc?: string | null;
 }
 
 export interface Category {

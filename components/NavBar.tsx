@@ -1,6 +1,6 @@
 "use client";
-import Link from 'next/link';
-import { Home, BookOpen, FileText, Radio, Info } from 'lucide-react';
+import Link from "next/link";
+import { Home, BookOpen, FileText, Radio, Info } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,43 +9,32 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 
-const exams: { title: string; href: string; description: string }[] = [
-  {
-    title: "Category 3",
-    href: "/exam/3",
-    description: "Technician Class",
-  },
-  {
-    title: "Category 2",
-    href: "/exam/2",
-    description: "General Class",
-  },
-  {
-    title: "Category 1",
-    href: "/exam/1",
-    description: "Amateur Extra Class",
-  },
-]
+const categories = [
+  { id: "3", title: "Categoria 3", description: "Entrada" },
+  { id: "2", title: "Categoria 2", description: "Intermédio" },
+  { id: "1", title: "Categoria 1", description: "Avançado" },
+] as const;
 
-const browse: { title: string; href: string; description: string }[] = [
+const exams = categories.map((cat) => ({
+  title: cat.title,
+  href: `/exam/${cat.id}`,
+  description: cat.description,
+}));
+
+const browse: { title: string; href: string; description: string }[] = categories.flatMap((cat) => [
   {
-    title: "Category 3",
-    href: "/browse/3",
-    description: "Technician Class",
+    title: `${cat.title}`,
+    href: `/browse/${cat.id}`,
+    description: `${cat.description} - completo`,
   },
   {
-    title: "Category 2",
-    href: "/browse/2",
-    description: "General Class",
+    title: `${cat.title}`,
+    href: `/browse/${cat.id}/flash`,
+    description: `${cat.description} - flashcards`,
   },
-  {
-    title: "Category 1",
-    href: "/browse/1",
-    description: "Amateur Extra Class",
-  },
-]
+]);
 
 export default function NavBar() {
   return (
@@ -70,25 +59,6 @@ export default function NavBar() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger>
-                  <BookOpen className="mr-2 h-4 w-4" />
-                  Browse
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-4 w-[200px]">
-                  {browse.map((item) => (
-                    <ListItem
-                      key={item.title}
-                      title={item.title}
-                      href={item.href}
-                    >
-                      {item.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link
                   href="/study"
@@ -101,6 +71,25 @@ export default function NavBar() {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger>
+                <BookOpen className="mr-2 h-4 w-4" />
+                Browse
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid gap-3 p-4 w-[200px]">
+                  {browse.map((item) => (
+                    <ListItem
+                      key={item.href}
+                      title={item.title}
+                      href={item.href}
+                    >
+                      {item.description}
+                    </ListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>
                 <FileText className="mr-2 h-4 w-4" />
                 Exam
               </NavigationMenuTrigger>
@@ -108,7 +97,7 @@ export default function NavBar() {
                 <ul className="grid gap-3 p-4 w-[200px]">
                   {exams.map((exam) => (
                     <ListItem
-                      key={exam.title}
+                      key={exam.href}
                       title={exam.title}
                       href={exam.href}
                     >
@@ -156,5 +145,5 @@ function ListItem({
         </Link>
       </NavigationMenuLink>
     </li>
-  )
+  );
 }
