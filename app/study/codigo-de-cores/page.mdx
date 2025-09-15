@@ -1,0 +1,51 @@
+---
+title: Código de cores
+description: As resistências eletrónicas possuem um código de cores.
+categories: [3]
+---
+
+
+# Código de cores para resistências
+
+import ResistorCalculator from '@components/ResistorCalculator'
+
+As resistências eletrónicas possuem um código de cores que indica seu valor de resistência. Esse código é composto por faixas coloridas que representam os dígitos e multiplicadores.
+
+## Como funciona o código de cores
+
+As resistências têm faixas coloridas que indicam o seu valor de resistência em ohms. Normalmente, existem 4 ou 5 faixas:
+
+- As primeiras 2 ou 3 faixas representam os dígitos do valor.
+- A quarta faixa (ou quinta, se houver 5) é o multiplicador (potência de 10).
+- A última faixa indica a tolerância (precisão do valor).
+
+### Cores e valores
+
+Aqui está a tabela das cores e os valores correspondentes:
+
+| Cor       | Dígito | Multiplicador | Tolerância |
+|-----------|--------|---------------|------------|
+| Preto     | 0      | 10^0 (1)      | -          |
+| Castanho  | 1      | 10^1 (10)     | ±1%        |
+| Vermelho  | 2      | 10^2 (100)    | ±2%        |
+| Laranja   | 3      | 10^3 (1k)     | -          |
+| Amarelo   | 4      | 10^4 (10k)    | -          |
+| Verde     | 5      | 10^5 (100k)   | ±0.5%      |
+| Azul      | 6      | 10^6 (1M)     | ±0.25%     |
+| Violeta   | 7      | 10^7 (10M)    | ±0.1%      |
+| Cinzento  | 8      | 10^8 (100M)   | -          |
+| Branco    | 9      | 10^9 (1G)     | -          |
+| Dourado   | -      | 10^-1 (0.1)   | ±5%        |
+| Prateado  | -      | 10^-2 (0.01)  | ±10%       |
+
+### Exemplo
+
+Para uma resistência com faixas: castanho, preto, vermelho, dourado.
+
+- Castanho (1), Preto (0) → 10
+- Vermelho (x100) → 10 x 100 = 1000 ohms (1kΩ)
+- Dourado (±5%) → tolerância de 5%
+
+Use a calculadora abaixo para praticar!
+
+<ResistorCalculator />

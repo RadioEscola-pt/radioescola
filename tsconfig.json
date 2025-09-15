@@ -3,7 +3,9 @@
     "target": "ES2017",
         "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@app/*": ["./app/*"],
+      "@components/*": ["./components/*"],
     },
     "lib": [
       "dom",
