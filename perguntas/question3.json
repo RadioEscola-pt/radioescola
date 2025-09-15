@@ -1912,7 +1912,10 @@
       "notes": "Notas",
       "img": null,
       "uniqueID": 105,
-      "fonte": null,
+      "fonte": [
+        "cat3/2021_12_14p4",
+        "cat3/2022_04_13p4"
+      ],
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1928,7 +1931,9 @@
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "cat3/2023_08_18p13"
+        "cat3/2023_08_18p13",
+        "cat3/2021_12_03p4",
+        "cat3/2021_12_14p4"
       ],
       "img": null,
       "uniqueID": 106,
@@ -3187,7 +3192,7 @@
       ],
       "img": null,
       "uniqueID": 180,
-      "tutorial":"ohm" ,
+      "tutorial": "ohm",
       "materia": null,
       "calc": null
     },
