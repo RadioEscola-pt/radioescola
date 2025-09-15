@@ -4,6 +4,8 @@ description: As resistências eletrónicas possuem um código de cores.
 categories: [3, 2]
 ---
 
+import StudyQuestionCard from '@components/StudyQuestionCard'
+
 # Campo Electromagnético e Ondas de Rádio
 
 ## As ondas de rádio como ondas electromagnéticas
@@ -41,74 +43,53 @@ A polarização é importante na prática do radioamadorismo porque afeta a tran
 
 ## Perguntas e respostas
 
-### 1 - Qual é a relação entre frequência (f) e comprimento de onda (λ) de uma onda de rádio?
-- a) f = c × λ
-- b) f = c / λ
-- c) λ = c × f
-- d) Não há relação direta
+<StudyQuestionCard
+    prompt="1 - Qual é a relação entre frequência (f) e comprimento de onda (λ) de uma onda de rádio?"
+    options={["f = c × λ","f = c / λ","λ = c × f","Não há relação direta"]}
+    correct="B" />
 
-### 2 - Uma onda de rádio com frequência de 300 MHz tem um comprimento de onda de:
-- a) 10 cm
-- b) 1 m
-- c) 100 cm
-- d) 3 m
 
-### 3 - Qual é a velocidade de propagação das ondas de rádio no vácuo?
-a) 300.000 km/s
-b) 3.000.000 m/s
-c) 300.000.000 m/s
-d) 30.000 km/s
+<StudyQuestionCard
+    prompt="2 - Uma onda de rádio com frequência de 300 MHz tem um comprimento de onda de:"
+    options={["10cm", "1m", "100cm", "3m"]}
+    correct="B"/>
 
-### 4 - O que acontece com o comprimento de onda quando a frequência aumenta?
-- a) Aumenta
-- b) Diminui
-- c) Permanece constante
-- d) Não há relação entre eles
 
-5 - Qual tipo de polarização é produzido quando o campo elétrico de uma onda de rádio oscila em uma única direção?
-- a) Circular
-- b) Elíptica
-- c) Linear
-- d) Esférica
+<StudyQuestionCard 
+    prompt="3 - Qual é a velocidade de propagação das ondas de rádio no vácuo?"
+    options={['300.000 km/s','3.000.000 m/s','300.000.000 m/s','30.000 km/s']}
+    correct="C" />
 
-6 - Por que a polarização é importante na prática do radioamadorismo?
-- a) Afeta a cor do sinal recebido
-- b) Determina a potência do transmissor
-- c) Influencia a eficiência da transmissão e recepção
-- d) Não tem importância prática
+<StudyQuestionCard 
+    prompt="4 - O que acontece com o comprimento de onda quando a frequência aumenta?"
+    options={["Aumenta","Diminui","Permanece constante","Não há relação entre eles"]}
+    correct="B" />
 
-7 - Uma antena vertical geralmente produz ondas de rádio com que tipo de polarização?
-- a) Horizontal
-- b) Vertical
-- c) Circular
-- d) Elíptica
+<StudyQuestionCard 
+    prompt="5 - Qual tipo de polarização é produzido quando o campo elétrico de uma onda de rádio oscila em uma única direção?"
+    options={["Circular","Elíptica","Linear","Esférica"]}
+    correct="C" />
 
-8 - Qual é a unidade de medida da frequência?
-- a) Metro
-- b) Hertz
-- c) Watt
-- d) Ampere
+<StudyQuestionCard 
+    prompt="6 - Por que a polarização é importante na prática do radioamadorismo?"
+    options={["Afeta a cor do sinal recebido","Determina a potência do transmissor","Influencia a eficiência da transmissão e recepção","Não tem importância prática"]}
+    correct="C" />
+<StudyQuestionCard 
+    prompt="7 - Uma antena vertical geralmente produz ondas de rádio com que tipo de polarização?"
+    options={["Horizontal","Vertical","Circular","Elíptica",]}
+    correct="B" />
 
-9 - As ondas de rádio são um tipo de:
-- a) Onda sonora
-- b) Onda mecânica
-- c) Onda electromagnética
-- d) Onda de pressão
+<StudyQuestionCard 
+    prompt="8 - Qual é a unidade de medida da frequência?"
+    options={["Metro","Hertz","Watt","Ampere",]}
+    correct="B" />
 
-10 - Se uma onda de rádio tem um comprimento de onda de 2 metros, qual é aproximadamente sua frequência?
-- a) 75 MHz
-- b) 150 MHz
-- c) 300 MHz
-- d) 600 MHz
+<StudyQuestionCard 
+    prompt="9 - As ondas de rádio são um tipo de:"
+    options={["Onda sonora","Onda mecânica","Onda electromagnética","Onda de pressão"]}
+    correct="C" />
 
-Respostas:
-1 - b) f = c / λ
-2 - b) 1 m
-3 - c) 300.000.000 m/s
-4 - b) Diminui
-5 - c) Linear
-6 - c) Influencia a eficiência da transmissão e recepção
-7 - b) Vertical
-8 - b) Hertz
-9 - c) Onda electromagnética
-10 - b) 150 MHz
+<StudyQuestionCard 
+    prompt="10 - Se uma onda de rádio tem um comprimento de onda de 2 metros, qual é aproximadamente sua frequência?"
+    options={["75 MHz","150 MHz","300 MHz","600 MHz"]}
+    correct="B" />
