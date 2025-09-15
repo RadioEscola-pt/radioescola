@@ -1,7 +1,9 @@
+// MDX config with frontmatter + GFM (Webpack dev friendly)
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [require('remark-gfm')],
+    remarkPlugins: [["remark-gfm"], ["remark-frontmatter"]],
+    rehypePlugins: [],
   },
 });
 
@@ -10,7 +12,7 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  pageExtensions: ['ts', 'tsx', 'mdx'],
+  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
 };
 
 module.exports = withMDX(nextConfig);
