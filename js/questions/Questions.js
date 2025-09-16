@@ -204,16 +204,27 @@ class Questions {
   }
 
   showPageWithStorage() {
-    const index = parseInt(this.value);
+    const index = parseInt(this.value, 10);
+    if (Number.isNaN(index)) {
+      return;
+    }
+
     this.pageIndex = index;
     window.scrollTo(0, 0);
 
-    const normalizedIndex = index == 0 ? 0 : index / 10;
+    const pageSize = this.quiz && this.quiz.questionsPerPage ? this.quiz.questionsPerPage : 10;
+    const maxIndex = this.pageBlocks.length - 1;
+    const normalizedIndex = Math.max(0, Math.min(Math.floor(index / pageSize), maxIndex));
+
     this.pageBlocks.forEach(page => page.style.display = "none");
-    this.pageBlocks[normalizedIndex].style.display = "block";
+    if (this.pageBlocks[normalizedIndex]) {
+      this.pageBlocks[normalizedIndex].style.display = "block";
+    }
 
+    if (this.quiz) {
+      this.quiz.currentPage = normalizedIndex;
+    }
 
-    const button = document.querySelector('#qIndex button.bg-slate-400');
     if (this.quiz.constructor.name === 'FavQuiz') {
       this.quiz.storeFavPage(normalizedIndex);
     }
@@ -226,6 +237,12 @@ class Questions {
       
     }
 
+    if (typeof this.quiz.renderPagination === 'function') {
+      this.quiz.renderPagination(normalizedIndex);
+      return;
+    }
+
+    const button = document.querySelector('#qIndex button.bg-slate-400');
     if (button) {
       button.classList.replace('bg-slate-400', 'bg-slate-300');
       button.classList.replace('dark:bg-slate-800', 'dark:bg-slate-700');

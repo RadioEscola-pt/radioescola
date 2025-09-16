@@ -30,59 +30,74 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 		this.simulateQuiz.timeout=0;
 	}
 
-
-	generatePagination() {
-		//var currentPage = parseInt(document.querySelector(`.page.active`).dataset.page);
-		let buttons = document.querySelector('#pagination')
-		buttons.innerHTML = ''
-
-		let previousButton = document.createElement('button');
-		previousButton.innerText = 'Anterior'
-		previousButton.value = (this.currentPage-1)*10;
-		previousButton.onclick = this.showPageWithStorage;
-		previousButton.pageBlocks = this.pageBlocks;
-		previousButton.quiz=this;
-		previousButton.disabled = this.currentPage == 0;
-		previousButton.className = 'bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-800 p-2 rounded cursor-pointer hover:bg-slate-400';
-		buttons.append(previousButton)
-
-		for (let i = 0 ; i < this.numberOfPages(); i++) {
-			var pageBtn = document.createElement("button");
-			pageBtn.innerText = i + 1
-			pageBtn.value = i*10 ;
-			pageBtn.onclick =  this.showPageWithStorage;
-			pageBtn.pageBlocks = this.pageBlocks;
-			pageBtn.quiz=this;
-			pageBtn.className = 'bg-slate-300 p-2 rounded cursor-pointer dark:bg-slate-700 dark:hover:bg-slate-800'
-			if (this.currentPage == i ) {
-				pageBtn.className = 'bg-slate-400 dark:bg-slate-800 p-2 rounded cursor-pointer dark:hover:bg-slate-800';
-			}
-			buttons.appendChild(pageBtn);
+		generatePagination() {
+		const paginationContainer = document.querySelector('#pagination');
+		if (!paginationContainer) {
+			return;
 		}
 
-		let nextButton = document.createElement('button');
-		nextButton.innerText = 'Seguinte'
-		nextButton.value = (this.currentPage + 1)*10;
-		nextButton.onclick = this.showPageWithStorage
-		nextButton.quiz=this;
-		nextButton.pageBlocks = this.pageBlocks;
-		nextButton.disabled = this.currentPage == this.numberOfPages()-1;
-		nextButton.className = 'bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-800 p-2 rounded cursor-pointer';
-		buttons.append(nextButton);
+		paginationContainer.innerHTML = '';
 
-		let spacer = document.createElement('div')
+		const totalPages = this.numberOfPages();
+		if (totalPages === 0) {
+			return;
+		}
+
+		const safePage = Math.max(0, Math.min(this.currentPage, totalPages - 1));
+		this.currentPage = safePage;
+		const pageSize = this.questionsPerPage || SimulateQuiz.PER_PAGE;
+
+		const createButton = (label, pageIndex, options = {}) => {
+			const { isActive = false, isDisabled = false } = options;
+			const button = document.createElement('button');
+			button.type = 'button';
+			button.innerText = label;
+			button.value = pageIndex * pageSize;
+			button.pageBlocks = this.pageBlocks;
+			button.quiz = this;
+
+			if (isDisabled) {
+				button.disabled = true;
+				button.className = 'bg-slate-200 text-slate-500 p-2 rounded cursor-not-allowed dark:bg-slate-700 dark:text-slate-300';
+			} else {
+				button.onclick = this.showPageWithStorage;
+				button.className = isActive ? 'block aspect-square bg-slate-500 text-white dark:bg-slate-800 hover:bg-slate-400 dark:hover:bg-slate-900 p-2 rounded cursor-pointer' : 'bg-slate-300 hover:bg-slate-400 p-2 rounded cursor-pointer dark:bg-slate-700 dark:hover:bg-slate-800';
+			}
+
+			paginationContainer.appendChild(button);
+		};
+
+		const isAtStart = safePage === 0;
+		const previousPage = Math.max(safePage - 1, 0);
+		// createButton('Start', 0, { isDisabled: isAtStart });
+		// createButton('Back', previousPage, { isDisabled: isAtStart });
+
+
+		const pagesAround = typeof this.paginationWindow === 'number' ? Math.max(0, this.paginationWindow) : 3;
+		const startPage = Math.max(safePage - pagesAround, 0);
+		const endPage = Math.min(safePage + pagesAround, totalPages - 1);
+
+		for (let page = startPage; page <= endPage; page++) {
+			createButton(page + 1, page, { isActive: page === safePage });
+		}
+
+		const isAtEnd = safePage === totalPages - 1;
+		const nextPage = Math.min(safePage + 1, totalPages - 1);
+		// createButton('Next', nextPage, { isDisabled: isAtEnd });
+		// createButton('Last', totalPages - 1, { isDisabled: isAtEnd });
+
+		const spacer = document.createElement('div');
 		spacer.style.display = 'flex';
 		spacer.style.flex = 1;
-		buttons.append(spacer);
+		paginationContainer.append(spacer);
 
-		let btn = document.createElement("button");
-		btn.innerHTML = "Finalizar";
-		btn.className = "bg-lime-50 hover:bg-lime-200 px-4 rounded shadow text-lime-700 font-bold cursor-pointer";
-
-		btn.onclick = this.stoptimer;
-		btn.simulateQuiz = this;
-		btn.id = 'submitQuiz'
-		buttons.appendChild(btn);
+		const finishButton = document.createElement('button');
+		finishButton.innerHTML = 'Finalizar';
+		finishButton.className = 'bg-lime-50 hover:bg-lime-200 px-4 rounded shadow text-lime-700 font-bold cursor-pointer';
+		finishButton.onclick = this.stoptimer;
+		finishButton.simulateQuiz = this;
+		finishButton.id = 'submitQuiz';
+		paginationContainer.appendChild(finishButton);
 	}
 
 	numberOfPages() {
@@ -133,8 +148,52 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 			total += answer;
 
 		}
-		var counterDiv = document.getElementById("timer");
-		counterDiv.innerHTML = "Pontos:" + total + " em 40. Classificação mínima para aprovação: 20 pontos";
+		const modalId = 'simulateQuizResultModal';
+		const existingModal = document.getElementById(modalId);
+		if (existingModal) {
+			existingModal.remove();
+		}
+
+		const formattedScore = Math.round(total * 100) / 100;
+		const scoreText = Number.isInteger(formattedScore) ? formattedScore.toString() : formattedScore.toFixed(2);
+
+		const answeredCount = this.questions.length - answers.filter(a => a === SimulateQuiz.UNANSWERED).length;
+		const modalHTML = `
+			<div id="${modalId}" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-800/80 backdrop-blur-md shadow-lg" role="dialog" aria-modal="true">
+				<div class="bg-white dark:bg-gray-900 rounded-lg shadow-xl p-8 max-w-md w-full text-center space-y-4">
+					<h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100">Resultado do Exame</h2>
+					<p class="text-4xl font-semibold ${scoreText >= 20 ? 'text-lime-500' : 'text-red-500'}">${scoreText}/40</p>
+					<p class="text-md text-gray-600 dark:text-gray-400">Respondeu a <span class="font-semibold">${answeredCount}</span> de <span class="font-semibold">${this.questions.length}</span> perguntas. <br/> Necessário para aprovação: 20 pontos.</p>
+					<table class="min-w-full divide-y divide-gray-200">
+						<thead>
+							<tr>
+								<th class="px-4 py-2 text-left text-sm font-medium text-gray-500">Resposta</th>
+								<th class="px-4 py-2 text-left text-sm font-medium text-gray-500">Pontuação</th>
+							</tr>
+						</thead>
+						<tbody class="bg-white divide-y divide-gray-200">
+							<tr>
+								<td class="px-4 py-2 text-sm text-gray-700 text-left">Correta</td>
+								<td class="px-4 py-2 text-sm text-gray-700 text-left">+1 ponto</td>
+							</tr>
+							<tr>
+								<td class="px-4 py-2 text-sm text-gray-700 text-left">Errada</td>
+								<td class="px-4 py-2 text-sm text-gray-700 text-left">-0.25 pontos</td>
+							</tr>
+							<tr>
+								<td class="px-4 py-2 text-sm text-gray-700 text-left">Sem Resposta</td>
+								<td class="px-4 py-2 text-sm text-gray-700 text-left">0 pontos</td>
+							</tr>
+						</tbody>
+					</table>
+					<button type="button" class="inline-flex items-center justify-center rounded-md bg-lime-600 px-5 py-2 font-semibold text-white hover:bg-lime-700 focus:outline-none focus:ring-2 focus:ring-lime-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 mt-4 transition duration-200" onclick="document.getElementById('${modalId}').remove();">Fechar</button>
+				</div>
+			</div>
+		`;
+
+		document.body.insertAdjacentHTML('beforeend', modalHTML);
+		submitQuiz.style.display = "none";
+
 	}
 
 	constructor(json) {
@@ -144,7 +203,9 @@ class SimulateQuiz extends  Classes([Questions,Storage])  {
 		var numberOfUnaswered = 0;
 		var questionCounter = 0;
 		this.pageBlocks = []
-		this.currentPage =0;
+		this.currentPage = 0;
+		this.questionsPerPage = SimulateQuiz.PER_PAGE;
+		this.paginationWindow = 3;
 		var ajaxRequest = new XMLHttpRequest();
 		ajaxRequest.simulateQuiz=this;
 		ajaxRequest.pageBlocks = this.pageBlocks;
