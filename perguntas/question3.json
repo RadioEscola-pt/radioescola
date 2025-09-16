@@ -12,7 +12,8 @@
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "cat3/2023_08_18p17"
+        "cat3/2023_08_18p17",
+        "cat3/2021_12_03p5"
       ],
       "img": null,
       "uniqueID": 1,
@@ -50,7 +51,9 @@
       "correctIndex": 2,
       "notes": "Notas",
       "fonte": [
-        "cat3/2023_08_18p10"
+        "cat3/2023_08_18p10",
+        "cat3/2021_12_03p3",
+        "cat3/2023_08_18p3"
       ],
       "img": null,
       "uniqueID": 5,
@@ -69,7 +72,11 @@
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "cat3/2023_08_18p37"
+        "cat3/2023_08_18p37",
+        "cat3/2021_12_03p11",
+        "cat3/2021_12_14p10",
+        "cat3/2022_02_03p11",
+        "cat3/2022_04_20p11"
       ],
       "img": null,
       "uniqueID": 6,
@@ -139,7 +146,10 @@
       "correctIndex": 4,
       "notes": "Consulte: <a target='_blank' href='?LoadChapter=entidades'>Entidades</a>",
       "fonte": [
-        "cat3/2023_08_18p14"
+        "cat3/2023_08_18p14",
+        "cat3/2021_12_03p4",
+        "cat3/2022_02_03p5",
+        "cat3/2022_04_20p4"
       ],
       "img": null,
       "uniqueID": 210,
@@ -159,7 +169,11 @@
       "notes": "Notas",
       "img": null,
       "uniqueID": 11,
-      "fonte": null,
+      "fonte": [
+        "cat3/2020_01_30p8",
+        "cat3/2021_12_14p8",
+        "cat3/2022_04_13p8"
+      ],
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -175,7 +189,10 @@
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "cat3/2023_09_21p28"
+        "cat3/2023_09_21p28",
+        "cat3/2021_12_03p8",
+        "cat3/2022_02_03p8",
+        "cat3/2023_09_21p7"
       ],
       "img": null,
       "uniqueID": 213,
