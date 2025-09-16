@@ -205,13 +205,17 @@
       "answers": [
         "Não as respeitar",
         "Incentivar a que outros amadores não as respeitem",
-        "Apresentar fundamentalmente e discordância à ANACOM propondo alterações",
+        "Apresentar fundamentadamente a discordância à ANACOM propondo alterações",
         "Recorrer a instâncias internacionais, no sentido destas entrarem em contacto com a ANACOM"
       ],
       "correctIndex": 3,
       "notes": "Notas",
       "fonte": [
-        "cat3/2023_08_18p29"
+        "cat3/2023_08_18p29",
+        "cat3/2020_01_30p8",
+        "cat3/2022_02_03p9",
+        "cat3/2022_04_131p9",
+        "cat3/2022_04_20p8"
       ],
       "img": null,
       "uniqueID": 12,
@@ -282,7 +286,9 @@
       "notes": "Notas",
       "img": null,
       "uniqueID": 16,
-      "fonte": null,
+      "fonte": [
+        "cat3/2022_04_13p2"
+      ],
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -299,7 +305,9 @@
       "notes": "Notas",
       "img": null,
       "uniqueID": 17,
-      "fonte": null,
+      "fonte": [
+        "cat3/2022_04_20p1"
+      ],
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -369,7 +377,10 @@
       "notes": "Notas",
       "img": null,
       "uniqueID": 20,
-      "fonte": null,
+      "fonte": [
+        "cat3/2021_12_03p2",
+        "cat3/2022_04_20p3"
+      ],
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -422,7 +433,10 @@
       "notes": "Notas",
       "img": null,
       "uniqueID": 24,
-      "fonte": null,
+      "fonte": [
+        "cat3/2020_01_30p3",
+        "cat3/2022_02_03p2"
+      ],
       "tutorial": null,
       "materia": null,
       "calc": null
