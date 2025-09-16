@@ -14,24 +14,51 @@ class Questions {
     for (let i = 0; i < elements.length; i++) {
       if (elements[i].checked) {
         if (answer - 1 === i) {
-          this.className = "bg-green-500 text-white p-2 rounded";
+          this.className = "bg-green-500 text-white p-2 mt-2 rounded w-52 hidden";
+          this.parentElement.querySelector("span.text-lg").classList.add("text-green-400");
+          this.parentElement.querySelector("span.text-lg").classList.remove("text-red-400");
+          this.parentElement.parentElement.classList.add("border-green-400");
+          this.parentElement.parentElement.classList.remove("border-red-400");
           this.innerHTML = "CERTO";
           this.quiz.storeAnswer(true, uniqueId);
           this.quiz.loadQuestionInfo(infoDiv, question)
+
+
+            const nextQuestion = document.getElementById("questionBlock" + (index + 1));
+            if (nextQuestion) {
+              this.parentElement.parentElement.classList.add("animate-correct");
+              setTimeout(() => {
+
+                // Blink the entire this.parentElement.parentElement
+                
+                  this.parentElement.parentElement.classList.remove("animate-correct");
+
+
+                nextQuestion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }, 500);
+            }
+          
+
           return;
         }
       }
     }
 
-    const noteElement = document.getElementById("note" + index);
-    noteElement.innerHTML = question.notes;
-    this.style.background = "#FF0000";
+    if (question.notes != "Notas") {
+      const noteElement = document.getElementById("note" + index);
+      noteElement.className = "bg-slate-200 text-slate-900 p-2 mt-2 rounded";
+      noteElement.innerHTML = question.notes;
+    }
+
+    
     this.innerHTML = "ERRADO";
-    noteElement.className = "bg-red-200 text-red-900 p-2 mt-2";
+    this.className = "bg-red-200 text-red-900 p-2 mt-2 rounded w-52 hidden";
+    this.parentElement.querySelector("span.text-lg").classList.add("text-red-400");
+    this.parentElement.querySelector("span.text-lg").classList.remove("text-green-400");
+    this.parentElement.parentElement.classList.add("border-red-400");
+    this.parentElement.parentElement.classList.remove("border-green-400");
+
     this.quiz.storeAnswer(false, uniqueId);
-
-
-
     this.quiz.loadQuestionInfo(infoDiv, question)
   }
   /**
@@ -45,7 +72,7 @@ class Questions {
   addQuestion(welcomeDiv, pageBlock, questions, qindex, exitOnEmptyFav=false) {
     var questionBlock = document.createElement("div");
     questionBlock.className =
-      "max-w-screen-md m-auto p-6 mb-8 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700";
+      "scroll-m-20 max-w-screen-md m-auto p-6 mb-8 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700";
     questionBlock.id = "questionBlock" + qindex;
 
     var questionCard = document.createElement("div");
@@ -113,13 +140,17 @@ class Questions {
       let btn = document.createElement("button");
       btn.innerHTML = "Verificar";
       btn.className =
-        "mt-8 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800";
+        "hidden md:hidden mt-8 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800";
       btn.value = qindex;
       btn.quiz = this;
       btn.onclick = this.checkQuestion;
       questionCard.appendChild(btn);
       this.addStar(questionCard, qindex, questions.uniqueID,exitOnEmptyFav);
 
+      // Add onchange to radio buttons to auto-verify
+      answers.querySelectorAll('input[type="radio"]').forEach(input => {
+        input.onchange = () => btn.click();
+      });
     }
     let infoDiv = document.createElement("div");
     infoDiv.className = "questionInfo border-t-1 border-gray-100 pt-2 items-center flex flex-row gap-4 mt-4 text-sm text-gray-500 dark:text-gray-400";
