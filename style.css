@@ -1,19 +1,38 @@
 @import "tailwindcss";
 
 @layer components {
-
 }
 
 #answerDisplay {
-    display: none;
+  display: none;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 .bg-header {
-    background-image: url(/images/header2.jpg);
+  background-image: url(/images/header2.jpg);
 }
 
 .font-header {
-    font-family: Rubik Mono One, sans-serif;
+  font-family: Rubik Mono One, sans-serif;
+}
+
+/* When scrolling to elements with this class, offset by 100px to account for fixed header */
+.scroll-offset {
+  scroll-margin-top: 100px;
+}
+
+@theme {
+  --animate-correct: correct 0.5s linear infinite;
+  @keyframes correct {
+    0%,
+    100% {
+      scale: 1;
+      background: linear-gradient(to right, theme(colors.green.50), theme(colors.green.50));
+    }
+    50% {
+    scale: 1.02;
+    opacity: 1;
+    }
+  }
 }
