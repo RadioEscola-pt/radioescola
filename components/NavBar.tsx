@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Radio, Info } from "lucide-react";
+import { Home, BookOpen, FileText, Radio, Info, Calculator } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,11 +10,12 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { useCalculators } from "@components/providers/CalculatorProvider";
 
 const categories = [
   { id: "3", title: "Categoria 3", description: "Entrada" },
-  { id: "2", title: "Categoria 2", description: "Intermédio" },
-  { id: "1", title: "Categoria 1", description: "Avançado" },
+  { id: "2", title: "Categoria 2", description: "Intermedio" },
+  { id: "1", title: "Categoria 1", description: "Avancado" },
 ] as const;
 
 const exams = categories.map((cat) => ({
@@ -36,7 +37,17 @@ const browse: { title: string; href: string; description: string }[] = categorie
   },
 ]);
 
+const calculators = [
+  {
+    title: "Ohm's Law",
+    description: "Solve voltage, current, or resistance.",
+    action: "ohm",
+  },
+] as const;
+
 export default function NavBar() {
+  const { openOhms } = useCalculators();
+
   return (
     <header className="sticky top-0 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center justify-between">
@@ -75,7 +86,7 @@ export default function NavBar() {
                 Browse
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid gap-3 p-4 w-[200px]">
+                <ul className="grid gap-3 p-4 w-[220px]">
                   {browse.map((item) => (
                     <ListItem
                       key={item.href}
@@ -108,6 +119,29 @@ export default function NavBar() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
+              <NavigationMenuTrigger>
+                <Calculator className="mr-2 h-4 w-4" />
+                Calculators
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid gap-3 p-4 w-[220px]">
+                  {calculators.map((calc) => (
+                    <ListItem
+                      key={calc.action}
+                      title={calc.title}
+                      onSelect={() => {
+                        if (calc.action === "ohm") {
+                          openOhms();
+                        }
+                      }}
+                    >
+                      {calc.description}
+                    </ListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link
                   href="/about"
@@ -129,20 +163,36 @@ function ListItem({
   title,
   children,
   href,
+  onSelect,
   ...props
-}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
+}: React.ComponentPropsWithoutRef<"li"> & { href?: string; onSelect?: () => void }) {
+  const content = href ? (
+    <Link
+      href={href}
+      className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+    >
+      <div className="text-sm font-medium leading-none">{title}</div>
+      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+        {children}
+      </p>
+    </Link>
+  ) : (
+    <button
+      type="button"
+      onClick={onSelect}
+      className="block w-full select-none space-y-1 rounded-md p-3 text-left leading-none outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+    >
+      <div className="text-sm font-medium leading-none">{title}</div>
+      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+        {children}
+      </p>
+    </button>
+  );
+
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
-        <Link
-          href={href}
-          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </Link>
+        {content}
       </NavigationMenuLink>
     </li>
   );

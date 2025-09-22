@@ -1,14 +1,16 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'next/navigation';
 import { Category } from '../../../lib/types';
 import { loadData } from '../../../lib/data';
 import QuestionCard from '../../../components/QuestionCard';
+import { useCalculators } from '../../../components/providers/CalculatorProvider';
 
 export default function BrowsePage() {
   const params = useParams();
   const [category, setCategory] = useState<Category | null>(null);
   const [answers, setAnswers] = useState<Record<number, number>>({});
+  const { openOhms } = useCalculators();
 
   useEffect(() => {
     const cat = typeof params.category === 'string' ? params.category : Array.isArray(params.category) ? params.category[0] : '3';
@@ -16,6 +18,12 @@ export default function BrowsePage() {
       setCategory(data.categories[cat] ?? null);
     });
   }, [params.category]);
+
+  const handleLaunchCalculator = useCallback((code: string) => {
+    if (code === 'OHMCALC') {
+      openOhms();
+    }
+  }, [openOhms]);
 
   if (!category) {
     return <main className="p-8">Loading...</main>;
@@ -43,6 +51,8 @@ export default function BrowsePage() {
             showImage
             indexNumber={idx + 1}
             showId
+            showCalcHint
+            onLaunchCalculator={handleLaunchCalculator}
             ended={isAnswered}
           />
         );

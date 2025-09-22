@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useParams } from "next/navigation";
 import QuestionCard from "@components/QuestionCard";
 import { Category } from "../../../../lib/types";
 import { loadData } from "../../../../lib/data";
+import { useCalculators } from "@components/providers/CalculatorProvider";
 
 const DEFAULT_CATEGORY = "3";
 
@@ -40,6 +41,7 @@ export default function FlashBrowsePage() {
   const [selectedOption, setSelectedOption] = useState<number | undefined>();
   const [isLoading, setIsLoading] = useState(true);
   const [answeredCount, setAnsweredCount] = useState(0);
+  const { openOhms } = useCalculators();
 
   useEffect(() => {
     let active = true;
@@ -84,6 +86,12 @@ export default function FlashBrowsePage() {
     setSelectedOption(undefined);
     setAnsweredCount(0);
   }, [category]);
+
+  const handleLaunchCalculator = useCallback((code: string) => {
+    if (code === "OHMCALC") {
+      openOhms();
+    }
+  }, [openOhms]);
 
   const currentQuestion =
     category && order.length > 0 ? category.questions[order[cursor]] : null;
@@ -158,6 +166,8 @@ export default function FlashBrowsePage() {
         onSelect={handleSelect}
         showImage
         indexNumber={sessionPosition}
+        showCalcHint
+        onLaunchCalculator={handleLaunchCalculator}
         ended={ended}
       />
 

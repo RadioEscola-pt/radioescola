@@ -11,6 +11,7 @@ interface QuestionCardProps {
   ended?: boolean; // when true, show correctness styling like exam review
   disabled?: boolean; // disable interaction
   showCalcHint?: boolean; // show calculator suggestion badge
+  onLaunchCalculator?: (code: string) => void;
 }
 
 function buildFonteLink(entry: string) {
@@ -34,13 +35,30 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   ended = false,
   disabled = false,
   showCalcHint = false,
+  onLaunchCalculator,
 }) => {
   const isAnswered = selectedOption !== undefined;
+  const handleLaunch = React.useCallback(() => {
+    if (question.calc && onLaunchCalculator) {
+      onLaunchCalculator(question.calc);
+    }
+  }, [onLaunchCalculator, question.calc]);
+
   return (
     <div className="p-4 border rounded-md mb-4 bg-white">
       {showCalcHint && question.calc && (
-        <div className="mb-2 inline-flex items-center rounded bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700">
-          Suggested calculator: <span className="ml-1 font-semibold">{question.calc}</span>
+        <div className="mb-2 flex flex-wrap items-center gap-2 rounded bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700">
+          <span>Suggested calculator:</span>
+          <span className="font-semibold">{question.calc}</span>
+          {onLaunchCalculator && (
+            <button
+              type="button"
+              onClick={handleLaunch}
+              className="rounded bg-blue-600 px-2 py-1 text-white transition hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            >
+              Open
+            </button>
+          )}
         </div>
       )}
       <h2 className="font-semibold mb-1">
