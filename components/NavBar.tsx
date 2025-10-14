@@ -6,6 +6,9 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -23,18 +26,17 @@ const exams = categories.map((cat) => ({
   description: cat.description,
 }));
 
-const browse: { title: string; href: string; description: string }[] = categories.flatMap((cat) => [
-  {
-    title: `${cat.title}`,
-    href: `/browse/${cat.id}`,
-    description: `${cat.description} - completo`,
-  },
-  {
-    title: `${cat.title}`,
-    href: `/browse/${cat.id}/flash`,
-    description: `${cat.description} - flashcards`,
-  },
-]);
+const browseComplete = categories.map((cat) => ({
+  title: `${cat.title}`,
+  href: `/browse/${cat.id}`,
+  description: `${cat.description} - completo`,
+}));
+
+const browseFlashcards = categories.map((cat) => ({
+  title: `${cat.title}`,
+  href: `/browse/${cat.id}/flash`,
+  description: `${cat.description} - flashcards`,
+}));
 
 const calculators = [
   {
@@ -84,16 +86,34 @@ export default function NavBar() {
               <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-[220px]">
-              {browse.map((item) => (
-                <DropdownMenuItem key={item.href} asChild>
-                  <Link href={item.href} className="cursor-pointer">
-                    <div className="flex flex-col">
-                      <span className="font-medium">{item.title}</span>
-                      <span className="text-xs text-muted-foreground">{item.description}</span>
-                    </div>
-                  </Link>
-                </DropdownMenuItem>
-              ))}
+              <DropdownMenuSub>
+                <DropdownMenuSubTrigger>{t("browseComplete")}</DropdownMenuSubTrigger>
+                <DropdownMenuSubContent className="w-[240px]">
+                  {browseComplete.map((item) => (
+                    <DropdownMenuItem key={item.href} asChild>
+                      <Link href={item.href} className="cursor-pointer">
+                        <div className="flex flex-col">
+                          <span>{item.title}</span>
+                        </div>
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+              <DropdownMenuSub>
+                <DropdownMenuSubTrigger>{t("browseFlashcards")}</DropdownMenuSubTrigger>
+                <DropdownMenuSubContent className="w-[240px]">
+                  {browseFlashcards.map((item) => (
+                    <DropdownMenuItem key={item.href} asChild>
+                      <Link href={item.href} className="cursor-pointer">
+                        <div className="flex flex-col">
+                          <span>{item.title}</span>
+                        </div>
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
             </DropdownMenuContent>
           </DropdownMenu>
 

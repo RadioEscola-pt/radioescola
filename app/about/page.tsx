@@ -6,16 +6,18 @@ type TeamMember = {
   role: string;
   image: string; // public path
   bio: string;
+  qrzUrl?: string;
 };
 
 export default function AboutPage() {
   const team: TeamMember[] = [
     {
       name: 'Joel Calado',
-      callsign: 'CR7BLE',
+      callsign: 'CS7BLE',
       role: 'Founder',
       image: '/images/team/joelcalado.jpg', // Placeholder path
       bio: 'Founder and sole team member. Ham radio enthusiast since 2023.',
+      qrzUrl: 'https://www.qrz.com/db/CS7BLE',
     },
   ];
 
@@ -45,7 +47,14 @@ export default function AboutPage() {
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-semibold text-gray-900">{m.name}</h3>
                   {m.callsign && (
-                    <span className="text-xs px-2 py-1 rounded-full bg-indigo-100 text-indigo-700">{m.callsign}</span>
+                    <a
+                      href={m.qrzUrl ?? `https://www.qrz.com/db/${encodeURIComponent(m.callsign)}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-xs px-2 py-1 rounded-full bg-indigo-100 text-indigo-700 hover:bg-indigo-200 transition-colors"
+                    >
+                      {m.callsign}
+                    </a>
                   )}
                 </div>
                 <div className="text-sm text-gray-600 mt-0.5">{m.role}</div>
