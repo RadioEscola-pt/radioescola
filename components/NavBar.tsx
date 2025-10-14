@@ -40,10 +40,15 @@ const calculators = [
     description: "Solve voltage, current, or resistance.",
     action: "ohm",
   },
+  {
+    title: "Component Sum",
+    description: "Sum resistors, capacitors, or inductors.",
+    action: "componentSum",
+  },
 ] as const;
 
 export default function NavBar() {
-  const { openOhms } = useCalculators();
+  const { openOhms, openComponentSum } = useCalculators();
 
   return (
     <header className="sticky top-0 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -123,6 +128,8 @@ export default function NavBar() {
                   onClick={() => {
                     if (calc.action === "ohm") {
                       openOhms();
+                    } else if (calc.action === "componentSum") {
+                      openComponentSum();
                     }
                   }}
                 >
