@@ -1,15 +1,12 @@
 "use client";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Radio, Info, Calculator } from "lucide-react";
+import { Home, BookOpen, FileText, Radio, Info, Calculator, ChevronDown } from "lucide-react";
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { useCalculators } from "@components/providers/CalculatorProvider";
 
 const categories = [
@@ -55,145 +52,99 @@ export default function NavBar() {
           <Radio className="h-6 w-6" />
           HamRadioStudy
         </Link>
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link
-                  href="/"
-                  className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50"
-                >
-                  <Home className="mr-2 h-4 w-4" />
-                  Home
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
+        <nav className="flex items-center gap-1">
+          <Link
+            href="/"
+            className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
+          >
+            <Home className="mr-2 h-4 w-4" />
+            Home
+          </Link>
 
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link
-                  href="/study"
-                  className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50"
+          <Link
+            href="/study"
+            className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
+          >
+            <BookOpen className="mr-2 h-4 w-4" />
+            Study
+          </Link>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none data-[state=open]:bg-accent">
+              <BookOpen className="mr-2 h-4 w-4" />
+              Browse
+              <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="w-[220px]">
+              {browse.map((item) => (
+                <DropdownMenuItem key={item.href} asChild>
+                  <Link href={item.href} className="cursor-pointer">
+                    <div className="flex flex-col">
+                      <span className="font-medium">{item.title}</span>
+                      <span className="text-xs text-muted-foreground">{item.description}</span>
+                    </div>
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none data-[state=open]:bg-accent">
+              <FileText className="mr-2 h-4 w-4" />
+              Exam
+              <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="w-[200px]">
+              {exams.map((exam) => (
+                <DropdownMenuItem key={exam.href} asChild>
+                  <Link href={exam.href} className="cursor-pointer">
+                    <div className="flex flex-col">
+                      <span className="font-medium">{exam.title}</span>
+                      <span className="text-xs text-muted-foreground">{exam.description}</span>
+                    </div>
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none data-[state=open]:bg-accent">
+              <Calculator className="mr-2 h-4 w-4" />
+              Calculators
+              <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="w-[220px]">
+              {calculators.map((calc) => (
+                <DropdownMenuItem
+                  key={calc.action}
+                  className="cursor-pointer"
+                  onClick={() => {
+                    if (calc.action === "ohm") {
+                      openOhms();
+                    }
+                  }}
                 >
-                  <BookOpen className="mr-2 h-4 w-4" />
-                  Study
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>
-                <BookOpen className="mr-2 h-4 w-4" />
-                Browse
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-4 w-[220px]">
-                  {browse.map((item) => (
-                    <ListItem
-                      key={item.href}
-                      title={item.title}
-                      href={item.href}
-                    >
-                      {item.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>
-                <FileText className="mr-2 h-4 w-4" />
-                Exam
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-4 w-[200px]">
-                  {exams.map((exam) => (
-                    <ListItem
-                      key={exam.href}
-                      title={exam.title}
-                      href={exam.href}
-                    >
-                      {exam.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>
-                <Calculator className="mr-2 h-4 w-4" />
-                Calculators
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-4 w-[220px]">
-                  {calculators.map((calc) => (
-                    <ListItem
-                      key={calc.action}
-                      title={calc.title}
-                      onSelect={() => {
-                        if (calc.action === "ohm") {
-                          openOhms();
-                        }
-                      }}
-                    >
-                      {calc.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link
-                  href="/about"
-                  className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50"
-                >
-                  <Info className="mr-2 h-4 w-4" />
-                  About
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+                  <div className="flex flex-col">
+                    <span className="font-medium">{calc.title}</span>
+                    <span className="text-xs text-muted-foreground">{calc.description}</span>
+                  </div>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <Link
+            href="/about"
+            className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
+          >
+            <Info className="mr-2 h-4 w-4" />
+            About
+          </Link>
+        </nav>
       </div>
     </header>
   );
 }
 
-function ListItem({
-  title,
-  children,
-  href,
-  onSelect,
-  ...props
-}: React.ComponentPropsWithoutRef<"li"> & { href?: string; onSelect?: () => void }) {
-  const content = href ? (
-    <Link
-      href={href}
-      className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-    >
-      <div className="text-sm font-medium leading-none">{title}</div>
-      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-        {children}
-      </p>
-    </Link>
-  ) : (
-    <button
-      type="button"
-      onClick={onSelect}
-      className="block w-full select-none space-y-1 rounded-md p-3 text-left leading-none outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-    >
-      <div className="text-sm font-medium leading-none">{title}</div>
-      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-        {children}
-      </p>
-    </button>
-  );
-
-  return (
-    <li {...props}>
-      <NavigationMenuLink asChild>
-        {content}
-      </NavigationMenuLink>
-    </li>
-  );
-}
