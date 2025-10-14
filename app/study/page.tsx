@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import Link from 'next/link';
 import matter from 'gray-matter';
+import { getTranslations } from 'next-intl/server';
 
 const STUDY_DIR = path.join(process.cwd(), 'app', 'study');
 
@@ -39,31 +40,30 @@ function humanize(slug: string) {
   return slug.replace(/[-_]/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
 }
 
-export default function StudyIndexPage({ searchParams }: { searchParams?: { cat?: string } }) {
+export default async function StudyIndexPage({ searchParams }: { searchParams?: { cat?: string } }) {
+  const t = await getTranslations('Study');
   const items = readItems();
   const active = searchParams?.cat ?? 'all';
   const filtered = active === 'all' ? items : items.filter(i => i.categories.includes(active));
 
   const tabs: { key: string; label: string }[] = [
-    { key: 'all', label: 'All' },
-    { key: '3', label: 'Category 3' },
-    { key: '2', label: 'Category 2' },
-    { key: '1', label: 'Category 1' },
+    { key: 'all', label: t('tabs.all') },
+    ...['3', '2', '1'].map((id) => ({ key: id, label: t('tabs.category', { id }) })),
   ];
 
   return (
     <main className="p-8">
       <section className="max-w-5xl">
-        <h1 className="text-3xl font-bold text-gray-900">Study Materials</h1>
-        <p className="mt-2 text-gray-700">Filter by your target ham category.</p>
+        <h1 className="text-3xl font-bold text-gray-900">{t('title')}</h1>
+        <p className="mt-2 text-gray-700">{t('description')}</p>
 
         <div className="mt-4 flex flex-wrap gap-2">
-          {tabs.map((t) => {
-            const selected = active === t.key;
-            const href = t.key === 'all' ? '/study' : `/study?cat=${t.key}`;
+          {tabs.map((tab) => {
+            const selected = active === tab.key;
+            const href = tab.key === 'all' ? '/study' : `/study?cat=${tab.key}`;
             return (
               <Link
-                key={t.key}
+                key={tab.key}
                 href={href}
                 className={
                   'inline-flex items-center rounded-lg border px-3 py-1.5 text-sm ' +
@@ -72,7 +72,7 @@ export default function StudyIndexPage({ searchParams }: { searchParams?: { cat?
                     : 'bg-white text-indigo-700 border-indigo-200 hover:bg-indigo-50')
                 }
               >
-                {t.label}
+                {tab.label}
               </Link>
             );
           })}
@@ -86,14 +86,14 @@ export default function StudyIndexPage({ searchParams }: { searchParams?: { cat?
                 {i.description && <p className="text-sm text-gray-600 mt-1 line-clamp-2">{i.description}</p>}
                 <div className="mt-3 flex gap-1">
                   {i.categories.map((c) => (
-                    <span key={c} className="text-[11px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200">CAT {c}</span>
+                    <span key={c} className="text-[11px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200">{t('badge', { id: c })}</span>
                   ))}
                 </div>
               </Link>
             </li>
           ))}
           {filtered.length === 0 && (
-            <li className="text-gray-600">No materials match this category yet.</li>
+            <li className="text-gray-600">{t('empty')}</li>
           )}
         </ul>
       </section>

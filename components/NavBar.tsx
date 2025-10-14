@@ -7,12 +7,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./LanguageSwitcher";
 import { useCalculators } from "@components/providers/CalculatorProvider";
 
 const categories = [
   { id: "3", title: "Categoria 3", description: "Entrada" },
-  { id: "2", title: "Categoria 2", description: "Intermedio" },
-  { id: "1", title: "Categoria 1", description: "Avancado" },
+  { id: "2", title: "Categoria 2", description: "Intermédio" },
+  { id: "1", title: "Categoria 1", description: "Avançado" },
 ] as const;
 
 const exams = categories.map((cat) => ({
@@ -49,10 +51,11 @@ const calculators = [
 
 export default function NavBar() {
   const { openOhms, openComponentSum } = useCalculators();
+  const t = useTranslations("NavBar");
 
   return (
     <header className="sticky top-0 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center justify-between">
+      <div className="container flex h-14 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2 font-bold text-lg">
           <Radio className="h-6 w-6" />
           HamRadioStudy
@@ -63,7 +66,7 @@ export default function NavBar() {
             className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
           >
             <Home className="mr-2 h-4 w-4" />
-            Home
+            {t("home")}
           </Link>
 
           <Link
@@ -71,13 +74,13 @@ export default function NavBar() {
             className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
           >
             <BookOpen className="mr-2 h-4 w-4" />
-            Study
+            {t("study")}
           </Link>
 
           <DropdownMenu>
             <DropdownMenuTrigger className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none data-[state=open]:bg-accent">
               <BookOpen className="mr-2 h-4 w-4" />
-              Browse
+              {t("browse")}
               <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-[220px]">
@@ -97,7 +100,7 @@ export default function NavBar() {
           <DropdownMenu>
             <DropdownMenuTrigger className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none data-[state=open]:bg-accent">
               <FileText className="mr-2 h-4 w-4" />
-              Exam
+              {t("exams")}
               <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-[200px]">
@@ -117,7 +120,7 @@ export default function NavBar() {
           <DropdownMenu>
             <DropdownMenuTrigger className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none data-[state=open]:bg-accent">
               <Calculator className="mr-2 h-4 w-4" />
-              Calculators
+              {t("calculators")}
               <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-[220px]">
@@ -147,9 +150,10 @@ export default function NavBar() {
             className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
           >
             <Info className="mr-2 h-4 w-4" />
-            About
+            {t("about")}
           </Link>
         </nav>
+        <LanguageSwitcher />
       </div>
     </header>
   );

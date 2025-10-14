@@ -1,0 +1,65 @@
+{
+  "Common": {
+    "language": "Language"
+  },
+  "LanguageSwitcher": {
+    "label": "Language",
+    "english": "English",
+    "portuguese": "Portuguese"
+  },
+  "NavBar": {
+    "home": "Home",
+    "study": "Study",
+    "browse": "Browse",
+    "exams": "Exams",
+    "calculators": "Calculators",
+    "about": "About",
+    "examTimer": "Exam Timer"
+  },
+  "Home": {
+    "heroTitle": "Ham Radio Study",
+    "heroSubtitle": "Practice with real questions, take timed exams, and review your results. Choose a category to get started.",
+    "ctaExam": "Take Exam (Cat 3)",
+    "ctaBrowse": "Browse Questions",
+    "categoriesHeading": "Categories",
+    "sectionSubtitle": "A quick, practical path to get on the air legally in Portugal.",
+    "categoryName": "Category {id}",
+    "categoryBadge": "CAT {id}",
+    "categoryBrowse": "Browse",
+    "categorySimulation": "Simulation",
+    "processHeading": "Ham Radio in Portugal: Due Process",
+    "processSteps": {
+      "study": {
+        "title": "1) Study & Practice",
+        "description": "Cover the syllabus for Category 3, 2 or 1. Use browse and simulation exams here."
+      },
+      "exam": {
+        "title": "2) Take the Exam",
+        "description": "Register with ANACOM and pass the exam to obtain the aptitude certificate."
+      },
+      "license": {
+        "title": "3) License & Callsign",
+        "description": "Apply for your amateur radio license and callsign with ANACOM and pay the applicable fees."
+      },
+      "operate": {
+        "title": "4) Operate Responsibly",
+        "description": "Follow your category privileges and comply with national and CEPT regulations."
+      }
+    },
+    "tipText": "Tip: Check official forms on ANACOM and consider a local club for mentoring.",
+    "externalLinks": {
+      "anacom": "ANACOM",
+      "rep": "REP"
+    }
+  },
+  "Study": {
+    "title": "Study Materials",
+    "description": "Filter by your target ham category.",
+    "tabs": {
+      "all": "All",
+      "category": "Category {id}"
+    },
+    "badge": "CAT {id}",
+    "empty": "No materials match this category yet."
+  }
+}

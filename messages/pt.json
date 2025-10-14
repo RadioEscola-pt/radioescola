@@ -1,0 +1,65 @@
+{
+  "Common": {
+    "language": "Idioma"
+  },
+  "LanguageSwitcher": {
+    "label": "Idioma",
+    "english": "Inglês",
+    "portuguese": "Português"
+  },
+  "NavBar": {
+    "home": "Início",
+    "study": "Estudar",
+    "browse": "Explorar",
+    "exams": "Exames",
+    "calculators": "Calculadoras",
+    "about": "Sobre",
+    "examTimer": "Cronómetro"
+  },
+  "Home": {
+    "heroTitle": "Estudo para Rádio Amador",
+    "heroSubtitle": "Pratica com questões reais, faz exames cronometrados e revê resultados. Escolhe uma categoria para começar.",
+    "ctaExam": "Fazer Exame (Cat 3)",
+    "ctaBrowse": "Ver Questões",
+    "categoriesHeading": "Categorias",
+    "sectionSubtitle": "Um caminho rápido e prático para poderes operar legalmente em Portugal.",
+    "categoryName": "Categoria {id}",
+    "categoryBadge": "CAT {id}",
+    "categoryBrowse": "Explorar",
+    "categorySimulation": "Simulação",
+    "processHeading": "Rádio Amador em Portugal: Processo",
+    "processSteps": {
+      "study": {
+        "title": "1) Estudar e Praticar",
+        "description": "Revê o programa das categorias 3, 2 ou 1. Usa a exploração e os exames de simulação aqui."
+      },
+      "exam": {
+        "title": "2) Fazer o Exame",
+        "description": "Inscreve-te na ANACOM e passa o exame para obter o certificado de aptidão."
+      },
+      "license": {
+        "title": "3) Licença e Indicativo",
+        "description": "Requer a licença de rádio amador e o teu indicativo junto da ANACOM e paga as taxas."
+      },
+      "operate": {
+        "title": "4) Operar com Responsabilidade",
+        "description": "Cumpre as tuas prerrogativas de categoria e respeita a regulamentação nacional e CEPT."
+      }
+    },
+    "tipText": "Dica: Consulta os formulários oficiais na ANACOM e considera um clube local para mentoria.",
+    "externalLinks": {
+      "anacom": "ANACOM",
+      "rep": "REP"
+    }
+  },
+  "Study": {
+    "title": "Materiais de Estudo",
+    "description": "Filtre pela categoria de radioamador desejada.",
+    "tabs": {
+      "all": "Todas",
+      "category": "Categoria {id}"
+    },
+    "badge": "CAT {id}",
+    "empty": "Ainda não há materiais para esta categoria."
+  }
+}
