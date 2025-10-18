@@ -68,7 +68,13 @@ class MobileNavbar {
     }
 
     initEventListeners() {
-        // Hamburger button
+        // Mobile hamburger button (in header)
+        const mobileToggleButton = document.getElementById('mobile-navbar-toggle');
+        if (mobileToggleButton) {
+            mobileToggleButton.addEventListener('click', () => this.toggleMenu());
+        }
+
+        // Old hamburger button (kept for compatibility if needed)
         const toggleButton = document.getElementById('navbar-toggle');
         if (toggleButton) {
             toggleButton.addEventListener('click', () => this.toggleMenu());

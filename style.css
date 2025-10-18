@@ -39,8 +39,8 @@
 
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
-  /* Hide the old dropdown navbar content on mobile */
-  #navbar-multi-level {
+  /* Hide the entire nav bar on mobile */
+  nav {
     display: none !important;
   }
 

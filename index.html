@@ -51,7 +51,7 @@
 
   <body class="bg-slate-50 dark:bg-slate-800 dark:text-white">
     <header
-      class="flex justify-center font-header h-[25vh] bg-header bg-center bg-cover"
+      class="flex justify-center font-header h-[25vh] bg-header bg-center bg-cover relative"
     >
       <div
         class="w-full h-full flex justify-center items-center bg-[rgba(0,0,0,0.3)] backdrop-blur-sm"
@@ -62,6 +62,17 @@
           >Rádio Escola</a
         >
       </div>
+      <!-- Mobile Menu Toggle Button -->
+      <button
+        id="mobile-navbar-toggle"
+        type="button"
+        class="md:hidden absolute top-4 right-4 inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg hover:bg-[rgba(255,255,255,0.1)] focus:outline-none focus:ring-2 focus:ring-white/50 z-10"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open main menu</span>
+        <img src="images/menu.svg" class="w-5 h-5 invert" alt="menu" />
+      </button>
     </header>
     <nav
       class="bg-slate-100 border-gray-200 dark:bg-gray-900 dark:border-gray-700"
