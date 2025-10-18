@@ -1,5 +1,10 @@
 class StudyNavbar {
     constructor() {
+        // Only initialize on desktop
+        if (window.innerWidth < 768) {
+            return;
+        }
+
         this.navbarElement = document.getElementById("studyNavbar");
         this.dataUrl = "capitulos/tutoriais.json";
         this.loadData();

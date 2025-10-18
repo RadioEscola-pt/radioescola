@@ -72,6 +72,12 @@ class Init {
         this.hashChecker();
         console.log("load complete");
         new StudyNavbar();
+
+        // Initialize mobile navbar on mobile devices
+        if (window.innerWidth < 768) {
+            new MobileNavbar();
+        }
+
         initFlowbite();
 
 
