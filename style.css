@@ -39,6 +39,32 @@
 
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
+  /* Prevent horizontal overflow on mobile */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Make content container constrained */
+  #welcome {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  /* Make all iframes responsive */
+  iframe {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 300px;
+  }
+
+  /* Make images responsive */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
   /* Hide the entire nav bar on mobile */
   nav {
     display: none !important;
