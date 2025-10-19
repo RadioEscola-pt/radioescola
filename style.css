@@ -293,6 +293,66 @@
   .dark .mobile-menu-content::-webkit-scrollbar-thumb {
     background-color: #4b5563;
   }
+
+  /* Mobile Menu Footer */
+  .mobile-menu-footer {
+    border-top: 1px solid #e5e7eb;
+    padding: 1rem 1.25rem;
+    background-color: #f9fafb;
+  }
+
+  .dark .mobile-menu-footer {
+    border-top-color: #374151;
+    background-color: #111827;
+  }
+
+  /* Mobile Theme Toggle */
+  .mobile-theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #111827;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .mobile-theme-toggle:active {
+    transform: scale(0.98);
+    background-color: #f3f4f6;
+  }
+
+  .dark .mobile-theme-toggle {
+    color: white;
+    background-color: #374151;
+    border-color: #4b5563;
+  }
+
+  .dark .mobile-theme-toggle:active {
+    background-color: #4b5563;
+  }
+
+  .mobile-theme-label {
+    flex: 1;
+    text-align: left;
+  }
+
+  .mobile-theme-toggle svg {
+    flex-shrink: 0;
+    color: #f59e0b;
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-theme-toggle:active svg {
+    transform: rotate(20deg);
+  }
 }
 
 /* Desktop: Hide mobile menu elements */
