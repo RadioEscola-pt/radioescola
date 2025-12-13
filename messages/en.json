@@ -340,7 +340,7 @@
       "exam": "Exam: basic",
       "power": "Power: Cannot transmit*"
     },
-    "category3PowerFootnote": "A category 3 ham radio operator may transmit on behalf of a licensed category 2 or higher operator, on the bands they can operate, provided they are operating the license holder's amateur station and under their direct supervision.",
+    "category3PowerFootnote": "*A Category 3 license holder may use stations of higher category amateurs, under their supervision, in transmission and reception modes, using the frequency bands permitted to them. - DL 53/2009 - Article 8",
     "category2": {
       "name": "Category 2",
       "age": "Minimum age: 14 years",
@@ -394,7 +394,6 @@
       "annualRenewal": "Annual license renewal.",
       "annualFees": "Payment of annual fees.",
       "compliance": "Compliance with regulations and good practices of amateur radio."
-    },
-    "footnote": "(A Category 3 CAN holder may:) Use individual stations of any higher category amateur, under their supervision, in transmission and reception modes, using the frequency bands permitted to them. - DL 53/2009 - Article 8"
+    }
   }
 }

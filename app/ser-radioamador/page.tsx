@@ -261,13 +261,6 @@ export default async function BecomeHamPage() {
           ))}
         </ul>
       </section>
-
-      {/* Footnote */}
-      <section className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800">
-        <p className="text-sm text-slate-600 dark:text-slate-400 italic">
-          * {t("footnote")}
-        </p>
-      </section>
     </main>
   );
 }
