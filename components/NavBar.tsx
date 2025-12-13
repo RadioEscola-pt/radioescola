@@ -10,6 +10,7 @@ import {
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useCalculators } from "@/components/providers/CalculatorProvider";
+import type { CalculatorCode } from "@/lib/types";
 
 const categories = [
   { id: "3", title: "Categoria 3", description: "Entrada" },
@@ -36,22 +37,16 @@ const browse: { title: string; href: string; description: string }[] = categorie
   },
 ]);
 
-const calculators = [
-  {
-    title: "Ohm's Law",
-    description: "Solve voltage, current, or resistance.",
-    action: "ohm",
-  },
-  {
-    title: "Component Sum",
-    description: "Sum resistors, capacitors, or inductors.",
-    action: "componentSum",
-  },
-] as const;
-
 export default function NavBar() {
-  const { openOhms, openComponentSum } = useCalculators();
+  const { openCalculator, getAllCalculators } = useCalculators();
   const t = useTranslations("NavBar");
+  const tc = useTranslations("Calculators");
+
+  const calculators = getAllCalculators();
+
+  const handleCalculatorClick = (code: CalculatorCode) => {
+    openCalculator(code);
+  };
 
   return (
     <header className="sticky top-0 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -124,24 +119,25 @@ export default function NavBar() {
               <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-[220px]">
-              {calculators.map((calc) => (
-                <DropdownMenuItem
-                  key={calc.action}
-                  className="cursor-pointer"
-                  onClick={() => {
-                    if (calc.action === "ohm") {
-                      openOhms();
-                    } else if (calc.action === "componentSum") {
-                      openComponentSum();
-                    }
-                  }}
-                >
-                  <div className="flex flex-col">
-                    <span className="font-medium">{calc.title}</span>
-                    <span className="text-xs text-muted-foreground">{calc.description}</span>
-                  </div>
-                </DropdownMenuItem>
-              ))}
+              {calculators.map((calc) => {
+                const Icon = calc.icon;
+                const key = calc.translationKey;
+                return (
+                  <DropdownMenuItem
+                    key={calc.code}
+                    className="cursor-pointer"
+                    onClick={() => handleCalculatorClick(calc.code)}
+                  >
+                    <div className="flex items-start gap-2">
+                      <Icon className="h-4 w-4 mt-0.5 shrink-0" />
+                      <div className="flex flex-col">
+                        <span className="font-medium">{tc(`${key}.shortTitle`)}</span>
+                        <span className="text-xs text-muted-foreground">{tc(`${key}.description`)}</span>
+                      </div>
+                    </div>
+                  </DropdownMenuItem>
+                );
+              })}
             </DropdownMenuContent>
           </DropdownMenu>
 
@@ -158,4 +154,3 @@ export default function NavBar() {
     </header>
   );
 }
-

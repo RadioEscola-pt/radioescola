@@ -1,6 +1,8 @@
 import React from 'react';
 import DOMPurify from 'dompurify';
 import { Question } from '@/lib/types';
+import { getCalculatorMeta } from '@/lib/config';
+import type { CalculatorCode } from '@/lib/types';
 
 interface QuestionCardProps {
   question: Question;
@@ -29,6 +31,13 @@ function buildFonteLink(entry: string) {
   return { label, href };
 }
 
+/** Normalize calc field to array of calculator codes */
+function normalizeCalcCodes(calc: string | string[] | null | undefined): string[] {
+  if (!calc) return [];
+  if (Array.isArray(calc)) return calc;
+  return [calc];
+}
+
 const QuestionCard: React.FC<QuestionCardProps> = ({
   question,
   selectedOption,
@@ -42,27 +51,37 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   onLaunchCalculator,
 }) => {
   const isAnswered = selectedOption !== undefined;
-  const handleLaunch = React.useCallback(() => {
-    if (question.calc && onLaunchCalculator) {
-      onLaunchCalculator(question.calc);
+  const calcCodes = normalizeCalcCodes(question.calc);
+
+  const handleLaunch = React.useCallback((code: string) => {
+    if (onLaunchCalculator) {
+      onLaunchCalculator(code);
     }
-  }, [onLaunchCalculator, question.calc]);
+  }, [onLaunchCalculator]);
 
   return (
     <div className="p-4 border rounded-md mb-4 bg-white">
-      {showCalcHint && question.calc && (
+      {showCalcHint && calcCodes.length > 0 && (
         <div className="mb-2 flex flex-wrap items-center gap-2 rounded bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700">
-          <span>Suggested calculator:</span>
-          <span className="font-semibold">{question.calc}</span>
-          {onLaunchCalculator && (
-            <button
-              type="button"
-              onClick={handleLaunch}
-              className="rounded bg-blue-600 px-2 py-1 text-white transition hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
-            >
-              Open
-            </button>
-          )}
+          <span>Suggested calculator{calcCodes.length > 1 ? 's' : ''}:</span>
+          {calcCodes.map((code) => {
+            const meta = getCalculatorMeta(code as CalculatorCode);
+            const displayName = meta?.shortTitle ?? code;
+            return (
+              <span key={code} className="inline-flex items-center gap-1">
+                <span className="font-semibold">{displayName}</span>
+                {onLaunchCalculator && (
+                  <button
+                    type="button"
+                    onClick={() => handleLaunch(code)}
+                    className="rounded bg-blue-600 px-2 py-0.5 text-white transition hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  >
+                    Open
+                  </button>
+                )}
+              </span>
+            );
+          })}
         </div>
       )}
       <h2 className="font-semibold mb-1">

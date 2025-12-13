@@ -4,3 +4,4 @@
 export * from './exam';
 export * from './categories';
 export * from './external-links';
+export * from './calculators';

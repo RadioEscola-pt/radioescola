@@ -6,12 +6,13 @@ import { loadData } from '@/lib/data';
 import QuestionCard from '@/components/QuestionCard';
 import { useCalculators } from '@/components/providers/CalculatorProvider';
 import { PageLoading } from '@/components/shared/Loading';
+import type { CalculatorCode } from '@/lib/types';
 
 export default function BrowsePage() {
   const params = useParams();
   const [category, setCategory] = useState<Category | null>(null);
   const [answers, setAnswers] = useState<Record<number, number>>({});
-  const { openOhms } = useCalculators();
+  const { openCalculator } = useCalculators();
 
   useEffect(() => {
     const cat = typeof params.category === 'string'
@@ -25,10 +26,8 @@ export default function BrowsePage() {
   }, [params.category]);
 
   const handleLaunchCalculator = useCallback((code: string) => {
-    if (code === 'OHMCALC') {
-      openOhms();
-    }
-  }, [openOhms]);
+    openCalculator(code as CalculatorCode);
+  }, [openCalculator]);
 
   if (!category) {
     return <PageLoading message="Loading questions..." />;

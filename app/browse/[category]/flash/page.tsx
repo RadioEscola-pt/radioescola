@@ -7,6 +7,7 @@ import { Category } from "@/lib/types";
 import { loadData } from "@/lib/data";
 import { useCalculators } from "@/components/providers/CalculatorProvider";
 import { PageLoading } from "@/components/shared/Loading";
+import type { CalculatorCode } from "@/lib/types";
 
 const DEFAULT_CATEGORY = "3";
 
@@ -46,7 +47,7 @@ export default function FlashBrowsePage() {
   const [selectedOption, setSelectedOption] = useState<number | undefined>();
   const [isLoading, setIsLoading] = useState(true);
   const [answeredCount, setAnsweredCount] = useState(0);
-  const { openOhms } = useCalculators();
+  const { openCalculator } = useCalculators();
 
   useEffect(() => {
     let active = true;
@@ -93,10 +94,8 @@ export default function FlashBrowsePage() {
   }, [category]);
 
   const handleLaunchCalculator = useCallback((code: string) => {
-    if (code === "OHMCALC") {
-      openOhms();
-    }
-  }, [openOhms]);
+    openCalculator(code as CalculatorCode);
+  }, [openCalculator]);
 
   const orderIndex = order[cursor];
   const currentQuestion =
