@@ -12,7 +12,7 @@ function resolveLocale(request: NextRequest): Locale {
   return detectLocale(request.headers.get("accept-language"));
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const locale = resolveLocale(request);
   const response = NextResponse.next();
 
