@@ -211,6 +211,16 @@
       "complete": "Cálculo completo."
     }
   },
+  "QuestionCard": {
+    "suggestedCalculator": "Calculadora sugerida:",
+    "suggestedCalculators": "Calculadoras sugeridas:",
+    "open": "Abrir",
+    "correct": "Correto",
+    "incorrect": "Incorreto",
+    "unanswered": "Sem resposta",
+    "relatedTutorial": "Tutorial relacionado:",
+    "officialSource": "Fonte oficial:"
+  },
   "ExamResults": {
     "title": "Resultados do Exame",
     "subtitle": "Resumo do teu desempenho",

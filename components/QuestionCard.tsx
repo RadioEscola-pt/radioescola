@@ -1,5 +1,8 @@
+"use client";
+
 import React from 'react';
 import DOMPurify from 'dompurify';
+import { useTranslations } from 'next-intl';
 import { Question } from '@/lib/types';
 import { getCalculatorMeta } from '@/lib/config';
 import type { CalculatorCode } from '@/lib/types';
@@ -50,6 +53,8 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   showCalcHint = false,
   onLaunchCalculator,
 }) => {
+  const t = useTranslations('QuestionCard');
+  const tc = useTranslations('Calculators');
   const isAnswered = selectedOption !== undefined;
   const calcCodes = normalizeCalcCodes(question.calc);
 
@@ -63,10 +68,11 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
     <div className="p-4 border rounded-md mb-4 bg-white">
       {showCalcHint && calcCodes.length > 0 && (
         <div className="mb-2 flex flex-wrap items-center gap-2 rounded bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700">
-          <span>Suggested calculator{calcCodes.length > 1 ? 's' : ''}:</span>
+          <span>{calcCodes.length > 1 ? t('suggestedCalculators') : t('suggestedCalculator')}</span>
           {calcCodes.map((code) => {
             const meta = getCalculatorMeta(code as CalculatorCode);
-            const displayName = meta?.shortTitle ?? code;
+            const translationKey = meta?.translationKey;
+            const displayName = translationKey ? tc(`${translationKey}.shortTitle`) : code;
             return (
               <span key={code} className="inline-flex items-center gap-1">
                 <span className="font-semibold">{displayName}</span>
@@ -76,7 +82,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
                     onClick={() => handleLaunch(code)}
                     className="rounded bg-blue-600 px-2 py-0.5 text-white transition hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   >
-                    Open
+                    {t('open')}
                   </button>
                 )}
               </span>
@@ -130,9 +136,9 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
         <div className="mt-3 space-y-2 text-sm">
           <p>
             {selectedOption === question.correctIndex ? (
-              <span className="text-green-700">Correct</span>
+              <span className="text-green-700">{t('correct')}</span>
             ) : (
-              <span className="text-red-700">{isAnswered ? 'Incorrect' : 'Unanswered'}</span>
+              <span className="text-red-700">{isAnswered ? t('incorrect') : t('unanswered')}</span>
             )}
           </p>
           {question.notes && (
@@ -143,7 +149,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
           )}
           {question.tutorial && (
             <div>
-              <span className="font-semibold text-gray-700">Related tutorial:</span>{' '}
+              <span className="font-semibold text-gray-700">{t('relatedTutorial')}</span>{' '}
               <a className="text-blue-600 underline" href={`/study/${question.tutorial}`}>
                 {question.tutorial}
               </a>
@@ -151,7 +157,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
           )}
           {question.fonte && question.fonte.length > 0 && (
             <div>
-              <span className="font-semibold text-gray-700">Fonte oficial:</span>
+              <span className="font-semibold text-gray-700">{t('officialSource')}</span>
               <ul className="mt-1 space-y-1 list-disc list-inside text-gray-700">
                 {question.fonte.map((entry, idx) => {
                   const { href, label } = buildFonteLink(entry);

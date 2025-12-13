@@ -211,6 +211,16 @@
       "complete": "Calculation complete."
     }
   },
+  "QuestionCard": {
+    "suggestedCalculator": "Suggested calculator:",
+    "suggestedCalculators": "Suggested calculators:",
+    "open": "Open",
+    "correct": "Correct",
+    "incorrect": "Incorrect",
+    "unanswered": "Unanswered",
+    "relatedTutorial": "Related tutorial:",
+    "officialSource": "Official source:"
+  },
   "ExamResults": {
     "title": "Exam Results",
     "subtitle": "Summary of your performance",
