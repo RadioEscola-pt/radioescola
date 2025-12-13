@@ -4,10 +4,10 @@ import { LOCALE_COOKIE, detectLocale, isLocale, defaultLocale, type Locale } fro
 import { loadMessages } from "../lib/i18n/messages";
 
 export default getRequestConfig(async () => {
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const fromCookie = cookieStore.get(LOCALE_COOKIE)?.value;
 
-  const headerStore = headers();
+  const headerStore = await headers();
   const acceptLanguage = headerStore.get("accept-language");
 
   const locale: Locale = isLocale(fromCookie)
