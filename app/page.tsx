@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { BookOpen, ClipboardCheck, IdCard, Radio, ExternalLink, Building2 } from "lucide-react";
+import { BookOpen, IdCard, Radio, ExternalLink, Building2 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { CATEGORIES, CATEGORY_STYLES, CATEGORY_IMAGES } from "@/lib/config";
 
@@ -16,22 +16,16 @@ export default async function HomePage() {
       iconClass: "bg-indigo-100 text-indigo-700",
     },
     {
-      icon: ClipboardCheck,
-      title: t("processSteps.exam.title"),
-      description: t("processSteps.exam.description"),
-      iconClass: "bg-emerald-100 text-emerald-700",
-    },
-    {
       icon: IdCard,
-      title: t("processSteps.license.title"),
-      description: t("processSteps.license.description"),
-      iconClass: "bg-amber-100 text-amber-700",
+      title: t("processSteps.examAndLicense.title"),
+      description: t("processSteps.examAndLicense.description"),
+      iconClass: "bg-emerald-100 text-emerald-700",
     },
     {
       icon: Radio,
       title: t("processSteps.operate.title"),
       description: t("processSteps.operate.description"),
-      iconClass: "bg-rose-100 text-rose-700",
+      iconClass: "bg-amber-100 text-amber-700",
     },
   ];
 
@@ -70,9 +64,9 @@ export default async function HomePage() {
             return (
               <div
                 key={id}
-                className="group overflow-hidden rounded-xl border bg-white shadow-md transition-shadow duration-300 hover:shadow-lg"
+                className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-md transition-shadow duration-300 hover:shadow-lg dark:border-slate-700 dark:bg-slate-800"
               >
-                <div className="h-40 w-full overflow-hidden bg-gray-100">
+                <div className="h-40 w-full overflow-hidden bg-slate-100 dark:bg-slate-700">
                   <img
                     src={image}
                     alt={`${name} illustration`}
@@ -81,7 +75,7 @@ export default async function HomePage() {
                 </div>
                 <div className="p-6">
                   <div className="mb-2 flex items-center justify-between">
-                    <h3 className="text-xl font-bold text-gray-900">{name}</h3>
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">{name}</h3>
                     <span className={`text-xs font-medium ${s.badgeBg} ${s.badgeText} rounded-full px-3 py-1`}>
                       {badge}
                     </span>

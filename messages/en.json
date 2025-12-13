@@ -56,16 +56,12 @@
         "title": "1) Study & Practice",
         "description": "Cover the syllabus for Category 3, 2 or 1. Use browse and simulation exams here."
       },
-      "exam": {
-        "title": "2) Take the Exam",
-        "description": "Register with ANACOM and pass the exam to obtain the aptitude certificate."
-      },
-      "license": {
-        "title": "3) License & Callsign",
-        "description": "Apply for your amateur radio license and callsign with ANACOM and pay the applicable fees."
+      "examAndLicense": {
+        "title": "2) Exam, License & Callsign",
+        "description": "Register with ANACOM, pass the exam, apply for your license and callsign."
       },
       "operate": {
-        "title": "4) Operate Responsibly",
+        "title": "3) Operate Responsibly",
         "description": "Follow your category privileges and comply with national and CEPT regulations."
       }
     },

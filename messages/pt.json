@@ -48,7 +48,7 @@
     "sectionSubtitle": "Um caminho rápido e prático para poderes operar legalmente em Portugal.",
     "categoryName": "Categoria {id}",
     "categoryBadge": "CAT {id}",
-    "categoryBrowse": "Explorar",
+    "categoryBrowse": "Estudar",
     "categorySimulation": "Simulação",
     "processHeading": "Rádio Amador em Portugal: Processo",
     "processSteps": {
@@ -56,16 +56,12 @@
         "title": "1) Estudar e Praticar",
         "description": "Revê o programa das categorias 3, 2 ou 1. Usa a exploração e os exames de simulação aqui."
       },
-      "exam": {
-        "title": "2) Fazer o Exame",
-        "description": "Inscreve-te na ANACOM e passa o exame para obter o certificado de aptidão."
-      },
-      "license": {
-        "title": "3) Licença e Indicativo",
-        "description": "Requer a licença de rádio amador e o teu indicativo junto da ANACOM e paga as taxas."
+      "examAndLicense": {
+        "title": "2) Exame, Licença e Indicativo",
+        "description": "Inscreve-te para exame na ANACOM, paga a taxa e passa no exame, e receberás o CAN e o teu indicativo."
       },
       "operate": {
-        "title": "4) Operar com Responsabilidade",
+        "title": "3) Operar com Responsabilidade",
         "description": "Cumpre as tuas prerrogativas de categoria e respeita a regulamentação nacional e CEPT."
       }
     },
