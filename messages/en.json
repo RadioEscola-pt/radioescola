@@ -340,6 +340,7 @@
       "exam": "Exam: basic",
       "power": "Power: Cannot transmit*"
     },
+    "category3PowerFootnote": "A category 3 ham radio operator may transmit on behalf of a licensed category 2 or higher operator, on the bands they can operate, provided they are operating the license holder's amateur station and under their direct supervision.",
     "category2": {
       "name": "Category 2",
       "age": "Minimum age: 14 years",

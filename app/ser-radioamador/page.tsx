@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { BookOpen, Clock, Radio, Award, FileText, CheckCircle, RefreshCw, User, Zap, GraduationCap, Signal } from "lucide-react";
+import CategoryPowerInfo from "@/components/CategoryPowerInfo";
 
 export default async function BecomeHamPage() {
   const t = await getTranslations("BecomeHam");
@@ -95,9 +96,19 @@ export default async function BecomeHamPage() {
                       <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${cat.badgeBg}`}>
                         <Icon className={`h-4 w-4 ${cat.accentColor}`} />
                       </div>
-                      <span className="text-sm text-slate-700 dark:text-slate-300">
-                        {t(`category${cat.id}.${key}`)}
-                      </span>
+                      {key === "power" && cat.id === "3" ? (
+                        <CategoryPowerInfo
+                          text={t(`category${cat.id}.${key}`)}
+                          footnote={t("category3PowerFootnote")}
+                          showFootnote={true}
+                          accentColor={cat.accentColor}
+                          badgeBg={cat.badgeBg}
+                        />
+                      ) : (
+                        <span className="text-sm text-slate-700 dark:text-slate-300">
+                          {t(`category${cat.id}.${key}`)}
+                        </span>
+                      )}
                     </li>
                   ))}
                 </ul>

@@ -340,6 +340,7 @@
       "exam": "Exame: básico",
       "power": "Potência: Não pode transmitir*"
     },
+    "category3PowerFootnote": "Um radioamador categoria 3 poderá transmitir em nome de um radioamador licenciado de categoria 2 ou superior, nas bandas em que este pode operar, desde que esteja a operar a estação de amador do titular da licença e sob a sua supervisão direta.",
     "category2": {
       "name": "Categoria 2",
       "age": "Idade mínima: 14 anos",
@@ -394,6 +395,6 @@
       "annualFees": "Pagamento de taxas anuais.",
       "compliance": "Cumprimento das regulamentações e boas práticas do radioamadorismo."
     },
-    "footnote": "Um radioamador categoria 3 poderá transmitir em nome de um radioamador licenciado de categoria 2 ou superior, nas bandas em que este pode operar, desde que esteja a operar a estação de amador do titular da licença e sob a sua supervisão direta."
+    "footnote": "(Um titular de CAN da categoria 3 pode:) Utilizar estações individuais de qualquer amador de categoria superior, sob a sua supervisão, nos modos de emissão e recepção, utilizando as faixas de frequências que a este forem permitidas; - DL 53/2009 - Artigo 8.º"
   }
 }
