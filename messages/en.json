@@ -331,6 +331,7 @@
     "intro": "In Portugal, the process to become a licensed ham radio operator is regulated by ANACOM (National Communications Authority) and involves several steps and categories. This guide will explain the process from the beginning to obtaining the most advanced license.",
     "categoriesTitle": "Ham Radio Categories",
     "categoriesIntro": "There are three categories for new ham radio operators in Portugal, organized progressively:",
+    "studyCategory": "Study this category",
     "category3": {
       "name": "Category 3",
       "age": "Minimum age: 12 years",

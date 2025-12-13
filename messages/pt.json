@@ -331,6 +331,7 @@
     "intro": "Em Portugal, o processo para se tornar um radioamador licenciado é regulado pela ANACOM (Autoridade Nacional de Comunicações) e envolve várias etapas e categorias. Este guia irá explicar o processo desde o início até à obtenção da licença mais avançada.",
     "categoriesTitle": "Categorias de Radioamador",
     "categoriesIntro": "Existem três categorias para novos radioamadores em Portugal, organizadas de forma progressiva:",
+    "studyCategory": "Estudar esta categoria",
     "category3": {
       "name": "Categoria 3",
       "age": "Idade mínima: 12 anos",

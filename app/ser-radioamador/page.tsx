@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { BookOpen, Clock, Radio, Award, FileText, CheckCircle, CreditCard, RefreshCw } from "lucide-react";
+import { BookOpen, Clock, Radio, Award, FileText, CheckCircle, RefreshCw, User, Zap, GraduationCap, Signal } from "lucide-react";
 
 export default async function BecomeHamPage() {
   const t = await getTranslations("BecomeHam");
@@ -8,22 +8,36 @@ export default async function BecomeHamPage() {
   const categories = [
     {
       id: "3",
-      emoji: "🌟",
-      color: "bg-emerald-50 border-emerald-200 dark:bg-emerald-950 dark:border-emerald-800",
-      badgeColor: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900 dark:text-emerald-300",
+      gradient: "from-emerald-500 to-teal-500",
+      bgColor: "bg-emerald-50 dark:bg-emerald-950/50",
+      borderColor: "border-emerald-200 dark:border-emerald-800",
+      accentColor: "text-emerald-600 dark:text-emerald-400",
+      badgeBg: "bg-emerald-100 dark:bg-emerald-900/50",
     },
     {
       id: "2",
-      emoji: "🚀",
-      color: "bg-blue-50 border-blue-200 dark:bg-blue-950 dark:border-blue-800",
-      badgeColor: "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300",
+      gradient: "from-blue-500 to-indigo-500",
+      bgColor: "bg-blue-50 dark:bg-blue-950/50",
+      borderColor: "border-blue-200 dark:border-blue-800",
+      accentColor: "text-blue-600 dark:text-blue-400",
+      badgeBg: "bg-blue-100 dark:bg-blue-900/50",
     },
     {
       id: "1",
-      emoji: "🏆",
-      color: "bg-amber-50 border-amber-200 dark:bg-amber-950 dark:border-amber-800",
-      badgeColor: "bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-300",
+      gradient: "from-amber-500 to-orange-500",
+      bgColor: "bg-amber-50 dark:bg-amber-950/50",
+      borderColor: "border-amber-200 dark:border-amber-800",
+      accentColor: "text-amber-600 dark:text-amber-400",
+      badgeBg: "bg-amber-100 dark:bg-amber-900/50",
     },
+  ];
+
+  const categoryIcons = [
+    { key: "age", icon: User },
+    { key: "experience", icon: Clock },
+    { key: "privileges", icon: Zap },
+    { key: "exam", icon: GraduationCap },
+    { key: "power", icon: Signal },
   ];
 
   const examProcessSteps = [
@@ -49,46 +63,54 @@ export default async function BecomeHamPage() {
 
       {/* Categories Overview */}
       <section className="mb-12">
-        <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6">
+        <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">
           {t("categoriesTitle")}
         </h2>
-        <p className="text-slate-600 dark:text-slate-400 mb-6">
+        <p className="text-slate-600 dark:text-slate-400 mb-8">
           {t("categoriesIntro")}
         </p>
         <div className="grid gap-6 md:grid-cols-3">
           {categories.map((cat) => (
             <div
               key={cat.id}
-              className={`rounded-xl border p-6 ${cat.color}`}
+              className={`group relative rounded-2xl border ${cat.borderColor} ${cat.bgColor} overflow-hidden transition-shadow hover:shadow-lg`}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl">{cat.emoji}</span>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
-                  {t(`category${cat.id}.name`)}
-                </h3>
+              {/* Gradient header */}
+              <div className={`bg-gradient-to-r ${cat.gradient} px-6 py-4`}>
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xl font-bold text-white">
+                    {t(`category${cat.id}.name`)}
+                  </h3>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                    <span className="text-2xl font-bold text-white">{cat.id}</span>
+                  </div>
+                </div>
               </div>
-              <ul className="space-y-2 text-sm">
-                <li className="flex items-center gap-2">
-                  <span>🎂</span>
-                  <span className="text-slate-700 dark:text-slate-300">{t(`category${cat.id}.age`)}</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span>⏳</span>
-                  <span className="text-slate-700 dark:text-slate-300">{t(`category${cat.id}.experience`)}</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span>🎛️</span>
-                  <span className="text-slate-700 dark:text-slate-300">{t(`category${cat.id}.privileges`)}</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span>📚</span>
-                  <span className="text-slate-700 dark:text-slate-300">{t(`category${cat.id}.exam`)}</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span>📡</span>
-                  <span className="text-slate-700 dark:text-slate-300">{t(`category${cat.id}.power`)}</span>
-                </li>
-              </ul>
+
+              {/* Content */}
+              <div className="p-6">
+                <ul className="space-y-3">
+                  {categoryIcons.map(({ key, icon: Icon }) => (
+                    <li key={key} className="flex items-center gap-3">
+                      <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${cat.badgeBg}`}>
+                        <Icon className={`h-4 w-4 ${cat.accentColor}`} />
+                      </div>
+                      <span className="text-sm text-slate-700 dark:text-slate-300">
+                        {t(`category${cat.id}.${key}`)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA Button */}
+                <Link
+                  href={`/exam/${cat.id}`}
+                  className={`mt-6 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r ${cat.gradient} px-4 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90`}
+                >
+                  <BookOpen className="h-4 w-4" />
+                  {t("studyCategory")}
+                </Link>
+              </div>
             </div>
           ))}
         </div>
