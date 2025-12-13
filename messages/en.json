@@ -80,7 +80,8 @@
       "category": "Category {id}"
     },
     "badge": "CAT {id}",
-    "empty": "No materials match this category yet."
+    "empty": "No materials match this category yet.",
+    "loading": "Loading..."
   },
   "Exam": {
     "loading": "Loading...",
