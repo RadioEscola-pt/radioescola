@@ -65,9 +65,9 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   }, [onLaunchCalculator]);
 
   return (
-    <div className="p-4 border rounded-md mb-4 bg-white">
+    <div className="p-4 border rounded-md mb-4 bg-white dark:bg-slate-800 dark:border-slate-700">
       {showCalcHint && calcCodes.length > 0 && (
-        <div className="mb-2 flex flex-wrap items-center gap-2 rounded bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700">
+        <div className="mb-2 flex flex-wrap items-center gap-2 rounded bg-blue-50 dark:bg-blue-900/30 px-2 py-1 text-xs font-medium text-blue-700 dark:text-blue-300">
           <span>{calcCodes.length > 1 ? t('suggestedCalculators') : t('suggestedCalculator')}</span>
           {calcCodes.map((code) => {
             const meta = getCalculatorMeta(code as CalculatorCode);
@@ -94,7 +94,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
         {indexNumber ? `${indexNumber}. ` : ''}{question.question}
       </h2>
       {showId && (
-        <div className="text-xs text-gray-500 mb-2">ID: {question.id}</div>
+        <div className="text-xs text-gray-500 dark:text-gray-400 mb-2">ID: {question.id}</div>
       )}
       <div className="grid gap-2">
         {question.options.map((option, idx) => {
@@ -103,16 +103,16 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
           const cls = ended
             ? idx === question.correctIndex
               ? isSelected
-                ? 'bg-green-100 border-green-400'
-                : 'bg-white border-green-300'
+                ? 'bg-green-100 border-green-400 dark:bg-green-900/40 dark:border-green-600'
+                : 'bg-white border-green-300 dark:bg-slate-800 dark:border-green-700'
               : isSelected
-                ? 'bg-red-100 border-red-400'
-                : 'bg-white border-gray-200'
+                ? 'bg-red-100 border-red-400 dark:bg-red-900/40 dark:border-red-600'
+                : 'bg-white border-gray-200 dark:bg-slate-800 dark:border-slate-600'
             : isAnswered
               ? isSelected
-                ? 'bg-blue-100 border-blue-300'
-                : 'bg-white border-gray-200 opacity-70'
-              : 'hover:bg-gray-50 border-gray-200';
+                ? 'bg-blue-100 border-blue-300 dark:bg-blue-900/40 dark:border-blue-600'
+                : 'bg-white border-gray-200 opacity-70 dark:bg-slate-800 dark:border-slate-600'
+              : 'hover:bg-gray-50 border-gray-200 dark:hover:bg-slate-700 dark:border-slate-600';
           return (
             <button
               key={idx}
@@ -129,42 +129,42 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
       </div>
       {showImage && question.img && (
         <div className="mt-3">
-          <img src={question.img} alt={question.question} className="max-h-64 rounded border" />
+          <img src={question.img} alt={question.question} className="max-h-64 rounded border dark:border-slate-600" />
         </div>
       )}
       {ended && (
         <div className="mt-3 space-y-2 text-sm">
           <p>
             {selectedOption === question.correctIndex ? (
-              <span className="text-green-700">{t('correct')}</span>
+              <span className="text-green-700 dark:text-green-400">{t('correct')}</span>
             ) : (
-              <span className="text-red-700">{isAnswered ? t('incorrect') : t('unanswered')}</span>
+              <span className="text-red-700 dark:text-red-400">{isAnswered ? t('incorrect') : t('unanswered')}</span>
             )}
           </p>
           {question.notes && (
             <div
-              className="text-gray-700 [&_a]:text-blue-600 [&_a]:underline"
+              className="text-gray-700 dark:text-gray-300 [&_a]:text-blue-600 dark:[&_a]:text-blue-400 [&_a]:underline"
               dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(question.notes) }}
             />
           )}
           {question.tutorial && (
             <div>
-              <span className="font-semibold text-gray-700">{t('relatedTutorial')}</span>{' '}
-              <a className="text-blue-600 underline" href={`/study/${question.tutorial}`}>
+              <span className="font-semibold text-gray-700 dark:text-gray-300">{t('relatedTutorial')}</span>{' '}
+              <a className="text-blue-600 dark:text-blue-400 underline" href={`/study/${question.tutorial}`}>
                 {question.tutorial}
               </a>
             </div>
           )}
           {question.fonte && question.fonte.length > 0 && (
             <div>
-              <span className="font-semibold text-gray-700">{t('officialSource')}</span>
-              <ul className="mt-1 space-y-1 list-disc list-inside text-gray-700">
+              <span className="font-semibold text-gray-700 dark:text-gray-300">{t('officialSource')}</span>
+              <ul className="mt-1 space-y-1 list-disc list-inside text-gray-700 dark:text-gray-300">
                 {question.fonte.map((entry, idx) => {
                   const { href, label } = buildFonteLink(entry);
                   return (
                     <li key={`${entry}-${idx}`}>
                       {href ? (
-                        <a className="text-blue-600 underline" href={href} target="_blank" rel="noreferrer">
+                        <a className="text-blue-600 dark:text-blue-400 underline" href={href} target="_blank" rel="noreferrer">
                           {label}
                         </a>
                       ) : (

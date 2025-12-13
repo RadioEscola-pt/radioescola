@@ -24,8 +24,8 @@ export function Loading({
     <div
       className={`flex flex-col items-center justify-center gap-3 ${className}`}
     >
-      <Loader2 className={`${sizeClasses[size]} animate-spin text-indigo-600`} />
-      {message && <p className="text-sm text-gray-600">{message}</p>}
+      <Loader2 className={`${sizeClasses[size]} animate-spin text-indigo-600 dark:text-indigo-400`} />
+      {message && <p className="text-sm text-gray-600 dark:text-gray-400">{message}</p>}
     </div>
   );
 }
