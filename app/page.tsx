@@ -2,45 +2,11 @@ import React from "react";
 import Link from "next/link";
 import { BookOpen, ClipboardCheck, IdCard, Radio, ExternalLink, Building2 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import { CATEGORIES, CATEGORY_STYLES, CATEGORY_IMAGES } from "@/lib/config";
 
 export default async function HomePage() {
   const t = await getTranslations("Home");
-
-  const categoryIds = ["3", "2", "1"] as const;
-  const categoryImages: Record<(typeof categoryIds)[number], string> = {
-    "3": "/images/cat3/cover.webp",
-    "2": "/images/cat2/cover.webp",
-    "1": "/images/cat1/cover.jpg",
-  };
-
-  const styles: Record<
-    string,
-    {
-      badgeBg: string;
-      badgeText: string;
-      solidBtn: string;
-      outlineBtn: string;
-    }
-  > = {
-    "3": {
-      badgeBg: "bg-green-100",
-      badgeText: "text-green-700",
-      solidBtn: "bg-green-600 text-white hover:bg-green-700",
-      outlineBtn: "border-green-200 text-green-700 hover:bg-green-50 hover:border-green-400",
-    },
-    "2": {
-      badgeBg: "bg-amber-100",
-      badgeText: "text-amber-700",
-      solidBtn: "bg-amber-600 text-white hover:bg-amber-700",
-      outlineBtn: "border-amber-200 text-amber-700 hover:bg-amber-50 hover:border-amber-400",
-    },
-    "1": {
-      badgeBg: "bg-rose-100",
-      badgeText: "text-rose-700",
-      solidBtn: "bg-rose-600 text-white hover:bg-rose-700",
-      outlineBtn: "border-rose-200 text-rose-700 hover:bg-rose-50 hover:border-rose-400",
-    },
-  };
+  const defaultStyle = CATEGORY_STYLES["3"];
 
   const processSteps = [
     {
@@ -76,8 +42,8 @@ export default async function HomePage() {
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">{t("heroTitle")}</h1>
           <p className="mt-3 text-gray-700 max-w-2xl">{t("heroSubtitle")}</p>
           <div className="mt-6 flex items-center gap-3">
-            <Link href="/exam/3" className={`px-4 py-2 rounded ${styles["3"].solidBtn}`}>{t("ctaExam")}</Link>
-            <Link href="/browse/3" className={`px-4 py-2 rounded border ${styles["3"].outlineBtn}`}>{t("ctaBrowse")}</Link>
+            <Link href="/exam/3" className={`px-4 py-2 rounded ${defaultStyle.solidBtn}`}>{t("ctaExam")}</Link>
+            <Link href="/browse/3" className={`px-4 py-2 rounded border ${defaultStyle.outlineBtn}`}>{t("ctaBrowse")}</Link>
           </div>
         </div>
       </section>
@@ -85,28 +51,26 @@ export default async function HomePage() {
       <section>
         <h2 className="text-xl font-semibold mb-4">{t("categoriesHeading")}</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {categoryIds.map((id) => {
-            const s = styles[id] ?? styles["3"];
+          {CATEGORIES.map((id) => {
+            const s = CATEGORY_STYLES[id];
             const name = t("categoryName", { id });
             const badge = t("categoryBadge", { id });
             const browseLabel = t("categoryBrowse");
             const simulationLabel = t("categorySimulation");
-            const image = categoryImages[id];
+            const image = CATEGORY_IMAGES[id];
 
             return (
               <div
                 key={id}
                 className="group overflow-hidden rounded-xl border bg-white shadow-md transition-shadow duration-300 hover:shadow-lg"
               >
-                {image && (
-                  <div className="h-40 w-full overflow-hidden bg-gray-100">
-                    <img
-                      src={image}
-                      alt={`${name} illustration`}
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                )}
+                <div className="h-40 w-full overflow-hidden bg-gray-100">
+                  <img
+                    src={image}
+                    alt={`${name} illustration`}
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
                 <div className="p-6">
                   <div className="mb-2 flex items-center justify-between">
                     <h3 className="text-xl font-bold text-gray-900">{name}</h3>

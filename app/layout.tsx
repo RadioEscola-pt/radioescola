@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
 import "./globals.css";
-import NavBar from "../components/NavBar";
-import CalculatorProvider from "../components/providers/CalculatorProvider";
+import NavBar from "@/components/NavBar";
+import CalculatorProvider from "@/components/providers/CalculatorProvider";
+import { ErrorBoundary } from "@/components/shared/ErrorBoundary";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 
@@ -24,7 +25,9 @@ export default async function RootLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <CalculatorProvider>
             <NavBar />
-            <main className="mx-auto max-w-5xl px-4 py-6">{children}</main>
+            <ErrorBoundary>
+              <main className="mx-auto max-w-5xl px-4 py-6">{children}</main>
+            </ErrorBoundary>
           </CalculatorProvider>
         </NextIntlClientProvider>
       </body>

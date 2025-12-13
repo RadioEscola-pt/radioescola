@@ -2,8 +2,7 @@
 
 import React from "react";
 import { X, Plus, Trash2 } from "lucide-react";
-
-type Position = { x: number; y: number };
+import { useDraggableWindow, Position } from "@/hooks/useDraggableWindow";
 
 type ComponentType = "resistor" | "capacitor" | "inductor";
 type Mode = "series" | "parallel";
@@ -41,16 +40,6 @@ const unitMultipliers: Record<string, number> = {
   "nH": 1e-9,
 };
 
-function clampPosition(pos: Position): Position {
-  const padding = 16;
-  const maxX = typeof window !== "undefined" ? window.innerWidth - padding : pos.x;
-  const maxY = typeof window !== "undefined" ? window.innerHeight - padding : pos.y;
-  return {
-    x: Math.max(padding - 8, Math.min(maxX, pos.x)),
-    y: Math.max(padding, Math.min(maxY, pos.y)),
-  };
-}
-
 const ComponentSumCalculator: React.FC<ComponentSumCalculatorProps> = ({ onClose, initialPosition }) => {
   const [componentType, setComponentType] = React.useState<ComponentType>("resistor");
   const [mode, setMode] = React.useState<Mode>("series");
@@ -61,53 +50,9 @@ const ComponentSumCalculator: React.FC<ComponentSumCalculatorProps> = ({ onClose
   const [result, setResult] = React.useState<string>("");
   const [message, setMessage] = React.useState<string>("Add component values to calculate.");
 
-  const [position, setPosition] = React.useState<Position>(() => initialPosition ?? { x: 80, y: 160 });
-  const draggingRef = React.useRef(false);
-  const dragOffsetRef = React.useRef({ x: 0, y: 0 });
-  const containerRef = React.useRef<HTMLDivElement | null>(null);
-
-  const updatePosition = React.useCallback((next: Position) => {
-    setPosition(clampPosition(next));
-  }, []);
-
-  const handlePointerMove = React.useCallback(
-    (event: PointerEvent) => {
-      if (!draggingRef.current) return;
-      const next = {
-        x: event.clientX - dragOffsetRef.current.x,
-        y: event.clientY - dragOffsetRef.current.y,
-      };
-      updatePosition(next);
-    },
-    [updatePosition]
-  );
-
-  const handlePointerUp = React.useCallback(() => {
-    if (!draggingRef.current) return;
-    draggingRef.current = false;
-    window.removeEventListener("pointermove", handlePointerMove);
-    window.removeEventListener("pointerup", handlePointerUp);
-  }, [handlePointerMove]);
-
-  React.useEffect(() => {
-    return () => {
-      window.removeEventListener("pointermove", handlePointerMove);
-      window.removeEventListener("pointerup", handlePointerUp);
-    };
-  }, [handlePointerMove, handlePointerUp]);
-
-  const beginDrag = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    draggingRef.current = true;
-    dragOffsetRef.current = {
-      x: event.clientX - rect.left,
-      y: event.clientY - rect.top,
-    };
-    window.addEventListener("pointermove", handlePointerMove);
-    window.addEventListener("pointerup", handlePointerUp);
-    event.preventDefault();
-  };
+  const { position, containerRef, beginDrag } = useDraggableWindow({
+    initialPosition: initialPosition ?? { x: 80, y: 160 },
+  });
 
   const getUnitsForType = (type: ComponentType): string[] => {
     switch (type) {
@@ -123,7 +68,8 @@ const ComponentSumCalculator: React.FC<ComponentSumCalculatorProps> = ({ onClose
   const handleComponentTypeChange = (type: ComponentType) => {
     setComponentType(type);
     const units = getUnitsForType(type);
-    setComponents(components.map(c => ({ ...c, unit: units[0] })));
+    const defaultUnit = units[0] ?? "Ω";
+    setComponents(components.map(c => ({ ...c, unit: defaultUnit })));
     setResult("");
     setMessage("Add component values to calculate.");
   };
@@ -131,7 +77,8 @@ const ComponentSumCalculator: React.FC<ComponentSumCalculatorProps> = ({ onClose
   const addComponent = () => {
     const units = getUnitsForType(componentType);
     const newId = String(Date.now());
-    setComponents([...components, { id: newId, value: "", unit: units[0] }]);
+    const defaultUnit = units[0] ?? "Ω";
+    setComponents([...components, { id: newId, value: "", unit: defaultUnit }]);
   };
 
   const removeComponent = (id: string) => {
@@ -154,7 +101,7 @@ const ComponentSumCalculator: React.FC<ComponentSumCalculatorProps> = ({ onClose
   };
 
   const convertToBaseUnit = (value: number, unit: string): number => {
-    return value * unitMultipliers[unit];
+    return value * (unitMultipliers[unit] ?? 1);
   };
 
   const formatResult = (value: number, type: ComponentType): string => {
@@ -164,16 +111,19 @@ const ComponentSumCalculator: React.FC<ComponentSumCalculatorProps> = ({ onClose
 
     // Find the best unit to display
     for (let i = units.length - 1; i >= 0; i--) {
-      const multiplier = unitMultipliers[units[i]];
+      const unit = units[i];
+      if (!unit) continue;
+      const multiplier = unitMultipliers[unit] ?? 1;
       const converted = value / multiplier;
 
       if (converted >= 1 || i === 0) {
         const decimals = converted >= 100 ? 2 : converted >= 10 ? 3 : 4;
-        return `${converted.toFixed(decimals)} ${units[i]}`;
+        return `${converted.toFixed(decimals)} ${unit}`;
       }
     }
 
-    return `${value.toFixed(4)} ${units[0]}`;
+    const defaultUnit = units[0] ?? "Ω";
+    return `${value.toFixed(4)} ${defaultUnit}`;
   };
 
   const calculate = () => {
@@ -222,9 +172,10 @@ const ComponentSumCalculator: React.FC<ComponentSumCalculatorProps> = ({ onClose
 
   const reset = () => {
     const units = getUnitsForType(componentType);
+    const defaultUnit = units[0] ?? "Ω";
     setComponents([
-      { id: "1", value: "", unit: units[0] },
-      { id: "2", value: "", unit: units[0] },
+      { id: "1", value: "", unit: defaultUnit },
+      { id: "2", value: "", unit: defaultUnit },
     ]);
     setResult("");
     setMessage("Add component values to calculate.");

@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import OhmsLawCalculator from "@components/calculators/OhmsLawCalculator";
-import ComponentSumCalculator from "@components/calculators/ComponentSumCalculator";
+import OhmsLawCalculator from "@/components/calculators/OhmsLawCalculator";
+import ComponentSumCalculator from "@/components/calculators/ComponentSumCalculator";
 
 interface CalculatorContextValue {
   ohmsOpen: boolean;

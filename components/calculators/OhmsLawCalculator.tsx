@@ -2,22 +2,11 @@
 
 import React from "react";
 import { X } from "lucide-react";
-
-type Position = { x: number; y: number };
+import { useDraggableWindow, Position } from "@/hooks/useDraggableWindow";
 
 interface OhmsLawCalculatorProps {
   onClose: () => void;
   initialPosition?: Position;
-}
-
-function clampPosition(pos: Position): Position {
-  const padding = 16;
-  const maxX = typeof window !== "undefined" ? window.innerWidth - padding : pos.x;
-  const maxY = typeof window !== "undefined" ? window.innerHeight - padding : pos.y;
-  return {
-    x: Math.max(padding - 8, Math.min(maxX, pos.x)),
-    y: Math.max(padding, Math.min(maxY, pos.y)),
-  };
 }
 
 const OhmsLawCalculator: React.FC<OhmsLawCalculatorProps> = ({ onClose, initialPosition }) => {
@@ -25,53 +14,10 @@ const OhmsLawCalculator: React.FC<OhmsLawCalculatorProps> = ({ onClose, initialP
   const [current, setCurrent] = React.useState<string>("");
   const [resistance, setResistance] = React.useState<string>("");
   const [message, setMessage] = React.useState<string>("Fill any two fields to compute the third.");
-  const [position, setPosition] = React.useState<Position>(() => initialPosition ?? { x: 40, y: 120 });
-  const draggingRef = React.useRef(false);
-  const dragOffsetRef = React.useRef({ x: 0, y: 0 });
-  const containerRef = React.useRef<HTMLDivElement | null>(null);
 
-  const updatePosition = React.useCallback((next: Position) => {
-    setPosition(clampPosition(next));
-  }, []);
-
-  const handlePointerMove = React.useCallback(
-    (event: PointerEvent) => {
-      if (!draggingRef.current) return;
-      const next = {
-        x: event.clientX - dragOffsetRef.current.x,
-        y: event.clientY - dragOffsetRef.current.y,
-      };
-      updatePosition(next);
-    },
-    [updatePosition]
-  );
-
-  const handlePointerUp = React.useCallback(() => {
-    if (!draggingRef.current) return;
-    draggingRef.current = false;
-    window.removeEventListener("pointermove", handlePointerMove);
-    window.removeEventListener("pointerup", handlePointerUp);
-  }, [handlePointerMove]);
-
-  React.useEffect(() => {
-    return () => {
-      window.removeEventListener("pointermove", handlePointerMove);
-      window.removeEventListener("pointerup", handlePointerUp);
-    };
-  }, [handlePointerMove, handlePointerUp]);
-
-  const beginDrag = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    draggingRef.current = true;
-    dragOffsetRef.current = {
-      x: event.clientX - rect.left,
-      y: event.clientY - rect.top,
-    };
-    window.addEventListener("pointermove", handlePointerMove);
-    window.addEventListener("pointerup", handlePointerUp);
-    event.preventDefault();
-  };
+  const { position, containerRef, beginDrag } = useDraggableWindow({
+    initialPosition: initialPosition ?? { x: 40, y: 120 },
+  });
 
   const reset = () => {
     setVoltage("");

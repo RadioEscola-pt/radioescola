@@ -2,10 +2,11 @@
 
 import React, { useEffect, useState, useCallback } from "react";
 import { useParams } from "next/navigation";
-import QuestionCard from "@components/QuestionCard";
-import { Category } from "../../../../lib/types";
-import { loadData } from "../../../../lib/data";
-import { useCalculators } from "@components/providers/CalculatorProvider";
+import QuestionCard from "@/components/QuestionCard";
+import { Category } from "@/lib/types";
+import { loadData } from "@/lib/data";
+import { useCalculators } from "@/components/providers/CalculatorProvider";
+import { PageLoading } from "@/components/shared/Loading";
 
 const DEFAULT_CATEGORY = "3";
 
@@ -13,14 +14,18 @@ function createOrder(count: number, avoid?: number): number[] {
   const indices = Array.from({ length: count }, (_, idx) => idx);
   for (let i = indices.length - 1; i > 0; i -= 1) {
     const j = Math.floor(Math.random() * (i + 1));
-    const tmp = indices[i];
-    indices[i] = indices[j];
-    indices[j] = tmp;
+    const idxI = indices[i];
+    const idxJ = indices[j];
+    if (idxI !== undefined && idxJ !== undefined) {
+      indices[i] = idxJ;
+      indices[j] = idxI;
+    }
   }
-  if (avoid !== undefined && indices.length > 1 && indices[0] === avoid) {
-    const swapIndex = 1;
-    indices[0] = indices[swapIndex];
-    indices[swapIndex] = avoid;
+  const first = indices[0];
+  const second = indices[1];
+  if (avoid !== undefined && indices.length > 1 && first === avoid && second !== undefined) {
+    indices[0] = second;
+    indices[1] = avoid;
   }
   return indices;
 }
@@ -32,7 +37,7 @@ export default function FlashBrowsePage() {
     typeof rawCategory === "string"
       ? rawCategory
       : Array.isArray(rawCategory)
-        ? rawCategory[0]
+        ? rawCategory[0] ?? DEFAULT_CATEGORY
         : DEFAULT_CATEGORY;
 
   const [category, setCategory] = useState<Category | null>(null);
@@ -93,8 +98,11 @@ export default function FlashBrowsePage() {
     }
   }, [openOhms]);
 
+  const orderIndex = order[cursor];
   const currentQuestion =
-    category && order.length > 0 ? category.questions[order[cursor]] : null;
+    category && order.length > 0 && orderIndex !== undefined
+      ? category.questions[orderIndex] ?? null
+      : null;
 
   const handleSelect = (choice: number) => {
     if (selectedOption !== undefined) {
@@ -112,7 +120,8 @@ export default function FlashBrowsePage() {
     if (nextIndex < order.length) {
       setCursor(nextIndex);
     } else {
-      const nextOrder = createOrder(category.questions.length, order[cursor]);
+      const currentOrderIndex = order[cursor];
+      const nextOrder = createOrder(category.questions.length, currentOrderIndex);
       setOrder(nextOrder);
       setCursor(0);
     }
@@ -120,7 +129,7 @@ export default function FlashBrowsePage() {
   };
 
   if (isLoading) {
-    return <main className="p-8">Loading...</main>;
+    return <PageLoading message="Loading flashcards..." />;
   }
 
   if (!category) {

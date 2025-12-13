@@ -20,11 +20,11 @@ export function Dialog({
     if (open) {
       setShouldRender(true);
       requestAnimationFrame(() => setIsAnimating(true));
-    } else {
-      setIsAnimating(false);
-      const timer = setTimeout(() => setShouldRender(false), 200);
-      return () => clearTimeout(timer);
+      return;
     }
+    setIsAnimating(false);
+    const timer = setTimeout(() => setShouldRender(false), 200);
+    return () => clearTimeout(timer);
   }, [open]);
 
   React.useEffect(() => {

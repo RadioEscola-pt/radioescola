@@ -2,24 +2,26 @@
 import React, { useState } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { Category } from '../../../lib/types';
-import { loadData } from '../../../lib/data';
-import ExamTimer from '../../../components/ExamTimer';
-import { ExamResultsModal } from '../../../components/ExamResultsModal';
+import { Category } from '@/lib/types';
+import { loadData } from '@/lib/data';
+import { EXAM_CONFIG, DEFAULT_CATEGORY } from '@/lib/config';
+import ExamTimer from '@/components/ExamTimer';
+import { ExamResultsModal } from '@/components/ExamResultsModal';
+import { PageLoading } from '@/components/shared/Loading';
+
+const { DURATION_SECONDS, QUESTIONS_PER_PAGE, MAX_QUESTIONS, PASSING_SCORE, WRONG_ANSWER_PENALTY } = EXAM_CONFIG;
 
 export default function ExamPage() {
   const params = useParams();
   const searchParams = useSearchParams();
   const t = useTranslations('Exam');
-  const [timeLeft, setTimeLeft] = useState(3600);
+  const [timeLeft, setTimeLeft] = useState<number>(DURATION_SECONDS);
   const [score, setScore] = useState(0);
   const [category, setCategory] = useState<Category | null>(null);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [quizEnded, setQuizEnded] = useState(false);
   const [resultsOpen, setResultsOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 10;
-  const totalSeconds = 3600;
 
   // Timer: countdown from initial time to 0; stops when quiz ends
   const timerRef = React.useRef<ReturnType<typeof setInterval> | null>(null);
@@ -69,7 +71,7 @@ export default function ExamPage() {
       const sel = answers[q.id];
       if (sel === undefined) continue;
       if (sel === q.correctIndex) total += 1;
-      else total -= 0.25;
+      else total -= WRONG_ANSWER_PENALTY;
     }
     setScore(total);
   }, [answers, category]);
@@ -78,12 +80,12 @@ export default function ExamPage() {
     const cat = typeof params.category === 'string'
       ? params.category
       : Array.isArray(params.category)
-        ? params.category[0]
-        : '3';
+        ? params.category[0] ?? DEFAULT_CATEGORY
+        : DEFAULT_CATEGORY;
     // Reset state on category change
     setAnswers({});
     setScore(0);
-    setTimeLeft(3600);
+    setTimeLeft(DURATION_SECONDS);
     setQuizEnded(false);
     setResultsOpen(false);
     setCurrentPage(1);
@@ -108,9 +110,10 @@ export default function ExamPage() {
           const chars = aParam.split('');
           for (let i = 0; i < Math.min(chars.length, chosen.length); i++) {
             const ch = chars[i];
-            if (ch && ch !== 'x') {
+            const chosenQuestion = chosen[i];
+            if (ch && ch !== 'x' && chosenQuestion) {
               const idx = parseInt(ch, 36);
-              if (!Number.isNaN(idx)) ans[chosen[i].id] = idx;
+              if (!Number.isNaN(idx)) ans[chosenQuestion.id] = idx;
             }
           }
         }
@@ -125,9 +128,14 @@ export default function ExamPage() {
       const qs = [...base.questions];
       for (let i = qs.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [qs[i], qs[j]] = [qs[j], qs[i]];
+        const qi = qs[i];
+        const qj = qs[j];
+        if (qi !== undefined && qj !== undefined) {
+          qs[i] = qj;
+          qs[j] = qi;
+        }
       }
-      const sample = qs.slice(0, Math.min(40, qs.length));
+      const sample = qs.slice(0, Math.min(MAX_QUESTIONS, qs.length));
       setCategory({ id: base.id, name: base.name, questions: sample });
     });
   }, [params.category, searchParams]);
@@ -141,13 +149,18 @@ export default function ExamPage() {
       const qs = [...base.questions];
       for (let i = qs.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [qs[i], qs[j]] = [qs[j], qs[i]];
+        const qi = qs[i];
+        const qj = qs[j];
+        if (qi !== undefined && qj !== undefined) {
+          qs[i] = qj;
+          qs[j] = qi;
+        }
       }
-      const sample = qs.slice(0, Math.min(40, qs.length));
+      const sample = qs.slice(0, Math.min(MAX_QUESTIONS, qs.length));
       setCategory({ id: base.id, name: base.name, questions: sample });
       setAnswers({});
       setScore(0);
-      setTimeLeft(3600);
+      setTimeLeft(DURATION_SECONDS);
       setCurrentPage(1);
       setQuizEnded(false);
       setResultsOpen(false);
@@ -155,7 +168,7 @@ export default function ExamPage() {
   };
 
   if (!category) {
-    return <main className="p-8">{t('loading')}</main>;
+    return <PageLoading message={t('loading')} />;
   }
 
   return (
@@ -173,13 +186,13 @@ export default function ExamPage() {
           </button>
           <button
             className="px-3 py-2 border rounded disabled:opacity-50"
-            onClick={() => setCurrentPage((p) => Math.min(Math.ceil(category.questions.length / pageSize), p + 1))}
-            disabled={currentPage >= Math.ceil(category.questions.length / pageSize)}
+            onClick={() => setCurrentPage((p) => Math.min(Math.ceil(category.questions.length / QUESTIONS_PER_PAGE), p + 1))}
+            disabled={currentPage >= Math.ceil(category.questions.length / QUESTIONS_PER_PAGE)}
           >
             {t('next')}
           </button>
           <span className="ml-3 text-sm text-gray-600 mr-4">
-            {t('page', { current: currentPage, total: Math.max(1, Math.ceil(category.questions.length / pageSize)) })}
+            {t('page', { current: currentPage, total: Math.max(1, Math.ceil(category.questions.length / QUESTIONS_PER_PAGE)) })}
           </span>
           {quizEnded ? (
             <button
@@ -206,14 +219,14 @@ export default function ExamPage() {
       )}
       <section className="mt-6 space-y-6">
         {category.questions
-          .slice((currentPage - 1) * pageSize, currentPage * pageSize)
+          .slice((currentPage - 1) * QUESTIONS_PER_PAGE, currentPage * QUESTIONS_PER_PAGE)
           .map((q, qi) => {
           const selected = answers[q.id];
           const isAnswered = selected !== undefined;
           const timeUp = timeLeft <= 0;
           return (
             <div key={q.id} className="border rounded-md p-4">
-              <h2 className="font-semibold mb-1">{(currentPage - 1) * pageSize + qi + 1}. {q.question}</h2>
+              <h2 className="font-semibold mb-1">{(currentPage - 1) * QUESTIONS_PER_PAGE + qi + 1}. {q.question}</h2>
               <div className="text-xs text-gray-500 mb-2">{t('questionId', { id: q.id })}</div>
               <div className="grid gap-2">
                 {q.options.map((opt, oi) => {
@@ -267,8 +280,8 @@ export default function ExamPage() {
         score={score}
         totalQuestions={category.questions.length}
         timeLeft={timeLeft}
-        totalSeconds={totalSeconds}
-        passingScore={20}
+        totalSeconds={DURATION_SECONDS}
+        passingScore={PASSING_SCORE}
         shareableUrl={(() => {
           try {
             const origin = typeof window !== 'undefined' ? window.location.origin : '';

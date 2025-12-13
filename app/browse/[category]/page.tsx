@@ -1,10 +1,11 @@
 "use client";
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'next/navigation';
-import { Category } from '../../../lib/types';
-import { loadData } from '../../../lib/data';
-import QuestionCard from '../../../components/QuestionCard';
-import { useCalculators } from '../../../components/providers/CalculatorProvider';
+import { Category } from '@/lib/types';
+import { loadData } from '@/lib/data';
+import QuestionCard from '@/components/QuestionCard';
+import { useCalculators } from '@/components/providers/CalculatorProvider';
+import { PageLoading } from '@/components/shared/Loading';
 
 export default function BrowsePage() {
   const params = useParams();
@@ -13,7 +14,11 @@ export default function BrowsePage() {
   const { openOhms } = useCalculators();
 
   useEffect(() => {
-    const cat = typeof params.category === 'string' ? params.category : Array.isArray(params.category) ? params.category[0] : '3';
+    const cat = typeof params.category === 'string'
+      ? params.category
+      : Array.isArray(params.category)
+        ? params.category[0] ?? '3'
+        : '3';
     loadData().then((data) => {
       setCategory(data.categories[cat] ?? null);
     });
@@ -26,7 +31,7 @@ export default function BrowsePage() {
   }, [openOhms]);
 
   if (!category) {
-    return <main className="p-8">Loading...</main>;
+    return <PageLoading message="Loading questions..." />;
   }
 
   return (

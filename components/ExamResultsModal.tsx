@@ -60,6 +60,7 @@ export function ExamResultsModal({
       reset();
       setCopied(false);
     }
+    return;
   }, [open, passed, celebrate, reset]);
 
   const fmt = (s: number) => {

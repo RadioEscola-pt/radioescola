@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { useCalculators } from "@components/providers/CalculatorProvider";
+import { useCalculators } from "@/components/providers/CalculatorProvider";
 
 const categories = [
   { id: "3", title: "Categoria 3", description: "Entrada" },

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Question } from '../lib/types';
+import DOMPurify from 'dompurify';
+import { Question } from '@/lib/types';
 
 interface QuestionCardProps {
   question: Question;
@@ -20,6 +21,9 @@ function buildFonteLink(entry: string) {
     return { label: entry, href: null };
   }
   const [, folder, file, page] = match;
+  if (!folder || !file || !page) {
+    return { label: entry, href: null };
+  }
   const href = `/exams/${folder}/${file}.pdf#page=${page}`;
   const label = `${folder.toUpperCase()} ${file} (p${page})`;
   return { label, href };
@@ -115,7 +119,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
           {question.notes && (
             <div
               className="text-gray-700 [&_a]:text-blue-600 [&_a]:underline"
-              dangerouslySetInnerHTML={{ __html: question.notes }}
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(question.notes) }}
             />
           )}
           {question.tutorial && (
