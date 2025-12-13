@@ -362,10 +362,10 @@ export function ExamResultsModal({
             onClick={onStartNew}
             className={cn(
               "px-4 py-2 rounded-md text-sm font-medium",
-              "bg-indigo-600 text-white",
+              "bg-brand-500 text-white",
               "transition-all duration-200",
-              "hover:bg-indigo-700 hover:shadow-md",
-              "focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2",
+              "hover:bg-brand-600 hover:shadow-md",
+              "focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2",
               "active:scale-[0.98]"
             )}
           >
