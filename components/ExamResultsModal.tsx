@@ -1,8 +1,10 @@
 "use client";
 import React, { useEffect, useState, useMemo } from 'react';
+import { useTranslations } from 'next-intl';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from './ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
 import { useConfetti } from '@/hooks/useConfetti';
 import { Trophy, XCircle, Clock, Copy, Check, Share2, CircleCheck, CircleX, CircleDashed } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -12,8 +14,9 @@ type AnswerStatus = 'correct' | 'incorrect' | 'unanswered';
 interface ReviewAnswer {
   index: number;
   question: string;
-  userAnswer: string | null;
-  correctAnswer: string;
+  options: string[];
+  selectedIndex: number | undefined;
+  correctIndex: number;
   status: AnswerStatus;
 }
 
@@ -42,6 +45,7 @@ export function ExamResultsModal({
   reviewAnswers,
   onStartNew,
 }: ExamResultsModalProps) {
+  const t = useTranslations('ExamResults');
   const passed = score >= passingScore;
   const [copied, setCopied] = useState(false);
   const [filter, setFilter] = useState<'all' | AnswerStatus>('all');
@@ -86,14 +90,20 @@ export function ExamResultsModal({
 
   const wrongCount = counts.incorrect + counts.unanswered;
 
+  const StatusIcon = ({ status }: { status: AnswerStatus }) => {
+    if (status === 'correct') return <CircleCheck className="w-4 h-4 text-green-600 shrink-0" />;
+    if (status === 'incorrect') return <CircleX className="w-4 h-4 text-red-600 shrink-0" />;
+    return <CircleDashed className="w-4 h-4 text-amber-600 shrink-0" />;
+  };
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[85vh] flex flex-col">
+      <DialogContent className="h-[75dvh] flex flex-col">
         {/* Header with Share button */}
         <DialogHeader className="flex-row items-start justify-between space-y-0 pb-2">
           <div>
-            <DialogTitle className="text-xl">Exam Results</DialogTitle>
-            <DialogDescription>Summary of your performance</DialogDescription>
+            <DialogTitle className="text-xl">{t('title')}</DialogTitle>
+            <DialogDescription>{t('subtitle')}</DialogDescription>
           </div>
           <Popover>
             <PopoverTrigger asChild>
@@ -103,16 +113,16 @@ export function ExamResultsModal({
                   "hover:bg-gray-100",
                   "focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                 )}
-                title="Share results"
+                title={t('share.title')}
               >
                 <Share2 className="w-5 h-5 text-muted-foreground" />
               </button>
             </PopoverTrigger>
             <PopoverContent align="end" className="w-80">
               <div className="space-y-2">
-                <h4 className="font-medium text-sm">Share this exam</h4>
+                <h4 className="font-medium text-sm">{t('share.title')}</h4>
                 <p className="text-xs text-muted-foreground">
-                  Copy this link to share your exact exam and answers.
+                  {t('share.description')}
                 </p>
                 <div className="flex items-center gap-2">
                   <input
@@ -130,7 +140,7 @@ export function ExamResultsModal({
                     )}
                   >
                     {copied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
-                    {copied ? "Copied" : "Copy"}
+                    {copied ? t('share.copied') : t('share.copy')}
                   </button>
                 </div>
               </div>
@@ -141,9 +151,9 @@ export function ExamResultsModal({
         {/* Tabs */}
         <Tabs defaultValue="summary" className="flex-1 flex flex-col min-h-0">
           <TabsList className="w-full grid grid-cols-2">
-            <TabsTrigger value="summary">Summary</TabsTrigger>
+            <TabsTrigger value="summary">{t('tabs.summary')}</TabsTrigger>
             <TabsTrigger value="review">
-              Review {wrongCount > 0 && (
+              {t('tabs.review')} {wrongCount > 0 && (
                 <span className="ml-1.5 px-1.5 py-0.5 text-xs rounded-full bg-red-100 text-red-700">
                   {wrongCount}
                 </span>
@@ -152,7 +162,7 @@ export function ExamResultsModal({
           </TabsList>
 
           {/* Summary Tab */}
-          <TabsContent value="summary" className="flex-1 overflow-auto">
+          <TabsContent value="summary" className="flex-1 overflow-auto min-h-0">
             {/* Hero Status Section */}
             <div className="flex flex-col items-center py-4">
               <div className={cn(
@@ -170,7 +180,7 @@ export function ExamResultsModal({
                 "mt-3 text-xl font-bold animate-score-pop",
                 passed ? "text-green-700" : "text-red-700"
               )}>
-                {passed ? "You Passed!" : "Not Passed"}
+                {passed ? t('status.passed') : t('status.failed')}
               </h2>
 
               <div className="mt-2 text-center animate-score-pop" style={{ animationDelay: '0.1s' }}>
@@ -183,12 +193,12 @@ export function ExamResultsModal({
             <div className="flex items-center justify-center gap-6 py-3 border-t border-b text-sm">
               <div className="flex items-center gap-1.5">
                 <Clock className="w-4 h-4 text-muted-foreground" />
-                <span className="text-muted-foreground">Remaining:</span>
+                <span className="text-muted-foreground">{t('time.remaining')}</span>
                 <span className="font-medium">{fmt(timeLeft)}</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <Clock className="w-4 h-4 text-muted-foreground" />
-                <span className="text-muted-foreground">Elapsed:</span>
+                <span className="text-muted-foreground">{t('time.elapsed')}</span>
                 <span className="font-medium">{fmt(totalSeconds - timeLeft)}</span>
               </div>
             </div>
@@ -196,7 +206,7 @@ export function ExamResultsModal({
             {/* Progress Bar */}
             <div className="py-4">
               <div className="mb-2 flex items-center justify-between text-sm text-muted-foreground">
-                <span>Progress</span>
+                <span>{t('progress.label')}</span>
                 <span>{progress}%</span>
               </div>
               <div className="relative h-3 rounded-full bg-gray-200 overflow-hidden">
@@ -210,12 +220,12 @@ export function ExamResultsModal({
                 <div
                   className="absolute top-0 h-full w-0.5 bg-green-700"
                   style={{ left: `${passThreshold}%` }}
-                  title={`Pass at ${passingScore} pts`}
+                  title={t('progress.pass', { score: passingScore })}
                 />
               </div>
               <div className="mt-1 flex items-center justify-between text-xs text-muted-foreground">
-                <span>Pass: {passingScore}</span>
-                <span>Perfect: {totalQuestions}</span>
+                <span>{t('progress.pass', { score: passingScore })}</span>
+                <span>{t('progress.perfect', { score: totalQuestions })}</span>
               </div>
             </div>
           </TabsContent>
@@ -223,7 +233,7 @@ export function ExamResultsModal({
           {/* Review Tab */}
           <TabsContent value="review" className="flex-1 flex flex-col min-h-0">
             {/* Filter selector */}
-            <div className="flex items-center gap-1 p-1 bg-muted rounded-lg">
+            <div className="flex items-center gap-1 p-1 bg-muted rounded-lg mt-2 shrink-0">
               <button
                 onClick={() => setFilter('all')}
                 className={cn(
@@ -233,7 +243,7 @@ export function ExamResultsModal({
                     : "text-muted-foreground hover:text-foreground"
                 )}
               >
-                All ({reviewAnswers.length})
+                {t('filter.all', { count: reviewAnswers.length })}
               </button>
               <button
                 onClick={() => setFilter('correct')}
@@ -274,52 +284,61 @@ export function ExamResultsModal({
             </div>
 
             {/* Answers list */}
-            <div className="flex-1 overflow-auto min-h-0">
+            <div className="flex-1 overflow-auto min-h-0 mt-2">
               {filteredAnswers.length === 0 ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
-                  <p className="text-sm text-muted-foreground">No questions match the selected filters.</p>
+                  <p className="text-sm text-muted-foreground">{t('review.empty')}</p>
                 </div>
               ) : (
-                <div className="space-y-2 py-2">
+                <Accordion type="single" collapsible className="space-y-1">
                   {filteredAnswers.map((item) => (
-                    <div
+                    <AccordionItem
                       key={item.index}
+                      value={`item-${item.index}`}
                       className={cn(
-                        "border rounded-md p-3",
+                        "border rounded-md px-3",
                         item.status === 'correct' && "bg-green-50 border-green-200",
                         item.status === 'incorrect' && "bg-red-50 border-red-200",
                         item.status === 'unanswered' && "bg-amber-50 border-amber-200"
                       )}
                     >
-                      <div className="flex items-start gap-2">
-                        {item.status === 'correct' && <CircleCheck className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />}
-                        {item.status === 'incorrect' && <CircleX className="w-4 h-4 text-red-600 mt-0.5 shrink-0" />}
-                        {item.status === 'unanswered' && <CircleDashed className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />}
-                        <div className="flex-1 min-w-0">
-                          <div className="text-sm text-foreground mb-1 font-medium">
+                      <AccordionTrigger className="py-2 hover:no-underline">
+                        <div className="flex items-center gap-2 text-left">
+                          <StatusIcon status={item.status} />
+                          <span className="text-sm font-medium">
                             {item.index + 1}. {item.question}
-                          </div>
-                          <div className="text-sm space-y-0.5">
-                            {item.status !== 'unanswered' && (
-                              <p>
-                                <span className="text-muted-foreground">Your answer:</span>{' '}
-                                <span className={item.status === 'correct' ? "text-green-600" : "text-red-600"}>
-                                  {item.userAnswer}
-                                </span>
-                              </p>
-                            )}
-                            {item.status !== 'correct' && (
-                              <p>
-                                <span className="text-muted-foreground">Correct:</span>{' '}
-                                <span className="text-green-600">{item.correctAnswer}</span>
-                              </p>
-                            )}
-                          </div>
+                          </span>
                         </div>
-                      </div>
-                    </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <div className="space-y-1 pt-1">
+                          {item.options.map((option, optIdx) => {
+                            const isSelected = item.selectedIndex === optIdx;
+                            const isCorrect = item.correctIndex === optIdx;
+                            return (
+                              <div
+                                key={optIdx}
+                                className={cn(
+                                  "flex items-center gap-2 px-2 py-1.5 rounded text-sm",
+                                  isCorrect && "bg-green-100 text-green-800",
+                                  isSelected && !isCorrect && "bg-red-100 text-red-800",
+                                  !isSelected && !isCorrect && "text-muted-foreground"
+                                )}
+                              >
+                                <span className="font-mono text-xs w-5">
+                                  {String.fromCharCode(65 + optIdx)}.
+                                </span>
+                                <span className="flex-1">{option}</span>
+                                {isCorrect && <CircleCheck className="w-4 h-4 text-green-600" />}
+                                {isSelected && !isCorrect && <CircleX className="w-4 h-4 text-red-600" />}
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
                   ))}
-                </div>
+                </Accordion>
               )}
             </div>
           </TabsContent>
@@ -336,7 +355,7 @@ export function ExamResultsModal({
               "focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
             )}
           >
-            Close
+            {t('buttons.close')}
           </button>
           <button
             onClick={onStartNew}
@@ -349,7 +368,7 @@ export function ExamResultsModal({
               "active:scale-[0.98]"
             )}
           >
-            Take Another Exam
+            {t('buttons.takeAnother')}
           </button>
         </DialogFooter>
       </DialogContent>

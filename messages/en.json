@@ -61,5 +61,57 @@
     },
     "badge": "CAT {id}",
     "empty": "No materials match this category yet."
+  },
+  "Exam": {
+    "loading": "Loading...",
+    "title": "Exam: {name}",
+    "categoryName": "Category {id}",
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page {current} / {total}",
+    "takeAnother": "Take Another",
+    "endQuiz": "End Quiz",
+    "score": "Score: {score} / {total}",
+    "questionId": "ID: {id}",
+    "correct": "Correct",
+    "incorrect": "Incorrect",
+    "unanswered": "Unanswered"
+  },
+  "ExamResults": {
+    "title": "Exam Results",
+    "subtitle": "Summary of your performance",
+    "share": {
+      "title": "Share this exam",
+      "description": "Copy this link to share your exact exam and answers.",
+      "copy": "Copy",
+      "copied": "Copied"
+    },
+    "tabs": {
+      "summary": "Summary",
+      "review": "Review"
+    },
+    "status": {
+      "passed": "You Passed!",
+      "failed": "Not Passed"
+    },
+    "time": {
+      "remaining": "Remaining:",
+      "elapsed": "Elapsed:"
+    },
+    "progress": {
+      "label": "Progress",
+      "pass": "Pass: {score}",
+      "perfect": "Perfect: {score}"
+    },
+    "filter": {
+      "all": "All ({count})"
+    },
+    "review": {
+      "empty": "No questions match the selected filters."
+    },
+    "buttons": {
+      "close": "Close",
+      "takeAnother": "Take Another Exam"
+    }
   }
 }

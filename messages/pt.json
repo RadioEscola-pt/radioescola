@@ -61,5 +61,57 @@
     },
     "badge": "CAT {id}",
     "empty": "Ainda não há materiais para esta categoria."
+  },
+  "Exam": {
+    "loading": "A carregar...",
+    "title": "Exame: {name}",
+    "categoryName": "Categoria {id}",
+    "previous": "Anterior",
+    "next": "Seguinte",
+    "page": "Página {current} / {total}",
+    "takeAnother": "Fazer Outro",
+    "endQuiz": "Terminar Exame",
+    "score": "Pontuação: {score} / {total}",
+    "questionId": "ID: {id}",
+    "correct": "Correto",
+    "incorrect": "Incorreto",
+    "unanswered": "Sem resposta"
+  },
+  "ExamResults": {
+    "title": "Resultados do Exame",
+    "subtitle": "Resumo do teu desempenho",
+    "share": {
+      "title": "Partilhar este exame",
+      "description": "Copia este link para partilhar o teu exame e respostas.",
+      "copy": "Copiar",
+      "copied": "Copiado"
+    },
+    "tabs": {
+      "summary": "Resumo",
+      "review": "Rever"
+    },
+    "status": {
+      "passed": "Aprovado!",
+      "failed": "Reprovado"
+    },
+    "time": {
+      "remaining": "Restante:",
+      "elapsed": "Decorrido:"
+    },
+    "progress": {
+      "label": "Progresso",
+      "pass": "Passar: {score}",
+      "perfect": "Perfeito: {score}"
+    },
+    "filter": {
+      "all": "Todas ({count})"
+    },
+    "review": {
+      "empty": "Nenhuma questão corresponde aos filtros selecionados."
+    },
+    "buttons": {
+      "close": "Fechar",
+      "takeAnother": "Fazer Outro Exame"
+    }
   }
 }

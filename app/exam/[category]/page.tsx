@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { Category } from '../../../lib/types';
 import { loadData } from '../../../lib/data';
 import ExamTimer from '../../../components/ExamTimer';
@@ -9,6 +10,7 @@ import { ExamResultsModal } from '../../../components/ExamResultsModal';
 export default function ExamPage() {
   const params = useParams();
   const searchParams = useSearchParams();
+  const t = useTranslations('Exam');
   const [timeLeft, setTimeLeft] = useState(3600);
   const [score, setScore] = useState(0);
   const [category, setCategory] = useState<Category | null>(null);
@@ -153,12 +155,12 @@ export default function ExamPage() {
   };
 
   if (!category) {
-    return <main className="p-8">Loading...</main>;
+    return <main className="p-8">{t('loading')}</main>;
   }
 
   return (
     <main className="p-8">
-      <h1 className="text-2xl font-bold mb-4">Exam: {category.name}</h1>
+      <h1 className="text-2xl font-bold mb-4">{t('title', { name: t('categoryName', { id: category.id }) })}</h1>
       <div className="flex items-center justify-between mb-2">
         <ExamTimer timeLeft={timeLeft} />
         <div className="flex items-center">
@@ -167,24 +169,24 @@ export default function ExamPage() {
             onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
             disabled={currentPage === 1}
           >
-            Previous
+            {t('previous')}
           </button>
           <button
             className="px-3 py-2 border rounded disabled:opacity-50"
             onClick={() => setCurrentPage((p) => Math.min(Math.ceil(category.questions.length / pageSize), p + 1))}
             disabled={currentPage >= Math.ceil(category.questions.length / pageSize)}
           >
-            Next
+            {t('next')}
           </button>
           <span className="ml-3 text-sm text-gray-600 mr-4">
-            Page {currentPage} / {Math.max(1, Math.ceil(category.questions.length / pageSize))}
+            {t('page', { current: currentPage, total: Math.max(1, Math.ceil(category.questions.length / pageSize)) })}
           </span>
           {quizEnded ? (
             <button
               className="px-4 py-2 bg-indigo-600 text-white rounded"
               onClick={startNewQuiz}
             >
-              Take Another
+              {t('takeAnother')}
             </button>
           ) : (
             <button
@@ -194,13 +196,13 @@ export default function ExamPage() {
                 setResultsOpen(true);
               }}
             >
-              End Quiz
+              {t('endQuiz')}
             </button>
           )}
         </div>
       </div>
       {quizEnded && (
-        <p className="mb-2 font-semibold">Score: {score} / {category.questions.length}</p>
+        <p className="mb-2 font-semibold">{t('score', { score, total: category.questions.length })}</p>
       )}
       <section className="mt-6 space-y-6">
         {category.questions
@@ -212,7 +214,7 @@ export default function ExamPage() {
           return (
             <div key={q.id} className="border rounded-md p-4">
               <h2 className="font-semibold mb-1">{(currentPage - 1) * pageSize + qi + 1}. {q.question}</h2>
-              <div className="text-xs text-gray-500 mb-2">ID: {q.id}</div>
+              <div className="text-xs text-gray-500 mb-2">{t('questionId', { id: q.id })}</div>
               <div className="grid gap-2">
                 {q.options.map((opt, oi) => {
                   const isSelected = selected === oi;
@@ -249,9 +251,9 @@ export default function ExamPage() {
               {quizEnded && (
                 <p className="mt-2 text-sm">
                   {selected === q.correctIndex ? (
-                    <span className="text-green-700">Correct</span>
+                    <span className="text-green-700">{t('correct')}</span>
                   ) : (
-                    <span className="text-red-700">{isAnswered ? 'Incorrect' : 'Unanswered'}</span>
+                    <span className="text-red-700">{isAnswered ? t('incorrect') : t('unanswered')}</span>
                   )}
                 </p>
               )}
@@ -288,8 +290,9 @@ export default function ExamPage() {
           return {
             index: idx,
             question: q.question,
-            userAnswer: sel !== undefined ? q.options[sel] : null,
-            correctAnswer: q.options[q.correctIndex],
+            options: q.options,
+            selectedIndex: sel,
+            correctIndex: q.correctIndex,
             status: status as 'correct' | 'incorrect' | 'unanswered',
           };
         })}
