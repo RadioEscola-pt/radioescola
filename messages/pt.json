@@ -16,7 +16,10 @@
     "about": "Sobre",
     "examTimer": "Cronómetro",
     "submitExam": "Enviar",
-    "submitExamDesc": "Enviar exame para o banco de questões"
+    "submitExamDesc": "Enviar exame para o banco de questões",
+    "menu": "Menu",
+    "studyAll": "Todos os Materiais",
+    "studyAllDesc": "Ver todos os materiais de estudo"
   },
   "Home": {
     "heroTitle": "Estudo para Rádio Amador",

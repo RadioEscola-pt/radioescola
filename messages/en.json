@@ -16,7 +16,10 @@
     "about": "About",
     "examTimer": "Exam Timer",
     "submitExam": "Submit",
-    "submitExamDesc": "Submit exam for question bank"
+    "submitExamDesc": "Submit exam for question bank",
+    "menu": "Menu",
+    "studyAll": "All Materials",
+    "studyAllDesc": "View all study materials"
   },
   "Home": {
     "heroTitle": "Ham Radio Study",
