@@ -4,7 +4,7 @@ import { useParams, useSearchParams } from 'next/navigation';
 import { Category } from '../../../lib/types';
 import { loadData } from '../../../lib/data';
 import ExamTimer from '../../../components/ExamTimer';
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '../../../components/ui/dialog';
+import { ExamResultsModal } from '../../../components/ExamResultsModal';
 
 export default function ExamPage() {
   const params = useParams();
@@ -19,11 +19,6 @@ export default function ExamPage() {
   const pageSize = 10;
   const totalSeconds = 3600;
 
-  const fmt = (s: number) => {
-    const m = Math.floor(s / 60);
-    const sec = s % 60;
-    return `${m}:${sec.toString().padStart(2, '0')}`;
-  };
   // Timer: countdown from initial time to 0; stops when quiz ends
   const timerRef = React.useRef<ReturnType<typeof setInterval> | null>(null);
   React.useEffect(() => {
@@ -264,151 +259,42 @@ export default function ExamPage() {
           );
         })}
       </section>
-      <Dialog open={resultsOpen} onOpenChange={(v) => setResultsOpen(v)}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Exam Results</DialogTitle>
-            <DialogDescription>Summary of your performance in this attempt.</DialogDescription>
-          </DialogHeader>
-          <div className="space-y-2">
-            <p><span className="font-medium">Points:</span> {score} / {category.questions.length}</p>
-            <p><span className="font-medium">Time Remaining:</span> {fmt(timeLeft)}</p>
-            <p><span className="font-medium">Time Elapsed:</span> {fmt(totalSeconds - timeLeft)}</p>
-            <p>
-              <span className="font-medium">Status:</span>{' '}
-              {score >= 20 ? (
-                <span className="text-green-700">Approved</span>
-              ) : (
-                <span className="text-red-700">Not Approved</span>
-              )}
-            </p>
-          </div>
-          {/* Shareable URL to revisit this exact exam */}
-          {(() => {
-            const buildUrl = () => {
-              try {
-                const origin = typeof window !== 'undefined' ? window.location.origin : '';
-                const catId = category.id;
-                const ids = category.questions.map((q) => q.id).join('-');
-                const ans = category.questions
-                  .map((q) => {
-                    const sel = answers[q.id];
-                    return sel === undefined ? 'x' : sel.toString(36);
-                  })
-                  .join('');
-                const t = timeLeft;
-                const url = `${origin}/exam/${encodeURIComponent(catId)}?q=${encodeURIComponent(ids)}&a=${encodeURIComponent(ans)}&t=${t}`;
-                return url;
-              } catch {
-                return '';
-              }
-            };
-            const url = buildUrl();
-            return (
-              <div className="mt-4">
-                <h4 className="font-semibold mb-2">Shareable Link</h4>
-                <div className="flex items-center gap-2">
-                  <input
-                    readOnly
-                    value={url}
-                    className="flex-1 px-3 py-2 border rounded font-mono text-xs"
-                  />
-                  <button
-                    className="px-3 py-2 border rounded"
-                    onClick={() => {
-                      if (url) navigator.clipboard?.writeText(url);
-                    }}
-                  >
-                    Copy
-                  </button>
-                </div>
-              </div>
-            );
-          })()}
-          {/* Progress toward pass and perfection */}
-          {(() => {
-            const total = category.questions.length || 1;
-            const passPoints = 20;
-            const maxPoints = total;
-            const raw = score / maxPoints;
-            const progress = Math.max(0, Math.min(1, raw));
-            const passPct = Math.min(100, Math.max(0, (passPoints / maxPoints) * 100));
-            const progPct = Math.round(progress * 100);
-            const needToPass = Math.max(0, passPoints - score);
-            const needForPerfect = Math.max(0, maxPoints - score);
-            return (
-              <div className="mt-4">
-                <div className="mb-1 flex items-center justify-between text-sm text-gray-600">
-                  <span>Progress to Pass</span>
-                  <span>{progPct}%</span>
-                </div>
-                <div className="relative h-3 rounded-full bg-gray-200 overflow-hidden">
-                  <div
-                    className="absolute left-0 top-0 h-full bg-indigo-500"
-                    style={{ width: `${progPct}%` }}
-                  />
-                  {/* Pass threshold marker */}
-                  <div
-                    className="absolute top-0 h-full border-l-2 border-green-500"
-                    style={{ left: `${passPct}%` }}
-                    aria-label="Pass threshold"
-                    title={`Pass at ${passPoints} pts`}
-                  />
-                  {/* Perfect marker */}
-                  <div
-                    className="absolute top-0 right-0 h-full border-r-2 border-amber-500"
-                    aria-label="Perfect score"
-                    title={`Perfect at ${maxPoints} pts`}
-                  />
-                </div>
-                <div className="mt-1 flex items-center justify-between text-xs text-gray-600">
-                  <span>Pass: {passPoints} pts</span>
-                  <span>Perfect: {maxPoints} pts</span>
-                </div>
-                <div className="mt-2 text-sm text-gray-700">
-                  {score >= passPoints ? (
-                    <span>You passed by {Math.max(0, score - passPoints).toFixed(2)} pts.</span>
-                  ) : (
-                    <span>{needToPass.toFixed(2)} pts needed to pass.</span>
-                  )}
-                  {needForPerfect > 0 && (
-                    <span className="ml-2">{needForPerfect.toFixed(2)} pts from perfect.</span>
-                  )}
-                </div>
-              </div>
-            );
-          })()}
-          <div className="mt-4">
-            <h4 className="font-semibold mb-2">Review Wrong Answers</h4>
-            <div className="space-y-3 max-h-64 overflow-auto pr-2">
-              {category.questions.filter(q => answers[q.id] !== q.correctIndex).length === 0 ? (
-                <p className="text-sm text-gray-600">Great job! No wrong answers to review.</p>
-              ) : (
-                category.questions.map((q, idx) => {
-                  const sel = answers[q.id];
-                  if (sel === q.correctIndex) return null;
-                  return (
-                    <div key={q.id} className="border rounded p-3">
-                      <div className="text-sm text-gray-700 mb-1">{idx + 1}. {q.question}</div>
-                      <div className="text-sm"><span className="font-medium">Your answer:</span> {sel !== undefined ? q.options[sel] : 'Unanswered'}</div>
-                      <div className="text-sm"><span className="font-medium">Correct answer:</span> <span className="text-green-700">{q.options[q.correctIndex]}</span></div>
-                    </div>
-                  );
-                })
-              )}
-            </div>
-          </div>
-          <DialogFooter>
-            <button className="px-4 py-2 border rounded" onClick={() => setResultsOpen(false)}>Close</button>
-            <button
-              className="px-4 py-2 bg-indigo-600 text-white rounded"
-              onClick={startNewQuiz}
-            >
-              Take Another
-            </button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+      <ExamResultsModal
+        open={resultsOpen}
+        onOpenChange={setResultsOpen}
+        score={score}
+        totalQuestions={category.questions.length}
+        timeLeft={timeLeft}
+        totalSeconds={totalSeconds}
+        passingScore={20}
+        shareableUrl={(() => {
+          try {
+            const origin = typeof window !== 'undefined' ? window.location.origin : '';
+            const ids = category.questions.map((q) => q.id).join('-');
+            const ans = category.questions
+              .map((q) => {
+                const sel = answers[q.id];
+                return sel === undefined ? 'x' : sel.toString(36);
+              })
+              .join('');
+            return `${origin}/exam/${encodeURIComponent(category.id)}?q=${encodeURIComponent(ids)}&a=${encodeURIComponent(ans)}&t=${timeLeft}`;
+          } catch {
+            return '';
+          }
+        })()}
+        reviewAnswers={category.questions.map((q, idx) => {
+          const sel = answers[q.id];
+          const status = sel === undefined ? 'unanswered' : sel === q.correctIndex ? 'correct' : 'incorrect';
+          return {
+            index: idx,
+            question: q.question,
+            userAnswer: sel !== undefined ? q.options[sel] : null,
+            correctAnswer: q.options[q.correctIndex],
+            status: status as 'correct' | 'incorrect' | 'unanswered',
+          };
+        })}
+        onStartNew={startNewQuiz}
+      />
       
     </main>
   );
