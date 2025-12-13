@@ -14,6 +14,7 @@
     "exams": "Exames",
     "calculators": "Calculadoras",
     "about": "Sobre",
+    "becomeHam": "Ser Radioamador",
     "examTimer": "Cronómetro",
     "submitExam": "Enviar",
     "submitExamDesc": "Enviar exame para o banco de questões",
@@ -324,5 +325,87 @@
       "close": "Fechar",
       "takeAnother": "Fazer Outro Exame"
     }
+  },
+  "BecomeHam": {
+    "title": "Como se tornar um radioamador",
+    "intro": "Em Portugal, o processo para se tornar um radioamador licenciado é regulado pela ANACOM (Autoridade Nacional de Comunicações) e envolve várias etapas e categorias. Este guia irá explicar o processo desde o início até à obtenção da licença mais avançada.",
+    "categoriesTitle": "Categorias de Radioamador",
+    "categoriesIntro": "Existem três categorias para novos radioamadores em Portugal, organizadas de forma progressiva:",
+    "category3": {
+      "name": "Categoria 3",
+      "age": "Idade mínima: 12 anos",
+      "experience": "Experiência: nenhuma",
+      "privileges": "Privilégios: muito limitados",
+      "exam": "Exame: básico",
+      "power": "Potência: Não pode transmitir*"
+    },
+    "category2": {
+      "name": "Categoria 2",
+      "age": "Idade mínima: 14 anos",
+      "experience": "Experiência: 2 anos Cat. 3",
+      "privileges": "Privilégios: expandidos",
+      "exam": "Exame: intermediário",
+      "power": "Potência: média"
+    },
+    "category1": {
+      "name": "Categoria 1",
+      "age": "Idade mínima: 16 anos",
+      "experience": "Experiência: 1 ano Cat. 2",
+      "privileges": "Privilégios: completos",
+      "exam": "Exame: avançado",
+      "power": "Potência: alta"
+    },
+    "licensingTitle": "Processo de Licenciamento",
+    "licensingIntro": "Para poder transmitir enquanto radioamador terá de ser portador de licença de amador de categoria 2 ou superior.* Para chegar a qualquer categoria terá sempre de fazer as categorias anteriores, e cumprir os seus tempos de progressão.",
+    "requirements": "Requisitos",
+    "examLabel": "Exame",
+    "examContentLabel": "Conteúdo do exame",
+    "approval": "Aprovação: Acertar pelo menos 50% das questões.",
+    "categoryDetail3": {
+      "title": "Categoria 3 (Entrada)",
+      "requirements": "Ter pelo menos 12 anos de idade.",
+      "examContent": "Realizar um exame teórico sobre regulamentação nacional e internacional, ética e procedimentos operacionais, e teoria básica de eletricidade e radioeletricidade.",
+      "examFormat": "40 perguntas de escolha múltipla."
+    },
+    "categoryDetail2": {
+      "title": "Categoria 2 (Intermédia)",
+      "requirements": "Ter licença de Categoria 3 há pelo menos dois anos. Ter pelo menos 14 anos de idade.",
+      "examContent": "Realizar um exame mais avançado que inclui tópicos da Categoria 3, além de conhecimentos técnicos mais aprofundados. Geralmente mais extenso e complexo que o da Categoria 3."
+    },
+    "categoryDetail1": {
+      "title": "Categoria 1 (Avançada)",
+      "requirements": "Ter licença de Categoria 2 há pelo menos um ano. Ter pelo menos 16 anos de idade.",
+      "examContent": "O mais completo e desafiador, cobrindo todos os aspectos do radioamadorismo em profundidade."
+    },
+    "waitTimesTitle": "Tempos de Espera e Progressão",
+    "waitTime32": "Entre a Categoria 3 e 2: Mínimo de 2 anos",
+    "waitTime21": "Entre a Categoria 2 e 1: Mínimo de 1 ano",
+    "waitTimesNote": "É importante notar que estes são os tempos mínimos. Muitos radioamadores optam por passar mais tempo em cada categoria para ganhar experiência e conhecimento antes de progredir.",
+    "examProcessTitle": "Processo de exame",
+    "examProcess": {
+      "registration": {
+        "title": "Inscrição na ANACOM",
+        "description": "Acede ao portal da ANACOM, preenche o formulário de inscrição e efetua o pagamento da taxa de exame. Receberás confirmação por email com a data e local do exame."
+      },
+      "preparation": {
+        "title": "Preparação para o exame",
+        "description": "Estuda o programa oficial usando os nossos materiais, simulações de exame e flashcards. Considera também participar em cursos de clubes de radioamadores locais."
+      },
+      "exam": {
+        "title": "Realização do exame",
+        "description": "Comparece no local designado pela ANACOM com documento de identificação. O exame é de escolha múltipla e tens tempo limitado para responder a todas as questões."
+      },
+      "results": {
+        "title": "Resultados e indicativo",
+        "description": "Os resultados são comunicados no próprio dia. Se aprovado, recebes o teu indicativo de chamada oficial e podes começar a operar de acordo com a tua categoria."
+      }
+    },
+    "maintenanceTitle": "Manutenção da Licença",
+    "maintenance": {
+      "annualRenewal": "Renovação anual da licença.",
+      "annualFees": "Pagamento de taxas anuais.",
+      "compliance": "Cumprimento das regulamentações e boas práticas do radioamadorismo."
+    },
+    "footnote": "Um radioamador categoria 3 poderá transmitir em nome de um radioamador licenciado de categoria 2 ou superior, nas bandas em que este pode operar, desde que esteja a operar a estação de amador do titular da licença e sob a sua supervisão direta."
   }
 }

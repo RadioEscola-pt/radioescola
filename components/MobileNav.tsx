@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Info, Calculator, Upload, Menu } from "lucide-react";
+import { Home, BookOpen, FileText, Info, Calculator, Upload, Menu, GraduationCap } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -228,10 +228,20 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
           <Link
             href="/about"
             onClick={closeMenu}
-            className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
+            className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
           >
             <Info className="h-4 w-4" />
             {t("about")}
+          </Link>
+
+          {/* Become Ham Link */}
+          <Link
+            href="/ser-radioamador"
+            onClick={closeMenu}
+            className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+          >
+            <GraduationCap className="h-4 w-4" />
+            {t("becomeHam")}
           </Link>
 
           {/* Language Switcher & Theme Toggle in Mobile */}

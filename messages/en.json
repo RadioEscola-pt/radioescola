@@ -14,6 +14,7 @@
     "exams": "Exams",
     "calculators": "Calculators",
     "about": "About",
+    "becomeHam": "Become Ham",
     "examTimer": "Exam Timer",
     "submitExam": "Submit",
     "submitExamDesc": "Submit exam for question bank",
@@ -324,5 +325,87 @@
       "close": "Close",
       "takeAnother": "Take Another Exam"
     }
+  },
+  "BecomeHam": {
+    "title": "How to become a ham radio operator",
+    "intro": "In Portugal, the process to become a licensed ham radio operator is regulated by ANACOM (National Communications Authority) and involves several steps and categories. This guide will explain the process from the beginning to obtaining the most advanced license.",
+    "categoriesTitle": "Ham Radio Categories",
+    "categoriesIntro": "There are three categories for new ham radio operators in Portugal, organized progressively:",
+    "category3": {
+      "name": "Category 3",
+      "age": "Minimum age: 12 years",
+      "experience": "Experience: none",
+      "privileges": "Privileges: very limited",
+      "exam": "Exam: basic",
+      "power": "Power: Cannot transmit*"
+    },
+    "category2": {
+      "name": "Category 2",
+      "age": "Minimum age: 14 years",
+      "experience": "Experience: 2 years Cat. 3",
+      "privileges": "Privileges: expanded",
+      "exam": "Exam: intermediate",
+      "power": "Power: medium"
+    },
+    "category1": {
+      "name": "Category 1",
+      "age": "Minimum age: 16 years",
+      "experience": "Experience: 1 year Cat. 2",
+      "privileges": "Privileges: full",
+      "exam": "Exam: advanced",
+      "power": "Power: high"
+    },
+    "licensingTitle": "Licensing Process",
+    "licensingIntro": "To transmit as a ham radio operator you must hold a category 2 or higher amateur license.* To reach any category you must always complete the previous categories and fulfill their progression times.",
+    "requirements": "Requirements",
+    "examLabel": "Exam",
+    "examContentLabel": "Exam content",
+    "approval": "Approval: Score at least 50% of the questions.",
+    "categoryDetail3": {
+      "title": "Category 3 (Entry)",
+      "requirements": "Be at least 12 years old.",
+      "examContent": "Take a theoretical exam on national and international regulations, ethics and operating procedures, and basic electricity and radio electricity theory.",
+      "examFormat": "40 multiple choice questions."
+    },
+    "categoryDetail2": {
+      "title": "Category 2 (Intermediate)",
+      "requirements": "Hold a Category 3 license for at least two years. Be at least 14 years old.",
+      "examContent": "Take a more advanced exam that includes Category 3 topics, plus more in-depth technical knowledge. Generally more extensive and complex than Category 3."
+    },
+    "categoryDetail1": {
+      "title": "Category 1 (Advanced)",
+      "requirements": "Hold a Category 2 license for at least one year. Be at least 16 years old.",
+      "examContent": "The most complete and challenging, covering all aspects of amateur radio in depth."
+    },
+    "waitTimesTitle": "Wait Times and Progression",
+    "waitTime32": "Between Category 3 and 2: Minimum of 2 years",
+    "waitTime21": "Between Category 2 and 1: Minimum of 1 year",
+    "waitTimesNote": "It's important to note that these are minimum times. Many ham radio operators choose to spend more time in each category to gain experience and knowledge before progressing.",
+    "examProcessTitle": "Exam Process",
+    "examProcess": {
+      "registration": {
+        "title": "Register with ANACOM",
+        "description": "Access the ANACOM portal, fill out the registration form and pay the exam fee. You'll receive email confirmation with the exam date and location."
+      },
+      "preparation": {
+        "title": "Prepare for the exam",
+        "description": "Study the official syllabus using our materials, exam simulations and flashcards. Also consider joining courses from local amateur radio clubs."
+      },
+      "exam": {
+        "title": "Take the exam",
+        "description": "Arrive at the ANACOM designated location with your ID document. The exam is multiple choice and you have limited time to answer all questions."
+      },
+      "results": {
+        "title": "Results and callsign",
+        "description": "Results are communicated on the same day. If approved, you receive your official callsign and can start operating according to your category."
+      }
+    },
+    "maintenanceTitle": "License Maintenance",
+    "maintenance": {
+      "annualRenewal": "Annual license renewal.",
+      "annualFees": "Payment of annual fees.",
+      "compliance": "Compliance with regulations and good practices of amateur radio."
+    },
+    "footnote": "A category 3 ham radio operator may transmit on behalf of a licensed category 2 or higher operator, on the bands they can operate, provided they are operating the license holder's amateur station and under their direct supervision."
   }
 }
