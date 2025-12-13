@@ -196,14 +196,14 @@ export default function ExamPage() {
           </span>
           {quizEnded ? (
             <button
-              className="px-4 py-2 bg-indigo-600 text-white rounded"
+              className="px-4 py-2 bg-brand-500 hover:bg-brand-600 text-white rounded transition-colors"
               onClick={startNewQuiz}
             >
               {t('takeAnother')}
             </button>
           ) : (
             <button
-              className="px-4 py-2 bg-indigo-600 text-white rounded"
+              className="px-4 py-2 bg-brand-500 hover:bg-brand-600 text-white rounded transition-colors"
               onClick={() => {
                 setQuizEnded(true);
                 setResultsOpen(true);
