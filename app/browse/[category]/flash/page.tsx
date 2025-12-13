@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, useCallback } from "react";
 import { useParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 import QuestionCard from "@/components/QuestionCard";
 import { Category } from "@/lib/types";
 import { loadData } from "@/lib/data";
@@ -48,6 +49,7 @@ export default function FlashBrowsePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [answeredCount, setAnsweredCount] = useState(0);
   const { openCalculator } = useCalculators();
+  const t = useTranslations("Browse");
 
   useEffect(() => {
     let active = true;
@@ -128,15 +130,15 @@ export default function FlashBrowsePage() {
   };
 
   if (isLoading) {
-    return <PageLoading message="Loading flashcards..." />;
+    return <PageLoading message={t("flashLoading")} />;
   }
 
   if (!category) {
     return (
       <main className="p-8">
-        <h1 className="text-2xl font-bold mb-2">Flashcards</h1>
+        <h1 className="text-2xl font-bold mb-2">{t("flashTitle", { id: catId })}</h1>
         <p className="text-gray-600">
-          We could not find category {catId}. Try choosing a category from the Browse menu.
+          {t("flashNotFound", { id: catId })}
         </p>
       </main>
     );
@@ -145,9 +147,9 @@ export default function FlashBrowsePage() {
   if (!currentQuestion) {
     return (
       <main className="p-8">
-        <h1 className="text-2xl font-bold mb-2">Flashcards {category.name}</h1>
+        <h1 className="text-2xl font-bold mb-2">{t("flashTitle", { id: catId })}</h1>
         <p className="text-gray-600">
-          There are no questions available for this category yet.
+          {t("flashNoQuestions")}
         </p>
       </main>
     );
@@ -159,12 +161,12 @@ export default function FlashBrowsePage() {
   return (
     <main className="p-8">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold">Flashcards {category.name}</h1>
+        <h1 className="text-2xl font-bold">{t("flashTitle", { id: catId })}</h1>
         <p className="text-sm text-gray-600">
-          Practice one random question at a time. Reviewed {answeredCount} so far.
+          {t("flashSubtitle", { count: answeredCount })}
         </p>
         <p className="text-xs text-gray-500 mt-1">
-          Card {sessionPosition} of {category.questions.length} in this round.
+          {t("flashCard", { position: sessionPosition, total: category.questions.length })}
         </p>
       </div>
 
@@ -186,7 +188,7 @@ export default function FlashBrowsePage() {
             onClick={handleNext}
             className="inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-white text-sm font-medium shadow hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
           >
-            Next question
+            {t("flashNext")}
           </button>
         </div>
       )}

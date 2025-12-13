@@ -107,17 +107,17 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="mt-10 rounded-2xl border bg-gradient-to-br from-indigo-50 to-purple-50 overflow-hidden">
+      <section className="mt-10 rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-orange-50 overflow-hidden">
         <div className="p-6 md:p-8">
           <div className="flex items-center gap-3">
-            <Radio className="h-6 w-6 text-indigo-600" aria-hidden />
+            <span className="text-2xl" aria-hidden>📻</span>
             <h2 className="text-2xl font-bold text-gray-900">{t("processHeading")}</h2>
           </div>
           <p className="mt-2 text-gray-700">{t("sectionSubtitle")}</p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {processSteps.map((step) => (
-              <div key={step.title} className="flex items-start gap-3 rounded-xl border bg-white/70 p-4 backdrop-blur">
+              <div key={step.title} className="flex items-start gap-3 rounded-xl border border-amber-200/50 bg-white/70 p-4 backdrop-blur">
                 <span
                   className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${step.iconClass}`}
                 >
@@ -132,7 +132,7 @@ export default async function HomePage() {
           </div>
 
           <div className="mt-5 flex items-start gap-2 text-sm text-gray-700">
-            <Building2 className="h-4 w-4 text-indigo-600 mt-0.5" aria-hidden />
+            <Building2 className="h-4 w-4 text-amber-600 mt-0.5" aria-hidden />
             <p>{t("tipText")}</p>
           </div>
 
@@ -141,7 +141,7 @@ export default async function HomePage() {
               href="https://www.anacom.pt"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg bg-white/80 border border-indigo-200 text-indigo-700 hover:bg-white"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg bg-white/80 border border-amber-300 text-amber-700 hover:bg-white"
             >
               {t("externalLinks.anacom")}
               <ExternalLink className="h-4 w-4" aria-hidden />
@@ -150,7 +150,7 @@ export default async function HomePage() {
               href="https://www.rep.pt"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg bg-white/80 border border-indigo-200 text-indigo-700 hover:bg-white"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg bg-white/80 border border-amber-300 text-amber-700 hover:bg-white"
             >
               {t("externalLinks.rep")}
               <ExternalLink className="h-4 w-4" aria-hidden />

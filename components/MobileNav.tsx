@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Radio, Info, Calculator, Upload, Menu } from "lucide-react";
+import { Home, BookOpen, FileText, Info, Calculator, Upload, Menu } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/accordion";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeToggle from "./ThemeToggle";
 import { useCalculators } from "@/components/providers/CalculatorProvider";
 import type { CalculatorCode } from "@/lib/types";
 
@@ -68,7 +69,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
       <SheetTrigger asChild className="md:hidden">
         <button
           type="button"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-700 hover:bg-slate-200 hover:text-slate-900"
           aria-label={t("menu")}
         >
           <Menu className="h-6 w-6" />
@@ -76,9 +77,9 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
       </SheetTrigger>
       <SheetContent side="right" className="w-[300px] overflow-y-auto">
         <SheetHeader className="text-left">
-          <SheetTitle className="flex items-center gap-2">
-            <Radio className="h-5 w-5" />
-            HamRadioStudy
+          <SheetTitle className="flex items-center gap-2 text-slate-800">
+            <span className="text-xl">📻</span>
+            Rádio Escola
           </SheetTitle>
         </SheetHeader>
 
@@ -87,7 +88,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
           <Link
             href="/"
             onClick={closeMenu}
-            className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent"
+            className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
           >
             <Home className="h-4 w-4" />
             {t("home")}
@@ -97,7 +98,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
           <Accordion type="multiple" className="w-full">
             {/* Study Accordion */}
             <AccordionItem value="study" className="border-none">
-              <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:no-underline">
+              <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:no-underline">
                 <span className="flex items-center gap-3">
                   <BookOpen className="h-4 w-4" />
                   {t("study")}
@@ -108,7 +109,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
                   <Link
                     href="/study"
                     onClick={closeMenu}
-                    className="flex flex-col rounded-md px-3 py-2 hover:bg-accent"
+                    className="flex flex-col rounded-md px-3 py-2 hover:bg-slate-100"
                   >
                     <span className="text-sm font-medium">{t("studyAll")}</span>
                     <span className="text-xs text-muted-foreground">{t("studyAllDesc")}</span>
@@ -118,7 +119,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
                       key={cat.id}
                       href={`/study?cat=${cat.id}`}
                       onClick={closeMenu}
-                      className="flex flex-col rounded-md px-3 py-2 hover:bg-accent"
+                      className="flex flex-col rounded-md px-3 py-2 hover:bg-slate-100"
                     >
                       <span className="text-sm font-medium">{cat.title}</span>
                       <span className="text-xs text-muted-foreground">{cat.description}</span>
@@ -130,7 +131,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
 
             {/* Browse Accordion */}
             <AccordionItem value="browse" className="border-none">
-              <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:no-underline">
+              <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:no-underline">
                 <span className="flex items-center gap-3">
                   <BookOpen className="h-4 w-4" />
                   {t("browse")}
@@ -143,7 +144,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
                       key={item.href}
                       href={item.href}
                       onClick={closeMenu}
-                      className="flex flex-col rounded-md px-3 py-2 hover:bg-accent"
+                      className="flex flex-col rounded-md px-3 py-2 hover:bg-slate-100"
                     >
                       <span className="text-sm font-medium">{item.title}</span>
                       <span className="text-xs text-muted-foreground">{item.description}</span>
@@ -155,7 +156,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
 
             {/* Exams Accordion */}
             <AccordionItem value="exams" className="border-none">
-              <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:no-underline">
+              <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:no-underline">
                 <span className="flex items-center gap-3">
                   <FileText className="h-4 w-4" />
                   {t("exams")}
@@ -168,7 +169,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
                       key={exam.href}
                       href={exam.href}
                       onClick={closeMenu}
-                      className="flex flex-col rounded-md px-3 py-2 hover:bg-accent"
+                      className="flex flex-col rounded-md px-3 py-2 hover:bg-slate-100"
                     >
                       <span className="text-sm font-medium">{exam.title}</span>
                       <span className="text-xs text-muted-foreground">{exam.description}</span>
@@ -178,7 +179,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
                   <Link
                     href="/submit-exam"
                     onClick={closeMenu}
-                    className="flex items-start gap-2 rounded-md px-3 py-2 hover:bg-accent"
+                    className="flex items-start gap-2 rounded-md px-3 py-2 hover:bg-slate-100"
                   >
                     <Upload className="h-4 w-4 mt-0.5 shrink-0" />
                     <div className="flex flex-col">
@@ -192,7 +193,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
 
             {/* Calculators Accordion */}
             <AccordionItem value="calculators" className="border-none">
-              <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:no-underline">
+              <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:no-underline">
                 <span className="flex items-center gap-3">
                   <Calculator className="h-4 w-4" />
                   {t("calculators")}
@@ -208,7 +209,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
                         key={calc.code}
                         type="button"
                         onClick={() => handleCalculatorClick(calc.code)}
-                        className="flex items-start gap-2 rounded-md px-3 py-2 text-left hover:bg-accent w-full"
+                        className="flex items-start gap-2 rounded-md px-3 py-2 text-left hover:bg-slate-100 w-full"
                       >
                         <Icon className="h-4 w-4 mt-0.5 shrink-0" />
                         <div className="flex flex-col">
@@ -227,14 +228,15 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
           <Link
             href="/about"
             onClick={closeMenu}
-            className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent"
+            className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
           >
             <Info className="h-4 w-4" />
             {t("about")}
           </Link>
 
-          {/* Language Switcher in Mobile */}
-          <div className="border-t pt-4 mt-2">
+          {/* Language Switcher & Theme Toggle in Mobile */}
+          <div className="border-t pt-4 mt-2 flex items-center gap-2">
+            <ThemeToggle />
             <LanguageSwitcher />
           </div>
         </nav>

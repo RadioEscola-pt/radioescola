@@ -21,6 +21,24 @@
     "studyAll": "Todos os Materiais",
     "studyAllDesc": "Ver todos os materiais de estudo"
   },
+  "Footer": {
+    "reportError": "Reportar Erro",
+    "sourceCode": "Código Fonte",
+    "telegram": "Telegram",
+    "app": "App",
+    "slogan": "Feito por radioamadores, para (futuros) radioamadores"
+  },
+  "Browse": {
+    "title": "Estudar Categoria {id}",
+    "loading": "A carregar questões...",
+    "flashTitle": "Flashcards Categoria {id}",
+    "flashLoading": "A carregar flashcards...",
+    "flashNotFound": "Não encontrámos a categoria {id}. Tenta escolher uma categoria no menu Explorar.",
+    "flashNoQuestions": "Ainda não há questões disponíveis para esta categoria.",
+    "flashSubtitle": "Pratica uma questão aleatória de cada vez. Já reviste {count}.",
+    "flashCard": "Cartão {position} de {total} nesta ronda.",
+    "flashNext": "Próxima questão"
+  },
   "Home": {
     "heroTitle": "Estudo para Rádio Amador",
     "heroSubtitle": "Pratica com questões reais, faz exames cronometrados e revê resultados. Escolhe uma categoria para começar.",
