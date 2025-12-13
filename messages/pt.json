@@ -359,22 +359,6 @@
     "examLabel": "Exame",
     "examContentLabel": "Conteúdo do exame",
     "approval": "Aprovação: Acertar pelo menos 50% das questões.",
-    "categoryDetail3": {
-      "title": "Categoria 3 (Entrada)",
-      "requirements": "Ter pelo menos 12 anos de idade.",
-      "examContent": "Realizar um exame teórico sobre regulamentação nacional e internacional, ética e procedimentos operacionais, e teoria básica de eletricidade e radioeletricidade.",
-      "examFormat": "40 perguntas de escolha múltipla."
-    },
-    "categoryDetail2": {
-      "title": "Categoria 2 (Intermédia)",
-      "requirements": "Ter licença de Categoria 3 há pelo menos dois anos. Ter pelo menos 14 anos de idade.",
-      "examContent": "Realizar um exame mais avançado que inclui tópicos da Categoria 3, além de conhecimentos técnicos mais aprofundados. Geralmente mais extenso e complexo que o da Categoria 3."
-    },
-    "categoryDetail1": {
-      "title": "Categoria 1 (Avançada)",
-      "requirements": "Ter licença de Categoria 2 há pelo menos um ano. Ter pelo menos 16 anos de idade.",
-      "examContent": "O mais completo e desafiador, cobrindo todos os aspectos do radioamadorismo em profundidade."
-    },
     "waitTimesTitle": "Tempos de Espera e Progressão",
     "progression": {
       "entry": "Entrada",
