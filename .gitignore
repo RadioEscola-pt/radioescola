@@ -38,3 +38,5 @@ npm-debug.log*
 
 # Package managers
 bun.lockb
+
+tsconfig.tsbuildinfo
