@@ -355,32 +355,19 @@
       "exam": "Exam: advanced",
       "power": "Power: high"
     },
-    "licensingTitle": "Licensing Process",
-    "licensingIntro": "To transmit as a ham radio operator you must hold a category 2 or higher amateur license.* To reach any category you must always complete the previous categories and fulfill their progression times.",
     "requirements": "Requirements",
     "examLabel": "Exam",
     "examContentLabel": "Exam content",
     "approval": "Approval: Score at least 50% of the questions.",
-    "categoryDetail3": {
-      "title": "Category 3 (Entry)",
-      "requirements": "Be at least 12 years old.",
-      "examContent": "Take a theoretical exam on national and international regulations, ethics and operating procedures, and basic electricity and radio electricity theory.",
-      "examFormat": "40 multiple choice questions."
-    },
-    "categoryDetail2": {
-      "title": "Category 2 (Intermediate)",
-      "requirements": "Hold a Category 3 license for at least two years. Be at least 14 years old.",
-      "examContent": "Take a more advanced exam that includes Category 3 topics, plus more in-depth technical knowledge. Generally more extensive and complex than Category 3."
-    },
-    "categoryDetail1": {
-      "title": "Category 1 (Advanced)",
-      "requirements": "Hold a Category 2 license for at least one year. Be at least 16 years old.",
-      "examContent": "The most complete and challenging, covering all aspects of amateur radio in depth."
-    },
     "waitTimesTitle": "Wait Times and Progression",
-    "waitTime32": "Between Category 3 and 2: Minimum of 2 years",
-    "waitTime21": "Between Category 2 and 1: Minimum of 1 year",
-    "waitTimesNote": "It's important to note that these are minimum times. Many ham radio operators choose to spend more time in each category to gain experience and knowledge before progressing.",
+    "progression": {
+      "entry": "Entry",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced",
+      "twoYears": "2 years",
+      "oneYear": "1 year"
+    },
+    "waitTimesNote": "These are minimum wait times. Many ham radio operators choose to spend more time in each category to gain experience before progressing.",
     "examProcessTitle": "Exam Process",
     "examProcess": {
       "registration": {

@@ -355,8 +355,6 @@
       "exam": "Exame: avançado",
       "power": "Potência: alta"
     },
-    "licensingTitle": "Processo de Licenciamento",
-    "licensingIntro": "Para poder transmitir enquanto radioamador terá de ser portador de licença de amador de categoria 2 ou superior.* Para chegar a qualquer categoria terá sempre de fazer as categorias anteriores, e cumprir os seus tempos de progressão.",
     "requirements": "Requisitos",
     "examLabel": "Exame",
     "examContentLabel": "Conteúdo do exame",
@@ -378,9 +376,14 @@
       "examContent": "O mais completo e desafiador, cobrindo todos os aspectos do radioamadorismo em profundidade."
     },
     "waitTimesTitle": "Tempos de Espera e Progressão",
-    "waitTime32": "Entre a Categoria 3 e 2: Mínimo de 2 anos",
-    "waitTime21": "Entre a Categoria 2 e 1: Mínimo de 1 ano",
-    "waitTimesNote": "É importante notar que estes são os tempos mínimos. Muitos radioamadores optam por passar mais tempo em cada categoria para ganhar experiência e conhecimento antes de progredir.",
+    "progression": {
+      "entry": "Entrada",
+      "intermediate": "Intermédio",
+      "advanced": "Avançado",
+      "twoYears": "2 anos",
+      "oneYear": "1 ano"
+    },
+    "waitTimesNote": "Estes são os tempos mínimos de espera. Muitos radioamadores optam por passar mais tempo em cada categoria para ganhar experiência antes de progredir.",
     "examProcessTitle": "Processo de exame",
     "examProcess": {
       "registration": {
