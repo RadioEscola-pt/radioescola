@@ -14,7 +14,9 @@
     "exams": "Exames",
     "calculators": "Calculadoras",
     "about": "Sobre",
-    "examTimer": "Cronómetro"
+    "examTimer": "Cronómetro",
+    "submitExam": "Enviar",
+    "submitExamDesc": "Enviar exame para o banco de questões"
   },
   "Home": {
     "heroTitle": "Estudo para Rádio Amador",
@@ -220,6 +222,54 @@
     "unanswered": "Sem resposta",
     "relatedTutorial": "Tutorial relacionado:",
     "officialSource": "Fonte oficial:"
+  },
+  "SubmitExam": {
+    "title": "Enviar Exame",
+    "subtitle": "Ajuda a expandir o banco de questões enviando fotos ou PDFs de exames",
+    "capture": {
+      "title": "Adicionar Páginas",
+      "takePhoto": "Tirar Foto",
+      "uploadFiles": "Carregar Ficheiros",
+      "dragDrop": "ou arrasta e larga aqui",
+      "acceptedFormats": "JPG, PNG, PDF aceites"
+    },
+    "pages": {
+      "title": "Páginas ({count})",
+      "empty": "Nenhuma página adicionada",
+      "reorderHint": "Arrasta para reordenar",
+      "rotate": "Rodar",
+      "delete": "Apagar",
+      "preview": "Pré-visualizar"
+    },
+    "tips": {
+      "title": "Dicas para Boas Fotos",
+      "lighting": "Usa boa iluminação uniforme",
+      "flat": "Coloca o exame numa superfície plana",
+      "focus": "Certifica-te que o texto está focado",
+      "margins": "Inclui todas as margens",
+      "angle": "Captura de frente, não em ângulo"
+    },
+    "form": {
+      "category": "Categoria",
+      "categoryPlaceholder": "Seleciona categoria...",
+      "year": "Ano (opcional)",
+      "yearPlaceholder": "ex., 2024",
+      "source": "Fonte (opcional)",
+      "sourcePlaceholder": "ex., Exame oficial ANACOM"
+    },
+    "submit": {
+      "button": "Enviar Exame",
+      "sending": "A enviar...",
+      "success": "Exame enviado com sucesso!",
+      "successDesc": "Obrigado por contribuíres para o banco de questões.",
+      "error": "Falha ao enviar exame",
+      "retry": "Tentar novamente"
+    },
+    "progress": {
+      "preparing": "A preparar imagens...",
+      "generating": "A gerar PDF...",
+      "uploading": "A enviar email..."
+    }
   },
   "ExamResults": {
     "title": "Resultados do Exame",

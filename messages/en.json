@@ -14,7 +14,9 @@
     "exams": "Exams",
     "calculators": "Calculators",
     "about": "About",
-    "examTimer": "Exam Timer"
+    "examTimer": "Exam Timer",
+    "submitExam": "Submit",
+    "submitExamDesc": "Submit exam for question bank"
   },
   "Home": {
     "heroTitle": "Ham Radio Study",
@@ -220,6 +222,54 @@
     "unanswered": "Unanswered",
     "relatedTutorial": "Related tutorial:",
     "officialSource": "Official source:"
+  },
+  "SubmitExam": {
+    "title": "Submit Exam",
+    "subtitle": "Help expand the question bank by submitting exam photos or PDFs",
+    "capture": {
+      "title": "Add Pages",
+      "takePhoto": "Take Photo",
+      "uploadFiles": "Upload Files",
+      "dragDrop": "or drag and drop here",
+      "acceptedFormats": "JPG, PNG, PDF accepted"
+    },
+    "pages": {
+      "title": "Pages ({count})",
+      "empty": "No pages added yet",
+      "reorderHint": "Drag to reorder pages",
+      "rotate": "Rotate",
+      "delete": "Delete",
+      "preview": "Preview"
+    },
+    "tips": {
+      "title": "Tips for Good Photos",
+      "lighting": "Use good, even lighting",
+      "flat": "Place exam flat on a surface",
+      "focus": "Ensure text is in focus",
+      "margins": "Include all margins",
+      "angle": "Capture straight-on, not at an angle"
+    },
+    "form": {
+      "category": "Category",
+      "categoryPlaceholder": "Select category...",
+      "year": "Year (optional)",
+      "yearPlaceholder": "e.g., 2024",
+      "source": "Source (optional)",
+      "sourcePlaceholder": "e.g., ANACOM official exam"
+    },
+    "submit": {
+      "button": "Submit Exam",
+      "sending": "Sending...",
+      "success": "Exam submitted successfully!",
+      "successDesc": "Thank you for contributing to the question bank.",
+      "error": "Failed to submit exam",
+      "retry": "Retry"
+    },
+    "progress": {
+      "preparing": "Preparing images...",
+      "generating": "Generating PDF...",
+      "uploading": "Sending email..."
+    }
   },
   "ExamResults": {
     "title": "Exam Results",

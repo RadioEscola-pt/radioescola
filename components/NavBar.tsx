@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Radio, Info, Calculator, ChevronDown } from "lucide-react";
+import { Home, BookOpen, FileText, Radio, Info, Calculator, ChevronDown, Upload } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTranslations } from "next-intl";
@@ -109,6 +110,18 @@ export default function NavBar() {
                   </Link>
                 </DropdownMenuItem>
               ))}
+              <DropdownMenuSeparator />
+              <DropdownMenuItem asChild>
+                <Link href="/submit-exam" className="cursor-pointer">
+                  <div className="flex items-start gap-2">
+                    <Upload className="h-4 w-4 mt-0.5 shrink-0" />
+                    <div className="flex flex-col">
+                      <span className="font-medium">{t("submitExam")}</span>
+                      <span className="text-xs text-muted-foreground">{t("submitExamDesc")}</span>
+                    </div>
+                  </div>
+                </Link>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 

@@ -28,3 +28,6 @@ export interface Data {
 
 // Calculator types
 export * from "./calculator";
+
+// Submit exam types
+export * from "./submit-exam";
