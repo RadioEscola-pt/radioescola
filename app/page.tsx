@@ -37,13 +37,21 @@ export default async function HomePage() {
 
   return (
     <main className="p-8">
-      <section className="rounded-xl bg-gradient-to-r from-indigo-50 to-purple-50 border mb-8">
-        <div className="px-6 py-10">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">{t("heroTitle")}</h1>
-          <p className="mt-3 text-gray-700 max-w-2xl">{t("heroSubtitle")}</p>
+      <section className="relative rounded-xl overflow-hidden mb-8">
+        <div
+          className="absolute inset-0 bg-cover bg-center blur-[2px] scale-105"
+          style={{ backgroundImage: "url('https://www.radioescola.pt/images/header2.jpg')" }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(to right, rgba(180, 83, 9, 0.9), rgba(247, 149, 22, 0.8))" }}
+        />
+        <div className="relative px-6 py-12 md:py-16">
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-white drop-shadow-md">{t("heroTitle")}</h1>
+          <p className="mt-3 text-white/90 max-w-2xl drop-shadow-sm">{t("heroSubtitle")}</p>
           <div className="mt-6 flex items-center gap-3">
-            <Link href="/exam/3" className={`px-4 py-2 rounded ${defaultStyle.solidBtn}`}>{t("ctaExam")}</Link>
-            <Link href="/browse/3" className={`px-4 py-2 rounded border ${defaultStyle.outlineBtn}`}>{t("ctaBrowse")}</Link>
+            <Link href="/exam/3" className="px-4 py-2 rounded bg-white text-amber-700 font-medium hover:bg-amber-50 transition-colors shadow-md">{t("ctaExam")}</Link>
+            <Link href="/browse/3" className="px-4 py-2 rounded border-2 border-white text-white font-medium hover:bg-white/10 transition-colors">{t("ctaBrowse")}</Link>
           </div>
         </div>
       </section>

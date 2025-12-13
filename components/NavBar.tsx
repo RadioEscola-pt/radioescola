@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Radio, Info, Calculator, ChevronDown, Upload, Menu } from "lucide-react";
+import { Home, BookOpen, FileText, Radio, Info, Calculator, ChevronDown, Upload } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,21 +9,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
+import MobileNav from "./MobileNav";
 import { useCalculators } from "@/components/providers/CalculatorProvider";
 import type { CalculatorCode } from "@/lib/types";
 
@@ -64,13 +52,6 @@ export default function NavBar() {
     openCalculator(code);
   };
 
-  const closeMobileMenu = () => setMobileMenuOpen(false);
-
-  const handleMobileCalculatorClick = (code: CalculatorCode) => {
-    openCalculator(code);
-    closeMobileMenu();
-  };
-
   return (
     <header className="sticky top-0 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center justify-between px-4">
@@ -78,6 +59,8 @@ export default function NavBar() {
           <Radio className="h-6 w-6" />
           HamRadioStudy
         </Link>
+
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-1">
           <Link
             href="/"
@@ -191,182 +174,7 @@ export default function NavBar() {
         </div>
 
         {/* Mobile Menu */}
-        <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <button
-              type="button"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground"
-              aria-label={t("menu")}
-            >
-              <Menu className="h-6 w-6" />
-            </button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] overflow-y-auto">
-            <SheetHeader className="text-left">
-              <SheetTitle className="flex items-center gap-2">
-                <Radio className="h-5 w-5" />
-                HamRadioStudy
-              </SheetTitle>
-            </SheetHeader>
-
-            <nav className="flex flex-col gap-1 mt-6">
-              {/* Home Link */}
-              <Link
-                href="/"
-                onClick={closeMobileMenu}
-                className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent"
-              >
-                <Home className="h-4 w-4" />
-                {t("home")}
-              </Link>
-
-              {/* Accordion for nested items */}
-              <Accordion type="multiple" className="w-full">
-                {/* Study Accordion */}
-                <AccordionItem value="study" className="border-none">
-                  <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:no-underline">
-                    <span className="flex items-center gap-3">
-                      <BookOpen className="h-4 w-4" />
-                      {t("study")}
-                    </span>
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-0 pt-1">
-                    <div className="flex flex-col gap-1 pl-7">
-                      <Link
-                        href="/study"
-                        onClick={closeMobileMenu}
-                        className="flex flex-col rounded-md px-3 py-2 hover:bg-accent"
-                      >
-                        <span className="text-sm font-medium">{t("studyAll")}</span>
-                        <span className="text-xs text-muted-foreground">{t("studyAllDesc")}</span>
-                      </Link>
-                      {categories.map((cat) => (
-                        <Link
-                          key={cat.id}
-                          href={`/study?cat=${cat.id}`}
-                          onClick={closeMobileMenu}
-                          className="flex flex-col rounded-md px-3 py-2 hover:bg-accent"
-                        >
-                          <span className="text-sm font-medium">{cat.title}</span>
-                          <span className="text-xs text-muted-foreground">{cat.description}</span>
-                        </Link>
-                      ))}
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-
-                {/* Browse Accordion */}
-                <AccordionItem value="browse" className="border-none">
-                  <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:no-underline">
-                    <span className="flex items-center gap-3">
-                      <BookOpen className="h-4 w-4" />
-                      {t("browse")}
-                    </span>
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-0 pt-1">
-                    <div className="flex flex-col gap-1 pl-7">
-                      {browse.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          onClick={closeMobileMenu}
-                          className="flex flex-col rounded-md px-3 py-2 hover:bg-accent"
-                        >
-                          <span className="text-sm font-medium">{item.title}</span>
-                          <span className="text-xs text-muted-foreground">{item.description}</span>
-                        </Link>
-                      ))}
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-
-                {/* Exams Accordion */}
-                <AccordionItem value="exams" className="border-none">
-                  <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:no-underline">
-                    <span className="flex items-center gap-3">
-                      <FileText className="h-4 w-4" />
-                      {t("exams")}
-                    </span>
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-0 pt-1">
-                    <div className="flex flex-col gap-1 pl-7">
-                      {exams.map((exam) => (
-                        <Link
-                          key={exam.href}
-                          href={exam.href}
-                          onClick={closeMobileMenu}
-                          className="flex flex-col rounded-md px-3 py-2 hover:bg-accent"
-                        >
-                          <span className="text-sm font-medium">{exam.title}</span>
-                          <span className="text-xs text-muted-foreground">{exam.description}</span>
-                        </Link>
-                      ))}
-                      <div className="border-t my-1" />
-                      <Link
-                        href="/submit-exam"
-                        onClick={closeMobileMenu}
-                        className="flex items-start gap-2 rounded-md px-3 py-2 hover:bg-accent"
-                      >
-                        <Upload className="h-4 w-4 mt-0.5 shrink-0" />
-                        <div className="flex flex-col">
-                          <span className="text-sm font-medium">{t("submitExam")}</span>
-                          <span className="text-xs text-muted-foreground">{t("submitExamDesc")}</span>
-                        </div>
-                      </Link>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-
-                {/* Calculators Accordion */}
-                <AccordionItem value="calculators" className="border-none">
-                  <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:no-underline">
-                    <span className="flex items-center gap-3">
-                      <Calculator className="h-4 w-4" />
-                      {t("calculators")}
-                    </span>
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-0 pt-1">
-                    <div className="flex flex-col gap-1 pl-7">
-                      {calculators.map((calc) => {
-                        const Icon = calc.icon;
-                        const key = calc.translationKey;
-                        return (
-                          <button
-                            key={calc.code}
-                            type="button"
-                            onClick={() => handleMobileCalculatorClick(calc.code)}
-                            className="flex items-start gap-2 rounded-md px-3 py-2 text-left hover:bg-accent w-full"
-                          >
-                            <Icon className="h-4 w-4 mt-0.5 shrink-0" />
-                            <div className="flex flex-col">
-                              <span className="text-sm font-medium">{tc(`${key}.shortTitle`)}</span>
-                              <span className="text-xs text-muted-foreground">{tc(`${key}.description`)}</span>
-                            </div>
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-
-              {/* About Link */}
-              <Link
-                href="/about"
-                onClick={closeMobileMenu}
-                className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent"
-              >
-                <Info className="h-4 w-4" />
-                {t("about")}
-              </Link>
-
-              {/* Language Switcher in Mobile */}
-              <div className="border-t pt-4 mt-2">
-                <LanguageSwitcher />
-              </div>
-            </nav>
-          </SheetContent>
-        </Sheet>
+        <MobileNav open={mobileMenuOpen} onOpenChange={setMobileMenuOpen} />
       </div>
     </header>
   );
