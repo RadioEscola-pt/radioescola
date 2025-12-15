@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl';
 import { Category } from '@/lib/types';
 import { loadData } from '@/lib/data';
 import { EXAM_CONFIG, DEFAULT_CATEGORY } from '@/lib/config';
-import ExamTimer from '@/components/ExamTimer';
 import { ExamResultsModal } from '@/components/ExamResultsModal';
 import { PageLoading } from '@/components/shared/Loading';
 
@@ -171,39 +170,47 @@ export default function ExamPage() {
     return <PageLoading message={t('loading')} />;
   }
 
+  const totalPages = Math.max(1, Math.ceil(category.questions.length / QUESTIONS_PER_PAGE));
+  const answeredCount = Object.keys(answers).length;
+
   return (
-    <main className="p-8">
-      <h1 className="text-2xl font-bold mb-4">{t('title', { name: t('categoryName', { id: category.id }) })}</h1>
-      <div className="flex items-center justify-between mb-2">
-        <ExamTimer timeLeft={timeLeft} />
-        <div className="flex items-center">
-          <button
-            className="px-3 py-2 border rounded disabled:opacity-50 mr-2"
-            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-            disabled={currentPage === 1}
-          >
-            {t('previous')}
-          </button>
-          <button
-            className="px-3 py-2 border rounded disabled:opacity-50"
-            onClick={() => setCurrentPage((p) => Math.min(Math.ceil(category.questions.length / QUESTIONS_PER_PAGE), p + 1))}
-            disabled={currentPage >= Math.ceil(category.questions.length / QUESTIONS_PER_PAGE)}
-          >
-            {t('next')}
-          </button>
-          <span className="ml-3 text-sm text-gray-600 mr-4">
-            {t('page', { current: currentPage, total: Math.max(1, Math.ceil(category.questions.length / QUESTIONS_PER_PAGE)) })}
-          </span>
+    <main className="-mx-4 sm:mx-0 pb-8">
+      {/* Sticky header with timer and controls */}
+      <div className="sticky top-0 z-10 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 px-4 py-3 mb-4">
+        <div className="flex items-center justify-between gap-2">
+          {/* Timer */}
+          <div className={`font-mono text-lg px-3 py-1.5 rounded-lg font-semibold ${
+            timeLeft <= 60
+              ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
+              : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200'
+          }`}>
+            {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+          </div>
+
+          {/* Progress indicator - mobile */}
+          <div className="flex-1 mx-2 sm:hidden">
+            <div className="text-xs text-slate-500 dark:text-slate-400 text-center mb-1">
+              {answeredCount}/{category.questions.length}
+            </div>
+            <div className="h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-amber-500 transition-all duration-300"
+                style={{ width: `${(answeredCount / category.questions.length) * 100}%` }}
+              />
+            </div>
+          </div>
+
+          {/* End/New quiz button */}
           {quizEnded ? (
             <button
-              className="px-4 py-2 bg-brand-500 hover:bg-brand-600 text-white rounded transition-colors"
+              className="px-3 py-1.5 bg-amber-500 hover:bg-amber-600 text-slate-900 text-sm font-medium rounded-lg transition-colors"
               onClick={startNewQuiz}
             >
               {t('takeAnother')}
             </button>
           ) : (
             <button
-              className="px-4 py-2 bg-brand-500 hover:bg-brand-600 text-white rounded transition-colors"
+              className="px-3 py-1.5 bg-amber-500 hover:bg-amber-600 text-slate-900 text-sm font-medium rounded-lg transition-colors"
               onClick={() => {
                 setQuizEnded(true);
                 setResultsOpen(true);
@@ -213,24 +220,64 @@ export default function ExamPage() {
             </button>
           )}
         </div>
+
+        {/* Score display when quiz ended */}
+        {quizEnded && (
+          <div className="mt-2 text-center">
+            <span className={`text-sm font-semibold px-3 py-1 rounded-full ${
+              score >= category.questions.length * PASSING_SCORE
+                ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                : 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
+            }`}>
+              {t('score', { score: score.toFixed(1), total: category.questions.length })}
+            </span>
+          </div>
+        )}
       </div>
-      {quizEnded && (
-        <p className="mb-2 font-semibold">{t('score', { score, total: category.questions.length })}</p>
-      )}
-      <section className="mt-6 space-y-6">
+
+      {/* Title - hidden on mobile, shown on larger screens */}
+      <h1 className="hidden sm:block text-2xl font-bold mb-4 px-4 sm:px-0">
+        {t('title', { name: t('categoryName', { id: category.id }) })}
+      </h1>
+
+      {/* Questions */}
+      <section className="sm:px-0">
         {category.questions
           .slice((currentPage - 1) * QUESTIONS_PER_PAGE, currentPage * QUESTIONS_PER_PAGE)
           .map((q, qi) => {
           const selected = answers[q.id];
           const isAnswered = selected !== undefined;
           const timeUp = timeLeft <= 0;
+          const questionNumber = (currentPage - 1) * QUESTIONS_PER_PAGE + qi + 1;
           return (
-            <div key={q.id} className="border rounded-md p-4">
-              <h2 className="font-semibold mb-1">{(currentPage - 1) * QUESTIONS_PER_PAGE + qi + 1}. {q.question}</h2>
-              <div className="text-xs text-gray-500 mb-2">{t('questionId', { id: q.id })}</div>
-              <div className="grid gap-2">
+            <div key={q.id} className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 sm:border sm:rounded-xl sm:mb-4 p-4">
+              <p className="text-slate-900 dark:text-slate-100 mb-3">
+                <span className="font-semibold text-amber-600 dark:text-amber-500 mr-2">{questionNumber}.</span>
+                {q.question}
+              </p>
+
+              {q.img && (
+                <div className="mb-3">
+                  <img src={q.img} alt="" className="w-full rounded-lg border border-slate-200 dark:border-slate-700" />
+                </div>
+              )}
+
+              <div className="space-y-2">
                 {q.options.map((opt, oi) => {
                   const isSelected = selected === oi;
+                  const isCorrect = oi === q.correctIndex;
+                  let optionStyles = 'bg-slate-100 dark:bg-slate-700 border-transparent hover:bg-slate-200 dark:hover:bg-slate-600 hover:border-slate-300 dark:hover:border-slate-500';
+
+                  if (quizEnded) {
+                    if (isCorrect) {
+                      optionStyles = 'bg-green-200 dark:bg-green-800/60 border-green-500';
+                    } else if (isSelected) {
+                      optionStyles = 'bg-red-200 dark:bg-red-800/60 border-red-500';
+                    }
+                  } else if (isSelected) {
+                    optionStyles = 'bg-amber-200 dark:bg-amber-700/60 border-amber-500';
+                  }
+
                   return (
                     <button
                       key={oi}
@@ -239,41 +286,48 @@ export default function ExamPage() {
                       onClick={() => {
                         setAnswers(prev => ({ ...prev, [q.id]: oi }));
                       }}
-                      className={[
-                        'text-left border rounded px-3 py-2 transition-colors',
-                        quizEnded
-                          ? (oi === q.correctIndex
-                              ? (isSelected ? 'bg-green-100 border-green-400' : 'bg-white border-green-300')
-                              : (isSelected ? 'bg-red-100 border-red-400' : 'bg-white border-gray-200'))
-                          : (isAnswered
-                              ? (isSelected ? 'bg-blue-100 border-blue-300' : 'bg-white border-gray-200 opacity-70')
-                              : 'hover:bg-gray-50 border-gray-200')
-                      ].join(' ')}
+                      className={`w-full text-left border-l-4 rounded px-3 py-2 transition-all ${optionStyles} disabled:cursor-default flex items-start gap-3`}
                     >
-                      <span className="mr-2 font-mono">{String.fromCharCode(65 + oi)}.</span>
-                      {opt}
+                      <span className="flex-shrink-0 w-6 h-6 rounded bg-white/50 dark:bg-slate-600 flex items-center justify-center text-xs font-bold text-slate-600 dark:text-slate-300">
+                        {String.fromCharCode(65 + oi)}
+                      </span>
+                      <span className="text-slate-700 dark:text-slate-200 text-sm pt-0.5">{opt}</span>
                     </button>
                   );
                 })}
               </div>
-              {q.img && (
-                <div className="mt-3">
-                  <img src={q.img} alt={q.question} className="max-h-64 rounded border" />
-                </div>
-              )}
-              {quizEnded && (
-                <p className="mt-2 text-sm">
-                  {selected === q.correctIndex ? (
-                    <span className="text-green-700">{t('correct')}</span>
-                  ) : (
-                    <span className="text-red-700">{isAnswered ? t('incorrect') : t('unanswered')}</span>
-                  )}
-                </p>
-              )}
             </div>
           );
         })}
       </section>
+
+      {/* Bottom navigation - fixed on mobile */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 p-3 sm:relative sm:mt-6 sm:border-t-0 sm:bg-transparent sm:p-0">
+        <div className="flex items-center justify-between gap-2 max-w-5xl mx-auto">
+          <button
+            className="flex-1 sm:flex-none px-4 py-2.5 border border-slate-300 dark:border-slate-600 rounded-lg disabled:opacity-40 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+            disabled={currentPage === 1}
+          >
+            {t('previous')}
+          </button>
+
+          <span className="text-sm text-slate-600 dark:text-slate-400 font-medium">
+            {currentPage} / {totalPages}
+          </span>
+
+          <button
+            className="flex-1 sm:flex-none px-4 py-2.5 border border-slate-300 dark:border-slate-600 rounded-lg disabled:opacity-40 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+            onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+            disabled={currentPage >= totalPages}
+          >
+            {t('next')}
+          </button>
+        </div>
+      </div>
+
+      {/* Spacer for fixed bottom nav on mobile */}
+      <div className="h-16 sm:hidden" />
       <ExamResultsModal
         open={resultsOpen}
         onOpenChange={setResultsOpen}

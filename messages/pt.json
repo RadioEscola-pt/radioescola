@@ -97,7 +97,7 @@
     "next": "Seguinte",
     "page": "Página {current} / {total}",
     "takeAnother": "Fazer Outro",
-    "endQuiz": "Terminar Exame",
+    "endQuiz": "Terminar",
     "score": "Pontuação: {score} / {total}",
     "questionId": "ID: {id}",
     "correct": "Correto",
