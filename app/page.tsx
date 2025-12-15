@@ -52,11 +52,10 @@ export default async function HomePage() {
 
       <section>
         <h2 className="text-xl font-semibold mb-4">{t("categoriesHeading")}</h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {CATEGORIES.map((id) => {
             const s = CATEGORY_STYLES[id];
             const name = t("categoryName", { id });
-            const badge = t("categoryBadge", { id });
             const browseLabel = t("categoryBrowse");
             const simulationLabel = t("categorySimulation");
             const image = CATEGORY_IMAGES[id];
@@ -64,35 +63,36 @@ export default async function HomePage() {
             return (
               <div
                 key={id}
-                className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-md transition-shadow duration-300 hover:shadow-lg dark:border-slate-700 dark:bg-slate-800"
+                className="group relative overflow-hidden rounded-2xl h-64"
               >
-                <div className="h-40 w-full overflow-hidden bg-slate-100 dark:bg-slate-700">
-                  <img
-                    src={image}
-                    alt={`${name} illustration`}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="mb-2 flex items-center justify-between">
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">{name}</h3>
-                    <span className={`text-xs font-medium ${s.badgeBg} ${s.badgeText} rounded-full px-3 py-1`}>
-                      {badge}
+                <img
+                  src={image}
+                  alt={`${name} illustration`}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                <div className="relative h-full flex flex-col justify-between p-5">
+                  <div>
+                    <span className={`inline-block text-xs font-bold uppercase tracking-wider ${s.badgeText} ${s.badgeBg} rounded px-2 py-1`}>
+                      {id === '3' ? t("categoryLevel.beginner") : id === '2' ? t("categoryLevel.intermediate") : t("categoryLevel.advanced")}
                     </span>
                   </div>
-                  <div className="mt-5 flex items-center gap-3">
-                    <Link
-                      href={`/browse/${id}`}
-                      className={`flex-1 rounded-lg border px-4 py-2 text-center text-sm font-medium transition-colors ${s.outlineBtn}`}
-                    >
-                      {browseLabel}
-                    </Link>
-                    <Link
-                      href={`/exam/${id}`}
-                      className={`flex-1 rounded-lg px-4 py-2 text-center text-sm font-medium transition-colors ${s.solidBtn}`}
-                    >
-                      {simulationLabel}
-                    </Link>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-4 drop-shadow-lg">{name}</h3>
+                    <div className="flex gap-2">
+                      <Link
+                        href={`/browse/${id}`}
+                        className="flex-1 rounded-lg px-4 py-2.5 text-center text-sm font-medium bg-white/20 text-white backdrop-blur-sm border border-white/30 hover:bg-white/30 transition-colors"
+                      >
+                        {browseLabel}
+                      </Link>
+                      <Link
+                        href={`/exam/${id}`}
+                        className={`flex-1 rounded-lg px-4 py-2.5 text-center text-sm font-medium transition-colors ${s.solidBtn}`}
+                      >
+                        {simulationLabel}
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

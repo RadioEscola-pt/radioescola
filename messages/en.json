@@ -49,8 +49,13 @@
     "sectionSubtitle": "A quick, practical path to get on the air legally in Portugal.",
     "categoryName": "Category {id}",
     "categoryBadge": "CAT {id}",
-    "categoryBrowse": "Browse",
-    "categorySimulation": "Simulation",
+    "categoryLevel": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+    "categoryBrowse": "Study",
+    "categorySimulation": "Exam",
     "processHeading": "Become a Licensed Ham Radio Operator",
     "processSteps": {
       "study": {

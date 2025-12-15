@@ -49,8 +49,13 @@
     "sectionSubtitle": "Um caminho rápido e prático para poderes operar legalmente em Portugal.",
     "categoryName": "Categoria {id}",
     "categoryBadge": "CAT {id}",
+    "categoryLevel": {
+      "beginner": "Iniciante",
+      "intermediate": "Intermédio",
+      "advanced": "Avançado"
+    },
     "categoryBrowse": "Estudar",
-    "categorySimulation": "Simulação",
+    "categorySimulation": "Exame",
     "processHeading": "Torna-te Radioamador Licenciado",
     "processSteps": {
       "study": {
