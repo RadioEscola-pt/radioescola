@@ -13,25 +13,25 @@ export default async function HomePage() {
       icon: BookOpen,
       title: t("processSteps.study.title"),
       description: t("processSteps.study.description"),
-      iconClass: "bg-indigo-100 text-indigo-700",
+      iconClass: "bg-indigo-500/20 text-indigo-400",
     },
     {
       icon: IdCard,
       title: t("processSteps.examAndLicense.title"),
       description: t("processSteps.examAndLicense.description"),
-      iconClass: "bg-emerald-100 text-emerald-700",
+      iconClass: "bg-emerald-500/20 text-emerald-400",
     },
     {
       icon: Radio,
       title: t("processSteps.operate.title"),
       description: t("processSteps.operate.description"),
-      iconClass: "bg-amber-100 text-amber-700",
+      iconClass: "bg-amber-500/20 text-amber-400",
     },
   ];
 
   return (
-    <main className="p-8">
-      <section className="relative rounded-xl overflow-hidden mb-8">
+    <div className="py-8">
+      <section className="relative overflow-hidden mb-8 -mx-4 md:mx-0 md:rounded-xl">
         <div
           className="absolute inset-0 bg-cover bg-center blur-[2px] scale-105"
           style={{ backgroundImage: "url('https://www.radioescola.pt/images/header2.jpg')" }}
@@ -43,9 +43,9 @@ export default async function HomePage() {
         <div className="relative px-6 py-12 md:py-16">
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-white drop-shadow-md">{t("heroTitle")}</h1>
           <p className="mt-3 text-white/90 max-w-2xl drop-shadow-sm">{t("heroSubtitle")}</p>
-          <div className="mt-6 flex items-center gap-3">
-            <Link href="/exam/3" className="px-4 py-2 rounded bg-white text-amber-700 font-medium hover:bg-amber-50 transition-colors shadow-md">{t("ctaExam")}</Link>
-            <Link href="/browse/3" className="px-4 py-2 rounded border-2 border-white text-white font-medium hover:bg-white/10 transition-colors">{t("ctaBrowse")}</Link>
+          <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
+            <Link href="/exam/3" className="px-4 py-2 rounded bg-white text-amber-700 font-medium hover:bg-amber-50 transition-colors shadow-md text-center">{t("ctaExam")}</Link>
+            <Link href="/browse/3" className="px-4 py-2 rounded border-2 border-white text-white font-medium hover:bg-white/10 transition-colors text-center">{t("ctaBrowse")}</Link>
           </div>
         </div>
       </section>
@@ -101,57 +101,68 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="mt-10 rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-orange-50 overflow-hidden">
-        <div className="p-6 md:p-8">
-          <div className="flex items-center gap-3">
-            <span className="text-2xl" aria-hidden>📻</span>
-            <h2 className="text-2xl font-bold text-gray-900">{t("processHeading")}</h2>
+      <section className="mt-10 -mx-4 md:mx-0 md:rounded-2xl overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900 dark:from-slate-900 dark:to-black">
+        <div className="p-6 md:p-10">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">{t("processHeading")}</h2>
+            <p className="mt-2 text-slate-300 max-w-2xl mx-auto">{t("sectionSubtitle")}</p>
           </div>
-          <p className="mt-2 text-gray-700">{t("sectionSubtitle")}</p>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            {processSteps.map((step) => (
-              <div key={step.title} className="flex items-start gap-3 rounded-xl border border-amber-200/50 bg-white/70 p-4 backdrop-blur">
-                <span
-                  className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${step.iconClass}`}
-                >
-                  <step.icon className="h-5 w-5" aria-hidden />
-                </span>
-                <div>
-                  <h3 className="font-semibold text-gray-900">{step.title}</h3>
-                  <p className="text-sm text-gray-700">{step.description}</p>
+          <div className="grid gap-6 md:grid-cols-3">
+            {processSteps.map((step, index) => (
+              <div key={step.title} className="relative">
+                <div className="flex flex-col items-center text-center p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="mb-4 relative">
+                    <span className="absolute -top-2 -left-2 w-6 h-6 rounded-full bg-amber-500 text-slate-900 text-sm font-bold flex items-center justify-center">
+                      {index + 1}
+                    </span>
+                    <span className={`inline-flex h-14 w-14 items-center justify-center rounded-full ${step.iconClass}`}>
+                      <step.icon className="h-7 w-7" aria-hidden />
+                    </span>
+                  </div>
+                  <h3 className="font-semibold text-white text-lg mb-2">{step.title}</h3>
+                  <p className="text-sm text-slate-300">{step.description}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-5 flex items-start gap-2 text-sm text-gray-700">
-            <Building2 className="h-4 w-4 text-amber-600 mt-0.5" aria-hidden />
-            <p>{t("tipText")}</p>
-          </div>
-
-          <div className="mt-5 flex flex-wrap gap-3">
-            <a
-              href="https://www.anacom.pt"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg bg-white/80 border border-amber-300 text-amber-700 hover:bg-white"
-            >
-              {t("externalLinks.anacom")}
-              <ExternalLink className="h-4 w-4" aria-hidden />
-            </a>
-            <a
-              href="https://www.rep.pt"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg bg-white/80 border border-amber-300 text-amber-700 hover:bg-white"
-            >
-              {t("externalLinks.rep")}
-              <ExternalLink className="h-4 w-4" aria-hidden />
-            </a>
+          <div className="mt-8 pt-6 border-t border-white/10">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <p className="text-sm text-slate-400 flex items-center gap-2">
+                <Building2 className="h-4 w-4 text-amber-500" aria-hidden />
+                {t("tipText")}
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <a
+                  href="https://www.anacom.pt"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg bg-amber-500 text-slate-900 hover:bg-amber-400 transition-colors"
+                >
+                  {t("externalLinks.anacom")}
+                  <ExternalLink className="h-4 w-4" aria-hidden />
+                </a>
+                <a
+                  href="https://www.rep.pt"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg border border-white/20 text-white hover:bg-white/10 transition-colors"
+                >
+                  {t("externalLinks.rep")}
+                  <ExternalLink className="h-4 w-4" aria-hidden />
+                </a>
+                <Link
+                  href="/ser-radioamador"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg border border-white/20 text-white hover:bg-white/10 transition-colors"
+                >
+                  {t("learnMore")}
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

@@ -51,22 +51,23 @@
     "categoryBadge": "CAT {id}",
     "categoryBrowse": "Browse",
     "categorySimulation": "Simulation",
-    "processHeading": "Ham Radio in Portugal: Due Process",
+    "processHeading": "Become a Licensed Ham Radio Operator",
     "processSteps": {
       "study": {
-        "title": "1) Study & Practice",
-        "description": "Cover the syllabus for Category 3, 2 or 1. Use browse and simulation exams here."
+        "title": "Study & Practice",
+        "description": "Master the syllabus for your target category. Use our question bank and exam simulations to prepare."
       },
       "examAndLicense": {
-        "title": "2) Exam, License & Callsign",
-        "description": "Register with ANACOM, pass the exam, apply for your license and callsign."
+        "title": "Pass the Exam",
+        "description": "Register with ANACOM, take the official exam, and receive your license and callsign."
       },
       "operate": {
-        "title": "3) Operate Responsibly",
-        "description": "Follow your category privileges and comply with national and CEPT regulations."
+        "title": "Get On the Air",
+        "description": "Start operating within your category privileges, following national and CEPT regulations."
       }
     },
-    "tipText": "Tip: Check official forms on ANACOM and consider a local club for mentoring.",
+    "tipText": "Join a local club for mentoring and hands-on experience.",
+    "learnMore": "Full Guide",
     "externalLinks": {
       "anacom": "ANACOM",
       "rep": "REP"

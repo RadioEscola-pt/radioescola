@@ -51,22 +51,23 @@
     "categoryBadge": "CAT {id}",
     "categoryBrowse": "Estudar",
     "categorySimulation": "Simulação",
-    "processHeading": "Rádio Amador em Portugal: Processo",
+    "processHeading": "Torna-te Radioamador Licenciado",
     "processSteps": {
       "study": {
-        "title": "1) Estudar e Praticar",
-        "description": "Revê o programa das categorias 3, 2 ou 1. Usa a exploração e os exames de simulação aqui."
+        "title": "Estudar e Praticar",
+        "description": "Domina o programa da tua categoria alvo. Usa o nosso banco de questões e simulações de exame."
       },
       "examAndLicense": {
-        "title": "2) Exame, Licença e Indicativo",
-        "description": "Inscreve-te para exame na ANACOM, paga a taxa e passa no exame, e receberás o CAN e o teu indicativo."
+        "title": "Passar no Exame",
+        "description": "Inscreve-te na ANACOM, faz o exame oficial e recebe a tua licença e indicativo."
       },
       "operate": {
-        "title": "3) Operar com Responsabilidade",
-        "description": "Cumpre as tuas prerrogativas de categoria e respeita a regulamentação nacional e CEPT."
+        "title": "Entrar no Ar",
+        "description": "Começa a operar dentro das tuas prerrogativas, seguindo a regulamentação nacional e CEPT."
       }
     },
-    "tipText": "Dica: Consulta os formulários oficiais na ANACOM e considera um clube local para mentoria.",
+    "tipText": "Junta-te a um clube local para mentoria e experiência prática.",
+    "learnMore": "Guia Completo",
     "externalLinks": {
       "anacom": "ANACOM",
       "rep": "REP"
