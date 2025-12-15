@@ -70,7 +70,7 @@ export default async function HomePage() {
                   alt={`${name} illustration`}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
                 <div className="relative h-full flex flex-col justify-between p-5">
                   <div>
                     <span className={`inline-block text-xs font-bold uppercase tracking-wider ${s.badgeText} ${s.badgeBg} rounded px-2 py-1`}>
