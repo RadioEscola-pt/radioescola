@@ -79,15 +79,20 @@
     }
   },
   "Study": {
-    "title": "Study Materials",
-    "description": "Filter by your target ham category.",
+    "title": "Study Library",
+    "description": "Master the material for your ham radio exam with tutorials, guides, and reference materials.",
     "tabs": {
       "all": "All",
       "category": "Category {id}"
     },
     "badge": "CAT {id}",
-    "empty": "No materials match this category yet.",
-    "loading": "Loading..."
+    "empty": "No materials match your search.",
+    "loading": "Loading materials...",
+    "searchPlaceholder": "Search topics...",
+    "progress": "Your progress",
+    "filterBy": "Filter by category",
+    "markComplete": "Mark as complete",
+    "markIncomplete": "Mark as incomplete"
   },
   "Exam": {
     "loading": "Loading...",

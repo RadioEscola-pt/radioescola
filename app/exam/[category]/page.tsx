@@ -7,6 +7,7 @@ import { loadData } from '@/lib/data';
 import { EXAM_CONFIG, DEFAULT_CATEGORY } from '@/lib/config';
 import { ExamResultsModal } from '@/components/ExamResultsModal';
 import { PageLoading } from '@/components/shared/Loading';
+import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
 
 const { DURATION_SECONDS, QUESTIONS_PER_PAGE, MAX_QUESTIONS, PASSING_SCORE, WRONG_ANSWER_PENALTY } = EXAM_CONFIG;
 
@@ -266,33 +267,25 @@ export default function ExamPage() {
                 {q.options.map((opt, oi) => {
                   const isSelected = selected === oi;
                   const isCorrect = oi === q.correctIndex;
-                  let optionStyles = 'bg-slate-100 dark:bg-slate-700 border-transparent hover:bg-slate-200 dark:hover:bg-slate-600 hover:border-slate-300 dark:hover:border-slate-500';
+                  let state: AnswerOptionState = "default";
 
                   if (quizEnded) {
-                    if (isCorrect) {
-                      optionStyles = 'bg-green-200 dark:bg-green-800/60 border-green-500';
-                    } else if (isSelected) {
-                      optionStyles = 'bg-red-200 dark:bg-red-800/60 border-red-500';
-                    }
+                    if (isCorrect) state = "correct";
+                    else if (isSelected) state = "incorrect";
                   } else if (isSelected) {
-                    optionStyles = 'bg-amber-200 dark:bg-amber-700/60 border-amber-500';
+                    state = "selected";
                   }
 
                   return (
-                    <button
+                    <AnswerOption
                       key={oi}
-                      type="button"
+                      letter={String.fromCharCode(65 + oi)}
+                      state={state}
                       disabled={timeUp || quizEnded}
-                      onClick={() => {
-                        setAnswers(prev => ({ ...prev, [q.id]: oi }));
-                      }}
-                      className={`w-full text-left border-l-4 rounded px-3 py-2 transition-all ${optionStyles} disabled:cursor-default flex items-start gap-3`}
+                      onClick={() => setAnswers(prev => ({ ...prev, [q.id]: oi }))}
                     >
-                      <span className="flex-shrink-0 w-6 h-6 rounded bg-white/50 dark:bg-slate-600 flex items-center justify-center text-xs font-bold text-slate-600 dark:text-slate-300">
-                        {String.fromCharCode(65 + oi)}
-                      </span>
-                      <span className="text-slate-700 dark:text-slate-200 text-sm pt-0.5">{opt}</span>
-                    </button>
+                      {opt}
+                    </AnswerOption>
                   );
                 })}
               </div>

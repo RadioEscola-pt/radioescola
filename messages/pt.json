@@ -79,15 +79,20 @@
     }
   },
   "Study": {
-    "title": "Materiais de Estudo",
-    "description": "Filtre pela categoria de radioamador desejada.",
+    "title": "Biblioteca de Estudo",
+    "description": "Domina a matéria para o teu exame de radioamador com tutoriais, guias e materiais de referência.",
     "tabs": {
-      "all": "Todas",
+      "all": "Todos",
       "category": "Categoria {id}"
     },
     "badge": "CAT {id}",
-    "empty": "Ainda não há materiais para esta categoria.",
-    "loading": "A carregar..."
+    "empty": "Nenhum material corresponde à tua pesquisa.",
+    "loading": "A carregar materiais...",
+    "searchPlaceholder": "Pesquisar tópicos...",
+    "progress": "O teu progresso",
+    "filterBy": "Filtrar por categoria",
+    "markComplete": "Marcar como concluído",
+    "markIncomplete": "Marcar como incompleto"
   },
   "Exam": {
     "loading": "A carregar...",

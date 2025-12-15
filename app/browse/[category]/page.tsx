@@ -38,33 +38,39 @@ export default function BrowsePage() {
   }
 
   return (
-    <main className="p-8">
-      <div className="mb-4">
-        <h1 className="text-2xl font-bold">{t('title', { id: categoryId })}</h1>
+    <main className="-mx-4 sm:mx-0 pb-8">
+      <div className="px-4 sm:px-0 py-4">
+        <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
+          {t('title', { id: categoryId })}
+        </h1>
+        <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
+          {category.questions.length} {category.questions.length === 1 ? 'question' : 'questions'}
+        </p>
       </div>
-      {category.questions.map((q, idx) => {
-        const selected = answers[q.id];
-        const isAnswered = selected !== undefined;
-        return (
-          <QuestionCard
-            key={q.id}
-            question={q}
-            selectedOption={selected}
-            onSelect={(choice) => {
-              setAnswers((prev) => {
-                if (Object.prototype.hasOwnProperty.call(prev, q.id)) return prev;
-                return { ...prev, [q.id]: choice };
-              });
-            }}
-            showImage
-            indexNumber={idx + 1}
-            showId
-            showCalcHint
-            onLaunchCalculator={handleLaunchCalculator}
-            ended={isAnswered}
-          />
-        );
-      })}
+      <section className="sm:px-0">
+        {category.questions.map((q, idx) => {
+          const selected = answers[q.id];
+          const isAnswered = selected !== undefined;
+          return (
+            <QuestionCard
+              key={q.id}
+              question={q}
+              selectedOption={selected}
+              onSelect={(choice) => {
+                setAnswers((prev) => {
+                  if (Object.prototype.hasOwnProperty.call(prev, q.id)) return prev;
+                  return { ...prev, [q.id]: choice };
+                });
+              }}
+              showImage
+              indexNumber={idx + 1}
+              showCalcHint
+              onLaunchCalculator={handleLaunchCalculator}
+              ended={isAnswered}
+            />
+          );
+        })}
+      </section>
     </main>
   );
 }

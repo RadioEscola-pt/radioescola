@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { Question } from '@/lib/types';
 import { getCalculatorMeta } from '@/lib/config';
 import type { CalculatorCode } from '@/lib/types';
+import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
 
 interface QuestionCardProps {
   question: Question;
@@ -64,10 +65,23 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
     }
   }, [onLaunchCalculator]);
 
+  const getOptionState = (idx: number): AnswerOptionState => {
+    const isSelected = selectedOption === idx;
+    const isCorrect = idx === question.correctIndex;
+
+    if (ended) {
+      if (isCorrect) return "correct";
+      if (isSelected) return "incorrect";
+      return "default";
+    }
+    if (isSelected) return "selected";
+    return "default";
+  };
+
   return (
-    <div className="p-4 border rounded-md mb-4 bg-white dark:bg-slate-800 dark:border-slate-700">
+    <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 sm:border sm:rounded-xl sm:mb-4 p-4">
       {showCalcHint && calcCodes.length > 0 && (
-        <div className="mb-2 flex flex-wrap items-center gap-2 rounded bg-blue-50 dark:bg-blue-900/30 px-2 py-1 text-xs font-medium text-blue-700 dark:text-blue-300">
+        <div className="mb-3 flex flex-wrap items-center gap-2 rounded-lg bg-blue-50 dark:bg-blue-900/30 px-3 py-2 text-xs font-medium text-blue-700 dark:text-blue-300">
           <span>{calcCodes.length > 1 ? t('suggestedCalculators') : t('suggestedCalculator')}</span>
           {calcCodes.map((code) => {
             const meta = getCalculatorMeta(code as CalculatorCode);
@@ -90,75 +104,54 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
           })}
         </div>
       )}
-      <h2 className="font-semibold mb-1">
-        {indexNumber ? `${indexNumber}. ` : ''}{question.question}
-      </h2>
-      {showId && (
-        <div className="text-xs text-gray-500 dark:text-gray-400 mb-2">ID: {question.id}</div>
-      )}
-      <div className="grid gap-2">
-        {question.options.map((option, idx) => {
-          const isSelected = selectedOption === idx;
-          const base = 'text-left border rounded px-3 py-2 transition-colors';
-          const cls = ended
-            ? idx === question.correctIndex
-              ? isSelected
-                ? 'bg-green-100 border-green-400 dark:bg-green-900/40 dark:border-green-600'
-                : 'bg-white border-green-300 dark:bg-slate-800 dark:border-green-700'
-              : isSelected
-                ? 'bg-red-100 border-red-400 dark:bg-red-900/40 dark:border-red-600'
-                : 'bg-white border-gray-200 dark:bg-slate-800 dark:border-slate-600'
-            : isAnswered
-              ? isSelected
-                ? 'bg-blue-100 border-blue-300 dark:bg-blue-900/40 dark:border-blue-600'
-                : 'bg-white border-gray-200 opacity-70 dark:bg-slate-800 dark:border-slate-600'
-              : 'hover:bg-gray-50 border-gray-200 dark:hover:bg-slate-700 dark:border-slate-600';
-          return (
-            <button
-              key={idx}
-              type="button"
-              disabled={disabled || ended}
-              onClick={() => onSelect(idx)}
-              className={[base, cls].join(' ')}
-            >
-              <span className="mr-2 font-mono">{String.fromCharCode(65 + idx)}.</span>
-              {option}
-            </button>
-          );
-        })}
-      </div>
+
+      <p className="text-slate-900 dark:text-slate-100 mb-3">
+        {indexNumber && (
+          <span className="font-semibold text-amber-600 dark:text-amber-500 mr-2">{indexNumber}.</span>
+        )}
+        {question.question}
+      </p>
+
       {showImage && question.img && (
-        <div className="mt-3">
-          <img src={question.img} alt={question.question} className="max-h-64 rounded border dark:border-slate-600" />
+        <div className="mb-3">
+          <img src={question.img} alt="" className="w-full rounded-lg border border-slate-200 dark:border-slate-700" />
         </div>
       )}
+
+      <div className="space-y-2">
+        {question.options.map((option, idx) => (
+          <AnswerOption
+            key={idx}
+            letter={String.fromCharCode(65 + idx)}
+            state={getOptionState(idx)}
+            disabled={disabled || ended}
+            onClick={() => onSelect(idx)}
+          >
+            {option}
+          </AnswerOption>
+        ))}
+      </div>
+
       {ended && (
-        <div className="mt-3 space-y-2 text-sm">
-          <p>
-            {selectedOption === question.correctIndex ? (
-              <span className="text-green-700 dark:text-green-400">{t('correct')}</span>
-            ) : (
-              <span className="text-red-700 dark:text-red-400">{isAnswered ? t('incorrect') : t('unanswered')}</span>
-            )}
-          </p>
+        <div className="mt-4 space-y-2 text-sm">
           {question.notes && (
             <div
-              className="text-gray-700 dark:text-gray-300 [&_a]:text-blue-600 dark:[&_a]:text-blue-400 [&_a]:underline"
+              className="text-slate-600 dark:text-slate-400 [&_a]:text-blue-600 dark:[&_a]:text-blue-400 [&_a]:underline"
               dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(question.notes) }}
             />
           )}
           {question.tutorial && (
-            <div>
-              <span className="font-semibold text-gray-700 dark:text-gray-300">{t('relatedTutorial')}</span>{' '}
+            <div className="text-slate-600 dark:text-slate-400">
+              <span className="font-semibold">{t('relatedTutorial')}</span>{' '}
               <a className="text-blue-600 dark:text-blue-400 underline" href={`/study/${question.tutorial}`}>
                 {question.tutorial}
               </a>
             </div>
           )}
           {question.fonte && question.fonte.length > 0 && (
-            <div>
-              <span className="font-semibold text-gray-700 dark:text-gray-300">{t('officialSource')}</span>
-              <ul className="mt-1 space-y-1 list-disc list-inside text-gray-700 dark:text-gray-300">
+            <div className="text-slate-600 dark:text-slate-400">
+              <span className="font-semibold">{t('officialSource')}</span>
+              <ul className="mt-1 space-y-1 list-disc list-inside">
                 {question.fonte.map((entry, idx) => {
                   const { href, label } = buildFonteLink(entry);
                   return (
