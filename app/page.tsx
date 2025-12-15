@@ -3,6 +3,7 @@ import Link from "next/link";
 import { BookOpen, IdCard, Radio, ExternalLink, Building2 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { CATEGORIES, CATEGORY_STYLES, CATEGORY_IMAGES } from "@/lib/config";
+import { Button } from "@/components/ui/button";
 
 export default async function HomePage() {
   const t = await getTranslations("Home");
@@ -44,8 +45,12 @@ export default async function HomePage() {
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-white drop-shadow-md">{t("heroTitle")}</h1>
           <p className="mt-3 text-white/90 max-w-2xl drop-shadow-sm">{t("heroSubtitle")}</p>
           <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
-            <Link href="/exam/3" className="px-4 py-2 rounded bg-white text-amber-700 font-medium hover:bg-amber-50 transition-colors shadow-md text-center">{t("ctaExam")}</Link>
-            <Link href="/browse/3" className="px-4 py-2 rounded border-2 border-white text-white font-medium hover:bg-white/10 transition-colors text-center">{t("ctaBrowse")}</Link>
+            <Button asChild>
+              <Link href="/exam/3">{t("ctaExam")}</Link>
+            </Button>
+            <Button variant="secondary" asChild>
+              <Link href="/browse/3">{t("ctaBrowse")}</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -80,18 +85,12 @@ export default async function HomePage() {
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-4 drop-shadow-lg">{name}</h3>
                     <div className="flex gap-2">
-                      <Link
-                        href={`/browse/${id}`}
-                        className="flex-1 rounded-lg px-4 py-2.5 text-center text-sm font-medium bg-white/20 text-white backdrop-blur-sm border border-white/30 hover:bg-white/30 transition-colors"
-                      >
-                        {browseLabel}
-                      </Link>
-                      <Link
-                        href={`/exam/${id}`}
-                        className={`flex-1 rounded-lg px-4 py-2.5 text-center text-sm font-medium transition-colors ${s.solidBtn}`}
-                      >
-                        {simulationLabel}
-                      </Link>
+                      <Button variant="secondary" className="flex-1" asChild>
+                        <Link href={`/browse/${id}`}>{browseLabel}</Link>
+                      </Button>
+                      <Button className={`flex-1 ${s.solidBtn}`} asChild>
+                        <Link href={`/exam/${id}`}>{simulationLabel}</Link>
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -134,30 +133,21 @@ export default async function HomePage() {
                 {t("tipText")}
               </p>
               <div className="flex flex-wrap justify-center gap-3">
-                <a
-                  href="https://www.anacom.pt"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg bg-amber-500 text-slate-900 hover:bg-amber-400 transition-colors"
-                >
-                  {t("externalLinks.anacom")}
-                  <ExternalLink className="h-4 w-4" aria-hidden />
-                </a>
-                <a
-                  href="https://www.rep.pt"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg border border-white/20 text-white hover:bg-white/10 transition-colors"
-                >
-                  {t("externalLinks.rep")}
-                  <ExternalLink className="h-4 w-4" aria-hidden />
-                </a>
-                <Link
-                  href="/ser-radioamador"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg border border-white/20 text-white hover:bg-white/10 transition-colors"
-                >
-                  {t("learnMore")}
-                </Link>
+                <Button asChild>
+                  <a href="https://www.anacom.pt" target="_blank" rel="noreferrer">
+                    {t("externalLinks.anacom")}
+                    <ExternalLink className="h-4 w-4" aria-hidden />
+                  </a>
+                </Button>
+                <Button variant="outline" asChild>
+                  <a href="https://www.rep.pt" target="_blank" rel="noreferrer">
+                    {t("externalLinks.rep")}
+                    <ExternalLink className="h-4 w-4" aria-hidden />
+                  </a>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link href="/ser-radioamador">{t("learnMore")}</Link>
+                </Button>
               </div>
             </div>
           </div>
