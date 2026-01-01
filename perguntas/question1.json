@@ -71,6 +71,7 @@
       "uniqueID": 4,
       "fonte": [
         "cat1/2023_12_22p8"
+		"cat1/2017_01_12p6"
       ],
       "tutorial": null,
       "materia": null
@@ -3439,7 +3440,9 @@
       "notes": "A143",
       "img": null,
       "uniqueID": 190,
-      "fonte": null,
+      "fonte": [
+        "cat1/2017_01_12p7"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -3954,6 +3957,7 @@
       "uniqueID": 217,
       "fonte":  [
         "cat1/2023_12_22p4"
+		"cat1/2017_01_12p3"
       ],
       "tutorial": null,
       "materia": null
@@ -4158,7 +4162,9 @@
       "notes": " As faixas de VHF e UHF são menos afetadas pela ionosfera, o que facilita a comunicação via satélite, pois as ondas eletromagnéticas nessas frequências são pouco atenuadas e desviadas pelo ambiente ionosférico.",
       "img": null,
       "uniqueID": 228,
-      "fonte": null,
+      "fonte": [
+        "cat1/2017_01_12p2"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -4277,7 +4283,9 @@
       "notes": "A178",
       "img": null,
       "uniqueID": 234,
-      "fonte": null,
+      "fonte": [
+        "cat1/2017_01_12p1"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -4852,7 +4860,9 @@
       "notes": "A204",
       "img": null,
       "uniqueID": 264,
-      "fonte": null,
+      "fonte": [
+        "cat1/2017_01_12p4"
+      ],
       "tutorial": null,
       "materia": null
     },
@@ -4942,6 +4952,7 @@
       "notes": "Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf'> ADENDA_2013_QNAF",
       "fonte": [
         "cat1/2023_08_00p1"
+		"cat1/2017_01_12p5"
       ],
       "img": null,
       "uniqueID": 268,
@@ -5358,6 +5369,8 @@
       "uniqueID": 290,
       "fonte": [
         "cat1/2014_05_23p8"
+		"cat1/2017_01_12p8"
+		
       ],
       "tutorial": null,
       "materia": null
