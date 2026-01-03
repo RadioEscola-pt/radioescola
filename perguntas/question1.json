@@ -70,8 +70,8 @@
       "img": null,
       "uniqueID": 4,
       "fonte": [
-        "cat1/2023_12_22p8"
-		"cat1/2017_01_12p6"
+        "cat1/2023_12_22p8",
+		    "cat1/2017_01_12p6"
       ],
       "tutorial": null,
       "materia": null
@@ -3956,7 +3956,7 @@
       "img": null,
       "uniqueID": 217,
       "fonte":  [
-        "cat1/2023_12_22p4"
+        "cat1/2023_12_22p4",
 		"cat1/2017_01_12p3"
       ],
       "tutorial": null,
@@ -4951,7 +4951,7 @@
       "correctIndex": 4,
       "notes": "Consulte os documentos:<a target='_blank' href='docs/anexo6_Adenda_2013_QNAF.pdf'> ADENDA_2013_QNAF",
       "fonte": [
-        "cat1/2023_08_00p1"
+        "cat1/2023_08_00p1",
 		"cat1/2017_01_12p5"
       ],
       "img": null,
@@ -5368,7 +5368,7 @@
       "img": null,
       "uniqueID": 290,
       "fonte": [
-        "cat1/2014_05_23p8"
+        "cat1/2014_05_23p8",
 		"cat1/2017_01_12p8"
 		
       ],
