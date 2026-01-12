@@ -1,12 +1,16 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { Home, BookOpen, FileText, Calculator, ChevronDown, Upload, GraduationCap, BarChart3, UserCircle, Moon, Globe } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuLabel,
   DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTranslations } from "next-intl";
@@ -28,23 +32,6 @@ const exams = categories.map((cat) => ({
   description: cat.description,
 }));
 
-const browse: { title: string; href: string; description: string }[] = categories.flatMap((cat) => [
-  {
-    title: `${cat.title}`,
-    href: `/browse/${cat.id}`,
-    description: `${cat.description} - completo`,
-  },
-  {
-    title: `${cat.title}`,
-    href: `/browse/${cat.id}/flash`,
-    description: `${cat.description} - flashcards`,
-  },
-  {
-    title: `${cat.title}`,
-    href: `/browse/${cat.id}/smart-practice`,
-    description: `${cat.description} - prática inteligente`,
-  },
-]);
 
 export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -76,13 +63,49 @@ export default function NavBar() {
             {t("home")}
           </Link>
 
-          <Link
-            href="/study"
-            className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100"
-          >
-            <BookOpen className="mr-2 h-4 w-4" />
-            {t("study")}
-          </Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none data-[state=open]:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100 dark:data-[state=open]:bg-slate-700">
+              <BookOpen className="mr-2 h-4 w-4" />
+              {t("study")}
+              <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="w-[220px]">
+              <DropdownMenuItem asChild>
+                <Link href="/study" className="cursor-pointer">
+                  <BookOpen className="mr-2 h-4 w-4" />
+                  {t("studyLibrary")}
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuSub>
+                <DropdownMenuSubTrigger>
+                  <Calculator className="mr-2 h-4 w-4" />
+                  {t("calculators")}
+                </DropdownMenuSubTrigger>
+                <DropdownMenuSubContent className="w-[220px]">
+                  {calculators.map((calc) => {
+                    const Icon = calc.icon;
+                    const key = calc.translationKey;
+                    return (
+                      <DropdownMenuItem
+                        key={calc.code}
+                        className="cursor-pointer"
+                        onClick={() => handleCalculatorClick(calc.code)}
+                      >
+                        <div className="flex items-start gap-2">
+                          <Icon className="h-4 w-4 mt-0.5 shrink-0" />
+                          <div className="flex flex-col">
+                            <span className="font-medium">{tc(`${key}.shortTitle`)}</span>
+                            <span className="text-xs text-muted-foreground">{tc(`${key}.description`)}</span>
+                          </div>
+                        </div>
+                      </DropdownMenuItem>
+                    );
+                  })}
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+            </DropdownMenuContent>
+          </DropdownMenu>
 
           <DropdownMenu>
             <DropdownMenuTrigger className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none data-[state=open]:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100 dark:data-[state=open]:bg-slate-700">
@@ -91,15 +114,28 @@ export default function NavBar() {
               <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-[220px]">
-              {browse.map((item) => (
-                <DropdownMenuItem key={item.href} asChild>
-                  <Link href={item.href} className="cursor-pointer">
-                    <div className="flex flex-col">
-                      <span className="font-medium">{item.title}</span>
-                      <span className="text-xs text-muted-foreground">{item.description}</span>
-                    </div>
-                  </Link>
-                </DropdownMenuItem>
+              {categories.map((cat, idx) => (
+                <React.Fragment key={cat.id}>
+                  {idx > 0 && <DropdownMenuSeparator />}
+                  <DropdownMenuLabel className="text-xs text-muted-foreground">
+                    {cat.title} ({cat.description})
+                  </DropdownMenuLabel>
+                  <DropdownMenuItem asChild>
+                    <Link href={`/browse/${cat.id}`} className="cursor-pointer">
+                      {t("questions")}
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href={`/browse/${cat.id}/flash`} className="cursor-pointer">
+                      {t("flashcards")}
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href={`/browse/${cat.id}/smart-practice`} className="cursor-pointer">
+                      {t("smartPractice")}
+                    </Link>
+                  </DropdownMenuItem>
+                </React.Fragment>
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
@@ -133,35 +169,6 @@ export default function NavBar() {
                   </div>
                 </Link>
               </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          <DropdownMenu>
-            <DropdownMenuTrigger className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none data-[state=open]:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100 dark:data-[state=open]:bg-slate-700">
-              <Calculator className="mr-2 h-4 w-4" />
-              {t("calculators")}
-              <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="w-[220px]">
-              {calculators.map((calc) => {
-                const Icon = calc.icon;
-                const key = calc.translationKey;
-                return (
-                  <DropdownMenuItem
-                    key={calc.code}
-                    className="cursor-pointer"
-                    onClick={() => handleCalculatorClick(calc.code)}
-                  >
-                    <div className="flex items-start gap-2">
-                      <Icon className="h-4 w-4 mt-0.5 shrink-0" />
-                      <div className="flex flex-col">
-                        <span className="font-medium">{tc(`${key}.shortTitle`)}</span>
-                        <span className="text-xs text-muted-foreground">{tc(`${key}.description`)}</span>
-                      </div>
-                    </div>
-                  </DropdownMenuItem>
-                );
-              })}
             </DropdownMenuContent>
           </DropdownMenu>
 

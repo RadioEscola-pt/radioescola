@@ -24,7 +24,11 @@
     "studyAllDesc": "View all study materials",
     "settings": "Settings",
     "theme": "Theme",
-    "language": "Language"
+    "language": "Language",
+    "studyLibrary": "Study Library",
+    "questions": "Questions",
+    "flashcards": "Flashcards",
+    "smartPractice": "Smart Practice"
   },
   "Footer": {
     "about": "About",

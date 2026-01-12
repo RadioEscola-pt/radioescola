@@ -24,7 +24,11 @@
     "studyAllDesc": "Ver todos os materiais de estudo",
     "settings": "Definições",
     "theme": "Tema",
-    "language": "Idioma"
+    "language": "Idioma",
+    "studyLibrary": "Biblioteca de Estudo",
+    "questions": "Questões",
+    "flashcards": "Flashcards",
+    "smartPractice": "Prática Inteligente"
   },
   "Footer": {
     "about": "Sobre",

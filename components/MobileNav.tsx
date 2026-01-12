@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Calculator, Upload, Menu, GraduationCap, BarChart3, Settings, Moon, Globe } from "lucide-react";
+import { Home, BookOpen, FileText, Upload, Menu, GraduationCap, BarChart3, Settings, Moon, Globe } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -32,23 +32,6 @@ const exams = categories.map((cat) => ({
   description: cat.description,
 }));
 
-const browse = categories.flatMap((cat) => [
-  {
-    title: cat.title,
-    href: `/browse/${cat.id}`,
-    description: `${cat.description} - completo`,
-  },
-  {
-    title: cat.title,
-    href: `/browse/${cat.id}/flash`,
-    description: `${cat.description} - flashcards`,
-  },
-  {
-    title: cat.title,
-    href: `/browse/${cat.id}/smart-practice`,
-    description: `${cat.description} - prática inteligente`,
-  },
-]);
 
 interface MobileNavProps {
   open: boolean;
@@ -114,22 +97,33 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
                   <Link
                     href="/study"
                     onClick={closeMenu}
-                    className="flex flex-col rounded-md px-3 py-2 hover:bg-slate-100"
+                    className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-slate-100"
                   >
-                    <span className="text-sm font-medium">{t("studyAll")}</span>
-                    <span className="text-xs text-muted-foreground">{t("studyAllDesc")}</span>
+                    <BookOpen className="h-4 w-4 shrink-0" />
+                    <span className="text-sm font-medium">{t("studyLibrary")}</span>
                   </Link>
-                  {categories.map((cat) => (
-                    <Link
-                      key={cat.id}
-                      href={`/study?cat=${cat.id}`}
-                      onClick={closeMenu}
-                      className="flex flex-col rounded-md px-3 py-2 hover:bg-slate-100"
-                    >
-                      <span className="text-sm font-medium">{cat.title}</span>
-                      <span className="text-xs text-muted-foreground">{cat.description}</span>
-                    </Link>
-                  ))}
+                  <div className="border-t my-1" />
+                  <span className="px-3 py-1 text-xs font-medium text-muted-foreground">
+                    {t("calculators")}
+                  </span>
+                  {calculators.map((calc) => {
+                    const Icon = calc.icon;
+                    const key = calc.translationKey;
+                    return (
+                      <button
+                        key={calc.code}
+                        type="button"
+                        onClick={() => handleCalculatorClick(calc.code)}
+                        className="flex items-start gap-2 rounded-md px-3 py-2 text-left hover:bg-slate-100 w-full"
+                      >
+                        <Icon className="h-4 w-4 mt-0.5 shrink-0" />
+                        <div className="flex flex-col">
+                          <span className="text-sm font-medium">{tc(`${key}.shortTitle`)}</span>
+                          <span className="text-xs text-muted-foreground">{tc(`${key}.description`)}</span>
+                        </div>
+                      </button>
+                    );
+                  })}
                 </div>
               </AccordionContent>
             </AccordionItem>
@@ -144,16 +138,34 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
               </AccordionTrigger>
               <AccordionContent className="pb-0 pt-1">
                 <div className="flex flex-col gap-1 pl-7">
-                  {browse.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={closeMenu}
-                      className="flex flex-col rounded-md px-3 py-2 hover:bg-slate-100"
-                    >
-                      <span className="text-sm font-medium">{item.title}</span>
-                      <span className="text-xs text-muted-foreground">{item.description}</span>
-                    </Link>
+                  {categories.map((cat, idx) => (
+                    <div key={cat.id}>
+                      {idx > 0 && <div className="border-t my-1" />}
+                      <span className="px-3 py-1 text-xs font-medium text-muted-foreground">
+                        {cat.title} ({cat.description})
+                      </span>
+                      <Link
+                        href={`/browse/${cat.id}`}
+                        onClick={closeMenu}
+                        className="flex rounded-md px-3 py-2 text-sm hover:bg-slate-100"
+                      >
+                        {t("questions")}
+                      </Link>
+                      <Link
+                        href={`/browse/${cat.id}/flash`}
+                        onClick={closeMenu}
+                        className="flex rounded-md px-3 py-2 text-sm hover:bg-slate-100"
+                      >
+                        {t("flashcards")}
+                      </Link>
+                      <Link
+                        href={`/browse/${cat.id}/smart-practice`}
+                        onClick={closeMenu}
+                        className="flex rounded-md px-3 py-2 text-sm hover:bg-slate-100"
+                      >
+                        {t("smartPractice")}
+                      </Link>
+                    </div>
                   ))}
                 </div>
               </AccordionContent>
@@ -196,37 +208,6 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
               </AccordionContent>
             </AccordionItem>
 
-            {/* Calculators Accordion */}
-            <AccordionItem value="calculators" className="border-none">
-              <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:no-underline">
-                <span className="flex items-center gap-3">
-                  <Calculator className="h-4 w-4" />
-                  {t("calculators")}
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="pb-0 pt-1">
-                <div className="flex flex-col gap-1 pl-7">
-                  {calculators.map((calc) => {
-                    const Icon = calc.icon;
-                    const key = calc.translationKey;
-                    return (
-                      <button
-                        key={calc.code}
-                        type="button"
-                        onClick={() => handleCalculatorClick(calc.code)}
-                        className="flex items-start gap-2 rounded-md px-3 py-2 text-left hover:bg-slate-100 w-full"
-                      >
-                        <Icon className="h-4 w-4 mt-0.5 shrink-0" />
-                        <div className="flex flex-col">
-                          <span className="text-sm font-medium">{tc(`${key}.shortTitle`)}</span>
-                          <span className="text-xs text-muted-foreground">{tc(`${key}.description`)}</span>
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
-              </AccordionContent>
-            </AccordionItem>
           </Accordion>
 
           {/* Become Ham Link */}
