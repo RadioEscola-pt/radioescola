@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Info, Calculator, Upload, Menu, GraduationCap } from "lucide-react";
+import { Home, BookOpen, FileText, Info, Calculator, Upload, Menu, GraduationCap, BarChart3 } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -92,6 +92,16 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
           >
             <Home className="h-4 w-4" />
             {t("home")}
+          </Link>
+
+          {/* Dashboard Link */}
+          <Link
+            href="/dashboard"
+            onClick={closeMenu}
+            className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
+          >
+            <BarChart3 className="h-4 w-4" />
+            {t("dashboard")}
           </Link>
 
           {/* Accordion for nested items */}

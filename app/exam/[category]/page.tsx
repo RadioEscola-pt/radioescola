@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { Category } from '@/lib/types';
@@ -8,6 +8,8 @@ import { EXAM_CONFIG, DEFAULT_CATEGORY } from '@/lib/config';
 import { ExamResultsModal } from '@/components/ExamResultsModal';
 import { PageLoading } from '@/components/shared/Loading';
 import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
+import { useProgressContext } from '@/components/providers/ProgressProvider';
+import type { ExamAttempt, QuestionAttempt } from '@/lib/types/progress';
 
 const { DURATION_SECONDS, QUESTIONS_PER_PAGE, MAX_QUESTIONS, PASSING_SCORE, WRONG_ANSWER_PENALTY } = EXAM_CONFIG;
 
@@ -15,6 +17,7 @@ export default function ExamPage() {
   const params = useParams();
   const searchParams = useSearchParams();
   const t = useTranslations('Exam');
+  const { recordExam, recordQuestionBatch } = useProgressContext();
   const [timeLeft, setTimeLeft] = useState<number>(DURATION_SECONDS);
   const [score, setScore] = useState(0);
   const [category, setCategory] = useState<Category | null>(null);
@@ -22,6 +25,8 @@ export default function ExamPage() {
   const [quizEnded, setQuizEnded] = useState(false);
   const [resultsOpen, setResultsOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const progressSavedRef = useRef(false);
+  const isReplayRef = useRef(false);
 
   // Timer: countdown from initial time to 0; stops when quiz ends
   const timerRef = React.useRef<ReturnType<typeof setInterval> | null>(null);
@@ -76,6 +81,66 @@ export default function ExamPage() {
     setScore(total);
   }, [answers, category]);
 
+  // Save progress when quiz ends (only for fresh exams, not replays)
+  React.useEffect(() => {
+    if (!quizEnded || !category || isReplayRef.current || progressSavedRef.current) {
+      return;
+    }
+
+    progressSavedRef.current = true;
+    const timeSpent = DURATION_SECONDS - timeLeft;
+
+    // Calculate results
+    let correctCount = 0;
+    let incorrectCount = 0;
+    let unansweredCount = 0;
+
+    for (const q of category.questions) {
+      const sel = answers[q.id];
+      if (sel === undefined) {
+        unansweredCount++;
+      } else if (sel === q.correctIndex) {
+        correctCount++;
+      } else {
+        incorrectCount++;
+      }
+    }
+
+    const passed = score >= PASSING_SCORE;
+
+    // Record exam attempt
+    const examAttempt: ExamAttempt = {
+      id: crypto.randomUUID(),
+      category: category.id,
+      score,
+      totalQuestions: category.questions.length,
+      correctCount,
+      incorrectCount,
+      unansweredCount,
+      timeSpent,
+      passed,
+      timestamp: Date.now(),
+      questionIds: category.questions.map(q => q.id),
+      answers: { ...answers },
+    };
+
+    recordExam(examAttempt);
+
+    // Record individual question attempts
+    const questionAttempts: QuestionAttempt[] = category.questions
+      .filter(q => answers[q.id] !== undefined)
+      .map(q => ({
+        questionId: q.id,
+        category: category.id,
+        correct: answers[q.id] === q.correctIndex,
+        timestamp: Date.now(),
+      }));
+
+    if (questionAttempts.length > 0) {
+      recordQuestionBatch(questionAttempts);
+    }
+  }, [quizEnded, category, answers, score, timeLeft, recordExam, recordQuestionBatch]);
+
   React.useEffect(() => {
     const cat = typeof params.category === 'string'
       ? params.category
@@ -100,6 +165,7 @@ export default function ExamPage() {
       }
       // If a replay URL is present, reconstruct exact exam/order/answers
       if (qParam) {
+        isReplayRef.current = true;
         const ids = qParam.split('-').map((s) => parseInt(s, 10)).filter((n) => !Number.isNaN(n));
         const byId = new Map(base.questions.map((q) => [q.id, q] as const));
         const chosen = ids.map((id) => byId.get(id)).filter((q): q is NonNullable<typeof q> => Boolean(q));
@@ -125,6 +191,8 @@ export default function ExamPage() {
         return;
       }
       // Otherwise, sample a fresh random exam
+      isReplayRef.current = false;
+      progressSavedRef.current = false;
       const qs = [...base.questions];
       for (let i = qs.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -142,6 +210,8 @@ export default function ExamPage() {
 
   const startNewQuiz = () => {
     if (!category) return;
+    isReplayRef.current = false;
+    progressSavedRef.current = false;
     const catId = category.id;
     loadData().then((data) => {
       const base = data.categories[catId];

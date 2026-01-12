@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Info, Calculator, ChevronDown, Upload, GraduationCap } from "lucide-react";
+import { Home, BookOpen, FileText, Info, Calculator, ChevronDown, Upload, GraduationCap, BarChart3 } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -69,6 +69,14 @@ export default function NavBar() {
           >
             <Home className="mr-2 h-4 w-4" />
             {t("home")}
+          </Link>
+
+          <Link
+            href="/dashboard"
+            className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100"
+          >
+            <BarChart3 className="mr-2 h-4 w-4" />
+            {t("dashboard")}
           </Link>
 
           <Link

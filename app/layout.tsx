@@ -4,6 +4,7 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import CalculatorProvider from "@/components/providers/CalculatorProvider";
 import ThemeProvider from "@/components/providers/ThemeProvider";
+import ProgressProvider from "@/components/providers/ProgressProvider";
 import { ErrorBoundary } from "@/components/shared/ErrorBoundary";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
@@ -26,13 +27,15 @@ export default async function RootLayout({
       <body className="flex min-h-screen flex-col bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider>
-            <CalculatorProvider>
-              <NavBar />
-              <ErrorBoundary>
-                <main className="mx-auto max-w-5xl px-4 py-6 flex-1">{children}</main>
-              </ErrorBoundary>
-              <Footer />
-            </CalculatorProvider>
+            <ProgressProvider>
+              <CalculatorProvider>
+                <NavBar />
+                <ErrorBoundary>
+                  <main className="mx-auto max-w-5xl px-4 py-6 flex-1">{children}</main>
+                </ErrorBoundary>
+                <Footer />
+              </CalculatorProvider>
+            </ProgressProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

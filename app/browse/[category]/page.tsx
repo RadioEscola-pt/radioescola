@@ -8,6 +8,7 @@ import QuestionCard from '@/components/QuestionCard';
 import { useCalculators } from '@/components/providers/CalculatorProvider';
 import { PageLoading } from '@/components/shared/Loading';
 import type { CalculatorCode } from '@/lib/types';
+import { useProgressContext } from '@/components/providers/ProgressProvider';
 
 export default function BrowsePage() {
   const params = useParams();
@@ -15,6 +16,7 @@ export default function BrowsePage() {
   const [categoryId, setCategoryId] = useState<string>('3');
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const { openCalculator } = useCalculators();
+  const { recordQuestion } = useProgressContext();
   const t = useTranslations('Browse');
 
   useEffect(() => {
@@ -59,6 +61,13 @@ export default function BrowsePage() {
               onSelect={(choice) => {
                 setAnswers((prev) => {
                   if (Object.prototype.hasOwnProperty.call(prev, q.id)) return prev;
+                  // Record question attempt for progress tracking
+                  recordQuestion({
+                    questionId: q.id,
+                    category: categoryId,
+                    correct: choice === q.correctIndex,
+                    timestamp: Date.now(),
+                  });
                   return { ...prev, [q.id]: choice };
                 });
               }}

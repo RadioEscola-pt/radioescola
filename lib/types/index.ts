@@ -31,3 +31,6 @@ export * from "./calculator";
 
 // Submit exam types
 export * from "./submit-exam";
+
+// Progress tracking types
+export * from "./progress";

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import QuestionCard from "@/components/QuestionCard";
@@ -9,6 +9,7 @@ import { loadData } from "@/lib/data";
 import { useCalculators } from "@/components/providers/CalculatorProvider";
 import { PageLoading } from "@/components/shared/Loading";
 import type { CalculatorCode } from "@/lib/types";
+import { useProgressContext } from "@/components/providers/ProgressProvider";
 
 const DEFAULT_CATEGORY = "3";
 
@@ -49,6 +50,7 @@ export default function FlashBrowsePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [answeredCount, setAnsweredCount] = useState(0);
   const { openCalculator } = useCalculators();
+  const { recordQuestion } = useProgressContext();
   const t = useTranslations("Browse");
 
   useEffect(() => {
@@ -106,10 +108,17 @@ export default function FlashBrowsePage() {
       : null;
 
   const handleSelect = (choice: number) => {
-    if (selectedOption !== undefined) {
+    if (selectedOption !== undefined || !currentQuestion) {
       return;
     }
     setSelectedOption(choice);
+    // Record question attempt for progress tracking
+    recordQuestion({
+      questionId: currentQuestion.id,
+      category: catId,
+      correct: choice === currentQuestion.correctIndex,
+      timestamp: Date.now(),
+    });
   };
 
   const handleNext = () => {

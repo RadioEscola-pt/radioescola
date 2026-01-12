@@ -9,6 +9,7 @@
   },
   "NavBar": {
     "home": "Início",
+    "dashboard": "Progresso",
     "study": "Estudar",
     "browse": "Explorar",
     "exams": "Exames",
@@ -337,6 +338,31 @@
       "close": "Fechar",
       "takeAnother": "Fazer Outro Exame"
     }
+  },
+  "Dashboard": {
+    "title": "O Teu Progresso",
+    "subtitle": "Acompanha o teu desempenho nos exames e progresso de estudo",
+    "loading": "A carregar progresso...",
+    "totalExams": "Total de Exames",
+    "passRate": "Taxa de Aprovação",
+    "currentStreak": "Sequência Atual",
+    "longestStreak": "{count} dias (máximo)",
+    "lastStudy": "Último Estudo",
+    "never": "Nunca",
+    "performanceChart": "Tendência de Desempenho",
+    "passingScore": "Passar",
+    "categoryProgress": "Progresso por Categoria",
+    "category": "Categoria",
+    "mastered": "dominadas",
+    "attempted": "tentadas",
+    "bestScore": "Melhor",
+    "weakAreas": "Áreas a Melhorar",
+    "attempts": "tentativas",
+    "correct": "corretas",
+    "examHistory": "Exames Recentes",
+    "emptyTitle": "Ainda sem progresso",
+    "emptyDescription": "Faz o teu primeiro exame para começar a acompanhar o teu progresso.",
+    "startExam": "Começar Exame"
   },
   "BecomeHam": {
     "title": "Como se tornar um radioamador",

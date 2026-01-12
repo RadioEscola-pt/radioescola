@@ -9,6 +9,7 @@
   },
   "NavBar": {
     "home": "Home",
+    "dashboard": "Progress",
     "study": "Study",
     "browse": "Browse",
     "exams": "Exams",
@@ -337,6 +338,31 @@
       "close": "Close",
       "takeAnother": "Take Another Exam"
     }
+  },
+  "Dashboard": {
+    "title": "Your Progress",
+    "subtitle": "Track your exam performance and study progress",
+    "loading": "Loading progress...",
+    "totalExams": "Total Exams",
+    "passRate": "Pass Rate",
+    "currentStreak": "Current Streak",
+    "longestStreak": "{count} day longest",
+    "lastStudy": "Last Study",
+    "never": "Never",
+    "performanceChart": "Performance Trend",
+    "passingScore": "Pass",
+    "categoryProgress": "Category Progress",
+    "category": "Category",
+    "mastered": "mastered",
+    "attempted": "attempted",
+    "bestScore": "Best",
+    "weakAreas": "Areas to Improve",
+    "attempts": "attempts",
+    "correct": "correct",
+    "examHistory": "Recent Exams",
+    "emptyTitle": "No progress yet",
+    "emptyDescription": "Take your first exam to start tracking your progress.",
+    "startExam": "Start Exam"
   },
   "BecomeHam": {
     "title": "How to become a ham radio operator",
