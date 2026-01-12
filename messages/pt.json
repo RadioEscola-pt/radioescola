@@ -661,5 +661,10 @@
       "error": "Falha ao importar: {message}",
       "invalidFile": "Ficheiro de backup inválido"
     }
+  },
+  "Offline": {
+    "message": "Estás offline. Algumas funcionalidades podem estar limitadas.",
+    "reconnected": "De volta online!",
+    "dismiss": "Fechar"
   }
 }

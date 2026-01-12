@@ -661,5 +661,10 @@
       "error": "Failed to import: {message}",
       "invalidFile": "Invalid backup file"
     }
+  },
+  "Offline": {
+    "message": "You're offline. Some features may be limited.",
+    "reconnected": "Back online!",
+    "dismiss": "Dismiss"
   }
 }
