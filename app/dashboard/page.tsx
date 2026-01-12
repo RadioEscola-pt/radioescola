@@ -28,6 +28,8 @@ import {
   Calendar,
   BarChart3,
   Settings,
+  Bookmark,
+  HardDrive,
 } from "lucide-react";
 import type { ExamAttempt } from "@/lib/types/progress";
 import {
@@ -37,6 +39,9 @@ import {
   AchievementToastContainer,
 } from "@/components/gamification";
 import { ACHIEVEMENTS } from "@/lib/gamification/achievements";
+import Link from "next/link";
+import DataManagement from "@/components/settings/DataManagement";
+import { getBookmarkedQuestions } from "@/lib/storage/localStorage";
 
 interface CategoryQuestionCount {
   [key: string]: number;
@@ -50,6 +55,7 @@ export default function DashboardPage() {
   const [questionCounts, setQuestionCounts] = useState<CategoryQuestionCount>(
     {}
   );
+  const [bookmarkCount, setBookmarkCount] = useState(0);
 
   useEffect(() => {
     loadData().then((data) => {
@@ -60,6 +66,14 @@ export default function DashboardPage() {
       setQuestionCounts(counts);
     });
   }, []);
+
+  // Get bookmark count
+  useEffect(() => {
+    if (progress) {
+      const bookmarks = getBookmarkedQuestions(progress);
+      setBookmarkCount(bookmarks.length);
+    }
+  }, [progress]);
 
   const handleDismissAchievement = (id: string) => {
     dismissAchievementNotifications([id]);
@@ -352,6 +366,46 @@ export default function DashboardPage() {
           </div>
         </div>
       )}
+
+      {/* Quick Links - Bookmarks */}
+      <div className="grid sm:grid-cols-2 gap-4 px-4 sm:px-0 mb-6">
+        <Link
+          href="/bookmarks"
+          className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 hover:border-amber-300 dark:hover:border-amber-700 transition-colors group"
+        >
+          <div className="flex items-center gap-3">
+            <div className="p-2 rounded-lg bg-amber-100 dark:bg-amber-900/30 group-hover:bg-amber-200 dark:group-hover:bg-amber-900/50 transition-colors">
+              <Bookmark className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+            </div>
+            <div>
+              <h3 className="font-semibold text-slate-900 dark:text-slate-100">
+                {t("bookmarks")}
+              </h3>
+              <p className="text-sm text-slate-500 dark:text-slate-400">
+                {t("bookmarksCount", { count: bookmarkCount })}
+              </p>
+            </div>
+          </div>
+        </Link>
+
+        {/* Data Management Card */}
+        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="p-2 rounded-lg bg-slate-100 dark:bg-slate-700">
+              <HardDrive className="h-5 w-5 text-slate-600 dark:text-slate-400" />
+            </div>
+            <div>
+              <h3 className="font-semibold text-slate-900 dark:text-slate-100">
+                {t("dataManagement")}
+              </h3>
+              <p className="text-sm text-slate-500 dark:text-slate-400">
+                {t("dataManagementDesc")}
+              </p>
+            </div>
+          </div>
+          <DataManagement />
+        </div>
+      </div>
 
       {/* Empty State */}
       {!progress ||

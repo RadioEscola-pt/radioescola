@@ -370,7 +370,11 @@
     "examHistory": "Exames Recentes",
     "emptyTitle": "Ainda sem progresso",
     "emptyDescription": "Faz o teu primeiro exame para começar a acompanhar o teu progresso.",
-    "startExam": "Começar Exame"
+    "startExam": "Começar Exame",
+    "bookmarks": "Questões Guardadas",
+    "bookmarksCount": "{count, plural, =0 {Nenhuma questão guardada} =1 {1 questão guardada} other {# questões guardadas}}",
+    "dataManagement": "Gestão de Dados",
+    "dataManagementDesc": "Exporta ou importa o teu progresso"
   },
   "SmartPractice": {
     "title": "Prática Inteligente",
@@ -644,22 +648,27 @@
       "title": "Exportar Progresso",
       "description": "Descarrega os teus dados de progresso como ficheiro JSON para backup.",
       "button": "Exportar Progresso",
-      "success": "Progresso exportado com sucesso!"
+      "success": "Progresso exportado!"
     },
     "import": {
       "title": "Importar Progresso",
       "description": "Restaura o progresso a partir de um ficheiro exportado anteriormente.",
       "button": "Importar Progresso",
-      "selectStrategy": "Estratégia de Importação",
-      "replace": "Substituir Tudo",
-      "replaceDescription": "Substitui todo o progresso existente pelos dados importados.",
-      "merge": "Combinar",
-      "mergeDescription": "Combina os dados importados com o progresso existente.",
       "cancel": "Cancelar",
       "confirm": "Importar",
-      "success": "Progresso importado com sucesso!",
-      "error": "Falha ao importar: {message}",
-      "invalidFile": "Ficheiro de backup inválido"
+      "success": "Progresso importado!",
+      "warnings": "Avisos",
+      "error": {
+        "invalid": "Ficheiro de backup inválido",
+        "corrupted": "Ficheiro corrompido ou incompatível"
+      },
+      "strategy": {
+        "label": "Estratégia de Importação",
+        "merge": "Combinar",
+        "mergeDesc": "Combina os dados importados com o progresso existente. Melhores pontuações e tentativas são preservadas.",
+        "replace": "Substituir Tudo",
+        "replaceDesc": "Substitui todo o progresso existente pelos dados importados."
+      }
     }
   },
   "Offline": {

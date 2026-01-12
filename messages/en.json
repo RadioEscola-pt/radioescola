@@ -370,7 +370,11 @@
     "examHistory": "Recent Exams",
     "emptyTitle": "No progress yet",
     "emptyDescription": "Take your first exam to start tracking your progress.",
-    "startExam": "Start Exam"
+    "startExam": "Start Exam",
+    "bookmarks": "Bookmarked Questions",
+    "bookmarksCount": "{count, plural, =0 {No questions saved} =1 {1 question saved} other {# questions saved}}",
+    "dataManagement": "Data Management",
+    "dataManagementDesc": "Export or import your progress"
   },
   "SmartPractice": {
     "title": "Smart Practice",
@@ -644,22 +648,27 @@
       "title": "Export Progress",
       "description": "Download your progress data as a JSON file for backup.",
       "button": "Export Progress",
-      "success": "Progress exported successfully!"
+      "success": "Progress exported!"
     },
     "import": {
       "title": "Import Progress",
       "description": "Restore progress from a previously exported file.",
       "button": "Import Progress",
-      "selectStrategy": "Import Strategy",
-      "replace": "Replace All",
-      "replaceDescription": "Replace all existing progress with the imported data.",
-      "merge": "Merge",
-      "mergeDescription": "Combine imported data with existing progress.",
       "cancel": "Cancel",
       "confirm": "Import",
-      "success": "Progress imported successfully!",
-      "error": "Failed to import: {message}",
-      "invalidFile": "Invalid backup file"
+      "success": "Progress imported!",
+      "warnings": "Warnings",
+      "error": {
+        "invalid": "Invalid backup file",
+        "corrupted": "File is corrupted or incompatible"
+      },
+      "strategy": {
+        "label": "Import Strategy",
+        "merge": "Merge",
+        "mergeDesc": "Combine imported data with existing progress. Best scores and attempts are preserved.",
+        "replace": "Replace All",
+        "replaceDesc": "Replace all existing progress with the imported data."
+      }
     }
   },
   "Offline": {
