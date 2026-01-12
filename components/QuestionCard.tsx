@@ -7,6 +7,7 @@ import { Question } from '@/lib/types';
 import { getCalculatorMeta } from '@/lib/config';
 import type { CalculatorCode } from '@/lib/types';
 import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
+import BookmarkButton from '@/components/BookmarkButton';
 
 interface QuestionCardProps {
   question: Question;
@@ -19,6 +20,10 @@ interface QuestionCardProps {
   disabled?: boolean; // disable interaction
   showCalcHint?: boolean; // show calculator suggestion badge
   onLaunchCalculator?: (code: string) => void;
+  // Bookmark feature
+  showBookmark?: boolean;
+  isBookmarked?: boolean;
+  onToggleBookmark?: () => Promise<void> | void;
 }
 
 function buildFonteLink(entry: string) {
@@ -53,6 +58,9 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   disabled = false,
   showCalcHint = false,
   onLaunchCalculator,
+  showBookmark = false,
+  isBookmarked = false,
+  onToggleBookmark,
 }) => {
   const t = useTranslations('QuestionCard');
   const tc = useTranslations('Calculators');
@@ -105,12 +113,21 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
         </div>
       )}
 
-      <p className="text-slate-900 dark:text-slate-100 mb-3">
-        {indexNumber && (
-          <span className="font-semibold text-amber-600 dark:text-amber-500 mr-2">{indexNumber}.</span>
+      <div className="flex items-start gap-2 mb-3">
+        <p className="flex-1 text-slate-900 dark:text-slate-100">
+          {indexNumber && (
+            <span className="font-semibold text-amber-600 dark:text-amber-500 mr-2">{indexNumber}.</span>
+          )}
+          {question.question}
+        </p>
+        {showBookmark && onToggleBookmark && (
+          <BookmarkButton
+            isBookmarked={isBookmarked}
+            onToggle={onToggleBookmark}
+            size="sm"
+          />
         )}
-        {question.question}
-      </p>
+      </div>
 
       {showImage && question.img && (
         <div className="mb-3">

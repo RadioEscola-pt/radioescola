@@ -304,3 +304,97 @@ export function getCategoryProgress(
     masteryRate: totalQuestions > 0 ? mastered / totalQuestions : 0,
   };
 }
+
+/**
+ * Toggle bookmark status for a question
+ * Returns the new bookmarked state
+ */
+export async function toggleBookmark(
+  category: string,
+  questionId: number
+): Promise<boolean> {
+  let progress = await getProgress();
+  if (!progress) {
+    progress = createEmptyProgress();
+  }
+
+  const key = getQuestionKey(category, questionId);
+  const existing = progress.questionStats[key];
+
+  if (existing) {
+    const newBookmarked = !existing.bookmarked;
+    progress.questionStats[key] = {
+      ...existing,
+      bookmarked: newBookmarked,
+      bookmarkedAt: newBookmarked ? Date.now() : undefined,
+    };
+  } else {
+    progress.questionStats[key] = {
+      attempts: 0,
+      correct: 0,
+      lastAttempt: 0,
+      lastCorrect: false,
+      bookmarked: true,
+      bookmarkedAt: Date.now(),
+    };
+  }
+
+  await saveProgress(progress);
+  return progress.questionStats[key]?.bookmarked ?? false;
+}
+
+/**
+ * Save personal notes for a question
+ */
+export async function saveQuestionNotes(
+  category: string,
+  questionId: number,
+  notes: string
+): Promise<void> {
+  let progress = await getProgress();
+  if (!progress) {
+    progress = createEmptyProgress();
+  }
+
+  const key = getQuestionKey(category, questionId);
+  const existing = progress.questionStats[key];
+
+  if (existing) {
+    progress.questionStats[key] = {
+      ...existing,
+      notes: notes || undefined,
+    };
+  } else {
+    progress.questionStats[key] = {
+      attempts: 0,
+      correct: 0,
+      lastAttempt: 0,
+      lastCorrect: false,
+      notes: notes || undefined,
+    };
+  }
+
+  await saveProgress(progress);
+}
+
+/**
+ * Get all bookmarked questions
+ */
+export function getBookmarkedQuestions(
+  progress: UserProgress | null
+): Array<{ key: string; category: string; questionId: number; stats: QuestionStats }> {
+  if (!progress) return [];
+
+  return Object.entries(progress.questionStats)
+    .filter(([_, stats]) => stats.bookmarked)
+    .map(([key, stats]) => {
+      const [cat, id] = key.split("_");
+      return {
+        key,
+        category: cat?.replace("cat", "") ?? "",
+        questionId: parseInt(id ?? "0", 10),
+        stats,
+      };
+    })
+    .sort((a, b) => (b.stats.bookmarkedAt ?? 0) - (a.stats.bookmarkedAt ?? 0));
+}
