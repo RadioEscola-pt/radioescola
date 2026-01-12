@@ -21,9 +21,13 @@
     "submitExamDesc": "Enviar exame para o banco de questões",
     "menu": "Menu",
     "studyAll": "Todos os Materiais",
-    "studyAllDesc": "Ver todos os materiais de estudo"
+    "studyAllDesc": "Ver todos os materiais de estudo",
+    "settings": "Definições",
+    "theme": "Tema",
+    "language": "Idioma"
   },
   "Footer": {
+    "about": "Sobre",
     "reportError": "Reportar Erro",
     "sourceCode": "Código Fonte",
     "telegram": "Telegram",

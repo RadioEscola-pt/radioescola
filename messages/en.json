@@ -21,9 +21,13 @@
     "submitExamDesc": "Submit exam for question bank",
     "menu": "Menu",
     "studyAll": "All Materials",
-    "studyAllDesc": "View all study materials"
+    "studyAllDesc": "View all study materials",
+    "settings": "Settings",
+    "theme": "Theme",
+    "language": "Language"
   },
   "Footer": {
+    "about": "About",
     "reportError": "Report Error",
     "sourceCode": "Source Code",
     "telegram": "Telegram",

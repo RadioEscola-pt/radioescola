@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Info, Calculator, Upload, Menu, GraduationCap, BarChart3 } from "lucide-react";
+import { Home, BookOpen, FileText, Calculator, Upload, Menu, GraduationCap, BarChart3, Settings, Moon, Globe } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -97,16 +97,6 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
           >
             <Home className="h-4 w-4" />
             {t("home")}
-          </Link>
-
-          {/* Dashboard Link */}
-          <Link
-            href="/dashboard"
-            onClick={closeMenu}
-            className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
-          >
-            <BarChart3 className="h-4 w-4" />
-            {t("dashboard")}
           </Link>
 
           {/* Accordion for nested items */}
@@ -239,16 +229,6 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
             </AccordionItem>
           </Accordion>
 
-          {/* About Link */}
-          <Link
-            href="/about"
-            onClick={closeMenu}
-            className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
-          >
-            <Info className="h-4 w-4" />
-            {t("about")}
-          </Link>
-
           {/* Become Ham Link */}
           <Link
             href="/ser-radioamador"
@@ -259,10 +239,44 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
             {t("becomeHam")}
           </Link>
 
-          {/* Language Switcher & Theme Toggle in Mobile */}
-          <div className="border-t pt-4 mt-2 flex items-center gap-2">
-            <ThemeToggle />
-            <LanguageSwitcher />
+          {/* Settings Section */}
+          <div className="border-t pt-2 mt-2">
+            <Accordion type="multiple" className="w-full">
+              <AccordionItem value="settings" className="border-none">
+                <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:no-underline dark:text-slate-300 dark:hover:bg-slate-800">
+                  <span className="flex items-center gap-3">
+                    <Settings className="h-4 w-4" />
+                    {t("settings")}
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="pb-0 pt-1">
+                  <div className="flex flex-col gap-1 pl-7">
+                    <Link
+                      href="/dashboard"
+                      onClick={closeMenu}
+                      className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-800"
+                    >
+                      <BarChart3 className="h-4 w-4" />
+                      <span className="text-sm font-medium">{t("dashboard")}</span>
+                    </Link>
+                    <div className="flex items-center justify-between rounded-md px-3 py-2">
+                      <span className="flex items-center gap-2 text-sm">
+                        <Moon className="h-4 w-4" />
+                        {t("theme")}
+                      </span>
+                      <ThemeToggle />
+                    </div>
+                    <div className="flex items-center justify-between rounded-md px-3 py-2">
+                      <span className="flex items-center gap-2 text-sm">
+                        <Globe className="h-4 w-4" />
+                        {t("language")}
+                      </span>
+                      <LanguageSwitcher />
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </nav>
       </SheetContent>

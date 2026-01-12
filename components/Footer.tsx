@@ -1,10 +1,11 @@
 "use client";
 
-import { Github, MessageCircle, Smartphone, Bug } from "lucide-react";
+import Link from "next/link";
+import { Github, MessageCircle, Smartphone, Bug, Info } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { EXTERNAL_LINKS } from "@/lib/config";
 
-const links = [
+const externalLinks = [
   {
     href: EXTERNAL_LINKS.GITHUB_ISSUES,
     icon: Bug,
@@ -27,6 +28,14 @@ const links = [
   },
 ] as const;
 
+const internalLinks = [
+  {
+    href: "/about",
+    icon: Info,
+    labelKey: "about",
+  },
+] as const;
+
 export default function Footer() {
   const t = useTranslations("Footer");
 
@@ -36,7 +45,22 @@ export default function Footer() {
         <div className="flex flex-col items-center gap-6">
           {/* Links */}
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-            {links.map((link) => {
+            {/* Internal Links */}
+            {internalLinks.map((link) => {
+              const Icon = link.icon;
+              return (
+                <Link
+                  key={link.labelKey}
+                  href={link.href}
+                  className="flex items-center gap-2 text-sm text-slate-600 hover:text-amber-600 transition-colors dark:text-slate-400 dark:hover:text-amber-400"
+                >
+                  <Icon className="h-4 w-4" />
+                  <span>{t(link.labelKey)}</span>
+                </Link>
+              );
+            })}
+            {/* External Links */}
+            {externalLinks.map((link) => {
               const Icon = link.icon;
               return (
                 <a
