@@ -11,6 +11,7 @@ import { PageLoading } from "@/components/shared/Loading";
 import type { CalculatorCode } from "@/lib/types";
 import { useProgressContext } from "@/components/providers/ProgressProvider";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
+import { toggleBookmark } from "@/lib/storage/localStorage";
 
 const DEFAULT_CATEGORY = "3";
 
@@ -51,8 +52,18 @@ export default function FlashBrowsePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [answeredCount, setAnsweredCount] = useState(0);
   const { openCalculator } = useCalculators();
-  const { recordQuestion } = useProgressContext();
+  const { recordQuestion, progress, refreshProgress } = useProgressContext();
   const t = useTranslations("Browse");
+
+  const isBookmarked = useCallback((questionId: number) => {
+    const key = `cat${catId}_${questionId}`;
+    return progress?.questionStats[key]?.bookmarked ?? false;
+  }, [progress, catId]);
+
+  const handleToggleBookmark = useCallback(async (questionId: number) => {
+    await toggleBookmark(catId, questionId);
+    await refreshProgress();
+  }, [catId, refreshProgress]);
 
   useEffect(() => {
     let active = true;
@@ -211,6 +222,9 @@ export default function FlashBrowsePage() {
         showCalcHint
         onLaunchCalculator={handleLaunchCalculator}
         ended={ended}
+        showBookmark
+        isBookmarked={isBookmarked(currentQuestion.id)}
+        onToggleBookmark={() => handleToggleBookmark(currentQuestion.id)}
       />
 
       {ended && (

@@ -9,6 +9,7 @@ import { useCalculators } from '@/components/providers/CalculatorProvider';
 import { PageLoading } from '@/components/shared/Loading';
 import type { CalculatorCode } from '@/lib/types';
 import { useProgressContext } from '@/components/providers/ProgressProvider';
+import { toggleBookmark } from '@/lib/storage/localStorage';
 
 export default function BrowsePage() {
   const params = useParams();
@@ -16,8 +17,18 @@ export default function BrowsePage() {
   const [categoryId, setCategoryId] = useState<string>('3');
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const { openCalculator } = useCalculators();
-  const { recordQuestion } = useProgressContext();
+  const { recordQuestion, progress, refreshProgress } = useProgressContext();
   const t = useTranslations('Browse');
+
+  const isBookmarked = useCallback((questionId: number) => {
+    const key = `cat${categoryId}_${questionId}`;
+    return progress?.questionStats[key]?.bookmarked ?? false;
+  }, [progress, categoryId]);
+
+  const handleToggleBookmark = useCallback(async (questionId: number) => {
+    await toggleBookmark(categoryId, questionId);
+    await refreshProgress();
+  }, [categoryId, refreshProgress]);
 
   useEffect(() => {
     const cat = typeof params.category === 'string'
@@ -76,6 +87,9 @@ export default function BrowsePage() {
               showCalcHint
               onLaunchCalculator={handleLaunchCalculator}
               ended={isAnswered}
+              showBookmark
+              isBookmarked={isBookmarked(q.id)}
+              onToggleBookmark={() => handleToggleBookmark(q.id)}
             />
           );
         })}
