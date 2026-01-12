@@ -63,7 +63,7 @@ New exam submission received:
 
 Category: ${metadata.category}
 ${metadata.year ? `Year: ${metadata.year}` : "Year: Not specified"}
-${metadata.source ? `Source: ${metadata.source}` : "Source: Not specified"}
+${metadata.email ? `Contact Email: ${metadata.email}` : "Contact Email: Not provided"}
 Pages: ${pageCount}
 PDF Size: ${sizeMB.toFixed(2)} MB
 

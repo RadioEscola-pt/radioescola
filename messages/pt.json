@@ -293,8 +293,9 @@
       "categoryPlaceholder": "Seleciona categoria...",
       "year": "Ano (opcional)",
       "yearPlaceholder": "ex., 2024",
-      "source": "Fonte (opcional)",
-      "sourcePlaceholder": "ex., Exame oficial ANACOM"
+      "email": "Email (opcional)",
+      "emailPlaceholder": "teu@email.com",
+      "emailHint": "Para questões sobre a submissão"
     },
     "submit": {
       "button": "Enviar Exame",

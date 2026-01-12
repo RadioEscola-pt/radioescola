@@ -18,8 +18,8 @@ interface SubmitFormProps {
 export function SubmitForm({ pageCount, status, error, onSubmit, onRetry }: SubmitFormProps) {
   const t = useTranslations("SubmitExam");
   const [category, setCategory] = useState<CategoryId | "">("");
-  const [year, setYear] = useState("");
-  const [source, setSource] = useState("");
+  const [year, setYear] = useState(() => new Date().getFullYear().toString());
+  const [email, setEmail] = useState("");
 
   const isSubmitting = ["preparing", "generating", "uploading"].includes(status);
   const canSubmit = pageCount > 0 && category !== "" && !isSubmitting;
@@ -30,7 +30,7 @@ export function SubmitForm({ pageCount, status, error, onSubmit, onRetry }: Subm
     onSubmit({
       category,
       year: year || undefined,
-      source: source || undefined,
+      email: email || undefined,
     });
   };
 
@@ -85,18 +85,19 @@ export function SubmitForm({ pageCount, status, error, onSubmit, onRetry }: Subm
         />
       </div>
 
-      {/* Source (optional) */}
+      {/* Email (optional) */}
       <div className="mb-6">
         <label className="block text-sm font-medium text-gray-700 mb-1">
-          {t("form.source")}
+          {t("form.email")}
         </label>
         <input
-          type="text"
-          value={source}
-          onChange={(e) => setSource(e.target.value)}
-          placeholder={t("form.sourcePlaceholder")}
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder={t("form.emailPlaceholder")}
           className="w-full px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
         />
+        <p className="text-xs text-gray-500 mt-1">{t("form.emailHint")}</p>
       </div>
 
       {/* Error state */}

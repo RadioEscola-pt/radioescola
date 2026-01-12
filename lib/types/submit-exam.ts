@@ -13,7 +13,7 @@ export interface ExamPage {
 export interface ExamSubmissionMetadata {
   category: CategoryId;
   year?: string;
-  source?: string;
+  email?: string;
 }
 
 /** Request body for submit-exam API */

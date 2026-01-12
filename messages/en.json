@@ -293,8 +293,9 @@
       "categoryPlaceholder": "Select category...",
       "year": "Year (optional)",
       "yearPlaceholder": "e.g., 2024",
-      "source": "Source (optional)",
-      "sourcePlaceholder": "e.g., ANACOM official exam"
+      "email": "Email (optional)",
+      "emailPlaceholder": "your@email.com",
+      "emailHint": "For follow-up questions about the submission"
     },
     "submit": {
       "button": "Submit Exam",
