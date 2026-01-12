@@ -41,6 +41,10 @@ export interface QuestionStats {
   lastAttempt: number;
   lastCorrect: boolean;
   spacedRep?: SpacedRepetitionStats;  // Optional for backward compatibility
+  // Bookmark feature (v4)
+  bookmarked?: boolean;
+  notes?: string;
+  bookmarkedAt?: number;
 }
 
 export interface UserStats {
