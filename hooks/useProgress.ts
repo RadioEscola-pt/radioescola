@@ -6,6 +6,7 @@ import {
   type ExamAttempt,
   type QuestionAttempt,
   type QuestionStats,
+  type SpacedRepetitionStats,
   createEmptyProgress,
   getQuestionKey,
 } from "@/lib/types/progress";
@@ -14,6 +15,7 @@ import {
   getQuestionStatsFromProgress,
   getWeakQuestions,
   getCategoryProgress,
+  updateQuestionSR,
 } from "@/lib/storage";
 
 interface UseProgressReturn {
@@ -22,6 +24,12 @@ interface UseProgressReturn {
   recordExam: (attempt: ExamAttempt) => Promise<void>;
   recordQuestion: (attempt: QuestionAttempt) => Promise<void>;
   recordQuestionBatch: (attempts: QuestionAttempt[]) => Promise<void>;
+  recordQuestionWithSR: (
+    category: string,
+    questionId: number,
+    srStats: SpacedRepetitionStats,
+    wasCorrect: boolean
+  ) => Promise<void>;
   getQuestionStats: (
     category: string,
     questionId: number
@@ -77,6 +85,21 @@ export function useProgress(): UseProgressReturn {
         await storageProvider.recordQuestionAttempt(attempt);
       }
       // Reload progress after batch
+      const updated = await storageProvider.getProgress();
+      setProgress(updated);
+    },
+    []
+  );
+
+  const recordQuestionWithSR = useCallback(
+    async (
+      category: string,
+      questionId: number,
+      srStats: SpacedRepetitionStats,
+      wasCorrect: boolean
+    ) => {
+      await updateQuestionSR(category, questionId, srStats, wasCorrect);
+      // Reload progress to get updated state
       const updated = await storageProvider.getProgress();
       setProgress(updated);
     },
@@ -142,6 +165,7 @@ export function useProgress(): UseProgressReturn {
     recordExam,
     recordQuestion,
     recordQuestionBatch,
+    recordQuestionWithSR,
     getQuestionStats: getQuestionStatsHook,
     getBestScore,
     getStreak,

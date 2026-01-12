@@ -39,6 +39,11 @@ const browse: { title: string; href: string; description: string }[] = categorie
     href: `/browse/${cat.id}/flash`,
     description: `${cat.description} - flashcards`,
   },
+  {
+    title: `${cat.title}`,
+    href: `/browse/${cat.id}/smart-practice`,
+    description: `${cat.description} - prática inteligente`,
+  },
 ]);
 
 export default function NavBar() {

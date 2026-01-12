@@ -25,11 +25,19 @@ export interface ExamAttempt {
   answers: Record<number, number>;
 }
 
+export interface SpacedRepetitionStats {
+  interval: number;           // Days until next review
+  easeFactor: number;         // Difficulty multiplier (1.3-2.5)
+  nextReviewDate: number;     // Unix timestamp when to show next
+  repetitionNumber: number;   // Which rep in sequence (1st, 2nd, 3rd...)
+}
+
 export interface QuestionStats {
   attempts: number;
   correct: number;
   lastAttempt: number;
   lastCorrect: boolean;
+  spacedRep?: SpacedRepetitionStats;  // Optional for backward compatibility
 }
 
 export interface UserStats {
@@ -57,7 +65,24 @@ export interface StorageProvider {
   clearProgress(): Promise<void>;
 }
 
-export const PROGRESS_VERSION = 1;
+export const PROGRESS_VERSION = 2;
+
+// SM-2 Algorithm Constants
+export const SM2_CONFIG = {
+  MIN_EASE_FACTOR: 1.3,
+  MAX_EASE_FACTOR: 2.5,
+  INITIAL_EASE_FACTOR: 2.5,
+  INITIAL_INTERVAL: 1,
+} as const;
+
+export function createInitialSRStats(): SpacedRepetitionStats {
+  return {
+    interval: SM2_CONFIG.INITIAL_INTERVAL,
+    easeFactor: SM2_CONFIG.INITIAL_EASE_FACTOR,
+    nextReviewDate: Date.now(),  // Due immediately for new questions
+    repetitionNumber: 0,
+  };
+}
 
 export function createEmptyProgress(): UserProgress {
   return {

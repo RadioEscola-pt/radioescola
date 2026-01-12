@@ -43,6 +43,11 @@ const browse = categories.flatMap((cat) => [
     href: `/browse/${cat.id}/flash`,
     description: `${cat.description} - flashcards`,
   },
+  {
+    title: cat.title,
+    href: `/browse/${cat.id}/smart-practice`,
+    description: `${cat.description} - prática inteligente`,
+  },
 ]);
 
 interface MobileNavProps {

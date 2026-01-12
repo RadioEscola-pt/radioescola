@@ -8,6 +8,7 @@ import {
   type ExamAttempt,
   type QuestionAttempt,
   type QuestionStats,
+  type SpacedRepetitionStats,
   PROGRESS_VERSION,
   createEmptyProgress,
   getQuestionKey,
@@ -163,6 +164,7 @@ async function recordQuestionAttempt(attempt: QuestionAttempt): Promise<void> {
       correct: existing.correct + (attempt.correct ? 1 : 0),
       lastAttempt: attempt.timestamp,
       lastCorrect: attempt.correct,
+      spacedRep: existing.spacedRep, // Preserve existing SR data
     };
   } else {
     progress.questionStats[key] = {
@@ -182,6 +184,49 @@ async function recordQuestionAttempt(attempt: QuestionAttempt): Promise<void> {
 async function clearProgress(): Promise<void> {
   if (!isLocalStorageAvailable()) return;
   localStorage.removeItem(STORAGE_KEY);
+}
+
+/**
+ * Update spaced repetition stats for a specific question
+ * Used by Smart Practice mode to track review intervals
+ */
+export async function updateQuestionSR(
+  category: string,
+  questionId: number,
+  srStats: SpacedRepetitionStats,
+  wasCorrect: boolean
+): Promise<void> {
+  let progress = await getProgress();
+  if (!progress) {
+    progress = createEmptyProgress();
+  }
+
+  const key = getQuestionKey(category, questionId);
+  const existing = progress.questionStats[key];
+
+  if (existing) {
+    progress.questionStats[key] = {
+      ...existing,
+      attempts: existing.attempts + 1,
+      correct: existing.correct + (wasCorrect ? 1 : 0),
+      lastAttempt: Date.now(),
+      lastCorrect: wasCorrect,
+      spacedRep: srStats,
+    };
+  } else {
+    progress.questionStats[key] = {
+      attempts: 1,
+      correct: wasCorrect ? 1 : 0,
+      lastAttempt: Date.now(),
+      lastCorrect: wasCorrect,
+      spacedRep: srStats,
+    };
+  }
+
+  // Update streak for any study activity
+  updateStreak(progress.stats);
+
+  await saveProgress(progress);
 }
 
 export const localStorageProvider: StorageProvider = {

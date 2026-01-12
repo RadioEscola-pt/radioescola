@@ -7,6 +7,7 @@ import type {
   ExamAttempt,
   QuestionAttempt,
   QuestionStats,
+  SpacedRepetitionStats,
 } from "@/lib/types/progress";
 
 type ProgressContextType = {
@@ -15,6 +16,12 @@ type ProgressContextType = {
   recordExam: (attempt: ExamAttempt) => Promise<void>;
   recordQuestion: (attempt: QuestionAttempt) => Promise<void>;
   recordQuestionBatch: (attempts: QuestionAttempt[]) => Promise<void>;
+  recordQuestionWithSR: (
+    category: string,
+    questionId: number,
+    srStats: SpacedRepetitionStats,
+    wasCorrect: boolean
+  ) => Promise<void>;
   getQuestionStats: (
     category: string,
     questionId: number
