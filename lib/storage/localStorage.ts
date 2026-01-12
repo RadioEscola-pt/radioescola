@@ -80,7 +80,7 @@ function saveProgress(progress: UserProgress): Promise<void> {
   });
 }
 
-function migrateProgress(progress: UserProgress): UserProgress {
+export function migrateProgress(progress: UserProgress): UserProgress {
   let migrated = { ...progress };
 
   // V1 -> V2: Added spaced repetition fields (optional, no-op)
