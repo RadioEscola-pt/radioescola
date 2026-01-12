@@ -394,6 +394,150 @@
     "practiceMore": "Praticar Mais",
     "viewProgress": "Ver Progresso"
   },
+  "Gamification": {
+    "xpBar": {
+      "progress": "Progresso",
+      "level": "Nível {level}",
+      "xpToNext": "{current} / {next} XP"
+    },
+    "xpProgress": "{current} / {required} XP",
+    "maxLevel": "Nível Máximo",
+    "total": "total",
+    "level": "Nível {level}",
+    "levels": {
+      "1": "Ouvinte SWL",
+      "2": "Aprendiz",
+      "3": "Novato",
+      "4": "Técnico",
+      "5": "Operador Geral",
+      "6": "Operador Avançado",
+      "7": "Classe Extra",
+      "8": "Caçador de DX",
+      "9": "Operador de Concurso",
+      "10": "Controle de Rede",
+      "11": "Membro ARRL",
+      "12": "Elmer",
+      "13": "Mestre de Estação",
+      "14": "Lenda Silent Key",
+      "15": "Hall da Fama"
+    },
+    "dailyGoals": {
+      "title": "Metas Diárias",
+      "loading": "A carregar metas diárias...",
+      "streak": "{count} dias seguidos",
+      "bonusReady": "Todas as metas completas! XP bónus pronto.",
+      "allComplete": "Todas as metas diárias completas!",
+      "questionsAnswered": "Responder {count} questões",
+      "questionsCorrect": "Acertar {count} questões",
+      "examsTaken": "Fazer {count} exame(s)",
+      "smartPractice": "Prática inteligente {count} questões"
+    },
+    "achievements": {
+      "title": "Conquistas",
+      "progress": "{unlocked}/{total} desbloqueadas",
+      "unlocked": "Conquista Desbloqueada!",
+      "secret": "Conquista Secreta",
+      "viewAll": "Ver todas as conquistas",
+      "first_exam": {
+        "name": "Primeiro Exame",
+        "desc": "Completa o teu primeiro exame"
+      },
+      "ten_exams": {
+        "name": "Veterano de Exames",
+        "desc": "Completa 10 exames"
+      },
+      "hundred_questions": {
+        "name": "Centenário",
+        "desc": "Responde a 100 questões"
+      },
+      "thousand_questions": {
+        "name": "Mestre das Questões",
+        "desc": "Responde a 1.000 questões"
+      },
+      "level_ten": {
+        "name": "Especialista",
+        "desc": "Alcança o nível 10"
+      },
+      "first_pass": {
+        "name": "Primeira Vitória",
+        "desc": "Passa no teu primeiro exame"
+      },
+      "perfect_exam": {
+        "name": "Pontuação Perfeita",
+        "desc": "Obtém 100% num exame"
+      },
+      "five_perfect": {
+        "name": "Perfeccionista",
+        "desc": "Obtém 5 pontuações perfeitas"
+      },
+      "speed_demon": {
+        "name": "Veloz",
+        "desc": "Termina com 30+ minutos restantes"
+      },
+      "comeback_kid": {
+        "name": "Volta por Cima",
+        "desc": "Passa após reprovar na mesma categoria"
+      },
+      "week_streak": {
+        "name": "Guerreiro da Semana",
+        "desc": "Mantém uma sequência de 7 dias"
+      },
+      "month_streak": {
+        "name": "Mestre do Mês",
+        "desc": "Mantém uma sequência de 30 dias"
+      },
+      "daily_champion": {
+        "name": "Campeão Diário",
+        "desc": "Completa 7 conjuntos de metas diárias"
+      },
+      "smart_learner": {
+        "name": "Aprendiz Inteligente",
+        "desc": "Completa 10 sessões de prática inteligente"
+      },
+      "iron_will": {
+        "name": "Vontade de Ferro",
+        "desc": "Mantém uma sequência de 100 dias"
+      },
+      "explorer": {
+        "name": "Explorador",
+        "desc": "Experimenta as 3 categorias"
+      },
+      "cat3_master": {
+        "name": "Mestre Categoria 3",
+        "desc": "Domina a Categoria 3"
+      },
+      "cat1_master": {
+        "name": "Mestre Categoria 1",
+        "desc": "Domina a Categoria 1"
+      }
+    },
+    "xpEarned": {
+      "title": "XP Ganho"
+    },
+    "xpEvents": {
+      "question_correct": "Resposta correta",
+      "question_incorrect": "Questão tentada",
+      "exam_completed": "Exame completo",
+      "exam_passed": "Exame aprovado",
+      "perfect_score": "Pontuação perfeita",
+      "daily_goal": "Meta diária completa",
+      "daily_goals_all_bonus": "Bónus todas as metas diárias",
+      "daily_streak_bonus": "Bónus sequência diária",
+      "first_of_day": "Primeira atividade do dia",
+      "achievement_unlocked": "Conquista desbloqueada",
+      "smart_practice_session": "Sessão de prática inteligente"
+    },
+    "levelUp": {
+      "title": "Subiu de Nível!",
+      "description": "Alcançaste o nível {level}!"
+    },
+    "settings": {
+      "toggle": "Definições de gamificação",
+      "disabled": "Gamificação desativada",
+      "disabledDescription": "Ativa a gamificação para ganhar XP, desbloquear conquistas e acompanhar metas diárias.",
+      "enable": "Ativar"
+    }
+  },
   "BecomeHam": {
     "title": "Como se tornar um radioamador",
     "intro": "Em Portugal, o processo para se tornar um radioamador licenciado é regulado pela ANACOM (Autoridade Nacional de Comunicações) e envolve várias etapas e categorias. Este guia irá explicar o processo desde o início até à obtenção da licença mais avançada.",

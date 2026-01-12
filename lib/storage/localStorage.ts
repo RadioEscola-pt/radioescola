@@ -13,6 +13,8 @@ import {
   createEmptyProgress,
   getQuestionKey,
 } from "@/lib/types/progress";
+import { migrateToGamification } from "@/lib/gamification/engine";
+import { createInitialGamificationState } from "@/lib/types/gamification";
 
 const STORAGE_KEY = "hamradio_progress";
 
@@ -79,12 +81,21 @@ function saveProgress(progress: UserProgress): Promise<void> {
 }
 
 function migrateProgress(progress: UserProgress): UserProgress {
-  // Future migrations will be handled here
-  // For now, just update the version
-  return {
-    ...progress,
-    version: PROGRESS_VERSION,
-  };
+  let migrated = { ...progress };
+
+  // V1 -> V2: Added spaced repetition fields (optional, no-op)
+  // V2 -> V3: Added gamification state
+  if (migrated.version < 3) {
+    migrated.gamification = migrateToGamification(migrated);
+  }
+
+  // Ensure gamification state exists
+  if (!migrated.gamification) {
+    migrated.gamification = createInitialGamificationState();
+  }
+
+  migrated.version = PROGRESS_VERSION;
+  return migrated;
 }
 
 function getTodayDateString(): string {

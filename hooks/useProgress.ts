@@ -10,6 +10,7 @@ import {
   createEmptyProgress,
   getQuestionKey,
 } from "@/lib/types/progress";
+import type { GamificationState } from "@/lib/types/gamification";
 import {
   storageProvider,
   getQuestionStatsFromProgress,
@@ -45,6 +46,7 @@ interface UseProgressReturn {
   ) => { mastered: number; attempted: number; masteryRate: number };
   clearProgress: () => Promise<void>;
   refreshProgress: () => Promise<void>;
+  updateGamificationState: (newState: GamificationState) => Promise<void>;
 }
 
 export function useProgress(): UseProgressReturn {
@@ -159,6 +161,20 @@ export function useProgress(): UseProgressReturn {
     await loadProgress();
   }, [loadProgress]);
 
+  const updateGamificationState = useCallback(
+    async (newState: GamificationState) => {
+      if (!progress) return;
+      const updated: UserProgress = {
+        ...progress,
+        gamification: newState,
+        lastUpdated: Date.now(),
+      };
+      await storageProvider.saveProgress(updated);
+      setProgress(updated);
+    },
+    [progress]
+  );
+
   return {
     progress,
     isLoading,
@@ -173,5 +189,6 @@ export function useProgress(): UseProgressReturn {
     getCategoryProgress: getCategoryProgressHook,
     clearProgress: clearProgressHook,
     refreshProgress,
+    updateGamificationState,
   };
 }

@@ -27,8 +27,16 @@ import {
   TrendingUp,
   Calendar,
   BarChart3,
+  Settings,
 } from "lucide-react";
 import type { ExamAttempt } from "@/lib/types/progress";
+import {
+  XPBar,
+  DailyGoalsCard,
+  AchievementsGrid,
+  AchievementToastContainer,
+} from "@/components/gamification";
+import { ACHIEVEMENTS } from "@/lib/gamification/achievements";
 
 interface CategoryQuestionCount {
   [key: string]: number;
@@ -36,7 +44,8 @@ interface CategoryQuestionCount {
 
 export default function DashboardPage() {
   const t = useTranslations("Dashboard");
-  const { progress, isLoading, getCategoryProgress, getWeakQuestions } =
+  const tGamification = useTranslations("Gamification");
+  const { progress, isLoading, getCategoryProgress, getWeakQuestions, setGamificationEnabled, dismissAchievementNotifications, gamification } =
     useProgressContext();
   const [questionCounts, setQuestionCounts] = useState<CategoryQuestionCount>(
     {}
@@ -51,6 +60,16 @@ export default function DashboardPage() {
       setQuestionCounts(counts);
     });
   }, []);
+
+  const handleDismissAchievement = (id: string) => {
+    dismissAchievementNotifications([id]);
+  };
+
+  const handleToggleGamification = () => {
+    if (gamification) {
+      setGamificationEnabled(!gamification.isEnabled);
+    }
+  };
 
   if (isLoading) {
     return <PageLoading message={t("loading")} />;
@@ -85,8 +104,21 @@ export default function DashboardPage() {
   // Get weak questions
   const weakQuestions = getWeakQuestions(2).slice(0, 5);
 
+  // Get pending achievement notifications
+  const pendingAchievements = gamification?.pendingNotifications
+    .map(ua => ACHIEVEMENTS.find(a => a.id === ua.achievementId))
+    .filter((a): a is typeof ACHIEVEMENTS[number] => a !== undefined) ?? [];
+
+  const gamificationEnabled = gamification?.isEnabled ?? true;
+
   return (
     <main className="-mx-4 sm:mx-0 pb-8">
+      {/* Achievement Toast Notifications */}
+      <AchievementToastContainer
+        achievements={pendingAchievements}
+        onDismiss={handleDismissAchievement}
+      />
+
       <div className="px-4 sm:px-0 py-4">
         <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100">
           {t("title")}
@@ -95,6 +127,31 @@ export default function DashboardPage() {
           {t("subtitle")}
         </p>
       </div>
+
+      {/* Gamification Section (XP Bar) */}
+      {gamificationEnabled && gamification && (
+        <div className="px-4 sm:px-0 mb-6">
+          <div className="flex items-center justify-between mb-2">
+            <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+              {tGamification("xpBar.progress")}
+            </h2>
+            <button
+              onClick={handleToggleGamification}
+              className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+              title={tGamification("settings.toggle")}
+            >
+              <Settings className="h-4 w-4 text-slate-400" />
+            </button>
+          </div>
+          <XPBar
+            currentXP={gamification.totalXP}
+            levelXP={gamification.xpProgress.levelXP}
+            requiredXP={gamification.xpProgress.requiredXP}
+            percentage={gamification.xpProgress.percentage}
+            level={gamification.currentLevel}
+          />
+        </div>
+      )}
 
       {/* Stats Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 px-4 sm:px-0 mb-6">
@@ -121,6 +178,43 @@ export default function DashboardPage() {
           value={stats.lastStudyDate ?? t("never")}
         />
       </div>
+
+      {/* Daily Goals & Achievements Row */}
+      {gamificationEnabled && gamification && (
+        <div className="grid md:grid-cols-2 gap-4 px-4 sm:px-0 mb-6">
+          <DailyGoalsCard
+            dailyProgress={gamification.dailyProgress}
+            dailyGoalStreak={gamification.dailyGoalStreak}
+          />
+          <AchievementsGrid
+            achievements={ACHIEVEMENTS}
+            unlockedAchievements={progress?.gamification?.unlockedAchievements ?? []}
+            maxDisplay={16}
+          />
+        </div>
+      )}
+
+      {/* Gamification Disabled Banner */}
+      {!gamificationEnabled && (
+        <div className="mx-4 sm:mx-0 mb-6 p-4 bg-slate-100 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
+                {tGamification("settings.disabled")}
+              </p>
+              <p className="text-xs text-slate-500 dark:text-slate-400">
+                {tGamification("settings.disabledDescription")}
+              </p>
+            </div>
+            <button
+              onClick={handleToggleGamification}
+              className="px-3 py-1.5 text-sm font-medium bg-amber-500 hover:bg-amber-600 text-slate-900 rounded-lg transition-colors"
+            >
+              {tGamification("settings.enable")}
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Performance Chart */}
       {chartData.length > 0 && (

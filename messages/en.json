@@ -394,6 +394,150 @@
     "practiceMore": "Practice More",
     "viewProgress": "View Progress"
   },
+  "Gamification": {
+    "xpBar": {
+      "progress": "Progress",
+      "level": "Level {level}",
+      "xpToNext": "{current} / {next} XP"
+    },
+    "xpProgress": "{current} / {required} XP",
+    "maxLevel": "Max Level",
+    "total": "total",
+    "level": "Level {level}",
+    "levels": {
+      "1": "SWL Listener",
+      "2": "Apprentice",
+      "3": "Novice",
+      "4": "Technician",
+      "5": "General Operator",
+      "6": "Advanced Operator",
+      "7": "Extra Class",
+      "8": "DX Hunter",
+      "9": "Contest Operator",
+      "10": "Net Control",
+      "11": "ARRL Member",
+      "12": "Elmer",
+      "13": "Station Master",
+      "14": "Silent Key Legend",
+      "15": "Hall of Fame"
+    },
+    "dailyGoals": {
+      "title": "Daily Goals",
+      "loading": "Loading daily goals...",
+      "streak": "{count} day streak",
+      "bonusReady": "All goals complete! Bonus XP ready.",
+      "allComplete": "All daily goals completed!",
+      "questionsAnswered": "Answer {count} questions",
+      "questionsCorrect": "Get {count} correct",
+      "examsTaken": "Take {count} exam(s)",
+      "smartPractice": "Smart practice {count} questions"
+    },
+    "achievements": {
+      "title": "Achievements",
+      "progress": "{unlocked}/{total} unlocked",
+      "unlocked": "Achievement Unlocked!",
+      "secret": "Secret Achievement",
+      "viewAll": "View all achievements",
+      "first_exam": {
+        "name": "First Exam",
+        "desc": "Complete your first exam"
+      },
+      "ten_exams": {
+        "name": "Exam Veteran",
+        "desc": "Complete 10 exams"
+      },
+      "hundred_questions": {
+        "name": "Century",
+        "desc": "Answer 100 questions"
+      },
+      "thousand_questions": {
+        "name": "Question Master",
+        "desc": "Answer 1,000 questions"
+      },
+      "level_ten": {
+        "name": "Expert",
+        "desc": "Reach level 10"
+      },
+      "first_pass": {
+        "name": "First Victory",
+        "desc": "Pass your first exam"
+      },
+      "perfect_exam": {
+        "name": "Perfect Score",
+        "desc": "Get 100% on an exam"
+      },
+      "five_perfect": {
+        "name": "Perfectionist",
+        "desc": "Get 5 perfect scores"
+      },
+      "speed_demon": {
+        "name": "Speed Demon",
+        "desc": "Finish with 30+ minutes remaining"
+      },
+      "comeback_kid": {
+        "name": "Comeback Kid",
+        "desc": "Pass after failing the same category"
+      },
+      "week_streak": {
+        "name": "Week Warrior",
+        "desc": "Maintain a 7-day streak"
+      },
+      "month_streak": {
+        "name": "Month Master",
+        "desc": "Maintain a 30-day streak"
+      },
+      "daily_champion": {
+        "name": "Daily Champion",
+        "desc": "Complete 7 sets of daily goals"
+      },
+      "smart_learner": {
+        "name": "Smart Learner",
+        "desc": "Complete 10 smart practice sessions"
+      },
+      "iron_will": {
+        "name": "Iron Will",
+        "desc": "Maintain a 100-day streak"
+      },
+      "explorer": {
+        "name": "Explorer",
+        "desc": "Try all 3 categories"
+      },
+      "cat3_master": {
+        "name": "Category 3 Master",
+        "desc": "Master Category 3"
+      },
+      "cat1_master": {
+        "name": "Category 1 Master",
+        "desc": "Master Category 1"
+      }
+    },
+    "xpEarned": {
+      "title": "XP Earned"
+    },
+    "xpEvents": {
+      "question_correct": "Correct answer",
+      "question_incorrect": "Question attempted",
+      "exam_completed": "Exam completed",
+      "exam_passed": "Exam passed",
+      "perfect_score": "Perfect score",
+      "daily_goal": "Daily goal completed",
+      "daily_goals_all_bonus": "All daily goals bonus",
+      "daily_streak_bonus": "Daily streak bonus",
+      "first_of_day": "First activity of the day",
+      "achievement_unlocked": "Achievement unlocked",
+      "smart_practice_session": "Smart practice session"
+    },
+    "levelUp": {
+      "title": "Level Up!",
+      "description": "You reached level {level}!"
+    },
+    "settings": {
+      "toggle": "Gamification settings",
+      "disabled": "Gamification is disabled",
+      "disabledDescription": "Enable gamification to earn XP, unlock achievements, and track daily goals.",
+      "enable": "Enable"
+    }
+  },
   "BecomeHam": {
     "title": "How to become a ham radio operator",
     "intro": "In Portugal, the process to become a licensed ham radio operator is regulated by ANACOM (National Communications Authority) and involves several steps and categories. This guide will explain the process from the beginning to obtaining the most advanced license.",

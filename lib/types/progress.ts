@@ -3,6 +3,9 @@
  * Designed for localStorage-first with future database migration support
  */
 
+import type { GamificationState } from "./gamification";
+import { createInitialGamificationState } from "./gamification";
+
 export interface QuestionAttempt {
   questionId: number;
   category: string;
@@ -55,6 +58,7 @@ export interface UserProgress {
   questionStats: Record<string, QuestionStats>;
   examHistory: ExamAttempt[];
   stats: UserStats;
+  gamification?: GamificationState;  // Optional for V3+, added via migration
 }
 
 export interface StorageProvider {
@@ -65,7 +69,7 @@ export interface StorageProvider {
   clearProgress(): Promise<void>;
 }
 
-export const PROGRESS_VERSION = 2;
+export const PROGRESS_VERSION = 3;
 
 // SM-2 Algorithm Constants
 export const SM2_CONFIG = {
@@ -98,6 +102,7 @@ export function createEmptyProgress(): UserProgress {
       longestStreak: 0,
       lastStudyDate: null,
     },
+    gamification: createInitialGamificationState(),
   };
 }
 

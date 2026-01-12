@@ -10,6 +10,7 @@ import { PageLoading } from '@/components/shared/Loading';
 import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
 import { useProgressContext } from '@/components/providers/ProgressProvider';
 import type { ExamAttempt, QuestionAttempt } from '@/lib/types/progress';
+import type { GamificationResult } from '@/lib/types/gamification';
 
 const { DURATION_SECONDS, QUESTIONS_PER_PAGE, MAX_QUESTIONS, PASSING_SCORE, WRONG_ANSWER_PENALTY } = EXAM_CONFIG;
 
@@ -17,7 +18,7 @@ export default function ExamPage() {
   const params = useParams();
   const searchParams = useSearchParams();
   const t = useTranslations('Exam');
-  const { recordExam, recordQuestionBatch } = useProgressContext();
+  const { recordExamWithGamification, recordQuestionBatch, gamification } = useProgressContext();
   const [timeLeft, setTimeLeft] = useState<number>(DURATION_SECONDS);
   const [score, setScore] = useState(0);
   const [category, setCategory] = useState<Category | null>(null);
@@ -27,6 +28,7 @@ export default function ExamPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const progressSavedRef = useRef(false);
   const isReplayRef = useRef(false);
+  const [gamificationResult, setGamificationResult] = useState<GamificationResult | null>(null);
 
   // Timer: countdown from initial time to 0; stops when quiz ends
   const timerRef = React.useRef<ReturnType<typeof setInterval> | null>(null);
@@ -124,7 +126,10 @@ export default function ExamPage() {
       answers: { ...answers },
     };
 
-    recordExam(examAttempt);
+    // Record exam with gamification (returns XP result)
+    recordExamWithGamification(examAttempt, timeLeft).then((result) => {
+      setGamificationResult(result);
+    });
 
     // Record individual question attempts
     const questionAttempts: QuestionAttempt[] = category.questions
@@ -139,7 +144,7 @@ export default function ExamPage() {
     if (questionAttempts.length > 0) {
       recordQuestionBatch(questionAttempts);
     }
-  }, [quizEnded, category, answers, score, timeLeft, recordExam, recordQuestionBatch]);
+  }, [quizEnded, category, answers, score, timeLeft, recordExamWithGamification, recordQuestionBatch]);
 
   React.useEffect(() => {
     const cat = typeof params.category === 'string'
@@ -234,6 +239,7 @@ export default function ExamPage() {
       setCurrentPage(1);
       setQuizEnded(false);
       setResultsOpen(false);
+      setGamificationResult(null);
     });
   };
 
@@ -427,6 +433,8 @@ export default function ExamPage() {
           };
         })}
         onStartNew={startNewQuiz}
+        gamificationResult={gamificationResult}
+        gamificationEnabled={gamification?.isEnabled ?? false}
       />
       
     </main>

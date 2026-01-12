@@ -6,8 +6,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
 import { useConfetti } from '@/hooks/useConfetti';
-import { Trophy, XCircle, Clock, Copy, Check, Share2, CircleCheck, CircleX, CircleDashed } from 'lucide-react';
+import { Trophy, XCircle, Clock, Copy, Check, Share2, CircleCheck, CircleX, CircleDashed, Sparkles, Star, ArrowUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import type { GamificationResult } from '@/lib/types/gamification';
 
 type AnswerStatus = 'correct' | 'incorrect' | 'unanswered';
 
@@ -31,6 +32,8 @@ interface ExamResultsModalProps {
   shareableUrl: string;
   reviewAnswers: ReviewAnswer[];
   onStartNew: () => void;
+  gamificationResult?: GamificationResult | null;
+  gamificationEnabled?: boolean;
 }
 
 export function ExamResultsModal({
@@ -44,8 +47,11 @@ export function ExamResultsModal({
   shareableUrl,
   reviewAnswers,
   onStartNew,
+  gamificationResult,
+  gamificationEnabled = false,
 }: ExamResultsModalProps) {
   const t = useTranslations('ExamResults');
+  const tGamification = useTranslations('Gamification');
   const passed = score >= passingScore;
   const [copied, setCopied] = useState(false);
   const [filter, setFilter] = useState<'all' | AnswerStatus>('all');
@@ -229,6 +235,68 @@ export function ExamResultsModal({
                 <span>{t('progress.perfect', { score: totalQuestions })}</span>
               </div>
             </div>
+
+            {/* XP Earned Section */}
+            {gamificationEnabled && gamificationResult && gamificationResult.xpGained > 0 && (
+              <div className="py-4 border-t">
+                <div className="flex items-center gap-2 mb-3">
+                  <Sparkles className="w-5 h-5 text-amber-500" />
+                  <h3 className="font-semibold text-foreground">
+                    {tGamification('xpEarned.title')}
+                  </h3>
+                  <span className="ml-auto text-lg font-bold text-amber-600">
+                    +{gamificationResult.xpGained} XP
+                  </span>
+                </div>
+
+                {/* XP Breakdown */}
+                <div className="space-y-1 text-sm">
+                  {gamificationResult.xpEvents.map((event, idx) => (
+                    <div key={idx} className="flex items-center justify-between text-muted-foreground">
+                      <span>{tGamification(`xpEvents.${event.type}`)}</span>
+                      <span className="text-amber-600">+{event.amount} XP</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Level Up */}
+                {gamificationResult.levelUp && (
+                  <div className="mt-3 p-3 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+                    <div className="flex items-center gap-2">
+                      <ArrowUp className="w-5 h-5 text-amber-600" />
+                      <span className="font-semibold text-amber-700 dark:text-amber-400">
+                        {tGamification('levelUp.title')}
+                      </span>
+                    </div>
+                    <p className="text-sm text-amber-600 dark:text-amber-500 mt-1">
+                      {tGamification('levelUp.description', { level: gamificationResult.newLevel })}
+                    </p>
+                  </div>
+                )}
+
+                {/* New Achievements */}
+                {gamificationResult.newAchievements.length > 0 && (
+                  <div className="mt-3 space-y-2">
+                    {gamificationResult.newAchievements.map((achievement) => (
+                      <div
+                        key={achievement.id}
+                        className="flex items-center gap-2 p-2 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800"
+                      >
+                        <Star className="w-5 h-5 text-purple-500" />
+                        <div className="flex-1">
+                          <span className="text-sm font-medium text-purple-700 dark:text-purple-400">
+                            {tGamification(achievement.nameKey)}
+                          </span>
+                        </div>
+                        <span className="text-xs text-purple-600 dark:text-purple-500">
+                          +{achievement.xpReward} XP
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
           </TabsContent>
 
           {/* Review Tab */}
