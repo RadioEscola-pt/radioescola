@@ -23,6 +23,7 @@ import {
   type QualityRating,
 } from "@/lib/spaced-repetition/sm2";
 import { RotateCcw, Zap, Clock, CheckCircle2 } from "lucide-react";
+import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
 
 const DEFAULT_CATEGORY = "3";
 const SESSION_SIZE = 20;
@@ -215,6 +216,21 @@ export default function SmartPracticePage() {
     const years = Math.round(days / 365);
     return years === 1 ? t("intervalYear", { count: 1 }) : t("intervalYears", { count: years });
   };
+
+  // Keyboard shortcuts for answer selection
+  const handleKeyboardAnswer = useCallback((index: number) => {
+    if (selectedOption === undefined && currentQuestion) {
+      handleSelect(index);
+    }
+  }, [selectedOption, currentQuestion]);
+
+  useKeyboardShortcuts({
+    onAnswer1: () => handleKeyboardAnswer(0),
+    onAnswer2: () => handleKeyboardAnswer(1),
+    onAnswer3: () => handleKeyboardAnswer(2),
+    onAnswer4: () => handleKeyboardAnswer(3),
+    enabled: !isLoading && !sessionComplete && !!currentQuestion,
+  });
 
   if (isLoading) {
     return <PageLoading message={t("loading")} />;

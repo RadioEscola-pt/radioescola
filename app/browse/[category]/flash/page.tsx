@@ -10,6 +10,7 @@ import { useCalculators } from "@/components/providers/CalculatorProvider";
 import { PageLoading } from "@/components/shared/Loading";
 import type { CalculatorCode } from "@/lib/types";
 import { useProgressContext } from "@/components/providers/ProgressProvider";
+import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
 
 const DEFAULT_CATEGORY = "3";
 
@@ -137,6 +138,28 @@ export default function FlashBrowsePage() {
     }
     setSelectedOption(undefined);
   };
+
+  // Keyboard shortcuts for flashcard navigation
+  const handleAnswer = useCallback((index: number) => {
+    if (selectedOption === undefined && currentQuestion) {
+      handleSelect(index);
+    }
+  }, [selectedOption, currentQuestion]);
+
+  const handleRevealOrNext = useCallback(() => {
+    if (selectedOption !== undefined) {
+      handleNext();
+    }
+  }, [selectedOption]);
+
+  useKeyboardShortcuts({
+    onAnswer1: () => handleAnswer(0),
+    onAnswer2: () => handleAnswer(1),
+    onAnswer3: () => handleAnswer(2),
+    onAnswer4: () => handleAnswer(3),
+    onReveal: handleRevealOrNext,
+    enabled: !isLoading && !!currentQuestion,
+  });
 
   if (isLoading) {
     return <PageLoading message={t("flashLoading")} />;

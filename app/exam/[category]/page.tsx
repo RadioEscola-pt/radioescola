@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { Category } from '@/lib/types';
@@ -9,6 +9,7 @@ import { ExamResultsModal } from '@/components/ExamResultsModal';
 import { PageLoading } from '@/components/shared/Loading';
 import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
 import { useProgressContext } from '@/components/providers/ProgressProvider';
+import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
 import type { ExamAttempt, QuestionAttempt } from '@/lib/types/progress';
 import type { GamificationResult } from '@/lib/types/gamification';
 
@@ -243,11 +244,31 @@ export default function ExamPage() {
     });
   };
 
+  // Calculate total pages (safe even when category is null)
+  const totalPages = category ? Math.max(1, Math.ceil(category.questions.length / QUESTIONS_PER_PAGE)) : 1;
+
+  // Keyboard shortcuts for exam navigation
+  useKeyboardShortcuts({
+    onNext: useCallback(() => {
+      if (category) {
+        setCurrentPage((p) => Math.min(totalPages, p + 1));
+      }
+    }, [category, totalPages]),
+    onPrevious: useCallback(() => {
+      setCurrentPage((p) => Math.max(1, p - 1));
+    }, []),
+    onEndQuiz: useCallback(() => {
+      if (!quizEnded) {
+        setQuizEnded(true);
+        setResultsOpen(true);
+      }
+    }, [quizEnded]),
+    enabled: !resultsOpen && !!category,
+  });
+
   if (!category) {
     return <PageLoading message={t('loading')} />;
   }
-
-  const totalPages = Math.max(1, Math.ceil(category.questions.length / QUESTIONS_PER_PAGE));
   const answeredCount = Object.keys(answers).length;
 
   return (
