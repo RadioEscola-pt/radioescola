@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Download, Upload, AlertTriangle, Check, Loader2 } from "lucide-react";
+import { Download, Upload, AlertTriangle, Check, Loader2, Trash2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import {
@@ -19,7 +19,7 @@ import type { ImportStrategy, ValidationResult } from "@/lib/backup/types";
 
 export default function DataManagement() {
   const t = useTranslations("DataManagement");
-  const { progress, refreshProgress } = useProgress();
+  const { progress, refreshProgress, clearProgress } = useProgress();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [isExporting, setIsExporting] = useState(false);
@@ -32,6 +32,9 @@ export default function DataManagement() {
   const [isImporting, setIsImporting] = useState(false);
   const [importSuccess, setImportSuccess] = useState(false);
   const [importError, setImportError] = useState<string | null>(null);
+
+  const [clearDialogOpen, setClearDialogOpen] = useState(false);
+  const [isClearing, setIsClearing] = useState(false);
 
   const handleExport = () => {
     if (!progress) return;
@@ -100,6 +103,20 @@ export default function DataManagement() {
     setImportFile(null);
     setValidation(null);
     setImportError(null);
+  };
+
+  const handleClearData = async () => {
+    setIsClearing(true);
+    try {
+      await clearProgress();
+      setClearDialogOpen(false);
+      // Reload page to reset all state
+      window.location.reload();
+    } catch (error) {
+      console.error("Clear failed:", error);
+    } finally {
+      setIsClearing(false);
+    }
   };
 
   return (
@@ -241,6 +258,57 @@ export default function DataManagement() {
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
               ) : null}
               {t("import.confirm")}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Clear Data Section */}
+      <div className="pt-3 border-t border-slate-200 dark:border-slate-700">
+        <Button
+          variant="destructive"
+          onClick={() => setClearDialogOpen(true)}
+          className="w-full sm:w-auto"
+        >
+          <Trash2 className="mr-2 h-4 w-4" />
+          {t("clear.button")}
+        </Button>
+      </div>
+
+      {/* Clear Confirmation Dialog */}
+      <Dialog open={clearDialogOpen} onOpenChange={setClearDialogOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2 text-red-600">
+              <AlertTriangle className="h-5 w-5" />
+              {t("clear.title")}
+            </DialogTitle>
+            <DialogDescription>
+              {t("clear.description")}
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="rounded-md bg-red-50 p-3 dark:bg-red-900/20">
+            <p className="text-sm text-red-800 dark:text-red-200">
+              {t("clear.warning")}
+            </p>
+          </div>
+
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setClearDialogOpen(false)}>
+              {t("clear.cancel")}
+            </Button>
+            <Button
+              variant="destructive"
+              onClick={handleClearData}
+              disabled={isClearing}
+            >
+              {isClearing ? (
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              ) : (
+                <Trash2 className="mr-2 h-4 w-4" />
+              )}
+              {t("clear.confirm")}
             </Button>
           </DialogFooter>
         </DialogContent>

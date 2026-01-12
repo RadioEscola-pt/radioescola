@@ -25,6 +25,16 @@ export default function BrowsePage() {
     return progress?.questionStats[key]?.bookmarked ?? false;
   }, [progress, categoryId]);
 
+  const getQuestionDifficultyStats = useCallback((questionId: number) => {
+    const key = `cat${categoryId}_${questionId}`;
+    const stats = progress?.questionStats[key];
+    if (!stats || stats.attempts === 0) return { successRate: undefined, attemptCount: 0 };
+    return {
+      successRate: (stats.correct / stats.attempts) * 100,
+      attemptCount: stats.attempts,
+    };
+  }, [progress, categoryId]);
+
   const handleToggleBookmark = useCallback(async (questionId: number) => {
     await toggleBookmark(categoryId, questionId);
     await refreshProgress();
@@ -64,6 +74,7 @@ export default function BrowsePage() {
         {category.questions.map((q, idx) => {
           const selected = answers[q.id];
           const isAnswered = selected !== undefined;
+          const difficultyStats = getQuestionDifficultyStats(q.id);
           return (
             <QuestionCard
               key={q.id}
@@ -90,6 +101,8 @@ export default function BrowsePage() {
               showBookmark
               isBookmarked={isBookmarked(q.id)}
               onToggleBookmark={() => handleToggleBookmark(q.id)}
+              successRate={difficultyStats.successRate}
+              attemptCount={difficultyStats.attemptCount}
             />
           );
         })}

@@ -156,6 +156,14 @@ function mergeGamification(
           existing.lifetimeStats?.smartPracticeSessions || 0,
           imported.lifetimeStats?.smartPracticeSessions || 0
         ),
+        drillsCompleted: Math.max(
+          existing.lifetimeStats?.drillsCompleted || 0,
+          imported.lifetimeStats?.drillsCompleted || 0
+        ),
+        drillsPerfect: Math.max(
+          existing.lifetimeStats?.drillsPerfect || 0,
+          imported.lifetimeStats?.drillsPerfect || 0
+        ),
         dailyGoalsCompleted: Math.max(
           existing.lifetimeStats?.dailyGoalsCompleted || 0,
           imported.lifetimeStats?.dailyGoalsCompleted || 0

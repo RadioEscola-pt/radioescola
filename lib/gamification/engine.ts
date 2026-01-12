@@ -15,6 +15,15 @@ import type { ExamAttempt, UserProgress } from "@/lib/types/progress";
 import { createInitialGamificationState } from "@/lib/types/gamification";
 import { XP_VALUES, calculateExamXP, calculateDailyStreakBonus, ACHIEVEMENT_XP } from "./xp";
 import { getLevelForXP } from "./levels";
+
+// Maximum XP allowed (safety cap to prevent corruption from bugs)
+const MAX_XP = 100000;
+
+// Helper to safely add XP with cap
+function addXPSafely(currentXP: number, xpToAdd: number): number {
+  return Math.min(currentXP + xpToAdd, MAX_XP);
+}
+
 import { ACHIEVEMENTS } from "./achievements";
 import {
   ensureTodayProgress,
@@ -157,8 +166,8 @@ export function processExamComplete(
   const totalXP = events.reduce((sum, e) => sum + e.amount, 0);
   const previousLevel = newState.currentLevel;
 
-  // Apply XP
-  newState.totalXP += totalXP;
+  // Apply XP (with safety cap)
+  newState.totalXP = addXPSafely(newState.totalXP, totalXP);
   newState.currentLevel = getLevelForXP(newState.totalXP).level;
 
   // Check achievements
@@ -174,7 +183,7 @@ export function processExamComplete(
       timestamp: now,
       metadata: { achievementId: achievement.id },
     });
-    newState.totalXP += achievement.xpReward;
+    newState.totalXP = addXPSafely(newState.totalXP, achievement.xpReward);
   }
 
   // Recheck level after achievement XP
@@ -263,7 +272,7 @@ export function processQuestionAnswered(
   const totalXP = events.reduce((sum, e) => sum + e.amount, 0);
   const previousLevel = newState.currentLevel;
 
-  newState.totalXP += totalXP;
+  newState.totalXP = addXPSafely(newState.totalXP, totalXP);
   newState.currentLevel = getLevelForXP(newState.totalXP).level;
   newState.xpHistory = [...events, ...newState.xpHistory].slice(0, 100);
 
@@ -326,7 +335,7 @@ export function processSmartPracticeSession(
   const totalXP = events.reduce((sum, e) => sum + e.amount, 0);
   const previousLevel = newState.currentLevel;
 
-  newState.totalXP += totalXP;
+  newState.totalXP = addXPSafely(newState.totalXP, totalXP);
   newState.currentLevel = getLevelForXP(newState.totalXP).level;
   newState.xpHistory = [...events, ...newState.xpHistory].slice(0, 100);
 
@@ -341,6 +350,108 @@ export function processSmartPracticeSession(
       newLevel: newState.currentLevel,
       dailyGoalsCompleted: dailyResult.newlyCompleted,
       allDailyGoalsComplete: false,
+    },
+  };
+}
+
+/**
+ * Process drill completion
+ */
+export function processDrillComplete(
+  state: GamificationState,
+  correctAnswers: number,
+  totalQuestions: number
+): { newState: GamificationState; result: GamificationResult } {
+  if (!state.settings.enabled) {
+    return { newState: state, result: createEmptyResult(state) };
+  }
+
+  let newState = { ...state };
+  const events: XPEvent[] = [];
+  const now = Date.now();
+  const today = getTodayDateString();
+
+  // Check if first activity of the day
+  const isFirstOfDay = newState.lastActivityDate !== today;
+  if (isFirstOfDay) {
+    events.push({ type: "first_of_day", amount: XP_VALUES.FIRST_OF_DAY, timestamp: now });
+    newState.lastActivityDate = today;
+  }
+
+  const isPerfect = correctAnswers === totalQuestions;
+
+  // Award XP for drill completion
+  events.push({ type: "drill_completed", amount: XP_VALUES.DRILL_COMPLETED, timestamp: now });
+
+  // Bonus XP for perfect score
+  if (isPerfect) {
+    events.push({ type: "drill_perfect", amount: XP_VALUES.DRILL_PERFECT, timestamp: now });
+  }
+
+  // Update lifetime stats
+  newState.lifetimeStats = {
+    ...newState.lifetimeStats,
+    drillsCompleted: (newState.lifetimeStats.drillsCompleted ?? 0) + 1,
+    drillsPerfect: (newState.lifetimeStats.drillsPerfect ?? 0) + (isPerfect ? 1 : 0),
+  };
+
+  // Update daily goals
+  newState.dailyProgress = ensureTodayProgress(newState.dailyProgress);
+  const dailyResult = updateDailyGoalProgress(
+    newState.dailyProgress,
+    "questions_answered",
+    totalQuestions
+  );
+  newState.dailyProgress = dailyResult.updated;
+
+  // Also track correct answers
+  const correctResult = updateDailyGoalProgress(
+    newState.dailyProgress,
+    "questions_correct",
+    correctAnswers
+  );
+  newState.dailyProgress = correctResult.updated;
+  dailyResult.newlyCompleted.push(...correctResult.newlyCompleted);
+
+  for (const goal of dailyResult.newlyCompleted) {
+    events.push({ type: "daily_goal", amount: goal.xpReward, timestamp: now });
+    newState.lifetimeStats = {
+      ...newState.lifetimeStats,
+      dailyGoalsCompleted: newState.lifetimeStats.dailyGoalsCompleted + 1,
+    };
+  }
+
+  // Check for all daily goals complete
+  const allDailyComplete = areAllDailyGoalsComplete(newState.dailyProgress);
+  if (allDailyComplete && !newState.dailyProgress.bonusClaimed) {
+    events.push({ type: "daily_goals_all_bonus", amount: XP_VALUES.DAILY_GOALS_ALL_BONUS, timestamp: now });
+    newState.dailyProgress = { ...newState.dailyProgress, bonusClaimed: true };
+    newState.dailyGoalStreak += 1;
+
+    const streakBonus = calculateDailyStreakBonus(newState.dailyGoalStreak);
+    if (streakBonus > 0) {
+      events.push({ type: "daily_streak_bonus", amount: streakBonus, timestamp: now });
+    }
+  }
+
+  const totalXP = events.reduce((sum, e) => sum + e.amount, 0);
+  const previousLevel = newState.currentLevel;
+
+  newState.totalXP = addXPSafely(newState.totalXP, totalXP);
+  newState.currentLevel = getLevelForXP(newState.totalXP).level;
+  newState.xpHistory = [...events, ...newState.xpHistory].slice(0, 100);
+
+  return {
+    newState,
+    result: {
+      xpGained: totalXP,
+      xpEvents: events,
+      newAchievements: [],
+      levelUp: newState.currentLevel > previousLevel,
+      previousLevel,
+      newLevel: newState.currentLevel,
+      dailyGoalsCompleted: dailyResult.newlyCompleted,
+      allDailyGoalsComplete: allDailyComplete && !state.dailyProgress?.bonusClaimed,
     },
   };
 }

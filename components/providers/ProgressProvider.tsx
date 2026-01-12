@@ -18,6 +18,7 @@ import {
   processExamComplete,
   processQuestionAnswered,
   processSmartPracticeSession,
+  processDrillComplete,
   toggleGamification,
   markAchievementsNotified,
 } from "@/lib/gamification/engine";
@@ -58,6 +59,7 @@ type ProgressContextType = {
     timeRemaining?: number
   ) => Promise<GamificationResult>;
   recordSmartPracticeSession: (questionsCompleted: number) => Promise<GamificationResult>;
+  recordDrillComplete: (correctAnswers: number, totalQuestions: number) => Promise<GamificationResult>;
   setGamificationEnabled: (enabled: boolean) => Promise<void>;
   dismissAchievementNotifications: (achievementIds: string[]) => Promise<void>;
 };
@@ -153,6 +155,36 @@ export default function ProgressProvider({
     [progressData, gamificationState]
   );
 
+  // Record drill completion
+  const recordDrillComplete = useCallback(
+    async (correctAnswers: number, totalQuestions: number): Promise<GamificationResult> => {
+      if (gamificationState && gamificationState.settings.enabled) {
+        const { newState, result } = processDrillComplete(
+          gamificationState,
+          correctAnswers,
+          totalQuestions
+        );
+
+        await progressData.updateGamificationState(newState);
+        setLastGamificationResult(result);
+        return result;
+      }
+
+      const emptyResult: GamificationResult = {
+        xpGained: 0,
+        xpEvents: [],
+        newAchievements: [],
+        levelUp: false,
+        previousLevel: gamificationState?.currentLevel ?? 1,
+        newLevel: gamificationState?.currentLevel ?? 1,
+        dailyGoalsCompleted: [],
+        allDailyGoalsComplete: false,
+      };
+      return emptyResult;
+    },
+    [progressData, gamificationState]
+  );
+
   // Toggle gamification enabled/disabled
   const setGamificationEnabled = useCallback(
     async (enabled: boolean): Promise<void> => {
@@ -181,6 +213,7 @@ export default function ProgressProvider({
     lastGamificationResult,
     recordExamWithGamification,
     recordSmartPracticeSession,
+    recordDrillComplete,
     setGamificationEnabled,
     dismissAchievementNotifications,
   };

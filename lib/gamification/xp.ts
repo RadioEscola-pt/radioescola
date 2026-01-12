@@ -17,6 +17,8 @@ export const XP_VALUES = {
   DAILY_STREAK_MULTIPLIER: 5,
   DAILY_STREAK_MAX: 50,
   SMART_PRACTICE_SESSION: 20,
+  DRILL_COMPLETED: 15,
+  DRILL_PERFECT: 25,
 } as const;
 
 export const ACHIEVEMENT_XP: Record<AchievementRarity, number> = {

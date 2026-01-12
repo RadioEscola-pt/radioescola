@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Upload, Menu, GraduationCap, BarChart3, Settings, Moon, Globe } from "lucide-react";
+import { Home, BookOpen, FileText, Upload, Menu, GraduationCap, BarChart3, Settings, Moon, Globe, Zap } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -138,6 +138,15 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
               </AccordionTrigger>
               <AccordionContent className="pb-0 pt-1">
                 <div className="flex flex-col gap-1 pl-7">
+                  <Link
+                    href="/drill"
+                    onClick={closeMenu}
+                    className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-slate-100"
+                  >
+                    <Zap className="h-4 w-4 text-amber-500" />
+                    {t("quickDrill")}
+                  </Link>
+                  <div className="border-t my-1" />
                   {categories.map((cat, idx) => (
                     <div key={cat.id}>
                       {idx > 0 && <div className="border-t my-1" />}

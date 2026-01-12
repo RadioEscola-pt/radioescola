@@ -24,6 +24,9 @@ interface QuestionCardProps {
   showBookmark?: boolean;
   isBookmarked?: boolean;
   onToggleBookmark?: () => Promise<void> | void;
+  // Difficulty indicator
+  successRate?: number; // 0-100 percentage
+  attemptCount?: number;
 }
 
 function buildFonteLink(entry: string) {
@@ -61,11 +64,20 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   showBookmark = false,
   isBookmarked = false,
   onToggleBookmark,
+  successRate,
+  attemptCount,
 }) => {
   const t = useTranslations('QuestionCard');
   const tc = useTranslations('Calculators');
   const isAnswered = selectedOption !== undefined;
   const calcCodes = normalizeCalcCodes(question.calc);
+
+  // Get color class for difficulty badge based on success rate
+  const getDifficultyColorClass = (rate: number) => {
+    if (rate >= 70) return 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400';
+    if (rate >= 50) return 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400';
+    return 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400';
+  };
 
   const handleLaunch = React.useCallback((code: string) => {
     if (onLaunchCalculator) {
@@ -120,13 +132,20 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
           )}
           {question.question}
         </p>
-        {showBookmark && onToggleBookmark && (
-          <BookmarkButton
-            isBookmarked={isBookmarked}
-            onToggle={onToggleBookmark}
-            size="sm"
-          />
-        )}
+        <div className="flex items-center gap-2 shrink-0">
+          {attemptCount !== undefined && attemptCount > 0 && successRate !== undefined && (
+            <span className={`text-xs px-2 py-0.5 rounded-full ${getDifficultyColorClass(successRate)}`}>
+              {t('successRate', { rate: Math.round(successRate) })}
+            </span>
+          )}
+          {showBookmark && onToggleBookmark && (
+            <BookmarkButton
+              isBookmarked={isBookmarked}
+              onToggle={onToggleBookmark}
+              size="sm"
+            />
+          )}
+        </div>
       </div>
 
       {showImage && question.img && (

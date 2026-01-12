@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Calculator, ChevronDown, Upload, GraduationCap, BarChart3, UserCircle, Moon, Globe } from "lucide-react";
+import { Home, BookOpen, FileText, Calculator, ChevronDown, Upload, GraduationCap, BarChart3, UserCircle, Moon, Globe, Zap } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -114,6 +114,13 @@ export default function NavBar() {
               <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-[220px]">
+              <DropdownMenuItem asChild>
+                <Link href="/drill" className="cursor-pointer">
+                  <Zap className="mr-2 h-4 w-4 text-amber-500" />
+                  {t("quickDrill")}
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
               {categories.map((cat, idx) => (
                 <React.Fragment key={cat.id}>
                   {idx > 0 && <DropdownMenuSeparator />}

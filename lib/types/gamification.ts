@@ -16,7 +16,9 @@ export type XPEventType =
   | "daily_streak_bonus"
   | "achievement_unlocked"
   | "first_of_day"
-  | "smart_practice_session";
+  | "smart_practice_session"
+  | "drill_completed"
+  | "drill_perfect";
 
 export interface XPEvent {
   type: XPEventType;
@@ -113,6 +115,8 @@ export interface LifetimeStats {
   questionsCorrect: number;
   perfectScores: number;
   smartPracticeSessions: number;
+  drillsCompleted: number;
+  drillsPerfect: number;
   dailyGoalsCompleted: number;
   fastFinishes: number;
   comebacks: number;
@@ -159,6 +163,8 @@ export function createInitialLifetimeStats(): LifetimeStats {
     questionsCorrect: 0,
     perfectScores: 0,
     smartPracticeSessions: 0,
+    drillsCompleted: 0,
+    drillsPerfect: 0,
     dailyGoalsCompleted: 0,
     fastFinishes: 0,
     comebacks: 0,

@@ -28,7 +28,8 @@
     "studyLibrary": "Study Library",
     "questions": "Questions",
     "flashcards": "Flashcards",
-    "smartPractice": "Smart Practice"
+    "smartPractice": "Smart Practice",
+    "quickDrill": "Quick Drill"
   },
   "Footer": {
     "about": "About",
@@ -260,7 +261,8 @@
     "incorrect": "Incorrect",
     "unanswered": "Unanswered",
     "relatedTutorial": "Related tutorial:",
-    "officialSource": "Official source:"
+    "officialSource": "Official source:",
+    "successRate": "{rate}% success"
   },
   "SubmitExam": {
     "title": "Submit Exam",
@@ -406,6 +408,52 @@
     "accuracy": "Accuracy",
     "practiceMore": "Practice More",
     "viewProgress": "View Progress"
+  },
+  "Drill": {
+    "title": "Quick Drill",
+    "subtitle": "10 questions in 5 minutes",
+    "selectCategory": "Select a category",
+    "allCategories": "All Categories",
+    "category": "Category {id}",
+    "startDrill": "Start Drill",
+    "timeRemaining": "{minutes}:{seconds}",
+    "question": "Question {current} of {total}",
+    "skip": "Skip",
+    "timeUp": "Time's Up!",
+    "drillComplete": "Drill Complete!",
+    "score": "{correct} of {total} correct",
+    "accuracy": "{percent}% accuracy",
+    "perfect": "Perfect Score!",
+    "passed": "Great Job!",
+    "needsWork": "Keep Practicing",
+    "xpEarned": "+{xp} XP",
+    "tryAgain": "Try Again",
+    "backHome": "Back to Home",
+    "inProgress": "In Progress",
+    "timeBonus": "Time bonus: +{seconds}s remaining"
+  },
+  "StreakCalendar": {
+    "title": "Study Activity",
+    "currentStreak": "{days} day streak",
+    "totalDays": "{days} days total",
+    "xpEarned": "{xp} XP earned",
+    "lessActive": "Less",
+    "moreActive": "More"
+  },
+  "Notifications": {
+    "title": "Study Reminders",
+    "description": "Get notified when questions are due for review",
+    "notSupported": "Notifications not available",
+    "notSupportedDescription": "Your browser doesn't support push notifications",
+    "permissionDenied": "Notifications blocked",
+    "permissionDeniedDescription": "Please enable notifications in your browser settings",
+    "minQuestions": "Minimum questions for reminder",
+    "questions": "questions",
+    "cooldown": "Reminder frequency",
+    "minutes": "minutes",
+    "hour": "hour",
+    "hours": "hours",
+    "dueReminder": "{count} questions ready for review"
   },
   "Gamification": {
     "xpBar": {
@@ -670,6 +718,14 @@
         "replace": "Replace All",
         "replaceDesc": "Replace all existing progress with the imported data."
       }
+    },
+    "clear": {
+      "button": "Clear All Data",
+      "title": "Clear All Data",
+      "description": "This will permanently delete all your study progress, exam history, and achievements.",
+      "warning": "This action cannot be undone. Make sure to export your data first if you want to keep a backup.",
+      "cancel": "Cancel",
+      "confirm": "Delete Everything"
     }
   },
   "Offline": {

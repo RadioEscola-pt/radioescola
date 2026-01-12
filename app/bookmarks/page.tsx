@@ -171,6 +171,8 @@ export default function BookmarksPage() {
                     onSelect={() => {}}
                     showImage
                     disabled
+                    successRate={bookmark.stats.attempts > 0 ? (bookmark.stats.correct / bookmark.stats.attempts) * 100 : undefined}
+                    attemptCount={bookmark.stats.attempts}
                   />
                   {bookmark.stats.notes && (
                     <div className="mt-2 mx-4 mb-4 p-3 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">

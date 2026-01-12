@@ -14,6 +14,10 @@ import { getLevelForXP, getXPProgress, getXPToNextLevel, LEVELS } from "@/lib/ga
 import { ACHIEVEMENTS, getAchievementById, getVisibleAchievements, getAchievementProgress } from "@/lib/gamification/achievements";
 import { ensureTodayProgress } from "@/lib/gamification/daily-goals";
 
+// Maximum reasonable XP (prevents corrupted data from displaying absurd values)
+// 100,000 XP would take months of daily use to legitimately earn
+const MAX_REASONABLE_XP = 100000;
+
 export interface UseGamificationReturn {
   // State
   isEnabled: boolean;
@@ -55,7 +59,9 @@ export function useGamification(
   const state = gamificationState ?? createInitialGamificationState();
 
   const isEnabled = state.settings.enabled;
-  const totalXP = state.totalXP;
+  // Apply sanity check to prevent displaying corrupted XP values
+  // This can happen if a bug causes XP to be added repeatedly
+  const totalXP = Math.min(state.totalXP, MAX_REASONABLE_XP);
   const currentLevel = getLevelForXP(totalXP);
   const xpProgress = getXPProgress(totalXP);
   const xpToNextLevel = getXPToNextLevel(totalXP);

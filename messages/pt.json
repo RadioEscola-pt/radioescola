@@ -28,7 +28,8 @@
     "studyLibrary": "Biblioteca de Estudo",
     "questions": "Questões",
     "flashcards": "Flashcards",
-    "smartPractice": "Prática Inteligente"
+    "smartPractice": "Prática Inteligente",
+    "quickDrill": "Treino Rápido"
   },
   "Footer": {
     "about": "Sobre",
@@ -260,7 +261,8 @@
     "incorrect": "Incorreto",
     "unanswered": "Sem resposta",
     "relatedTutorial": "Tutorial relacionado:",
-    "officialSource": "Fonte oficial:"
+    "officialSource": "Fonte oficial:",
+    "successRate": "{rate}% de acerto"
   },
   "SubmitExam": {
     "title": "Enviar Exame",
@@ -406,6 +408,52 @@
     "accuracy": "Precisão",
     "practiceMore": "Praticar Mais",
     "viewProgress": "Ver Progresso"
+  },
+  "Drill": {
+    "title": "Treino Rápido",
+    "subtitle": "10 questões em 5 minutos",
+    "selectCategory": "Seleciona uma categoria",
+    "allCategories": "Todas as Categorias",
+    "category": "Categoria {id}",
+    "startDrill": "Iniciar Treino",
+    "timeRemaining": "{minutes}:{seconds}",
+    "question": "Questão {current} de {total}",
+    "skip": "Saltar",
+    "timeUp": "Tempo Esgotado!",
+    "drillComplete": "Treino Completo!",
+    "score": "{correct} de {total} corretas",
+    "accuracy": "{percent}% de precisão",
+    "perfect": "Pontuação Perfeita!",
+    "passed": "Muito Bem!",
+    "needsWork": "Continua a Praticar",
+    "xpEarned": "+{xp} XP",
+    "tryAgain": "Tentar Novamente",
+    "backHome": "Voltar ao Início",
+    "inProgress": "Em Progresso",
+    "timeBonus": "Bónus de tempo: +{seconds}s restantes"
+  },
+  "StreakCalendar": {
+    "title": "Atividade de Estudo",
+    "currentStreak": "{days} dias de sequência",
+    "totalDays": "{days} dias no total",
+    "xpEarned": "{xp} XP ganhos",
+    "lessActive": "Menos",
+    "moreActive": "Mais"
+  },
+  "Notifications": {
+    "title": "Lembretes de Estudo",
+    "description": "Recebe notificações quando há questões para rever",
+    "notSupported": "Notificações não disponíveis",
+    "notSupportedDescription": "O teu navegador não suporta notificações push",
+    "permissionDenied": "Notificações bloqueadas",
+    "permissionDeniedDescription": "Por favor ativa as notificações nas definições do navegador",
+    "minQuestions": "Mínimo de questões para lembrete",
+    "questions": "questões",
+    "cooldown": "Frequência de lembretes",
+    "minutes": "minutos",
+    "hour": "hora",
+    "hours": "horas",
+    "dueReminder": "{count} questões prontas para revisão"
   },
   "Gamification": {
     "xpBar": {
@@ -670,6 +718,14 @@
         "replace": "Substituir Tudo",
         "replaceDesc": "Substitui todo o progresso existente pelos dados importados."
       }
+    },
+    "clear": {
+      "button": "Limpar Todos os Dados",
+      "title": "Limpar Todos os Dados",
+      "description": "Isto irá eliminar permanentemente todo o teu progresso de estudo, histórico de exames e conquistas.",
+      "warning": "Esta ação não pode ser desfeita. Certifica-te de exportar os teus dados primeiro se quiseres manter um backup.",
+      "cancel": "Cancelar",
+      "confirm": "Eliminar Tudo"
     }
   },
   "Offline": {

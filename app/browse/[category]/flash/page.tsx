@@ -60,6 +60,16 @@ export default function FlashBrowsePage() {
     return progress?.questionStats[key]?.bookmarked ?? false;
   }, [progress, catId]);
 
+  const getQuestionDifficultyStats = useCallback((questionId: number) => {
+    const key = `cat${catId}_${questionId}`;
+    const stats = progress?.questionStats[key];
+    if (!stats || stats.attempts === 0) return { successRate: undefined, attemptCount: 0 };
+    return {
+      successRate: (stats.correct / stats.attempts) * 100,
+      attemptCount: stats.attempts,
+    };
+  }, [progress, catId]);
+
   const handleToggleBookmark = useCallback(async (questionId: number) => {
     await toggleBookmark(catId, questionId);
     await refreshProgress();
@@ -225,6 +235,8 @@ export default function FlashBrowsePage() {
         showBookmark
         isBookmarked={isBookmarked(currentQuestion.id)}
         onToggleBookmark={() => handleToggleBookmark(currentQuestion.id)}
+        successRate={getQuestionDifficultyStats(currentQuestion.id).successRate}
+        attemptCount={getQuestionDifficultyStats(currentQuestion.id).attemptCount}
       />
 
       {ended && (

@@ -377,18 +377,25 @@ export default function SmartPracticePage() {
 
       {/* Question card */}
       <div className="px-0 sm:px-8">
-        {currentQuestion && (
-          <QuestionCard
-            question={currentQuestion}
-            selectedOption={selectedOption}
-            onSelect={handleSelect}
-            showImage
-            indexNumber={cursor + 1}
-            showCalcHint
-            onLaunchCalculator={handleLaunchCalculator}
-            ended={ended}
-          />
-        )}
+        {currentQuestion && (() => {
+          const stats = getQuestionStats(catId, currentQuestion.id);
+          const attemptCount = stats?.attempts ?? 0;
+          const successRate = attemptCount > 0 ? ((stats?.correct ?? 0) / attemptCount) * 100 : undefined;
+          return (
+            <QuestionCard
+              question={currentQuestion}
+              selectedOption={selectedOption}
+              onSelect={handleSelect}
+              showImage
+              indexNumber={cursor + 1}
+              showCalcHint
+              onLaunchCalculator={handleLaunchCalculator}
+              ended={ended}
+              successRate={successRate}
+              attemptCount={attemptCount}
+            />
+          );
+        })()}
       </div>
 
       {/* Quality rating buttons */}

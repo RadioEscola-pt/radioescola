@@ -38,9 +38,11 @@ import {
   AchievementsGrid,
   AchievementToastContainer,
 } from "@/components/gamification";
+import { StreakCalendar } from "@/components/gamification/StreakCalendar";
 import { ACHIEVEMENTS } from "@/lib/gamification/achievements";
 import Link from "next/link";
 import DataManagement from "@/components/settings/DataManagement";
+import NotificationSettings from "@/components/settings/NotificationSettings";
 import { getBookmarkedQuestions } from "@/lib/storage/localStorage";
 
 interface CategoryQuestionCount {
@@ -164,6 +166,13 @@ export default function DashboardPage() {
             percentage={gamification.xpProgress.percentage}
             level={gamification.currentLevel}
           />
+        </div>
+      )}
+
+      {/* Streak Calendar */}
+      {gamificationEnabled && gamification && progress?.gamification?.xpHistory && (
+        <div className="px-4 sm:px-0 mb-6">
+          <StreakCalendar xpHistory={progress.gamification.xpHistory} weeks={12} />
         </div>
       )}
 
@@ -405,6 +414,11 @@ export default function DashboardPage() {
           </div>
           <DataManagement />
         </div>
+      </div>
+
+      {/* Notification Settings */}
+      <div className="px-4 sm:px-0 mb-6">
+        <NotificationSettings />
       </div>
 
       {/* Empty State */}
