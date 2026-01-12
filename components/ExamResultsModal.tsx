@@ -3,12 +3,13 @@ import React, { useEffect, useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from './ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
 import { useConfetti } from '@/hooks/useConfetti';
-import { Trophy, XCircle, Clock, Copy, Check, Share2, CircleCheck, CircleX, CircleDashed, Sparkles, Star, ArrowUp } from 'lucide-react';
+import { Trophy, XCircle, Clock, CircleCheck, CircleX, CircleDashed, Sparkles, Star, ArrowUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { GamificationResult } from '@/lib/types/gamification';
+import { ShareButton } from './ShareButton';
+import { createExamResultShare } from '@/lib/share';
 
 type AnswerStatus = 'correct' | 'incorrect' | 'unanswered';
 
@@ -24,12 +25,12 @@ interface ReviewAnswer {
 interface ExamResultsModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  category: string;
   score: number;
   totalQuestions: number;
   timeLeft: number;
   totalSeconds: number;
   passingScore?: number;
-  shareableUrl: string;
   reviewAnswers: ReviewAnswer[];
   onStartNew: () => void;
   gamificationResult?: GamificationResult | null;
@@ -39,12 +40,12 @@ interface ExamResultsModalProps {
 export function ExamResultsModal({
   open,
   onOpenChange,
+  category,
   score,
   totalQuestions,
   timeLeft,
   totalSeconds,
   passingScore = 20,
-  shareableUrl,
   reviewAnswers,
   onStartNew,
   gamificationResult,
@@ -53,9 +54,16 @@ export function ExamResultsModal({
   const t = useTranslations('ExamResults');
   const tGamification = useTranslations('Gamification');
   const passed = score >= passingScore;
-  const [copied, setCopied] = useState(false);
   const [filter, setFilter] = useState<'all' | AnswerStatus>('all');
   const { celebrate, reset } = useConfetti({ enabled: passed });
+
+  // Create share content for exam results
+  const shareContent = useMemo(() => createExamResultShare({
+    category,
+    score,
+    totalQuestions,
+    passed,
+  }), [category, score, totalQuestions, passed]);
 
   useEffect(() => {
     if (open && passed) {
@@ -64,7 +72,6 @@ export function ExamResultsModal({
     }
     if (!open) {
       reset();
-      setCopied(false);
     }
     return;
   }, [open, passed, celebrate, reset]);
@@ -77,12 +84,6 @@ export function ExamResultsModal({
 
   const progress = Math.max(0, Math.min(100, Math.round((score / totalQuestions) * 100)));
   const passThreshold = Math.round((passingScore / totalQuestions) * 100);
-
-  const handleCopy = async () => {
-    await navigator.clipboard?.writeText(shareableUrl);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   const counts = useMemo(() => ({
     correct: reviewAnswers.filter(a => a.status === 'correct').length,
@@ -112,47 +113,7 @@ export function ExamResultsModal({
             <DialogTitle className="text-xl">{t('title')}</DialogTitle>
             <DialogDescription>{t('subtitle')}</DialogDescription>
           </div>
-          <Popover>
-            <PopoverTrigger asChild>
-              <button
-                className={cn(
-                  "p-2 rounded-md transition-colors",
-                  "hover:bg-gray-100",
-                  "focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                )}
-                title={t('share.title')}
-              >
-                <Share2 className="w-5 h-5 text-muted-foreground" />
-              </button>
-            </PopoverTrigger>
-            <PopoverContent align="end" className="w-80">
-              <div className="space-y-2">
-                <h4 className="font-medium text-sm">{t('share.title')}</h4>
-                <p className="text-xs text-muted-foreground">
-                  {t('share.description')}
-                </p>
-                <div className="flex items-center gap-2">
-                  <input
-                    readOnly
-                    value={shareableUrl}
-                    className="flex-1 px-2 py-1.5 border rounded-md bg-gray-50 font-mono text-xs"
-                  />
-                  <button
-                    onClick={handleCopy}
-                    className={cn(
-                      "inline-flex items-center gap-1 px-2 py-1.5 rounded-md text-xs font-medium",
-                      "border transition-all duration-200",
-                      "hover:bg-gray-100",
-                      copied && "bg-green-50 border-green-300 text-green-700"
-                    )}
-                  >
-                    {copied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
-                    {copied ? t('share.copied') : t('share.copy')}
-                  </button>
-                </div>
-              </div>
-            </PopoverContent>
-          </Popover>
+          <ShareButton content={shareContent} iconOnly />
         </DialogHeader>
 
         {/* Tabs */}

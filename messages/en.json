@@ -615,5 +615,51 @@
       "annualFees": "Payment of annual fees.",
       "compliance": "Compliance with regulations and good practices of amateur radio."
     }
+  },
+  "Share": {
+    "title": "Share",
+    "native": "Share...",
+    "twitter": "Share on X (Twitter)",
+    "facebook": "Share on Facebook",
+    "linkedin": "Share on LinkedIn",
+    "copyLink": "Copy Link",
+    "copied": "Copied!"
+  },
+  "Bookmarks": {
+    "title": "Bookmarked Questions",
+    "subtitle": "{count, plural, =0 {No bookmarked questions} =1 {1 bookmarked question} other {# bookmarked questions}}",
+    "loading": "Loading bookmarks...",
+    "backToDashboard": "Back to Dashboard",
+    "empty": "No bookmarked questions yet. Bookmark questions while studying to review them later.",
+    "startBrowsing": "Start Browsing Questions",
+    "filterAll": "All",
+    "filterCategory": "Category {id}",
+    "questionNotFound": "Question {id} not found",
+    "remove": "Remove bookmark",
+    "notes": "Notes"
+  },
+  "DataManagement": {
+    "title": "Data Management",
+    "export": {
+      "title": "Export Progress",
+      "description": "Download your progress data as a JSON file for backup.",
+      "button": "Export Progress",
+      "success": "Progress exported successfully!"
+    },
+    "import": {
+      "title": "Import Progress",
+      "description": "Restore progress from a previously exported file.",
+      "button": "Import Progress",
+      "selectStrategy": "Import Strategy",
+      "replace": "Replace All",
+      "replaceDescription": "Replace all existing progress with the imported data.",
+      "merge": "Merge",
+      "mergeDescription": "Combine imported data with existing progress.",
+      "cancel": "Cancel",
+      "confirm": "Import",
+      "success": "Progress imported successfully!",
+      "error": "Failed to import: {message}",
+      "invalidFile": "Invalid backup file"
+    }
   }
 }

@@ -615,5 +615,51 @@
       "annualFees": "Pagamento de taxas anuais.",
       "compliance": "Cumprimento das regulamentações e boas práticas do radioamadorismo."
     }
+  },
+  "Share": {
+    "title": "Partilhar",
+    "native": "Partilhar...",
+    "twitter": "Partilhar no X (Twitter)",
+    "facebook": "Partilhar no Facebook",
+    "linkedin": "Partilhar no LinkedIn",
+    "copyLink": "Copiar Link",
+    "copied": "Copiado!"
+  },
+  "Bookmarks": {
+    "title": "Questões Guardadas",
+    "subtitle": "{count, plural, =0 {Nenhuma questão guardada} =1 {1 questão guardada} other {# questões guardadas}}",
+    "loading": "A carregar favoritos...",
+    "backToDashboard": "Voltar ao Painel",
+    "empty": "Ainda não há questões guardadas. Marca questões como favoritas enquanto estudas para as rever mais tarde.",
+    "startBrowsing": "Começar a Explorar",
+    "filterAll": "Todas",
+    "filterCategory": "Categoria {id}",
+    "questionNotFound": "Questão {id} não encontrada",
+    "remove": "Remover favorito",
+    "notes": "Notas"
+  },
+  "DataManagement": {
+    "title": "Gestão de Dados",
+    "export": {
+      "title": "Exportar Progresso",
+      "description": "Descarrega os teus dados de progresso como ficheiro JSON para backup.",
+      "button": "Exportar Progresso",
+      "success": "Progresso exportado com sucesso!"
+    },
+    "import": {
+      "title": "Importar Progresso",
+      "description": "Restaura o progresso a partir de um ficheiro exportado anteriormente.",
+      "button": "Importar Progresso",
+      "selectStrategy": "Estratégia de Importação",
+      "replace": "Substituir Tudo",
+      "replaceDescription": "Substitui todo o progresso existente pelos dados importados.",
+      "merge": "Combinar",
+      "mergeDescription": "Combina os dados importados com o progresso existente.",
+      "cancel": "Cancelar",
+      "confirm": "Importar",
+      "success": "Progresso importado com sucesso!",
+      "error": "Falha ao importar: {message}",
+      "invalidFile": "Ficheiro de backup inválido"
+    }
   }
 }

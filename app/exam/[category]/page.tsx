@@ -421,26 +421,12 @@ export default function ExamPage() {
       <ExamResultsModal
         open={resultsOpen}
         onOpenChange={setResultsOpen}
+        category={category.id}
         score={score}
         totalQuestions={category.questions.length}
         timeLeft={timeLeft}
         totalSeconds={DURATION_SECONDS}
         passingScore={PASSING_SCORE}
-        shareableUrl={(() => {
-          try {
-            const origin = typeof window !== 'undefined' ? window.location.origin : '';
-            const ids = category.questions.map((q) => q.id).join('-');
-            const ans = category.questions
-              .map((q) => {
-                const sel = answers[q.id];
-                return sel === undefined ? 'x' : sel.toString(36);
-              })
-              .join('');
-            return `${origin}/exam/${encodeURIComponent(category.id)}?q=${encodeURIComponent(ids)}&a=${encodeURIComponent(ans)}&t=${timeLeft}`;
-          } catch {
-            return '';
-          }
-        })()}
         reviewAnswers={category.questions.map((q, idx) => {
           const sel = answers[q.id];
           const status = sel === undefined ? 'unanswered' : sel === q.correctIndex ? 'correct' : 'incorrect';
