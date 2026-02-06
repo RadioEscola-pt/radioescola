@@ -160,63 +160,110 @@ export default async function BecomeHamPage() {
           {t("waitTimesNote")}
         </p>
 
-        <div className="rounded-xl border border-slate-200 dark:border-slate-700/60 bg-white dark:bg-slate-800/50 p-6 sm:p-8">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0">
-            {/* Category 3 */}
-            <div className="flex flex-col items-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/40 ring-2 ring-green-200 dark:ring-green-800/40">
-                <div className="text-center">
-                  <div className="text-xl font-bold text-green-600 dark:text-green-400">3</div>
-                  <div className="text-[10px] font-medium text-green-500 dark:text-green-500">{t("progression.entry")}</div>
-                </div>
+        {/* Desktop: horizontal track */}
+        <div className="hidden sm:block">
+          <div className="relative flex items-start">
+            {/* Continuous track line behind everything */}
+            <div className="absolute top-5 left-[40px] right-[40px] h-0.5 bg-slate-200 dark:bg-slate-700" />
+
+            {/* Cat 3 */}
+            <div className="relative flex-1 flex flex-col items-center">
+              <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-green-500 text-white font-bold text-base shadow-sm">
+                3
               </div>
-              <span className="mt-1.5 text-xs font-medium text-slate-400">12+</span>
+              <span className="mt-2 text-sm font-semibold text-slate-900 dark:text-slate-100">{t("progression.entry")}</span>
+              <span className="text-xs text-slate-400">12+</span>
             </div>
 
-            {/* Arrow: 2 years */}
-            <div className="flex flex-col sm:flex-row items-center gap-1 sm:mx-3">
-              <div className="hidden sm:block h-px w-6 bg-slate-300 dark:bg-slate-600" />
-              <div className="sm:hidden w-px h-6 bg-slate-300 dark:bg-slate-600" />
-              <div className="flex items-center gap-1.5 rounded-full bg-slate-100 dark:bg-slate-700 px-3 py-1">
+            {/* Wait: 2 years - centered on the track line (top-5 = 20px center) */}
+            <div className="relative flex-1 flex flex-col items-center" style={{ paddingTop: 'calc(1.25rem - 13px)' }}>
+              <div className="relative z-10 flex items-center gap-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1 shadow-sm">
                 <Clock className="h-3 w-3 text-slate-400" />
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">{t("progression.twoYears")}</span>
               </div>
-              <div className="hidden sm:block h-px w-6 bg-slate-300 dark:bg-slate-600" />
-              <div className="sm:hidden w-px h-6 bg-slate-300 dark:bg-slate-600" />
             </div>
 
-            {/* Category 2 */}
-            <div className="flex flex-col items-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/40 ring-2 ring-amber-200 dark:ring-amber-800/40">
-                <div className="text-center">
-                  <div className="text-xl font-bold text-amber-600 dark:text-amber-400">2</div>
-                  <div className="text-[10px] font-medium text-amber-500 dark:text-amber-500">{t("progression.intermediate")}</div>
-                </div>
+            {/* Cat 2 */}
+            <div className="relative flex-1 flex flex-col items-center">
+              <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-amber-500 text-white font-bold text-base shadow-sm">
+                2
               </div>
-              <span className="mt-1.5 text-xs font-medium text-slate-400">14+</span>
+              <span className="mt-2 text-sm font-semibold text-slate-900 dark:text-slate-100">{t("progression.intermediate")}</span>
+              <span className="text-xs text-slate-400">14+</span>
             </div>
 
-            {/* Arrow: 1 year */}
-            <div className="flex flex-col sm:flex-row items-center gap-1 sm:mx-3">
-              <div className="hidden sm:block h-px w-6 bg-slate-300 dark:bg-slate-600" />
-              <div className="sm:hidden w-px h-6 bg-slate-300 dark:bg-slate-600" />
-              <div className="flex items-center gap-1.5 rounded-full bg-slate-100 dark:bg-slate-700 px-3 py-1">
+            {/* Wait: 1 year - centered on the track line */}
+            <div className="relative flex-1 flex flex-col items-center" style={{ paddingTop: 'calc(1.25rem - 13px)' }}>
+              <div className="relative z-10 flex items-center gap-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1 shadow-sm">
                 <Clock className="h-3 w-3 text-slate-400" />
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">{t("progression.oneYear")}</span>
               </div>
-              <div className="hidden sm:block h-px w-6 bg-slate-300 dark:bg-slate-600" />
-              <div className="sm:hidden w-px h-6 bg-slate-300 dark:bg-slate-600" />
             </div>
 
-            {/* Category 1 */}
-            <div className="flex flex-col items-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-rose-100 dark:bg-rose-900/40 ring-2 ring-rose-200 dark:ring-rose-800/40">
-                <div className="text-center">
-                  <div className="text-xl font-bold text-rose-600 dark:text-rose-400">1</div>
-                  <div className="text-[10px] font-medium text-rose-500 dark:text-rose-500">{t("progression.advanced")}</div>
-                </div>
+            {/* Cat 1 */}
+            <div className="relative flex-1 flex flex-col items-center">
+              <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-rose-500 text-white font-bold text-base shadow-sm">
+                1
               </div>
-              <span className="mt-1.5 text-xs font-medium text-slate-400">16+</span>
+              <span className="mt-2 text-sm font-semibold text-slate-900 dark:text-slate-100">{t("progression.advanced")}</span>
+              <span className="text-xs text-slate-400">16+</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile: vertical track */}
+        <div className="sm:hidden">
+          <div className="relative ml-5">
+            {/* Vertical track line */}
+            <div className="absolute top-5 bottom-5 left-0 w-0.5 bg-slate-200 dark:bg-slate-700" />
+
+            {/* Cat 3 */}
+            <div className="relative flex items-center gap-4 pb-3">
+              <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-500 text-white font-bold text-base shadow-sm -ml-5">
+                3
+              </div>
+              <div>
+                <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">{t("progression.entry")}</span>
+                <span className="ml-2 text-xs text-slate-400">12+</span>
+              </div>
+            </div>
+
+            {/* Wait: 2 years */}
+            <div className="relative flex items-center gap-4 py-2">
+              <div className="relative z-10 flex items-center gap-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-2.5 py-0.5 shadow-sm -ml-[13px]">
+                <Clock className="h-3 w-3 text-slate-400" />
+                <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">{t("progression.twoYears")}</span>
+              </div>
+            </div>
+
+            {/* Cat 2 */}
+            <div className="relative flex items-center gap-4 pb-3">
+              <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-500 text-white font-bold text-base shadow-sm -ml-5">
+                2
+              </div>
+              <div>
+                <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">{t("progression.intermediate")}</span>
+                <span className="ml-2 text-xs text-slate-400">14+</span>
+              </div>
+            </div>
+
+            {/* Wait: 1 year */}
+            <div className="relative flex items-center gap-4 py-2">
+              <div className="relative z-10 flex items-center gap-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-2.5 py-0.5 shadow-sm -ml-[13px]">
+                <Clock className="h-3 w-3 text-slate-400" />
+                <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">{t("progression.oneYear")}</span>
+              </div>
+            </div>
+
+            {/* Cat 1 */}
+            <div className="relative flex items-center gap-4">
+              <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-rose-500 text-white font-bold text-base shadow-sm -ml-5">
+                1
+              </div>
+              <div>
+                <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">{t("progression.advanced")}</span>
+                <span className="ml-2 text-xs text-slate-400">16+</span>
+              </div>
             </div>
           </div>
         </div>
