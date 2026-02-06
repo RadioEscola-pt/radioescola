@@ -169,6 +169,7 @@ export default function FlashBrowsePage() {
         showCalcHint
         onLaunchCalculator={handleLaunchCalculator}
         ended={ended}
+        categoryId={category.id}
       />
 
       {ended && (

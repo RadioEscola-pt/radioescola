@@ -12,6 +12,7 @@ interface QuestionCardProps {
   disabled?: boolean; // disable interaction
   showCalcHint?: boolean; // show calculator suggestion badge
   onLaunchCalculator?: (code: string) => void;
+  categoryId?: string;
 }
 
 function buildFonteLink(entry: string) {
@@ -36,8 +37,58 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   disabled = false,
   showCalcHint = false,
   onLaunchCalculator,
+  categoryId,
 }) => {
   const isAnswered = selectedOption !== undefined;
+  const [remoteNotesHtml, setRemoteNotesHtml] = React.useState<string | null>(null);
+  const [remoteNotesLoading, setRemoteNotesLoading] = React.useState(false);
+  const [remoteNotesError, setRemoteNotesError] = React.useState<string | null>(null);
+  const [remoteNotesLoaded, setRemoteNotesLoaded] = React.useState(false);
+
+  React.useEffect(() => {
+    setRemoteNotesHtml(null);
+    setRemoteNotesLoading(false);
+    setRemoteNotesError(null);
+    setRemoteNotesLoaded(false);
+  }, [question.id, categoryId]);
+
+  React.useEffect(() => {
+    if (!ended) return;
+    if (!categoryId) return;
+    if (!question.hasNotesMdx) return;
+    if (remoteNotesLoading || remoteNotesLoaded) return;
+
+    let cancelled = false;
+    setRemoteNotesLoading(true);
+    fetch(`/api/notes/${encodeURIComponent(categoryId)}/${encodeURIComponent(String(question.id))}`)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Failed to load notes: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        if (cancelled) return;
+        const html = typeof data?.html === 'string' ? data.html : '';
+        setRemoteNotesHtml(html.length > 0 ? html : null);
+      })
+      .catch((err) => {
+        if (cancelled) return;
+        console.error(err);
+        setRemoteNotesError('Unable to load notes.');
+      })
+      .finally(() => {
+        if (cancelled) return;
+        setRemoteNotesLoading(false);
+        setRemoteNotesLoaded(true);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [ended, categoryId, question.hasNotesMdx, question.id, remoteNotesLoaded, remoteNotesLoading]);
+
+  const resolvedNotes = remoteNotesHtml ?? question.notes ?? null;
   const handleLaunch = React.useCallback(() => {
     if (question.calc && onLaunchCalculator) {
       onLaunchCalculator(question.calc);
@@ -112,11 +163,16 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
               <span className="text-red-700">{isAnswered ? 'Incorrect' : 'Unanswered'}</span>
             )}
           </p>
-          {question.notes && (
-            <div
-              className="text-gray-700 [&_a]:text-blue-600 [&_a]:underline"
-              dangerouslySetInnerHTML={{ __html: question.notes }}
-            />
+          {(remoteNotesLoading || remoteNotesError || resolvedNotes) && (
+            <div className="text-gray-700 [&_a]:text-blue-600 [&_a]:underline">
+              {remoteNotesLoading && <p className="italic text-gray-500">Loading notes…</p>}
+              {remoteNotesError && !remoteNotesLoading && (
+                <p className="italic text-red-600">{remoteNotesError}</p>
+              )}
+              {!remoteNotesLoading && !remoteNotesError && resolvedNotes && (
+                <div dangerouslySetInnerHTML={{ __html: resolvedNotes }} />
+              )}
+            </div>
           )}
           {question.tutorial && (
             <div>

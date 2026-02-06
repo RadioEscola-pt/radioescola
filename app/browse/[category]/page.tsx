@@ -54,6 +54,7 @@ export default function BrowsePage() {
             showCalcHint
             onLaunchCalculator={handleLaunchCalculator}
             ended={isAnswered}
+            categoryId={category.id}
           />
         );
       })}
