@@ -1,12 +1,11 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import React from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
 import { compile, run } from '@mdx-js/mdx';
 import * as runtime from 'react/jsx-runtime';
 import remarkGfm from 'remark-gfm';
 import remarkFrontmatter from 'remark-frontmatter';
-import { remarkMdxFrontmatter } from 'remark-mdx-frontmatter';
+import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 
 const NOTES_ROOT = path.join(process.cwd(), 'content', 'notes');
 const VALID_CATEGORIES = new Set(['1', '2', '3']);
@@ -29,6 +28,7 @@ async function compileMdxToHtml(filePath: string) {
     outputFormat: 'function-body',
   });
   const { default: Content } = await run(compiled, runtime);
+  const { renderToStaticMarkup } = await import('react-dom/server');
   const html = renderToStaticMarkup(React.createElement(Content));
   return html;
 }
