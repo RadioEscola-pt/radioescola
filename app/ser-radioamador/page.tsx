@@ -21,36 +21,30 @@ export default async function BecomeHamPage() {
   const categories = [
     {
       id: "3",
-      color: "green",
-      headerBg: "bg-green-500",
-      bg: "bg-green-50 dark:bg-green-950/30",
-      border: "border-green-200 dark:border-green-800/60",
       accent: "text-green-600 dark:text-green-400",
+      dot: "bg-green-400",
       badgeBg: "bg-green-100 dark:bg-green-900/50",
-      dotBg: "bg-green-400",
+      numberColor: "text-green-100 dark:text-green-900/40",
       btnBg: "bg-green-600 hover:bg-green-500",
+      btnRing: "focus-visible:ring-green-300",
     },
     {
       id: "2",
-      color: "amber",
-      headerBg: "bg-amber-500",
-      bg: "bg-amber-50 dark:bg-amber-950/30",
-      border: "border-amber-200 dark:border-amber-800/60",
       accent: "text-amber-600 dark:text-amber-400",
+      dot: "bg-amber-400",
       badgeBg: "bg-amber-100 dark:bg-amber-900/50",
-      dotBg: "bg-amber-400",
+      numberColor: "text-amber-100 dark:text-amber-900/40",
       btnBg: "bg-amber-600 hover:bg-amber-500",
+      btnRing: "focus-visible:ring-amber-300",
     },
     {
       id: "1",
-      color: "rose",
-      headerBg: "bg-rose-500",
-      bg: "bg-rose-50 dark:bg-rose-950/30",
-      border: "border-rose-200 dark:border-rose-800/60",
       accent: "text-rose-600 dark:text-rose-400",
+      dot: "bg-rose-400",
       badgeBg: "bg-rose-100 dark:bg-rose-900/50",
-      dotBg: "bg-rose-400",
+      numberColor: "text-rose-100 dark:text-rose-900/40",
       btnBg: "bg-rose-600 hover:bg-rose-500",
+      btnRing: "focus-visible:ring-rose-300",
     },
   ];
 
@@ -103,26 +97,30 @@ export default async function BecomeHamPage() {
           {categories.map((cat) => (
             <div
               key={cat.id}
-              className={`relative rounded-xl border ${cat.border} overflow-hidden`}
+              className="group relative rounded-xl border border-slate-200 dark:border-slate-700/60 bg-white dark:bg-slate-800/50 overflow-hidden transition-shadow hover:shadow-md"
             >
-              {/* Header */}
-              <div className={`px-5 pt-4 pb-3 ${cat.bg}`}>
-                <div className="flex items-center justify-between">
-                  <h3 className={`text-base font-bold ${cat.accent}`}>
+              {/* Oversized number watermark */}
+              <span
+                className={`absolute -right-3 -top-4 text-[120px] font-black leading-none select-none pointer-events-none ${cat.numberColor}`}
+                aria-hidden="true"
+              >
+                {cat.id}
+              </span>
+
+              <div className="relative px-5 pt-5 pb-5">
+                {/* Category name with dot */}
+                <div className="flex items-center gap-2 mb-4">
+                  <span className={`w-2 h-2 rounded-full ${cat.dot}`} />
+                  <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
                     {t(`category${cat.id}.name`)}
                   </h3>
-                  <span className={`flex h-8 w-8 items-center justify-center rounded-full ${cat.badgeBg} text-sm font-bold ${cat.accent}`}>
-                    {cat.id}
-                  </span>
                 </div>
-              </div>
 
-              {/* Content */}
-              <div className="px-5 py-4 bg-white dark:bg-slate-800/50">
-                <ul className="space-y-2.5">
+                {/* Details */}
+                <ul className="space-y-2">
                   {categoryIcons.map(({ key, icon: Icon }) => (
                     <li key={key} className="flex items-center gap-2.5">
-                      <Icon className={`h-4 w-4 shrink-0 ${cat.accent} opacity-70`} />
+                      <Icon className={`h-3.5 w-3.5 shrink-0 ${cat.accent}`} />
                       {key === "power" && cat.id === "3" ? (
                         <CategoryPowerInfo
                           text={t(`category${cat.id}.${key}`)}
@@ -142,7 +140,7 @@ export default async function BecomeHamPage() {
 
                 <Link
                   href={`/exam/${cat.id}`}
-                  className={`mt-5 flex items-center justify-center gap-2 rounded-lg ${cat.btnBg} px-4 py-2 text-sm font-medium text-white transition-colors`}
+                  className={`mt-5 flex items-center justify-center gap-2 rounded-lg ${cat.btnBg} ${cat.btnRing} px-4 py-2.5 text-sm font-medium text-white transition-colors`}
                 >
                   <BookOpen className="h-3.5 w-3.5" />
                   {t("studyCategory")}
