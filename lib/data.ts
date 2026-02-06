@@ -83,7 +83,7 @@ export async function loadData(): Promise<Data> {
           correctIndex: boundedCorrectIndex,
           img: imgPath,
           notes: normalizeNotes(qObj.notes),
-          hasNotesMdx: notesIndex?.[cat]?.has(Number(q.uniqueID)) ?? false,
+          hasNotesMdx: notesIndex?.[cat]?.has(Number(qObj.uniqueID)) ?? false,
           fonte: normalizeFonte(qObj.fonte),
           tutorial: typeof qObj.tutorial === 'string' && qObj.tutorial.trim() ? qObj.tutorial.trim() : null,
           materia: typeof qObj.materia === 'string' && qObj.materia.trim() ? qObj.materia.trim() : null,
