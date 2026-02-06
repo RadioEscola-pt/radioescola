@@ -8,6 +8,7 @@ import { EXAM_CONFIG, DEFAULT_CATEGORY } from '@/lib/config';
 import { ExamResultsModal } from '@/components/ExamResultsModal';
 import { PageLoading } from '@/components/shared/Loading';
 import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
+import { Button } from '@/components/ui/button';
 import { useProgressContext } from '@/components/providers/ProgressProvider';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
 import type { ExamAttempt, QuestionAttempt } from '@/lib/types/progress';
@@ -307,15 +308,15 @@ export default function ExamPage() {
               {t('takeAnother')}
             </button>
           ) : (
-            <button
-              className="px-3 py-1.5 bg-amber-500 hover:bg-amber-600 text-slate-900 text-sm font-medium rounded-lg transition-colors"
+            <Button
+              size="sm"
               onClick={() => {
                 setQuizEnded(true);
                 setResultsOpen(true);
               }}
             >
               {t('endQuiz')}
-            </button>
+            </Button>
           )}
         </div>
 
