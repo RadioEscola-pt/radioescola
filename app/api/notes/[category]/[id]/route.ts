@@ -35,9 +35,9 @@ async function compileMdxToHtml(filePath: string) {
 
 export async function GET(
   _req: Request,
-  { params }: { params: { category: string; id: string } }
+  { params }: { params: Promise<{ category: string; id: string }> }
 ) {
-  const { category, id } = params;
+  const { category, id } = await params;
   if (!VALID_CATEGORIES.has(category)) {
     return new Response(JSON.stringify({ error: 'Invalid category' }), { status: 400 });
   }
