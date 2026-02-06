@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="64" fill="#0f172a"/>
+  <circle cx="256" cy="200" r="80" fill="none" stroke="#f59e0b" stroke-width="16"/>
+  <path d="M256 280 L256 380 M206 330 L256 380 L306 330" fill="none" stroke="#f59e0b" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="256" cy="200" r="20" fill="#f59e0b"/>
+  <text x="256" y="460" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="bold" fill="#f59e0b">RE</text>
+</svg>

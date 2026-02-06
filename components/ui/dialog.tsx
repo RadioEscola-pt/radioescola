@@ -1,9 +1,32 @@
 "use client";
 import * as React from 'react';
+import { cn } from '@/lib/utils';
 
 type BaseProps = React.HTMLAttributes<HTMLDivElement> & { children?: React.ReactNode };
 
-export function Dialog({ open, onOpenChange, children }: { open: boolean; onOpenChange?: (v: boolean) => void; children: React.ReactNode }) {
+export function Dialog({
+  open,
+  onOpenChange,
+  children
+}: {
+  open: boolean;
+  onOpenChange?: (v: boolean) => void;
+  children: React.ReactNode
+}) {
+  const [shouldRender, setShouldRender] = React.useState(open);
+  const [isAnimating, setIsAnimating] = React.useState(false);
+
+  React.useEffect(() => {
+    if (open) {
+      setShouldRender(true);
+      requestAnimationFrame(() => setIsAnimating(true));
+      return;
+    }
+    setIsAnimating(false);
+    const timer = setTimeout(() => setShouldRender(false), 200);
+    return () => clearTimeout(timer);
+  }, [open]);
+
   React.useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -12,11 +35,26 @@ export function Dialog({ open, onOpenChange, children }: { open: boolean; onOpen
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [open, onOpenChange]);
-  if (!open) return null;
+
+  if (!shouldRender) return null;
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div className="absolute inset-0 bg-black/40" onClick={() => onOpenChange?.(false)} />
-      <div className="relative z-10 w-full max-w-2xl mx-4">
+      <div
+        className={cn(
+          "absolute inset-0 bg-black/40 transition-opacity duration-200",
+          isAnimating ? "opacity-100" : "opacity-0"
+        )}
+        onClick={() => onOpenChange?.(false)}
+      />
+      <div
+        className={cn(
+          "relative z-10 w-full max-w-2xl mx-4 transition-all duration-200",
+          isAnimating
+            ? "opacity-100 scale-100 translate-y-0"
+            : "opacity-0 scale-95 translate-y-4"
+        )}
+      >
         {children}
       </div>
     </div>
@@ -28,11 +66,11 @@ export function DialogContent({ className = '', children, ...rest }: BaseProps) 
     <div
       role="dialog"
       aria-modal="true"
-      className={[
-        'bg-white rounded-lg shadow-lg border',
+      className={cn(
+        'bg-white rounded-lg shadow-2xl border',
         'p-6',
         className,
-      ].join(' ')}
+      )}
       {...rest}
     >
       {children}
@@ -42,7 +80,7 @@ export function DialogContent({ className = '', children, ...rest }: BaseProps) 
 
 export function DialogHeader({ className = '', children, ...rest }: BaseProps) {
   return (
-    <div className={["mb-4", className].join(' ')} {...rest}>
+    <div className={cn("mb-4", className)} {...rest}>
       {children}
     </div>
   );
@@ -50,7 +88,7 @@ export function DialogHeader({ className = '', children, ...rest }: BaseProps) {
 
 export function DialogTitle({ className = '', children, ...rest }: BaseProps) {
   return (
-    <h3 className={["text-lg font-semibold", className].join(' ')} {...rest}>
+    <h3 className={cn("text-lg font-semibold", className)} {...rest}>
       {children}
     </h3>
   );
@@ -58,7 +96,7 @@ export function DialogTitle({ className = '', children, ...rest }: BaseProps) {
 
 export function DialogDescription({ className = '', children, ...rest }: BaseProps) {
   return (
-    <p className={["text-sm text-gray-600", className].join(' ')} {...rest}>
+    <p className={cn("text-sm text-gray-600", className)} {...rest}>
       {children}
     </p>
   );
@@ -66,9 +104,8 @@ export function DialogDescription({ className = '', children, ...rest }: BasePro
 
 export function DialogFooter({ className = '', children, ...rest }: BaseProps) {
   return (
-    <div className={["mt-6 flex items-center justify-end gap-2", className].join(' ')} {...rest}>
+    <div className={cn("mt-6 flex items-center justify-end gap-2", className)} {...rest}>
       {children}
     </div>
   );
 }
-

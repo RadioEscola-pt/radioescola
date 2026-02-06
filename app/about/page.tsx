@@ -1,75 +1,157 @@
 import React from 'react';
+import { Users, MessageCircle, Github, Radio, Heart, ExternalLink } from 'lucide-react';
+import { EXTERNAL_LINKS } from '@/lib/config';
+import { Button } from '@/components/ui/button';
 
 type TeamMember = {
   name: string;
-  callsign?: string;
+  callsign: string;
   role: string;
-  image: string; // public path
-  bio: string;
-  qrzUrl?: string;
 };
 
-export default function AboutPage() {
-  const team: TeamMember[] = [
-    {
-      name: 'Joel Calado',
-      callsign: 'CS7BLE',
-      role: 'Founder',
-      image: '/images/team/joelcalado.jpg', // Placeholder path
-      bio: 'Founder and sole team member. Ham radio enthusiast since 2023.',
-      qrzUrl: 'https://www.qrz.com/db/CS7BLE',
-    },
-  ];
+const team: TeamMember[] = [
+  {
+    name: 'Julio Andrade',
+    callsign: 'CT7AZE',
+    role: 'Fundador',
+  },
+  {
+    name: 'Alexandre Badalo',
+    callsign: 'CT7AXE',
+    role: 'Web Master',
+  },
+  {
+    name: 'Luis Serrano',
+    callsign: 'CS7BAX',
+    role: 'Gestor de Conteúdos',
+  },
+  {
+    name: 'Joel Calado',
+    callsign: 'CS7BLE',
+    role: 'Web Developer',
+  },
+];
 
+export default function AboutPage() {
   return (
-    <main className="p-8">
-      <section className="max-w-5xl mx-auto">
-        <div className="rounded-2xl border bg-gradient-to-r from-indigo-50 to-purple-50 p-8 mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900">About This Project</h1>
-          <p className="mt-3 text-gray-700 max-w-3xl">
-            This website helps aspiring ham radio operators study exam material, practice with real questions, and take simulated exams.
-            It is an open project created and maintained by Joel Calado.
+    <main className="-mx-4 sm:mx-0 pb-8">
+      {/* Hero */}
+      <div className="bg-gradient-to-br from-slate-800 to-slate-900 dark:from-slate-900 dark:to-black px-4 sm:px-8 py-10 sm:rounded-2xl mb-8">
+        <div className="flex items-center gap-4 mb-4">
+          <div className="p-3 rounded-xl bg-amber-500/20">
+            <Radio className="w-8 h-8 text-amber-400" />
+          </div>
+          <div>
+            <h1 className="text-3xl md:text-4xl font-bold text-white">Rádio Escola</h1>
+            <p className="text-amber-400 font-medium">Aprende. Pratica. Transmite.</p>
+          </div>
+        </div>
+        <p className="text-slate-300 max-w-2xl text-lg leading-relaxed">
+          Uma plataforma gratuita e open-source que ajuda aspirantes a radioamadores a estudar o material de exame,
+          praticar com questões reais e realizar exames simulados.
+        </p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Button asChild>
+            <a href={EXTERNAL_LINKS.GITHUB_REPO} target="_blank" rel="noopener noreferrer">
+              <Github className="w-4 h-4" />
+              Contribuir no GitHub
+            </a>
+          </Button>
+          <Button variant="outline" asChild>
+            <a href={EXTERNAL_LINKS.TELEGRAM} target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="w-4 h-4" />
+              Juntar ao Telegram
+            </a>
+          </Button>
+        </div>
+      </div>
+
+      {/* Mission */}
+      <div className="px-4 sm:px-0 mb-10">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="p-2 rounded-lg bg-rose-100 dark:bg-rose-900/30">
+            <Heart className="w-5 h-5 text-rose-600 dark:text-rose-400" />
+          </div>
+          <h2 className="text-xl font-semibold text-slate-900 dark:text-white">A Nossa Missão</h2>
+        </div>
+        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6">
+          <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+            Acreditamos que o radioamadorismo é uma forma única de conectar pessoas, aprender sobre tecnologia
+            e contribuir para a comunidade. O nosso objetivo é tornar o processo de certificação mais acessível,
+            fornecendo ferramentas de estudo modernas e gratuitas para todos os que querem entrar neste hobby fascinante.
           </p>
         </div>
+      </div>
 
-        <h2 className="text-2xl font-semibold mb-4">Team</h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {team.map((m) => (
-            <article key={m.name} className="group overflow-hidden rounded-xl border bg-white shadow-sm hover:shadow-md transition-shadow">
-              <div className="h-40 w-full bg-gray-100 overflow-hidden">
-                <img
-                  src={m.image}
-                  alt={`${m.name} photo`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-5">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-gray-900">{m.name}</h3>
-                  {m.callsign && (
-                    <a
-                      href={m.qrzUrl ?? `https://www.qrz.com/db/${encodeURIComponent(m.callsign)}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-xs px-2 py-1 rounded-full bg-indigo-100 text-indigo-700 hover:bg-indigo-200 transition-colors"
-                    >
-                      {m.callsign}
-                    </a>
-                  )}
+      {/* Team */}
+      <div className="px-4 sm:px-0 mb-10">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30">
+            <Users className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+          </div>
+          <h2 className="text-xl font-semibold text-slate-900 dark:text-white">Equipa</h2>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {team.map((member) => (
+            <article
+              key={member.callsign}
+              className="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 hover:border-amber-300 dark:hover:border-amber-600 hover:shadow-lg transition-all"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-white font-bold text-lg">
+                  {member.name.split(' ').map(n => n[0]).join('')}
                 </div>
-                <div className="text-sm text-gray-600 mt-0.5">{m.role}</div>
-                <p className="text-sm text-gray-700 mt-3">{m.bio}</p>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-semibold text-slate-900 dark:text-white">{member.name}</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">{member.role}</p>
+                </div>
+                <span className="shrink-0 text-xs font-mono px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-600">
+                  {member.callsign}
+                </span>
               </div>
             </article>
           ))}
         </div>
+      </div>
 
-        <div className="mt-10 rounded-xl border p-6 bg-white">
-          <h2 className="text-xl font-semibold mb-2">Contact</h2>
-          <p className="text-gray-700 mb-1">Email: contact@example.com</p>
-          <p className="text-gray-700">GitHub: github.com/example/hamradiostudy</p>
+      {/* Links */}
+      <div className="px-4 sm:px-0">
+        <div className="bg-slate-100 dark:bg-slate-800/50 rounded-xl p-6">
+          <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Links Úteis</h2>
+          <div className="grid gap-3 sm:grid-cols-2">
+            <a
+              href={EXTERNAL_LINKS.TELEGRAM}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 p-4 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-amber-300 dark:hover:border-amber-600 transition-colors group"
+            >
+              <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+                <MessageCircle className="w-5 h-5" />
+              </div>
+              <div className="flex-1">
+                <p className="font-medium text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Telegram</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">Junta-te à comunidade</p>
+              </div>
+              <ExternalLink className="w-4 h-4 text-slate-400" />
+            </a>
+            <a
+              href={EXTERNAL_LINKS.GITHUB_REPO}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 p-4 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-amber-300 dark:hover:border-amber-600 transition-colors group"
+            >
+              <div className="p-2 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
+                <Github className="w-5 h-5" />
+              </div>
+              <div className="flex-1">
+                <p className="font-medium text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">GitHub</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">Código fonte aberto</p>
+              </div>
+              <ExternalLink className="w-4 h-4 text-slate-400" />
+            </a>
+          </div>
         </div>
-      </section>
+      </div>
     </main>
   );
 }

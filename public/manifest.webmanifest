@@ -1,0 +1,22 @@
+{
+  "name": "Rádio Escola - Ham Radio Study",
+  "short_name": "Rádio Escola",
+  "description": "Practice with real questions, take timed exams, and become a licensed ham radio operator in Portugal.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#f59e0b",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["education", "utilities"],
+  "lang": "pt-PT",
+  "dir": "ltr"
+}

@@ -1,11 +1,17 @@
 "use client";
 
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import { useParams } from "next/navigation";
-import QuestionCard from "@components/QuestionCard";
-import { Category } from "../../../../lib/types";
-import { loadData } from "../../../../lib/data";
-import { useCalculators } from "@components/providers/CalculatorProvider";
+import { useTranslations } from "next-intl";
+import QuestionCard from "@/components/QuestionCard";
+import { Category } from "@/lib/types";
+import { loadData } from "@/lib/data";
+import { useCalculators } from "@/components/providers/CalculatorProvider";
+import { PageLoading } from "@/components/shared/Loading";
+import type { CalculatorCode } from "@/lib/types";
+import { useProgressContext } from "@/components/providers/ProgressProvider";
+import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
+import { toggleBookmark } from "@/lib/storage/localStorage";
 
 const DEFAULT_CATEGORY = "3";
 
@@ -13,14 +19,18 @@ function createOrder(count: number, avoid?: number): number[] {
   const indices = Array.from({ length: count }, (_, idx) => idx);
   for (let i = indices.length - 1; i > 0; i -= 1) {
     const j = Math.floor(Math.random() * (i + 1));
-    const tmp = indices[i];
-    indices[i] = indices[j];
-    indices[j] = tmp;
+    const idxI = indices[i];
+    const idxJ = indices[j];
+    if (idxI !== undefined && idxJ !== undefined) {
+      indices[i] = idxJ;
+      indices[j] = idxI;
+    }
   }
-  if (avoid !== undefined && indices.length > 1 && indices[0] === avoid) {
-    const swapIndex = 1;
-    indices[0] = indices[swapIndex];
-    indices[swapIndex] = avoid;
+  const first = indices[0];
+  const second = indices[1];
+  if (avoid !== undefined && indices.length > 1 && first === avoid && second !== undefined) {
+    indices[0] = second;
+    indices[1] = avoid;
   }
   return indices;
 }
@@ -32,7 +42,7 @@ export default function FlashBrowsePage() {
     typeof rawCategory === "string"
       ? rawCategory
       : Array.isArray(rawCategory)
-        ? rawCategory[0]
+        ? rawCategory[0] ?? DEFAULT_CATEGORY
         : DEFAULT_CATEGORY;
 
   const [category, setCategory] = useState<Category | null>(null);
@@ -41,7 +51,29 @@ export default function FlashBrowsePage() {
   const [selectedOption, setSelectedOption] = useState<number | undefined>();
   const [isLoading, setIsLoading] = useState(true);
   const [answeredCount, setAnsweredCount] = useState(0);
-  const { openOhms } = useCalculators();
+  const { openCalculator } = useCalculators();
+  const { recordQuestion, progress, refreshProgress } = useProgressContext();
+  const t = useTranslations("Browse");
+
+  const isBookmarked = useCallback((questionId: number) => {
+    const key = `cat${catId}_${questionId}`;
+    return progress?.questionStats[key]?.bookmarked ?? false;
+  }, [progress, catId]);
+
+  const getQuestionDifficultyStats = useCallback((questionId: number) => {
+    const key = `cat${catId}_${questionId}`;
+    const stats = progress?.questionStats[key];
+    if (!stats || stats.attempts === 0) return { successRate: undefined, attemptCount: 0 };
+    return {
+      successRate: (stats.correct / stats.attempts) * 100,
+      attemptCount: stats.attempts,
+    };
+  }, [progress, catId]);
+
+  const handleToggleBookmark = useCallback(async (questionId: number) => {
+    await toggleBookmark(catId, questionId);
+    await refreshProgress();
+  }, [catId, refreshProgress]);
 
   useEffect(() => {
     let active = true;
@@ -88,19 +120,27 @@ export default function FlashBrowsePage() {
   }, [category]);
 
   const handleLaunchCalculator = useCallback((code: string) => {
-    if (code === "OHMCALC") {
-      openOhms();
-    }
-  }, [openOhms]);
+    openCalculator(code as CalculatorCode);
+  }, [openCalculator]);
 
+  const orderIndex = order[cursor];
   const currentQuestion =
-    category && order.length > 0 ? category.questions[order[cursor]] : null;
+    category && order.length > 0 && orderIndex !== undefined
+      ? category.questions[orderIndex] ?? null
+      : null;
 
   const handleSelect = (choice: number) => {
-    if (selectedOption !== undefined) {
+    if (selectedOption !== undefined || !currentQuestion) {
       return;
     }
     setSelectedOption(choice);
+    // Record question attempt for progress tracking
+    recordQuestion({
+      questionId: currentQuestion.id,
+      category: catId,
+      correct: choice === currentQuestion.correctIndex,
+      timestamp: Date.now(),
+    });
   };
 
   const handleNext = () => {
@@ -112,23 +152,46 @@ export default function FlashBrowsePage() {
     if (nextIndex < order.length) {
       setCursor(nextIndex);
     } else {
-      const nextOrder = createOrder(category.questions.length, order[cursor]);
+      const currentOrderIndex = order[cursor];
+      const nextOrder = createOrder(category.questions.length, currentOrderIndex);
       setOrder(nextOrder);
       setCursor(0);
     }
     setSelectedOption(undefined);
   };
 
+  // Keyboard shortcuts for flashcard navigation
+  const handleAnswer = useCallback((index: number) => {
+    if (selectedOption === undefined && currentQuestion) {
+      handleSelect(index);
+    }
+  }, [selectedOption, currentQuestion]);
+
+  const handleRevealOrNext = useCallback(() => {
+    if (selectedOption !== undefined) {
+      handleNext();
+    }
+  }, [selectedOption]);
+
+  useKeyboardShortcuts({
+    onAnswer1: () => handleAnswer(0),
+    onAnswer2: () => handleAnswer(1),
+    onAnswer3: () => handleAnswer(2),
+    onAnswer4: () => handleAnswer(3),
+    onReveal: handleRevealOrNext,
+    enabled: !isLoading && !!currentQuestion,
+  });
+
   if (isLoading) {
-    return <main className="p-8">Loading...</main>;
+    return <PageLoading message={t("flashLoading")} />;
   }
 
   if (!category) {
     return (
       <main className="p-8">
-        <h1 className="text-2xl font-bold mb-2">Flashcards</h1>
+        <h1 className="text-2xl font-bold mb-2">{t("flashTitle", { id: catId })}</h1>
         <p className="text-gray-600">
-          We could not find category {catId}. Try choosing a category from the Browse menu.
+          {t("flashNotFound", { id: catId })}
         </p>
       </main>
     );
@@ -137,9 +200,9 @@ export default function FlashBrowsePage() {
   if (!currentQuestion) {
     return (
       <main className="p-8">
-        <h1 className="text-2xl font-bold mb-2">Flashcards {category.name}</h1>
+        <h1 className="text-2xl font-bold mb-2">{t("flashTitle", { id: catId })}</h1>
         <p className="text-gray-600">
-          There are no questions available for this category yet.
+          {t("flashNoQuestions")}
         </p>
       </main>
     );
@@ -151,12 +214,12 @@ export default function FlashBrowsePage() {
   return (
     <main className="p-8">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold">Flashcards {category.name}</h1>
+        <h1 className="text-2xl font-bold">{t("flashTitle", { id: catId })}</h1>
         <p className="text-sm text-gray-600">
-          Practice one random question at a time. Reviewed {answeredCount} so far.
+          {t("flashSubtitle", { count: answeredCount })}
         </p>
         <p className="text-xs text-gray-500 mt-1">
-          Card {sessionPosition} of {category.questions.length} in this round.
+          {t("flashCard", { position: sessionPosition, total: category.questions.length })}
         </p>
       </div>
 
@@ -169,7 +232,11 @@ export default function FlashBrowsePage() {
         showCalcHint
         onLaunchCalculator={handleLaunchCalculator}
         ended={ended}
-        categoryId={category.id}
+        showBookmark
+        isBookmarked={isBookmarked(currentQuestion.id)}
+        onToggleBookmark={() => handleToggleBookmark(currentQuestion.id)}
+        successRate={getQuestionDifficultyStats(currentQuestion.id).successRate}
+        attemptCount={getQuestionDifficultyStats(currentQuestion.id).attemptCount}
       />
 
       {ended && (
@@ -179,7 +246,7 @@ export default function FlashBrowsePage() {
             onClick={handleNext}
             className="inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-white text-sm font-medium shadow hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
           >
-            Next question
+            {t("flashNext")}
           </button>
         </div>
       )}

@@ -12,9 +12,6 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   pageExtensions: ["ts", "tsx", "md", "mdx"],
 };
 

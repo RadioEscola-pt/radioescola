@@ -1,5 +1,13 @@
+"use client";
+
 import React from 'react';
-import { Question } from '../lib/types';
+import DOMPurify from 'dompurify';
+import { useTranslations } from 'next-intl';
+import { Question } from '@/lib/types';
+import { getCalculatorMeta } from '@/lib/config';
+import type { CalculatorCode } from '@/lib/types';
+import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
+import BookmarkButton from '@/components/BookmarkButton';
 
 interface QuestionCardProps {
   question: Question;
@@ -13,6 +21,13 @@ interface QuestionCardProps {
   showCalcHint?: boolean; // show calculator suggestion badge
   onLaunchCalculator?: (code: string) => void;
   categoryId?: string;
+  // Bookmark feature
+  showBookmark?: boolean;
+  isBookmarked?: boolean;
+  onToggleBookmark?: () => Promise<void> | void;
+  // Difficulty indicator
+  successRate?: number; // 0-100 percentage
+  attemptCount?: number;
 }
 
 function buildFonteLink(entry: string) {
@@ -21,9 +36,19 @@ function buildFonteLink(entry: string) {
     return { label: entry, href: null };
   }
   const [, folder, file, page] = match;
+  if (!folder || !file || !page) {
+    return { label: entry, href: null };
+  }
   const href = `/exams/${folder}/${file}.pdf#page=${page}`;
   const label = `${folder.toUpperCase()} ${file} (p${page})`;
   return { label, href };
+}
+
+/** Normalize calc field to array of calculator codes */
+function normalizeCalcCodes(calc: string | string[] | null | undefined): string[] {
+  if (!calc) return [];
+  if (Array.isArray(calc)) return calc;
+  return [calc];
 }
 
 const QuestionCard: React.FC<QuestionCardProps> = ({
@@ -37,8 +62,15 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   disabled = false,
   showCalcHint = false,
   onLaunchCalculator,
+  showBookmark = false,
+  isBookmarked = false,
+  onToggleBookmark,
+  successRate,
+  attemptCount,
   categoryId,
 }) => {
+  const t = useTranslations('QuestionCard');
+  const tc = useTranslations('Calculators');
   const isAnswered = selectedOption !== undefined;
   const [remoteNotesHtml, setRemoteNotesHtml] = React.useState<string | null>(null);
   const [remoteNotesLoading, setRemoteNotesLoading] = React.useState(false);
@@ -89,109 +121,135 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   }, [ended, categoryId, question.hasNotesMdx, question.id, remoteNotesLoaded, remoteNotesLoading]);
 
   const resolvedNotes = remoteNotesHtml ?? question.notes ?? null;
-  const handleLaunch = React.useCallback(() => {
-    if (question.calc && onLaunchCalculator) {
-      onLaunchCalculator(question.calc);
+  const calcCodes = normalizeCalcCodes(question.calc);
+
+  // Get color class for difficulty badge based on success rate
+  const getDifficultyColorClass = (rate: number) => {
+    if (rate >= 70) return 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400';
+    if (rate >= 50) return 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400';
+    return 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400';
+  };
+
+  const handleLaunch = React.useCallback((code: string) => {
+    if (onLaunchCalculator) {
+      onLaunchCalculator(code);
     }
-  }, [onLaunchCalculator, question.calc]);
+  }, [onLaunchCalculator]);
+
+  const getOptionState = (idx: number): AnswerOptionState => {
+    const isSelected = selectedOption === idx;
+    const isCorrect = idx === question.correctIndex;
+
+    if (ended) {
+      if (isCorrect) return "correct";
+      if (isSelected) return "incorrect";
+      return "default";
+    }
+    if (isSelected) return "selected";
+    return "default";
+  };
 
   return (
-    <div className="p-4 border rounded-md mb-4 bg-white">
-      {showCalcHint && question.calc && (
-        <div className="mb-2 flex flex-wrap items-center gap-2 rounded bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700">
-          <span>Suggested calculator:</span>
-          <span className="font-semibold">{question.calc}</span>
-          {onLaunchCalculator && (
-            <button
-              type="button"
-              onClick={handleLaunch}
-              className="rounded bg-blue-600 px-2 py-1 text-white transition hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
-            >
-              Open
-            </button>
+    <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 sm:border sm:rounded-xl sm:mb-4 p-4">
+      {showCalcHint && calcCodes.length > 0 && (
+        <div className="mb-3 flex flex-wrap items-center gap-2 rounded-lg bg-blue-50 dark:bg-blue-900/30 px-3 py-2 text-xs font-medium text-blue-700 dark:text-blue-300">
+          <span>{calcCodes.length > 1 ? t('suggestedCalculators') : t('suggestedCalculator')}</span>
+          {calcCodes.map((code) => {
+            const meta = getCalculatorMeta(code as CalculatorCode);
+            const translationKey = meta?.translationKey;
+            const displayName = translationKey ? tc(`${translationKey}.shortTitle`) : code;
+            return (
+              <span key={code} className="inline-flex items-center gap-1">
+                <span className="font-semibold">{displayName}</span>
+                {onLaunchCalculator && (
+                  <button
+                    type="button"
+                    onClick={() => handleLaunch(code)}
+                    className="rounded bg-blue-600 px-2 py-0.5 text-white transition hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  >
+                    {t('open')}
+                  </button>
+                )}
+              </span>
+            );
+          })}
+        </div>
+      )}
+
+      <div className="flex items-start gap-2 mb-3">
+        <p className="flex-1 text-slate-900 dark:text-slate-100">
+          {indexNumber && (
+            <span className="font-semibold text-amber-600 dark:text-amber-500 mr-2">{indexNumber}.</span>
+          )}
+          {question.question}
+        </p>
+        <div className="flex items-center gap-2 shrink-0">
+          {attemptCount !== undefined && attemptCount > 0 && successRate !== undefined && (
+            <span className={`text-xs px-2 py-0.5 rounded-full ${getDifficultyColorClass(successRate)}`}>
+              {t('successRate', { rate: Math.round(successRate) })}
+            </span>
+          )}
+          {showBookmark && onToggleBookmark && (
+            <BookmarkButton
+              isBookmarked={isBookmarked}
+              onToggle={onToggleBookmark}
+              size="sm"
+            />
           )}
         </div>
-      )}
-      <h2 className="font-semibold mb-1">
-        {indexNumber ? `${indexNumber}. ` : ''}{question.question}
-      </h2>
-      {showId && (
-        <div className="text-xs text-gray-500 mb-2">ID: {question.id}</div>
-      )}
-      <div className="grid gap-2">
-        {question.options.map((option, idx) => {
-          const isSelected = selectedOption === idx;
-          const base = 'text-left border rounded px-3 py-2 transition-colors';
-          const cls = ended
-            ? idx === question.correctIndex
-              ? isSelected
-                ? 'bg-green-100 border-green-400'
-                : 'bg-white border-green-300'
-              : isSelected
-                ? 'bg-red-100 border-red-400'
-                : 'bg-white border-gray-200'
-            : isAnswered
-              ? isSelected
-                ? 'bg-blue-100 border-blue-300'
-                : 'bg-white border-gray-200 opacity-70'
-              : 'hover:bg-gray-50 border-gray-200';
-          return (
-            <button
-              key={idx}
-              type="button"
-              disabled={disabled || ended}
-              onClick={() => onSelect(idx)}
-              className={[base, cls].join(' ')}
-            >
-              <span className="mr-2 font-mono">{String.fromCharCode(65 + idx)}.</span>
-              {option}
-            </button>
-          );
-        })}
       </div>
+
       {showImage && question.img && (
-        <div className="mt-3">
-          <img src={question.img} alt={question.question} className="max-h-64 rounded border" />
+        <div className="mb-3">
+          <img src={question.img} alt="" className="w-full rounded-lg border border-slate-200 dark:border-slate-700" />
         </div>
       )}
+
+      <div className="space-y-2">
+        {question.options.map((option, idx) => (
+          <AnswerOption
+            key={idx}
+            letter={String.fromCharCode(65 + idx)}
+            state={getOptionState(idx)}
+            disabled={disabled || ended}
+            onClick={() => onSelect(idx)}
+          >
+            {option}
+          </AnswerOption>
+        ))}
+      </div>
+
       {ended && (
-        <div className="mt-3 space-y-2 text-sm">
-          <p>
-            {selectedOption === question.correctIndex ? (
-              <span className="text-green-700">Correct</span>
-            ) : (
-              <span className="text-red-700">{isAnswered ? 'Incorrect' : 'Unanswered'}</span>
-            )}
-          </p>
+        <div className="mt-4 space-y-2 text-sm">
           {(remoteNotesLoading || remoteNotesError || resolvedNotes) && (
-            <div className="text-gray-700 [&_a]:text-blue-600 [&_a]:underline">
+            <div className="text-slate-600 dark:text-slate-400 [&_a]:text-blue-600 dark:[&_a]:text-blue-400 [&_a]:underline">
               {remoteNotesLoading && <p className="italic text-gray-500">Loading notes…</p>}
               {remoteNotesError && !remoteNotesLoading && (
                 <p className="italic text-red-600">{remoteNotesError}</p>
               )}
               {!remoteNotesLoading && !remoteNotesError && resolvedNotes && (
-                <div dangerouslySetInnerHTML={{ __html: resolvedNotes }} />
+                <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(resolvedNotes) }} />
               )}
             </div>
           )}
           {question.tutorial && (
-            <div>
-              <span className="font-semibold text-gray-700">Related tutorial:</span>{' '}
-              <a className="text-blue-600 underline" href={`/study/${question.tutorial}`}>
+            <div className="text-slate-600 dark:text-slate-400">
+              <span className="font-semibold">{t('relatedTutorial')}</span>{' '}
+              <a className="text-blue-600 dark:text-blue-400 underline" href={`/study/${question.tutorial}`}>
                 {question.tutorial}
               </a>
             </div>
           )}
           {question.fonte && question.fonte.length > 0 && (
-            <div>
-              <span className="font-semibold text-gray-700">Fonte oficial:</span>
-              <ul className="mt-1 space-y-1 list-disc list-inside text-gray-700">
+            <div className="text-slate-600 dark:text-slate-400">
+              <span className="font-semibold">{t('officialSource')}</span>
+              <ul className="mt-1 space-y-1 list-disc list-inside">
                 {question.fonte.map((entry, idx) => {
                   const { href, label } = buildFonteLink(entry);
                   return (
                     <li key={`${entry}-${idx}`}>
                       {href ? (
-                        <a className="text-blue-600 underline" href={href} target="_blank" rel="noreferrer">
+                        <a className="text-blue-600 dark:text-blue-400 underline" href={href} target="_blank" rel="noreferrer">
                           {label}
                         </a>
                       ) : (

@@ -9,6 +9,7 @@
   },
   "NavBar": {
     "home": "Home",
+    "dashboard": "Progress",
     "study": "Study",
     "browse": "Browse",
     "browseFlashcards": "Flashcards",
@@ -16,52 +17,722 @@
     "exams": "Exams",
     "calculators": "Calculators",
     "about": "About",
-    "examTimer": "Exam Timer"
+    "becomeHam": "Become Ham",
+    "examTimer": "Exam Timer",
+    "submitExam": "Submit",
+    "submitExamDesc": "Submit exam for question bank",
+    "menu": "Menu",
+    "studyAll": "All Materials",
+    "studyAllDesc": "View all study materials",
+    "settings": "Settings",
+    "theme": "Theme",
+    "language": "Language",
+    "studyLibrary": "Study Library",
+    "questions": "Questions",
+    "flashcards": "Flashcards",
+    "smartPractice": "Smart Practice",
+    "quickDrill": "Quick Drill"
+  },
+  "Footer": {
+    "about": "About",
+    "reportError": "Report Error",
+    "sourceCode": "Source Code",
+    "telegram": "Telegram",
+    "app": "App",
+    "slogan": "Made by amateur radio operators, for (future) amateur radio operators"
+  },
+  "Browse": {
+    "title": "Browse Category {id}",
+    "loading": "Loading questions...",
+    "flashTitle": "Flashcards Category {id}",
+    "flashLoading": "Loading flashcards...",
+    "flashNotFound": "We could not find category {id}. Try choosing a category from the Browse menu.",
+    "flashNoQuestions": "There are no questions available for this category yet.",
+    "flashSubtitle": "Practice one random question at a time. Reviewed {count} so far.",
+    "flashCard": "Card {position} of {total} in this round.",
+    "flashNext": "Next question"
   },
   "Home": {
-    "heroTitle": "Ham Radio Study",
+    "heroTitle": "Rádio Escola",
     "heroSubtitle": "Practice with real questions, take timed exams, and review your results. Choose a category to get started.",
-    "ctaExam": "Take Exam (Cat 3)",
+    "ctaExam": "Simulate Exam (Cat 3)",
     "ctaBrowse": "Browse Questions",
     "categoriesHeading": "Categories",
     "sectionSubtitle": "A quick, practical path to get on the air legally in Portugal.",
     "categoryName": "Category {id}",
     "categoryBadge": "CAT {id}",
-    "categoryBrowse": "Browse",
-    "categorySimulation": "Simulation",
-    "processHeading": "Ham Radio in Portugal: Due Process",
+    "categoryLevel": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+    "categoryBrowse": "Study",
+    "categorySimulation": "Exam",
+    "processHeading": "Become a Licensed Ham Radio Operator",
     "processSteps": {
       "study": {
-        "title": "1) Study & Practice",
-        "description": "Cover the syllabus for Category 3, 2 or 1. Use browse and simulation exams here."
+        "title": "Study & Practice",
+        "description": "Master the syllabus for your target category. Use our question bank and exam simulations to prepare."
       },
-      "exam": {
-        "title": "2) Take the Exam",
-        "description": "Register with ANACOM and pass the exam to obtain the aptitude certificate."
-      },
-      "license": {
-        "title": "3) License & Callsign",
-        "description": "Apply for your amateur radio license and callsign with ANACOM and pay the applicable fees."
+      "examAndLicense": {
+        "title": "Pass the Exam",
+        "description": "Register with ANACOM, take the official exam, and receive your license and callsign."
       },
       "operate": {
-        "title": "4) Operate Responsibly",
-        "description": "Follow your category privileges and comply with national and CEPT regulations."
+        "title": "Get On the Air",
+        "description": "Start operating within your category privileges, following national and CEPT regulations."
       }
     },
-    "tipText": "Tip: Check official forms on ANACOM and consider a local club for mentoring.",
+    "tipText": "Join a local club for mentoring and hands-on experience.",
+    "learnMore": "Full Guide",
     "externalLinks": {
       "anacom": "ANACOM",
       "rep": "REP"
     }
   },
   "Study": {
-    "title": "Study Materials",
-    "description": "Filter by your target ham category.",
+    "title": "Study Library",
+    "description": "Master the material for your ham radio exam with tutorials, guides, and reference materials.",
     "tabs": {
       "all": "All",
       "category": "Category {id}"
     },
     "badge": "CAT {id}",
-    "empty": "No materials match this category yet."
+    "empty": "No materials match your search.",
+    "loading": "Loading materials...",
+    "searchPlaceholder": "Search topics...",
+    "progress": "Your progress",
+    "filterBy": "Filter by category",
+    "markComplete": "Mark as complete",
+    "markIncomplete": "Mark as incomplete"
+  },
+  "Exam": {
+    "loading": "Loading...",
+    "title": "Exam: {name}",
+    "categoryName": "Category {id}",
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page {current} / {total}",
+    "takeAnother": "Take Another",
+    "endQuiz": "End Quiz",
+    "score": "Score: {score} / {total}",
+    "questionId": "ID: {id}",
+    "correct": "Correct",
+    "incorrect": "Incorrect",
+    "unanswered": "Unanswered"
+  },
+  "Calculators": {
+    "common": {
+      "calculate": "Calculate",
+      "reset": "Reset",
+      "result": "Result",
+      "mode": "Mode",
+      "formula": "Formula"
+    },
+    "ohmsLaw": {
+      "title": "Ohm's Law Calculator",
+      "shortTitle": "Ohm's Law",
+      "description": "Calculate voltage, current, or resistance using Ohm's Law (V = IR)",
+      "voltage": "Voltage (V)",
+      "current": "Current (A)",
+      "resistance": "Resistance",
+      "fillTwoFields": "Fill any two fields to compute the third.",
+      "provideTwoValues": "Provide any two values to solve the third.",
+      "clearOneField": "Clear one field so we can compute it for you.",
+      "numericOnly": "Use numeric values only (decimals allowed).",
+      "resistanceNonZero": "Resistance must be non-zero to compute current.",
+      "currentNonZero": "Current must be non-zero to compute resistance.",
+      "computedVoltage": "Computed Voltage: {value} V",
+      "computedCurrent": "Computed Current: {value} A",
+      "computedResistance": "Computed Resistance: {value}"
+    },
+    "componentSum": {
+      "title": "Component Sum Calculator",
+      "shortTitle": "Component Sum",
+      "description": "Calculate series/parallel resistance and capacitance",
+      "componentType": "Component Type",
+      "configuration": "Configuration",
+      "components": "Components",
+      "resistor": "Resistor",
+      "capacitor": "Capacitor",
+      "inductor": "Inductor (Coil)",
+      "series": "Series",
+      "parallel": "Parallel",
+      "add": "Add",
+      "value": "Value",
+      "result": "Result",
+      "addComponentValues": "Add component values to calculate.",
+      "addAtLeastOne": "Add at least one component value.",
+      "allPositive": "All values must be positive numbers.",
+      "totalResult": "Total {type} in {mode}: {value}"
+    },
+    "rlc": {
+      "title": "RLC Circuit Calculator",
+      "shortTitle": "RLC Circuit",
+      "description": "Calculate resonant frequency, impedance, and Q factor",
+      "resonance": "Resonance",
+      "impedance": "Impedance",
+      "resistance": "Resistance (R)",
+      "inductance": "Inductance (L)",
+      "capacitance": "Capacitance (C)",
+      "frequency": "Frequency (f)",
+      "enterLCResonance": "Enter L and C to calculate resonant frequency.",
+      "enterRLCImpedance": "Enter R, L, C, and f to calculate impedance.",
+      "positiveLC": "Enter positive values for inductance and capacitance.",
+      "validValues": "Enter valid values for all fields.",
+      "positiveValues": "Values must be positive (R can be zero).",
+      "resonantFrequency": "Resonant frequency: {value}"
+    },
+    "vswr": {
+      "title": "VSWR Calculator",
+      "shortTitle": "VSWR",
+      "description": "Calculate VSWR, return loss, and mismatch loss",
+      "inputMode": "Input Mode",
+      "fromPower": "From Power",
+      "directVswr": "Direct VSWR",
+      "forwardPower": "Forward Power",
+      "reflectedPower": "Reflected Power",
+      "vswrValue": "VSWR Value",
+      "enterPower": "Enter forward and reflected power to calculate VSWR.",
+      "enterVswr": "Enter VSWR value to calculate losses.",
+      "validNumeric": "Enter valid numeric values.",
+      "forwardPositive": "Forward power must be positive, reflected power non-negative.",
+      "reflectedExceed": "Reflected power cannot exceed forward power.",
+      "vswrMinimum": "VSWR must be 1 or greater.",
+      "complete": "Calculation complete."
+    },
+    "gain": {
+      "title": "Gain Calculator",
+      "shortTitle": "Gain",
+      "description": "Calculate power gain in dB and combined stage gain",
+      "powerRatio": "Power Ratio",
+      "addDb": "Add dB",
+      "inputPower": "Input Power (P1)",
+      "outputPower": "Output Power (P2)",
+      "dbStages": "dB Stages",
+      "dbValue": "dB value",
+      "enterTwoPower": "Enter two power values to calculate gain in dB.",
+      "enterDbValues": "Enter dB values to add (positive for gain, negative for loss).",
+      "validBothPowers": "Enter valid numeric values for both powers.",
+      "powerPositive": "Power values must be positive.",
+      "atLeastOneDb": "Enter at least one dB value.",
+      "allValidNumbers": "All values must be valid numbers.",
+      "powerRatioResult": "Power ratio: {ratio}x ({type} of {value} dB)",
+      "totalResult": "Total: {total} dB (power ratio: {ratio}x)",
+      "gain": "gain",
+      "loss": "loss"
+    },
+    "transformer": {
+      "title": "Transformer Calculator",
+      "shortTitle": "Transformer",
+      "description": "Calculate turns ratio, voltages, currents, and impedance",
+      "calculateFrom": "Calculate From",
+      "voltage": "Voltage",
+      "turns": "Turns",
+      "impedance": "Impedance",
+      "primaryVoltage": "Primary Voltage (Vp)",
+      "secondaryVoltage": "Secondary Voltage (Vs)",
+      "primaryTurns": "Primary Turns (Np)",
+      "secondaryTurns": "Secondary Turns (Ns)",
+      "primaryImpedance": "Primary Impedance (Zp)",
+      "turnsRatio": "Turns Ratio (n:1)",
+      "enterVoltages": "Enter primary and secondary voltages to calculate turns ratio.",
+      "enterTurns": "Enter number of turns to calculate ratio and voltage relationship.",
+      "enterImpedance": "Enter primary impedance and turns ratio to calculate secondary impedance.",
+      "validVoltages": "Enter valid numeric values for both voltages.",
+      "voltagesPositive": "Voltage values must be positive.",
+      "validTurns": "Enter valid numeric values for both turn counts.",
+      "turnsPositive": "Turn counts must be positive.",
+      "validImpedance": "Enter valid numeric values.",
+      "valuesPositive": "Values must be positive.",
+      "turnsRatioResult": "Turns Ratio: {ratio}:1",
+      "stepUp": "Step-up",
+      "stepDown": "Step-down",
+      "oneToOne": "1:1",
+      "transformerType": "{type} transformer.",
+      "currentRatio": "Current ratio: {ratio}:1 (inverse of voltage)",
+      "impedanceResult": "Zs = {value}",
+      "complete": "Calculation complete."
+    }
+  },
+  "QuestionCard": {
+    "suggestedCalculator": "Suggested calculator:",
+    "suggestedCalculators": "Suggested calculators:",
+    "open": "Open",
+    "correct": "Correct",
+    "incorrect": "Incorrect",
+    "unanswered": "Unanswered",
+    "relatedTutorial": "Related tutorial:",
+    "officialSource": "Official source:",
+    "successRate": "{rate}% success"
+  },
+  "SubmitExam": {
+    "title": "Submit Exam",
+    "subtitle": "Help expand the question bank by submitting exam photos or PDFs",
+    "capture": {
+      "title": "Add Pages",
+      "takePhoto": "Take Photo",
+      "uploadFiles": "Upload Files",
+      "dragDrop": "or drag and drop here",
+      "acceptedFormats": "JPG, PNG, PDF accepted"
+    },
+    "pages": {
+      "title": "Pages ({count})",
+      "empty": "No pages added yet",
+      "reorderHint": "Drag to reorder pages",
+      "rotate": "Rotate",
+      "delete": "Delete",
+      "preview": "Preview"
+    },
+    "tips": {
+      "title": "Tips for Good Photos",
+      "lighting": "Use good, even lighting",
+      "flat": "Place exam flat on a surface",
+      "focus": "Ensure text is in focus",
+      "margins": "Include all margins",
+      "angle": "Capture straight-on, not at an angle"
+    },
+    "form": {
+      "category": "Category",
+      "categoryPlaceholder": "Select category...",
+      "year": "Year (optional)",
+      "yearPlaceholder": "e.g., 2024",
+      "email": "Email (optional)",
+      "emailPlaceholder": "your@email.com",
+      "emailHint": "For follow-up questions about the submission"
+    },
+    "submit": {
+      "button": "Submit Exam",
+      "sending": "Sending...",
+      "success": "Exam submitted successfully!",
+      "successDesc": "Thank you for contributing to the question bank.",
+      "error": "Failed to submit exam",
+      "retry": "Retry"
+    },
+    "progress": {
+      "preparing": "Preparing images...",
+      "generating": "Generating PDF...",
+      "uploading": "Sending email..."
+    }
+  },
+  "ExamResults": {
+    "title": "Exam Results",
+    "subtitle": "Summary of your performance",
+    "share": {
+      "title": "Share this exam",
+      "description": "Copy this link to share your exact exam and answers.",
+      "copy": "Copy",
+      "copied": "Copied"
+    },
+    "tabs": {
+      "summary": "Summary",
+      "review": "Review"
+    },
+    "status": {
+      "passed": "You Passed!",
+      "failed": "Not Passed"
+    },
+    "time": {
+      "remaining": "Remaining:",
+      "elapsed": "Elapsed:"
+    },
+    "progress": {
+      "label": "Progress",
+      "pass": "Pass: {score}",
+      "perfect": "Perfect: {score}"
+    },
+    "filter": {
+      "all": "All ({count})"
+    },
+    "review": {
+      "empty": "No questions match the selected filters."
+    },
+    "buttons": {
+      "close": "Close",
+      "takeAnother": "Take Another Exam"
+    }
+  },
+  "Dashboard": {
+    "title": "Your Progress",
+    "subtitle": "Track your exam performance and study progress",
+    "loading": "Loading progress...",
+    "totalExams": "Total Exams",
+    "passRate": "Pass Rate",
+    "currentStreak": "Current Streak",
+    "longestStreak": "{count} day longest",
+    "lastStudy": "Last Study",
+    "never": "Never",
+    "performanceChart": "Performance Trend",
+    "passingScore": "Pass",
+    "categoryProgress": "Category Progress",
+    "category": "Category",
+    "mastered": "mastered",
+    "attempted": "attempted",
+    "bestScore": "Best",
+    "weakAreas": "Areas to Improve",
+    "attempts": "attempts",
+    "correct": "correct",
+    "examHistory": "Recent Exams",
+    "emptyTitle": "No progress yet",
+    "emptyDescription": "Take your first exam to start tracking your progress.",
+    "startExam": "Start Exam",
+    "bookmarks": "Bookmarked Questions",
+    "bookmarksCount": "{count, plural, =0 {No questions saved} =1 {1 question saved} other {# questions saved}}",
+    "dataManagement": "Data Management",
+    "dataManagementDesc": "Export or import your progress"
+  },
+  "SmartPractice": {
+    "title": "Smart Practice",
+    "subtitle": "Questions are selected based on your performance using spaced repetition",
+    "loading": "Preparing your practice session...",
+    "noQuestions": "No questions to review right now. Check back later!",
+    "allCaughtUp": "All Caught Up!",
+    "browseAll": "Browse All Questions",
+    "progress": "{current} of {total}",
+    "ratePrompt": "How well did you know this?",
+    "again": "Again",
+    "hard": "Hard",
+    "good": "Good",
+    "easy": "Easy",
+    "intervalDay": "{count} day",
+    "intervalDays": "{count} days",
+    "intervalMonth": "{count} month",
+    "intervalMonths": "{count} months",
+    "intervalYear": "{count} year",
+    "intervalYears": "{count} years",
+    "dueNow": "{count} due now",
+    "newQuestions": "{count} new",
+    "dueSoon": "{count} due soon",
+    "sessionComplete": "Session Complete!",
+    "reviewedCount": "You reviewed {count} questions",
+    "correctLabel": "Correct",
+    "incorrectLabel": "Incorrect",
+    "accuracy": "Accuracy",
+    "practiceMore": "Practice More",
+    "viewProgress": "View Progress"
+  },
+  "Drill": {
+    "title": "Quick Drill",
+    "subtitle": "10 questions in 5 minutes",
+    "selectCategory": "Select a category",
+    "allCategories": "All Categories",
+    "category": "Category {id}",
+    "startDrill": "Start Drill",
+    "timeRemaining": "{minutes}:{seconds}",
+    "question": "Question {current} of {total}",
+    "skip": "Skip",
+    "timeUp": "Time's Up!",
+    "drillComplete": "Drill Complete!",
+    "score": "{correct} of {total} correct",
+    "accuracy": "{percent}% accuracy",
+    "perfect": "Perfect Score!",
+    "passed": "Great Job!",
+    "needsWork": "Keep Practicing",
+    "xpEarned": "+{xp} XP",
+    "tryAgain": "Try Again",
+    "backHome": "Back to Home",
+    "inProgress": "In Progress",
+    "timeBonus": "Time bonus: +{seconds}s remaining"
+  },
+  "StreakCalendar": {
+    "title": "Study Activity",
+    "currentStreak": "{days} day streak",
+    "totalDays": "{days} days total",
+    "xpEarned": "{xp} XP earned",
+    "lessActive": "Less",
+    "moreActive": "More"
+  },
+  "Notifications": {
+    "title": "Study Reminders",
+    "description": "Get notified when questions are due for review",
+    "notSupported": "Notifications not available",
+    "notSupportedDescription": "Your browser doesn't support push notifications",
+    "permissionDenied": "Notifications blocked",
+    "permissionDeniedDescription": "Please enable notifications in your browser settings",
+    "minQuestions": "Minimum questions for reminder",
+    "questions": "questions",
+    "cooldown": "Reminder frequency",
+    "minutes": "minutes",
+    "hour": "hour",
+    "hours": "hours",
+    "dueReminder": "{count} questions ready for review"
+  },
+  "Gamification": {
+    "xpBar": {
+      "progress": "Progress",
+      "level": "Level {level}",
+      "xpToNext": "{current} / {next} XP"
+    },
+    "xpProgress": "{current} / {required} XP",
+    "maxLevel": "Max Level",
+    "total": "total",
+    "level": "Level {level}",
+    "levels": {
+      "1": "SWL Listener",
+      "2": "Apprentice",
+      "3": "Novice",
+      "4": "Technician",
+      "5": "General Operator",
+      "6": "Advanced Operator",
+      "7": "Extra Class",
+      "8": "DX Hunter",
+      "9": "Contest Operator",
+      "10": "Net Control",
+      "11": "ARRL Member",
+      "12": "Elmer",
+      "13": "Station Master",
+      "14": "Silent Key Legend",
+      "15": "Hall of Fame"
+    },
+    "dailyGoals": {
+      "title": "Daily Goals",
+      "loading": "Loading daily goals...",
+      "streak": "{count} day streak",
+      "bonusReady": "All goals complete! Bonus XP ready.",
+      "allComplete": "All daily goals completed!",
+      "questionsAnswered": "Answer {count} questions",
+      "questionsCorrect": "Get {count} correct",
+      "examsTaken": "Take {count} exam(s)",
+      "smartPractice": "Smart practice {count} questions"
+    },
+    "achievements": {
+      "title": "Achievements",
+      "progress": "{unlocked}/{total} unlocked",
+      "unlocked": "Achievement Unlocked!",
+      "secret": "Secret Achievement",
+      "viewAll": "View all achievements",
+      "first_exam": {
+        "name": "First Exam",
+        "desc": "Complete your first exam"
+      },
+      "ten_exams": {
+        "name": "Exam Veteran",
+        "desc": "Complete 10 exams"
+      },
+      "hundred_questions": {
+        "name": "Century",
+        "desc": "Answer 100 questions"
+      },
+      "thousand_questions": {
+        "name": "Question Master",
+        "desc": "Answer 1,000 questions"
+      },
+      "level_ten": {
+        "name": "Expert",
+        "desc": "Reach level 10"
+      },
+      "first_pass": {
+        "name": "First Victory",
+        "desc": "Pass your first exam"
+      },
+      "perfect_exam": {
+        "name": "Perfect Score",
+        "desc": "Get 100% on an exam"
+      },
+      "five_perfect": {
+        "name": "Perfectionist",
+        "desc": "Get 5 perfect scores"
+      },
+      "speed_demon": {
+        "name": "Speed Demon",
+        "desc": "Finish with 30+ minutes remaining"
+      },
+      "comeback_kid": {
+        "name": "Comeback Kid",
+        "desc": "Pass after failing the same category"
+      },
+      "week_streak": {
+        "name": "Week Warrior",
+        "desc": "Maintain a 7-day streak"
+      },
+      "month_streak": {
+        "name": "Month Master",
+        "desc": "Maintain a 30-day streak"
+      },
+      "daily_champion": {
+        "name": "Daily Champion",
+        "desc": "Complete 7 sets of daily goals"
+      },
+      "smart_learner": {
+        "name": "Smart Learner",
+        "desc": "Complete 10 smart practice sessions"
+      },
+      "iron_will": {
+        "name": "Iron Will",
+        "desc": "Maintain a 100-day streak"
+      },
+      "explorer": {
+        "name": "Explorer",
+        "desc": "Try all 3 categories"
+      },
+      "cat3_master": {
+        "name": "Category 3 Master",
+        "desc": "Master Category 3"
+      },
+      "cat1_master": {
+        "name": "Category 1 Master",
+        "desc": "Master Category 1"
+      }
+    },
+    "xpEarned": {
+      "title": "XP Earned"
+    },
+    "xpEvents": {
+      "question_correct": "Correct answer",
+      "question_incorrect": "Question attempted",
+      "exam_completed": "Exam completed",
+      "exam_passed": "Exam passed",
+      "perfect_score": "Perfect score",
+      "daily_goal": "Daily goal completed",
+      "daily_goals_all_bonus": "All daily goals bonus",
+      "daily_streak_bonus": "Daily streak bonus",
+      "first_of_day": "First activity of the day",
+      "achievement_unlocked": "Achievement unlocked",
+      "smart_practice_session": "Smart practice session"
+    },
+    "levelUp": {
+      "title": "Level Up!",
+      "description": "You reached level {level}!"
+    },
+    "settings": {
+      "toggle": "Gamification settings",
+      "disabled": "Gamification is disabled",
+      "disabledDescription": "Enable gamification to earn XP, unlock achievements, and track daily goals.",
+      "enable": "Enable"
+    }
+  },
+  "BecomeHam": {
+    "title": "How to become a ham radio operator",
+    "intro": "In Portugal, the process to become a licensed ham radio operator is regulated by ANACOM (National Communications Authority) and involves several steps and categories. This guide will explain the process from the beginning to obtaining the most advanced license.",
+    "categoriesTitle": "Ham Radio Categories",
+    "categoriesIntro": "There are three categories for new ham radio operators in Portugal, organized progressively:",
+    "studyCategory": "Study this category",
+    "category3": {
+      "name": "Category 3",
+      "age": "Minimum age: 12 years",
+      "experience": "Experience: none",
+      "privileges": "Privileges: very limited",
+      "exam": "Exam: basic",
+      "power": "Power: Cannot transmit*"
+    },
+    "category3PowerFootnote": "*A Category 3 license holder may use stations of higher category amateurs, under their supervision, in transmission and reception modes, using the frequency bands permitted to them. - DL 53/2009 - Article 8",
+    "category2": {
+      "name": "Category 2",
+      "age": "Minimum age: 14 years",
+      "experience": "Experience: 2 years Cat. 3",
+      "privileges": "Privileges: expanded",
+      "exam": "Exam: intermediate",
+      "power": "Power: medium"
+    },
+    "category1": {
+      "name": "Category 1",
+      "age": "Minimum age: 16 years",
+      "experience": "Experience: 1 year Cat. 2",
+      "privileges": "Privileges: full",
+      "exam": "Exam: advanced",
+      "power": "Power: high"
+    },
+    "requirements": "Requirements",
+    "examLabel": "Exam",
+    "examContentLabel": "Exam content",
+    "approval": "Approval: Score at least 50% of the questions.",
+    "waitTimesTitle": "Wait Times and Progression",
+    "progression": {
+      "entry": "Entry",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced",
+      "twoYears": "2 years",
+      "oneYear": "1 year"
+    },
+    "waitTimesNote": "These are minimum wait times. Many ham radio operators choose to spend more time in each category to gain experience before progressing.",
+    "examProcessTitle": "Exam Process",
+    "examProcess": {
+      "registration": {
+        "title": "Register with ANACOM",
+        "description": "Access the ANACOM portal, fill out the registration form and pay the exam fee. You'll receive email confirmation with the exam date and location."
+      },
+      "preparation": {
+        "title": "Prepare for the exam",
+        "description": "Study the official syllabus using our materials, exam simulations and flashcards. Also consider joining courses from local amateur radio clubs."
+      },
+      "exam": {
+        "title": "Take the exam",
+        "description": "Arrive at the ANACOM designated location with your ID document. The exam is multiple choice and you have limited time to answer all questions."
+      },
+      "results": {
+        "title": "Results and callsign",
+        "description": "Results are communicated on the same day. If approved, you receive your official callsign and can start operating according to your category."
+      }
+    },
+    "maintenanceTitle": "License Maintenance",
+    "maintenance": {
+      "annualRenewal": "Annual license renewal.",
+      "annualFees": "Payment of annual fees.",
+      "compliance": "Compliance with regulations and good practices of amateur radio."
+    }
+  },
+  "Share": {
+    "title": "Share",
+    "native": "Share...",
+    "twitter": "Share on X (Twitter)",
+    "facebook": "Share on Facebook",
+    "linkedin": "Share on LinkedIn",
+    "copyLink": "Copy Link",
+    "copied": "Copied!"
+  },
+  "Bookmarks": {
+    "title": "Bookmarked Questions",
+    "subtitle": "{count, plural, =0 {No bookmarked questions} =1 {1 bookmarked question} other {# bookmarked questions}}",
+    "loading": "Loading bookmarks...",
+    "backToDashboard": "Back to Dashboard",
+    "empty": "No bookmarked questions yet. Bookmark questions while studying to review them later.",
+    "startBrowsing": "Start Browsing Questions",
+    "filterAll": "All",
+    "filterCategory": "Category {id}",
+    "questionNotFound": "Question {id} not found",
+    "remove": "Remove bookmark",
+    "notes": "Notes"
+  },
+  "DataManagement": {
+    "title": "Data Management",
+    "export": {
+      "title": "Export Progress",
+      "description": "Download your progress data as a JSON file for backup.",
+      "button": "Export Progress",
+      "success": "Progress exported!"
+    },
+    "import": {
+      "title": "Import Progress",
+      "description": "Restore progress from a previously exported file.",
+      "button": "Import Progress",
+      "cancel": "Cancel",
+      "confirm": "Import",
+      "success": "Progress imported!",
+      "warnings": "Warnings",
+      "error": {
+        "invalid": "Invalid backup file",
+        "corrupted": "File is corrupted or incompatible"
+      },
+      "strategy": {
+        "label": "Import Strategy",
+        "merge": "Merge",
+        "mergeDesc": "Combine imported data with existing progress. Best scores and attempts are preserved.",
+        "replace": "Replace All",
+        "replaceDesc": "Replace all existing progress with the imported data."
+      }
+    },
+    "clear": {
+      "button": "Clear All Data",
+      "title": "Clear All Data",
+      "description": "This will permanently delete all your study progress, exam history, and achievements.",
+      "warning": "This action cannot be undone. Make sure to export your data first if you want to keep a backup.",
+      "cancel": "Cancel",
+      "confirm": "Delete Everything"
+    }
+  },
+  "Offline": {
+    "message": "You're offline. Some features may be limited.",
+    "reconnected": "Back online!",
+    "dismiss": "Dismiss"
   }
 }

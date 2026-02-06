@@ -9,6 +9,7 @@
   },
   "NavBar": {
     "home": "Início",
+    "dashboard": "Progresso",
     "study": "Estudar",
     "browse": "Explorar",
     "browseFlashcards": "Flashcards",
@@ -16,52 +17,722 @@
     "exams": "Exames",
     "calculators": "Calculadoras",
     "about": "Sobre",
-    "examTimer": "Cronómetro"
+    "becomeHam": "Ser Radioamador",
+    "examTimer": "Cronómetro",
+    "submitExam": "Enviar",
+    "submitExamDesc": "Enviar exame para o banco de questões",
+    "menu": "Menu",
+    "studyAll": "Todos os Materiais",
+    "studyAllDesc": "Ver todos os materiais de estudo",
+    "settings": "Definições",
+    "theme": "Tema",
+    "language": "Idioma",
+    "studyLibrary": "Biblioteca de Estudo",
+    "questions": "Questões",
+    "flashcards": "Flashcards",
+    "smartPractice": "Prática Inteligente",
+    "quickDrill": "Treino Rápido"
+  },
+  "Footer": {
+    "about": "Sobre",
+    "reportError": "Reportar Erro",
+    "sourceCode": "Código Fonte",
+    "telegram": "Telegram",
+    "app": "App",
+    "slogan": "Feito por radioamadores, para (futuros) radioamadores"
+  },
+  "Browse": {
+    "title": "Estudar Categoria {id}",
+    "loading": "A carregar questões...",
+    "flashTitle": "Flashcards Categoria {id}",
+    "flashLoading": "A carregar flashcards...",
+    "flashNotFound": "Não encontrámos a categoria {id}. Tenta escolher uma categoria no menu Explorar.",
+    "flashNoQuestions": "Ainda não há questões disponíveis para esta categoria.",
+    "flashSubtitle": "Pratica uma questão aleatória de cada vez. Já reviste {count}.",
+    "flashCard": "Cartão {position} de {total} nesta ronda.",
+    "flashNext": "Próxima questão"
   },
   "Home": {
-    "heroTitle": "Estudo para Rádio Amador",
+    "heroTitle": "Rádio Escola",
     "heroSubtitle": "Pratica com questões reais, faz exames cronometrados e revê resultados. Escolhe uma categoria para começar.",
-    "ctaExam": "Fazer Exame (Cat 3)",
+    "ctaExam": "Simular Exame (Cat 3)",
     "ctaBrowse": "Ver Questões",
     "categoriesHeading": "Categorias",
     "sectionSubtitle": "Um caminho rápido e prático para poderes operar legalmente em Portugal.",
     "categoryName": "Categoria {id}",
     "categoryBadge": "CAT {id}",
-    "categoryBrowse": "Explorar",
-    "categorySimulation": "Simulação",
-    "processHeading": "Rádio Amador em Portugal: Processo",
+    "categoryLevel": {
+      "beginner": "Iniciante",
+      "intermediate": "Intermédio",
+      "advanced": "Avançado"
+    },
+    "categoryBrowse": "Estudar",
+    "categorySimulation": "Exame",
+    "processHeading": "Torna-te Radioamador Licenciado",
     "processSteps": {
       "study": {
-        "title": "1) Estudar e Praticar",
-        "description": "Revê o programa das categorias 3, 2 ou 1. Usa a exploração e os exames de simulação aqui."
+        "title": "Estudar e Praticar",
+        "description": "Domina o programa da tua categoria alvo. Usa o nosso banco de questões e simulações de exame."
       },
-      "exam": {
-        "title": "2) Fazer o Exame",
-        "description": "Inscreve-te na ANACOM e passa o exame para obter o certificado de aptidão."
-      },
-      "license": {
-        "title": "3) Licença e Indicativo",
-        "description": "Requer a licença de rádio amador e o teu indicativo junto da ANACOM e paga as taxas."
+      "examAndLicense": {
+        "title": "Passar no Exame",
+        "description": "Inscreve-te na ANACOM, faz o exame oficial e recebe a tua licença e indicativo."
       },
       "operate": {
-        "title": "4) Operar com Responsabilidade",
-        "description": "Cumpre as tuas prerrogativas de categoria e respeita a regulamentação nacional e CEPT."
+        "title": "Entrar no Ar",
+        "description": "Começa a operar dentro das tuas prerrogativas, seguindo a regulamentação nacional e CEPT."
       }
     },
-    "tipText": "Dica: Consulta os formulários oficiais na ANACOM e considera um clube local para mentoria.",
+    "tipText": "Junta-te a um clube local para mentoria e experiência prática.",
+    "learnMore": "Guia Completo",
     "externalLinks": {
       "anacom": "ANACOM",
       "rep": "REP"
     }
   },
   "Study": {
-    "title": "Materiais de Estudo",
-    "description": "Filtre pela categoria de radioamador desejada.",
+    "title": "Biblioteca de Estudo",
+    "description": "Domina a matéria para o teu exame de radioamador com tutoriais, guias e materiais de referência.",
     "tabs": {
-      "all": "Todas",
+      "all": "Todos",
       "category": "Categoria {id}"
     },
     "badge": "CAT {id}",
-    "empty": "Ainda não há materiais para esta categoria."
+    "empty": "Nenhum material corresponde à tua pesquisa.",
+    "loading": "A carregar materiais...",
+    "searchPlaceholder": "Pesquisar tópicos...",
+    "progress": "O teu progresso",
+    "filterBy": "Filtrar por categoria",
+    "markComplete": "Marcar como concluído",
+    "markIncomplete": "Marcar como incompleto"
+  },
+  "Exam": {
+    "loading": "A carregar...",
+    "title": "Exame: {name}",
+    "categoryName": "Categoria {id}",
+    "previous": "Anterior",
+    "next": "Seguinte",
+    "page": "Página {current} / {total}",
+    "takeAnother": "Fazer Outro",
+    "endQuiz": "Terminar",
+    "score": "Pontuação: {score} / {total}",
+    "questionId": "ID: {id}",
+    "correct": "Correto",
+    "incorrect": "Incorreto",
+    "unanswered": "Sem resposta"
+  },
+  "Calculators": {
+    "common": {
+      "calculate": "Calcular",
+      "reset": "Limpar",
+      "result": "Resultado",
+      "mode": "Modo",
+      "formula": "Fórmula"
+    },
+    "ohmsLaw": {
+      "title": "Calculadora Lei de Ohm",
+      "shortTitle": "Lei de Ohm",
+      "description": "Calcula tensão, corrente ou resistência usando a Lei de Ohm (V = IR)",
+      "voltage": "Tensão (V)",
+      "current": "Corrente (A)",
+      "resistance": "Resistência",
+      "fillTwoFields": "Preenche dois campos para calcular o terceiro.",
+      "provideTwoValues": "Fornece dois valores para resolver o terceiro.",
+      "clearOneField": "Limpa um campo para que possamos calculá-lo.",
+      "numericOnly": "Usa apenas valores numéricos (decimais permitidos).",
+      "resistanceNonZero": "A resistência deve ser diferente de zero para calcular a corrente.",
+      "currentNonZero": "A corrente deve ser diferente de zero para calcular a resistência.",
+      "computedVoltage": "Tensão calculada: {value} V",
+      "computedCurrent": "Corrente calculada: {value} A",
+      "computedResistance": "Resistência calculada: {value}"
+    },
+    "componentSum": {
+      "title": "Calculadora de Soma de Componentes",
+      "shortTitle": "Soma Componentes",
+      "description": "Calcula resistência e capacitância em série/paralelo",
+      "componentType": "Tipo de Componente",
+      "configuration": "Configuração",
+      "components": "Componentes",
+      "resistor": "Resistência",
+      "capacitor": "Condensador",
+      "inductor": "Bobina (Indutor)",
+      "series": "Série",
+      "parallel": "Paralelo",
+      "add": "Adicionar",
+      "value": "Valor",
+      "result": "Resultado",
+      "addComponentValues": "Adiciona valores de componentes para calcular.",
+      "addAtLeastOne": "Adiciona pelo menos um valor de componente.",
+      "allPositive": "Todos os valores devem ser números positivos.",
+      "totalResult": "Total {type} em {mode}: {value}"
+    },
+    "rlc": {
+      "title": "Calculadora de Circuito RLC",
+      "shortTitle": "Circuito RLC",
+      "description": "Calcula frequência de ressonância, impedância e fator Q",
+      "resonance": "Ressonância",
+      "impedance": "Impedância",
+      "resistance": "Resistência (R)",
+      "inductance": "Indutância (L)",
+      "capacitance": "Capacitância (C)",
+      "frequency": "Frequência (f)",
+      "enterLCResonance": "Introduz L e C para calcular a frequência de ressonância.",
+      "enterRLCImpedance": "Introduz R, L, C e f para calcular a impedância.",
+      "positiveLC": "Introduz valores positivos para indutância e capacitância.",
+      "validValues": "Introduz valores válidos para todos os campos.",
+      "positiveValues": "Os valores devem ser positivos (R pode ser zero).",
+      "resonantFrequency": "Frequência de ressonância: {value}"
+    },
+    "vswr": {
+      "title": "Calculadora VSWR",
+      "shortTitle": "VSWR",
+      "description": "Calcula VSWR, perda de retorno e perda por desadaptação",
+      "inputMode": "Modo de Entrada",
+      "fromPower": "A partir da Potência",
+      "directVswr": "VSWR Direto",
+      "forwardPower": "Potência Direta",
+      "reflectedPower": "Potência Refletida",
+      "vswrValue": "Valor VSWR",
+      "enterPower": "Introduz a potência direta e refletida para calcular o VSWR.",
+      "enterVswr": "Introduz o valor VSWR para calcular as perdas.",
+      "validNumeric": "Introduz valores numéricos válidos.",
+      "forwardPositive": "A potência direta deve ser positiva, a refletida não-negativa.",
+      "reflectedExceed": "A potência refletida não pode exceder a potência direta.",
+      "vswrMinimum": "O VSWR deve ser 1 ou superior.",
+      "complete": "Cálculo completo."
+    },
+    "gain": {
+      "title": "Calculadora de Ganho",
+      "shortTitle": "Ganho",
+      "description": "Calcula ganho de potência em dB e ganho combinado de estágios",
+      "powerRatio": "Razão de Potência",
+      "addDb": "Somar dB",
+      "inputPower": "Potência de Entrada (P1)",
+      "outputPower": "Potência de Saída (P2)",
+      "dbStages": "Estágios dB",
+      "dbValue": "Valor dB",
+      "enterTwoPower": "Introduz dois valores de potência para calcular o ganho em dB.",
+      "enterDbValues": "Introduz valores dB para somar (positivo para ganho, negativo para perda).",
+      "validBothPowers": "Introduz valores numéricos válidos para ambas as potências.",
+      "powerPositive": "Os valores de potência devem ser positivos.",
+      "atLeastOneDb": "Introduz pelo menos um valor dB.",
+      "allValidNumbers": "Todos os valores devem ser números válidos.",
+      "powerRatioResult": "Razão de potência: {ratio}x ({type} de {value} dB)",
+      "totalResult": "Total: {total} dB (razão de potência: {ratio}x)",
+      "gain": "ganho",
+      "loss": "perda"
+    },
+    "transformer": {
+      "title": "Calculadora de Transformador",
+      "shortTitle": "Transformador",
+      "description": "Calcula razão de espiras, tensões, correntes e impedância",
+      "calculateFrom": "Calcular a partir de",
+      "voltage": "Tensão",
+      "turns": "Espiras",
+      "impedance": "Impedância",
+      "primaryVoltage": "Tensão Primária (Vp)",
+      "secondaryVoltage": "Tensão Secundária (Vs)",
+      "primaryTurns": "Espiras Primárias (Np)",
+      "secondaryTurns": "Espiras Secundárias (Ns)",
+      "primaryImpedance": "Impedância Primária (Zp)",
+      "turnsRatio": "Razão de Espiras (n:1)",
+      "enterVoltages": "Introduz as tensões primária e secundária para calcular a razão de espiras.",
+      "enterTurns": "Introduz o número de espiras para calcular a razão e a relação de tensão.",
+      "enterImpedance": "Introduz a impedância primária e a razão de espiras para calcular a impedância secundária.",
+      "validVoltages": "Introduz valores numéricos válidos para ambas as tensões.",
+      "voltagesPositive": "Os valores de tensão devem ser positivos.",
+      "validTurns": "Introduz valores numéricos válidos para ambas as contagens de espiras.",
+      "turnsPositive": "As contagens de espiras devem ser positivas.",
+      "validImpedance": "Introduz valores numéricos válidos.",
+      "valuesPositive": "Os valores devem ser positivos.",
+      "turnsRatioResult": "Razão de Espiras: {ratio}:1",
+      "stepUp": "Elevador",
+      "stepDown": "Redutor",
+      "oneToOne": "1:1",
+      "transformerType": "Transformador {type}.",
+      "currentRatio": "Razão de corrente: {ratio}:1 (inverso da tensão)",
+      "impedanceResult": "Zs = {value}",
+      "complete": "Cálculo completo."
+    }
+  },
+  "QuestionCard": {
+    "suggestedCalculator": "Calculadora sugerida:",
+    "suggestedCalculators": "Calculadoras sugeridas:",
+    "open": "Abrir",
+    "correct": "Correto",
+    "incorrect": "Incorreto",
+    "unanswered": "Sem resposta",
+    "relatedTutorial": "Tutorial relacionado:",
+    "officialSource": "Fonte oficial:",
+    "successRate": "{rate}% de acerto"
+  },
+  "SubmitExam": {
+    "title": "Enviar Exame",
+    "subtitle": "Ajuda a expandir o banco de questões enviando fotos ou PDFs de exames",
+    "capture": {
+      "title": "Adicionar Páginas",
+      "takePhoto": "Tirar Foto",
+      "uploadFiles": "Carregar Ficheiros",
+      "dragDrop": "ou arrasta e larga aqui",
+      "acceptedFormats": "JPG, PNG, PDF aceites"
+    },
+    "pages": {
+      "title": "Páginas ({count})",
+      "empty": "Nenhuma página adicionada",
+      "reorderHint": "Arrasta para reordenar",
+      "rotate": "Rodar",
+      "delete": "Apagar",
+      "preview": "Pré-visualizar"
+    },
+    "tips": {
+      "title": "Dicas para Boas Fotos",
+      "lighting": "Usa boa iluminação uniforme",
+      "flat": "Coloca o exame numa superfície plana",
+      "focus": "Certifica-te que o texto está focado",
+      "margins": "Inclui todas as margens",
+      "angle": "Captura de frente, não em ângulo"
+    },
+    "form": {
+      "category": "Categoria",
+      "categoryPlaceholder": "Seleciona categoria...",
+      "year": "Ano (opcional)",
+      "yearPlaceholder": "ex., 2024",
+      "email": "Email (opcional)",
+      "emailPlaceholder": "teu@email.com",
+      "emailHint": "Para questões sobre a submissão"
+    },
+    "submit": {
+      "button": "Enviar Exame",
+      "sending": "A enviar...",
+      "success": "Exame enviado com sucesso!",
+      "successDesc": "Obrigado por contribuíres para o banco de questões.",
+      "error": "Falha ao enviar exame",
+      "retry": "Tentar novamente"
+    },
+    "progress": {
+      "preparing": "A preparar imagens...",
+      "generating": "A gerar PDF...",
+      "uploading": "A enviar email..."
+    }
+  },
+  "ExamResults": {
+    "title": "Resultados do Exame",
+    "subtitle": "Resumo do teu desempenho",
+    "share": {
+      "title": "Partilhar este exame",
+      "description": "Copia este link para partilhar o teu exame e respostas.",
+      "copy": "Copiar",
+      "copied": "Copiado"
+    },
+    "tabs": {
+      "summary": "Resumo",
+      "review": "Rever"
+    },
+    "status": {
+      "passed": "Aprovado!",
+      "failed": "Reprovado"
+    },
+    "time": {
+      "remaining": "Restante:",
+      "elapsed": "Decorrido:"
+    },
+    "progress": {
+      "label": "Progresso",
+      "pass": "Passar: {score}",
+      "perfect": "Perfeito: {score}"
+    },
+    "filter": {
+      "all": "Todas ({count})"
+    },
+    "review": {
+      "empty": "Nenhuma questão corresponde aos filtros selecionados."
+    },
+    "buttons": {
+      "close": "Fechar",
+      "takeAnother": "Fazer Outro Exame"
+    }
+  },
+  "Dashboard": {
+    "title": "O Teu Progresso",
+    "subtitle": "Acompanha o teu desempenho nos exames e progresso de estudo",
+    "loading": "A carregar progresso...",
+    "totalExams": "Total de Exames",
+    "passRate": "Taxa de Aprovação",
+    "currentStreak": "Sequência Atual",
+    "longestStreak": "{count} dias (máximo)",
+    "lastStudy": "Último Estudo",
+    "never": "Nunca",
+    "performanceChart": "Tendência de Desempenho",
+    "passingScore": "Passar",
+    "categoryProgress": "Progresso por Categoria",
+    "category": "Categoria",
+    "mastered": "dominadas",
+    "attempted": "tentadas",
+    "bestScore": "Melhor",
+    "weakAreas": "Áreas a Melhorar",
+    "attempts": "tentativas",
+    "correct": "corretas",
+    "examHistory": "Exames Recentes",
+    "emptyTitle": "Ainda sem progresso",
+    "emptyDescription": "Faz o teu primeiro exame para começar a acompanhar o teu progresso.",
+    "startExam": "Começar Exame",
+    "bookmarks": "Questões Guardadas",
+    "bookmarksCount": "{count, plural, =0 {Nenhuma questão guardada} =1 {1 questão guardada} other {# questões guardadas}}",
+    "dataManagement": "Gestão de Dados",
+    "dataManagementDesc": "Exporta ou importa o teu progresso"
+  },
+  "SmartPractice": {
+    "title": "Prática Inteligente",
+    "subtitle": "Questões selecionadas com base no teu desempenho usando repetição espaçada",
+    "loading": "A preparar a tua sessão de prática...",
+    "noQuestions": "Sem questões para rever agora. Volta mais tarde!",
+    "allCaughtUp": "Tudo em Dia!",
+    "browseAll": "Ver Todas as Questões",
+    "progress": "{current} de {total}",
+    "ratePrompt": "Quão bem sabias esta?",
+    "again": "Repetir",
+    "hard": "Difícil",
+    "good": "Bem",
+    "easy": "Fácil",
+    "intervalDay": "{count} dia",
+    "intervalDays": "{count} dias",
+    "intervalMonth": "{count} mês",
+    "intervalMonths": "{count} meses",
+    "intervalYear": "{count} ano",
+    "intervalYears": "{count} anos",
+    "dueNow": "{count} para rever",
+    "newQuestions": "{count} novas",
+    "dueSoon": "{count} em breve",
+    "sessionComplete": "Sessão Completa!",
+    "reviewedCount": "Reviste {count} questões",
+    "correctLabel": "Corretas",
+    "incorrectLabel": "Incorretas",
+    "accuracy": "Precisão",
+    "practiceMore": "Praticar Mais",
+    "viewProgress": "Ver Progresso"
+  },
+  "Drill": {
+    "title": "Treino Rápido",
+    "subtitle": "10 questões em 5 minutos",
+    "selectCategory": "Seleciona uma categoria",
+    "allCategories": "Todas as Categorias",
+    "category": "Categoria {id}",
+    "startDrill": "Iniciar Treino",
+    "timeRemaining": "{minutes}:{seconds}",
+    "question": "Questão {current} de {total}",
+    "skip": "Saltar",
+    "timeUp": "Tempo Esgotado!",
+    "drillComplete": "Treino Completo!",
+    "score": "{correct} de {total} corretas",
+    "accuracy": "{percent}% de precisão",
+    "perfect": "Pontuação Perfeita!",
+    "passed": "Muito Bem!",
+    "needsWork": "Continua a Praticar",
+    "xpEarned": "+{xp} XP",
+    "tryAgain": "Tentar Novamente",
+    "backHome": "Voltar ao Início",
+    "inProgress": "Em Progresso",
+    "timeBonus": "Bónus de tempo: +{seconds}s restantes"
+  },
+  "StreakCalendar": {
+    "title": "Atividade de Estudo",
+    "currentStreak": "{days} dias de sequência",
+    "totalDays": "{days} dias no total",
+    "xpEarned": "{xp} XP ganhos",
+    "lessActive": "Menos",
+    "moreActive": "Mais"
+  },
+  "Notifications": {
+    "title": "Lembretes de Estudo",
+    "description": "Recebe notificações quando há questões para rever",
+    "notSupported": "Notificações não disponíveis",
+    "notSupportedDescription": "O teu navegador não suporta notificações push",
+    "permissionDenied": "Notificações bloqueadas",
+    "permissionDeniedDescription": "Por favor ativa as notificações nas definições do navegador",
+    "minQuestions": "Mínimo de questões para lembrete",
+    "questions": "questões",
+    "cooldown": "Frequência de lembretes",
+    "minutes": "minutos",
+    "hour": "hora",
+    "hours": "horas",
+    "dueReminder": "{count} questões prontas para revisão"
+  },
+  "Gamification": {
+    "xpBar": {
+      "progress": "Progresso",
+      "level": "Nível {level}",
+      "xpToNext": "{current} / {next} XP"
+    },
+    "xpProgress": "{current} / {required} XP",
+    "maxLevel": "Nível Máximo",
+    "total": "total",
+    "level": "Nível {level}",
+    "levels": {
+      "1": "Ouvinte SWL",
+      "2": "Aprendiz",
+      "3": "Novato",
+      "4": "Técnico",
+      "5": "Operador Geral",
+      "6": "Operador Avançado",
+      "7": "Classe Extra",
+      "8": "Caçador de DX",
+      "9": "Operador de Concurso",
+      "10": "Controle de Rede",
+      "11": "Membro ARRL",
+      "12": "Elmer",
+      "13": "Mestre de Estação",
+      "14": "Lenda Silent Key",
+      "15": "Hall da Fama"
+    },
+    "dailyGoals": {
+      "title": "Metas Diárias",
+      "loading": "A carregar metas diárias...",
+      "streak": "{count} dias seguidos",
+      "bonusReady": "Todas as metas completas! XP bónus pronto.",
+      "allComplete": "Todas as metas diárias completas!",
+      "questionsAnswered": "Responder {count} questões",
+      "questionsCorrect": "Acertar {count} questões",
+      "examsTaken": "Fazer {count} exame(s)",
+      "smartPractice": "Prática inteligente {count} questões"
+    },
+    "achievements": {
+      "title": "Conquistas",
+      "progress": "{unlocked}/{total} desbloqueadas",
+      "unlocked": "Conquista Desbloqueada!",
+      "secret": "Conquista Secreta",
+      "viewAll": "Ver todas as conquistas",
+      "first_exam": {
+        "name": "Primeiro Exame",
+        "desc": "Completa o teu primeiro exame"
+      },
+      "ten_exams": {
+        "name": "Veterano de Exames",
+        "desc": "Completa 10 exames"
+      },
+      "hundred_questions": {
+        "name": "Centenário",
+        "desc": "Responde a 100 questões"
+      },
+      "thousand_questions": {
+        "name": "Mestre das Questões",
+        "desc": "Responde a 1.000 questões"
+      },
+      "level_ten": {
+        "name": "Especialista",
+        "desc": "Alcança o nível 10"
+      },
+      "first_pass": {
+        "name": "Primeira Vitória",
+        "desc": "Passa no teu primeiro exame"
+      },
+      "perfect_exam": {
+        "name": "Pontuação Perfeita",
+        "desc": "Obtém 100% num exame"
+      },
+      "five_perfect": {
+        "name": "Perfeccionista",
+        "desc": "Obtém 5 pontuações perfeitas"
+      },
+      "speed_demon": {
+        "name": "Veloz",
+        "desc": "Termina com 30+ minutos restantes"
+      },
+      "comeback_kid": {
+        "name": "Volta por Cima",
+        "desc": "Passa após reprovar na mesma categoria"
+      },
+      "week_streak": {
+        "name": "Guerreiro da Semana",
+        "desc": "Mantém uma sequência de 7 dias"
+      },
+      "month_streak": {
+        "name": "Mestre do Mês",
+        "desc": "Mantém uma sequência de 30 dias"
+      },
+      "daily_champion": {
+        "name": "Campeão Diário",
+        "desc": "Completa 7 conjuntos de metas diárias"
+      },
+      "smart_learner": {
+        "name": "Aprendiz Inteligente",
+        "desc": "Completa 10 sessões de prática inteligente"
+      },
+      "iron_will": {
+        "name": "Vontade de Ferro",
+        "desc": "Mantém uma sequência de 100 dias"
+      },
+      "explorer": {
+        "name": "Explorador",
+        "desc": "Experimenta as 3 categorias"
+      },
+      "cat3_master": {
+        "name": "Mestre Categoria 3",
+        "desc": "Domina a Categoria 3"
+      },
+      "cat1_master": {
+        "name": "Mestre Categoria 1",
+        "desc": "Domina a Categoria 1"
+      }
+    },
+    "xpEarned": {
+      "title": "XP Ganho"
+    },
+    "xpEvents": {
+      "question_correct": "Resposta correta",
+      "question_incorrect": "Questão tentada",
+      "exam_completed": "Exame completo",
+      "exam_passed": "Exame aprovado",
+      "perfect_score": "Pontuação perfeita",
+      "daily_goal": "Meta diária completa",
+      "daily_goals_all_bonus": "Bónus todas as metas diárias",
+      "daily_streak_bonus": "Bónus sequência diária",
+      "first_of_day": "Primeira atividade do dia",
+      "achievement_unlocked": "Conquista desbloqueada",
+      "smart_practice_session": "Sessão de prática inteligente"
+    },
+    "levelUp": {
+      "title": "Subiu de Nível!",
+      "description": "Alcançaste o nível {level}!"
+    },
+    "settings": {
+      "toggle": "Definições de gamificação",
+      "disabled": "Gamificação desativada",
+      "disabledDescription": "Ativa a gamificação para ganhar XP, desbloquear conquistas e acompanhar metas diárias.",
+      "enable": "Ativar"
+    }
+  },
+  "BecomeHam": {
+    "title": "Como se tornar um radioamador",
+    "intro": "Em Portugal, o processo para se tornar um radioamador licenciado é regulado pela ANACOM (Autoridade Nacional de Comunicações) e envolve várias etapas e categorias. Este guia irá explicar o processo desde o início até à obtenção da licença mais avançada.",
+    "categoriesTitle": "Categorias de Radioamador",
+    "categoriesIntro": "Existem três categorias para novos radioamadores em Portugal, organizadas de forma progressiva:",
+    "studyCategory": "Estudar esta categoria",
+    "category3": {
+      "name": "Categoria 3",
+      "age": "Idade mínima: 12 anos",
+      "experience": "Experiência: nenhuma",
+      "privileges": "Privilégios: muito limitados",
+      "exam": "Exame: básico",
+      "power": "Potência: Não pode transmitir*"
+    },
+    "category3PowerFootnote": "(Um portador de CAN de categoria 3 poderá) Utilizar estações individuais de qualquer amador de categoria superior, sob a sua supervisão, nos modos de emissão e recepção, utilizando as faixas de frequências que a este forem permitidas; (DL 53/2009 - Artigo 8.º)",
+    "category2": {
+      "name": "Categoria 2",
+      "age": "Idade mínima: 14 anos",
+      "experience": "Experiência: 2 anos Cat. 3",
+      "privileges": "Privilégios: expandidos",
+      "exam": "Exame: intermediário",
+      "power": "Potência: média"
+    },
+    "category1": {
+      "name": "Categoria 1",
+      "age": "Idade mínima: 16 anos",
+      "experience": "Experiência: 1 ano Cat. 2",
+      "privileges": "Privilégios: completos",
+      "exam": "Exame: avançado",
+      "power": "Potência: alta"
+    },
+    "requirements": "Requisitos",
+    "examLabel": "Exame",
+    "examContentLabel": "Conteúdo do exame",
+    "approval": "Aprovação: Acertar pelo menos 50% das questões.",
+    "waitTimesTitle": "Tempos de Espera e Progressão",
+    "progression": {
+      "entry": "Entrada",
+      "intermediate": "Intermédio",
+      "advanced": "Avançado",
+      "twoYears": "2 anos",
+      "oneYear": "1 ano"
+    },
+    "waitTimesNote": "Estes são os tempos mínimos de espera. Muitos radioamadores optam por passar mais tempo em cada categoria para ganhar experiência antes de progredir.",
+    "examProcessTitle": "Processo de exame",
+    "examProcess": {
+      "registration": {
+        "title": "Inscrição na ANACOM",
+        "description": "Acede ao portal da ANACOM, preenche o formulário de inscrição e efetua o pagamento da taxa de exame. Receberás confirmação por email com a data e local do exame."
+      },
+      "preparation": {
+        "title": "Preparação para o exame",
+        "description": "Estuda o programa oficial usando os nossos materiais, simulações de exame e flashcards. Considera também participar em cursos de clubes de radioamadores locais."
+      },
+      "exam": {
+        "title": "Realização do exame",
+        "description": "Comparece no local designado pela ANACOM com documento de identificação. O exame é de escolha múltipla e tens tempo limitado para responder a todas as questões."
+      },
+      "results": {
+        "title": "Resultados e indicativo",
+        "description": "Os resultados são comunicados no próprio dia. Se aprovado, recebes o teu indicativo de chamada oficial e podes começar a operar de acordo com a tua categoria."
+      }
+    },
+    "maintenanceTitle": "Manutenção da Licença",
+    "maintenance": {
+      "annualRenewal": "Renovação anual da licença.",
+      "annualFees": "Pagamento de taxas anuais.",
+      "compliance": "Cumprimento das regulamentações e boas práticas do radioamadorismo."
+    }
+  },
+  "Share": {
+    "title": "Partilhar",
+    "native": "Partilhar...",
+    "twitter": "Partilhar no X (Twitter)",
+    "facebook": "Partilhar no Facebook",
+    "linkedin": "Partilhar no LinkedIn",
+    "copyLink": "Copiar Link",
+    "copied": "Copiado!"
+  },
+  "Bookmarks": {
+    "title": "Questões Guardadas",
+    "subtitle": "{count, plural, =0 {Nenhuma questão guardada} =1 {1 questão guardada} other {# questões guardadas}}",
+    "loading": "A carregar favoritos...",
+    "backToDashboard": "Voltar ao Painel",
+    "empty": "Ainda não há questões guardadas. Marca questões como favoritas enquanto estudas para as rever mais tarde.",
+    "startBrowsing": "Começar a Explorar",
+    "filterAll": "Todas",
+    "filterCategory": "Categoria {id}",
+    "questionNotFound": "Questão {id} não encontrada",
+    "remove": "Remover favorito",
+    "notes": "Notas"
+  },
+  "DataManagement": {
+    "title": "Gestão de Dados",
+    "export": {
+      "title": "Exportar Progresso",
+      "description": "Descarrega os teus dados de progresso como ficheiro JSON para backup.",
+      "button": "Exportar Progresso",
+      "success": "Progresso exportado!"
+    },
+    "import": {
+      "title": "Importar Progresso",
+      "description": "Restaura o progresso a partir de um ficheiro exportado anteriormente.",
+      "button": "Importar Progresso",
+      "cancel": "Cancelar",
+      "confirm": "Importar",
+      "success": "Progresso importado!",
+      "warnings": "Avisos",
+      "error": {
+        "invalid": "Ficheiro de backup inválido",
+        "corrupted": "Ficheiro corrompido ou incompatível"
+      },
+      "strategy": {
+        "label": "Estratégia de Importação",
+        "merge": "Combinar",
+        "mergeDesc": "Combina os dados importados com o progresso existente. Melhores pontuações e tentativas são preservadas.",
+        "replace": "Substituir Tudo",
+        "replaceDesc": "Substitui todo o progresso existente pelos dados importados."
+      }
+    },
+    "clear": {
+      "button": "Limpar Todos os Dados",
+      "title": "Limpar Todos os Dados",
+      "description": "Isto irá eliminar permanentemente todo o teu progresso de estudo, histórico de exames e conquistas.",
+      "warning": "Esta ação não pode ser desfeita. Certifica-te de exportar os teus dados primeiro se quiseres manter um backup.",
+      "cancel": "Cancelar",
+      "confirm": "Eliminar Tudo"
+    }
+  },
+  "Offline": {
+    "message": "Estás offline. Algumas funcionalidades podem estar limitadas.",
+    "reconnected": "De volta online!",
+    "dismiss": "Fechar"
   }
 }

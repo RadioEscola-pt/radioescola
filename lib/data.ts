@@ -1,6 +1,5 @@
 import { Data, Category, Question } from './types';
-
-const cats = ['1', '2', '3'];
+import { CATEGORIES } from './config';
 type NotesIndex = Record<string, Set<number>> | null;
 
 let notesIndexCache: NotesIndex = null;
@@ -60,34 +59,35 @@ function normalizeFonte(value: unknown): string[] | null {
 export async function loadData(): Promise<Data> {
   const notesIndex = await ensureNotesIndex();
   const categoriesEntries = await Promise.all(
-    cats.map(async (cat): Promise<[string, Category]> => {
+    CATEGORIES.map(async (cat): Promise<[string, Category]> => {
       const res = await fetch(`/data/cat${cat}.json`);
       if (!res.ok) {
         return [cat, { id: cat, name: `Category ${cat}`, questions: [] }];
       }
-      const raw = await res.json();
-      const questions: Question[] = (raw.questions || []).map((q: any) => {
-        const rawOptions = Array.isArray(q.answers) ? q.answers : [];
-        const options = rawOptions.map((opt: any) => (typeof opt === 'string' ? opt : String(opt ?? '')));
-        const correctIndexRaw = (q.correctIndex ?? 1) - 1;
+      const raw = await res.json() as { questions?: unknown[] };
+      const questions: Question[] = (raw.questions ?? []).map((q: unknown) => {
+        const qObj = q as Record<string, unknown>;
+        const rawOptions = Array.isArray(qObj.answers) ? qObj.answers : [];
+        const options = rawOptions.map((opt: unknown) => (typeof opt === 'string' ? opt : String(opt ?? '')));
+        const correctIndexRaw = (typeof qObj.correctIndex === 'number' ? qObj.correctIndex : 1) - 1;
         const boundedCorrectIndex = options.length > 0
           ? Math.max(0, Math.min(options.length - 1, correctIndexRaw))
           : 0;
-        const imgPath = typeof q.img === 'string' && q.img.trim().length > 0
-          ? `/images/cat${cat}/${q.img}`
+        const imgPath = typeof qObj.img === 'string' && qObj.img.trim().length > 0
+          ? `/images/cat${cat}/${qObj.img}`
           : null;
         return {
-          id: q.uniqueID,
-          question: q.question,
+          id: typeof qObj.uniqueID === 'number' ? qObj.uniqueID : 0,
+          question: typeof qObj.question === 'string' ? qObj.question : '',
           options,
           correctIndex: boundedCorrectIndex,
           img: imgPath,
-          notes: normalizeNotes(q.notes),
+          notes: normalizeNotes(qObj.notes),
           hasNotesMdx: notesIndex?.[cat]?.has(Number(q.uniqueID)) ?? false,
-          fonte: normalizeFonte(q.fonte),
-          tutorial: typeof q.tutorial === 'string' && q.tutorial.trim() ? q.tutorial.trim() : null,
-          materia: typeof q.materia === 'string' && q.materia.trim() ? q.materia.trim() : null,
-          calc: typeof q.calc === 'string' && q.calc.trim() ? q.calc.trim() : null,
+          fonte: normalizeFonte(qObj.fonte),
+          tutorial: typeof qObj.tutorial === 'string' && qObj.tutorial.trim() ? qObj.tutorial.trim() : null,
+          materia: typeof qObj.materia === 'string' && qObj.materia.trim() ? qObj.materia.trim() : null,
+          calc: typeof qObj.calc === 'string' && qObj.calc.trim() ? qObj.calc.trim() : null,
         } satisfies Question;
       });
       return [cat, { id: cat, name: `Category ${cat}`, questions }];

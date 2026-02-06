@@ -28,8 +28,8 @@ export default function DownloadButton({ url, name, description, sizeMb }: Downl
   })();
 
   const ext = (() => {
-    const fromUrl = url.split('?')[0].split('#')[0];
-    const idx = fromUrl.lastIndexOf('.')
+    const fromUrl = url.split('?')[0]?.split('#')[0] ?? '';
+    const idx = fromUrl.lastIndexOf('.');
     return idx > -1 ? fromUrl.slice(idx + 1).toLowerCase() : '';
   })();
 

@@ -1,29 +1,37 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
-import { Category } from '../../../lib/types';
-import { loadData } from '../../../lib/data';
-import ExamTimer from '../../../components/ExamTimer';
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '../../../components/ui/dialog';
+import { useTranslations } from 'next-intl';
+import { Category } from '@/lib/types';
+import { loadData } from '@/lib/data';
+import { EXAM_CONFIG, DEFAULT_CATEGORY } from '@/lib/config';
+import { ExamResultsModal } from '@/components/ExamResultsModal';
+import { PageLoading } from '@/components/shared/Loading';
+import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
+import { Button } from '@/components/ui/button';
+import { useProgressContext } from '@/components/providers/ProgressProvider';
+import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
+import type { ExamAttempt, QuestionAttempt } from '@/lib/types/progress';
+import type { GamificationResult } from '@/lib/types/gamification';
+
+const { DURATION_SECONDS, QUESTIONS_PER_PAGE, MAX_QUESTIONS, PASSING_SCORE, WRONG_ANSWER_PENALTY } = EXAM_CONFIG;
 
 export default function ExamPage() {
   const params = useParams();
   const searchParams = useSearchParams();
-  const [timeLeft, setTimeLeft] = useState(3600);
+  const t = useTranslations('Exam');
+  const { recordExamWithGamification, recordQuestionBatch, gamification } = useProgressContext();
+  const [timeLeft, setTimeLeft] = useState<number>(DURATION_SECONDS);
   const [score, setScore] = useState(0);
   const [category, setCategory] = useState<Category | null>(null);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [quizEnded, setQuizEnded] = useState(false);
   const [resultsOpen, setResultsOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 10;
-  const totalSeconds = 3600;
+  const progressSavedRef = useRef(false);
+  const isReplayRef = useRef(false);
+  const [gamificationResult, setGamificationResult] = useState<GamificationResult | null>(null);
 
-  const fmt = (s: number) => {
-    const m = Math.floor(s / 60);
-    const sec = s % 60;
-    return `${m}:${sec.toString().padStart(2, '0')}`;
-  };
   // Timer: countdown from initial time to 0; stops when quiz ends
   const timerRef = React.useRef<ReturnType<typeof setInterval> | null>(null);
   React.useEffect(() => {
@@ -72,21 +80,84 @@ export default function ExamPage() {
       const sel = answers[q.id];
       if (sel === undefined) continue;
       if (sel === q.correctIndex) total += 1;
-      else total -= 0.25;
+      else total -= WRONG_ANSWER_PENALTY;
     }
     setScore(total);
   }, [answers, category]);
+
+  // Save progress when quiz ends (only for fresh exams, not replays)
+  React.useEffect(() => {
+    if (!quizEnded || !category || isReplayRef.current || progressSavedRef.current) {
+      return;
+    }
+
+    progressSavedRef.current = true;
+    const timeSpent = DURATION_SECONDS - timeLeft;
+
+    // Calculate results
+    let correctCount = 0;
+    let incorrectCount = 0;
+    let unansweredCount = 0;
+
+    for (const q of category.questions) {
+      const sel = answers[q.id];
+      if (sel === undefined) {
+        unansweredCount++;
+      } else if (sel === q.correctIndex) {
+        correctCount++;
+      } else {
+        incorrectCount++;
+      }
+    }
+
+    const passed = score >= PASSING_SCORE;
+
+    // Record exam attempt
+    const examAttempt: ExamAttempt = {
+      id: crypto.randomUUID(),
+      category: category.id,
+      score,
+      totalQuestions: category.questions.length,
+      correctCount,
+      incorrectCount,
+      unansweredCount,
+      timeSpent,
+      passed,
+      timestamp: Date.now(),
+      questionIds: category.questions.map(q => q.id),
+      answers: { ...answers },
+    };
+
+    // Record exam with gamification (returns XP result)
+    recordExamWithGamification(examAttempt, timeLeft).then((result) => {
+      setGamificationResult(result);
+    });
+
+    // Record individual question attempts
+    const questionAttempts: QuestionAttempt[] = category.questions
+      .filter(q => answers[q.id] !== undefined)
+      .map(q => ({
+        questionId: q.id,
+        category: category.id,
+        correct: answers[q.id] === q.correctIndex,
+        timestamp: Date.now(),
+      }));
+
+    if (questionAttempts.length > 0) {
+      recordQuestionBatch(questionAttempts);
+    }
+  }, [quizEnded, category, answers, score, timeLeft, recordExamWithGamification, recordQuestionBatch]);
 
   React.useEffect(() => {
     const cat = typeof params.category === 'string'
       ? params.category
       : Array.isArray(params.category)
-        ? params.category[0]
-        : '3';
+        ? params.category[0] ?? DEFAULT_CATEGORY
+        : DEFAULT_CATEGORY;
     // Reset state on category change
     setAnswers({});
     setScore(0);
-    setTimeLeft(3600);
+    setTimeLeft(DURATION_SECONDS);
     setQuizEnded(false);
     setResultsOpen(false);
     setCurrentPage(1);
@@ -101,6 +172,7 @@ export default function ExamPage() {
       }
       // If a replay URL is present, reconstruct exact exam/order/answers
       if (qParam) {
+        isReplayRef.current = true;
         const ids = qParam.split('-').map((s) => parseInt(s, 10)).filter((n) => !Number.isNaN(n));
         const byId = new Map(base.questions.map((q) => [q.id, q] as const));
         const chosen = ids.map((id) => byId.get(id)).filter((q): q is NonNullable<typeof q> => Boolean(q));
@@ -111,9 +183,10 @@ export default function ExamPage() {
           const chars = aParam.split('');
           for (let i = 0; i < Math.min(chars.length, chosen.length); i++) {
             const ch = chars[i];
-            if (ch && ch !== 'x') {
+            const chosenQuestion = chosen[i];
+            if (ch && ch !== 'x' && chosenQuestion) {
               const idx = parseInt(ch, 36);
-              if (!Number.isNaN(idx)) ans[chosen[i].id] = idx;
+              if (!Number.isNaN(idx)) ans[chosenQuestion.id] = idx;
             }
           }
         }
@@ -125,18 +198,27 @@ export default function ExamPage() {
         return;
       }
       // Otherwise, sample a fresh random exam
+      isReplayRef.current = false;
+      progressSavedRef.current = false;
       const qs = [...base.questions];
       for (let i = qs.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [qs[i], qs[j]] = [qs[j], qs[i]];
+        const qi = qs[i];
+        const qj = qs[j];
+        if (qi !== undefined && qj !== undefined) {
+          qs[i] = qj;
+          qs[j] = qi;
+        }
       }
-      const sample = qs.slice(0, Math.min(40, qs.length));
+      const sample = qs.slice(0, Math.min(MAX_QUESTIONS, qs.length));
       setCategory({ id: base.id, name: base.name, questions: sample });
     });
   }, [params.category, searchParams]);
 
   const startNewQuiz = () => {
     if (!category) return;
+    isReplayRef.current = false;
+    progressSavedRef.current = false;
     const catId = category.id;
     loadData().then((data) => {
       const base = data.categories[catId];
@@ -144,271 +226,224 @@ export default function ExamPage() {
       const qs = [...base.questions];
       for (let i = qs.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [qs[i], qs[j]] = [qs[j], qs[i]];
+        const qi = qs[i];
+        const qj = qs[j];
+        if (qi !== undefined && qj !== undefined) {
+          qs[i] = qj;
+          qs[j] = qi;
+        }
       }
-      const sample = qs.slice(0, Math.min(40, qs.length));
+      const sample = qs.slice(0, Math.min(MAX_QUESTIONS, qs.length));
       setCategory({ id: base.id, name: base.name, questions: sample });
       setAnswers({});
       setScore(0);
-      setTimeLeft(3600);
+      setTimeLeft(DURATION_SECONDS);
       setCurrentPage(1);
       setQuizEnded(false);
       setResultsOpen(false);
+      setGamificationResult(null);
     });
   };
 
+  // Calculate total pages (safe even when category is null)
+  const totalPages = category ? Math.max(1, Math.ceil(category.questions.length / QUESTIONS_PER_PAGE)) : 1;
+
+  // Keyboard shortcuts for exam navigation
+  useKeyboardShortcuts({
+    onNext: useCallback(() => {
+      if (category) {
+        setCurrentPage((p) => Math.min(totalPages, p + 1));
+      }
+    }, [category, totalPages]),
+    onPrevious: useCallback(() => {
+      setCurrentPage((p) => Math.max(1, p - 1));
+    }, []),
+    onEndQuiz: useCallback(() => {
+      if (!quizEnded) {
+        setQuizEnded(true);
+        setResultsOpen(true);
+      }
+    }, [quizEnded]),
+    enabled: !resultsOpen && !!category,
+  });
+
   if (!category) {
-    return <main className="p-8">Loading...</main>;
+    return <PageLoading message={t('loading')} />;
   }
+  const answeredCount = Object.keys(answers).length;
 
   return (
-    <main className="p-8">
-      <h1 className="text-2xl font-bold mb-4">Exam: {category.name}</h1>
-      <div className="flex items-center justify-between mb-2">
-        <ExamTimer timeLeft={timeLeft} />
-        <div className="flex items-center">
-          <button
-            className="px-3 py-2 border rounded disabled:opacity-50 mr-2"
-            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-            disabled={currentPage === 1}
-          >
-            Previous
-          </button>
-          <button
-            className="px-3 py-2 border rounded disabled:opacity-50"
-            onClick={() => setCurrentPage((p) => Math.min(Math.ceil(category.questions.length / pageSize), p + 1))}
-            disabled={currentPage >= Math.ceil(category.questions.length / pageSize)}
-          >
-            Next
-          </button>
-          <span className="ml-3 text-sm text-gray-600 mr-4">
-            Page {currentPage} / {Math.max(1, Math.ceil(category.questions.length / pageSize))}
-          </span>
+    <main className="-mx-4 sm:mx-0 pb-8">
+      {/* Sticky header with timer and controls */}
+      <div className="sticky top-0 z-10 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 px-4 py-3 mb-4">
+        <div className="flex items-center justify-between gap-2">
+          {/* Timer */}
+          <div className={`font-mono text-lg px-3 py-1.5 rounded-lg font-semibold ${
+            timeLeft <= 60
+              ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
+              : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200'
+          }`}>
+            {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+          </div>
+
+          {/* Progress indicator - mobile */}
+          <div className="flex-1 mx-2 sm:hidden">
+            <div className="text-xs text-slate-500 dark:text-slate-400 text-center mb-1">
+              {answeredCount}/{category.questions.length}
+            </div>
+            <div className="h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-amber-500 transition-all duration-300"
+                style={{ width: `${(answeredCount / category.questions.length) * 100}%` }}
+              />
+            </div>
+          </div>
+
+          {/* End/New quiz button */}
           {quizEnded ? (
             <button
-              className="px-4 py-2 bg-indigo-600 text-white rounded"
+              className="px-3 py-1.5 bg-amber-500 hover:bg-amber-600 text-slate-900 text-sm font-medium rounded-lg transition-colors"
               onClick={startNewQuiz}
             >
-              Take Another
+              {t('takeAnother')}
             </button>
           ) : (
-            <button
-              className="px-4 py-2 bg-indigo-600 text-white rounded"
+            <Button
+              size="sm"
               onClick={() => {
                 setQuizEnded(true);
                 setResultsOpen(true);
               }}
             >
-              End Quiz
-            </button>
+              {t('endQuiz')}
+            </Button>
           )}
         </div>
+
+        {/* Score display when quiz ended */}
+        {quizEnded && (
+          <div className="mt-2 text-center">
+            <span className={`text-sm font-semibold px-3 py-1 rounded-full ${
+              score >= category.questions.length * PASSING_SCORE
+                ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                : 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
+            }`}>
+              {t('score', { score: score.toFixed(1), total: category.questions.length })}
+            </span>
+          </div>
+        )}
       </div>
-      {quizEnded && (
-        <p className="mb-2 font-semibold">Score: {score} / {category.questions.length}</p>
-      )}
-      <section className="mt-6 space-y-6">
+
+      {/* Title - hidden on mobile, shown on larger screens */}
+      <h1 className="hidden sm:block text-2xl font-bold mb-4 px-4 sm:px-0">
+        {t('title', { name: t('categoryName', { id: category.id }) })}
+      </h1>
+
+      {/* Questions */}
+      <section className="sm:px-0">
         {category.questions
-          .slice((currentPage - 1) * pageSize, currentPage * pageSize)
+          .slice((currentPage - 1) * QUESTIONS_PER_PAGE, currentPage * QUESTIONS_PER_PAGE)
           .map((q, qi) => {
           const selected = answers[q.id];
           const isAnswered = selected !== undefined;
           const timeUp = timeLeft <= 0;
+          const questionNumber = (currentPage - 1) * QUESTIONS_PER_PAGE + qi + 1;
           return (
-            <div key={q.id} className="border rounded-md p-4">
-              <h2 className="font-semibold mb-1">{(currentPage - 1) * pageSize + qi + 1}. {q.question}</h2>
-              <div className="text-xs text-gray-500 mb-2">ID: {q.id}</div>
-              <div className="grid gap-2">
+            <div key={q.id} className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 sm:border sm:rounded-xl sm:mb-4 p-4">
+              <p className="text-slate-900 dark:text-slate-100 mb-3">
+                <span className="font-semibold text-amber-600 dark:text-amber-500 mr-2">{questionNumber}.</span>
+                {q.question}
+              </p>
+
+              {q.img && (
+                <div className="mb-3">
+                  <img src={q.img} alt="" className="w-full rounded-lg border border-slate-200 dark:border-slate-700" />
+                </div>
+              )}
+
+              <div className="space-y-2">
                 {q.options.map((opt, oi) => {
                   const isSelected = selected === oi;
+                  const isCorrect = oi === q.correctIndex;
+                  let state: AnswerOptionState = "default";
+
+                  if (quizEnded) {
+                    if (isCorrect) state = "correct";
+                    else if (isSelected) state = "incorrect";
+                  } else if (isSelected) {
+                    state = "selected";
+                  }
+
                   return (
-                    <button
+                    <AnswerOption
                       key={oi}
-                      type="button"
+                      letter={String.fromCharCode(65 + oi)}
+                      state={state}
                       disabled={timeUp || quizEnded}
-                      onClick={() => {
-                        setAnswers(prev => ({ ...prev, [q.id]: oi }));
-                      }}
-                      className={[
-                        'text-left border rounded px-3 py-2 transition-colors',
-                        quizEnded
-                          ? (oi === q.correctIndex
-                              ? (isSelected ? 'bg-green-100 border-green-400' : 'bg-white border-green-300')
-                              : (isSelected ? 'bg-red-100 border-red-400' : 'bg-white border-gray-200'))
-                          : (isAnswered
-                              ? (isSelected ? 'bg-blue-100 border-blue-300' : 'bg-white border-gray-200 opacity-70')
-                              : 'hover:bg-gray-50 border-gray-200')
-                      ].join(' ')}
+                      onClick={() => setAnswers(prev => ({ ...prev, [q.id]: oi }))}
                     >
-                      <span className="mr-2 font-mono">{String.fromCharCode(65 + oi)}.</span>
                       {opt}
-                    </button>
+                    </AnswerOption>
                   );
                 })}
               </div>
-              {q.img && (
-                <div className="mt-3">
-                  <img src={q.img} alt={q.question} className="max-h-64 rounded border" />
-                </div>
-              )}
-              {quizEnded && (
-                <p className="mt-2 text-sm">
-                  {selected === q.correctIndex ? (
-                    <span className="text-green-700">Correct</span>
-                  ) : (
-                    <span className="text-red-700">{isAnswered ? 'Incorrect' : 'Unanswered'}</span>
-                  )}
-                </p>
-              )}
             </div>
           );
         })}
       </section>
-      <Dialog open={resultsOpen} onOpenChange={(v) => setResultsOpen(v)}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Exam Results</DialogTitle>
-            <DialogDescription>Summary of your performance in this attempt.</DialogDescription>
-          </DialogHeader>
-          <div className="space-y-2">
-            <p><span className="font-medium">Points:</span> {score} / {category.questions.length}</p>
-            <p><span className="font-medium">Time Remaining:</span> {fmt(timeLeft)}</p>
-            <p><span className="font-medium">Time Elapsed:</span> {fmt(totalSeconds - timeLeft)}</p>
-            <p>
-              <span className="font-medium">Status:</span>{' '}
-              {score >= 20 ? (
-                <span className="text-green-700">Approved</span>
-              ) : (
-                <span className="text-red-700">Not Approved</span>
-              )}
-            </p>
-          </div>
-          {/* Shareable URL to revisit this exact exam */}
-          {(() => {
-            const buildUrl = () => {
-              try {
-                const origin = typeof window !== 'undefined' ? window.location.origin : '';
-                const catId = category.id;
-                const ids = category.questions.map((q) => q.id).join('-');
-                const ans = category.questions
-                  .map((q) => {
-                    const sel = answers[q.id];
-                    return sel === undefined ? 'x' : sel.toString(36);
-                  })
-                  .join('');
-                const t = timeLeft;
-                const url = `${origin}/exam/${encodeURIComponent(catId)}?q=${encodeURIComponent(ids)}&a=${encodeURIComponent(ans)}&t=${t}`;
-                return url;
-              } catch {
-                return '';
-              }
-            };
-            const url = buildUrl();
-            return (
-              <div className="mt-4">
-                <h4 className="font-semibold mb-2">Shareable Link</h4>
-                <div className="flex items-center gap-2">
-                  <input
-                    readOnly
-                    value={url}
-                    className="flex-1 px-3 py-2 border rounded font-mono text-xs"
-                  />
-                  <button
-                    className="px-3 py-2 border rounded"
-                    onClick={() => {
-                      if (url) navigator.clipboard?.writeText(url);
-                    }}
-                  >
-                    Copy
-                  </button>
-                </div>
-              </div>
-            );
-          })()}
-          {/* Progress toward pass and perfection */}
-          {(() => {
-            const total = category.questions.length || 1;
-            const passPoints = 20;
-            const maxPoints = total;
-            const raw = score / maxPoints;
-            const progress = Math.max(0, Math.min(1, raw));
-            const passPct = Math.min(100, Math.max(0, (passPoints / maxPoints) * 100));
-            const progPct = Math.round(progress * 100);
-            const needToPass = Math.max(0, passPoints - score);
-            const needForPerfect = Math.max(0, maxPoints - score);
-            return (
-              <div className="mt-4">
-                <div className="mb-1 flex items-center justify-between text-sm text-gray-600">
-                  <span>Progress to Pass</span>
-                  <span>{progPct}%</span>
-                </div>
-                <div className="relative h-3 rounded-full bg-gray-200 overflow-hidden">
-                  <div
-                    className="absolute left-0 top-0 h-full bg-indigo-500"
-                    style={{ width: `${progPct}%` }}
-                  />
-                  {/* Pass threshold marker */}
-                  <div
-                    className="absolute top-0 h-full border-l-2 border-green-500"
-                    style={{ left: `${passPct}%` }}
-                    aria-label="Pass threshold"
-                    title={`Pass at ${passPoints} pts`}
-                  />
-                  {/* Perfect marker */}
-                  <div
-                    className="absolute top-0 right-0 h-full border-r-2 border-amber-500"
-                    aria-label="Perfect score"
-                    title={`Perfect at ${maxPoints} pts`}
-                  />
-                </div>
-                <div className="mt-1 flex items-center justify-between text-xs text-gray-600">
-                  <span>Pass: {passPoints} pts</span>
-                  <span>Perfect: {maxPoints} pts</span>
-                </div>
-                <div className="mt-2 text-sm text-gray-700">
-                  {score >= passPoints ? (
-                    <span>You passed by {Math.max(0, score - passPoints).toFixed(2)} pts.</span>
-                  ) : (
-                    <span>{needToPass.toFixed(2)} pts needed to pass.</span>
-                  )}
-                  {needForPerfect > 0 && (
-                    <span className="ml-2">{needForPerfect.toFixed(2)} pts from perfect.</span>
-                  )}
-                </div>
-              </div>
-            );
-          })()}
-          <div className="mt-4">
-            <h4 className="font-semibold mb-2">Review Wrong Answers</h4>
-            <div className="space-y-3 max-h-64 overflow-auto pr-2">
-              {category.questions.filter(q => answers[q.id] !== q.correctIndex).length === 0 ? (
-                <p className="text-sm text-gray-600">Great job! No wrong answers to review.</p>
-              ) : (
-                category.questions.map((q, idx) => {
-                  const sel = answers[q.id];
-                  if (sel === q.correctIndex) return null;
-                  return (
-                    <div key={q.id} className="border rounded p-3">
-                      <div className="text-sm text-gray-700 mb-1">{idx + 1}. {q.question}</div>
-                      <div className="text-sm"><span className="font-medium">Your answer:</span> {sel !== undefined ? q.options[sel] : 'Unanswered'}</div>
-                      <div className="text-sm"><span className="font-medium">Correct answer:</span> <span className="text-green-700">{q.options[q.correctIndex]}</span></div>
-                    </div>
-                  );
-                })
-              )}
-            </div>
-          </div>
-          <DialogFooter>
-            <button className="px-4 py-2 border rounded" onClick={() => setResultsOpen(false)}>Close</button>
-            <button
-              className="px-4 py-2 bg-indigo-600 text-white rounded"
-              onClick={startNewQuiz}
-            >
-              Take Another
-            </button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+
+      {/* Bottom navigation - fixed on mobile */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 p-3 sm:relative sm:mt-6 sm:border-t-0 sm:bg-transparent sm:p-0">
+        <div className="flex items-center justify-between gap-2 max-w-5xl mx-auto">
+          <button
+            className="flex-1 sm:flex-none px-4 py-2.5 border border-slate-300 dark:border-slate-600 rounded-lg disabled:opacity-40 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+            disabled={currentPage === 1}
+          >
+            {t('previous')}
+          </button>
+
+          <span className="text-sm text-slate-600 dark:text-slate-400 font-medium">
+            {currentPage} / {totalPages}
+          </span>
+
+          <button
+            className="flex-1 sm:flex-none px-4 py-2.5 border border-slate-300 dark:border-slate-600 rounded-lg disabled:opacity-40 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+            onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+            disabled={currentPage >= totalPages}
+          >
+            {t('next')}
+          </button>
+        </div>
+      </div>
+
+      {/* Spacer for fixed bottom nav on mobile */}
+      <div className="h-16 sm:hidden" />
+      <ExamResultsModal
+        open={resultsOpen}
+        onOpenChange={setResultsOpen}
+        category={category.id}
+        score={score}
+        totalQuestions={category.questions.length}
+        timeLeft={timeLeft}
+        totalSeconds={DURATION_SECONDS}
+        passingScore={PASSING_SCORE}
+        reviewAnswers={category.questions.map((q, idx) => {
+          const sel = answers[q.id];
+          const status = sel === undefined ? 'unanswered' : sel === q.correctIndex ? 'correct' : 'incorrect';
+          return {
+            index: idx,
+            question: q.question,
+            options: q.options,
+            selectedIndex: sel,
+            correctIndex: q.correctIndex,
+            status: status as 'correct' | 'incorrect' | 'unanswered',
+          };
+        })}
+        onStartNew={startNewQuiz}
+        gamificationResult={gamificationResult}
+        gamificationEnabled={gamification?.isEnabled ?? false}
+      />
       
     </main>
   );

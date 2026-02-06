@@ -1,95 +1,40 @@
 "use client";
 
 import React from "react";
-import { X } from "lucide-react";
+import { useTranslations } from "next-intl";
+import {
+  CalculatorWindow,
+  CalculatorInput,
+  CalculatorButtons,
+  CalculatorResult,
+} from "./base";
+import { registerCalculatorComponent } from "@/lib/config";
+import { ohmsLaw } from "@/lib/utils";
+import { parseValue, formatValue } from "@/lib/utils";
+import type { CalculatorInstanceProps } from "@/lib/types";
 
-type Position = { x: number; y: number };
-
-interface OhmsLawCalculatorProps {
-  onClose: () => void;
-  initialPosition?: Position;
-}
-
-function clampPosition(pos: Position): Position {
-  const padding = 16;
-  const maxX = typeof window !== "undefined" ? window.innerWidth - padding : pos.x;
-  const maxY = typeof window !== "undefined" ? window.innerHeight - padding : pos.y;
-  return {
-    x: Math.max(padding - 8, Math.min(maxX, pos.x)),
-    y: Math.max(padding, Math.min(maxY, pos.y)),
-  };
-}
-
-const OhmsLawCalculator: React.FC<OhmsLawCalculatorProps> = ({ onClose, initialPosition }) => {
+const OhmsLawCalculator: React.FC<CalculatorInstanceProps> = ({
+  instanceId,
+  initialPosition,
+  zIndex,
+  onClose,
+  onFocus,
+}) => {
+  const t = useTranslations("Calculators.ohmsLaw");
   const [voltage, setVoltage] = React.useState<string>("");
   const [current, setCurrent] = React.useState<string>("");
   const [resistance, setResistance] = React.useState<string>("");
-  const [message, setMessage] = React.useState<string>("Fill any two fields to compute the third.");
-  const [position, setPosition] = React.useState<Position>(() => initialPosition ?? { x: 40, y: 120 });
-  const draggingRef = React.useRef(false);
-  const dragOffsetRef = React.useRef({ x: 0, y: 0 });
-  const containerRef = React.useRef<HTMLDivElement | null>(null);
-
-  const updatePosition = React.useCallback((next: Position) => {
-    setPosition(clampPosition(next));
-  }, []);
-
-  const handlePointerMove = React.useCallback(
-    (event: PointerEvent) => {
-      if (!draggingRef.current) return;
-      const next = {
-        x: event.clientX - dragOffsetRef.current.x,
-        y: event.clientY - dragOffsetRef.current.y,
-      };
-      updatePosition(next);
-    },
-    [updatePosition]
-  );
-
-  const handlePointerUp = React.useCallback(() => {
-    if (!draggingRef.current) return;
-    draggingRef.current = false;
-    window.removeEventListener("pointermove", handlePointerMove);
-    window.removeEventListener("pointerup", handlePointerUp);
-  }, [handlePointerMove]);
+  const [message, setMessage] = React.useState<string>("");
 
   React.useEffect(() => {
-    return () => {
-      window.removeEventListener("pointermove", handlePointerMove);
-      window.removeEventListener("pointerup", handlePointerUp);
-    };
-  }, [handlePointerMove, handlePointerUp]);
-
-  const beginDrag = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    draggingRef.current = true;
-    dragOffsetRef.current = {
-      x: event.clientX - rect.left,
-      y: event.clientY - rect.top,
-    };
-    window.addEventListener("pointermove", handlePointerMove);
-    window.addEventListener("pointerup", handlePointerUp);
-    event.preventDefault();
-  };
+    setMessage(t("fillTwoFields"));
+  }, [t]);
 
   const reset = () => {
     setVoltage("");
     setCurrent("");
     setResistance("");
-    setMessage("Fill any two fields to compute the third.");
-  };
-
-  const parseValue = (value: string) => {
-    const num = Number(value.replace(",", "."));
-    return Number.isFinite(num) ? num : NaN;
-  };
-
-  const formatValue = (value: number) => {
-    if (!Number.isFinite(value)) return "";
-    const abs = Math.abs(value);
-    const decimals = abs >= 100 ? 0 : abs >= 10 ? 1 : 2;
-    return value.toFixed(decimals);
+    setMessage(t("fillTwoFields"));
   };
 
   const calculate = () => {
@@ -99,11 +44,11 @@ const OhmsLawCalculator: React.FC<OhmsLawCalculatorProps> = ({ onClose, initialP
 
     const filledCount = Number(hasVoltage) + Number(hasCurrent) + Number(hasResistance);
     if (filledCount < 2) {
-      setMessage("Provide any two values to solve the third.");
+      setMessage(t("provideTwoValues"));
       return;
     }
     if (filledCount === 3) {
-      setMessage("Clear one field so we can compute it for you.");
+      setMessage(t("clearOneField"));
       return;
     }
 
@@ -112,116 +57,81 @@ const OhmsLawCalculator: React.FC<OhmsLawCalculatorProps> = ({ onClose, initialP
     const R = parseValue(resistance);
 
     if ((hasVoltage && Number.isNaN(V)) || (hasCurrent && Number.isNaN(I)) || (hasResistance && Number.isNaN(R))) {
-      setMessage("Use numeric values only (decimals allowed).");
+      setMessage(t("numericOnly"));
       return;
     }
 
     if (!hasVoltage) {
-      const result = I * R;
+      const result = ohmsLaw.voltage(I, R);
       setVoltage(formatValue(result));
-      setMessage(`Computed Voltage: ${formatValue(result)} V`);
+      setMessage(t("computedVoltage", { value: formatValue(result) }));
       return;
     }
     if (!hasCurrent) {
       if (R === 0) {
-        setMessage("Resistance must be non-zero to compute current.");
+        setMessage(t("resistanceNonZero"));
         return;
       }
-      const result = V / R;
+      const result = ohmsLaw.current(V, R);
       setCurrent(formatValue(result));
-      setMessage(`Computed Current: ${formatValue(result)} A`);
+      setMessage(t("computedCurrent", { value: formatValue(result) }));
       return;
     }
     if (!hasResistance) {
       if (I === 0) {
-        setMessage("Current must be non-zero to compute resistance.");
+        setMessage(t("currentNonZero"));
         return;
       }
-      const result = V / I;
+      const result = ohmsLaw.resistance(V, I);
       setResistance(formatValue(result));
-      setMessage(`Computed Resistance: ${formatValue(result)} Ω`);
+      setMessage(t("computedResistance", { value: `${formatValue(result)} Ω` }));
     }
   };
 
   return (
-    <div
-      ref={containerRef}
-      className="fixed z-50 w-72 select-none rounded-lg border border-gray-300 bg-white shadow-lg"
-      style={{ left: position.x, top: position.y }}
+    <CalculatorWindow
+      title={t("title")}
+      color="blue"
+      initialPosition={initialPosition}
+      zIndex={zIndex}
+      onClose={onClose}
+      onFocus={onFocus}
     >
-      <div
-        className="flex cursor-move items-center justify-between rounded-t-lg bg-blue-600 px-3 py-2 text-sm font-semibold text-white"
-        onPointerDown={beginDrag}
-      >
-        <span>Ohm&apos;s Law Calculator</span>
-        <button
-          type="button"
-          onClick={onClose}
-          className="rounded-md p-1 transition hover:bg-blue-500"
-        >
-          <X className="h-4 w-4" />
-        </button>
-      </div>
-      <div className="space-y-3 px-4 py-4 text-sm">
-        <div>
-          <label className="mb-1 block text-xs font-medium uppercase tracking-wide text-gray-600" htmlFor="ohms-v">
-            Voltage (V)
-          </label>
-          <input
-            id="ohms-v"
-            type="text"
-            value={voltage}
-            onChange={(event) => setVoltage(event.target.value)}
-            className="w-full rounded border border-gray-300 px-2 py-1 focus:border-blue-500 focus:outline-none focus:ring"
-            placeholder="e.g. 12"
-          />
-        </div>
-        <div>
-          <label className="mb-1 block text-xs font-medium uppercase tracking-wide text-gray-600" htmlFor="ohms-i">
-            Current (A)
-          </label>
-          <input
-            id="ohms-i"
-            type="text"
-            value={current}
-            onChange={(event) => setCurrent(event.target.value)}
-            className="w-full rounded border border-gray-300 px-2 py-1 focus:border-blue-500 focus:outline-none focus:ring"
-            placeholder="e.g. 0.5"
-          />
-        </div>
-        <div>
-          <label className="mb-1 block text-xs font-medium uppercase tracking-wide text-gray-600" htmlFor="ohms-r">
-            Resistance (Ω)
-          </label>
-          <input
-            id="ohms-r"
-            type="text"
-            value={resistance}
-            onChange={(event) => setResistance(event.target.value)}
-            className="w-full rounded border border-gray-300 px-2 py-1 focus:border-blue-500 focus:outline-none focus:ring"
-            placeholder="e.g. 24"
-          />
-        </div>
-        <div className="flex items-center justify-between gap-2">
-          <button
-            type="button"
-            onClick={calculate}
-            className="flex-1 rounded bg-blue-600 px-3 py-2 text-white transition hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            Calculate
-          </button>
-          <button
-            type="button"
-            onClick={reset}
-            className="rounded border border-gray-300 px-3 py-2 text-gray-700 transition hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            Reset
-          </button>
-        </div>
-        <p className="text-xs text-gray-600">{message}</p>
-      </div>
-    </div>
+      <CalculatorInput
+        id={`${instanceId}-v`}
+        label={t("voltage")}
+        value={voltage}
+        onChange={setVoltage}
+        placeholder="e.g. 12"
+        color="blue"
+      />
+      <CalculatorInput
+        id={`${instanceId}-i`}
+        label={t("current")}
+        value={current}
+        onChange={setCurrent}
+        placeholder="e.g. 0.5"
+        color="blue"
+      />
+      <CalculatorInput
+        id={`${instanceId}-r`}
+        label={t("resistance")}
+        value={resistance}
+        onChange={setResistance}
+        placeholder="e.g. 24"
+        color="blue"
+      />
+      <CalculatorButtons
+        onCalculate={calculate}
+        onReset={reset}
+        color="blue"
+      />
+      <CalculatorResult value={message} color="blue" formula="V = I × R" />
+    </CalculatorWindow>
   );
 };
+
+// Register this calculator with the registry
+registerCalculatorComponent("OHMCALC", OhmsLawCalculator);
 
 export default OhmsLawCalculator;

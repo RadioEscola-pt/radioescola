@@ -47,8 +47,8 @@ export default function LanguageSwitcher({ className }: LanguageSwitcherProps) {
           <button
             type="button"
             className={cn(
-              "inline-flex h-9 w-9 items-center justify-center rounded-full border border-muted-foreground/40",
-              "bg-background shadow-sm transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              "inline-flex h-9 w-9 items-center justify-center rounded-md",
+              "text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100"
             )}
             aria-label={`${t("label")}: ${t(currentLanguage.labelKey)}`}
             disabled={isPending}
