@@ -9,6 +9,7 @@ import { ExamResultsModal } from '@/components/ExamResultsModal';
 import { PageLoading } from '@/components/shared/Loading';
 import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
 import { Button } from '@/components/ui/button';
+import { StudyHeader } from '@/components/StudyHeader';
 import { useProgressContext } from '@/components/providers/ProgressProvider';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
 import type { ExamAttempt, QuestionAttempt } from '@/lib/types/progress';
@@ -274,70 +275,41 @@ export default function ExamPage() {
 
   return (
     <main className="-mx-4 sm:mx-0 pb-8">
-      {/* Sticky header with timer and controls */}
-      <div className="sticky top-0 z-10 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 px-4 py-3 mb-4">
-        <div className="flex items-center justify-between gap-2">
-          {/* Timer */}
-          <div className={`font-mono text-lg px-3 py-1.5 rounded-lg font-semibold ${
-            timeLeft <= 60
-              ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
-              : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200'
-          }`}>
-            {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
-          </div>
-
-          {/* Progress indicator - mobile */}
-          <div className="flex-1 mx-2 sm:hidden">
-            <div className="text-xs text-slate-500 dark:text-slate-400 text-center mb-1">
-              {answeredCount}/{category.questions.length}
-            </div>
-            <div className="h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-amber-500 transition-all duration-300"
-                style={{ width: `${(answeredCount / category.questions.length) * 100}%` }}
-              />
-            </div>
-          </div>
-
-          {/* End/New quiz button */}
-          {quizEnded ? (
-            <button
-              className="px-3 py-1.5 bg-amber-500 hover:bg-amber-600 text-slate-900 text-sm font-medium rounded-lg transition-colors"
-              onClick={startNewQuiz}
-            >
-              {t('takeAnother')}
-            </button>
-          ) : (
-            <Button
-              size="sm"
-              onClick={() => {
-                setQuizEnded(true);
-                setResultsOpen(true);
-              }}
-            >
-              {t('endQuiz')}
-            </Button>
-          )}
+      <StudyHeader
+        categoryId={category.id}
+        mode="exam"
+        backHref="/"
+        subtitle={`${answeredCount}/${category.questions.length}`}
+      >
+        {/* Timer */}
+        <div className={`font-mono text-sm px-2.5 py-1 rounded-md font-semibold tabular-nums ${
+          timeLeft <= 60
+            ? 'bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400'
+            : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'
+        }`}>
+          {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
         </div>
 
-        {/* Score display when quiz ended */}
-        {quizEnded && (
-          <div className="mt-2 text-center">
-            <span className={`text-sm font-semibold px-3 py-1 rounded-full ${
-              score >= category.questions.length * PASSING_SCORE
-                ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
-                : 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
-            }`}>
-              {t('score', { score: score.toFixed(1), total: category.questions.length })}
-            </span>
-          </div>
+        {/* End/New quiz button */}
+        {quizEnded ? (
+          <button
+            className="px-3 py-1 bg-amber-500 hover:bg-amber-400 text-slate-900 text-xs font-semibold rounded-md transition-colors"
+            onClick={startNewQuiz}
+          >
+            {t('takeAnother')}
+          </button>
+        ) : (
+          <Button
+            size="sm"
+            onClick={() => {
+              setQuizEnded(true);
+              setResultsOpen(true);
+            }}
+          >
+            {t('endQuiz')}
+          </Button>
         )}
-      </div>
-
-      {/* Title - hidden on mobile, shown on larger screens */}
-      <h1 className="hidden sm:block text-2xl font-bold mb-4 px-4 sm:px-0">
-        {t('title', { name: t('categoryName', { id: category.id }) })}
-      </h1>
+      </StudyHeader>
 
       {/* Questions */}
       <section className="sm:px-0">

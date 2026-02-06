@@ -9,6 +9,7 @@ import { Category } from "@/lib/types";
 import { loadData } from "@/lib/data";
 import { useCalculators } from "@/components/providers/CalculatorProvider";
 import { PageLoading } from "@/components/shared/Loading";
+import { StudyHeader } from "@/components/StudyHeader";
 import type { CalculatorCode } from "@/lib/types";
 import { useProgressContext } from "@/components/providers/ProgressProvider";
 import {
@@ -327,56 +328,49 @@ export default function SmartPracticePage() {
   const progressPercent = ((cursor) / sessionQuestions.length) * 100;
 
   return (
-    <main className="pb-8">
-      {/* Header */}
-      <div className="px-4 sm:px-8 py-4">
-        <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
-          {t("title")} - {tBrowse("title", { id: catId })}
-        </h1>
-        <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-          {t("subtitle")}
-        </p>
-
-        {/* Question counts badge */}
+    <main className="-mx-4 sm:mx-0 pb-8">
+      <StudyHeader
+        categoryId={catId}
+        mode="smart"
+        backHref={`/browse/${catId}`}
+        subtitle={t("progress", { current: cursor + 1, total: sessionQuestions.length })}
+      >
+        {/* Question counts badges */}
         {questionCounts && (
-          <div className="flex flex-wrap gap-2 mt-3">
+          <div className="flex items-center gap-1.5">
             {questionCounts["due-now"] > 0 && (
-              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300">
-                <Zap className="h-3 w-3" />
-                {t("dueNow", { count: questionCounts["due-now"] })}
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300">
+                <Zap className="h-2.5 w-2.5" />
+                {questionCounts["due-now"]}
               </span>
             )}
             {questionCounts["new"] > 0 && (
-              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300">
-                {t("newQuestions", { count: questionCounts["new"] })}
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300">
+                {questionCounts["new"]} new
               </span>
             )}
             {questionCounts["due-soon"] > 0 && (
-              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300">
-                <Clock className="h-3 w-3" />
-                {t("dueSoon", { count: questionCounts["due-soon"] })}
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300">
+                <Clock className="h-2.5 w-2.5" />
+                {questionCounts["due-soon"]}
               </span>
             )}
           </div>
         )}
+      </StudyHeader>
 
-        {/* Progress bar */}
-        <div className="mt-4">
-          <div className="flex items-center justify-between text-sm text-slate-600 dark:text-slate-400 mb-1">
-            <span>{t("progress", { current: cursor + 1, total: sessionQuestions.length })}</span>
-            <span>{Math.round(progressPercent)}%</span>
-          </div>
-          <div className="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-amber-500 transition-all duration-300"
-              style={{ width: `${progressPercent}%` }}
-            />
-          </div>
+      {/* Progress bar */}
+      <div className="px-4 sm:px-0 mb-4">
+        <div className="h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+          <div
+            className="h-full bg-amber-500 transition-all duration-300"
+            style={{ width: `${progressPercent}%` }}
+          />
         </div>
       </div>
 
       {/* Question card */}
-      <div className="px-0 sm:px-8">
+      <section className="sm:px-0">
         {currentQuestion && (() => {
           const stats = getQuestionStats(catId, currentQuestion.id);
           const attemptCount = stats?.attempts ?? 0;
@@ -396,11 +390,10 @@ export default function SmartPracticePage() {
             />
           );
         })()}
-      </div>
 
       {/* Quality rating buttons */}
       {ended && (
-        <div className="px-4 sm:px-8 mt-4">
+        <div className="px-4 sm:px-0 mt-4">
           <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
             <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-3 text-center">
               {t("ratePrompt")}
@@ -422,6 +415,7 @@ export default function SmartPracticePage() {
           </div>
         </div>
       )}
+      </section>
     </main>
   );
 }

@@ -8,6 +8,7 @@ import { Category } from "@/lib/types";
 import { loadData } from "@/lib/data";
 import { useCalculators } from "@/components/providers/CalculatorProvider";
 import { PageLoading } from "@/components/shared/Loading";
+import { StudyHeader } from "@/components/StudyHeader";
 import type { CalculatorCode } from "@/lib/types";
 import { useProgressContext } from "@/components/providers/ProgressProvider";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
@@ -212,17 +213,19 @@ export default function FlashBrowsePage() {
   const sessionPosition = cursor + 1;
 
   return (
-    <main className="p-8">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold">{t("flashTitle", { id: catId })}</h1>
-        <p className="text-sm text-gray-600">
-          {t("flashSubtitle", { count: answeredCount })}
-        </p>
-        <p className="text-xs text-gray-500 mt-1">
-          {t("flashCard", { position: sessionPosition, total: category.questions.length })}
-        </p>
-      </div>
+    <main className="-mx-4 sm:mx-0 pb-8">
+      <StudyHeader
+        categoryId={catId}
+        mode="flash"
+        backHref={`/browse/${catId}`}
+        subtitle={t("flashCard", { position: sessionPosition, total: category.questions.length })}
+      >
+        <span className="text-xs font-medium text-slate-500 dark:text-slate-400 tabular-nums">
+          {answeredCount} reviewed
+        </span>
+      </StudyHeader>
 
+      <section className="sm:px-0">
       <QuestionCard
         question={currentQuestion}
         selectedOption={selectedOption}
@@ -240,16 +243,17 @@ export default function FlashBrowsePage() {
       />
 
       {ended && (
-        <div className="flex justify-end mt-4">
+        <div className="flex justify-end mt-4 px-4 sm:px-0">
           <button
             type="button"
             onClick={handleNext}
-            className="inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-white text-sm font-medium shadow hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            className="inline-flex items-center rounded-md bg-amber-500 hover:bg-amber-400 px-4 py-2 text-slate-900 text-sm font-semibold transition-colors"
           >
             {t("flashNext")}
           </button>
         </div>
       )}
+      </section>
     </main>
   );
 }

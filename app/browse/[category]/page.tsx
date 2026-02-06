@@ -7,6 +7,7 @@ import { loadData } from '@/lib/data';
 import QuestionCard from '@/components/QuestionCard';
 import { useCalculators } from '@/components/providers/CalculatorProvider';
 import { PageLoading } from '@/components/shared/Loading';
+import { StudyHeader } from '@/components/StudyHeader';
 import type { CalculatorCode } from '@/lib/types';
 import { useProgressContext } from '@/components/providers/ProgressProvider';
 import { toggleBookmark } from '@/lib/storage/localStorage';
@@ -62,14 +63,12 @@ export default function BrowsePage() {
 
   return (
     <main className="-mx-4 sm:mx-0 pb-8">
-      <div className="px-4 sm:px-0 py-4">
-        <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
-          {t('title', { id: categoryId })}
-        </h1>
-        <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-          {category.questions.length} {category.questions.length === 1 ? 'question' : 'questions'}
-        </p>
-      </div>
+      <StudyHeader
+        categoryId={categoryId}
+        mode="browse"
+        backHref="/"
+        subtitle={`${category.questions.length} ${category.questions.length === 1 ? 'question' : 'questions'}`}
+      />
       <section className="sm:px-0">
         {category.questions.map((q, idx) => {
           const selected = answers[q.id];

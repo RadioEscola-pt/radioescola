@@ -12,9 +12,6 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -141,34 +138,6 @@ export default function NavBar() {
               <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-[220px]">
-              <DropdownMenuSub>
-                <DropdownMenuSubTrigger>{t("browseComplete")}</DropdownMenuSubTrigger>
-                <DropdownMenuSubContent className="w-[240px]">
-                  {browseComplete.map((item) => (
-                    <DropdownMenuItem key={item.href} asChild>
-                      <Link href={item.href} className="cursor-pointer">
-                        <div className="flex flex-col">
-                          <span>{item.title}</span>
-                        </div>
-                      </Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuSubContent>
-              </DropdownMenuSub>
-              <DropdownMenuSub>
-                <DropdownMenuSubTrigger>{t("browseFlashcards")}</DropdownMenuSubTrigger>
-                <DropdownMenuSubContent className="w-[240px]">
-                  {browseFlashcards.map((item) => (
-                    <DropdownMenuItem key={item.href} asChild>
-                      <Link href={item.href} className="cursor-pointer">
-                        <div className="flex flex-col">
-                          <span>{item.title}</span>
-                        </div>
-                      </Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuSubContent>
-              </DropdownMenuSub>
               <DropdownMenuItem asChild>
                 <Link href="/drill" className="cursor-pointer">
                   <Zap className="mr-2 h-4 w-4 text-amber-500" />

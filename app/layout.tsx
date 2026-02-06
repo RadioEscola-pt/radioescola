@@ -54,7 +54,7 @@ export default async function RootLayout({
                 <PWAProvider>
                   <NavBar />
                   <ErrorBoundary>
-                    <main className="mx-auto max-w-5xl px-4 py-6 flex-1">{children}</main>
+                    <main className="mx-auto w-full max-w-5xl px-4 py-6 flex-1">{children}</main>
                   </ErrorBoundary>
                   <Footer />
                 </PWAProvider>
