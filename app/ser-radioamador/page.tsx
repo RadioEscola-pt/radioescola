@@ -1,6 +1,18 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { BookOpen, Clock, Radio, Award, FileText, CheckCircle, RefreshCw, User, Zap, GraduationCap, Signal } from "lucide-react";
+import {
+  BookOpen,
+  Clock,
+  Radio,
+  Award,
+  FileText,
+  CheckCircle,
+  RefreshCw,
+  User,
+  Zap,
+  GraduationCap,
+  Signal,
+} from "lucide-react";
 import CategoryPowerInfo from "@/components/CategoryPowerInfo";
 
 export default async function BecomeHamPage() {
@@ -9,27 +21,36 @@ export default async function BecomeHamPage() {
   const categories = [
     {
       id: "3",
-      gradient: "from-emerald-500 to-teal-500",
-      bgColor: "bg-emerald-50 dark:bg-emerald-950/50",
-      borderColor: "border-emerald-200 dark:border-emerald-800",
-      accentColor: "text-emerald-600 dark:text-emerald-400",
-      badgeBg: "bg-emerald-100 dark:bg-emerald-900/50",
+      color: "green",
+      headerBg: "bg-green-500",
+      bg: "bg-green-50 dark:bg-green-950/30",
+      border: "border-green-200 dark:border-green-800/60",
+      accent: "text-green-600 dark:text-green-400",
+      badgeBg: "bg-green-100 dark:bg-green-900/50",
+      dotBg: "bg-green-400",
+      btnBg: "bg-green-600 hover:bg-green-500",
     },
     {
       id: "2",
-      gradient: "from-blue-500 to-indigo-500",
-      bgColor: "bg-blue-50 dark:bg-blue-950/50",
-      borderColor: "border-blue-200 dark:border-blue-800",
-      accentColor: "text-blue-600 dark:text-blue-400",
-      badgeBg: "bg-blue-100 dark:bg-blue-900/50",
+      color: "amber",
+      headerBg: "bg-amber-500",
+      bg: "bg-amber-50 dark:bg-amber-950/30",
+      border: "border-amber-200 dark:border-amber-800/60",
+      accent: "text-amber-600 dark:text-amber-400",
+      badgeBg: "bg-amber-100 dark:bg-amber-900/50",
+      dotBg: "bg-amber-400",
+      btnBg: "bg-amber-600 hover:bg-amber-500",
     },
     {
       id: "1",
-      gradient: "from-amber-500 to-orange-500",
-      bgColor: "bg-amber-50 dark:bg-amber-950/50",
-      borderColor: "border-amber-200 dark:border-amber-800",
-      accentColor: "text-amber-600 dark:text-amber-400",
-      badgeBg: "bg-amber-100 dark:bg-amber-900/50",
+      color: "rose",
+      headerBg: "bg-rose-500",
+      bg: "bg-rose-50 dark:bg-rose-950/30",
+      border: "border-rose-200 dark:border-rose-800/60",
+      accent: "text-rose-600 dark:text-rose-400",
+      badgeBg: "bg-rose-100 dark:bg-rose-900/50",
+      dotBg: "bg-rose-400",
+      btnBg: "bg-rose-600 hover:bg-rose-500",
     },
   ];
 
@@ -53,59 +74,65 @@ export default async function BecomeHamPage() {
   return (
     <main className="py-8">
       {/* Hero Section */}
-      <section className="mb-12">
-        <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">
-          {t("title")}
-        </h1>
-        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl">
-          {t("intro")}
-        </p>
+      <section className="mb-14">
+        <div className="flex items-start gap-4 mb-4">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-100 dark:bg-amber-900/40">
+            <Radio className="h-6 w-6 text-amber-600 dark:text-amber-400" />
+          </div>
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 leading-tight">
+              {t("title")}
+            </h1>
+            <p className="mt-2 text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">
+              {t("intro")}
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Categories Overview */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">
+      <section className="mb-14">
+        <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-1">
           {t("categoriesTitle")}
         </h2>
-        <p className="text-slate-600 dark:text-slate-400 mb-8">
+        <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
           {t("categoriesIntro")}
         </p>
-        <div className="grid gap-6 md:grid-cols-3">
+
+        <div className="grid gap-4 md:grid-cols-3">
           {categories.map((cat) => (
             <div
               key={cat.id}
-              className={`group relative rounded-2xl border ${cat.borderColor} ${cat.bgColor} overflow-hidden transition-shadow hover:shadow-lg`}
+              className={`relative rounded-xl border ${cat.border} overflow-hidden`}
             >
-              {/* Gradient header */}
-              <div className={`bg-gradient-to-r ${cat.gradient} px-6 py-4`}>
+              {/* Header */}
+              <div className={`px-5 pt-4 pb-3 ${cat.bg}`}>
                 <div className="flex items-center justify-between">
-                  <h3 className="text-xl font-bold text-white">
+                  <h3 className={`text-base font-bold ${cat.accent}`}>
                     {t(`category${cat.id}.name`)}
                   </h3>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
-                    <span className="text-2xl font-bold text-white">{cat.id}</span>
-                  </div>
+                  <span className={`flex h-8 w-8 items-center justify-center rounded-full ${cat.badgeBg} text-sm font-bold ${cat.accent}`}>
+                    {cat.id}
+                  </span>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <ul className="space-y-3">
+              <div className="px-5 py-4 bg-white dark:bg-slate-800/50">
+                <ul className="space-y-2.5">
                   {categoryIcons.map(({ key, icon: Icon }) => (
-                    <li key={key} className="flex items-center gap-3">
-                      <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${cat.badgeBg}`}>
-                        <Icon className={`h-4 w-4 ${cat.accentColor}`} />
-                      </div>
+                    <li key={key} className="flex items-center gap-2.5">
+                      <Icon className={`h-4 w-4 shrink-0 ${cat.accent} opacity-70`} />
                       {key === "power" && cat.id === "3" ? (
                         <CategoryPowerInfo
                           text={t(`category${cat.id}.${key}`)}
                           footnote={t("category3PowerFootnote")}
                           showFootnote={true}
-                          accentColor={cat.accentColor}
+                          accentColor={cat.accent}
                           badgeBg={cat.badgeBg}
                         />
                       ) : (
-                        <span className="text-sm text-slate-700 dark:text-slate-300">
+                        <span className="text-sm text-slate-600 dark:text-slate-300">
                           {t(`category${cat.id}.${key}`)}
                         </span>
                       )}
@@ -113,12 +140,11 @@ export default async function BecomeHamPage() {
                   ))}
                 </ul>
 
-                {/* CTA Button */}
                 <Link
                   href={`/exam/${cat.id}`}
-                  className={`mt-6 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r ${cat.gradient} px-4 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90`}
+                  className={`mt-5 flex items-center justify-center gap-2 rounded-lg ${cat.btnBg} px-4 py-2 text-sm font-medium text-white transition-colors`}
                 >
-                  <BookOpen className="h-4 w-4" />
+                  <BookOpen className="h-3.5 w-3.5" />
                   {t("studyCategory")}
                 </Link>
               </div>
@@ -126,115 +152,108 @@ export default async function BecomeHamPage() {
           ))}
         </div>
       </section>
-      {/* Wait Times - Progression Diagram */}
-      <section className="mb-12">
-        <div className="flex items-center gap-3 mb-6">
-          <Clock className="h-6 w-6 text-amber-600 dark:text-amber-400" />
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-            {t("waitTimesTitle")}
-          </h2>
-        </div>
 
-        {/* Progression Flow */}
-        <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-800">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0">
+      {/* Wait Times - Progression Diagram */}
+      <section className="mb-14">
+        <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-1">
+          {t("waitTimesTitle")}
+        </h2>
+        <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
+          {t("waitTimesNote")}
+        </p>
+
+        <div className="rounded-xl border border-slate-200 dark:border-slate-700/60 bg-white dark:bg-slate-800/50 p-6 sm:p-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0">
             {/* Category 3 */}
             <div className="flex flex-col items-center">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/50">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/40 ring-2 ring-green-200 dark:ring-green-800/40">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-emerald-700 dark:text-emerald-400">3</div>
-                  <div className="text-xs text-emerald-600 dark:text-emerald-500">{t("progression.entry")}</div>
+                  <div className="text-xl font-bold text-green-600 dark:text-green-400">3</div>
+                  <div className="text-[10px] font-medium text-green-500 dark:text-green-500">{t("progression.entry")}</div>
                 </div>
               </div>
-              <span className="mt-2 text-sm font-medium text-slate-600 dark:text-slate-400">12+</span>
+              <span className="mt-1.5 text-xs font-medium text-slate-400">12+</span>
             </div>
 
-            {/* Arrow with 2 years */}
-            <div className="flex flex-col md:flex-row items-center gap-1 md:mx-2">
-              <div className="hidden md:block h-0.5 w-8 bg-gradient-to-r from-emerald-400 to-blue-400" />
-              <div className="md:hidden w-0.5 h-8 bg-gradient-to-b from-emerald-400 to-blue-400" />
-              <div className="flex items-center gap-1 rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-700">
-                <Clock className="h-3.5 w-3.5 text-slate-500 dark:text-slate-400" />
-                <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">{t("progression.twoYears")}</span>
+            {/* Arrow: 2 years */}
+            <div className="flex flex-col sm:flex-row items-center gap-1 sm:mx-3">
+              <div className="hidden sm:block h-px w-6 bg-slate-300 dark:bg-slate-600" />
+              <div className="sm:hidden w-px h-6 bg-slate-300 dark:bg-slate-600" />
+              <div className="flex items-center gap-1.5 rounded-full bg-slate-100 dark:bg-slate-700 px-3 py-1">
+                <Clock className="h-3 w-3 text-slate-400" />
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">{t("progression.twoYears")}</span>
               </div>
-              <div className="hidden md:block h-0.5 w-8 bg-gradient-to-r from-blue-400 to-blue-500" />
-              <div className="md:hidden w-0.5 h-8 bg-gradient-to-b from-blue-400 to-blue-500" />
+              <div className="hidden sm:block h-px w-6 bg-slate-300 dark:bg-slate-600" />
+              <div className="sm:hidden w-px h-6 bg-slate-300 dark:bg-slate-600" />
             </div>
 
             {/* Category 2 */}
             <div className="flex flex-col items-center">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/50">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/40 ring-2 ring-amber-200 dark:ring-amber-800/40">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-700 dark:text-blue-400">2</div>
-                  <div className="text-xs text-blue-600 dark:text-blue-500">{t("progression.intermediate")}</div>
+                  <div className="text-xl font-bold text-amber-600 dark:text-amber-400">2</div>
+                  <div className="text-[10px] font-medium text-amber-500 dark:text-amber-500">{t("progression.intermediate")}</div>
                 </div>
               </div>
-              <span className="mt-2 text-sm font-medium text-slate-600 dark:text-slate-400">14+</span>
+              <span className="mt-1.5 text-xs font-medium text-slate-400">14+</span>
             </div>
 
-            {/* Arrow with 1 year */}
-            <div className="flex flex-col md:flex-row items-center gap-1 md:mx-2">
-              <div className="hidden md:block h-0.5 w-8 bg-gradient-to-r from-blue-400 to-amber-400" />
-              <div className="md:hidden w-0.5 h-8 bg-gradient-to-b from-blue-400 to-amber-400" />
-              <div className="flex items-center gap-1 rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-700">
-                <Clock className="h-3.5 w-3.5 text-slate-500 dark:text-slate-400" />
-                <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">{t("progression.oneYear")}</span>
+            {/* Arrow: 1 year */}
+            <div className="flex flex-col sm:flex-row items-center gap-1 sm:mx-3">
+              <div className="hidden sm:block h-px w-6 bg-slate-300 dark:bg-slate-600" />
+              <div className="sm:hidden w-px h-6 bg-slate-300 dark:bg-slate-600" />
+              <div className="flex items-center gap-1.5 rounded-full bg-slate-100 dark:bg-slate-700 px-3 py-1">
+                <Clock className="h-3 w-3 text-slate-400" />
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">{t("progression.oneYear")}</span>
               </div>
-              <div className="hidden md:block h-0.5 w-8 bg-gradient-to-r from-amber-400 to-amber-500" />
-              <div className="md:hidden w-0.5 h-8 bg-gradient-to-b from-amber-400 to-amber-500" />
+              <div className="hidden sm:block h-px w-6 bg-slate-300 dark:bg-slate-600" />
+              <div className="sm:hidden w-px h-6 bg-slate-300 dark:bg-slate-600" />
             </div>
 
             {/* Category 1 */}
             <div className="flex flex-col items-center">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/50">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-rose-100 dark:bg-rose-900/40 ring-2 ring-rose-200 dark:ring-rose-800/40">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-amber-700 dark:text-amber-400">1</div>
-                  <div className="text-xs text-amber-600 dark:text-amber-500">{t("progression.advanced")}</div>
+                  <div className="text-xl font-bold text-rose-600 dark:text-rose-400">1</div>
+                  <div className="text-[10px] font-medium text-rose-500 dark:text-rose-500">{t("progression.advanced")}</div>
                 </div>
               </div>
-              <span className="mt-2 text-sm font-medium text-slate-600 dark:text-slate-400">16+</span>
+              <span className="mt-1.5 text-xs font-medium text-slate-400">16+</span>
             </div>
           </div>
-
-          {/* Note */}
-          <p className="mt-6 text-center text-sm text-slate-500 dark:text-slate-400 italic max-w-xl mx-auto">
-            {t("waitTimesNote")}
-          </p>
         </div>
       </section>
 
       {/* Exam Process */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-8">
+      <section className="mb-14">
+        <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-6">
           {t("examProcessTitle")}
         </h2>
-        <div className="relative">
+
+        <div className="space-y-3">
           {examProcessSteps.map((step, index) => {
             const Icon = step.icon;
-            const isLast = index === examProcessSteps.length - 1;
             return (
-              <div key={step.key} className="relative flex gap-6 pb-8 last:pb-0">
-                {/* Timeline line */}
-                {!isLast && (
-                  <div className="absolute left-6 top-14 h-full w-0.5 -translate-x-1/2 bg-gradient-to-b from-amber-400 to-amber-200 dark:from-amber-600 dark:to-amber-800" />
-                )}
-
-                {/* Step number circle */}
-                <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-500 to-orange-500 text-white font-bold text-lg shadow-lg shadow-amber-500/25">
-                  {index + 1}
+              <div key={step.key} className="flex gap-4">
+                {/* Step number */}
+                <div className="flex flex-col items-center">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-500 text-white font-bold text-sm">
+                    {index + 1}
+                  </div>
+                  {index < examProcessSteps.length - 1 && (
+                    <div className="w-px flex-1 bg-amber-200 dark:bg-amber-800/50 my-1" />
+                  )}
                 </div>
 
                 {/* Content */}
-                <div className="flex-1 rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-800">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-100 dark:bg-amber-900/50">
-                      <Icon className="h-5 w-5 text-amber-600 dark:text-amber-400" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+                <div className="flex-1 pb-4">
+                  <div className="flex items-center gap-2.5 mb-1">
+                    <Icon className="h-4 w-4 text-amber-500 dark:text-amber-400" />
+                    <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100">
                       {t(`examProcess.${step.key}.title`)}
                     </h3>
                   </div>
-                  <p className="text-slate-600 dark:text-slate-400 ml-13">
+                  <p className="text-sm text-slate-500 dark:text-slate-400 ml-[26px] leading-relaxed">
                     {t(`examProcess.${step.key}.description`)}
                   </p>
                 </div>
@@ -245,21 +264,23 @@ export default async function BecomeHamPage() {
       </section>
 
       {/* License Maintenance */}
-      <section className="mb-12">
-        <div className="flex items-center gap-3 mb-6">
-          <RefreshCw className="h-6 w-6 text-slate-600 dark:text-slate-400" />
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-            {t("maintenanceTitle")}
-          </h2>
+      <section className="mb-8">
+        <div className="rounded-xl border border-slate-200 dark:border-slate-700/60 bg-slate-50 dark:bg-slate-800/30 p-6">
+          <div className="flex items-center gap-2.5 mb-4">
+            <RefreshCw className="h-4.5 w-4.5 text-slate-400" />
+            <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">
+              {t("maintenanceTitle")}
+            </h2>
+          </div>
+          <ul className="space-y-2.5">
+            {maintenanceSteps.map((step) => (
+              <li key={step} className="flex items-start gap-2.5 text-sm text-slate-600 dark:text-slate-300">
+                <CheckCircle className="h-4 w-4 mt-0.5 shrink-0 text-green-500 dark:text-green-400" />
+                {t(`maintenance.${step}`)}
+              </li>
+            ))}
+          </ul>
         </div>
-        <ul className="space-y-2">
-          {maintenanceSteps.map((step) => (
-            <li key={step} className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
-              <CheckCircle className="h-4 w-4 text-emerald-500" />
-              {t(`maintenance.${step}`)}
-            </li>
-          ))}
-        </ul>
       </section>
     </main>
   );
