@@ -1,6 +1,44 @@
 import { Data, Category, Question } from './types';
 
 const cats = ['1', '2', '3'];
+type NotesIndex = Record<string, Set<number>> | null;
+
+let notesIndexCache: NotesIndex = null;
+let notesIndexPromise: Promise<NotesIndex> | null = null;
+
+async function ensureNotesIndex(): Promise<NotesIndex> {
+  if (notesIndexCache) {
+    return notesIndexCache;
+  }
+  if (!notesIndexPromise) {
+    notesIndexPromise = (async () => {
+      try {
+        const res = await fetch('/data/notes-index.json', { cache: 'no-store' });
+        if (!res.ok) {
+          return null;
+        }
+        const raw = await res.json();
+        const entries = Object.entries(raw as Record<string, (number | string)[]>).map(([cat, list]) => {
+          const normalized = new Set<number>();
+          for (const value of list ?? []) {
+            const num = typeof value === 'number' ? value : parseInt(String(value), 10);
+            if (!Number.isNaN(num)) {
+              normalized.add(num);
+            }
+          }
+          return [cat, normalized] as const;
+        });
+        const index = Object.fromEntries(entries) as Record<string, Set<number>>;
+        notesIndexCache = index;
+        return index;
+      } catch (err) {
+        console.error('Failed to load notes index', err);
+        return null;
+      }
+    })();
+  }
+  return notesIndexPromise;
+}
 
 function normalizeNotes(value: unknown): string | null {
   if (typeof value !== 'string') return null;
@@ -20,6 +58,7 @@ function normalizeFonte(value: unknown): string[] | null {
 }
 
 export async function loadData(): Promise<Data> {
+  const notesIndex = await ensureNotesIndex();
   const categoriesEntries = await Promise.all(
     cats.map(async (cat): Promise<[string, Category]> => {
       const res = await fetch(`/data/cat${cat}.json`);
@@ -44,6 +83,7 @@ export async function loadData(): Promise<Data> {
           correctIndex: boundedCorrectIndex,
           img: imgPath,
           notes: normalizeNotes(q.notes),
+          hasNotesMdx: notesIndex?.[cat]?.has(Number(q.uniqueID)) ?? false,
           fonte: normalizeFonte(q.fonte),
           tutorial: typeof q.tutorial === 'string' && q.tutorial.trim() ? q.tutorial.trim() : null,
           materia: typeof q.materia === 'string' && q.materia.trim() ? q.materia.trim() : null,

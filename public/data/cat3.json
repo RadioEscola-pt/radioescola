@@ -10,7 +10,7 @@
         "da NATO"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p17"
       ],
@@ -29,7 +29,7 @@
         "Níveis de ondas acústicas extremamente fortes no local onde os equipamentos estão instalados"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p33"
       ],
@@ -48,7 +48,7 @@
         "Abster-se de retransmitir emissões de estações de quaisquer outros serviços de radiocomunicações"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p10"
       ],
@@ -67,7 +67,7 @@
         "Nada terei que fazer até que me provem que realmente existem interferências"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p37"
       ],
@@ -86,7 +86,7 @@
         "Podem ser criadas no cabo tensões muito elevadas quando a estação de amador emite"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 7,
       "fonte": null,
@@ -103,7 +103,7 @@
         "Uma tensão DC"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 8,
       "fonte": null,
@@ -120,7 +120,7 @@
         "28,0 - 29,7 MHz; 50,0 - 50,5 MHZ; 70,1570 - 70,2875 MHz; 144 - 146 MHz"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 9,
       "fonte": null,
@@ -137,7 +137,7 @@
         "Destinam-se a harmonizar numa dada região as utilizações por parte dos Serviço de Amador e de Amador por Satélite"
       ],
       "correctIndex": 4,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=entidades'>Entidades</a>",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p4"
       ],
@@ -156,7 +156,7 @@
         "Um amador deverá sempre, por solidariedade com outros, causar perturbações no espectro quando acha que os interesses do radioamadorismo estão e causa"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 11,
       "fonte": null,
@@ -173,7 +173,7 @@
         "Um amador nunca deve deixar de identificar a estação através dos seu indicativo de chamada"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p28"
       ],
@@ -192,7 +192,7 @@
         "Recorrer a instâncias internacionais, no sentido destas entrarem em contacto com a ANACOM"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p29"
       ],
@@ -211,7 +211,7 @@
         "só se atenuam se se propagarem através do ar"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 13,
       "fonte": null,
@@ -228,7 +228,7 @@
         "Os titulares de CAN, exceto da categoria 3, podem partilhar a utilização das suas estações individuais com outros amadores, de acordo com a sua categoria"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 14,
       "fonte": null,
@@ -245,7 +245,7 @@
         "Colaborar com a ANACOM na resolução de interferências"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 15,
       "fonte": null,
@@ -262,7 +262,7 @@
         "Não necessita"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 16,
       "fonte": null,
@@ -279,7 +279,7 @@
         "por dez anos é renovável por iguais periodos"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 17,
       "fonte": null,
@@ -296,7 +296,7 @@
         "o indicativo de chamada consignado a todas as estações móveis da União Europeia"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 18,
       "fonte": null,
@@ -313,7 +313,7 @@
         "Os titulares de CAN, excepto da categoria 3, podem partilhar a utilização das suas estações individuais com outros amadores, de acordo com a sua categoria"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 19,
       "fonte": null,
@@ -330,7 +330,7 @@
         "transmitir apenas o Indicativo de Chamada (IC) da estação operada seguido do IC da sua estação"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p4"
       ],
@@ -349,7 +349,7 @@
         "As que pretendem, dado não haver limite para número de estações fixas"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 20,
       "fonte": null,
@@ -366,7 +366,7 @@
         "Por um período superior a 24 meses e inferior ou igual a 10 anos"
       ],
       "correctIndex": 3,
-      "notes": "Consulte o <a target='_blank' href='docs/Decreto-Lei_53-2009.pdf'>Decreto-Lei_53-2009</a> CAPÍTULO II-Acesso e exercício da actividade de amador o Artigo 6.º-Certificado de amador nacional",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p10"
       ],
@@ -385,7 +385,7 @@
         "As que pretenderem, dado não haver limite para o número de estações móveis ou portáteis"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 22,
       "fonte": null,
@@ -402,7 +402,7 @@
         "Além de qualquer amador das categorias 1 ou A, os presidentes das Associações de amador"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 24,
       "fonte": null,
@@ -419,7 +419,7 @@
         "Todos os amadores"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 25,
       "fonte": null,
@@ -436,7 +436,7 @@
         "Nas faixas em que os ServiçoS de Amador ou de Amador por Satélite têm estatuto secundário, as estações de amador poderão apenas reclamar protecção de interferências causadas por estações de serviços com estatuto secundário, se as consignações feitas a estes serviços forem posteriores àquelas."
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p19"
       ],
@@ -455,7 +455,7 @@
         "Estatutos primário ou secundário"
       ],
       "correctIndex": 4,
-      "notes": "Consulte: <a target='_blank' href='docs/RR-2020-00013-Vol.I-EA5.pdf' class='underline'>Regulamento das Radiocomunicações da UIT</a> | CHAPTER II - Frequencies > ARTICLE 5 - Frequency allocations Section II – Categories of services and allocations 5.23) <strong>Resposta correcta: Primary and secondary services</strong> <a href='docs/R-REG-RR-2020-ZPF-E.zip'class='underline'>poderá descarregar todo o regulamento aqui.</a>",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p19"
       ],
@@ -474,7 +474,7 @@
         "A CEPT ou a União Europeia"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 28,
       "fonte": null,
@@ -491,7 +491,7 @@
         "A Administração do país em causa"
       ],
       "correctIndex": 4,
-      "notes": "Consulte: <a target='_blank' href='docs/RR-2020-00013-Vol.I-EA5.pdf' class='underline'>Regulamento das Radiocomunicações da UIT</a> | CHAPTER III Coordination, notification and recording of frequency assignments and Plan modifications > ARTICLE 25 Amateur services - Section I − Amateur service > 25.6 2) <strong>Resposta correcta: Administrations shall verify the operational and technical qualifications of any person wishing to operate an amateur station. Guidance for standards of competence may be found in the most recent version of Recommendation ITU-R M.1544. (WRC-03)</strong> <a href='docs/R-REG-RR-2020-ZPF-E.zip'class='underline'>poderá descarregar todo o regulamento aqui.</a>",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p18"
       ],
@@ -510,7 +510,7 @@
         "É uma estação de radiocomunicações do Serviço de Amador ou do Serviço de Amador por Satélite, que apenas pode ter carácter fixo"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p18"
       ],
@@ -529,7 +529,7 @@
         "Que a emissão é proveniente de uma estação fixa adicional"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 31,
       "fonte": null,
@@ -546,7 +546,7 @@
         "Que a emissão é proveniente de uma estação fixa adicional"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 212,
       "fonte": null,
@@ -563,7 +563,7 @@
         "Que a emissão é proveniente de uma estação fixa adicional"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p34",
         "cat3/2023_09_21p34"
@@ -583,7 +583,7 @@
         "Um trabalho realizado em 1995 por amadores num grupo de trabalho de gestão de frequências"
       ],
       "correctIndex": 1,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=entidades'>Entidades</a>",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p15"
       ],
@@ -602,7 +602,7 @@
         "Um trabalho realizado em 1995 por amadores num grupo de trabalho de gestão de frequências"
       ],
       "correctIndex": 1,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=entidades'>Entidades</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 34,
       "fonte": null,
@@ -619,7 +619,7 @@
         "Não, existe apenas um plano elaborado segundo os interesses da Região 2 defInida no Regulamento das Radiocomunicações"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 35,
       "fonte": null,
@@ -636,7 +636,7 @@
         "estão a cair em desuso tendo e conta a evlução das radiocomunicações"
       ],
       "correctIndex": 1,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=entidades'>Entidades</a>",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p15",
         "cat3/2023_09_21p14"
@@ -656,7 +656,7 @@
         "Só podem as estações de uso comum"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p1",
         "cat3/2023_09_21p2"
@@ -676,7 +676,7 @@
         "UR"
       ],
       "correctIndex": 2,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=AbreviaturasOperacao' class='underline'>Abreviaturas de Operação</a>",
+      "notes": null,
       "fonte": [
         "cat3/"
       ],
@@ -695,7 +695,7 @@
         "Mensagem"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p12"
       ],
@@ -714,7 +714,7 @@
         "Mensagem"
       ],
       "correctIndex": 3,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=AbreviaturasOperacao' class='underline'>Abreviaturas de Operação</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 39,
       "fonte": null,
@@ -731,7 +731,7 @@
         "Quando tornará a chamar-me?"
       ],
       "correctIndex": 1,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=AbreviaturasOperacao' class='underline'>Abreviaturas de Operação</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 40,
       "fonte": null,
@@ -748,7 +748,7 @@
         "Quando tornará a chamar-me?"
       ],
       "correctIndex": 2,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=codigoq' class='underline'>Código Q</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 41,
       "fonte": null,
@@ -765,7 +765,7 @@
         "Mensagem"
       ],
       "correctIndex": 1,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=AbreviaturasOperacao' class='underline'>Abreviaturas de Operação</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 42,
       "fonte": null,
@@ -782,7 +782,7 @@
         "Quando tornará a chamar-me?"
       ],
       "correctIndex": 3,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=codigoq' class='underline'>Código Q</a>",
+      "notes": null,
       "fonte": [
         "cat3/",
         "cat3/2023_09_21p20"
@@ -802,7 +802,7 @@
         "Mensagem"
       ],
       "correctIndex": 2,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=AbreviaturasOperacao' class='underline'>Abreviaturas de Operação</a>",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p12"
       ],
@@ -821,7 +821,7 @@
         "Mensagem"
       ],
       "correctIndex": 3,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=AbreviaturasOperacao' class='underline'>Abreviaturas de Operação</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 45,
       "fonte": null,
@@ -838,7 +838,7 @@
         "Quando tornará a chamar-me?"
       ],
       "correctIndex": 4,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=codigoq' class='underline'>Código Q</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 46,
       "fonte": null,
@@ -855,7 +855,7 @@
         "Quando tornará a chamar-me?"
       ],
       "correctIndex": 1,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=codigoq' class='underline'>Código Q</a>",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p20"
       ],
@@ -874,7 +874,7 @@
         "Alpha, November, Quebec"
       ],
       "correctIndex": 4,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=alfabeto' class='underline'>Alfabeto Fonético</a>",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p26",
         "cat3/2023_09_21p26"
@@ -894,7 +894,7 @@
         "Alpha, Mouse, Time"
       ],
       "correctIndex": 1,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=alfabeto' class='underline'>Alfabeto Fonético</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 49,
       "fonte": null,
@@ -911,7 +911,7 @@
         "Alpha, Esquilo, Unit"
       ],
       "correctIndex": 2,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=alfabeto' class='underline'>Alfabeto Fonético</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 50,
       "fonte": null,
@@ -928,7 +928,7 @@
         "Alpha, Papa, Yack"
       ],
       "correctIndex": 3,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=alfabeto' class='underline'>Alfabeto Fonético</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 51,
       "fonte": null,
@@ -945,7 +945,7 @@
         "Alpha, Bravo, Fox"
       ],
       "correctIndex": 3,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=alfabeto' class='underline'>Alfabeto Fonético</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 52,
       "fonte": null,
@@ -962,7 +962,7 @@
         "Não está correto. Os equipamentos em operação devem ser mantidos em armários fechados para os proteger do pó"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 53,
       "fonte": null,
@@ -979,7 +979,7 @@
         "Raios Alfa"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 54,
       "fonte": null,
@@ -996,7 +996,7 @@
         "Queixar-me à Junta de Freguesia"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p36"
       ],
@@ -1015,7 +1015,7 @@
         "Ligando os cabos de alimentação do rádio directamente à bateria e instalando condensadores coaxiais em linha com os cabos do\n alternador"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 56,
       "fonte": null,
@@ -1032,7 +1032,7 @@
         "Sinais que têm uma distribuição de frequências com picos\n acentuados"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 57,
       "fonte": null,
@@ -1049,7 +1049,7 @@
         "Todas as opções são válidas"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 58,
       "fonte": null,
@@ -1066,7 +1066,7 @@
         "Utilizando um interruptor de corrente com falha na ligação à terra no circuito utilizado para alimentar o\n motor"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 59,
       "fonte": null,
@@ -1083,7 +1083,7 @@
         "Todas as opções são válidas"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 60,
       "fonte": null,
@@ -1100,7 +1100,7 @@
         "O som de timbre no filtro DSP vai suprimir por completo os espaços entre os caracteres\n CW"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 61,
       "fonte": null,
@@ -1117,7 +1117,7 @@
         "Deve-se ter especial cuidado na alimentação dos equipamentos de emissão e de recepção para garantir o seu bom funcionamento introduzindo-se estabilizadores ou filtros"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 62,
       "fonte": null,
@@ -1134,7 +1134,7 @@
         "A filtragem não é utilizada na redução de radiações harmónicas, pelo que as três hipóteses anteriores são incorrectas"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p33"
       ],
@@ -1153,7 +1153,7 @@
         "Filtro passa banda"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 64,
       "fonte": null,
@@ -1170,7 +1170,7 @@
         "Um filtro passa- alto no telefone afectado"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 65,
       "fonte": null,
@@ -1187,7 +1187,7 @@
         "28,0 - 29,7 MHz; 50,0 - 52,0 MHZ; segmentos do intervalo 70,1570 - 70,2875 MHz; 144 - 146 MHz"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p25"
       ],
@@ -1206,7 +1206,7 @@
         "o cálculo da abertura e da diretividade, respetivamente"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 67,
       "fonte": null,
@@ -1223,7 +1223,7 @@
         "o cálculo da abertura e da diretividade, respetivamente"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 68,
       "fonte": null,
@@ -1240,7 +1240,7 @@
         "apenas da potência de saída do emissor e dos sistemas de filtragem que lhe podem estar associados"
       ],
       "correctIndex": 1,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=defs_genericas'>Definições Genéricas</a> significado de p.a.r e p.i.r.e.",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p13"
       ],
@@ -1259,7 +1259,7 @@
         "amplificador de áudio"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 70,
       "fonte": null,
@@ -1276,7 +1276,7 @@
         "emissor, antena, \"baixada\" da antena e amplificador"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 71,
       "fonte": null,
@@ -1293,7 +1293,7 @@
         "Nenhuma das respostas anteriores está correcta"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p3"
       ],
@@ -1312,7 +1312,7 @@
         "Qualquer das sequências anteriores estão correctas, pois é indiferente a forma como se liga"
       ],
       "correctIndex": 3,
-      "notes": "2023_09_23p23",
+      "notes": null,
       "img": null,
       "uniqueID": 73,
       "fonte": null,
@@ -1329,7 +1329,7 @@
         "Filtro de saída"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 74,
       "fonte": null,
@@ -1346,7 +1346,7 @@
         "Microfone"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 75,
       "fonte": null,
@@ -1363,7 +1363,7 @@
         "Sintonizador de frequência"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 76,
       "fonte": null,
@@ -1380,7 +1380,7 @@
         "Sintonizador de frequência"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p27",
         "cat3/2023_09_21p27"
@@ -1400,7 +1400,7 @@
         "As ondas de rádio duma forma geral propagam-se sem necessidade de guia artificial e por esse facto foram fundamentais no desenvolvimento de comunicações móveis"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 78,
       "fonte": null,
@@ -1417,7 +1417,7 @@
         "Filtragem de saída dos equipamentos emissores"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 79,
       "fonte": null,
@@ -1434,7 +1434,7 @@
         "não tomar providências mesmo que seja interferido, evitando assim problemas"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 80,
       "fonte": null,
@@ -1451,7 +1451,7 @@
         "Todas as respostas anteriores estão correctas"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 81,
       "fonte": null,
@@ -1468,7 +1468,7 @@
         "Raios Alfa"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 82,
       "fonte": null,
@@ -1485,7 +1485,7 @@
         "Nenhumas aplicações têm faixas exclusivas"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 83,
       "fonte": null,
@@ -1502,7 +1502,7 @@
         "4 letras"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 84,
       "fonte": null,
@@ -1519,7 +1519,7 @@
         "4 caracteres, o último dos quais deverá ser uma letra"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 85,
       "fonte": null,
@@ -1536,7 +1536,7 @@
         "20 anos"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 23,
       "fonte": null,
@@ -1553,7 +1553,7 @@
         "20 anos"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 2,
       "fonte": null,
@@ -1570,7 +1570,7 @@
         "20 anos"
       ],
       "correctIndex": 3,
-      "notes": "Consulte o <a target='_blank' href='docs/Decreto-Lei_53-2009.pdf'>Decreto-Lei_53-2009</a> CAPÍTULO III-Regime geral de licenciamento e responsabilidade pelo funcionamento das estações de amador o Artigo 10.º-Licenças de estação de uso comum",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p8"
       ],
@@ -1589,7 +1589,7 @@
         "Um ano"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 89,
       "fonte": null,
@@ -1606,7 +1606,7 @@
         "Um ano"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 90,
       "fonte": null,
@@ -1623,7 +1623,7 @@
         "Indicativo de chamada de estação fixa adicional"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 91,
       "fonte": null,
@@ -1640,7 +1640,7 @@
         "Nenhuma delas"
       ],
       "correctIndex": 3,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=entidades'>Entidades</a>",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p16",
         "cat3/2023_09_21p16"
@@ -1660,7 +1660,7 @@
         "Abandonar a actividade pois acho que nunca vou resolver este problema"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 87,
       "fonte": null,
@@ -1677,7 +1677,7 @@
         "Esperar que a situação de interferência passe"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p38",
         "cat3/2023_09_21p36"
@@ -1697,7 +1697,7 @@
         "Para evitar que eventuais emissões espúrias do emissor em teste sejam radiadas e possam provocar interferências"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 93,
       "fonte": null,
@@ -1714,7 +1714,7 @@
         "4"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 94,
       "fonte": null,
@@ -1731,7 +1731,7 @@
         "Região P"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 95,
       "fonte": null,
@@ -1748,7 +1748,7 @@
         "As ondas de rádio são ondas que resultam da força gravitacional"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 96,
       "fonte": null,
@@ -1765,7 +1765,7 @@
         "Podem ser criadas na linha de transmissão tensões muito elevadas quando a estação de amador emite, pondo em risco a segurança das pessoas"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p37"
       ],
@@ -1784,7 +1784,7 @@
         "Informar os vizinhos do amador que o melhor é reclamarem para a ANACOM"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 98,
       "fonte": null,
@@ -1801,7 +1801,7 @@
         "Introdução de filtragem adequada na estação de amador"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 99,
       "fonte": null,
@@ -1818,7 +1818,7 @@
         "menor é a intensidade de campo num dado ponto do espaço, a uma dada distância nessa frequência, apenas se esse estiver no vazio"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 100,
       "fonte": null,
@@ -1835,7 +1835,7 @@
         "Não ligar"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p28"
       ],
@@ -1854,7 +1854,7 @@
         "Usar sempre máscara no nariz e na boca quando se estão a operar os equipamentos da estação para proteger as vias respiratórias"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p22"
       ],
@@ -1873,7 +1873,7 @@
         "Sim, se tiver autorização da entidade competente"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 103,
       "fonte": null,
@@ -1890,7 +1890,7 @@
         "nunca deverá ser feita"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p2"
       ],
@@ -1909,7 +1909,7 @@
         "são parte dos sufixos de indicadores de chamada que podem ser consignados às estações de amador"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 105,
       "fonte": null,
@@ -1926,7 +1926,7 @@
         "Antena de meio comprimento de onda"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p13"
       ],
@@ -1945,7 +1945,7 @@
         "Destina-se exclusivamente a amadores que desenvolvem as suas comunicações pelo menos 800 m acima do nível médio das águas do mar"
       ],
       "correctIndex": 2,
-      "notes": "Consulte: <a target='_blank' href='docs/Decreto-Lei_53-2009.pdf' class='underline'>Decreto-Lei 53/2009</a> | CAPÍTULO I-Disposições gerais e definições > Artigo 2.º-Definições",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p17"
       ],
@@ -1964,7 +1964,7 @@
         "AJUDA"
       ],
       "correctIndex": 3,
-      "notes": "Consulte: <a target='_blank' href='docs/decisaoamador27052009.pdf' class='underline'>PROCEDIMENTOS PREVISTOS NO DECRETO-LEI N.º 53/2009, DE 2 DE MARÇO QUE DEFINE AS REGRAS APLICÁVEIS AO SERVIÇO DE AMADOR E AMADOR POR SATÉLITE - Descrição detalhada das matérias de exame (Parte B número-4 SINAIS DE PERIGO INTERNACIONAIS, COMUNICAÇÕES DE EMERGÊNCIA E COMUNICAÇÕES EM CASO DE CATÁSTROFES NATURAIS</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 108,
       "fonte": null,
@@ -1981,7 +1981,7 @@
         ". - . - . –"
       ],
       "correctIndex": 1,
-      "notes": "Consulte: <a target='_blank' href='docs/decisaoamador27052009.pdf' class='underline'>PROCEDIMENTOS PREVISTOS NO DECRETO-LEI N.º 53/2009, DE 2 DE MARÇO QUE DEFINE AS REGRAS APLICÁVEIS AO SERVIÇO DE AMADOR E AMADOR POR SATÉLITE - Descrição detalhada das matérias de exame (Parte B número-4 SINAIS DE PERIGO INTERNACIONAIS, COMUNICAÇÕES DE EMERGÊNCIA E COMUNICAÇÕES EM CASO DE CATÁSTROFES NATURAIS</a>",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p1"
       ],
@@ -2000,7 +2000,7 @@
         "Nada de relevante"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 110,
       "fonte": null,
@@ -2017,7 +2017,7 @@
         "Banda lateral\n dupla"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 111,
       "fonte": null,
@@ -2034,7 +2034,7 @@
         "HF"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 112,
       "fonte": null,
@@ -2051,7 +2051,7 @@
         "SHF"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p25"
       ],
@@ -2070,7 +2070,7 @@
         "SHF"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 114,
       "fonte": null,
@@ -2087,7 +2087,7 @@
         "SHF"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 115,
       "fonte": null,
@@ -2104,7 +2104,7 @@
         "SHF"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 116,
       "fonte": null,
@@ -2121,7 +2121,7 @@
         "250 000 km/s"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 117,
       "fonte": null,
@@ -2138,7 +2138,7 @@
         "Para as comunicações a mais curta distância utilizam-se as faixas de VHF e de UHF (e em particular esta última)"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 118,
       "fonte": null,
@@ -2155,7 +2155,7 @@
         "Seguir os procedimentos publicados pelo ICP-ANACOM"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 119,
       "fonte": null,
@@ -2172,7 +2172,7 @@
         "Seguir os procedimentos publicados pelo ICP-ANACOM"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 120,
       "fonte": null,
@@ -2189,7 +2189,7 @@
         "Se o problema for na minha estação, investigar e resolver a situação ou ajudar a resolver a situação se o problema for da instalação de recepção."
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p38"
       ],
@@ -2208,7 +2208,7 @@
         "Usar uma frequência que não seja usada por repetidores"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p35",
         "cat3/2023_09_21p35"
@@ -2228,7 +2228,7 @@
         "Em nenhum dos sítios referidos nas três hipóteses anteriores"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 123,
       "fonte": null,
@@ -2245,7 +2245,7 @@
         "transmitir lenta e pacientemente quando solicitado"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 124,
       "fonte": null,
@@ -2262,7 +2262,7 @@
         "aumentar os seus conhecimentos não os partilhando com os outros amadores"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 125,
       "fonte": null,
@@ -2279,7 +2279,7 @@
         "Um amador nunca deve deixar de identificar a estação através do seu indicativo de chamada"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 126,
       "fonte": null,
@@ -2296,7 +2296,7 @@
         "amistoso"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p29"
       ],
@@ -2315,7 +2315,7 @@
         "Um amador deverá sempre, por solidariedade com outros, causar perturbações no espectro quando acha que os interesses do radioamadorismo estão e causa"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 128,
       "fonte": null,
@@ -2332,7 +2332,7 @@
         "Emitir nas frequências de amador, excepto se a sua estação puder emitir nas frequências de outros serviços"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p30",
         "cat3/2023_09_21p30"
@@ -2352,7 +2352,7 @@
         "F3E"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p3"
       ],
@@ -2371,7 +2371,7 @@
         "nenhuma das respostas anteriores está correcta"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 131,
       "fonte": null,
@@ -2388,7 +2388,7 @@
         "Não existem"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 132,
       "fonte": null,
@@ -2405,7 +2405,7 @@
         "No sítio da internet da IARU"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 133,
       "fonte": null,
@@ -2422,7 +2422,7 @@
         "ANACOM"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 135,
       "fonte": null,
@@ -2439,7 +2439,7 @@
         "A adaptação de impedâncias não é importante numa estação de recepção"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 136,
       "fonte": null,
@@ -2456,7 +2456,7 @@
         "só se atenuam se se propagarem através do ar"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 137,
       "fonte": null,
@@ -2473,7 +2473,7 @@
         "por dez anos e é renovável por iguais períodos"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 138,
       "fonte": null,
@@ -2490,7 +2490,7 @@
         "CQ5"
       ],
       "correctIndex": 3,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 139,
       "fonte": null,
@@ -2507,7 +2507,7 @@
         "CQ5"
       ],
       "correctIndex": 3,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 140,
       "fonte": null,
@@ -2524,7 +2524,7 @@
         "CQ5"
       ],
       "correctIndex": 3,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 141,
       "fonte": null,
@@ -2541,7 +2541,7 @@
         "CR0"
       ],
       "correctIndex": 4,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 142,
       "fonte": null,
@@ -2558,7 +2558,7 @@
         "CR9"
       ],
       "correctIndex": 2,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p6",
         "cat3/2023_09_21p5"
@@ -2578,7 +2578,7 @@
         "CR9"
       ],
       "correctIndex": 1,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 144,
       "fonte": null,
@@ -2595,7 +2595,7 @@
         "CR9"
       ],
       "correctIndex": 3,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p4"
       ],
@@ -2614,7 +2614,7 @@
         "CR9"
       ],
       "correctIndex": 4,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p5",
         "cat3/2023_09_21p6"
@@ -2634,7 +2634,7 @@
         "CR9"
       ],
       "correctIndex": 1,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 146,
       "fonte": null,
@@ -2651,7 +2651,7 @@
         "CR9"
       ],
       "correctIndex": 2,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 147,
       "fonte": null,
@@ -2668,7 +2668,7 @@
         "CR9"
       ],
       "correctIndex": 1,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 149,
       "fonte": null,
@@ -2685,7 +2685,7 @@
         "CR9"
       ],
       "correctIndex": 3,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 150,
       "fonte": null,
@@ -2702,7 +2702,7 @@
         "CR9"
       ],
       "correctIndex": 1,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 152,
       "fonte": null,
@@ -2719,7 +2719,7 @@
         "CR9"
       ],
       "correctIndex": 1,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 153,
       "fonte": null,
@@ -2736,7 +2736,7 @@
         "Apenas ao HAREC"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p11"
       ],
@@ -2755,7 +2755,7 @@
         "Taxa anual de utilização do espectro"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 156,
       "fonte": null,
@@ -2772,7 +2772,7 @@
         "terá um novo indicativo de chamada para a sua estação com prefixo e sufixo distintos do anterior"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 157,
       "fonte": null,
@@ -2789,7 +2789,7 @@
         "Mediante exame realizado pela IARU"
       ],
       "correctIndex": 3,
-      "notes": "Consulte o <a target='_blank' href='docs/Decreto-Lei_53-2009.pdf'>Decreto-Lei_53-2009</a> CAPÍTULO II-Acesso e exercício da actividade de amador o Artigo 3.º-Acesso à actividade de amador",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p9",
         "cat3/2023_09_21p9"
@@ -2809,7 +2809,7 @@
         "Existem sete categorias de amador: A, B, C, D, 1, 2 e 3"
       ],
       "correctIndex": 2,
-      "notes": "Consulte o <a target='_blank' href='docs/Decreto-Lei_53-2009.pdf'>Decreto-Lei_53-2009</a> CAPÍTULO II-Acesso e exercício da actividade de amador o Artigo 5.º-Categorias de amador",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p11",
         "cat3/2023_09_21p7"
@@ -2829,7 +2829,7 @@
         "maiores de 21 anos"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p7"
       ],
@@ -2848,7 +2848,7 @@
         "Mediante exame ao qual podem candidatar-se amadores maiores de 16 anos, que tenham o tempo mínimo de permanência na categoria 3 ou os amadores da categoria C"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 161,
       "fonte": null,
@@ -2865,7 +2865,7 @@
         "Mediante exame ao qual podem candidatar-se amadores das categorias 2, 3, B ou C"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p8"
       ],
@@ -2884,7 +2884,7 @@
         "AJUDA"
       ],
       "correctIndex": 3,
-      "notes": "Consulte: <a target='_blank' href='docs/decisaoamador27052009.pdf' class='underline'>PROCEDIMENTOS PREVISTOS NO DECRETO-LEI N.º 53/2009, DE 2 DE MARÇO QUE DEFINE AS REGRAS APLICÁVEIS AO SERVIÇO DE AMADOR E AMADOR POR SATÉLITE - Descrição detalhada das matérias de exame (Parte B número-4 SINAIS DE PERIGO INTERNACIONAIS, COMUNICAÇÕES DE EMERGÊNCIA E COMUNICAÇÕES EM CASO DE CATÁSTROFES NATURAIS</a>",
+      "notes": null,
       "img": null,
       "uniqueID": 163,
       "fonte": null,
@@ -2901,7 +2901,7 @@
         "Não está correcto. Os equipamentos devem ser manuseados com as mãos molhadas para evitar que a gordura dos dedos danifique os equipamentos."
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p21"
       ],
@@ -2920,7 +2920,7 @@
         "Não está correcto. Os locais e os equipamentos deverão estar húmidos para evitar que o pó se agarre"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 165,
       "fonte": null,
@@ -2937,7 +2937,7 @@
         "Atinge um máximo próximo dos 18\n MHz"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 166,
       "fonte": null,
@@ -2954,7 +2954,7 @@
         "Inserir um circulador entre dois circuitos"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 167,
       "fonte": null,
@@ -2971,7 +2971,7 @@
         "Um ruído semelhante a um gemido que se ouve e pára continuamente"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 168,
       "fonte": null,
@@ -2988,7 +2988,7 @@
         "Defeito do estágio do amplificador IF do receptor da estação"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 169,
       "fonte": null,
@@ -3005,7 +3005,7 @@
         "Harmónicos da frequência do cabo de alimentação AC"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 170,
       "fonte": null,
@@ -3022,7 +3022,7 @@
         "Todas as respostas anteriores estão corretas"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p24",
         "cat3/2023_09_21p21"
@@ -3042,7 +3042,7 @@
         "Chuva de meteoros"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 172,
       "fonte": null,
@@ -3059,7 +3059,7 @@
         "Todas as\n opções são válidas"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 173,
       "fonte": null,
@@ -3076,7 +3076,7 @@
         "Próximo do segmento RTTY, próximo dos 14,070 MHz"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 174,
       "fonte": null,
@@ -3093,7 +3093,7 @@
         "Nestas faixas de frequências, os radioamadores estão sujeitos à utilização da banda lateral inferior"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 175,
       "fonte": null,
@@ -3110,7 +3110,7 @@
         "Modulação em fase"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 176,
       "fonte": null,
@@ -3127,7 +3127,7 @@
         "Banda lateral dupla"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 177,
       "fonte": null,
@@ -3144,7 +3144,7 @@
         "não aumenta nem diminui qualquer que seja o valor da corrente aplicada"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p32"
       ],
@@ -3163,7 +3163,7 @@
         "não aumenta nem diminui qualquer que seja o valor da tensão aplicada"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 179,
       "fonte": null,
@@ -3180,14 +3180,14 @@
         "I=V/R"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p31",
         "cat3/2023_09_21p31"
       ],
       "img": null,
       "uniqueID": 180,
-      "tutorial":"ohm" ,
+      "tutorial": "ohm",
       "materia": null,
       "calc": null
     },
@@ -3200,7 +3200,7 @@
         "Watt"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 181,
       "fonte": null,
@@ -3217,7 +3217,7 @@
         "Watt"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 182,
       "fonte": null,
@@ -3234,7 +3234,7 @@
         "Joule"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 183,
       "fonte": null,
@@ -3251,7 +3251,7 @@
         "Joule"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 184,
       "fonte": null,
@@ -3268,7 +3268,7 @@
         "Joule"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 185,
       "fonte": null,
@@ -3285,7 +3285,7 @@
         "Watt"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 186,
       "fonte": null,
@@ -3302,7 +3302,7 @@
         "Metro"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p39"
       ],
@@ -3321,7 +3321,7 @@
         "Plástico"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 188,
       "fonte": null,
@@ -3338,7 +3338,7 @@
         "Ferro"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 189,
       "fonte": null,
@@ -3355,7 +3355,7 @@
         "Plastico"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 190,
       "fonte": null,
@@ -3372,7 +3372,7 @@
         "Para evitar choques elétricos"
       ],
       "correctIndex": 2,
-      "notes": "2023_09_21p24",
+      "notes": null,
       "img": null,
       "uniqueID": 191,
       "fonte": null,
@@ -3389,7 +3389,7 @@
         "uma tensão DC"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p23",
         "cat3/2023_09_22"
@@ -3409,7 +3409,7 @@
         "Uma tensão DC"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 193,
       "fonte": null,
@@ -3426,7 +3426,7 @@
         "Uma tensão DC"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "img": null,
       "uniqueID": 194,
       "fonte": null,
@@ -3443,7 +3443,7 @@
         "100 000 Ohm"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "img": "images/cat3/100k.png",
       "uniqueID": 195,
       "fonte": null,
@@ -3460,7 +3460,7 @@
         "2200 Ohm"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": "images/cat3/220ohm.png",
       "uniqueID": 196,
       "fonte": null,
@@ -3477,7 +3477,7 @@
         "20000 Ohm"
       ],
       "correctIndex": 2,
-      "notes": "Notas",
+      "notes": null,
       "img": "images/cat3/2k.png",
       "uniqueID": 197,
       "fonte": null,
@@ -3494,7 +3494,7 @@
         "Valor pico a pico do sinal"
       ],
       "correctIndex": 1,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
+      "notes": null,
       "img": "images/cat3/sinusoidal.png",
       "uniqueID": 198,
       "fonte": null,
@@ -3511,7 +3511,7 @@
         "Valor pico a pico do sinal"
       ],
       "correctIndex": 4,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
+      "notes": null,
       "img": "images/cat3/sinusoidal.png",
       "uniqueID": 199,
       "fonte": null,
@@ -3528,7 +3528,7 @@
         "Valor pico a pico do sinal"
       ],
       "correctIndex": 3,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p40"
       ],
@@ -3547,7 +3547,7 @@
         "Valor pico a pico do sinal"
       ],
       "correctIndex": 2,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p40"
       ],
@@ -3566,7 +3566,7 @@
         "2 Volt"
       ],
       "correctIndex": 4,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
+      "notes": null,
       "img": "images/cat3/sinusoidal.png",
       "uniqueID": 202,
       "fonte": null,
@@ -3583,7 +3583,7 @@
         "2 Volt"
       ],
       "correctIndex": 3,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
+      "notes": null,
       "img": "images/cat3/sinusoidal.png",
       "uniqueID": 203,
       "fonte": null,
@@ -3600,7 +3600,7 @@
         "2 Volt"
       ],
       "correctIndex": 1,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
+      "notes": null,
       "img": "images/cat3/sinusoidal.png",
       "uniqueID": 204,
       "fonte": null,
@@ -3617,7 +3617,7 @@
         "Valor pico a pico do sinal"
       ],
       "correctIndex": 1,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
+      "notes": null,
       "img": "images/cat3/sinusoidal.png",
       "uniqueID": 205,
       "fonte": null,
@@ -3634,7 +3634,7 @@
         "2 Volt"
       ],
       "correctIndex": 2,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=AC' class='underline'>Corrente Alternada / AC</a>",
+      "notes": null,
       "img": "images/cat3/sinusoidal.png",
       "uniqueID": 206,
       "fonte": null,
@@ -3651,7 +3651,7 @@
         "4"
       ],
       "correctIndex": 4,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_09_21p39"
       ],
@@ -3670,7 +3670,7 @@
         "4"
       ],
       "correctIndex": 1,
-      "notes": "Notas",
+      "notes": null,
       "img": "images/cat3/sinal.png",
       "uniqueID": 208,
       "fonte": null,
@@ -3687,7 +3687,7 @@
         "4"
       ],
       "correctIndex": 3,
-      "notes": "Notas",
+      "notes": null,
       "fonte": [
         "cat3/2023_08_18p32"
       ],

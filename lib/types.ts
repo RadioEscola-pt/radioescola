@@ -5,6 +5,7 @@ export interface Question {
   correctIndex: number;
   img?: string | null;
   notes?: string | null;
+  hasNotesMdx?: boolean;
   fonte?: string[] | null;
   tutorial?: string | null;
   materia?: string | null;
