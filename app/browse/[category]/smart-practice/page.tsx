@@ -23,7 +23,7 @@ import {
   getIntervalPreviews,
   type QualityRating,
 } from "@/lib/spaced-repetition/sm2";
-import { RotateCcw, Zap, Clock, CheckCircle2 } from "lucide-react";
+import { RotateCcw, Zap, Clock, CheckCircle2, RefreshCw, Brain, ThumbsUp, Sparkles } from "lucide-react";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
 
 const DEFAULT_CATEGORY = "3";
@@ -32,9 +32,12 @@ const SESSION_SIZE = 20;
 type QualityButton = {
   key: keyof typeof QUALITY_LABELS;
   label: string;
-  color: string;
-  bgColor: string;
-  hoverBg: string;
+  shortcut: string;
+  icon: React.ComponentType<{ className?: string }>;
+  bg: string;
+  bgHover: string;
+  text: string;
+  iconBg: string;
 };
 
 export default function SmartPracticePage() {
@@ -180,30 +183,42 @@ export default function SmartPracticePage() {
     {
       key: "again",
       label: t("again"),
-      color: "text-red-700 dark:text-red-300",
-      bgColor: "bg-red-100 dark:bg-red-900/40",
-      hoverBg: "hover:bg-red-200 dark:hover:bg-red-900/60",
+      shortcut: "1",
+      icon: RefreshCw,
+      bg: "bg-red-50 dark:bg-red-950/40",
+      bgHover: "hover:bg-red-100 dark:hover:bg-red-900/50",
+      text: "text-red-600 dark:text-red-400",
+      iconBg: "bg-red-100 dark:bg-red-900/60",
     },
     {
       key: "hard",
       label: t("hard"),
-      color: "text-orange-700 dark:text-orange-300",
-      bgColor: "bg-orange-100 dark:bg-orange-900/40",
-      hoverBg: "hover:bg-orange-200 dark:hover:bg-orange-900/60",
+      shortcut: "2",
+      icon: Brain,
+      bg: "bg-orange-50 dark:bg-orange-950/40",
+      bgHover: "hover:bg-orange-100 dark:hover:bg-orange-900/50",
+      text: "text-orange-600 dark:text-orange-400",
+      iconBg: "bg-orange-100 dark:bg-orange-900/60",
     },
     {
       key: "good",
       label: t("good"),
-      color: "text-green-700 dark:text-green-300",
-      bgColor: "bg-green-100 dark:bg-green-900/40",
-      hoverBg: "hover:bg-green-200 dark:hover:bg-green-900/60",
+      shortcut: "3",
+      icon: ThumbsUp,
+      bg: "bg-emerald-50 dark:bg-emerald-950/40",
+      bgHover: "hover:bg-emerald-100 dark:hover:bg-emerald-900/50",
+      text: "text-emerald-600 dark:text-emerald-400",
+      iconBg: "bg-emerald-100 dark:bg-emerald-900/60",
     },
     {
       key: "easy",
       label: t("easy"),
-      color: "text-blue-700 dark:text-blue-300",
-      bgColor: "bg-blue-100 dark:bg-blue-900/40",
-      hoverBg: "hover:bg-blue-200 dark:hover:bg-blue-900/60",
+      shortcut: "4",
+      icon: Sparkles,
+      bg: "bg-sky-50 dark:bg-sky-950/40",
+      bgHover: "hover:bg-sky-100 dark:hover:bg-sky-900/50",
+      text: "text-sky-600 dark:text-sky-400",
+      iconBg: "bg-sky-100 dark:bg-sky-900/60",
     },
   ];
 
@@ -391,27 +406,32 @@ export default function SmartPracticePage() {
           );
         })()}
 
-      {/* Quality rating buttons */}
+      {/* Quality rating */}
       {ended && (
-        <div className="px-4 sm:px-0 mt-4">
-          <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
-            <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-3 text-center">
-              {t("ratePrompt")}
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-              {qualityButtons.map((btn) => (
+        <div className="px-4 sm:px-0 mt-5">
+          <p className="text-sm text-slate-500 dark:text-slate-400 mb-3">
+            {t("ratePrompt")}
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            {qualityButtons.map((btn) => {
+              const Icon = btn.icon;
+              return (
                 <button
                   key={btn.key}
                   onClick={() => handleQualityRating(QUALITY_LABELS[btn.key])}
-                  className={`flex flex-col items-center justify-center p-3 rounded-lg transition-colors ${btn.bgColor} ${btn.hoverBg} ${btn.color}`}
+                  className={`group flex flex-col items-center gap-2 rounded-xl py-4 px-3 transition-all duration-150
+                    ${btn.bg} ${btn.bgHover} active:scale-[0.97]`}
                 >
-                  <span className="font-semibold">{btn.label}</span>
-                  <span className="text-xs opacity-75">
+                  <span className={`inline-flex items-center justify-center w-10 h-10 rounded-full ${btn.iconBg}`}>
+                    <Icon className={`w-5 h-5 ${btn.text}`} />
+                  </span>
+                  <span className={`text-sm font-semibold ${btn.text}`}>{btn.label}</span>
+                  <span className="text-xs text-slate-400 dark:text-slate-500 tabular-nums">
                     {formatInterval(intervalPreviews[btn.key])}
                   </span>
                 </button>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </div>
       )}
