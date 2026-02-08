@@ -5,8 +5,8 @@
 export const EXTERNAL_LINKS = {
   /** Portuguese communications regulator */
   ANACOM: 'https://www.anacom.pt',
-  /** Portuguese ham radio association */
-  REP: 'https://www.rep.pt',
+  /** Ham radio clubs / associations directory */
+  CLUBS: 'https://radioamador.info/associations',
   /** GitHub repository */
   GITHUB_REPO: 'https://github.com/RadioEscola-pt/radioescola',
   /** GitHub issues for error reporting */

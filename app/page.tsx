@@ -140,8 +140,8 @@ export default async function HomePage() {
                   </a>
                 </Button>
                 <Button variant="outline" asChild>
-                  <a href="https://www.rep.pt" target="_blank" rel="noreferrer">
-                    {t("externalLinks.rep")}
+                  <a href="https://radioamador.info/associations" target="_blank" rel="noreferrer">
+                    {t("externalLinks.clubs")}
                     <ExternalLink className="h-4 w-4" aria-hidden />
                   </a>
                 </Button>
