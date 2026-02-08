@@ -625,23 +625,6 @@
       "calc": null
     },
     {
-      "question": "Qual é a base da elaboração dos planos da IARU",
-      "answers": [
-        "O Regulamento das Radiocomunicações da UIT",
-        "As decisões da CEPT",
-        "As recomendações da ARRL",
-        "Um trabalho realizado em 1995 por amadores num grupo de trabalho de gestão de frequências"
-      ],
-      "correctIndex": 1,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=entidades'>Entidades</a>",
-      "img": null,
-      "uniqueID": 34,
-      "fonte": null,
-      "tutorial": null,
-      "materia": null,
-      "calc": null
-    },
-    {
       "question": "Existem vários planos de frequência da IARU?",
       "answers": [
         "Não, existe apenas um plano para cada três Regiões definidas no Regulamento das Radiocomunicações",
@@ -1232,23 +1215,6 @@
       "question": "A antena isotrópica e o dipolo de meia onda são antenas de referência para",
       "answers": [
         "o cálculo da p.a.r. e da p.i.r.e, respetivamente",
-        "o cálculo da p.a.r. e da directividade, respectivamente.",
-        "o cálculo da p.i.r.e. e da p.a.r. respetivamente",
-        "o cálculo da abertura e da diretividade, respetivamente"
-      ],
-      "correctIndex": 3,
-      "notes": "Notas",
-      "img": null,
-      "uniqueID": 67,
-      "fonte": null,
-      "tutorial": null,
-      "materia": null,
-      "calc": null
-    },
-    {
-      "question": "A antena isotrópica e o dipolo de meia onda são antenas de referência para",
-      "answers": [
-        "o cálculo da p.a.r. e da p.i.r.e, respetivamente",
         "o cálculo da p.a.r. e da p.i.r.e, respetivamente",
         "o cálculo da p.i.r.e. e da p.a.r. respetivamente",
         "o cálculo da abertura e da diretividade, respetivamente"
@@ -1570,23 +1536,6 @@
       "notes": "Notas",
       "img": null,
       "uniqueID": 23,
-      "fonte": null,
-      "tutorial": null,
-      "materia": null,
-      "calc": null
-    },
-    {
-      "question": "Qual a validade dos Certificados de Amador Nacional (CAN)?",
-      "answers": [
-        "1 ano",
-        "5 anos",
-        "10 anos",
-        "20 anos"
-      ],
-      "correctIndex": 3,
-      "notes": "Notas",
-      "img": null,
-      "uniqueID": 2,
       "fonte": null,
       "tutorial": null,
       "materia": null,
@@ -2307,23 +2256,6 @@
       "calc": null
     },
     {
-      "question": "Qual das seguintes afirmações é falsa?",
-      "answers": [
-        "Um amador nunca deve interromper uma comunicação, a menos que se trate duma situação de emergência",
-        "Um amador nunca deve ocupar uma dada frequência por longos períodos de tempo em detrimento de outros utilizadores",
-        "Um amador nunca deve ser correcto e educado para os amadores que o estão a ofender, pois eles não o merecem",
-        "Um amador nunca deve deixar de identificar a estação através do seu indicativo de chamada"
-      ],
-      "correctIndex": 3,
-      "notes": "Notas",
-      "img": null,
-      "uniqueID": 126,
-      "fonte": null,
-      "tutorial": null,
-      "materia": null,
-      "calc": null
-    },
-    {
       "question": "O amador não devera ser",
       "answers": [
         "Leal",
@@ -2338,23 +2270,6 @@
       ],
       "img": null,
       "uniqueID": 127,
-      "tutorial": null,
-      "materia": null,
-      "calc": null
-    },
-    {
-      "question": "Qual das seguintes afirmações é falsa?",
-      "answers": [
-        "Um amador deverá sempre respeitar as utilizações das várias frequências de acordo com o definido na regulamentação aplicável",
-        "Um amador deverá sempre ajudar os menos experientes de forma paciente, educada e desinteressada",
-        "Um amador deverá sempre, manter-se perfeitamete actualizado no que respeita ao conhecimento da legislação aplicável aos serviços de amador e de amador por satélite",
-        "Um amador deverá sempre, por solidariedade com outros, causar perturbações no espectro quando acha que os interesses do radioamadorismo estão e causa"
-      ],
-      "correctIndex": 4,
-      "notes": "Notas",
-      "img": null,
-      "uniqueID": 128,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2529,23 +2444,6 @@
       "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
       "img": null,
       "uniqueID": 139,
-      "fonte": null,
-      "tutorial": null,
-      "materia": null,
-      "calc": null
-    },
-    {
-      "question": "Uma estação repetidora de fonia analógica em Portugal Continental (região POR) tem o prefixo",
-      "answers": [
-        "CR0",
-        "CS0",
-        "CS5",
-        "CQ5"
-      ],
-      "correctIndex": 3,
-      "notes": "Consulte: <a target='_blank' href='?LoadChapter=prefixos'>Prefixos de Indicativos de Chamada</a>",
-      "img": null,
-      "uniqueID": 140,
       "fonte": null,
       "tutorial": null,
       "materia": null,
