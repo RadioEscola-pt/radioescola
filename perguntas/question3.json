@@ -3732,6 +3732,25 @@
       "tutorial": null,
       "materia": null,
       "calc": null
+    },
+    {
+      "question": "Antes de fazer uma chamada geral a todas as estações, o amador deverá certificar-se que",
+      "answers": [
+        "tem autorização de outros amadores para o fazer",
+        "a frequencia em que vai operar está livre",
+        "tem autorização da ANACOM para o fazer",
+        "existem pelo menos dois canais adjacentes sem qualquer comunicação"
+      ],
+      "correctIndex": 2,
+      "notes": "Notas",
+      "fonte": [
+        "cat3/2025_02_02p28"
+      ],
+      "img": null,
+      "uniqueID": 423,
+      "tutorial": null,
+      "materia": null,
+      "calc": null
     }
   ]
 }
