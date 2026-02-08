@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, Monitor } from "lucide-react";
 import { useTheme } from "@/components/providers/ThemeProvider";
 
 export default function ThemeToggle() {
@@ -12,6 +12,22 @@ export default function ThemeToggle() {
     setMounted(true);
   }, []);
 
+  const ariaLabel =
+    theme === "system"
+      ? "Switch to light mode"
+      : theme === "light"
+        ? "Switch to dark mode"
+        : "Switch to system mode";
+
+  const icon =
+    theme === "system" ? (
+      <Monitor className="h-5 w-5" />
+    ) : theme === "light" ? (
+      <Moon className="h-5 w-5" />
+    ) : (
+      <Sun className="h-5 w-5" />
+    );
+
   // Prevent hydration mismatch by rendering placeholder until mounted
   if (!mounted) {
     return (
@@ -20,7 +36,7 @@ export default function ThemeToggle() {
         className="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100"
         aria-label="Toggle theme"
       >
-        <Moon className="h-5 w-5" />
+        <Monitor className="h-5 w-5" />
       </button>
     );
   }
@@ -30,13 +46,9 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       className="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100"
-      aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+      aria-label={ariaLabel}
     >
-      {theme === "light" ? (
-        <Moon className="h-5 w-5" />
-      ) : (
-        <Sun className="h-5 w-5" />
-      )}
+      {icon}
     </button>
   );
 }
