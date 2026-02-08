@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Calculator, ChevronDown, Upload, GraduationCap, BarChart3, UserCircle, Moon, Globe, Zap } from "lucide-react";
+import { Home, BookOpen, FileText, Calculator, ChevronDown, Upload, GraduationCap, BarChart3, UserCircle, Globe, Zap } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -212,40 +212,38 @@ export default function NavBar() {
           </Link>
         </nav>
 
-        {/* Desktop Profile Dropdown */}
-        <div className="hidden md:flex items-center">
-          <DropdownMenu>
-            <DropdownMenuTrigger className="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100">
-              <UserCircle className="h-5 w-5" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-[200px]">
-              <DropdownMenuItem asChild>
-                <Link href="/dashboard" className="cursor-pointer">
-                  <BarChart3 className="mr-2 h-4 w-4" />
-                  {t("dashboard")}
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <div className="px-2 py-1.5 flex items-center justify-between">
-                <span className="flex items-center gap-2 text-sm">
-                  <Moon className="h-4 w-4" />
-                  {t("theme")}
-                </span>
-                <ThemeToggle />
-              </div>
-              <div className="px-2 py-1.5 flex items-center justify-between">
-                <span className="flex items-center gap-2 text-sm">
-                  <Globe className="h-4 w-4" />
-                  {t("language")}
-                </span>
-                <LanguageSwitcher />
-              </div>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
+        {/* Right-side actions */}
+        <div className="flex items-center gap-1">
+          <ThemeToggle />
 
-        {/* Mobile Menu */}
-        <MobileNav open={mobileMenuOpen} onOpenChange={setMobileMenuOpen} />
+          {/* Desktop Profile Dropdown */}
+          <div className="hidden md:flex items-center">
+            <DropdownMenu>
+              <DropdownMenuTrigger className="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100">
+                <UserCircle className="h-5 w-5" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-[200px]">
+                <DropdownMenuItem asChild>
+                  <Link href="/dashboard" className="cursor-pointer">
+                    <BarChart3 className="mr-2 h-4 w-4" />
+                    {t("dashboard")}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <div className="px-2 py-1.5 flex items-center justify-between">
+                  <span className="flex items-center gap-2 text-sm">
+                    <Globe className="h-4 w-4" />
+                    {t("language")}
+                  </span>
+                  <LanguageSwitcher />
+                </div>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+
+          {/* Mobile Menu */}
+          <MobileNav open={mobileMenuOpen} onOpenChange={setMobileMenuOpen} />
+        </div>
       </div>
     </header>
   );

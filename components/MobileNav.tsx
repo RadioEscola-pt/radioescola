@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Upload, Menu, GraduationCap, BarChart3, Settings, Moon, Globe, Zap } from "lucide-react";
+import { Home, BookOpen, FileText, Upload, Menu, GraduationCap, BarChart3, Settings, Globe, Zap } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/accordion";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
-import ThemeToggle from "./ThemeToggle";
+
 import { useCalculators } from "@/components/providers/CalculatorProvider";
 import type { CalculatorCode } from "@/lib/types";
 
@@ -249,13 +249,6 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
                       <BarChart3 className="h-4 w-4" />
                       <span className="text-sm font-medium">{t("dashboard")}</span>
                     </Link>
-                    <div className="flex items-center justify-between rounded-md px-3 py-2">
-                      <span className="flex items-center gap-2 text-sm">
-                        <Moon className="h-4 w-4" />
-                        {t("theme")}
-                      </span>
-                      <ThemeToggle />
-                    </div>
                     <div className="flex items-center justify-between rounded-md px-3 py-2">
                       <span className="flex items-center gap-2 text-sm">
                         <Globe className="h-4 w-4" />

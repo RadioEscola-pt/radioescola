@@ -1,12 +1,11 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, useCallback } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
-type Theme = "light" | "dark" | "system";
+type Theme = "light" | "dark";
 
 type ThemeContextType = {
   theme: Theme;
-  resolvedTheme: "light" | "dark";
   toggleTheme: () => void;
 };
 
@@ -26,64 +25,37 @@ function getSystemTheme(): "light" | "dark" {
 }
 
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("system");
-  const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<Theme>(getSystemTheme);
   const [mounted, setMounted] = useState(false);
 
-  // Resolve the effective theme whenever theme changes
-  const resolve = useCallback(() => {
-    if (theme === "system") {
-      setResolvedTheme(getSystemTheme());
-    } else {
-      setResolvedTheme(theme);
-    }
-  }, [theme]);
-
-  // On mount: read localStorage, resolve theme
+  // On mount: read localStorage (fall back to system preference)
   useEffect(() => {
     setMounted(true);
-    const stored = localStorage.getItem("theme") as Theme | null;
-    if (stored === "light" || stored === "dark" || stored === "system") {
+    const stored = localStorage.getItem("theme");
+    if (stored === "light" || stored === "dark") {
       setTheme(stored);
     }
-    // else keep default "system"
   }, []);
-
-  // Listen for OS preference changes when in system mode
-  useEffect(() => {
-    resolve();
-
-    if (theme !== "system") return;
-
-    const mql = window.matchMedia("(prefers-color-scheme: dark)");
-    const handler = () => setResolvedTheme(mql.matches ? "dark" : "light");
-    mql.addEventListener("change", handler);
-    return () => mql.removeEventListener("change", handler);
-  }, [theme, resolve]);
 
   // Apply dark class and persist
   useEffect(() => {
     if (!mounted) return;
 
     const root = document.documentElement;
-    if (resolvedTheme === "dark") {
+    if (theme === "dark") {
       root.classList.add("dark");
     } else {
       root.classList.remove("dark");
     }
     localStorage.setItem("theme", theme);
-  }, [theme, resolvedTheme, mounted]);
+  }, [theme, mounted]);
 
   const toggleTheme = () => {
-    setTheme((prev) => {
-      if (prev === "system") return "light";
-      if (prev === "light") return "dark";
-      return "system";
-    });
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, resolvedTheme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
