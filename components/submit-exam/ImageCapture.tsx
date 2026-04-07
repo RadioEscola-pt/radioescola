@@ -4,6 +4,7 @@ import { useCallback, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Camera, Upload, FileImage } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import { fileToDataUrl } from "@/lib/utils/pdf-generator";
 import type { ExamPage } from "@/lib/types";
 
@@ -26,6 +27,9 @@ function generateId(): string {
   return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 11)}`;
 }
 
+const MAX_FILE_SIZE_MB = 20;
+const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;
+
 interface ImageCaptureProps {
   onCapture: (pages: ExamPage[]) => void;
 }
@@ -35,30 +39,55 @@ export function ImageCapture({ onCapture }: ImageCaptureProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const cameraInputRef = useRef<HTMLInputElement>(null);
   const [isDragging, setIsDragging] = useState(false);
+  const [fileError, setFileError] = useState<string | null>(null);
+  const [isProcessing, setIsProcessing] = useState(false);
 
   const processFiles = useCallback(
     async (files: FileList | File[]) => {
       const fileArray = Array.from(files);
       const pages: ExamPage[] = [];
+      const skipped: string[] = [];
+      const tooLarge: string[] = [];
 
-      for (const file of fileArray) {
-        if (file.type === "application/pdf" || file.type.startsWith("image/")) {
-          const dataUrl = await fileToDataUrl(file);
-          pages.push({
-            id: generateId(),
-            file,
-            dataUrl,
-            rotation: 0,
-            originalName: file.name,
-          });
+      setFileError(null);
+      setIsProcessing(true);
+
+      try {
+        for (const file of fileArray) {
+          if (file.size > MAX_FILE_SIZE_BYTES) {
+            tooLarge.push(file.name);
+            continue;
+          }
+          if (file.type === "application/pdf" || file.type.startsWith("image/")) {
+            const dataUrl = await fileToDataUrl(file);
+            pages.push({
+              id: generateId(),
+              file,
+              dataUrl,
+              rotation: 0,
+              originalName: file.name,
+            });
+          } else {
+            skipped.push(file.name);
+          }
         }
-      }
 
-      if (pages.length > 0) {
-        onCapture(pages);
+        if (tooLarge.length > 0) {
+          setFileError(t("fileTooLarge", { maxSize: MAX_FILE_SIZE_MB, count: tooLarge.length }));
+        } else if (skipped.length > 0) {
+          setFileError(t("unsupportedFormat", { count: skipped.length }));
+        }
+
+        if (pages.length > 0) {
+          onCapture(pages);
+        }
+      } catch {
+        setFileError(t("processingError"));
+      } finally {
+        setIsProcessing(false);
       }
     },
-    [onCapture]
+    [onCapture, t]
   );
 
   const handleDrop = useCallback(
@@ -83,8 +112,8 @@ export function ImageCapture({ onCapture }: ImageCaptureProps) {
   );
 
   return (
-    <div className="rounded-lg border bg-white p-6">
-      <h2 className="font-semibold mb-4">{t("title")}</h2>
+    <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
+      <h2 className="font-semibold mb-4 text-slate-900 dark:text-slate-100">{t("title")}</h2>
 
       {/* Drop zone */}
       <div
@@ -97,46 +126,46 @@ export function ImageCapture({ onCapture }: ImageCaptureProps) {
         className={cn(
           "border-2 border-dashed rounded-lg p-8 text-center transition-colors",
           isDragging
-            ? "border-indigo-500 bg-indigo-50"
-            : "border-gray-300 hover:border-gray-400"
+            ? "border-amber-500 bg-amber-50 dark:bg-amber-900/20"
+            : "border-slate-300 dark:border-slate-600 hover:border-slate-400 dark:hover:border-slate-500"
         )}
       >
-        <FileImage className="h-12 w-12 mx-auto text-gray-400 mb-4" />
-        <p className="text-sm text-gray-600 mb-4">{t("dragDrop")}</p>
-        <p className="text-xs text-gray-500">{t("acceptedFormats")}</p>
+        <FileImage className="h-12 w-12 mx-auto text-slate-400 dark:text-slate-500 mb-4" />
+        <p className="text-sm text-slate-600 dark:text-slate-300 mb-4">{t("dragDrop")}</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400">{t("acceptedFormats")}</p>
+        <p className="text-xs text-slate-400 dark:text-slate-500 mt-1">{t("maxFileSize", { maxSize: MAX_FILE_SIZE_MB })}</p>
       </div>
+
+      {/* File error feedback */}
+      {fileError && (
+        <div className="mt-3 p-2.5 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800">
+          <p className="text-sm text-red-700 dark:text-red-400">{fileError}</p>
+        </div>
+      )}
 
       {/* Action buttons */}
       <div className="flex gap-3 mt-4">
         {/* Camera button - mobile only, uses environment (back) camera */}
-        <button
+        <Button
           type="button"
           onClick={() => cameraInputRef.current?.click()}
-          className={cn(
-            "flex-1 inline-flex items-center justify-center gap-2",
-            "px-4 py-2.5 rounded-md text-sm font-medium",
-            "bg-indigo-600 text-white",
-            "hover:bg-indigo-700 transition-colors",
-            "md:hidden" // Hide on desktop
-          )}
+          disabled={isProcessing}
+          className="flex-1 md:hidden"
         >
           <Camera className="h-4 w-4" />
           {t("takePhoto")}
-        </button>
+        </Button>
 
-        <button
+        <Button
           type="button"
+          variant="outline"
           onClick={() => fileInputRef.current?.click()}
-          className={cn(
-            "flex-1 inline-flex items-center justify-center gap-2",
-            "px-4 py-2.5 rounded-md text-sm font-medium",
-            "border border-gray-300",
-            "hover:bg-gray-50 transition-colors"
-          )}
+          disabled={isProcessing}
+          className="flex-1"
         >
           <Upload className="h-4 w-4" />
-          {t("uploadFiles")}
-        </button>
+          {isProcessing ? t("processing") : t("uploadFiles")}
+        </Button>
       </div>
 
       {/* Hidden inputs */}

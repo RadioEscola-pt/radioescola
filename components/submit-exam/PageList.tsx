@@ -47,9 +47,9 @@ export function PageList({ pages, onDelete, onRotate, onReorder }: PageListProps
   };
 
   return (
-    <div className="rounded-lg border bg-white p-6">
+    <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="font-semibold flex items-center gap-2">
+        <h2 className="font-semibold flex items-center gap-2 text-slate-900 dark:text-slate-100">
           <FileStack className="h-5 w-5" />
           {t("title", { count: pages.length })}
         </h2>

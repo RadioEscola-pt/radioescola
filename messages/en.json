@@ -279,17 +279,22 @@
   },
   "SubmitExam": {
     "title": "Submit Exam",
-    "subtitle": "Help expand the question bank by submitting exam photos or PDFs",
+    "subtitle": "Have a paper exam? Upload photos or PDFs to help other radio amateurs study.",
     "capture": {
       "title": "Add Pages",
       "takePhoto": "Take Photo",
       "uploadFiles": "Upload Files",
       "dragDrop": "or drag and drop here",
-      "acceptedFormats": "JPG, PNG, PDF accepted"
+      "acceptedFormats": "JPG, PNG, PDF accepted",
+      "maxFileSize": "Max {maxSize} MB per file",
+      "fileTooLarge": "{count, plural, one {File skipped — exceeds {maxSize} MB. Try reducing the file size.} other {# files skipped — exceed {maxSize} MB. Try reducing the file sizes.}}",
+      "unsupportedFormat": "{count, plural, one {File skipped — use JPG, PNG, or PDF.} other {# files skipped — use JPG, PNG, or PDF.}}",
+      "processingError": "Couldn't process the files. Please try again.",
+      "processing": "Processing..."
     },
     "pages": {
       "title": "Pages ({count})",
-      "empty": "No pages added yet",
+      "empty": "Add exam photos or PDFs above",
       "reorderHint": "Drag to reorder pages",
       "rotate": "Rotate",
       "delete": "Delete",
@@ -299,31 +304,33 @@
       "title": "Tips for Good Photos",
       "lighting": "Use good, even lighting",
       "flat": "Place exam flat on a surface",
-      "focus": "Ensure text is in focus",
+      "focus": "Make sure the text is readable",
       "margins": "Include all margins",
       "angle": "Capture straight-on, not at an angle"
     },
     "form": {
+      "title": "Exam Details",
       "category": "Category",
       "categoryPlaceholder": "Select category...",
       "year": "Year (optional)",
       "yearPlaceholder": "e.g., 2024",
       "email": "Email (optional)",
       "emailPlaceholder": "your@email.com",
-      "emailHint": "For follow-up questions about the submission"
+      "emailHint": "In case we need to contact you about this submission"
     },
     "submit": {
       "button": "Submit Exam",
-      "sending": "Sending...",
-      "success": "Exam submitted successfully!",
-      "successDesc": "Thank you for contributing to the question bank.",
-      "error": "Failed to submit exam",
-      "retry": "Retry"
+      "sending": "Submitting...",
+      "success": "Exam submitted!",
+      "successDesc": "Thanks for your contribution! We'll add the questions to the bank as soon as possible.",
+      "submitAnother": "Submit another exam",
+      "error": "Couldn't submit the exam. Check your connection and try again.",
+      "retry": "Try again"
     },
     "progress": {
-      "preparing": "Preparing images...",
-      "generating": "Generating PDF...",
-      "uploading": "Sending email..."
+      "preparing": "Preparing the pages...",
+      "generating": "Building the document...",
+      "uploading": "Submitting the exam..."
     }
   },
   "ExamResults": {

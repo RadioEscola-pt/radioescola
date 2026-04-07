@@ -42,9 +42,9 @@ export function PageThumbnail({ page, index, onDelete, onRotate }: PageThumbnail
         ref={setNodeRef}
         style={style}
         className={cn(
-          "relative group rounded-lg border overflow-hidden bg-gray-100",
+          "relative group rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden bg-slate-100 dark:bg-slate-700",
           "aspect-[3/4]",
-          isDragging && "opacity-50 ring-2 ring-indigo-500"
+          isDragging && "opacity-50 ring-2 ring-amber-500"
         )}
       >
         {/* Drag handle */}
@@ -63,8 +63,8 @@ export function PageThumbnail({ page, index, onDelete, onRotate }: PageThumbnail
 
         {/* Thumbnail */}
         {isPdf ? (
-          <div className="w-full h-full flex items-center justify-center bg-gray-200">
-            <FileText className="h-8 w-8 text-gray-400" />
+          <div className="w-full h-full flex items-center justify-center bg-slate-200 dark:bg-slate-600">
+            <FileText className="h-8 w-8 text-slate-400 dark:text-slate-300" />
           </div>
         ) : (
           <img

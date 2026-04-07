@@ -279,17 +279,22 @@
   },
   "SubmitExam": {
     "title": "Enviar Exame",
-    "subtitle": "Ajuda a expandir o banco de questões enviando fotos ou PDFs de exames",
+    "subtitle": "Tens um exame em papel? Envia fotos ou PDFs para ajudar outros radioamadores a estudar.",
     "capture": {
       "title": "Adicionar Páginas",
       "takePhoto": "Tirar Foto",
       "uploadFiles": "Carregar Ficheiros",
       "dragDrop": "ou arrasta e larga aqui",
-      "acceptedFormats": "JPG, PNG, PDF aceites"
+      "acceptedFormats": "JPG, PNG, PDF aceites",
+      "maxFileSize": "Máx. {maxSize} MB por ficheiro",
+      "fileTooLarge": "{count, plural, one {Ficheiro ignorado — excede {maxSize} MB. Tenta reduzir o tamanho.} other {# ficheiros ignorados — excedem {maxSize} MB. Tenta reduzir o tamanho.}}",
+      "unsupportedFormat": "{count, plural, one {Ficheiro ignorado — usa JPG, PNG ou PDF.} other {# ficheiros ignorados — usa JPG, PNG ou PDF.}}",
+      "processingError": "Não foi possível processar os ficheiros. Tenta novamente.",
+      "processing": "A processar..."
     },
     "pages": {
       "title": "Páginas ({count})",
-      "empty": "Nenhuma página adicionada",
+      "empty": "Adiciona fotos ou PDFs do exame acima",
       "reorderHint": "Arrasta para reordenar",
       "rotate": "Rodar",
       "delete": "Apagar",
@@ -299,31 +304,33 @@
       "title": "Dicas para Boas Fotos",
       "lighting": "Usa boa iluminação uniforme",
       "flat": "Coloca o exame numa superfície plana",
-      "focus": "Certifica-te que o texto está focado",
+      "focus": "Certifica-te que o texto está legível",
       "margins": "Inclui todas as margens",
       "angle": "Captura de frente, não em ângulo"
     },
     "form": {
+      "title": "Detalhes do Exame",
       "category": "Categoria",
       "categoryPlaceholder": "Seleciona categoria...",
       "year": "Ano (opcional)",
       "yearPlaceholder": "ex., 2024",
       "email": "Email (opcional)",
       "emailPlaceholder": "teu@email.com",
-      "emailHint": "Para questões sobre a submissão"
+      "emailHint": "Caso precisemos de te contactar sobre esta submissão"
     },
     "submit": {
       "button": "Enviar Exame",
       "sending": "A enviar...",
-      "success": "Exame enviado com sucesso!",
-      "successDesc": "Obrigado por contribuíres para o banco de questões.",
-      "error": "Falha ao enviar exame",
+      "success": "Exame enviado!",
+      "successDesc": "Obrigado pela contribuição! Vamos adicionar as questões ao banco o mais breve possível.",
+      "submitAnother": "Enviar outro exame",
+      "error": "Não foi possível enviar o exame. Verifica a tua ligação e tenta novamente.",
       "retry": "Tentar novamente"
     },
     "progress": {
-      "preparing": "A preparar imagens...",
-      "generating": "A gerar PDF...",
-      "uploading": "A enviar email..."
+      "preparing": "A preparar as páginas...",
+      "generating": "A gerar o documento...",
+      "uploading": "A submeter o exame..."
     }
   },
   "ExamResults": {

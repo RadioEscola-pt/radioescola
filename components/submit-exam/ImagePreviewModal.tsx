@@ -23,10 +23,10 @@ export function ImagePreviewModal({ open, onClose, page }: ImagePreviewModalProp
           <X className="h-5 w-5" />
         </button>
         {isPdf ? (
-          <div className="flex items-center justify-center h-96 bg-gray-100 rounded">
+          <div className="flex items-center justify-center h-96 bg-slate-100 dark:bg-slate-800 rounded">
             <div className="text-center">
-              <FileText className="h-16 w-16 mx-auto text-gray-400 mb-2" />
-              <p className="text-sm text-gray-600">{page.originalName}</p>
+              <FileText className="h-16 w-16 mx-auto text-slate-400 dark:text-slate-500 mb-2" />
+              <p className="text-sm text-slate-600 dark:text-slate-300">{page.originalName}</p>
             </div>
           </div>
         ) : (
