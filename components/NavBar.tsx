@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Calculator, ChevronDown, Upload, GraduationCap, BarChart3, UserCircle, Globe, Zap } from "lucide-react";
+import { Home, BookOpen, FileText, Calculator, ChevronDown, Upload, GraduationCap, BarChart3, UserCircle, Globe, Zap, Radio } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -73,8 +73,8 @@ export default function NavBar() {
     <header className="sticky top-0 z-50 border-b border-slate-200/50 bg-slate-50/70 backdrop-blur-xl dark:border-slate-700/50 dark:bg-slate-900/70">
       <div className="container mx-auto flex h-14 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2 font-bold text-lg text-slate-800 dark:text-slate-100">
-          <span className="text-2xl">📻</span>
-          Rádio Escola
+          <Radio className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+          <span className="tracking-tight">Rádio Escola</span>
         </Link>
 
         {/* Desktop Navigation */}
