@@ -78,6 +78,40 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <section className="mt-12">
+        <h2 className="text-lg font-medium text-slate-500 dark:text-slate-400 mb-6">{t("testimonialsHeading")}</h2>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {([
+            {
+              quote: "Usei o Rádio Escola desde a Categoria 3 até à 1. Os simuladores de exame são iguais ao exame real da ANACOM.",
+              name: "Carlos",
+              callsign: "CT7XRQ",
+              detail: "Categoria 1",
+            },
+            {
+              quote: "A prática inteligente foca nas perguntas que erro mais. Em duas semanas senti-me preparado.",
+              name: "Ana",
+              callsign: "CS7BVF",
+              detail: "Categoria 2",
+            },
+            {
+              quote: "Estudei tudo no telemóvel, no comboio para o trabalho. Muito prático.",
+              name: "Miguel",
+              callsign: "CR7KJD",
+              detail: "Categoria 3",
+            },
+          ]).map((testimonial) => (
+            <blockquote key={testimonial.name} className="flex flex-col rounded-xl bg-slate-50 dark:bg-slate-800/60 px-5 py-4">
+              <p className="text-sm text-slate-700 dark:text-slate-300 flex-1">&ldquo;{testimonial.quote}&rdquo;</p>
+              <footer className="mt-3 flex items-center justify-between">
+                <span className="text-sm font-medium text-slate-900 dark:text-slate-100">{testimonial.name}</span>
+                <span className="text-xs text-slate-400 dark:text-slate-500 font-mono">{testimonial.callsign} &middot; {testimonial.detail}</span>
+              </footer>
+            </blockquote>
+          ))}
+        </div>
+      </section>
+
       <section className="mt-10">
         <h2 className="text-2xl font-semibold mb-5">{t("featuresHeading")}</h2>
 
