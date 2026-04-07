@@ -12,12 +12,12 @@ interface CalculatorResultProps {
 }
 
 const RESULT_CLASSES: Record<CalculatorColor, { bg: string; text: string }> = {
-  blue: { bg: "bg-blue-50", text: "text-blue-800" },
-  green: { bg: "bg-green-50", text: "text-green-800" },
-  purple: { bg: "bg-purple-50", text: "text-purple-800" },
-  orange: { bg: "bg-orange-50", text: "text-orange-800" },
-  cyan: { bg: "bg-cyan-50", text: "text-cyan-800" },
-  rose: { bg: "bg-rose-50", text: "text-rose-800" },
+  blue: { bg: "bg-blue-50 dark:bg-blue-950/30", text: "text-blue-800 dark:text-blue-300" },
+  green: { bg: "bg-green-50 dark:bg-green-950/30", text: "text-green-800 dark:text-green-300" },
+  purple: { bg: "bg-purple-50 dark:bg-purple-950/30", text: "text-purple-800 dark:text-purple-300" },
+  orange: { bg: "bg-orange-50 dark:bg-orange-950/30", text: "text-orange-800 dark:text-orange-300" },
+  cyan: { bg: "bg-cyan-50 dark:bg-cyan-950/30", text: "text-cyan-800 dark:text-cyan-300" },
+  rose: { bg: "bg-rose-50 dark:bg-rose-950/30", text: "text-rose-800 dark:text-rose-300" },
 };
 
 export function CalculatorResult({
@@ -32,13 +32,13 @@ export function CalculatorResult({
   return (
     <div className={`rounded-md ${colorClasses.bg} px-3 py-2`}>
       {label && (
-        <p className="text-xs font-medium uppercase tracking-wide text-gray-600">
+        <p className="text-xs font-medium text-slate-500 dark:text-slate-400">
           {label}
         </p>
       )}
       <p className={`text-sm font-semibold ${colorClasses.text}`}>{value}</p>
       {formula && (
-        <p className="mt-1 text-xs text-gray-500 font-mono">
+        <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 font-mono">
           {t("formula")}: {formula}
         </p>
       )}

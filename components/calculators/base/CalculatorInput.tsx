@@ -43,7 +43,7 @@ export function CalculatorInput({
   return (
     <div>
       <label
-        className="mb-1 block text-xs font-medium uppercase tracking-wide text-gray-600"
+        className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400"
         htmlFor={id}
       >
         {label}
@@ -54,7 +54,7 @@ export function CalculatorInput({
           type="text"
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className={`${hasUnits ? "flex-1" : "w-full"} rounded border border-gray-300 px-2 py-1 focus:outline-none focus:ring ${focusClass} ${disabled ? "bg-gray-100 text-gray-500" : ""}`}
+          className={`${hasUnits ? "flex-1" : "w-full"} rounded border border-slate-300 bg-white px-2 py-1 text-slate-900 focus:outline-none focus:ring dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 ${focusClass} ${disabled ? "bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-500" : ""}`}
           placeholder={placeholder}
           disabled={disabled}
         />
@@ -62,7 +62,7 @@ export function CalculatorInput({
           <select
             value={selectedUnit}
             onChange={(e) => onUnitChange(e.target.value)}
-            className={`w-20 rounded border border-gray-300 px-1 py-1 text-sm focus:outline-none focus:ring ${focusClass}`}
+            className={`w-20 rounded border border-slate-300 bg-white px-1 py-1 text-sm text-slate-900 focus:outline-none focus:ring dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 ${focusClass}`}
             disabled={disabled}
           >
             {units.map((unit) => (

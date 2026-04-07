@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Plus, Trash2 } from "lucide-react";
+import { Plus, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { CalculatorWindow, CalculatorButtons, CalculatorResult } from "./base";
 import { registerCalculatorComponent } from "@/lib/config";
@@ -172,13 +172,13 @@ const ComponentSumCalculator: React.FC<CalculatorInstanceProps> = ({
       onFocus={onFocus}
     >
       <div>
-        <label className="mb-1 block text-xs font-medium uppercase tracking-wide text-gray-600">
+        <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">
           {t("componentType")}
         </label>
         <select
           value={componentType}
           onChange={(e) => handleComponentTypeChange(e.target.value as ComponentType)}
-          className="w-full rounded border border-gray-300 px-2 py-1 focus:border-green-500 focus:outline-none focus:ring"
+          className="w-full rounded border border-slate-300 bg-white px-2 py-1 text-slate-900 focus:border-green-500 focus:outline-none focus:ring dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100"
         >
           <option value="resistor">{t("resistor")}</option>
           <option value="capacitor">{t("capacitor")}</option>
@@ -187,7 +187,7 @@ const ComponentSumCalculator: React.FC<CalculatorInstanceProps> = ({
       </div>
 
       <div>
-        <label className="mb-1 block text-xs font-medium uppercase tracking-wide text-gray-600">
+        <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">
           {t("configuration")}
         </label>
         <div className="flex gap-2">
@@ -197,7 +197,7 @@ const ComponentSumCalculator: React.FC<CalculatorInstanceProps> = ({
             className={`flex-1 rounded px-3 py-1 transition focus:outline-none focus:ring-2 focus:ring-green-500 ${
               mode === "series"
                 ? "bg-green-600 text-white"
-                : "border border-gray-300 text-gray-700 hover:bg-gray-100"
+                : "border border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
             }`}
           >
             {t("series")}
@@ -208,7 +208,7 @@ const ComponentSumCalculator: React.FC<CalculatorInstanceProps> = ({
             className={`flex-1 rounded px-3 py-1 transition focus:outline-none focus:ring-2 focus:ring-green-500 ${
               mode === "parallel"
                 ? "bg-green-600 text-white"
-                : "border border-gray-300 text-gray-700 hover:bg-gray-100"
+                : "border border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
             }`}
           >
             {t("parallel")}
@@ -218,13 +218,13 @@ const ComponentSumCalculator: React.FC<CalculatorInstanceProps> = ({
 
       <div>
         <div className="mb-2 flex items-center justify-between">
-          <label className="text-xs font-medium uppercase tracking-wide text-gray-600">
+          <label className="text-xs font-medium text-slate-500 dark:text-slate-400">
             {t("components")}
           </label>
           <button
             type="button"
             onClick={addComponent}
-            className="flex items-center gap-1 rounded bg-green-600 px-2 py-1 text-xs text-white transition hover:bg-green-500"
+            className="flex items-center gap-1 rounded border border-slate-300 px-2 py-1 text-xs text-slate-600 transition hover:bg-slate-100 dark:border-slate-600 dark:text-slate-400 dark:hover:bg-slate-700"
           >
             <Plus className="h-3 w-3" />
             {t("add")}
@@ -233,18 +233,18 @@ const ComponentSumCalculator: React.FC<CalculatorInstanceProps> = ({
         <div className="max-h-64 space-y-2">
           {components.map((comp, index) => (
             <div key={comp.id} className="flex items-center gap-1.5">
-              <span className="text-xs text-gray-500 w-5 shrink-0">{index + 1}.</span>
+              <span className="w-5 shrink-0 text-xs text-slate-400 dark:text-slate-500">{index + 1}.</span>
               <input
                 type="text"
                 value={comp.value}
                 onChange={(e) => updateComponentValue(comp.id, e.target.value)}
-                className="min-w-0 flex-1 rounded border border-gray-300 px-2 py-1 text-sm focus:border-green-500 focus:outline-none focus:ring"
+                className="min-w-0 flex-1 rounded border border-slate-300 bg-white px-2 py-1 text-sm text-slate-900 focus:border-green-500 focus:outline-none focus:ring dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100"
                 placeholder={t("value")}
               />
               <select
                 value={comp.unit}
                 onChange={(e) => updateComponentUnit(comp.id, e.target.value)}
-                className="shrink-0 rounded border border-gray-300 px-1.5 py-1 text-sm focus:border-green-500 focus:outline-none focus:ring"
+                className="shrink-0 rounded border border-slate-300 bg-white px-1.5 py-1 text-sm text-slate-900 focus:border-green-500 focus:outline-none focus:ring dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100"
               >
                 {getUnitsForType(componentType).map((unit) => (
                   <option key={unit} value={unit}>
@@ -256,9 +256,9 @@ const ComponentSumCalculator: React.FC<CalculatorInstanceProps> = ({
                 <button
                   type="button"
                   onClick={() => removeComponent(comp.id)}
-                  className="shrink-0 rounded p-1 text-red-600 transition hover:bg-red-50"
+                  className="shrink-0 rounded p-1 text-slate-400 transition hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-slate-700 dark:hover:text-slate-300"
                 >
-                  <Trash2 className="h-4 w-4" />
+                  <X className="h-3.5 w-3.5" />
                 </button>
               )}
             </div>
@@ -267,9 +267,9 @@ const ComponentSumCalculator: React.FC<CalculatorInstanceProps> = ({
       </div>
 
       {result && (
-        <div className="rounded bg-green-50 p-2 text-center">
-          <div className="text-xs font-medium text-gray-600">{t("result")}</div>
-          <div className="text-lg font-bold text-green-700">{result}</div>
+        <div key={result} className="animate-result-pop rounded-lg bg-green-50 px-3 py-3 text-center dark:bg-green-950/30">
+          <div className="text-xs font-medium text-slate-500 dark:text-slate-400">{t("result")}</div>
+          <div className="text-2xl font-bold tracking-tight text-green-700 dark:text-green-300">{result}</div>
         </div>
       )}
 

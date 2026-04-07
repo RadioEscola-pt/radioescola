@@ -141,7 +141,7 @@
       "formula": "Fórmula"
     },
     "ohmsLaw": {
-      "title": "Calculadora Lei de Ohm",
+      "title": "Lei de Ohm",
       "shortTitle": "Lei de Ohm",
       "description": "Calcula tensão, corrente ou resistência usando a Lei de Ohm (V = IR)",
       "voltage": "Tensão (V)",
@@ -158,7 +158,7 @@
       "computedResistance": "Resistência calculada: {value}"
     },
     "componentSum": {
-      "title": "Calculadora de Soma de Componentes",
+      "title": "Soma de Componentes",
       "shortTitle": "Soma Componentes",
       "description": "Calcula resistência e capacitância em série/paralelo",
       "componentType": "Tipo de Componente",
@@ -178,7 +178,7 @@
       "totalResult": "Total {type} em {mode}: {value}"
     },
     "rlc": {
-      "title": "Calculadora de Circuito RLC",
+      "title": "Circuito RLC",
       "shortTitle": "Circuito RLC",
       "description": "Calcula frequência de ressonância, impedância e fator Q",
       "resonance": "Ressonância",
@@ -195,7 +195,7 @@
       "resonantFrequency": "Frequência de ressonância: {value}"
     },
     "vswr": {
-      "title": "Calculadora VSWR",
+      "title": "VSWR",
       "shortTitle": "VSWR",
       "description": "Calcula VSWR, perda de retorno e perda por desadaptação",
       "inputMode": "Modo de Entrada",
@@ -213,7 +213,7 @@
       "complete": "Cálculo completo."
     },
     "gain": {
-      "title": "Calculadora de Ganho",
+      "title": "Ganho",
       "shortTitle": "Ganho",
       "description": "Calcula ganho de potência em dB e ganho combinado de estágios",
       "powerRatio": "Razão de Potência",
@@ -234,7 +234,7 @@
       "loss": "perda"
     },
     "transformer": {
-      "title": "Calculadora de Transformador",
+      "title": "Transformador",
       "shortTitle": "Transformador",
       "description": "Calcula razão de espiras, tensões, correntes e impedância",
       "calculateFrom": "Calcular a partir de",

@@ -48,7 +48,7 @@ export function CalculatorWindow({
   return (
     <div
       ref={containerRef}
-      className={`fixed ${width} select-none rounded-lg border border-gray-300 bg-white shadow-lg`}
+      className={`fixed ${width} max-w-[calc(100vw-2rem)] max-md:!left-4 select-none rounded-lg border border-slate-200 bg-white shadow-lg dark:border-slate-700 dark:bg-slate-800`}
       style={{ left: position.x, top: position.y, zIndex }}
       onPointerDown={handlePointerDown}
     >
@@ -65,7 +65,7 @@ export function CalculatorWindow({
           <X className="h-4 w-4" />
         </button>
       </div>
-      <div className="space-y-4 px-5 py-5 text-sm overflow-hidden">{children}</div>
+      <div className="space-y-4 overflow-hidden px-5 py-5 text-sm">{children}</div>
     </div>
   );
 }
