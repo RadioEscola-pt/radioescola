@@ -1,0 +1,95 @@
+# CLAUDE.md
+
+## Commands
+
+```bash
+bun install          # Install dependencies (bun is the package manager, not npm)
+bun run dev          # Start dev server (Next.js 16)
+bun run build        # Production build
+bun run start        # Start production server
+bun run lint         # ESLint
+bun run test         # Vitest (unit + integration)
+bun run test:watch   # Vitest in watch mode
+bun run test:coverage # Vitest with V8 coverage
+bun run type-check   # tsc --noEmit
+./deploy.sh          # Pull, install, build, PM2 restart (app name: radioescola)
+```
+
+## Architecture
+
+Next.js 16 App Router with React 19, TypeScript (strict), Tailwind CSS v4.
+
+**Routing**: `/app/` with dynamic `[category]` segments (values: `'3'`, `'2'`, `'1'`).
+
+**Key routes**:
+- `/browse/[category]` - Question browser (+ `/flash`, `/smart-practice` sub-routes)
+- `/exam/[category]` - Timed 40-question exam simulation
+- `/drill` - Quick 10-question drill
+- `/dashboard` - Progress with gamification
+- `/study` - Study materials index
+
+**API routes**: `/api/data`, `/api/notes/[category]/[id]`, `/api/study-items`, `/api/submit-exam`
+
+**Provider chain** (in root layout): Theme → Progress → Calculator → PWA
+
+**Data flow**: Static JSON in `/public/data/cat{1,2,3}.json` → `loadData()` fetches all 3 in parallel. All user progress stored in localStorage (key: `hamradio_progress`). No backend database.
+
+## Key Directories
+
+```
+app/             # Next.js App Router pages and API routes
+components/      # ui/, providers/, calculators/, gamification/, shared/, settings/
+lib/             # Core logic: i18n/, types/, config/, storage/, gamification/, spaced-repetition/, utils/
+content/notes/   # MDX files per question (cat1/, cat2/, cat3/)
+messages/        # i18n JSON: en.json, pt.json
+hooks/           # React hooks: useProgress, useGamification, useExamTimer, etc.
+public/data/     # Question bank JSON + notes-index.json
+public/exams/    # PDF exam papers (cat1/, cat2/, cat3/)
+specs/           # Feature specifications
+__tests__/       # unit/, integration/, contracts/
+next.config.js   # Next.js configuration
+tailwind.config.js # Tailwind CSS v4 config
+```
+
+## i18n
+
+Uses `next-intl` v4. Default locale is **Portuguese (pt)**, also supports English (en).
+- Messages in `messages/{en,pt}.json`
+- Locale config in `lib/i18n/config.ts`
+- Middleware sets locale cookie from Accept-Language header
+- Use `useTranslations('SectionName')` in components
+
+## Gotchas
+
+- **Question correctIndex is 1-indexed** in JSON data, converted to 0-indexed in code: `(qObj.correctIndex ?? 1) - 1`
+- **Category order is 3→2→1** (not ascending). Category 3 = beginner, 1 = advanced (Portuguese licensing progression)
+- **Exam scoring penalty**: -0.25 per wrong answer (hardcoded in `lib/config/exam.ts`)
+- **Image paths**: Questions store just the filename; code prepends `/images/cat{id}/`
+- **Progress version migration**: Auto-migrates localStorage on load if version < `PROGRESS_VERSION` (currently V3)
+- **Exam replay via URL params**: `q=` (question IDs), `a=` (base36-encoded answers), `t=` (time remaining) — no server storage needed
+- **Calculator is a modal context**, not a route — opening calculators doesn't change URL
+
+## Code Style
+
+- TypeScript strict mode with `noUncheckedIndexedAccess` and `noImplicitReturns`
+- Path alias: `@/*` maps to project root
+- Components use `"use client"` directive where needed
+- Radix UI primitives in `components/ui/`
+- Tailwind CSS v4 with `dark:` prefix for dark mode (`darkMode: 'class'`)
+
+## Testing
+
+- **Framework**: Vitest + React Testing Library + jsdom
+- **Location**: `__tests__/{unit,integration,contracts}/`
+- **Pattern**: `*.test.{ts,tsx}`
+- **Setup**: `vitest.setup.ts` (excluded from tsconfig)
+
+## Environment Variables
+
+```
+RESEND_API_KEY=           # Email service for exam PDF submissions
+EXAM_SUBMISSION_EMAIL=    # Recipient for submitted exams
+RESEND_FROM_EMAIL=        # Sender email (default: onboarding@resend.dev)
+```
+
+Only needed for the `/submit-exam` feature. The app runs fully without them.
