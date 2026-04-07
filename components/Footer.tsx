@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Github, MessageCircle, Smartphone, Bug, Info } from "lucide-react";
+import { Github, MessageCircle, Smartphone, Bug, Info, Radio } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { EXTERNAL_LINKS } from "@/lib/config";
 
@@ -84,8 +84,8 @@ export default function Footer() {
 
           {/* Logo */}
           <div className="flex items-center gap-2 text-slate-400 dark:text-slate-500">
-            <span className="text-lg">📻</span>
-            <span className="text-sm font-medium">Rádio Escola</span>
+            <Radio className="h-4 w-4" />
+            <span className="text-sm font-medium tracking-tight">Rádio Escola</span>
           </div>
         </div>
       </div>

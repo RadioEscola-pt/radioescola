@@ -290,7 +290,8 @@
       "fileTooLarge": "{count, plural, one {Ficheiro ignorado — excede {maxSize} MB. Tenta reduzir o tamanho.} other {# ficheiros ignorados — excedem {maxSize} MB. Tenta reduzir o tamanho.}}",
       "unsupportedFormat": "{count, plural, one {Ficheiro ignorado — usa JPG, PNG ou PDF.} other {# ficheiros ignorados — usa JPG, PNG ou PDF.}}",
       "processingError": "Não foi possível processar os ficheiros. Tenta novamente.",
-      "processing": "A processar..."
+      "processing": "A processar...",
+      "uploadLink": "ou carrega ficheiros"
     },
     "pages": {
       "title": "Páginas ({count})",

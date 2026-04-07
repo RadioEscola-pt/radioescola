@@ -68,7 +68,7 @@ export function PageThumbnail({ page, index, onDelete, onRotate }: PageThumbnail
           </div>
         ) : (
           <img
-            src={page.dataUrl}
+            src={page.thumbnailDataUrl || page.dataUrl}
             alt={`Page ${index + 1}`}
             className="w-full h-full object-cover"
             style={{ transform: `rotate(${page.rotation}deg)` }}

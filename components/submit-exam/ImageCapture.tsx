@@ -5,7 +5,11 @@ import { useTranslations } from "next-intl";
 import { Camera, Upload, FileImage } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { fileToDataUrl } from "@/lib/utils/pdf-generator";
+import {
+  fileToDataUrl,
+  compressImageForSubmission,
+  compressImageForThumbnail,
+} from "@/lib/utils/pdf-generator";
 import type { ExamPage } from "@/lib/types";
 
 // Fallback for browsers without crypto.randomUUID
@@ -58,12 +62,26 @@ export function ImageCapture({ onCapture }: ImageCaptureProps) {
             tooLarge.push(file.name);
             continue;
           }
-          if (file.type === "application/pdf" || file.type.startsWith("image/")) {
+          if (file.type.startsWith("image/")) {
+            const [dataUrl, thumbnailDataUrl] = await Promise.all([
+              compressImageForSubmission(file),
+              compressImageForThumbnail(file),
+            ]);
+            pages.push({
+              id: generateId(),
+              file,
+              dataUrl,
+              thumbnailDataUrl,
+              rotation: 0,
+              originalName: file.name,
+            });
+          } else if (file.type === "application/pdf") {
             const dataUrl = await fileToDataUrl(file);
             pages.push({
               id: generateId(),
               file,
               dataUrl,
+              thumbnailDataUrl: "",
               rotation: 0,
               originalName: file.name,
             });
@@ -144,24 +162,36 @@ export function ImageCapture({ onCapture }: ImageCaptureProps) {
       )}
 
       {/* Action buttons */}
-      <div className="flex gap-3 mt-4">
-        {/* Camera button - mobile only, uses environment (back) camera */}
-        <Button
-          type="button"
-          onClick={() => cameraInputRef.current?.click()}
-          disabled={isProcessing}
-          className="flex-1 md:hidden"
-        >
-          <Camera className="h-4 w-4" />
-          {t("takePhoto")}
-        </Button>
+      <div className="mt-4 space-y-2">
+        {/* Mobile: camera primary, upload as secondary link */}
+        <div className="md:hidden space-y-2">
+          <Button
+            type="button"
+            onClick={() => cameraInputRef.current?.click()}
+            disabled={isProcessing}
+            className="w-full"
+          >
+            <Camera className="h-4 w-4" />
+            {t("takePhoto")}
+          </Button>
+          <button
+            type="button"
+            onClick={() => fileInputRef.current?.click()}
+            disabled={isProcessing}
+            className="w-full text-center text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors disabled:opacity-50"
+          >
+            <Upload className="h-3.5 w-3.5 inline mr-1.5" />
+            {isProcessing ? t("processing") : t("uploadLink")}
+          </button>
+        </div>
 
+        {/* Desktop: upload button only */}
         <Button
           type="button"
           variant="outline"
           onClick={() => fileInputRef.current?.click()}
           disabled={isProcessing}
-          className="flex-1"
+          className="hidden md:inline-flex w-full"
         >
           <Upload className="h-4 w-4" />
           {isProcessing ? t("processing") : t("uploadFiles")}

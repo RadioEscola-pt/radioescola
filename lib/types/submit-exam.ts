@@ -5,6 +5,7 @@ export interface ExamPage {
   id: string;
   file: File;
   dataUrl: string;
+  thumbnailDataUrl: string;
   rotation: 0 | 90 | 180 | 270;
   originalName: string;
 }

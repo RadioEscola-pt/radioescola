@@ -290,7 +290,8 @@
       "fileTooLarge": "{count, plural, one {File skipped — exceeds {maxSize} MB. Try reducing the file size.} other {# files skipped — exceed {maxSize} MB. Try reducing the file sizes.}}",
       "unsupportedFormat": "{count, plural, one {File skipped — use JPG, PNG, or PDF.} other {# files skipped — use JPG, PNG, or PDF.}}",
       "processingError": "Couldn't process the files. Please try again.",
-      "processing": "Processing..."
+      "processing": "Processing...",
+      "uploadLink": "or upload from files"
     },
     "pages": {
       "title": "Pages ({count})",

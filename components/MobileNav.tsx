@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Upload, Menu, GraduationCap, BarChart3, Settings, Globe, Zap } from "lucide-react";
+import { Home, BookOpen, FileText, Upload, Menu, GraduationCap, BarChart3, Settings, Globe, Zap, Radio } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -65,9 +65,9 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
       </SheetTrigger>
       <SheetContent side="right" className="w-[300px] overflow-y-auto">
         <SheetHeader className="text-left">
-          <SheetTitle className="flex items-center gap-2 text-slate-800">
-            <span className="text-xl">📻</span>
-            Rádio Escola
+          <SheetTitle className="flex items-center gap-2 text-slate-800 dark:text-slate-100">
+            <Radio className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+            <span className="tracking-tight">Rádio Escola</span>
           </SheetTitle>
         </SheetHeader>
 

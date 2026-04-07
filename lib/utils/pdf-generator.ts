@@ -3,7 +3,10 @@ import type { ExamPage } from "@/lib/types";
 
 const A4_WIDTH_MM = 210;
 const A4_HEIGHT_MM = 297;
-const JPEG_QUALITY = 0.85;
+const SUBMISSION_MAX_DIMENSION = 2048;
+const SUBMISSION_QUALITY = 0.8;
+const THUMBNAIL_MAX_DIMENSION = 300;
+const THUMBNAIL_QUALITY = 0.6;
 
 /**
  * Generate a PDF from exam pages
@@ -105,7 +108,7 @@ async function rotateImage(dataUrl: string, rotation: number): Promise<string> {
   ctx.rotate((rotation * Math.PI) / 180);
   ctx.drawImage(img, -img.width / 2, -img.height / 2);
 
-  return canvas.toDataURL("image/jpeg", JPEG_QUALITY);
+  return canvas.toDataURL("image/jpeg", SUBMISSION_QUALITY);
 }
 
 /**
@@ -118,6 +121,53 @@ function loadImage(src: string): Promise<HTMLImageElement> {
     img.onerror = reject;
     img.src = src;
   });
+}
+
+/**
+ * Compress an image file using canvas resize + JPEG encoding.
+ * Returns a data URL of the compressed image.
+ */
+export async function compressImage(
+  file: File,
+  maxDimension: number,
+  quality: number
+): Promise<string> {
+  const objectUrl = URL.createObjectURL(file);
+  try {
+    const img = await loadImage(objectUrl);
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    if (!ctx) throw new Error("Could not get canvas context");
+
+    // Scale to fit within maxDimension, preserving aspect ratio
+    let { width, height } = img;
+    if (width > maxDimension || height > maxDimension) {
+      if (width > height) {
+        height = Math.round((height * maxDimension) / width);
+        width = maxDimension;
+      } else {
+        width = Math.round((width * maxDimension) / height);
+        height = maxDimension;
+      }
+    }
+
+    canvas.width = width;
+    canvas.height = height;
+    ctx.drawImage(img, 0, 0, width, height);
+    return canvas.toDataURL("image/jpeg", quality);
+  } finally {
+    URL.revokeObjectURL(objectUrl);
+  }
+}
+
+/** Compress image for PDF submission (max 2048px, quality 0.8) */
+export function compressImageForSubmission(file: File): Promise<string> {
+  return compressImage(file, SUBMISSION_MAX_DIMENSION, SUBMISSION_QUALITY);
+}
+
+/** Compress image for thumbnail display (max 300px, quality 0.6) */
+export function compressImageForThumbnail(file: File): Promise<string> {
+  return compressImage(file, THUMBNAIL_MAX_DIMENSION, THUMBNAIL_QUALITY);
 }
 
 /**
