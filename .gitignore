@@ -40,3 +40,7 @@ npm-debug.log*
 bun.lockb
 
 tsconfig.tsbuildinfo
+
+# Playwright MCP
+.playwright-mcp/
+screenshots/

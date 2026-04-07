@@ -58,7 +58,7 @@
     "ctaExam": "Simular Exame (Cat 3)",
     "ctaBrowse": "Ver Questões",
     "categoriesHeading": "Categorias",
-    "sectionSubtitle": "Um caminho rápido e prático para poderes operar legalmente em Portugal.",
+    "sectionSubtitle": "São 3 passos para poderes transmitir legalmente em Portugal.",
     "categoryName": "Categoria {id}",
     "categoryBadge": "CAT {id}",
     "categoryLevel": {
@@ -68,11 +68,11 @@
     },
     "categoryBrowse": "Estudar",
     "categorySimulation": "Exame",
-    "processHeading": "Torna-te Radioamador",
+    "processHeading": "Como Tirar a Licença",
     "processSteps": {
       "study": {
         "title": "Estudar e Praticar",
-        "description": "Domina o programa da tua categoria alvo. Usa o nosso banco de questões e simulações de exame."
+        "description": "Escolhe a tua categoria e domina o programa oficial com questões reais de exame."
       },
       "examAndLicense": {
         "title": "Passar no Exame",
@@ -80,15 +80,24 @@
       },
       "operate": {
         "title": "Entrar no Ar",
-        "description": "Começa a operar dentro das tuas prerrogativas, seguindo a regulamentação nacional e CEPT."
+        "description": "Recebe o teu indicativo e começa a operar. Progride nas categorias para mais privilégios e acesso internacional."
       }
     },
     "tipText": "Junta-te a um clube local para mentoria e experiência prática.",
-    "learnMore": "Guia Completo",
+    "learnMore": "Ver Guia Completo",
     "externalLinks": {
-      "anacom": "ANACOM",
-      "clubs": "Associações"
-    }
+      "anacom": "Site da ANACOM",
+      "clubs": "Encontrar Clubes"
+    },
+    "featuresHeading": "Mais Formas de Estudar",
+    "drillTitle": "Treino Rápido",
+    "drillDescription": "10 questões em 5 minutos — testa os teus conhecimentos contra o relógio.",
+    "smartPracticeTitle": "Prática Inteligente",
+    "smartPracticeDescription": "Repetição espaçada adaptada ao teu desempenho.",
+    "flashcardsTitle": "Flashcards",
+    "flashcardsDescription": "Revê questões uma a uma, ao teu ritmo.",
+    "studyLibraryTitle": "Biblioteca de Estudo",
+    "studyLibraryDescription": "Tutoriais, guias e materiais de referência."
   },
   "Study": {
     "title": "Biblioteca de Estudo",

@@ -58,7 +58,7 @@
     "ctaExam": "Simulate Exam (Cat 3)",
     "ctaBrowse": "Browse Questions",
     "categoriesHeading": "Categories",
-    "sectionSubtitle": "A quick, practical path to get on the air legally in Portugal.",
+    "sectionSubtitle": "Three steps to transmitting legally in Portugal.",
     "categoryName": "Category {id}",
     "categoryBadge": "CAT {id}",
     "categoryLevel": {
@@ -68,11 +68,11 @@
     },
     "categoryBrowse": "Study",
     "categorySimulation": "Exam",
-    "processHeading": "Become a Licensed Ham Radio Operator",
+    "processHeading": "How to Get Licensed",
     "processSteps": {
       "study": {
         "title": "Study & Practice",
-        "description": "Master the syllabus for your target category. Use our question bank and exam simulations to prepare."
+        "description": "Pick your category and master the official syllabus with real exam questions."
       },
       "examAndLicense": {
         "title": "Pass the Exam",
@@ -80,15 +80,24 @@
       },
       "operate": {
         "title": "Get On the Air",
-        "description": "Start operating within your category privileges, following national and CEPT regulations."
+        "description": "Receive your callsign and start operating. Progress through categories for more privileges and international access."
       }
     },
     "tipText": "Join a local club for mentoring and hands-on experience.",
-    "learnMore": "Full Guide",
+    "learnMore": "See Full Guide",
     "externalLinks": {
-      "anacom": "ANACOM",
-      "clubs": "Clubs"
-    }
+      "anacom": "ANACOM Website",
+      "clubs": "Find Clubs"
+    },
+    "featuresHeading": "More Ways to Study",
+    "drillTitle": "Quick Drill",
+    "drillDescription": "10 questions in 5 minutes — test your knowledge against the clock.",
+    "smartPracticeTitle": "Smart Practice",
+    "smartPracticeDescription": "Spaced repetition adapted to your performance.",
+    "flashcardsTitle": "Flashcards",
+    "flashcardsDescription": "Review questions one by one, at your pace.",
+    "studyLibraryTitle": "Study Library",
+    "studyLibraryDescription": "Tutorials, guides, and reference materials."
   },
   "Study": {
     "title": "Study Library",

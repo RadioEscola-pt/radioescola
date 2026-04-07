@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { BookOpen, IdCard, Radio, ExternalLink, Building2 } from "lucide-react";
+import { BookOpen, IdCard, Radio, ExternalLink, Building2, ArrowRight, Zap, Brain, Layers } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { CATEGORIES, CATEGORY_STYLES, CATEGORY_IMAGES } from "@/lib/config";
 import { Button } from "@/components/ui/button";
@@ -68,7 +68,7 @@ export default async function HomePage() {
             return (
               <div
                 key={id}
-                className="group relative overflow-hidden rounded-2xl h-64"
+                className="group relative overflow-hidden rounded-2xl h-64 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 <img
                   src={image}
@@ -100,6 +100,48 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <section className="mt-10">
+        <h2 className="text-2xl font-semibold mb-5">{t("featuresHeading")}</h2>
+
+        <Link
+          href="/drill"
+          className="flex items-center gap-4 px-5 py-4 rounded-xl bg-amber-50 border border-amber-200/60 hover:bg-amber-100/80 dark:bg-amber-950/30 dark:border-amber-800/40 dark:hover:bg-amber-950/50 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md group mb-4"
+        >
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-amber-500 text-white animate-gentle-pulse">
+            <Zap className="h-5 w-5" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="font-semibold text-slate-900 dark:text-slate-100">{t("drillTitle")}</p>
+            <p className="text-sm text-slate-600 dark:text-slate-400">{t("drillDescription")}</p>
+          </div>
+          <ArrowRight className="h-5 w-5 shrink-0 text-slate-400 group-hover:text-amber-600 group-hover:translate-x-0.5 transition-all" aria-hidden />
+        </Link>
+
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {([
+            { href: "/browse/3/smart-practice", icon: Brain, titleKey: "smartPracticeTitle", descKey: "smartPracticeDescription" },
+            { href: "/browse/3/flash", icon: Layers, titleKey: "flashcardsTitle", descKey: "flashcardsDescription" },
+            { href: "/study", icon: BookOpen, titleKey: "studyLibraryTitle", descKey: "studyLibraryDescription" },
+          ] as const).map((feature) => {
+            const Icon = feature.icon;
+            return (
+              <Link
+                key={feature.href}
+                href={feature.href}
+                className="flex items-start gap-3 px-4 py-3.5 rounded-xl bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all duration-200 hover:-translate-y-0.5 group"
+              >
+                <Icon className="h-5 w-5 shrink-0 mt-0.5 text-slate-500 dark:text-slate-400 group-hover:text-amber-500 transition-colors" />
+                <div className="flex-1 min-w-0">
+                  <p className="font-medium text-sm text-slate-900 dark:text-slate-100">{t(feature.titleKey)}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{t(feature.descKey)}</p>
+                </div>
+                <ArrowRight className="h-4 w-4 shrink-0 mt-0.5 text-slate-300 dark:text-slate-600 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" aria-hidden />
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
       <section className="mt-10 -mx-4 md:mx-0 md:rounded-2xl overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900 dark:from-slate-900 dark:to-black">
         <div className="p-6 md:p-10">
           <div className="text-center mb-8">
@@ -126,29 +168,27 @@ export default async function HomePage() {
             ))}
           </div>
 
-          <div className="mt-8 pt-6 border-t border-white/10">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <p className="text-sm text-slate-400 flex items-center gap-2">
-                <Building2 className="h-4 w-4 text-amber-500" aria-hidden />
-                {t("tipText")}
-              </p>
-              <div className="flex flex-wrap justify-center gap-3">
-                <Button asChild>
-                  <a href="https://www.anacom.pt" target="_blank" rel="noreferrer">
-                    {t("externalLinks.anacom")}
-                    <ExternalLink className="h-4 w-4" aria-hidden />
-                  </a>
-                </Button>
-                <Button variant="outline" asChild>
-                  <a href="https://radioamador.info/associations" target="_blank" rel="noreferrer">
-                    {t("externalLinks.clubs")}
-                    <ExternalLink className="h-4 w-4" aria-hidden />
-                  </a>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link href="/ser-radioamador">{t("learnMore")}</Link>
-                </Button>
-              </div>
+          <div className="mt-8 pt-6 border-t border-white/10 text-center">
+            <p className="text-sm text-slate-400 flex items-center justify-center gap-2 mb-4">
+              <Building2 className="h-4 w-4 text-amber-500 shrink-0" aria-hidden />
+              {t("tipText")}
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Button asChild>
+                <Link href="/ser-radioamador">{t("learnMore")}</Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <a href="https://www.anacom.pt" target="_blank" rel="noreferrer">
+                  {t("externalLinks.anacom")}
+                  <ExternalLink className="h-4 w-4" aria-hidden />
+                </a>
+              </Button>
+              <Button variant="outline" asChild>
+                <a href="https://radioamador.info/associations" target="_blank" rel="noreferrer">
+                  {t("externalLinks.clubs")}
+                  <ExternalLink className="h-4 w-4" aria-hidden />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
