@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 
 export default async function HomePage() {
   const t = await getTranslations("Home");
-  const defaultStyle = CATEGORY_STYLES["3"];
 
   const processSteps = [
     {
@@ -32,32 +31,11 @@ export default async function HomePage() {
 
   return (
     <div className="py-8">
-      <section className="relative overflow-hidden mb-8 -mx-4 md:mx-0 md:rounded-xl">
-        <div
-          className="absolute inset-0 bg-cover bg-center blur-[2px] scale-105"
-          style={{ backgroundImage: "url('https://www.radioescola.pt/images/header2.jpg')" }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{ background: "linear-gradient(to right, rgba(180, 83, 9, 0.9), rgba(247, 149, 22, 0.8))" }}
-        />
-        <div className="relative px-6 py-12 md:py-16">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-white drop-shadow-md">{t("heroTitle")}</h1>
-          <p className="mt-3 text-white/90 max-w-2xl drop-shadow-sm">{t("heroSubtitle")}</p>
-          <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
-            <Button asChild>
-              <Link href="/exam/3">{t("ctaExam")}</Link>
-            </Button>
-            <Button variant="secondary" asChild>
-              <Link href="/browse/3">{t("ctaBrowse")}</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       <section>
-        <h2 className="text-xl font-semibold mb-4">{t("categoriesHeading")}</h2>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <h1 className="mt-4 text-2xl md:text-3xl font-medium text-slate-700 dark:text-slate-300">
+          {t("heroPrefix")} <span className="text-amber-600 dark:text-amber-400">{t("heroAccent")}</span>
+        </h1>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {CATEGORIES.map((id) => {
             const s = CATEGORY_STYLES[id];
             const name = t("categoryName", { id });

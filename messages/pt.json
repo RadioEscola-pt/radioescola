@@ -54,7 +54,8 @@
   },
   "Home": {
     "heroTitle": "Rádio Escola",
-    "heroSubtitle": "Pratica com questões reais, faz exames cronometrados e revê resultados. Escolhe uma categoria para começar.",
+    "heroPrefix": "Escolhe uma categoria para",
+    "heroAccent": "começar a praticar.",
     "ctaExam": "Simular Exame (Cat 3)",
     "ctaBrowse": "Ver Questões",
     "categoriesHeading": "Categorias",

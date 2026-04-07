@@ -54,7 +54,8 @@
   },
   "Home": {
     "heroTitle": "Rádio Escola",
-    "heroSubtitle": "Practice with real questions, take timed exams, and review your results. Choose a category to get started.",
+    "heroPrefix": "Pick a category to",
+    "heroAccent": "start practicing.",
     "ctaExam": "Simulate Exam (Cat 3)",
     "ctaBrowse": "Browse Questions",
     "categoriesHeading": "Categories",
