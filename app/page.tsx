@@ -161,23 +161,23 @@ export default async function HomePage() {
       </section>
 
       {/* Process section */}
-      <section className="mt-16 md:mt-24 -mx-4 md:mx-0 md:rounded-2xl overflow-hidden bg-amber-950 dark:bg-amber-950/80">
+      <section className="mt-16 md:mt-24 -mx-4 md:mx-0 md:rounded-2xl overflow-hidden bg-stone-900 dark:bg-stone-800/50">
         <div className="p-6 md:p-10 lg:p-14">
           <h2 className="text-3xl md:text-4xl font-bold text-white">{t("processHeading")}</h2>
-          <p className="mt-2 text-amber-200/70 max-w-xl">{t("sectionSubtitle")}</p>
+          <p className="mt-2 text-stone-400 max-w-xl">{t("sectionSubtitle")}</p>
 
           <div className="mt-10 grid gap-8 md:grid-cols-3">
             {processSteps.map((step) => (
               <div key={step.title}>
-                <span className="text-4xl font-black text-amber-500/30">{step.number}</span>
+                <span className="text-4xl font-black text-amber-500/25">{step.number}</span>
                 <h3 className="mt-2 text-xl font-semibold text-white">{step.title}</h3>
-                <p className="mt-2 text-sm text-amber-100/60 leading-relaxed">{step.description}</p>
+                <p className="mt-2 text-sm text-stone-400 leading-relaxed">{step.description}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-10 pt-6 border-t border-amber-800/50">
-            <p className="text-sm text-amber-200/50 flex items-center gap-2 mb-4">
+          <div className="mt-10 pt-6 border-t border-stone-700/50">
+            <p className="text-sm text-stone-500 flex items-center gap-2 mb-4">
               <Building2 className="h-4 w-4 text-amber-500 shrink-0" aria-hidden />
               {t("tipText")}
             </p>
@@ -185,13 +185,13 @@ export default async function HomePage() {
               <Button asChild>
                 <Link href="/ser-radioamador">{t("learnMore")}</Link>
               </Button>
-              <Button variant="outline" className="border-amber-700 text-amber-200 hover:bg-amber-900 hover:text-amber-100 dark:border-amber-700 dark:text-amber-200 dark:hover:bg-amber-900" asChild>
+              <Button variant="ghost" className="border border-stone-500 text-white bg-transparent hover:bg-stone-700 hover:text-white dark:text-white dark:hover:bg-stone-700" asChild>
                 <a href="https://www.anacom.pt" target="_blank" rel="noreferrer">
                   {t("externalLinks.anacom")}
                   <ExternalLink className="h-4 w-4" aria-hidden />
                 </a>
               </Button>
-              <Button variant="outline" className="border-amber-700 text-amber-200 hover:bg-amber-900 hover:text-amber-100 dark:border-amber-700 dark:text-amber-200 dark:hover:bg-amber-900" asChild>
+              <Button variant="ghost" className="border border-stone-500 text-white bg-transparent hover:bg-stone-700 hover:text-white dark:text-white dark:hover:bg-stone-700" asChild>
                 <a href="https://radioamador.info/associations" target="_blank" rel="noreferrer">
                   {t("externalLinks.clubs")}
                   <ExternalLink className="h-4 w-4" aria-hidden />
