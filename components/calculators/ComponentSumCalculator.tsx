@@ -165,7 +165,7 @@ const ComponentSumCalculator: React.FC<CalculatorInstanceProps> = ({
     <CalculatorWindow
       title={t("title")}
       color="green"
-      width="w-80"
+      width="w-96"
       initialPosition={initialPosition}
       zIndex={zIndex}
       onClose={onClose}
@@ -230,21 +230,21 @@ const ComponentSumCalculator: React.FC<CalculatorInstanceProps> = ({
             {t("add")}
           </button>
         </div>
-        <div className="max-h-48 space-y-2 overflow-y-auto">
+        <div className="max-h-64 space-y-2">
           {components.map((comp, index) => (
-            <div key={comp.id} className="flex items-center gap-2">
-              <span className="text-xs text-gray-500 w-6">{index + 1}.</span>
+            <div key={comp.id} className="flex items-center gap-1.5">
+              <span className="text-xs text-gray-500 w-5 shrink-0">{index + 1}.</span>
               <input
                 type="text"
                 value={comp.value}
                 onChange={(e) => updateComponentValue(comp.id, e.target.value)}
-                className="flex-1 rounded border border-gray-300 px-2 py-1 text-sm focus:border-green-500 focus:outline-none focus:ring"
+                className="min-w-0 flex-1 rounded border border-gray-300 px-2 py-1 text-sm focus:border-green-500 focus:outline-none focus:ring"
                 placeholder={t("value")}
               />
               <select
                 value={comp.unit}
                 onChange={(e) => updateComponentUnit(comp.id, e.target.value)}
-                className="rounded border border-gray-300 px-2 py-1 text-sm focus:border-green-500 focus:outline-none focus:ring"
+                className="shrink-0 rounded border border-gray-300 px-1.5 py-1 text-sm focus:border-green-500 focus:outline-none focus:ring"
               >
                 {getUnitsForType(componentType).map((unit) => (
                   <option key={unit} value={unit}>
@@ -256,7 +256,7 @@ const ComponentSumCalculator: React.FC<CalculatorInstanceProps> = ({
                 <button
                   type="button"
                   onClick={() => removeComponent(comp.id)}
-                  className="rounded p-1 text-red-600 transition hover:bg-red-50"
+                  className="shrink-0 rounded p-1 text-red-600 transition hover:bg-red-50"
                 >
                   <Trash2 className="h-4 w-4" />
                 </button>

@@ -65,7 +65,7 @@ export function CalculatorWindow({
           <X className="h-4 w-4" />
         </button>
       </div>
-      <div className="space-y-3 px-4 py-4 text-sm">{children}</div>
+      <div className="space-y-4 px-5 py-5 text-sm overflow-hidden">{children}</div>
     </div>
   );
 }
