@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <title>Procurar Perguntas — Rádio Escola</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <base href="/" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/questions.css" />
+
+    <script type="text/javascript" src="js/Popup.js"></script>
+    <script type="text/javascript" src="js/LoadChapter.js"></script>
+    <script type="text/javascript" src="js/LocalStorageManager.js"></script>
+    <script type="text/javascript" src="js/questions/Storage.js"></script>
+    <script type="text/javascript" src="js/questions/Questions.js"></script>
+    <script type="text/javascript" src="js/classUtils.js"></script>
+    <script type="text/javascript" src="js/questions/SimulateQuiz.js"></script>
+    <script type="text/javascript" src="js/questions/FavQuiz.js"></script>
+    <script type="text/javascript" src="js/questions/Quiz.js"></script>
+    <script type="text/javascript" src="js/questions/QuestionStatus.js"></script>
+    <script type="text/javascript" src="js/MatomoOptOutManager.js"></script>
+    <script type="text/javascript" src="js/DarkModeToggle.js"></script>
+    <script type="text/javascript" src="js/questions/SearchQuiz.js"></script>
+  </head>
+
+  <body class="bg-slate-50 dark:bg-slate-800 dark:text-white">
+    <header
+      class="flex justify-center font-header h-[15vh] bg-header bg-center bg-cover relative"
+    >
+      <div
+        class="w-full h-full flex justify-center items-center bg-[rgba(0,0,0,0.3)] backdrop-blur-sm"
+      >
+        <a
+          href="/"
+          class="self-center font-header text-[#ff9a17] text-2xl md:text-3xl drop-shadow-[0px_2px_0px_#b26b10]"
+          >Rádio Escola</a
+        >
+      </div>
+      <button
+        id="theme-toggle"
+        type="button"
+        class="absolute top-4 right-4 p-2 text-white rounded-lg hover:bg-[rgba(255,255,255,0.1)] focus:outline-none z-10"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+        </svg>
+      </button>
+    </header>
+
+    <main class="p-4 md:p-8">
+      <div class="max-w-screen-md m-auto">
+        <h1 class="text-2xl font-bold mb-2 dark:text-white">Procurar Perguntas</h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">
+          <span id="searchQuestionCount">...</span> perguntas carregadas.
+          Escreva os termos de pesquisa para filtrar.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3 mb-4">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Ex: impedância, antena, frequência..."
+            class="flex-1 p-3 border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+          />
+          <button
+            id="searchBtn"
+            class="px-6 py-3 bg-sky-700 text-white font-medium rounded-lg hover:bg-sky-800 focus:ring-4 focus:ring-sky-300 dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800"
+          >
+            Procurar
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2 mb-6 text-sm flex-wrap">
+          <label class="cat-toggle cursor-pointer">
+            <input type="checkbox" id="cat1" checked class="hidden peer" />
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold border-2 border-yellow-400 transition-colors select-none peer-checked:bg-yellow-400 peer-checked:text-black text-yellow-600 dark:text-yellow-400 bg-transparent">Cat 1</span>
+          </label>
+          <label class="cat-toggle cursor-pointer">
+            <input type="checkbox" id="cat2" checked class="hidden peer" />
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold border-2 border-blue-400 transition-colors select-none peer-checked:bg-blue-400 peer-checked:text-black text-blue-600 dark:text-blue-400 bg-transparent">Cat 2</span>
+          </label>
+          <label class="cat-toggle cursor-pointer">
+            <input type="checkbox" id="cat3" checked class="hidden peer" />
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold border-2 border-green-400 transition-colors select-none peer-checked:bg-green-400 peer-checked:text-black text-green-600 dark:text-green-400 bg-transparent">Cat 3</span>
+          </label>
+          <span class="text-gray-300 dark:text-gray-600 mx-1">|</span>
+          <label class="cursor-pointer">
+            <input type="checkbox" id="colorCards" checked class="hidden peer" />
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-medium border border-gray-300 dark:border-gray-600 transition-colors select-none peer-checked:bg-gray-200 peer-checked:dark:bg-gray-700 text-gray-500 dark:text-gray-400 bg-transparent">Colorir</span>
+          </label>
+        </div>
+      </div>
+
+      <div id="searchResults"></div>
+
+      <div id="searchEmpty" class="max-w-screen-md m-auto mt-4">
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Experimente procurar por:</p>
+        <div class="flex flex-wrap gap-2 mb-6">
+          <button class="search-suggestion px-3 py-1.5 text-sm bg-white border border-gray-300 rounded-full hover:bg-sky-50 hover:border-sky-300 dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:text-gray-200 cursor-pointer transition-colors">impedância</button>
+          <button class="search-suggestion px-3 py-1.5 text-sm bg-white border border-gray-300 rounded-full hover:bg-sky-50 hover:border-sky-300 dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:text-gray-200 cursor-pointer transition-colors">antena dipolo</button>
+          <button class="search-suggestion px-3 py-1.5 text-sm bg-white border border-gray-300 rounded-full hover:bg-sky-50 hover:border-sky-300 dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:text-gray-200 cursor-pointer transition-colors">lei de Ohm</button>
+          <button class="search-suggestion px-3 py-1.5 text-sm bg-white border border-gray-300 rounded-full hover:bg-sky-50 hover:border-sky-300 dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:text-gray-200 cursor-pointer transition-colors">modulação FM</button>
+          <button class="search-suggestion px-3 py-1.5 text-sm bg-white border border-gray-300 rounded-full hover:bg-sky-50 hover:border-sky-300 dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:text-gray-200 cursor-pointer transition-colors">frequência</button>
+          <button class="search-suggestion px-3 py-1.5 text-sm bg-white border border-gray-300 rounded-full hover:bg-sky-50 hover:border-sky-300 dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:text-gray-200 cursor-pointer transition-colors">potência</button>
+        </div>
+        <p class="text-xs text-gray-400 dark:text-gray-500">Dica: pode usar vários termos em simultâneo para refinar a pesquisa.</p>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new DarkModeToggle();
+        new SearchQuiz();
+      });
+    </script>
+  </body>
+</html>
