@@ -38,7 +38,7 @@ class Quiz extends Classes([Questions, Storage]) {
 					welcomeDiv.innerHTML = "";
 					var indexBlock = document.createElement("div");
 					indexBlock.id = "qIndex";
-					indexBlock.className = "max-w-screen-md m-auto list-none m-0 p-2 rounded mb-5 overflow-x-scroll overflow-y-hidden bg-slate-200 dark:bg-slate-600 sticky flex items-center justify-start top-[10px] gap-[5px]";
+					indexBlock.className = "max-w-screen-md m-auto list-none m-0 p-2 rounded mb-5 overflow-x-auto overflow-y-hidden bg-slate-200 dark:bg-slate-600 sticky flex items-center justify-start top-[10px] gap-[5px]";
 
 					welcomeDiv.appendChild(indexBlock);
 					this.quiz.indexBlock = indexBlock;
@@ -136,8 +136,8 @@ class Quiz extends Classes([Questions, Storage]) {
 
 		const isAtStart = safePage === 0;
 		const previousPage = Math.max(safePage - 1, 0);
-		createButton("Start", 0, { isDisabled: isAtStart });
-		createButton("Back", previousPage, { isDisabled: isAtStart });
+		createButton("Início", 0, { isDisabled: isAtStart });
+		createButton("Anterior", previousPage, { isDisabled: isAtStart });
 
 		const pagesAround = typeof this.paginationWindow === "number" ? Math.max(0, this.paginationWindow) : 3;
 
@@ -150,8 +150,8 @@ class Quiz extends Classes([Questions, Storage]) {
 
 		const isAtEnd = safePage === totalPages - 1;
 		const nextPage = Math.min(safePage + 1, totalPages - 1);
-		createButton("Next", nextPage, { isDisabled: isAtEnd });
-		createButton("Last", totalPages - 1, { isDisabled: isAtEnd });
+		createButton("Seguinte", nextPage, { isDisabled: isAtEnd });
+		createButton("Fim", totalPages - 1, { isDisabled: isAtEnd });
 	}
 
 
