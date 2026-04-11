@@ -4,16 +4,9 @@ import {
   BookOpen,
   Clock,
   Radio,
-  Award,
-  FileText,
+  ArrowRight,
   CheckCircle,
   RefreshCw,
-  User,
-  Zap,
-  GraduationCap,
-  Signal,
-  Layers,
-  ArrowRight,
 } from "lucide-react";
 import CategoryPowerInfo from "@/components/CategoryPowerInfo";
 import { Button } from "@/components/ui/button";
@@ -25,48 +18,42 @@ export default async function BecomeHamPage() {
     {
       id: "3",
       accent: "text-green-600 dark:text-green-400",
-      dot: "bg-green-400",
+      dot: "bg-green-500",
       badgeBg: "bg-green-100 dark:bg-green-900/50",
       numberColor: "text-green-100 dark:text-green-900/40",
     },
     {
       id: "2",
       accent: "text-amber-600 dark:text-amber-400",
-      dot: "bg-amber-400",
+      dot: "bg-amber-500",
       badgeBg: "bg-amber-100 dark:bg-amber-900/50",
       numberColor: "text-amber-100 dark:text-amber-900/40",
     },
     {
       id: "1",
       accent: "text-rose-600 dark:text-rose-400",
-      dot: "bg-rose-400",
+      dot: "bg-rose-500",
       badgeBg: "bg-rose-100 dark:bg-rose-900/50",
       numberColor: "text-rose-100 dark:text-rose-900/40",
     },
   ];
 
-  const categoryIcons = [
-    { key: "age", icon: User },
-    { key: "experience", icon: Clock },
-    { key: "privileges", icon: Zap },
-    { key: "exam", icon: GraduationCap },
-    { key: "power", icon: Signal },
-  ];
+  const detailKeys = ["age", "experience", "privileges", "exam", "power"] as const;
 
   const examProcessSteps = [
-    { icon: FileText, key: "registration" },
-    { icon: BookOpen, key: "preparation" },
-    { icon: CheckCircle, key: "exam" },
-    { icon: Award, key: "results" },
+    { key: "registration" },
+    { key: "preparation" },
+    { key: "exam" },
+    { key: "results" },
   ];
 
   const maintenanceSteps = ["annualRenewal", "annualFees", "compliance"];
 
   return (
     <div className="py-8">
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="mb-14">
-        <div className="flex items-start gap-4 mb-4">
+        <div className="flex items-start gap-4">
           <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-100 dark:bg-amber-900/40">
             <Radio className="h-6 w-6 text-amber-600 dark:text-amber-400" />
           </div>
@@ -81,17 +68,12 @@ export default async function BecomeHamPage() {
         </div>
       </section>
 
-      {/* Categories Overview */}
+      {/* Categories */}
       <section className="mb-14">
-        <div className="flex items-center gap-3 mb-1">
-          <div className="p-2 rounded-lg bg-amber-100 dark:bg-amber-900/30">
-            <Layers className="w-5 h-5 text-amber-600 dark:text-amber-400" />
-          </div>
-          <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
-            {t("categoriesTitle")}
-          </h2>
-        </div>
-        <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 ml-[52px]">
+        <h2 className="text-xl font-semibold text-slate-900 dark:text-white mb-1">
+          {t("categoriesTitle")}
+        </h2>
+        <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
           {t("categoriesIntro")}
         </p>
 
@@ -101,7 +83,7 @@ export default async function BecomeHamPage() {
               key={cat.id}
               className="group relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden hover:border-amber-300 dark:hover:border-amber-600 hover:shadow-lg transition-all"
             >
-              {/* Oversized number watermark */}
+              {/* Watermark number */}
               <span
                 className={`absolute -right-3 -top-4 text-[120px] font-black leading-none select-none pointer-events-none ${cat.numberColor}`}
                 aria-hidden="true"
@@ -109,8 +91,7 @@ export default async function BecomeHamPage() {
                 {cat.id}
               </span>
 
-              <div className="relative px-5 pt-5 pb-5">
-                {/* Category name with dot */}
+              <div className="relative px-5 py-5">
                 <div className="flex items-center gap-2 mb-4">
                   <span className={`w-2 h-2 rounded-full ${cat.dot}`} />
                   <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
@@ -118,11 +99,9 @@ export default async function BecomeHamPage() {
                   </h3>
                 </div>
 
-                {/* Details */}
-                <ul className="space-y-2">
-                  {categoryIcons.map(({ key, icon: Icon }) => (
-                    <li key={key} className="flex items-center gap-2.5">
-                      <Icon className={`h-3.5 w-3.5 shrink-0 ${cat.accent}`} />
+                <dl className="space-y-1.5 text-sm text-slate-600 dark:text-slate-300">
+                  {detailKeys.map((key) => (
+                    <div key={key}>
                       {key === "power" && cat.id === "3" ? (
                         <CategoryPowerInfo
                           text={t(`category${cat.id}.${key}`)}
@@ -132,13 +111,11 @@ export default async function BecomeHamPage() {
                           badgeBg={cat.badgeBg}
                         />
                       ) : (
-                        <span className="text-sm text-slate-600 dark:text-slate-300">
-                          {t(`category${cat.id}.${key}`)}
-                        </span>
+                        <dd>{t(`category${cat.id}.${key}`)}</dd>
                       )}
-                    </li>
+                    </div>
                   ))}
-                </ul>
+                </dl>
 
                 <Button asChild className="mt-5 w-full">
                   <Link href={`/browse/${cat.id}`}>
@@ -153,27 +130,20 @@ export default async function BecomeHamPage() {
         </div>
       </section>
 
-      {/* Wait Times - Progression Diagram */}
+      {/* Progression */}
       <section className="mb-14">
-        <div className="flex items-center gap-3 mb-1">
-          <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30">
-            <Clock className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-          </div>
-          <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
-            {t("waitTimesTitle")}
-          </h2>
-        </div>
-        <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 ml-[52px]">
+        <h2 className="text-xl font-semibold text-slate-900 dark:text-white mb-1">
+          {t("waitTimesTitle")}
+        </h2>
+        <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
           {t("waitTimesNote")}
         </p>
 
         {/* Desktop: horizontal track */}
         <div className="hidden sm:block">
           <div className="relative flex items-start">
-            {/* Continuous track line behind everything */}
             <div className="absolute top-5 left-[40px] right-[40px] h-0.5 bg-slate-200 dark:bg-slate-700" />
 
-            {/* Cat 3 */}
             <div className="relative flex-1 flex flex-col items-center">
               <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-green-500 text-white font-bold text-base shadow-sm">
                 3
@@ -182,7 +152,6 @@ export default async function BecomeHamPage() {
               <span className="text-xs text-slate-400">12+</span>
             </div>
 
-            {/* Wait: 2 years */}
             <div className="relative flex-1 flex flex-col items-center pt-[7px]">
               <div className="relative z-10 flex items-center gap-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1 shadow-sm">
                 <Clock className="h-3 w-3 text-slate-400" />
@@ -190,7 +159,6 @@ export default async function BecomeHamPage() {
               </div>
             </div>
 
-            {/* Cat 2 */}
             <div className="relative flex-1 flex flex-col items-center">
               <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-amber-500 text-white font-bold text-base shadow-sm">
                 2
@@ -199,7 +167,6 @@ export default async function BecomeHamPage() {
               <span className="text-xs text-slate-400">14+</span>
             </div>
 
-            {/* Wait: 1 year */}
             <div className="relative flex-1 flex flex-col items-center pt-[7px]">
               <div className="relative z-10 flex items-center gap-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1 shadow-sm">
                 <Clock className="h-3 w-3 text-slate-400" />
@@ -207,7 +174,6 @@ export default async function BecomeHamPage() {
               </div>
             </div>
 
-            {/* Cat 1 */}
             <div className="relative flex-1 flex flex-col items-center">
               <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-rose-500 text-white font-bold text-base shadow-sm">
                 1
@@ -221,10 +187,8 @@ export default async function BecomeHamPage() {
         {/* Mobile: vertical track */}
         <div className="sm:hidden">
           <div className="relative ml-5">
-            {/* Vertical track line */}
             <div className="absolute top-5 bottom-5 left-0 w-0.5 bg-slate-200 dark:bg-slate-700" />
 
-            {/* Cat 3 */}
             <div className="relative flex items-center gap-4 pb-3">
               <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-500 text-white font-bold text-base shadow-sm -ml-5">
                 3
@@ -235,7 +199,6 @@ export default async function BecomeHamPage() {
               </div>
             </div>
 
-            {/* Wait: 2 years */}
             <div className="relative flex items-center gap-4 py-2">
               <div className="relative z-10 flex items-center gap-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-2.5 py-0.5 shadow-sm -ml-[13px]">
                 <Clock className="h-3 w-3 text-slate-400" />
@@ -243,7 +206,6 @@ export default async function BecomeHamPage() {
               </div>
             </div>
 
-            {/* Cat 2 */}
             <div className="relative flex items-center gap-4 pb-3">
               <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-500 text-white font-bold text-base shadow-sm -ml-5">
                 2
@@ -254,7 +216,6 @@ export default async function BecomeHamPage() {
               </div>
             </div>
 
-            {/* Wait: 1 year */}
             <div className="relative flex items-center gap-4 py-2">
               <div className="relative z-10 flex items-center gap-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-2.5 py-0.5 shadow-sm -ml-[13px]">
                 <Clock className="h-3 w-3 text-slate-400" />
@@ -262,7 +223,6 @@ export default async function BecomeHamPage() {
               </div>
             </div>
 
-            {/* Cat 1 */}
             <div className="relative flex items-center gap-4">
               <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-rose-500 text-white font-bold text-base shadow-sm -ml-5">
                 1
@@ -278,66 +238,63 @@ export default async function BecomeHamPage() {
 
       {/* Exam Process */}
       <section className="mb-14">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="p-2 rounded-lg bg-green-100 dark:bg-green-900/30">
-            <FileText className="w-5 h-5 text-green-600 dark:text-green-400" />
-          </div>
-          <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
-            {t("examProcessTitle")}
-          </h2>
-        </div>
+        <h2 className="text-xl font-semibold text-slate-900 dark:text-white mb-6">
+          {t("examProcessTitle")}
+        </h2>
 
         <div className="space-y-3">
-          {examProcessSteps.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <div key={step.key} className="flex gap-4">
-                {/* Step number */}
-                <div className="flex flex-col items-center">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-500 text-white font-bold text-sm">
-                    {index + 1}
-                  </div>
-                  {index < examProcessSteps.length - 1 && (
-                    <div className="w-px flex-1 bg-amber-200 dark:bg-amber-800/50 my-1" />
-                  )}
+          {examProcessSteps.map((step, index) => (
+            <div key={step.key} className="flex gap-4">
+              <div className="flex flex-col items-center">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-semibold text-sm">
+                  {index + 1}
                 </div>
-
-                {/* Content */}
-                <div className="flex-1 pb-4">
-                  <div className="flex items-center gap-2.5 mb-1">
-                    <Icon className="h-4 w-4 text-amber-500 dark:text-amber-400" />
-                    <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100">
-                      {t(`examProcess.${step.key}.title`)}
-                    </h3>
-                  </div>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 ml-[26px] leading-relaxed">
-                    {t(`examProcess.${step.key}.description`)}
-                  </p>
-                </div>
+                {index < examProcessSteps.length - 1 && (
+                  <div className="w-px flex-1 bg-slate-200 dark:bg-slate-700 my-1" />
+                )}
               </div>
-            );
-          })}
+
+              <div className="flex-1 pb-4">
+                <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100 mb-0.5">
+                  {t(`examProcess.${step.key}.title`)}
+                </h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                  {t(`examProcess.${step.key}.description`)}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* License Maintenance */}
-      <section className="mb-8">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="p-2 rounded-lg bg-purple-100 dark:bg-purple-900/30">
-            <RefreshCw className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-          </div>
-          <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
+      {/* Maintenance + Closing CTA */}
+      <section className="rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/30 p-6">
+        <div className="flex items-center gap-2 mb-3">
+          <RefreshCw className="h-4 w-4 text-slate-400" />
+          <h2 className="text-sm font-semibold text-slate-900 dark:text-white">
             {t("maintenanceTitle")}
           </h2>
         </div>
-        <ul className="space-y-2.5">
+        <ul className="space-y-1.5 mb-6">
           {maintenanceSteps.map((step) => (
-            <li key={step} className="flex items-start gap-2.5 text-sm text-slate-600 dark:text-slate-300">
-              <CheckCircle className="h-4 w-4 mt-0.5 shrink-0 text-green-500 dark:text-green-400" />
+            <li key={step} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300">
+              <CheckCircle className="h-3.5 w-3.5 mt-0.5 shrink-0 text-green-500 dark:text-green-400" />
               {t(`maintenance.${step}`)}
             </li>
           ))}
         </ul>
+
+        <div className="border-t border-slate-200 dark:border-slate-700 pt-5 flex flex-col sm:flex-row sm:items-center gap-3">
+          <p className="text-sm text-slate-600 dark:text-slate-300 flex-1">
+            {t("ctaText")}
+          </p>
+          <Button asChild>
+            <Link href="/browse/3">
+              {t("ctaButton")}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
       </section>
     </div>
   );

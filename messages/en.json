@@ -688,7 +688,9 @@
       "annualRenewal": "Annual license renewal.",
       "annualFees": "Payment of annual fees.",
       "compliance": "Compliance with regulations and good practices of amateur radio."
-    }
+    },
+    "ctaText": "Ready to get started? Most operators begin with Category 3.",
+    "ctaButton": "Start studying"
   },
   "Share": {
     "title": "Share",

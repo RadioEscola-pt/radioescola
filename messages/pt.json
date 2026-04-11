@@ -688,7 +688,9 @@
       "annualRenewal": "Renovação anual da licença.",
       "annualFees": "Pagamento de taxas anuais.",
       "compliance": "Cumprimento das regulamentações e boas práticas do radioamadorismo."
-    }
+    },
+    "ctaText": "Pronto para começar? A maioria dos radioamadores começa pela Categoria 3.",
+    "ctaButton": "Começar a estudar"
   },
   "Share": {
     "title": "Partilhar",
