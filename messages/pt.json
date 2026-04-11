@@ -151,6 +151,8 @@
     "page": "Página {current} / {total}",
     "takeAnother": "Fazer Outro",
     "endQuiz": "Terminar",
+    "viewResults": "Ver Resultados",
+    "resultsSubtitle": "Resultados",
     "score": "Pontuação: {score} / {total}",
     "questionId": "ID: {id}",
     "correct": "Correto",
@@ -361,7 +363,7 @@
   },
   "ExamResults": {
     "title": "Resultados do Exame",
-    "subtitle": "Resumo do teu desempenho",
+    "subtitle": "Categoria {category}",
     "share": {
       "title": "Partilhar este exame",
       "description": "Copia este link para partilhar o teu exame e respostas.",
@@ -374,26 +376,47 @@
     },
     "status": {
       "passed": "Aprovado!",
-      "failed": "Reprovado"
+      "failed": "Reprovado",
+      "perfect": "Nota Máxima!",
+      "encouragePassed": "Bom trabalho — dominas a matéria.",
+      "encouragePassedHigh": "Impressionante! Quase perfeito.",
+      "encouragePassedPerfect": "Impecável. Nada a apontar.",
+      "encourageFailed": "Continua a estudar — estás a melhorar.",
+      "encourageFailedClose": "Tão perto! Mais um pouco de prática e consegues.",
+      "encourageFailedLow": "Não desistas. Foca-te nos temas que falhaste."
     },
     "time": {
       "remaining": "Restante:",
-      "elapsed": "Decorrido:"
+      "elapsed": "Decorrido:",
+      "finishedEarly": "Terminaste {minutes} min mais cedo",
+      "finishedVeryEarly": "Terminaste {minutes} min mais cedo — velocidade máxima!",
+      "usedFullTime": "Usaste a hora toda",
+      "usedMostTime": "Terminaste com {minutes} min de sobra"
     },
     "progress": {
-      "label": "Progresso",
-      "pass": "Passar: {score}",
-      "perfect": "Perfeito: {score}"
+      "label": "Pontuação",
+      "pass": "{score} para passar",
+      "perfect": "{score} máx"
+    },
+    "score": {
+      "points": "pts",
+      "passThreshold": "de {score} necessários",
+      "correct": "{count} certas",
+      "incorrect": "{count} erradas",
+      "unanswered": "{count} sem resposta"
     },
     "filter": {
       "all": "Todas ({count})"
     },
     "review": {
-      "empty": "Nenhuma questão corresponde aos filtros selecionados."
+      "empty": "Nenhuma nesta categoria.",
+      "emptyCorrect": "Nenhuma resposta correta ainda — revê após a próxima tentativa.",
+      "emptyAllCorrect": "Tudo certo! Nada para rever."
     },
     "buttons": {
       "close": "Fechar",
-      "takeAnother": "Fazer Outro Exame"
+      "takeAnother": "Fazer Outro Exame",
+      "tryAgain": "Tentar Outra Vez"
     }
   },
   "Dashboard": {

@@ -276,7 +276,10 @@
 
 @media (prefers-reduced-motion: reduce) {
   .animate-gentle-pulse,
-  .animate-result-pop {
+  .animate-result-pop,
+  .animate-badge-entrance,
+  .animate-score-pop,
+  .animate-progress-fill {
     animation: none;
   }
 

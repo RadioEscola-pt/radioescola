@@ -151,6 +151,8 @@
     "page": "Page {current} / {total}",
     "takeAnother": "Take Another",
     "endQuiz": "End Quiz",
+    "viewResults": "View Results",
+    "resultsSubtitle": "Results",
     "score": "Score: {score} / {total}",
     "questionId": "ID: {id}",
     "correct": "Correct",
@@ -361,7 +363,7 @@
   },
   "ExamResults": {
     "title": "Exam Results",
-    "subtitle": "Summary of your performance",
+    "subtitle": "Category {category}",
     "share": {
       "title": "Share this exam",
       "description": "Copy this link to share your exact exam and answers.",
@@ -374,26 +376,47 @@
     },
     "status": {
       "passed": "You Passed!",
-      "failed": "Not Passed"
+      "failed": "Not yet",
+      "perfect": "Perfect Score!",
+      "encouragePassed": "Solid work — you know your stuff.",
+      "encouragePassedHigh": "Impressive! Almost flawless.",
+      "encouragePassedPerfect": "Flawless. Nothing more to say.",
+      "encourageFailed": "Keep at it — you're getting closer.",
+      "encourageFailedClose": "So close! A little more practice and you've got this.",
+      "encourageFailedLow": "Don't give up. Focus on the topics you missed."
     },
     "time": {
       "remaining": "Remaining:",
-      "elapsed": "Elapsed:"
+      "elapsed": "Elapsed:",
+      "finishedEarly": "Finished {minutes} min early",
+      "finishedVeryEarly": "Finished {minutes} min early — speed demon!",
+      "usedFullTime": "Used the full hour",
+      "usedMostTime": "Finished with {minutes} min to spare"
     },
     "progress": {
-      "label": "Progress",
-      "pass": "Pass: {score}",
-      "perfect": "Perfect: {score}"
+      "label": "Score",
+      "pass": "{score} to pass",
+      "perfect": "{score} max"
+    },
+    "score": {
+      "points": "pts",
+      "passThreshold": "of {score} needed",
+      "correct": "{count} correct",
+      "incorrect": "{count} wrong",
+      "unanswered": "{count} skipped"
     },
     "filter": {
       "all": "All ({count})"
     },
     "review": {
-      "empty": "No questions match the selected filters."
+      "empty": "None in this category.",
+      "emptyCorrect": "No correct answers yet — check the Review tab after your next attempt.",
+      "emptyAllCorrect": "All correct! Nothing to review."
     },
     "buttons": {
       "close": "Close",
-      "takeAnother": "Take Another Exam"
+      "takeAnother": "Take Another Exam",
+      "tryAgain": "Try Again"
     }
   },
   "Dashboard": {

@@ -67,8 +67,8 @@ export function DialogContent({ className = '', children, ...rest }: BaseProps) 
       role="dialog"
       aria-modal="true"
       className={cn(
-        'bg-white rounded-lg shadow-2xl border',
-        'p-6',
+        'bg-card text-card-foreground rounded-lg shadow-2xl border',
+        'p-4 sm:p-6',
         className,
       )}
       {...rest}
@@ -96,7 +96,7 @@ export function DialogTitle({ className = '', children, ...rest }: BaseProps) {
 
 export function DialogDescription({ className = '', children, ...rest }: BaseProps) {
   return (
-    <p className={cn("text-sm text-gray-600", className)} {...rest}>
+    <p className={cn("text-sm text-muted-foreground", className)} {...rest}>
       {children}
     </p>
   );

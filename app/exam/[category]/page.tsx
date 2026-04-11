@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Category } from '@/lib/types';
 import { loadData } from '@/lib/data';
 import { EXAM_CONFIG, DEFAULT_CATEGORY } from '@/lib/config';
-import { ExamResultsModal } from '@/components/ExamResultsModal';
+import { ExamResults } from '@/components/ExamResults';
 import { PageLoading } from '@/components/shared/Loading';
 import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
 import { Button } from '@/components/ui/button';
@@ -83,7 +83,7 @@ export default function ExamPage() {
       if (sel === q.correctIndex) total += 1;
       else total -= WRONG_ANSWER_PENALTY;
     }
-    setScore(total);
+    setScore(Math.max(0, total));
   }, [answers, category]);
 
   // Save progress when quiz ends (only for fresh exams, not replays)
@@ -273,6 +273,45 @@ export default function ExamPage() {
   }
   const answeredCount = Object.keys(answers).length;
 
+  // Build review answers list (shared between results and replay views)
+  const reviewAnswers = category.questions.map((q, idx) => {
+    const sel = answers[q.id];
+    const status = sel === undefined ? 'unanswered' : sel === q.correctIndex ? 'correct' : 'incorrect';
+    return {
+      index: idx,
+      question: q.question,
+      options: q.options,
+      selectedIndex: sel,
+      correctIndex: q.correctIndex,
+      status: status as 'correct' | 'incorrect' | 'unanswered',
+    };
+  });
+
+  // Show results page when quiz is ended and results are open
+  if (resultsOpen) {
+    return (
+      <main className="-mx-4 sm:mx-0 pb-8">
+        <StudyHeader
+          categoryId={category.id}
+          mode="exam"
+          backHref="/"
+          subtitle={t('resultsSubtitle')}
+        />
+        <ExamResults
+          category={category.id}
+          score={score}
+          totalQuestions={category.questions.length}
+          timeLeft={timeLeft}
+          passingScore={PASSING_SCORE}
+          reviewAnswers={reviewAnswers}
+          onStartNew={startNewQuiz}
+          gamificationResult={gamificationResult}
+          gamificationEnabled={gamification?.isEnabled ?? false}
+        />
+      </main>
+    );
+  }
+
   return (
     <main className="-mx-4 sm:mx-0 pb-8">
       <StudyHeader
@@ -292,12 +331,9 @@ export default function ExamPage() {
 
         {/* End/New quiz button */}
         {quizEnded ? (
-          <button
-            className="px-3 py-1 bg-amber-500 hover:bg-amber-400 text-slate-900 text-xs font-semibold rounded-md transition-colors"
-            onClick={startNewQuiz}
-          >
-            {t('takeAnother')}
-          </button>
+          <Button size="sm" onClick={() => setResultsOpen(true)}>
+            {t('viewResults')}
+          </Button>
         ) : (
           <Button
             size="sm"
@@ -317,7 +353,6 @@ export default function ExamPage() {
           .slice((currentPage - 1) * QUESTIONS_PER_PAGE, currentPage * QUESTIONS_PER_PAGE)
           .map((q, qi) => {
           const selected = answers[q.id];
-          const isAnswered = selected !== undefined;
           const timeUp = timeLeft <= 0;
           const questionNumber = (currentPage - 1) * QUESTIONS_PER_PAGE + qi + 1;
           return (
@@ -391,32 +426,6 @@ export default function ExamPage() {
 
       {/* Spacer for fixed bottom nav on mobile */}
       <div className="h-16 sm:hidden" />
-      <ExamResultsModal
-        open={resultsOpen}
-        onOpenChange={setResultsOpen}
-        category={category.id}
-        score={score}
-        totalQuestions={category.questions.length}
-        timeLeft={timeLeft}
-        totalSeconds={DURATION_SECONDS}
-        passingScore={PASSING_SCORE}
-        reviewAnswers={category.questions.map((q, idx) => {
-          const sel = answers[q.id];
-          const status = sel === undefined ? 'unanswered' : sel === q.correctIndex ? 'correct' : 'incorrect';
-          return {
-            index: idx,
-            question: q.question,
-            options: q.options,
-            selectedIndex: sel,
-            correctIndex: q.correctIndex,
-            status: status as 'correct' | 'incorrect' | 'unanswered',
-          };
-        })}
-        onStartNew={startNewQuiz}
-        gamificationResult={gamificationResult}
-        gamificationEnabled={gamification?.isEnabled ?? false}
-      />
-      
     </main>
   );
 }
