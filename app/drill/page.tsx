@@ -257,69 +257,42 @@ export default function DrillPage() {
   };
 
   if (!data) {
-    return <PageLoading message="Loading..." />;
+    return <PageLoading message={t("loading")} />;
   }
 
   // Setup screen
   if (drillState === "setup") {
     return (
-      <main className="container mx-auto px-4 py-8 max-w-2xl">
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber-100 dark:bg-amber-900/40 mb-4">
-            <Zap className="h-8 w-8 text-amber-600 dark:text-amber-400" />
-          </div>
-          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100">
-            {t("title")}
-          </h1>
-          <p className="text-slate-600 dark:text-slate-400 mt-2">{t("subtitle")}</p>
-        </div>
+      <main className="container mx-auto px-4 py-8 max-w-md">
+        <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-1">
+          {t("title")}
+        </h1>
+        <p className="text-slate-500 dark:text-slate-400 mb-6">{t("subtitle")}</p>
 
-        <div className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6">
-          <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-            {t("selectCategory")}
-          </label>
-          <select
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            className="w-full p-3 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
-          >
-            <option value="all">{t("allCategories")}</option>
-            {CATEGORIES.map((catId) => (
-              <option key={catId} value={catId}>
-                {t("category", { id: catId })}
-              </option>
-            ))}
-          </select>
+        <label htmlFor="drill-category" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+          {t("selectCategory")}
+        </label>
+        <select
+          id="drill-category"
+          value={selectedCategory}
+          onChange={(e) => setSelectedCategory(e.target.value)}
+          className="w-full p-3 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+        >
+          <option value="all">{t("allCategories")}</option>
+          {CATEGORIES.map((catId) => (
+            <option key={catId} value={catId}>
+              {t("category", { id: catId })}
+            </option>
+          ))}
+        </select>
 
-          <button
-            onClick={startDrill}
-            className="w-full mt-6 py-3 px-6 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg transition-colors flex items-center justify-center gap-2"
-          >
-            <Zap className="h-5 w-5" />
-            {t("startDrill")}
-          </button>
-        </div>
-
-        <div className="mt-8 grid grid-cols-3 gap-4 text-center">
-          <div className="bg-slate-100 dark:bg-slate-800 rounded-lg p-4">
-            <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-              {DRILL_CONFIG.QUESTION_COUNT}
-            </p>
-            <p className="text-sm text-slate-600 dark:text-slate-400">Questions</p>
-          </div>
-          <div className="bg-slate-100 dark:bg-slate-800 rounded-lg p-4">
-            <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-              {Math.floor(DRILL_CONFIG.DURATION_SECONDS / 60)}:00
-            </p>
-            <p className="text-sm text-slate-600 dark:text-slate-400">Time Limit</p>
-          </div>
-          <div className="bg-slate-100 dark:bg-slate-800 rounded-lg p-4">
-            <p className="text-2xl font-bold text-amber-600 dark:text-amber-400">
-              +{DRILL_CONFIG.XP_COMPLETION}
-            </p>
-            <p className="text-sm text-slate-600 dark:text-slate-400">XP</p>
-          </div>
-        </div>
+        <button
+          onClick={startDrill}
+          className="w-full mt-6 py-3 px-6 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900 transition-colors flex items-center justify-center gap-2"
+        >
+          <Zap className="h-5 w-5" />
+          {t("startDrill")}
+        </button>
       </main>
     );
   }
@@ -336,12 +309,13 @@ export default function DrillPage() {
       <main className="container mx-auto px-4 py-4 max-w-2xl">
         {/* Header with timer and progress */}
         <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2" role="timer" aria-live={timeWarning ? "assertive" : "off"} aria-atomic="true">
             <Timer
               className={`h-5 w-5 ${timeWarning ? "text-red-500" : "text-slate-600 dark:text-slate-400"}`}
+              aria-hidden="true"
             />
             <span
-              className={`text-lg font-mono font-bold ${
+              className={`text-lg font-mono font-bold tabular-nums ${
                 timeWarning
                   ? "text-red-500"
                   : "text-slate-900 dark:text-slate-100"
@@ -356,9 +330,16 @@ export default function DrillPage() {
         </div>
 
         {/* Progress bar */}
-        <div className="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden mb-6">
+        <div
+          className="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden mb-6"
+          role="progressbar"
+          aria-valuenow={currentIndex + (isAnswered ? 1 : 0)}
+          aria-valuemin={0}
+          aria-valuemax={drillQuestions.length}
+          aria-label={t("question", { current: currentIndex + (isAnswered ? 1 : 0), total: drillQuestions.length })}
+        >
           <div
-            className="h-full bg-amber-500 transition-all duration-300"
+            className="h-full bg-amber-500 transition-all duration-300 motion-reduce:transition-none"
             style={{
               width: `${((currentIndex + (isAnswered ? 1 : 0)) / drillQuestions.length) * 100}%`,
             }}
@@ -366,7 +347,7 @@ export default function DrillPage() {
         </div>
 
         {/* Question card */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6">
+        <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
           <p className="text-lg text-slate-900 dark:text-slate-100 mb-6">
             {currentQuestion.question.question}
           </p>
@@ -397,24 +378,20 @@ export default function DrillPage() {
         </div>
 
         {/* Actions */}
-        <div className="flex justify-between mt-6">
+        <div className={`flex mt-6 ${isAnswered ? "justify-end" : "justify-start"}`}>
           {!isAnswered ? (
             <button
               onClick={handleSkip}
-              className="px-4 py-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+              className="px-4 py-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 transition-colors"
             >
               {t("skip")}
             </button>
           ) : (
-            <div />
-          )}
-
-          {isAnswered && (
             <button
               onClick={handleNext}
-              className="px-6 py-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-medium rounded-lg transition-colors"
+              className="px-6 py-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-medium rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900 transition-colors"
             >
-              {currentIndex + 1 >= drillQuestions.length ? "Finish" : "Next"}
+              {currentIndex + 1 >= drillQuestions.length ? t("finish") : t("next")}
             </button>
           )}
         </div>
@@ -425,7 +402,7 @@ export default function DrillPage() {
   // Complete screen
   return (
     <main className="container mx-auto px-4 py-8 max-w-2xl">
-      <div className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8 text-center">
+      <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-8 text-center">
         <div
           className={`inline-flex items-center justify-center w-20 h-20 rounded-full mb-4 ${
             results.isPerfect
@@ -478,14 +455,14 @@ export default function DrillPage() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <button
             onClick={resetDrill}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-amber-500 text-slate-900 rounded-lg font-medium hover:bg-amber-400 transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-amber-500 text-slate-900 rounded-lg font-medium hover:bg-amber-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-800 transition-colors"
           >
             <RotateCcw className="h-4 w-4" />
             {t("tryAgain")}
           </button>
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-200 dark:bg-slate-600 text-slate-900 dark:text-slate-100 rounded-lg font-medium hover:bg-slate-300 dark:hover:bg-slate-500 transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-200 dark:bg-slate-600 text-slate-900 dark:text-slate-100 rounded-lg font-medium hover:bg-slate-300 dark:hover:bg-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-800 transition-colors"
           >
             <Home className="h-4 w-4" />
             {t("backHome")}

@@ -33,7 +33,7 @@ export function AnswerOption({
       disabled={disabled}
       onClick={onClick}
       className={cn(
-        "w-full text-left border-l-4 rounded px-3 py-2 transition-all disabled:cursor-default flex items-start gap-3",
+        "w-full text-left border-l-4 rounded px-3 py-2 transition-all motion-reduce:transition-none disabled:cursor-default flex items-start gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-1 dark:focus-visible:ring-offset-slate-800",
         stateStyles[state]
       )}
     >
