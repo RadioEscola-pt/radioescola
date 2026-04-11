@@ -40,6 +40,9 @@
     }
   },
   "Footer": {
+    "quickDrill": "Treino Rápido",
+    "progress": "Progresso",
+    "becomeHam": "Ser Radioamador",
     "about": "Sobre",
     "reportError": "Reportar Erro",
     "sourceCode": "Código Fonte",

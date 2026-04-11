@@ -40,6 +40,9 @@
     }
   },
   "Footer": {
+    "quickDrill": "Quick Drill",
+    "progress": "Progress",
+    "becomeHam": "Become Ham",
     "about": "About",
     "reportError": "Report Error",
     "sourceCode": "Source Code",
