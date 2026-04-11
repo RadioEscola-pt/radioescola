@@ -46,7 +46,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
       <SheetTrigger asChild className="md:hidden">
         <button
           type="button"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-700 hover:bg-slate-200 hover:text-slate-900"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100"
           aria-label={t("menu")}
         >
           <Menu className="h-6 w-6" />
