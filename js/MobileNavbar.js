@@ -222,7 +222,7 @@ class MobileNavbar {
             { title: 'Início', action: () => this.navigateToChapter('home') },
             { title: 'Equipa', action: () => this.navigateToChapter('equipa') },
             { title: 'Estado da Nação', action: () => this.navigateToChapter('EDN') },
-            { title: 'Estado da Escola', action: () => new QuestionStatus() && this.closeMenu() },
+            { title: 'Estado da Escola', action: () => { window.location.hash = '/estado-da-escola'; this.closeMenu(); } },
             { title: 'Calculadoras', action: () => this.navigateToCalculators(), hasSubmenu: true },
             { title: 'Quero ser Radioamador', action: () => this.navigateToChapter('ser_radioamador') },
             { title: 'Exames', action: () => this.navigateToExams(), hasSubmenu: true },
@@ -272,9 +272,9 @@ class MobileNavbar {
         this.currentLevel = `exams-cat${category}`;
 
         const examItems = [
-            { title: 'Favoritas', action: () => this.startQuiz('FavQuiz', category) },
-            { title: 'Todas as perguntas', action: () => this.startQuiz('Quiz', category) },
-            { title: 'Simulador de exame', action: () => this.startQuiz('SimulateQuiz', category) }
+            { title: 'Favoritas', action: () => { window.location.hash = `/exame/cat${category}/favoritas`; this.closeMenu(); } },
+            { title: 'Todas as perguntas', action: () => { window.location.hash = `/exame/cat${category}/todas`; this.closeMenu(); } },
+            { title: 'Simulador de exame', action: () => { window.location.hash = `/exame/cat${category}/simulador`; this.closeMenu(); } }
         ];
 
         this.renderMenuItems(examItems);
@@ -359,7 +359,7 @@ class MobileNavbar {
     }
 
     navigateToChapter(chapter) {
-        new LoadChapter(chapter);
+        window.location.hash = '/' + chapter;
         this.closeMenu();
     }
 

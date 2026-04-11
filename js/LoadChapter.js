@@ -2,7 +2,7 @@ class LoadChapter {
     constructor(chapter, callback = null) {
         const ajaxRequest = new XMLHttpRequest();
         ajaxRequest.loadChapter = this;
-        
+
         ajaxRequest.onreadystatechange = function () {
             if (this.readyState == 4) {
                 // The request is completed, now check its status
