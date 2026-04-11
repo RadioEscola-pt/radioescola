@@ -140,7 +140,20 @@ export function processExamComplete(
   const dailyResult = updateDailyGoalProgress(newState.dailyProgress, "exams_taken", 1);
   newState.dailyProgress = dailyResult.updated;
 
-  for (const goal of dailyResult.newlyCompleted) {
+  // Exam questions also count toward questions_answered and questions_correct goals
+  const questionsResult = updateDailyGoalProgress(newState.dailyProgress, "questions_answered", exam.totalQuestions);
+  newState.dailyProgress = questionsResult.updated;
+  const correctResult = updateDailyGoalProgress(newState.dailyProgress, "questions_correct", exam.correctCount);
+  newState.dailyProgress = correctResult.updated;
+
+  // Also update lifetime question stats
+  newState.lifetimeStats = {
+    ...newState.lifetimeStats,
+    questionsAnswered: newState.lifetimeStats.questionsAnswered + exam.totalQuestions,
+    questionsCorrect: newState.lifetimeStats.questionsCorrect + exam.correctCount,
+  };
+
+  for (const goal of [...dailyResult.newlyCompleted, ...questionsResult.newlyCompleted, ...correctResult.newlyCompleted]) {
     events.push({ type: "daily_goal", amount: goal.xpReward, timestamp: now });
     newState.lifetimeStats = {
       ...newState.lifetimeStats,
@@ -393,6 +406,8 @@ export function processDrillComplete(
     ...newState.lifetimeStats,
     drillsCompleted: (newState.lifetimeStats.drillsCompleted ?? 0) + 1,
     drillsPerfect: (newState.lifetimeStats.drillsPerfect ?? 0) + (isPerfect ? 1 : 0),
+    questionsAnswered: newState.lifetimeStats.questionsAnswered + totalQuestions,
+    questionsCorrect: newState.lifetimeStats.questionsCorrect + correctAnswers,
   };
 
   // Update daily goals

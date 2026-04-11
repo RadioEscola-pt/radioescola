@@ -18,19 +18,16 @@ import {
   ReferenceLine,
 } from "recharts";
 import {
-  Trophy,
-  Target,
-  Flame,
-  Clock,
   CheckCircle,
   XCircle,
   MinusCircle,
-  TrendingUp,
-  Calendar,
-  BarChart3,
   Settings,
   Bookmark,
-  HardDrive,
+  ChevronDown,
+  BookOpen,
+  ListChecks,
+  GraduationCap,
+  Upload,
 } from "lucide-react";
 import type { ExamAttempt } from "@/lib/types/progress";
 import {
@@ -42,9 +39,17 @@ import {
 import { StreakCalendar } from "@/components/gamification/StreakCalendar";
 import { ACHIEVEMENTS } from "@/lib/gamification/achievements";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import DataManagement from "@/components/settings/DataManagement";
 import NotificationSettings from "@/components/settings/NotificationSettings";
 import { getBookmarkedQuestions } from "@/lib/storage/localStorage";
+
+/** Ring + tint colors per category — extends CATEGORY_CONFIG with SVG-specific tokens */
+const CATEGORY_RING_COLORS: Record<CategoryId, { stroke: string; bg: string }> = {
+  '3': { stroke: 'stroke-green-500', bg: 'bg-green-50/60 dark:bg-green-950/15' },
+  '2': { stroke: 'stroke-amber-500', bg: 'bg-amber-50/60 dark:bg-amber-950/15' },
+  '1': { stroke: 'stroke-rose-500', bg: 'bg-rose-50/60 dark:bg-rose-950/15' },
+};
 
 interface CategoryQuestionCount {
   [key: string]: number;
@@ -70,7 +75,6 @@ export default function DashboardPage() {
     });
   }, []);
 
-  // Get bookmark count
   useEffect(() => {
     if (progress) {
       const bookmarks = getBookmarkedQuestions(progress);
@@ -107,7 +111,6 @@ export default function DashboardPage() {
       ? Math.round((stats.totalPassed / stats.totalExams) * 100)
       : 0;
 
-  // Prepare chart data (last 10 exams, reversed for chronological order)
   const chartData = examHistory
     .slice(0, 10)
     .reverse()
@@ -118,24 +121,102 @@ export default function DashboardPage() {
       date: new Date(exam.timestamp).toLocaleDateString(),
     }));
 
-  // Get weak questions
   const weakQuestions = getWeakQuestions(2).slice(0, 5);
 
-  // Get pending achievement notifications
   const pendingAchievements = gamification?.pendingNotifications
     .map(ua => ACHIEVEMENTS.find(a => a.id === ua.achievementId))
     .filter((a): a is typeof ACHIEVEMENTS[number] => a !== undefined) ?? [];
 
   const gamificationEnabled = gamification?.isEnabled ?? true;
+  const hasActivity = stats.totalExams > 0 || (gamification?.totalXP ?? 0) > 0;
+
+  // New user — show onboarding instead of empty data grids
+  if (!hasActivity) {
+    return (
+      <section className="-mx-4 sm:mx-0 pb-8">
+        <AchievementToastContainer
+          achievements={pendingAchievements}
+          onDismiss={handleDismissAchievement}
+        />
+
+        <div className="px-4 sm:px-0 py-4">
+          <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100">
+            {t("emptyTitle")}
+          </h1>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
+            {t("emptyDescription")}
+          </p>
+        </div>
+
+        {/* 3-step getting started */}
+        <div className="px-4 sm:px-0 mb-8">
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { href: "/study", icon: BookOpen, color: "green", step: 1, titleKey: "onboardingStep1Title" as const, descKey: "onboardingStep1Desc" as const },
+              { href: "/browse/3", icon: ListChecks, color: "amber", step: 2, titleKey: "onboardingStep2Title" as const, descKey: "onboardingStep2Desc" as const },
+              { href: "/exam/3", icon: GraduationCap, color: "rose", step: 3, titleKey: "onboardingStep3Title" as const, descKey: "onboardingStep3Desc" as const },
+            ].map(({ href, icon: Icon, color, step, titleKey, descKey }) => (
+              <Link
+                key={step}
+                href={href}
+                className={`group p-5 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200 hover:-translate-y-1 hover:shadow-md motion-safe:animate-[fadeSlideUp_0.4s_ease-out_both] motion-reduce:opacity-100`}
+                style={{ animationDelay: `${(step - 1) * 120}ms` }}
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <span className={`flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold ${
+                    color === 'green' ? 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' :
+                    color === 'amber' ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400' :
+                    'bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400'
+                  }`}>{step}</span>
+                  <Icon className={`h-4 w-4 transition-transform duration-200 group-hover:scale-110 ${
+                    color === 'green' ? 'text-green-600 dark:text-green-400' :
+                    color === 'amber' ? 'text-amber-600 dark:text-amber-400' :
+                    'text-rose-600 dark:text-rose-400'
+                  }`} />
+                </div>
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">
+                  {t(titleKey)}
+                </h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  {t(descKey)}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Quick start CTA */}
+        <div className="px-4 sm:px-0 mb-8 text-center motion-safe:animate-[fadeSlideUp_0.4s_ease-out_0.4s_both] motion-reduce:opacity-100">
+          <Button asChild size="lg" className="hover:shadow-lg hover:shadow-amber-500/25 active:translate-y-0.5 transition-all duration-200">
+            <Link href="/exam/3">{t("startExam")}</Link>
+          </Button>
+        </div>
+
+        {/* Import existing data — for returning users on a new device */}
+        <div className="px-4 sm:px-0">
+          <details className="group">
+            <summary className="flex items-center gap-2 cursor-pointer text-sm text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-400 transition-colors list-none [&::-webkit-details-marker]:hidden">
+              <Upload className="h-3.5 w-3.5" />
+              {t("onboardingImport")}
+              <ChevronDown className="h-3.5 w-3.5 transition-transform group-open:rotate-180" />
+            </summary>
+            <div className="mt-3 max-w-sm">
+              <DataManagement />
+            </div>
+          </details>
+        </div>
+      </section>
+    );
+  }
 
   return (
-    <main className="-mx-4 sm:mx-0 pb-8">
-      {/* Achievement Toast Notifications */}
+    <section className="-mx-4 sm:mx-0 pb-8">
       <AchievementToastContainer
         achievements={pendingAchievements}
         onDismiss={handleDismissAchievement}
       />
 
+      {/* Header */}
       <div className="px-4 sm:px-0 py-4">
         <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100">
           {t("title")}
@@ -145,7 +226,7 @@ export default function DashboardPage() {
         </p>
       </div>
 
-      {/* Gamification Section (XP Bar) */}
+      {/* XP Bar */}
       {gamificationEnabled && gamification && (
         <div className="px-4 sm:px-0 mb-6">
           <div className="flex items-center justify-between mb-2">
@@ -177,33 +258,27 @@ export default function DashboardPage() {
         </div>
       )}
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 px-4 sm:px-0 mb-6">
-        <StatCard
-          icon={<Trophy className="h-5 w-5 text-amber-500" />}
-          label={t("totalExams")}
-          value={stats.totalExams.toString()}
-        />
-        <StatCard
-          icon={<Target className="h-5 w-5 text-green-500" />}
-          label={t("passRate")}
-          value={`${passRate}%`}
-          subtext={`${stats.totalPassed}/${stats.totalExams}`}
-        />
-        <StatCard
-          icon={<Flame className="h-5 w-5 text-orange-500" />}
-          label={t("currentStreak")}
-          value={stats.currentStreak.toString()}
-          subtext={t("longestStreak", { count: stats.longestStreak })}
-        />
-        <StatCard
-          icon={<Clock className="h-5 w-5 text-blue-500" />}
-          label={t("lastStudy")}
-          value={stats.lastStudyDate ?? t("never")}
-        />
+      {/* Compact Stats */}
+      <div className="px-4 sm:px-0 mb-6">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-3 sm:flex sm:flex-wrap sm:gap-x-6 sm:gap-y-2 text-sm">
+          <Stat label={t("totalExams")} value={stats.totalExams.toString()} />
+          <Stat
+            label={t("passRate")}
+            value={`${passRate}%`}
+            detail={`${stats.totalPassed}/${stats.totalExams}`}
+            valueColor={passRate >= 70 ? 'text-green-600 dark:text-green-400' : passRate >= 40 ? 'text-amber-600 dark:text-amber-400' : undefined}
+          />
+          <Stat
+            label={t("currentStreak")}
+            value={`${stats.currentStreak}`}
+            detail={t("longestStreak", { count: stats.longestStreak })}
+            valueColor={stats.currentStreak >= 3 ? 'text-amber-600 dark:text-amber-400' : undefined}
+          />
+          <Stat label={t("lastStudy")} value={stats.lastStudyDate ?? t("never")} />
+        </div>
       </div>
 
-      {/* Daily Goals & Achievements Row */}
+      {/* Daily Goals & Achievements */}
       {gamificationEnabled && gamification && (
         <div className="grid md:grid-cols-2 gap-4 px-4 sm:px-0 mb-6">
           <DailyGoalsCard
@@ -213,7 +288,7 @@ export default function DashboardPage() {
           <AchievementsGrid
             achievements={ACHIEVEMENTS}
             unlockedAchievements={progress?.gamification?.unlockedAchievements ?? []}
-            maxDisplay={16}
+            maxDisplay={8}
           />
         </div>
       )}
@@ -230,24 +305,20 @@ export default function DashboardPage() {
                 {tGamification("settings.disabledDescription")}
               </p>
             </div>
-            <button
-              onClick={handleToggleGamification}
-              className="px-3 py-1.5 text-sm font-medium bg-amber-500 hover:bg-amber-600 text-slate-900 rounded-lg transition-colors"
-            >
+            <Button size="sm" onClick={handleToggleGamification}>
               {tGamification("settings.enable")}
-            </button>
+            </Button>
           </div>
         </div>
       )}
 
       {/* Performance Chart */}
       {chartData.length > 0 && (
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 mx-4 sm:mx-0 mb-6">
-          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
-            <TrendingUp className="h-5 w-5 text-amber-500" />
+        <div className="px-4 sm:px-0 mb-6">
+          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">
             {t("performanceChart")}
           </h2>
-          <div className="h-64">
+          <div className="h-64 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={chartData}>
                 <CartesianGrid
@@ -299,17 +370,13 @@ export default function DashboardPage() {
 
       {/* Category Progress */}
       <div className="px-4 sm:px-0 mb-6">
-        <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
-          <BarChart3 className="h-5 w-5 text-amber-500" />
+        <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">
           {t("categoryProgress")}
         </h2>
         <div className="grid sm:grid-cols-3 gap-4">
           {CATEGORIES.map((catId) => {
             const totalQuestions = questionCounts[catId] ?? 0;
-            const categoryProgress = getCategoryProgress(
-              catId,
-              totalQuestions
-            );
+            const categoryProgress = getCategoryProgress(catId, totalQuestions);
             const bestScore = stats.bestScores[catId];
             return (
               <CategoryCard
@@ -328,15 +395,15 @@ export default function DashboardPage() {
 
       {/* Weak Areas */}
       {weakQuestions.length > 0 && (
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 mx-4 sm:mx-0 mb-6">
-          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">
+        <div className="px-4 sm:px-0 mb-6">
+          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-3">
             {t("weakAreas")}
           </h2>
-          <div className="space-y-3">
+          <div className="space-y-2">
             {weakQuestions.map(({ key, stats: qStats, successRate }) => (
               <div
                 key={key}
-                className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg"
+                className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800 rounded-lg"
               >
                 <div>
                   <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
@@ -364,9 +431,8 @@ export default function DashboardPage() {
 
       {/* Exam History */}
       {examHistory.length > 0 && (
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 mx-4 sm:mx-0">
-          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
-            <Calendar className="h-5 w-5 text-amber-500" />
+        <div className="px-4 sm:px-0 mb-6">
+          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-3">
             {t("examHistory")}
           </h2>
           <div className="space-y-2">
@@ -377,44 +443,20 @@ export default function DashboardPage() {
         </div>
       )}
 
-      {/* Quick Links - Bookmarks */}
-      <div className="grid sm:grid-cols-2 gap-4 px-4 sm:px-0 mb-6">
+      {/* Bookmarks — compact link */}
+      <div className="px-4 sm:px-0 mb-6">
         <Link
           href="/bookmarks"
-          className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 hover:border-amber-300 dark:hover:border-amber-700 transition-colors group"
+          className="flex items-center gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all duration-200 hover:-translate-y-0.5 group"
         >
-          <div className="flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-amber-100 dark:bg-amber-900/30 group-hover:bg-amber-200 dark:group-hover:bg-amber-900/50 transition-colors">
-              <Bookmark className="h-5 w-5 text-amber-600 dark:text-amber-400" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-slate-900 dark:text-slate-100">
-                {t("bookmarks")}
-              </h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400">
-                {t("bookmarksCount", { count: bookmarkCount })}
-              </p>
-            </div>
-          </div>
+          <Bookmark className="h-4 w-4 text-slate-400 group-hover:text-amber-500 transition-colors" />
+          <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+            {t("bookmarks")}
+          </span>
+          <span className="text-xs text-slate-400">
+            {t("bookmarksCount", { count: bookmarkCount })}
+          </span>
         </Link>
-
-        {/* Data Management Card */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="p-2 rounded-lg bg-slate-100 dark:bg-slate-700">
-              <HardDrive className="h-5 w-5 text-slate-600 dark:text-slate-400" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-slate-900 dark:text-slate-100">
-                {t("dataManagement")}
-              </h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400">
-                {t("dataManagementDesc")}
-              </p>
-            </div>
-          </div>
-          <DataManagement />
-        </div>
       </div>
 
       {/* Notification Settings */}
@@ -422,56 +464,43 @@ export default function DashboardPage() {
         <NotificationSettings />
       </div>
 
-      {/* Empty State */}
-      {!progress ||
-        (examHistory.length === 0 && (
-          <div className="text-center py-12 px-4">
-            <Trophy className="h-16 w-16 text-slate-300 dark:text-slate-600 mx-auto mb-4" />
-            <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-2">
-              {t("emptyTitle")}
-            </h2>
-            <p className="text-slate-500 dark:text-slate-400 mb-6">
-              {t("emptyDescription")}
-            </p>
-            <a
-              href="/exam/3"
-              className="inline-flex items-center px-4 py-2 bg-amber-500 hover:bg-amber-600 text-slate-900 font-medium rounded-lg transition-colors"
-            >
-              {t("startExam")}
-            </a>
-          </div>
-        ))}
-    </main>
+      {/* Data Management — collapsed by default */}
+      <details className="px-4 sm:px-0 mb-6 group">
+        <summary className="flex items-center gap-2 cursor-pointer text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300 transition-colors list-none [&::-webkit-details-marker]:hidden">
+          <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
+          {t("dataManagement")}
+        </summary>
+        <div className="mt-3 pl-6">
+          <p className="text-xs text-slate-400 dark:text-slate-500 mb-3">
+            {t("dataManagementDesc")}
+          </p>
+          <DataManagement />
+        </div>
+      </details>
+    </section>
   );
 }
 
-function StatCard({
-  icon,
+function Stat({
   label,
   value,
-  subtext,
+  detail,
+  valueColor,
 }: {
-  icon: React.ReactNode;
   label: string;
   value: string;
-  subtext?: string;
+  detail?: string;
+  valueColor?: string;
 }) {
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
-      <div className="flex items-center gap-2 mb-2">
-        {icon}
-        <span className="text-sm text-slate-500 dark:text-slate-400">
-          {label}
-        </span>
+    <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-2">
+      <span className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">{label}</span>
+      <div className="flex items-baseline gap-1.5">
+        <span className={`font-semibold text-base sm:text-sm ${valueColor ?? 'text-slate-900 dark:text-slate-100'}`}>{value}</span>
+        {detail && (
+          <span className="text-xs text-slate-400 dark:text-slate-500">{detail}</span>
+        )}
       </div>
-      <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-        {value}
-      </p>
-      {subtext && (
-        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-          {subtext}
-        </p>
-      )}
     </div>
   );
 }
@@ -492,18 +521,19 @@ function CategoryCard({
   t: ReturnType<typeof useTranslations>;
 }) {
   const masteryPercent = total > 0 ? Math.round((mastered / total) * 100) : 0;
+  const targetDash = masteryPercent * 2.51;
 
   const cfg = CATEGORY_CONFIG[categoryId as CategoryId];
   const CategoryIcon = cfg?.icon;
-  const strokeColor = categoryId === '3' ? 'stroke-green-500' : categoryId === '2' ? 'stroke-amber-500' : 'stroke-rose-500';
+  const catColors = CATEGORY_RING_COLORS[categoryId as CategoryId];
 
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
-      <h3 className="flex items-center gap-1.5 font-semibold text-slate-900 dark:text-slate-100 mb-3">
+    <div className={`p-4 rounded-xl ${catColors.bg}`}>
+      <h3 className={`flex items-center gap-1.5 font-semibold mb-3 ${cfg?.badgeText ?? ''}`}>
         {CategoryIcon && <CategoryIcon className="h-4 w-4" />}
         {t("category")} {categoryId}
       </h3>
-      <div className="relative h-24 w-24 mx-auto mb-3">
+      <div className="relative h-20 w-20 mx-auto mb-3">
         <svg className="w-full h-full" viewBox="0 0 100 100">
           <circle
             className="stroke-slate-200 dark:stroke-slate-700"
@@ -514,19 +544,20 @@ function CategoryCard({
             r="40"
           />
           <circle
-            className={strokeColor}
+            className={`${catColors.stroke} motion-safe:animate-[ringDraw_0.8s_ease-out_0.3s_both]`}
             strokeWidth="10"
             fill="none"
             cx="50"
             cy="50"
             r="40"
             strokeLinecap="round"
-            strokeDasharray={`${masteryPercent * 2.51} 251`}
+            strokeDasharray={`${targetDash} 251`}
+            style={{ '--ring-target': `${targetDash}` } as React.CSSProperties}
             transform="rotate(-90 50 50)"
           />
         </svg>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-xl font-bold text-slate-900 dark:text-slate-100">
+          <span className="text-lg font-bold text-slate-900 dark:text-slate-100">
             {masteryPercent}%
           </span>
         </div>
@@ -535,7 +566,7 @@ function CategoryCard({
         <p className="text-slate-600 dark:text-slate-300">
           {mastered}/{total} {t("mastered")}
         </p>
-        <p className="text-slate-500 dark:text-slate-400 text-xs">
+        <p className="text-slate-400 dark:text-slate-500 text-xs">
           {attempted} {t("attempted")}
         </p>
         {bestScore !== undefined && (
@@ -556,16 +587,18 @@ function ExamHistoryRow({
   t: ReturnType<typeof useTranslations>;
 }) {
   const date = new Date(exam.timestamp);
-  const timeSpentMinutes = Math.floor(exam.timeSpent / 60);
-  const timeSpentSeconds = exam.timeSpent % 60;
 
   return (
-    <div className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
+    <div className={`flex items-center justify-between p-3 rounded-lg border-l-3 ${
+      exam.passed
+        ? 'bg-green-50/50 dark:bg-green-950/10 border-green-500'
+        : 'bg-rose-50/50 dark:bg-rose-950/10 border-rose-400'
+    }`}>
       <div className="flex items-center gap-3">
         {exam.passed ? (
           <CheckCircle className="h-5 w-5 text-green-500" />
         ) : (
-          <XCircle className="h-5 w-5 text-red-500" />
+          <XCircle className="h-5 w-5 text-rose-400" />
         )}
         <div>
           <p className="text-sm font-medium text-slate-900 dark:text-slate-100">

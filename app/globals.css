@@ -255,6 +255,25 @@
   }
 }
 
+/* Dashboard onboarding entrance */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Category progress ring draw-in */
+@keyframes ringDraw {
+  from {
+    stroke-dasharray: 0 251;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-gentle-pulse,
   .animate-result-pop {

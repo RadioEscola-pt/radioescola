@@ -59,7 +59,17 @@
     "flashNoQuestions": "There are no questions available for this category yet.",
     "flashSubtitle": "Practice one random question at a time. Reviewed {count} so far.",
     "flashCard": "Card {position} of {total} in this round.",
-    "flashNext": "Next question"
+    "flashNext": "Next question",
+    "questionCount": "{count} questions"
+  },
+  "StudyHeader": {
+    "mode": {
+      "exam": "EXAM",
+      "browse": "BROWSE",
+      "flash": "FLASH",
+      "smart": "SMART"
+    },
+    "category": "Cat {id}"
   },
   "Home": {
     "heroTitle": "Rádio Escola",
@@ -124,7 +134,9 @@
     "progress": "Your progress",
     "filterBy": "Filter by category",
     "markComplete": "Mark as complete",
-    "markIncomplete": "Mark as incomplete"
+    "markIncomplete": "Mark as incomplete",
+    "error": "Could not load study materials.",
+    "retry": "Try again"
   },
   "Exam": {
     "loading": "Loading...",
@@ -401,9 +413,16 @@
     "attempts": "attempts",
     "correct": "correct",
     "examHistory": "Recent Exams",
-    "emptyTitle": "No progress yet",
-    "emptyDescription": "Take your first exam to start tracking your progress.",
+    "emptyTitle": "Welcome to Rádio Escola",
+    "emptyDescription": "Get ready for your ham radio license exam in 3 steps.",
     "startExam": "Start Exam",
+    "onboardingStep1Title": "Study the material",
+    "onboardingStep1Desc": "Review theory content organized by category.",
+    "onboardingStep2Title": "Practice questions",
+    "onboardingStep2Desc": "Train with real questions in browse or quick drill mode.",
+    "onboardingStep3Title": "Take an exam",
+    "onboardingStep3Desc": "Simulate the official exam with real timing and scoring.",
+    "onboardingImport": "Already have progress? Import your data.",
     "bookmarks": "Bookmarked Questions",
     "bookmarksCount": "{count, plural, =0 {No questions saved} =1 {1 question saved} other {# questions saved}}",
     "dataManagement": "Data Management",

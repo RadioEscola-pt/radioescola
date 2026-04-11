@@ -59,7 +59,17 @@
     "flashNoQuestions": "Ainda não há questões disponíveis para esta categoria.",
     "flashSubtitle": "Pratica uma questão aleatória de cada vez. Já reviste {count}.",
     "flashCard": "Cartão {position} de {total} nesta ronda.",
-    "flashNext": "Próxima questão"
+    "flashNext": "Próxima questão",
+    "questionCount": "{count} questões"
+  },
+  "StudyHeader": {
+    "mode": {
+      "exam": "EXAME",
+      "browse": "ESTUDAR",
+      "flash": "FLASH",
+      "smart": "PRÁTICA"
+    },
+    "category": "Cat {id}"
   },
   "Home": {
     "heroTitle": "Rádio Escola",
@@ -124,7 +134,9 @@
     "progress": "O teu progresso",
     "filterBy": "Filtrar por categoria",
     "markComplete": "Marcar como concluído",
-    "markIncomplete": "Marcar como incompleto"
+    "markIncomplete": "Marcar como incompleto",
+    "error": "Não foi possível carregar os materiais.",
+    "retry": "Tentar novamente"
   },
   "Exam": {
     "loading": "A carregar...",
@@ -401,9 +413,16 @@
     "attempts": "tentativas",
     "correct": "corretas",
     "examHistory": "Exames Recentes",
-    "emptyTitle": "Ainda sem progresso",
-    "emptyDescription": "Faz o teu primeiro exame para começar a acompanhar o teu progresso.",
+    "emptyTitle": "Bem-vindo à Rádio Escola",
+    "emptyDescription": "Prepara-te para o exame de radioamador em 3 passos.",
     "startExam": "Começar Exame",
+    "onboardingStep1Title": "Estuda a matéria",
+    "onboardingStep1Desc": "Revê os conteúdos teóricos organizados por categoria.",
+    "onboardingStep2Title": "Pratica questões",
+    "onboardingStep2Desc": "Treina com questões reais no modo explorar ou treino rápido.",
+    "onboardingStep3Title": "Faz um exame",
+    "onboardingStep3Desc": "Simula o exame oficial com tempo e pontuação reais.",
+    "onboardingImport": "Já tens progresso? Importa os teus dados.",
     "bookmarks": "Questões Guardadas",
     "bookmarksCount": "{count, plural, =0 {Nenhuma questão guardada} =1 {1 questão guardada} other {# questões guardadas}}",
     "dataManagement": "Gestão de Dados",

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useCallback, useMemo } from "react";
+import React, { useEffect, useState, useCallback, useMemo, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
@@ -58,8 +58,9 @@ export default function SmartPracticePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [sessionComplete, setSessionComplete] = useState(false);
   const [sessionStats, setSessionStats] = useState({ correct: 0, incorrect: 0 });
+  const sessionActiveRef = useRef(false);
   const { openCalculator } = useCalculators();
-  const { progress, recordQuestionWithSR, getQuestionStats, refreshProgress } = useProgressContext();
+  const { progress, recordQuestionWithSR, getQuestionStats, refreshProgress, recordSmartPracticeSession } = useProgressContext();
   const t = useTranslations("SmartPractice");
   const tBrowse = useTranslations("Browse");
 
@@ -85,12 +86,15 @@ export default function SmartPracticePage() {
     return () => { active = false; };
   }, [catId]);
 
-  // Select questions for the session when category or progress changes
+  // Select questions for the session when category loads (not on every progress update)
   useEffect(() => {
     if (!category || category.questions.length === 0) {
       setSessionQuestions([]);
       return;
     }
+
+    // Don't re-select questions mid-session — progress updates after each answer
+    if (sessionActiveRef.current) return;
 
     const selected = selectQuestionsForReview(
       category.questions,
@@ -103,6 +107,7 @@ export default function SmartPracticePage() {
     setSelectedOption(undefined);
     setSessionComplete(false);
     setSessionStats({ correct: 0, incorrect: 0 });
+    sessionActiveRef.current = true;
   }, [category, progress, catId]);
 
   const handleLaunchCalculator = useCallback((code: string) => {
@@ -150,6 +155,8 @@ export default function SmartPracticePage() {
     // Move to next question or end session
     if (cursor + 1 >= sessionQuestions.length) {
       setSessionComplete(true);
+      sessionActiveRef.current = false;
+      recordSmartPracticeSession(sessionQuestions.length);
     } else {
       setCursor(prev => prev + 1);
       setSelectedOption(undefined);
@@ -157,6 +164,7 @@ export default function SmartPracticePage() {
   };
 
   const handleRestartSession = async () => {
+    sessionActiveRef.current = false;
     await refreshProgress();
     if (category) {
       const selected = selectQuestionsForReview(
@@ -170,6 +178,7 @@ export default function SmartPracticePage() {
       setSelectedOption(undefined);
       setSessionComplete(false);
       setSessionStats({ correct: 0, incorrect: 0 });
+      sessionActiveRef.current = true;
     }
   };
 

@@ -131,18 +131,14 @@ export function StreakCalendar({ xpHistory, weeks = 16 }: StreakCalendarProps) {
   const dayLabels = ["M", "T", "W", "T", "F", "S", "S"];
 
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
-      <div className="flex items-center justify-between mb-4">
-        <h3 className="font-semibold text-slate-900 dark:text-slate-100">
+    <div>
+      <div className="flex items-center justify-between mb-3">
+        <h3 className="text-sm font-medium text-slate-700 dark:text-slate-300">
           {t("title")}
         </h3>
-        <div className="flex items-center gap-4 text-sm">
-          <span className="text-slate-600 dark:text-slate-400">
-            {t("currentStreak", { days: currentStreak })}
-          </span>
-          <span className="text-slate-600 dark:text-slate-400">
-            {t("totalDays", { days: totalDays })}
-          </span>
+        <div className="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
+          <span>{t("currentStreak", { days: currentStreak })}</span>
+          <span>{t("totalDays", { days: totalDays })}</span>
         </div>
       </div>
 
@@ -184,7 +180,7 @@ export function StreakCalendar({ xpHistory, weeks = 16 }: StreakCalendarProps) {
       </div>
 
       {/* Legend */}
-      <div className="flex items-center justify-end gap-1 mt-3 text-xs text-slate-500 dark:text-slate-400">
+      <div className="flex items-center justify-end gap-1 mt-2 text-xs text-slate-400 dark:text-slate-500">
         <span>{t("lessActive")}</span>
         {intensityColors.map((color, idx) => (
           <div key={idx} className={`w-3 h-3 rounded-sm ${color}`} />
