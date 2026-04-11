@@ -3,7 +3,8 @@
 import { useTranslations } from "next-intl";
 import { useProgressContext } from "@/components/providers/ProgressProvider";
 import { PageLoading } from "@/components/shared/Loading";
-import { CATEGORIES } from "@/lib/config";
+import { CATEGORIES, CATEGORY_CONFIG } from "@/lib/config";
+import type { CategoryId } from "@/lib/config/categories";
 import { loadData } from "@/lib/data";
 import { useEffect, useState } from "react";
 import {
@@ -492,9 +493,14 @@ function CategoryCard({
 }) {
   const masteryPercent = total > 0 ? Math.round((mastered / total) * 100) : 0;
 
+  const cfg = CATEGORY_CONFIG[categoryId as CategoryId];
+  const CategoryIcon = cfg?.icon;
+  const strokeColor = categoryId === '3' ? 'stroke-green-500' : categoryId === '2' ? 'stroke-amber-500' : 'stroke-rose-500';
+
   return (
     <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
-      <h3 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">
+      <h3 className="flex items-center gap-1.5 font-semibold text-slate-900 dark:text-slate-100 mb-3">
+        {CategoryIcon && <CategoryIcon className="h-4 w-4" />}
         {t("category")} {categoryId}
       </h3>
       <div className="relative h-24 w-24 mx-auto mb-3">
@@ -508,7 +514,7 @@ function CategoryCard({
             r="40"
           />
           <circle
-            className="stroke-amber-500"
+            className={strokeColor}
             strokeWidth="10"
             fill="none"
             cx="50"

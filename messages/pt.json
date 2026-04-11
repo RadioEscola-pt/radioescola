@@ -31,7 +31,13 @@
     "questions": "Questões",
     "flashcards": "Flashcards",
     "smartPractice": "Prática Inteligente",
-    "quickDrill": "Treino Rápido"
+    "quickDrill": "Treino Rápido",
+    "category": "Categoria {id}",
+    "categoryDesc": {
+      "3": "Entrada",
+      "2": "Intermédio",
+      "1": "Avançado"
+    }
   },
   "Footer": {
     "about": "Sobre",

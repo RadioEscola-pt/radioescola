@@ -31,7 +31,13 @@
     "questions": "Questions",
     "flashcards": "Flashcards",
     "smartPractice": "Smart Practice",
-    "quickDrill": "Quick Drill"
+    "quickDrill": "Quick Drill",
+    "category": "Category {id}",
+    "categoryDesc": {
+      "3": "Beginner",
+      "2": "Intermediate",
+      "1": "Advanced"
+    }
   },
   "Footer": {
     "about": "About",

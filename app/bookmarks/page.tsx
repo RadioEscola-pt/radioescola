@@ -7,6 +7,8 @@ import { Bookmark, ArrowLeft, Trash2 } from "lucide-react";
 import { useProgressContext } from "@/components/providers/ProgressProvider";
 import { getBookmarkedQuestions, toggleBookmark } from "@/lib/storage/localStorage";
 import { loadData } from "@/lib/data";
+import { CATEGORY_CONFIG } from "@/lib/config/categories";
+import type { CategoryId } from "@/lib/config/categories";
 import type { Question, Data } from "@/lib/types";
 import type { QuestionStats } from "@/lib/types/progress";
 import QuestionCard from "@/components/QuestionCard";
@@ -20,12 +22,6 @@ interface BookmarkedQuestion {
   stats: QuestionStats;
   question?: Question;
 }
-
-const CATEGORY_COLORS: Record<string, string> = {
-  "1": "bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300",
-  "2": "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300",
-  "3": "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300",
-};
 
 export default function BookmarksPage() {
   const t = useTranslations("Bookmarks");
@@ -154,9 +150,16 @@ export default function BookmarksPage() {
               return (
                 <div key={bookmark.key} className="relative">
                   <div className="absolute top-3 right-3 z-10 flex items-center gap-2">
-                    <span className={`px-2 py-0.5 text-xs font-medium rounded-full ${CATEGORY_COLORS[bookmark.category] || "bg-slate-100 text-slate-700"}`}>
-                      Cat {bookmark.category}
-                    </span>
+                    {(() => {
+                      const cfg = CATEGORY_CONFIG[bookmark.category as CategoryId];
+                      const CatIcon = cfg?.icon;
+                      return (
+                        <span className={`inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium rounded-full ${cfg ? `${cfg.badgeBg} ${cfg.badgeText}` : "bg-slate-100 text-slate-700"}`}>
+                          {CatIcon && <CatIcon className="h-3 w-3" />}
+                          Cat {bookmark.category}
+                        </span>
+                      );
+                    })()}
                     <button
                       onClick={() => handleRemoveBookmark(bookmark.category, bookmark.questionId)}
                       className="p-1.5 rounded-md text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"

@@ -18,19 +18,8 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 import MobileNav from "./MobileNav";
 import { useCalculators } from "@/components/providers/CalculatorProvider";
+import { CATEGORIES, CATEGORY_CONFIG } from "@/lib/config/categories";
 import type { CalculatorCode } from "@/lib/types";
-
-const categories = [
-  { id: "3", title: "Categoria 3", description: "Entrada", dot: "bg-green-500" },
-  { id: "2", title: "Categoria 2", description: "Intermédio", dot: "bg-amber-500" },
-  { id: "1", title: "Categoria 1", description: "Avançado", dot: "bg-rose-500" },
-] as const;
-
-const exams = categories.map((cat) => ({
-  title: cat.title,
-  href: `/exam/${cat.id}`,
-  description: cat.description,
-}));
 
 const triggerClasses = "inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none data-[state=open]:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100 dark:data-[state=open]:bg-slate-700";
 
@@ -119,29 +108,33 @@ export default function NavBar() {
 
               {/* Category grid */}
               <div className="grid grid-cols-3 gap-0 p-1.5">
-                {categories.map((cat) => (
-                  <div key={cat.id} className="flex flex-col">
+                {CATEGORIES.map((catId) => {
+                  const cfg = CATEGORY_CONFIG[catId];
+                  const Icon = cfg.icon;
+                  return (
+                  <div key={catId} className="flex flex-col">
                     <DropdownMenuLabel className="text-xs text-muted-foreground font-medium flex items-center gap-1.5 py-1">
-                      <span className={`w-1.5 h-1.5 rounded-full ${cat.dot}`} />
-                      {cat.title}
+                      <Icon className="h-3.5 w-3.5" />
+                      {t("category", { id: catId })}
                     </DropdownMenuLabel>
                     <DropdownMenuItem asChild>
-                      <Link href={`/browse/${cat.id}`} className="cursor-pointer text-sm">
+                      <Link href={`/browse/${catId}`} className="cursor-pointer text-sm">
                         {t("questions")}
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                      <Link href={`/browse/${cat.id}/flash`} className="cursor-pointer text-sm">
+                      <Link href={`/browse/${catId}/flash`} className="cursor-pointer text-sm">
                         {t("flashcards")}
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                      <Link href={`/browse/${cat.id}/smart-practice`} className="cursor-pointer text-sm">
+                      <Link href={`/browse/${catId}/smart-practice`} className="cursor-pointer text-sm">
                         {t("smartPractice")}
                       </Link>
                     </DropdownMenuItem>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -153,17 +146,24 @@ export default function NavBar() {
               {t("exams")}
               <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="w-[200px]">
-              {exams.map((exam) => (
-                <DropdownMenuItem key={exam.href} asChild>
-                  <Link href={exam.href} className="cursor-pointer">
-                    <div className="flex flex-col">
-                      <span className="font-medium">{exam.title}</span>
-                      <span className="text-xs text-muted-foreground">{exam.description}</span>
+            <DropdownMenuContent align="start" className="w-[220px]">
+              {CATEGORIES.map((catId) => {
+                const cfg = CATEGORY_CONFIG[catId];
+                const Icon = cfg.icon;
+                return (
+                <DropdownMenuItem key={catId} asChild>
+                  <Link href={`/exam/${catId}`} className="cursor-pointer">
+                    <div className="flex items-start gap-2">
+                      <Icon className="h-4 w-4 mt-0.5 shrink-0" />
+                      <div className="flex flex-col">
+                        <span className="font-medium">{t("category", { id: catId })}</span>
+                        <span className="text-xs text-muted-foreground">{t(`categoryDesc.${catId}`)}</span>
+                      </div>
                     </div>
                   </Link>
                 </DropdownMenuItem>
-              ))}
+                );
+              })}
               <DropdownMenuSeparator />
               <DropdownMenuItem asChild>
                 <Link href="/submit-exam" className="cursor-pointer">

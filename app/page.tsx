@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { BookOpen, IdCard, Radio, ExternalLink, Building2, ArrowRight, Zap, Brain, Layers } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { CATEGORIES, CATEGORY_STYLES, CATEGORY_IMAGES } from "@/lib/config";
+import { CATEGORIES, CATEGORY_CONFIG, CATEGORY_IMAGES } from "@/lib/config";
 import { Button } from "@/components/ui/button";
 
 export default async function HomePage() {
@@ -41,7 +41,7 @@ export default async function HomePage() {
         {/* Category cards */}
         <div className="mt-8 md:mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {CATEGORIES.map((id) => {
-            const s = CATEGORY_STYLES[id];
+            const s = CATEGORY_CONFIG[id];
             const name = t("categoryName", { id });
             const browseLabel = t("categoryBrowse");
             const simulationLabel = t("categorySimulation");

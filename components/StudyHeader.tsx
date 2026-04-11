@@ -3,6 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowLeft, FileText, BookOpen, Layers, Zap } from "lucide-react";
+import { CATEGORY_CONFIG } from "@/lib/config/categories";
+import type { CategoryId } from "@/lib/config/categories";
 
 type StudyMode = "exam" | "browse" | "flash" | "smart";
 
@@ -12,18 +14,6 @@ const MODE_CONFIG = {
   flash: { icon: Layers, label: "FLASH" },
   smart: { icon: Zap, label: "SMART" },
 } as const;
-
-const CATEGORY_ACCENT: Record<string, string> = {
-  "3": "bg-green-500",
-  "2": "bg-amber-500",
-  "1": "bg-rose-500",
-};
-
-const CATEGORY_DOT: Record<string, string> = {
-  "3": "bg-green-400",
-  "2": "bg-amber-400",
-  "1": "bg-rose-400",
-};
 
 interface StudyHeaderProps {
   categoryId: string;
@@ -41,8 +31,9 @@ export function StudyHeader({
   children,
 }: StudyHeaderProps) {
   const { icon: Icon, label } = MODE_CONFIG[mode];
-  const accent = CATEGORY_ACCENT[categoryId] ?? "bg-amber-500";
-  const dot = CATEGORY_DOT[categoryId] ?? "bg-amber-400";
+  const cfg = CATEGORY_CONFIG[categoryId as CategoryId];
+  const accent = cfg?.accent ?? "bg-amber-500";
+  const CategoryIcon = cfg?.icon;
   const href = backHref ?? "/";
 
   return (
@@ -72,7 +63,7 @@ export function StudyHeader({
 
               {/* Category indicator */}
               <span className="inline-flex items-center gap-1.5">
-                <span className={`w-1.5 h-1.5 rounded-full ${dot}`} />
+                {CategoryIcon && <CategoryIcon className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />}
                 <span className="text-sm font-semibold text-slate-700 dark:text-slate-200 leading-none">
                   Cat {categoryId}
                 </span>

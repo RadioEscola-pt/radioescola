@@ -18,19 +18,8 @@ import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 import { useCalculators } from "@/components/providers/CalculatorProvider";
+import { CATEGORIES, CATEGORY_CONFIG } from "@/lib/config/categories";
 import type { CalculatorCode } from "@/lib/types";
-
-const categories = [
-  { id: "3", title: "Categoria 3", description: "Entrada", dot: "bg-green-500" },
-  { id: "2", title: "Categoria 2", description: "Intermédio", dot: "bg-amber-500" },
-  { id: "1", title: "Categoria 1", description: "Avançado", dot: "bg-rose-500" },
-] as const;
-
-const exams = categories.map((cat) => ({
-  title: cat.title,
-  href: `/exam/${cat.id}`,
-  description: cat.description,
-}));
 
 
 interface MobileNavProps {
@@ -115,36 +104,40 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
                   <div className="border-t my-1" />
 
                   {/* Categories */}
-                  {categories.map((cat, idx) => (
-                    <div key={cat.id}>
+                  {CATEGORIES.map((catId, idx) => {
+                    const cfg = CATEGORY_CONFIG[catId];
+                    const Icon = cfg.icon;
+                    return (
+                    <div key={catId}>
                       {idx > 0 && <div className="border-t my-1" />}
                       <span className="flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-muted-foreground">
-                        <span className={`w-1.5 h-1.5 rounded-full ${cat.dot}`} />
-                        {cat.title}
+                        <Icon className="h-3.5 w-3.5" />
+                        {t("category", { id: catId })}
                       </span>
                       <Link
-                        href={`/browse/${cat.id}`}
+                        href={`/browse/${catId}`}
                         onClick={closeMenu}
                         className="flex rounded-md px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800"
                       >
                         {t("questions")}
                       </Link>
                       <Link
-                        href={`/browse/${cat.id}/flash`}
+                        href={`/browse/${catId}/flash`}
                         onClick={closeMenu}
                         className="flex rounded-md px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800"
                       >
                         {t("flashcards")}
                       </Link>
                       <Link
-                        href={`/browse/${cat.id}/smart-practice`}
+                        href={`/browse/${catId}/smart-practice`}
                         onClick={closeMenu}
                         className="flex rounded-md px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800"
                       >
                         {t("smartPractice")}
                       </Link>
                     </div>
-                  ))}
+                    );
+                  })}
 
                   <div className="border-t my-1" />
 
@@ -184,17 +177,24 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
               </AccordionTrigger>
               <AccordionContent className="pb-0 pt-1">
                 <div className="flex flex-col gap-1 pl-7">
-                  {exams.map((exam) => (
+                  {CATEGORIES.map((catId) => {
+                    const cfg = CATEGORY_CONFIG[catId];
+                    const Icon = cfg.icon;
+                    return (
                     <Link
-                      key={exam.href}
-                      href={exam.href}
+                      key={catId}
+                      href={`/exam/${catId}`}
                       onClick={closeMenu}
-                      className="flex flex-col rounded-md px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-800"
+                      className="flex items-start gap-2 rounded-md px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-800"
                     >
-                      <span className="text-sm font-medium">{exam.title}</span>
-                      <span className="text-xs text-muted-foreground">{exam.description}</span>
+                      <Icon className="h-4 w-4 mt-0.5 shrink-0" />
+                      <div className="flex flex-col">
+                        <span className="text-sm font-medium">{t("category", { id: catId })}</span>
+                        <span className="text-xs text-muted-foreground">{t(`categoryDesc.${catId}`)}</span>
+                      </div>
                     </Link>
-                  ))}
+                    );
+                  })}
                   <div className="border-t my-1" />
                   <Link
                     href="/submit-exam"
