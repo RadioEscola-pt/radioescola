@@ -33,7 +33,7 @@ export default async function HomePage() {
     <div className="py-6 md:py-10">
       {/* Hero heading */}
       <section>
-        <h1 className="mt-2 text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-slate-800 dark:text-slate-200">
+        <h1 className="mt-2 text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-foreground">
           {t("heroPrefix")}{" "}
           <span className="font-semibold text-amber-600 dark:text-amber-400">{t("heroAccent")}</span>
         </h1>
@@ -50,7 +50,7 @@ export default async function HomePage() {
             return (
               <div
                 key={id}
-                className="group relative overflow-hidden rounded-2xl h-72 md:h-80 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                className="group relative overflow-hidden rounded-xl h-72 md:h-80 transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl"
               >
                 <img
                   src={image}
@@ -84,7 +84,7 @@ export default async function HomePage() {
 
       {/* Testimonials */}
       <section className="mt-16 md:mt-20">
-        <h2 className="text-lg font-medium text-slate-500 dark:text-slate-400 mb-6">{t("testimonialsHeading")}</h2>
+        <h2 className="text-lg font-medium text-muted-foreground mb-6">{t("testimonialsHeading")}</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {([
             {
@@ -110,7 +110,7 @@ export default async function HomePage() {
               <p className="text-sm text-slate-700 dark:text-slate-300 flex-1">&ldquo;{testimonial.quote}&rdquo;</p>
               <footer className="mt-3 flex items-center justify-between">
                 <span className="text-sm font-medium text-slate-900 dark:text-slate-100">{testimonial.name}</span>
-                <span className="text-xs text-slate-400 dark:text-slate-500 font-mono">{testimonial.callsign} &middot; {testimonial.detail}</span>
+                <span className="text-xs text-muted-foreground font-mono">{testimonial.callsign} &middot; {testimonial.detail}</span>
               </footer>
             </blockquote>
           ))}
@@ -123,7 +123,7 @@ export default async function HomePage() {
 
         <Link
           href="/drill"
-          className="flex items-center gap-4 px-5 py-4 rounded-xl bg-amber-50 border border-amber-200/60 hover:bg-amber-100/80 dark:bg-amber-950/30 dark:border-amber-800/40 dark:hover:bg-amber-950/50 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md group mb-4"
+          className="flex items-center gap-4 px-5 py-4 rounded-xl bg-amber-50 border border-amber-200/60 hover:bg-amber-100/80 dark:bg-amber-950/30 dark:border-amber-800/40 dark:hover:bg-amber-950/50 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md group mb-4"
         >
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-amber-500 text-white animate-gentle-pulse">
             <Zap className="h-5 w-5" />
@@ -132,10 +132,10 @@ export default async function HomePage() {
             <p className="font-semibold text-slate-900 dark:text-slate-100">{t("drillTitle")}</p>
             <p className="text-sm text-slate-600 dark:text-slate-400">{t("drillDescription")}</p>
           </div>
-          <ArrowRight className="h-5 w-5 shrink-0 text-slate-400 group-hover:text-amber-600 group-hover:translate-x-0.5 transition-all" aria-hidden />
+          <ArrowRight className="h-5 w-5 shrink-0 text-slate-400 group-hover:text-amber-600 group-hover:translate-x-0.5 transition-all duration-200" aria-hidden />
         </Link>
 
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {([
             { href: "/browse/3/smart-practice", icon: Brain, titleKey: "smartPracticeTitle", descKey: "smartPracticeDescription" },
             { href: "/browse/3/flash", icon: Layers, titleKey: "flashcardsTitle", descKey: "flashcardsDescription" },
@@ -146,9 +146,9 @@ export default async function HomePage() {
               <Link
                 key={feature.href}
                 href={feature.href}
-                className="flex items-start gap-3 px-4 py-3.5 rounded-xl bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all duration-200 hover:-translate-y-0.5 group"
+                className="flex items-start gap-3 px-5 py-4 rounded-xl bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all duration-200 hover:-translate-y-0.5 group"
               >
-                <Icon className="h-5 w-5 shrink-0 mt-0.5 text-slate-500 dark:text-slate-400 group-hover:text-amber-500 transition-colors" />
+                <Icon className="h-5 w-5 shrink-0 mt-0.5 text-slate-500 dark:text-slate-400 group-hover:text-amber-500 transition-colors duration-200" />
                 <div className="flex-1 min-w-0">
                   <p className="font-medium text-sm text-slate-900 dark:text-slate-100">{t(feature.titleKey)}</p>
                   <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{t(feature.descKey)}</p>
@@ -161,23 +161,23 @@ export default async function HomePage() {
       </section>
 
       {/* Process section */}
-      <section className="mt-16 md:mt-24 -mx-4 md:mx-0 md:rounded-2xl overflow-hidden bg-stone-900 dark:bg-stone-800/50">
+      <section className="mt-16 md:mt-20 -mx-4 md:mx-0 md:rounded-xl overflow-hidden bg-slate-900 dark:bg-slate-800/50">
         <div className="p-6 md:p-10 lg:p-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">{t("processHeading")}</h2>
-          <p className="mt-2 text-stone-400 max-w-xl">{t("sectionSubtitle")}</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-white">{t("processHeading")}</h2>
+          <p className="mt-2 text-slate-400 max-w-xl">{t("sectionSubtitle")}</p>
 
           <div className="mt-10 grid gap-8 md:grid-cols-3">
             {processSteps.map((step) => (
               <div key={step.title}>
                 <span className="text-4xl font-black text-amber-500/25">{step.number}</span>
                 <h3 className="mt-2 text-xl font-semibold text-white">{step.title}</h3>
-                <p className="mt-2 text-sm text-stone-400 leading-relaxed">{step.description}</p>
+                <p className="mt-2 text-sm text-slate-400 leading-relaxed">{step.description}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-10 pt-6 border-t border-stone-700/50">
-            <p className="text-sm text-stone-500 flex items-center gap-2 mb-4">
+          <div className="mt-10 pt-6 border-t border-slate-700/50">
+            <p className="text-sm text-slate-500 flex items-center gap-2 mb-4">
               <Building2 className="h-4 w-4 text-amber-500 shrink-0" aria-hidden />
               {t("tipText")}
             </p>
@@ -185,13 +185,13 @@ export default async function HomePage() {
               <Button asChild>
                 <Link href="/ser-radioamador">{t("learnMore")}</Link>
               </Button>
-              <Button variant="ghost" className="border border-stone-500 text-white bg-transparent hover:bg-stone-700 hover:text-white dark:text-white dark:hover:bg-stone-700" asChild>
+              <Button variant="outline" className="border-slate-600 text-slate-200 bg-transparent hover:bg-slate-700 hover:text-white" asChild>
                 <a href="https://www.anacom.pt" target="_blank" rel="noreferrer">
                   {t("externalLinks.anacom")}
                   <ExternalLink className="h-4 w-4" aria-hidden />
                 </a>
               </Button>
-              <Button variant="ghost" className="border border-stone-500 text-white bg-transparent hover:bg-stone-700 hover:text-white dark:text-white dark:hover:bg-stone-700" asChild>
+              <Button variant="outline" className="border-slate-600 text-slate-200 bg-transparent hover:bg-slate-700 hover:text-white" asChild>
                 <a href="https://radioamador.info/associations" target="_blank" rel="noreferrer">
                   {t("externalLinks.clubs")}
                   <ExternalLink className="h-4 w-4" aria-hidden />
