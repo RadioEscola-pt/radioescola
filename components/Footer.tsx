@@ -83,10 +83,10 @@ export default function Footer() {
           </p>
 
           {/* Logo */}
-          <div className="flex items-center gap-2 text-slate-400 dark:text-slate-500">
-            <Radio className="h-4 w-4" />
+          <Link href="/" className="logo-link flex items-center gap-2 text-slate-400 transition-colors hover:text-amber-600 dark:text-slate-500 dark:hover:text-amber-400">
+            <Radio className="logo-radio-icon h-4 w-4" />
             <span className="text-sm font-medium tracking-tight">Rádio Escola</span>
-          </div>
+          </Link>
         </div>
       </div>
     </footer>

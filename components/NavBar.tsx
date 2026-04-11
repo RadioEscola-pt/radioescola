@@ -72,8 +72,8 @@ export default function NavBar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/50 bg-slate-50/70 backdrop-blur-xl dark:border-slate-700/50 dark:bg-slate-900/70">
       <div className="container mx-auto flex h-14 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2 font-bold text-lg text-slate-800 dark:text-slate-100">
-          <Radio className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+        <Link href="/" className="logo-link flex items-center gap-2 font-bold text-lg text-slate-800 transition-colors hover:text-amber-700 dark:text-slate-100 dark:hover:text-amber-300">
+          <Radio className="logo-radio-icon h-5 w-5 text-amber-600 dark:text-amber-400" />
           <span className="tracking-tight">Rádio Escola</span>
         </Link>
 
