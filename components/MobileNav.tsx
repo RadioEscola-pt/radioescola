@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Upload, Menu, GraduationCap, BarChart3, Settings, Globe, Zap, Radio } from "lucide-react";
+import { Home, BookOpen, FileText, Upload, Menu, GraduationCap, BarChart3, Settings, Globe, Zap, Radio, TrendingUp, School } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -212,6 +212,26 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
             </AccordionItem>
 
           </Accordion>
+
+          {/* Estado da Nação */}
+          <Link
+            href="/estado-da-nacao"
+            onClick={closeMenu}
+            className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+          >
+            <TrendingUp className="h-4 w-4" />
+            {t("nationStatus")}
+          </Link>
+
+          {/* Estado da Escola */}
+          <Link
+            href="/estado-da-escola"
+            onClick={closeMenu}
+            className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+          >
+            <School className="h-4 w-4" />
+            {t("schoolStatus")}
+          </Link>
 
           {/* Become Ham Link */}
           <Link
