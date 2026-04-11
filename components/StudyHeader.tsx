@@ -3,16 +3,17 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowLeft, FileText, BookOpen, Layers, Zap } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { CATEGORY_CONFIG } from "@/lib/config/categories";
 import type { CategoryId } from "@/lib/config/categories";
 
 type StudyMode = "exam" | "browse" | "flash" | "smart";
 
-const MODE_CONFIG = {
-  exam: { icon: FileText, label: "EXAM" },
-  browse: { icon: BookOpen, label: "BROWSE" },
-  flash: { icon: Layers, label: "FLASH" },
-  smart: { icon: Zap, label: "SMART" },
+const MODE_ICONS = {
+  exam: FileText,
+  browse: BookOpen,
+  flash: Layers,
+  smart: Zap,
 } as const;
 
 interface StudyHeaderProps {
@@ -30,7 +31,9 @@ export function StudyHeader({
   subtitle,
   children,
 }: StudyHeaderProps) {
-  const { icon: Icon, label } = MODE_CONFIG[mode];
+  const t = useTranslations("StudyHeader");
+  const Icon = MODE_ICONS[mode];
+  const label = t(`mode.${mode}`);
   const cfg = CATEGORY_CONFIG[categoryId as CategoryId];
   const accent = cfg?.accent ?? "bg-amber-500";
   const CategoryIcon = cfg?.icon;
@@ -65,7 +68,7 @@ export function StudyHeader({
               <span className="inline-flex items-center gap-1.5">
                 {CategoryIcon && <CategoryIcon className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />}
                 <span className="text-sm font-semibold text-slate-700 dark:text-slate-200 leading-none">
-                  Cat {categoryId}
+                  {t("category", { id: categoryId })}
                 </span>
               </span>
 

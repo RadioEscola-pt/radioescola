@@ -10,6 +10,7 @@ type Item = {
   title: string;
   description?: string;
   categories: string[];
+  readTime: number;
 };
 
 function humanize(slug: string) {
@@ -35,7 +36,10 @@ function readItems(): Item[] {
     const cats = Array.isArray(categories)
       ? categories.map((c) => String(c))
       : ['3', '2', '1'];
-    return { slug, title, description, categories: cats };
+    // Calculate read time from word count (~200 words/min), minimum 1 min
+    const wordCount = fm.content.split(/\s+/).filter(Boolean).length;
+    const readTime = Math.max(1, Math.round(wordCount / 200));
+    return { slug, title, description, categories: cats, readTime };
   }).sort((a, b) => a.title.localeCompare(b.title));
 }
 

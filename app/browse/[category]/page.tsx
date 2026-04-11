@@ -67,7 +67,7 @@ export default function BrowsePage() {
         categoryId={categoryId}
         mode="browse"
         backHref="/"
-        subtitle={`${category.questions.length} ${category.questions.length === 1 ? 'question' : 'questions'}`}
+        subtitle={t("questionCount", { count: category.questions.length })}
       />
       <section className="sm:px-0">
         {category.questions.map((q, idx) => {
