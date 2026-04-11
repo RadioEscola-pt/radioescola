@@ -24,42 +24,40 @@ const YEAR_CHARTS: Record<Year, { src: string; alt: string }[]> = {
 };
 
 const YEAR_IFRAMES: Record<Year, { src: string; title: string }[]> = {
-  "2025": [
-    {
-      src: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3MNbYQr5WZwoflp08j5376UdnlMV-0Xgd-zotx5sq38YPT1TjFYKokdztWP4EsNHUNRgX_YRthIpC/pubhtml?gid=677334600&pid=explorer&a=v&chrome=false&embedded=true",
-      title: "Totais e entradas/saídas por categoria",
-    },
-  ],
-  "2024": [
-    {
-      src: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrVjXWCfTosvC6BZqLb5eSCTjOGmL5AaoVfnfAm-GcC_PC33k_BMzRxDYtoUCbt5VZjAi1s_kwJCDR/pubhtml?gid=677334600&pid=explorer&a=v&chrome=false&embedded=true",
-      title: "Totais e entradas/saídas por categoria",
-    },
-    {
-      src: "https://docs.google.com/spreadsheets/d/e/2PACX-1vREKf5ssUJP1xKJwbqQ--MOxEvW6y4J9tCGANIjp8uvERvTFW6__AExi2iTOzdcw6FSAZ9hVZxLqhP5/pubhtml?gid=677334600&pid=explorer&a=v&chrome=false&embedded=true",
-      title: "Indicativos alterados por mês",
-    },
-    {
-      src: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTHxTwssR7UFM_0Ke3OoeW1Vlg17NcVU2Fc-44WNFgNw6zagyiPkepFSgZEMmcWBwoQOy4jKYeHtxH5/pubhtml?gid=677334600&pid=explorer&a=v&chrome=false&embedded=true",
-      title: "Distribuição por região (Continente, Açores, Madeira)",
-    },
-  ],
+  "2025": [],
+  "2024": [],
   "2023": [
     {
-      src: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRQiPdGp3l1Zqhg7eKr8F13ON0OAQxNb57aSaMX9AwbHiIwyDpsWeAXkXr91YyrS4HlKzfDpvJyWn43/pubhtml?gid=677334600&pid=explorer&a=v&chrome=false&embedded=true",
-      title: "Totais e entradas/saídas por categoria",
-    },
-    {
-      src: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSOJjfsTtR3CC1RnQpqdWNGwh_Znjzg9nNWGf84O9Gdm8yGFxSuNiSwmLXvgohiLQpdkUy6yxuVrtZs/pubhtml?gid=677334600&pid=explorer&a=v&chrome=false&embedded=true",
-      title: "Indicativos alterados por mês",
-    },
-    {
-      src: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSoy2lFWo___AJW-EpN5M2MEs0dsaFI8kOIqg5UazWlrbFWPFIpJnx4mFvnbwxawFrxumrutnGGo5V2/pubhtml?gid=677334600&pid=explorer&a=v&chrome=false&embedded=true",
-      title: "Distribuição por região (Continente, Açores, Madeira)",
+      src: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3MNbYQr5WZwoflp08j5376UdnlMV-0Xgd-zotx5sq38YPT1TjFYKokdztWP4EsNHUNRgX_YRthIpC/pubhtml?gid=677334600&pid=explorer&a=v&chrome=false&embedded=true",
+      title: "Resumo anual 2023",
     },
     {
       src: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRs8lwT6H5FYgMchdMn4pVMc9ThHqy2sH2SHPVm3aXZT2rNOJaivpLx4hQghiQWVngBi76v-58xxbPF/pubhtml?gid=677334600&pid=explorer&a=v&chrome=false&embedded=true",
-      title: "Resumo anual por categoria",
+      title: "Junho 2023",
+    },
+    {
+      src: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSoy2lFWo___AJW-EpN5M2MEs0dsaFI8kOIqg5UazWlrbFWPFIpJnx4mFvnbwxawFrxumrutnGGo5V2/pubhtml?gid=677334600&pid=explorer&a=v&chrome=false&embedded=true",
+      title: "Julho 2023",
+    },
+    {
+      src: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSOJjfsTtR3CC1RnQpqdWNGwh_Znjzg9nNWGf84O9Gdm8yGFxSuNiSwmLXvgohiLQpdkUy6yxuVrtZs/pubhtml?gid=677334600&pid=explorer&a=v&chrome=false&embedded=true",
+      title: "Agosto 2023",
+    },
+    {
+      src: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRQiPdGp3l1Zqhg7eKr8F13ON0OAQxNb57aSaMX9AwbHiIwyDpsWeAXkXr91YyrS4HlKzfDpvJyWn43/pubhtml?gid=677334600&pid=explorer&a=v&chrome=false&embedded=true",
+      title: "Setembro 2023",
+    },
+    {
+      src: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTHxTwssR7UFM_0Ke3OoeW1Vlg17NcVU2Fc-44WNFgNw6zagyiPkepFSgZEMmcWBwoQOy4jKYeHtxH5/pubhtml?gid=677334600&pid=explorer&a=v&chrome=false&embedded=true",
+      title: "Outubro 2023",
+    },
+    {
+      src: "https://docs.google.com/spreadsheets/d/e/2PACX-1vREKf5ssUJP1xKJwbqQ--MOxEvW6y4J9tCGANIjp8uvERvTFW6__AExi2iTOzdcw6FSAZ9hVZxLqhP5/pubhtml?gid=677334600&pid=explorer&a=v&chrome=false&embedded=true",
+      title: "Novembro 2023",
+    },
+    {
+      src: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrVjXWCfTosvC6BZqLb5eSCTjOGmL5AaoVfnfAm-GcC_PC33k_BMzRxDYtoUCbt5VZjAi1s_kwJCDR/pubhtml?gid=677334600&pid=explorer&a=v&chrome=false&embedded=true",
+      title: "Dezembro 2023",
     },
   ],
 };
