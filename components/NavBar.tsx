@@ -21,9 +21,9 @@ import { useCalculators } from "@/components/providers/CalculatorProvider";
 import type { CalculatorCode } from "@/lib/types";
 
 const categories = [
-  { id: "3", title: "Categoria 3", description: "Entrada" },
-  { id: "2", title: "Categoria 2", description: "Intermédio" },
-  { id: "1", title: "Categoria 1", description: "Avançado" },
+  { id: "3", title: "Categoria 3", description: "Entrada", dot: "bg-green-500" },
+  { id: "2", title: "Categoria 2", description: "Intermédio", dot: "bg-amber-500" },
+  { id: "1", title: "Categoria 1", description: "Avançado", dot: "bg-rose-500" },
 ] as const;
 
 const exams = categories.map((cat) => ({
@@ -32,30 +32,7 @@ const exams = categories.map((cat) => ({
   description: cat.description,
 }));
 
-const browseComplete = categories.map((cat) => ({
-  title: `${cat.title}`,
-  href: `/browse/${cat.id}`,
-  description: `${cat.description} - completo`,
-}));
-
-const browseFlashcards = categories.map((cat) => ({
-  title: `${cat.title}`,
-  href: `/browse/${cat.id}/flash`,
-  description: `${cat.description} - flashcards`,
-}));
-
-const calculators = [
-  {
-    title: "Ohm's Law",
-    description: "Solve voltage, current, or resistance.",
-    action: "ohm",
-  },
-  {
-    title: "Component Sum",
-    description: "Sum resistors, capacitors, or inductors.",
-    action: "componentSum",
-  },
-] as const;
+const triggerClasses = "inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none data-[state=open]:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100 dark:data-[state=open]:bg-slate-700";
 
 export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -87,92 +64,91 @@ export default function NavBar() {
             {t("home")}
           </Link>
 
+          {/* Study — merged with Browse */}
           <DropdownMenu>
-            <DropdownMenuTrigger className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none data-[state=open]:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100 dark:data-[state=open]:bg-slate-700">
+            <DropdownMenuTrigger className={triggerClasses}>
               <BookOpen className="mr-2 h-4 w-4" />
               {t("study")}
               <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="w-[220px]">
-              <DropdownMenuItem asChild>
-                <Link href="/study" className="cursor-pointer">
-                  <BookOpen className="mr-2 h-4 w-4" />
-                  {t("studyLibrary")}
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuSub>
-                <DropdownMenuSubTrigger>
-                  <Calculator className="mr-2 h-4 w-4" />
-                  {t("calculators")}
-                </DropdownMenuSubTrigger>
-                <DropdownMenuSubContent className="w-[220px]">
-                  {calculators.map((calc) => {
-                    const Icon = calc.icon;
-                    const key = calc.translationKey;
-                    return (
-                      <DropdownMenuItem
-                        key={calc.code}
-                        className="cursor-pointer"
-                        onClick={() => handleCalculatorClick(calc.code)}
-                      >
-                        <div className="flex items-start gap-2">
-                          <Icon className="h-4 w-4 mt-0.5 shrink-0" />
-                          <div className="flex flex-col">
-                            <span className="font-medium">{tc(`${key}.shortTitle`)}</span>
-                            <span className="text-xs text-muted-foreground">{tc(`${key}.description`)}</span>
+            <DropdownMenuContent align="start" className="w-[480px] p-0">
+              {/* Top: quick actions */}
+              <div className="p-1.5 flex gap-1">
+                <DropdownMenuItem asChild className="flex-1 whitespace-nowrap">
+                  <Link href="/drill" className="cursor-pointer">
+                    <Zap className="mr-2 h-4 w-4 text-amber-500" />
+                    {t("quickDrill")}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild className="flex-1 whitespace-nowrap">
+                  <Link href="/study" className="cursor-pointer">
+                    <BookOpen className="mr-2 h-4 w-4" />
+                    {t("studyLibrary")}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger className="flex-1 whitespace-nowrap">
+                    <Calculator className="mr-2 h-4 w-4" />
+                    {t("calculators")}
+                  </DropdownMenuSubTrigger>
+                  <DropdownMenuSubContent className="w-[220px]">
+                    {calculators.map((calc) => {
+                      const Icon = calc.icon;
+                      const key = calc.translationKey;
+                      return (
+                        <DropdownMenuItem
+                          key={calc.code}
+                          className="cursor-pointer"
+                          onClick={() => handleCalculatorClick(calc.code)}
+                        >
+                          <div className="flex items-start gap-2">
+                            <Icon className="h-4 w-4 mt-0.5 shrink-0" />
+                            <div className="flex flex-col">
+                              <span className="font-medium">{tc(`${key}.shortTitle`)}</span>
+                              <span className="text-xs text-muted-foreground">{tc(`${key}.description`)}</span>
+                            </div>
                           </div>
-                        </div>
-                      </DropdownMenuItem>
-                    );
-                  })}
-                </DropdownMenuSubContent>
-              </DropdownMenuSub>
+                        </DropdownMenuItem>
+                      );
+                    })}
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
+              </div>
+
+              <DropdownMenuSeparator className="my-0" />
+
+              {/* Category grid */}
+              <div className="grid grid-cols-3 gap-0 p-1.5">
+                {categories.map((cat) => (
+                  <div key={cat.id} className="flex flex-col">
+                    <DropdownMenuLabel className="text-xs text-muted-foreground font-medium flex items-center gap-1.5 py-1">
+                      <span className={`w-1.5 h-1.5 rounded-full ${cat.dot}`} />
+                      {cat.title}
+                    </DropdownMenuLabel>
+                    <DropdownMenuItem asChild>
+                      <Link href={`/browse/${cat.id}`} className="cursor-pointer text-sm">
+                        {t("questions")}
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href={`/browse/${cat.id}/flash`} className="cursor-pointer text-sm">
+                        {t("flashcards")}
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href={`/browse/${cat.id}/smart-practice`} className="cursor-pointer text-sm">
+                        {t("smartPractice")}
+                      </Link>
+                    </DropdownMenuItem>
+                  </div>
+                ))}
+              </div>
             </DropdownMenuContent>
           </DropdownMenu>
 
+          {/* Exams */}
           <DropdownMenu>
-            <DropdownMenuTrigger className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none data-[state=open]:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100 dark:data-[state=open]:bg-slate-700">
-              <BookOpen className="mr-2 h-4 w-4" />
-              {t("browse")}
-              <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="w-[220px]">
-              <DropdownMenuItem asChild>
-                <Link href="/drill" className="cursor-pointer">
-                  <Zap className="mr-2 h-4 w-4 text-amber-500" />
-                  {t("quickDrill")}
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              {categories.map((cat, idx) => (
-                <React.Fragment key={cat.id}>
-                  {idx > 0 && <DropdownMenuSeparator />}
-                  <DropdownMenuLabel className="text-xs text-muted-foreground">
-                    {cat.title} ({cat.description})
-                  </DropdownMenuLabel>
-                  <DropdownMenuItem asChild>
-                    <Link href={`/browse/${cat.id}`} className="cursor-pointer">
-                      {t("questions")}
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href={`/browse/${cat.id}/flash`} className="cursor-pointer">
-                      {t("flashcards")}
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href={`/browse/${cat.id}/smart-practice`} className="cursor-pointer">
-                      {t("smartPractice")}
-                    </Link>
-                  </DropdownMenuItem>
-                </React.Fragment>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          <DropdownMenu>
-            <DropdownMenuTrigger className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none data-[state=open]:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100 dark:data-[state=open]:bg-slate-700">
+            <DropdownMenuTrigger className={triggerClasses}>
               <FileText className="mr-2 h-4 w-4" />
               {t("exams")}
               <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />

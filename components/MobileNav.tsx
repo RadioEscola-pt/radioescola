@@ -21,9 +21,9 @@ import { useCalculators } from "@/components/providers/CalculatorProvider";
 import type { CalculatorCode } from "@/lib/types";
 
 const categories = [
-  { id: "3", title: "Categoria 3", description: "Entrada" },
-  { id: "2", title: "Categoria 2", description: "Intermédio" },
-  { id: "1", title: "Categoria 1", description: "Avançado" },
+  { id: "3", title: "Categoria 3", description: "Entrada", dot: "bg-green-500" },
+  { id: "2", title: "Categoria 2", description: "Intermédio", dot: "bg-amber-500" },
+  { id: "1", title: "Categoria 1", description: "Avançado", dot: "bg-rose-500" },
 ] as const;
 
 const exams = categories.map((cat) => ({
@@ -76,7 +76,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
           <Link
             href="/"
             onClick={closeMenu}
-            className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
+            className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
           >
             <Home className="h-4 w-4" />
             {t("home")}
@@ -84,9 +84,9 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
 
           {/* Accordion for nested items */}
           <Accordion type="multiple" className="w-full">
-            {/* Study Accordion */}
+            {/* Study Accordion — includes browse/practice */}
             <AccordionItem value="study" className="border-none">
-              <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:no-underline">
+              <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:no-underline">
                 <span className="flex items-center gap-3">
                   <BookOpen className="h-4 w-4" />
                   {t("study")}
@@ -94,6 +94,15 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
               </AccordionTrigger>
               <AccordionContent className="pb-0 pt-1">
                 <div className="flex flex-col gap-1 pl-7">
+                  {/* Quick actions */}
+                  <Link
+                    href="/drill"
+                    onClick={closeMenu}
+                    className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800"
+                  >
+                    <Zap className="h-4 w-4 text-amber-500" />
+                    {t("quickDrill")}
+                  </Link>
                   <Link
                     href="/study"
                     onClick={closeMenu}
@@ -102,7 +111,44 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
                     <BookOpen className="h-4 w-4 shrink-0" />
                     <span className="text-sm font-medium">{t("studyLibrary")}</span>
                   </Link>
+
                   <div className="border-t my-1" />
+
+                  {/* Categories */}
+                  {categories.map((cat, idx) => (
+                    <div key={cat.id}>
+                      {idx > 0 && <div className="border-t my-1" />}
+                      <span className="flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-muted-foreground">
+                        <span className={`w-1.5 h-1.5 rounded-full ${cat.dot}`} />
+                        {cat.title}
+                      </span>
+                      <Link
+                        href={`/browse/${cat.id}`}
+                        onClick={closeMenu}
+                        className="flex rounded-md px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800"
+                      >
+                        {t("questions")}
+                      </Link>
+                      <Link
+                        href={`/browse/${cat.id}/flash`}
+                        onClick={closeMenu}
+                        className="flex rounded-md px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800"
+                      >
+                        {t("flashcards")}
+                      </Link>
+                      <Link
+                        href={`/browse/${cat.id}/smart-practice`}
+                        onClick={closeMenu}
+                        className="flex rounded-md px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800"
+                      >
+                        {t("smartPractice")}
+                      </Link>
+                    </div>
+                  ))}
+
+                  <div className="border-t my-1" />
+
+                  {/* Calculators */}
                   <span className="px-3 py-1 text-xs font-medium text-muted-foreground">
                     {t("calculators")}
                   </span>
@@ -114,7 +160,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
                         key={calc.code}
                         type="button"
                         onClick={() => handleCalculatorClick(calc.code)}
-                        className="flex items-start gap-2 rounded-md px-3 py-2 text-left hover:bg-slate-100 w-full"
+                        className="flex items-start gap-2 rounded-md px-3 py-2 text-left hover:bg-slate-100 dark:hover:bg-slate-800 w-full"
                       >
                         <Icon className="h-4 w-4 mt-0.5 shrink-0" />
                         <div className="flex flex-col">
@@ -128,61 +174,9 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
               </AccordionContent>
             </AccordionItem>
 
-            {/* Browse Accordion */}
-            <AccordionItem value="browse" className="border-none">
-              <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:no-underline">
-                <span className="flex items-center gap-3">
-                  <BookOpen className="h-4 w-4" />
-                  {t("browse")}
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="pb-0 pt-1">
-                <div className="flex flex-col gap-1 pl-7">
-                  <Link
-                    href="/drill"
-                    onClick={closeMenu}
-                    className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-slate-100"
-                  >
-                    <Zap className="h-4 w-4 text-amber-500" />
-                    {t("quickDrill")}
-                  </Link>
-                  <div className="border-t my-1" />
-                  {categories.map((cat, idx) => (
-                    <div key={cat.id}>
-                      {idx > 0 && <div className="border-t my-1" />}
-                      <span className="px-3 py-1 text-xs font-medium text-muted-foreground">
-                        {cat.title} ({cat.description})
-                      </span>
-                      <Link
-                        href={`/browse/${cat.id}`}
-                        onClick={closeMenu}
-                        className="flex rounded-md px-3 py-2 text-sm hover:bg-slate-100"
-                      >
-                        {t("questions")}
-                      </Link>
-                      <Link
-                        href={`/browse/${cat.id}/flash`}
-                        onClick={closeMenu}
-                        className="flex rounded-md px-3 py-2 text-sm hover:bg-slate-100"
-                      >
-                        {t("flashcards")}
-                      </Link>
-                      <Link
-                        href={`/browse/${cat.id}/smart-practice`}
-                        onClick={closeMenu}
-                        className="flex rounded-md px-3 py-2 text-sm hover:bg-slate-100"
-                      >
-                        {t("smartPractice")}
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-
             {/* Exams Accordion */}
             <AccordionItem value="exams" className="border-none">
-              <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:no-underline">
+              <AccordionTrigger className="w-full rounded-md px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:no-underline">
                 <span className="flex items-center gap-3">
                   <FileText className="h-4 w-4" />
                   {t("exams")}
@@ -195,7 +189,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
                       key={exam.href}
                       href={exam.href}
                       onClick={closeMenu}
-                      className="flex flex-col rounded-md px-3 py-2 hover:bg-slate-100"
+                      className="flex flex-col rounded-md px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-800"
                     >
                       <span className="text-sm font-medium">{exam.title}</span>
                       <span className="text-xs text-muted-foreground">{exam.description}</span>
@@ -205,7 +199,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
                   <Link
                     href="/submit-exam"
                     onClick={closeMenu}
-                    className="flex items-start gap-2 rounded-md px-3 py-2 hover:bg-slate-100"
+                    className="flex items-start gap-2 rounded-md px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-800"
                   >
                     <Upload className="h-4 w-4 mt-0.5 shrink-0" />
                     <div className="flex flex-col">
