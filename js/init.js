@@ -14,7 +14,37 @@ class Init {
 
         if (fragment) {
             const cleanFragment = fragment.substring(1);
-            this.loadComponent(cleanFragment);
+            if (cleanFragment.startsWith('/exame/')) {
+                this.loadExamRoute(cleanFragment);
+            } else if (cleanFragment === '/estado-da-escola') {
+                new QuestionStatus();
+            } else if (cleanFragment.startsWith('/')) {
+                const chapter = cleanFragment.substring(1) || 'home';
+                new LoadChapter(chapter);
+            } else {
+                this.loadComponent(cleanFragment);
+            }
+        }
+    }
+
+    loadExamRoute(route) {
+        const parts = route.split('/');
+        // format: /exame/cat{N}/{type}
+        if (parts.length < 4) return;
+        const category = parts[2].replace('cat', '');
+        const type = parts[3];
+        const quizFile = `perguntas/question${category}.json`;
+
+        switch (type) {
+            case 'favoritas':
+                new FavQuiz(quizFile);
+                break;
+            case 'todas':
+                new Quiz(quizFile);
+                break;
+            case 'simulador':
+                new SimulateQuiz(quizFile);
+                break;
         }
     }
 
@@ -58,18 +88,34 @@ class Init {
 
     load() {
 
-        
+
         new DarkModeToggle();
         new MatomoOptOutManager();
         const searchParams = new URLSearchParams(window.location.search);
         new LocalStorageManager();
 
+        // Backward compat: redirect ?LoadChapter= to hash URL
         if (searchParams.has("LoadChapter")) {
-            new LoadChapter(searchParams.get("LoadChapter"));
-        } else {
-            new LoadChapter("home");
+            const chapter = searchParams.get("LoadChapter");
+            window.location.replace(window.location.pathname + '#/' + chapter);
+            return;
         }
-        this.hashChecker();
+
+        // If hash is a chapter route, hashChecker will load it; otherwise load home
+        const fragment = window.location.hash.substring(1);
+        if (fragment.startsWith('/exame/')) {
+            new LoadChapter("home");
+            this.hashChecker();
+        } else if (fragment.startsWith('/')) {
+            this.hashChecker();
+        } else if (!fragment) {
+            new LoadChapter("home");
+        } else {
+            // Calculator hash — load home first, then handle hash
+            new LoadChapter("home");
+            this.hashChecker();
+        }
+
         console.log("load complete");
         new StudyNavbar();
 
