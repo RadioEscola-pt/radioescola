@@ -274,8 +274,32 @@
   }
 }
 
+/* Donations page heartbeat */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.15);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.1);
+  }
+  56% {
+    transform: scale(1);
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 2.5s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-gentle-pulse,
+  .animate-heartbeat,
   .animate-result-pop,
   .animate-badge-entrance,
   .animate-score-pop,

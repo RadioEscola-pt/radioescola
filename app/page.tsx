@@ -203,7 +203,7 @@ export default async function HomePage() {
       </section>
 
       {/* Donate CTA */}
-      <section className="mt-12 md:mt-16">
+      <section className="mt-8 md:mt-10">
         <Link
           href="/donativos"
           className="flex items-center gap-4 px-5 py-4 rounded-xl bg-slate-50 border border-slate-200/60 hover:bg-slate-100 dark:bg-slate-800/40 dark:border-slate-700/40 dark:hover:bg-slate-800/70 transition-all duration-200 group"

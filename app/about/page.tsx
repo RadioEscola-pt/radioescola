@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Users, MessageCircle, Github, Radio, Heart, ExternalLink } from 'lucide-react';
+import { Users, MessageCircle, Github, Radio, Heart, ExternalLink, ArrowRight } from 'lucide-react';
 import { EXTERNAL_LINKS } from '@/lib/config';
 import { Button } from '@/components/ui/button';
 
@@ -119,7 +119,7 @@ export default function AboutPage() {
       <div className="px-4 sm:px-0">
         <div className="bg-slate-100 dark:bg-slate-800/50 rounded-xl p-6">
           <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Links Úteis</h2>
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-3 sm:grid-cols-3">
             <a
               href={EXTERNAL_LINKS.TELEGRAM}
               target="_blank"
@@ -161,6 +161,7 @@ export default function AboutPage() {
                 <p className="font-medium text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Apoiar o Projeto</p>
                 <p className="text-sm text-slate-500 dark:text-slate-400">Ajuda-nos a manter a plataforma</p>
               </div>
+              <ArrowRight className="w-4 h-4 text-slate-400" />
             </Link>
           </div>
         </div>
