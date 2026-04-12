@@ -15,8 +15,10 @@ import {
 } from "@/lib/types/progress";
 import { migrateToGamification } from "@/lib/gamification/engine";
 import { createInitialGamificationState } from "@/lib/types/gamification";
+import { convertLegacyExport } from "@/lib/backup/legacy-import";
 
 const STORAGE_KEY = "hamradio_progress";
+const LEGACY_MIGRATED_KEY = "hamradio_legacy_migrated";
 
 function isLocalStorageAvailable(): boolean {
   if (typeof window === "undefined") return false;
@@ -30,6 +32,51 @@ function isLocalStorageAvailable(): boolean {
   }
 }
 
+/**
+ * Auto-migrate legacy RadioEscola localStorage data.
+ * When the new app is deployed over the same domain, the old keys
+ * (question1, question2, question3, question1Fav, etc.) are still
+ * present. This converts them to the new format on first load,
+ * then removes the old keys.
+ */
+function autoMigrateLegacy(): UserProgress | null {
+  if (localStorage.getItem(LEGACY_MIGRATED_KEY)) return null;
+
+  // Collect old RadioEscola keys
+  const legacyKeys = ["question1", "question2", "question3", "question1Fav", "question2Fav", "question3Fav"];
+  const legacyData: Record<string, string> = {};
+  let hasLegacy = false;
+
+  for (const key of legacyKeys) {
+    const value = localStorage.getItem(key);
+    if (value) {
+      legacyData[key] = value;
+      hasLegacy = true;
+    }
+  }
+
+  // Mark as done regardless — we only attempt once
+  localStorage.setItem(LEGACY_MIGRATED_KEY, "1");
+
+  if (!hasLegacy) return null;
+
+  try {
+    const { progress } = convertLegacyExport(legacyData);
+
+    // Clean up old keys
+    for (const key of legacyKeys) {
+      localStorage.removeItem(key);
+    }
+    // Also remove auxiliary old keys
+    localStorage.removeItem("DarkMode");
+
+    return progress;
+  } catch (error) {
+    console.error("Legacy auto-migration failed:", error);
+    return null;
+  }
+}
+
 function getProgress(): Promise<UserProgress | null> {
   return new Promise((resolve) => {
     if (!isLocalStorageAvailable()) {
@@ -39,7 +86,15 @@ function getProgress(): Promise<UserProgress | null> {
 
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
+
+      // If no new-format data exists, try auto-migrating legacy data
       if (!stored) {
+        const legacy = autoMigrateLegacy();
+        if (legacy) {
+          saveProgress(legacy);
+          resolve(legacy);
+          return;
+        }
         resolve(null);
         return;
       }
