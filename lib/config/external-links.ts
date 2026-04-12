@@ -15,6 +15,8 @@ export const EXTERNAL_LINKS = {
   TELEGRAM: 'https://t.me/+xQNzwNwb2JIxMWY8',
   /** Google Play app */
   GOOGLE_PLAY: 'https://play.google.com/store/apps/details?id=com.andradator.escoladeradioamador',
+  /** PayPal.me donation link */
+  PAYPAL_DONATE: 'https://www.paypal.me/radioescola',
 } as const;
 
 export type ExternalLinkKey = keyof typeof EXTERNAL_LINKS;

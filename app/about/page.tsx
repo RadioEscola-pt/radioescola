@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Users, MessageCircle, Github, Radio, Heart, ExternalLink } from 'lucide-react';
 import { EXTERNAL_LINKS } from '@/lib/config';
 import { Button } from '@/components/ui/button';
@@ -149,6 +150,18 @@ export default function AboutPage() {
               </div>
               <ExternalLink className="w-4 h-4 text-slate-400" />
             </a>
+            <Link
+              href="/donativos"
+              className="flex items-center gap-3 p-4 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-amber-300 dark:hover:border-amber-600 transition-colors group"
+            >
+              <div className="p-2 rounded-lg bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400">
+                <Heart className="w-5 h-5" />
+              </div>
+              <div className="flex-1">
+                <p className="font-medium text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Apoiar o Projeto</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">Ajuda-nos a manter a plataforma</p>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

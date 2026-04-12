@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { BookOpen, IdCard, Radio, ExternalLink, Building2, ArrowRight, Zap, Brain, Layers } from "lucide-react";
+import { BookOpen, IdCard, Radio, ExternalLink, Building2, ArrowRight, Zap, Brain, Layers, Heart } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { CATEGORIES, CATEGORY_CONFIG, CATEGORY_IMAGES } from "@/lib/config";
 import { Button } from "@/components/ui/button";
@@ -200,6 +200,24 @@ export default async function HomePage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Donate CTA */}
+      <section className="mt-12 md:mt-16">
+        <Link
+          href="/donativos"
+          className="flex items-center gap-4 px-5 py-4 rounded-xl bg-slate-50 border border-slate-200/60 hover:bg-slate-100 dark:bg-slate-800/40 dark:border-slate-700/40 dark:hover:bg-slate-800/70 transition-all duration-200 group"
+        >
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-rose-100 dark:bg-rose-900/30">
+            <Heart className="h-4 w-4 text-rose-500 dark:text-rose-400" />
+          </div>
+          <p className="flex-1 text-sm text-slate-600 dark:text-slate-400">
+            {t("donatePrompt")}
+          </p>
+          <span className="shrink-0 text-sm font-medium text-amber-600 dark:text-amber-400 group-hover:underline">
+            {t("donateButton")}
+          </span>
+        </Link>
       </section>
     </div>
   );

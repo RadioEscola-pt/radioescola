@@ -52,6 +52,7 @@
     "sourceCode": "Source Code",
     "telegram": "Telegram",
     "app": "App",
+    "donate": "Support",
     "slogan": "Made by amateur radio operators, for (future) amateur radio operators"
   },
   "Browse": {
@@ -122,7 +123,32 @@
     "flashcardsTitle": "Flashcards",
     "flashcardsDescription": "Review questions one by one, at your pace.",
     "studyLibraryTitle": "Study Library",
-    "studyLibraryDescription": "Tutorials, guides, and reference materials."
+    "studyLibraryDescription": "Tutorials, guides, and reference materials.",
+    "donatePrompt": "Enjoying it? Help us keep going",
+    "donateButton": "Support"
+  },
+  "Donate": {
+    "title": "Help us keep Rádio Escola online",
+    "subtitle": "Rádio Escola is a free, open-source project maintained by volunteers. Your contributions help us keep the platform running and continue developing new features.",
+    "whatHelps": "Where your support goes",
+    "hosting": "Hosting",
+    "hostingDesc": "Servers, domain, and infrastructure to keep the platform online and fast.",
+    "development": "Development",
+    "developmentDesc": "Time dedicated to building new features and improving the experience.",
+    "community": "Community",
+    "communityDesc": "Keeping the platform free and accessible for all aspiring radio amateurs.",
+    "chooseAmount": "Choose how to support",
+    "coffee": "A coffee for the team",
+    "coffeeAmount": "5",
+    "hosting10": "Help with hosting",
+    "hosting10Amount": "10",
+    "sponsor": "Sponsor a month",
+    "sponsorAmount": "25",
+    "otherAmount": "Other amount",
+    "otherAmountDesc": "Choose your own amount",
+    "donateVia": "Donate via PayPal",
+    "thankYou": "Thank you!",
+    "thankYouText": "Every contribution, no matter how small, makes a difference. Thank you for supporting amateur radio in Portugal."
   },
   "Study": {
     "title": "Study Library",

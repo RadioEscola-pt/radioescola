@@ -52,6 +52,7 @@
     "sourceCode": "Código Fonte",
     "telegram": "Telegram",
     "app": "App",
+    "donate": "Apoiar",
     "slogan": "Feito por radioamadores, para (futuros) radioamadores"
   },
   "Browse": {
@@ -122,7 +123,32 @@
     "flashcardsTitle": "Flashcards",
     "flashcardsDescription": "Revê questões uma a uma, ao teu ritmo.",
     "studyLibraryTitle": "Biblioteca de Estudo",
-    "studyLibraryDescription": "Tutoriais, guias e materiais de referência."
+    "studyLibraryDescription": "Tutoriais, guias e materiais de referência.",
+    "donatePrompt": "Gostaste? Ajuda-nos a continuar",
+    "donateButton": "Apoiar"
+  },
+  "Donate": {
+    "title": "Ajuda-nos a manter o Rádio Escola no ar",
+    "subtitle": "O Rádio Escola é um projeto gratuito, open-source e mantido por voluntários. As tuas contribuições ajudam-nos a manter a plataforma online e a continuar a desenvolver novas funcionalidades.",
+    "whatHelps": "Para onde vai o teu apoio",
+    "hosting": "Alojamento",
+    "hostingDesc": "Servidores, domínio e infraestrutura para manter a plataforma online e rápida.",
+    "development": "Desenvolvimento",
+    "developmentDesc": "Tempo dedicado a criar novas funcionalidades e melhorar a experiência.",
+    "community": "Comunidade",
+    "communityDesc": "Manter a plataforma gratuita e acessível para todos os aspirantes a radioamador.",
+    "chooseAmount": "Escolhe como apoiar",
+    "coffee": "Um café para a equipa",
+    "coffeeAmount": "5",
+    "hosting10": "Ajuda com o hosting",
+    "hosting10Amount": "10",
+    "sponsor": "Patrocina um mês",
+    "sponsorAmount": "25",
+    "otherAmount": "Outro valor",
+    "otherAmountDesc": "Escolhe o teu próprio valor",
+    "donateVia": "Doar via PayPal",
+    "thankYou": "Obrigado!",
+    "thankYouText": "Cada contribuição, por mais pequena que seja, faz a diferença. Obrigado por apoiares o radioamadorismo em Portugal."
   },
   "Study": {
     "title": "Biblioteca de Estudo",
