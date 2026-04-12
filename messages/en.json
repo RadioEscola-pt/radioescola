@@ -816,6 +816,23 @@
         "replaceDesc": "Replace all existing progress with the imported data."
       }
     },
+    "legacy": {
+      "description": "Have progress from the old RadioEscola site? Import it here.",
+      "button": "Import from RadioEscola",
+      "title": "Import from RadioEscola",
+      "success": "RadioEscola data imported!",
+      "detected": "Legacy data detected",
+      "stats": {
+        "questions": "{count, plural, one {# question with answer history} other {# questions with answer history}}",
+        "bookmarks": "{count, plural, one {# bookmarked question} other {# bookmarked questions}}",
+        "categories": "{count, plural, one {# category} other {# categories}}"
+      },
+      "error": {
+        "notLegacy": "This file doesn't appear to be a RadioEscola export",
+        "invalid": "Could not read the file",
+        "failed": "Import failed"
+      }
+    },
     "clear": {
       "button": "Clear All Data",
       "title": "Clear All Data",

@@ -816,6 +816,23 @@
         "replaceDesc": "Substitui todo o progresso existente pelos dados importados."
       }
     },
+    "legacy": {
+      "description": "Tens progresso do antigo site RadioEscola? Importa-o aqui.",
+      "button": "Importar do RadioEscola",
+      "title": "Importar do RadioEscola",
+      "success": "Dados do RadioEscola importados!",
+      "detected": "Dados antigos detetados",
+      "stats": {
+        "questions": "{count, plural, one {# pergunta com histórico} other {# perguntas com histórico}}",
+        "bookmarks": "{count, plural, one {# pergunta favorita} other {# perguntas favoritas}}",
+        "categories": "{count, plural, one {# categoria} other {# categorias}}"
+      },
+      "error": {
+        "notLegacy": "Este ficheiro não parece ser uma exportação do RadioEscola",
+        "invalid": "Não foi possível ler o ficheiro",
+        "failed": "Falha na importação"
+      }
+    },
     "clear": {
       "button": "Limpar Todos os Dados",
       "title": "Limpar Todos os Dados",

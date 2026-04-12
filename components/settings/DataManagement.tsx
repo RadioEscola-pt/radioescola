@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Download, Upload, AlertTriangle, Check, Loader2, Trash2 } from "lucide-react";
+import { Download, Upload, AlertTriangle, Check, Loader2, Trash2, ArrowRightLeft } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,7 +14,9 @@ import {
 } from "@/components/ui/dialog";
 import { useProgress } from "@/hooks/useProgress";
 import { exportProgress } from "@/lib/backup/export";
-import { parseBackupFile, validateBackup, importBackup } from "@/lib/backup/import";
+import { parseBackupFile, validateBackup, importBackup, mergeProgress } from "@/lib/backup/import";
+import { isLegacyExport, convertLegacyExport } from "@/lib/backup/legacy-import";
+import type { LegacyImportStats } from "@/lib/backup/legacy-import";
 import type { ImportStrategy, ValidationResult } from "@/lib/backup/types";
 
 export default function DataManagement() {
@@ -35,6 +37,16 @@ export default function DataManagement() {
 
   const [clearDialogOpen, setClearDialogOpen] = useState(false);
   const [isClearing, setIsClearing] = useState(false);
+
+  // Legacy import state
+  const legacyFileInputRef = useRef<HTMLInputElement>(null);
+  const [legacyDialogOpen, setLegacyDialogOpen] = useState(false);
+  const [legacyStats, setLegacyStats] = useState<LegacyImportStats | null>(null);
+  const [legacyFile, setLegacyFile] = useState<File | null>(null);
+  const [isLegacyImporting, setIsLegacyImporting] = useState(false);
+  const [legacySuccess, setLegacySuccess] = useState(false);
+  const [legacyError, setLegacyError] = useState<string | null>(null);
+  const [legacyStrategy, setLegacyStrategy] = useState<ImportStrategy>("merge");
 
   const handleExport = () => {
     if (!progress) return;
@@ -103,6 +115,75 @@ export default function DataManagement() {
     setImportFile(null);
     setValidation(null);
     setImportError(null);
+  };
+
+  const handleLegacyFileSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setLegacyFile(file);
+    setLegacyError(null);
+    setLegacySuccess(false);
+
+    try {
+      const text = await file.text();
+      const parsed = JSON.parse(text);
+
+      if (!isLegacyExport(parsed)) {
+        setLegacyError(t("legacy.error.notLegacy"));
+        return;
+      }
+
+      const { stats } = convertLegacyExport(parsed);
+      setLegacyStats(stats);
+      setLegacyDialogOpen(true);
+    } catch {
+      setLegacyError(t("legacy.error.invalid"));
+    }
+
+    if (legacyFileInputRef.current) {
+      legacyFileInputRef.current.value = "";
+    }
+  };
+
+  const handleLegacyImport = async () => {
+    if (!legacyFile) return;
+
+    setIsLegacyImporting(true);
+    setLegacyError(null);
+
+    try {
+      const text = await legacyFile.text();
+      const parsed = JSON.parse(text);
+      const { progress: convertedProgress } = convertLegacyExport(parsed);
+
+      const { localStorageProvider } = await import("@/lib/storage/localStorage");
+
+      let finalProgress = convertedProgress;
+      if (legacyStrategy === "merge" && progress) {
+        const { merged } = mergeProgress(progress, convertedProgress);
+        finalProgress = merged;
+      }
+
+      await localStorageProvider.saveProgress(finalProgress);
+      await refreshProgress();
+
+      setLegacySuccess(true);
+      setLegacyDialogOpen(false);
+      setTimeout(() => setLegacySuccess(false), 3000);
+    } catch (error) {
+      console.error("Legacy import failed:", error);
+      setLegacyError(t("legacy.error.failed"));
+    } finally {
+      setIsLegacyImporting(false);
+    }
+  };
+
+  const closeLegacyDialog = () => {
+    setLegacyDialogOpen(false);
+    setLegacyFile(null);
+    setLegacyStats(null);
+    setLegacyError(null);
   };
 
   const handleClearData = async () => {
@@ -255,6 +336,120 @@ export default function DataManagement() {
               disabled={!validation?.valid || isImporting}
             >
               {isImporting ? (
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              ) : null}
+              {t("import.confirm")}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Legacy Import Section */}
+      <div className="pt-3 border-t border-slate-200 dark:border-slate-700">
+        <p className="text-sm text-muted-foreground mb-2">
+          {t("legacy.description")}
+        </p>
+        <input
+          ref={legacyFileInputRef}
+          type="file"
+          accept=".json"
+          onChange={handleLegacyFileSelect}
+          className="hidden"
+          id="legacy-file-input"
+        />
+        <Button
+          variant="outline"
+          onClick={() => legacyFileInputRef.current?.click()}
+          className="w-full sm:w-auto"
+        >
+          {legacySuccess ? (
+            <Check className="mr-2 h-4 w-4 text-green-500" />
+          ) : (
+            <ArrowRightLeft className="mr-2 h-4 w-4" />
+          )}
+          {legacySuccess ? t("legacy.success") : t("legacy.button")}
+        </Button>
+
+        {legacyError && (
+          <p className="text-sm text-red-500 flex items-center gap-2 mt-2">
+            <AlertTriangle className="h-4 w-4" />
+            {legacyError}
+          </p>
+        )}
+      </div>
+
+      {/* Legacy Import Dialog */}
+      <Dialog open={legacyDialogOpen} onOpenChange={closeLegacyDialog}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{t("legacy.title")}</DialogTitle>
+            <DialogDescription>
+              {legacyFile?.name}
+            </DialogDescription>
+          </DialogHeader>
+
+          {legacyStats && (
+            <div className="space-y-3">
+              <div className="rounded-md bg-blue-50 p-3 dark:bg-blue-900/20">
+                <p className="text-sm font-medium text-blue-800 dark:text-blue-200">
+                  {t("legacy.detected")}
+                </p>
+                <ul className="mt-2 text-sm text-blue-700 dark:text-blue-300 list-disc list-inside">
+                  <li>{t("legacy.stats.questions", { count: legacyStats.questionsImported })}</li>
+                  <li>{t("legacy.stats.bookmarks", { count: legacyStats.bookmarksImported })}</li>
+                  <li>{t("legacy.stats.categories", { count: legacyStats.categoriesFound.length })}</li>
+                </ul>
+              </div>
+
+              {progress && Object.keys(progress.questionStats).length > 0 && (
+                <div className="space-y-2">
+                  <p className="text-sm font-medium">{t("import.strategy.label")}</p>
+                  <label className="flex items-start gap-3 p-3 rounded-md border cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800">
+                    <input
+                      type="radio"
+                      name="legacy-strategy"
+                      value="merge"
+                      checked={legacyStrategy === "merge"}
+                      onChange={() => setLegacyStrategy("merge")}
+                      className="mt-1"
+                    />
+                    <div>
+                      <p className="font-medium">{t("import.strategy.merge")}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {t("import.strategy.mergeDesc")}
+                      </p>
+                    </div>
+                  </label>
+                  <label className="flex items-start gap-3 p-3 rounded-md border cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800">
+                    <input
+                      type="radio"
+                      name="legacy-strategy"
+                      value="replace"
+                      checked={legacyStrategy === "replace"}
+                      onChange={() => setLegacyStrategy("replace")}
+                      className="mt-1"
+                    />
+                    <div>
+                      <p className="font-medium">{t("import.strategy.replace")}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {t("import.strategy.replaceDesc")}
+                      </p>
+                    </div>
+                  </label>
+                </div>
+              )}
+            </div>
+          )}
+
+          <DialogFooter>
+            <Button variant="outline" onClick={closeLegacyDialog}>
+              {t("import.cancel")}
+            </Button>
+            <Button
+              onClick={handleLegacyImport}
+              disabled={!legacyStats || isLegacyImporting}
+            >
+              {isLegacyImporting ? (
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
               ) : null}
               {t("import.confirm")}
