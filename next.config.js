@@ -13,6 +13,7 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
+  output: "standalone",
 };
 
 module.exports = withNextIntl(withMDX(nextConfig));
