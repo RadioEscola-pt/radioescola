@@ -3734,23 +3734,6 @@
       "calc": null
     },
     {
-      "question": "O que está ligado ao fio verde e amarelo numa tomada tripla?",
-      "answers": [
-        "O neutro",
-        "A fase",
-        "A terra",
-        "Uma tensão DC"
-      ],
-      "correctIndex": 3,
-      "notes": "Notas",
-      "img": null,
-      "uniqueID": 194,
-      "fonte": null,
-      "tutorial": null,
-      "materia": null,
-      "calc": null
-    },
-    {
     "question": "O funcionamento das estações de uso comum necessita de licença?",
     "answers": [
       "Sim, necessita",
