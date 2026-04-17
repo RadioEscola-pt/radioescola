@@ -3732,6 +3732,80 @@
       "tutorial": null,
       "materia": null,
       "calc": null
-    }
+    },
+    {
+      "question": "O que está ligado ao fio verde e amarelo numa tomada tripla?",
+      "answers": [
+        "O neutro",
+        "A fase",
+        "A terra",
+        "Uma tensão DC"
+      ],
+      "correctIndex": 3,
+      "notes": "Notas",
+      "img": null,
+      "uniqueID": 194,
+      "fonte": null,
+      "tutorial": null,
+      "materia": null,
+      "calc": null
+    },
+    {
+    "question": "O funcionamento das estações de uso comum necessita de licença?",
+    "answers": [
+      "Sim, necessita",
+      "Sim, necessita, mas apenas no caso de serem operadas por amadores da categoria 3",
+      "Não necessita, exceto quando estas estações são fixas",
+      "Não necessita"
+    ],
+    "correctIndex": 1,
+    "notes": "Notas",
+    "fonte": [
+      "cat3/2025_04_16p11"
+    ],
+    "img": null,
+    "uniqueID": 2101,
+    "tutorial": null,
+    "materia": "Licenciamento",
+    "calc": null
+  },
+  {
+    "question": "Dos seguintes tipos de antenas qual o que tem maior diretividade?",
+    "answers": [
+      "Dipolo dobrado",
+      "Antena vertical de quarto de onda (ground plane)",
+      "Antena multielementos (tipo YAGI)",
+      "Antena de meio comprimento de onda"
+    ],
+    "correctIndex": 3,
+    "notes": "Notas",
+    "fonte": [
+      "cat3/2025_04_16p13"
+    ],
+    "img": null,
+    "uniqueID": 2102,
+    "tutorial": null,
+    "materia": "Antenas",
+    "calc": null
+  },
+  {
+    "question": "Existem vários planos de frequências na IARU?",
+    "answers": [
+      "Não, existe apenas um plano para as três Regiões definidas no Regulamento das Radiocomunicações",
+      "Sim, existem três planos para cada uma das Regiões definidas no Regulamento das Radiocomunicações",
+      "Sim, existem dois planos para cada uma das Regiões definidas no Regulamento das Radiocomunicações",
+      "Não, existe apenas um plano elaborado segundo os interesses da Região 2 definida no Regulamento das Radiocomunicações"
+    ],
+    "correctIndex": 2,
+    "notes": "Notas",
+    "fonte": [
+      "cat3/2025_04_16p16"
+    ],
+    "img": null,
+    "uniqueID": 2103,
+    "tutorial": null,
+    "materia": "Planos de Frequências",
+    "calc": null
+  }
   ]
 }
