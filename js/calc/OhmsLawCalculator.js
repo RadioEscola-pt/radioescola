@@ -63,7 +63,7 @@ class OhmsLawCalculator extends ElectricalUnits {
                 resistance*=resistanceRatio;
 
                 voltage = ((current * resistance) / voltageRatio);
-                result=formatNumberWithExponent(voltage);
+                result=this.formatNumberWithExponent(voltage);
 
                 this.voltageInput.value = result;
                
