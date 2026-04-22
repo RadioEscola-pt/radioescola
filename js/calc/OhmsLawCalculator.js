@@ -47,15 +47,24 @@ class OhmsLawCalculator extends ElectricalUnits {
 
         let result = 0;
 
+        const showError = (msg) => {
+            this.resultInput.classList.remove("hidden");
+            this.resultInput.classList.add("flex", "items-center", "px-4", "py-3", "rounded", "bg-red-50", "dark:bg-red-950", "text-red-600", "dark:text-red-400", "text-sm", "font-medium");
+            this.resultInput.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-5 h-5 mr-2 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>${msg}</span>`;
+        };
+        const clearError = () => {
+            this.resultInput.classList.remove("flex", "items-center", "px-4", "py-3", "rounded", "bg-red-50", "dark:bg-red-950", "text-red-600", "dark:text-red-400", "text-sm", "font-medium");
+            this.resultInput.innerHTML = "";
+        };
+
         // Check how many values are populated
         const populatedValues = [voltage , current , resistance ].filter(value => !isNaN(value));
 
         if (populatedValues.length === 3) {
-            // Error: All three values are populated
-            this.resultInput.innerHTML = "Erro: Apenas pode introduzir 2 valores.";
+            showError("Apenas pode introduzir 2 valores. Apague um para calcular os outros.");
             return;
         } else if (populatedValues.length === 2) {
-            this.resultInput.innerHTML = "";
+            clearError();
             // Calculate the missing value
             if (isNaN(voltage)) {
                 // R*I
@@ -92,8 +101,7 @@ class OhmsLawCalculator extends ElectricalUnits {
 
 
         } else {
-            // Error: Less than two values are populated
-            this.resultInput.innerHTML = "Erro: tem de introduzir pelo menos 2 valores.";
+            showError("Introduza pelo menos 2 valores para calcular.");
         }
     }
 
