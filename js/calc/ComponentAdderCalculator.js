@@ -21,52 +21,47 @@ class ComponentAdderCalculator extends ElectricalUnits{
         this.addRowBtn.onclick=this.addRow.bind(this);
         this.removeRowBtn.onclick=this.removeRow.bind(this);
         this.calculateBtn.onclick=this.calculateTotal.bind(this);
-        this.componentsTable = document.getElementById("componentsTable").getElementsByTagName('tbody')[0];
+        this.componentsTable = document.getElementById("componentsTable");
         this.changeUnit();
 
 
     }
+    get componentRows() {
+        return this.componentsTable.querySelectorAll(":scope > .flex");
+    }
+
     changeUnit()
     {
         let componentType = this.componentTypeSelect.value;
-        this.totalValueDisplay.textContent ="";
+        this.totalValueDisplay.textContent = "—";
 
         this.loadOptions(this.resultIn, componentType);
-        let rows = this.componentsTable.getElementsByTagName("tr");
-
-        for (let i = 0; i < rows.length; i++) {
-
-            let row = rows[i];
-            let unitsSelect = row.querySelector("select");
-            this.loadOptions(unitsSelect, componentType);
+        for (const row of this.componentRows) {
+            this.loadOptions(row.querySelector("select"), componentType);
         }
-  
-
     }
 
     addRow() {
-        let componentType = this.componentTypeSelect.value;
-        if (this.componentsTable.rows.length < 10) {
-            const newRow = this.componentsTable.insertRow(-1);
-            const rowNumber = this.componentsTable.rows.length;
+        const rows = this.componentRows;
+        if (rows.length >= 10) return;
 
-            const numberCell = newRow.insertCell(0);
-            const unitsCell = newRow.insertCell(1);
+        const componentType = this.componentTypeSelect.value;
+        const rowNumber = rows.length + 1;
 
-            unitsCell.classList.add('text-center')
-
-            numberCell.innerHTML = `<input type="text"  value="${rowNumber}" class="w-full rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600">`;
-            var selectElement = document.createElement('select');
-            selectElement.className = "w-28 rounded shadow-sm border-gray-400 focus:border-slate-800 focus:ring focus:ring-slate-200 focus:ring-opacity-50 dark:bg-slate-600";
-            this.loadOptions(selectElement,componentType);
-            unitsCell.append(selectElement);
-        }
-
+        const row = document.createElement("div");
+        row.className = "flex rounded shadow-sm border border-gray-400 overflow-hidden focus-within:border-slate-800 focus-within:ring focus-within:ring-slate-200 focus-within:ring-opacity-50 dark:border-slate-500";
+        row.innerHTML = `
+            <input type="text" value="${rowNumber}" class="flex-1 min-w-0 border-0 focus:ring-0 dark:bg-slate-600 px-3 py-2">
+            <select class="w-24 text-sm border-0 border-l border-gray-400 focus:ring-0 bg-gray-100 dark:bg-slate-700 dark:border-slate-500 px-2 py-2"></select>
+        `;
+        this.loadOptions(row.querySelector("select"), componentType);
+        this.componentsTable.appendChild(row);
     }
 
     removeRow() {
-        if (this.componentsTable.rows.length > 2) {
-            this.componentsTable.deleteRow(-1);
+        const rows = this.componentRows;
+        if (rows.length > 2) {
+            rows[rows.length - 1].remove();
         }
     }
 
@@ -74,7 +69,7 @@ class ComponentAdderCalculator extends ElectricalUnits{
         let totalValue = 0;
         let invertedValue = 0;
         let isInverted=false;
-        let rows = this.componentsTable.getElementsByTagName("tr");
+        let rows = this.componentRows;
         let seriesParallelType = this.seriesParallelSelect.value;
         let componentType = this.componentTypeSelect.value;
 
