@@ -1,220 +1,157 @@
-<div class="grid grid-cols-3 gap-3">
-  <div class="col-span-3 sm:col-span-1">
-    <label for="frequency">Frequência</label>
-    <div class="border shadow-sm flex border-slate-600 rounded overflow-hidden">
+<h1 class="text-xl font-bold mb-6">Circuito RLC</h1>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div class="flex flex-col gap-1">
+    <label for="frequency" class="text-sm font-medium">Frequência</label>
+    <div class="flex rounded shadow-sm border border-gray-400 overflow-hidden focus-within:border-slate-800 focus-within:ring focus-within:ring-slate-200 focus-within:ring-opacity-50 dark:border-slate-500">
       <input
         type="number"
         id="frequency"
         step="any"
         required
-        class="w-full border-none shadow-transparent ring-transparent outline-0"
+        class="flex-1 min-w-0 border-0 focus:ring-0 dark:bg-slate-600 px-3 py-2"
       />
       <select
         id="frequencyDropdown"
-        class="w-36 text-sm bg-gray-100 border-none shadow-transparent ring-transparent outline-0"
+        class="w-24 text-sm border-0 border-l border-gray-400 focus:ring-0 bg-gray-100 dark:bg-slate-700 dark:border-slate-500 px-2 py-2"
       ></select>
     </div>
   </div>
 
-  <div class="col-span-3 sm:col-span-1">
-    <label for="frequency">Resistência</label>
-    <div class="border shadow-sm flex border-slate-600 rounded overflow-hidden">
+  <div class="flex flex-col gap-1">
+    <label for="resistor" class="text-sm font-medium">Resistência</label>
+    <div class="flex rounded shadow-sm border border-gray-400 overflow-hidden focus-within:border-slate-800 focus-within:ring focus-within:ring-slate-200 focus-within:ring-opacity-50 dark:border-slate-500">
       <input
         type="number"
         id="resistor"
         step="any"
         required
-        class="w-full border-none shadow-transparent ring-transparent outline-0"
+        class="flex-1 min-w-0 border-0 focus:ring-0 dark:bg-slate-600 px-3 py-2"
       />
       <select
         id="resistorDropdown"
-        class="w-36 text-sm bg-gray-100 border-none shadow-transparent ring-transparent outline-0"
+        class="w-24 text-sm border-0 border-l border-gray-400 focus:ring-0 bg-gray-100 dark:bg-slate-700 dark:border-slate-500 px-2 py-2"
       ></select>
     </div>
   </div>
 
-  <div class="col-span-3 sm:col-span-1">
-    <label for="frequency">Tensão da fonte</label>
-    <div class="border shadow-sm flex border-slate-600 rounded overflow-hidden">
+  <div class="flex flex-col gap-1">
+    <label for="voltageSource" class="text-sm font-medium">Tensão da fonte</label>
+    <div class="flex rounded shadow-sm border border-gray-400 overflow-hidden focus-within:border-slate-800 focus-within:ring focus-within:ring-slate-200 focus-within:ring-opacity-50 dark:border-slate-500">
       <input
         type="number"
         id="voltageSource"
         step="any"
         required
-        class="w-full border-none shadow-transparent ring-transparent outline-0"
+        class="flex-1 min-w-0 border-0 focus:ring-0 dark:bg-slate-600 px-3 py-2"
       />
       <select
         id="voltageSourceDropdown"
-        class="w-36 text-sm bg-gray-100 border-none shadow-transparent ring-transparent outline-0"
+        class="w-24 text-sm border-0 border-l border-gray-400 focus:ring-0 bg-gray-100 dark:bg-slate-700 dark:border-slate-500 px-2 py-2"
       ></select>
     </div>
   </div>
 
-  <div class="col-span-3 sm:col-span-1">
-    <label for="frequency">Condensador</label>
-    <div class="border shadow-sm flex border-slate-600 rounded overflow-hidden">
+  <div class="flex flex-col gap-1">
+    <label for="capacitor" class="text-sm font-medium">Condensador</label>
+    <div class="flex rounded shadow-sm border border-gray-400 overflow-hidden focus-within:border-slate-800 focus-within:ring focus-within:ring-slate-200 focus-within:ring-opacity-50 dark:border-slate-500">
       <input
         type="number"
         id="capacitor"
         step="any"
         required
-        class="w-full border-none shadow-transparent ring-transparent outline-0"
+        class="flex-1 min-w-0 border-0 focus:ring-0 dark:bg-slate-600 px-3 py-2"
       />
       <select
         id="capacitorDropdown"
-        class="w-36 text-sm bg-gray-100 border-none shadow-transparent ring-transparent outline-0"
+        class="w-24 text-sm border-0 border-l border-gray-400 focus:ring-0 bg-gray-100 dark:bg-slate-700 dark:border-slate-500 px-2 py-2"
       ></select>
     </div>
   </div>
 
-  <div class="col-span-3 sm:col-span-1">
-    <label for="frequency">Bobine</label>
-    <div class="border shadow-sm flex border-slate-600 rounded overflow-hidden">
+  <div class="flex flex-col gap-1">
+    <label for="coil" class="text-sm font-medium">Bobine</label>
+    <div class="flex rounded shadow-sm border border-gray-400 overflow-hidden focus-within:border-slate-800 focus-within:ring focus-within:ring-slate-200 focus-within:ring-opacity-50 dark:border-slate-500">
       <input
         type="number"
         id="coil"
         step="any"
         required
-        class="w-full border-none shadow-transparent ring-transparent outline-0"
+        class="flex-1 min-w-0 border-0 focus:ring-0 dark:bg-slate-600 px-3 py-2"
       />
       <select
         id="coilDropdown"
-        class="w-36 text-sm bg-gray-100 border-none shadow-transparent ring-transparent outline-0"
+        class="w-24 text-sm border-0 border-l border-gray-400 focus:ring-0 bg-gray-100 dark:bg-slate-700 dark:border-slate-500 px-2 py-2"
       ></select>
     </div>
   </div>
 </div>
 
-<div
-  class="grid grid-cols-2 gap-3 mt-8 bg-gray-100 p-4 border border-gray-400 shadow-sm rounded"
->
-  <h1 class="col-span-2 font-bold">Resultados</h1>
-  
-  <div class="flex flex-col content-between col-span-2 sm:col-span-1">
-    <label for="resultTotalImpedance">Impedância total (Z)</label>
-    <div class="flex flex-row gap-1">
-      <input
-        type="text"
-        id="resultTotalImpedance"
-        disabled
-        class="w-full rounded border shadow-sm text-xs bg-slate-100"
-      />
-      <select
-        id="resultTotalImpedanceDropdown"
-        class="text-xs w-28 rounded shadow-sm"
-      ></select>
+<div class="mt-6 p-4 rounded bg-slate-100 dark:bg-slate-700">
+  <h2 class="font-bold mb-3">Resultados</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    <div class="flex flex-col gap-1">
+      <label for="resultTotalImpedance" class="text-xs font-medium">Impedância total (Z)</label>
+      <div class="flex rounded border border-gray-400 overflow-hidden bg-white dark:bg-slate-800 dark:border-slate-500">
+        <input type="text" id="resultTotalImpedance" disabled class="flex-1 min-w-0 border-0 bg-transparent text-sm px-2 py-1.5" />
+        <select id="resultTotalImpedanceDropdown" class="w-20 text-xs border-0 border-l border-gray-400 bg-slate-200 dark:bg-slate-900 dark:border-slate-500 px-2"></select>
+      </div>
     </div>
-  </div>
 
-  <div class="flex flex-col content-between col-span-2 sm:col-span-1">
-    <label for="resultXL">Reatância indutiva (XL)</label>
-    <div class="flex flex-row gap-1">
-      <input
-        type="text"
-        id="resultXL"
-        disabled
-        class="w-full rounded border shadow-sm text-xs bg-slate-100"
-      />
-      <select
-        id="resultXLDropdown"
-        class="text-xs w-28 rounded shadow-sm"
-      ></select>
+    <div class="flex flex-col gap-1">
+      <label for="resultXL" class="text-xs font-medium">Reatância indutiva (XL)</label>
+      <div class="flex rounded border border-gray-400 overflow-hidden bg-white dark:bg-slate-800 dark:border-slate-500">
+        <input type="text" id="resultXL" disabled class="flex-1 min-w-0 border-0 bg-transparent text-sm px-2 py-1.5" />
+        <select id="resultXLDropdown" class="w-20 text-xs border-0 border-l border-gray-400 bg-slate-200 dark:bg-slate-900 dark:border-slate-500 px-2"></select>
+      </div>
     </div>
-  </div>
 
-  <div class="flex flex-col content-between col-span-2 sm:col-span-1">
-    <label for="resultXC">Reatância capacitiva (XC)</label>
-    <div class="flex flex-row gap-1">
-      <input
-        type="text"
-        id="resultXC"
-        disabled
-        class="w-full rounded border shadow-sm text-xs bg-slate-100"
-      />
-      <select
-        id="resultXCDropdown"
-        class="text-xs w-28 rounded shadow-sm"
-      ></select>
+    <div class="flex flex-col gap-1">
+      <label for="resultXC" class="text-xs font-medium">Reatância capacitiva (XC)</label>
+      <div class="flex rounded border border-gray-400 overflow-hidden bg-white dark:bg-slate-800 dark:border-slate-500">
+        <input type="text" id="resultXC" disabled class="flex-1 min-w-0 border-0 bg-transparent text-sm px-2 py-1.5" />
+        <select id="resultXCDropdown" class="w-20 text-xs border-0 border-l border-gray-400 bg-slate-200 dark:bg-slate-900 dark:border-slate-500 px-2"></select>
+      </div>
     </div>
-  </div>
 
-  <div class="flex flex-col content-between col-span-2 sm:col-span-1">
-    <label for="resultXR">Impedância resistiva (XR)</label>
-    <div class="flex flex-row gap-1">
-      <input
-        type="text"
-        id="resultXR"
-        disabled
-        class="w-full rounded border shadow-sm text-xs bg-slate-100"
-      />
-      <select
-        id="resultXRDropdown"
-        class="text-xs w-28 rounded shadow-sm"
-      ></select>
+    <div class="flex flex-col gap-1">
+      <label for="resultXR" class="text-xs font-medium">Impedância resistiva (XR)</label>
+      <div class="flex rounded border border-gray-400 overflow-hidden bg-white dark:bg-slate-800 dark:border-slate-500">
+        <input type="text" id="resultXR" disabled class="flex-1 min-w-0 border-0 bg-transparent text-sm px-2 py-1.5" />
+        <select id="resultXRDropdown" class="w-20 text-xs border-0 border-l border-gray-400 bg-slate-200 dark:bg-slate-900 dark:border-slate-500 px-2"></select>
+      </div>
     </div>
-  </div>
 
-  <div class="flex flex-col content-between col-span-2 sm:col-span-1">
-    <label for="resultTotalCurrent">Corrente Total (I)</label>
-    <div class="flex flex-row gap-1">
-      <input
-        type="text"
-        id="resultTotalCurrent"
-        disabled
-        class="w-full rounded border shadow-sm text-xs bg-slate-100"
-      />
-      <select
-        id="resultTotalCurrentDropdown"
-        class="text-xs w-28 rounded shadow-sm"
-      ></select>
+    <div class="flex flex-col gap-1">
+      <label for="resultTotalCurrent" class="text-xs font-medium">Corrente total (I)</label>
+      <div class="flex rounded border border-gray-400 overflow-hidden bg-white dark:bg-slate-800 dark:border-slate-500">
+        <input type="text" id="resultTotalCurrent" disabled class="flex-1 min-w-0 border-0 bg-transparent text-sm px-2 py-1.5" />
+        <select id="resultTotalCurrentDropdown" class="w-20 text-xs border-0 border-l border-gray-400 bg-slate-200 dark:bg-slate-900 dark:border-slate-500 px-2"></select>
+      </div>
     </div>
-  </div>
 
-  <div class="flex flex-col content-between col-span-2 sm:col-span-1">
-    <label for="resultVc">Queda de tensão no condensador (Vc)</label>
-    <div class="flex flex-row gap-1">
-      <input
-        type="text"
-        id="resultVc"
-        disabled
-        class="w-full rounded border shadow-sm text-xs bg-slate-100"
-      />
-      <select
-        id="resultVcDropdown"
-        class="text-xs w-28 rounded shadow-sm"
-      ></select>
+    <div class="flex flex-col gap-1">
+      <label for="resultVc" class="text-xs font-medium">Queda de tensão no condensador (Vc)</label>
+      <div class="flex rounded border border-gray-400 overflow-hidden bg-white dark:bg-slate-800 dark:border-slate-500">
+        <input type="text" id="resultVc" disabled class="flex-1 min-w-0 border-0 bg-transparent text-sm px-2 py-1.5" />
+        <select id="resultVcDropdown" class="w-20 text-xs border-0 border-l border-gray-400 bg-slate-200 dark:bg-slate-900 dark:border-slate-500 px-2"></select>
+      </div>
     </div>
-  </div>
 
-  <div class="flex flex-col content-between col-span-2 sm:col-span-1">
-    <label for="resultVr">Queda de tensão na resistência (Vr)</label>
-    <div class="flex flex-row gap-1">
-      <input
-        type="text"
-        id="resultVr"
-        disabled
-        class="w-full rounded border shadow-sm text-xs bg-slate-100"
-      />
-      <select
-        id="resultVrDropdown"
-        class="text-xs w-28 rounded shadow-sm"
-      ></select>
+    <div class="flex flex-col gap-1">
+      <label for="resultVr" class="text-xs font-medium">Queda de tensão na resistência (Vr)</label>
+      <div class="flex rounded border border-gray-400 overflow-hidden bg-white dark:bg-slate-800 dark:border-slate-500">
+        <input type="text" id="resultVr" disabled class="flex-1 min-w-0 border-0 bg-transparent text-sm px-2 py-1.5" />
+        <select id="resultVrDropdown" class="w-20 text-xs border-0 border-l border-gray-400 bg-slate-200 dark:bg-slate-900 dark:border-slate-500 px-2"></select>
+      </div>
     </div>
-  </div>
 
-  <div class="flex flex-col content-between col-span-2 sm:col-span-1">
-    <label for="resultVL">Queda de tensão no indutor (VL)</label>
-    <div class="flex flex-row gap-1">
-      <input
-        type="text"
-        id="resultVL"
-        disabled
-        class="w-full rounded border shadow-sm text-xs bg-slate-100"
-      />
-      <select
-        id="resultVLDropdown"
-        class="text-xs w-28 rounded shadow-sm"
-      ></select>
+    <div class="flex flex-col gap-1">
+      <label for="resultVL" class="text-xs font-medium">Queda de tensão no indutor (VL)</label>
+      <div class="flex rounded border border-gray-400 overflow-hidden bg-white dark:bg-slate-800 dark:border-slate-500">
+        <input type="text" id="resultVL" disabled class="flex-1 min-w-0 border-0 bg-transparent text-sm px-2 py-1.5" />
+        <select id="resultVLDropdown" class="w-20 text-xs border-0 border-l border-gray-400 bg-slate-200 dark:bg-slate-900 dark:border-slate-500 px-2"></select>
+      </div>
     </div>
   </div>
 </div>
@@ -222,7 +159,7 @@
 <button
   type="button"
   id="calculateButton"
-  class="mt-8 text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800"
+  class="mt-6 w-full text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-slate-600 dark:hover:bg-slate-500 focus:outline-none dark:focus:ring-slate-800"
 >
   Calcular
 </button>
