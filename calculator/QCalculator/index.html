@@ -1,35 +1,56 @@
-<h1 class="text-2xl mb-4">Calculadora de Fator Q</h1>
-<div class="grid grid-cols-2 gap-x-4 gap-y-3 w-full mt-4"></div>
-<div class="col-span-2 sm:col-span-1 space-y-2">
-    <label for="frequencia">Frequência de Ressonância (Hz):</label>
-    <div class="border shadow-sm flex border-gray-400 rounded overflow-hidden">
-        <input class="w-full border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-900" type="number"
-            id="frequencia"><br><br>
-        <select
-            class="w-36 text-sm bg-gray-100 border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-950"
-            id="FUnit"
-            ></select>
+<h1 class="text-xl font-bold mb-2">Fator Q</h1>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Preencha 2 dos 3 campos para calcular o restante.</p>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <div class="flex flex-col gap-1">
+    <label for="frequencia" class="text-sm font-medium">Frequência de Ressonância</label>
+    <div class="flex rounded shadow-sm border border-gray-400 overflow-hidden focus-within:border-slate-800 focus-within:ring focus-within:ring-slate-200 focus-within:ring-opacity-50 dark:border-slate-500">
+      <input
+        type="number"
+        id="frequencia"
+        class="flex-1 min-w-0 border-0 focus:ring-0 dark:bg-slate-600 px-3 py-2"
+      />
+      <select
+        id="FUnit"
+        class="w-24 text-sm border-0 border-l border-gray-400 focus:ring-0 bg-gray-100 dark:bg-slate-700 dark:border-slate-500 px-2 py-2"
+      ></select>
     </div>
-</div>
-<div class="col-span-2 sm:col-span-1 space-y-2"></div>
-<label for="largura">Largura de Banda (Hz):</label>
-<div class="border shadow-sm flex border-gray-400 rounded overflow-hidden">
-    <input class="w-full border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-900" type="number"
-        id="largura"><br><br>
-    <select class="w-36 text-sm bg-gray-100 border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-950"
-        id="LUnit" ></select>
-</div>
+  </div>
+
+  <div class="flex flex-col gap-1">
+    <label for="largura" class="text-sm font-medium">Largura de Banda</label>
+    <div class="flex rounded shadow-sm border border-gray-400 overflow-hidden focus-within:border-slate-800 focus-within:ring focus-within:ring-slate-200 focus-within:ring-opacity-50 dark:border-slate-500">
+      <input
+        type="number"
+        id="largura"
+        class="flex-1 min-w-0 border-0 focus:ring-0 dark:bg-slate-600 px-3 py-2"
+      />
+      <select
+        id="LUnit"
+        class="w-24 text-sm border-0 border-l border-gray-400 focus:ring-0 bg-gray-100 dark:bg-slate-700 dark:border-slate-500 px-2 py-2"
+      ></select>
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-1 sm:col-span-2">
+    <label for="q" class="text-sm font-medium">Fator Q</label>
+    <div class="flex rounded shadow-sm border border-gray-400 overflow-hidden focus-within:border-slate-800 focus-within:ring focus-within:ring-slate-200 focus-within:ring-opacity-50 dark:border-slate-500">
+      <input
+        type="number"
+        id="q"
+        class="flex-1 min-w-0 border-0 focus:ring-0 dark:bg-slate-600 px-3 py-2"
+      />
+    </div>
+  </div>
 </div>
 
-
-<div class="col-span-2 sm:col-span-1 space-y-2"></div>
-
-<label for="q">Fator Q:</label>
-<div class="border shadow-sm flex border-gray-400 rounded overflow-hidden">
-    <input class="w-full border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-900" type="number"
-        id="q"><br><br>
-</div>
+<div class="mt-4 text-sm text-slate-600 dark:text-slate-400">
+  Fórmula: <span class="font-mono">Q = f / Δf</span>
 </div>
 
-<button id="calcularBtn">Calcular</button>
-</div>
+<button
+  id="calcularBtn"
+  class="mt-4 w-full text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-slate-600 dark:hover:bg-slate-500 focus:outline-none dark:focus:ring-slate-800"
+>
+  Calcular
+</button>
