@@ -131,7 +131,7 @@ class ComponentAdderCalculator extends ElectricalUnits{
             invertedValue=1/invertedValue;
             invertedValue/=this.unitMultipliers[unit1];
             let result=this.formatNumberWithExponent(invertedValue);
-            this.totalValueDisplay.textContent = `Total Value: `+result;
+            this.totalValueDisplay.textContent = `Valor Total: `+result;
         }
        
 
