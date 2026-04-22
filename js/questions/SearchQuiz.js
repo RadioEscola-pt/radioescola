@@ -177,7 +177,10 @@ class SearchQuiz extends Classes([Questions, Storage]) {
 		}
 
 		this.lastResults = results;
-		this.highlightTerms(welcomeDiv, terms);
+		for (let i = 0; i < results.length; i++) {
+			const card = document.getElementById("questionBlock" + i);
+			if (card) this.highlightTerms(card, terms);
+		}
 		this.addCategoryTints(results);
 	}
 
