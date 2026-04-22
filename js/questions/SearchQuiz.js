@@ -54,7 +54,7 @@ class SearchQuiz extends Classes([Questions, Storage]) {
 			const emptyDiv = document.getElementById("searchEmpty");
 			if (emptyDiv) emptyDiv.style.display = "none";
 			const categories = this.getSelectedCategories();
-			const terms = query.split(/\s+/);
+			const terms = this.parseTerms(query);
 			const results = this.searchQuestions(terms, categories);
 			this.renderResults(results, terms);
 		};
@@ -78,6 +78,16 @@ class SearchQuiz extends Classes([Questions, Storage]) {
 		});
 
 		input.focus();
+	}
+
+	parseTerms(query) {
+		const normalized = query.replace(/&quot;/gi, '"');
+		const terms = [];
+		for (const m of normalized.matchAll(/"([^"]+)"|(\S+)/g)) {
+			const token = m[1] ?? m[2].replace(/"/g, "");
+			if (token) terms.push(token);
+		}
+		return terms;
 	}
 
 	getSelectedCategories() {
