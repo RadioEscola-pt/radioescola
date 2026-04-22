@@ -13,8 +13,8 @@ class ResonanceCalculator extends ElectricalUnits {
     this.capacitanceUnitInput = document.getElementById("capacitanceUnit");
     this.frequencyUnitInput = document.getElementById("resultUnit");
     this.hertzUnitInput = document.getElementById("hertzUnit");
-    this.loadOptions(this.inductanceUnitInput, "F");
-    this.loadOptions(this.capacitanceUnitInput, "H");
+    this.loadOptions(this.inductanceUnitInput, "H");
+    this.loadOptions(this.capacitanceUnitInput, "F");
     this.loadOptions(this.frequencyUnitInput, "Hz");
   }
 
