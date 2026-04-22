@@ -18,7 +18,22 @@
   Fonte: Wikipedia</a
 >
 
-<table class="w-full my-12 shadow border-2">
+<div class="mt-8">
+  <label for="codigoq-filter" class="block text-sm mb-1">Filtrar por código Q</label>
+  <input
+    id="codigoq-filter"
+    type="search"
+    placeholder="Ex.: QAP, QRZ, QTH..."
+    autocomplete="off"
+    class="w-full sm:w-64 px-3 py-2 border-2 rounded bg-white dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-50"
+    oninput="(function(el){var q=el.value.trim().toUpperCase();var rows=document.querySelectorAll('#codigoq-table tbody tr');var visible=0;rows.forEach(function(r){var code=(r.cells[0].textContent||'').trim().toUpperCase();var m=q===''||code.indexOf(q)!==-1;r.style.display=m?'':'none';if(m)visible++;});document.getElementById('codigoq-filter-empty').classList.toggle('hidden',visible!==0);})(this)"
+  />
+  <p id="codigoq-filter-empty" class="hidden mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+    Nenhum código encontrado.
+  </p>
+</div>
+
+<table class="w-full my-4 shadow border-2" id="codigoq-table">
   <thead class="bg-slate-800 dark:bg-slate-950 text-white">
     <tr class="even:bg-neutral-100 dark:even:bg-slate-900">
       <th class="p-2">Código</th>
