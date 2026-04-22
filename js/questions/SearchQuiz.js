@@ -243,25 +243,34 @@ class SearchQuiz extends Classes([Questions, Storage]) {
 		const textNodes = [];
 		while (walker.nextNode()) textNodes.push(walker.currentNode);
 
+		const escaped = terms
+			.filter((t) => t && t.length > 0)
+			.map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+		if (escaped.length === 0) return;
+		const combined = new RegExp("(" + escaped.join("|") + ")", "gi");
+
 		for (const node of textNodes) {
 			const parent = node.parentNode;
 			if (!parent || parent.tagName === "SCRIPT" || parent.tagName === "STYLE") continue;
 			if (parent.classList && parent.classList.contains("search-highlight")) continue;
 
-			let html = node.textContent;
-			let hasMatch = false;
-			for (const term of terms) {
-				const regex = new RegExp("(" + term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi");
-				if (regex.test(html)) {
-					hasMatch = true;
-					html = html.replace(regex, '<mark class="search-highlight bg-yellow-200 dark:bg-yellow-700 dark:text-white rounded px-0.5">$1</mark>');
-				}
-			}
-			if (hasMatch) {
-				const span = document.createElement("span");
-				span.innerHTML = html;
-				parent.replaceChild(span, node);
-			}
+			const text = node.textContent;
+			combined.lastIndex = 0;
+			if (!combined.test(text)) continue;
+			combined.lastIndex = 0;
+
+			const escapeHtml = (s) => s
+				.replace(/&/g, "&amp;")
+				.replace(/</g, "&lt;")
+				.replace(/>/g, "&gt;");
+
+			const html = escapeHtml(text).replace(
+				combined,
+				'<mark class="search-highlight bg-yellow-200 dark:bg-yellow-700 dark:text-white rounded px-0.5">$1</mark>'
+			);
+			const span = document.createElement("span");
+			span.innerHTML = html;
+			parent.replaceChild(span, node);
 		}
 	}
 
