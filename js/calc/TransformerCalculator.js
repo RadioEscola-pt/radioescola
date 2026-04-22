@@ -77,28 +77,32 @@ class TransformerCalculator extends ElectricalUnits {
 
         }
 
-        this.result.className = "mt-8 font-bold";
+        this.result.classList.remove("text-red-600", "dark:text-red-400", "bg-red-50", "dark:bg-red-950");
+
+        const showError = (msg) => {
+            this.result.classList.add("text-red-600", "dark:text-red-400", "bg-red-50", "dark:bg-red-950");
+            this.result.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-5 h-5 mr-2 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>${msg}</span>`;
+        };
 
         if (voltageRatio === null && turnsRatio === null && currentRatio === null) {
-            this.result.innerHTML="Pelo menos um dos valores deve ser conhecido";
-            this.result.classList.add("text-red-500");
+            showError("Introduza pelo menos um par de valores (tensão, corrente ou voltas) no primário e secundário.");
             return;
         }
         if (voltageRatio != null && turnsRatio != null ){
             if (voltageRatio != turnsRatio ) {
-                this.result.innerHTML="O rácio da bobinagem e da tensão são diferentes.";
+                showError("O rácio da bobinagem e da tensão são diferentes.");
                 return;
             }
         }
         if (voltageRatio != null && currentRatio != null ){
             if (voltageRatio != currentRatio ) {
-                this.result.innerHTML="O rácio da voltagem e da corrente são diferentes.";
+                showError("O rácio da voltagem e da corrente são diferentes.");
                 return;
-            }   
+            }
         }
         if (turnsRatio != null && currentRatio != null ){
             if (turnsRatio != currentRatio ) {
-                this.result.innerHTML="O rácio da bobinagem e da corrente são diferentes.";
+                showError("O rácio da bobinagem e da corrente são diferentes.");
                 return;
             }
         }

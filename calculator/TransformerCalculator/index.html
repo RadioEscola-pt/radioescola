@@ -1,105 +1,66 @@
-<div class="grid grid-cols-3 gap-6">
-  <div class="col-span-3">
-    <h1 class="font-bold">Primário</h1>
-  </div>
-  <div class="col-span-3 sm:col-span-1">
-    <label for="primaryVoltage">Tensão</label>
-    <div class="border shadow-sm flex border-slate-600 rounded overflow-hidden">
-      <input
-        type="number"
-        id="primaryVoltage"
-        step="any"
-        required
-        class="w-full border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-900"
-      />
-      <select
-        id="primaryVoltageSelect"
-        class="w-36 text-sm bg-gray-100 border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-950"
-      ></select>
-    </div>
-  </div>
-  <div class="col-span-3 sm:col-span-1">
-    <label for="primaryCurrent">Corrente</label>
-    <div class="border shadow-sm flex border-slate-600 rounded overflow-hidden">
-      <input
-        type="number"
-        id="primaryCurrent"
-        step="any"
-        required
-        class="w-full border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-900"
-      />
-      <select
-        id="primaryCurrentSelect"
-        class="w-36 text-sm bg-gray-100 border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-950"
-      ></select>
-    </div>
-  </div>
-  <div class="col-span-3 sm:col-span-1">
-    <label for="turnsPrimary">Número de Voltas</label>
-    <div class="border shadow-sm flex border-slate-600 rounded overflow-hidden">
-      <input
-        type="number"
-        id="turnsPrimary"
-        step="any"
-        class="w-full border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-900"
-      />
-    </div>
-  </div>
-  <div class="col-span-3">
-    <h1 class="font-bold">Secundário</h1>
-  </div>
-  <div class="col-span-3 sm:col-span-1">
-    <label for="secondaryVoltage">Tensão</label>
-    <div class="border shadow-sm flex border-slate-600 rounded overflow-hidden">
-      <input
-        type="number"
-        id="secondaryVoltage"
-        step="any"
-        required
-        class="w-full border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-900"
-      />
-      <select
-        id="secondaryVoltageSelect"
-        class="w-36 text-sm bg-gray-100 border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-950"
-      ></select>
-    </div>
-  </div>
+<h1 class="text-xl font-bold mb-2">Transformador</h1>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Preencha os valores conhecidos. Os restantes serão calculados.</p>
 
-  <div class="col-span-3 sm:col-span-1">
-    <label for="secondaryCurrent">Corrente</label>
-    <div class="border shadow-sm flex border-slate-600 rounded overflow-hidden">
-      <input
-        type="number"
-        id="secondaryCurrent"
-        step="any"
-        required
-        class="w-full border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-900"
-      />
-      <select
-        id="secondaryCurrentSelect"
-        class="w-36 text-sm bg-gray-100 border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-950"
-      ></select>
+<div class="space-y-5">
+  <section>
+    <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2">Primário</h2>
+    <div class="grid grid-cols-3 gap-4">
+      <div class="flex flex-col gap-1">
+        <label for="primaryVoltage" class="text-sm font-medium">Tensão</label>
+        <div class="flex rounded shadow-sm border border-gray-400 overflow-hidden focus-within:border-slate-800 focus-within:ring focus-within:ring-slate-200 focus-within:ring-opacity-50 dark:border-slate-500">
+          <input type="number" id="primaryVoltage" step="any" class="flex-1 min-w-0 border-0 focus:ring-0 dark:bg-slate-600 px-3 py-2" />
+          <select id="primaryVoltageSelect" class="w-24 text-sm border-0 border-l border-gray-400 focus:ring-0 bg-gray-100 dark:bg-slate-700 dark:border-slate-500 px-2 py-2"></select>
+        </div>
+      </div>
+      <div class="flex flex-col gap-1">
+        <label for="primaryCurrent" class="text-sm font-medium">Corrente</label>
+        <div class="flex rounded shadow-sm border border-gray-400 overflow-hidden focus-within:border-slate-800 focus-within:ring focus-within:ring-slate-200 focus-within:ring-opacity-50 dark:border-slate-500">
+          <input type="number" id="primaryCurrent" step="any" class="flex-1 min-w-0 border-0 focus:ring-0 dark:bg-slate-600 px-3 py-2" />
+          <select id="primaryCurrentSelect" class="w-24 text-sm border-0 border-l border-gray-400 focus:ring-0 bg-gray-100 dark:bg-slate-700 dark:border-slate-500 px-2 py-2"></select>
+        </div>
+      </div>
+      <div class="flex flex-col gap-1">
+        <label for="turnsPrimary" class="text-sm font-medium">Número de voltas</label>
+        <div class="flex rounded shadow-sm border border-gray-400 overflow-hidden focus-within:border-slate-800 focus-within:ring focus-within:ring-slate-200 focus-within:ring-opacity-50 dark:border-slate-500">
+          <input type="number" id="turnsPrimary" step="any" class="flex-1 min-w-0 border-0 focus:ring-0 dark:bg-slate-600 px-3 py-2" />
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="col-span-3 sm:col-span-1">
-    <label for="turnsSecondary">Número de voltas</label>
-    <div class="border shadow-sm flex border-slate-600 rounded overflow-hidden">
-      <input
-        type="number"
-        id="turnsSecondary"
-        step="any"
-        class="w-full border-none shadow-transparent ring-transparent outline-0 dark:bg-gray-900"
-      />
+  <section>
+    <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2">Secundário</h2>
+    <div class="grid grid-cols-3 gap-4">
+      <div class="flex flex-col gap-1">
+        <label for="secondaryVoltage" class="text-sm font-medium">Tensão</label>
+        <div class="flex rounded shadow-sm border border-gray-400 overflow-hidden focus-within:border-slate-800 focus-within:ring focus-within:ring-slate-200 focus-within:ring-opacity-50 dark:border-slate-500">
+          <input type="number" id="secondaryVoltage" step="any" class="flex-1 min-w-0 border-0 focus:ring-0 dark:bg-slate-600 px-3 py-2" />
+          <select id="secondaryVoltageSelect" class="w-24 text-sm border-0 border-l border-gray-400 focus:ring-0 bg-gray-100 dark:bg-slate-700 dark:border-slate-500 px-2 py-2"></select>
+        </div>
+      </div>
+      <div class="flex flex-col gap-1">
+        <label for="secondaryCurrent" class="text-sm font-medium">Corrente</label>
+        <div class="flex rounded shadow-sm border border-gray-400 overflow-hidden focus-within:border-slate-800 focus-within:ring focus-within:ring-slate-200 focus-within:ring-opacity-50 dark:border-slate-500">
+          <input type="number" id="secondaryCurrent" step="any" class="flex-1 min-w-0 border-0 focus:ring-0 dark:bg-slate-600 px-3 py-2" />
+          <select id="secondaryCurrentSelect" class="w-24 text-sm border-0 border-l border-gray-400 focus:ring-0 bg-gray-100 dark:bg-slate-700 dark:border-slate-500 px-2 py-2"></select>
+        </div>
+      </div>
+      <div class="flex flex-col gap-1">
+        <label for="turnsSecondary" class="text-sm font-medium">Número de voltas</label>
+        <div class="flex rounded shadow-sm border border-gray-400 overflow-hidden focus-within:border-slate-800 focus-within:ring focus-within:ring-slate-200 focus-within:ring-opacity-50 dark:border-slate-500">
+          <input type="number" id="turnsSecondary" step="any" class="flex-1 min-w-0 border-0 focus:ring-0 dark:bg-slate-600 px-3 py-2" />
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 </div>
 
-<div id="calculatorResult" class="mt-8 font-bold"></div>
+<div id="calculatorResult" class="mt-6 px-4 py-3 rounded bg-slate-100 dark:bg-slate-700 text-sm font-mono font-bold min-h-[3rem] flex items-center"></div>
+
 <button
   type="button"
   id="calculateButton"
-  class="mt-8 text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800"
+  class="mt-4 w-full text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-slate-600 dark:hover:bg-slate-500 focus:outline-none dark:focus:ring-slate-800"
 >
   Calcular
 </button>
