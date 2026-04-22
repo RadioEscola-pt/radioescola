@@ -1,56 +1,59 @@
-<div class="space-y-4">
-  <h1 class="font-bold mb-6">Frequência de Ressonância</h1>
-  <div class="grid grid-cols-2 gap-3">
-    <div class="col-span-2 sm:col-span-1 space-y-2">
-      <label for="frequency">Indutância</label>
-      <div
-        class="border shadow-sm flex border-slate-600 rounded overflow-hidden"
-      >
-        <input
-          type="number"
-          id="inductance"
-          step="0.001"
-          required
-          class="w-full border-none shadow-transparent ring-transparent outline-0"
-        />
-        <select
-          id="inductanceUnit"
-          class="w-36 text-sm bg-gray-100 border-none shadow-transparent ring-transparent outline-0"
-        ></select>
-      </div>
-    </div>
+<h1 class="text-xl font-bold mb-6">Frequência de Ressonância</h1>
 
-    <div class="col-span-2 sm:col-span-1 space-y-2">
-      <label for="frequency">Capacitância</label>
-      <div
-        class="border shadow-sm flex border-slate-600 rounded overflow-hidden"
-      >
-        <input
-          type="number"
-          id="capacitance"
-          step="0.001"
-          required
-          class="w-full border-none shadow-transparent ring-transparent outline-0"
-        />
-        <select
-          id="capacitanceUnit"
-          class="w-36 text-sm bg-gray-100 border-none shadow-transparent ring-transparent outline-0"
-        ></select>
-      </div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <div class="flex flex-col gap-1">
+    <label for="inductance" class="text-sm font-medium">Indutância</label>
+    <div class="flex rounded shadow-sm border border-gray-400 overflow-hidden focus-within:border-slate-800 focus-within:ring focus-within:ring-slate-200 focus-within:ring-opacity-50 dark:border-slate-500">
+      <input
+        type="number"
+        id="inductance"
+        step="0.001"
+        required
+        class="flex-1 min-w-0 border-0 focus:ring-0 dark:bg-slate-600 px-3 py-2"
+      />
+      <select
+        id="inductanceUnit"
+        class="w-24 text-sm border-0 border-l border-gray-400 focus:ring-0 bg-gray-100 dark:bg-slate-700 dark:border-slate-500 px-2 py-2"
+      ></select>
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-1">
+    <label for="capacitance" class="text-sm font-medium">Capacitância</label>
+    <div class="flex rounded shadow-sm border border-gray-400 overflow-hidden focus-within:border-slate-800 focus-within:ring focus-within:ring-slate-200 focus-within:ring-opacity-50 dark:border-slate-500">
+      <input
+        type="number"
+        id="capacitance"
+        step="0.001"
+        required
+        class="flex-1 min-w-0 border-0 focus:ring-0 dark:bg-slate-600 px-3 py-2"
+      />
+      <select
+        id="capacitanceUnit"
+        class="w-24 text-sm border-0 border-l border-gray-400 focus:ring-0 bg-gray-100 dark:bg-slate-700 dark:border-slate-500 px-2 py-2"
+      ></select>
     </div>
   </div>
 </div>
-<label for="frequency">Resultado</label>
 
+<div class="mt-6 flex flex-col gap-1">
+  <label class="text-sm font-medium">Resultado</label>
+  <div class="flex rounded border border-gray-400 overflow-hidden bg-slate-100 dark:bg-slate-700 dark:border-slate-500">
+    <div id="result" class="flex-1 min-w-0 px-3 py-2 font-mono text-lg font-bold min-h-[2.75rem] flex items-center">—</div>
+    <select
+      id="resultUnit"
+      class="w-24 text-sm border-0 border-l border-gray-400 focus:ring-0 bg-slate-200 dark:bg-slate-800 dark:border-slate-500 px-2 py-2"
+    ></select>
+  </div>
+</div>
 
-<div id="result" class="mt-8 text-xl font-mono font-bold"></div>
-<select
-id="resultUnit"
-class="w-36 text-sm bg-gray-100 border-none shadow-transparent ring-transparent outline-0"
-></select>
+<div class="mt-4 text-sm text-slate-600 dark:text-slate-400">
+  Fórmula: <span class="font-mono">f = 1 / (2π√(LC))</span>
+</div>
+
 <button
   id="calculate"
-  class="mt-4 text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-slate-600 dark:hover:bg-slate-700 focus:outline-none dark:focus:ring-slate-800"
+  class="mt-4 w-full text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-slate-600 dark:hover:bg-slate-500 focus:outline-none dark:focus:ring-slate-800"
 >
   Calcular
 </button>
