@@ -30,9 +30,11 @@ export function useNotifications(): UseNotificationsReturn {
   );
   const [isSupported] = useState(() => isNotificationSupported());
 
-  // Load settings on mount
+  // Load persisted settings after mount. Intentionally render defaults first so
+  // server and client markup match, then hydrate from localStorage on the client.
   useEffect(() => {
     const loaded = loadNotificationSettings();
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- post-mount localStorage hydration
     setSettings(loaded);
   }, []);
 

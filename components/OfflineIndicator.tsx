@@ -11,9 +11,10 @@ export function OfflineIndicator() {
   const [dismissed, setDismissed] = useState(false);
   const [showReconnected, setShowReconnected] = useState(false);
 
-  // Reset dismissed state when going offline
+  // Reset dismissed state when connectivity drops so the banner reappears
   useEffect(() => {
     if (!isOnline) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- reacting to a connectivity transition
       setDismissed(false);
     }
   }, [isOnline]);
@@ -21,6 +22,7 @@ export function OfflineIndicator() {
   // Show "reconnected" message briefly when coming back online
   useEffect(() => {
     if (isOnline && wasOffline) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- transient banner cleared by the timer below
       setShowReconnected(true);
       const timer = setTimeout(() => {
         setShowReconnected(false);

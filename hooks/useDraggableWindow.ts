@@ -35,6 +35,8 @@ export function useDraggableWindow(options: UseDraggableWindowOptions = {}): Use
   const draggingRef = useRef(false);
   const dragOffsetRef = useRef({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement | null>(null);
+  // Scopes the active drag's listeners so they can be torn down together
+  const dragControllerRef = useRef<AbortController | null>(null);
 
   const updatePosition = useCallback(
     (next: Position) => {
@@ -58,16 +60,16 @@ export function useDraggableWindow(options: UseDraggableWindowOptions = {}): Use
   const handlePointerUp = useCallback(() => {
     if (!draggingRef.current) return;
     draggingRef.current = false;
-    window.removeEventListener("pointermove", handlePointerMove);
-    window.removeEventListener("pointerup", handlePointerUp);
-  }, [handlePointerMove]);
+    dragControllerRef.current?.abort();
+    dragControllerRef.current = null;
+  }, []);
 
   useEffect(() => {
     return () => {
-      window.removeEventListener("pointermove", handlePointerMove);
-      window.removeEventListener("pointerup", handlePointerUp);
+      dragControllerRef.current?.abort();
+      dragControllerRef.current = null;
     };
-  }, [handlePointerMove, handlePointerUp]);
+  }, []);
 
   const beginDrag = useCallback(
     (event: React.PointerEvent<HTMLDivElement>) => {
@@ -78,8 +80,10 @@ export function useDraggableWindow(options: UseDraggableWindowOptions = {}): Use
         x: event.clientX - rect.left,
         y: event.clientY - rect.top,
       };
-      window.addEventListener("pointermove", handlePointerMove);
-      window.addEventListener("pointerup", handlePointerUp);
+      const controller = new AbortController();
+      dragControllerRef.current = controller;
+      window.addEventListener("pointermove", handlePointerMove, { signal: controller.signal });
+      window.addEventListener("pointerup", handlePointerUp, { signal: controller.signal });
       event.preventDefault();
     },
     [handlePointerMove, handlePointerUp]

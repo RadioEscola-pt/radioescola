@@ -39,6 +39,9 @@ function useAnimatedCounter(target: number, duration: number, enabled: boolean) 
   const rafRef = useRef<number>(0);
   const hasDecimal = target % 1 !== 0;
 
+  // This effect drives an animation (the counter value over time), which is a
+  // legitimate use of synchronous setState — the rule's escape-hatch case.
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     if (!enabled) {
       setValue(0);
@@ -66,6 +69,7 @@ function useAnimatedCounter(target: number, duration: number, enabled: boolean) 
     rafRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(rafRef.current);
   }, [target, duration, enabled, hasDecimal]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   return value;
 }
