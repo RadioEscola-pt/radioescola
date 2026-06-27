@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { BookOpen, IdCard, Radio, ExternalLink, Building2, ArrowRight, Zap, Brain, Layers, Heart } from "lucide-react";
+import { BookOpen, IdCard, Radio, ExternalLink, Building2, ArrowRight, Zap, Brain, Layers, Heart, Play } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { CATEGORIES, CATEGORY_CONFIG, CATEGORY_IMAGES } from "@/lib/config";
 import { Button } from "@/components/ui/button";
@@ -122,19 +122,31 @@ export default async function HomePage() {
 
         <Link
           href="/drill"
-          className="flex items-center gap-4 px-5 py-4 rounded-xl bg-amber-50 border border-amber-200/60 hover:bg-amber-100/80 dark:bg-amber-950/30 dark:border-amber-800/40 dark:hover:bg-amber-950/50 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md group mb-4"
+          className="group relative mb-4 flex items-center gap-4 overflow-hidden rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 p-5 text-white shadow-lg shadow-amber-500/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-amber-500/30 sm:gap-5"
         >
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-amber-500 text-white animate-gentle-pulse">
-            <Zap className="h-5 w-5" />
+          {/* Diagonal speed streaks — a sense of motion behind the challenge. */}
+          <svg className="pointer-events-none absolute inset-0 h-full w-full text-white/10" aria-hidden>
+            {[0, 90, 180, 270, 360, 450, 540, 630].map((x) => (
+              <line key={x} x1={x} y1="-20" x2={x - 80} y2="160" stroke="currentColor" strokeWidth="14" />
+            ))}
+          </svg>
+
+          <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/15 ring-1 ring-white/25">
+            <Zap className="h-6 w-6" />
           </div>
-          <div className="flex-1 min-w-0">
-            <p className="font-semibold text-slate-900 dark:text-slate-100">{t("drillTitle")}</p>
-            <p className="text-sm text-slate-600 dark:text-slate-400">{t("drillDescription")}</p>
+
+          <div className="relative min-w-0 flex-1">
+            <h3 className="text-lg font-bold tracking-tight sm:text-xl">{t("drillTitle")}</h3>
+            <p className="mt-0.5 text-sm font-medium text-white/85">{t("drillDescription")}</p>
           </div>
-          <ArrowRight className="h-5 w-5 shrink-0 text-slate-400 group-hover:text-amber-600 group-hover:translate-x-0.5 transition-all duration-200" aria-hidden />
+
+          <span className="relative inline-flex shrink-0 items-center gap-1.5 rounded-full bg-white px-4 py-2 text-sm font-semibold text-amber-700 shadow-sm transition-transform duration-200 group-hover:scale-[1.03] sm:px-5 sm:py-2.5">
+            <Play className="h-4 w-4 fill-current" aria-hidden />
+            <span className="hidden sm:inline">{t("drillCta")}</span>
+          </span>
         </Link>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="divide-y divide-slate-200 overflow-hidden rounded-xl border border-slate-200 dark:divide-slate-800 dark:border-slate-800">
           {([
             { href: "/browse/3/smart-practice", icon: Brain, titleKey: "smartPracticeTitle", descKey: "smartPracticeDescription" },
             { href: "/browse/3/flash", icon: Layers, titleKey: "flashcardsTitle", descKey: "flashcardsDescription" },
@@ -145,14 +157,14 @@ export default async function HomePage() {
               <Link
                 key={feature.href}
                 href={feature.href}
-                className="flex items-start gap-3 px-5 py-4 rounded-xl bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all duration-200 hover:-translate-y-0.5 group"
+                className="group flex items-center gap-4 px-5 py-4 transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/50"
               >
-                <Icon className="h-5 w-5 shrink-0 mt-0.5 text-slate-500 dark:text-slate-400 group-hover:text-amber-500 transition-colors duration-200" />
-                <div className="flex-1 min-w-0">
-                  <p className="font-medium text-sm text-slate-900 dark:text-slate-100">{t(feature.titleKey)}</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{t(feature.descKey)}</p>
+                <Icon className="h-5 w-5 shrink-0 text-slate-400 transition-colors group-hover:text-amber-500 dark:text-slate-500" />
+                <div className="min-w-0 flex-1">
+                  <p className="font-medium text-slate-900 dark:text-slate-100">{t(feature.titleKey)}</p>
+                  <p className="mt-0.5 text-sm text-slate-500 dark:text-slate-400">{t(feature.descKey)}</p>
                 </div>
-                <ArrowRight className="h-4 w-4 shrink-0 mt-0.5 text-slate-300 dark:text-slate-600 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" aria-hidden />
+                <ArrowRight className="h-4 w-4 shrink-0 -translate-x-2 text-slate-300 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100 dark:text-slate-600" aria-hidden />
               </Link>
             );
           })}
