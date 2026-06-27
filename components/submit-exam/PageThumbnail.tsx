@@ -67,6 +67,7 @@ export function PageThumbnail({ page, index, onDelete, onRotate }: PageThumbnail
             <FileText className="h-8 w-8 text-slate-400 dark:text-slate-300" />
           </div>
         ) : (
+          /* eslint-disable-next-line @next/next/no-img-element -- base64 data URL with client-side rotation; next/image cannot optimize data URLs */
           <img
             src={page.thumbnailDataUrl || page.dataUrl}
             alt={`Page ${index + 1}`}

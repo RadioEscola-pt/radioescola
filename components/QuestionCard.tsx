@@ -201,6 +201,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
 
       {showImage && question.img && (
         <div className="mb-3">
+          {/* eslint-disable-next-line @next/next/no-img-element -- arbitrary-aspect question diagram with no stored dimensions; not a next/image fit */}
           <img src={question.img} alt="" className="w-full rounded-lg border border-slate-200 dark:border-slate-700" />
         </div>
       )}

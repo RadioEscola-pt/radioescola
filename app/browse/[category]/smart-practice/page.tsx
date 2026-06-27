@@ -127,10 +127,10 @@ export default function SmartPracticePage() {
     [currentStats]
   );
 
-  const handleSelect = (choice: number) => {
+  const handleSelect = useCallback((choice: number) => {
     if (selectedOption !== undefined || !currentQuestion) return;
     setSelectedOption(choice);
-  };
+  }, [selectedOption, currentQuestion]);
 
   const handleQualityRating = async (quality: QualityRating) => {
     if (!currentQuestion || selectedOption === undefined) return;
@@ -247,7 +247,7 @@ export default function SmartPracticePage() {
     if (selectedOption === undefined && currentQuestion) {
       handleSelect(index);
     }
-  }, [selectedOption, currentQuestion]);
+  }, [selectedOption, currentQuestion, handleSelect]);
 
   useKeyboardShortcuts({
     onAnswer1: () => handleKeyboardAnswer(0),
