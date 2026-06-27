@@ -37,19 +37,16 @@ export default async function HomePage() {
       icon: BookOpen,
       title: t("processSteps.study.title"),
       description: t("processSteps.study.description"),
-      number: "01",
     },
     {
       icon: IdCard,
       title: t("processSteps.examAndLicense.title"),
       description: t("processSteps.examAndLicense.description"),
-      number: "02",
     },
     {
       icon: Radio,
       title: t("processSteps.operate.title"),
       description: t("processSteps.operate.description"),
-      number: "03",
     },
   ];
 
@@ -177,14 +174,31 @@ export default async function HomePage() {
           <h2 className="text-2xl md:text-3xl font-bold text-white">{t("processHeading")}</h2>
           <p className="mt-2 text-slate-400 max-w-xl">{t("sectionSubtitle")}</p>
 
-          <div className="mt-10 grid gap-8 md:grid-cols-3">
-            {processSteps.map((step) => (
-              <div key={step.title}>
-                <span className="text-4xl font-black text-amber-500/25">{step.number}</span>
-                <h3 className="mt-2 text-xl font-semibold text-white">{step.title}</h3>
-                <p className="mt-2 text-sm text-slate-400 leading-relaxed">{step.description}</p>
-              </div>
-            ))}
+          <div className="mt-10 grid gap-10 md:grid-cols-3 md:gap-6">
+            {processSteps.map((step, i) => {
+              const Icon = step.icon;
+              const last = i === processSteps.length - 1;
+              return (
+                <div key={step.title} className="relative">
+                  {!last && (
+                    <div
+                      className="absolute left-14 top-6 hidden h-px w-full bg-gradient-to-r from-amber-500/40 to-amber-500/0 md:block"
+                      aria-hidden
+                    />
+                  )}
+                  <div className="flex items-center gap-4 md:block">
+                    <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-slate-800 text-amber-400 ring-1 ring-amber-500/30">
+                      <Icon className="h-5 w-5" aria-hidden />
+                      <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-amber-500 text-[10px] font-bold text-slate-900">
+                        {i + 1}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-white md:mt-5">{step.title}</h3>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-400">{step.description}</p>
+                </div>
+              );
+            })}
           </div>
 
           <div className="mt-10 pt-6 border-t border-slate-700/50">
