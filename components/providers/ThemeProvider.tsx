@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, useSyncExternalStore } from "react";
 
 type Theme = "light" | "dark";
 
@@ -24,15 +24,23 @@ function getSystemTheme(): "light" | "dark" {
   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
 
+// Hydration-safe client flag: false on the server/during hydration, true after.
+const noopSubscribe = () => () => {};
+
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>(getSystemTheme);
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    noopSubscribe,
+    () => true,
+    () => false
+  );
 
-  // On mount: read localStorage (fall back to system preference)
+  // On mount: read persisted theme from localStorage (falls back to system
+  // preference). Done post-mount so server/client markup match before hydration.
   useEffect(() => {
-    setMounted(true);
     const stored = localStorage.getItem("theme");
     if (stored === "light" || stored === "dark") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- post-mount localStorage hydration
       setTheme(stored);
     }
   }, []);

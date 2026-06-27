@@ -364,6 +364,7 @@ export default function ExamPage() {
 
               {q.img && (
                 <div className="mb-3">
+                  {/* eslint-disable-next-line @next/next/no-img-element -- arbitrary-aspect question diagram with no stored dimensions; not a next/image fit */}
                   <img src={q.img} alt="" className="w-full rounded-lg border border-slate-200 dark:border-slate-700" />
                 </div>
               )}

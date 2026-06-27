@@ -52,6 +52,7 @@ export default async function HomePage() {
                 key={id}
                 className="group relative overflow-hidden rounded-xl h-72 md:h-80 transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl"
               >
+                {/* eslint-disable-next-line @next/next/no-img-element -- self-hosted standalone build deliberately avoids the /_next/image optimizer */}
                 <img
                   src={image}
                   alt={`${name} illustration`}

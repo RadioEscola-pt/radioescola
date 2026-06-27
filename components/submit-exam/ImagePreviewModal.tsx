@@ -30,6 +30,7 @@ export function ImagePreviewModal({ open, onClose, page }: ImagePreviewModalProp
             </div>
           </div>
         ) : (
+          /* eslint-disable-next-line @next/next/no-img-element -- base64 data URL with client-side rotation; next/image cannot optimize data URLs */
           <img
             src={page.dataUrl}
             alt="Preview"

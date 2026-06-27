@@ -6,7 +6,7 @@ import { PageLoading } from "@/components/shared/Loading";
 import { CATEGORIES, CATEGORY_CONFIG } from "@/lib/config";
 import type { CategoryId } from "@/lib/config/categories";
 import { loadData } from "@/lib/data";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   LineChart,
   Line,
@@ -63,7 +63,10 @@ export default function DashboardPage() {
   const [questionCounts, setQuestionCounts] = useState<CategoryQuestionCount>(
     {}
   );
-  const [bookmarkCount, setBookmarkCount] = useState(0);
+  const bookmarkCount = useMemo(
+    () => (progress ? getBookmarkedQuestions(progress).length : 0),
+    [progress]
+  );
 
   useEffect(() => {
     loadData().then((data) => {
@@ -74,13 +77,6 @@ export default function DashboardPage() {
       setQuestionCounts(counts);
     });
   }, []);
-
-  useEffect(() => {
-    if (progress) {
-      const bookmarks = getBookmarkedQuestions(progress);
-      setBookmarkCount(bookmarks.length);
-    }
-  }, [progress]);
 
   const handleDismissAchievement = (id: string) => {
     dismissAchievementNotifications([id]);

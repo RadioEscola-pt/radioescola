@@ -15,7 +15,11 @@ import { toggleBookmark } from '@/lib/storage/localStorage';
 export default function BrowsePage() {
   const params = useParams();
   const [category, setCategory] = useState<Category | null>(null);
-  const [categoryId, setCategoryId] = useState<string>('3');
+  const categoryId = typeof params.category === 'string'
+    ? params.category
+    : Array.isArray(params.category)
+      ? params.category[0] ?? '3'
+      : '3';
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const { openCalculator } = useCalculators();
   const { recordQuestion, progress, refreshProgress } = useProgressContext();
@@ -42,16 +46,10 @@ export default function BrowsePage() {
   }, [categoryId, refreshProgress]);
 
   useEffect(() => {
-    const cat = typeof params.category === 'string'
-      ? params.category
-      : Array.isArray(params.category)
-        ? params.category[0] ?? '3'
-        : '3';
-    setCategoryId(cat);
     loadData().then((data) => {
-      setCategory(data.categories[cat] ?? null);
+      setCategory(data.categories[categoryId] ?? null);
     });
-  }, [params.category]);
+  }, [categoryId]);
 
   const handleLaunchCalculator = useCallback((code: string) => {
     openCalculator(code as CalculatorCode);

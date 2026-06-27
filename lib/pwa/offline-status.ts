@@ -1,42 +1,39 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
 interface OnlineStatus {
   isOnline: boolean;
   wasOffline: boolean;
 }
 
+function subscribeToOnlineStatus(callback: () => void): () => void {
+  window.addEventListener("online", callback);
+  window.addEventListener("offline", callback);
+  return () => {
+    window.removeEventListener("online", callback);
+    window.removeEventListener("offline", callback);
+  };
+}
+
 /**
- * Hook to track online/offline status
+ * Hook to track online/offline status.
+ * `isOnline` is sourced from the browser's connectivity store via
+ * useSyncExternalStore (SSR-safe: assumes online on the server).
  */
 export function useOnlineStatus(): OnlineStatus {
-  const [isOnline, setIsOnline] = useState(true);
+  const isOnline = useSyncExternalStore(
+    subscribeToOnlineStatus,
+    () => navigator.onLine,
+    () => true
+  );
   const [wasOffline, setWasOffline] = useState(false);
 
-  const handleOnline = useCallback(() => {
-    setIsOnline(true);
-  }, []);
-
-  const handleOffline = useCallback(() => {
-    setIsOnline(false);
-    setWasOffline(true);
-  }, []);
-
   useEffect(() => {
-    // Set initial state
-    if (typeof window !== "undefined") {
-      setIsOnline(navigator.onLine);
-    }
-
-    window.addEventListener("online", handleOnline);
+    const handleOffline = () => setWasOffline(true);
     window.addEventListener("offline", handleOffline);
-
-    return () => {
-      window.removeEventListener("online", handleOnline);
-      window.removeEventListener("offline", handleOffline);
-    };
-  }, [handleOnline, handleOffline]);
+    return () => window.removeEventListener("offline", handleOffline);
+  }, []);
 
   return { isOnline, wasOffline };
 }

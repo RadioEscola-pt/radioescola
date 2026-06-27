@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
@@ -46,27 +46,30 @@ export default function StudyIndexPage() {
     return result;
   }, [items, activeCategory, searchQuery]);
 
-  const loadItems = () => {
+  const fetchItems = useCallback(async () => {
+    try {
+      const res = await fetch('/api/study-items');
+      if (!res.ok) throw new Error('Failed to load');
+      const data = await res.json();
+      setItems(data);
+      setLoading(false);
+    } catch {
+      setError(true);
+      setLoading(false);
+    }
+  }, []);
+
+  // Retry handler (event-driven): reset to loading state, then refetch
+  const loadItems = useCallback(() => {
     setLoading(true);
     setError(false);
-    fetch('/api/study-items')
-      .then(res => {
-        if (!res.ok) throw new Error('Failed to load');
-        return res.json();
-      })
-      .then(data => {
-        setItems(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setError(true);
-        setLoading(false);
-      });
-  };
+    void fetchItems();
+  }, [fetchItems]);
 
+  // Initial load — state already starts in loading=true, so no synchronous reset needed
   useEffect(() => {
-    loadItems();
-  }, []);
+    void fetchItems();
+  }, [fetchItems]);
 
   const handleCategoryChange = (value: string) => {
     if (value === 'all') {

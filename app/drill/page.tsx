@@ -354,6 +354,7 @@ export default function DrillPage() {
 
           {currentQuestion.question.img && (
             <div className="mb-6">
+              {/* eslint-disable-next-line @next/next/no-img-element -- arbitrary-aspect question diagram with no stored dimensions; not a next/image fit */}
               <img
                 src={currentQuestion.question.img}
                 alt=""

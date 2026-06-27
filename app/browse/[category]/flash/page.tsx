@@ -130,7 +130,7 @@ export default function FlashBrowsePage() {
       ? category.questions[orderIndex] ?? null
       : null;
 
-  const handleSelect = (choice: number) => {
+  const handleSelect = useCallback((choice: number) => {
     if (selectedOption !== undefined || !currentQuestion) {
       return;
     }
@@ -142,9 +142,9 @@ export default function FlashBrowsePage() {
       correct: choice === currentQuestion.correctIndex,
       timestamp: Date.now(),
     });
-  };
+  }, [selectedOption, currentQuestion, recordQuestion, catId]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     if (!category || order.length === 0) {
       return;
     }
@@ -159,20 +159,20 @@ export default function FlashBrowsePage() {
       setCursor(0);
     }
     setSelectedOption(undefined);
-  };
+  }, [category, order, cursor]);
 
   // Keyboard shortcuts for flashcard navigation
   const handleAnswer = useCallback((index: number) => {
     if (selectedOption === undefined && currentQuestion) {
       handleSelect(index);
     }
-  }, [selectedOption, currentQuestion]);
+  }, [selectedOption, currentQuestion, handleSelect]);
 
   const handleRevealOrNext = useCallback(() => {
     if (selectedOption !== undefined) {
       handleNext();
     }
-  }, [selectedOption]);
+  }, [selectedOption, handleNext]);
 
   useKeyboardShortcuts({
     onAnswer1: () => handleAnswer(0),

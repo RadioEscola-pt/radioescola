@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { Bookmark, ArrowLeft, Trash2 } from "lucide-react";
@@ -26,8 +26,6 @@ interface BookmarkedQuestion {
 export default function BookmarksPage() {
   const t = useTranslations("Bookmarks");
   const { progress, refreshProgress } = useProgressContext();
-  const [bookmarks, setBookmarks] = useState<BookmarkedQuestion[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [filter, setFilter] = useState<string | null>(null);
   const [data, setData] = useState<Data | null>(null);
 
@@ -36,20 +34,17 @@ export default function BookmarksPage() {
     loadData().then(setData);
   }, []);
 
-  // Load bookmarked questions
-  useEffect(() => {
-    if (!data) return;
+  const isLoading = data === null;
 
-    const bookmarkedData = getBookmarkedQuestions(progress);
+  // Bookmarked questions enriched with their question data — derived from progress + data
+  const bookmarks = useMemo<BookmarkedQuestion[]>(() => {
+    if (!data) return [];
 
-    const enriched = bookmarkedData.map((b) => {
+    return getBookmarkedQuestions(progress).map((b) => {
       const categoryData = data.categories[b.category];
       const question = categoryData?.questions.find((q) => q.id === b.questionId);
       return { ...b, question };
     });
-
-    setBookmarks(enriched);
-    setIsLoading(false);
   }, [progress, data]);
 
   const handleRemoveBookmark = useCallback(async (category: string, questionId: number) => {
