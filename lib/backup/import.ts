@@ -168,6 +168,10 @@ function mergeGamification(
           existing.lifetimeStats?.dailyGoalsCompleted || 0,
           imported.lifetimeStats?.dailyGoalsCompleted || 0
         ),
+        dailyGoalSetsCompleted: Math.max(
+          existing.lifetimeStats?.dailyGoalSetsCompleted || 0,
+          imported.lifetimeStats?.dailyGoalSetsCompleted || 0
+        ),
         fastFinishes: Math.max(
           existing.lifetimeStats?.fastFinishes || 0,
           imported.lifetimeStats?.fastFinishes || 0

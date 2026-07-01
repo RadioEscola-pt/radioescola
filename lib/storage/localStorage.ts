@@ -15,6 +15,8 @@ import {
 } from "@/lib/types/progress";
 import { migrateToGamification } from "@/lib/gamification/engine";
 import { createInitialGamificationState } from "@/lib/types/gamification";
+import type { GamificationState } from "@/lib/types/gamification";
+import { getTodayDateString } from "@/lib/gamification/daily-goals";
 import { convertLegacyExport } from "@/lib/backup/legacy-import";
 
 const STORAGE_KEY = "hamradio_progress";
@@ -149,12 +151,20 @@ export function migrateProgress(progress: UserProgress): UserProgress {
     migrated.gamification = createInitialGamificationState();
   }
 
+  // V3 -> V4: Added lastGoalCompletionDate (consecutive-day daily-goal streak)
+  // and lifetimeStats.dailyGoalSetsCompleted (days with all goals complete).
+  // Backfill both for states that predate the fields.
+  if (migrated.version < 4) {
+    if (migrated.gamification.lastGoalCompletionDate === undefined) {
+      migrated.gamification.lastGoalCompletionDate = null;
+    }
+    if (migrated.gamification.lifetimeStats.dailyGoalSetsCompleted === undefined) {
+      migrated.gamification.lifetimeStats.dailyGoalSetsCompleted = 0;
+    }
+  }
+
   migrated.version = PROGRESS_VERSION;
   return migrated;
-}
-
-function getTodayDateString(): string {
-  return new Date().toISOString().split("T")[0] ?? "";
 }
 
 function updateStreak(stats: UserProgress["stats"]): void {
@@ -252,6 +262,17 @@ async function clearProgress(): Promise<void> {
   localStorage.removeItem(STORAGE_KEY);
 }
 
+async function updateGamification(
+  newState: GamificationState
+): Promise<UserProgress | null> {
+  const progress = await getProgress();
+  if (!progress) return null;
+
+  progress.gamification = newState;
+  await saveProgress(progress);
+  return progress;
+}
+
 /**
  * Update spaced repetition stats for a specific question
  * Used by Smart Practice mode to track review intervals
@@ -301,6 +322,7 @@ export const localStorageProvider: StorageProvider = {
   recordExamAttempt,
   recordQuestionAttempt,
   clearProgress,
+  updateGamification,
 };
 
 // Utility functions for accessing specific stats

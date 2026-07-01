@@ -21,6 +21,13 @@ export const XP_VALUES = {
   DRILL_PERFECT: 25,
 } as const;
 
+/**
+ * Seconds remaining on the exam clock that qualifies as a "fast finish"
+ * (30+ minutes). Single source of truth shared by the engine (which counts
+ * fast finishes) and the speed_demon achievement definition.
+ */
+export const FAST_FINISH_SECONDS_REMAINING = 1800;
+
 export const ACHIEVEMENT_XP: Record<AchievementRarity, number> = {
   common: 25,
   uncommon: 50,

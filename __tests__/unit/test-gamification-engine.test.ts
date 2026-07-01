@@ -10,7 +10,11 @@ import { createInitialGamificationState } from "@/lib/types/gamification";
 import type { GamificationState } from "@/lib/types/gamification";
 import { createEmptyProgress } from "@/lib/types/progress";
 import type { ExamAttempt, UserProgress } from "@/lib/types/progress";
-import { ensureTodayProgress } from "@/lib/gamification/daily-goals";
+import {
+  ensureTodayProgress,
+  getTodayDateString,
+  getYesterdayDateString,
+} from "@/lib/gamification/daily-goals";
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -372,6 +376,139 @@ describe("daily goal consistency across activity types", () => {
 
     expect(newState.lifetimeStats.questionsAnswered).toBe(10);
     expect(newState.lifetimeStats.questionsCorrect).toBe(8);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Daily goal streak (consecutive-day reset)
+// ---------------------------------------------------------------------------
+
+/**
+ * Build a state whose (single) daily goal is already complete and whose bonus
+ * has not yet been claimed, so the next processor call enters the
+ * "all daily goals complete" branch and bumps the streak.
+ */
+function stateWithAllGoalsComplete(
+  base: GamificationState,
+  lastGoalCompletionDate: string | null,
+  dailyGoalStreak: number
+): GamificationState {
+  const today = getTodayDateString();
+  const goal = {
+    id: `${today}-done`,
+    type: "questions_answered" as const,
+    target: 1,
+    xpReward: 10,
+  };
+  return {
+    ...base,
+    dailyGoalStreak,
+    lastGoalCompletionDate,
+    dailyProgress: {
+      date: today,
+      goals: [goal],
+      progress: { [goal.id]: 1 },
+      completed: [goal.id],
+      bonusClaimed: false,
+    },
+  };
+}
+
+describe("dailyGoalStreak consecutive-day handling", () => {
+  const base = createInitialGamificationState();
+  const today = getTodayDateString();
+
+  it("increments when the previous completion was yesterday", () => {
+    const state = stateWithAllGoalsComplete(base, getYesterdayDateString(today), 3);
+    const { newState } = processQuestionAnswered(state, true);
+
+    expect(newState.dailyGoalStreak).toBe(4);
+    expect(newState.lastGoalCompletionDate).toBe(today);
+  });
+
+  it("resets to 1 after a missed day (gap)", () => {
+    const twoDaysAgo = getYesterdayDateString(getYesterdayDateString(today));
+    const state = stateWithAllGoalsComplete(base, twoDaysAgo, 3);
+    const { newState } = processQuestionAnswered(state, true);
+
+    expect(newState.dailyGoalStreak).toBe(1);
+    expect(newState.lastGoalCompletionDate).toBe(today);
+  });
+
+  it("starts at 1 on the first ever completion", () => {
+    const state = stateWithAllGoalsComplete(base, null, 0);
+    const { newState } = processQuestionAnswered(state, true);
+
+    expect(newState.dailyGoalStreak).toBe(1);
+    expect(newState.lastGoalCompletionDate).toBe(today);
+  });
+
+  it("increments dailyGoalSetsCompleted once and flags the bonus as just claimed", () => {
+    const state = stateWithAllGoalsComplete(base, getYesterdayDateString(today), 1);
+    const { newState, result } = processQuestionAnswered(state, true);
+
+    expect(newState.lifetimeStats.dailyGoalSetsCompleted).toBe(1);
+    expect(result.allDailyGoalsComplete).toBe(true);
+  });
+
+  it("unlocks daily_champion after 7 goal SETS, not 7 individual goals", () => {
+    let state = stateWithAllGoalsComplete(base, getYesterdayDateString(today), 6);
+    state = {
+      ...state,
+      lifetimeStats: { ...state.lifetimeStats, dailyGoalSetsCompleted: 6 },
+    };
+
+    const { result } = processQuestionAnswered(state, true, createEmptyProgress());
+
+    expect(result.newAchievements.some((a) => a.id === "daily_champion")).toBe(true);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Achievements unlock outside of exams
+// ---------------------------------------------------------------------------
+
+describe("achievements evaluate on non-exam activity", () => {
+  let progress: UserProgress;
+
+  beforeEach(() => {
+    progress = createEmptyProgress();
+  });
+
+  it("unlocks a question-count achievement from a browsed question", () => {
+    let state = stateWithDailyGoals(createInitialGamificationState());
+    state = { ...state, lifetimeStats: { ...state.lifetimeStats, questionsAnswered: 99 } };
+
+    const { result } = processQuestionAnswered(state, true, progress);
+
+    expect(result.newAchievements.some((a) => a.id === "hundred_questions")).toBe(true);
+  });
+
+  it("does not evaluate achievements when no progress is supplied", () => {
+    let state = stateWithDailyGoals(createInitialGamificationState());
+    state = { ...state, lifetimeStats: { ...state.lifetimeStats, questionsAnswered: 99 } };
+
+    const { result } = processQuestionAnswered(state, true);
+
+    expect(result.newAchievements).toHaveLength(0);
+  });
+
+  it("unlocks a streak achievement via progress.stats from a question", () => {
+    const state = stateWithDailyGoals(createInitialGamificationState());
+    progress.stats.longestStreak = 7;
+
+    const { result } = processQuestionAnswered(state, true, progress);
+
+    expect(result.newAchievements.some((a) => a.id === "week_streak")).toBe(true);
+  });
+
+  it("unlocks achievements from a drill", () => {
+    let state = stateWithDailyGoals(createInitialGamificationState());
+    state = { ...state, lifetimeStats: { ...state.lifetimeStats, questionsAnswered: 99 } };
+
+    const { result } = processDrillComplete(state, 1, 1, progress);
+
+    expect(result.newAchievements.some((a) => a.id === "hundred_questions")).toBe(true);
   });
 });
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import * as LucideIcons from "lucide-react";
 import { X } from "lucide-react";
@@ -34,6 +34,14 @@ export function AchievementToast({
 
   const IconComponent = (LucideIcons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[achievement.icon] ?? LucideIcons.Star;
 
+  // Keep the latest onDismiss in a ref so the auto-hide effect can run once on
+  // mount without a fresh inline onDismiss closure (passed by the container on
+  // every parent re-render) restarting the timer and re-firing indefinitely.
+  const onDismissRef = useRef(onDismiss);
+  useEffect(() => {
+    onDismissRef.current = onDismiss;
+  });
+
   useEffect(() => {
     // Animate in
     const showTimer = setTimeout(() => setIsVisible(true), 100);
@@ -46,7 +54,7 @@ export function AchievementToast({
     if (autoHide) {
       hideTimer = setTimeout(() => {
         setIsVisible(false);
-        setTimeout(onDismiss, 300);
+        setTimeout(() => onDismissRef.current(), 300);
       }, autoHideDelay);
     }
 
@@ -54,7 +62,7 @@ export function AchievementToast({
       clearTimeout(showTimer);
       if (hideTimer) clearTimeout(hideTimer);
     };
-  }, [autoHide, autoHideDelay, celebrate, onDismiss]);
+  }, [autoHide, autoHideDelay, celebrate]);
 
   const handleDismiss = () => {
     setIsVisible(false);

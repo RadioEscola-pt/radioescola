@@ -22,7 +22,7 @@ export default function BrowsePage() {
       : '3';
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const { openCalculator } = useCalculators();
-  const { recordQuestion, progress, refreshProgress } = useProgressContext();
+  const { recordQuestionWithGamification, progress, refreshProgress } = useProgressContext();
   const t = useTranslations('Browse');
 
   const isBookmarked = useCallback((questionId: number) => {
@@ -80,8 +80,8 @@ export default function BrowsePage() {
               onSelect={(choice) => {
                 setAnswers((prev) => {
                   if (Object.prototype.hasOwnProperty.call(prev, q.id)) return prev;
-                  // Record question attempt for progress tracking
-                  recordQuestion({
+                  // Record question attempt (+ XP / daily goals) for progress tracking
+                  recordQuestionWithGamification({
                     questionId: q.id,
                     category: categoryId,
                     correct: choice === q.correctIndex,

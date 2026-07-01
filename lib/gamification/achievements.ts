@@ -3,7 +3,7 @@
  */
 
 import type { Achievement, AchievementCategory } from "@/lib/types/gamification";
-import { ACHIEVEMENT_XP } from "./xp";
+import { ACHIEVEMENT_XP, FAST_FINISH_SECONDS_REMAINING } from "./xp";
 
 export const ACHIEVEMENTS: Achievement[] = [
   // ===== MILESTONE (5) =====
@@ -97,7 +97,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     category: "excellence",
     rarity: "uncommon",
     xpReward: ACHIEVEMENT_XP.uncommon,
-    condition: { type: "fast_finish", secondsRemaining: 1800 },
+    condition: { type: "fast_finish", secondsRemaining: FAST_FINISH_SECONDS_REMAINING },
   },
   {
     id: "comeback_kid",
@@ -140,7 +140,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     category: "dedication",
     rarity: "uncommon",
     xpReward: ACHIEVEMENT_XP.uncommon,
-    condition: { type: "daily_goals_completed", count: 7 },
+    condition: { type: "daily_goal_sets_completed", count: 7 },
   },
   {
     id: "smart_learner",
@@ -219,6 +219,7 @@ export function getAchievementProgress(
     questionsCorrect: number;
     longestStreak: number;
     dailyGoalsCompleted: number;
+    dailyGoalSetsCompleted: number;
     smartPracticeSessions: number;
     currentLevel: number;
     categoriesAttempted: string[];
@@ -255,6 +256,10 @@ export function getAchievementProgress(
       break;
     case "daily_goals_completed":
       current = stats.dailyGoalsCompleted;
+      target = condition.count;
+      break;
+    case "daily_goal_sets_completed":
+      current = stats.dailyGoalSetsCompleted;
       target = condition.count;
       break;
     case "smart_practice_sessions":

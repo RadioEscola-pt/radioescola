@@ -22,6 +22,24 @@ describe("Contract: Gamification wiring", () => {
     });
   });
 
+  describe("browse and flash pages award gamification per question", () => {
+    it("ProgressProvider wires processQuestionAnswered to recordQuestionWithGamification", () => {
+      const source = readSource("components/providers/ProgressProvider.tsx");
+      expect(source).toContain("processQuestionAnswered");
+      expect(source).toContain("recordQuestionWithGamification");
+    });
+
+    it("browse page uses recordQuestionWithGamification", () => {
+      const source = readSource("app/browse/[category]/page.tsx");
+      expect(source).toContain("recordQuestionWithGamification");
+    });
+
+    it("flash page uses recordQuestionWithGamification", () => {
+      const source = readSource("app/browse/[category]/flash/page.tsx");
+      expect(source).toContain("recordQuestionWithGamification");
+    });
+  });
+
   describe("smart practice page calls recordSmartPracticeSession on completion", () => {
     it("destructures recordSmartPracticeSession from context", () => {
       const source = readSource("app/browse/[category]/smart-practice/page.tsx");

@@ -64,6 +64,7 @@ export type AchievementCondition =
   | { type: "xp_total"; amount: number }
   | { type: "level_reached"; level: number }
   | { type: "daily_goals_completed"; count: number }
+  | { type: "daily_goal_sets_completed"; count: number }
   | { type: "fast_finish"; secondsRemaining: number }
   | { type: "comeback" };
 
@@ -117,7 +118,10 @@ export interface LifetimeStats {
   smartPracticeSessions: number;
   drillsCompleted: number;
   drillsPerfect: number;
+  /** Count of individual daily goals completed (multiple per day). */
   dailyGoalsCompleted: number;
+  /** Count of days where ALL daily goals were completed (one "set" per day). */
+  dailyGoalSetsCompleted: number;
   fastFinishes: number;
   comebacks: number;
   categoriesAttempted: string[];
@@ -138,6 +142,9 @@ export interface GamificationState {
   achievementProgress: Record<string, number>;
   dailyProgress: DailyProgress | null;
   dailyGoalStreak: number;
+  /** YYYY-MM-DD of the last day all daily goals were completed (drives the
+   *  consecutive-day streak reset). Null until the first all-goals-complete day. */
+  lastGoalCompletionDate: string | null;
   lifetimeStats: LifetimeStats;
   lastActivityDate: string | null;
 }
@@ -166,6 +173,7 @@ export function createInitialLifetimeStats(): LifetimeStats {
     drillsCompleted: 0,
     drillsPerfect: 0,
     dailyGoalsCompleted: 0,
+    dailyGoalSetsCompleted: 0,
     fastFinishes: 0,
     comebacks: 0,
     categoriesAttempted: [],
@@ -188,6 +196,7 @@ export function createInitialGamificationState(): GamificationState {
     achievementProgress: {},
     dailyProgress: null,
     dailyGoalStreak: 0,
+    lastGoalCompletionDate: null,
     lifetimeStats: createInitialLifetimeStats(),
     lastActivityDate: null,
   };

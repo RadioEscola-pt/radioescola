@@ -71,9 +71,17 @@ export interface StorageProvider {
   recordExamAttempt(attempt: ExamAttempt): Promise<void>;
   recordQuestionAttempt(attempt: QuestionAttempt): Promise<void>;
   clearProgress(): Promise<void>;
+  /**
+   * Atomically merge a new gamification state into the persisted progress:
+   * re-reads the latest stored progress, replaces only `gamification`, and
+   * saves. Prevents a stale in-memory snapshot from clobbering exam/question
+   * writes that landed after it was read. Returns the merged progress (or null
+   * if there is nothing stored to merge into).
+   */
+  updateGamification(newState: GamificationState): Promise<UserProgress | null>;
 }
 
-export const PROGRESS_VERSION = 3;
+export const PROGRESS_VERSION = 4;
 
 // SM-2 Algorithm Constants
 export const SM2_CONFIG = {

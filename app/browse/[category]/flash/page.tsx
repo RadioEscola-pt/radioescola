@@ -53,7 +53,7 @@ export default function FlashBrowsePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [answeredCount, setAnsweredCount] = useState(0);
   const { openCalculator } = useCalculators();
-  const { recordQuestion, progress, refreshProgress } = useProgressContext();
+  const { recordQuestionWithGamification, progress, refreshProgress } = useProgressContext();
   const t = useTranslations("Browse");
 
   const isBookmarked = useCallback((questionId: number) => {
@@ -135,14 +135,14 @@ export default function FlashBrowsePage() {
       return;
     }
     setSelectedOption(choice);
-    // Record question attempt for progress tracking
-    recordQuestion({
+    // Record question attempt (+ XP / daily goals) for progress tracking
+    recordQuestionWithGamification({
       questionId: currentQuestion.id,
       category: catId,
       correct: choice === currentQuestion.correctIndex,
       timestamp: Date.now(),
     });
-  }, [selectedOption, currentQuestion, recordQuestion, catId]);
+  }, [selectedOption, currentQuestion, recordQuestionWithGamification, catId]);
 
   const handleNext = useCallback(() => {
     if (!category || order.length === 0) {
