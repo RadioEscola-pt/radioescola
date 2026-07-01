@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 import { useTranslations } from "next-intl";
 import type { XPEvent } from "@/lib/types/gamification";
+import { toLocalDateString } from "@/lib/gamification/daily-goals";
 
 interface StreakCalendarProps {
   xpHistory: XPEvent[];
@@ -17,7 +18,7 @@ function aggregateXPByDate(xpHistory: XPEvent[]): Map<string, number> {
   const dailyXP = new Map<string, number>();
 
   for (const event of xpHistory) {
-    const date = new Date(event.timestamp).toISOString().split("T")[0];
+    const date = toLocalDateString(new Date(event.timestamp));
     if (date) {
       // Cap individual event amounts to prevent corrupted data from skewing display
       const safeAmount = Math.min(event.amount, MAX_EVENT_XP);
@@ -61,7 +62,7 @@ function getCalendarDates(weeks: number): string[][] {
       const currentDate = new Date(startDate);
       currentDate.setDate(startDate.getDate() + (week * 7) + day);
       if (currentDate <= today) {
-        weekDates.push(currentDate.toISOString().split("T")[0]!);
+        weekDates.push(toLocalDateString(currentDate));
       }
     }
     if (weekDates.length > 0) {
@@ -96,33 +97,20 @@ export function StreakCalendar({ xpHistory, weeks = 16 }: StreakCalendarProps) {
 
   // Calculate streak
   const { currentStreak, totalDays } = useMemo(() => {
-    const today = new Date().toISOString().split("T")[0]!;
-    const sortedDates = [...dailyXP.keys()].sort().reverse();
-
     let streak = 0;
-    let checkDate = new Date();
+    const checkDate = new Date();
     checkDate.setHours(0, 0, 0, 0);
 
-    // Check if there's activity today or yesterday (to not break streak on current day)
-    const todayStr = checkDate.toISOString().split("T")[0]!;
-    const yesterdayDate = new Date(checkDate);
-    yesterdayDate.setDate(yesterdayDate.getDate() - 1);
-    const yesterdayStr = yesterdayDate.toISOString().split("T")[0]!;
-
-    if (!dailyXP.has(todayStr)) {
-      // No activity today, start counting from yesterday
+    // Don't break the streak just because there's no activity yet today: if
+    // today has no XP, start counting from yesterday.
+    if (!dailyXP.has(toLocalDateString(checkDate))) {
       checkDate.setDate(checkDate.getDate() - 1);
     }
 
-    // Count consecutive days
-    while (true) {
-      const dateStr = checkDate.toISOString().split("T")[0]!;
-      if (dailyXP.has(dateStr)) {
-        streak++;
-        checkDate.setDate(checkDate.getDate() - 1);
-      } else {
-        break;
-      }
+    // Count consecutive days backwards
+    while (dailyXP.has(toLocalDateString(checkDate))) {
+      streak++;
+      checkDate.setDate(checkDate.getDate() - 1);
     }
 
     return { currentStreak: streak, totalDays: dailyXP.size };

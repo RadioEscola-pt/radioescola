@@ -13,7 +13,7 @@ import type {
 } from "@/lib/types/gamification";
 import type { ExamAttempt, UserProgress } from "@/lib/types/progress";
 import { createInitialGamificationState } from "@/lib/types/gamification";
-import { XP_VALUES, calculateExamXP, calculateDailyStreakBonus, ACHIEVEMENT_XP } from "./xp";
+import { XP_VALUES, calculateExamXP, calculateDailyStreakBonus, ACHIEVEMENT_XP, FAST_FINISH_SECONDS_REMAINING } from "./xp";
 import { getLevelForXP } from "./levels";
 
 // Maximum XP allowed (safety cap to prevent corruption from bugs)
@@ -30,6 +30,7 @@ import {
   updateDailyGoalProgress,
   areAllDailyGoalsComplete,
   getTodayDateString,
+  getYesterdayDateString,
 } from "./daily-goals";
 
 /**
@@ -46,6 +47,69 @@ function createEmptyResult(state: GamificationState): GamificationResult {
     dailyGoalsCompleted: [],
     allDailyGoalsComplete: false,
   };
+}
+
+/**
+ * Evaluate achievements and fold any newly-unlocked ones into the state.
+ *
+ * Shared by every activity processor so achievements unlock as soon as their
+ * underlying stat advances — not only after the next exam. Pushes an
+ * `achievement_unlocked` XP event per unlock (into the caller's `events` array),
+ * adds the reward XP (capped) and rechecks the level. When `progress` is absent
+ * (e.g. pure unit tests) it is a no-op.
+ */
+function applyAchievements(
+  state: GamificationState,
+  progress: UserProgress | undefined,
+  events: XPEvent[],
+  timeRemaining: number,
+  now: number
+): { newState: GamificationState; unlocked: Achievement[] } {
+  if (!progress) {
+    return { newState: state, unlocked: [] };
+  }
+
+  const achievementResult = checkAchievements(state, progress, timeRemaining);
+  const newState = achievementResult.newState;
+
+  for (const achievement of achievementResult.unlocked) {
+    events.push({
+      type: "achievement_unlocked",
+      amount: achievement.xpReward,
+      timestamp: now,
+      metadata: { achievementId: achievement.id },
+    });
+    newState.totalXP = addXPSafely(newState.totalXP, achievement.xpReward);
+  }
+
+  newState.currentLevel = getLevelForXP(newState.totalXP).level;
+
+  return { newState, unlocked: achievementResult.unlocked };
+}
+
+/**
+ * Advance the consecutive-day daily-goal streak.
+ *
+ * Increments only when the previous all-goals-complete day was *yesterday*;
+ * resets to 1 after any gap (or on the very first completion). Without this the
+ * value was a lifetime count of all-goals days, inflating the streak-bonus XP
+ * and the number shown in the daily-goals card.
+ */
+function bumpDailyGoalStreak(
+  state: GamificationState,
+  today: string
+): GamificationState {
+  const yesterday = getYesterdayDateString(today);
+  let streak: number;
+  if (state.lastGoalCompletionDate === today) {
+    // Already counted today (guarded by bonusClaimed, but stay idempotent).
+    streak = state.dailyGoalStreak;
+  } else if (state.lastGoalCompletionDate === yesterday) {
+    streak = state.dailyGoalStreak + 1;
+  } else {
+    streak = 1;
+  }
+  return { ...state, dailyGoalStreak: streak, lastGoalCompletionDate: today };
 }
 
 /**
@@ -107,7 +171,7 @@ export function processExamComplete(
   }
 
   // Track fast finish (30+ min remaining)
-  if (timeRemaining >= 1800) {
+  if (timeRemaining >= FAST_FINISH_SECONDS_REMAINING) {
     newState.lifetimeStats = {
       ...newState.lifetimeStats,
       fastFinishes: newState.lifetimeStats.fastFinishes + 1,
@@ -163,10 +227,16 @@ export function processExamComplete(
 
   // Check for all daily goals complete bonus
   const allDailyComplete = areAllDailyGoalsComplete(newState.dailyProgress);
+  let bonusJustClaimed = false;
   if (allDailyComplete && !newState.dailyProgress.bonusClaimed) {
     events.push({ type: "daily_goals_all_bonus", amount: XP_VALUES.DAILY_GOALS_ALL_BONUS, timestamp: now });
     newState.dailyProgress = { ...newState.dailyProgress, bonusClaimed: true };
-    newState.dailyGoalStreak += 1;
+    bonusJustClaimed = true;
+    newState.lifetimeStats = {
+      ...newState.lifetimeStats,
+      dailyGoalSetsCompleted: newState.lifetimeStats.dailyGoalSetsCompleted + 1,
+    };
+    newState = bumpDailyGoalStreak(newState, today);
 
     // Daily streak bonus
     const streakBonus = calculateDailyStreakBonus(newState.dailyGoalStreak);
@@ -183,24 +253,10 @@ export function processExamComplete(
   newState.totalXP = addXPSafely(newState.totalXP, totalXP);
   newState.currentLevel = getLevelForXP(newState.totalXP).level;
 
-  // Check achievements
-  const achievementResult = checkAchievements(newState, progress, timeRemaining);
-  newState = achievementResult.newState;
-  newAchievements.push(...achievementResult.unlocked);
-
-  // Add achievement XP
-  for (const achievement of achievementResult.unlocked) {
-    events.push({
-      type: "achievement_unlocked",
-      amount: achievement.xpReward,
-      timestamp: now,
-      metadata: { achievementId: achievement.id },
-    });
-    newState.totalXP = addXPSafely(newState.totalXP, achievement.xpReward);
-  }
-
-  // Recheck level after achievement XP
-  newState.currentLevel = getLevelForXP(newState.totalXP).level;
+  // Check achievements (also adds their XP + rechecks level)
+  const achResult = applyAchievements(newState, progress, events, timeRemaining, now);
+  newState = achResult.newState;
+  newAchievements.push(...achResult.unlocked);
 
   // Update XP history (keep last 100)
   newState.xpHistory = [...events, ...newState.xpHistory].slice(0, 100);
@@ -208,14 +264,14 @@ export function processExamComplete(
   return {
     newState,
     result: {
-      xpGained: totalXP + achievementResult.unlocked.reduce((sum, a) => sum + a.xpReward, 0),
+      xpGained: totalXP + achResult.unlocked.reduce((sum, a) => sum + a.xpReward, 0),
       xpEvents: events,
       newAchievements,
       levelUp: newState.currentLevel > previousLevel,
       previousLevel,
       newLevel: newState.currentLevel,
       dailyGoalsCompleted: dailyResult.newlyCompleted,
-      allDailyGoalsComplete: allDailyComplete && !state.dailyProgress?.bonusClaimed,
+      allDailyGoalsComplete: bonusJustClaimed,
     },
   };
 }
@@ -226,6 +282,7 @@ export function processExamComplete(
 export function processQuestionAnswered(
   state: GamificationState,
   correct: boolean,
+  progress?: UserProgress,
   goalType: DailyGoalType = "questions_answered"
 ): { newState: GamificationState; result: GamificationResult } {
   if (!state.settings.enabled) {
@@ -275,10 +332,16 @@ export function processQuestionAnswered(
 
   // Check for all daily goals complete
   const allDailyComplete = areAllDailyGoalsComplete(newState.dailyProgress);
+  let bonusJustClaimed = false;
   if (allDailyComplete && !newState.dailyProgress.bonusClaimed) {
     events.push({ type: "daily_goals_all_bonus", amount: XP_VALUES.DAILY_GOALS_ALL_BONUS, timestamp: now });
     newState.dailyProgress = { ...newState.dailyProgress, bonusClaimed: true };
-    newState.dailyGoalStreak += 1;
+    bonusJustClaimed = true;
+    newState.lifetimeStats = {
+      ...newState.lifetimeStats,
+      dailyGoalSetsCompleted: newState.lifetimeStats.dailyGoalSetsCompleted + 1,
+    };
+    newState = bumpDailyGoalStreak(newState, today);
   }
 
   // Calculate total XP (questions don't earn XP directly outside exams, only through goals)
@@ -287,19 +350,23 @@ export function processQuestionAnswered(
 
   newState.totalXP = addXPSafely(newState.totalXP, totalXP);
   newState.currentLevel = getLevelForXP(newState.totalXP).level;
+
+  // Check achievements (streak/level/question milestones can unlock here too)
+  const ach = applyAchievements(newState, progress, events, 0, now);
+  newState = ach.newState;
   newState.xpHistory = [...events, ...newState.xpHistory].slice(0, 100);
 
   return {
     newState,
     result: {
-      xpGained: totalXP,
+      xpGained: totalXP + ach.unlocked.reduce((sum, a) => sum + a.xpReward, 0),
       xpEvents: events,
-      newAchievements: [],
+      newAchievements: ach.unlocked,
       levelUp: newState.currentLevel > previousLevel,
       previousLevel,
       newLevel: newState.currentLevel,
       dailyGoalsCompleted: dailyResult.newlyCompleted,
-      allDailyGoalsComplete: allDailyComplete && !state.dailyProgress?.bonusClaimed,
+      allDailyGoalsComplete: bonusJustClaimed,
     },
   };
 }
@@ -309,7 +376,8 @@ export function processQuestionAnswered(
  */
 export function processSmartPracticeSession(
   state: GamificationState,
-  questionsCompleted: number
+  questionsCompleted: number,
+  progress?: UserProgress
 ): { newState: GamificationState; result: GamificationResult } {
   if (!state.settings.enabled) {
     return { newState: state, result: createEmptyResult(state) };
@@ -350,14 +418,18 @@ export function processSmartPracticeSession(
 
   newState.totalXP = addXPSafely(newState.totalXP, totalXP);
   newState.currentLevel = getLevelForXP(newState.totalXP).level;
+
+  // Check achievements (smart_learner and level/xp milestones can unlock here)
+  const ach = applyAchievements(newState, progress, events, 0, now);
+  newState = ach.newState;
   newState.xpHistory = [...events, ...newState.xpHistory].slice(0, 100);
 
   return {
     newState,
     result: {
-      xpGained: totalXP,
+      xpGained: totalXP + ach.unlocked.reduce((sum, a) => sum + a.xpReward, 0),
       xpEvents: events,
-      newAchievements: [],
+      newAchievements: ach.unlocked,
       levelUp: newState.currentLevel > previousLevel,
       previousLevel,
       newLevel: newState.currentLevel,
@@ -373,7 +445,8 @@ export function processSmartPracticeSession(
 export function processDrillComplete(
   state: GamificationState,
   correctAnswers: number,
-  totalQuestions: number
+  totalQuestions: number,
+  progress?: UserProgress
 ): { newState: GamificationState; result: GamificationResult } {
   if (!state.settings.enabled) {
     return { newState: state, result: createEmptyResult(state) };
@@ -438,10 +511,16 @@ export function processDrillComplete(
 
   // Check for all daily goals complete
   const allDailyComplete = areAllDailyGoalsComplete(newState.dailyProgress);
+  let bonusJustClaimed = false;
   if (allDailyComplete && !newState.dailyProgress.bonusClaimed) {
     events.push({ type: "daily_goals_all_bonus", amount: XP_VALUES.DAILY_GOALS_ALL_BONUS, timestamp: now });
     newState.dailyProgress = { ...newState.dailyProgress, bonusClaimed: true };
-    newState.dailyGoalStreak += 1;
+    bonusJustClaimed = true;
+    newState.lifetimeStats = {
+      ...newState.lifetimeStats,
+      dailyGoalSetsCompleted: newState.lifetimeStats.dailyGoalSetsCompleted + 1,
+    };
+    newState = bumpDailyGoalStreak(newState, today);
 
     const streakBonus = calculateDailyStreakBonus(newState.dailyGoalStreak);
     if (streakBonus > 0) {
@@ -454,19 +533,23 @@ export function processDrillComplete(
 
   newState.totalXP = addXPSafely(newState.totalXP, totalXP);
   newState.currentLevel = getLevelForXP(newState.totalXP).level;
+
+  // Check achievements (drill milestones, streak/level/xp can unlock here)
+  const ach = applyAchievements(newState, progress, events, 0, now);
+  newState = ach.newState;
   newState.xpHistory = [...events, ...newState.xpHistory].slice(0, 100);
 
   return {
     newState,
     result: {
-      xpGained: totalXP,
+      xpGained: totalXP + ach.unlocked.reduce((sum, a) => sum + a.xpReward, 0),
       xpEvents: events,
-      newAchievements: [],
+      newAchievements: ach.unlocked,
       levelUp: newState.currentLevel > previousLevel,
       previousLevel,
       newLevel: newState.currentLevel,
       dailyGoalsCompleted: dailyResult.newlyCompleted,
-      allDailyGoalsComplete: allDailyComplete && !state.dailyProgress?.bonusClaimed,
+      allDailyGoalsComplete: bonusJustClaimed,
     },
   };
 }
@@ -542,6 +625,8 @@ function evaluateCondition(
       return progress.stats.longestStreak >= condition.count;
     case "daily_goals_completed":
       return state.lifetimeStats.dailyGoalsCompleted >= condition.count;
+    case "daily_goal_sets_completed":
+      return state.lifetimeStats.dailyGoalSetsCompleted >= condition.count;
     case "smart_practice_sessions":
       return state.lifetimeStats.smartPracticeSessions >= condition.count;
     case "level_reached":
@@ -645,8 +730,22 @@ export function migrateToGamification(
 
   // Award XP for past activity (simplified: 5 XP per correct answer)
   const retroactiveXP = questionsCorrect * 5 + progress.stats.totalPassed * 50;
-  state.totalXP = retroactiveXP;
-  state.currentLevel = getLevelForXP(retroactiveXP).level;
+  state.totalXP = addXPSafely(0, retroactiveXP);
+  state.currentLevel = getLevelForXP(state.totalXP).level;
 
-  return state;
+  // Retroactively unlock achievements the user already earned. Mark them as
+  // already notified so returning users are not flooded with toasts on the
+  // first load after this migration.
+  const { newState: withAchievements, unlocked } = checkAchievements(state, progress, 0);
+  const finalState = withAchievements;
+  for (const achievement of unlocked) {
+    finalState.totalXP = addXPSafely(finalState.totalXP, achievement.xpReward);
+  }
+  finalState.currentLevel = getLevelForXP(finalState.totalXP).level;
+  finalState.unlockedAchievements = finalState.unlockedAchievements.map((ua) => ({
+    ...ua,
+    notified: true,
+  }));
+
+  return finalState;
 }

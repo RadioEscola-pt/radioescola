@@ -68,10 +68,35 @@ export function createDailyProgress(date: string): DailyProgress {
 }
 
 /**
- * Get today's date as YYYY-MM-DD string
+ * Format a Date as a YYYY-MM-DD string using the LOCAL calendar day.
+ *
+ * We deliberately avoid `toISOString()` here: that returns the UTC date, which
+ * shifts to the previous/next day for users at nonzero UTC offsets (including
+ * Portugal/WEST, the primary audience) and desynchronizes streaks, daily-goal
+ * rollover and the streak calendar from what the user perceives as "today".
+ */
+export function toLocalDateString(date: Date): string {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+/**
+ * Get today's date as YYYY-MM-DD string (local calendar day)
  */
 export function getTodayDateString(): string {
-  return new Date().toISOString().split("T")[0] ?? "";
+  return toLocalDateString(new Date());
+}
+
+/**
+ * Get the day before the given YYYY-MM-DD date, as a YYYY-MM-DD string.
+ */
+export function getYesterdayDateString(fromDate: string): string {
+  // Parse at local midnight so the -1 day arithmetic stays in the local calendar.
+  const d = new Date(`${fromDate}T00:00:00`);
+  d.setDate(d.getDate() - 1);
+  return toLocalDateString(d);
 }
 
 /**

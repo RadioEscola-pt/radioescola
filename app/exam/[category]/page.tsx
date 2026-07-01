@@ -129,11 +129,6 @@ export default function ExamPage() {
       answers: { ...answers },
     };
 
-    // Record exam with gamification (returns XP result)
-    recordExamWithGamification(examAttempt, timeLeft).then((result) => {
-      setGamificationResult(result);
-    });
-
     // Record individual question attempts
     const questionAttempts: QuestionAttempt[] = category.questions
       .filter(q => answers[q.id] !== undefined)
@@ -144,9 +139,15 @@ export default function ExamPage() {
         timestamp: Date.now(),
       }));
 
-    if (questionAttempts.length > 0) {
-      recordQuestionBatch(questionAttempts);
-    }
+    // Sequence the writes so they don't race on localStorage: record the exam
+    // (+ gamification, persisted atomically) first, then the per-question batch.
+    // Running them concurrently let one overwrite the other's just-saved data.
+    recordExamWithGamification(examAttempt, timeLeft).then((result) => {
+      setGamificationResult(result);
+      if (questionAttempts.length > 0) {
+        recordQuestionBatch(questionAttempts);
+      }
+    });
   }, [quizEnded, category, answers, score, timeLeft, recordExamWithGamification, recordQuestionBatch]);
 
   React.useEffect(() => {

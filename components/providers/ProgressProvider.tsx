@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, useCallback, type ReactNode } from "react";
 import { useProgress } from "@/hooks/useProgress";
+import { storageProvider } from "@/lib/storage";
 import type {
   UserProgress,
   ExamAttempt,
@@ -27,8 +28,11 @@ import { useGamification, type UseGamificationReturn } from "@/hooks/useGamifica
 type ProgressContextType = {
   progress: UserProgress | null;
   isLoading: boolean;
-  recordExam: (attempt: ExamAttempt) => Promise<void>;
+  recordExam: (attempt: ExamAttempt) => Promise<UserProgress | null>;
   recordQuestion: (attempt: QuestionAttempt) => Promise<void>;
+  recordQuestionWithGamification: (
+    attempt: QuestionAttempt
+  ) => Promise<GamificationResult>;
   recordQuestionBatch: (attempts: QuestionAttempt[]) => Promise<void>;
   recordQuestionWithSR: (
     category: string,
@@ -68,6 +72,20 @@ const ProgressContext = createContext<ProgressContextType | undefined>(
   undefined
 );
 
+/** Neutral gamification result used when gamification is disabled or absent. */
+function makeEmptyResult(level: number): GamificationResult {
+  return {
+    xpGained: 0,
+    xpEvents: [],
+    newAchievements: [],
+    levelUp: false,
+    previousLevel: level,
+    newLevel: level,
+    dailyGoalsCompleted: [],
+    allDailyGoalsComplete: false,
+  };
+}
+
 export function useProgressContext() {
   const context = useContext(ProgressContext);
   if (!context) {
@@ -88,101 +106,78 @@ export default function ProgressProvider({
 
   // Get gamification state from progress
   const gamificationState = progressData.progress?.gamification ?? null;
-  const gamification = useGamification(gamificationState);
+  const gamification = useGamification(gamificationState, progressData.progress?.stats);
+
+  // Run a gamification processor against the freshest persisted progress, then
+  // persist the result atomically. Reading fresh (instead of the possibly stale
+  // React snapshot) fixes achievement counts lagging by one activity and avoids
+  // clobbering concurrent writes.
+  const runGamification = useCallback(
+    async (
+      run: (
+        state: GamificationState,
+        progress: UserProgress
+      ) => { newState: GamificationState; result: GamificationResult }
+    ): Promise<GamificationResult> => {
+      const fresh = await storageProvider.getProgress();
+      const state = fresh?.gamification ?? null;
+
+      if (!fresh || !state || !state.settings.enabled) {
+        return makeEmptyResult(state?.currentLevel ?? 1);
+      }
+
+      const { newState, result } = run(state, fresh);
+      await progressData.updateGamificationState(newState);
+      setLastGamificationResult(result);
+      return result;
+    },
+    [progressData]
+  );
 
   // Record exam with gamification processing
   const recordExamWithGamification = useCallback(
     async (attempt: ExamAttempt, timeRemaining: number = 0): Promise<GamificationResult> => {
-      // First record the exam normally
+      // Record the exam first (updates stats/streak/history), then process
+      // gamification against the freshly-persisted progress.
       await progressData.recordExam(attempt);
-
-      // Then process gamification if enabled and state exists
-      if (gamificationState && gamificationState.settings.enabled && progressData.progress) {
-        const { newState, result } = processExamComplete(
-          gamificationState,
-          progressData.progress,
-          attempt,
-          timeRemaining
-        );
-
-        await progressData.updateGamificationState(newState);
-        setLastGamificationResult(result);
-        return result;
-      }
-
-      // Return empty result if gamification is disabled
-      const emptyResult: GamificationResult = {
-        xpGained: 0,
-        xpEvents: [],
-        newAchievements: [],
-        levelUp: false,
-        previousLevel: gamificationState?.currentLevel ?? 1,
-        newLevel: gamificationState?.currentLevel ?? 1,
-        dailyGoalsCompleted: [],
-        allDailyGoalsComplete: false,
-      };
-      return emptyResult;
+      return runGamification((state, progress) =>
+        processExamComplete(state, progress, attempt, timeRemaining)
+      );
     },
-    [progressData, gamificationState]
+    [progressData, runGamification]
+  );
+
+  // Record a single answered question (Browse / Flash) with gamification
+  const recordQuestionWithGamification = useCallback(
+    async (attempt: QuestionAttempt): Promise<GamificationResult> => {
+      // Persist the raw attempt first (question stats + study streak), then
+      // award XP / advance daily goals against the fresh progress.
+      await progressData.recordQuestion(attempt);
+      return runGamification((state, progress) =>
+        processQuestionAnswered(state, attempt.correct, progress)
+      );
+    },
+    [progressData, runGamification]
   );
 
   // Record smart practice session completion
   const recordSmartPracticeSession = useCallback(
     async (questionsCompleted: number): Promise<GamificationResult> => {
-      if (gamificationState && gamificationState.settings.enabled) {
-        const { newState, result } = processSmartPracticeSession(
-          gamificationState,
-          questionsCompleted
-        );
-
-        await progressData.updateGamificationState(newState);
-        setLastGamificationResult(result);
-        return result;
-      }
-
-      const emptyResult: GamificationResult = {
-        xpGained: 0,
-        xpEvents: [],
-        newAchievements: [],
-        levelUp: false,
-        previousLevel: gamificationState?.currentLevel ?? 1,
-        newLevel: gamificationState?.currentLevel ?? 1,
-        dailyGoalsCompleted: [],
-        allDailyGoalsComplete: false,
-      };
-      return emptyResult;
+      return runGamification((state, progress) =>
+        processSmartPracticeSession(state, questionsCompleted, progress)
+      );
     },
-    [progressData, gamificationState]
+    [runGamification]
   );
 
   // Record drill completion
   const recordDrillComplete = useCallback(
     async (correctAnswers: number, totalQuestions: number): Promise<GamificationResult> => {
-      if (gamificationState && gamificationState.settings.enabled) {
-        const { newState, result } = processDrillComplete(
-          gamificationState,
-          correctAnswers,
-          totalQuestions
-        );
-
-        await progressData.updateGamificationState(newState);
-        setLastGamificationResult(result);
-        return result;
-      }
-
-      const emptyResult: GamificationResult = {
-        xpGained: 0,
-        xpEvents: [],
-        newAchievements: [],
-        levelUp: false,
-        previousLevel: gamificationState?.currentLevel ?? 1,
-        newLevel: gamificationState?.currentLevel ?? 1,
-        dailyGoalsCompleted: [],
-        allDailyGoalsComplete: false,
-      };
-      return emptyResult;
+      return runGamification((state, progress) =>
+        processDrillComplete(state, correctAnswers, totalQuestions, progress)
+      );
     },
-    [progressData, gamificationState]
+    [runGamification]
   );
 
   // Toggle gamification enabled/disabled
@@ -212,6 +207,7 @@ export default function ProgressProvider({
     gamification,
     lastGamificationResult,
     recordExamWithGamification,
+    recordQuestionWithGamification,
     recordSmartPracticeSession,
     recordDrillComplete,
     setGamificationEnabled,

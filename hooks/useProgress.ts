@@ -22,7 +22,7 @@ import {
 interface UseProgressReturn {
   progress: UserProgress | null;
   isLoading: boolean;
-  recordExam: (attempt: ExamAttempt) => Promise<void>;
+  recordExam: (attempt: ExamAttempt) => Promise<UserProgress | null>;
   recordQuestion: (attempt: QuestionAttempt) => Promise<void>;
   recordQuestionBatch: (attempts: QuestionAttempt[]) => Promise<void>;
   recordQuestionWithSR: (
@@ -69,12 +69,18 @@ export function useProgress(): UseProgressReturn {
     loadProgress();
   }, [loadProgress]);
 
-  const recordExam = useCallback(async (attempt: ExamAttempt) => {
-    await storageProvider.recordExamAttempt(attempt);
-    // Reload progress to get updated state
-    const updated = await storageProvider.getProgress();
-    setProgress(updated);
-  }, []);
+  const recordExam = useCallback(
+    async (attempt: ExamAttempt): Promise<UserProgress | null> => {
+      await storageProvider.recordExamAttempt(attempt);
+      // Reload progress to get updated state, and hand the fresh copy back so
+      // callers can process gamification against post-exam stats without racing
+      // the async React state update.
+      const updated = await storageProvider.getProgress();
+      setProgress(updated);
+      return updated;
+    },
+    []
+  );
 
   const recordQuestion = useCallback(async (attempt: QuestionAttempt) => {
     await storageProvider.recordQuestionAttempt(attempt);
@@ -163,16 +169,13 @@ export function useProgress(): UseProgressReturn {
 
   const updateGamificationState = useCallback(
     async (newState: GamificationState) => {
-      if (!progress) return;
-      const updated: UserProgress = {
-        ...progress,
-        gamification: newState,
-        lastUpdated: Date.now(),
-      };
-      await storageProvider.saveProgress(updated);
-      setProgress(updated);
+      // Merge atomically against the latest stored progress rather than the
+      // (possibly stale) in-memory snapshot, so we never clobber exam/question
+      // writes that landed after this hook last rendered.
+      const updated = await storageProvider.updateGamification(newState);
+      if (updated) setProgress(updated);
     },
-    [progress]
+    []
   );
 
   return {

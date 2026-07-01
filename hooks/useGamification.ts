@@ -10,6 +10,7 @@ import type {
   UnlockedAchievement,
 } from "@/lib/types/gamification";
 import { createInitialGamificationState } from "@/lib/types/gamification";
+import type { UserProgress } from "@/lib/types/progress";
 import { getLevelForXP, getXPProgress, getXPToNextLevel, LEVELS } from "@/lib/gamification/levels";
 import { ACHIEVEMENTS, getAchievementById, getVisibleAchievements, getAchievementProgress } from "@/lib/gamification/achievements";
 import { ensureTodayProgress } from "@/lib/gamification/daily-goals";
@@ -54,7 +55,8 @@ export interface UseGamificationReturn {
 }
 
 export function useGamification(
-  gamificationState: GamificationState | undefined | null
+  gamificationState: GamificationState | undefined | null,
+  progressStats?: UserProgress["stats"] | null
 ): UseGamificationReturn {
   const state = gamificationState ?? createInitialGamificationState();
 
@@ -112,19 +114,20 @@ export function useGamification(
       if (!achievement) return null;
 
       return getAchievementProgress(achievement, {
-        totalExams: 0, // These will be filled from progress context
-        totalPassed: 0,
+        totalExams: progressStats?.totalExams ?? 0,
+        totalPassed: progressStats?.totalPassed ?? 0,
         perfectScores: state.lifetimeStats.perfectScores,
         questionsAnswered: state.lifetimeStats.questionsAnswered,
         questionsCorrect: state.lifetimeStats.questionsCorrect,
-        longestStreak: 0,
+        longestStreak: progressStats?.longestStreak ?? 0,
         dailyGoalsCompleted: state.lifetimeStats.dailyGoalsCompleted,
+        dailyGoalSetsCompleted: state.lifetimeStats.dailyGoalSetsCompleted,
         smartPracticeSessions: state.lifetimeStats.smartPracticeSessions,
         currentLevel: state.currentLevel,
         categoriesAttempted: state.lifetimeStats.categoriesAttempted,
       });
     },
-    [state]
+    [state, progressStats]
   );
 
   const isAchievementUnlocked = useCallback(
