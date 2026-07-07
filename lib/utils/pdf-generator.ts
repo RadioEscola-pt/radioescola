@@ -1,87 +1,63 @@
-import { jsPDF } from "jspdf";
+import { PDFDocument, PageSizes, degrees } from "pdf-lib";
 import type { ExamPage } from "@/lib/types";
 
-const A4_WIDTH_MM = 210;
-const A4_HEIGHT_MM = 297;
 const SUBMISSION_MAX_DIMENSION = 2048;
 const SUBMISSION_QUALITY = 0.8;
 const THUMBNAIL_MAX_DIMENSION = 300;
 const THUMBNAIL_QUALITY = 0.6;
 
 /**
- * Generate a PDF from exam pages
- * Images are scaled to fit A4 while maintaining aspect ratio
+ * Generate a single PDF from exam pages.
+ * - Image pages are embedded onto A4 sheets, scaled to fit and centered.
+ * - Uploaded PDF pages are merged in with their real content preserved
+ *   (a single uploaded PDF may contribute multiple pages).
+ * Page order matches the order of `pages`.
  */
 export async function generatePdf(pages: ExamPage[]): Promise<Blob> {
-  const doc = new jsPDF({
-    orientation: "portrait",
-    unit: "mm",
-    format: "a4",
-  });
+  const doc = await PDFDocument.create();
 
-  for (let i = 0; i < pages.length; i++) {
-    const page = pages[i];
+  for (const page of pages) {
     if (!page) continue;
 
-    if (i > 0) {
-      doc.addPage();
-    }
-
-    // Handle PDF files - just add a placeholder for now
     if (page.file.type === "application/pdf") {
-      doc.setFontSize(12);
-      doc.text(`PDF attachment: ${page.originalName}`, 20, 30);
-      doc.setFontSize(10);
-      doc.text("(Original PDF file included in submission)", 20, 40);
+      // Merge the actual pages of the uploaded PDF.
+      const donor = await PDFDocument.load(dataUrlToUint8Array(page.dataUrl));
+      const copiedPages = await doc.copyPages(donor, donor.getPageIndices());
+      for (const copiedPage of copiedPages) {
+        if (page.rotation) {
+          const current = copiedPage.getRotation().angle;
+          copiedPage.setRotation(degrees((current + page.rotation) % 360));
+        }
+        doc.addPage(copiedPage);
+      }
       continue;
     }
 
-    // Process image with rotation
+    // Image page: bake in rotation, then embed scaled-to-fit on an A4 sheet.
     const imgData = await rotateImage(page.dataUrl, page.rotation);
+    const jpg = await doc.embedJpg(dataUrlToUint8Array(imgData));
 
-    // Calculate dimensions to fit A4 while maintaining aspect ratio
-    const img = await loadImage(imgData);
-    const { width, height, x, y } = calculateFitDimensions(
-      img.width,
-      img.height
-    );
-
-    doc.addImage(imgData, "JPEG", x, y, width, height);
+    const sheet = doc.addPage(PageSizes.A4);
+    const { width: pageWidth, height: pageHeight } = sheet.getSize();
+    const scale = Math.min(pageWidth / jpg.width, pageHeight / jpg.height);
+    const drawWidth = jpg.width * scale;
+    const drawHeight = jpg.height * scale;
+    sheet.drawImage(jpg, {
+      x: (pageWidth - drawWidth) / 2,
+      y: (pageHeight - drawHeight) / 2,
+      width: drawWidth,
+      height: drawHeight,
+    });
   }
 
-  return doc.output("blob");
-}
-
-/**
- * Calculate dimensions to fit image on A4 page while maintaining aspect ratio
- */
-function calculateFitDimensions(
-  imgWidth: number,
-  imgHeight: number
-): { width: number; height: number; x: number; y: number } {
-  const imgAspect = imgWidth / imgHeight;
-  const pageAspect = A4_WIDTH_MM / A4_HEIGHT_MM;
-
-  let width: number;
-  let height: number;
-  let x: number;
-  let y: number;
-
-  if (imgAspect > pageAspect) {
-    // Image is wider - fit to width
-    width = A4_WIDTH_MM;
-    height = A4_WIDTH_MM / imgAspect;
-    x = 0;
-    y = (A4_HEIGHT_MM - height) / 2;
-  } else {
-    // Image is taller - fit to height
-    height = A4_HEIGHT_MM;
-    width = A4_HEIGHT_MM * imgAspect;
-    x = (A4_WIDTH_MM - width) / 2;
-    y = 0;
+  // pdf-lib cannot serialize a document with zero pages.
+  if (doc.getPageCount() === 0) {
+    doc.addPage(PageSizes.A4);
   }
 
-  return { width, height, x, y };
+  const bytes = await doc.save();
+  // Copy into a fresh ArrayBuffer-backed view so the result is a valid BlobPart.
+  return new Blob([new Uint8Array(bytes)], { type: "application/pdf" });
 }
 
 /**
@@ -168,6 +144,20 @@ export function compressImageForSubmission(file: File): Promise<string> {
 /** Compress image for thumbnail display (max 300px, quality 0.6) */
 export function compressImageForThumbnail(file: File): Promise<string> {
   return compressImage(file, THUMBNAIL_MAX_DIMENSION, THUMBNAIL_QUALITY);
+}
+
+/**
+ * Decode a base64 data URL (e.g. "data:application/pdf;base64,...") into bytes.
+ */
+function dataUrlToUint8Array(dataUrl: string): Uint8Array {
+  const commaIndex = dataUrl.indexOf(",");
+  const base64 = commaIndex >= 0 ? dataUrl.slice(commaIndex + 1) : dataUrl;
+  const binary = atob(base64);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) {
+    bytes[i] = binary.charCodeAt(i);
+  }
+  return bytes;
 }
 
 /**

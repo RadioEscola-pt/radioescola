@@ -23,6 +23,9 @@ export default function ExamPage() {
   const t = useTranslations('Exam');
   const { recordExamWithGamification, recordQuestionBatch, gamification } = useProgressContext();
   const [timeLeft, setTimeLeft] = useState<number>(DURATION_SECONDS);
+  // Wall-clock deadline (epoch ms) the countdown runs toward; null when no exam
+  // is actively running (loading or replay).
+  const [deadline, setDeadline] = useState<number | null>(null);
   const [score, setScore] = useState(0);
   const [category, setCategory] = useState<Category | null>(null);
   const [answers, setAnswers] = useState<Record<number, number>>({});
@@ -33,37 +36,48 @@ export default function ExamPage() {
   const isReplayRef = useRef(false);
   const [gamificationResult, setGamificationResult] = useState<GamificationResult | null>(null);
 
-  // Timer: countdown from initial time to 0; stops when quiz ends
+  // Timer: wall-clock countdown toward a fixed deadline. Deriving the remaining
+  // time from Date.now() on each tick — rather than decrementing a per-tick
+  // counter — avoids cumulative drift and prevents background-tab throttling from
+  // silently granting extra time (a throttled tick still reads the true clock).
+  // Deps are [quizEnded, deadline] only, so the interval is created once per exam,
+  // not recreated on every tick.
   const timerRef = React.useRef<ReturnType<typeof setInterval> | null>(null);
   React.useEffect(() => {
-    // If quiz ended or time is up, ensure timer is stopped
-    if (quizEnded || timeLeft <= 0) {
+    if (quizEnded || deadline === null) {
       if (timerRef.current) {
         clearInterval(timerRef.current);
         timerRef.current = null;
       }
       return;
     }
-    // Start ticking
-    timerRef.current = setInterval(() => {
-      setTimeLeft((t) => {
-        if (t <= 1) {
-          if (timerRef.current) {
-            clearInterval(timerRef.current);
-            timerRef.current = null;
-          }
-          return 0;
-        }
-        return t - 1;
-      });
-    }, 1000);
+
+    const tick = () => {
+      const remaining = Math.max(0, Math.round((deadline - Date.now()) / 1000));
+      setTimeLeft(remaining);
+      if (remaining <= 0 && timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
+    };
+
+    tick(); // sync immediately so the display is correct on (re)start
+    timerRef.current = setInterval(tick, 250);
+
+    // Re-sync the moment the tab regains focus; background tabs throttle timers.
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "visible") tick();
+    };
+    document.addEventListener("visibilitychange", onVisibilityChange);
+
     return () => {
+      document.removeEventListener("visibilitychange", onVisibilityChange);
       if (timerRef.current) {
         clearInterval(timerRef.current);
         timerRef.current = null;
       }
     };
-  }, [quizEnded, timeLeft]);
+  }, [quizEnded, deadline]);
 
   // End quiz when time runs out
   React.useEffect(() => {
@@ -160,6 +174,9 @@ export default function ExamPage() {
     setAnswers({});
     setScore(0);
     setTimeLeft(DURATION_SECONDS);
+    // Keep the timer inert until the fresh/replay branch below establishes the
+    // deadline, so a stale deadline from a previous exam can't tick in between.
+    setDeadline(null);
     setQuizEnded(false);
     setResultsOpen(false);
     setCurrentPage(1);
@@ -214,6 +231,7 @@ export default function ExamPage() {
       }
       const sample = qs.slice(0, Math.min(MAX_QUESTIONS, qs.length));
       setCategory({ id: base.id, name: base.name, questions: sample });
+      setDeadline(Date.now() + DURATION_SECONDS * 1000);
     });
   }, [params.category, searchParams]);
 
@@ -240,6 +258,7 @@ export default function ExamPage() {
       setAnswers({});
       setScore(0);
       setTimeLeft(DURATION_SECONDS);
+      setDeadline(Date.now() + DURATION_SECONDS * 1000);
       setCurrentPage(1);
       setQuizEnded(false);
       setResultsOpen(false);

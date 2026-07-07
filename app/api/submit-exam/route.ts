@@ -15,15 +15,19 @@ function getResendClient(): Resend | null {
   return resendClient;
 }
 
-const RECIPIENT_EMAIL = process.env.EXAM_SUBMISSION_EMAIL || "exams@example.com";
+const RECIPIENT_EMAIL = process.env.EXAM_SUBMISSION_EMAIL;
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
 
 export async function POST(request: Request): Promise<NextResponse<SubmitExamResponse>> {
   try {
-    // Check if API key is configured
+    // Require both an API key and a configured recipient. Falling back to a
+    // placeholder recipient would report success while the submission is silently
+    // lost (the admin never receives it).
     const resend = getResendClient();
-    if (!resend) {
-      console.warn("RESEND_API_KEY not configured - email not sent");
+    if (!resend || !RECIPIENT_EMAIL) {
+      console.warn(
+        "Email service not configured - set both RESEND_API_KEY and EXAM_SUBMISSION_EMAIL"
+      );
       return NextResponse.json({
         success: false,
         error: "Email service not configured. Please contact the administrator.",

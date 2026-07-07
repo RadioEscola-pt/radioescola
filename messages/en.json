@@ -391,6 +391,7 @@
       "successDesc": "Thanks for your contribution! We'll add the questions to the bank as soon as possible.",
       "submitAnother": "Submit another exam",
       "error": "Couldn't submit the exam. Check your connection and try again.",
+      "timeout": "The upload took too long. Check your connection and try again.",
       "retry": "Try again"
     },
     "progress": {

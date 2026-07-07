@@ -101,7 +101,7 @@ export default function DrillPage() {
   useEffect(() => {
     if (drillState === "complete" && results.answeredCount > 0 && !completionRecordedRef.current) {
       completionRecordedRef.current = true;
-      recordDrillCompleteRef.current(results.correct, results.total).then((result) => {
+      recordDrillCompleteRef.current(results.correct, results.total, results.answeredCount).then((result) => {
         setXpEarned(result.xpGained);
       });
     }

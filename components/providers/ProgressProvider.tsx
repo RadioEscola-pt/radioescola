@@ -63,7 +63,7 @@ type ProgressContextType = {
     timeRemaining?: number
   ) => Promise<GamificationResult>;
   recordSmartPracticeSession: (questionsCompleted: number) => Promise<GamificationResult>;
-  recordDrillComplete: (correctAnswers: number, totalQuestions: number) => Promise<GamificationResult>;
+  recordDrillComplete: (correctAnswers: number, totalQuestions: number, answeredQuestions?: number) => Promise<GamificationResult>;
   setGamificationEnabled: (enabled: boolean) => Promise<void>;
   dismissAchievementNotifications: (achievementIds: string[]) => Promise<void>;
 };
@@ -172,9 +172,13 @@ export default function ProgressProvider({
 
   // Record drill completion
   const recordDrillComplete = useCallback(
-    async (correctAnswers: number, totalQuestions: number): Promise<GamificationResult> => {
+    async (
+      correctAnswers: number,
+      totalQuestions: number,
+      answeredQuestions?: number
+    ): Promise<GamificationResult> => {
       return runGamification((state, progress) =>
-        processDrillComplete(state, correctAnswers, totalQuestions, progress)
+        processDrillComplete(state, correctAnswers, totalQuestions, progress, answeredQuestions)
       );
     },
     [runGamification]
