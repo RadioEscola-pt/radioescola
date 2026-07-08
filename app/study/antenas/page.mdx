@@ -1,0 +1,129 @@
+---
+title: Antenas e Linhas de Transmissão
+description: Tipos de antena, potência radiada (ERP/EIRP), cabos de alimentação e adaptação de impedância.
+categories: [3, 2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Antenas e Linhas de Transmissão
+
+A **antena** converte a energia de rádio-frequência em ondas electromagnéticas que se propagam no espaço (e faz o inverso na recepção). A **linha de transmissão** liga o emissor ou o receptor à antena. Este capítulo trata os tipos de antena, a potência radiada, os cabos de alimentação e a adaptação de impedância, ao nível de construção física, propriedades direccionais e polarização.
+
+## 6.1 Tipos de antena
+
+- **Dipolo de meia onda alimentado ao centro:** um condutor com cerca de **meio comprimento de onda (λ/2)**, alimentado no meio. É a antena de referência; o seu diagrama de radiação é **bidireccional** (a radiação é máxima na perpendicular ao fio). A polarização segue a orientação do fio (horizontal ou vertical).
+- **Antena alimentada na extremidade (end-fed):** alimentada numa das pontas; necessita de uma boa ligação de terra ou de um contrapeso.
+- **Antena vertical de quarto de onda (plano de terra / ground plane):** um elemento vertical de **λ/4** sobre um plano de terra (radiais). Tem **polarização vertical** e radiação **omnidireccional** no plano horizontal.
+- **Antena com elementos parasitas (Yagi):** um elemento activo (excitado) mais elementos parasitas, o **reflector** e os **directores**. É **direccional** e apresenta **ganho** numa direcção.
+
+### Potência radiada: ERP e EIRP
+
+A potência radiada exprime-se em relação a uma antena de referência:
+
+- **ERP (PRE):** potência radiada equivalente, referida a um **dipolo de meia onda**.
+- **EIRP (PIRE):** potência isotrópica radiada equivalente, referida a uma **antena isotrópica** (uma antena teórica que radia igualmente em todas as direcções).
+
+Como o dipolo tem um ganho de cerca de **2,15 dB** sobre a antena isotrópica, os dois valores diferem por essa quantidade: EIRP = ERP + 2,15 dB.
+
+![Antena isotrópica comparada com o dipolo de meia onda](/images/cat2/isovsdip.png)
+
+#### Cálculo da PIRE (EIRP)
+
+Em unidades logarítmicas, a PIRE obtém-se somando o ganho da antena e subtraindo as perdas à potência de saída:
+
+$$\text{PIRE} = P_T - L_C + G_a$$
+
+Onde:
+
+- **P_T** — potência de saída do emissor (dBm);
+- **L_C** — perdas no cabo (dB);
+- **G_a** — ganho da antena (dBi).
+
+O **ganho em dBi** relaciona-se com uma razão de potências da seguinte forma:
+
+| Ganho | Significado (razão de potência) |
+|---|---|
+| −10 dBi | um décimo (10 %), perda |
+| −6 dBi | um quarto (25 %), perda |
+| −3 dBi | metade (50 %), perda |
+| 0 dBi | igual (100 %), sem ganho nem perda |
+| +1 dBi | 26 % mais (× 1,26) |
+| +2 dBi | 58 % mais (× 1,58) |
+| +3 dBi | o dobro (× 2) |
+| +6 dBi | o quádruplo (× 4) |
+| +9 dBi | × 8 |
+| +10 dBi | × 10 |
+| +13 dBi | × 20 |
+| +20 dBi | × 100 |
+| +30 dBi | × 1000 |
+
+E a **conversão entre unidades de potência**:
+
+| Potência (dBW) | Potência (dBm) | Potência (W) |
+|---|---|---|
+| 1 dBW | 31 dBm | ≈ 1,26 W |
+| 10 dBW | 40 dBm | 10 W |
+| 20 dBW | 50 dBm | 100 W |
+| 30 dBW | 60 dBm | 1 kW |
+
+## 6.2 Métodos de alimentação da antena
+
+- **Cabo coaxial:** condutor central envolvido por uma malha condutora (blindagem). É **blindado**, logo pouco sensível a captações ou radiações indesejadas, e fácil de instalar; em contrapartida, tem **mais perdas** e é mais caro. A impedância típica em rádio-amador é de **50 Ω**.
+- **Linha bifilar (twin feeder / linha aberta):** dois condutores paralelos. Tem **baixas perdas** e é barata, mas **não é blindada** (é sensível a objectos e metais próximos) e apresenta impedâncias elevadas (tipicamente 300 a 600 Ω).
+
+## 6.3 Adaptação de impedância
+
+A **unidade de adaptação de antena (ATU / acoplador)** serve para **adaptar a impedância** da antena à do emissor (50 Ω). Uma boa adaptação maximiza a transferência de potência para a antena e **reduz a onda estacionária (ROE / SWR)** na linha. Para o exame, basta conhecer o seu propósito.
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - Qual é o comprimento aproximado de um dipolo de meia onda?"
+    options={["Um comprimento de onda (λ)","Meio comprimento de onda (λ/2)","Um quarto de comprimento de onda (λ/4)","O dobro do comprimento de onda"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="2 - Uma antena vertical de quarto de onda (ground plane) tem polarização:"
+    options={["Horizontal","Vertical","Circular","Nenhuma"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="3 - Qual antena utiliza elementos parasitas (reflector e directores) para obter ganho numa direcção?"
+    options={["Dipolo simples","Antena vertical","Antena Yagi","Antena alimentada na extremidade"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="4 - A EIRP (PIRE) é a potência radiada equivalente referida a uma antena:"
+    options={["Dipolo de meia onda","Isotrópica","Yagi","Vertical de quarto de onda"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="5 - A ERP (PRE) é a potência radiada equivalente referida a:"
+    options={["Uma antena isotrópica","Um dipolo de meia onda","Uma antena Yagi","O cabo coaxial"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="6 - Qual é a principal vantagem do cabo coaxial face à linha bifilar?"
+    options={["Tem menos perdas","É blindado, sendo pouco sensível a captações e radiações","É mais barato","Não precisa de adaptação"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="7 - Qual é a impedância típica de um cabo coaxial usado em rádio-amador?"
+    options={["8 Ω","50 Ω","300 Ω","600 Ω"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="8 - Qual é a função de uma unidade de adaptação de antena (ATU)?"
+    options={["Amplificar o sinal","Adaptar a impedância da antena ao emissor e reduzir a ROE","Gerar a portadora","Modular o sinal"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="9 - O diagrama de radiação de um dipolo de meia onda é:"
+    options={["Omnidireccional em todas as direcções","Bidireccional, máximo na perpendicular ao fio","Unidireccional, ao longo do fio","Sem qualquer direcção preferencial"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="10 - Numa antena Yagi, os elementos parasitas são o:"
+    options={["Excitador e a linha","Reflector e os directores","Balun e o coaxial","Radiais e o plano de terra"]}
+    correct="B" />

@@ -1,0 +1,124 @@
+---
+title: Componentes
+description: Resistências, condensadores, bobinas, transformadores, díodos e transístores e a sua aplicação.
+categories: [3, 2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Componentes
+
+Depois dos fundamentos eléctricos, este capítulo apresenta os componentes com que se constroem os circuitos de um equipamento de rádio: o que fazem, em que unidades se medem e como se combinam. O tratamento é ao nível do exame (aplicação e função), não de cálculo detalhado.
+
+## 2.1 Resistência
+
+A **resistência** opõe-se à passagem da corrente. Unidade: **ohm (Ω)**.
+
+Ao ser percorrida por corrente, uma resistência **dissipa potência** sob a forma de calor (P = R × I²), pelo que tem uma potência nominal máxima (em watt) que não deve ser ultrapassada.
+
+O valor e a tolerância de uma resistência são normalmente indicados por um **código de cores**.
+
+> O código de cores é apresentado em detalhe no guia [Código de cores](/study/codigo-de-cores).
+
+**Associação de resistências:**
+
+- **Em série**, as resistências somam-se, ficando a total maior do que a maior delas: $R = R_1 + R_2 + R_3 + \dots$
+- **Em paralelo**, a total é menor do que a menor delas: $\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + \dots$ Para duas resistências, $R = \dfrac{R_1 \times R_2}{R_1 + R_2}$; duas resistências iguais em paralelo dão metade do valor.
+
+## 2.2 Condensador
+
+O **condensador** armazena carga eléctrica. A grandeza correspondente é a **capacidade**, com unidade **farad (F)**. Como o farad é muito grande, usam-se os submúltiplos microfarad (µF), nanofarad (nF) e picofarad (pF).
+
+Perante a corrente contínua (CC) em regime estabelecido, o condensador **bloqueia** a passagem; à corrente alternada (CA) oferece uma reactância que **diminui com o aumento da frequência**.
+
+**Tipos:**
+
+- **Fixos:** de ar, mica, plástico, cerâmica e electrolítico. O condensador **electrolítico é polarizado** (tem de respeitar a polaridade) e permite capacidades elevadas.
+- **Variáveis:** usados em circuitos de sintonia.
+
+**Associação:** ao contrário das resistências, os condensadores **em paralelo somam-se** (C = C₁ + C₂ + …); em série soma-se o inverso das capacidades.
+
+## 2.3 Bobina
+
+A **bobina** (ou indutor) opõe-se às variações de corrente. A grandeza é a **indutância**, com unidade **henry (H)** (e os submúltiplos mH e µH).
+
+A sua reactância **aumenta com a frequência**. Pode ter núcleo de ar ou núcleo de ferrite para aumentar a indutância.
+
+## 2.4 Transformadores: aplicação e utilização
+
+O **transformador** transfere energia entre dois enrolamentos por indução magnética. **Só funciona com corrente alternada.**
+
+A relação entre as tensões é dada pela relação de espiras:
+
+$$\frac{U_\text{sec}}{U_\text{prim}} = \frac{N_\text{sec}}{N_\text{prim}}$$
+
+Aplicações típicas: elevar ou baixar a tensão (por exemplo, nas fontes de alimentação), isolar circuitos e adaptar impedâncias.
+
+## 2.5 Díodo
+
+O **díodo** é um componente semicondutor que conduz a corrente **num só sentido**. Duas aplicações do programa:
+
+- **Díodo rectificador:** converte corrente alternada em contínua (rectificação), sendo a base das fontes de alimentação.
+- **Díodo zener:** mantém uma **tensão constante** aos seus terminais, sendo usado na regulação/estabilização de tensão. Funciona em polarização inversa.
+
+## 2.6 Transístor
+
+O **transístor** é um componente semicondutor de três terminais. Para o exame, importa saber que pode ser utilizado como **amplificador** (amplifica sinais) ou como **oscilador** (gera sinais).
+
+## 2.7 Circuitos sintonizados
+
+A combinação de uma bobina com um condensador forma um **circuito sintonizado (ressonante)**, que responde de forma selectiva a uma determinada frequência. É a base dos filtros e da sintonia.
+
+> O funcionamento dos circuitos série e paralelo e dos filtros é tratado no capítulo dos **Circuitos**.
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - Qual é a unidade de capacidade eléctrica?"
+    options={["Ohm","Henry","Farad","Ampere"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="2 - Qual é a unidade de indutância?"
+    options={["Farad","Henry","Ampere","Volt"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="3 - Duas resistências de 100 Ω ligadas em série apresentam uma resistência total de:"
+    options={["50 Ω","100 Ω","200 Ω","10 000 Ω"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="4 - Duas resistências de 100 Ω ligadas em paralelo apresentam uma resistência total de:"
+    options={["50 Ω","100 Ω","150 Ω","200 Ω"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="5 - Dois condensadores ligados em paralelo têm uma capacidade total igual a:"
+    options={["A soma das capacidades","O inverso da soma","A média das capacidades","A menor das duas"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="6 - A função do díodo rectificador é:"
+    options={["Estabilizar a tensão","Converter corrente alternada em contínua","Amplificar sinais","Gerar oscilações"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="7 - Que tipo de díodo é normalmente utilizado para estabilizar uma tensão?"
+    options={["Díodo rectificador","Díodo zener","Díodo emissor de luz (LED)","Díodo variável"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="8 - Um transístor pode ser utilizado como:"
+    options={["Apenas isolador","Amplificador ou oscilador","Apenas resistência","Fonte de tensão"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="9 - Perante a corrente contínua (CC) em regime estabelecido, um condensador:"
+    options={["Conduz totalmente","Bloqueia a passagem","Comporta-se como uma resistência muito baixa","Amplifica a corrente"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="10 - Um transformador só funciona com:"
+    options={["Corrente contínua","Corrente alternada","Tensão nula","Sinais digitais"]}
+    correct="B" />

@@ -1,0 +1,96 @@
+---
+title: Receptores
+description: Receptores de amplificação directa e superheterodino, diagramas de blocos e função de cada andar.
+categories: [3, 2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Receptores
+
+Um **receptor** capta o sinal de rádio, muito fraco, que chega à antena e recupera a informação original (normalmente áudio). Este capítulo trata os tipos de receptor, os diagramas de blocos por modo de emissão e a função de cada andar, ao nível do diagrama de blocos.
+
+## 4.1 Tipos de receptor
+
+**Receptor de amplificação directa (TRF ou "straight"):** amplifica o sinal directamente na frequência de recepção e só depois o detecta. É simples, mas tem pouca **selectividade** e **sensibilidade**, que ainda por cima variam com a frequência sintonizada.
+
+![Diagrama de blocos de um receptor TRF](/images/cat2/recetor_TRF.png)
+
+**Receptor superheterodino:** converte o sinal recebido para uma **frequência intermédia (FI) fixa**, usando um misturador e um oscilador local. Como quase toda a amplificação e filtragem é feita nessa FI fixa, a selectividade e a sensibilidade são muito melhores e **constantes** em toda a gama. É o tipo de receptor mais utilizado.
+
+![Diagrama de blocos de um receptor superheterodino](/images/cat2/recetor_super_heterodino.png)
+
+## 4.2 Diagramas de blocos por modo
+
+A estrutura do receptor adapta-se ao modo de emissão:
+
+- **CW (A1A):** a telegrafia não tem áudio próprio, por isso é necessário um **oscilador de batimento (BFO)** para tornar os pontos e traços audíveis.
+- **AM (A3E):** basta um detector de envolvente (díodo detector).
+- **SSB (J3E):** como a portadora foi suprimida na emissão, é preciso reinseri-la no receptor com um **BFO / detector de produto**.
+- **FM (F3E):** exige um detector de frequência (discriminador) e, habitualmente, um circuito de **squelch**.
+
+## 4.3 Função de cada andar
+
+Percorrendo a cadeia de um receptor superheterodino:
+
+- **Amplificador de RF (entrada):** amplifica o sinal fraco vindo da antena e melhora a relação sinal/ruído e a selectividade de entrada.
+- **Oscilador local (fixo e variável):** gera um sinal cuja frequência, ao ser misturada com a do sinal recebido, dá origem à FI. Sendo **variável**, permite sintonizar diferentes frequências.
+- **Misturador:** combina o sinal de RF com o do oscilador local, produzindo a **frequência intermédia** (resultante da diferença das frequências).
+- **Amplificador de FI:** amplifica e filtra o sinal na FI fixa. É aqui que se obtém a maior parte do ganho e da selectividade do receptor.
+- **Detector (desmodulador):** recupera a informação (áudio) contida no sinal modulado.
+- **Oscilador de batimento (BFO):** produz, por batimento com a FI, um tom audível — indispensável na recepção de **CW** e **SSB**.
+- **Amplificador de BF (áudio):** amplifica o sinal de áudio até ao nível necessário para o altifalante ou auscultadores.
+- **Fonte de alimentação:** fornece as tensões contínuas de que os vários andares necessitam.
+- **Squelch (silenciador):** corta o ruído no altifalante quando não há sinal presente (basta conhecer o propósito).
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - Num receptor superheterodino, o misturador combina o sinal de entrada com o do oscilador local para produzir a:"
+    options={["Frequência de áudio","Frequência intermédia (FI)","Portadora","Segunda harmónica"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="2 - Que andar é necessário para receber telegrafia (CW) e SSB?"
+    options={["Squelch","Oscilador de batimento (BFO)","Amplificador de BF","Limitador"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="3 - A principal vantagem do receptor superheterodino face ao de amplificação directa (TRF) é:"
+    options={["Ser mais barato","Ter selectividade e sensibilidade melhores e constantes","Não precisar de antena","Não usar oscilador"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="4 - Qual é a função do detector (desmodulador) de um receptor?"
+    options={["Amplificar a RF","Recuperar a informação contida no sinal modulado","Gerar a frequência intermédia","Alimentar o circuito"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="5 - Qual é a função do circuito de squelch (silenciador)?"
+    options={["Aumentar a potência de saída","Silenciar o ruído na ausência de sinal","Reinserir a portadora","Sintonizar a frequência"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="6 - No receptor superheterodino, o amplificador de FI trabalha a uma frequência:"
+    options={["Variável com a sintonia","Fixa (a frequência intermédia)","Igual à do áudio","Igual à da portadora recebida"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="7 - Para que serve o oscilador local variável num receptor superheterodino?"
+    options={["Amplificar o áudio","Sintonizar diferentes frequências de recepção","Filtrar as harmónicas","Alimentar o altifalante"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="8 - Qual é a função do amplificador de RF à entrada do receptor?"
+    options={["Amplificar o sinal fraco da antena e melhorar a relação sinal/ruído","Converter CA em CC","Gerar a frequência intermédia","Produzir o tom de batimento"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="9 - Que andar amplifica o sinal de áudio antes do altifalante?"
+    options={["Amplificador de RF","Amplificador de FI","Amplificador de BF (áudio)","Misturador"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="10 - Num receptor de amplificação directa (TRF), a amplificação do sinal é feita:"
+    options={["Numa frequência intermédia fixa","Directamente na frequência do sinal recebido","Apenas em áudio","Após conversão para digital"]}
+    correct="B" />

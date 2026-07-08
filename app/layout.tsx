@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import "katex/dist/katex.min.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import CalculatorProvider from "@/components/providers/CalculatorProvider";

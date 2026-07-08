@@ -1,0 +1,91 @@
+---
+title: Circuitos
+description: Filtros passa-baixo, passa-alto, passa-banda e rejeita-banda, e circuitos sintonizados série e paralelo.
+categories: [3, 2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Circuitos
+
+Combinando os componentes do capítulo anterior, sobretudo bobinas e condensadores, obtêm-se circuitos que tratam os sinais em função da **frequência**. Os mais importantes para o exame são os **filtros** e os **circuitos sintonizados**. O tratamento é ao nível de utilização e função, não de cálculo.
+
+## 3.1 Filtros
+
+Um **filtro** deixa passar certas frequências e atenua outras. Existem quatro tipos fundamentais:
+
+- **Passa-baixo:** deixa passar as frequências **abaixo** de uma frequência de corte e atenua as que estão acima.
+- **Passa-alto:** deixa passar as frequências **acima** da frequência de corte e atenua as que estão abaixo.
+- **Passa-banda:** deixa passar apenas uma **banda** de frequências, atenuando todas as restantes (acima e abaixo).
+- **Rejeita-banda (notch):** faz o inverso do passa-banda — atenua uma banda estreita e deixa passar tudo o resto.
+
+**Aplicações típicas:**
+
+- Um **filtro passa-baixo** à saída de um emissor (por exemplo o **filtro em π**) reduz as **harmónicas**, evitando que sejam radiadas e causem interferências.
+- Um **filtro passa-banda** aumenta a **selectividade** de um receptor, deixando passar apenas a frequência pretendida.
+- Um **filtro rejeita-banda** elimina uma interferência situada numa frequência específica.
+
+## 3.2 Circuitos sintonizados
+
+Uma bobina (L) e um condensador (C) ligados em conjunto formam um **circuito sintonizado (ressonante)**. À sua **frequência de ressonância**, a reactância indutiva iguala a reactância capacitiva.
+
+- **Circuito série ressonante:** na ressonância apresenta **impedância mínima**, comportando-se como um curto-circuito para essa frequência (deixa-a passar).
+- **Circuito paralelo ressonante (circuito tanque):** na ressonância apresenta **impedância máxima**, bloqueando ou seleccionando essa frequência. É muito usado nos osciladores e na sintonia.
+
+A frequência de ressonância depende dos valores de L e C: quanto maiores forem, mais baixa é a frequência de ressonância.
+
+$$f = \frac{1}{2\pi\sqrt{LC}}$$
+
+> Os circuitos sintonizados são a base da sintonia dos emissores e receptores, tratados nos capítulos seguintes.
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - Um filtro passa-baixo deixa passar as frequências:"
+    options={["Acima da frequência de corte","Abaixo da frequência de corte","Apenas uma banda estreita","Todas por igual"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="2 - Que tipo de filtro se coloca à saída de um emissor para reduzir as harmónicas?"
+    options={["Passa-alto","Passa-baixo","Rejeita-banda","Passa-banda"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="3 - Um filtro passa-alto deixa passar as frequências:"
+    options={["Abaixo da frequência de corte","Acima da frequência de corte","Apenas a frequência de ressonância","Nenhuma"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="4 - Um filtro que atenua uma banda estreita de frequências e deixa passar as restantes designa-se por:"
+    options={["Passa-banda","Passa-baixo","Rejeita-banda","Passa-alto"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="5 - Qual é a função de um filtro passa-banda num receptor?"
+    options={["Aumentar a potência de saída","Deixar passar apenas a banda de frequências pretendida","Eliminar a corrente contínua","Converter CA em CC"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="6 - Um circuito sintonizado é formado por:"
+    options={["Duas resistências","Uma bobina e um condensador","Um díodo e uma resistência","Dois transformadores"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="7 - Um circuito LC série apresenta, na frequência de ressonância, uma impedância:"
+    options={["Máxima","Mínima","Infinita","Sempre nula fora da ressonância"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="8 - Um circuito LC paralelo (circuito tanque) apresenta, na frequência de ressonância, uma impedância:"
+    options={["Mínima","Máxima","Nula","Negativa"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="9 - Para eliminar uma interferência situada numa frequência específica, utiliza-se um filtro:"
+    options={["Passa-baixo","Passa-alto","Rejeita-banda","Passa-banda"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="10 - Se aumentarmos os valores de L e de C de um circuito sintonizado, a frequência de ressonância:"
+    options={["Aumenta","Diminui","Mantém-se igual","Anula-se"]}
+    correct="B" />

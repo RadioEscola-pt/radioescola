@@ -1,0 +1,90 @@
+---
+title: Interferências e Imunidade
+description: Onde ocorrem as interferências, as suas causas e as medidas para as prevenir e minimizar.
+categories: [3, 2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Interferências e Imunidade
+
+A **interferência** (compatibilidade electromagnética) é um problema frequente: o emissor de amador pode perturbar equipamentos vizinhos, ou a própria estação pode ser afectada. Este capítulo trata onde ocorrem as interferências, quais são as suas causas e que medidas as previnem ou minimizam.
+
+## 9.1 Onde ocorre a interferência
+
+A interferência manifesta-se em equipamentos electrónicos próximos, tipicamente:
+
+- **Televisão (TVI)**, rádio VHF e **radiodifusão (BCI)**;
+- **Sistemas de áudio** (amplificadores, colunas, telefones).
+
+## 9.2 Causas da interferência
+
+- **Radiação espúria do emissor:** sinais indesejados fora da frequência pretendida, sobretudo **harmónicas** e radiações parasitas.
+- **Influência indesejada sobre o equipamento afectado**, que pode entrar por vários caminhos:
+  - pela **entrada de antena** do receptor;
+  - por **outros caminhos** (rede eléctrica, cabos das colunas, fios de ligação);
+  - por **radiação directa** — o forte campo de RF entra directamente nos circuitos do aparelho.
+
+## 9.3 Medidas contra a interferência
+
+- **Filtragem na estação de amador:** por exemplo, um filtro passa-baixo à saída do emissor para reduzir as harmónicas.
+- **Filtragem no aparelho interferido:** filtros de rede, filtros de antena e ferrites nos cabos.
+- **Desacoplamento:** uso de condensadores de desacoplamento para escoar a RF indesejada.
+- **Blindagem:** envolver os equipamentos e cabos num invólucro condutor.
+- **Separação das antenas** de emissão e de TV.
+- **Evitar antenas alimentadas na extremidade (end-fed)**, que apresentam RF elevada junto ao equipamento.
+- **Usar a potência mínima** necessária à comunicação.
+- **Boa ligação de terra de RF.**
+- **Efeitos sociais:** manter uma **boa relação com os vizinhos**, cuja cooperação ajuda a resolver os problemas.
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - A interferência provocada por um emissor num televisor é normalmente designada por:"
+    options={["BCI","TVI","ROE","MUF"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="2 - Qual é uma causa de interferência com origem no próprio emissor?"
+    options={["A radiação de harmónicas e sinais espúrios","A boa ligação de terra","A potência mínima","A blindagem dos cabos"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="3 - Por que caminhos pode a RF indesejada entrar num equipamento afectado?"
+    options={["Apenas pela antena","Pela entrada de antena, pela rede e cabos, e por radiação directa","Apenas pela rede eléctrica","Não existe forma de entrar"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="4 - Que medida, tomada na estação de amador, ajuda a reduzir a radiação de harmónicas?"
+    options={["Um filtro passa-baixo à saída do emissor","Aumentar a potência","Usar uma antena end-fed","Retirar a ligação de terra"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="5 - Em que consiste a blindagem de um equipamento?"
+    options={["Aumentar a sua potência","Envolvê-lo num invólucro condutor para impedir a entrada/saída de RF","Ligá-lo a uma antena maior","Retirar os filtros"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="6 - Para minimizar as interferências, o emissor deve funcionar com:"
+    options={["A potência máxima possível","A potência mínima necessária","A antena end-fed","A terra desligada"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="7 - Uma boa ligação de terra de RF na estação:"
+    options={["Aumenta as interferências","Ajuda a reduzir as interferências","Não tem qualquer efeito","Só serve para segurança eléctrica"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="8 - Que tipo de antena é preferível evitar por tender a causar mais interferências junto ao equipamento?"
+    options={["Dipolo ao centro","Antena Yagi","Antena alimentada na extremidade (end-fed)","Antena de quarto de onda"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="9 - Um filtro colocado no aparelho de áudio ou TV afectado serve para:"
+    options={["Aumentar o volume","Impedir a entrada da RF indesejada","Sintonizar emissoras","Alimentar o aparelho"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="10 - Para além das medidas técnicas, o que ajuda a resolver problemas de interferência com os vizinhos?"
+    options={["Emitir com mais potência","Manter uma boa relação e cooperação com os vizinhos","Ignorar as queixas","Mudar de indicativo"]}
+    correct="B" />

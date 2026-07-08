@@ -1,0 +1,92 @@
+---
+title: Espectro de Frequências e Propagação
+description: Bandas HF/VHF/UHF, ionosfera, desvanecimento, troposfera e ciclo solar.
+categories: [3, 2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Espectro de Frequências e Propagação
+
+A forma como as ondas de rádio viajam entre a antena emissora e a receptora depende da **frequência** e das condições da atmosfera. Este capítulo descreve, de forma simples, as bandas de frequência e os principais mecanismos de propagação.
+
+> As noções básicas de onda, frequência e comprimento de onda são tratadas no guia [Campo Electromagnético e Ondas de Rádio](/study/campo-electromagnetico).
+
+## 7.1 Bandas HF, VHF e UHF
+
+- **HF (Alta Frequência), 3 – 30 MHz:** as "ondas curtas". Propagam-se por **reflexão na ionosfera**, permitindo comunicações a **grandes distâncias (DX)**.
+- **VHF (Muito Alta Frequência), 30 – 300 MHz:** propagação essencialmente em **linha de vista**, um pouco além do horizonte.
+- **UHF (Ultra Alta Frequência), 300 – 3000 MHz:** também em linha de vista, com alcance tipicamente local.
+
+## 7.2 A ionosfera e a propagação em HF
+
+A **ionosfera** é a região alta da atmosfera, ionizada pela radiação solar, que se organiza em camadas (D, E, F1 e F2):
+
+- A **camada D** existe durante o dia e **absorve** as ondas HF, sobretudo as de frequência mais baixa.
+- As **camadas E e F refletem** as ondas HF de volta à Terra, permitindo comunicações a longas distâncias através de "saltos".
+
+A propagação em HF varia com a **hora do dia** e a estação do ano: à noite a camada D desaparece e as frequências baixas propagam-se melhor. A **MUF (frequência máxima utilizável)** é a frequência mais alta que ainda regressa à Terra por reflexão ionosférica.
+
+## 7.3 Desvanecimento (fading)
+
+O **desvanecimento** é a variação da intensidade do sinal recebido ao longo do tempo. Deve-se, por exemplo, à chegada do sinal por vários percursos com fases diferentes ou a variações da própria ionosfera.
+
+## 7.4 Troposfera e propagação em VHF/UHF
+
+A **troposfera** é a camada baixa da atmosfera, onde ocorrem os fenómenos meteorológicos. As **condições meteorológicas** (por exemplo, inversões de temperatura e variações de humidade) podem originar propagação troposférica anómala, estendendo o alcance em **VHF/UHF** muito para além do habitual.
+
+## 7.5 Ciclo solar
+
+A actividade solar segue um ciclo de aproximadamente **11 anos**, avaliado pelo número de **manchas solares**. Quanto **mais manchas solares**, maior a ionização da ionosfera, mais alta a MUF e **melhores as condições de propagação em HF**, sobretudo nas frequências mais elevadas.
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - Que região da atmosfera reflete as ondas HF, permitindo comunicações a longa distância?"
+    options={["A troposfera","A ionosfera","A estratosfera inferior","O plano de terra"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="2 - A que gama de frequências corresponde a banda HF?"
+    options={["300 kHz – 3 MHz","3 – 30 MHz","30 – 300 MHz","300 – 3000 MHz"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="3 - Em VHF e UHF, a propagação faz-se essencialmente por:"
+    options={["Reflexão na ionosfera","Linha de vista","Ondas de superfície","Reflexão na Lua"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="4 - Durante o dia, qual é o efeito da camada D da ionosfera sobre as ondas HF?"
+    options={["Reflete-as para longas distâncias","Absorve-as, sobretudo as de frequência mais baixa","Não tem qualquer efeito","Aumenta a sua potência"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="5 - O ciclo solar tem um período aproximado de:"
+    options={["1 ano","11 anos","24 horas","100 anos"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="6 - Um aumento do número de manchas solares tende a:"
+    options={["Piorar toda a propagação","Melhorar as condições de propagação em HF","Não ter efeito na propagação","Eliminar a ionosfera"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="7 - O desvanecimento (fading) de um sinal consiste em:"
+    options={["Uma variação da intensidade do sinal recebido","Um aumento permanente da potência","Uma mudança de frequência do emissor","Uma falha da fonte de alimentação"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="8 - Um alcance anormalmente grande em VHF/UHF está frequentemente associado a:"
+    options={["Manchas solares","Condições meteorológicas na troposfera","Camada D","Baixa MUF"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="9 - A MUF (frequência máxima utilizável) é:"
+    options={["A frequência mais baixa que a ionosfera absorve","A frequência mais alta que ainda regressa à Terra por reflexão ionosférica","A frequência da portadora do emissor","A largura de banda da emissão"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="10 - Para comunicações a grandes distâncias (DX) em ondas curtas utiliza-se sobretudo a banda:"
+    options={["HF","VHF","UHF","SHF"]}
+    correct="A" />
