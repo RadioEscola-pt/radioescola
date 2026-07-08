@@ -793,17 +793,9 @@
       },
       "results": {
         "title": "Resultados e indicativo",
-        "description": "Os resultados são comunicados no próprio dia. Se aprovado, recebes o teu indicativo de chamada oficial e podes começar a operar de acordo com a tua categoria."
+        "description": "Os resultados são mostrados automaticamente no fim do exame. Se aprovado, recebes o teu indicativo de chamada oficial e podes começar a operar de acordo com a tua categoria."
       }
-    },
-    "maintenanceTitle": "Manutenção da Licença",
-    "maintenance": {
-      "annualRenewal": "Renovação anual da licença.",
-      "annualFees": "Pagamento de taxas anuais.",
-      "compliance": "Cumprimento das regulamentações e boas práticas do radioamadorismo."
-    },
-    "ctaText": "Pronto para começar? A maioria dos radioamadores começa pela Categoria 3.",
-    "ctaButton": "Começar a estudar"
+    }
   },
   "Share": {
     "title": "Partilhar",

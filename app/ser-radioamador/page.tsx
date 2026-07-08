@@ -5,8 +5,6 @@ import {
   Clock,
   Radio,
   ArrowRight,
-  CheckCircle,
-  RefreshCw,
 } from "lucide-react";
 import CategoryPowerInfo from "@/components/CategoryPowerInfo";
 import { Button } from "@/components/ui/button";
@@ -46,8 +44,6 @@ export default async function BecomeHamPage() {
     { key: "exam" },
     { key: "results" },
   ];
-
-  const maintenanceSteps = ["annualRenewal", "annualFees", "compliance"];
 
   return (
     <div className="py-8">
@@ -264,36 +260,6 @@ export default async function BecomeHamPage() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Maintenance + Closing CTA */}
-      <section className="rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/30 p-6">
-        <div className="flex items-center gap-2 mb-3">
-          <RefreshCw className="h-4 w-4 text-slate-400" />
-          <h2 className="text-sm font-semibold text-slate-900 dark:text-white">
-            {t("maintenanceTitle")}
-          </h2>
-        </div>
-        <ul className="space-y-1.5 mb-6">
-          {maintenanceSteps.map((step) => (
-            <li key={step} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300">
-              <CheckCircle className="h-3.5 w-3.5 mt-0.5 shrink-0 text-green-500 dark:text-green-400" />
-              {t(`maintenance.${step}`)}
-            </li>
-          ))}
-        </ul>
-
-        <div className="border-t border-slate-200 dark:border-slate-700 pt-5 flex flex-col sm:flex-row sm:items-center gap-3">
-          <p className="text-sm text-slate-600 dark:text-slate-300 flex-1">
-            {t("ctaText")}
-          </p>
-          <Button asChild>
-            <Link href="/browse/3">
-              {t("ctaButton")}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
         </div>
       </section>
     </div>
