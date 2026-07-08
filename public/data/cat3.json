@@ -18,7 +18,10 @@
       "uniqueID": 1,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p17": 5
+      }
     },
     {
       "question": "Qual dos seguintes factores não se aplica quando estamos a falar de influência indesejada nos equipamentos de uma estação de amador?",
@@ -37,7 +40,10 @@
       "uniqueID": 4,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p33": 10
+      }
     },
     {
       "question": "Qual das seguintes não constitui uma obrigação dos utilizadores de estações de amador?",
@@ -56,7 +62,10 @@
       "uniqueID": 5,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p10": 3
+      }
     },
     {
       "question": "Que deverei fazer se tiver conhecimento que a minha estação está a provocar interferências?",
@@ -75,7 +84,10 @@
       "uniqueID": 6,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p37": 11
+      }
     },
     {
       "question": "Que efeito pode ter um corte numa linha de transmissão de televisão por cabo numa estação de amador?",
@@ -145,7 +157,10 @@
       "uniqueID": 210,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p4": 1
+      }
     },
     {
       "question": "Qual das seguintes afirmações é incorreta?",
@@ -181,7 +196,10 @@
       "uniqueID": 213,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p28": 7
+      }
     },
     {
       "question": "Não concordo com determinadas disposições regulamentares aplicáveis aos Serviços de Amador e de Amador por Satélite. O que é correto fazer?",
@@ -200,7 +218,10 @@
       "uniqueID": 12,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p29": 9
+      }
     },
     {
       "question": "Duma forma geral, as ondas de rádio em espaço livre",
@@ -338,7 +359,10 @@
       "uniqueID": 211,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p4": 1
+      }
     },
     {
       "question": "Quantas estações individuais fixas podem ser utilizadas ao abrigo de um CAN?",
@@ -374,7 +398,10 @@
       "uniqueID": 21,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p10": 3
+      }
     },
     {
       "question": "Quantas estações móveis e estações portáteis podem ser utilizadas ao abrigo de um CAN?",
@@ -444,7 +471,10 @@
       "uniqueID": 26,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p19": 6
+      }
     },
     {
       "question": "De acordo como definido no Regulamento das Radiocomunicações da UIT, que estatutos podem ter os Serviços de Amador ou do Serviço de Amador por Satélite no que respeita à atribuição de frequências?",
@@ -463,7 +493,10 @@
       "uniqueID": 27,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p19": 5
+      }
     },
     {
       "question": "De acordo com o definido no Artigo 25º do Regulamento das Radiocomunicações, da UIT, quem deverá fixar as potências máximas permitidas às estações de amador?",
@@ -499,7 +532,10 @@
       "uniqueID": 29,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p18": 5
+      }
     },
     {
       "question": "De acordo com a regulamentação em vigor e tendo em conta o definido no Regulamento das Radiocomunicações, o que é uma estação de amador?",
@@ -518,7 +554,10 @@
       "uniqueID": 30,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p18": 5
+      }
     },
     {
       "question": "Se ouvir um indicativo de uma estação seguido por /P, o que posso concluir?",
@@ -572,7 +611,11 @@
       "uniqueID": 32,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p34": 10,
+        "cat3/2023_09_21p34": 9
+      }
     },
     {
       "question": "Qual é a base da elaboração dos planos da IARU?",
@@ -591,7 +634,10 @@
       "uniqueID": 33,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p15": 4
+      }
     },
     {
       "question": "Qual é a base da elaboração dos planos da IARU",
@@ -645,7 +691,11 @@
       "uniqueID": 10,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p15": 4,
+        "cat3/2023_09_21p14": 4
+      }
     },
     {
       "question": "As estações de amador podem participar em exercícios de proteção civil?",
@@ -665,7 +715,11 @@
       "uniqueID": 37,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p1": 1,
+        "cat3/2023_09_21p2": 1
+      }
     },
     {
       "question": "Se quiser fazer uma chamada geral a todas as estações que abreviatura de operação devo utilizar?",
@@ -703,7 +757,10 @@
       "uniqueID": 38,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p12": 3
+      }
     },
     {
       "question": "O que significa a abreviatura de operação R?",
@@ -791,7 +848,10 @@
       "uniqueID": 43,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p20": 5
+      }
     },
     {
       "question": "O que significa a abreviatura de operação BK?",
@@ -810,7 +870,10 @@
       "uniqueID": 44,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p12": 3
+      }
     },
     {
       "question": "O que significa a abreviatura de operação PSE?",
@@ -863,7 +926,10 @@
       "uniqueID": 47,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p20": 6
+      }
     },
     {
       "question": "Como se designa no alfabeto fonético o sufixo ANQ?",
@@ -883,7 +949,11 @@
       "uniqueID": 48,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p26": 8,
+        "cat3/2023_09_21p26": 7
+      }
     },
     {
       "question": "Como se designa no alfabeto fonético o sufixo AMT?",
@@ -1004,7 +1074,10 @@
       "uniqueID": 55,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p36": 11
+      }
     },
     {
       "question": "Como se pode eliminar o ruído conduzido e irradiado por um alternador automóvel?",
@@ -1142,7 +1215,10 @@
       "uniqueID": 63,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p33": 9
+      }
     },
     {
       "question": "Um emissor está a produzir emissões espúrias em frequências abaixo e acima da sua frequência nominal. Qual o tipo de filtragem mais adequado?",
@@ -1195,7 +1271,10 @@
       "uniqueID": 66,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p25": 8
+      }
     },
     {
       "question": "A antena isotrópica e o dipolo de meia onda são antenas de referência para",
@@ -1248,7 +1327,10 @@
       "uniqueID": 69,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p13": 4
+      }
     },
     {
       "question": "Qual dos seguintes componentes nunca faz parte de um receptor?",
@@ -1301,7 +1383,10 @@
       "uniqueID": 72,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p3": 1
+      }
     },
     {
       "question": "Qual a sequência correcta de ligação de uma estação emissora?",
@@ -1389,7 +1474,11 @@
       "uniqueID": 77,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p27": 8,
+        "cat3/2023_09_21p27": 7
+      }
     },
     {
       "question": "Qual das seguintes afirmações não está correcta?",
@@ -1578,7 +1667,10 @@
       "uniqueID": 86,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p8": 2
+      }
     },
     {
       "question": "Qual a validade máxima de um Indicativo de Chamada Ocasional (ICO)?",
@@ -1649,7 +1741,11 @@
       "uniqueID": 92,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p16": 4,
+        "cat3/2023_09_21p16": 4
+      }
     },
     {
       "question": "Estive a fazer uma análise espectral das minhas emissões e parece-me que tenho uma espúrias não conformes com a regulamentação aplicável. O que devo fazer?",
@@ -1686,7 +1782,11 @@
       "uniqueID": 88,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p38": 12,
+        "cat3/2023_09_21p36": 9
+      }
     },
     {
       "question": "Porque se deve utilizar uma carga artificial quando estamos a testar um emissor?",
@@ -1773,7 +1873,10 @@
       "uniqueID": 97,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p37": 10
+      }
     },
     {
       "question": "Tive conhecimento que um colega amador está com problemas na sua estação, pois os seus vizinhos reclamam que não conseguem ver televisão em condições. O que devo fazer?",
@@ -1843,7 +1946,10 @@
       "uniqueID": 101,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p28": 8
+      }
     },
     {
       "question": "Quais dos seguintes cuidados não é relevante do ponto de vista da segurança nas instalações onde estão os equipamentos da estação?",
@@ -1862,7 +1968,10 @@
       "uniqueID": 102,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p22": 7
+      }
     },
     {
       "question": "Posso utilizar estações a bordo de aeronaves?",
@@ -1898,7 +2007,10 @@
       "uniqueID": 104,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p2": 1
+      }
     },
     {
       "question": "As siglas RV e RU usadas em Portugal de acordo com as recomendações da IARU",
@@ -1934,7 +2046,10 @@
       "uniqueID": 106,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p13": 4
+      }
     },
     {
       "question": "De acordo com o regulamento das Radiocomunicações, o Serviço de Amador por Satélite:",
@@ -1953,7 +2068,10 @@
       "uniqueID": 107,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p17": 5
+      }
     },
     {
       "question": "Qual a expressão usada para sinal de perigo?",
@@ -1989,7 +2107,10 @@
       "uniqueID": 109,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p1": 1
+      }
     },
     {
       "question": "O cabo de alimentação de um ferro de soldar tem os condutores “à vista”. A que pode este facto dar origem?",
@@ -2059,7 +2180,10 @@
       "uniqueID": 113,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p25": 7
+      }
     },
     {
       "question": "Que outra designação têm as faixas métricas?",
@@ -2197,7 +2321,10 @@
       "uniqueID": 121,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p38": 10
+      }
     },
     {
       "question": "Qual a melhor maneira de reduzir a possibilidade de causar interferências quando se testa um emissor?",
@@ -2217,7 +2344,11 @@
       "uniqueID": 122,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p35": 11,
+        "cat3/2023_09_21p35": 9
+      }
     },
     {
       "question": "Quais as definições que deverão ser consideradas como de referência para os vários tipos de interferências",
@@ -2304,7 +2435,10 @@
       "uniqueID": 127,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p29": 8
+      }
     },
     {
       "question": "Qual das seguintes afirmações é falsa?",
@@ -2341,7 +2475,11 @@
       "uniqueID": 129,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p30": 9,
+        "cat3/2023_09_21p30": 8
+      }
     },
     {
       "question": "Qual das seguintes classes de emissão designa uma modulação de frequência?",
@@ -2360,7 +2498,10 @@
       "uniqueID": 130,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p3": 1
+      }
     },
     {
       "question": "Um receptor de radiocomunicações de amador destina-se a",
@@ -2567,7 +2708,11 @@
       "uniqueID": 143,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p6": 2,
+        "cat3/2023_09_21p5": 2
+      }
     },
     {
       "question": "O Indicativo de Chamada (IC) de uma estação fixa principal de um amador da categoria 1 na Região Autónoma da Madeira (área geográfica MDR) tem o prefixo",
@@ -2603,7 +2748,10 @@
       "uniqueID": 145,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p4": 1
+      }
     },
     {
       "question": "O Indicativo de Chamada (IC) de uma estação fixa principal de um amador de categoria 3 na Região Autónoma da Madeira (área geográfica MDR) tem o prefixo",
@@ -2623,7 +2771,11 @@
       "uniqueID": 151,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p5": 2,
+        "cat3/2023_09_21p6": 2
+      }
     },
     {
       "question": "O Indicativo de Chamada (IC) de uma estação fixa principal de um amador da categoria 1 em Portugal Continental (área geográfica POR) tem o prefixo",
@@ -2744,7 +2896,10 @@
       "uniqueID": 155,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p11": 3
+      }
     },
     {
       "question": "Sendo amador da categoria 3 e tendo o CAN ativo que taxa anual tenho que pagar?",
@@ -2798,7 +2953,11 @@
       "uniqueID": 158,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p9": 3,
+        "cat3/2023_09_21p9": 3
+      }
     },
     {
       "question": "Quantas categorias de amadores existem?",
@@ -2818,7 +2977,11 @@
       "uniqueID": 159,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p11": 3,
+        "cat3/2023_09_21p7": 2
+      }
     },
     {
       "question": "Podem requerer à ANACOM a realização de exame para a categoria 3, os indivíduos",
@@ -2837,7 +3000,10 @@
       "uniqueID": 160,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p7": 2
+      }
     },
     {
       "question": "Para além do reconhecimento de títulos habilitantes válidos emitidos por outras Administrações, como é feito o acesso à categoria 2?",
@@ -2873,7 +3039,10 @@
       "uniqueID": 162,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p8": 2
+      }
     },
     {
       "question": "Qual a expressão usada em fonia para sinal de perigo?",
@@ -2909,7 +3078,10 @@
       "uniqueID": 164,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p21": 6
+      }
     },
     {
       "question": "Porque deverão estar as superficies do local onde se encontram os equipamentos e os próprios equipamentos livres de água ou humidade excessiva?",
@@ -3031,7 +3203,11 @@
       "uniqueID": 171,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p24": 7,
+        "cat3/2023_09_21p21": 6
+      }
     },
     {
       "question": "Qual é a maior causa para a estática da atmosfera?",
@@ -3152,7 +3328,10 @@
       "uniqueID": 178,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p32": 8
+      }
     },
     {
       "question": "O valor da potência dissipada numa dada resistência",
@@ -3189,7 +3368,11 @@
       "uniqueID": 180,
       "tutorial": "ohm",
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p31": 9,
+        "cat3/2023_09_21p31": 8
+      }
     },
     {
       "question": "O valor da frequência de uma onda de rádio, no Sistema Internacional de Unidades, exprime-se em",
@@ -3310,7 +3493,10 @@
       "uniqueID": 187,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p39": 12
+      }
     },
     {
       "question": "Qual das seguintes substâncias é um semicondutor",
@@ -3398,7 +3584,10 @@
       "uniqueID": 192,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p23": 7
+      }
     },
     {
       "question": "O que está ligado ao fio azul numa instalação eléctrica habitacional?",
@@ -3536,7 +3725,10 @@
       "uniqueID": 200,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p40": 12
+      }
     },
     {
       "question": "A figura representa um sinal sinusoidal de amplitude em função do tempo. O que representa 3?",
@@ -3555,7 +3747,10 @@
       "uniqueID": 201,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p40": 11
+      }
     },
     {
       "question": "A figura representa um sinal sinusoidal em que +Um é igual a 1 volt. Qual o valor pico a pico do sinal?",
@@ -3659,7 +3854,10 @@
       "uniqueID": 207,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_09_21p39": 10
+      }
     },
     {
       "question": "Qual das figuras representa um sinal sinusoidal?",
@@ -3695,7 +3893,10 @@
       "uniqueID": 209,
       "tutorial": null,
       "materia": null,
-      "calc": null
+      "calc": null,
+      "fontePages": {
+        "cat3/2023_08_18p32": 10
+      }
     }
   ]
 }

@@ -10,7 +10,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest --coverage",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "data:fonte-pages": "node scripts/resolve-fonte-pages.js"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

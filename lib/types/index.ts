@@ -12,6 +12,8 @@ export interface Question {
   notes?: string | null;
   hasNotesMdx?: boolean;
   fonte?: string[] | null;
+  /** Maps a fonte entry (e.g. "cat3/2023_08_18p17") to the real PDF page it appears on. */
+  fontePages?: Record<string, number> | null;
   tutorial?: string | null;
   materia?: string | null;
   calc?: string | string[] | null;
