@@ -8,6 +8,7 @@ import { getCalculatorMeta } from '@/lib/config';
 import type { CalculatorCode } from '@/lib/types';
 import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
 import BookmarkButton from '@/components/BookmarkButton';
+import PdfPageDialog from '@/components/PdfPageDialog';
 
 interface QuestionCardProps {
   question: Question;
@@ -252,9 +253,12 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
                   return (
                     <li key={`${entry}-${idx}`}>
                       {href ? (
-                        <a className="text-blue-600 dark:text-blue-400 underline" href={href} target="_blank" rel="noreferrer">
-                          {label}
-                        </a>
+                        <PdfPageDialog
+                          href={href}
+                          label={label}
+                          openInNewTabLabel={t('sourceOpenNewTab')}
+                          closeLabel={t('sourceClose')}
+                        />
                       ) : (
                         entry
                       )}

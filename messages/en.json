@@ -340,6 +340,8 @@
     "unanswered": "Unanswered",
     "relatedTutorial": "Related tutorial:",
     "officialSource": "Official source:",
+    "sourceOpenNewTab": "Open in new tab",
+    "sourceClose": "Close",
     "successRate": "{rate}% success"
   },
   "SubmitExam": {

@@ -340,6 +340,8 @@
     "unanswered": "Sem resposta",
     "relatedTutorial": "Tutorial relacionado:",
     "officialSource": "Fonte oficial:",
+    "sourceOpenNewTab": "Abrir em nova aba",
+    "sourceClose": "Fechar",
     "successRate": "{rate}% de acerto"
   },
   "SubmitExam": {
