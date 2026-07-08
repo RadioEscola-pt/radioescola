@@ -199,25 +199,27 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
         </div>
       </div>
 
-      {showImage && question.img && (
-        <div className="mb-3">
-          {/* eslint-disable-next-line @next/next/no-img-element -- arbitrary-aspect question diagram with no stored dimensions; not a next/image fit */}
-          <img src={question.img} alt="" className="w-full rounded-lg border border-slate-200 dark:border-slate-700" />
+      <div className={showImage && question.img ? "flex flex-col gap-4 sm:flex-row sm:items-start" : undefined}>
+        <div className="space-y-2 sm:flex-[2] sm:min-w-0">
+          {question.options.map((option, idx) => (
+            <AnswerOption
+              key={idx}
+              letter={String.fromCharCode(65 + idx)}
+              state={getOptionState(idx)}
+              disabled={disabled || ended}
+              onClick={() => onSelect(idx)}
+            >
+              {option}
+            </AnswerOption>
+          ))}
         </div>
-      )}
 
-      <div className="space-y-2">
-        {question.options.map((option, idx) => (
-          <AnswerOption
-            key={idx}
-            letter={String.fromCharCode(65 + idx)}
-            state={getOptionState(idx)}
-            disabled={disabled || ended}
-            onClick={() => onSelect(idx)}
-          >
-            {option}
-          </AnswerOption>
-        ))}
+        {showImage && question.img && (
+          <div className="sm:flex-1 sm:min-w-0">
+            {/* eslint-disable-next-line @next/next/no-img-element -- arbitrary-aspect question diagram with no stored dimensions; not a next/image fit */}
+            <img src={question.img} alt="" className="max-w-full h-auto max-h-96 rounded-lg border border-slate-200 dark:border-slate-700" />
+          </div>
+        )}
       </div>
 
       {ended && (

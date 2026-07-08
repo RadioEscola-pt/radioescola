@@ -382,38 +382,40 @@ export default function ExamPage() {
                 {q.question}
               </p>
 
-              {q.img && (
-                <div className="mb-3">
-                  {/* eslint-disable-next-line @next/next/no-img-element -- arbitrary-aspect question diagram with no stored dimensions; not a next/image fit */}
-                  <img src={q.img} alt="" className="w-full rounded-lg border border-slate-200 dark:border-slate-700" />
+              <div className={q.img ? "flex flex-col gap-4 sm:flex-row sm:items-start" : undefined}>
+                <div className="space-y-2 sm:flex-[2] sm:min-w-0">
+                  {q.options.map((opt, oi) => {
+                    const isSelected = selected === oi;
+                    const isCorrect = oi === q.correctIndex;
+                    let state: AnswerOptionState = "default";
+
+                    if (quizEnded) {
+                      if (isCorrect) state = "correct";
+                      else if (isSelected) state = "incorrect";
+                    } else if (isSelected) {
+                      state = "selected";
+                    }
+
+                    return (
+                      <AnswerOption
+                        key={oi}
+                        letter={String.fromCharCode(65 + oi)}
+                        state={state}
+                        disabled={timeUp || quizEnded}
+                        onClick={() => setAnswers(prev => ({ ...prev, [q.id]: oi }))}
+                      >
+                        {opt}
+                      </AnswerOption>
+                    );
+                  })}
                 </div>
-              )}
 
-              <div className="space-y-2">
-                {q.options.map((opt, oi) => {
-                  const isSelected = selected === oi;
-                  const isCorrect = oi === q.correctIndex;
-                  let state: AnswerOptionState = "default";
-
-                  if (quizEnded) {
-                    if (isCorrect) state = "correct";
-                    else if (isSelected) state = "incorrect";
-                  } else if (isSelected) {
-                    state = "selected";
-                  }
-
-                  return (
-                    <AnswerOption
-                      key={oi}
-                      letter={String.fromCharCode(65 + oi)}
-                      state={state}
-                      disabled={timeUp || quizEnded}
-                      onClick={() => setAnswers(prev => ({ ...prev, [q.id]: oi }))}
-                    >
-                      {opt}
-                    </AnswerOption>
-                  );
-                })}
+                {q.img && (
+                  <div className="sm:flex-1 sm:min-w-0">
+                    {/* eslint-disable-next-line @next/next/no-img-element -- arbitrary-aspect question diagram with no stored dimensions; not a next/image fit */}
+                    <img src={q.img} alt="" className="max-w-full h-auto max-h-96 rounded-lg border border-slate-200 dark:border-slate-700" />
+                  </div>
+                )}
               </div>
             </div>
           );
