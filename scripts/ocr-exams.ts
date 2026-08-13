@@ -58,6 +58,14 @@ type Options = {
   lang: string;
   jobs: number;
   minScore: number;
+  /**
+   * Stricter bar for writing a page number than for reporting a match.
+   * A borderline match once put a question on page 7 because page 7 carried
+   * it as an *answer option* of a different question; that scored 0.583, just
+   * over the reporting threshold. Reporting a doubtful match is cheap, writing
+   * one is not.
+   */
+  minFillScore: number;
   /** Reject a match whose runner-up is nearly as good. */
   minMargin: number;
   refresh: boolean;
@@ -74,6 +82,7 @@ function parseArgs(argv: string[]): Options {
     lang: "",
     jobs: Math.max(1, cpus().length - 2),
     minScore: 0.55,
+    minFillScore: 0.65,
     minMargin: 0.08,
     refresh: false,
     apply: false,
@@ -92,6 +101,7 @@ function parseArgs(argv: string[]): Options {
     else if (arg === "--lang") opts.lang = next();
     else if (arg === "--jobs") opts.jobs = Math.max(1, Number(next()));
     else if (arg === "--min-score") opts.minScore = Number(next());
+    else if (arg === "--min-fill-score") opts.minFillScore = Number(next());
     else if (arg === "--min-margin") opts.minMargin = Number(next());
     else if (arg === "--report") opts.reportPath = next();
     else if (arg === "--refresh") opts.refresh = true;
@@ -388,14 +398,15 @@ export type PageFill = {
  */
 export function planPageFills(
   matched: Match[],
-  categories: Map<string, ContentCategory>
+  categories: Map<string, ContentCategory>,
+  minFillScore: number
 ): { fills: PageFill[]; ambiguous: PageFill[]; disagreements: PageFill[] } {
   const fills: PageFill[] = [];
   const ambiguous: PageFill[] = [];
   const disagreements: PageFill[] = [];
 
   for (const m of matched) {
-    if (m.questionId === null) continue;
+    if (m.questionId === null || m.score < minFillScore) continue;
     const cat = m.pdf.slice(3, 4);
     const question = categories.get(cat)?.questions.find((q) => q.id === m.questionId);
     if (!question) continue;
@@ -581,9 +592,9 @@ async function main() {
     }
   }
 
-  const { fills, ambiguous, disagreements } = planPageFills(matched, categories);
+  const { fills, ambiguous, disagreements } = planPageFills(matched, categories, o.minFillScore);
 
-  console.log(`\nPage numbers for already-declared references:`);
+  console.log(`\nPage numbers for already-declared references (score >= ${o.minFillScore}):`);
   console.log(`  fillable now       : ${fills.length}`);
   console.log(`  already recorded   : ${matched.length - fills.length - ambiguous.length - disagreements.length}`);
   console.log(`  ambiguous (skipped): ${ambiguous.length}`);
