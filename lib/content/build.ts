@@ -207,6 +207,37 @@ export function findDanglingPdfs(
     .sort((a, b) => b.refs - a.refs);
 }
 
+/**
+ * Finds images referenced by questions that are not in public/.
+ *
+ * Covers both the frontmatter `image` field and `<img src>` inside explanation
+ * bodies. All of cat1's question figures were missing from this repo for
+ * however long — 15 questions rendered a broken image — because nothing
+ * connected a reference to a file on disk.
+ */
+export function findMissingImages(
+  categories: ContentCategory[],
+  publicDir: string
+): { image: string; questions: number[] }[] {
+  const found = new Map<string, number[]>();
+  const record = (image: string, id: number) => {
+    const rel = image.replace(/^\//, "");
+    if (!rel.startsWith("images/")) return;
+    if (existsSync(join(publicDir, rel))) return;
+    found.set(rel, [...(found.get(rel) ?? []), id]);
+  };
+
+  for (const category of categories) {
+    for (const q of category.questions) {
+      if (q.image) record(q.image, q.id);
+      for (const m of (q.explanation ?? "").matchAll(/<img[^>]+src=['"]([^'"]+)['"]/gi)) {
+        record(m[1]!, q.id);
+      }
+    }
+  }
+  return [...found.entries()].map(([image, questions]) => ({ image, questions })).sort();
+}
+
 /** Baseline of references known to point at papers we do not have. */
 export const MISSING_EXAMS_FILE = join("content", "missing-exams.json");
 

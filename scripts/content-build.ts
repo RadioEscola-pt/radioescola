@@ -18,6 +18,7 @@ import {
   loadCategory,
   emitCategory,
   findDanglingPdfs,
+  findMissingImages,
   loadMissingExamsBaseline,
   MISSING_EXAMS_FILE,
 } from "../lib/content/build";
@@ -65,6 +66,16 @@ for (const category of CATEGORIES) {
 if (checked === 0) {
   console.log("no migrated categories found — nothing to build");
   process.exit(0);
+}
+
+const missingImages = findMissingImages(loaded, "public");
+if (missingImages.length > 0) {
+  console.error(`\n${missingImages.length} referenced image(s) missing from public/:`);
+  for (const m of missingImages) {
+    console.error(`  ${m.image}  (question${m.questions.length === 1 ? "" : "s"} ${m.questions.join(", ")})`);
+  }
+  console.error("\nAdd the file, or remove the reference.");
+  process.exit(1);
 }
 
 // Every `sources` entry must point at a real PDF. Known-absent papers are
