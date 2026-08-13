@@ -64,7 +64,7 @@ Uses `next-intl` v4. Default locale is **Portuguese (pt)**, also supports Englis
 - **Question correctIndex is 1-indexed** in JSON data, converted to 0-indexed in code: `(qObj.correctIndex ?? 1) - 1`
 - **Category order is 3→2→1** (not ascending). Category 3 = beginner, 1 = advanced (Portuguese licensing progression)
 - **Exam scoring penalty**: -0.25 per wrong answer (hardcoded in `lib/config/exam.ts`)
-- **Image paths**: Questions store just the filename; code prepends `/images/cat{id}/`
+- **Image paths**: Questions store the `img` field as a full public-relative path (`images/cat{id}/file.png`). `normalizeImg()` in `lib/data.ts` makes it absolute (`/images/...`); it also handles bare filenames and already-absolute paths. Consumers (`QuestionCard`, exam page) use the normalized `question.img` directly, so don't re-prepend the path
 - **Progress version migration**: Auto-migrates localStorage on load if version < `PROGRESS_VERSION` (currently V3)
 - **Exam replay via URL params**: `q=` (question IDs), `a=` (base36-encoded answers), `t=` (time remaining) — no server storage needed
 - **Calculator is a modal context**, not a route — opening calculators doesn't change URL

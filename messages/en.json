@@ -340,6 +340,8 @@
     "unanswered": "Unanswered",
     "relatedTutorial": "Related tutorial:",
     "officialSource": "Official source:",
+    "sourceOpenNewTab": "Open in new tab",
+    "sourceClose": "Close",
     "successRate": "{rate}% success"
   },
   "SubmitExam": {
@@ -391,6 +393,7 @@
       "successDesc": "Thanks for your contribution! We'll add the questions to the bank as soon as possible.",
       "submitAnother": "Submit another exam",
       "error": "Couldn't submit the exam. Check your connection and try again.",
+      "timeout": "The upload took too long. Check your connection and try again.",
       "retry": "Try again"
     },
     "progress": {
@@ -792,17 +795,9 @@
       },
       "results": {
         "title": "Results and callsign",
-        "description": "Results are communicated on the same day. If approved, you receive your official callsign and can start operating according to your category."
+        "description": "Results are shown automatically at the end of the exam. If approved, you receive your official callsign and can start operating according to your category."
       }
-    },
-    "maintenanceTitle": "License Maintenance",
-    "maintenance": {
-      "annualRenewal": "Annual license renewal.",
-      "annualFees": "Payment of annual fees.",
-      "compliance": "Compliance with regulations and good practices of amateur radio."
-    },
-    "ctaText": "Ready to get started? Most operators begin with Category 3.",
-    "ctaButton": "Start studying"
+    }
   },
   "Share": {
     "title": "Share",

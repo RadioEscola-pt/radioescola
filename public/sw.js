@@ -1,6 +1,6 @@
 /// <reference lib="webworker" />
 
-const CACHE_NAME = "radioescola-v1";
+const CACHE_NAME = "radioescola-v2";
 
 // Static assets to cache on install
 const STATIC_ASSETS = [
@@ -64,9 +64,11 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // For data files, use cache-first strategy (they rarely change)
+  // For data files, use stale-while-revalidate: serve the cached copy instantly
+  // (also enables offline), but refresh the cache in the background so edits to
+  // the question data (e.g. fontePages) are picked up on the next load.
   if (url.pathname.startsWith("/data/") && url.pathname.endsWith(".json")) {
-    event.respondWith(cacheFirst(request));
+    event.respondWith(staleWhileRevalidate(request));
     return;
   }
 
@@ -79,27 +81,6 @@ self.addEventListener("fetch", (event) => {
   // For static assets, use stale-while-revalidate
   event.respondWith(staleWhileRevalidate(request));
 });
-
-// Cache-first strategy (good for static data that rarely changes)
-async function cacheFirst(request) {
-  const cached = await caches.match(request);
-  if (cached) {
-    return cached;
-  }
-  try {
-    const response = await fetch(request);
-    if (response.ok) {
-      const cache = await caches.open(CACHE_NAME);
-      cache.put(request, response.clone());
-    }
-    return response;
-  } catch {
-    return new Response(JSON.stringify({ error: "Offline" }), {
-      status: 503,
-      headers: { "Content-Type": "application/json" },
-    });
-  }
-}
 
 // Network-first strategy (good for API requests)
 async function networkFirst(request) {

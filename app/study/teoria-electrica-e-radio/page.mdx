@@ -1,0 +1,146 @@
+---
+title: Teoria Eléctrica, Electromagnética e de Rádio
+description: Condutividade, Lei de Ohm, potência, fontes de electricidade, sinais e modulação (AM, SSB, FM).
+categories: [3, 2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Teoria Eléctrica, Electromagnética e de Rádio
+
+Este capítulo reúne os fundamentos eléctricos e de rádio do programa de exame: a forma como a corrente se comporta nos materiais, a Lei de Ohm, a potência, as fontes de energia, os tipos de sinais e a modulação. É a base sobre a qual assentam os capítulos seguintes (componentes, circuitos, emissores e receptores).
+
+## 1.1 Condutividade
+
+Os materiais comportam-se de formas diferentes perante a passagem de corrente eléctrica:
+
+- **Condutor:** permite a passagem fácil da corrente. Exemplos: cobre, alumínio, ouro.
+- **Semicondutor:** conduz apenas em determinadas condições. Exemplos: silício e germânio. É a base dos díodos e transístores.
+- **Isolador:** impede a passagem da corrente. Exemplos: borracha, vidro, plástico, ar seco.
+
+Três grandezas descrevem um circuito eléctrico:
+
+- **Corrente (I)** — o fluxo de carga eléctrica. Unidade: **ampere (A)**.
+- **Tensão (U)** — a diferença de potencial que "empurra" a corrente. Unidade: **volt (V)**.
+- **Resistência (R)** — a oposição à passagem da corrente. Unidade: **ohm (Ω)**.
+
+### Lei de Ohm
+
+A Lei de Ohm relaciona as três grandezas:
+
+$$U = R \times I$$
+
+A partir desta relação podemos calcular qualquer uma das grandezas conhecendo as outras duas:
+
+$$R = \frac{U}{I} \qquad I = \frac{U}{R}$$
+
+### Potência eléctrica
+
+A **potência (P)** é a energia consumida ou dissipada por unidade de tempo. Unidade: **watt (W)**.
+
+$$P = U \times I$$
+
+Combinando com a Lei de Ohm, obtêm-se também:
+
+$$P = R \times I^2 \qquad P = \frac{U^2}{R}$$
+
+## 1.2 Fontes de electricidade
+
+Existem duas fontes de energia eléctrica de referência:
+
+- **Bateria (ou pilha):** fornece **corrente contínua (CC / DC)**, em que a tensão mantém a mesma polaridade ao longo do tempo. É uma fonte química de tensão.
+- **Rede eléctrica:** fornece **corrente alternada (CA / AC)**, em que a tensão inverte a polaridade periodicamente. Em Portugal, a rede doméstica é de 230 V a 50 Hz.
+
+## 1.3 Ondas de rádio
+
+As ondas de rádio são **ondas electromagnéticas** que se propagam no vácuo à velocidade da luz (c ≈ 3 × 10⁸ m/s). A velocidade, a frequência (f) e o comprimento de onda (λ) relacionam-se por:
+
+$$c = f \times \lambda$$
+
+A unidade de frequência é o **hertz (Hz)**. Quanto maior a frequência, menor o comprimento de onda.
+
+> Este tema é aprofundado no guia [Campo Electromagnético e Ondas de Rádio](/study/campo-electromagnetico), incluindo a polarização.
+
+## 1.4 Sinais áudio e digitais
+
+- **Sinal áudio:** sinal analógico de variação contínua, dentro da gama audível (aproximadamente 20 Hz a 20 kHz). É o tipo de sinal que representa a voz ou a música.
+- **Sinal digital:** representado por níveis discretos (por exemplo, "0" e "1"). Tem maior imunidade ao ruído, porque o receptor só precisa de distinguir entre um número limitado de estados.
+
+## 1.5 Sinais modulados
+
+**Modular** é o processo de sobrepor a informação (o sinal modulante) a uma **portadora** de rádio-frequência, para que possa ser transmitida por uma antena. Os três tipos de modulação do programa são:
+
+- **AM — Modulação de Amplitude (A3E):** a amplitude da portadora varia ao ritmo do sinal.
+  - *Vantagens:* receptores simples e baratos.
+  - *Desvantagens:* ocupa mais largura de banda e é pouco eficiente (grande parte da potência fica na portadora); é sensível ao ruído de amplitude.
+- **SSB — Banda Lateral Única (J3E):** transmite apenas uma banda lateral e suprime a portadora.
+  - *Vantagens:* muito eficiente em potência e em largura de banda.
+  - *Desvantagens:* o receptor é mais complexo (necessita de um oscilador de batimento, BFO) e a sintonia é mais crítica.
+- **FM — Modulação de Frequência (F3E):** a frequência da portadora varia ao ritmo do sinal.
+  - *Vantagens:* boa qualidade de áudio e grande imunidade ao ruído de amplitude.
+  - *Desvantagens:* ocupa bastante largura de banda e exige um sinal mais forte (efeito de captura).
+
+### Portadora, bandas laterais e largura de banda
+
+Ao modular uma portadora em amplitude, surgem duas **bandas laterais** (uma acima e outra abaixo da frequência da portadora). A **largura de banda** ocupada por uma emissão AM de dupla banda lateral é aproximadamente o **dobro** da frequência máxima do sinal modulante.
+
+## 1.6 Potência
+
+Num emissor distinguem-se duas potências:
+
+- **Potência CC de entrada (DC input):** a potência contínua fornecida ao andar final do emissor (P = U × I).
+- **Potência RF de saída (RF output):** a potência de rádio-frequência efectivamente entregue à antena.
+
+A potência de saída é **sempre inferior** à potência de entrada, porque nenhum andar amplificador tem rendimento de 100 % — parte da energia perde-se sob a forma de calor.
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - Qual é a unidade de resistência eléctrica?"
+    options={["Ampere","Volt","Ohm","Watt"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="2 - Aplicando a Lei de Ohm, qual é a corrente num circuito com 12 V aos terminais de uma resistência de 4 Ω?"
+    options={["3 A","48 A","0,33 A","16 A"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="3 - Que potência é dissipada numa resistência percorrida por 2 A com 10 V aos seus terminais?"
+    options={["5 W","12 W","20 W","0,2 W"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="4 - Qual dos seguintes materiais é um semicondutor?"
+    options={["Cobre","Silício","Borracha","Vidro"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="5 - Uma bateria fornece corrente:"
+    options={["Contínua (DC)","Alternada (AC)","De alta frequência","Modulada"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="6 - A rede eléctrica doméstica em Portugal fornece corrente:"
+    options={["Contínua a 12 V","Alternada a 230 V e 50 Hz","Contínua a 230 V","Alternada a 12 V e 60 Hz"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="7 - Qual é a principal vantagem da modulação em banda lateral única (SSB / J3E) face à AM?"
+    options={["O receptor é mais simples","Maior eficiência de potência e de largura de banda","Melhor reprodução de música","Não necessita de antena"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="8 - Comparada com AM e SSB, a modulação de frequência (FM) caracteriza-se por:"
+    options={["Ocupar menos largura de banda","Ser mais imune ao ruído de amplitude","Usar menos potência","Ter alcance ilimitado"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="9 - Numa emissão AM de dupla banda lateral, a largura de banda ocupada é aproximadamente:"
+    options={["Igual à frequência do sinal modulante","O dobro da frequência máxima do sinal modulante","Metade da frequência da portadora","Independente do sinal modulante"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="10 - A potência de RF de saída de um emissor, em relação à potência CC de entrada do andar final, é:"
+    options={["Sempre maior","Sempre menor","Sempre igual","Nula"]}
+    correct="B" />

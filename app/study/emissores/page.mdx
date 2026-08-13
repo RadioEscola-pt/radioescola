@@ -1,0 +1,89 @@
+---
+title: Emissores
+description: Diagramas de blocos de emissores CW, SSB e FM, função de cada andar e características do emissor.
+categories: [3, 2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Emissores
+
+Um **emissor** gera um sinal de rádio-frequência, junta-lhe a informação a transmitir (modulação) e amplifica-o até ao nível necessário para alimentar a antena. É o complemento do receptor. Este capítulo trata os diagramas de blocos por modo, a função de cada andar e as características de um bom emissor.
+
+## 5.1 Diagramas de blocos por modo
+
+- **CW (A1A):** oscilador → (separador e multiplicador) → amplificador de potência → filtro de saída → antena. A informação é transmitida ligando e desligando a portadora (manipulação).
+- **SSB (J3E):** o **modulador SSB** gera o sinal de banda lateral única a baixa frequência; este é convertido para a frequência de saída e amplificado por um amplificador de potência **linear** (para não distorcer o sinal).
+- **FM (F3E):** um **modulador de frequência** faz variar a frequência do oscilador ao ritmo do áudio; segue-se a multiplicação, a amplificação de potência e o filtro de saída.
+
+## 5.2 Função de cada andar
+
+- **Oscilador (cristal e VFO):** gera a frequência de base do sinal. Um oscilador a **cristal** dá uma frequência fixa e muito estável; um **VFO** (oscilador de frequência variável) permite variar a frequência de emissão.
+- **Separador (buffer):** isola o oscilador dos andares seguintes, evitando que as variações de carga afectem a sua frequência. Melhora a **estabilidade**.
+- **Excitador (driver):** amplifica o sinal o suficiente para "atacar" o amplificador de potência.
+- **Multiplicador de frequência:** multiplica a frequência do oscilador para obter a frequência de saída pretendida.
+- **Amplificador de potência (PA):** eleva a potência do sinal até ao nível final, antes da antena.
+- **Filtro de saída (filtro em π):** atenua as **harmónicas** e os sinais **espúrios** antes de chegarem à antena.
+- **Modulador de frequência:** faz variar a frequência do oscilador ao ritmo do sinal (FM).
+- **Modulador SSB:** gera o sinal de banda lateral única, **suprimindo a portadora** e uma das bandas laterais.
+- **Fonte de alimentação:** fornece as tensões contínuas de que os vários andares necessitam.
+
+## 5.3 Características do emissor
+
+- **Estabilidade de frequência:** capacidade de manter a frequência constante, sem deriva. É essencial para não sair da banda atribuída nem causar interferências.
+- **Largura de banda de RF:** a gama de frequências ocupada pela emissão. Depende do modo (a SSB é estreita, a FM é larga).
+- **Bandas laterais:** resultam da modulação da portadora.
+- **Potência de saída:** a potência de RF efectivamente entregue à antena.
+- **Espúrios e harmónicas:** sinais indesejados fora da frequência pretendida. Devem ser minimizados (com o filtro de saída) para não interferir com outros serviços.
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - Qual é a função do amplificador de potência de um emissor?"
+    options={["Gerar a frequência de base","Elevar a potência do sinal antes da antena","Recuperar o áudio","Estabilizar a fonte de alimentação"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="2 - Qual é a diferença entre um oscilador a cristal e um VFO?"
+    options={["O cristal dá frequência variável e o VFO fixa","O cristal dá frequência fixa e estável e o VFO permite variá-la","São exactamente iguais","Nenhum gera frequência"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="3 - Qual é a função do andar separador (buffer)?"
+    options={["Amplificar o áudio","Isolar o oscilador e melhorar a estabilidade de frequência","Filtrar as harmónicas","Modular a portadora"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="4 - Para que serve o filtro de saída (filtro em π) de um emissor?"
+    options={["Aumentar a potência","Atenuar as harmónicas e os sinais espúrios","Gerar a portadora","Estabilizar a frequência"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="5 - O que faz o multiplicador de frequência?"
+    options={["Divide a frequência do sinal de áudio","Multiplica a frequência do oscilador para obter a frequência de saída","Converte CA em CC","Amplifica o sinal recebido"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="6 - Sinais indesejados cujas frequências são múltiplos inteiros da frequência fundamental designam-se por:"
+    options={["Bandas laterais","Harmónicas","Ruído de fundo","Batimentos"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="7 - A estabilidade de frequência de um emissor refere-se à sua capacidade de:"
+    options={["Aumentar a potência","Manter a frequência constante, sem deriva","Reduzir o consumo","Ampliar a largura de banda"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="8 - Que modo de emissão exige um amplificador de potência linear?"
+    options={["CW (A1A)","FM (F3E)","SSB (J3E)","Todos indistintamente"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="9 - O modulador de SSB caracteriza-se por:"
+    options={["Suprimir a portadora e uma das bandas laterais","Aumentar a potência da portadora","Multiplicar a frequência","Filtrar o áudio"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="10 - Num emissor de FM, a informação é transmitida fazendo variar a:"
+    options={["Amplitude da portadora","Frequência da portadora","Potência da fonte de alimentação","Impedância da antena"]}
+    correct="B" />

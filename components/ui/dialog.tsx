@@ -7,10 +7,12 @@ type BaseProps = React.HTMLAttributes<HTMLDivElement> & { children?: React.React
 export function Dialog({
   open,
   onOpenChange,
+  className,
   children
 }: {
   open: boolean;
   onOpenChange?: (v: boolean) => void;
+  className?: string;
   children: React.ReactNode
 }) {
   const [shouldRender, setShouldRender] = React.useState(open);
@@ -52,7 +54,8 @@ export function Dialog({
           "relative z-10 w-full max-w-2xl mx-4 transition-all duration-200",
           isAnimating
             ? "opacity-100 scale-100 translate-y-0"
-            : "opacity-0 scale-95 translate-y-4"
+            : "opacity-0 scale-95 translate-y-4",
+          className
         )}
       >
         {children}

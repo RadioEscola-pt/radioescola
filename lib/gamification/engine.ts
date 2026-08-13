@@ -204,8 +204,11 @@ export function processExamComplete(
   const dailyResult = updateDailyGoalProgress(newState.dailyProgress, "exams_taken", 1);
   newState.dailyProgress = dailyResult.updated;
 
-  // Exam questions also count toward questions_answered and questions_correct goals
-  const questionsResult = updateDailyGoalProgress(newState.dailyProgress, "questions_answered", exam.totalQuestions);
+  // Exam questions also count toward questions_answered and questions_correct goals.
+  // Only questions the user actually answered count — unanswered blanks are excluded
+  // (exam.totalQuestions is the full sample size, e.g. 40, regardless of how many were answered).
+  const answeredQuestions = exam.correctCount + exam.incorrectCount;
+  const questionsResult = updateDailyGoalProgress(newState.dailyProgress, "questions_answered", answeredQuestions);
   newState.dailyProgress = questionsResult.updated;
   const correctResult = updateDailyGoalProgress(newState.dailyProgress, "questions_correct", exam.correctCount);
   newState.dailyProgress = correctResult.updated;
@@ -213,7 +216,7 @@ export function processExamComplete(
   // Also update lifetime question stats
   newState.lifetimeStats = {
     ...newState.lifetimeStats,
-    questionsAnswered: newState.lifetimeStats.questionsAnswered + exam.totalQuestions,
+    questionsAnswered: newState.lifetimeStats.questionsAnswered + answeredQuestions,
     questionsCorrect: newState.lifetimeStats.questionsCorrect + exam.correctCount,
   };
 
@@ -446,7 +449,11 @@ export function processDrillComplete(
   state: GamificationState,
   correctAnswers: number,
   totalQuestions: number,
-  progress?: UserProgress
+  progress?: UserProgress,
+  // Number of questions actually answered (excludes skips). Defaults to
+  // totalQuestions for backward compatibility. totalQuestions is still used
+  // to determine a perfect score (all questions correct).
+  answeredQuestions: number = totalQuestions
 ): { newState: GamificationState; result: GamificationResult } {
   if (!state.settings.enabled) {
     return { newState: state, result: createEmptyResult(state) };
@@ -479,7 +486,7 @@ export function processDrillComplete(
     ...newState.lifetimeStats,
     drillsCompleted: (newState.lifetimeStats.drillsCompleted ?? 0) + 1,
     drillsPerfect: (newState.lifetimeStats.drillsPerfect ?? 0) + (isPerfect ? 1 : 0),
-    questionsAnswered: newState.lifetimeStats.questionsAnswered + totalQuestions,
+    questionsAnswered: newState.lifetimeStats.questionsAnswered + answeredQuestions,
     questionsCorrect: newState.lifetimeStats.questionsCorrect + correctAnswers,
   };
 
@@ -488,7 +495,7 @@ export function processDrillComplete(
   const dailyResult = updateDailyGoalProgress(
     newState.dailyProgress,
     "questions_answered",
-    totalQuestions
+    answeredQuestions
   );
   newState.dailyProgress = dailyResult.updated;
 

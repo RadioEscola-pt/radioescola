@@ -7,6 +7,9 @@ import type { ExamPage, ExamSubmissionMetadata, SubmissionStatus } from "@/lib/t
 import { generatePdf, blobToBase64 } from "@/lib/utils/pdf-generator";
 import { Upload } from "lucide-react";
 
+// Abort an upload that hasn't responded within this window.
+const UPLOAD_TIMEOUT_MS = 60_000;
+
 export default function SubmitExamPage() {
   const t = useTranslations("SubmitExam");
   const [pages, setPages] = useState<ExamPage[]>([]);
@@ -46,15 +49,25 @@ export default function SubmitExamPage() {
       const pdfBase64 = await blobToBase64(pdfBlob);
 
       setStatus("uploading");
-      const response = await fetch("/api/submit-exam", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          pdfBase64,
-          metadata,
-          pageCount: pages.length,
-        }),
-      });
+      // Abort a stalled upload instead of hanging in "uploading" forever
+      // (common on flaky mobile connections after capturing photos).
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), UPLOAD_TIMEOUT_MS);
+      let response: Response;
+      try {
+        response = await fetch("/api/submit-exam", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            pdfBase64,
+            metadata,
+            pageCount: pages.length,
+          }),
+          signal: controller.signal,
+        });
+      } finally {
+        clearTimeout(timeoutId);
+      }
 
       const result = await response.json();
       if (!result.success) throw new Error(result.error || "Submission failed");
@@ -63,7 +76,11 @@ export default function SubmitExamPage() {
       setPages([]);
     } catch (err) {
       setStatus("error");
-      setError(err instanceof Error ? err.message : "Unknown error");
+      if (err instanceof DOMException && err.name === "AbortError") {
+        setError(t("submit.timeout"));
+      } else {
+        setError(err instanceof Error ? err.message : "Unknown error");
+      }
     }
   };
 

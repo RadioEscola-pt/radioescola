@@ -1,0 +1,78 @@
+---
+title: Medidas
+description: "Grandezas a medir e instrumentos: multímetro, medidor de ROE, ondámetro e carga fictícia."
+categories: [3, 2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Medidas
+
+Para construir, afinar e verificar o equipamento, o radioamador mede grandezas eléctricas e de rádio-frequência. Este capítulo trata o que se mede e com que instrumentos.
+
+## 8.1 Grandezas a medir
+
+- **Tensão CC e CA** (volt) — mede-se com um **voltímetro**, ligado **em paralelo** (aos terminais do componente). Um voltímetro tem alta impedância.
+- **Corrente CC e CA** (ampere) — mede-se com um **amperímetro**, ligado **em série** com o circuito. Um amperímetro tem baixa impedância.
+- **Resistência** (ohm) — mede-se com um **ohmímetro**, com o circuito **desligado da alimentação**.
+- **Potência CC e RF** (watt) — mede-se com um **wattímetro**.
+- **Frequência** (hertz) — mede-se com um **frequencímetro** ou verifica-se com um ondámetro.
+
+## 8.2 Instrumentos de medida
+
+- **Multímetro (analógico e digital):** mede **tensão, corrente e resistência** (V, A, Ω) em várias gamas. O modelo **analógico** usa um ponteiro sobre uma escala; o **digital** apresenta o valor num mostrador numérico.
+- **Medidor de ROE (SWR meter):** mede a **relação de onda estacionária** na linha de transmissão, indicando a qualidade da **adaptação** entre o emissor e a antena. Uma **ROE de 1:1** corresponde a uma adaptação perfeita.
+- **Ondámetro de absorção:** instrumento simples que permite **verificar a frequência** de um sinal de RF e **detectar harmónicas**.
+- **Carga fictícia (dummy load):** uma resistência **não indutiva** que substitui a antena, dissipando a potência do emissor sob a forma de **calor**. Permite afinar e testar o emissor **sem radiar** sinal para o ar, evitando interferências.
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - Como se liga um amperímetro para medir a corrente num circuito?"
+    options={["Em paralelo com o componente","Em série com o circuito","Aos terminais da fonte","Não é preciso ligar"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="2 - Como se liga um voltímetro para medir uma tensão?"
+    options={["Em série com o circuito","Em paralelo (aos terminais)","Depois de cortar o circuito","Através de uma carga fictícia"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="3 - Que instrumento mede tensão, corrente e resistência em várias gamas?"
+    options={["Ondámetro","Multímetro","Medidor de ROE","Carga fictícia"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="4 - O que indica um medidor de ROE (SWR)?"
+    options={["A potência de saída em watt","A qualidade da adaptação entre o emissor e a antena","A frequência do sinal","A tensão da fonte de alimentação"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="5 - Uma relação de onda estacionária (ROE) de 1:1 significa:"
+    options={["Adaptação perfeita","Antena em curto-circuito","Antena em circuito aberto","Máxima potência reflectida"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="6 - Para que serve uma carga fictícia (dummy load)?"
+    options={["Amplificar o sinal recebido","Substituir a antena, dissipando a potência em calor para testar sem radiar","Medir a frequência","Estabilizar a tensão"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="7 - Antes de medir uma resistência com um ohmímetro, o circuito deve estar:"
+    options={["Ligado à alimentação","Desligado da alimentação","Em emissão","Ligado à antena"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="8 - Que instrumento permite verificar a frequência de um sinal e detectar harmónicas?"
+    options={["Multímetro","Ondámetro de absorção","Carga fictícia","Voltímetro"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="9 - A potência eléctrica ou de RF mede-se em:"
+    options={["Volt","Ampere","Watt","Ohm"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="10 - Uma carga fictícia deve ser uma resistência:"
+    options={["Indutiva e de baixo valor","Não indutiva e capaz de dissipar a potência","Variável com a frequência","De valor infinito"]}
+    correct="B" />

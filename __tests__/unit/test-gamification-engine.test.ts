@@ -86,7 +86,13 @@ describe("processExamComplete", () => {
   });
 
   it("updates questions_answered daily goal from exam questions", () => {
-    const exam = makeExam({ totalQuestions: 40, correctCount: 35 });
+    // 35 correct + 3 incorrect = 38 answered; the 2 unanswered blanks are excluded.
+    const exam = makeExam({
+      totalQuestions: 40,
+      correctCount: 35,
+      incorrectCount: 3,
+      unansweredCount: 2,
+    });
     const { newState } = processExamComplete(state, progress, exam);
 
     // Find the questions_answered goal in daily progress
@@ -95,7 +101,7 @@ describe("processExamComplete", () => {
     );
     if (qaGoal) {
       const goalProgress = newState.dailyProgress?.progress[qaGoal.id] ?? 0;
-      expect(goalProgress).toBeGreaterThanOrEqual(40);
+      expect(goalProgress).toBeGreaterThanOrEqual(38);
     }
   });
 
@@ -112,12 +118,31 @@ describe("processExamComplete", () => {
     }
   });
 
-  it("updates lifetime questionsAnswered from exam", () => {
-    const exam = makeExam({ totalQuestions: 40, correctCount: 25 });
+  it("updates lifetime questionsAnswered from exam (excluding unanswered blanks)", () => {
+    // 25 correct + 10 incorrect = 35 answered; the 5 unanswered blanks are excluded.
+    const exam = makeExam({
+      totalQuestions: 40,
+      correctCount: 25,
+      incorrectCount: 10,
+      unansweredCount: 5,
+    });
     const { newState } = processExamComplete(state, progress, exam);
 
-    expect(newState.lifetimeStats.questionsAnswered).toBe(40);
+    expect(newState.lifetimeStats.questionsAnswered).toBe(35);
     expect(newState.lifetimeStats.questionsCorrect).toBe(25);
+  });
+
+  it("credits zero questionsAnswered for an exam ended without answering", () => {
+    const exam = makeExam({
+      totalQuestions: 40,
+      correctCount: 0,
+      incorrectCount: 0,
+      unansweredCount: 40,
+    });
+    const { newState } = processExamComplete(state, progress, exam);
+
+    expect(newState.lifetimeStats.questionsAnswered).toBe(0);
+    expect(newState.lifetimeStats.questionsCorrect).toBe(0);
   });
 
   it("updates exams_taken daily goal", () => {
@@ -340,8 +365,13 @@ describe("daily goal consistency across activity types", () => {
   });
 
   it("exam questions count the same as individual questions for daily goals", () => {
-    // Answer 40 questions via exam
-    const exam = makeExam({ totalQuestions: 40, correctCount: 30 });
+    // Answer all 40 questions via exam (30 correct, 10 incorrect, 0 unanswered)
+    const exam = makeExam({
+      totalQuestions: 40,
+      correctCount: 30,
+      incorrectCount: 10,
+      unansweredCount: 0,
+    });
     const { newState: examState } = processExamComplete(state, progress, exam);
 
     // Answer 40 questions individually
@@ -375,6 +405,14 @@ describe("daily goal consistency across activity types", () => {
     const { newState } = processDrillComplete(state, 8, 10);
 
     expect(newState.lifetimeStats.questionsAnswered).toBe(10);
+    expect(newState.lifetimeStats.questionsCorrect).toBe(8);
+  });
+
+  it("drill counts only answered questions, excluding skipped ones", () => {
+    // 8 correct out of 10, but only 9 were actually answered (1 skipped).
+    const { newState } = processDrillComplete(state, 8, 10, undefined, 9);
+
+    expect(newState.lifetimeStats.questionsAnswered).toBe(9);
     expect(newState.lifetimeStats.questionsCorrect).toBe(8);
   });
 });

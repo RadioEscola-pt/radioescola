@@ -1,0 +1,92 @@
+---
+title: Segurança
+description: Choque eléctrico, rede eléctrica e ligação à terra, fusíveis, tensões elevadas, condensadores carregados e trovoadas.
+categories: [3, 2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Segurança
+
+Uma estação de rádio trabalha com **tensões perigosas** e antenas expostas às **trovoadas**. A segurança de pessoas e equipamentos é, por isso, essencial. Este capítulo trata os riscos eléctricos, a alimentação a partir da rede, os fusíveis e a protecção contra descargas atmosféricas.
+
+## 10.1 O corpo humano
+
+**Consequências do choque eléctrico:** a corrente que atravessa o corpo pode provocar contracções musculares, queimaduras, paragem respiratória e **fibrilação ou paragem cardíaca**. É a **corrente** (e não apenas a tensão) que é perigosa; mesmo correntes pequenas a atravessar o coração podem ser fatais.
+
+**Precauções:** desligar a alimentação antes de trabalhar no equipamento, não trabalhar sozinho, usar ferramentas isoladas, descarregar os condensadores e assegurar boas ligações de terra.
+
+## 10.2 Rede eléctrica
+
+A alimentação a partir da rede usa três condutores, com o seguinte **código de cores**:
+
+- **Fase** — castanho (ou preto/cinzento);
+- **Neutro** — azul;
+- **Terra de protecção** — verde/amarelo.
+
+**Importância de boas ligações de terra:** a terra de protecção liga as **massas metálicas** dos equipamentos à terra. Assim, se uma avaria colocar a carcaça sob tensão, a corrente escoa-se para a terra e faz actuar os dispositivos de protecção, evitando o choque.
+
+**Fusíveis:** protegem o circuito contra **sobreintensidades**, fundindo quando a corrente excede o valor nominal. Os **fusíveis rápidos** actuam de imediato (para electrónica sensível) e os **fusíveis lentos (retardados)** toleram picos momentâneos de corrente (por exemplo, no arranque). Deve usar-se sempre o fusível do **valor correcto** — nunca o substituir por um de valor mais alto nem por um fio.
+
+## 10.3 Perigos
+
+- **Tensões elevadas:** presentes nas fontes de alimentação e amplificadores; podem ser letais.
+- **Condensadores carregados:** podem reter uma carga perigosa mesmo **depois de o equipamento estar desligado**, devendo ser descarregados antes de se lhes tocar.
+
+## 10.4 Trovoadas
+
+- **Perigo:** as antenas exteriores podem ser atingidas por **descargas atmosféricas**, danificando os equipamentos e pondo pessoas em risco.
+- **Protecção:** durante as trovoadas, **desligar a antena** do equipamento e **ligá-la à terra**; utilizar descarregadores de sobretensão.
+- Assegurar uma boa **ligação à terra** dos equipamentos e dos mastros.
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - Num choque eléctrico, o que é sobretudo perigoso para o corpo humano é:"
+    options={["A tensão, independentemente da corrente","A corrente que atravessa o corpo","A frequência da rede","A cor do condutor"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="2 - Qual é a cor do condutor de terra de protecção?"
+    options={["Azul","Castanho","Verde/amarelo","Vermelho"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="3 - Qual é a cor do condutor neutro?"
+    options={["Azul","Castanho","Verde/amarelo","Preto"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="4 - Para que serve a ligação de terra de protecção de um equipamento?"
+    options={["Melhorar a recepção","Evitar que a carcaça fique sob tensão em caso de avaria, protegendo contra choques","Aumentar a potência","Reduzir o consumo"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="5 - Qual é a função de um fusível?"
+    options={["Estabilizar a tensão","Proteger o circuito contra sobreintensidades, fundindo quando a corrente é excessiva","Filtrar as harmónicas","Aumentar a corrente disponível"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="6 - É aceitável substituir um fusível queimado por outro de valor mais alto ou por um fio?"
+    options={["Sim, para não voltar a queimar","Não, pois compromete a protecção do circuito","Sim, se for do mesmo tamanho","Apenas em corrente contínua"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="7 - Depois de desligar um equipamento da alimentação, um condensador pode:"
+    options={["Ficar sempre totalmente descarregado","Reter uma carga perigosa e dever ser descarregado","Gerar a sua própria tensão indefinidamente","Aumentar a sua capacidade"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="8 - Durante uma trovoada, a antena exterior deve:"
+    options={["Ser mantida ligada ao equipamento","Ser desligada do equipamento e ligada à terra","Ser usada com mais potência","Ser retirada da terra"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="9 - Antes de trabalhar num equipamento com tensões elevadas deve-se:"
+    options={["Aumentar a potência","Desligar a alimentação e descarregar os condensadores","Ligar a antena","Retirar o fusível de terra"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="10 - Qual é a diferença entre um fusível rápido e um fusível lento (retardado)?"
+    options={["O lento tolera picos momentâneos de corrente; o rápido actua de imediato","O rápido suporta mais tensão","São exactamente iguais","O lento não protege o circuito"]}
+    correct="A" />

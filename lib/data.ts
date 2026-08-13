@@ -48,12 +48,36 @@ function normalizeNotes(value: unknown): string | null {
     .replace(/href=(['"])exams\//gi, 'href=$1/exams/');
 }
 
+function normalizeImg(value: unknown, cat: string): string | null {
+  if (typeof value !== 'string') return null;
+  const trimmed = value.trim();
+  if (!trimmed) return null;
+  // Already an absolute path (e.g. "/images/cat3/foo.png").
+  if (trimmed.startsWith('/')) return trimmed;
+  // Full public-relative path (e.g. "images/cat3/foo.png"): just make it absolute.
+  if (trimmed.startsWith('images/')) return `/${trimmed}`;
+  // Bare filename (e.g. "foo.png"): prepend the category image directory.
+  return `/images/cat${cat}/${trimmed}`;
+}
+
 function normalizeFonte(value: unknown): string[] | null {
   if (!Array.isArray(value)) return null;
   const filtered = value
     .map((item) => (typeof item === 'string' ? item.trim() : ''))
     .filter(Boolean);
   return filtered.length ? filtered : null;
+}
+
+function normalizeFontePages(value: unknown): Record<string, number> | null {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
+  const out: Record<string, number> = {};
+  for (const [key, page] of Object.entries(value as Record<string, unknown>)) {
+    const trimmed = key.trim();
+    if (trimmed && typeof page === 'number' && Number.isInteger(page) && page > 0) {
+      out[trimmed] = page;
+    }
+  }
+  return Object.keys(out).length ? out : null;
 }
 
 export async function loadData(): Promise<Data> {
@@ -73,9 +97,7 @@ export async function loadData(): Promise<Data> {
         const boundedCorrectIndex = options.length > 0
           ? Math.max(0, Math.min(options.length - 1, correctIndexRaw))
           : 0;
-        const imgPath = typeof qObj.img === 'string' && qObj.img.trim().length > 0
-          ? `/images/cat${cat}/${qObj.img}`
-          : null;
+        const imgPath = normalizeImg(qObj.img, cat);
         return {
           id: typeof qObj.uniqueID === 'number' ? qObj.uniqueID : 0,
           question: typeof qObj.question === 'string' ? qObj.question : '',
@@ -85,6 +107,7 @@ export async function loadData(): Promise<Data> {
           notes: normalizeNotes(qObj.notes),
           hasNotesMdx: notesIndex?.[cat]?.has(Number(qObj.uniqueID)) ?? false,
           fonte: normalizeFonte(qObj.fonte),
+          fontePages: normalizeFontePages(qObj.fontePages),
           tutorial: typeof qObj.tutorial === 'string' && qObj.tutorial.trim() ? qObj.tutorial.trim() : null,
           materia: typeof qObj.materia === 'string' && qObj.materia.trim() ? qObj.materia.trim() : null,
           calc: typeof qObj.calc === 'string' && qObj.calc.trim() ? qObj.calc.trim() : null,

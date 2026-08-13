@@ -340,6 +340,8 @@
     "unanswered": "Sem resposta",
     "relatedTutorial": "Tutorial relacionado:",
     "officialSource": "Fonte oficial:",
+    "sourceOpenNewTab": "Abrir em nova aba",
+    "sourceClose": "Fechar",
     "successRate": "{rate}% de acerto"
   },
   "SubmitExam": {
@@ -391,6 +393,7 @@
       "successDesc": "Obrigado pela contribuição! Vamos adicionar as questões ao banco o mais breve possível.",
       "submitAnother": "Enviar outro exame",
       "error": "Não foi possível enviar o exame. Verifica a tua ligação e tenta novamente.",
+      "timeout": "O envio demorou demasiado tempo. Verifica a tua ligação e tenta novamente.",
       "retry": "Tentar novamente"
     },
     "progress": {
@@ -792,17 +795,9 @@
       },
       "results": {
         "title": "Resultados e indicativo",
-        "description": "Os resultados são comunicados no próprio dia. Se aprovado, recebes o teu indicativo de chamada oficial e podes começar a operar de acordo com a tua categoria."
+        "description": "Os resultados são mostrados automaticamente no fim do exame. Se aprovado, recebes o teu indicativo de chamada oficial e podes começar a operar de acordo com a tua categoria."
       }
-    },
-    "maintenanceTitle": "Manutenção da Licença",
-    "maintenance": {
-      "annualRenewal": "Renovação anual da licença.",
-      "annualFees": "Pagamento de taxas anuais.",
-      "compliance": "Cumprimento das regulamentações e boas práticas do radioamadorismo."
-    },
-    "ctaText": "Pronto para começar? A maioria dos radioamadores começa pela Categoria 3.",
-    "ctaButton": "Começar a estudar"
+    }
   },
   "Share": {
     "title": "Partilhar",

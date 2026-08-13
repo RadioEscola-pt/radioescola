@@ -1,9 +1,9 @@
-// MDX config with frontmatter + GFM (Webpack dev friendly)
+// MDX config with frontmatter + GFM + math (Webpack dev friendly)
 const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [["remark-gfm"], ["remark-frontmatter"]],
-    rehypePlugins: [],
+    remarkPlugins: [["remark-gfm"], ["remark-frontmatter"], ["remark-math"]],
+    rehypePlugins: [["rehype-katex"]],
   },
 });
 
