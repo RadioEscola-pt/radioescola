@@ -1,29 +1,11 @@
 {
   "note": "Exam papers referenced by questions but not present in public/exams/. This is a ratchet, not a permission slip: content:check fails on any dangling reference NOT listed here, and reports entries that have become unnecessary so they can be removed. Shrink it, never grow it.",
   "findings": {
-    "wrong-folder": "Most entries are not missing at all — the same paper sits under another category folder, so only the reference's prefix is wrong. `content:check` prints where each one was found. Fixing them means editing the `pdf` field in the citing questions; cat1/2022_02_03 is ambiguous (it exists under both cat2 and cat3) and needs a human to pick.",
-    "genuinely-absent": "2014_12_19 is referenced from cat1 and cat2 and exists in neither, 37 references in total. That paper needs to be sourced or the references removed."
+    "genuinely-absent": "2014_12_19 is referenced from both cat1 and cat2 and exists in neither folder, 37 references in total. The paper needs to be sourced, or the references removed.",
+    "resolved-2026-08": "18 other entries were removed after OCR confirmed they were not missing at all: the papers referenced as cat1/<date> are the files at cat2/<date>, so the references were repointed. Note that a shared date does NOT imply a shared paper - cat2/2022_02_03 and cat3/2022_02_03 are different exams - so each one was verified by checking that the citing questions actually appear in the candidate PDF."
   },
   "pdfs": [
-    "cat1/0000_00_01",
-    "cat1/0000_00_03",
-    "cat1/2012_04_10",
-    "cat1/2013_08_00",
     "cat1/2014_12_19",
-    "cat1/2016_01_00",
-    "cat1/2017_09_27",
-    "cat1/2018_03_08",
-    "cat1/2018_05_00",
-    "cat1/2018_06_19",
-    "cat1/2020_07_16",
-    "cat1/2021_02_18",
-    "cat1/2022_02_03",
-    "cat1/2022_06_27",
-    "cat1/2022_07_20",
-    "cat1/2022_08_26",
-    "cat1/2022_12_27",
-    "cat1/2023_01_27",
-    "cat1/2023_03_08",
     "cat2/2014_12_19"
   ]
 }
