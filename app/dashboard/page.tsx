@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { useProgressContext } from "@/components/providers/ProgressProvider";
 import { PageLoading } from "@/components/shared/Loading";
-import { CATEGORIES, CATEGORY_CONFIG } from "@/lib/config";
+import { CATEGORIES, CATEGORY_CONFIG, GAMIFICATION_ENABLED } from "@/lib/config";
 import type { CategoryId } from "@/lib/config/categories";
 import { loadData } from "@/lib/data";
 import { useEffect, useMemo, useState } from "react";
@@ -123,7 +123,10 @@ export default function DashboardPage() {
     .map(ua => ACHIEVEMENTS.find(a => a.id === ua.achievementId))
     .filter((a): a is typeof ACHIEVEMENTS[number] => a !== undefined) ?? [];
 
-  const gamificationEnabled = gamification?.isEnabled ?? true;
+  // `?? true` keeps the pre-existing default-on behaviour while progress is
+  // still loading, so the build flag has to be applied on top of it here.
+  const gamificationEnabled =
+    GAMIFICATION_ENABLED && (gamification?.isEnabled ?? true);
   const hasActivity = stats.totalExams > 0 || (gamification?.totalXP ?? 0) > 0;
 
   // New user — show onboarding instead of empty data grids
@@ -207,10 +210,12 @@ export default function DashboardPage() {
 
   return (
     <section className="-mx-4 sm:mx-0 pb-8">
-      <AchievementToastContainer
-        achievements={pendingAchievements}
-        onDismiss={handleDismissAchievement}
-      />
+      {GAMIFICATION_ENABLED && (
+        <AchievementToastContainer
+          achievements={pendingAchievements}
+          onDismiss={handleDismissAchievement}
+        />
+      )}
 
       {/* Header */}
       <div className="px-4 sm:px-0 py-4">
@@ -289,8 +294,9 @@ export default function DashboardPage() {
         </div>
       )}
 
-      {/* Gamification Disabled Banner */}
-      {!gamificationEnabled && (
+      {/* Gamification Disabled Banner — only when the user turned it off; a
+          build without gamification has no way to act on the Enable button. */}
+      {GAMIFICATION_ENABLED && !gamificationEnabled && (
         <div className="mx-4 sm:mx-0 mb-6 p-4 bg-slate-100 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
           <div className="flex items-center justify-between">
             <div>
