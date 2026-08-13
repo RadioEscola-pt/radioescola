@@ -93,3 +93,24 @@ RESEND_FROM_EMAIL=        # Sender email (default: onboarding@resend.dev)
 ```
 
 Only needed for the `/submit-exam` feature. The app runs fully without them.
+
+### Feature flags
+
+```
+NEXT_PUBLIC_GAMIFICATION=  # "true" enables gamification; anything else disables it
+```
+
+Build-time flags live in `lib/config/features.ts`. Next inlines `NEXT_PUBLIC_*`
+at build time, so the constants collapse to literals — **changing a flag needs a
+rebuild, not just a restart**. Keep the `process.env.X` access written out
+literally; destructuring defeats the inlining. The flags gate behaviour, not
+bundle size: disabling gamification does not measurably shrink the client
+bundle, since `useGamification` runs on every page and imports the achievement
+data unconditionally.
+
+Gamification is **off by default**. It is gated at two choke points —
+`isEnabled` in `hooks/useGamification.ts` (drives all UI) and `runGamification`
+in `ProgressProvider` (drives all XP/achievement writes) — plus the dashboard
+blocks. `lib/gamification/engine.ts` is deliberately not gated, so its tests run
+independently of the flag. Existing localStorage progress is preserved while
+off.

@@ -11,6 +11,7 @@ import type {
 } from "@/lib/types/gamification";
 import { createInitialGamificationState } from "@/lib/types/gamification";
 import type { UserProgress } from "@/lib/types/progress";
+import { GAMIFICATION_ENABLED } from "@/lib/config/features";
 import { getLevelForXP, getXPProgress, getXPToNextLevel, LEVELS } from "@/lib/gamification/levels";
 import { ACHIEVEMENTS, getAchievementById, getVisibleAchievements, getAchievementProgress } from "@/lib/gamification/achievements";
 import { ensureTodayProgress } from "@/lib/gamification/daily-goals";
@@ -60,7 +61,10 @@ export function useGamification(
 ): UseGamificationReturn {
   const state = gamificationState ?? createInitialGamificationState();
 
-  const isEnabled = state.settings.enabled;
+  // The build flag wins over the user's stored setting: when gamification is
+  // compiled out there is no way to turn it back on, so every consumer of
+  // `isEnabled` must see false regardless of what localStorage says.
+  const isEnabled = GAMIFICATION_ENABLED && state.settings.enabled;
   // Apply sanity check to prevent displaying corrupted XP values
   // This can happen if a bug causes XP to be added repeatedly
   const totalXP = Math.min(state.totalXP, MAX_REASONABLE_XP);

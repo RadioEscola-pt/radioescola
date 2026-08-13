@@ -24,6 +24,7 @@ import {
   markAchievementsNotified,
 } from "@/lib/gamification/engine";
 import { useGamification, type UseGamificationReturn } from "@/hooks/useGamification";
+import { GAMIFICATION_ENABLED } from "@/lib/config/features";
 
 type ProgressContextType = {
   progress: UserProgress | null;
@@ -119,6 +120,13 @@ export default function ProgressProvider({
         progress: UserProgress
       ) => { newState: GamificationState; result: GamificationResult }
     ): Promise<GamificationResult> => {
+      // Bail before touching storage when gamification is compiled out, so a
+      // disabled build never writes XP or achievements — existing saved
+      // progress stays exactly as it was and returns intact if the flag flips.
+      if (!GAMIFICATION_ENABLED) {
+        return makeEmptyResult(1);
+      }
+
       const fresh = await storageProvider.getProgress();
       const state = fresh?.gamification ?? null;
 
