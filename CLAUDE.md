@@ -50,7 +50,11 @@ as the MDX body), plus `category.json` holding `anacomFile` and the question
 
 `bun run content:build` regenerates them; `bun run content:check` verifies they
 match and is wired into `bun run build`, so a hand-edit or a stale artifact
-fails the build. `scripts/content-migrate.ts <cat>` performs a migration and
+fails the build. It also fails on any `sources` entry pointing at an exam PDF
+that is not in `public/exams/`. Papers we genuinely do not have are baselined in
+`content/missing-exams.json` — a ratchet, so anything new fails while the known
+69 references do not break the build; the check also reports baseline entries
+that have become unnecessary. `scripts/content-migrate.ts <cat>` performs a migration and
 refuses to overwrite an existing source directory.
 
 **Linking questions to exam PDFs**: `bun run data:ocr-exams` OCRs the scanned

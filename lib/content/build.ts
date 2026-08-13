@@ -16,7 +16,7 @@
  * of renumbering every file after the insertion point, and it is validated
  * against the files present so the two cannot drift.
  */
-import { readFileSync, readdirSync } from "fs";
+import { existsSync, readFileSync, readdirSync } from "fs";
 import { join } from "path";
 import { z } from "zod";
 import { CategorySchema, type ContentCategory, type ContentQuestion } from "./schema";
@@ -147,6 +147,65 @@ export function emitCategory(category: ContentCategory): CategoryArtifacts {
     appJson: `${JSON.stringify(app, null, 2)}\n`,
     notes,
   };
+}
+
+export type DanglingPdf = {
+  /** The `pdf` value that does not resolve, e.g. "cat1/2014_12_19". */
+  pdf: string;
+  /** How many references point at it. */
+  refs: number;
+  /** Categories whose folder does contain a file of that name. */
+  alsoIn: string[];
+  /** Listed in the baseline, so it does not fail the check. */
+  known: boolean;
+};
+
+/**
+ * Finds source references pointing at exam PDFs that are not on disk.
+ *
+ * Only possible now that `pdf` is a field: under the old composite-string
+ * format, recovering the filename needed a regex, so nothing checked this and
+ * dead references accumulated unnoticed.
+ *
+ * `alsoIn` exists because most of them are not missing at all — the same paper
+ * sits under a different category folder, and the reference's prefix is simply
+ * wrong. That is a content fix rather than something to guess at here, so it is
+ * reported, not repaired.
+ */
+export function findDanglingPdfs(
+  categories: ContentCategory[],
+  examsDir: string,
+  baseline: Set<string>
+): DanglingPdf[] {
+  const counts = new Map<string, number>();
+  for (const category of categories) {
+    for (const q of category.questions) {
+      for (const s of q.sources) {
+        if (existsSync(join(examsDir, `${s.pdf}.pdf`))) continue;
+        counts.set(s.pdf, (counts.get(s.pdf) ?? 0) + 1);
+      }
+    }
+  }
+
+  return [...counts.entries()]
+    .map(([pdf, refs]) => {
+      const stem = pdf.slice(pdf.indexOf("/") + 1);
+      const alsoIn = (["1", "2", "3"] as const).filter(
+        (c) => `cat${c}` !== pdf.split("/")[0] && existsSync(join(examsDir, `cat${c}`, `${stem}.pdf`))
+      ).map((c) => `cat${c}`);
+      return { pdf, refs, alsoIn, known: baseline.has(pdf) };
+    })
+    .sort((a, b) => b.refs - a.refs);
+}
+
+/** Baseline of references known to point at papers we do not have. */
+export const MISSING_EXAMS_FILE = join("content", "missing-exams.json");
+
+export function loadMissingExamsBaseline(root: string): Set<string> {
+  const path = join(root, MISSING_EXAMS_FILE);
+  if (!existsSync(path)) return new Set();
+  const parsed = JSON.parse(readFileSync(path, "utf-8")) as { pdfs?: string[] };
+  return new Set(parsed.pdfs ?? []);
 }
 
 /** Serializes a manifest in the format the migration writes. */
