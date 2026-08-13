@@ -12,6 +12,8 @@ bun run test         # Vitest (unit + integration)
 bun run test:watch   # Vitest in watch mode
 bun run test:coverage # Vitest with V8 coverage
 bun run type-check   # tsc --noEmit
+bun run content:build # Compile content/questions/** into shipped artifacts
+bun run content:check # Verify artifacts match their source (writes nothing)
 ./deploy.sh          # Pull, install, build, PM2 restart (app name: radioescola)
 ```
 
@@ -32,7 +34,34 @@ Next.js 16 App Router with React 19, TypeScript (strict), Tailwind CSS v4.
 
 **Provider chain** (in root layout): Theme → Progress → Calculator → PWA
 
-**Data flow**: Static JSON in `/public/data/cat{1,2,3}.json` → `loadData()` fetches all 3 in parallel. All user progress stored in localStorage (key: `hamradio_progress`). No backend database.
+**Data flow**: `content/questions/**` → compiled by `content:build` → static JSON in `/public/data/cat{1,2,3}.json` → `loadData()` fetches all 3 in parallel and copies fields, doing **no** transformation. All user progress stored in localStorage (key: `hamradio_progress`). No backend database.
+
+## Content pipeline
+
+All three categories are migrated. **Source of truth is `content/questions/cat{n}/`** —
+one `{id}.mdx` per question (zero-padded filename, YAML frontmatter, explanation
+as the MDX body), plus `category.json` holding `anacomFile` and the question
+`order`. 1,015 questions total.
+
+**Generated — never hand-edit:**
+- `public/data/cat{n}.json` — what the client fetches, already in the shape
+  `loadData()` returns
+- `content/notes/cat{n}/{id}.mdx` — what `/api/notes` serves
+
+`bun run content:build` regenerates them; `bun run content:check` verifies they
+match and is wired into `bun run build`, so a hand-edit or a stale artifact
+fails the build. `scripts/content-migrate.ts <cat>` performs a migration and
+refuses to overwrite an existing source directory.
+
+Why `order` lives in `category.json`: the question order is **editorial, not id
+order** (in cat3, questions 210-213 sit at positions 8, 10, 19 and 31, grouped
+by subject) and it drives the browse sequence. A manifest keeps inserting a
+question a one-line diff instead of renumbering every file after it, and it is
+validated against the files present in both directions.
+
+The canonical model (`lib/content/schema.ts`) is the single definition of a
+question, with types inferred from the Zod schema. `lib/content/legacy.ts` is
+import-only, kept for re-running a migration from an archived JSON file.
 
 ## Key Directories
 
@@ -40,10 +69,11 @@ Next.js 16 App Router with React 19, TypeScript (strict), Tailwind CSS v4.
 app/             # Next.js App Router pages and API routes
 components/      # ui/, providers/, calculators/, gamification/, shared/, settings/
 lib/             # Core logic: i18n/, types/, config/, storage/, gamification/, spaced-repetition/, utils/
-content/notes/   # MDX files per question (cat1/, cat2/, cat3/)
+content/questions/ # Question SOURCE of truth, one MDX per question (cat1/, cat2/, cat3/)
+content/notes/   # GENERATED explanation files (do not hand-edit)
 messages/        # i18n JSON: en.json, pt.json
 hooks/           # React hooks: useProgress, useGamification, useExamTimer, etc.
-public/data/     # Question bank JSON + notes-index.json
+public/data/     # GENERATED question bank JSON (do not hand-edit)
 public/exams/    # PDF exam papers (cat1/, cat2/, cat3/)
 specs/           # Feature specifications
 __tests__/       # unit/, integration/, contracts/
@@ -61,10 +91,11 @@ Uses `next-intl` v4. Default locale is **Portuguese (pt)**, also supports Englis
 
 ## Gotchas
 
-- **Question correctIndex is 1-indexed** in JSON data, converted to 0-indexed in code: `(qObj.correctIndex ?? 1) - 1`
+- **`correctIndex` is 0-indexed everywhere.** It was 1-indexed in the old hand-maintained JSON and decremented at runtime; the compiler now resolves it, and source files mark the right answer with `correct: true` instead of an index at all
 - **Category order is 3→2→1** (not ascending). Category 3 = beginner, 1 = advanced (Portuguese licensing progression)
 - **Exam scoring penalty**: -0.25 per wrong answer (hardcoded in `lib/config/exam.ts`)
-- **Image paths**: Questions store the `img` field as a full public-relative path (`images/cat{id}/file.png`). `normalizeImg()` in `lib/data.ts` makes it absolute (`/images/...`); it also handles bare filenames and already-absolute paths. Consumers (`QuestionCard`, exam page) use the normalized `question.img` directly, so don't re-prepend the path
+- **Image paths are already absolute** in the shipped JSON (`/images/cat{id}/file.png`); source files store them public-relative (`images/...`) and the compiler resolves them. Consumers use `question.img` directly — don't re-prepend
+- **`lib/data.ts` does no normalization.** If question data looks wrong, fix the source and rebuild; don't add a runtime coercion. Malformed data should fail `content:check`, not be patched per visitor
 - **Progress version migration**: Auto-migrates localStorage on load if version < `PROGRESS_VERSION` (currently V3)
 - **Exam replay via URL params**: `q=` (question IDs), `a=` (base36-encoded answers), `t=` (time remaining) — no server storage needed
 - **Calculator is a modal context**, not a route — opening calculators doesn't change URL
