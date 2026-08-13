@@ -50,8 +50,20 @@ as the MDX body), plus `category.json` holding `anacomFile` and the question
 
 `bun run content:build` regenerates them; `bun run content:check` verifies they
 match and is wired into `bun run build`, so a hand-edit or a stale artifact
-fails the build. `scripts/content-migrate.ts <cat>` performs a migration and
+fails the build. It also fails on any `sources` entry pointing at an exam PDF
+that is not in `public/exams/`. Papers we genuinely do not have are baselined in
+`content/missing-exams.json` — a ratchet, so anything new fails while the known
+69 references do not break the build; the check also reports baseline entries
+that have become unnecessary. `scripts/content-migrate.ts <cat>` performs a migration and
 refuses to overwrite an existing source directory.
+
+**Linking questions to exam PDFs**: `bun run data:ocr-exams` OCRs the scanned
+papers in `public/exams/` and matches them back to the bank (needs `poppler`
+and `tesseract`; install `tesseract-data-por` for accented text). With
+`--apply` it fills the `page` of references that already exist. It never invents
+a `sources` entry, because that needs the question number read off the scan,
+which is the least reliable part — those are proposed in the report for a human
+to confirm. `bun run data:fonte-pages` is the manual equivalent.
 
 Why `order` lives in `category.json`: the question order is **editorial, not id
 order** (in cat3, questions 210-213 sit at positions 8, 10, 19 and 31, grouped
@@ -94,6 +106,10 @@ Uses `next-intl` v4. Default locale is **Portuguese (pt)**, also supports Englis
 - **`correctIndex` is 0-indexed everywhere.** It was 1-indexed in the old hand-maintained JSON and decremented at runtime; the compiler now resolves it, and source files mark the right answer with `correct: true` instead of an index at all
 - **Category order is 3→2→1** (not ascending). Category 3 = beginner, 1 = advanced (Portuguese licensing progression)
 - **Exam scoring penalty**: -0.25 per wrong answer (hardcoded in `lib/config/exam.ts`)
+- **A source reference nests its parts**: `sources: [{ pdf, question, page }]`.
+  `question` is the pergunta number printed in the paper, `page` is the PDF page
+  — unrelated numbers, since a paper carries ~4 questions per page. `page` is
+  absent until somebody resolves it. Never use the pergunta number as a page
 - **Image paths are already absolute** in the shipped JSON (`/images/cat{id}/file.png`); source files store them public-relative (`images/...`) and the compiler resolves them. Consumers use `question.img` directly — don't re-prepend
 - **`lib/data.ts` does no normalization.** If question data looks wrong, fix the source and rebuild; don't add a runtime coercion. Malformed data should fail `content:check`, not be patched per visitor
 - **Progress version migration**: Auto-migrates localStorage on load if version < `PROGRESS_VERSION` (currently V3)
@@ -145,3 +161,13 @@ in `ProgressProvider` (drives all XP/achievement writes) — plus the dashboard
 blocks. `lib/gamification/engine.ts` is deliberately not gated, so its tests run
 independently of the flag. Existing localStorage progress is preserved while
 off.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

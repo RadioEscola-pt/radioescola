@@ -1,0 +1,11 @@
+{
+  "note": "Exam papers referenced by questions but not present in public/exams/. This is a ratchet, not a permission slip: content:check fails on any dangling reference NOT listed here, and reports entries that have become unnecessary so they can be removed. Shrink it, never grow it.",
+  "findings": {
+    "genuinely-absent": "2014_12_19 is referenced from both cat1 and cat2 and exists in neither folder, 37 references in total. The paper needs to be sourced, or the references removed.",
+    "resolved-2026-08": "18 other entries were removed after OCR confirmed they were not missing at all: the papers referenced as cat1/<date> are the files at cat2/<date>, so the references were repointed. Note that a shared date does NOT imply a shared paper - cat2/2022_02_03 and cat3/2022_02_03 are different exams - so each one was verified by checking that the citing questions actually appear in the candidate PDF."
+  },
+  "pdfs": [
+    "cat1/2014_12_19",
+    "cat2/2014_12_19"
+  ]
+}

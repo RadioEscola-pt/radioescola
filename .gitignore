@@ -44,3 +44,7 @@ tsconfig.tsbuildinfo
 # Playwright MCP
 .playwright-mcp/
 screenshots/
+
+# OCR page-text cache (scripts/ocr-exams.ts)
+.ocr-cache/
+

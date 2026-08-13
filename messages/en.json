@@ -342,6 +342,7 @@
     "officialSource": "Official source:",
     "sourceOpenNewTab": "Open in new tab",
     "sourceClose": "Close",
+    "sourceUnavailable": "document not available",
     "successRate": "{rate}% success"
   },
   "SubmitExam": {

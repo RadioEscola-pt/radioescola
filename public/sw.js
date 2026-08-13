@@ -1,8 +1,9 @@
 /// <reference lib="webworker" />
 
-// Bumped to v3: the shape of /data/cat*.json changed (options instead of
-// answers, 0-indexed correctIndex), so precached v2 payloads must be dropped.
-const CACHE_NAME = "radioescola-v3";
+// Bumped on every change to the shape of /data/cat*.json, since precached
+// payloads outlive a deploy. v3: options instead of answers, 0-indexed
+// correctIndex. v4: fonte/fontePages replaced by nested `sources`.
+const CACHE_NAME = "radioescola-v4";
 
 // Static assets to cache on install
 const STATIC_ASSETS = [

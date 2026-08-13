@@ -13,8 +13,11 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2024_01_02p8"
+      "sources": [
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 8
+        }
       ]
     },
     {
@@ -28,14 +31,22 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p8",
-        "cat1/2011_12_13p6",
-        "cat1/2014_12_19p6"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p6": 2
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 8
+        },
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 6,
+          "page": 2
+        },
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 6,
+          "unavailable": true
+        }
+      ]
     },
     {
       "id": 3,
@@ -48,12 +59,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_05_23p6"
-      ],
-      "fontePages": {
-        "cat1/2014_05_23p6": 2
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2014_05_23",
+          "question": 6,
+          "page": 2
+        }
+      ]
     },
     {
       "id": 4,
@@ -66,8 +78,11 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p8"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 8
+        }
       ]
     },
     {
@@ -93,9 +108,15 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p19",
-        "cat1/2024_01_02p19"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 19
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 19
+        }
       ]
     },
     {
@@ -109,12 +130,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p19"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p19": 5
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 19,
+          "page": 5
+        }
+      ]
     },
     {
       "id": 8,
@@ -127,8 +149,11 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p19"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 19
+        }
       ]
     },
     {
@@ -142,13 +167,18 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p24",
-        "cat1/2014_12_19p24"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p24": 7
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 24,
+          "page": 7
+        },
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 24,
+          "unavailable": true
+        }
+      ]
     },
     {
       "id": 10,
@@ -161,15 +191,22 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p24",
-        "cat1/2011_12_13p17",
-        "cat1/2023_07_03p23"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p17": 5,
-        "cat1/2023_07_03p23": 6
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 24
+        },
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 17,
+          "page": 5
+        },
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 23,
+          "page": 6
+        }
+      ]
     },
     {
       "id": 11,
@@ -193,8 +230,12 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p17"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 17,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -208,8 +249,12 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p32"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 32,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -223,13 +268,17 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p32",
-        "cat1/2023_12_22p34"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p32": 8
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 32,
+          "page": 8
+        },
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 34
+        }
+      ]
     },
     {
       "id": 15,
@@ -254,14 +303,21 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p34",
-        "cat1/2023_07_03p34",
-        "cat1/2024_01_02p34"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p34": 10
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 34
+        },
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 34,
+          "page": 10
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 34
+        }
+      ]
     },
     {
       "id": 17,
@@ -286,9 +342,16 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p37",
-        "cat1/2014_12_19p35"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 37
+        },
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 35,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -302,13 +365,17 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p35",
-        "cat1/2023_12_22p37"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p35": 9
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 35,
+          "page": 9
+        },
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 37
+        }
+      ]
     },
     {
       "id": 20,
@@ -321,13 +388,17 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p37",
-        "cat1/2024_01_02p37"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p37": 11
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 37,
+          "page": 11
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 37
+        }
+      ]
     },
     {
       "id": 21,
@@ -376,9 +447,16 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p40",
-        "cat1/2014_12_19p38"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 40
+        },
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 38,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -427,13 +505,17 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p39",
-        "cat1/2023_07_03p39"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p39": 12
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 39
+        },
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 39,
+          "page": 12
+        }
+      ]
     },
     {
       "id": 29,
@@ -470,13 +552,17 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p40",
-        "cat1/2024_01_02p40"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p40": 10
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 40,
+          "page": 10
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 40
+        }
+      ]
     },
     {
       "id": 32,
@@ -501,12 +587,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_05_23p16"
-      ],
-      "fontePages": {
-        "cat1/2014_05_23p16": 4
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2014_05_23",
+          "question": 16,
+          "page": 4
+        }
+      ]
     },
     {
       "id": 34,
@@ -543,12 +630,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p20"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p20": 5
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 20,
+          "page": 5
+        }
+      ]
     },
     {
       "id": 37,
@@ -561,8 +649,11 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p18"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 18
+        }
       ]
     },
     {
@@ -576,8 +667,11 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2024_01_02p18"
+      "sources": [
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 18
+        }
       ]
     },
     {
@@ -615,12 +709,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p18"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p18": 5
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 18,
+          "page": 5
+        }
+      ]
     },
     {
       "id": 42,
@@ -645,13 +740,17 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p29",
-        "cat1/2024_01_02p26"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p29": 8
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 29,
+          "page": 8
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 26
+        }
+      ]
     },
     {
       "id": 44,
@@ -664,12 +763,28 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p29",
-        "cat1/2017_09_27p28",
-        "cat1/2020_07_16p28",
-        "cat1/2022_08_26p28",
-        "cat1/2022_12_27p28"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 29,
+          "unavailable": true
+        },
+        {
+          "pdf": "cat2/2017_09_27",
+          "question": 28
+        },
+        {
+          "pdf": "cat2/2020_07_16",
+          "question": 28
+        },
+        {
+          "pdf": "cat2/2022_08_26",
+          "question": 28
+        },
+        {
+          "pdf": "cat2/2022_12_27",
+          "question": 28
+        }
       ]
     },
     {
@@ -683,8 +798,12 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p22"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 22,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -722,13 +841,17 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p26",
-        "cat1/2023_07_03p26"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p26": 7
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 26
+        },
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 26,
+          "page": 7
+        }
+      ]
     },
     {
       "id": 49,
@@ -765,8 +888,11 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2024_01_02p30"
+      "sources": [
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 30
+        }
       ]
     },
     {
@@ -804,8 +930,12 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p31"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 31,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -819,8 +949,11 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p30"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 30
+        }
       ]
     },
     {
@@ -846,8 +979,11 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p33"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 33
+        }
       ]
     },
     {
@@ -861,8 +997,12 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p33"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 33,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -876,13 +1016,17 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p33",
-        "cat1/2024_01_02p33"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p33": 9
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 33,
+          "page": 9
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 33
+        }
+      ]
     },
     {
       "id": 59,
@@ -907,12 +1051,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p33"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p33": 10
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 33,
+          "page": 10
+        }
+      ]
     },
     {
       "id": 61,
@@ -949,8 +1094,11 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p33"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 33
+        }
       ]
     },
     {
@@ -976,8 +1124,12 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p36"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 36,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -991,12 +1143,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p36"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p36": 9
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 36,
+          "page": 9
+        }
+      ]
     },
     {
       "id": 67,
@@ -1071,8 +1224,11 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p10"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 10
+        }
       ],
       "calc": "COPADDER"
     },
@@ -1087,8 +1243,11 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2024_01_02p10"
+      "sources": [
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 10
+        }
       ],
       "calc": "COPADDER"
     },
@@ -1103,12 +1262,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p10"
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 10,
+          "page": 3
+        }
       ],
-      "fontePages": {
-        "cat1/2023_07_03p10": 3
-      },
       "calc": "COPADDER"
     },
     {
@@ -1122,8 +1282,12 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p11"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 11,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -1149,8 +1313,11 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p10"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 10
+        }
       ]
     },
     {
@@ -1200,8 +1367,12 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p15"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 15,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -1227,9 +1398,15 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p15",
-        "cat1/2023_12_22p15"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 15
+        },
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 15
+        }
       ]
     },
     {
@@ -1255,12 +1432,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p15"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p15": 4
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 15,
+          "page": 4
+        }
+      ]
     },
     {
       "id": 85,
@@ -1285,12 +1463,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_05_23p15"
-      ],
-      "fontePages": {
-        "cat1/2014_05_23p15": 4
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2014_05_23",
+          "question": 15,
+          "page": 4
+        }
+      ]
     },
     {
       "id": 87,
@@ -1303,13 +1482,17 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p22",
-        "cat1/2023_07_03p22"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p22": 6
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 22
+        },
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 22,
+          "page": 6
+        }
+      ]
     },
     {
       "id": 88,
@@ -1370,8 +1553,12 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p19"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 19,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -1385,12 +1572,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p15"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p15": 4
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 15,
+          "page": 4
+        }
+      ]
     },
     {
       "id": 94,
@@ -1403,12 +1591,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_05_23p11"
-      ],
-      "fontePages": {
-        "cat1/2014_05_23p11": 3
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2014_05_23",
+          "question": 11,
+          "page": 3
+        }
+      ]
     },
     {
       "id": 95,
@@ -1421,13 +1610,17 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p11",
-        "cat1/2024_01_02p15"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p11": 3
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 11,
+          "page": 3
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 15
+        }
+      ]
     },
     {
       "id": 96,
@@ -1464,8 +1657,11 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p17"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 17
+        }
       ]
     },
     {
@@ -1517,12 +1713,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p22"
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 22,
+          "page": 6
+        }
       ],
-      "fontePages": {
-        "cat1/2011_12_13p22": 6
-      },
       "img": "/images/cat1/fig2a.png"
     },
     {
@@ -1536,12 +1733,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p17"
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 17,
+          "page": 5
+        }
       ],
-      "fontePages": {
-        "cat1/2023_07_03p17": 5
-      },
       "img": "/images/cat1/fig2.png"
     },
     {
@@ -1567,9 +1765,15 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p17",
-        "cat1/2024_01_02p17"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 17
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 17
+        }
       ]
     },
     {
@@ -1607,12 +1811,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p29"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p29": 8
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 29,
+          "page": 8
+        }
+      ]
     },
     {
       "id": 108,
@@ -1625,8 +1830,11 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p29"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 29
+        }
       ]
     },
     {
@@ -1688,8 +1896,11 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p29"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 29
+        }
       ]
     },
     {
@@ -1715,12 +1926,13 @@
         "Realimentação"
       ],
       "correctIndex": 1,
-      "fonte": [
-        "cat1/2011_12_13p25"
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 25,
+          "page": 7
+        }
       ],
-      "fontePages": {
-        "cat1/2011_12_13p25": 7
-      },
       "img": "/images/cat1/fig7.png"
     },
     {
@@ -1771,9 +1983,15 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p27",
-        "cat1/2023_12_22p27"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 27
+        },
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 27
+        }
       ]
     },
     {
@@ -1800,8 +2018,11 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p31"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 31
+        }
       ]
     },
     {
@@ -1815,12 +2036,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_05_23p10"
-      ],
-      "fontePages": {
-        "cat1/2014_05_23p10": 3
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2014_05_23",
+          "question": 10,
+          "page": 3
+        }
+      ]
     },
     {
       "id": 123,
@@ -1845,9 +2067,15 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p31",
-        "cat1/2024_01_02p31"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 31
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 31
+        }
       ]
     },
     {
@@ -1861,12 +2089,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p31"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p31": 9
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 31,
+          "page": 9
+        }
+      ]
     },
     {
       "id": 126,
@@ -1879,12 +2108,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2019_07_08p32"
-      ],
-      "fontePages": {
-        "cat1/2019_07_08p32": 9
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2019_07_08",
+          "question": 32,
+          "page": 9
+        }
+      ]
     },
     {
       "id": 127,
@@ -1897,12 +2127,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p28"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p28": 8
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 28,
+          "page": 8
+        }
+      ]
     },
     {
       "id": 128,
@@ -1939,12 +2170,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p32"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p32": 9
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 32,
+          "page": 9
+        }
+      ]
     },
     {
       "id": 131,
@@ -1969,8 +2201,12 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p34"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 34,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -1996,8 +2232,11 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p32"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 32
+        }
       ]
     },
     {
@@ -2011,13 +2250,17 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p34",
-        "cat1/2024_01_02p32"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p34": 9
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 34,
+          "page": 9
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 32
+        }
+      ]
     },
     {
       "id": 136,
@@ -2042,13 +2285,18 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p30",
-        "cat1/2014_12_19p30"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p30": 8
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 30,
+          "page": 8
+        },
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 30,
+          "unavailable": true
+        }
+      ]
     },
     {
       "id": 138,
@@ -2061,8 +2309,11 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p32"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 32
+        }
       ]
     },
     {
@@ -2088,12 +2339,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p36"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p36": 11
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 36,
+          "page": 11
+        }
+      ]
     },
     {
       "id": 380,
@@ -2106,8 +2358,11 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p36"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 36
+        }
       ]
     },
     {
@@ -2145,12 +2400,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p38"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p38": 11
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 38,
+          "page": 11
+        }
+      ]
     },
     {
       "id": 144,
@@ -2175,12 +2431,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p39"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p39": 10
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 39,
+          "page": 10
+        }
+      ]
     },
     {
       "id": 146,
@@ -2205,12 +2462,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p21"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p21": 6
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 21,
+          "page": 6
+        }
+      ]
     },
     {
       "id": 148,
@@ -2271,9 +2529,15 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p36",
-        "cat1/2024_01_02p36"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 36
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 36
+        }
       ]
     },
     {
@@ -2287,8 +2551,12 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p37"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 37,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -2315,9 +2583,15 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p23",
-        "cat1/2023_12_22p23"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 23
+        },
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 23
+        }
       ]
     },
     {
@@ -2331,13 +2605,17 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p23",
-        "cat1/2024_01_02p23"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p23": 6
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 23,
+          "page": 6
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 23
+        }
+      ]
     },
     {
       "id": 157,
@@ -2350,8 +2628,12 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p21"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 21,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -2377,9 +2659,15 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p25",
-        "cat1/2024_01_02p25"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 25
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 25
+        }
       ]
     },
     {
@@ -2393,12 +2681,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p25"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p25": 7
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 25,
+          "page": 7
+        }
+      ]
     },
     {
       "id": 161,
@@ -2411,8 +2700,11 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p25"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 25
+        }
       ]
     },
     {
@@ -2450,8 +2742,12 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p23"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 23,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -2465,13 +2761,18 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p26",
-        "cat1/2014_12_19p26"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p26": 7
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 26,
+          "page": 7
+        },
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 26,
+          "unavailable": true
+        }
+      ]
     },
     {
       "id": 166,
@@ -2496,12 +2797,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p7"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p7": 2
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 7,
+          "page": 2
+        }
+      ]
     },
     {
       "id": 372,
@@ -2514,8 +2816,11 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p7"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 7
+        }
       ]
     },
     {
@@ -2529,12 +2834,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p28"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p28": 8
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 28,
+          "page": 8
+        }
+      ]
     },
     {
       "id": 169,
@@ -2547,8 +2853,11 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2024_01_02p7"
+      "sources": [
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 7
+        }
       ]
     },
     {
@@ -2562,8 +2871,11 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p7"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 7
+        }
       ]
     },
     {
@@ -2589,8 +2901,11 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2024_01_02p22"
+      "sources": [
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 22
+        }
       ]
     },
     {
@@ -2604,8 +2919,11 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2024_01_02p29"
+      "sources": [
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 29
+        }
       ]
     },
     {
@@ -2619,8 +2937,11 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p22"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 22
+        }
       ]
     },
     {
@@ -2646,8 +2967,11 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p39"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 39
+        }
       ]
     },
     {
@@ -2685,8 +3009,12 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p27"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 27,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -2700,9 +3028,16 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2018_06_19p29",
-        "cat1/2014_12_19p27"
+      "sources": [
+        {
+          "pdf": "cat2/2018_06_19",
+          "question": 29
+        },
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 27,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -2728,13 +3063,17 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p27",
-        "cat1/2023_12_22p28"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p27": 7
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 27,
+          "page": 7
+        },
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 28
+        }
+      ]
     },
     {
       "id": 180,
@@ -2759,12 +3098,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p27"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p27": 8
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 27,
+          "page": 8
+        }
+      ]
     },
     {
       "id": 182,
@@ -2801,8 +3141,12 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p9"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 9,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -2816,8 +3160,11 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p12"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 12
+        }
       ]
     },
     {
@@ -2831,12 +3178,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_05_23p9"
-      ],
-      "fontePages": {
-        "cat1/2014_05_23p9": 3
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2014_05_23",
+          "question": 9,
+          "page": 3
+        }
+      ]
     },
     {
       "id": 187,
@@ -2861,8 +3209,11 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2024_01_02p21"
+      "sources": [
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 21
+        }
       ]
     },
     {
@@ -2876,12 +3227,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p12"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p12": 4
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 12,
+          "page": 4
+        }
+      ]
     },
     {
       "id": 189,
@@ -2918,9 +3270,16 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p20",
-        "cat1/2014_12_19p18"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 20
+        },
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 18,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -2946,13 +3305,17 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p13",
-        "cat1/2023_12_22p13"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p13": 4
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 13,
+          "page": 4
+        },
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 13
+        }
+      ]
     },
     {
       "id": 194,
@@ -3049,9 +3412,15 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p24",
-        "cat1/2024_01_02p24"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 24
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 24
+        }
       ]
     },
     {
@@ -3114,8 +3483,11 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2024_01_02p13"
+      "sources": [
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 13
+        }
       ]
     },
     {
@@ -3129,8 +3501,11 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p21"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 21
+        }
       ]
     },
     {
@@ -3144,8 +3519,11 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2024_01_02p20"
+      "sources": [
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 20
+        }
       ]
     },
     {
@@ -3159,13 +3537,17 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p13",
-        "cat1/2014_05_23p14"
-      ],
-      "fontePages": {
-        "cat1/2014_05_23p14": 4
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 13
+        },
+        {
+          "pdf": "cat1/2014_05_23",
+          "question": 14,
+          "page": 4
+        }
+      ]
     },
     {
       "id": 208,
@@ -3178,12 +3560,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p21"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p21": 6
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 21,
+          "page": 6
+        }
+      ]
     },
     {
       "id": 209,
@@ -3208,12 +3591,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p18"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p18": 5
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 18,
+          "page": 5
+        }
+      ]
     },
     {
       "id": 211,
@@ -3226,12 +3610,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p18"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p18": 5
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 18,
+          "page": 5
+        }
+      ]
     },
     {
       "id": 212,
@@ -3256,8 +3641,11 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p20"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 20
+        }
       ]
     },
     {
@@ -3271,12 +3659,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p19"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p19": 5
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 19,
+          "page": 5
+        }
+      ]
     },
     {
       "id": 214,
@@ -3289,8 +3678,11 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p21"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 21
+        }
       ]
     },
     {
@@ -3304,12 +3696,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p20"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p20": 6
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 20,
+          "page": 6
+        }
+      ]
     },
     {
       "id": 216,
@@ -3334,8 +3727,11 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p4"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 4
+        }
       ]
     },
     {
@@ -3349,8 +3745,12 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p2"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 2,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -3376,8 +3776,12 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p2"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 2,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -3403,8 +3807,11 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p3"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 3
+        }
       ]
     },
     {
@@ -3418,8 +3825,11 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2024_01_02p3"
+      "sources": [
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 3
+        }
       ]
     },
     {
@@ -3433,12 +3843,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p4"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p4": 2
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 4,
+          "page": 2
+        }
+      ]
     },
     {
       "id": 224,
@@ -3475,12 +3886,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_05_23p1"
-      ],
-      "fontePages": {
-        "cat1/2014_05_23p1": 1
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2014_05_23",
+          "question": 1,
+          "page": 1
+        }
+      ]
     },
     {
       "id": 227,
@@ -3517,8 +3929,11 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2024_01_02p1"
+      "sources": [
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 1
+        }
       ]
     },
     {
@@ -3556,12 +3971,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_05_23p3"
-      ],
-      "fontePages": {
-        "cat1/2014_05_23p3": 1
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2014_05_23",
+          "question": 3,
+          "page": 1
+        }
+      ]
     },
     {
       "id": 232,
@@ -3574,13 +3990,17 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p4",
-        "cat1/2023_07_03p3"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p3": 1
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 4
+        },
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 3,
+          "page": 1
+        }
+      ]
     },
     {
       "id": 233,
@@ -3617,8 +4037,11 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p5"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 5
+        }
       ]
     },
     {
@@ -3632,12 +4055,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p2"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p2": 1
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 2,
+          "page": 1
+        }
+      ]
     },
     {
       "id": 384,
@@ -3650,8 +4074,11 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2024_01_02p4"
+      "sources": [
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 4
+        }
       ]
     },
     {
@@ -3689,9 +4116,15 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p5",
-        "cat1/2024_01_02p5"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 5
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 5
+        }
       ]
     },
     {
@@ -3741,19 +4174,42 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2018_03_08p13",
-        "cat1/2016_01_00p13",
-        "cat1/2018_05_00p13",
-        "cat1/2020_07_16p12",
-        "cat1/2023_01_27p12",
-        "cat1/2014_12_19p7",
-        "cat1/2023_07_03p11",
-        "cat1/2024_01_02p11"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p11": 3
-      }
+      "sources": [
+        {
+          "pdf": "cat2/2018_03_08",
+          "question": 13
+        },
+        {
+          "pdf": "cat2/2016_01_00",
+          "question": 13
+        },
+        {
+          "pdf": "cat2/2018_05_00",
+          "question": 13
+        },
+        {
+          "pdf": "cat2/2020_07_16",
+          "question": 12
+        },
+        {
+          "pdf": "cat2/2023_01_27",
+          "question": 12
+        },
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 7,
+          "unavailable": true
+        },
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 11,
+          "page": 3
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 11
+        }
+      ]
     },
     {
       "id": 244,
@@ -3766,12 +4222,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p7"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p7": 2
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 7,
+          "page": 2
+        }
+      ]
     },
     {
       "id": 245,
@@ -3784,8 +4241,11 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p11"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 11
+        }
       ]
     },
     {
@@ -3799,8 +4259,11 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p11"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 11
+        }
       ]
     },
     {
@@ -3850,12 +4313,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p14"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p14": 4
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 14,
+          "page": 4
+        }
+      ]
     },
     {
       "id": 250,
@@ -3868,8 +4332,12 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p20"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 20,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -3907,8 +4375,11 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2024_01_02p27"
+      "sources": [
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 27
+        }
       ]
     },
     {
@@ -3922,13 +4393,17 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_05_23p13",
-        "cat1/2024_01_02p14"
-      ],
-      "fontePages": {
-        "cat1/2014_05_23p13": 4
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2014_05_23",
+          "question": 13,
+          "page": 4
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 14
+        }
+      ]
     },
     {
       "id": 254,
@@ -3953,13 +4428,17 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p13",
-        "cat1/2023_12_22p14"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p13": 4
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 13,
+          "page": 4
+        },
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 14
+        }
+      ]
     },
     {
       "id": 256,
@@ -4008,16 +4487,27 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p8",
-        "cat1/2014_12_19p8",
-        "cat1/2023_07_03p9",
-        "cat1/2023_12_22p9"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p8": 2,
-        "cat1/2023_07_03p9": 3
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 8,
+          "page": 2
+        },
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 8,
+          "unavailable": true
+        },
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 9,
+          "page": 3
+        },
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 9
+        }
+      ]
     },
     {
       "id": 260,
@@ -4042,8 +4532,11 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p9"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 9
+        }
       ]
     },
     {
@@ -4057,8 +4550,11 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2024_01_02p9"
+      "sources": [
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 9
+        }
       ]
     },
     {
@@ -4072,12 +4568,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p12"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p12": 3
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 12,
+          "page": 3
+        }
+      ]
     },
     {
       "id": 264,
@@ -4102,8 +4599,11 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2024_01_02p2"
+      "sources": [
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 2
+        }
       ]
     },
     {
@@ -4117,13 +4617,18 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p5",
-        "cat1/2014_12_19p5"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p5": 2
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 5,
+          "page": 2
+        },
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 5,
+          "unavailable": true
+        }
+      ]
     },
     {
       "id": 266,
@@ -4136,12 +4641,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p2"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p2": 1
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 2,
+          "page": 1
+        }
+      ]
     },
     {
       "id": 267,
@@ -4154,13 +4660,18 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p4",
-        "cat1/2014_12_19p4"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p4": 1
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 4,
+          "page": 1
+        },
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 4,
+          "unavailable": true
+        }
+      ]
     },
     {
       "id": 268,
@@ -4173,12 +4684,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p1"
-      ],
-      "fontePages": {
-        "cat1/2023_08_00p1": 1
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 1,
+          "page": 1
+        }
+      ]
     },
     {
       "id": 269,
@@ -4191,13 +4703,17 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p1",
-        "cat1/2023_12_22p1"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p1": 1
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 1,
+          "page": 1
+        },
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 1
+        }
+      ]
     },
     {
       "id": 270,
@@ -4210,12 +4726,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p1"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p1": 1
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 1,
+          "page": 1
+        }
+      ]
     },
     {
       "id": 271,
@@ -4228,12 +4745,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p3"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p3": 1
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 3,
+          "page": 1
+        }
+      ]
     },
     {
       "id": 272,
@@ -4246,12 +4764,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p9"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p9": 3
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 9,
+          "page": 3
+        }
+      ]
     },
     {
       "id": 273,
@@ -4264,9 +4783,15 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p12",
-        "cat1/2024_01_02p12"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 12
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 12
+        }
       ]
     },
     {
@@ -4280,8 +4805,12 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p25"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 25,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -4295,14 +4824,22 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2021_02_18p19",
-        "cat1/2011_12_13p10",
-        "cat1/2014_12_19p10"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p10": 3
-      }
+      "sources": [
+        {
+          "pdf": "cat2/2021_02_18",
+          "question": 19
+        },
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 10,
+          "page": 3
+        },
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 10,
+          "unavailable": true
+        }
+      ]
     },
     {
       "id": 276,
@@ -4315,12 +4852,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p37"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p37": 10
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 37,
+          "page": 10
+        }
+      ]
     },
     {
       "id": 277,
@@ -4333,12 +4871,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p23"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p23": 6
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 23,
+          "page": 6
+        }
+      ]
     },
     {
       "id": 278,
@@ -4351,8 +4890,11 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p28"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 28
+        }
       ]
     },
     {
@@ -4366,12 +4908,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p14"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p14": 4
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 14,
+          "page": 4
+        }
+      ]
     },
     {
       "id": 280,
@@ -4384,12 +4927,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2011_12_13p38"
-      ],
-      "fontePages": {
-        "cat1/2011_12_13p38": 10
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 38,
+          "page": 10
+        }
+      ]
     },
     {
       "id": 281,
@@ -4402,8 +4946,12 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_12_19p1"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 1,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -4417,12 +4965,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_05_23p2"
-      ],
-      "fontePages": {
-        "cat1/2014_05_23p2": 1
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2014_05_23",
+          "question": 2,
+          "page": 1
+        }
+      ]
     },
     {
       "id": 283,
@@ -4435,12 +4984,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p5"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p5": 2
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 5,
+          "page": 2
+        }
+      ]
     },
     {
       "id": 284,
@@ -4453,10 +5003,20 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2013_08_00p13",
-        "cat1/2016_01_00p12",
-        "cat1/2014_12_19p12"
+      "sources": [
+        {
+          "pdf": "cat2/2013_08_00",
+          "question": 13
+        },
+        {
+          "pdf": "cat2/2016_01_00",
+          "question": 12
+        },
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 12,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -4469,8 +5029,12 @@
         "Todas as opções são válidas"
       ],
       "correctIndex": 1,
-      "fonte": [
-        "cat1/2014_12_19p13"
+      "sources": [
+        {
+          "pdf": "cat1/2014_12_19",
+          "question": 13,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -4483,8 +5047,12 @@
         "O seu uso é prático unicamente em bandas de VHF"
       ],
       "correctIndex": 0,
-      "fonte": [
-        "cat2/2014_12_19p14"
+      "sources": [
+        {
+          "pdf": "cat2/2014_12_19",
+          "question": 14,
+          "unavailable": true
+        }
       ]
     },
     {
@@ -4498,15 +5066,25 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/0000_00_01p4",
-        "cat1/0000_00_03p4",
-        "cat1/2013_08_00p4",
-        "cat1/2014_05_23p4"
-      ],
-      "fontePages": {
-        "cat1/2014_05_23p4": 1
-      }
+      "sources": [
+        {
+          "pdf": "cat2/0000_00_01",
+          "question": 4
+        },
+        {
+          "pdf": "cat2/0000_00_03",
+          "question": 4
+        },
+        {
+          "pdf": "cat2/2013_08_00",
+          "question": 4
+        },
+        {
+          "pdf": "cat1/2014_05_23",
+          "question": 4,
+          "page": 1
+        }
+      ]
     },
     {
       "id": 288,
@@ -4519,19 +5097,41 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p2",
-        "cat1/2013_08_00p5",
-        "cat1/2016_01_00p3",
-        "cat1/2021_02_18p4",
-        "cat1/2022_02_03p4",
-        "cat1/2023_03_08p04",
-        "cat1/2014_05_23p5",
-        "cat1/2023_12_22p2"
-      ],
-      "fontePages": {
-        "cat1/2014_05_23p5": 2
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 2
+        },
+        {
+          "pdf": "cat2/2013_08_00",
+          "question": 5
+        },
+        {
+          "pdf": "cat2/2016_01_00",
+          "question": 3
+        },
+        {
+          "pdf": "cat2/2021_02_18",
+          "question": 4
+        },
+        {
+          "pdf": "cat2/2022_02_03",
+          "question": 4
+        },
+        {
+          "pdf": "cat2/2023_03_08",
+          "question": 4
+        },
+        {
+          "pdf": "cat1/2014_05_23",
+          "question": 5,
+          "page": 2
+        },
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 2
+        }
+      ]
     },
     {
       "id": 289,
@@ -4544,14 +5144,17 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2022_12_27p12",
-        "cat1/2014_05_23p7",
-        "cat1/2014_05_23p7"
-      ],
-      "fontePages": {
-        "cat1/2014_05_23p7": 2
-      }
+      "sources": [
+        {
+          "pdf": "cat2/2022_12_27",
+          "question": 12
+        },
+        {
+          "pdf": "cat1/2014_05_23",
+          "question": 7,
+          "page": 2
+        }
+      ]
     },
     {
       "id": 290,
@@ -4564,12 +5167,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2014_05_23p8"
-      ],
-      "fontePages": {
-        "cat1/2014_05_23p8": 2
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2014_05_23",
+          "question": 8,
+          "page": 2
+        }
+      ]
     },
     {
       "id": 291,
@@ -4582,20 +5186,42 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2012_04_10p13",
-        "cat1/2017_09_27p12",
-        "cat1/2021_02_18p7",
-        "cat1/2022_07_20p7",
-        "cat1/2022_08_26p7",
-        "cat1/2023_03_08p07",
-        "cat1/2014_05_23p12",
-        "cat1/2023_07_03p6"
-      ],
-      "fontePages": {
-        "cat1/2014_05_23p12": 3,
-        "cat1/2023_07_03p6": 2
-      }
+      "sources": [
+        {
+          "pdf": "cat2/2012_04_10",
+          "question": 13
+        },
+        {
+          "pdf": "cat2/2017_09_27",
+          "question": 12
+        },
+        {
+          "pdf": "cat2/2021_02_18",
+          "question": 7
+        },
+        {
+          "pdf": "cat2/2022_07_20",
+          "question": 7
+        },
+        {
+          "pdf": "cat2/2022_08_26",
+          "question": 7
+        },
+        {
+          "pdf": "cat2/2023_03_08",
+          "question": 7
+        },
+        {
+          "pdf": "cat1/2014_05_23",
+          "question": 12,
+          "page": 3
+        },
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 6,
+          "page": 2
+        }
+      ]
     },
     {
       "id": 292,
@@ -4608,13 +5234,31 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p6",
-        "cat1/2018_03_08p12",
-        "cat1/2022_06_27p7",
-        "cat1/2022_12_27p7",
-        "cat1/2023_01_27p7",
-        "cat1/2024_01_02p6"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 6
+        },
+        {
+          "pdf": "cat2/2018_03_08",
+          "question": 12
+        },
+        {
+          "pdf": "cat2/2022_06_27",
+          "question": 7
+        },
+        {
+          "pdf": "cat2/2022_12_27",
+          "question": 7
+        },
+        {
+          "pdf": "cat2/2023_01_27",
+          "question": 7
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 6
+        }
       ]
     },
     {
@@ -4628,8 +5272,11 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p6"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 6
+        }
       ]
     },
     {
@@ -4676,12 +5323,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p8"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p8": 3
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 8,
+          "page": 3
+        }
+      ]
     },
     {
       "id": 297,
@@ -4837,8 +5485,11 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p14"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 14
+        }
       ]
     },
     {
@@ -4939,8 +5590,11 @@
         "Podem ser detectados alguns tipos de erro."
       ],
       "correctIndex": 3,
-      "fonte": [
-        "cat1/2024_01_02p39"
+      "sources": [
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 39
+        }
       ]
     },
     {
@@ -4975,8 +5629,11 @@
         "o sinal analógico é  misturado com outro sinal analógico padrão de frequência muito superior, resultando um sinal digital de amplitude variável proporcional ao sinal amostrado."
       ],
       "correctIndex": 1,
-      "fonte": [
-        "cat1/2023_12_22p40"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 40
+        }
       ]
     },
     {
@@ -5002,12 +5659,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p40"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p40": 12
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 40,
+          "page": 12
+        }
+      ]
     },
     {
       "id": 326,
@@ -5053,8 +5711,11 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p16"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 16
+        }
       ]
     },
     {
@@ -5079,13 +5740,17 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p16",
-        "cat1/2024_01_02p16"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p16": 4
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 16,
+          "page": 4
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 16
+        }
+      ]
     },
     {
       "id": 332,
@@ -5097,8 +5762,11 @@
         "Todas as respostas estão correctas."
       ],
       "correctIndex": 1,
-      "fonte": [
-        "cat1/2023_12_22p16"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 16
+        }
       ]
     },
     {
@@ -5189,8 +5857,11 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p18"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 18
+        }
       ]
     },
     {
@@ -5302,8 +5973,11 @@
         "Capacidade mútua."
       ],
       "correctIndex": 2,
-      "fonte": [
-        "cat1/2023_12_22p26"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 26
+        }
       ]
     },
     {
@@ -5349,8 +6023,11 @@
         "Comporta-se como um varicap"
       ],
       "correctIndex": 0,
-      "fonte": [
-        "cat1/2023_12_22p30"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 30
+        }
       ]
     },
     {
@@ -5364,12 +6041,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p30"
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 30,
+          "page": 9
+        }
       ],
-      "fontePages": {
-        "cat1/2023_07_03p30": 9
-      },
       "img": "/images/cat1/q25.png"
     },
     {
@@ -5472,10 +6150,19 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p35",
-        "cat1/2023_12_22p35",
-        "cat1/2024_01_02p35"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 35
+        },
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 35
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 35
+        }
       ],
       "img": "/images/cat1/fig1.png"
     },
@@ -5524,12 +6211,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_07_03p35"
-      ],
-      "fontePages": {
-        "cat1/2023_07_03p35": 10
-      }
+      "sources": [
+        {
+          "pdf": "cat1/2023_07_03",
+          "question": 35,
+          "page": 10
+        }
+      ]
     },
     {
       "id": 369,
@@ -5542,10 +6230,19 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_08_00p38",
-        "cat1/2023_12_22p38",
-        "cat1/2024_01_02p38"
+      "sources": [
+        {
+          "pdf": "cat1/2023_08_00",
+          "question": 38
+        },
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 38
+        },
+        {
+          "pdf": "cat1/2024_01_02",
+          "question": 38
+        }
       ]
     },
     {
@@ -5559,8 +6256,11 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "fonte": [
-        "cat1/2023_12_22p3"
+      "sources": [
+        {
+          "pdf": "cat1/2023_12_22",
+          "question": 3
+        }
       ]
     }
   ]

@@ -67,8 +67,15 @@ export function serializeQuestionFile(q: ContentQuestion): string {
   };
 
   if (q.topic !== null) frontmatter.topic = q.topic;
-  if (q.sources.length > 0) frontmatter.sources = q.sources;
-  if (Object.keys(q.sourcePages).length > 0) frontmatter.sourcePages = q.sourcePages;
+  if (q.sources.length > 0) {
+    // `page` is omitted while unresolved rather than written as null, so a
+    // file shows only what is actually known.
+    frontmatter.sources = q.sources.map((s) =>
+      s.page === null
+        ? { pdf: s.pdf, question: s.question }
+        : { pdf: s.pdf, question: s.question, page: s.page }
+    );
+  }
   if (q.image !== null) frontmatter.image = q.image;
   if (q.tutorial !== null) frontmatter.tutorial = q.tutorial;
   if (q.calc !== null) frontmatter.calc = q.calc;

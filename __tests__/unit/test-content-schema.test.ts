@@ -24,8 +24,7 @@ function validCategory() {
           { text: "da UIT", correct: true },
           { text: "da NATO" },
         ],
-        sources: ["cat3/2023_08_18p17"],
-        sourcePages: { "cat3/2023_08_18p17": 5 },
+        sources: [{ pdf: "cat3/2023_08_18", question: 17, page: 5 }],
       },
     ],
   };
@@ -65,14 +64,36 @@ describe("canonical schema", () => {
     expect(result.error?.issues[0]?.message).toContain("found 2");
   });
 
-  it("rejects a sourcePages key that is not a cited source", () => {
+  it("rejects the same paper and pergunta cited twice", () => {
     const input = validCategory();
-    input.questions[0]!.sourcePages = { "cat3/not-a-real-source": 5 };
+    input.questions[0]!.sources = [
+      { pdf: "cat3/2023_08_18", question: 17, page: 5 },
+      { pdf: "cat3/2023_08_18", question: 17, page: 5 },
+    ];
 
     const result = safeParseCategory(input);
 
     expect(result.success).toBe(false);
-    expect(result.error?.issues[0]?.message).toContain("not present in sources");
+    expect(result.error?.issues[0]?.message).toContain("more than once");
+  });
+
+  it("accepts the same paper cited at different perguntas", () => {
+    const input = validCategory();
+    input.questions[0]!.sources = [
+      { pdf: "cat3/2023_08_18", question: 17, page: 5 },
+      { pdf: "cat3/2023_08_18", question: 21, page: 6 },
+    ];
+
+    expect(safeParseCategory(input).success).toBe(true);
+  });
+
+  it("leaves an unresolved page as null rather than dropping the reference", () => {
+    const input = validCategory();
+    input.questions[0]!.sources = [{ pdf: "cat3/2023_08_18", question: 17 }];
+
+    const parsed = parseCategory(input);
+    expect(parsed.questions[0]!.sources[0]!.page).toBeNull();
+    expect(parsed.questions[0]!.sources[0]!.question).toBe(17);
   });
 
   it("rejects a question with fewer than two answers", () => {
@@ -94,12 +115,18 @@ describe("canonical schema", () => {
 
   it("rejects a non-positive or fractional page number", () => {
     const zero = validCategory();
-    zero.questions[0]!.sourcePages = { "cat3/2023_08_18p17": 0 };
+    zero.questions[0]!.sources = [{ pdf: "cat3/2023_08_18", question: 17, page: 0 }];
     expect(safeParseCategory(zero).success).toBe(false);
 
     const fractional = validCategory();
-    fractional.questions[0]!.sourcePages = { "cat3/2023_08_18p17": 1.5 };
+    fractional.questions[0]!.sources = [{ pdf: "cat3/2023_08_18", question: 17, page: 1.5 }];
     expect(safeParseCategory(fractional).success).toBe(false);
+  });
+
+  it("rejects a non-positive or fractional pergunta number", () => {
+    const zero = validCategory();
+    zero.questions[0]!.sources = [{ pdf: "cat3/2023_08_18", question: 0 }];
+    expect(safeParseCategory(zero).success).toBe(false);
   });
 
   it("trims surrounding whitespace rather than preserving it", () => {

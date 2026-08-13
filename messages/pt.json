@@ -342,6 +342,7 @@
     "officialSource": "Fonte oficial:",
     "sourceOpenNewTab": "Abrir em nova aba",
     "sourceClose": "Fechar",
+    "sourceUnavailable": "documento não disponível",
     "successRate": "{rate}% de acerto"
   },
   "SubmitExam": {
