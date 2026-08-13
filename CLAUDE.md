@@ -53,6 +53,14 @@ match and is wired into `bun run build`, so a hand-edit or a stale artifact
 fails the build. `scripts/content-migrate.ts <cat>` performs a migration and
 refuses to overwrite an existing source directory.
 
+**Linking questions to exam PDFs**: `bun run data:ocr-exams` OCRs the scanned
+papers in `public/exams/` and matches them back to the bank (needs `poppler`
+and `tesseract`; install `tesseract-data-por` for accented text). With
+`--apply` it fills `sourcePages` for references that already exist. It never
+invents a `sources` entry, because that needs the question number read off the
+scan, which is the least reliable part — those are proposed in the report for a
+human to confirm. `bun run data:fonte-pages` is the manual equivalent.
+
 Why `order` lives in `category.json`: the question order is **editorial, not id
 order** (in cat3, questions 210-213 sit at positions 8, 10, 19 and 31, grouped
 by subject) and it drives the browse sequence. A manifest keeps inserting a
