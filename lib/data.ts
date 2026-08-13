@@ -23,7 +23,7 @@ export type RawQuestion = {
   options: string[];
   correctIndex: number;
   hasNotesMdx?: boolean;
-  sources?: { pdf: string; question: number; page?: number }[];
+  sources?: { pdf: string; question: number; page?: number; unavailable?: boolean }[];
   img?: string;
   tutorial?: string;
   materia?: string;

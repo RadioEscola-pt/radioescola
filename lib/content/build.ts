@@ -101,7 +101,8 @@ function absoluteImagePath(image: string, categoryId: string): string {
  */
 function toAppQuestion(
   q: ContentQuestion,
-  categoryId: string
+  categoryId: string,
+  pdfExists: (pdf: string) => boolean
 ): Record<string, unknown> {
   const out: Record<string, unknown> = {
     id: q.id,
@@ -114,11 +115,15 @@ function toAppQuestion(
   if (q.sources.length > 0) {
     // Same nesting as the source files, minus unresolved pages: the client
     // only needs `page` when there is one to link to.
-    out.sources = q.sources.map((s) =>
-      s.page === null
-        ? { pdf: s.pdf, question: s.question }
-        : { pdf: s.pdf, question: s.question, page: s.page }
-    );
+    out.sources = q.sources.map((s) => {
+      const ref: Record<string, unknown> = { pdf: s.pdf, question: s.question };
+      if (s.page !== null) ref.page = s.page;
+      // Marked here so the client can show the citation without offering a
+      // link that 404s. 37 questions cite a paper nobody has; they were
+      // rendering a broken link to every visitor.
+      if (!pdfExists(s.pdf)) ref.unavailable = true;
+      return ref;
+    });
   }
   if (q.image !== null) out.img = absoluteImagePath(q.image, categoryId);
   if (q.tutorial !== null) out.tutorial = q.tutorial;
@@ -129,7 +134,11 @@ function toAppQuestion(
 }
 
 /** Compiles a validated category into the files the app ships. */
-export function emitCategory(category: ContentCategory): CategoryArtifacts {
+export function emitCategory(
+  category: ContentCategory,
+  examsDir = join("public", "exams")
+): CategoryArtifacts {
+  const pdfExists = (pdf: string) => existsSync(join(examsDir, `${pdf}.pdf`));
   const notes = new Map<number, string>();
   for (const q of category.questions) {
     if (q.explanation !== null) {
@@ -140,7 +149,7 @@ export function emitCategory(category: ContentCategory): CategoryArtifacts {
   const app = {
     category: category.id,
     anacomFile: category.anacomFile,
-    questions: category.questions.map((q) => toAppQuestion(q, category.id)),
+    questions: category.questions.map((q) => toAppQuestion(q, category.id, pdfExists)),
   };
 
   return {

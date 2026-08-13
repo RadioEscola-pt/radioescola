@@ -43,7 +43,8 @@
         },
         {
           "pdf": "cat1/2014_12_19",
-          "question": 6
+          "question": 6,
+          "unavailable": true
         }
       ]
     },
@@ -174,7 +175,8 @@
         },
         {
           "pdf": "cat1/2014_12_19",
-          "question": 24
+          "question": 24,
+          "unavailable": true
         }
       ]
     },
@@ -231,7 +233,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 17
+          "question": 17,
+          "unavailable": true
         }
       ]
     },
@@ -249,7 +252,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 32
+          "question": 32,
+          "unavailable": true
         }
       ]
     },
@@ -345,7 +349,8 @@
         },
         {
           "pdf": "cat1/2014_12_19",
-          "question": 35
+          "question": 35,
+          "unavailable": true
         }
       ]
     },
@@ -449,7 +454,8 @@
         },
         {
           "pdf": "cat1/2014_12_19",
-          "question": 38
+          "question": 38,
+          "unavailable": true
         }
       ]
     },
@@ -760,7 +766,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 29
+          "question": 29,
+          "unavailable": true
         },
         {
           "pdf": "cat2/2017_09_27",
@@ -794,7 +801,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 22
+          "question": 22,
+          "unavailable": true
         }
       ]
     },
@@ -925,7 +933,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 31
+          "question": 31,
+          "unavailable": true
         }
       ]
     },
@@ -991,7 +1000,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 33
+          "question": 33,
+          "unavailable": true
         }
       ]
     },
@@ -1117,7 +1127,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 36
+          "question": 36,
+          "unavailable": true
         }
       ]
     },
@@ -1274,7 +1285,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 11
+          "question": 11,
+          "unavailable": true
         }
       ]
     },
@@ -1358,7 +1370,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 15
+          "question": 15,
+          "unavailable": true
         }
       ]
     },
@@ -1543,7 +1556,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 19
+          "question": 19,
+          "unavailable": true
         }
       ]
     },
@@ -2190,7 +2204,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 34
+          "question": 34,
+          "unavailable": true
         }
       ]
     },
@@ -2278,7 +2293,8 @@
         },
         {
           "pdf": "cat1/2014_12_19",
-          "question": 30
+          "question": 30,
+          "unavailable": true
         }
       ]
     },
@@ -2538,7 +2554,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 37
+          "question": 37,
+          "unavailable": true
         }
       ]
     },
@@ -2614,7 +2631,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 21
+          "question": 21,
+          "unavailable": true
         }
       ]
     },
@@ -2727,7 +2745,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 23
+          "question": 23,
+          "unavailable": true
         }
       ]
     },
@@ -2750,7 +2769,8 @@
         },
         {
           "pdf": "cat1/2014_12_19",
-          "question": 26
+          "question": 26,
+          "unavailable": true
         }
       ]
     },
@@ -2992,7 +3012,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 27
+          "question": 27,
+          "unavailable": true
         }
       ]
     },
@@ -3014,7 +3035,8 @@
         },
         {
           "pdf": "cat1/2014_12_19",
-          "question": 27
+          "question": 27,
+          "unavailable": true
         }
       ]
     },
@@ -3122,7 +3144,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 9
+          "question": 9,
+          "unavailable": true
         }
       ]
     },
@@ -3254,7 +3277,8 @@
         },
         {
           "pdf": "cat1/2014_12_19",
-          "question": 18
+          "question": 18,
+          "unavailable": true
         }
       ]
     },
@@ -3724,7 +3748,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 2
+          "question": 2,
+          "unavailable": true
         }
       ]
     },
@@ -3754,7 +3779,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 2
+          "question": 2,
+          "unavailable": true
         }
       ]
     },
@@ -4171,7 +4197,8 @@
         },
         {
           "pdf": "cat1/2014_12_19",
-          "question": 7
+          "question": 7,
+          "unavailable": true
         },
         {
           "pdf": "cat1/2023_07_03",
@@ -4308,7 +4335,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 20
+          "question": 20,
+          "unavailable": true
         }
       ]
     },
@@ -4467,7 +4495,8 @@
         },
         {
           "pdf": "cat1/2014_12_19",
-          "question": 8
+          "question": 8,
+          "unavailable": true
         },
         {
           "pdf": "cat1/2023_07_03",
@@ -4596,7 +4625,8 @@
         },
         {
           "pdf": "cat1/2014_12_19",
-          "question": 5
+          "question": 5,
+          "unavailable": true
         }
       ]
     },
@@ -4638,7 +4668,8 @@
         },
         {
           "pdf": "cat1/2014_12_19",
-          "question": 4
+          "question": 4,
+          "unavailable": true
         }
       ]
     },
@@ -4777,7 +4808,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 25
+          "question": 25,
+          "unavailable": true
         }
       ]
     },
@@ -4804,7 +4836,8 @@
         },
         {
           "pdf": "cat1/2014_12_19",
-          "question": 10
+          "question": 10,
+          "unavailable": true
         }
       ]
     },
@@ -4916,7 +4949,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 1
+          "question": 1,
+          "unavailable": true
         }
       ]
     },
@@ -4980,7 +5014,8 @@
         },
         {
           "pdf": "cat1/2014_12_19",
-          "question": 12
+          "question": 12,
+          "unavailable": true
         }
       ]
     },
@@ -4997,7 +5032,8 @@
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
-          "question": 13
+          "question": 13,
+          "unavailable": true
         }
       ]
     },
@@ -5014,7 +5050,8 @@
       "sources": [
         {
           "pdf": "cat2/2014_12_19",
-          "question": 14
+          "question": 14,
+          "unavailable": true
         }
       ]
     },

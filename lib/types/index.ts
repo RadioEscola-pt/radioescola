@@ -12,6 +12,8 @@ export interface SourceRef {
   pdf: string;
   question: number;
   page?: number;
+  /** The PDF is not in public/exams, so the citation must not be linked. */
+  unavailable?: boolean;
 }
 
 export interface Question {

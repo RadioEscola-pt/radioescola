@@ -41,10 +41,16 @@ function buildSourceLink(source: SourceRef) {
   if (!folder || !file) {
     return { label: source.pdf, href: null };
   }
+  const label = `${folder.toUpperCase()} ${file} (p${source.question})`;
+  // The paper is cited but we do not hold it; linking would 404. Keep the
+  // citation visible — it is still provenance — and drop the link.
+  if (source.unavailable) {
+    return { label, href: null };
+  }
   const base = `/exams/${source.pdf}.pdf`;
   return {
     href: source.page ? `${base}#page=${source.page}` : base,
-    label: `${folder.toUpperCase()} ${file} (p${source.question})`,
+    label,
   };
 }
 
@@ -272,7 +278,12 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
                           closeLabel={t('sourceClose')}
                         />
                       ) : (
-                        label
+                        <span className="text-slate-500 dark:text-slate-500">
+                          {label}
+                          {source.unavailable && (
+                            <span className="ml-1 italic">({t('sourceUnavailable')})</span>
+                          )}
+                        </span>
                       )}
                     </li>
                   );
