@@ -10,15 +10,14 @@
         "Aumenta para 4 vezes o valor"
       ],
       "correctIndex": 2,
-      "TEMA": "ohm",
       "notes": null,
-      "img": null,
-      "uniqueID": 1,
       "fonte": [
         "cat2/2018_06_19p7"
       ],
+      "img": null,
+      "uniqueID": 1,
       "tutorial": null,
-      "materia": null,
+      "materia": "ohm",
       "calc": "OHMCALC"
     },
     {
@@ -31,13 +30,13 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 2,
       "fonte": [
         "cat2/2020_07_16p8",
         "cat2/2023_06_15p8",
         "cat2/2023_06_26p8"
       ],
+      "img": null,
+      "uniqueID": 2,
       "tutorial": null,
       "materia": null,
       "calc": "OHMCALC"
@@ -50,14 +49,14 @@
         "300 Ohm",
         "1,2 Kilo Ohm"
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 3,
+      "notes": null,
       "fonte": [
         "cat2/2012_04_10p7",
         "cat2/2022_06_27p8"
       ],
+      "img": null,
+      "uniqueID": 3,
       "tutorial": null,
       "materia": null,
       "calc": "OHMCALC"
@@ -72,14 +71,14 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 4,
       "fonte": [
         "cat2/2018_05_00p7",
         "cat2/2021_02_18p8",
         "cat2/2023_01_27p8",
         "cat2/2023_01_27p8"
       ],
+      "img": null,
+      "uniqueID": 4,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -92,13 +91,13 @@
         "2 V",
         "1 V"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 5,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_01p7"
       ],
+      "img": null,
+      "uniqueID": 5,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -133,8 +132,6 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 7,
       "fonte": [
         "cat2/2013_08_00p7",
         "cat2/0000_00_02p7",
@@ -142,6 +139,8 @@
         "cat2/2018_03_08p7",
         "cat2/2022_12_27p8"
       ],
+      "img": null,
+      "uniqueID": 7,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -156,13 +155,13 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 8,
       "fonte": [
         "cat2/2017_09_27p7",
         "cat2/2022_08_26p8",
         "cat2/2023_03_08p08"
       ],
+      "img": null,
+      "uniqueID": 8,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -177,13 +176,13 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 9,
       "fonte": [
         "cat2/0000_00_03p14",
         "cat2/0000_00_01p14",
         "cat2/2022_02_03p16"
       ],
+      "img": null,
+      "uniqueID": 9,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -194,13 +193,13 @@
         "6 V",
         "12 V",
         "24 V",
-        "Nenhuma das respostas está correcta. "
+        "Nenhuma das respostas está correcta."
       ],
-      "notes": null,
       "correctIndex": 3,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 10,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -213,11 +212,11 @@
         "Ao ser carregada.",
         "Ao ser colocada numa superfície não plana."
       ],
-      "notes": null,
       "correctIndex": 3,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 11,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -230,11 +229,11 @@
         "Alta tensão.",
         "Recarga rápida."
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 12,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -242,16 +241,16 @@
     {
       "question": "Qual o mínimo de tensão de descarga permitido para o máximo de vida útil de uma bateria comum de chumbo-ácido de 12 volt?",
       "answers": [
-        "6 V ",
-        "8,5 V ",
-        "10,5 V ",
-        "12 V "
+        "6 V",
+        "8,5 V",
+        "10,5 V",
+        "12 V"
       ],
-      "notes": null,
       "correctIndex": 3,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 13,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -264,11 +263,11 @@
         "Bateria de hidreto metálico de níquel.",
         "Bateria de mercúrio."
       ],
-      "notes": null,
       "correctIndex": 3,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 14,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -303,13 +302,13 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 16,
       "fonte": [
         "cat2/2013_08_00p14",
         "cat2/2021_02_18p16",
         "cat2/2023_06_15p16"
       ],
+      "img": null,
+      "uniqueID": 16,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -347,9 +346,9 @@
       ],
       "correctIndex": 1,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 18,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -364,13 +363,13 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 19,
       "fonte": [
         "cat2/2022_06_27p16",
         "cat2/2022_08_26p16",
         "cat2/2022_12_27p16"
       ],
+      "img": null,
+      "uniqueID": 19,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -385,8 +384,6 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 20,
       "fonte": [
         "cat2/0000_00_01p21",
         "cat2/2018_06_19p21",
@@ -396,6 +393,8 @@
         "cat2/2023_01_27p23",
         "cat2/2023_06_15p23"
       ],
+      "img": null,
+      "uniqueID": 20,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -408,15 +407,15 @@
         "a altura da antena da estação emissora",
         "a sensibildade do receptor"
       ],
-      "notes": null,
       "correctIndex": 2,
-      "img": null,
-      "uniqueID": 21,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_01p9",
         "cat2/2021_02_18p12",
         "cat2/2022_07_20p12"
       ],
+      "img": null,
+      "uniqueID": 21,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -431,9 +430,9 @@
       ],
       "correctIndex": 3,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 22,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -446,16 +445,16 @@
         "Watt",
         "Ampere."
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 23,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_03p27",
         "cat2/0000_00_01p27",
         "cat2/2018_03_08p27",
         "cat2/2023_03_08p27"
       ],
+      "img": null,
+      "uniqueID": 23,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -470,13 +469,13 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 24,
       "fonte": [
         "cat2/0000_00_02p27",
         "cat2/2020_07_16p27",
         "cat2/2022_12_27p27"
       ],
+      "img": null,
+      "uniqueID": 24,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -513,10 +512,8 @@
         "a força electromotriz",
         "a frequência"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 26,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p14",
         "cat2/2016_01_00p14",
@@ -525,6 +522,8 @@
         "cat2/2022_07_20p16",
         "cat2/2023_01_27p16"
       ],
+      "img": null,
+      "uniqueID": 26,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -537,11 +536,11 @@
         "Em todos os sentidos; omnidireccional.",
         "No sentido determinado pela regra da mão esquerda."
       ],
-      "notes": null,
       "correctIndex": 4,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 27,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -554,11 +553,11 @@
         "O diâmetro do condutor.",
         "A quantidade de corrente."
       ],
-      "notes": null,
       "correctIndex": 4,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 28,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -573,13 +572,13 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 29,
       "fonte": [
         "cat2/2013_08_00p27",
         "cat2/2021_02_18p27",
         "cat2/2023_06_15p27"
       ],
+      "img": null,
+      "uniqueID": 29,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -592,16 +591,16 @@
         "É um campo numa dada região do espaço onde se manifesta a acção do efeito gravitacional",
         "É um campo numa dada região do espaço, tendo necessariamente ar, onde se manifesta a acção de fontes de luz coerente."
       ],
-      "notes": null,
       "correctIndex": 2,
-      "img": null,
-      "uniqueID": 30,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_03p21",
         "cat2/0000_00_02p21",
         "cat2/2018_05_00p21",
         "cat2/2022_12_27p23"
       ],
+      "img": null,
+      "uniqueID": 30,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -616,13 +615,13 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 31,
       "fonte": [
         "cat2/2018_05_00p27",
         "cat2/2022_06_27p27",
         "cat2/2022_07_20p27"
       ],
+      "img": null,
+      "uniqueID": 31,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -656,8 +655,6 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 32,
       "fonte": [
         "cat2/2013_08_00p31",
         "cat2/0000_00_01p31",
@@ -665,6 +662,8 @@
         "cat2/2022_08_26p31",
         "cat2/2023_06_26p32"
       ],
+      "img": null,
+      "uniqueID": 32,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -679,8 +678,6 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 33,
       "fonte": [
         "cat2/2017_09_27p31",
         "cat2/2018_03_08p31",
@@ -688,6 +685,8 @@
         "cat2/2023_03_08p32",
         "cat2/2023_06_15p32"
       ],
+      "img": null,
+      "uniqueID": 33,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -700,15 +699,15 @@
         "20 MHz",
         "30 MHz"
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 34,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_02p31",
         "cat2/2020_07_16p28",
         "cat2/2021_09_06p32"
       ],
+      "img": null,
+      "uniqueID": 34,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -723,13 +722,13 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 35,
       "fonte": [
         "cat2/2011_11_00p31",
         "cat2/2016_01_00p31",
         "cat2/2022_06_27p32"
       ],
+      "img": null,
+      "uniqueID": 35,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -744,13 +743,13 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 36,
       "fonte": [
         "cat2/2011_11_00p33",
         "cat2/2022_07_20p35",
         "cat2/2022_12_27p34"
       ],
+      "img": null,
+      "uniqueID": 36,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -765,8 +764,6 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 37,
       "fonte": [
         "cat2/2012_04_10p20",
         "cat2/2013_08_00p20",
@@ -774,6 +771,8 @@
         "cat2/2022_02_03p20",
         "cat2/2022_07_20p20"
       ],
+      "img": null,
+      "uniqueID": 37,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -786,16 +785,16 @@
         "Hertz",
         "Volt"
       ],
-      "notes": null,
       "correctIndex": 2,
-      "img": null,
-      "uniqueID": 38,
+      "notes": null,
       "fonte": [
         "cat2/2013_08_00p23",
         "cat2/0000_00_02p23",
         "cat2/2018_05_00p24",
         "cat2/2022_07_20p22"
       ],
+      "img": null,
+      "uniqueID": 38,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -810,13 +809,13 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 39,
       "fonte": [
         "cat2/2018_06_19p33",
         "cat2/2021_02_18p35",
         "cat2/2022_06_27p35"
       ],
+      "img": null,
+      "uniqueID": 39,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -829,10 +828,8 @@
         "433 010 000 Hz",
         "0,000 433 010 Hz"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 40,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_03p33",
         "cat2/0000_00_01p33",
@@ -840,6 +837,8 @@
         "cat2/2020_07_16p35",
         "cat2/2023_03_08p34"
       ],
+      "img": null,
+      "uniqueID": 40,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -852,16 +851,16 @@
         "9 000 Hz",
         "90 000 Hz"
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 41,
+      "notes": null,
       "fonte": [
         "cat2/2018_03_08p33",
         "cat2/0000_00_02p33",
         "cat2/2022_07_20p34",
         "cat2/2022_12_27p35"
       ],
+      "img": null,
+      "uniqueID": 41,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -874,15 +873,15 @@
         "9,3 GHz",
         "9 300 000 GHz"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 42,
+      "notes": null,
       "fonte": [
         "cat2/2012_04_10p34",
         "cat2/2020_07_16p34",
         "cat2/2023_06_26p34"
       ],
+      "img": null,
+      "uniqueID": 42,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -920,12 +919,12 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 44,
       "fonte": [
         "cat2/2018_05_00p34",
         "cat2/2022_02_03p35"
       ],
+      "img": null,
+      "uniqueID": 44,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -940,14 +939,14 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 45,
       "fonte": [
         "cat2/0000_00_03p34",
         "cat2/2011_11_00p34",
         "cat2/2013_08_00p33",
         "cat2/2023_06_15p34"
       ],
+      "img": null,
+      "uniqueID": 45,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -962,14 +961,14 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 46,
       "fonte": [
         "cat2/2022_02_03p34",
         "cat2/2023_01_27p35",
         "cat2/2023_03_08p35",
         "cat2/2023_06_15p35"
       ],
+      "img": null,
+      "uniqueID": 46,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1004,13 +1003,13 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 48,
       "fonte": [
         "cat2/2017_09_27p33",
         "cat2/2022_08_26p35",
         "cat2/2023_01_27p34"
       ],
+      "img": null,
+      "uniqueID": 48,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1025,11 +1024,11 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 49,
       "fonte": [
         "cat2/2022_12_27p37"
       ],
+      "img": null,
+      "uniqueID": 49,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1042,11 +1041,11 @@
         "0,5 s",
         "0,005 s"
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 50,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1061,8 +1060,6 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 52,
       "fonte": [
         "cat2/2017_09_27p36",
         "cat2/0000_00_02p36",
@@ -1071,6 +1068,8 @@
         "cat2/2023_03_08p37",
         "cat2/2023_06_26p37"
       ],
+      "img": null,
+      "uniqueID": 52,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1085,8 +1084,6 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 53,
       "fonte": [
         "cat2/2013_08_00p36",
         "cat2/2011_11_00p36",
@@ -1095,6 +1092,8 @@
         "cat2/2023_01_27p37",
         "cat2/2023_06_15p37"
       ],
+      "img": null,
+      "uniqueID": 53,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1109,12 +1108,12 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 54,
       "fonte": [
         "cat2/2022_08_26p38",
         "cat2/2022_12_27p38"
       ],
+      "img": null,
+      "uniqueID": 54,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1122,16 +1121,16 @@
     {
       "question": "Define-se índice de modulação em frequência modulada como a relação entre o:",
       "answers": [
-        "desvio máximo e a mais alta frequência de modulação ",
-        "desvio mínimo e a mais alta frequência de modulação ",
+        "desvio máximo e a mais alta frequência de modulação",
+        "desvio mínimo e a mais alta frequência de modulação",
         "desvio máximo e a mais baixa frequência de modulação",
         "desvio mínimo e a mais baixa frequência de modulação"
       ],
       "correctIndex": 1,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 55,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1146,9 +1145,9 @@
       ],
       "correctIndex": 3,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 56,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1163,13 +1162,13 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 57,
       "fonte": [
         "cat2/2013_08_00p19",
         "cat2/0000_00_01p19",
         "cat2/2021_02_18p18"
       ],
+      "img": null,
+      "uniqueID": 57,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1184,11 +1183,11 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 58,
       "fonte": [
         "cat2/2023_06_15p29"
       ],
+      "img": null,
+      "uniqueID": 58,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1203,14 +1202,14 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 59,
       "fonte": [
         "cat2/0000_00_03p38",
         "cat2/2011_11_00p38",
         "cat2/2013_08_00p38",
         "cat2/2022_06_27p39"
       ],
+      "img": null,
+      "uniqueID": 59,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1225,11 +1224,11 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 60,
       "fonte": [
         "cat2/2022_02_03p39"
       ],
+      "img": null,
+      "uniqueID": 60,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1244,14 +1243,14 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 61,
       "fonte": [
         "cat2/2012_04_10p38",
         "cat2/0000_00_01p39",
         "cat2/0000_00_02p39",
         "cat2/2018_03_08p38"
       ],
+      "img": null,
+      "uniqueID": 61,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1266,13 +1265,13 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 62,
       "fonte": [
         "cat2/2013_08_00p29",
         "cat2/2020_07_16p29",
         "cat2/2023_03_08p29"
       ],
+      "img": null,
+      "uniqueID": 62,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1287,11 +1286,11 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 63,
       "fonte": [
         "cat2/0000_00_01p38"
       ],
+      "img": null,
+      "uniqueID": 63,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1306,11 +1305,11 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 64,
       "fonte": [
         "cat2/2016_01_00p38"
       ],
+      "img": null,
+      "uniqueID": 64,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1325,12 +1324,12 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 65,
       "fonte": [
         "cat2/2021_02_18p29",
         "cat2/2023_06_26p29"
       ],
+      "img": null,
+      "uniqueID": 65,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1345,11 +1344,11 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 66,
       "fonte": [
         "cat2/2020_07_16p39"
       ],
+      "img": null,
+      "uniqueID": 66,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1364,12 +1363,12 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 67,
       "fonte": [
         "cat2/0000_00_02p38",
         "cat2/2023_03_08p39"
       ],
+      "img": null,
+      "uniqueID": 67,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1384,11 +1383,11 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 68,
       "fonte": [
         "cat2/2018_06_19p39"
       ],
+      "img": null,
+      "uniqueID": 68,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1396,19 +1395,19 @@
     {
       "question": "Em modulação de frequência, quanto maior é o desvio de frequência",
       "answers": [
-        "menos ruído se nota no recetor e maior é a faixa de frequências ocupada ",
-        "menos ruído se nota no recetor e menor é a faixa de frequências ocupada ",
-        "mais ruído se nota no recetor e maior é a faixa de frequências ocupada  ",
-        "mais ruído se nota no recetor e menor é a faixa de frequências ocupada  "
+        "menos ruído se nota no recetor e maior é a faixa de frequências ocupada",
+        "menos ruído se nota no recetor e menor é a faixa de frequências ocupada",
+        "mais ruído se nota no recetor e maior é a faixa de frequências ocupada",
+        "mais ruído se nota no recetor e menor é a faixa de frequências ocupada"
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 69,
       "fonte": [
         "cat2/2020_07_16p38",
         "cat2/2021_02_18p38"
       ],
+      "img": null,
+      "uniqueID": 69,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1423,11 +1422,11 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 70,
       "fonte": [
         "cat2/2023_03_08p38"
       ],
+      "img": null,
+      "uniqueID": 70,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1442,12 +1441,12 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 71,
       "fonte": [
         "cat2/2018_05_00p38",
         "cat2/2021_02_18p39"
       ],
+      "img": null,
+      "uniqueID": 71,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1462,11 +1461,11 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 72,
       "fonte": [
         "cat2/2017_09_27p39"
       ],
+      "img": null,
+      "uniqueID": 72,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1481,9 +1480,9 @@
       ],
       "correctIndex": 3,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 73,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1498,9 +1497,9 @@
       ],
       "correctIndex": 1,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 74,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1515,9 +1514,9 @@
       ],
       "correctIndex": 3,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 75,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1532,9 +1531,9 @@
       ],
       "correctIndex": 1,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 76,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1547,11 +1546,11 @@
         "As transmissões de voz em banda lateral única têm uma potência média mais elevada do que qualquer outro tipo de modulação.",
         "A banda lateral única é o único tipo de modulação autorizado a operar nas faixas de radioamador dos 160, 75 e 40 metro"
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 77,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1566,13 +1565,13 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 78,
       "fonte": [
         "cat2/2018_05_00p39",
         "cat2/2018_06_19p38",
         "cat2/2022_02_03p38"
       ],
+      "img": null,
+      "uniqueID": 78,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1587,11 +1586,11 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 79,
       "fonte": [
         "cat2/2017_09_27p38"
       ],
+      "img": null,
+      "uniqueID": 79,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1606,9 +1605,9 @@
       ],
       "correctIndex": 1,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 80,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1623,14 +1622,14 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 81,
       "fonte": [
         "cat2/0000_00_03p29",
         "cat2/0000_00_01p29",
         "cat2/2012_04_10p29",
         "cat2/2016_01_00p29"
       ],
+      "img": null,
+      "uniqueID": 81,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1645,11 +1644,11 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 82,
       "fonte": [
         "cat2/2022_02_03p29"
       ],
+      "img": null,
+      "uniqueID": 82,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1664,11 +1663,11 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 83,
       "fonte": [
         "cat2/2022_07_20p38"
       ],
+      "img": null,
+      "uniqueID": 83,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1681,11 +1680,11 @@
         "3000",
         "1000"
       ],
-      "notes": null,
       "correctIndex": 1,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 84,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1698,13 +1697,13 @@
         "15",
         "18"
       ],
-      "notes": null,
       "correctIndex": 2,
-      "img": null,
-      "uniqueID": 85,
+      "notes": null,
       "fonte": [
         "cat2/2022_07_20p39"
       ],
+      "img": null,
+      "uniqueID": 85,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1719,13 +1718,13 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 86,
       "fonte": [
         "cat2/2013_08_00p40",
         "cat2/2018_05_00p40",
         "cat2/2022_06_27p40"
       ],
+      "img": null,
+      "uniqueID": 86,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1740,11 +1739,11 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 87,
       "fonte": [
         "cat2/0000_00_02p40"
       ],
+      "img": null,
+      "uniqueID": 87,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1759,9 +1758,9 @@
       ],
       "correctIndex": 4,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 88,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1776,14 +1775,14 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 89,
       "fonte": [
         "cat2/0000_00_03p40",
         "cat2/0000_00_01p40",
         "cat2/2011_11_00p40",
         "cat2/2022_08_26p40"
       ],
+      "img": null,
+      "uniqueID": 89,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1798,12 +1797,12 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 90,
       "fonte": [
         "cat2/2018_03_08p40",
         "cat2/2023_06_15p40"
       ],
+      "img": null,
+      "uniqueID": 90,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1818,9 +1817,9 @@
       ],
       "correctIndex": 3,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 91,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1835,13 +1834,13 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 92,
       "fonte": [
         "cat2/2012_04_10p8",
         "cat2/0000_00_02p8",
         "cat2/2020_07_16p9"
       ],
+      "img": null,
+      "uniqueID": 92,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1856,9 +1855,9 @@
       ],
       "correctIndex": 3,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 93,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1871,13 +1870,13 @@
         "200 ohms, 200 ohms, 200 ohms.",
         "600 ohms, 600 ohms, 600 ohms."
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 94,
+      "notes": null,
       "fonte": [
         "cat2/2022_02_03p9"
       ],
+      "img": null,
+      "uniqueID": 94,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1892,11 +1891,11 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 95,
       "fonte": [
         "cat2/2017_09_27p8"
       ],
+      "img": null,
+      "uniqueID": 95,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1909,14 +1908,14 @@
         "5 resistências de 200 ohms em série.",
         "10 resistências de 100 ohms em paralelo."
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 96,
+      "notes": null,
       "fonte": [
         "cat2/2016_01_00p8",
         "cat2/2022_06_27p9"
       ],
+      "img": null,
+      "uniqueID": 96,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1950,11 +1949,11 @@
         "4 resistências de 8 ohms em paralelo.",
         "4 resistências de 16 ohms em série."
       ],
-      "notes": null,
       "correctIndex": 1,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 98,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1969,12 +1968,12 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 99,
       "fonte": [
         "cat2/2021_02_18p9",
         "cat2/2023_03_08p09"
       ],
+      "img": null,
+      "uniqueID": 99,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -1989,13 +1988,13 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 100,
       "fonte": [
         "cat2/0000_00_01p8",
         "cat2/2018_06_19p8",
         "cat2/2022_08_26p9"
       ],
+      "img": null,
+      "uniqueID": 100,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2010,11 +2009,11 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 101,
       "fonte": [
         "cat2/2013_08_00p8"
       ],
+      "img": null,
+      "uniqueID": 101,
       "tutorial": null,
       "materia": null,
       "calc": "COPADDER"
@@ -2048,11 +2047,11 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 103,
       "fonte": [
         "cat2/2022_06_27p20"
       ],
+      "img": null,
+      "uniqueID": 103,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2067,8 +2066,6 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 104,
       "fonte": [
         "cat2/0000_00_03p20",
         "cat2/0000_00_01p20",
@@ -2077,6 +2074,8 @@
         "cat2/2018_03_08p15",
         "cat2/2022_12_27p20"
       ],
+      "img": null,
+      "uniqueID": 104,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2091,12 +2090,12 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 105,
       "fonte": [
         "cat2/2018_06_19p15",
         "cat2/2022_08_26p20"
       ],
+      "img": null,
+      "uniqueID": 105,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2109,11 +2108,11 @@
         "capacidade elevada para um volume determinado.",
         "Condensador RF de custo reduzido."
       ],
-      "notes": null,
       "correctIndex": 3,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 106,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2128,11 +2127,11 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 107,
       "fonte": [
         "cat2/2023_06_15p20"
       ],
+      "img": null,
+      "uniqueID": 107,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2147,14 +2146,14 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 108,
       "fonte": [
         "cat2/2016_01_00p24",
         "cat2/2020_07_16p22",
         "cat2/2022_02_03p22",
         "cat2/2023_06_15p22"
       ],
+      "img": null,
+      "uniqueID": 108,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2169,12 +2168,12 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 109,
       "fonte": [
         "cat2/2017_09_27p26",
         "cat2/2022_06_27p21"
       ],
+      "img": null,
+      "uniqueID": 109,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2189,8 +2188,6 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 110,
       "fonte": [
         "cat2/0000_00_03p23",
         "cat2/2012_04_10p23",
@@ -2198,6 +2195,8 @@
         "cat2/2022_06_27p22",
         "cat2/2022_08_26p22"
       ],
+      "img": null,
+      "uniqueID": 110,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2212,8 +2211,6 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 111,
       "fonte": [
         "cat2/2018_06_19p24",
         "cat2/2021_02_18p22",
@@ -2221,6 +2218,8 @@
         "cat2/2023_03_08p22",
         "cat2/2023_06_26p22"
       ],
+      "img": null,
+      "uniqueID": 111,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2235,8 +2234,6 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 112,
       "fonte": [
         "cat2/0000_00_03p30",
         "cat2/2012_04_10p30",
@@ -2245,6 +2242,8 @@
         "cat2/2022_06_27p28",
         "cat2/2023_01_27p28"
       ],
+      "img": null,
+      "uniqueID": 112,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2259,13 +2258,13 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 113,
       "fonte": [
         "cat2/2011_11_00p30",
         "cat2/0000_00_01p30",
         "cat2/2022_07_20p28"
       ],
+      "img": null,
+      "uniqueID": 113,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2278,15 +2277,15 @@
         "de tensão rectificada",
         "de tensão rectificada em apenas metade do período"
       ],
-      "notes": null,
       "correctIndex": 2,
-      "img": null,
-      "uniqueID": 114,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p30",
         "cat2/0000_00_01p30",
         "cat2/2022_07_20p28"
       ],
+      "img": null,
+      "uniqueID": 114,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2301,13 +2300,13 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 115,
       "fonte": [
         "cat2/2016_01_00p28",
         "cat2/2018_05_00p28",
         "cat2/2023_06_26p28"
       ],
+      "img": null,
+      "uniqueID": 115,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2322,12 +2321,12 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 116,
       "fonte": [
         "cat2/2023_03_08p28",
         "cat2/2023_06_15p28"
       ],
+      "img": null,
+      "uniqueID": 116,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2342,14 +2341,14 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 117,
       "fonte": [
         "cat2/2017_09_27p28",
         "cat2/2020_07_16p28",
         "cat2/2022_08_26p28",
         "cat2/2022_12_27p28"
       ],
+      "img": null,
+      "uniqueID": 117,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2364,13 +2363,13 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 118,
       "fonte": [
         "cat2/2017_09_27p32",
         "cat2/2021_02_18p31",
         "cat2/2022_02_03p31"
       ],
+      "img": null,
+      "uniqueID": 118,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2385,12 +2384,12 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 119,
       "fonte": [
         "cat2/2018_03_08p32",
         "cat2/2022_08_26p31"
       ],
+      "img": null,
+      "uniqueID": 119,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2405,13 +2404,13 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 120,
       "fonte": [
         "cat2/2012_04_10p32",
         "cat2/2013_08_00p32",
         "cat2/2022_06_27p31"
       ],
+      "img": null,
+      "uniqueID": 120,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2426,11 +2425,11 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 121,
       "fonte": [
         "cat2/2022_07_20p31"
       ],
+      "img": null,
+      "uniqueID": 121,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2445,12 +2444,12 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 122,
       "fonte": [
         "cat2/2011_11_00p32",
         "cat2/2016_01_00p32"
       ],
+      "img": null,
+      "uniqueID": 122,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2465,9 +2464,9 @@
       ],
       "correctIndex": 2,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 123,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2482,12 +2481,12 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": "images/cat2/image-48.png",
-      "uniqueID": 124,
       "fonte": [
         "cat2/0000_00_01p32",
         "cat2/2023_03_08p31"
       ],
+      "img": "images/cat2/image-48.png",
+      "uniqueID": 124,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2495,19 +2494,19 @@
     {
       "question": "Na figura, identifique o símbolo que representa o díodo Zener:",
       "answers": [
-        "D1 ",
-        "D2 ",
-        "D3 ",
-        "D4 "
+        "D1",
+        "D2",
+        "D3",
+        "D4"
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": "images/cat2/image-49.png",
-      "uniqueID": 125,
       "fonte": [
         "cat2/2018_05_00p32",
         "cat2/2023_06_15p31"
       ],
+      "img": "images/cat2/image-49.png",
+      "uniqueID": 125,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2522,11 +2521,11 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": "images/cat2/image-49.png",
-      "uniqueID": 126,
       "fonte": [
         "cat2/2021_09_06p31"
       ],
+      "img": "images/cat2/image-49.png",
+      "uniqueID": 126,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2541,9 +2540,9 @@
       ],
       "correctIndex": 3,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 127,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2558,11 +2557,11 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 128,
       "fonte": [
         "cat2/2020_07_16p31"
       ],
+      "img": null,
+      "uniqueID": 128,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2577,12 +2576,12 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 129,
       "fonte": [
         "cat2/2012_04_10p35",
         "cat2/2023_03_08p33"
       ],
+      "img": null,
+      "uniqueID": 129,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2597,19 +2596,19 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": "images/cat2/image-50.png",
-      "uniqueID": 130,
       "fonte": [
         "cat2/2011_11_00p35",
         "cat2/2018_03_08p35",
         "cat2/2022_02_03p33"
       ],
+      "img": "images/cat2/image-50.png",
+      "uniqueID": 130,
       "tutorial": null,
       "materia": null,
       "calc": null
     },
     {
-      "question": "Na figura 7, identifique o terminal colector ",
+      "question": "Na figura 7, identifique o terminal colector",
       "answers": [
         "A",
         "B",
@@ -2639,12 +2638,12 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": "images/cat2/image-50.png",
-      "uniqueID": 132,
       "fonte": [
         "cat2/0000_00_01p35",
         "cat2/2021_02_18p33"
       ],
+      "img": "images/cat2/image-50.png",
+      "uniqueID": 132,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2659,12 +2658,12 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 133,
       "fonte": [
         "cat2/2021_09_06p33",
         "cat2/2022_06_27p33"
       ],
+      "img": null,
+      "uniqueID": 133,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2679,11 +2678,11 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 134,
       "fonte": [
         "cat2/2020_07_16p33"
       ],
+      "img": null,
+      "uniqueID": 134,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2698,12 +2697,12 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 135,
       "fonte": [
         "cat2/2016_01_00p35",
         "cat2/2022_08_26p33"
       ],
+      "img": null,
+      "uniqueID": 135,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2718,11 +2717,11 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 136,
       "fonte": [
         "cat2/2022_07_20p33"
       ],
+      "img": null,
+      "uniqueID": 136,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2737,12 +2736,12 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 137,
       "fonte": [
         "cat2/2022_12_27p33",
         "cat2/2023_01_27p33"
       ],
+      "img": null,
+      "uniqueID": 137,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2757,12 +2756,12 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 138,
       "fonte": [
         "cat2/2017_09_27p35",
         "cat2/2018_05_00p35"
       ],
+      "img": null,
+      "uniqueID": 138,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2777,11 +2776,11 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 139,
       "fonte": [
         "cat2/2023_06_15p33"
       ],
+      "img": null,
+      "uniqueID": 139,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2796,8 +2795,6 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 140,
       "fonte": [
         "cat2/2016_01_00p37",
         "cat2/2018_06_19p37",
@@ -2805,6 +2802,8 @@
         "cat2/2022_08_26p36",
         "cat2/2022_12_27p36"
       ],
+      "img": null,
+      "uniqueID": 140,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2819,9 +2818,9 @@
       ],
       "correctIndex": 3,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 141,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2836,12 +2835,12 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 142,
       "fonte": [
         "cat2/2017_09_27p23",
         "cat2/2018_03_08p23"
       ],
+      "img": null,
+      "uniqueID": 142,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2856,12 +2855,12 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 143,
       "fonte": [
         "cat2/2017_09_27p16",
         "cat2/2023_06_15p18"
       ],
+      "img": null,
+      "uniqueID": 143,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2876,8 +2875,6 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 144,
       "fonte": [
         "cat2/0000_00_03p19",
         "cat2/2016_01_00p16",
@@ -2887,6 +2884,8 @@
         "cat2/2023_01_27p18",
         "cat2/2023_03_08p18"
       ],
+      "img": null,
+      "uniqueID": 144,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2921,13 +2920,13 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 146,
       "fonte": [
         "cat2/2012_04_10p25",
         "cat2/2022_12_27p21",
         "cat2/2023_01_27p21"
       ],
+      "img": null,
+      "uniqueID": 146,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2942,11 +2941,11 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 147,
       "fonte": [
         "cat2/2023_06_26p31"
       ],
+      "img": null,
+      "uniqueID": 147,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2961,13 +2960,13 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 148,
       "fonte": [
         "cat2/0000_00_01p25",
         "cat2/2022_07_20p21",
         "cat2/2023_06_15p21"
       ],
+      "img": null,
+      "uniqueID": 148,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -2982,11 +2981,11 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 149,
       "fonte": [
         "cat2/0000_00_03p25"
       ],
+      "img": null,
+      "uniqueID": 149,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3001,12 +3000,12 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 150,
       "fonte": [
         "cat2/2018_06_19p26",
         "cat2/2023_03_08p21"
       ],
+      "img": null,
+      "uniqueID": 150,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3021,14 +3020,14 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 151,
       "fonte": [
         "cat2/2016_01_00p26",
         "cat2/2020_07_16p21",
         "cat2/2022_02_03p21",
         "cat2/2023_06_26p21"
       ],
+      "img": null,
+      "uniqueID": 151,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3043,8 +3042,6 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 152,
       "fonte": [
         "cat2/2011_11_00p28",
         "cat2/2022_02_03p30",
@@ -3053,6 +3050,8 @@
         "cat2/2023_01_27p30",
         "cat2/2023_03_08p30"
       ],
+      "img": null,
+      "uniqueID": 152,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3067,12 +3066,12 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 153,
       "fonte": [
         "cat2/2013_08_00p28",
         "cat2/2018_03_08p30"
       ],
+      "img": null,
+      "uniqueID": 153,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3087,12 +3086,12 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 154,
       "fonte": [
         "cat2/2016_01_00p30",
         "cat2/2018_06_19p30"
       ],
+      "img": null,
+      "uniqueID": 154,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3105,16 +3104,16 @@
         "50",
         "200"
       ],
-      "notes": null,
       "correctIndex": 2,
-      "img": null,
-      "uniqueID": 155,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_03p28",
         "cat2/2020_07_16p30",
         "cat2/2021_02_18p30",
         "cat2/2023_06_26p30"
       ],
+      "img": null,
+      "uniqueID": 155,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3127,14 +3126,14 @@
         "50",
         "200"
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 156,
+      "notes": null,
       "fonte": [
         "cat2/2012_04_10p28",
         "cat2/2023_06_15p30"
       ],
+      "img": null,
+      "uniqueID": 156,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3149,11 +3148,11 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 157,
       "fonte": [
         "cat2/2017_09_27p30"
       ],
+      "img": null,
+      "uniqueID": 157,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3168,13 +3167,13 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 158,
       "fonte": [
         "cat2/2022_06_27p25",
         "cat2/2022_12_27p25",
         "cat2/2023_01_27p25"
       ],
+      "img": null,
+      "uniqueID": 158,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3189,13 +3188,13 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 159,
       "fonte": [
         "cat2/2017_09_27p29",
         "cat2/2022_12_27p29",
         "cat2/2023_01_27p29"
       ],
+      "img": null,
+      "uniqueID": 159,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3210,8 +3209,6 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 160,
       "fonte": [
         "cat2/2013_08_00p11",
         "cat2/2018_06_19p9",
@@ -3220,6 +3217,8 @@
         "cat2/2022_08_26p10",
         "cat2/2023_06_26p10"
       ],
+      "img": null,
+      "uniqueID": 160,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3234,8 +3233,6 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 161,
       "fonte": [
         "cat2/0000_00_03p17",
         "cat2/2018_03_08p19",
@@ -3243,6 +3240,8 @@
         "cat2/2022_08_26p19",
         "cat2/2023_03_08p19"
       ],
+      "img": null,
+      "uniqueID": 161,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3257,13 +3256,13 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 162,
       "fonte": [
         "cat2/2022_02_03p10",
         "cat2/2022_12_27p10",
         "cat2/2023_01_27p10"
       ],
+      "img": null,
+      "uniqueID": 162,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3301,8 +3300,6 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 164,
       "fonte": [
         "cat2/2018_03_08p20",
         "cat2/0000_00_01p18",
@@ -3310,6 +3307,8 @@
         "cat2/2022_12_27p14",
         "cat2/2023_03_08p14"
       ],
+      "img": null,
+      "uniqueID": 164,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3322,15 +3321,15 @@
         "J3E",
         "F3E"
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 165,
+      "notes": null,
       "fonte": [
         "cat2/2013_08_00p18",
         "cat2/2016_01_00p20",
         "cat2/2023_01_27p14"
       ],
+      "img": null,
+      "uniqueID": 165,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3345,12 +3344,12 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 166,
       "fonte": [
         "cat2/2017_09_27p20",
         "cat2/2020_07_16p14"
       ],
+      "img": null,
+      "uniqueID": 166,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3365,12 +3364,12 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 167,
       "fonte": [
         "cat2/2022_07_20p26",
         "cat2/2022_12_27p26"
       ],
+      "img": null,
+      "uniqueID": 167,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3385,12 +3384,12 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 168,
       "fonte": [
         "cat2/2012_04_10p24",
         "cat2/0000_00_01p24"
       ],
+      "img": null,
+      "uniqueID": 168,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3405,11 +3404,11 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 169,
       "fonte": [
         "cat2/2013_08_00p24"
       ],
+      "img": null,
+      "uniqueID": 169,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3422,10 +3421,8 @@
         "Aproximadamente 4 vezes",
         "Aproximadamente 5 vezes"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 170,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_03p24",
         "cat2/0000_00_02p24",
@@ -3433,6 +3430,8 @@
         "cat2/2016_01_00p25",
         "cat2/2018_06_19p25"
       ],
+      "img": null,
+      "uniqueID": 170,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3447,11 +3446,11 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 171,
       "fonte": [
         "cat2/2021_02_18p26"
       ],
+      "img": null,
+      "uniqueID": 171,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3466,12 +3465,12 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 172,
       "fonte": [
         "cat2/2018_03_08p25",
         "cat2/2022_02_03p26"
       ],
+      "img": null,
+      "uniqueID": 172,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3486,13 +3485,13 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 173,
       "fonte": [
         "cat2/2022_08_26p26",
         "cat2/2023_03_08p26",
         "cat2/2023_06_15p26"
       ],
+      "img": null,
+      "uniqueID": 173,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3507,9 +3506,9 @@
       ],
       "correctIndex": 1,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 174,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3524,9 +3523,9 @@
       ],
       "correctIndex": 1,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 175,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3560,12 +3559,12 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 177,
       "fonte": [
         "cat2/2017_09_27p25",
         "cat2/2020_07_16p26"
       ],
+      "img": null,
+      "uniqueID": 177,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3580,11 +3579,11 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 178,
       "fonte": [
         "cat2/2022_06_27p26"
       ],
+      "img": null,
+      "uniqueID": 178,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3599,11 +3598,11 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 179,
       "fonte": [
         "cat2/2012_04_10p17"
       ],
+      "img": null,
+      "uniqueID": 179,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3618,11 +3617,11 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 180,
       "fonte": [
         "cat2/2021_02_18p19"
       ],
+      "img": null,
+      "uniqueID": 180,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3637,11 +3636,11 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 181,
       "fonte": [
         "cat2/2022_12_27p19"
       ],
+      "img": null,
+      "uniqueID": 181,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3656,11 +3655,11 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 182,
       "fonte": [
         "cat2/2016_01_00p19"
       ],
+      "img": null,
+      "uniqueID": 182,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3675,11 +3674,11 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 183,
       "fonte": [
         "cat2/2017_09_27p19"
       ],
+      "img": null,
+      "uniqueID": 183,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3694,8 +3693,6 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 184,
       "fonte": [
         "cat2/2016_01_00p23",
         "cat2/2018_05_00p23",
@@ -3703,6 +3700,8 @@
         "cat2/2022_08_26p25",
         "cat2/2023_03_08p25"
       ],
+      "img": null,
+      "uniqueID": 184,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3717,11 +3716,11 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 185,
       "fonte": [
         "cat2/2013_08_00p26"
       ],
+      "img": null,
+      "uniqueID": 185,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3736,11 +3735,11 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 186,
       "fonte": [
         "cat2/2020_07_16p25"
       ],
+      "img": null,
+      "uniqueID": 186,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3755,11 +3754,11 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 187,
       "fonte": [
         "cat2/2022_02_03p25"
       ],
+      "img": null,
+      "uniqueID": 187,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3774,14 +3773,14 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 188,
       "fonte": [
         "cat2/2011_11_00p29",
         "cat2/0000_00_01p29",
         "cat2/2022_06_27p29",
         "cat2/2022_07_20p29"
       ],
+      "img": null,
+      "uniqueID": 188,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3796,11 +3795,11 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 189,
       "fonte": [
         "cat2/2022_08_26p29"
       ],
+      "img": null,
+      "uniqueID": 189,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3815,12 +3814,12 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 190,
       "fonte": [
         "cat2/2018_03_08p29",
         "cat2/2018_05_00p29"
       ],
+      "img": null,
+      "uniqueID": 190,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3835,11 +3834,11 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 191,
       "fonte": [
         "cat2/2018_06_19p29"
       ],
+      "img": null,
+      "uniqueID": 191,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3854,9 +3853,9 @@
       ],
       "correctIndex": 2,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 192,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3871,13 +3870,13 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 193,
       "fonte": [
         "cat2/2023_06_26p13",
         "cat2/2012_04_10p12",
         "cat2/2022_02_03p13"
       ],
+      "img": null,
+      "uniqueID": 193,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3892,17 +3891,17 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 194,
       "fonte": [
         "cat2/2021_02_18p13"
       ],
+      "img": null,
+      "uniqueID": 194,
       "tutorial": null,
       "materia": null,
       "calc": null
     },
     {
-      "question": "Como deve variar o tamanho físico de dipolo de meia onda com a frequência de operação? ",
+      "question": "Como deve variar o tamanho físico de dipolo de meia onda com a frequência de operação?",
       "answers": [
         "Deve tornar-se maior quando a frequência aumenta",
         "Não deverá variar pois as suas características são iguais quaisquer que sejam as frequências em causa",
@@ -3911,8 +3910,6 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 195,
       "fonte": [
         "cat2/2018_03_08p10",
         "cat2/0000_00_02p12",
@@ -3921,6 +3918,8 @@
         "cat2/2022_07_20p13",
         "cat2/2023_03_08p13"
       ],
+      "img": null,
+      "uniqueID": 195,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3935,12 +3934,12 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 196,
       "fonte": [
         "cat2/2023_01_27p13",
         "cat2/2023_06_15p13"
       ],
+      "img": null,
+      "uniqueID": 196,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -3953,21 +3952,21 @@
         "Uma antena vertical",
         "Uma antena Yagi"
       ],
-      "notes": null,
       "correctIndex": 2,
-      "img": null,
-      "uniqueID": 197,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p12",
         "cat2/2013_08_00p12",
         "cat2/2022_06_27p13"
       ],
+      "img": null,
+      "uniqueID": 197,
       "tutorial": null,
       "materia": null,
       "calc": null
     },
     {
-      "question": "No sentido de caracterizar o diagrama de radiação de uma antena, quando há dificuldade na sua representação tridimensional,  ",
+      "question": "No sentido de caracterizar o diagrama de radiação de uma antena, quando há dificuldade na sua representação tridimensional,",
       "answers": [
         "apresenta-se o diagrama de radiação vertical e o diagrama de radiação horizontal da antena",
         "apresentam-se fotografias da antena de três ângulos ortogonais entre si",
@@ -3976,20 +3975,20 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 198,
       "fonte": [
         "cat2/2020_07_16p15",
         "cat2/2022_02_03p15",
         "cat2/2022_08_26p15",
         "cat2/2022_12_27p15"
       ],
+      "img": null,
+      "uniqueID": 198,
       "tutorial": null,
       "materia": null,
       "calc": null
     },
     {
-      "question": "A potência isotrópica radiada equivalente (p.i.r.e.) emitida por uma antena de 20dBi de ganho (no máximo do seu diagrama de radiação) quando lhe é entregue uma potência de 10 dBW é ",
+      "question": "A potência isotrópica radiada equivalente (p.i.r.e.) emitida por uma antena de 20dBi de ganho (no máximo do seu diagrama de radiação) quando lhe é entregue uma potência de 10 dBW é",
       "answers": [
         "200 dBW",
         "30 dBW",
@@ -3998,12 +3997,12 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 199,
       "fonte": [
         "cat2/2013_08_00p16",
         "cat2/2023_06_26p15"
       ],
+      "img": null,
+      "uniqueID": 199,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4018,8 +4017,6 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 200,
       "fonte": [
         "cat2/0000_00_03p16",
         "cat2/0000_00_02p16",
@@ -4027,6 +4024,8 @@
         "cat2/2022_07_20p15",
         "cat2/2023_01_27p15"
       ],
+      "img": null,
+      "uniqueID": 200,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4041,8 +4040,6 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 201,
       "fonte": [
         "cat2/2011_11_00p16",
         "cat2/2016_01_00p17",
@@ -4051,6 +4048,8 @@
         "cat2/2022_06_27p15",
         "cat2/2023_06_15p15"
       ],
+      "img": null,
+      "uniqueID": 201,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4063,14 +4062,14 @@
         "15 W",
         "50 W"
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 202,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_01p16",
         "cat2/2018_06_19p17"
       ],
+      "img": null,
+      "uniqueID": 202,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4085,9 +4084,9 @@
       ],
       "correctIndex": 3,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 203,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4102,11 +4101,11 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 204,
       "fonte": [
         "cat2/2023_03_08p15"
       ],
+      "img": null,
+      "uniqueID": 204,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4121,13 +4120,13 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 205,
       "fonte": [
         "cat2/2012_04_10p22",
         "cat2/2018_03_08p22",
         "cat2/2023_06_26p24"
       ],
+      "img": null,
+      "uniqueID": 205,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4142,12 +4141,12 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 206,
       "fonte": [
         "cat2/2011_11_00p22",
         "cat2/0000_00_01p22"
       ],
+      "img": null,
+      "uniqueID": 206,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4162,8 +4161,6 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 207,
       "fonte": [
         "cat2/2012_04_10p19",
         "cat2/2018_06_19p16",
@@ -4172,12 +4169,14 @@
         "cat2/2022_08_26p18",
         "cat2/2023_06_26p18"
       ],
+      "img": null,
+      "uniqueID": 207,
       "tutorial": null,
       "materia": null,
       "calc": null
     },
     {
-      "question": "Qual é a impedância característica das linhas de transmissão habitualmente utilizada nas estações de amador para ligar o emissor à antena? ",
+      "question": "Qual é a impedância característica das linhas de transmissão habitualmente utilizada nas estações de amador para ligar o emissor à antena?",
       "answers": [
         "8 Ohm",
         "600 Ohm",
@@ -4186,9 +4185,9 @@
       ],
       "correctIndex": 4,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 208,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4203,11 +4202,11 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 209,
       "fonte": [
         "cat2/2022_02_03p24"
       ],
+      "img": null,
+      "uniqueID": 209,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4222,12 +4221,12 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 210,
       "fonte": [
         "cat2/2020_07_16p24",
         "cat2/2022_06_27p24"
       ],
+      "img": null,
+      "uniqueID": 210,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4242,9 +4241,9 @@
       ],
       "correctIndex": 1,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 211,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4259,12 +4258,12 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 212,
       "fonte": [
         "cat2/2018_05_00p22",
         "cat2/2023_06_15p24"
       ],
+      "img": null,
+      "uniqueID": 212,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4279,12 +4278,12 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 213,
       "fonte": [
         "cat2/2022_12_27p24",
         "cat2/2023_03_08p24"
       ],
+      "img": null,
+      "uniqueID": 213,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4299,14 +4298,14 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 214,
       "fonte": [
         "cat2/0000_00_03p22",
         "cat2/2016_01_00p22",
         "cat2/2021_02_18p24",
         "cat2/2022_08_26p24"
       ],
+      "img": null,
+      "uniqueID": 214,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4321,11 +4320,11 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 215,
       "fonte": [
         "cat2/2018_05_00p1"
       ],
+      "img": null,
+      "uniqueID": 215,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4340,9 +4339,9 @@
       ],
       "correctIndex": 4,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 216,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4357,12 +4356,12 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 217,
       "fonte": [
         "cat2/0000_00_01p1",
         "cat2/2022_02_03p6"
       ],
+      "img": null,
+      "uniqueID": 217,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4377,12 +4376,12 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 218,
       "fonte": [
         "cat2/2012_04_10p1",
         "cat2/2013_08_00p1"
       ],
+      "img": null,
+      "uniqueID": 218,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4397,9 +4396,9 @@
       ],
       "correctIndex": 3,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 219,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4433,12 +4432,12 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 222,
       "fonte": [
         "cat2/2016_01_00p1",
         "cat2/2023_03_08p06"
       ],
+      "img": null,
+      "uniqueID": 222,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4453,11 +4452,11 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 422,
       "fonte": [
         "cat2/2023_06_26p6"
       ],
+      "img": null,
+      "uniqueID": 422,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4472,13 +4471,13 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 223,
       "fonte": [
         "cat2/2020_07_16p6",
         "cat2/2022_06_27p6",
         "cat2/2022_08_26p6"
       ],
+      "img": null,
+      "uniqueID": 223,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4493,12 +4492,12 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 224,
       "fonte": [
         "cat2/2021_02_18p6",
         "cat2/2023_01_27p6"
       ],
+      "img": null,
+      "uniqueID": 224,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4513,11 +4512,11 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 225,
       "fonte": [
         "cat2/2018_06_19p1"
       ],
+      "img": null,
+      "uniqueID": 225,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4532,9 +4531,9 @@
       ],
       "correctIndex": 4,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 226,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4549,11 +4548,11 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 227,
       "fonte": [
         "cat2/2018_03_08p1"
       ],
+      "img": null,
+      "uniqueID": 227,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4568,9 +4567,9 @@
       ],
       "correctIndex": 2,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 228,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4585,12 +4584,12 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 229,
       "fonte": [
         "cat2/2011_11_00p9",
         "cat2/2022_02_03p12"
       ],
+      "img": null,
+      "uniqueID": 229,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4605,9 +4604,9 @@
       ],
       "correctIndex": 4,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 230,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4622,11 +4621,11 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 231,
       "fonte": [
         "cat2/2013_08_00p22"
       ],
+      "img": null,
+      "uniqueID": 231,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4641,13 +4640,13 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 232,
       "fonte": [
         "cat2/2022_06_27p12",
         "cat2/2022_08_26p12",
         "cat2/2023_03_08p12"
       ],
+      "img": null,
+      "uniqueID": 232,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4662,8 +4661,6 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 233,
       "fonte": [
         "cat2/2018_03_08p13",
         "cat2/2016_01_00p13",
@@ -4671,6 +4668,8 @@
         "cat2/2020_07_16p12",
         "cat2/2023_01_27p12"
       ],
+      "img": null,
+      "uniqueID": 233,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4685,14 +4684,14 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 234,
       "fonte": [
         "cat2/2022_02_03p19",
         "cat2/2022_06_27p19",
         "cat2/2023_01_27p19",
         "cat2/2023_06_15p19"
       ],
+      "img": null,
+      "uniqueID": 234,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4707,12 +4706,12 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 235,
       "fonte": [
         "cat2/2017_09_27p13",
         "cat2/2023_06_26p12"
       ],
+      "img": null,
+      "uniqueID": 235,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4727,11 +4726,11 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 236,
       "fonte": [
         "cat2/2023_06_15p12"
       ],
+      "img": null,
+      "uniqueID": 236,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4746,11 +4745,11 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 237,
       "fonte": [
         "cat2/2018_05_00p18"
       ],
+      "img": null,
+      "uniqueID": 237,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4765,12 +4764,12 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 238,
       "fonte": [
         "cat2/0000_00_03p9",
         "cat2/2013_08_00p9"
       ],
+      "img": null,
+      "uniqueID": 238,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4783,15 +4782,15 @@
         "Indiscriminadamente",
         "Em série-paralelo"
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 239,
+      "notes": null,
       "fonte": [
         "cat2/2012_04_10p9",
         "cat2/0000_00_02p9",
         "cat2/2018_06_19p13"
       ],
+      "img": null,
+      "uniqueID": 239,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4806,14 +4805,14 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 240,
       "fonte": [
         "cat2/2016_01_00p18",
         "cat2/2017_09_27p18",
         "cat2/2018_03_08p18",
         "cat2/2022_12_27p17"
       ],
+      "img": null,
+      "uniqueID": 240,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4848,11 +4847,11 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 242,
       "fonte": [
         "cat2/2022_12_27p12"
       ],
+      "img": null,
+      "uniqueID": 242,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4867,12 +4866,12 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 243,
       "fonte": [
         "cat2/2022_02_03p11",
         "cat2/2022_07_20p11"
       ],
+      "img": null,
+      "uniqueID": 243,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4887,14 +4886,14 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 244,
       "fonte": [
         "cat2/2018_05_00p11",
         "cat2/2018_06_19p11",
         "cat2/2020_07_16p11",
         "cat2/2022_12_27p11"
       ],
+      "img": null,
+      "uniqueID": 244,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4909,12 +4908,12 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 245,
       "fonte": [
         "cat2/2017_09_27p11",
         "cat2/2023_01_27p11"
       ],
+      "img": null,
+      "uniqueID": 245,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4929,9 +4928,9 @@
       ],
       "correctIndex": 1,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 246,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4946,13 +4945,13 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 247,
       "fonte": [
         "cat2/2018_03_08p6",
         "cat2/2018_06_19p6",
         "cat2/2023_03_08p05"
       ],
+      "img": null,
+      "uniqueID": 247,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4967,14 +4966,14 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 248,
       "fonte": [
         "cat2/2013_08_00p2",
         "cat2/2018_05_00p6",
         "cat2/2022_02_03p5",
         "cat2/2023_01_27p5"
       ],
+      "img": null,
+      "uniqueID": 248,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -4989,9 +4988,9 @@
       ],
       "correctIndex": 4,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 249,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5030,12 +5029,12 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 251,
       "fonte": [
         "cat2/2016_01_00p6",
         "cat2/2022_08_26p5"
       ],
+      "img": null,
+      "uniqueID": 251,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5098,8 +5097,6 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 254,
       "fonte": [
         "cat2/2018_05_00p4",
         "cat2/2020_07_16p1",
@@ -5109,6 +5106,8 @@
         "cat2/2023_03_08p01",
         "cat2/2023_06_26p1"
       ],
+      "img": null,
+      "uniqueID": 254,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5123,12 +5122,12 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 255,
       "fonte": [
         "cat2/2013_08_00p13",
         "cat2/2016_01_00p12"
       ],
+      "img": null,
+      "uniqueID": 255,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5143,8 +5142,6 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 256,
       "fonte": [
         "cat2/2012_04_10p13",
         "cat2/2017_09_27p12",
@@ -5153,6 +5150,8 @@
         "cat2/2022_08_26p7",
         "cat2/2023_03_08p07"
       ],
+      "img": null,
+      "uniqueID": 256,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5167,8 +5166,6 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 257,
       "fonte": [
         "cat2/2016_01_00p2",
         "cat2/2018_06_19p2",
@@ -5176,6 +5173,8 @@
         "cat2/2022_08_26p3",
         "cat2/2023_01_27p3"
       ],
+      "img": null,
+      "uniqueID": 257,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5190,11 +5189,11 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 258,
       "fonte": [
         "cat2/0000_00_03p6"
       ],
+      "img": null,
+      "uniqueID": 258,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5268,6 +5267,7 @@
         "cat2/2018_03_08p2",
         "cat2/2021_02_18p3"
       ],
+      "img": null,
       "uniqueID": 261,
       "tutorial": null,
       "materia": null,
@@ -5329,11 +5329,11 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 264,
       "fonte": [
         "cat2/2022_07_20p2"
       ],
+      "img": null,
+      "uniqueID": 264,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5371,8 +5371,6 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 266,
       "fonte": [
         "cat2/2018_05_00p5",
         "cat2/2021_02_18p2",
@@ -5381,6 +5379,8 @@
         "cat2/2023_01_27p2",
         "cat2/2023_06_15p2"
       ],
+      "img": null,
+      "uniqueID": 266,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5393,13 +5393,13 @@
         "Porque, de uma forma geral, os sinais nestas gamas de frequências não se reflectem na ionosfera",
         "Porque colidem facilmente com árvores e outros obstáculos, a menos que sejam emitidos na vertical para a ionosfera"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 267,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p1"
       ],
+      "img": null,
+      "uniqueID": 267,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5412,14 +5412,14 @@
         "Porque, de uma forma geral, os sinais nestas gamas de frequências não se reflectem na ionosfera",
         "Porque, duma forma geral, colidem facilmente com árvores e outros obstáculos, a menos que sejam emitidos na vertical para a ionosfera"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 268,
+      "notes": null,
       "fonte": [
         "cat2/2022_12_27p3",
         "cat2/2023_06_15p6"
       ],
+      "img": null,
+      "uniqueID": 268,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5432,13 +5432,13 @@
         "A terra",
         "Uma tensão DC"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 269,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p2"
       ],
+      "img": null,
+      "uniqueID": 269,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5451,13 +5451,13 @@
         "Sim. Nas Recomendações da CEPT",
         "Não existem"
       ],
-      "notes": null,
       "correctIndex": 2,
-      "img": null,
-      "uniqueID": 270,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p3"
       ],
+      "img": null,
+      "uniqueID": 270,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5470,13 +5470,13 @@
         "produto da tensão (V) pela corrente (I)",
         "quociente da tensão (V) pela corrente (I)"
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 272,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p7"
       ],
+      "img": null,
+      "uniqueID": 272,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5489,14 +5489,14 @@
         "20 Ohm",
         "60 Ohm"
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 273,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p8",
         "cat2/2018_05_00p8"
       ],
+      "img": null,
+      "uniqueID": 273,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5509,15 +5509,15 @@
         "Além da possibilidade do amador interferir quando em emissão, pode causar interferência na recepção da estação de amador",
         "Podem ser criadas no cabo tensões muito elevadas quando a estação de amador emite"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 274,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p10",
         "cat2/0000_00_01p10",
         "cat2/2013_08_00p10"
       ],
+      "img": null,
+      "uniqueID": 274,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5530,10 +5530,8 @@
         "Oscilador de HF, misturador e detector",
         "Oscilador de HF, detector de produto e amplificador"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 275,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_03p11",
         "cat2/0000_00_03p11",
@@ -5544,6 +5542,8 @@
         "cat2/2023_03_08p10",
         "cat2/2023_06_15p10"
       ],
+      "img": null,
+      "uniqueID": 275,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5582,10 +5582,8 @@
         "Melhora significativamente a precisão na maioria das utilizações",
         "Tem uma resposta mais rápida"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 277,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p15",
         "cat2/0000_00_01p15",
@@ -5593,6 +5591,8 @@
         "cat2/2021_02_18p17",
         "cat2/2023_03_08p17"
       ],
+      "img": null,
+      "uniqueID": 277,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5605,14 +5605,14 @@
         "Um eletroscópio binário",
         "Uma ponte de Wheatstone"
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 278,
+      "notes": null,
       "fonte": [
         "cat2/2018_06_19p18",
         "cat2/2022_08_26p17"
       ],
+      "img": null,
+      "uniqueID": 278,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5625,15 +5625,15 @@
         "Pode ser posta maior potência de emissão na banda lateral",
         "Maior simplicidade no equipamento de recepção"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 279,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p17",
         "cat2/2013_08_00p17",
         "cat2/2022_07_20p19"
       ],
+      "img": null,
+      "uniqueID": 279,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5646,15 +5646,15 @@
         "A banda lateral restante pode receber mais potência de transmissão.",
         "Pode ser usado equipamento de recepção de menor complexidade."
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 280,
+      "notes": null,
       "fonte": [
         "cat2/2022_07_20p19",
         "cat2/2023_06_15p38",
         "cat2/2023_06_26p38"
       ],
+      "img": null,
+      "uniqueID": 280,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5667,14 +5667,14 @@
         "a rejeitar as frequências mais baixas e as frequências mais altas, deixando passar uma dada gama de frequências",
         "a deixar passar as frequências mais baixas e as frequências mais altas, rejeitando uma dada gama de frequências"
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 281,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p19",
         "cat2/2022_12_27p18"
       ],
+      "img": null,
+      "uniqueID": 281,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5687,14 +5687,14 @@
         "A resistência parasita associada a uma bobina só depende da frequência",
         "A resistência parasita associada a uma bobina está intimamente relacionada com as capacidades parasitas associadas a essa bobina"
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 282,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p23",
         "cat2/2023_01_27p22"
       ],
+      "img": null,
+      "uniqueID": 282,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5707,13 +5707,13 @@
         "tem que ter um estabilizador de corrente",
         "tem que ter um circuito de rectificação"
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 283,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p25"
       ],
+      "img": null,
+      "uniqueID": 283,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5726,13 +5726,13 @@
         "No emissor",
         "No microfone"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 284,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p26"
       ],
+      "img": null,
+      "uniqueID": 284,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5745,14 +5745,14 @@
         "As linhas do campo magnético, de um condutor onde flui uma corrente eléctrica, são perpendiculares ao condutor",
         "As linhas do campo magnético de um condutor onde flui uma corrente eléctrica, formam círculos concêntricos ao redor do condutor"
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 285,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p27",
         "cat2/2016_01_00p27"
       ],
+      "img": null,
+      "uniqueID": 285,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5765,16 +5765,16 @@
         "Devido ao menor tamanho dos dispositivos de estado sólido",
         "Todas as respostas estão correctas"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 286,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p37",
         "cat2/2018_05_00p37",
         "cat2/2022_02_03p36",
         "cat2/2022_07_20p36"
       ],
+      "img": null,
+      "uniqueID": 286,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5787,16 +5787,16 @@
         "Para evitar interferências na recepção de televisão",
         "Para evitar choques"
       ],
-      "notes": null,
       "correctIndex": 2,
-      "img": null,
-      "uniqueID": 287,
+      "notes": null,
       "fonte": [
         "cat2/2012_04_10p2",
         "cat2/0000_00_01p2",
         "cat2/0000_00_02p2",
         "cat2/2023_06_15p5"
       ],
+      "img": null,
+      "uniqueID": 287,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5809,10 +5809,8 @@
         "Podem com o devido enquadramento das entidades com responsabilidade na protecção civil",
         "Só podem as estações de uso comum"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 288,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_01p3",
         "cat2/0000_00_03p3",
@@ -5821,6 +5819,8 @@
         "cat2/2022_02_03p1",
         "cat2/2022_07_20p1"
       ],
+      "img": null,
+      "uniqueID": 288,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5833,11 +5833,11 @@
         "750 W",
         "100 W"
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 289,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5850,15 +5850,15 @@
         "Não são permitidas nas estações de amador",
         "Foram inventadas em 1990"
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 291,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_03p12",
         "cat2/2017_09_27p10",
         "cat2/2022_08_26p13"
       ],
+      "img": null,
+      "uniqueID": 291,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5871,13 +5871,13 @@
         "elementos parasitas",
         "unidades de adaptação"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 292,
+      "notes": null,
       "fonte": [
         "cat2/2018_05_00p10"
       ],
+      "img": null,
+      "uniqueID": 292,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5890,15 +5890,15 @@
         "Diminuição do peso",
         "Diminuição da resistência ao vento"
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 293,
+      "notes": null,
       "fonte": [
         "cat2/2016_01_00p10",
         "cat2/2020_07_16p13",
         "cat2/2022_12_27p13"
       ],
+      "img": null,
+      "uniqueID": 293,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5911,15 +5911,15 @@
         "um oscilador controlado por tensão onde entra o sinal modulante",
         "Nenhuma das respostas está correcta"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 421,
+      "notes": null,
       "fonte": [
         "cat2/2018_06_19p19",
         "cat2/0000_00_01p17",
         "cat2/2020_07_16p19"
       ],
+      "img": null,
+      "uniqueID": 421,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5934,9 +5934,9 @@
       ],
       "correctIndex": 4,
       "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 294,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5949,13 +5949,13 @@
         "Misturador",
         "Discriminador"
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 295,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_03p18"
       ],
+      "img": null,
+      "uniqueID": 295,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5968,11 +5968,11 @@
         "Para limitar a potência entregue à antena",
         "Nenhuma das respostas está correcta"
       ],
-      "notes": null,
       "correctIndex": 1,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 296,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -5985,11 +5985,11 @@
         "Porque se comportam como um curto-circuito",
         "Porque se comportam como um circuito aberto"
       ],
-      "notes": null,
       "correctIndex": 3,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 297,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6002,14 +6002,14 @@
         "No emissor",
         "Numa ponte de díodos"
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 298,
+      "notes": null,
       "fonte": [
         "cat2/2018_05_00p25",
         "cat2/2023_06_26p26"
       ],
+      "img": null,
+      "uniqueID": 298,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6022,10 +6022,8 @@
         "proteger o circuito a alimentar de sobretensões na rede",
         "evitar interferências rádio no circuito a alimentar"
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 299,
+      "notes": null,
       "fonte": [
         "cat2/2013_08_00p25",
         "cat2/0000_00_02p25",
@@ -6034,6 +6032,8 @@
         "cat2/2021_02_18p21",
         "cat2/2022_08_26p21"
       ],
+      "img": null,
+      "uniqueID": 299,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6046,10 +6046,8 @@
         "apenas permite a utilização de díodos de aquecimento directo.",
         "é simples, mas só se aplica aos emissores com baixa potência de saída e com pequena profundidade de modulação."
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 300,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_03p26",
         "cat2/0000_00_01p26",
@@ -6057,6 +6055,8 @@
         "cat2/2023_06_15p25",
         "cat2/2023_06_26p25"
       ],
+      "img": null,
+      "uniqueID": 300,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6069,14 +6069,14 @@
         "À base",
         "Ao ânodo e ao cátodo"
       ],
-      "notes": null,
       "correctIndex": 2,
-      "img": null,
-      "uniqueID": 301,
+      "notes": null,
       "fonte": [
         "cat2/2022_12_27p31",
         "cat2/2023_01_27p31"
       ],
+      "img": null,
+      "uniqueID": 301,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6089,31 +6089,31 @@
         "Podemos transformar as ondas da nossa voz em sinais eléctricos",
         "As frequências associadas às ondas da nossa voz raramente ultrapassam os 15 kHz"
       ],
-      "notes": null,
       "correctIndex": 2,
-      "img": null,
-      "uniqueID": 302,
+      "notes": null,
       "fonte": [
         "cat2/2022_06_27p37",
         "cat2/2022_07_20p37"
       ],
+      "img": null,
+      "uniqueID": 302,
       "tutorial": null,
       "materia": null,
       "calc": null
     },
     {
-      "question": " O que pode estar a acontecer quando recebemos sinais de VHF a longas distâncias?",
+      "question": "O que pode estar a acontecer quando recebemos sinais de VHF a longas distâncias?",
       "answers": [
         "Os sinais são refletidos no espaço exterior",
         "Os sinais são refletidos em tempestade na vizinhança do local onde nos encontramos",
         "Ocorreu uma reflexão lunar esporádica",
         "Ocorreu uma reflexão na camada esporádica-E da ionosfera"
       ],
-      "notes": null,
       "correctIndex": 4,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 303,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6126,16 +6126,16 @@
         "Só com uma autorização especial do ICP-ANACOM",
         "Respeitando as condicionantes expressas na regulamentação aplicável"
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 304,
+      "notes": null,
       "fonte": [
         "cat2/2012_04_10p4",
         "cat2/2016_01_00p5",
         "cat2/2017_09_27p5",
         "cat2/2023_06_26p2"
       ],
+      "img": null,
+      "uniqueID": 304,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6148,11 +6148,11 @@
         "Utilizar estações de amador nos países cuja Adminstração tenha adoptado a Recomendação CEPT ECC/REC/(05)06",
         "Utilizar estações de amador em todos os países da CEPT, nos Estados Unidos e na Austrália"
       ],
-      "notes": null,
       "correctIndex": 3,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 305,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6165,6 +6165,7 @@
         "10,45-10,5 GHz",
         "24-24,05 GHz"
       ],
+      "correctIndex": 3,
       "notes": null,
       "fonte": [
         "cat2/0000_00_02p6",
@@ -6172,7 +6173,6 @@
         "cat2/2022_12_27p3",
         "cat2/2023_03_08p03"
       ],
-      "correctIndex": 3,
       "img": null,
       "uniqueID": 306,
       "tutorial": null,
@@ -6187,11 +6187,11 @@
         "330 Ohm",
         "16,5 Ohm"
       ],
-      "notes": null,
       "correctIndex": 1,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 307,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6204,14 +6204,14 @@
         "330 Ohm",
         "16,5 Ohm"
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 308,
+      "notes": null,
       "fonte": [
         "cat2/2018_03_08p8",
         "cat2/2022_12_27p9"
       ],
+      "img": null,
+      "uniqueID": 308,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6224,15 +6224,15 @@
         "Usar as frequências mais altas",
         "Usar uma frequência que não seja usada por repetidores"
       ],
-      "notes": null,
       "correctIndex": 2,
-      "img": null,
-      "uniqueID": 309,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_02p10",
         "cat2/2022_08_26p11",
         "cat2/2023_06_26p11"
       ],
+      "img": null,
+      "uniqueID": 309,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6267,15 +6267,15 @@
         "Comunicar imediatamente para o ICP-ANACOM",
         "Esperar que a situação de interferência passe"
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 311,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_03p13",
         "cat2/0000_00_02p13",
         "cat2/2022_02_03p7"
       ],
+      "img": null,
+      "uniqueID": 311,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6290,14 +6290,14 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 312,
       "fonte": [
         "cat2/2018_03_08p12",
         "cat2/2022_06_27p7",
         "cat2/2022_12_27p7",
         "cat2/2023_01_27p7"
       ],
+      "img": null,
+      "uniqueID": 312,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6312,8 +6312,6 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 313,
       "fonte": [
         "cat2/2011_11_00p18",
         "cat2/2018_05_00p20",
@@ -6322,6 +6320,8 @@
         "cat2/2022_06_27p14",
         "cat2/2023_06_15p14"
       ],
+      "img": null,
+      "uniqueID": 313,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6336,14 +6336,14 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 314,
       "fonte": [
         "cat2/2012_04_10p18",
         "cat2/2022_07_20p14",
         "cat2/2022_08_26p14",
         "cat2/2023_06_26p14"
       ],
+      "img": null,
+      "uniqueID": 314,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6356,10 +6356,8 @@
         "Em cada ponto passa só uma linha de campo",
         "Todas as respostas anteriores estão correctas"
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 315,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p21",
         "cat2/2012_04_10p21",
@@ -6369,6 +6367,8 @@
         "cat2/2023_03_08p23",
         "cat2/2023_06_26p23"
       ],
+      "img": null,
+      "uniqueID": 315,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6381,32 +6381,32 @@
         "As perdas no cabo",
         "A constante dieléctrica"
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 316,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
     },
     {
-      "question": "O simbolo indicado em D, na figura 6 (acima), representa ",
+      "question": "O simbolo indicado em D, na figura 6 (acima), representa",
       "answers": [
         "Transistor NPN",
         "Transistor PNP",
         "Díodo Zener",
         "Díodo Túnel"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": "images/cat2/diodos_1.jpg",
-      "uniqueID": 317,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_03p32",
         "cat2/0000_00_02p32",
         "cat2/2018_06_19p32"
       ],
+      "img": "images/cat2/diodos_1.jpg",
+      "uniqueID": 317,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6419,10 +6419,8 @@
         "5 elementos",
         "6 elementos"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 318,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_03p37",
         "cat2/2017_09_27p37",
@@ -6432,6 +6430,8 @@
         "cat2/2023_03_08p36",
         "cat2/2023_06_26p36"
       ],
+      "img": null,
+      "uniqueID": 318,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6444,13 +6444,13 @@
         "o produto do desvio instantâneo pelo desvio da portadora",
         "o quociente entre o desvio instantâneo e o desvio máximo definido"
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 319,
+      "notes": null,
       "fonte": [
         "cat2/2022_06_27p38"
       ],
+      "img": null,
+      "uniqueID": 319,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6463,11 +6463,11 @@
         "Da altura dos sons a transmitir",
         "Da amplitude da tensão de modulação"
       ],
-      "notes": null,
       "correctIndex": 4,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 320,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6480,13 +6480,13 @@
         "Produto da tensão (V) pela corrente (I).",
         "Quociente da tensão (V) pela corrente (I)."
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 321,
+      "notes": null,
       "fonte": [
         "cat2/2022_07_20p8"
       ],
+      "img": null,
+      "uniqueID": 321,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6499,11 +6499,11 @@
         "Não é possível o fluxo de corrente no circuito.",
         "A fonte tem capacidade para fornecer o máximo de potência à carga."
       ],
-      "notes": null,
       "correctIndex": 4,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 322,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6516,13 +6516,13 @@
         "Para garantir que a resistência é menor que a reactância no circuito.",
         "Para garantir que os níveis de resistência e de reactância no circuito se assemelham."
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 323,
+      "notes": null,
       "fonte": [
         "cat2/2022_07_20p24"
       ],
+      "img": null,
+      "uniqueID": 323,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6558,16 +6558,16 @@
         "A associação de fontes de tensão em série dá origem a um fonte eléctrica em que a tensão é igual à soma das tensões das fontes de tensão associadas.",
         "As três afirmações são correctas."
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 325,
+      "notes": null,
       "fonte": [
         "cat2/2020_07_16p16",
         "cat2/0000_00_02p14",
         "cat2/2021_09_06p16",
         "cat2/2023_06_26p16"
       ],
+      "img": null,
+      "uniqueID": 325,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6580,11 +6580,11 @@
         "Fotossíntese.",
         "Decomposição de fotões."
       ],
-      "notes": null,
       "correctIndex": 1,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 326,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6597,11 +6597,11 @@
         "Corresponde à soma das correntes nas várias ramificações.",
         "Corresponde à soma do inverso de cada queda individual de tensão."
       ],
-      "notes": null,
       "correctIndex": 3,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 327,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6609,16 +6609,16 @@
     {
       "question": "Em que circunstância se torna aceitável recarregar uma célula primária de carbono-zinco?",
       "answers": [
-        "Sempre que a tensão se mantenha superior a 1,0 V ",
+        "Sempre que a tensão se mantenha superior a 1,0 V",
         "Sempre que a célula se mantenha morna durante o período de recarga.",
         "Sempre que se use um carregador de corrente constante.",
         "Nunca."
       ],
-      "notes": null,
       "correctIndex": 4,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 328,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6631,11 +6631,11 @@
         "Uma corrente eléctrica.",
         "Uma região luminosa."
       ],
-      "notes": null,
       "correctIndex": 1,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 329,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6648,11 +6648,11 @@
         "Decresce com o quadrado da distância.",
         "Cresce com o quadrado da distância."
       ],
-      "notes": null,
       "correctIndex": 3,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 330,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6665,14 +6665,14 @@
         "tanto aos campos eléctricos como aos campos magnéticos.",
         "a tensões que lhe são aplicadas."
       ],
-      "notes": null,
       "correctIndex": 2,
-      "img": null,
-      "uniqueID": 331,
+      "notes": null,
       "fonte": [
         "cat2/2012_04_10p27",
         "cat2/2018_06_19p27"
       ],
+      "img": null,
+      "uniqueID": 331,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6685,11 +6685,11 @@
         "Espaço entre as placas de um condensador carregado, através das quais actua uma força magnética",
         "A força que impulsiona uma corrente através de uma resistência."
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 332,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6702,15 +6702,15 @@
         "Corrente eléctrica contínua.",
         "Corrente eléctrica oscilante."
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 333,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_03p31",
         "cat2/2018_05_00p31",
         "cat2/2022_02_03p32"
       ],
+      "img": null,
+      "uniqueID": 333,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6723,16 +6723,16 @@
         "500 000 km/s",
         "250 000 km/s"
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 334,
+      "notes": null,
       "fonte": [
         "cat2/2012_04_10p31",
         "cat2/2018_06_19p31",
         "cat2/2021_02_18p32",
         "cat2/2023_01_27p32"
       ],
+      "img": null,
+      "uniqueID": 334,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6745,15 +6745,15 @@
         "130 V",
         "184 V"
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 335,
+      "notes": null,
       "fonte": [
         "cat2/2017_09_27p34",
         "cat2/2021_09_06p34",
         "cat2/2022_06_27p34"
       ],
+      "img": null,
+      "uniqueID": 335,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6766,11 +6766,11 @@
         "As ondas são reflectidas pela ionosfera e redireccionadas de volta à fonte.",
         "A energia propaga-se pela alteração dos campos eléctrico e magnético."
       ],
-      "notes": null,
       "correctIndex": 4,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 336,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6783,15 +6783,15 @@
         "1 000 Hz",
         "1 000 kHz"
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 337,
+      "notes": null,
       "fonte": [
         "cat2/2012_04_10p33",
         "cat2/2013_08_00p34",
         "cat2/2022_08_26p34"
       ],
+      "img": null,
+      "uniqueID": 337,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6804,11 +6804,11 @@
         "A tensão DC que provoca a mesma quantidade de calor num dado resistência que a tensão AC RMS correspondente.",
         "A tensão AC que se obtém tomando a raiz quadrada do valor médio AC."
       ],
-      "notes": null,
       "correctIndex": 3,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 338,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6821,14 +6821,14 @@
         "Elevada impedância de entrada",
         "Baixa impedância de entrada"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 339,
+      "notes": null,
       "fonte": [
         "cat2/2021_09_06p17",
         "cat2/2023_06_15p17"
       ],
+      "img": null,
+      "uniqueID": 339,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6841,11 +6841,11 @@
         "O número de vezes que a onda cruza a o eixo x (zero) num ciclo.",
         "A amplitude da onda."
       ],
-      "notes": null,
       "correctIndex": 1,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 340,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6858,11 +6858,11 @@
         "Podemos transformar as ondas da nossa voz em sinais eléctricos.",
         "As frequências associadas às ondas da nossa voz raramente ultrapassam os 15 kHz"
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 341,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6875,11 +6875,11 @@
         "As ondas quadradas são fundamentais na representação e processamento dos sinais digitais.",
         "Todas as hipóteses anteriores estão correctas."
       ],
-      "notes": null,
       "correctIndex": 4,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 342,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6892,15 +6892,15 @@
         "Uma onda quadrada só tem a frequência fundamental, não tendo harmónicas.",
         "Numa onda quadrada as harmónicas possuem frequências mais elevadas que a fundamental."
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 343,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_03p36",
         "cat2/0000_00_01p36",
         "cat2/2012_04_10p36"
       ],
+      "img": null,
+      "uniqueID": 343,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6913,16 +6913,16 @@
         "Uma onda quadrada só tem a frequência fundamental, não tendo harmónicas.",
         "Numa onda quadrada as harmónicas possuem frequências mais elevadas que a fundamental."
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 344,
+      "notes": null,
       "fonte": [
         "cat2/2016_01_00p36",
         "cat2/2018_03_08p36",
         "cat2/2020_07_16p37",
         "cat2/2022_08_26p37"
       ],
+      "img": null,
+      "uniqueID": 344,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6935,11 +6935,11 @@
         "Irregular.",
         "Trapezoidal."
       ],
-      "notes": null,
       "correctIndex": 3,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 345,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6952,13 +6952,13 @@
         "0,3",
         "0,45"
       ],
-      "notes": null,
       "correctIndex": 2,
-      "img": null,
-      "uniqueID": 346,
+      "notes": null,
       "fonte": [
         "cat2/2012_04_10p39"
       ],
+      "img": null,
+      "uniqueID": 346,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6971,11 +6971,11 @@
         "Aumenta quando se diminui a reactância.",
         "Serve para calcular a percentagem de modulação."
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 347,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -6988,11 +6988,11 @@
         "Não é importante já que a percentagem de modulação não afecta a qualidade de emissão.",
         "Não porque poderá danificar o receptor."
       ],
-      "notes": null,
       "correctIndex": 1,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 348,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7005,11 +7005,11 @@
         "Produz uma emissão em faixa mais estreita.",
         "Provoca uma saturação na antena do emissor."
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 349,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7022,11 +7022,11 @@
         "há apenas a faixa lateral referente à média das frequências.",
         "o número de frequências que constituem as faixas laterais é infinito."
       ],
-      "notes": null,
       "correctIndex": 4,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 350,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7039,11 +7039,11 @@
         "Menor estabilidade.",
         "Maior consumo de energia."
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 351,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7056,11 +7056,11 @@
         "Utiliza-se apenas nos emissores.",
         "Tem apenas interesse para separar duas frequências próximas."
       ],
-      "notes": null,
       "correctIndex": 1,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 352,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7073,13 +7073,13 @@
         "À rectificação de uma onda de radiofrequência modulada.",
         "À rectificação de uma onda de audiofrequência."
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 353,
+      "notes": null,
       "fonte": [
         "cat2/2016_01_00p39"
       ],
+      "img": null,
+      "uniqueID": 353,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7092,11 +7092,11 @@
         "10 kHz",
         "12 kHz"
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 354,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7109,14 +7109,14 @@
         "Pode danificar o receptor.",
         "Pode danificar a antena da estação emissora."
       ],
-      "notes": null,
       "correctIndex": 2,
-      "img": null,
-      "uniqueID": 355,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_03p39",
         "cat2/2023_01_27p38"
       ],
+      "img": null,
+      "uniqueID": 355,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7129,14 +7129,14 @@
         "Três frequências - portadora e duas frequências laterais.",
         "Um número infinito de frequências."
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 356,
+      "notes": null,
       "fonte": [
         "cat2/2023_01_27p39",
         "cat2/2023_06_26p39"
       ],
+      "img": null,
+      "uniqueID": 356,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7149,13 +7149,13 @@
         "Atinge normalmente distâncias maiores.",
         "Menor separação entre canais adjacentes."
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 357,
+      "notes": null,
       "fonte": [
         "cat2/2013_08_00p39"
       ],
+      "img": null,
+      "uniqueID": 357,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7168,11 +7168,11 @@
         "a desmodulação é mais simples do que no sistema DSB.",
         "há maior economia do espectro de frequência."
       ],
-      "notes": null,
       "correctIndex": 4,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 358,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7185,13 +7185,13 @@
         "para desmodular, o receptor deve restabelecer a portadora",
         "a sintonia é pouco selectiva"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 359,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p39"
       ],
+      "img": null,
+      "uniqueID": 359,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7204,11 +7204,11 @@
         "apenas uma faixa lateral, com portadora completa ou reduzida, ou sem portadora.",
         "a portadora e duas faixas laterais."
       ],
-      "notes": null,
       "correctIndex": 3,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 360,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7221,11 +7221,11 @@
         "depende das características do receptor.",
         "não depende da classe de emissão."
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 361,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7238,11 +7238,11 @@
         "uma emissão em modulação de amplitude.",
         "uma emissão em qualquer tipo de modulação."
       ],
-      "notes": null,
       "correctIndex": 3,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 362,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7255,13 +7255,13 @@
         "Facilidade de sintonização na recepção.",
         "Menor susceptibilidade aos choques de electricidade estática (atmosféricos)."
       ],
-      "notes": null,
       "correctIndex": 2,
-      "img": null,
-      "uniqueID": 363,
+      "notes": null,
       "fonte": [
         "cat2/2022_12_27p39"
       ],
+      "img": null,
+      "uniqueID": 363,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7274,11 +7274,11 @@
         "Modulação por espalhamento espectral.",
         "Modulação de amplitude."
       ],
-      "notes": null,
       "correctIndex": 4,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 364,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7291,14 +7291,14 @@
         "Conversão de frequência.",
         "Modulação de frequência."
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 365,
+      "notes": null,
       "fonte": [
         "cat2/2018_03_08p39",
         "cat2/2022_08_26p39"
       ],
+      "img": null,
+      "uniqueID": 365,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7311,13 +7311,13 @@
         "Adquire maior fidelidade e a relação sinal-ruído melhora.",
         "Fica distorcido e ocupa maior largura de banda."
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 366,
+      "notes": null,
       "fonte": [
         "cat2/2022_08_26p29"
       ],
+      "img": null,
+      "uniqueID": 366,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7330,11 +7330,11 @@
         "Percentagem da modulação.",
         "Índice de modulação."
       ],
-      "notes": null,
       "correctIndex": 4,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 367,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7347,11 +7347,11 @@
         "Varia com a raiz quadrada da frequência da portadora de RF.",
         "Não depende da frequência da portadora de RF."
       ],
-      "notes": null,
       "correctIndex": 4,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 368,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7364,11 +7364,11 @@
         "0,6",
         "1,67"
       ],
-      "notes": null,
       "correctIndex": 4,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 369,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7381,11 +7381,11 @@
         "0,47",
         "47"
       ],
-      "notes": null,
       "correctIndex": 1,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 370,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7398,11 +7398,11 @@
         "A razão entre a frequência central da portadora e a frequência áudio de modulação.",
         "A razão entre a frequência áudio máxima de modulação e a frequência áudio média de modulação."
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 371,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7415,11 +7415,11 @@
         "ocupam cerca de metade da banda de uma emissão AM.",
         "são compatíveis com as emissões FM."
       ],
-      "notes": null,
       "correctIndex": 3,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 372,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7432,31 +7432,31 @@
         "combinar voz e código Morse.",
         "nenhum destes."
       ],
-      "notes": null,
       "correctIndex": 1,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 373,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
     },
     {
-      "question": "Um amplificador tem um ganho de 20 dB Qual a potência na sua saída quando a sua entrada é excitada com 1 W? ",
+      "question": "Um amplificador tem um ganho de 20 dB Qual a potência na sua saída quando a sua entrada é excitada com 1 W?",
       "answers": [
         "100 W",
         "20 W",
         "10 W",
         "200 W"
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 374,
+      "notes": null,
       "fonte": [
         "cat2/2018_06_19p40",
         "cat2/2022_07_20p40"
       ],
+      "img": null,
+      "uniqueID": 374,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7469,11 +7469,11 @@
         "353,5 W",
         "400 W"
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 375,
-      "fonte": null,
       "tutorial": "AC",
       "materia": null,
       "calc": null
@@ -7486,11 +7486,11 @@
         "1,414",
         "2"
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 376,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7503,11 +7503,11 @@
         "346 V",
         "692 V"
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 377,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7520,14 +7520,14 @@
         "adapta o gerador de AF ao recetor",
         "simula as características de carga da antena sem radiar sinais"
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 378,
+      "notes": null,
       "fonte": [
         "cat2/2017_09_27p17",
         "cat2/2018_03_08p17"
       ],
+      "img": null,
+      "uniqueID": 378,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7540,11 +7540,11 @@
         "20,5%.",
         "25,9%."
       ],
-      "notes": null,
       "correctIndex": 3,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 379,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7557,11 +7557,11 @@
         "2500 W",
         "5000 W"
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 380,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7574,11 +7574,11 @@
         "1500 W",
         "2120 W"
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 381,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7591,11 +7591,11 @@
         "Potência de pico da envolvente.",
         "Potência reactiva."
       ],
-      "notes": null,
       "correctIndex": 4,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 382,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7608,11 +7608,11 @@
         "Dividindo a potência aparente pelo factor de potência.",
         "Multiplicando a potência reactiva pelo factor de potência."
       ],
-      "notes": null,
       "correctIndex": 1,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 383,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7625,105 +7625,105 @@
         "2000 W",
         "50 W"
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 384,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
     },
     {
-      "question": "Num atenuador constituído por duas resistências de 100 ohms em série o sinal de entrada é aplicado no conjunto das duas e a saída é retirada do ponto médio. A atenuação da malha é de: ",
+      "question": "Num atenuador constituído por duas resistências de 100 ohms em série o sinal de entrada é aplicado no conjunto das duas e a saída é retirada do ponto médio. A atenuação da malha é de:",
       "answers": [
-        "3 dB ",
-        "6 dB ",
-        "50 dB ",
-        "100 dB "
+        "3 dB",
+        "6 dB",
+        "50 dB",
+        "100 dB"
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 385,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
     },
     {
-      "question": "Um atenuador tem 10 V rms aplicados à entrada obtendo-se 5 V rms na saída. A atenuação obtida é de: ",
+      "question": "Um atenuador tem 10 V rms aplicados à entrada obtendo-se 5 V rms na saída. A atenuação obtida é de:",
       "answers": [
         "6 dB",
         "10 dB",
         "20 dB",
         "40 dB"
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 386,
+      "notes": null,
       "fonte": [
         "cat2/2017_09_27p40"
       ],
+      "img": null,
+      "uniqueID": 386,
       "tutorial": null,
       "materia": null,
       "calc": null
     },
     {
-      "question": "Um amplificador com um ganho de 20 dB tem a saída ligada a um atenuador de 10 dB O ganho do conjunto é de: ",
+      "question": "Um amplificador com um ganho de 20 dB tem a saída ligada a um atenuador de 10 dB O ganho do conjunto é de:",
       "answers": [
-        "8 dB ",
-        "10 dB ",
-        "-10 dB ",
-        "-200 dB "
+        "8 dB",
+        "10 dB",
+        "-10 dB",
+        "-200 dB"
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 387,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
     },
     {
-      "question": "Um amplificador com um ganho de 20 dB tem a saída ligada a um atenuador de 30 dB O ganho do conjunto é de: ",
+      "question": "Um amplificador com um ganho de 20 dB tem a saída ligada a um atenuador de 30 dB O ganho do conjunto é de:",
       "answers": [
-        "8 dB ",
-        "10 dB ",
-        "-10 dB ",
-        "-200 dB "
+        "8 dB",
+        "10 dB",
+        "-10 dB",
+        "-200 dB"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 388,
+      "notes": null,
       "fonte": [
         "cat2/2020_07_16p40",
         "cat2/2022_12_27p38",
         "cat2/2023_03_08p40"
       ],
+      "img": null,
+      "uniqueID": 388,
       "tutorial": null,
       "materia": null,
       "calc": null
     },
     {
-      "question": "Cada um dos andares de um amplificador de três andares tem um ganho de 5 dB O ganho do amplificador é de: ",
+      "question": "Cada um dos andares de um amplificador de três andares tem um ganho de 5 dB O ganho do amplificador é de:",
       "answers": [
-        "10 dB ",
-        "15 dB ",
-        "25 dB ",
-        "125 dB "
+        "10 dB",
+        "15 dB",
+        "25 dB",
+        "125 dB"
       ],
-      "notes": null,
       "correctIndex": 2,
-      "img": null,
-      "uniqueID": 389,
+      "notes": null,
       "fonte": [
         "cat2/2023_01_27p40",
         "cat2/2023_06_26p40"
       ],
+      "img": null,
+      "uniqueID": 389,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7736,13 +7736,13 @@
         "50 ohms",
         "37,5 ohms"
       ],
-      "notes": null,
       "correctIndex": 3,
-      "img": null,
-      "uniqueID": 390,
+      "notes": null,
       "fonte": [
         "cat2/2022_07_20p9"
       ],
+      "img": null,
+      "uniqueID": 390,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7755,11 +7755,11 @@
         "330 ohms",
         "16,5 ohms"
       ],
-      "notes": null,
       "correctIndex": 4,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 391,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7772,11 +7772,11 @@
         "330 ohms",
         "16,5 ohms"
       ],
-      "notes": null,
       "correctIndex": 1,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 392,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7789,11 +7789,11 @@
         "Oposição ao fluxo de corrente num circuito de corrente alternada.",
         "Força de repulsão entre dois campos eléctricos semelhantes."
       ],
-      "notes": null,
       "correctIndex": 3,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 393,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7806,11 +7806,11 @@
         "10000 ohms",
         "80 ohms"
       ],
-      "notes": null,
       "correctIndex": 1,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 394,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7823,11 +7823,11 @@
         "Um condensador ligado em série.",
         "Um condensador ligado em paralelo."
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 395,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7840,11 +7840,11 @@
         "Um tipo especial de transístor para utilização em temperaturas muito baixas.",
         "Condensador cujos valores se alteram com variações de temperatura."
       ],
-      "notes": null,
       "correctIndex": 2,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 396,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7857,15 +7857,15 @@
         "0,47 µF.",
         "4 700 µF."
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 397,
+      "notes": null,
       "fonte": [
         "cat2/2011_11_00p20",
         "cat2/2018_05_00p15",
         "cat2/2023_01_27p20"
       ],
+      "img": null,
+      "uniqueID": 397,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7878,14 +7878,14 @@
         "Os condensadores cerâmicos são muito utilizados em circuitos de radiofrequência.",
         "Os únicos condensadores que têm polaridade são os condensadores de mica."
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 398,
+      "notes": null,
       "fonte": [
         "cat2/2021_02_18p20",
         "cat2/2023_03_08p20"
       ],
+      "img": null,
+      "uniqueID": 398,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7898,13 +7898,13 @@
         "capacidade elevada para um volume determinado.",
         "Custo relativamente reduzido."
       ],
-      "notes": null,
       "correctIndex": 4,
-      "img": null,
-      "uniqueID": 399,
+      "notes": null,
       "fonte": [
         "cat2/2023_06_26p20"
       ],
+      "img": null,
+      "uniqueID": 399,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7917,11 +7917,11 @@
         "Um condensador.",
         "Um indutor."
       ],
-      "notes": null,
       "correctIndex": 3,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 400,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7934,11 +7934,11 @@
         "Poliestireno.",
         "Papel dieléctrico."
       ],
-      "notes": null,
       "correctIndex": 3,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 401,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7951,6 +7951,7 @@
         "Aos amadores da categoria 2 são emitidas licenças CEPT novice nos termos expressos na recomendação CEPT ECC/REC/(05)06",
         "Os amadores da categoria 2 têm direito a licensas CEPT em função dos exames em que tiverem aproveitamento"
       ],
+      "correctIndex": 3,
       "notes": null,
       "fonte": [
         "cat2/2012_04_10p5",
@@ -7958,7 +7959,6 @@
         "cat2/2018_05_00p3",
         "cat2/2021_09_06p4</a>"
       ],
-      "correctIndex": 3,
       "img": null,
       "uniqueID": 402,
       "tutorial": null,
@@ -7973,11 +7973,11 @@
         "como o produto da potência entregue à antena pelo seu ganho relativamente a um dipolo de quarto de onda, numa dada direcção",
         "como o produto da potência entregue à antena pelo seu ganho relativamente a uma antena logarítmica, numa dada direcção"
       ],
-      "notes": null,
       "correctIndex": 1,
+      "notes": null,
+      "fonte": null,
       "img": null,
       "uniqueID": 403,
-      "fonte": null,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -7990,10 +7990,8 @@
         "5,1",
         "3,0"
       ],
-      "notes": null,
       "correctIndex": 1,
-      "img": null,
-      "uniqueID": 404,
+      "notes": null,
       "fonte": [
         "cat2/0000_00_01p28",
         "cat2/0000_00_02p28",
@@ -8001,6 +7999,8 @@
         "cat2/2022_06_27p30",
         "cat2/2022_08_26p30"
       ],
+      "img": null,
+      "uniqueID": 404,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -8015,13 +8015,13 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 405,
       "fonte": [
         "cat2/0000_00_01p37",
         "cat2/0000_00_02p37",
         "cat2/2023_01_27p36"
       ],
+      "img": null,
+      "uniqueID": 405,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -8036,13 +8036,13 @@
       ],
       "correctIndex": 2,
       "notes": null,
-      "img": null,
-      "uniqueID": 406,
       "fonte": [
         "cat2/0000_00_02p1",
         "cat2/0000_00_03p1",
         "cat2/2022_07_20p6"
       ],
+      "img": null,
+      "uniqueID": 406,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -8057,11 +8057,11 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 407,
       "fonte": [
         "cat2/2017_09_27p1"
       ],
+      "img": null,
+      "uniqueID": 407,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -8098,8 +8098,6 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 409,
       "fonte": [
         "cat2/0000_00_03p15",
         "cat2/0000_00_02p15",
@@ -8107,6 +8105,8 @@
         "cat2/2022_02_03p17",
         "cat2/2022_07_20p17"
       ],
+      "img": null,
+      "uniqueID": 409,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -8117,17 +8117,17 @@
         "Para proteger os equipamentos de flutuações na tensão",
         "As fontes de alimentação estabilizadas têm aprovação segundo as normas europeias",
         "Para não se utilizarem fusíveis",
-        "Estas fontes são mais baratas "
+        "Estas fontes são mais baratas"
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 410,
       "fonte": [
         "cat2/0000_00_02p26",
         "cat2/2021_02_18p25",
         "cat2/2022_07_20p25"
       ],
+      "img": null,
+      "uniqueID": 410,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -8135,27 +8135,27 @@
     {
       "question": "Se considerarmos um transformador, projectado para o efeito, com o primário ligado à rede eléctrica e apresentando nos terminais do secundário em vazio 12,6 V, qual das afirmações está correcta?",
       "answers": [
-        "A frequência do sinal do secundário é igual à frequência do primário ",
+        "A frequência do sinal do secundário é igual à frequência do primário",
         "Se carregado e à medida que a corrente for aumentando é expectável uma ligeira diminuição da tensão aos terminais do secundário",
         "Por não ser um transformador ideal, será previsível um ligeiro aquecimento",
         "Todas as afirmações estão correctas"
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 411,
       "fonte": [
         "cat2/2013_08_00p30",
         "cat2/0000_00_02p30",
         "cat2/2018_03_08p28",
         "cat2/2021_02_18p28"
       ],
+      "img": null,
+      "uniqueID": 411,
       "tutorial": null,
       "materia": null,
       "calc": null
     },
     {
-      "question": "identifique o símbolo representado na figura 7: ",
+      "question": "identifique o símbolo representado na figura 7:",
       "answers": [
         "díodo",
         "transistor PNP",
@@ -8164,12 +8164,12 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": "images/cat2/tran_fig_7.jpg",
-      "uniqueID": 412,
       "fonte": [
         "cat2/2013_08_00p35",
         "cat2/2023_06_26p33"
       ],
+      "img": "images/cat2/tran_fig_7.jpg",
+      "uniqueID": 412,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -8184,13 +8184,13 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 413,
       "fonte": [
         "cat2/0000_00_03p2",
         "cat2/2017_09_27p4",
         "cat2/2022_07_20p5"
       ],
+      "img": null,
+      "uniqueID": 413,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -8205,11 +8205,11 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 414,
       "fonte": [
         "cat2/0000_00_03p35"
       ],
+      "img": null,
+      "uniqueID": 414,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -8224,14 +8224,14 @@
       ],
       "correctIndex": 4,
       "notes": null,
-      "img": null,
-      "uniqueID": 415,
       "fonte": [
         "cat2/2012_04_10p10",
         "cat2/2016_01_00p11",
         "cat2/2021_02_18p10",
         "cat2/2022_06_27p11"
       ],
+      "img": null,
+      "uniqueID": 415,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -8246,13 +8246,13 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 416,
       "fonte": [
         "cat2/2012_04_10p37",
         "cat2/2013_08_00p37",
         "cat2/2023_06_15p36"
       ],
+      "img": null,
+      "uniqueID": 416,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -8267,14 +8267,14 @@
       ],
       "correctIndex": 1,
       "notes": null,
-      "img": null,
-      "uniqueID": 417,
       "fonte": [
         "cat2/2013_08_00p15",
         "cat2/2022_06_27p17",
         "cat2/2022_06_27p18",
         "cat2/2023_01_27p17"
       ],
+      "img": null,
+      "uniqueID": 417,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -8289,11 +8289,11 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 418,
       "fonte": [
         "cat2/2023_06_15p9"
       ],
+      "img": null,
+      "uniqueID": 418,
       "tutorial": null,
       "materia": null,
       "calc": null
@@ -8308,11 +8308,11 @@
       ],
       "correctIndex": 3,
       "notes": null,
-      "img": null,
-      "uniqueID": 419,
       "fonte": [
         "cat2/2023_06_26p19"
       ],
+      "img": null,
+      "uniqueID": 419,
       "tutorial": null,
       "materia": null,
       "calc": null

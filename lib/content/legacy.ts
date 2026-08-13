@@ -29,9 +29,16 @@ export type LegacyQuestion = {
   uniqueID: number;
   tutorial: string | null;
   materia: string | null;
-  calc: string | null;
+  /** Absent on most cat1 questions rather than null. */
+  calc?: string | null;
   /** Present only when the question has resolved page numbers. */
   fontePages?: Record<string, number>;
+  /**
+   * A stray topic annotation on exactly one cat2 question ("ohm", on an Ohm's
+   * law question whose `materia` is null). Nothing reads it; it is folded into
+   * `topic` on import so the annotation is not lost.
+   */
+  TEMA?: string | null;
 };
 
 export type LegacyCategory = {
@@ -72,7 +79,10 @@ function toCanonicalQuestion(raw: LegacyQuestion): unknown {
     id: raw.uniqueID,
     question: raw.question,
     answers,
-    topic: raw.materia,
+    // `materia` is the topic field, empty across all 1,015 questions. One cat2
+    // question carries the annotation under `TEMA` instead; preserve it rather
+    // than dropping the only topic hint in the bank.
+    topic: raw.materia ?? raw.TEMA ?? null,
     sources: raw.fonte ?? [],
     sourcePages: raw.fontePages ?? {},
     image: raw.img,
