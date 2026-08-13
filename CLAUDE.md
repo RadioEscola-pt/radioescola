@@ -56,10 +56,10 @@ refuses to overwrite an existing source directory.
 **Linking questions to exam PDFs**: `bun run data:ocr-exams` OCRs the scanned
 papers in `public/exams/` and matches them back to the bank (needs `poppler`
 and `tesseract`; install `tesseract-data-por` for accented text). With
-`--apply` it fills `sourcePages` for references that already exist. It never
-invents a `sources` entry, because that needs the question number read off the
-scan, which is the least reliable part — those are proposed in the report for a
-human to confirm. `bun run data:fonte-pages` is the manual equivalent.
+`--apply` it fills the `page` of references that already exist. It never invents
+a `sources` entry, because that needs the question number read off the scan,
+which is the least reliable part — those are proposed in the report for a human
+to confirm. `bun run data:fonte-pages` is the manual equivalent.
 
 Why `order` lives in `category.json`: the question order is **editorial, not id
 order** (in cat3, questions 210-213 sit at positions 8, 10, 19 and 31, grouped
@@ -102,6 +102,10 @@ Uses `next-intl` v4. Default locale is **Portuguese (pt)**, also supports Englis
 - **`correctIndex` is 0-indexed everywhere.** It was 1-indexed in the old hand-maintained JSON and decremented at runtime; the compiler now resolves it, and source files mark the right answer with `correct: true` instead of an index at all
 - **Category order is 3→2→1** (not ascending). Category 3 = beginner, 1 = advanced (Portuguese licensing progression)
 - **Exam scoring penalty**: -0.25 per wrong answer (hardcoded in `lib/config/exam.ts`)
+- **A source reference nests its parts**: `sources: [{ pdf, question, page }]`.
+  `question` is the pergunta number printed in the paper, `page` is the PDF page
+  — unrelated numbers, since a paper carries ~4 questions per page. `page` is
+  absent until somebody resolves it. Never use the pergunta number as a page
 - **Image paths are already absolute** in the shipped JSON (`/images/cat{id}/file.png`); source files store them public-relative (`images/...`) and the compiler resolves them. Consumers use `question.img` directly — don't re-prepend
 - **`lib/data.ts` does no normalization.** If question data looks wrong, fix the source and rebuild; don't add a runtime coercion. Malformed data should fail `content:check`, not be patched per visitor
 - **Progress version migration**: Auto-migrates localStorage on load if version < `PROGRESS_VERSION` (currently V3)

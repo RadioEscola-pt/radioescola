@@ -42,6 +42,32 @@ export const AnswerSchema = z.object({
   correct: z.boolean().default(false),
 });
 
+/**
+ * A place this question appears in an official exam paper.
+ *
+ * Replaces the old pair of a composite string ("cat3/2023_08_18p4") and a
+ * parallel `sourcePages` map. That split needed a cross-field invariant to stay
+ * consistent, forced the same filename-and-number regex to be reimplemented in
+ * three places, and made "does this PDF exist?" unanswerable without parsing.
+ *
+ * The two numbers are unrelated and both are needed: `question` is the pergunta
+ * number printed in the paper, `page` is the PDF page it is printed on. These
+ * papers carry about four questions per page, so pergunta 17 is on page 5.
+ */
+export const SourceRefSchema = z.object({
+  /** Folder and file stem under public/exams, e.g. "cat3/2023_08_18". */
+  pdf: TrimmedString,
+  /** Pergunta number as printed in the paper. */
+  question: z.number().int().positive(),
+  /** PDF page it appears on. Null until somebody resolves it. */
+  page: z
+    .number()
+    .int()
+    .positive()
+    .nullish()
+    .transform((p) => p ?? null),
+});
+
 export const QuestionSchema = z
   .object({
     /** Stable identifier, unique within a category (legacy `uniqueID`). */
@@ -53,10 +79,8 @@ export const QuestionSchema = z
      * taxonomy is applied — legacy `materia` is empty on every question.
      */
     topic: OptionalText,
-    /** Official exam papers this question appears in, e.g. "cat3/2023_08_18p17". */
-    sources: z.array(TrimmedString).default([]),
-    /** Maps a `sources` entry to the PDF page it appears on. */
-    sourcePages: z.record(z.string(), z.number().int().positive()).default({}),
+    /** Official exam papers this question appears in. */
+    sources: z.array(SourceRefSchema).default([]),
     /** Public-relative image path, e.g. "images/cat3/foo.png". */
     image: OptionalText,
     tutorial: OptionalText,
@@ -77,19 +101,21 @@ export const QuestionSchema = z
       });
     }
 
-    // A page reference to a source the question does not cite is a dangling
-    // pointer, and the most likely way this data goes subtly wrong.
-    const dangling = Object.keys(q.sourcePages).filter(
-      (key) => !q.sources.includes(key)
-    );
-    if (dangling.length > 0) {
-      ctx.addIssue({
-        code: "custom",
-        message: `question ${q.id} has sourcePages keys not present in sources: ${dangling.join(
-          ", "
-        )}`,
-        path: ["sourcePages"],
-      });
+    // The old shape needed a check that every `sourcePages` key was also in
+    // `sources`; nesting makes that unrepresentable. What remains expressible
+    // is a question citing the same paper and pergunta twice, which is a
+    // duplicate rather than two appearances.
+    const seen = new Set<string>();
+    for (const s of q.sources) {
+      const key = `${s.pdf}#${s.question}`;
+      if (seen.has(key)) {
+        ctx.addIssue({
+          code: "custom",
+          message: `question ${q.id} cites ${s.pdf} pergunta ${s.question} more than once`,
+          path: ["sources"],
+        });
+      }
+      seen.add(key);
     }
   });
 

@@ -3,6 +3,17 @@
  */
 
 // Question/category types (moved from lib/types.ts)
+/**
+ * Where a question appears in an official exam paper. `question` is the
+ * pergunta number printed in the paper; `page` is the PDF page it is on. The
+ * two are unrelated — these papers carry about four questions per page.
+ */
+export interface SourceRef {
+  pdf: string;
+  question: number;
+  page?: number;
+}
+
 export interface Question {
   id: number;
   question: string;
@@ -11,9 +22,7 @@ export interface Question {
   img?: string | null;
   notes?: string | null;
   hasNotesMdx?: boolean;
-  fonte?: string[] | null;
-  /** Maps a fonte entry (e.g. "cat3/2023_08_18p17") to the real PDF page it appears on. */
-  fontePages?: Record<string, number> | null;
+  sources?: SourceRef[] | null;
   tutorial?: string | null;
   materia?: string | null;
   calc?: string | string[] | null;

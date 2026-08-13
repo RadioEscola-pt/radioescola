@@ -111,8 +111,15 @@ function toAppQuestion(
   };
 
   if (q.explanation !== null) out.hasNotesMdx = true;
-  if (q.sources.length > 0) out.fonte = q.sources;
-  if (Object.keys(q.sourcePages).length > 0) out.fontePages = q.sourcePages;
+  if (q.sources.length > 0) {
+    // Same nesting as the source files, minus unresolved pages: the client
+    // only needs `page` when there is one to link to.
+    out.sources = q.sources.map((s) =>
+      s.page === null
+        ? { pdf: s.pdf, question: s.question }
+        : { pdf: s.pdf, question: s.question, page: s.page }
+    );
+  }
   if (q.image !== null) out.img = absoluteImagePath(q.image, categoryId);
   if (q.tutorial !== null) out.tutorial = q.tutorial;
   if (q.topic !== null) out.materia = q.topic;

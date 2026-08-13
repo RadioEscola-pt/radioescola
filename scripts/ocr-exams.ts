@@ -411,16 +411,21 @@ export function planPageFills(
     const question = categories.get(cat)?.questions.find((q) => q.id === m.questionId);
     if (!question) continue;
 
-    const forThisPdf = question.sources.filter((s) => s.startsWith(`${m.pdf}p`));
+    const forThisPdf = question.sources.filter((s) => s.pdf === m.pdf);
     if (forThisPdf.length === 0) continue;
 
-    const entry = forThisPdf[0]!;
-    const existingPage = question.sourcePages[entry] ?? null;
-    const fill: PageFill = { entry, questionId: question.id, page: m.page, score: m.score, existingPage };
+    const ref = forThisPdf[0]!;
+    const fill: PageFill = {
+      entry: `${ref.pdf}p${ref.question}`,
+      questionId: question.id,
+      page: m.page,
+      score: m.score,
+      existingPage: ref.page,
+    };
 
     if (forThisPdf.length > 1) ambiguous.push(fill);
-    else if (existingPage === null) fills.push(fill);
-    else if (existingPage !== m.page) disagreements.push(fill);
+    else if (ref.page === null) fills.push(fill);
+    else if (ref.page !== m.page) disagreements.push(fill);
   }
 
   return { fills, ambiguous, disagreements };
@@ -543,7 +548,11 @@ async function main() {
         const alreadyLinked =
           !!existing &&
           !!q &&
-          existing.questions.some((x) => x.id === q.id && x.sources.includes(entry));
+          existing.questions.some(
+            (x) =>
+              x.id === q.id &&
+              x.sources.some((s) => s.pdf === pdf.key && s.question === oq.num)
+          );
         matches.push({
           pdf: pdf.key,
           page,
@@ -652,8 +661,9 @@ function applyPageFills(fills: PageFill[], categories: Map<string, ContentCatego
     const question = category.questions.find((q) => q.id === f.questionId);
     if (!question) continue;
 
-    if (question.sourcePages[f.entry] === f.page) continue;
-    question.sourcePages[f.entry] = f.page;
+    const ref = question.sources.find((s) => `${s.pdf}p${s.question}` === f.entry);
+    if (!ref || ref.page === f.page) continue;
+    ref.page = f.page;
 
     let set = dirtyByCat.get(cat);
     if (!set) {

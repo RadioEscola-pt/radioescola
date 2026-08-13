@@ -55,8 +55,14 @@ function toCanonicalQuestion(raw: LegacyQuestion): unknown {
     // question carries the annotation under `TEMA` instead; preserve it rather
     // than dropping the only topic hint in the bank.
     topic: raw.materia ?? raw.TEMA ?? null,
-    sources: raw.fonte ?? [],
-    sourcePages: raw.fontePages ?? {},
+    // Old-shape JSON keeps the composite string plus a parallel page map; the
+    // canonical model nests them. "cat3/2023_08_18p4" -> pdf + pergunta 4.
+    sources: (raw.fonte ?? []).flatMap((entry) => {
+      const cleaned = entry.trim().replace(/<[^>]*>\s*$/, "").trim();
+      const m = /^(.+)p(\d+)$/.exec(cleaned);
+      if (!m) return [];
+      return [{ pdf: m[1]!, question: Number(m[2]), page: raw.fontePages?.[entry.trim()] ?? null }];
+    }),
     image: raw.img,
     tutorial: raw.tutorial,
     calc: raw.calc,

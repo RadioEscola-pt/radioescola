@@ -4,7 +4,7 @@ import React from 'react';
 import DOMPurify from 'dompurify';
 import { Calculator } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { Question } from '@/lib/types';
+import { Question, SourceRef } from '@/lib/types';
 import { getCalculatorMeta } from '@/lib/config';
 import type { CalculatorCode } from '@/lib/types';
 import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
@@ -32,22 +32,20 @@ interface QuestionCardProps {
   attemptCount?: number;
 }
 
-function buildFonteLink(entry: string, pdfPage?: number) {
-  const match = entry.match(/^([^\/]+)\/(.+?)p(\d+)$/i);
-  if (!match) {
-    return { label: entry, href: null };
+function buildSourceLink(source: SourceRef) {
+  // No parsing: the pdf, pergunta number and page arrive as separate fields.
+  // The pergunta number is shown in the label but must never be used as the
+  // page — a paper carries about four questions per page, so they diverge
+  // immediately. Without a resolved page the PDF opens at the start.
+  const [folder, file] = source.pdf.split('/');
+  if (!folder || !file) {
+    return { label: source.pdf, href: null };
   }
-  const [, folder, file, num] = match;
-  if (!folder || !file || !num) {
-    return { label: entry, href: null };
-  }
-  // `num` is the pergunta (question) number, shown in the label. The actual PDF
-  // page comes from fontePages when resolved; otherwise open the PDF at page 1
-  // (the pergunta number is not a page and would land on the wrong page).
-  const base = `/exams/${folder}/${file}.pdf`;
-  const href = pdfPage ? `${base}#page=${pdfPage}` : base;
-  const label = `${folder.toUpperCase()} ${file} (p${num})`;
-  return { label, href };
+  const base = `/exams/${source.pdf}.pdf`;
+  return {
+    href: source.page ? `${base}#page=${source.page}` : base,
+    label: `${folder.toUpperCase()} ${file} (p${source.question})`,
+  };
 }
 
 /** Normalize calc field to array of calculator codes */
@@ -258,15 +256,14 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
               </a>
             </div>
           )}
-          {question.fonte && question.fonte.length > 0 && (
+          {question.sources && question.sources.length > 0 && (
             <div className="text-slate-600 dark:text-slate-400">
               <span className="font-semibold">{t('officialSource')}</span>
               <ul className="mt-1 space-y-1 list-disc list-inside">
-                {question.fonte.map((entry, idx) => {
-                  const trimmed = entry.trim();
-                  const { href, label } = buildFonteLink(trimmed, question.fontePages?.[trimmed]);
+                {question.sources.map((source, idx) => {
+                  const { href, label } = buildSourceLink(source);
                   return (
-                    <li key={`${entry}-${idx}`}>
+                    <li key={`${source.pdf}-${source.question}-${idx}`}>
                       {href ? (
                         <PdfPageDialog
                           href={href}
@@ -275,7 +272,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
                           closeLabel={t('sourceClose')}
                         />
                       ) : (
-                        entry
+                        label
                       )}
                     </li>
                   );

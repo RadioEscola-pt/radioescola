@@ -23,8 +23,7 @@ export type RawQuestion = {
   options: string[];
   correctIndex: number;
   hasNotesMdx?: boolean;
-  fonte?: string[];
-  fontePages?: Record<string, number>;
+  sources?: { pdf: string; question: number; page?: number }[];
   img?: string;
   tutorial?: string;
   materia?: string;
@@ -42,8 +41,7 @@ function toQuestion(raw: RawQuestion): Question {
     // /api/notes; the field remains only as QuestionCard's fallback.
     notes: null,
     hasNotesMdx: raw.hasNotesMdx ?? false,
-    fonte: raw.fonte ?? null,
-    fontePages: raw.fontePages ?? null,
+    sources: raw.sources ?? null,
     tutorial: raw.tutorial ?? null,
     materia: raw.materia ?? null,
     calc: raw.calc ?? null,

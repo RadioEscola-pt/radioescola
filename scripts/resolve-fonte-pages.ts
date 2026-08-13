@@ -39,18 +39,9 @@ const ROOT = process.cwd();
 const EXAMS_DIR = path.join(ROOT, "public", "exams");
 const CATEGORIES = ["1", "2", "3"] as const;
 
-// "folder/file...pN" -> { pdf: "folder/file", num: N }
-const ENTRY_RE = /^([^/]+)\/(.+?)p(\d+)$/i;
-
-type Entry = { entry: string; pdf: string; num: number };
-
-function parseEntry(raw: unknown): Entry | null {
-  const entry = String(raw).trim();
-  const m = ENTRY_RE.exec(entry);
-  if (!m) return null;
-  const [, folder, file, num] = m;
-  if (!folder || !file || !num) return null;
-  return { entry, pdf: `${folder}/${file}`, num: Number(num) };
+/** Display/lookup key for a reference; the data no longer stores one. */
+function refKey(pdf: string, question: number): string {
+  return `${pdf}p${question}`;
 }
 
 function pdfPath(pdfKey: string) {
@@ -172,12 +163,14 @@ function main() {
     return;
   }
 
-  // Aggregate already-resolved pages (resume support).
+  // Aggregate already-resolved pages (resume support). A reference is keyed by
+  // its PDF and pergunta number, which are now separate fields rather than a
+  // string that has to be pulled apart.
   const resolved = new Map<string, number>();
   for (const file of files) {
     for (const q of file.category.questions) {
-      for (const [entry, page] of Object.entries(q.sourcePages)) {
-        if (Number.isInteger(page)) resolved.set(entry, page);
+      for (const s of q.sources) {
+        if (s.page !== null) resolved.set(refKey(s.pdf, s.question), s.page);
       }
     }
   }
@@ -188,12 +181,8 @@ function main() {
   const missingPdf = new Set<string>();
   for (const file of files) {
     for (const q of file.category.questions) {
-      for (const raw of q.sources) {
-        const info = parseEntry(raw);
-        if (!info) {
-          malformed.add(String(raw).trim());
-          continue;
-        }
+      for (const source of q.sources) {
+        const info = { entry: refKey(source.pdf, source.question), pdf: source.pdf, num: source.question };
         if (!fs.existsSync(pdfPath(info.pdf))) {
           missingPdf.add(info.pdf);
           continue;
@@ -249,7 +238,7 @@ function main() {
   function findContext(entry: string) {
     for (const file of files) {
       for (const q of file.category.questions) {
-        if (q.sources.some((x) => x.trim() === entry)) {
+        if (q.sources.some((s) => refKey(s.pdf, s.question) === entry)) {
           return { cat: file.cat, id: q.id, question: q.question };
         }
       }
@@ -261,10 +250,12 @@ function main() {
     resolved.set(entry, page);
     for (const file of files) {
       for (const q of file.category.questions) {
-        if (!q.sources.some((x) => x.trim() === entry)) continue;
-        if (q.sourcePages[entry] !== page) {
-          q.sourcePages[entry] = page;
-          file.dirty.add(q.id);
+        for (const s of q.sources) {
+          if (refKey(s.pdf, s.question) !== entry) continue;
+          if (s.page !== page) {
+            s.page = page;
+            file.dirty.add(q.id);
+          }
         }
       }
     }
