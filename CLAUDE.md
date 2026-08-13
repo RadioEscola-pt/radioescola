@@ -12,6 +12,8 @@ bun run test         # Vitest (unit + integration)
 bun run test:watch   # Vitest in watch mode
 bun run test:coverage # Vitest with V8 coverage
 bun run type-check   # tsc --noEmit
+bun run content:build # Compile content/questions/** into shipped artifacts
+bun run content:check # Verify artifacts match their source (writes nothing)
 ./deploy.sh          # Pull, install, build, PM2 restart (app name: radioescola)
 ```
 
@@ -34,13 +36,40 @@ Next.js 16 App Router with React 19, TypeScript (strict), Tailwind CSS v4.
 
 **Data flow**: Static JSON in `/public/data/cat{1,2,3}.json` → `loadData()` fetches all 3 in parallel. All user progress stored in localStorage (key: `hamradio_progress`). No backend database.
 
+## Content pipeline
+
+**cat3 is migrated; cat1 and cat2 are not.** Know which you are editing.
+
+- **cat3**: source of truth is `content/questions/cat3/` — one `{id}.mdx` per
+  question (zero-padded filename, YAML frontmatter, explanation as the body),
+  plus `category.json` holding `anacomFile` and the question `order`.
+  `public/data/cat3.json` and `content/notes/cat3/**` are **generated** — do not
+  hand-edit them; edit the source and run `bun run content:build`.
+- **cat1 / cat2**: still hand-maintained JSON + `content/notes/cat{1,2}/`. The
+  build skips categories with no source directory, so they are unaffected.
+
+`bun run content:check` fails if a generated file was hand-edited or the source
+no longer compiles to what is committed. Run `scripts/content-migrate.ts <cat>`
+to migrate a category (refuses to overwrite an existing source dir).
+
+Why `order` lives in `category.json`: the legacy array order is **editorial,
+not id order** (questions 210-213 sit at positions 8, 10, 19, 31, grouped by
+subject) and it drives the browse sequence, so it must survive the migration.
+
+The canonical model (`lib/content/schema.ts`) differs from the shipped JSON on
+purpose: answers carry a `correct` flag instead of a 1-indexed `correctIndex`,
+absent values are consistently `null`/`[]`/`{}`, and `topic` exists as a real
+field. `lib/content/legacy.ts` adapts between the two, so the runtime keeps
+fetching the same shape it always has.
+
 ## Key Directories
 
 ```
 app/             # Next.js App Router pages and API routes
 components/      # ui/, providers/, calculators/, gamification/, shared/, settings/
 lib/             # Core logic: i18n/, types/, config/, storage/, gamification/, spaced-repetition/, utils/
-content/notes/   # MDX files per question (cat1/, cat2/, cat3/)
+content/questions/ # Question SOURCE, one MDX per question (cat3/ only so far)
+content/notes/   # GENERATED for cat3; still source for cat1/cat2
 messages/        # i18n JSON: en.json, pt.json
 hooks/           # React hooks: useProgress, useGamification, useExamTimer, etc.
 public/data/     # Question bank JSON + notes-index.json

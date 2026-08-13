@@ -109,7 +109,13 @@ function toLegacyQuestion(q: ContentQuestion): LegacyQuestion {
     question: q.question,
     answers: q.answers.map((a) => a.text),
     correctIndex,
-    notes: q.explanation,
+    // Always null: inline notes were moved into content/notes/ by
+    // scripts/extract-notes.js long before this migration, and the field is
+    // null on all 1,015 questions across the three categories. Explanations
+    // are emitted as note files instead. `fromLegacy` still reads this field,
+    // so a non-null one would surface as a round-trip failure rather than
+    // being silently dropped.
+    notes: null,
     fonte: q.sources.length > 0 ? q.sources : null,
     img: q.image,
     uniqueID: q.id,

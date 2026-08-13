@@ -21,9 +21,15 @@ import { z } from "zod";
 /** A non-empty string with surrounding whitespace removed. */
 const TrimmedString = z.string().transform((s) => s.trim()).pipe(z.string().min(1));
 
-/** Optional text: null when absent or blank, trimmed otherwise. */
+/**
+ * Optional text: null when absent or blank, trimmed otherwise.
+ *
+ * `.nullish()` so source files may omit the key entirely rather than writing
+ * `topic: null` on every question.
+ */
 const OptionalText = z
-  .union([z.string(), z.null(), z.undefined()])
+  .string()
+  .nullish()
   .transform((s) => {
     if (typeof s !== "string") return null;
     const trimmed = s.trim();
