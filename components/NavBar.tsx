@@ -21,7 +21,7 @@ import { useCalculators } from "@/components/providers/CalculatorProvider";
 import { CATEGORIES, CATEGORY_CONFIG } from "@/lib/config/categories";
 import type { CalculatorCode } from "@/lib/types";
 
-const triggerClasses = "inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none data-[state=open]:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100 dark:data-[state=open]:bg-slate-700";
+const triggerClasses = "inline-flex h-9 whitespace-nowrap items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none data-[state=open]:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100 dark:data-[state=open]:bg-slate-700";
 
 export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -38,16 +38,16 @@ export default function NavBar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/50 bg-slate-50/70 backdrop-blur-xl dark:border-slate-700/50 dark:bg-slate-900/70">
       <div className="container mx-auto flex h-14 items-center justify-between px-4">
-        <Link href="/" className="logo-link flex items-center gap-2 font-bold text-lg text-slate-800 transition-colors hover:text-amber-700 dark:text-slate-100 dark:hover:text-amber-300">
+        <Link href="/" className="logo-link flex shrink-0 items-center gap-2 whitespace-nowrap font-bold text-lg text-slate-800 transition-colors hover:text-amber-700 dark:text-slate-100 dark:hover:text-amber-300">
           <Radio className="logo-radio-icon h-5 w-5 text-amber-600 dark:text-amber-400" />
           <span className="tracking-tight">Rádio Escola</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1">
           <Link
             href="/"
-            className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100"
+            className="inline-flex h-9 whitespace-nowrap items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100"
           >
             <Home className="mr-2 h-4 w-4" />
             {t("home")}
@@ -181,7 +181,7 @@ export default function NavBar() {
 
           <Link
             href="/estado-da-nacao"
-            className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100"
+            className="inline-flex h-9 whitespace-nowrap items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100"
           >
             <TrendingUp className="mr-2 h-4 w-4" />
             {t("nationStatus")}
@@ -190,7 +190,7 @@ export default function NavBar() {
 
           <Link
             href="/ser-radioamador"
-            className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100"
+            className="inline-flex h-9 whitespace-nowrap items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100"
           >
             <GraduationCap className="mr-2 h-4 w-4" />
             {t("becomeHam")}
@@ -202,7 +202,7 @@ export default function NavBar() {
           <ThemeToggle />
 
           {/* Desktop Profile Dropdown */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden lg:flex items-center">
             <DropdownMenu>
               <DropdownMenuTrigger className="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100">
                 <UserCircle className="h-5 w-5" />
