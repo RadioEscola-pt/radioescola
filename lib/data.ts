@@ -17,7 +17,7 @@ import { CATEGORIES } from './config';
  * are filled back in here to keep `Question` a fixed shape for consumers.
  */
 
-type RawQuestion = {
+export type RawQuestion = {
   id: number;
   question: string;
   options: string[];
@@ -50,6 +50,22 @@ function toQuestion(raw: RawQuestion): Question {
   };
 }
 
+/**
+ * Builds a category from a parsed artifact. Shared with `/api/data`, which
+ * reads the same files from disk rather than over HTTP.
+ */
+export function buildCategory(
+  cat: string,
+  raw: { questions?: RawQuestion[] }
+): Category {
+  return {
+    id: cat,
+    name: `Category ${cat}`,
+    questions: (raw.questions ?? []).map(toQuestion),
+  };
+}
+
+/** Client-side loader: the relative URL means this only runs in the browser. */
 export async function loadData(): Promise<Data> {
   const categoriesEntries = await Promise.all(
     CATEGORIES.map(async (cat): Promise<[string, Category]> => {
@@ -57,15 +73,7 @@ export async function loadData(): Promise<Data> {
       if (!res.ok) {
         return [cat, { id: cat, name: `Category ${cat}`, questions: [] }];
       }
-      const raw = (await res.json()) as { questions?: RawQuestion[] };
-      return [
-        cat,
-        {
-          id: cat,
-          name: `Category ${cat}`,
-          questions: (raw.questions ?? []).map(toQuestion),
-        },
-      ];
+      return [cat, buildCategory(cat, await res.json())];
     })
   );
   const categories = Object.fromEntries(categoriesEntries) as Record<string, Category>;
