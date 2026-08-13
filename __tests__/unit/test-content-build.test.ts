@@ -44,7 +44,7 @@ it("has at least one migrated category to check", () => {
 
 describe.each(MIGRATED)("cat%s content build", (categoryId) => {
   const sourceDir = join(ROOT, `content/questions/cat${categoryId}`);
-  const legacyPath = join(ROOT, `public/data/cat${categoryId}.json`);
+  const artifactPath = join(ROOT, `public/data/cat${categoryId}.json`);
   const notesDir = join(ROOT, `content/notes/cat${categoryId}`);
 
   const manifest = CategoryManifestSchema.parse(
@@ -59,7 +59,7 @@ describe.each(MIGRATED)("cat%s content build", (categoryId) => {
   });
 
   it("reproduces the shipped JSON byte for byte", () => {
-    expect(artifacts.legacyJson).toBe(readFileSync(legacyPath, "utf-8"));
+    expect(artifacts.appJson).toBe(readFileSync(artifactPath, "utf-8"));
   });
 
   it("reproduces every committed note file byte for byte", () => {

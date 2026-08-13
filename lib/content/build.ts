@@ -19,8 +19,7 @@
 import { readFileSync, readdirSync } from "fs";
 import { join } from "path";
 import { z } from "zod";
-import { CategorySchema, type ContentCategory } from "./schema";
-import { toLegacy, serializeLegacy } from "./legacy";
+import { CategorySchema, type ContentCategory, type ContentQuestion } from "./schema";
 import { parseQuestionFile, questionFileName, idFromFileName } from "./source";
 
 export const CategoryManifestSchema = z.object({
@@ -76,10 +75,51 @@ export function loadCategory(sourceDir: string): ContentCategory {
 
 export type CategoryArtifacts = {
   /** Contents of `public/data/cat{n}.json`. */
-  legacyJson: string;
+  appJson: string;
   /** Contents of `content/notes/cat{n}/{id}.mdx`, keyed by question id. */
   notes: Map<number, string>;
 };
+
+/**
+ * Makes an image path absolute. This ran in the browser for every question on
+ * every page load; the source form is public-relative ("images/cat3/x.png"),
+ * so resolving it is a build concern.
+ */
+function absoluteImagePath(image: string, categoryId: string): string {
+  if (image.startsWith("/")) return image;
+  if (image.startsWith("images/")) return `/${image}`;
+  return `/images/cat${categoryId}/${image}`;
+}
+
+/**
+ * Projects a question into the shape the app consumes directly.
+ *
+ * Null and empty values are omitted rather than written out — the reader fills
+ * them back in — which keeps the shipped payload smaller. The two legacy
+ * gotchas are resolved here rather than at runtime: `answers` becomes
+ * `options`, and `correctIndex` becomes 0-indexed.
+ */
+function toAppQuestion(
+  q: ContentQuestion,
+  categoryId: string
+): Record<string, unknown> {
+  const out: Record<string, unknown> = {
+    id: q.id,
+    question: q.question,
+    options: q.answers.map((a) => a.text),
+    correctIndex: q.answers.findIndex((a) => a.correct),
+  };
+
+  if (q.explanation !== null) out.hasNotesMdx = true;
+  if (q.sources.length > 0) out.fonte = q.sources;
+  if (Object.keys(q.sourcePages).length > 0) out.fontePages = q.sourcePages;
+  if (q.image !== null) out.img = absoluteImagePath(q.image, categoryId);
+  if (q.tutorial !== null) out.tutorial = q.tutorial;
+  if (q.topic !== null) out.materia = q.topic;
+  if (q.calc !== null) out.calc = q.calc;
+
+  return out;
+}
 
 /** Compiles a validated category into the files the app ships. */
 export function emitCategory(category: ContentCategory): CategoryArtifacts {
@@ -90,8 +130,14 @@ export function emitCategory(category: ContentCategory): CategoryArtifacts {
     }
   }
 
+  const app = {
+    category: category.id,
+    anacomFile: category.anacomFile,
+    questions: category.questions.map((q) => toAppQuestion(q, category.id)),
+  };
+
   return {
-    legacyJson: serializeLegacy(toLegacy(category)),
+    appJson: `${JSON.stringify(app, null, 2)}\n`,
     notes,
   };
 }

@@ -1,21 +1,13 @@
 /**
  * Legacy adapter: `public/data/cat{n}.json` <-> canonical content model
  *
- * `fromLegacy` is the importer used by the one-time migration; `toLegacy` is
- * the emitter that keeps the shipped JSON byte-compatible with what the app
- * already fetches, so the runtime is untouched while authoring moves to
- * per-question files.
- *
- * The pair is verified by a round-trip test over the real cat3 data: importing
- * and re-emitting must reproduce the committed file byte for byte. Anything
- * the adapter cannot represent shows up there.
+ * All three categories have been migrated, so this is import-only: it exists
+ * for `scripts/content-migrate.ts` and for re-running a migration from an
+ * archived JSON file. The matching emitter was removed once the shipped
+ * artifacts stopped being legacy-shaped — `lib/content/build.ts` now emits the
+ * app-ready form directly.
  */
-import {
-  parseCategory,
-  safeParseCategory,
-  type ContentCategory,
-  type ContentQuestion,
-} from "./schema";
+import { parseCategory, safeParseCategory, type ContentCategory } from "./schema";
 
 /** A question as stored in the legacy JSON files. */
 export type LegacyQuestion = {
@@ -46,32 +38,12 @@ export type LegacyCategory = {
   questions: LegacyQuestion[];
 };
 
-/**
- * Key order used when emitting. The legacy files carried three different
- * orderings (an artifact of hand-editing); cat3 has been normalized to this
- * one so the emitter's output matches the committed file exactly. cat1 and
- * cat2 still carry the old orderings until they are migrated.
- */
-const LEGACY_KEY_ORDER = [
-  "question",
-  "answers",
-  "correctIndex",
-  "notes",
-  "fonte",
-  "img",
-  "uniqueID",
-  "tutorial",
-  "materia",
-  "calc",
-  "fontePages",
-] as const;
-
 function toCanonicalQuestion(raw: LegacyQuestion): unknown {
   const answers = (raw.answers ?? []).map((text, index) => ({
     text,
     // Legacy correctIndex is 1-indexed. An out-of-range value marks no answer
     // correct, which the schema's "exactly one correct" rule then rejects
-    // rather than silently clamping the way the runtime loader does.
+    // rather than silently clamping the way the old runtime loader did.
     correct: index === raw.correctIndex - 1,
   }));
 
@@ -110,68 +82,4 @@ export function safeFromLegacy(raw: unknown, categoryId: string) {
     anacomFile: legacy.ANACOMFILE,
     questions: (legacy.questions ?? []).map(toCanonicalQuestion),
   });
-}
-
-function toLegacyQuestion(q: ContentQuestion): LegacyQuestion {
-  const correctIndex = q.answers.findIndex((a) => a.correct) + 1;
-
-  const out: LegacyQuestion = {
-    question: q.question,
-    answers: q.answers.map((a) => a.text),
-    correctIndex,
-    // Always null: inline notes were moved into content/notes/ by
-    // scripts/extract-notes.js long before this migration, and the field is
-    // null on all 1,015 questions across the three categories. Explanations
-    // are emitted as note files instead. `fromLegacy` still reads this field,
-    // so a non-null one would surface as a round-trip failure rather than
-    // being silently dropped.
-    notes: null,
-    fonte: q.sources.length > 0 ? q.sources : null,
-    img: q.image,
-    uniqueID: q.id,
-    tutorial: q.tutorial,
-    materia: q.topic,
-    calc: q.calc,
-  };
-
-  // Omitted rather than nulled when empty, matching the legacy files: the
-  // runtime loader treats a missing key and null identically, but reproducing
-  // presence exactly keeps the round-trip check honest.
-  if (Object.keys(q.sourcePages).length > 0) {
-    out.fontePages = q.sourcePages;
-  }
-
-  return out;
-}
-
-/** Emits a category in the legacy shape the app fetches today. */
-export function toLegacy(category: ContentCategory): LegacyCategory {
-  return {
-    ANACOMFILE: category.anacomFile,
-    questions: category.questions.map(toLegacyQuestion),
-  };
-}
-
-/** Reorders one question's keys into the canonical emission order. */
-function orderKeys(q: LegacyQuestion): Record<string, unknown> {
-  const source = q as unknown as Record<string, unknown>;
-  const ordered: Record<string, unknown> = {};
-  for (const key of LEGACY_KEY_ORDER) {
-    if (key in source) {
-      ordered[key] = source[key];
-    }
-  }
-  return ordered;
-}
-
-/**
- * Serializes a category exactly as the current data files are formatted:
- * 2-space indent, trailing newline.
- */
-export function serializeLegacy(category: LegacyCategory): string {
-  const ordered = {
-    ANACOMFILE: category.ANACOMFILE,
-    questions: category.questions.map(orderKeys),
-  };
-  return `${JSON.stringify(ordered, null, 2)}\n`;
 }

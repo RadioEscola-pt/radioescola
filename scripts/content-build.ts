@@ -44,9 +44,9 @@ for (const category of CATEGORIES) {
   if (!existsSync(sourceDir)) continue;
 
   const parsed = loadCategory(sourceDir);
-  const { legacyJson, notes } = emitCategory(parsed);
+  const { appJson, notes } = emitCategory(parsed);
 
-  compare(join("public", "data", `cat${category}.json`), legacyJson);
+  compare(join("public", "data", `cat${category}.json`), appJson);
   for (const [id, body] of notes) {
     compare(join("content", "notes", `cat${category}`, `${id}.mdx`), body);
   }
