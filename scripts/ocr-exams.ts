@@ -234,8 +234,16 @@ async function ocrPage(pdf: Pdf, page: number, o: Options): Promise<string> {
 
 export type OcrQuestion = { num: number; text: string };
 
-/** Lines like "1-da IARU", "2· da CEPT", "3. da UIT" start the answer list. */
-const OPTION_RE = /^\s*['‘`|]?\s*[1-9]\s*[-·.•]\s*\S/;
+/**
+ * Lines like "1-da IARU", "2· da CEPT", "3. da UIT", "4: da NATO" start the
+ * answer list.
+ *
+ * The separator class has to be generous: the same scan yields "1-da IARU"
+ * under the English model and "1: da IARU" under the Portuguese one. Missing a
+ * marker is costly — the four answers then get folded into the question text
+ * as continuation lines, diluting the match for that question.
+ */
+const OPTION_RE = /^\s*['‘`|]?\s*[1-9]\s*[-–—·.•:;,)]+\s*\S/;
 /**
  * Lines like "17 O Regulamento das ..." start a question.
  *
