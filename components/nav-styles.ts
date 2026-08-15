@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
  * the item over the blurred header, and the current section is tinted amber.
  */
 const glass =
-  "text-slate-700 backdrop-blur-md hover:border-slate-900/10 hover:bg-white/70 hover:text-slate-900 hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.9),0_1px_2px_0_rgba(15,23,42,0.06)] focus:border-slate-900/10 focus:bg-white/70 focus:text-slate-900 data-[state=open]:border-slate-900/10 data-[state=open]:bg-white/70 data-[state=open]:text-slate-900 dark:text-slate-300 dark:hover:border-white/15 dark:hover:bg-white/10 dark:hover:text-white dark:hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12)] dark:focus:border-white/15 dark:focus:bg-white/10 dark:focus:text-white dark:data-[state=open]:border-white/15 dark:data-[state=open]:bg-white/10 dark:data-[state=open]:text-white";
+  "text-slate-700 hover:backdrop-blur-md focus:backdrop-blur-md data-[state=open]:backdrop-blur-md hover:border-slate-900/10 hover:bg-white/70 hover:text-slate-900 hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.9),0_1px_2px_0_rgba(15,23,42,0.06)] focus:border-slate-900/10 focus:bg-white/70 focus:text-slate-900 data-[state=open]:border-slate-900/10 data-[state=open]:bg-white/70 data-[state=open]:text-slate-900 dark:text-slate-300 dark:hover:border-white/15 dark:hover:bg-white/10 dark:hover:text-white dark:hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12)] dark:focus:border-white/15 dark:focus:bg-white/10 dark:focus:text-white dark:data-[state=open]:border-white/15 dark:data-[state=open]:bg-white/10 dark:data-[state=open]:text-white";
 
 const itemBase =
   "inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md border border-transparent px-4 py-2 text-sm font-medium transition-colors focus:outline-none";

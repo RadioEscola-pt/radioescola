@@ -54,8 +54,9 @@ function Attribution({
 
       <span
         className={cn(
-          "ml-auto inline-flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium",
-          cat.badgeBg,
+          "ml-auto inline-flex shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium backdrop-blur-md",
+          "shadow-[inset_0_1px_0_0_rgba(255,255,255,0.7)] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12)]",
+          cat.badgeGlass,
           cat.badgeText
         )}
       >
