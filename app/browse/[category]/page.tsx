@@ -51,6 +51,16 @@ export default function BrowsePage() {
     });
   }, [categoryId]);
 
+  // Questions load after the native anchor scroll would have fired, so honor
+  // #q-{id} links (e.g. from the dashboard's weak areas) once they render.
+  useEffect(() => {
+    if (!category) return;
+    const hash = window.location.hash;
+    if (/^#q-\d+$/.test(hash)) {
+      document.querySelector(hash)?.scrollIntoView();
+    }
+  }, [category]);
+
   const handleLaunchCalculator = useCallback((code: string) => {
     openCalculator(code as CalculatorCode);
   }, [openCalculator]);
@@ -73,34 +83,35 @@ export default function BrowsePage() {
           const isAnswered = selected !== undefined;
           const difficultyStats = getQuestionDifficultyStats(q.id);
           return (
-            <QuestionCard
-              key={q.id}
-              question={q}
-              selectedOption={selected}
-              onSelect={(choice) => {
-                setAnswers((prev) => {
-                  if (Object.prototype.hasOwnProperty.call(prev, q.id)) return prev;
-                  // Record question attempt (+ XP / daily goals) for progress tracking
-                  recordQuestionWithGamification({
-                    questionId: q.id,
-                    category: categoryId,
-                    correct: choice === q.correctIndex,
-                    timestamp: Date.now(),
+            <div key={q.id} id={`q-${q.id}`} className="scroll-mt-20">
+              <QuestionCard
+                question={q}
+                selectedOption={selected}
+                onSelect={(choice) => {
+                  setAnswers((prev) => {
+                    if (Object.prototype.hasOwnProperty.call(prev, q.id)) return prev;
+                    // Record question attempt (+ XP / daily goals) for progress tracking
+                    recordQuestionWithGamification({
+                      questionId: q.id,
+                      category: categoryId,
+                      correct: choice === q.correctIndex,
+                      timestamp: Date.now(),
+                    });
+                    return { ...prev, [q.id]: choice };
                   });
-                  return { ...prev, [q.id]: choice };
-                });
-              }}
-              showImage
-              indexNumber={idx + 1}
-              showCalcHint
-              onLaunchCalculator={handleLaunchCalculator}
-              ended={isAnswered}
-              showBookmark
-              isBookmarked={isBookmarked(q.id)}
-              onToggleBookmark={() => handleToggleBookmark(q.id)}
-              successRate={difficultyStats.successRate}
-              attemptCount={difficultyStats.attemptCount}
-            />
+                }}
+                showImage
+                indexNumber={idx + 1}
+                showCalcHint
+                onLaunchCalculator={handleLaunchCalculator}
+                ended={isAnswered}
+                showBookmark
+                isBookmarked={isBookmarked(q.id)}
+                onToggleBookmark={() => handleToggleBookmark(q.id)}
+                successRate={difficultyStats.successRate}
+                attemptCount={difficultyStats.attemptCount}
+              />
+            </div>
           );
         })}
       </section>
