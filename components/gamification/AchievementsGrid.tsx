@@ -16,7 +16,7 @@ const rarityColors = {
   common: "from-slate-400 to-slate-500",
   uncommon: "from-green-400 to-green-500",
   rare: "from-blue-400 to-blue-500",
-  epic: "from-purple-400 to-purple-500",
+  epic: "from-rose-400 to-rose-500",
   legendary: "from-amber-400 to-orange-500",
 };
 
@@ -24,7 +24,7 @@ const rarityBgColors = {
   common: "bg-slate-100 dark:bg-slate-700/50",
   uncommon: "bg-green-50 dark:bg-green-900/20",
   rare: "bg-blue-50 dark:bg-blue-900/20",
-  epic: "bg-purple-50 dark:bg-purple-900/20",
+  epic: "bg-rose-50 dark:bg-rose-900/20",
   legendary: "bg-amber-50 dark:bg-amber-900/20",
 };
 
