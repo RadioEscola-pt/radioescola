@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/accordion";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { navIconButton } from "./nav-styles";
 
 import { useCalculators } from "@/components/providers/CalculatorProvider";
 import { CATEGORIES, CATEGORY_CONFIG } from "@/lib/config/categories";
@@ -46,7 +47,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
       <SheetTrigger asChild className="lg:hidden">
         <button
           type="button"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100"
+          className={navIconButton}
           aria-label={t("menu")}
         >
           <Menu className="h-6 w-6" />

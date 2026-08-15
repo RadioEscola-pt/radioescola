@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react";
 import { Sun, Moon } from "lucide-react";
 import { useTheme } from "@/components/providers/ThemeProvider";
+import { navIconButton } from "./nav-styles";
 
 // Hydration-safe "is this running on the client?" flag — false on the
 // server and during hydration, true afterwards. No subscription needed.
@@ -24,7 +25,7 @@ export default function ThemeToggle() {
     return (
       <button
         type="button"
-        className="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100"
+        className={navIconButton}
         aria-label="Toggle theme"
       >
         <Sun className="h-5 w-5" />
@@ -36,7 +37,7 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100"
+      className={navIconButton}
       aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
     >
       {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}

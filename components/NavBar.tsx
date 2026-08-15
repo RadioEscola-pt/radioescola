@@ -14,6 +14,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
+import { navIconButton, navItem, navItemActive } from "./nav-styles";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 import MobileNav from "./MobileNav";
@@ -21,13 +23,20 @@ import { useCalculators } from "@/components/providers/CalculatorProvider";
 import { CATEGORIES, CATEGORY_CONFIG } from "@/lib/config/categories";
 import type { CalculatorCode } from "@/lib/types";
 
-const triggerClasses = "inline-flex h-9 whitespace-nowrap items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none data-[state=open]:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100 dark:data-[state=open]:bg-slate-700";
-
 export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { openCalculator, getAllCalculators } = useCalculators();
   const t = useTranslations("NavBar");
   const tc = useTranslations("Calculators");
+  const pathname = usePathname();
+
+  const section = {
+    home: pathname === "/",
+    study: ["/browse", "/study", "/drill"].some((p) => pathname.startsWith(p)),
+    exams: pathname.startsWith("/exam") || pathname.startsWith("/submit-exam"),
+    nation: pathname.startsWith("/estado-da-nacao"),
+    becomeHam: pathname.startsWith("/ser-radioamador"),
+  };
 
   const calculators = getAllCalculators();
 
@@ -47,7 +56,8 @@ export default function NavBar() {
         <nav className="hidden lg:flex items-center gap-1">
           <Link
             href="/"
-            className="inline-flex h-9 whitespace-nowrap items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100"
+            aria-current={section.home ? "page" : undefined}
+            className={section.home ? navItemActive : navItem}
           >
             <Home className="mr-2 h-4 w-4" />
             {t("home")}
@@ -55,7 +65,7 @@ export default function NavBar() {
 
           {/* Study — merged with Browse */}
           <DropdownMenu>
-            <DropdownMenuTrigger className={triggerClasses}>
+            <DropdownMenuTrigger className={section.study ? navItemActive : navItem}>
               <BookOpen className="mr-2 h-4 w-4" />
               {t("study")}
               <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
@@ -141,7 +151,7 @@ export default function NavBar() {
 
           {/* Exams */}
           <DropdownMenu>
-            <DropdownMenuTrigger className={triggerClasses}>
+            <DropdownMenuTrigger className={section.exams ? navItemActive : navItem}>
               <FileText className="mr-2 h-4 w-4" />
               {t("exams")}
               <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200 group-data-[state=open]:rotate-180" />
@@ -181,7 +191,8 @@ export default function NavBar() {
 
           <Link
             href="/estado-da-nacao"
-            className="inline-flex h-9 whitespace-nowrap items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100"
+            aria-current={section.nation ? "page" : undefined}
+            className={section.nation ? navItemActive : navItem}
           >
             <TrendingUp className="mr-2 h-4 w-4" />
             {t("nationStatus")}
@@ -190,7 +201,8 @@ export default function NavBar() {
 
           <Link
             href="/ser-radioamador"
-            className="inline-flex h-9 whitespace-nowrap items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100"
+            aria-current={section.becomeHam ? "page" : undefined}
+            className={section.becomeHam ? navItemActive : navItem}
           >
             <GraduationCap className="mr-2 h-4 w-4" />
             {t("becomeHam")}
@@ -204,7 +216,7 @@ export default function NavBar() {
           {/* Desktop Profile Dropdown */}
           <div className="hidden lg:flex items-center">
             <DropdownMenu>
-              <DropdownMenuTrigger className="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 focus:bg-slate-200 focus:text-slate-900 focus:outline-none dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100 dark:focus:bg-slate-700 dark:focus:text-slate-100">
+              <DropdownMenuTrigger className={navIconButton}>
                 <UserCircle className="h-5 w-5" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-[200px]">
