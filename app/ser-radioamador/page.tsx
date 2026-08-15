@@ -19,6 +19,8 @@ export default async function BecomeHamPage() {
       dot: "bg-green-500",
       badgeBg: "bg-green-100 dark:bg-green-900/50",
       numberColor: "text-green-100 dark:text-green-900/40",
+      glass:
+        "bg-green-500/15 border-green-500/40 text-green-800 hover:bg-green-500/25 dark:bg-green-400/10 dark:border-green-400/30 dark:text-green-200 dark:hover:bg-green-400/20",
     },
     {
       id: "2",
@@ -26,6 +28,8 @@ export default async function BecomeHamPage() {
       dot: "bg-amber-500",
       badgeBg: "bg-amber-100 dark:bg-amber-900/50",
       numberColor: "text-amber-100 dark:text-amber-900/40",
+      glass:
+        "bg-amber-500/20 border-amber-500/40 text-amber-800 hover:bg-amber-500/30 dark:bg-amber-400/10 dark:border-amber-400/30 dark:text-amber-200 dark:hover:bg-amber-400/20",
     },
     {
       id: "1",
@@ -33,6 +37,8 @@ export default async function BecomeHamPage() {
       dot: "bg-rose-500",
       badgeBg: "bg-rose-100 dark:bg-rose-900/50",
       numberColor: "text-rose-100 dark:text-rose-900/40",
+      glass:
+        "bg-rose-500/15 border-rose-500/40 text-rose-800 hover:bg-rose-500/25 dark:bg-rose-400/10 dark:border-rose-400/30 dark:text-rose-200 dark:hover:bg-rose-400/20",
     },
   ];
 
@@ -113,7 +119,7 @@ export default async function BecomeHamPage() {
                   ))}
                 </dl>
 
-                <Button asChild className="mt-5 w-full">
+                <Button asChild variant="glass" className={`mt-5 w-full ${cat.glass}`}>
                   <Link href={`/browse/${cat.id}`}>
                     <BookOpen className="h-3.5 w-3.5" />
                     {t("studyCategory")}

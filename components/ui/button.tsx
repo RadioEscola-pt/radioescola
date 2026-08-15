@@ -10,6 +10,8 @@ const buttonVariants = cva(
       variant: {
         default: "bg-amber-500 text-slate-900 hover:bg-amber-400",
         secondary: "bg-white/20 text-white backdrop-blur-sm border border-white/30 hover:bg-white/30",
+        glass:
+          "border border-slate-900/10 bg-slate-900/5 text-slate-900 backdrop-blur-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.7)] hover:bg-slate-900/10 dark:border-white/20 dark:bg-white/5 dark:text-white dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15)] dark:hover:bg-white/10",
         outline: "border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700",
         ghost: "text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-white/10",
         destructive: "bg-red-600 text-white hover:bg-red-500",
