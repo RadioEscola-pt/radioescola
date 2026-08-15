@@ -268,7 +268,13 @@ export default function DashboardPage() {
 
         {/* Quick start CTA — points at step 1, matching the pedagogy above */}
         <div className="px-4 sm:px-0 mb-8 text-center motion-safe:animate-[fadeSlideUp_0.4s_ease-out_0.4s_both] motion-reduce:opacity-100">
-          <Button asChild size="lg" variant="glassAccent" className="hover:shadow-lg hover:shadow-amber-500/25 active:translate-y-0.5 transition-all duration-200">
+          {/* Same amber glass as the category buttons on /ser-radioamador */}
+          <Button
+            asChild
+            size="lg"
+            variant="glass"
+            className="bg-amber-500/20 border-amber-500/40 text-amber-800 hover:bg-amber-500/30 active:translate-y-0.5 transition-all duration-200 dark:bg-amber-400/10 dark:border-amber-400/30 dark:text-amber-200 dark:hover:bg-amber-400/20"
+          >
             <Link href="/study">{t("onboardingCta")}</Link>
           </Button>
         </div>
