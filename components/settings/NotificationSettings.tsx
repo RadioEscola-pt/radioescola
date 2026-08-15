@@ -12,6 +12,7 @@ export function NotificationSettings() {
     isEnabled,
     permission,
     toggleEnabled,
+    updateSettings,
   } = useNotifications();
 
   if (!isSupported) {
@@ -52,6 +53,9 @@ export function NotificationSettings() {
 
         <button
           onClick={toggleEnabled}
+          role="switch"
+          aria-checked={isEnabled}
+          aria-label={t("title")}
           className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 ${
             isEnabled ? "bg-amber-500" : "bg-slate-300 dark:bg-slate-600"
           }`}
@@ -83,15 +87,17 @@ export function NotificationSettings() {
       {isEnabled && permission === "granted" && (
         <div className="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg space-y-4">
           <div>
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+            <label
+              htmlFor="notification-min-questions"
+              className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+            >
               {t("minQuestions")}
             </label>
             <select
+              id="notification-min-questions"
               value={settings.minQuestionsForReminder}
               onChange={(e) =>
-                toggleEnabled().then(() => {
-                  // Settings are saved automatically
-                })
+                updateSettings({ minQuestionsForReminder: Number(e.target.value) })
               }
               className="w-full p-2 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 text-sm"
             >
@@ -103,15 +109,17 @@ export function NotificationSettings() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+            <label
+              htmlFor="notification-cooldown"
+              className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+            >
               {t("cooldown")}
             </label>
             <select
+              id="notification-cooldown"
               value={settings.cooldownMinutes}
               onChange={(e) =>
-                toggleEnabled().then(() => {
-                  // Settings are saved automatically
-                })
+                updateSettings({ cooldownMinutes: Number(e.target.value) })
               }
               className="w-full p-2 rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 text-sm"
             >
