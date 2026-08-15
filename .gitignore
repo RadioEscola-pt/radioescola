@@ -48,3 +48,6 @@ screenshots/
 # OCR page-text cache (scripts/ocr-exams.ts)
 .ocr-cache/
 
+
+# Impeccable design-tool state
+.impeccable/

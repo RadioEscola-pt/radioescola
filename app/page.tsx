@@ -87,7 +87,7 @@ export default async function HomePage() {
                     </span>
                   </div>
                   <div>
-                    <h3 className="text-3xl font-bold text-white mb-4 drop-shadow-lg">{name}</h3>
+                    <h2 className="text-3xl font-bold text-white mb-4 drop-shadow-lg">{name}</h2>
                     <div className="flex gap-2">
                       <Button variant="secondary" className="flex-1" asChild>
                         <Link href={`/browse/${id}`}>{browseLabel}</Link>
