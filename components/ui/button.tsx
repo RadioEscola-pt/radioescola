@@ -10,6 +10,10 @@ const buttonVariants = cva(
       variant: {
         default: "bg-amber-500 text-slate-900 hover:bg-amber-400",
         secondary: "bg-white/20 text-white backdrop-blur-sm border border-white/30 hover:bg-white/30",
+        // Primary action in the glass family: still reads as the loudest thing
+        // on the page, but lit and translucent rather than a flat amber slab.
+        glassAccent:
+          "border border-amber-300/60 bg-amber-500/90 text-slate-900 backdrop-blur-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.55),0_1px_2px_0_rgba(15,23,42,0.1)] hover:bg-amber-400/95 dark:border-amber-200/40",
         glass:
           "border border-slate-900/10 bg-slate-900/5 text-slate-900 backdrop-blur-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.7)] hover:bg-slate-900/10 dark:border-white/20 dark:bg-white/5 dark:text-white dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15)] dark:hover:bg-white/10",
         outline: "border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700",

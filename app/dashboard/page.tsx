@@ -268,7 +268,7 @@ export default function DashboardPage() {
 
         {/* Quick start CTA — points at step 1, matching the pedagogy above */}
         <div className="px-4 sm:px-0 mb-8 text-center motion-safe:animate-[fadeSlideUp_0.4s_ease-out_0.4s_both] motion-reduce:opacity-100">
-          <Button asChild size="lg" className="hover:shadow-lg hover:shadow-amber-500/25 active:translate-y-0.5 transition-all duration-200">
+          <Button asChild size="lg" variant="glassAccent" className="hover:shadow-lg hover:shadow-amber-500/25 active:translate-y-0.5 transition-all duration-200">
             <Link href="/study">{t("onboardingCta")}</Link>
           </Button>
         </div>
