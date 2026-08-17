@@ -6134,7 +6134,8 @@
         "Pela corrente inversa máxima e capacidade.",
         "Pela corrente directa máxima e tensão de pico inversa."
       ],
-      "correctIndex": 3
+      "correctIndex": 3,
+      "hasNotesMdx": true
     },
     {
       "id": 358,
