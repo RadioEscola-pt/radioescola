@@ -5714,7 +5714,8 @@
         "É uma distorção relacionada com não linearidades dos amplificadores utilizados no processo.",
         "É a distorção resultante do não cumprimento do teorema de Nyquist."
       ],
-      "correctIndex": 3
+      "correctIndex": 3,
+      "hasNotesMdx": true
     },
     {
       "id": 327,

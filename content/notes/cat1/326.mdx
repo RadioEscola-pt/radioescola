@@ -1,20 +1,3 @@
----
-id: 326
-question: Numa conversão analógica/digital em que consiste o aliasing?
-answers:
-  - text: >-
-      É a distorção resultante de não se utilizar componentes de qualidade no
-      circuito.
-  - text: >-
-      É uma distorção aleatória que se verifica na conversão de sinais de muito
-      alta frequência.
-  - text: >-
-      É uma distorção relacionada com não linearidades dos amplificadores
-      utilizados no processo.
-  - text: É a distorção resultante do não cumprimento do teorema de Nyquist.
-    correct: true
----
-
 O aliasing é a **distorção resultante do não cumprimento do teorema de Nyquist**.
 
 O teorema de Nyquist estabelece que a frequência de amostragem tem de ser, no mínimo, o dobro da frequência mais alta contida no sinal. Quando esta condição não é respeitada, as componentes do sinal acima de metade da frequência de amostragem (fs/2) não desaparecem: são "rebatidas" para dentro da banda útil e surgem no sinal amostrado como frequências mais baixas, inexistentes no original. Essas frequências fantasma são os alias, e uma vez amostrado o sinal já não há forma de as distinguir das componentes legítimas.
