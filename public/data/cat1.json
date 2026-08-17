@@ -6158,7 +6158,8 @@
         "Emissor, base 1 e base 2.",
         "Porta, dreno e fonte."
       ],
-      "correctIndex": 3
+      "correctIndex": 3,
+      "hasNotesMdx": true
     },
     {
       "id": 360,
