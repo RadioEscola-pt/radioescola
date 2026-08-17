@@ -5551,7 +5551,8 @@
         "Mudança de nível.",
         "Inversão de fase."
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "hasNotesMdx": true
     },
     {
       "id": 315,
