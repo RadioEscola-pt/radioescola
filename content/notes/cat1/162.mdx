@@ -1,1 +1,9 @@
 A121
+
+**A figura de ruído é o fator de ruído expresso em dB.**
+
+O fator de ruído (F) é uma razão linear, adimensional: define-se como o quociente entre a relação sinal-ruído à entrada e a relação sinal-ruído à saída de um recetor ou amplificador, F = (S/N)<sub>entrada</sub> / (S/N)<sub>saída</sub>. Como qualquer circuito real acrescenta ruído, a relação sinal-ruído degrada-se ao atravessá-lo, logo F ≥ 1 (F = 1 corresponderia a um dispositivo ideal, que não acrescenta ruído nenhum).
+
+A figura de ruído (NF) é exatamente a mesma grandeza, apenas convertida para decibéis: NF = 10 × log(F), sendo o fator 10 porque as relações sinal-ruído são razões de potências. Por exemplo, um andar com F = 2 tem NF = 10 × log(2) ≈ 3 dB, e o dispositivo ideal com F = 1 tem NF = 0 dB. Na prática os fabricantes especificam quase sempre a figura de ruído em dB, e converte-se para o fator linear quando é preciso fazer contas, como na fórmula de Friis para andares em cascata.
+
+As restantes opções estão erradas: multiplicar o fator de ruído pela relação sinal-ruído à saída apenas devolve a relação sinal-ruído à entrada (da definição resulta que (S/N)<sub>entrada</sub> = F × (S/N)<sub>saída</sub>), multiplicá-lo pela relação sinal-ruído à entrada não produz nenhuma grandeza com significado, e o hertz é uma unidade de frequência, sem sentido para exprimir uma razão adimensional como F.
