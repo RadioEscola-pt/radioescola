@@ -1,1 +1,9 @@
 Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p15</a>)
+
+Os modos **digitais** são os mais afetados por uma resposta em fase não-linear no filtro de FI.
+
+Um filtro com fase linear atrasa todas as componentes espectrais do sinal exatamente o mesmo tempo (atraso de grupo constante), pelo que a forma de onda atravessa o filtro intacta. Quando a fase é não-linear, o atraso de grupo varia com a frequência: as diferentes componentes do sinal chegam à saída em instantes diferentes e a forma de onda fica deformada, mesmo que a amplitude de cada componente se mantenha.
+
+Num sinal digital, a informação está precisamente na forma de onda: nas transições entre símbolos e, em modulações como o PSK ou o QAM, na própria fase da portadora. O atraso de grupo variável espalha cada símbolo no tempo e sobrepõe-no aos vizinhos (interferência intersimbólica), fecha o diagrama de olho e dispersa os pontos da constelação, aumentando diretamente a taxa de erros de bit. Por isso os filtros de FI destinados a modos digitais são dimensionados tanto pela resposta em fase como pela resposta em amplitude.
+
+As restantes opções toleram muito melhor esta distorção: na voz em banda lateral única o recetor final é o ouvido humano, que é praticamente insensível às relações de fase entre componentes, pelo que a inteligibilidade quase não se degrada; a dispersão por meteoros é um mecanismo de propagação, não um formato de sinal com requisitos de fase próprios; e o vídeo analógico, embora sensível ao atraso de grupo (produz repetições e esborratamento da imagem), degrada-se de forma gradual, ao passo que num sinal digital a interferência intersimbólica traduz-se rapidamente em erros de descodificação.
