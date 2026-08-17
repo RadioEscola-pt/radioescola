@@ -1,31 +1,3 @@
----
-id: 323
-question: >-
-  Duma forma geral e no domínio do tempo, na fase de amostragem de uma conversão
-  analógica/digital
-answers:
-  - text: >-
-      o sinal analógico é  passado por um filtro passa baixo, resultando um
-      sinal digital de amplitude variável proporcional ao sinal amostrado, mas
-      com uma menor gama espectral.
-  - text: >-
-      o sinal analógico é  multiplicado por um trem de imimpulsos de amplitude
-      constante, resultando um trem de impulsos de amplitude variável
-      proporcional ao sinal amostrado.
-    correct: true
-  - text: >-
-      o sinal analógico é  sujeito a uma amplificação não linear, passa por um
-      filtro passa alto de forma a regenerar as componentes de mais alta
-      frequência que constituirão o sinal digital.
-  - text: >-
-      o sinal analógico é  misturado com outro sinal analógico padrão de
-      frequência muito superior, resultando um sinal digital de amplitude
-      variável proporcional ao sinal amostrado.
-sources:
-  - pdf: cat1/2023_12_22
-    question: 40
----
-
 Na fase de amostragem, **o sinal analógico é multiplicado por um trem de impulsos de amplitude constante, resultando um trem de impulsos de amplitude variável proporcional ao sinal amostrado**.
 
 É este o modelo matemático ideal da amostragem no domínio do tempo: em instantes regularmente espaçados de T<sub>s</sub> = 1/f<sub>s</sub>, "lê-se" o valor instantâneo do sinal. Multiplicar x(t) por um trem de impulsos de amplitude constante equivale a anular o sinal em todos os instantes exceto nos de amostragem, onde cada impulso fica escalado pelo valor de x(t) nesse momento. O resultado é uma sequência de impulsos cuja amplitude segue o sinal original: um sinal PAM (modulação de amplitude de impulsos), que as fases seguintes, quantificação e codificação, converterão em números binários.
