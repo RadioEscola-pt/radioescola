@@ -1,1 +1,11 @@
 A101
+
+A frequência de um oscilador LC é determinada pela **indutância e pela capacidade no circuito de tanque**.
+
+O circuito de tanque é o conjunto formado por uma bobina (L) e um condensador (C) em paralelo. Quando é excitado, a energia oscila entre o campo magnético da bobina e o campo elétrico do condensador, e essa troca acontece a um ritmo próprio, a frequência de ressonância, dada por:
+
+f<sub>0</sub> = 1 / (2π √(LC))
+
+O resto do oscilador (o elemento ativo, um transístor ou uma válvula, e a malha de realimentação) limita-se a repor a energia que o tanque perde nas resistências do circuito, mantendo a oscilação. É por isso que se sintoniza um oscilador LC variando C (condensador variável, díodo varicap) ou L (núcleo ajustável): aumentar qualquer um deles baixa a frequência, e diminuí-los sobe-a, em proporção inversa à raiz quadrada do produto LC.
+
+As restantes opções descrevem outras técnicas de geração de frequência: contadores e divisores de andares pertencem aos sintetizadores digitais e às malhas PLL, onde dividem uma frequência de referência, e um circuito de atraso define o período em certos osciladores de relaxação e linhas de atraso, não num oscilador LC. Nenhum destes elementos existe num oscilador LC simples.
