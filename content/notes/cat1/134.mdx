@@ -1,1 +1,9 @@
 Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p32</a>)
+
+No oscilador Colpitts, a realimentação positiva é fornecida **através de um divisor capacitivo**.
+
+O circuito ressonante é formado por uma bobina em paralelo com dois condensadores em série (C1 e C2). O ponto de junção entre os dois condensadores está ligado à massa (ou a um ponto de referência do circuito), pelo que a tensão do circuito ressonante fica dividida entre eles: a tensão aos terminais de C2 é uma fração da tensão total, e é essa fração que é reinjetada na entrada do elemento ativo (transístor ou válvula). A relação C1/C2 determina a fração de sinal realimentado, e a frequência de oscilação é dada pela ressonância de L com a capacidade equivalente da série, Ceq = C1·C2/(C1+C2), ou seja f = 1/(2π√(L·Ceq)).
+
+Para que a oscilação se mantenha, a realimentação tem de ser positiva (sinal em fase na entrada) e o ganho da malha tem de compensar as perdas: o divisor capacitivo garante precisamente a amostra de tensão com a fase correta.
+
+As restantes opções descrevem outros osciladores ou outra função: o divisor indutivo (bobina com tomada intermédia) é a marca do oscilador Hartley, a ligação acoplada (enrolamento de acoplamento) é típica do oscilador Armstrong/Meissner, e o condensador de neutralização não serve para criar oscilações, mas para as evitar, cancelando a realimentação indesejada através da capacidade interna de um amplificador. Uma mnemónica útil: **C**olpitts usa **C**ondensadores, Hartley usa **H**enries, a unidade da indutância da bobina.
