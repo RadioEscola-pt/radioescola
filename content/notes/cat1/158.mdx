@@ -1,1 +1,9 @@
 A119
+
+Mesmo diminuído, o fator de ruído **reduz a relação sinal-ruído**, apenas a reduz menos.
+
+O fator de ruído F define-se como o quociente entre a relação sinal-ruído à entrada e à saída do recetor: F = (S/N)<sub>entrada</sub> / (S/N)<sub>saída</sub>. Como qualquer andar real acrescenta sempre algum ruído próprio (nem que seja o ruído térmico das suas resistências), tem-se sempre F ≥ 1, ou seja, a relação sinal-ruído à saída é sempre igual ou inferior à da entrada. Diminuir o fator de ruído aproxima F de 1 e faz com que o recetor degrade menos o sinal, melhorando a sensibilidade, mas o efeito sobre a relação sinal-ruído continua a ser uma redução: mais pequena, sim, mas ainda uma redução.
+
+Este é o ponto essencial: um recetor nunca pode melhorar a relação sinal-ruído do sinal que lhe chega da antena; na melhor das hipóteses (F = 1, irrealizável na prática) limitar-se-ia a preservá-la. Em dB, o fator de ruído toma o nome de figura de ruído (NF = 10 log F), sempre ≥ 0 dB, e corresponde exatamente à degradação, em dB, que a relação sinal-ruído sofre ao atravessar o recetor.
+
+Quanto às restantes opções: "aumenta a relação sinal-ruído" é impossível, porque exigiria F < 1, isto é, um recetor que removesse ruído já misturado com o sinal. E o fator de ruído não define nem altera a largura de banda, que é fixada pelos filtros do recetor; a largura de banda entra no cálculo da potência de ruído (P = kTB), mas o fator de ruído é precisamente uma medida normalizada, independente dela.
