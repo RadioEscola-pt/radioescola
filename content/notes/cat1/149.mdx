@@ -1,1 +1,9 @@
 A114
+
+A transformada de Fourier dá **a representação no domínio da frequência S(f) dum sinal cuja representação no domínio do tempo é s(t)**.
+
+Qualquer sinal pode ser visto de duas maneiras equivalentes: como uma forma de onda que evolui no tempo, s(t), ou como a soma das sinusoides que o compõem, cada uma com a sua amplitude e fase, S(f). A transformada de Fourier é a operação matemática que passa da primeira representação para a segunda: recebe a função do tempo e devolve o espectro, isto é, quanto de cada frequência existe no sinal. Formalmente, S(f) = ∫ s(t)·e<sup>-j2πft</sup> dt, e o resultado é em geral uma função complexa, cujo módulo dá a amplitude e cujo argumento dá a fase de cada componente.
+
+É esta operação que está por trás de conceitos usados todos os dias em rádio: a largura de banda de uma emissão, as riscas espectrais de um sinal modulado ou o que se vê no ecrã de um analisador de espectros são precisamente S(f). Um impulso estreito no tempo tem um espectro largo, e uma sinusoide pura tem uma única risca: relações que só se veem no domínio da frequência.
+
+A segunda opção descreve exatamente o caminho inverso, de S(f) para s(t), que é a transformada de Fourier **inversa**, não a direta. A terceira mistura coordenadas espaciais que não fazem parte da definição para sinais no tempo, e a quarta fala de domínios "complexo" e "real" que não correspondem a nada: a transformada relaciona tempo e frequência, não números complexos com números reais.
