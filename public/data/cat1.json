@@ -5449,7 +5449,8 @@
         "directamente proporcional à temperatura de ruído efectiva do sistema e directamente proporc4onal à largura de banda efectiva do sistema.",
         "inversamente proporcional à temperatura de ruído efectiva do sistema e directamente proporcional à largura de banda efectiva do sistema."
       ],
-      "correctIndex": 2
+      "correctIndex": 2,
+      "hasNotesMdx": true
     },
     {
       "id": 307,
