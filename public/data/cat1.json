@@ -5768,7 +5768,8 @@
         "diminui  a constante dieléctrica do isolante.",
         "Todas as respostas estão correctas."
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "hasNotesMdx": true
     },
     {
       "id": 331,
