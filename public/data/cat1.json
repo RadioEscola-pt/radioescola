@@ -5983,7 +5983,8 @@
         "Anulando a componente reactiva de uma impedância.",
         "Substituindo as resistências da rede por resistências de carga."
       ],
-      "correctIndex": 2
+      "correctIndex": 2,
+      "hasNotesMdx": true
     },
     {
       "id": 347,
