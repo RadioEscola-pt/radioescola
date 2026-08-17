@@ -14,3 +14,11 @@ sources:
     question: 31
 ---
 A99
+
+Um discriminador de frequência é **um circuito de deteção de sinais FM**, ou seja, o desmodulador de um recetor de frequência modulada.
+
+Em FM a informação está nas variações da frequência instantânea da portadora, não na sua amplitude. O discriminador converte essas variações de frequência em variações de tensão: a sua curva de resposta (a curva em "S") passa por zero na frequência central e produz uma tensão de saída proporcional ao desvio, positiva quando a frequência sobe e negativa quando desce. À saída obtém-se assim uma réplica do sinal modulante, o áudio original.
+
+Na prática o discriminador trabalha à frequência intermédia do recetor e é precedido de um andar limitador, que corta as variações de amplitude provocadas por ruído e desvanecimento, para que só as variações de frequência cheguem à deteção. As realizações clássicas são o discriminador de Foster-Seeley e o detetor de relação (*ratio detector*), ambos baseados em circuitos ressonantes que transformam desvio de frequência em diferença de fase e depois em tensão.
+
+As restantes opções descrevem outros blocos: gerar FM é função do modulador no emissor (por exemplo um oscilador controlado por uma reactância variável), separar dois sinais adjacentes muito próximos é função dos filtros de seletividade do recetor, e a comutação automática de bandas é uma função de controlo do equipamento, sem relação com a desmodulação.
