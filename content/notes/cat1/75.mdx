@@ -1,1 +1,9 @@
 A63
+
+Um condensador real modela-se pela associação de um **condensador ideal, uma bobina ideal e uma resistência ideal**.
+
+O condensador ideal representa a capacidade pretendida, mas o componente físico traz sempre mais dois efeitos parasitas. Os terminais, os elétrodos e as armaduras têm resistência óhmica, e o dielétrico dissipa energia a cada ciclo de carga e descarga: tudo isto se agrupa na resistência equivalente em série, a ESR (*equivalent series resistance*), responsável pelas perdas e pelo aquecimento do componente. Além disso, qualquer condutor percorrido por corrente cria um campo magnético, pelo que os terminais e a própria construção interna apresentam uma indutância parasita, a ESL (*equivalent series inductance*), representada pela bobina ideal em série.
+
+Esta indutância parasita tem uma consequência prática importante em radiofrequência: como C e L estão em série, o condensador real tem uma frequência de ressonância própria, f = 1/(2π√(LC)). Abaixo dela comporta-se como condensador, na ressonância a sua impedância reduz-se praticamente à ESR, e acima dela comporta-se como uma bobina, deixando de cumprir a sua função (por exemplo, de desacoplamento). É por isso que em VHF/UHF se preferem condensadores de terminais curtos ou de montagem superficial, com ESL mais baixa.
+
+As opções com díodo ou transístor estão erradas porque esses são componentes não lineares (e o transístor é ativo), enquanto o condensador real é um componente passivo e linear: os seus desvios face ao ideal descrevem-se apenas com elementos passivos lineares, resistência e indutância. O mesmo raciocínio vale, aliás, para a bobina real, modelada por uma indutância com resistência em série e uma capacidade parasita em paralelo.
