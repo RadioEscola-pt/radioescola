@@ -11,3 +11,11 @@ answers:
   - text: Maior volume físico para a mesma potência
 ---
 A83
+
+A principal desvantagem das fontes comutadas é a **geração de mais ruído eletromagnético**.
+
+Numa fonte comutada, os transístores de potência ligam e desligam a corrente a frequências tipicamente entre dezenas de kHz e alguns MHz, com flancos muito abruptos (dI/dt e dV/dt elevados). Essas transições rápidas são ricas em harmónicas, que se propagam por condução através dos cabos de alimentação e por radiação a partir das pistas e do transformador. Para um radioamador isto é particularmente relevante: as harmónicas da frequência de comutação caem em cheio nas bandas de HF e ouvem-se como riscas ou como um aumento generalizado do ruído de fundo no recetor. Uma fonte linear não comuta nada: regula por dissipação contínua e, em termos de radiofrequência, é praticamente silenciosa.
+
+Este ruído pode ser mitigado com filtragem, blindagem e um bom traçado do circuito, mas nunca eliminado por completo, e é o preço a pagar pelo elevado rendimento da comutação: como os transístores estão ou saturados ou ao corte, quase não dissipam potência.
+
+As restantes opções descrevem precisamente as desvantagens das fontes lineares, não das comutadas: é a fonte linear que tem baixo rendimento (tipicamente 30 a 60%, porque o elemento regulador dissipa continuamente a diferença de tensão), que por isso precisa de grandes dissipadores de calor, e que exige um transformador volumoso e pesado a 50 Hz, resultando em maior volume para a mesma potência. A fonte comutada, ao trabalhar a alta frequência, usa transformadores pequenos e atinge rendimentos de 80 a 95%.
