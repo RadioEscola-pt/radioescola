@@ -5845,7 +5845,8 @@
         "À medida que aumenta a amplitude da corrente alternada aplicada, a reactância diminui.",
         "À medida que aumenta a frequência da corrente alternada aplicada, a reactância aumenta."
       ],
-      "correctIndex": 3
+      "correctIndex": 3,
+      "hasNotesMdx": true
     },
     {
       "id": 336,
