@@ -1933,6 +1933,7 @@
         "Realimentação"
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2011_12_13",
