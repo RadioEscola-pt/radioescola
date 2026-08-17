@@ -6182,7 +6182,8 @@
         "Melhor resposta em alta-frequência.",
         "Redução da resistência da placa."
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "hasNotesMdx": true
     },
     {
       "id": 362,
