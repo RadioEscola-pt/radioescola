@@ -1,1 +1,9 @@
 A57
+
+Um amplificador operacional é **um amplificador diferencial de ganho elevado, cujas características são determinadas pelos componentes externos ao amplificador**.
+
+Internamente, o amp-op tem duas entradas (inversora e não inversora) e amplifica a diferença de tensão entre elas com um ganho em malha aberta enorme, tipicamente 100 000 ou mais, além de apresentar impedância de entrada muito alta e impedância de saída baixa. Um ganho tão elevado não é utilizável diretamente: qualquer diferença mínima entre as entradas satura a saída.
+
+O truque está na realimentação negativa: liga-se parte da saída de volta à entrada inversora através de componentes externos (tipicamente resistências, ou condensadores). Com o ganho em malha aberta tão grande, o ganho do circuito em malha fechada passa a depender praticamente só desses componentes externos, por exemplo, no amplificador inversor clássico o ganho é -R2/R1, independentemente do circuito integrado usado. É essa a propriedade que define o amp-op: um bloco de ganho quase ideal que a malha externa configura para amplificar, somar, integrar, filtrar ou comparar.
+
+As restantes opções falham precisamente neste ponto: as características de um amp-op não são fixadas pelos componentes internos, e o dispositivo não se limita ao áudio (funciona de DC até ao limite da sua largura de banda). Também não é um andar de potência de RF a 10 GHz, gama muito acima da capacidade de um amp-op comum, nem, obviamente, um programa de cálculo: é um circuito físico, hoje quase sempre um circuito integrado.
