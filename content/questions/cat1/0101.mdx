@@ -14,3 +14,11 @@ sources:
 image: images/cat1/fig2a.png
 ---
 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p22</a>)
+
+C3 serve para **impedir a oscilação própria** do regulador.
+
+O circuito da figura é um regulador série: Q1 é o transístor de passagem, montado como seguidor de emissor, com a base mantida a tensão constante pelo zener D1, polarizado através de R1. Um seguidor de emissor a alimentar uma carga através de fios com indutância parasita ainda tem ganho a frequências muito altas, e basta essa indutância, com as capacidades parasitas do próprio transístor, para fechar um caminho de realimentação que o põe a oscilar em RF, mesmo sendo um circuito "de alimentação". C3, um condensador de apenas 0,01 µF ligado diretamente da saída à massa, apresenta uma impedância muito baixa a essas frequências (cerca de 16 Ω a 1 MHz, e a descer com a frequência), curto-circuitando qualquer sinal de alta frequência e eliminando o ganho de que a oscilação precisaria.
+
+Repare no contraste de valores: C1 e C2, de 1000 µF, é que tratam das baixas frequências, C1 a filtrar a ondulação da retificação à entrada e C2 a alisar a tensão de referência do zener. A 100 Hz, um condensador de 0,01 µF tem uma impedância de 1/(2πfC) ≈ 160 kΩ, completamente inútil para filtrar; o seu papel só faz sentido em RF.
+
+As restantes opções não descrevem C3: o filtro de entrada é C1, que está do lado dos +25 V, não da saída; a polarização fixa de Q1 é dada por R1 e D1 na base, e C3 nem sequer está ligado à base; e um condensador em paralelo com a saída nunca aumenta os picos da ondulação, quando muito atenua-os.
