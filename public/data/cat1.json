@@ -6258,7 +6258,8 @@
         "Um amplificador usado no andar de potência de um emissor de FM do serviço de amador.",
         "Um programa de subrotina que calcula o ganho de um amplificador de RF."
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "hasNotesMdx": true
     },
     {
       "id": 367,
