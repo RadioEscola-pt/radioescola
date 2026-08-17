@@ -19,3 +19,13 @@ sources:
     page: 10
 ---
 A50-Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p33</a>)
+
+**O FET tem uma impedância de entrada elevada; o transístor bipolar tem uma impedância de entrada baixa.**
+
+A diferença vem do modo como cada dispositivo é controlado. Num transístor bipolar, a junção base-emissor é uma junção PN polarizada diretamente, que conduz como um díodo: para estabelecer a corrente de coletor é preciso injetar uma corrente de base contínua (Ic = β × Ib). Como a entrada consome corrente, a impedância de entrada DC é baixa, tipicamente da ordem de centenas de ohms a alguns quilo-ohms. Diz-se por isso que o bipolar é um dispositivo controlado por corrente.
+
+Num FET, o elétrodo de controlo é a porta (gate), e o canal é comandado apenas pelo campo elétrico que ela cria, daí o nome "efeito de campo". Num JFET a porta é uma junção PN polarizada inversamente, e num MOSFET está mesmo isolada do canal por uma camada de óxido, pelo que em DC praticamente não circula corrente de porta: apenas fugas da ordem dos nanoamperes ou menos. A impedância de entrada resulta assim elevadíssima, de megaohms num JFET a valores superiores a 10<sup>12</sup> Ω num MOSFET. O FET é um dispositivo controlado por tensão.
+
+Esta propriedade tem consequências práticas: os FET são preferidos em andares de entrada que não devem carregar o circuito anterior, como voltímetros eletrónicos, sondas e pré-amplificadores de alta impedância.
+
+As restantes opções estão erradas: a comparação não depende da tensão da fonte de alimentação, porque a diferença é estrutural (junção em condução num caso, porta inversamente polarizada ou isolada no outro); as impedâncias não são iguais, diferindo em várias ordens de grandeza; e a opção que atribui a impedância baixa ao FET inverte precisamente os papéis dos dois dispositivos.
