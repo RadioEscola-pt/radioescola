@@ -19,3 +19,11 @@ sources:
     question: 37
 ---
 A14
+
+A potência de ruído diminui-se **filtrando de forma a diminuir o mais possível a largura de banda efetiva do sistema, sem degradar o sinal desejado**.
+
+A potência de ruído térmico à entrada de um recetor é dada por N = k × T × B, em que k é a constante de Boltzmann (1,38 × 10⁻²³ J/K), T a temperatura de ruído do sistema em kelvin e B a largura de banda efetiva em hertz. O ruído térmico é de banda larga (praticamente "branco"), pelo que a potência captada cresce em proporção direta com a banda que o recetor deixa passar: reduzir B para metade reduz o ruído em 3 dB, enquanto o sinal desejado, desde que caiba dentro da banda que resta, não é afetado.
+
+Na prática isto significa ajustar a largura de banda do recetor ao mínimo exigido pelo tipo de emissão: cerca de 2,4 kHz para SSB, 500 Hz ou menos para CW. É por isso que um filtro estreito de CW melhora tanto a relação sinal/ruído: o sinal mantém-se e o ruído integrado numa banda dez vezes menor cai 10 dB.
+
+As opções que propõem aumentar contrariam a fórmula: aumentar a largura de banda aumenta o ruído na mesma proporção, e aumentar a temperatura de ruído do sistema (que traduz o ruído gerado pelos próprios andares do recetor) também aumenta N, quando o objetivo é precisamente mantê-la o mais baixa possível, por exemplo usando um pré-amplificador de baixo ruído no primeiro andar. E, havendo uma opção correta, "nenhuma das respostas anteriores está correta" fica também excluída.
