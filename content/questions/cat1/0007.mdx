@@ -21,3 +21,11 @@ sources:
     page: 5
 ---
 Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p19</a>)
+
+A afirmação correta é que **a blindagem a campos elétricos só é eficiente quando estabelece um caminho de baixa impedância para a terra**.
+
+Uma blindagem elétrica funciona porque o campo incidente induz cargas na superfície do material condutor, e essas cargas redistribuem-se de forma a anular o campo no interior (o princípio da gaiola de Faraday). Para que isso aconteça na prática, as cargas induzidas e as correntes que lhes correspondem precisam de ser escoadas: se a blindagem estiver isolada, fica a "flutuar" ao potencial imposto pelo campo e passa a comportar-se como uma armadura de um condensador, acoplando capacitivamente a interferência ao circuito que devia proteger. A ligação à terra deve ter baixa impedância à frequência do campo a bloquear, porque qualquer impedância no percurso (incluindo a indutância de um cabo de terra comprido) cria uma queda de tensão que deixa a blindagem a um potencial diferente de zero, degradando a sua eficácia.
+
+Daqui decorre imediatamente por que razão as outras opções estão erradas. Dizer que a ligação à terra "não é relevante" contradiz precisamente o mecanismo descrito: sem ela a blindagem elétrica pode até piorar a situação. Os materiais isolantes não servem, porque não permitem a redistribuição de cargas nem conduzem as correntes induzidas, condição essencial para anular o campo no interior. E os semicondutores, embora conduzam, têm condutividade muito inferior à dos metais, pelo que não oferecem o caminho de baixa impedância necessário: uma boa blindagem elétrica faz-se com bons condutores (cobre, alumínio) devidamente ligados à terra.
+
+Note que esta exigência de ligação à terra é característica da blindagem a campos elétricos. Na blindagem a campos magnéticos o mecanismo é outro (reflexão e absorção no material, ou desvio das linhas de campo em materiais de elevada permeabilidade) e a ligação à terra não desempenha o mesmo papel.
