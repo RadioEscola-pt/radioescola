@@ -14,3 +14,11 @@ sources:
     question: 22
 ---
 Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p22</a>)
+
+Um circuito step-start serve para **permitir o carregamento gradual dos condensadores do filtro**.
+
+No instante em que se liga uma fonte de alta tensão, os condensadores do filtro estão descarregados e comportam-se momentaneamente como um curto-circuito. A corrente inicial de carga (corrente de inrush) ficaria limitada apenas pelas resistências parasitas do transformador e da rede, atingindo picos de dezenas ou centenas de amperes, suficientes para queimar fusíveis, danificar os díodos retificadores e sujeitar o transformador e os próprios condensadores a um esforço desnecessário.
+
+O step-start resolve o problema em dois tempos: ao ligar, a alimentação passa por uma resistência em série que limita o pico de corrente enquanto os condensadores carregam; passados alguns décimos de segundo, um relé ou temporizador curto-circuita essa resistência e a fonte fica ligada diretamente à rede, sem perdas em funcionamento normal. É um arranque em degraus, daí o nome.
+
+As restantes opções descrevem funções de outros circuitos: fornecer tensão dupla à saída é o papel de um retificador dobrador de tensão, compensar variações da tensão da rede cabe a um regulador ou estabilizador, e o controlo remoto da fonte faz-se com um simples circuito de comando por relé, nada disto tendo relação com o arranque suave.
