@@ -338,6 +338,8 @@
     "correct": "Correct",
     "incorrect": "Incorrect",
     "unanswered": "Unanswered",
+    "explanation": "Explanation",
+    "notesError": "Unable to load the explanation.",
     "relatedTutorial": "Related tutorial:",
     "officialSource": "Official source:",
     "sourceOpenNewTab": "Open in new tab",

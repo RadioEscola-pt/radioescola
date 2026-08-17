@@ -409,6 +409,7 @@ export default function SmartPracticePage() {
               showCalcHint
               onLaunchCalculator={handleLaunchCalculator}
               ended={ended}
+              categoryId={catId}
               successRate={successRate}
               attemptCount={attemptCount}
             />

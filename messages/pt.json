@@ -338,6 +338,8 @@
     "correct": "Correto",
     "incorrect": "Incorreto",
     "unanswered": "Sem resposta",
+    "explanation": "Explicação",
+    "notesError": "Não foi possível carregar a explicação.",
     "relatedTutorial": "Tutorial relacionado:",
     "officialSource": "Fonte oficial:",
     "sourceOpenNewTab": "Abrir em nova aba",

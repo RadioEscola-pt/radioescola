@@ -54,6 +54,21 @@ function buildSourceLink(source: SourceRef) {
   };
 }
 
+// The notes arrive as sanitized MDX-rendered HTML, so Tailwind's preflight has
+// already stripped paragraph margins and list markers from it. Restore the
+// rhythm for the tags the notes corpus actually uses: prose, the occasional
+// bullet list, and the formula/diagram images.
+const NOTES_PROSE = [
+  'max-w-[68ch] leading-relaxed',
+  '[&_p]:mb-3 [&_p:last-child]:mb-0',
+  '[&_ul]:my-3 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1',
+  '[&_ol]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-1',
+  '[&_img]:my-3 [&_img]:max-w-full [&_img]:h-auto [&_img]:rounded-lg',
+  '[&_img]:border [&_img]:border-slate-200 dark:[&_img]:border-slate-700',
+  '[&_strong]:font-semibold [&_strong]:text-slate-700 dark:[&_strong]:text-slate-300',
+  '[&_a]:text-blue-600 dark:[&_a]:text-blue-400 [&_a]:underline',
+].join(' ');
+
 /** Normalize calc field to array of calculator codes */
 function normalizeCalcCodes(calc: string | string[] | null | undefined): string[] {
   if (!calc) return [];
@@ -85,24 +100,26 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   const [remoteNotesHtml, setRemoteNotesHtml] = React.useState<string | null>(null);
   const [remoteNotesLoading, setRemoteNotesLoading] = React.useState(false);
   const [remoteNotesError, setRemoteNotesError] = React.useState<string | null>(null);
-  const [remoteNotesLoaded, setRemoteNotesLoaded] = React.useState(false);
+
+  // One key for the whole request. It is the only dependency of the fetch
+  // effect on purpose: putting the loading flag in the deps makes the effect
+  // tear itself down the moment it sets it, which cancels its own response.
+  const notesKey = ended && categoryId && question.hasNotesMdx
+    ? `${encodeURIComponent(categoryId)}/${encodeURIComponent(String(question.id))}`
+    : null;
 
   React.useEffect(() => {
     setRemoteNotesHtml(null);
-    setRemoteNotesLoading(false);
     setRemoteNotesError(null);
-    setRemoteNotesLoaded(false);
   }, [question.id, categoryId]);
 
   React.useEffect(() => {
-    if (!ended) return;
-    if (!categoryId) return;
-    if (!question.hasNotesMdx) return;
-    if (remoteNotesLoading || remoteNotesLoaded) return;
+    if (!notesKey) return;
 
     let cancelled = false;
     setRemoteNotesLoading(true);
-    fetch(`/api/notes/${encodeURIComponent(categoryId)}/${encodeURIComponent(String(question.id))}`)
+    setRemoteNotesError(null);
+    fetch(`/api/notes/${notesKey}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Failed to load notes: ${res.status}`);
@@ -122,13 +139,12 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
       .finally(() => {
         if (cancelled) return;
         setRemoteNotesLoading(false);
-        setRemoteNotesLoaded(true);
       });
 
     return () => {
       cancelled = true;
     };
-  }, [ended, categoryId, question.hasNotesMdx, question.id, remoteNotesLoaded, remoteNotesLoading]);
+  }, [notesKey]);
 
   const resolvedNotes = remoteNotesHtml ?? question.notes ?? null;
   const calcCodes = normalizeCalcCodes(question.calc);
@@ -242,21 +258,28 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
       </div>
 
       {ended && (
-        <div className="mt-4 space-y-2 text-sm">
+        <div className="mt-5 border-t border-slate-200 dark:border-slate-700 pt-4 space-y-4 text-sm">
           {(remoteNotesLoading || remoteNotesError || resolvedNotes) && (
-            <div className="text-slate-600 dark:text-slate-400 [&_a]:text-blue-600 dark:[&_a]:text-blue-400 [&_a]:underline">
-              {remoteNotesLoading && <p className="italic text-gray-500">Loading notes…</p>}
+            <div className="text-slate-600 dark:text-slate-400">
+              <p className="mb-2 font-semibold text-slate-700 dark:text-slate-300">{t('explanation')}</p>
+              {remoteNotesLoading && (
+                <div className="max-w-[68ch] space-y-2" aria-hidden="true">
+                  <div className="h-3 rounded bg-slate-200 dark:bg-slate-700 animate-pulse motion-reduce:animate-none" />
+                  <div className="h-3 rounded bg-slate-200 dark:bg-slate-700 animate-pulse motion-reduce:animate-none" />
+                  <div className="h-3 w-2/3 rounded bg-slate-200 dark:bg-slate-700 animate-pulse motion-reduce:animate-none" />
+                </div>
+              )}
               {remoteNotesError && !remoteNotesLoading && (
-                <p className="italic text-red-600">{remoteNotesError}</p>
+                <p className="text-red-600 dark:text-red-400">{t('notesError')}</p>
               )}
               {!remoteNotesLoading && !remoteNotesError && resolvedNotes && (
-                <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(resolvedNotes) }} />
+                <div className={NOTES_PROSE} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(resolvedNotes) }} />
               )}
             </div>
           )}
           {question.tutorial && (
             <div className="text-slate-600 dark:text-slate-400">
-              <span className="font-semibold">{t('relatedTutorial')}</span>{' '}
+              <span className="font-semibold text-slate-700 dark:text-slate-300">{t('relatedTutorial')}</span>{' '}
               <a className="text-blue-600 dark:text-blue-400 underline" href={`/study/${question.tutorial}`}>
                 {question.tutorial}
               </a>
@@ -264,8 +287,8 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
           )}
           {question.sources && question.sources.length > 0 && (
             <div className="text-slate-600 dark:text-slate-400">
-              <span className="font-semibold">{t('officialSource')}</span>
-              <ul className="mt-1 space-y-1 list-disc list-inside">
+              <span className="font-semibold text-slate-700 dark:text-slate-300">{t('officialSource')}</span>
+              <ul className="mt-1.5 space-y-1 list-disc pl-5">
                 {question.sources.map((source, idx) => {
                   const { href, label } = buildSourceLink(source);
                   return (

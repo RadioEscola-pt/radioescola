@@ -235,6 +235,7 @@ export default function FlashBrowsePage() {
         showCalcHint
         onLaunchCalculator={handleLaunchCalculator}
         ended={ended}
+        categoryId={catId}
         showBookmark
         isBookmarked={isBookmarked(currentQuestion.id)}
         onToggleBookmark={() => handleToggleBookmark(currentQuestion.id)}

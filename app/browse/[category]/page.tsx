@@ -105,6 +105,7 @@ export default function BrowsePage() {
                 showCalcHint
                 onLaunchCalculator={handleLaunchCalculator}
                 ended={isAnswered}
+                categoryId={categoryId}
                 showBookmark
                 isBookmarked={isBookmarked(q.id)}
                 onToggleBookmark={() => handleToggleBookmark(q.id)}
