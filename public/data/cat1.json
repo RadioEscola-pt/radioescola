@@ -5611,7 +5611,8 @@
         "É possível transmitir texto tanto em letras maiúsculas como minúsculas.",
         "Usa um carácter como código de alteração para enviar números e caracteres especiais."
       ],
-      "correctIndex": 2
+      "correctIndex": 2,
+      "hasNotesMdx": true
     },
     {
       "id": 320,
