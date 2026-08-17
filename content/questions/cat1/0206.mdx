@@ -20,3 +20,11 @@ sources:
     question: 20
 ---
 A157
+
+Um balun é **um dispositivo que permite a interligação entre elementos balanceados e não balanceados**. O próprio nome o diz: vem do inglês *balanced to unbalanced*.
+
+O caso típico é a ligação de um cabo coaxial a um dipolo. O dipolo é uma antena balanceada: os seus dois braços são simétricos em relação à terra e as correntes neles devem ser iguais e opostas. O cabo coaxial é uma linha não balanceada: o condutor central e a malha têm papéis diferentes, estando a malha referenciada à terra. Ligando-os diretamente, parte da corrente de RF regressa pelo exterior da malha (corrente de modo comum), o que faz o cabo radiar, deforma o diagrama de radiação da antena e pode trazer RF para dentro da estação. O balun bloqueia ou compensa essa corrente de modo comum, forçando as correntes nos dois braços da antena a ficarem equilibradas.
+
+Os baluns constroem-se de várias formas (troços de linha, enrolamentos sobre núcleos de ferrite, simples choques de cabo enrolado) e muitos fazem também transformação de impedância, indicada pela relação inscrita: um balun 1:1 apenas equilibra, um balun 4:1 transforma, por exemplo, os cerca de 300 ohms de um dipolo dobrado nos 75 ohms do coaxial.
+
+As restantes opções não descrevem um balun: não é um adaptador entre a saída do emissor e o cabo coaxial (ambos já são não balanceados, e essa função de adaptação de impedância cabe a um acoplador de antena), não liga os elementos parasitas de uma antena Yagi (esses nem sequer têm ligação elétrica ao cabo, funcionam por acoplamento) e nada tem a ver com balões ou satélites, apesar da semelhança fonética.
