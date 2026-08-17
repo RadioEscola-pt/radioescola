@@ -5653,7 +5653,8 @@
         "amostragem, quantificação e codificação.",
         "quantificação, amostragem e  integração."
       ],
-      "correctIndex": 2
+      "correctIndex": 2,
+      "hasNotesMdx": true
     },
     {
       "id": 323,
