@@ -5425,7 +5425,8 @@
         "Figuras de mérito.",
         "Figuras de Watt."
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "hasNotesMdx": true
     },
     {
       "id": 304,
