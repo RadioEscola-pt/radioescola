@@ -1,1 +1,9 @@
 A196
+
+A precaução essencial é **atenuar o sinal de saída do transmissor antes de o fornecer ao analisador espectral**.
+
+O andar de entrada de um analisador espectral é um misturador de muito baixo nível, dimensionado para sinais na ordem dos miliwatts: o limite absoluto de entrada situa-se tipicamente em cerca de 1 W (+30 dBm), e para medições lineares o nível no misturador deve ser muito inferior a isso. Um transmissor de amador entrega dezenas ou centenas de watts. Ligar essa potência diretamente à entrada destrói o misturador de forma instantânea e irreversível, sendo uma das avarias mais dispendiosas neste tipo de instrumento.
+
+Os números mostram a dimensão do problema: 100 W correspondem a +50 dBm. Para levar esse sinal a um nível de medição confortável, por exemplo -10 dBm, são precisos 60 dB de atenuação, obtidos com um atenuador de potência externo capaz de dissipar os 100 W (o atenuador interno do analisador não serve para isso, porque não aguenta a potência). Mesmo antes da destruição, um nível excessivo satura o misturador e gera produtos de intermodulação no próprio instrumento, falseando a medição de harmónicas e espúrias que se pretendia fazer.
+
+Cabos coaxiais de blindagem dupla e uma boa adaptação de impedâncias são boas práticas de medição, mas nenhuma delas protege o analisador: com ou sem elas, a potência plena do transmissor continuaria a chegar à entrada. Por isso "todas as opções são válidas" também está errada, já que só a atenuação é a precaução crítica.
