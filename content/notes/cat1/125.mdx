@@ -1,1 +1,9 @@
 Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p31</a>)
+
+O circuito que não permite desmodular FM é o **detetor de envolvente**.
+
+Num sinal FM a informação está nas variações da frequência instantânea da portadora, cuja amplitude se mantém constante. O detetor de envolvente (um díodo seguido de um filtro RC, o clássico detetor de AM) responde apenas às variações de amplitude: aplicado a um sinal FM ideal, de envolvente constante, produz uma tensão contínua sem qualquer informação. Para desmodular FM é preciso um circuito sensível à frequência ou à fase.
+
+Os outros três são precisamente isso. O detetor de flanco (*slope*) usa a vertente da curva de resposta de um circuito sintonizado ligeiramente dessintonizado: à medida que a frequência varia, a amplitude à saída varia proporcionalmente, convertendo FM em AM que depois é retificada. O discriminador Foster-Seeley usa um transformador sintonizado que converte os desvios de frequência em diferenças de fase: as tensões resultantes são retificadas por dois díodos e as suas saídas subtraídas, dando uma tensão proporcional ao desvio. No desmodulador com PLL, a malha mantém o VCO em fase com o sinal recebido, pelo que a tensão de controlo do VCO segue a frequência instantânea da portadora e é, ela própria, o sinal desmodulado.
+
+Repare que o detetor de envolvente aparece como último andar do detetor de flanco, mas só depois de a conversão FM para AM já ter sido feita pelo circuito sintonizado: sozinho, não desmodula FM.
