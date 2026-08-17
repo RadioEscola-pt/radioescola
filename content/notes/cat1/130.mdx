@@ -1,1 +1,7 @@
 Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p32</a>)
+
+Para oscilar, um circuito precisa de **realimentação positiva**: uma fração do sinal de saída é reinjetada na entrada em fase com ele, reforçando-o em vez de o contrariar.
+
+A condição rigorosa é o critério de Barkhausen: o ganho total da malha (amplificador mais rede de realimentação) tem de ser igual ou superior a 1, e o desfasamento total ao longo da malha tem de ser 0° (ou um múltiplo de 360°). Cumpridas as duas condições à frequência para a qual a rede de realimentação as satisfaz, qualquer perturbação mínima (o próprio ruído térmico do circuito) é amplificada ciclo após ciclo até a amplitude estabilizar pela saturação ou por um mecanismo de controlo de ganho. É a rede de realimentação (circuito LC, cristal, malha RC) que fixa a frequência de oscilação, porque só nessa frequência o desfasamento da malha é nulo.
+
+Note que o critério é sobre a malha, não sobre a arquitetura: um oscilador Colpitts ou Hartley funciona com um único transístor, pelo que não são necessários dois andares. Um varicap só aparece quando se quer sintonizar a frequência por tensão (como num VCO), não é condição para oscilar. E a realimentação negativa faz precisamente o contrário: opõe-se às variações do sinal e estabiliza o circuito, sendo por isso usada em amplificadores para evitar oscilações, não para as criar.
