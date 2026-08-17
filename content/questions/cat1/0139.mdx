@@ -17,3 +17,11 @@ answers:
       portadora numa relação que resulta da sequência de Fibonacci
 ---
 A108
+
+O ruído de fase aparece como **sinais muito concentrados em torno da portadora, um pouco acima e um pouco abaixo desta**.
+
+Uma portadora "ideal" seria uma sinusoide perfeita, que num analisador espectral se veria como uma única risca infinitamente estreita. Na prática, o oscilador que gera a portadora sofre pequenas flutuações aleatórias de fase (e, de forma equivalente, de frequência instantânea). Estas flutuações modulam a portadora e espalham parte da sua energia para frequências vizinhas, criando bandas laterais de ruído contínuas de ambos os lados da risca. No ecrã do analisador vê-se por isso a portadora assente numa "saia" de ruído, simétrica, cujo nível decresce à medida que nos afastamos da frequência central.
+
+É precisamente por isso que o ruído de fase se especifica em dBc/Hz a um dado afastamento da portadora (por exemplo a 1 kHz ou a 10 kHz): mede-se quanto está a densidade de ruído abaixo do nível da portadora, numa largura de banda de 1 Hz, a essa distância. Num recetor, o ruído de fase do oscilador local é o que degrada a receção de sinais fracos junto a sinais fortes (mistura recíproca).
+
+As restantes opções descrevem outros fenómenos: sinais nas frequências múltiplas da portadora são as harmónicas, resultantes de não linearidades e não de ruído de fase; sinais cujas frequências dependem de emissores vizinhos são produtos de intermodulação; e a sequência de Fibonacci não tem qualquer relação com o espetro de um emissor.
