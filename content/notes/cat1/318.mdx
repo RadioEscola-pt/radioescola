@@ -1,13 +1,3 @@
----
-id: 318
-question: A que estão associadas as siglas CRC e FEC nas comunicações electrónicas?
-answers:
-  - text: A diferentes técnicas de modulação analógicas e digitais.
-  - text: A sistemas de detecção de erros em transmissão de dados.
-    correct: true
-  - text: A sistemas de amplificação de RF.
-  - text: A sistemas de adaptação de impedâncias.
----
 CRC e FEC estão associadas a **sistemas de detecção de erros em transmissão de dados**.
 
 O CRC (*Cyclic Redundancy Check*, verificação de redundância cíclica) funciona por deteção: o emissor calcula, a partir dos bits da mensagem, um valor de verificação (dividindo a mensagem por um polinómio gerador conhecido de ambos os lados) e anexa-o à trama. O recetor repete o mesmo cálculo sobre os dados recebidos e compara o resultado com o valor anexado: se não coincidirem, houve erro na transmissão e a trama é rejeitada, tipicamente pedindo-se a retransmissão (esquema ARQ). O CRC deteta erros mas não os corrige.

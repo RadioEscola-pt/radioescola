@@ -5599,7 +5599,8 @@
         "A sistemas de amplificação de RF.",
         "A sistemas de adaptação de impedâncias."
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "hasNotesMdx": true
     },
     {
       "id": 319,
