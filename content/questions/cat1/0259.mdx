@@ -20,3 +20,11 @@ sources:
     question: 9
 ---
 A200
+
+A intermodulação é provocada por **circuitos ou dispositivos não lineares**.
+
+Num circuito perfeitamente linear, a saída é apenas uma réplica amplificada da entrada: dois sinais de frequências f1 e f2 saem com as mesmas frequências f1 e f2, sem produtos novos. Mas nenhum dispositivo real é perfeitamente linear: a característica de transferência de um transístor, díodo ou andar saturado contém termos quadráticos, cúbicos e de ordem superior. Quando dois ou mais sinais atravessam essa característica, os termos não lineares multiplicam-nos entre si e geram novas frequências da forma m·f1 ± n·f2 (com m e n inteiros): são os produtos de intermodulação.
+
+Os mais problemáticos são os de terceira ordem, 2f1 − f2 e 2f2 − f1, porque caem muito perto das frequências originais e, portanto, dentro da banda de passagem do recetor ou do transmissor, onde nenhum filtro os consegue remover. É por isso que a linearidade dos andares (caracterizada, por exemplo, pelo ponto de interceção de terceira ordem, IP3) é um parâmetro crítico em recetores e em amplificadores de SSB.
+
+As restantes opções descrevem outros problemas: um ganho demasiado baixo dá um sinal fraco, mas não cria frequências novas; a falta de neutralização e a realimentação positiva podem levar um amplificador a oscilar ou a tornar-se instável, o que é um defeito diferente da mistura de sinais entre si. Só a não linearidade produz os produtos m·f1 ± n·f2 que definem a intermodulação.
