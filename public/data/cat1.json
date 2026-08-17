@@ -5389,7 +5389,8 @@
         "S=20xlog(Ei/Et).",
         "S=20-log(Ei/Et)."
       ],
-      "correctIndex": 2
+      "correctIndex": 2,
+      "hasNotesMdx": true
     },
     {
       "id": 301,

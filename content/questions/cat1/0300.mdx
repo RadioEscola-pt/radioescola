@@ -11,4 +11,10 @@ answers:
     correct: true
   - text: S=20-log(Ei/Et).
 ---
+A expressão correta é **S = 20 × log(E<sub>i</sub>/E<sub>t</sub>)**.
 
+A efetividade da blindagem mede, em decibéis, quanto o campo elétrico é atenuado ao atravessar a blindagem, comparando o campo incidente E<sub>i</sub> com o campo transmitido E<sub>t</sub>. O campo elétrico é uma grandeza de amplitude (como a tensão ou a corrente), e para grandezas de amplitude a definição em decibéis usa o fator 20 a multiplicar o logaritmo. O fator 10 fica reservado às grandezas de potência, porque a potência varia com o quadrado da amplitude, e o quadrado dentro do logaritmo converte-se precisamente no fator 2 adicional.
+
+Verifique com valores concretos: se a blindagem reduzir o campo a um décimo (E<sub>i</sub>/E<sub>t</sub> = 10), vem S = 20 × log 10 = 20 dB; a um centésimo, 40 dB. Uma blindagem que não atenue nada (E<sub>i</sub> = E<sub>t</sub>) dá log 1 = 0, logo S = 0 dB, exatamente como se espera.
+
+As restantes opções falham este teste imediato: com S = 20 + log(E<sub>i</sub>/E<sub>t</sub>) ou S = 20 - log(E<sub>i</sub>/E<sub>t</sub>), uma blindagem inexistente teria 20 dB de efetividade, e S = 1 - log(E<sub>i</sub>/E<sub>t</sub>) diminuiria quando a atenuação aumenta. Só a multiplicação por 20 corresponde à definição de decibel para amplitudes.
