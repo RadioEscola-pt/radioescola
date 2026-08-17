@@ -13,3 +13,11 @@ sources:
     page: 10
 ---
 Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p35</a>)
+
+A impedância de saída de um AMPOP é **muito baixa**.
+
+Um amplificador operacional é concebido para se comportar como uma fonte de tensão quase ideal: deve impor a tensão de saída independentemente da carga que lhe é ligada. Para isso, o andar de saída (tipicamente um seguidor de emissor em configuração *push-pull*) apresenta em malha aberta uma impedância de apenas algumas dezenas de ohms. No modelo ideal do AMPOP assume-se mesmo impedância de saída nula, tal como se assume impedância de entrada infinita e ganho infinito.
+
+Na prática, o valor efetivo é ainda menor do que o da malha aberta, porque o AMPOP é quase sempre usado com realimentação negativa: a impedância de saída em malha fechada fica dividida pelo fator de realimentação (1 + Aβ), descendo facilmente para frações de ohm. É essa combinação, entrada de impedância muito alta e saída de impedância muito baixa, que faz do AMPOP um bloco de amplificação de tensão tão versátil.
+
+As restantes opções descrevem o oposto ou valores arbitrários: "muito alta" é a característica das **entradas** do AMPOP, não da saída, e 100 Ω ou 1000 Ω são números concretos sem justificação, muito acima do que se mede à saída de um AMPOP realimentado.
