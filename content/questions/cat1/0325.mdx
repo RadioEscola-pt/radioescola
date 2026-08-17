@@ -15,3 +15,11 @@ sources:
     page: 12
 ---
 Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p40</a>)
+
+A vantagem da sobre amostragem é **aumentar a relação sinal/ruído**.
+
+O ruído em causa é o ruído de quantificação. Quando um conversor A/D quantifica um sinal, comete um erro que se comporta como ruído de potência fixa, determinada apenas pelo número de bits (para um passo de quantificação q, essa potência vale q²/12). Esse ruído distribui-se uniformemente por toda a banda amostrada, de 0 a fs/2. Se aumentarmos a frequência de amostragem para além do mínimo exigido pelo teorema de Nyquist, a mesma potência de ruído fica espalhada por uma banda mais larga, mas o sinal útil continua confinado à sua banda original. Um filtro digital passa-baixo que retenha apenas a banda útil elimina o ruído que caiu fora dela, e o que resta é apenas uma fração do total.
+
+O ganho é quantificável: cada duplicação da frequência de amostragem reduz para metade a densidade do ruído na banda útil, o que melhora a relação sinal/ruído em 3 dB, o equivalente a meio bit de resolução. Uma sobre amostragem de 4 vezes ganha 6 dB (1 bit); de 16 vezes, 12 dB (2 bits). É este princípio, combinado com *noise shaping*, que permite aos conversores sigma-delta atingir resoluções muito elevadas com quantificadores de poucos bits. Como benefício adicional, a sobre amostragem também relaxa as exigências do filtro anti-aliasing analógico, que passa a dispor de uma banda de transição muito mais larga.
+
+As restantes opções estão erradas: amostrar mais depressa não altera a potência do sinal, que é uma propriedade do próprio sinal, e muito menos a relação entre potência transmitida e recebida, que depende da ligação rádio e não da conversão A/D. Quanto à facilidade de tratamento, é antes o contrário: mais amostras por segundo significam mais dados para processar no mesmo intervalo de tempo.
