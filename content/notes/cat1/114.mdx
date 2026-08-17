@@ -1,1 +1,7 @@
 A92
+
+R1 e R2 servem para estabelecer a **polarização fixa** da base do transístor Q1.
+
+As duas resistências formam um divisor de tensão entre Vcc e a massa, e a base está ligada ao ponto intermédio. Desprezando a corrente de base (o divisor é dimensionado para que a sua corrente seja muito maior do que ela), a tensão da base fica fixada em V<sub>B</sub> = Vcc × R2 / (R1 + R2), um valor que depende apenas de Vcc e da razão das resistências, e não do transístor. Fixada V<sub>B</sub>, a tensão no emissor fica V<sub>E</sub> = V<sub>B</sub> − V<sub>BE</sub> (cerca de 0,7 V abaixo), e a corrente de repouso fica definida por V<sub>E</sub>/R4. É este esquema que garante um ponto de funcionamento estável, praticamente insensível às variações do ganho β entre transístores e à temperatura.
+
+Repare como cada função do andar tem o seu componente próprio, o que descarta as restantes opções: a carga do coletor é R3 (é aos seus terminais que se desenvolve o sinal de saída, retirado através de C2), pelo que R1 e R2 não são resistências de carga. A filtragem, ou melhor, o desacoplamento das componentes alternadas, é feita por C3, que curto-circuita R4 para o sinal e preserva o ganho. E a realimentação negativa em contínua é dada por R4 (degeneração de emissor), não pelo divisor de base, que não recebe qualquer amostra do sinal de saída.
