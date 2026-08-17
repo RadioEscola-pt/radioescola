@@ -16,3 +16,11 @@ sources:
     question: 34
 ---
 Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p34</a>)
+
+Grande parte dos osciladores é constituída por **um filtro e um amplificador ligados num laço de realimentação (feed-back)**.
+
+O princípio de funcionamento é simples: uma parte do sinal de saída do amplificador é reinjetada na sua entrada através do filtro. O filtro (que pode ser um circuito ressonante LC, um cristal de quartzo ou uma rede RC) seleciona a frequência de oscilação, deixando passar apenas essa frequência com a fase certa, e o amplificador compensa as perdas do filtro e do circuito, mantendo a oscilação.
+
+Para que a oscilação arranque e se mantenha tem de se cumprir o critério de Barkhausen: o ganho total do laço deve ser igual ou superior a 1 e o desfasamento total ao longo do laço deve ser de 0° (ou um múltiplo de 360°) à frequência de oscilação. É o filtro que garante que esta condição só se verifica numa frequência, e é por isso que o oscilador oscila precisamente nela.
+
+As restantes opções descrevem outros blocos: um multiplicador e um misturador servem para transladar ou multiplicar frequências já existentes, não para as gerar; um divisor apenas reduz a frequência de um sinal que já existe; e um laço por antecipação (feed-forward) não reinjeta a saída na entrada, pelo que não pode sustentar uma oscilação, além de o circulador ser um componente de micro-ondas sem papel na geração do sinal.
