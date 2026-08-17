@@ -5893,7 +5893,8 @@
         "Com os eixos de enrolamento na perpendicular entre si.",
         "Resguardados num mesmo espaço blindado."
       ],
-      "correctIndex": 2
+      "correctIndex": 2,
+      "hasNotesMdx": true
     },
     {
       "id": 340,
