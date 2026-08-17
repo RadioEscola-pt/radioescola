@@ -1,1 +1,9 @@
 Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p20</a>)
+
+Uma impedância complexa torna-se resistiva **anulando a sua componente reactiva**.
+
+Uma impedância complexa escreve-se Z = R + jX, onde R é a parte resistiva e X a parte reactiva (positiva se indutiva, negativa se capacitiva). Para a tornar puramente resistiva basta acrescentar em série uma reactância igual e de sinal contrário: um condensador para cancelar uma reactância indutiva (jX<sub>L</sub> − jX<sub>C</sub> = 0 quando X<sub>L</sub> = X<sub>C</sub>), ou uma bobina para cancelar uma reactância capacitiva. Nesse ponto a impedância reduz-se a Z = R, e diz-se que o circuito está em ressonância: tensão e corrente ficam em fase e toda a potência entregue é potência ativa.
+
+É exatamente isto que faz um acoplador de antena (ATU): a antena fora da frequência de ressonância apresenta ao emissor uma impedância complexa, e o acoplador introduz reactâncias de compensação até o emissor ver uma carga resistiva, tipicamente 50 Ω.
+
+As restantes opções não fazem sentido: uma resistência negativa atuaria sobre a componente resistiva, que é precisamente a parte que se quer conservar (as resistências negativas usam-se em osciladores, não em adaptação); a transcondutância é um parâmetro de ganho de dispositivos ativos (relação entre corrente de saída e tensão de entrada) e não cancela reactâncias; e substituir resistências da rede por resistências de carga altera a parte resistiva sem tocar na reactância, pelo que a impedância continuaria complexa.
