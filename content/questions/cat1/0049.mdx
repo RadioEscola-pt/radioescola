@@ -21,3 +21,11 @@ answers:
       poderá servir como transformador de impedâncias
 ---
 A41
+
+A resposta correta é que **o número de espiras no secundário deverá ser maior que o número de espiras no primário**.
+
+Num transformador, a relação de tensões acompanha a relação de espiras (V<sub>s</sub>/V<sub>p</sub> = N<sub>s</sub>/N<sub>p</sub>) e a relação de correntes é a inversa. Como a impedância é o quociente entre tensão e corrente, a impedância vista de cada lado varia com o **quadrado** da relação de espiras: Z<sub>p</sub>/Z<sub>s</sub> = (N<sub>p</sub>/N<sub>s</sub>)². É esta propriedade que permite usar um transformador como transformador de impedâncias.
+
+Com o primário ligado à saída de 15 Ω e o secundário à entrada de 50 Ω do amplificador, vem N<sub>p</sub>/N<sub>s</sub> = √(Z<sub>p</sub>/Z<sub>s</sub>) = √(15/50) = √0,3 ≈ 0,55. Ou seja, o secundário precisa de cerca de 1,83 vezes mais espiras do que o primário (1/0,55 ≈ 1,83): para "subir" de uma impedância baixa para uma mais alta, o enrolamento do lado de impedância mais alta tem sempre mais espiras.
+
+Se o primário tivesse mais espiras, a transformação seria no sentido contrário (de 50 Ω para baixo); com espiras iguais o transformador seria de relação 1:1 e não alteraria a impedância. E a última opção é falsa: a adaptação de impedâncias é precisamente uma das aplicações clássicas dos transformadores, por exemplo nos baluns de antena de relação 4:1 (que corresponde a uma relação de espiras de 2:1).
