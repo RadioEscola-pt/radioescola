@@ -11,3 +11,11 @@ answers:
   - text: quanto menor for o número de transístores com ganho superior a 0 dB
 ---
 A71
+
+A resposta correta é **quanto menor for a largura de banda (B) a -3 dB**.
+
+O fator de qualidade de um circuito ressonante define-se como Q = fr / B, em que fr é a frequência de ressonância e B é a largura de banda medida entre os pontos onde a resposta cai 3 dB (metade da potência) relativamente ao máximo. Para uma frequência de ressonância fixa, Q e B são inversamente proporcionais: quanto mais estreita a banda, maior o Q, e vice-versa. Por exemplo, um filtro ressonante a 7 MHz com B = 70 kHz tem Q = 7 000 000 / 70 000 = 100; se a banda alargar para 700 kHz, o Q cai para 10.
+
+Fisicamente, o Q mede a relação entre a energia armazenada no circuito e a energia dissipada em cada ciclo. Um circuito com poucas perdas (resistência série baixa numa bobina, por exemplo) dissipa pouca energia, ressoa de forma muito seletiva e apresenta por isso uma curva de resposta estreita e aguçada. É esta seletividade que interessa num filtro: um Q elevado permite separar sinais próximos em frequência.
+
+As restantes opções não fazem sentido: quanto maior for B, menor é o Q (é o inverso da definição), e as opções que falam em transístores são absurdas por natureza, porque um filtro passivo, por definição, não contém elementos ativos como transístores, sendo constituído apenas por bobinas, condensadores e resistências.
