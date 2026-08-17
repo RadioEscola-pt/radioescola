@@ -21,3 +21,11 @@ sources:
     page: 11
 ---
 A111-Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p38</a>)
+
+A resposta correta é **todas as hipóteses anteriores estão corretas**: cada uma das três afirmações descreve uma vantagem real do processamento digital de sinais (DSP) face ao processamento analógico.
+
+A primeira vantagem é estrutural: qualquer algoritmo de DSP se decompõe numa sequência de operações elementares, somas, multiplicações e deslocamentos (atrasos de uma amostra). Um filtro FIR, por exemplo, é apenas uma cadeia de atrasos cujas saídas são multiplicadas por coeficientes e somadas. Isto permite realizar processamentos complexos com hardware genérico e repetitivo, como um processador ou uma FPGA, em vez de circuitos dedicados.
+
+A segunda é a reprodutibilidade: num circuito analógico, resistências, condensadores e bobinas têm tolerâncias de fabrico e derivam com a temperatura e o envelhecimento, pelo que dois exemplares do mesmo filtro nunca são exatamente iguais. No domínio digital, os coeficientes são números armazenados em memória e a aritmética é determinística e repetível: todos os exemplares se comportam da mesma forma, sem necessidade de calibração ou ajuste.
+
+A terceira é a flexibilidade: como o comportamento é definido por software, mudar de algoritmo (outro tipo de filtro, outra largura de banda, outro modo de desmodulação) resume-se a carregar outro programa, sem tocar no hardware. É esta característica que está na base do rádio definido por software (SDR). Como as três vantagens são verdadeiras, nenhuma opção isolada é resposta suficiente, e a única resposta completa é a que as engloba a todas.
