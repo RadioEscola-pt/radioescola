@@ -5738,7 +5738,8 @@
         "A tensão e a corrente estão desfasadas 90º.",
         "A tensão e a corrente estão desfasadas 270º."
       ],
-      "correctIndex": 2
+      "correctIndex": 2,
+      "hasNotesMdx": true
     },
     {
       "id": 329,
