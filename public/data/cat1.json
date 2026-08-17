@@ -5881,7 +5881,8 @@
         "A maior parte do campo magnético está contida no núcleo.",
         "Todas as opções são válidas."
       ],
-      "correctIndex": 3
+      "correctIndex": 3,
+      "hasNotesMdx": true
     },
     {
       "id": 339,
