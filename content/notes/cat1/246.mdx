@@ -1,1 +1,9 @@
 A189
+
+Deve utilizar-se **o equipamento com frequência máxima de operação de 100 MHz, pois é o que apresenta o menor erro de medição**.
+
+Uma onda quadrada não é um sinal sinusoidal puro: pela análise de Fourier, é composta pela frequência fundamental e por todas as harmónicas ímpares, com amplitudes proporcionais a 1/n. Com fundamental de 10 MHz, o sinal contém componentes a 10, 30, 50, 70, 90 MHz, e assim sucessivamente. O valor eficaz verdadeiro resulta da soma da energia de todas estas componentes, pelo que quanto maior for a largura de banda do equipamento, mais harmónicas entram na medição e mais próximo do valor real fica o resultado.
+
+Os números confirmam-no. Para uma onda quadrada de amplitude A, o valor eficaz verdadeiro é A, e cada harmónica ímpar tem amplitude 4A/(πn). Um equipamento que só capte a fundamental mede (4A/π)/√2 ≈ 0,90 A, um erro de cerca de 10%. Captando as harmónicas até 90 MHz, o valor medido sobe para √(8/π² × (1 + 1/9 + 1/25 + 1/49 + 1/81)) ≈ 0,98 A, reduzindo o erro para cerca de 2%.
+
+Quanto às restantes opções: o equipamento de 1 MHz nem sequer capta a fundamental, pelo que a afirmação de que a maior parte da energia está abaixo de 1 MHz é falsa (a maior parte da energia está precisamente na fundamental de 10 MHz). O de 10 MHz não beneficia de qualquer "ressonância": limita-se a medir a fundamental, perdendo todas as harmónicas. E os equipamentos de 20 MHz e 100 MHz não dão erros iguais: como a primeira harmónica acima da fundamental está a 30 MHz, o de 20 MHz capta apenas a fundamental (erro de cerca de 10%), enquanto o de 100 MHz capta as harmónicas até à nona (erro de cerca de 2%).
