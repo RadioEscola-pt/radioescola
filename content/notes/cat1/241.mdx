@@ -1,1 +1,9 @@
 A184
+
+A atenuação em espaço livre é tanto maior **quanto maior for a frequência**.
+
+A atenuação em espaço livre (FSPL, *free space path loss*) entre duas antenas isotrópicas é dada por FSPL = (4πd/λ)² = (4πdf/c)², onde d é a distância, f a frequência e c a velocidade da luz. Em decibéis, a forma prática é FSPL(dB) = 32,44 + 20 × log d(km) + 20 × log f(MHz). Os dois termos logarítmicos mostram que a atenuação cresce 20 dB por cada década, tanto de distância como de frequência: duplicar a frequência custa 6 dB adicionais, tal como duplicar a distância.
+
+Convém perceber porquê: o espaço livre não absorve energia, e a densidade de potência que chega a uma dada distância não depende da frequência. O que muda é a abertura efetiva da antena de receção, Ae = λ²G/(4π), que diminui com o quadrado do comprimento de onda. A uma frequência mais alta (λ menor), uma antena com o mesmo ganho capta menos potência, e é essa perda que a fórmula do FSPL contabiliza. Por exemplo, para d = 100 km: em 145 MHz a atenuação é 32,44 + 40 + 43,2 ≈ 116 dB; em 1296 MHz sobe para 32,44 + 40 + 62,3 ≈ 135 dB.
+
+As restantes opções contrariam a fórmula: a potência de emissão não entra no cálculo da atenuação, que é uma razão entre potência transmitida e recebida, independente do valor absoluto emitido; menor distância significa menor atenuação, não maior; e menor frequência também reduz a atenuação, precisamente o contrário do que a opção afirma.
