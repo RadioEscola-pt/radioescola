@@ -474,7 +474,8 @@
         "o número de inversões de fase numa dada comunicação",
         "a quantidade de informação associada a cada bit transmitido"
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "hasNotesMdx": true
     },
     {
       "id": 26,

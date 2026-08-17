@@ -1,0 +1,7 @@
+R1 e R2 asseguram a **polarização fixa** do transístor.
+
+No circuito, R1 liga a base ao terminal positivo da alimentação e R2 liga a base à massa, formando um divisor de tensão. Escolhendo as duas resistências de modo a que a corrente no divisor seja bastante superior à corrente de base, a tensão no ponto médio fica praticamente imposta pela razão R2/(R1+R2), ou seja, V<sub>B</sub> ≈ V<sub>+</sub> × R2/(R1+R2). A base fica assim a um potencial fixo, definido pelo circuito e não pelas características do transístor: é este carácter imposto de fora que dá o nome de polarização fixa.
+
+Não confunda com a polarização própria (ou automática): essa é a função de R3, a resistência de emissor, onde a passagem da própria corrente do transístor cria uma queda de tensão que estabiliza o ponto de funcionamento face a variações do ganho (β) do exemplar usado e da temperatura; C3 curto-circuita R3 para o sinal, preservando o ganho em alterna.
+
+Quanto às restantes opções: a resistência de carga é a que está no coletor, entre o transístor e a alimentação, por onde circula a corrente de saída, papel que R1 e R2 não desempenham. E não há realimentação, porque nenhuma fração do sinal de saída (no coletor) é devolvida à entrada através de R1 e R2; estas apenas fixam a tensão contínua da base.

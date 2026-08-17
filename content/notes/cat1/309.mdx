@@ -1,0 +1,7 @@
+O parâmetro determinante é o **controlo automático de nível** (ALC, *Automatic Level Control*).
+
+O PSK31 modula a fase da portadora, mas o sinal resultante não tem envolvente constante: nas transições de fase a amplitude passa suavemente por zero, e é essa envolvente cuidadosamente moldada que mantém o sinal confinado a uma largura de banda de apenas cerca de 31 Hz. Todo o percurso de transmissão tem por isso de ser rigorosamente linear. O ALC do emissor é um circuito de compressão: quando o nível de áudio vindo da placa de som é excessivo, o ALC reduz o ganho e distorce a envolvente. Essa distorção gera produtos de intermodulação que alargam o sinal muito para além dos 31 Hz, interferindo com as várias comunicações vizinhas que, neste modo, coexistem dentro da largura de um único canal de fonia.
+
+O procedimento correto é ajustar o nível de áudio de modo que o indicador de ALC não mostre praticamente atuação nenhuma: aumenta-se o nível até o ALC começar a acusar e recua-se ligeiramente. A potência de saída resultante é tipicamente muito inferior à potência de pico do emissor, e assim deve ser, porque em PSK31 um sinal limpo e fraco comunica melhor do que um sinal forte e alargado.
+
+As restantes opções são grandezas que o operador vigia em qualquer modo, mas nenhuma é o ponto crítico do ajuste de nível em PSK31: a potência de saída é uma consequência do ajuste, não o critério; a corrente do amplificador de potência apenas reflete o consumo; e o coeficiente de onda estacionária diz respeito à adaptação da antena, que não depende do modo transmitido.
