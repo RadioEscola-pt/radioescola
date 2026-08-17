@@ -5437,7 +5437,8 @@
         "Circuitos indutivos.",
         "Qualquer tipo de circuito, seja ele capacitivo, resistivo ou indutivo."
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "hasNotesMdx": true
     },
     {
       "id": 305,
