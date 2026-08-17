@@ -1,1 +1,9 @@
 Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p15</a>)
+
+A frequência de ressonância é **7,12 MHz**.
+
+Num circuito RLC a frequência de ressonância é dada pela fórmula de Thomson, f<sub>0</sub> = 1 / (2π√(LC)). Convertendo as unidades: L = 0,05 mH = 5×10<sup>-5</sup> H e C = 10 pF = 1×10<sup>-11</sup> F. O produto LC vale 5×10<sup>-5</sup> × 1×10<sup>-11</sup> = 5×10<sup>-16</sup>, cuja raiz quadrada é aproximadamente 2,24×10<sup>-8</sup>. Então f<sub>0</sub> = 1 / (2π × 2,24×10<sup>-8</sup>) ≈ 7,12×10<sup>6</sup> Hz, ou seja 7,12 MHz.
+
+Repare que o valor de R = 33 Ω é irrelevante para o cálculo: a resistência afeta o fator de qualidade Q e a largura de banda do circuito (e, num circuito real com perdas em série na bobina, desloca ligeiramente a ressonância), mas a frequência de ressonância de um circuito LC ideal depende apenas de L e de C. É um dado a mais, posto no enunciado para confundir.
+
+Quanto às restantes opções, 7,12 kHz resulta de um erro de um fator de 1000 no tratamento dos prefixos (mili e pico), e os valores de 23,5 MHz e 23,5 kHz não saem da fórmula com estes componentes: um bom teste rápido é verificar a ordem de grandeza, pois com bobinas de dezenas de microhenry e condensadores de picofarad a ressonância cai tipicamente na gama dos megahertz, nunca nos quilohertz.
