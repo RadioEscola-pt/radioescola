@@ -1,1 +1,9 @@
 A24
+
+A conversão analógica/digital divide-se em três etapas: **a amostragem, a quantificação e a codificação**, por esta ordem.
+
+A amostragem consiste em medir o valor do sinal analógico em instantes regularmente espaçados, à frequência de amostragem fs. Para que o sinal possa depois ser reconstruído sem perdas, o teorema de Nyquist exige que fs seja pelo menos o dobro da frequência máxima presente no sinal; caso contrário surge aliasing. O resultado desta etapa é uma sucessão de amostras que ainda podem tomar qualquer valor de amplitude, ou seja, o sinal é discreto no tempo mas contínuo em amplitude.
+
+A quantificação atribui a cada amostra o nível mais próximo de um conjunto finito de níveis de amplitude. É aqui que se perde informação de forma irreversível: a diferença entre o valor real e o nível atribuído é o erro de quantificação, que se manifesta como ruído. Com n bits dispõe-se de 2<sup>n</sup> níveis, e cada bit adicional melhora a relação sinal/ruído de quantificação em cerca de 6 dB. Por fim, a codificação traduz cada nível quantificado numa palavra binária, produzindo a sequência de bits que constitui o sinal digital.
+
+As restantes opções incluem a diferenciação ou a integração, que são operações matemáticas sobre sinais (realizáveis, por exemplo, com circuitos RC ou amplificadores operacionais) e não fazem parte do processo de conversão A/D. Basta reconhecer esses termos intrusos para eliminar as três alternativas erradas.
