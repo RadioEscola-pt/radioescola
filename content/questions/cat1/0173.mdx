@@ -9,3 +9,11 @@ answers:
   - text: ASK
 ---
 A130
+
+A resposta correta é **PSK**.
+
+PSK significa *Phase Shift Keying* (modulação por deslocamento de fase): a informação digital é transmitida variando a fase da portadora entre um conjunto discreto de valores, mantendo a amplitude e a frequência constantes. No caso mais simples, o BPSK, usam-se duas fases separadas de 180° para representar os bits 0 e 1; no QPSK usam-se quatro fases (0°, 90°, 180°, 270°), transportando 2 bits por símbolo. É a técnica usada, por exemplo, nos modos digitais PSK31 e nas transmissões de dados por satélite.
+
+A chave para não confundir estas siglas está na primeira letra, que indica o parâmetro da portadora que é manipulado: **F**SK (*Frequency Shift Keying*) comuta a frequência entre valores discretos, como no RTTY clássico, e **A**SK (*Amplitude Shift Keying*) comuta a amplitude, sendo o CW (ligar e desligar a portadora) o seu caso extremo. Nenhuma destas atua sobre a fase.
+
+Já o QAM (*Quadrature Amplitude Modulation*) modula simultaneamente a amplitude e a fase da portadora, combinando duas portadoras em quadratura moduladas em amplitude. Como envolve também variação de amplitude, não é uma modulação puramente de fase, pelo que a única opção que designa exclusivamente uma modulação de fase é o PSK.
