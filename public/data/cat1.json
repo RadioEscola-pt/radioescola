@@ -5624,6 +5624,7 @@
         "Podem ser detectados alguns tipos de erro."
       ],
       "correctIndex": 3,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2024_01_02",
