@@ -18,3 +18,11 @@ sources:
     question: 36
 ---
 Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p36</a>)
+
+O circuito descrito é **um sintetizador com malha de captura de fase** (PLL, *Phase Locked Loop*).
+
+A descrição enumera precisamente os blocos de uma PLL usada como sintetizador. O comparador (detetor) de fase mede a diferença de fase entre o sinal de um oscilador de referência estável e o sinal vindo da malha de realimentação, produzindo uma tensão de erro. O filtro passa-baixo suaviza essa tensão e aplica-a à entrada de controlo do oscilador controlado por tensão (VCO), corrigindo a sua frequência até anular o erro. O elemento que transforma esta malha num sintetizador é o divisor de frequências programável colocado na realimentação: o comparador só "vê" a frequência do VCO dividida por N, pelo que a malha engata quando f<sub>saída</sub>/N = f<sub>ref</sub>, ou seja, f<sub>saída</sub> = N × f<sub>ref</sub>.
+
+Programando o valor de N obtêm-se múltiplas frequências de saída, todas espaçadas de f<sub>ref</sub> e todas com a estabilidade do oscilador de referência (tipicamente a cristal). É este o método de síntese usado na generalidade dos transcetores: combina a estabilidade de um cristal com a agilidade de frequência de um VCO.
+
+As restantes opções designam técnicas diferentes: um sintetizador digital direto (DDS) gera o sinal por acumulação de fase e conversão digital-analógica através de uma tabela de valores, sem comparador de fase nem VCO; um sintetizador híbrido combina as duas técnicas (por exemplo, um DDS como referência de uma PLL), o que não corresponde à descrição de uma malha única; e uma matriz com comutação de díodos limita-se a selecionar, entre vários cristais ou saídas fixas, a que vai ser usada, não havendo qualquer malha de realimentação.
