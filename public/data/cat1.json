@@ -295,7 +295,8 @@
         "Qualquer tipo de circuito, seja ele puramente capacitivo, puramente resistivo ou puramente indutivo"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "figuras-de-lissajous"
     },
     {
       "id": 16,
