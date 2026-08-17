@@ -9,3 +9,11 @@ answers:
   - text: A sistemas de adaptação de impedâncias
 ---
 A21
+
+As siglas CRC e FEC estão associadas a **sistemas de deteção de erros em transmissão de dados**.
+
+CRC significa *Cyclic Redundancy Check* (verificação por redundância cíclica). O emissor trata o bloco de dados como um polinómio binário, divide-o por um polinómio gerador conhecido de ambos os lados e acrescenta o resto dessa divisão ao fim do bloco. O recetor repete a divisão: se o resto não for o esperado, houve erros no percurso. O CRC apenas deteta, não corrige, pelo que normalmente desencadeia um pedido de retransmissão (é o esquema usado, por exemplo, nas tramas do packet radio AX.25).
+
+FEC significa *Forward Error Correction* (correção de erros no sentido direto). Aqui o emissor acrescenta redundância suficiente (códigos convolucionais, Reed-Solomon, LDPC, entre outros) para que o recetor consiga não só detetar mas também corrigir um certo número de erros sozinho, sem pedir retransmissão. É essencial em ligações onde a retransmissão é impraticável, como nos modos digitais de sinal fraco (FT8, por exemplo) ou nas comunicações via satélite. Ambas as técnicas pertencem, portanto, ao controlo de erros na transmissão de dados.
+
+As restantes opções não têm relação com estas siglas: não são técnicas de modulação (como AM, FM ou PSK), não amplificam RF e nada têm a ver com adaptação de impedâncias entre andares ou entre emissor e antena.
