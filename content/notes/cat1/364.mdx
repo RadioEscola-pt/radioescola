@@ -1,1 +1,11 @@
 A36
+
+O ganho de tensão absoluto é aproximadamente **38**.
+
+O circuito da figura é um amplificador inversor com amplificador operacional: o sinal entra através de R1 na entrada inversora (-), R2 liga a saída a essa mesma entrada (realimentação negativa) e a entrada não inversora (+) está à massa. Nesta montagem, o ganho de tensão é dado por Av = -R2/R1, e o sinal negativo indica apenas a inversão de fase de 180° entre a entrada e a saída.
+
+A dedução é simples de reconstruir. Com realimentação negativa e ganho em malha aberta muito elevado, a entrada inversora fica praticamente ao potencial da massa (massa virtual). Toda a tensão de entrada cai então sobre R1, gerando a corrente I = Vin/R1. Como a impedância de entrada do operacional é muito alta, essa corrente atravessa integralmente R2, e a saída fica Vout = -I × R2 = -Vin × (R2/R1). Substituindo os valores:
+
+|Av| = R2/R1 = 68000/1800 ≈ 37,8 ≈ 38
+
+Quanto às restantes opções: 0,03 é o ganho calculado com a razão invertida (R1/R2), 1 seria o ganho de um seguidor de tensão (que não tem resistências no caminho do sinal) e 76 é o dobro do valor correto, sem correspondência com nenhuma fórmula desta montagem. Note ainda que na configuração não inversora o ganho seria 1 + R2/R1 ≈ 39, mas aqui o sinal entra pela entrada inversora, pelo que a expressão a usar é R2/R1.
