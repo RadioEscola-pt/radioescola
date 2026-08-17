@@ -5473,7 +5473,8 @@
         "Usam o modo de ligar/desligar.",
         "Usam a modulação por desvio de fase."
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "hasNotesMdx": true
     },
     {
       "id": 309,

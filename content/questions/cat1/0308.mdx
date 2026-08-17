@@ -8,4 +8,9 @@ answers:
   - text: Usam o modo de ligar/desligar.
   - text: Usam a modulação por desvio de fase.
 ---
+Estas quatro modalidades são todas **modos digitais**: em todas, a informação é codificada em estados discretos (pontos e traços, marca e espaço, bits) e não numa variação contínua de um sinal analógico, como acontece na voz em SSB ou FM.
+
+Cada uma concretiza essa codificação de maneira diferente. O Código Morse (CW) usa a manipulação ligar/desligar da portadora (*on-off keying*); o RTTY usa manipulação por desvio de frequência (FSK), alternando entre duas frequências, marca e espaço; o PSK31 usa manipulação por desvio de fase (PSK), invertendo a fase da portadora para transmitir os bits; e o packet transmite tramas de dados, tipicamente por AFSK ou FSK. O suporte físico varia, mas o conteúdo é sempre informação digital.
+
+Precisamente por isso as restantes opções falham: cada uma descreve apenas uma das modalidades, ou nenhuma. A largura de banda é muito diferente entre elas (o PSK31 ocupa cerca de 31 Hz, o CW na ordem das dezenas a centenas de hertz, o RTTY algumas centenas de hertz e o packet pode chegar a vários quilohertz, consoante o débito). O modo ligar/desligar é característico do Morse, mas não do RTTY, do PSK31 nem do packet, que mantêm a portadora sempre presente durante a emissão. E a modulação por desvio de fase é exclusiva do PSK31: o RTTY e o packet usam desvio de frequência.
 
