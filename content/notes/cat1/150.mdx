@@ -1,1 +1,9 @@
 A115
+
+A transformada de Fourier de um sinal periódico **é composta por impulsos nas frequências harmónicas do sinal**.
+
+Um sinal periódico com período T pode escrever-se como uma série de Fourier: uma soma de sinusoides com frequências múltiplas da frequência fundamental f<sub>0</sub> = 1/T, cada uma com a sua amplitude e fase. Ora, a transformada de Fourier de uma sinusoide pura de frequência f é um par de impulsos de Dirac em +f e -f. Somando as contribuições de todas as componentes da série, o espetro resultante é um conjunto de impulsos localizados em 0, ±f<sub>0</sub>, ±2f<sub>0</sub>, ±3f<sub>0</sub>, e assim sucessivamente, cujas áreas são os coeficientes da série. É o chamado espetro de riscas: toda a energia está concentrada em frequências discretas, sem qualquer conteúdo entre elas.
+
+Este resultado tem uma leitura prática importante: quanto maior o período (sinal mais "lento"), menor é f<sub>0</sub> e mais próximas ficam as riscas; no limite de um sinal não periódico (período infinito), as riscas aproximam-se até formar um espetro contínuo, que é o caso geral da transformada de Fourier.
+
+As restantes opções falham todas: o ruído branco gaussiano tem um espetro contínuo e plano, precisamente o oposto de um espetro de riscas; "ondas quadradas sobrepostas" descrevem uma forma de onda no domínio do tempo, não um espetro; e a última opção confunde as coisas, pois embora a frequência fundamental seja de facto inversamente proporcional ao período (f<sub>0</sub> = 1/T), a transformada não é "uma onda sinusoidal", é a representação em frequência do sinal, feita de impulsos.
