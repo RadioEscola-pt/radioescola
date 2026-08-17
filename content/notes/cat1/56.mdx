@@ -1,1 +1,9 @@
 Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p33</a>)
+
+Os díodos Zener incorporados servem **para evitar que o isolamento da porta seja perfurado por descargas estáticas ou tensões excessivas**.
+
+Num MOSFET, a porta está separada do canal por uma camada de óxido de silício extremamente fina, o que lhe dá uma impedância de entrada altíssima (praticamente não circula corrente de porta). Essa camada tão fina suporta apenas algumas dezenas de volts: acima disso é perfurada e o dano é permanente, o transístor fica inutilizado. Como a impedância de entrada é enorme, qualquer carga estática depositada na porta não tem por onde escoar e a tensão sobe facilmente até valores destrutivos, bastando o simples manuseamento do componente ou a descarga eletrostática (ESD) do corpo de quem o toca.
+
+Os fabricantes ligam por isso díodos Zener (tipicamente dois em oposição, para limitar em ambas as polaridades) entre a porta e a fonte. Em funcionamento normal os díodos não conduzem e não perturbam o circuito; se a tensão na porta exceder a tensão de Zener, eles entram em condução e desviam a carga, limitando a tensão a um valor seguro antes de o óxido ser perfurado. O preço a pagar é uma pequena redução da impedância de entrada e da tensão máxima utilizável na porta.
+
+Quanto às restantes opções: os Zener não fornecem qualquer tensão de referência de polarização, a polarização da porta é definida pelo circuito externo; não protegem o substrato, mas sim o dielétrico da porta; e não regulam a temperatura, o sobreaquecimento resulta da dissipação no canal, contra a qual um díodo na porta nada pode fazer.
