@@ -94,6 +94,8 @@ const NOTES_PROSE = [
   '[&_ol]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-1',
   '[&_img]:my-3 [&_img]:max-w-full [&_img]:h-auto [&_img]:rounded-lg',
   '[&_img]:border [&_img]:border-slate-200 dark:[&_img]:border-slate-700',
+  // Inline diagrams draw with currentColor, so they follow the theme.
+  '[&_svg]:my-3 [&_svg]:max-w-full [&_svg]:h-auto',
   '[&_strong]:font-semibold [&_strong]:text-slate-700 dark:[&_strong]:text-slate-300',
   '[&_a]:text-blue-600 dark:[&_a]:text-blue-400 [&_a]:underline',
 ].join(' ');

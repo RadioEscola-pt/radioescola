@@ -9,6 +9,7 @@ answers:
   - text: Figuras de Dirac
   - text: Figuras de mérito
   - text: Figuras de Watt
+tutorial: figuras-de-lissajous
 sources:
   - pdf: cat1/2011_12_13
     question: 32
@@ -16,4 +17,31 @@ sources:
   - pdf: cat1/2023_12_22
     question: 34
 ---
-As figuras de Lissajous são padrões geométricos que aparecem quando dois sinais sinusoidais estão em relação de fase. Elas são frequentemente usadas para visualizar e entender a diferença de fase entre dois sinais quando exibidos em um osciloscópio. Esses padrões podem variar dependendo das frequências e amplitudes dos sinais, bem como da relação de fase entre eles.
+São as **figuras de Lissajous**.
+
+Num osciloscópio em modo XY, um sinal sinusoidal aplicado ao canal horizontal e outro ao canal vertical desenham uma figura de Lissajous. A forma depende da razão de frequências e do desfasamento entre os dois sinais.
+
+<svg viewBox="0 0 340 128" width="340" height="128" role="img" aria-label="Três figuras de Lissajous para sinais de igual frequência: uma reta a 0 graus, uma elipse a 45 graus e um círculo a 90 graus de desfasamento">
+  <g fill="none" stroke="currentColor" strokeWidth="1.5">
+    <g strokeOpacity="0.25">
+      <rect x="0.75" y="0.75" width="98.5" height="98.5" rx="4" />
+      <rect x="120.75" y="0.75" width="98.5" height="98.5" rx="4" />
+      <rect x="240.75" y="0.75" width="98.5" height="98.5" rx="4" />
+    </g>
+    <path d="M10,90 L90,10" strokeLinecap="round" />
+    <ellipse cx="170" cy="50" rx="52.3" ry="21.6" transform="rotate(-45 170 50)" />
+    <circle cx="290" cy="50" r="40" />
+  </g>
+  <g fill="currentColor" fontSize="13" textAnchor="middle">
+    <text x="50" y="120">0°</text>
+    <text x="170" y="120">45°</text>
+    <text x="290" y="120">90°</text>
+  </g>
+</svg>
+
+Como ler a figura:
+
+- Para frequências iguais (1:1), o desfasamento transforma uma reta (0°) numa elipse cada vez mais aberta, até chegar a um círculo (90°).
+- Para razões inteiras, o número de vezes que a curva toca o bordo horizontal e o bordo vertical dá diretamente a razão fy:fx.
+
+As restantes opções não designam nada disto: Dirac dá o nome ao impulso unitário, uma figura de mérito é um índice de qualidade (de um recetor, por exemplo) e não um padrão no ecrã, e o watt é a unidade de potência.

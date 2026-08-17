@@ -1,0 +1,27 @@
+---
+title: Figuras de Lissajous
+description: Como um osciloscópio em modo XY revela a fase e a razão de frequências entre dois sinais.
+categories: [1]
+---
+
+
+# Figuras de Lissajous
+
+import Lissajous from '@/components/Lissajous'
+
+Num osciloscópio em modo XY, um sinal sinusoidal aplicado ao canal horizontal e
+outro ao canal vertical desenham uma **figura de Lissajous**. A forma depende da
+razão de frequências e do desfasamento entre os dois sinais.
+
+<Lissajous />
+
+## Como ler a figura
+
+- Para frequências iguais (1:1), a fase transforma uma reta (0°) numa elipse e
+  depois num círculo (90°).
+- Para razões inteiras, o número de vezes que a curva toca o bordo horizontal
+  e o vertical dá diretamente `fy:fx`.
+
+Podes também arrancar com outros valores:
+
+<Lissajous initialA={3} initialB={4} initialPhase={45} />
