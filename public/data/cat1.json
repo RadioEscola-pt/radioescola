@@ -5947,7 +5947,8 @@
         "Os toróides de ferro pulverizado requerem normalmente um menor número de espiras para produzir uma determinada indutância.",
         "Os toróides de ferro pulverizado apresentam a maior potência nominal."
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "hasNotesMdx": true
     },
     {
       "id": 344,
