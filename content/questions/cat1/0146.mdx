@@ -11,3 +11,11 @@ answers:
     correct: true
 ---
 A112
+
+FIR é a sigla de **"Finite Impulse Response"**, ou seja, resposta impulsional finita.
+
+A resposta impulsional de um filtro é o sinal que aparece à saída quando se aplica à entrada um impulso único. Num filtro FIR, a saída é calculada somando apenas as últimas N amostras da entrada, cada uma multiplicada pelo seu coeficiente, sem qualquer realimentação da saída. Por isso, quando o impulso acaba de percorrer as N posições da linha de atraso, a saída volta exatamente a zero: a resposta dura um número finito de amostras, daí o nome.
+
+Esta ausência de realimentação tem duas consequências práticas importantes: o filtro FIR é incondicionalmente estável (não pode oscilar, sejam quais forem os coeficientes) e pode ser projetado com fase linear, isto é, com atraso de grupo constante, o que evita distorção de fase e o torna muito usado nos modos digitais. Contrasta com o filtro IIR ("Infinite Impulse Response"), em que a realimentação da saída faz a resposta ao impulso prolongar-se indefinidamente.
+
+As restantes opções são apenas expansões inventadas da sigla: nenhuma delas contém a ideia de resposta impulsional finita, e o R de FIR vem de "Response", não de "Radio".
