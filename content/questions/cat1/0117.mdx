@@ -11,3 +11,11 @@ answers:
   - text: rejeita-banda
 ---
 A94
+
+Os amplificadores sintonizados apresentam tipicamente uma resposta **passa-banda**.
+
+Um amplificador sintonizado usa como carga um circuito ressonante LC (paralelo), em vez de uma simples resistência. A impedância desse circuito é máxima na frequência de ressonância, f₀ = 1/(2π√(LC)), e cai rapidamente acima e abaixo dela. Como o ganho do andar é proporcional à impedância de carga, o amplificador só amplifica com ganho elevado uma faixa estreita de frequências centrada em f₀: exatamente a forma de uma resposta passa-banda.
+
+A largura dessa banda é determinada pelo fator de qualidade Q do circuito ressonante: B = f₀/Q. Um Q elevado dá uma banda estreita e grande seletividade, o que é precisamente o objetivo destes andares, usados por exemplo nos amplificadores de FI de um recetor para selecionar o canal desejado e rejeitar os adjacentes, ou nos andares de RF para amplificar apenas a banda de interesse e atenuar produtos indesejados.
+
+As restantes opções descrevem outros comportamentos: uma resposta passa-baixo (amplificar tudo abaixo de uma frequência de corte) é típica dos amplificadores de áudio ou de banda larga, uma resposta passa-alto deixaria passar todas as frequências acima do corte, e rejeita-banda é o comportamento oposto ao pretendido, atenuar a frequência de sintonia em vez de a amplificar (é o que faria um circuito ressonante série em paralelo com o sinal, uma armadilha ou *trap*).
