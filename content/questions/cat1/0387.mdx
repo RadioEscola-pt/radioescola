@@ -14,3 +14,11 @@ sources:
     question: 22
 ---
 A128
+
+A resposta correta é **todas as opções são válidas**: transformador, rede em PI e troço de linha de transmissão são, todos, dispositivos de adaptação de impedâncias em RF.
+
+Um transformador adapta impedâncias através da relação de espiras: a impedância vista no primário é a impedância da carga multiplicada por (N1/N2)². Por exemplo, um balun 4:1 (relação de espiras 2:1) transforma 200 Ω em 50 Ω. É a solução típica para adaptação em banda larga, como na alimentação de antenas de fio.
+
+Uma rede em PI (um condensador em paralelo à entrada, uma bobina em série e outro condensador em paralelo à saída) adapta praticamente qualquer par de impedâncias por ajuste dos três elementos reativos. É o circuito clássico do andar de saída dos emissores valvulados e de muitas caixas de sintonia de antena, com a vantagem adicional de atenuar harmónicas por se comportar como filtro passa-baixo.
+
+Um troço de linha de transmissão também transforma impedâncias, porque a impedância vista à entrada de uma linha depende do seu comprimento elétrico e da carga. O caso mais conhecido é o transformador de quarto de onda: um troço de λ/4 com impedância característica Z0 = √(Zin × Zcarga) adapta as duas impedâncias, e um stub em curto-circuito ou em aberto pode anular a componente reativa. Sendo os três métodos válidos, nenhuma das opções isoladas está completa.
