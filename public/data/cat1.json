@@ -5527,7 +5527,8 @@
         "Dados.",
         "Todas as opções são válidas."
       ],
-      "correctIndex": 3
+      "correctIndex": 3,
+      "hasNotesMdx": true
     },
     {
       "id": 313,
