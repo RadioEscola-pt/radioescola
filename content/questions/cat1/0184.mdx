@@ -20,3 +20,11 @@ sources:
     question: 9
 ---
 Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p9</a>)
+
+A tensão de saída aumenta **aumentando o número de espiras de arame no loop ou a área da estrutura do loop**.
+
+Um loop de receção funciona pela lei da indução de Faraday: a componente magnética da onda que atravessa o loop induz uma força eletromotriz proporcional à taxa de variação do fluxo captado e ao número de espiras que o enlaçam. Para um loop pequeno face ao comprimento de onda, a tensão induzida é dada por V = (2π · N · A · E · cos θ) / λ, onde N é o número de espiras, A a área da estrutura, E a intensidade do campo incidente, λ o comprimento de onda e θ o ângulo entre o plano do loop e a direção de chegada do sinal.
+
+Como N e A aparecem ambos a multiplicar, qualquer um deles serve para aumentar a tensão de saída: duplicar as espiras duplica a tensão, tal como duplicar a área. É por isso que basta aumentar um **ou** outro. Na prática há um limite, porque mais espiras e mais área também aumentam a indutância do loop, o que baixa a frequência de autorressonância e restringe a banda útil, mas o princípio pedido é este.
+
+As restantes opções contrariam esta relação: diminuir espiras ou área reduz a tensão em vez de a aumentar, e aumentar as espiras reduzindo ao mesmo tempo a área faz os dois efeitos anularem-se (ou até perder-se sinal, conforme a proporção). Quanto à blindagem eletrostática que alguns loops têm, ela serve para equilibrar a resposta e rejeitar a componente elétrica local de ruído; alterar a sua permeabilidade não é o mecanismo de que depende a tensão de saída.
