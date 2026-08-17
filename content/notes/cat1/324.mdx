@@ -1,1 +1,9 @@
 A25
+
+O teorema de Nyquist (ou teorema da amostragem) estabelece que **a frequência de amostragem deve ser no mínimo o dobro da maior frequência associada ao sinal amostrado**, ou seja, fs ≥ 2 × fmáx.
+
+A razão é que amostrar um sinal equivale a observá-lo apenas em instantes discretos. Para que essas amostras contenham informação suficiente para reconstruir o sinal original sem ambiguidade, cada ciclo da componente mais rápida tem de ser "visto" pelo menos duas vezes. Se a amostragem for mais lenta do que isso, componentes acima de fs/2 tornam-se indistinguíveis de frequências mais baixas: é o fenómeno do aliasing, em que aparecem no sinal amostrado frequências falsas que não existiam no original. A frequência fs/2 chama-se por isso frequência de Nyquist, o limite superior da banda que uma dada taxa de amostragem consegue representar.
+
+Um exemplo clássico: o áudio de qualidade CD é amostrado a 44,1 kHz precisamente porque a banda audível vai até cerca de 20 kHz, e 44,1 kHz é ligeiramente mais do que o dobro. Na prática coloca-se ainda um filtro passa-baixo (anti-aliasing) antes do conversor A/D para garantir que nada acima de fs/2 chega à amostragem.
+
+As restantes opções falham o enunciado do teorema: amostrar apenas à frequência máxima do sinal (fator 1) é insuficiente e produz aliasing, enquanto os fatores 4 ou 10 são requisitos mais exigentes do que o teorema impõe. Na engenharia usa-se por vezes uma margem acima do dobro por conveniência de filtragem, mas o mínimo teórico é o dobro, nem mais nem menos.
