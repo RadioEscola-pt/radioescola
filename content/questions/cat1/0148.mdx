@@ -11,3 +11,11 @@ answers:
   - text: '"Input Impulse Response"'
 ---
 A113
+
+IIR significa **"Infinite Impulse Response"**, em português, resposta impulsional infinita.
+
+Num filtro digital, a resposta impulsional é a sequência de amostras que o filtro produz à saída quando na entrada se aplica um único impulso unitário. Nos filtros IIR essa resposta prolonga-se indefinidamente no tempo, porque a sua estrutura é recursiva: a saída em cada instante calcula-se a partir das amostras da entrada mas também de saídas anteriores, que são realimentadas. Essa realimentação faz com que, em teoria, o efeito de um impulso nunca se extinga por completo, apenas decaia, daí o "infinite".
+
+É esta recursividade que distingue os IIR dos filtros FIR ("Finite Impulse Response"), que usam apenas amostras da entrada e cuja resposta a um impulso termina ao fim de um número finito de amostras. Na prática, um IIR consegue uma dada seletividade com muito menos coeficientes (menos cálculo) do que um FIR equivalente, mas paga esse ganho com uma fase não linear e com risco de instabilidade se a realimentação for mal dimensionada; um FIR, sem realimentação, é sempre estável e pode ser desenhado com fase perfeitamente linear.
+
+As restantes opções são siglas inventadas: o "R" de IIR refere-se a "Response" (a resposta do filtro), não a "Radio", e o primeiro "I" é "Infinite", que qualifica a duração da resposta impulsional, não "Input".
