@@ -5497,7 +5497,8 @@
         "Transmissão de energia em multifase.",
         "Transmissão digital de dados."
       ],
-      "correctIndex": 3
+      "correctIndex": 3,
+      "hasNotesMdx": true
     },
     {
       "id": 311,
