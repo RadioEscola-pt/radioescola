@@ -6060,7 +6060,8 @@
         "Reactância capacitiva e tensão de avalanche.",
         "Pico da impedância de carga e tensão de pico."
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "hasNotesMdx": true
     },
     {
       "id": 354,

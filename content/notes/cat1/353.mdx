@@ -1,16 +1,3 @@
----
-id: 353
-question: >-
-  Quais são as duas principais variáveis nominais que não devem ser excedidas em
-  rectificadores com díodos de silício?
-answers:
-  - text: Tensão de pico inversa e corrente directa média.
-    correct: true
-  - text: Potência média e tensão média.
-  - text: Reactância capacitiva e tensão de avalanche.
-  - text: Pico da impedância de carga e tensão de pico.
----
-
 As duas grandezas nominais que nunca devem ser excedidas num retificador com díodos de silício são **a tensão de pico inversa e a corrente direta média**.
 
 A tensão de pico inversa (PIV, *peak inverse voltage*) é a tensão máxima que o díodo suporta enquanto está polarizado inversamente, ou seja, durante a metade do ciclo em que não conduz. Se for excedida, a junção entra em rutura por avalanche e, num díodo retificador comum (que, ao contrário de um Zener, não foi concebido para trabalhar nessa zona), a corrente inversa resultante destrói o componente. Convém ter presente que em circuitos com filtragem por condensador o díodo pode ficar sujeito a cerca do dobro da tensão de pico do transformador, pelo que se escolhe sempre um díodo com PIV com boa margem.
