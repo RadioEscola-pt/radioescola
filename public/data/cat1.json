@@ -6019,7 +6019,8 @@
         "Corrente de excitação.",
         "Corrente estacionária."
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "hasNotesMdx": true
     },
     {
       "id": 378,
