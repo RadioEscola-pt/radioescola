@@ -16,3 +16,11 @@ sources:
     question: 38
 ---
 Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p40</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p38</a>)
+
+A técnica utilizada é a **amostragem sequencial**.
+
+Converter um sinal analógico em digital exige transformar uma grandeza contínua no tempo numa sequência de números. O primeiro passo é a amostragem: medir a amplitude do sinal em instantes sucessivos, regularmente espaçados, à chamada frequência de amostragem. Cada amostra é depois quantificada (arredondada para o nível discreto mais próximo) e codificada em binário. É a natureza sequencial das amostras, uma após outra a intervalos fixos, que permite reconstruir o sinal original.
+
+Para que essa reconstrução seja fiel, o teorema de Nyquist impõe que a frequência de amostragem seja pelo menos o dobro da frequência máxima presente no sinal; caso contrário surge aliasing, com componentes de alta frequência a aparecerem disfarçadas de frequências mais baixas.
+
+As restantes opções não são técnicas de conversão A/D: a regeneração de sinais harmónicos não é um processo de digitalização, a mudança de nível apenas desloca o sinal em amplitude (continua analógico) e a inversão de fase limita-se a inverter a polaridade do sinal, sem o discretizar no tempo nem em amplitude.
