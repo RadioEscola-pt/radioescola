@@ -20,3 +20,11 @@ sources:
     question: 18
 ---
 Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p20</a>) (<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p18</a>)
+
+Conhecer a impedância do ponto de alimentação de uma antena serve **para adaptar as impedâncias e assim obter a máxima transferência de potência da linha de alimentação**.
+
+O teorema da máxima transferência de potência diz que uma carga absorve a potência máxima quando a sua impedância está adaptada à da fonte que a alimenta. Numa estação de rádio, a cadeia emissor, linha de transmissão e antena só funciona eficientemente se as impedâncias coincidirem em cada transição: um emissor projetado para 50 Ω, um cabo coaxial de 50 Ω e uma antena cujo ponto de alimentação apresente 50 Ω. Se a impedância da antena for diferente da impedância característica da linha, parte da onda é refletida no ponto de alimentação e volta para trás, criando ondas estacionárias na linha (ROE elevada), aumentando as perdas no cabo e podendo forçar o andar final do emissor a reduzir potência ou até danificar-se.
+
+A impedância do ponto de alimentação depende do tipo de antena e do local onde é alimentada: um dipolo de meia onda alimentado ao centro apresenta cerca de 73 Ω, um dipolo dobrado cerca de 300 Ω, e uma alimentação na extremidade encontra impedâncias de milhares de ohms. É por conhecer este valor que se sabe se a antena pode ser ligada diretamente ao cabo ou se é preciso interpor um dispositivo de adaptação (balun, transformador de quarto de onda, acoplador).
+
+As restantes opções misturam conceitos: a densidade de radiação do campo próximo mede-se com sondas de campo e diz respeito à exposição a radiações, não à impedância; e as relações frente/lado e frente/costas caracterizam o diagrama de radiação de antenas diretivas (comparam o ganho na direção principal com o ganho lateral ou traseiro), determinando-se a partir desse diagrama e não da impedância do ponto de alimentação.
