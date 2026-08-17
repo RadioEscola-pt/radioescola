@@ -1,1 +1,9 @@
 A58
+
+A impedância de entrada de um AMPOP é **muito alta**.
+
+O andar de entrada de um amplificador operacional é um par diferencial, projetado para que as entradas praticamente não consumam corrente da fonte de sinal. Nos AMPOP clássicos com entrada bipolar (como o 741) a impedância de entrada anda na ordem do megaohm ou de alguns megaohms; nos modelos com entrada JFET ou MOS chega a valores da ordem de 10<sup>12</sup> Ω. No modelo do AMPOP ideal considera-se mesmo infinita.
+
+Esta característica é essencial ao modo como o AMPOP é utilizado: como as entradas não carregam o circuito que as precede nem desviam corrente significativa, o comportamento do amplificador passa a ser determinado quase exclusivamente pela rede de realimentação externa (por exemplo, o ganho fixado pela razão de duas resistências), e a análise pode assumir corrente de entrada nula. Um AMPOP combina, aliás, três traços característicos: impedância de entrada muito alta, impedância de saída muito baixa e ganho em malha aberta muito elevado.
+
+As opções de 100 Ω e 1000 Ω são valores baixos, sem relação com um andar diferencial de entrada, e "muito baixa" descreve a impedância de saída do AMPOP, não a de entrada: uma entrada de baixa impedância carregaria a fonte de sinal e impediria o funcionamento pretendido.
