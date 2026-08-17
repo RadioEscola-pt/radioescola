@@ -6194,7 +6194,8 @@
         "Há mais variedades de AMPOP do que de elementos LC.",
         "Os AMPOP apresentam ganho em vez de perdas de inserção."
       ],
-      "correctIndex": 3
+      "correctIndex": 3,
+      "hasNotesMdx": true
     },
     {
       "id": 363,
