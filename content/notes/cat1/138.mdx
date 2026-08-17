@@ -1,1 +1,9 @@
 A107
+
+Um VCO é **um oscilador controlado por tensão** (Voltage Controlled Oscillator): a sua frequência de saída varia em função de uma tensão contínua aplicada à entrada de controlo.
+
+O elemento que torna isto possível é, tipicamente, um díodo varicap colocado no circuito ressonante do oscilador. Polarizado inversamente, o varicap comporta-se como um condensador cuja capacidade diminui quando a tensão inversa aumenta. Como a frequência de ressonância de um circuito LC é f = 1/(2π√(LC)), variar a tensão de controlo varia C e, por consequência, a frequência de oscilação. A variação de frequência obtida por cada volt aplicado à entrada de controlo chama-se ganho do VCO e exprime-se em Hz/V.
+
+O VCO é um bloco fundamental em radiocomunicações: é o coração de qualquer malha de captura de fase (PLL), onde a tensão de erro do comparador de fase, depois de filtrada, corrige continuamente a frequência do VCO até esta ficar sincronizada com a referência. É assim que funcionam os sintetizadores de frequência dos transcetores modernos, e é também o mecanismo básico da modulação de frequência: aplicando o sinal modulante à entrada de controlo, a frequência da portadora acompanha-o diretamente.
+
+As restantes opções não correspondem a nada real: "controlado por frequência" é circular (a frequência é a saída do oscilador, não a grandeza de controlo), e não existem osciladores deste tipo controlados por luz coerente nem por campos gravitacionais. A sigla resolve a questão: o V de VCO significa precisamente Voltage, tensão.
