@@ -5310,7 +5310,8 @@
         "A soma algébrica das correntes no nó é igual a zero.",
         "Nenhuma das afirmações está correcta."
       ],
-      "correctIndex": 2
+      "correctIndex": 2,
+      "hasNotesMdx": true
     },
     {
       "id": 295,
