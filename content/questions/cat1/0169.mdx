@@ -16,3 +16,11 @@ sources:
     question: 7
 ---
 A126
+
+A afirmação verdadeira é que **a modulação se traduz na translação de um sinal da sua gama de frequências para outra gama de frequências**.
+
+Um sinal de informação (voz, dados) ocupa a banda base, isto é, uma gama de frequências baixas, junto de 0 Hz. Para o transmitir por rádio é necessário deslocá-lo para a frequência da portadora, e é exatamente isso que a modulação faz. O caso mais claro é a modulação de amplitude: multiplicar o sinal m(t) por uma portadora cos(2πf<sub>c</sub>t) produz componentes em f<sub>c</sub> ± f<sub>m</sub>, ou seja, o espetro da banda base aparece transladado para junto de f<sub>c</sub>, formando as bandas laterais. Nas modulações angulares (FM, PM) a relação espetral é menos direta, mas o resultado é o mesmo: a energia do sinal passa a ocupar uma gama centrada na portadora.
+
+Esta translação é o que torna a radiocomunicação praticável: permite usar antenas de dimensões razoáveis (a antena eficiente tem dimensões comparáveis ao comprimento de onda) e permite que vários emissores partilhem o meio, cada um na sua gama de frequências. Na receção, a desmodulação faz a translação inversa, devolvendo o sinal à banda base.
+
+As restantes opções estão erradas. A amostragem do sinal em banda base pertence à conversão analógico/digital (teorema de Nyquist), não é modulação. Dizer que nunca existe translação de frequências é afirmar o contrário do que a modulação faz. E a "rotação de um sinal do espaço real para o espaço complexo" é uma frase sem significado físico: a notação complexa é apenas uma ferramenta matemática para representar sinais, não uma operação que a modulação execute.
