@@ -1,1 +1,9 @@
 A109-Exames:(<a target='_blank' href='exams/cat1/2023_07_03.pdf'>2023_07_03p36</a>)
+
+Uma PLL é **uma malha em que o sinal de realimentação é usado para sincronizar a frequência (ou fase) instantânea do sinal de saída com a frequência (ou fase) instantânea do sinal de entrada**.
+
+A malha é composta por três blocos: um comparador de fase, um filtro passa-baixo e um oscilador controlado por tensão (VCO). O comparador mede a diferença de fase entre o sinal de entrada e o sinal produzido pelo VCO, gerando uma tensão de erro proporcional a essa diferença. O filtro passa-baixo suaviza essa tensão e aplica-a à entrada de controlo do VCO, corrigindo a sua frequência no sentido de anular o erro. Quando o erro estabiliza, diz-se que a malha está "engatada" (locked): a saída segue a entrada em frequência, mantendo apenas uma pequena diferença de fase constante.
+
+Note-se que a realimentação numa PLL atua sobre a frequência e a fase, não sobre a potência: é este princípio que a torna útil em sintetizadores de frequência (com um divisor programável na malha), na desmodulação de FM (a tensão de controlo do VCO reproduz a modulação) e na recuperação de portadora e de relógio em sistemas digitais.
+
+As restantes opções descrevem mecanismos que não existem: uma PLL não regula a potência de saída em função da potência de entrada, e o objetivo da realimentação não é "minimizar" nem "maximizar" a frequência de saída, mas sim igualá-la à do sinal de entrada, anulando o erro de fase.
