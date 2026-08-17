@@ -5804,6 +5804,7 @@
         "Todas as respostas estão correctas."
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_12_22",
