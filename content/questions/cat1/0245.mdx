@@ -16,3 +16,11 @@ sources:
     question: 11
 ---
 A188- Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p11</a>)
+
+Um voltímetro deve ter uma impedância interna **o mais alta possível, idealmente tendendo para infinito**.
+
+O voltímetro liga-se em paralelo com o elemento cuja tensão se quer medir, pelo que a sua impedância interna passa a fazer parte do circuito. Se essa impedância for comparável à do circuito, o aparelho desvia parte da corrente e altera precisamente a tensão que está a tentar medir: é o chamado efeito de carga. Visto do ponto de medição, o circuito comporta-se como uma fonte com uma resistência equivalente R<sub>eq</sub> em série, e o voltímetro com resistência interna R<sub>v</sub> forma com ela um divisor de tensão: a leitura vale V × R<sub>v</sub>/(R<sub>v</sub> + R<sub>eq</sub>), sempre inferior ao valor real.
+
+Um exemplo numérico torna isto claro: para medir a tensão num ponto cuja resistência equivalente é 100 kΩ, um voltímetro de 1 MΩ lê 1000/(1000 + 100) ≈ 91% do valor verdadeiro, um erro de 9%. Com 10 MΩ o erro cai para cerca de 1%, e no limite R<sub>v</sub> → ∞ o aparelho não desvia corrente nenhuma e o erro de carga anula-se. É por isso que os multímetros digitais apresentam tipicamente 10 MΩ ou mais na função de tensão.
+
+As restantes opções descrevem exatamente o contrário do desejável: uma impedância próxima de zero curto-circuitaria o ponto de medição (é essa a característica ideal de um amperímetro, que se liga em série), e uma impedância da mesma ordem de grandeza da do circuito produziria um erro de carga enorme, que chega a 50% quando as duas impedâncias são iguais. A última opção também é falsa, porque, como se viu, a impedância interna determina diretamente o erro de carga da medição.
