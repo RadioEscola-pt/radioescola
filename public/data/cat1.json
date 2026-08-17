@@ -217,7 +217,8 @@
         "Absorção e efeito de túnel.",
         "Reflexão e aumento da velocidade de propagação."
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "hasNotesMdx": true
     },
     {
       "id": 12,
