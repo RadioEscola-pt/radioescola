@@ -1,1 +1,9 @@
 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p15</a>)
+
+A frequência de ressonância é aproximadamente **1,78 MHz**.
+
+Num circuito RLC série, a ressonância ocorre quando a reatância indutiva iguala a reatância capacitiva (X<sub>L</sub> = X<sub>C</sub>), o que conduz à fórmula de Thomson: f<sub>0</sub> = 1 / (2π√(LC)). Repare que a resistência não entra na fórmula: os 56 Ω afetam o fator de qualidade e a largura de banda do circuito, mas não a frequência a que ele ressoa. É um dado colocado no enunciado precisamente para distrair.
+
+Fazendo as contas, comece por converter as unidades: L = 0,04 mH = 4×10<sup>-5</sup> H e C = 200 pF = 2×10<sup>-10</sup> F. O produto LC = 4×10<sup>-5</sup> × 2×10<sup>-10</sup> = 8×10<sup>-15</sup>, cuja raiz quadrada é √(8×10<sup>-15</sup>) ≈ 8,94×10<sup>-8</sup>. Então f<sub>0</sub> = 1 / (2π × 8,94×10<sup>-8</sup>) ≈ 1 / (5,62×10<sup>-7</sup>) ≈ 1,78×10<sup>6</sup> Hz, ou seja 1,78 MHz.
+
+Quanto às outras opções: 11,18 MHz é o valor que se obtém esquecendo o fator 2π (1/√(LC) ≈ 1,118×10<sup>7</sup> dá a frequência angular ω em rad/s, não a frequência em Hz), e 22,36 MHz é o dobro desse erro. Num exame, se o seu resultado for cerca de 6,28 vezes maior do que uma das opções, é sinal de que se esqueceu do 2π.
