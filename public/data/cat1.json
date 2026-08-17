@@ -6072,7 +6072,8 @@
         "Períodos de comutação mais longos.",
         "Maior tensão de ruptura."
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "hasNotesMdx": true
     },
     {
       "id": 379,

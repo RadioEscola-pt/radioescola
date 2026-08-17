@@ -1,16 +1,3 @@
----
-id: 354
-question: >-
-  Qual a vantagem da utilização de um díodo Schottky num circuito de comutação
-  de RF, relativamente à de um díodo de silício comum?
-answers:
-  - text: Menor capacidade.
-    correct: true
-  - text: Menor indutância.
-  - text: Períodos de comutação mais longos.
-  - text: Maior tensão de ruptura.
----
-
 A vantagem do díodo Schottky num circuito de comutação de RF é a sua **menor capacidade**.
 
 Um díodo Schottky não tem uma junção PN: a junção é formada entre um metal e um semicondutor (tipicamente silício de tipo N). A condução faz-se apenas por portadores maioritários, pelo que não há acumulação de portadores minoritários na junção. É essa acumulação que, num díodo de silício comum, cria uma capacidade de difusão elevada e obriga a um tempo de recuperação inversa: ao inverter a polarização, a carga armazenada tem de ser removida antes de o díodo bloquear. No Schottky essa carga praticamente não existe, e a capacidade de junção é também mais baixa, logo o díodo comuta muito mais depressa e apresenta menos fuga de sinal quando está ao corte, o que é essencial quando se comutam sinais de RF, em que uma capacidade de poucos picofarads já representa uma reatância baixa.
