@@ -1,1 +1,9 @@
 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p37</a>)
+
+A gama de captura é **a gama de frequências que permite fechar o circuito**, ou seja, a banda de frequências de entrada, centrada na frequência de repouso do oscilador controlado por tensão (VCO), dentro da qual uma malha de captura de fase (PLL) inicialmente desbloqueada consegue adquirir o sincronismo.
+
+O mecanismo explica o limite: enquanto a malha está aberta, o comparador de fase produz um batimento à diferença entre a frequência do sinal de entrada e a do VCO. Esse batimento tem de atravessar o filtro passa-baixo da malha para poder corrigir a tensão de controlo do VCO e puxá-lo até à frequência do sinal. Se a diferença inicial for demasiado grande, o batimento cai fora da banda do filtro, a tensão de correção não chega ao VCO e a malha nunca fecha. A largura de banda do filtro determina assim, em grande parte, a gama de captura.
+
+Convém distinguir da gama de manutenção (ou de seguimento): depois de a malha estar fechada, o erro de fase é praticamente contínuo e já não é atenuado pelo filtro, pelo que a PLL consegue seguir o sinal ao longo de uma banda mais larga do que aquela em que conseguiu capturá-lo. A gama de captura é sempre igual ou mais estreita do que a gama de manutenção.
+
+As restantes opções confundem a grandeza em causa: a captura define-se em frequência, não em tensão nem em impedância de entrada, e também não é um intervalo de tempo. O tempo que a malha demora a fechar é outro parâmetro, o tempo de aquisição, que não se chama gama de captura.
