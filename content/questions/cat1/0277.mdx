@@ -21,3 +21,11 @@ sources:
     page: 6
 ---
 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p23</a>)
+
+Um modulador de fase **varia a sintonização do circuito de tanque do amplificador para gerar sinais modulados em fase**.
+
+O princípio assenta numa propriedade dos circuitos ressonantes: um circuito LC sintonizado introduz um desvio de fase que depende da diferença entre a frequência do sinal e a frequência de ressonância. Exatamente na ressonância o desvio é nulo; ligeiramente acima ou abaixo, o circuito comporta-se de forma indutiva ou capacitiva e avança ou atrasa a fase do sinal que o atravessa. Se o sinal modulador (por exemplo, através de um díodo varicap ou de um modulador de reatância) fizer variar a sintonização do tanque de um andar amplificador em torno da frequência da portadora, a fase do sinal à saída varia ao ritmo da modulação: obtém-se modulação de fase (PM).
+
+A grande vantagem desta técnica é que a modulação é feita depois do oscilador, que pode assim ser controlado a cristal e manter uma excelente estabilidade de frequência. É esta a base do método de Armstrong para gerar FM indiretamente: integra-se primeiro o sinal de áudio e aplica-se o resultado a um modulador de fase, tirando partido de a FM e a PM serem ambas modulações angulares. A ligeira variação de amplitude que a dessintonização também provoca é removida a jusante por andares limitadores, que a PM e a FM toleram por transportarem a informação no ângulo e não na envolvente.
+
+As restantes opções falham num dos dois termos. As que falam em sinais modulados em amplitude descrevem o efeito errado: o objetivo e o resultado fundamental de dessintonizar o tanque em torno da ressonância é o desvio de fase, não a variação de amplitude, que é residual e indesejada. As que falam no pré-amplificador de microfone confundem o andar de áudio com o andar de RF: o pré-amplificador limita-se a amplificar o sinal do microfone e não processa a portadora, pelo que variar a sua sintonização não modularia coisa nenhuma.
