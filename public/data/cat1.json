@@ -5575,7 +5575,8 @@
         "A duração dos impulsos.",
         "O momento em que se produz cada pulso."
       ],
-      "correctIndex": 3
+      "correctIndex": 3,
+      "hasNotesMdx": true
     },
     {
       "id": 317,
