@@ -6206,7 +6206,8 @@
         "Diminui logaritmicamente com o aumento da frequência.",
         "Não varia com a frequência."
       ],
-      "correctIndex": 3
+      "correctIndex": 3,
+      "hasNotesMdx": true
     },
     {
       "id": 364,
