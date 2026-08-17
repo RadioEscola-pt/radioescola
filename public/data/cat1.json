@@ -5923,7 +5923,8 @@
         "A tensão e a corrente estão em fase.",
         "A tensão e a corrente estão desfasadas 270º."
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "hasNotesMdx": true
     },
     {
       "id": 342,
