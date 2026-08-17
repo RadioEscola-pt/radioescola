@@ -11,3 +11,9 @@ answers:
     correct: true
 ---
 A98
+
+A resposta correta é **todas as hipóteses de resposta estão erradas**.
+
+O circuito que nos recetores de FM converte o sinal do amplificador de IF em áudio é o **discriminador de frequência**, que não figura entre as opções. Em FM a informação está nas variações de frequência da portadora, não na sua amplitude, pelo que o desmodulador tem de converter desvios de frequência em variações de tensão. É isso que fazem os circuitos clássicos deste tipo: o discriminador Foster-Seeley, o detetor de razão (*ratio detector*), o detetor de quadratura e o desmodulador com PLL, em que a tensão de controlo do VCO é diretamente o sinal de áudio.
+
+Nenhuma das opções apresentadas serve para FM. O detetor de envolvente segue a amplitude do sinal e desmodula AM, sendo por natureza insensível às variações de frequência (aliás, os recetores de FM incluem frequentemente um limitador precisamente para eliminar variações de amplitude antes da desmodulação). O detetor de produto mistura o sinal com um oscilador local (BFO) e destina-se a SSB e CW. E o inversor de fase nem sequer é um desmodulador: limita-se a produzir uma réplica do sinal desfasada de 180°, usada por exemplo para atacar andares em contrafase.
