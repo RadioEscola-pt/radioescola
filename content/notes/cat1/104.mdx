@@ -1,1 +1,9 @@
 A84
+
+A resistência de drenagem (*bleeder*) **descarrega o condensador de filtragem** depois de a fonte de alimentação ser desligada.
+
+Os condensadores de filtragem de uma fonte armazenam carga e mantêm a tensão aos seus terminais mesmo depois de o equipamento ser desligado da rede, durante minutos ou até horas, porque um condensador em bom estado tem fugas internas muito pequenas. Numa fonte de alta tensão, como a de um amplificador de válvulas, essa carga residual é suficiente para produzir um choque perigoso, ou mesmo mortal, a quem abra o equipamento para o reparar. A resistência de drenagem, ligada permanentemente em paralelo com o condensador, oferece um caminho de descarga: a tensão decai exponencialmente com a constante de tempo τ = R × C, ficando reduzida a valores seguros ao fim de alguns segundos.
+
+O valor da resistência é um compromisso: quanto menor, mais rápida a descarga, mas maior a potência dissipada em permanência (P = U²/R). Como benefício adicional, a drenagem garante uma carga mínima que ajuda a estabilizar a tensão de saída em vazio, mas o fator de segurança que a pergunta refere é a descarga do condensador.
+
+As restantes opções estão erradas: a resistência não funciona como fusível, porque não interrompe o circuito em caso de tensão excessiva, apenas dissipa energia; não tem qualquer relação com choques provocados por bobinas de indução, que resultam da força eletromotriz induzida na interrupção da corrente; e também não elimina correntes de malha de terra (*ground loop*), um problema de interligação de massas entre equipamentos, alheio à fonte de alimentação.
