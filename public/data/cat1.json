@@ -5485,7 +5485,8 @@
         "Controlo automático de nível.",
         "Coeficiente de onda estacionária."
       ],
-      "correctIndex": 2
+      "correctIndex": 2,
+      "hasNotesMdx": true
     },
     {
       "id": 310,
