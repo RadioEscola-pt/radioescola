@@ -11,3 +11,11 @@ answers:
   - text: sintetizadores de frequência a cristal
 ---
 A116
+
+Utilizam-se circuitos de **controlo automático de ganho** (CAG, em inglês AGC).
+
+Os sinais que chegam à antena têm amplitudes que variam enormemente, quer entre estações diferentes quer na mesma estação, devido ao desvanecimento (*fading*) da propagação. O CAG resolve o problema por realimentação negativa: um detetor mede o nível médio do sinal numa etapa avançada do recetor (tipicamente à saída do desmodulador ou dos andares de FI) e gera uma tensão contínua proporcional a esse nível. Essa tensão é aplicada aos andares de amplificação de RF e de FI para reduzir o seu ganho quando o sinal é forte e aumentá-lo quando o sinal é fraco, mantendo assim a saída aproximadamente constante sem intervenção do operador.
+
+A constante de tempo do circuito é escolhida de forma a acompanhar as variações lentas do desvanecimento sem "seguir" a modulação: se o CAG reagisse à própria modulação de amplitude, iria anulá-la e distorcer o sinal.
+
+As restantes opções não desempenham esta função: uma alimentação estabilizada mantém constantes as tensões de alimentação, não o nível do sinal recebido; um amplificador de baixo ruído melhora a sensibilidade mas tem ganho fixo, amplificando por igual sinais fortes e fracos; e um sintetizador de frequência a cristal serve para gerar frequências de oscilador local estáveis, nada tendo a ver com o nível de saída.
