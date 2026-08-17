@@ -5563,7 +5563,8 @@
         "Uma apresentação contínua de caracteres alfanuméricos.",
         "Nenhuma das opções referidas já que este tipo de sinal não consegue ser visualizado num osciloscópio convencional."
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "hasNotesMdx": true
     },
     {
       "id": 316,
