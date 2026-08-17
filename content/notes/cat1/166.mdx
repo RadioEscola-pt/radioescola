@@ -1,1 +1,9 @@
 A124
+
+A forma correta é **diminuir a largura de banda de RF do recetor**.
+
+A dessensibilização ocorre quando um sinal forte, fora da frequência de trabalho mas suficientemente próximo para passar pelos andares de entrada, leva o amplificador de RF ou o misturador para perto da saturação. Nessas condições o ganho efetivo desses andares cai (compressão de ganho) e o sinal fraco que se pretende escutar sai atenuado, como se a sensibilidade do recetor tivesse diminuído. O ponto essencial é que tudo isto acontece antes da seletividade de FI: o sinal interferente nem precisa de estar dentro do canal, basta entrar no "front-end".
+
+Estreitar a banda passante de RF (por exemplo com um pré-seletor ou filtros de entrada mais apertados) atenua esse sinal forte antes de ele chegar aos andares ativos. Com menos energia interferente à entrada, o amplificador e o misturador mantêm-se na zona linear e o ganho para o sinal desejado não é reduzido.
+
+As outras opções não resolvem o problema, ou agravam-no. Aumentar o ganho do "front-end" é contraproducente: um sinal forte mais amplificado atinge a compressão ainda mais cedo. Aumentar a frequência intermédia nada muda, porque a dessensibilização acontece antes da conversão e da seletividade de FI. E mudar o AGC de rápido para lento apenas altera a velocidade com que o controlo de ganho reage, não impede que o sinal forte sature os primeiros andares, podendo até manter o ganho reduzido durante mais tempo depois de o interferente desaparecer.
