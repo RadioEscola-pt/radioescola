@@ -5365,7 +5365,8 @@
         "Par telefónico.",
         "Todas possuem blindagem."
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "hasNotesMdx": true
     },
     {
       "id": 299,
