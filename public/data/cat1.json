@@ -5037,6 +5037,7 @@
         "Todas as opções são válidas"
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2014_12_19",
