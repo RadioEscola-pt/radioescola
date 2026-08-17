@@ -5935,7 +5935,8 @@
         "Reactividade do núcleo.",
         "Permeabilidade do núcleo."
       ],
-      "correctIndex": 3
+      "correctIndex": 3,
+      "hasNotesMdx": true
     },
     {
       "id": 343,
