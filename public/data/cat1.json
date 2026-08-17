@@ -5869,7 +5869,8 @@
         "A resistência poderia sobreaquecer.",
         "A capacidade interna da resistência poderia dessintonizar o circuito."
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "hasNotesMdx": true
     },
     {
       "id": 338,
