@@ -7,13 +7,15 @@ import { cn } from '@/lib/utils';
 interface PdfPageDialogProps {
   /** Full PDF URL including the page fragment, e.g. "/exams/cat1/2024_01_02.pdf#page=8". */
   href: string;
-  /** Human-readable label shown in the trigger and dialog title. */
+  /** Human-readable label shown in the dialog title, and in the trigger unless `children` replaces it. */
   label: string;
   /** Localized "open in new tab" text. */
   openInNewTabLabel: string;
   /** Localized close-button aria-label. */
   closeLabel: string;
   triggerClassName?: string;
+  /** Rich trigger content. The plain `label` still names the button for assistive tech. */
+  children?: React.ReactNode;
 }
 
 /** Append a PDF open-parameter, respecting the existing "#page=N" fragment. */
@@ -27,6 +29,7 @@ const PdfPageDialog: React.FC<PdfPageDialogProps> = ({
   openInNewTabLabel,
   closeLabel,
   triggerClassName,
+  children,
 }) => {
   const [open, setOpen] = React.useState(false);
 
@@ -35,12 +38,14 @@ const PdfPageDialog: React.FC<PdfPageDialogProps> = ({
       <button
         type="button"
         onClick={() => setOpen(true)}
+        title={children ? label : undefined}
+        aria-label={children ? label : undefined}
         className={cn(
-          'text-blue-600 dark:text-blue-400 underline hover:no-underline',
+          !children && 'text-blue-600 dark:text-blue-400 underline hover:no-underline',
           triggerClassName,
         )}
       >
-        {label}
+        {children ?? label}
       </button>
 
       <Dialog open={open} onOpenChange={setOpen} className="max-w-4xl">

@@ -2,8 +2,8 @@
 
 import React from 'react';
 import DOMPurify from 'dompurify';
-import { Calculator } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { Calculator, FileText, FileX } from 'lucide-react';
+import { useLocale, useTranslations } from 'next-intl';
 import { Question, SourceRef } from '@/lib/types';
 import { getCalculatorMeta } from '@/lib/config';
 import type { CalculatorCode } from '@/lib/types';
@@ -32,27 +32,56 @@ interface QuestionCardProps {
   attemptCount?: number;
 }
 
-function buildSourceLink(source: SourceRef) {
+/**
+ * Papers are named `YYYY_MM_DD`; a day of `00` means we only know the month.
+ * Shown as a real date because "2014_05_23" is a filename, not a citation.
+ */
+function formatExamDate(file: string, locale: string): string {
+  const parts = file.split('_');
+  const year = Number(parts[0]);
+  const month = Number(parts[1]);
+  const day = Number(parts[2]);
+  if (!Number.isFinite(year) || !Number.isFinite(month) || month < 1 || month > 12) {
+    return file;
+  }
+  const hasDay = Number.isFinite(day) && day > 0;
+  const parted = new Intl.DateTimeFormat(locale, {
+    ...(hasDay ? { day: 'numeric' as const } : {}),
+    month: 'short',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).formatToParts(new Date(Date.UTC(year, month - 1, hasDay ? day : 1)));
+  // Keep the locale's field order but drop its connective words ("2 de jan.
+  // de 2024" is too long for a chip), keeping punctuation like the en comma.
+  return parted
+    .map((part) => (part.type === 'literal' && /\p{L}/u.test(part.value) ? ' ' : part.value))
+    .join('')
+    .trim();
+}
+
+function buildSourceLink(source: SourceRef, locale: string) {
   // No parsing: the pdf, pergunta number and page arrive as separate fields.
-  // The pergunta number is shown in the label but must never be used as the
-  // page — a paper carries about four questions per page, so they diverge
-  // immediately. Without a resolved page the PDF opens at the start.
+  // The pergunta number is never rendered as a page — a paper carries about
+  // four questions per page, so they diverge immediately. Without a resolved
+  // page the PDF opens at the start.
   const [folder, file] = source.pdf.split('/');
   if (!folder || !file) {
-    return { label: source.pdf, href: null };
+    return { date: source.pdf, href: null };
   }
-  const label = `${folder.toUpperCase()} ${file} (p${source.question})`;
+  const date = formatExamDate(file, locale);
   // The paper is cited but we do not hold it; linking would 404. Keep the
   // citation visible — it is still provenance — and drop the link.
   if (source.unavailable) {
-    return { label, href: null };
+    return { date, href: null };
   }
   const base = `/exams/${source.pdf}.pdf`;
   return {
     href: source.page ? `${base}#page=${source.page}` : base,
-    label,
+    date,
   };
 }
+
+const SOURCE_CHIP = 'inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-xs font-medium transition-colors';
 
 // The notes arrive as sanitized MDX-rendered HTML, so Tailwind's preflight has
 // already stripped paragraph margins and list markers from it. Restore the
@@ -96,6 +125,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
 }) => {
   const t = useTranslations('QuestionCard');
   const tc = useTranslations('Calculators');
+  const locale = useLocale();
   const isAnswered = selectedOption !== undefined;
   const [remoteNotesHtml, setRemoteNotesHtml] = React.useState<string | null>(null);
   const [remoteNotesLoading, setRemoteNotesLoading] = React.useState(false);
@@ -287,24 +317,37 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
           )}
           {question.sources && question.sources.length > 0 && (
             <div className="text-slate-600 dark:text-slate-400">
-              <span className="font-semibold text-slate-700 dark:text-slate-300">{t('officialSource')}</span>
-              <ul className="mt-1.5 space-y-1 list-disc pl-5">
+              <p className="mb-2 font-semibold text-slate-700 dark:text-slate-300">{t('officialSource')}</p>
+              <ul className="flex flex-wrap gap-1.5">
                 {question.sources.map((source, idx) => {
-                  const { href, label } = buildSourceLink(source);
+                  const { href, date } = buildSourceLink(source, locale);
+                  const description = t('sourceDescription', { date, question: source.question });
                   return (
                     <li key={`${source.pdf}-${source.question}-${idx}`}>
                       {href ? (
                         <PdfPageDialog
                           href={href}
-                          label={label}
+                          label={description}
                           openInNewTabLabel={t('sourceOpenNewTab')}
                           closeLabel={t('sourceClose')}
-                        />
+                          triggerClassName={`${SOURCE_CHIP} border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 cursor-pointer hover:border-slate-300 hover:bg-slate-100 hover:text-slate-900 dark:hover:border-slate-500 dark:hover:bg-slate-700 dark:hover:text-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400`}
+                        >
+                          <FileText className="h-3.5 w-3.5 shrink-0 text-slate-400 dark:text-slate-500" />
+                          <span>{date}</span>
+                          <span className="text-slate-400 dark:text-slate-500">#{source.question}</span>
+                        </PdfPageDialog>
                       ) : (
-                        <span className="text-slate-500 dark:text-slate-500">
-                          {label}
+                        <span
+                          title={source.unavailable ? t('sourceUnavailable') : undefined}
+                          className={`${SOURCE_CHIP} border-dashed border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-500`}
+                        >
+                          {/* A different glyph, not just muted colour: hover
+                              titles do not exist on touch. */}
+                          <FileX className="h-3.5 w-3.5 shrink-0" />
+                          <span>{date}</span>
+                          <span>#{source.question}</span>
                           {source.unavailable && (
-                            <span className="ml-1 italic">({t('sourceUnavailable')})</span>
+                            <span className="sr-only">({t('sourceUnavailable')})</span>
                           )}
                         </span>
                       )}
