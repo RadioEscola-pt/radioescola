@@ -11,3 +11,11 @@ answers:
     correct: true
 ---
 A20
+
+Na modulação PPM o parâmetro que varia é **o momento em que se produz cada pulso**.
+
+Num sistema PPM, os pulsos são todos iguais: têm a mesma amplitude, a mesma duração e ocorrem à cadência ditada pelo relógio de amostragem. A informação vai codificada no desvio temporal de cada pulso em relação ao instante de referência do seu intervalo: quanto maior a amplitude da amostra do sinal modulante, mais cedo ou mais tarde (conforme a convenção) o pulso aparece dentro desse intervalo. É, portanto, a posição no tempo, e só ela, que transporta a informação.
+
+Esta técnica tem uma vantagem prática importante: como a amplitude dos pulsos é constante, o recetor só precisa de detetar instantes de chegada, o que torna a PPM pouco sensível a ruído de amplitude e permite usar amplificadores não lineares (mais eficientes) no emissor. Em contrapartida, exige boa sincronização entre emissor e recetor, para que a referência temporal de cada intervalo seja conhecida.
+
+As restantes opções descrevem outras modulações de pulsos: variar a amplitude dos pulsos é PAM ("Pulse-Amplitude Modulation"), variar a duração (largura) dos pulsos é PWM ou PDM ("Pulse-Width/Duration Modulation"), e variar o número de pulsos por segundo corresponde a variar a frequência de repetição (PFM), não a posição de cada pulso dentro do seu intervalo.
