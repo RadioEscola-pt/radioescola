@@ -5971,7 +5971,8 @@
         "Os toróides de ferrite requerem normalmente um menor número de espiras para produzir uma determinada indutância.",
         "Os toróides de ferrite são mais fáceis de usar com tecnologias de montagem superficial."
       ],
-      "correctIndex": 2
+      "correctIndex": 2,
+      "hasNotesMdx": true
     },
     {
       "id": 346,
