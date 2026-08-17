@@ -1,1 +1,9 @@
 A66
+
+A queda de tensão total **é cerca do dobro da queda de tensão em cada um deles**.
+
+Um díodo de junção de silício, quando conduz em polarização direta, apresenta aos seus terminais uma queda de tensão praticamente constante de cerca de 0,6 a 0,7 V. Este valor resulta da barreira de potencial da junção PN e varia muito pouco com a corrente: a característica exponencial do díodo faz com que grandes variações de corrente correspondam a variações de apenas algumas dezenas de milivolt na tensão.
+
+Numa ligação em série, a mesma corrente atravessa os dois díodos e as quedas de tensão somam-se, tal como em qualquer associação em série. Com dois díodos idênticos, cada um cai cerca de 0,7 V, pelo que o conjunto apresenta cerca de 1,4 V, ou seja, o dobro da queda em cada um. É aliás um truque clássico usar díodos em série para obter uma referência de tensão aproximada em múltiplos de 0,7 V, por exemplo na polarização de andares de saída.
+
+As restantes opções falham por razões diferentes: "metade da tensão em cada um" contraria a lei das malhas, porque em série as tensões somam-se, não se dividem. E os valores fixos de 25 V ou 12,5 V não têm qualquer relação com a barreira de potencial do silício; um díodo em condução direta cai décimas de volt, não dezenas, e esses valores lembram antes tensões de rutura de díodos Zener, que é um fenómeno distinto (condução inversa).
