@@ -1,1 +1,9 @@
 Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p19</a>)
+
+O condensador em série serve para **compensar a reactância indutiva da rede de adaptação**.
+
+Numa adaptação do tipo gama (gamma match), a antena é alimentada através de uma haste condutora montada paralelamente ao elemento radiante e ligada a este por um ponto de derivação ajustável. Essa haste, juntamente com o troço do elemento, comporta-se como uma pequena linha de transmissão curto-circuitada, que apresenta uma reactância indutiva em série com a resistência de radiação vista no ponto de derivação.
+
+Se essa indutância não fosse anulada, a impedância no ponto de alimentação teria uma componente reactiva e a linha coaxial ficaria desadaptada, com o consequente aumento da ROE. Coloca-se por isso um condensador variável em série com a haste: a sua reactância capacitiva (X<sub>C</sub> = 1/(2πfC)) cancela a reactância indutiva (X<sub>L</sub>) da haste no ajuste em que X<sub>C</sub> = X<sub>L</sub>, deixando a impedância puramente resistiva. Na prática ajustam-se em conjunto o ponto de derivação (que fixa a parte resistiva) e o condensador (que anula a parte reactiva) até obter o mínimo de ROE.
+
+Quanto às restantes opções: embora um condensador em série bloqueie de facto a corrente contínua, esse não é o objectivo da sua presença numa rede gama; um único condensador em série também não forma um filtro notch de rejeição de harmónicos, que exigiria um circuito ressonante sintonizado; e quem transforma a impedância da antena para um valor mais elevado é a posição do ponto de derivação na haste, não o condensador, cuja função é exclusivamente cancelar a reactância.
