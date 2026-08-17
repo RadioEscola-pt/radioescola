@@ -6170,7 +6170,8 @@
         "Imune a danos causados por descargas estáticas.",
         "Baixo consumo de energia."
       ],
-      "correctIndex": 3
+      "correctIndex": 3,
+      "hasNotesMdx": true
     },
     {
       "id": 361,
