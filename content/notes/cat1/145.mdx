@@ -1,1 +1,9 @@
 Exames:(<a target='_blank' href='exams/cat1/2011_12_13.pdf'>2011_12_13p39</a>)
+
+A vantagem é que **se pode obter uma vasta gama de larguras de banda e de formatos de filtro**.
+
+Num filtro analógico (a cristal, cerâmico ou mecânico), a largura de banda e a forma da curva de resposta ficam fixadas pelos componentes físicos: para ter 500 Hz em CW, 2,4 kHz em SSB e 6 kHz em AM seria preciso instalar três filtros distintos, cada um com custo e espaço próprios. Num recetor com FI processada digitalmente, o filtro é definido por coeficientes matemáticos aplicados às amostras do sinal, pelo que basta alterar esses coeficientes por software para mudar a largura de banda de forma quase contínua ou moldar a resposta (flancos muito abruptos, fase linear, rejeição de portadoras interferentes com filtros notch adaptativos), algo impraticável em hardware analógico.
+
+Além disso, um filtro digital é perfeitamente reprodutível e estável: não sofre derivas com a temperatura nem envelhecimento dos componentes, e curvas com fator de forma próximo de 1 são realizáveis sem os compromissos de ondulação e perdas de inserção dos filtros a cristal.
+
+As restantes opções não descrevem vantagens reais: o DSP não reduz o número de componentes digitais necessários (pelo contrário, exige conversores e um processador), "grande redução de dados misturados" não corresponde a nenhum fenómeno técnico, e o processamento digital não é especialmente eficaz em VHF; na prática o sinal é primeiro convertido para uma frequência intermédia baixa, precisamente porque amostrar diretamente frequências muito altas é mais exigente.
