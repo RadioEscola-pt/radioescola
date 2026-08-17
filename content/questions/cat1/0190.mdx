@@ -11,3 +11,11 @@ answers:
   - text: 1450 Ohm
 ---
 A143
+
+A impedância no ponto de alimentação de um dipolo dobrado é aproximadamente **300 Ohm**.
+
+O dipolo dobrado é um dipolo de meia onda cujos dois braços são prolongados e fechados sobre si próprios, formando um anel estreito com dois condutores paralelos. A corrente total da antena reparte-se igualmente pelos dois condutores, pelo que no ponto de alimentação circula apenas metade da corrente que circularia num dipolo simples a radiar a mesma potência. Como Z = P / I², reduzir a corrente para metade quadruplica a impedância: 4 × 73 Ω ≈ 292 Ω, ou seja, cerca de 300 Ω. Em geral, com n condutores em paralelo o fator de transformação é n², e n = 2 dá o fator 4.
+
+Este valor não é um acaso histórico sem utilidade: as linhas bifilares (o "twin-lead" de 300 Ω) foram normalizadas precisamente para alimentar dipolos dobrados sem necessidade de adaptação, e é também por isso que este tipo de antena aparece como elemento excitado em muitas Yagis, onde o acoplamento aos elementos parasitas baixa a impedância e o fator 4 ajuda a repô-la num valor prático.
+
+Quanto às restantes opções: 50 Ω é a impedância típica dos cabos coaxiais e dos equipamentos, próxima da de um dipolo simples ligeiramente carregado, mas não a de um dipolo dobrado; "6,28 vezes a frequência" é um distrator construído com 2π (6,28 aparece em ω = 2πf), que não tem qualquer relação com impedâncias de alimentação; e valores da ordem de 1450 Ω ou superiores encontram-se nas extremidades de um dipolo, onde a corrente é mínima e a tensão máxima, não no centro.
