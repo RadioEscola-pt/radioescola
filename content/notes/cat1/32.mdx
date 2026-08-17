@@ -1,1 +1,9 @@
 A27
+
+A convolução de dois pulsos retangulares resulta num **pulso triangular**.
+
+A convolução mede a área de sobreposição entre um sinal e uma réplica invertida e deslocada do outro, para cada valor do deslocamento. Imagine um retângulo fixo e outro a deslizar sobre ele: enquanto os dois não se tocam, a sobreposição é nula; à medida que o segundo entra sobre o primeiro, a área comum cresce linearmente; atinge o máximo quando estão totalmente sobrepostos; e depois decresce linearmente até voltar a zero. O resultado é, portanto, uma rampa a subir seguida de uma rampa a descer: um triângulo.
+
+Pode confirmar-se pelo cálculo. Para dois pulsos iguais de amplitude A e duração T, y(t) = ∫ x(τ)·x(t−τ) dτ. Para 0 ≤ t ≤ T a sobreposição vale A²·t; para T ≤ t ≤ 2T vale A²·(2T−t); fora de [0, 2T] é zero. Obtém-se um triângulo de pico A²T e base 2T (a duração da convolução é sempre a soma das durações dos dois sinais). No domínio da frequência isto corresponde a elevar ao quadrado o espetro: o retângulo tem espetro sinc(f), e sinc²(f) é precisamente o espetro do triângulo.
+
+As restantes opções falham: o resultado não é um retângulo, porque a área de sobreposição varia gradualmente com o deslocamento e não de forma abrupta; a amplitude não é infinita, pois a sobreposição de dois sinais de duração e amplitude finitas dá um integral finito (máximo A²T); e não é nula, porque enquanto os pulsos se sobrepõem a área comum é positiva.
