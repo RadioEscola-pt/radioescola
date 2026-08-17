@@ -194,17 +194,13 @@
       "sources": [
         {
           "pdf": "cat1/2023_08_00",
-          "question": 24
-        },
-        {
-          "pdf": "cat1/2011_12_13",
-          "question": 17,
-          "page": 5
+          "question": 24,
+          "page": 7
         },
         {
           "pdf": "cat1/2023_07_03",
-          "question": 23,
-          "page": 6
+          "question": 24,
+          "page": 7
         }
       ]
     },
@@ -218,14 +214,21 @@
         "Reflexão e aumento da velocidade de propagação."
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2011_12_13",
+          "question": 17,
+          "page": 5
+        }
+      ]
     },
     {
       "id": 12,
       "question": "Quais são os materiais mais usados na blindagem de campos elétricos?",
       "options": [
         "Alumínio e esferovite",
-        "Almínio e aço",
+        "Alumínio e aço",
         "Teflon e aço",
         "Teflon e alumínio"
       ],
