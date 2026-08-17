@@ -12,3 +12,11 @@ sources:
     question: 28
 ---
 Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p28</a>)
+
+Um sinal SSB modulado em excesso **pode causar interferências nos canais adjacentes**.
+
+Em SSB a amplitude do sinal de RF acompanha diretamente a amplitude do sinal de áudio. Se o nível de modulação ultrapassar o ponto para o qual os andares do emissor foram dimensionados, o amplificador linear final é levado à saturação e "corta" os picos do sinal (*flat-topping*). Esse corte é uma não linearidade, e uma não linearidade gera produtos de intermodulação e harmónicas do áudio que não existiam no sinal original.
+
+Esses produtos espúrios caem fora da largura de banda normal de um sinal SSB (cerca de 2,4 a 3 kHz) e espalham-se pelas frequências vizinhas, no chamado *splatter*, interferindo com as comunicações nos canais adjacentes. É por isso que se ajusta o ganho do microfone de modo a que o ALC atue apenas ligeiramente nos picos de voz: mais áudio a partir daí já não aumenta a potência útil, só a distorção e a largura de banda ocupada.
+
+As restantes opções não descrevem o que acontece: a sobremodulação não transforma o sinal em FM (a frequência da portadora não é afetada, o problema é de amplitude), e a propagação do sinal não depende do nível de modulação, depende da frequência e das condições da ionosfera. Sendo essas duas afirmações falsas, a opção "todas as hipóteses estão corretas" também está errada.
