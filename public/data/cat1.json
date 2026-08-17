@@ -5995,7 +5995,8 @@
         "Aumentaria a susceptância RF.",
         "A permeabilidade do núcleo poderia sofrer alterações temporárias."
       ],
-      "correctIndex": 0
+      "correctIndex": 0,
+      "hasNotesMdx": true
     },
     {
       "id": 348,
