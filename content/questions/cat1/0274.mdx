@@ -14,3 +14,11 @@ sources:
     question: 25
 ---
 Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p25</a>)
+
+A resposta correta é o **amplificador push-pull**.
+
+Num andar push-pull, dois dispositivos ativos (válvulas ou transístores) trabalham em oposição de fase: um amplifica o semiciclo positivo enquanto o outro amplifica o negativo, e as duas contribuições são recombinadas na saída, tipicamente por um transformador com ponto médio. Como os dois ramos são simétricos, a característica de transferência do conjunto fica com simetria ímpar, e a forma de onda resultante cumpre f(t + T/2) = -f(t). Uma onda com esta simetria de meia onda não contém, por definição, harmónicos pares: cada harmónico par gerado num ramo aparece em fase com o do outro ramo e as duas componentes anulam-se no transformador de saída, enquanto a fundamental e os harmónicos ímpares se somam.
+
+O cancelamento só é perfeito se os dois ramos forem idênticos; na prática, o desequilíbrio entre dispositivos deixa passar um resíduo de harmónicos pares, daí o enunciado dizer "reduz ou elimina". Note-se que a classe de funcionamento (A, AB, B) é independente da topologia: um push-pull é frequentemente polarizado em classe AB, mas é a simetria da montagem, e não a classe, que suprime os pares.
+
+As restantes opções estão erradas. O push-push faz precisamente o contrário: as saídas dos dois dispositivos são combinadas em fase, de modo que a fundamental e os ímpares se cancelam e os harmónicos pares se reforçam, sendo por isso usado como duplicador de frequência. A classe C, com ângulo de condução inferior a 180°, é fortemente não linear e gera harmónicos abundantes, pares e ímpares, que têm de ser removidos por filtragem. A classe AB, por si só, descreve apenas o ponto de polarização de um andar: num único dispositivo em classe AB a característica é assimétrica e produz harmónicos pares.
