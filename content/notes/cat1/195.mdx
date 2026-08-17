@@ -1,1 +1,11 @@
 A146
+
+A eficiência de radiação é o quociente entre a **resistência de radiação e a resistência total da antena**.
+
+Toda a potência entregue à antena se distribui por duas parcelas: a que é efetivamente radiada, representada pela resistência de radiação R<sub>r</sub>, e a que se dissipa em calor nos condutores, no solo e nos isoladores, representada pela resistência de perdas R<sub>p</sub>. Como a mesma corrente I percorre ambas, a potência radiada é I²·R<sub>r</sub> e a potência total absorvida é I²·(R<sub>r</sub> + R<sub>p</sub>). A eficiência é a razão entre elas:
+
+η = P<sub>radiada</sub> / P<sub>total</sub> = R<sub>r</sub> / (R<sub>r</sub> + R<sub>p</sub>) = R<sub>r</sub> / R<sub>total</sub>
+
+O I² cancela-se, sobrando apenas o quociente entre resistências. Por exemplo, uma antena com R<sub>r</sub> = 50 Ω e R<sub>p</sub> = 10 Ω tem η = 50/60 ≈ 83 %. Repare que η é sempre inferior ou igual a 1, como convém a uma eficiência, e só atinge 1 numa antena sem perdas (R<sub>p</sub> = 0).
+
+As restantes opções falham este teste. O quociente R<sub>r</sub>/R<sub>p</sub> pode ser maior do que 1, pelo que não pode ser uma eficiência; R<sub>p</sub>/R<sub>r</sub> compara as perdas com a radiação, ou seja, mede o contrário do pretendido; e R<sub>total</sub>/R<sub>p</sub> é também maior do que 1 e cresce quando as perdas diminuem, sem qualquer relação direta com a fração de potência radiada.
