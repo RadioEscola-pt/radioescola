@@ -5821,7 +5821,8 @@
         "Uma propriedade de resistências ideais em circuitos de corrente alternada.",
         "Produção de uma grande faísca nos contactos do interruptor quando a alimentação de energia da bobina é desligada."
       ],
-      "correctIndex": 1
+      "correctIndex": 1,
+      "hasNotesMdx": true
     },
     {
       "id": 334,
