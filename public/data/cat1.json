@@ -5377,7 +5377,8 @@
         "A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos em todas as frequências.",
         "A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos em determinadas frequências."
       ],
-      "correctIndex": 3
+      "correctIndex": 3,
+      "hasNotesMdx": true
     },
     {
       "id": 300,
