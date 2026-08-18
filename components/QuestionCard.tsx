@@ -2,7 +2,7 @@
 
 import React from 'react';
 import DOMPurify from 'dompurify';
-import { Calculator, FileText, FileX } from 'lucide-react';
+import { Calculator, ChevronRight, FileText, FileX } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Question, SourceRef } from '@/lib/types';
 import { getCalculatorMeta } from '@/lib/config';
@@ -10,6 +10,10 @@ import type { CalculatorCode } from '@/lib/types';
 import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
 import BookmarkButton from '@/components/BookmarkButton';
 import PdfPageDialog from '@/components/PdfPageDialog';
+import StudyGuideLink from '@/components/StudyGuideLink';
+import {
+  RESOURCE_ROW, RESOURCE_ROW_INERT, RESOURCE_TILE, RESOURCE_TITLE, RESOURCE_SUBTITLE, RESOURCE_CHEVRON,
+} from '@/components/ui/resource-row';
 
 interface QuestionCardProps {
   question: Question;
@@ -80,8 +84,6 @@ function buildSourceLink(source: SourceRef, locale: string) {
     date,
   };
 }
-
-const SOURCE_CHIP = 'inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-xs font-medium transition-colors';
 
 // The notes arrive as sanitized MDX-rendered HTML, so Tailwind's preflight has
 // already stripped paragraph margins and list markers from it. Restore the
@@ -310,20 +312,26 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
             </div>
           )}
           {question.tutorial && (
-            <div className="text-slate-600 dark:text-slate-400">
-              <span className="font-semibold text-slate-700 dark:text-slate-300">{t('relatedTutorial')}</span>{' '}
-              <a className="text-blue-600 dark:text-blue-400 underline" href={`/study/${question.tutorial}`}>
-                {question.tutorial}
-              </a>
+            <div>
+              <p className="mb-2 font-semibold text-slate-700 dark:text-slate-300">{t('studyLibrary')}</p>
+              <StudyGuideLink
+                slug={question.tutorial}
+                readTimeLabel={(minutes) => t('readTime', { minutes })}
+              />
             </div>
           )}
           {question.sources && question.sources.length > 0 && (
             <div className="text-slate-600 dark:text-slate-400">
               <p className="mb-2 font-semibold text-slate-700 dark:text-slate-300">{t('officialSource')}</p>
-              <ul className="flex flex-wrap gap-1.5">
+              <ul className="flex flex-col">
                 {question.sources.map((source, idx) => {
                   const { href, date } = buildSourceLink(source, locale);
                   const description = t('sourceDescription', { date, question: source.question });
+                  // The page was previously only in the link fragment. It is
+                  // the useful half of the citation, so it is shown.
+                  const detail = source.page
+                    ? `${t('sourceQuestion', { question: source.question })} · ${t('sourcePage', { page: source.page })}`
+                    : t('sourceQuestion', { question: source.question });
                   return (
                     <li key={`${source.pdf}-${source.question}-${idx}`}>
                       {href ? (
@@ -332,25 +340,29 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
                           label={description}
                           openInNewTabLabel={t('sourceOpenNewTab')}
                           closeLabel={t('sourceClose')}
-                          triggerClassName={`${SOURCE_CHIP} border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 cursor-pointer hover:border-slate-300 hover:bg-slate-100 hover:text-slate-900 dark:hover:border-slate-500 dark:hover:bg-slate-700 dark:hover:text-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400`}
+                          triggerClassName={`group ${RESOURCE_ROW}`}
                         >
-                          <FileText className="h-3.5 w-3.5 shrink-0 text-slate-400 dark:text-slate-500" />
-                          <span>{date}</span>
-                          <span className="text-slate-400 dark:text-slate-500">#{source.question}</span>
+                          <span className={`${RESOURCE_TILE} bg-slate-100 text-slate-500 dark:bg-slate-700/60 dark:text-slate-400`} aria-hidden="true">
+                            <FileText className="h-4.5 w-4.5" />
+                          </span>
+                          <span className="min-w-0 flex-1">
+                            <span className={RESOURCE_TITLE}>{date}</span>
+                            <span className={RESOURCE_SUBTITLE}>{detail}</span>
+                          </span>
+                          <ChevronRight className={RESOURCE_CHEVRON} />
                         </PdfPageDialog>
                       ) : (
-                        <span
-                          title={source.unavailable ? t('sourceUnavailable') : undefined}
-                          className={`${SOURCE_CHIP} border-dashed border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-500`}
-                        >
-                          {/* A different glyph, not just muted colour: hover
-                              titles do not exist on touch. */}
-                          <FileX className="h-3.5 w-3.5 shrink-0" />
-                          <span>{date}</span>
-                          <span>#{source.question}</span>
-                          {source.unavailable && (
-                            <span className="sr-only">({t('sourceUnavailable')})</span>
-                          )}
+                        <span className={RESOURCE_ROW_INERT}>
+                          <span className={`${RESOURCE_TILE} bg-slate-50 text-slate-300 dark:bg-slate-800 dark:text-slate-600`} aria-hidden="true">
+                            <FileX className="h-4.5 w-4.5" />
+                          </span>
+                          <span className="min-w-0 flex-1">
+                            <span className="block truncate font-semibold text-slate-400 dark:text-slate-500">{date}</span>
+                            <span className={RESOURCE_SUBTITLE}>
+                              {detail}
+                              {source.unavailable && ` · ${t('sourceUnavailable')}`}
+                            </span>
+                          </span>
                         </span>
                       )}
                     </li>

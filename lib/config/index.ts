@@ -6,3 +6,4 @@ export * from './features';
 export * from './categories';
 export * from './external-links';
 export * from './calculators';
+export * from './study-guides';
