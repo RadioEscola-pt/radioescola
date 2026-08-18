@@ -2066,7 +2066,8 @@
         "CQ5"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 140,
@@ -2078,7 +2079,8 @@
         "CQ5"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 141,
@@ -2090,7 +2092,8 @@
         "CQ5"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 142,
@@ -2102,7 +2105,8 @@
         "CR0"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 143,
@@ -2126,7 +2130,8 @@
           "question": 5,
           "page": 2
         }
-      ]
+      ],
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 144,
@@ -2138,7 +2143,8 @@
         "CR9"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 145,
@@ -2157,7 +2163,8 @@
           "question": 4,
           "page": 1
         }
-      ]
+      ],
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 151,
@@ -2181,7 +2188,8 @@
           "question": 6,
           "page": 2
         }
-      ]
+      ],
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 146,
@@ -2193,7 +2201,8 @@
         "CR9"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 147,
@@ -2205,7 +2214,8 @@
         "CR9"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 149,
@@ -2217,7 +2227,8 @@
         "CR9"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 150,
@@ -2229,7 +2240,8 @@
         "CR9"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 152,
@@ -2241,7 +2253,8 @@
         "CR9"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 153,
@@ -2253,7 +2266,8 @@
         "CR9"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 155,
