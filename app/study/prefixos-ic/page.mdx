@@ -1,6 +1,6 @@
 ---
 title: Lista dos prefixos de indicativos de chamada
-description: Prefixos de indicativos de chamada para estações de amador em Portugal.
+description: Como se constrói o prefixo do indicativo de chamada de uma estação de amador em Portugal, com a lista oficial da ANACOM por categoria e área geográfica.
 categories: [3, 2, 1]
 ---
 
@@ -8,7 +8,7 @@ import DownloadButton from "@/components/DownloadButton";
 
 # Lista dos prefixos de indicativos de chamada
 
-Lista dos prefixos de indicativos de chamada a consignar às estações de amador (Parte IX dos "Procedimentos adoptados pelo ICP-ANACOM")
+Lista dos prefixos de indicativos de chamada a consignar às estações de amador (Parte IX dos "Procedimentos adotados pelo ICP-ANACOM")
 
 <DownloadButton
   url="Anexo+3_mod.pdf"
@@ -16,6 +16,8 @@ Lista dos prefixos de indicativos de chamada a consignar às estações de amado
   description="Lista dos prefixos de indicativos de chamada a consignar às estações de
 amador"
 />
+
+O indicativo de chamada identifica cada estação de amador, e a sua parte inicial, o prefixo, é atribuída pela ANACOM segundo a tabela abaixo. Em Portugal, o prefixo codifica duas informações ao mesmo tempo: a categoria do amador (ou o tipo de estação) e a área geográfica onde a estação se encontra (continente, Açores ou Madeira).
 
 |             | POR                   | AZR             | MDR             |
 | ----------- | --------------------- | --------------- | --------------- |
@@ -26,16 +28,29 @@ amador"
 | PC          | CR0                   | CR0             | CR0             |
 | ICO/ICOA    | CQ7 - CR5 - CR6 - CS2 | CQ8 - CR1 - CR2 | CQ3 - CQ9 - CR3 |
 
+## Como ler o prefixo
+
+Para as estações pessoais das três categorias, o prefixo lê-se assim:
+
+- As duas letras indicam a categoria: CT para a categoria 1, CS para a categoria 2 e CR para a categoria 3.
+- O algarismo indica a área geográfica: 7 para Portugal continental (POR), 8 para os Açores (AZR) e 9 para a Madeira (MDR).
+
+Exemplos: um amador da categoria 1 com estação no continente usa o prefixo CT7; se a estação estivesse na Madeira, usaria CT9. Um amador da categoria 3 nos Açores usa CR8.
+
+Atenção, esta regra vale apenas para as três linhas de categoria. As linhas UC, PC e ICO/ICOA da mesma tabela não seguem o padrão letras/algarismo: as estações de proteção civil (PC) usam CR0 nas três áreas geográficas, e as estações de uso comum (UC) e os indicativos ocasionais (ICO/ICOA) usam combinações variadas de CQ, CR e CS que não codificam categoria nem área da mesma forma. Numa pergunta de exame sobre UC, PC ou ICO/ICOA, consulte a linha respetiva da tabela em vez de aplicar a regra. É uma armadilha frequente.
+
 ## Legenda
 
 | Abreviação     | Significado                                                                                                                             |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| POR, MDR e AZR | Áreas geográficas correspondentes a Portugal continental, à Região Autónoma da Madeira e à Região Autónoma dos Açores, respectivamente. |
+| POR, MDR e AZR | Áreas geográficas correspondentes a Portugal continental, à Região Autónoma da Madeira e à Região Autónoma dos Açores, respetivamente. |
 | UC             | Estações de uso comum pertencentes a associações de amador.                                                                             |
-| PC             | Estações de uso comum pertencentes a entidades competentes no âmbito da protecção civil.                                                |
+| PC             | Estações de uso comum pertencentes a entidades competentes no âmbito da proteção civil.                                                |
 | ICO/ICOA       | Indicativos de Chamada Ocasionais / Indicativos de Chamada Ocasionais Anuais.                                                           |
 
 ## Lista dos prefixos de indicativos de chamada consignados às estações de amador ao abrigo de anteriores legislações
+
+Os prefixos seguintes foram consignados ao abrigo de legislações anteriores, às antigas categorias A, B e C e às estações EA. Já não são atribuídos a novos amadores, mas ainda podem ouvir-se no ar, por isso convém saber reconhecê-los.
 
 |             | POR                                     | AZR             | MDR       |
 | ----------- | --------------------------------------- | --------------- | --------- |
