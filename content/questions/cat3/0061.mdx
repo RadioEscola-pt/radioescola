@@ -19,4 +19,8 @@ answers:
       os caracteres
        CW
 ---
-Notas
+**A desvantagem é que o filtro DSP pode eliminar o sinal desejado ao mesmo tempo que elimina os sinais interferentes.**
+
+Um filtro notch automático foi feito para detetar tons contínuos (como uma portadora que aparece a "apitar" no meio da conversa) e cortá-los sozinho, sem intervenção do operador. O problema é que um sinal de CW é precisamente isso: um tom puro e constante. Para o filtro automático, o Morse que queremos ouvir parece igual a uma interferência, por isso o filtro pode "atacar" o próprio sinal que estamos a tentar copiar e fazê-lo desaparecer.
+
+As restantes opções descrevem defeitos que não acontecem: um sinal próximo não se sobrepõe sempre ao sinal desejado só por haver DSP, a frequência de relógio do DSP não aparece como modulação nos sinais CW recebidos, e o filtro não suprime os espaços entre os caracteres, que são simplesmente silêncios entre os tons.
