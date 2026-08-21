@@ -1,0 +1,64 @@
+---
+title: Corrente Alternada
+description: Os valores de pico, pico a pico e eficaz de um sinal sinusoidal, e a relação entre período e frequência.
+categories: [3, 2]
+---
+
+
+# Corrente alternada
+
+Ao contrário da corrente contínua de uma pilha, a corrente alternada (CA) muda de sentido de forma periódica. A forma mais comum é a onda sinusoidal: a tensão sobe até um máximo, desce, passa por zero, atinge um mínimo simétrico e volta ao ponto de partida. A rede elétrica em Portugal e os sinais de rádio são exemplos de sinais sinusoidais.
+
+A figura seguinte mostra um ciclo completo de uma onda sinusoidal e as quatro medidas que precisa de saber identificar no exame:
+
+![Um ciclo de uma onda sinusoidal com quatro marcadores: 1 é o valor de pico (de zero até +Um), 2 é o valor pico a pico (de -Um até +Um), 3 é o valor eficaz (0,707 do pico) e 4 é o período, medido no eixo do tempo](/images/cat3/sinusoidal.png)
+
+## O que representa cada número
+
+- **1: valor de pico (Um, também chamado amplitude).** Mede-se da linha do zero até ao máximo (+Um). Escreve-se V<sub>pico</sub> ou V<sub>p</sub>.
+- **2: valor pico a pico.** Mede-se do mínimo (-Um) até ao máximo (+Um). É sempre o dobro do valor de pico: V<sub>pp</sub> = 2 × V<sub>pico</sub>.
+- **3: valor eficaz (RMS).** É uma seta mais curta que o pico, porque vale apenas 0,707 do valor de pico: V<sub>eficaz</sub> = V<sub>pico</sub> ÷ √2 = 0,707 × V<sub>pico</sub>.
+- **4: período (T).** É o tempo que um ciclo completo demora, medido na horizontal, no eixo do tempo. Mede-se em segundos.
+
+## Valor eficaz: porque importa
+
+O valor eficaz é o valor de uma tensão contínua que produziria o mesmo aquecimento num resistor que a tensão alternada em causa. É por isso o valor "útil" para calcular potência. Um voltímetro de corrente alternada indica o valor eficaz, e os "230 V" da rede elétrica são um valor eficaz (o pico da rede é na verdade cerca de 325 V).
+
+Cuidado com dois erros comuns:
+
+- O fator 0,707 relaciona o valor eficaz com o valor de **pico**, não com o valor pico a pico. Em relação ao pico a pico, o valor eficaz é apenas 0,354 (metade de 0,707).
+- O valor eficaz **não** é o valor médio. O valor médio da onda retificada é outro número, 0,637 × V<sub>pico</sub>, e raramente aparece na prática. Se a pergunta fala em aquecimento, potência ou na leitura de um voltímetro, a resposta é o valor eficaz.
+
+## Período e frequência
+
+O período T é o tempo de um ciclo completo. A frequência f é o número de ciclos por segundo, medida em hertz (Hz). Uma é o inverso da outra:
+
+- f = 1 ÷ T
+- T = 1 ÷ f
+
+Por exemplo, a rede elétrica tem f = 50 Hz, logo cada ciclo demora T = 1 ÷ 50 = 0,02 s (20 milissegundos).
+
+## Exemplos com números
+
+**Exemplo 1.** Uma onda sinusoidal tem +Um = 1 V (valor de pico igual a 1 volt).
+
+- Valor pico a pico: 2 × 1 = **2 V**
+- Valor eficaz: 0,707 × 1 = **0,707 V**
+
+**Exemplo 2.** Um voltímetro de CA indica 65 V (valor eficaz). Qual é o pico?
+
+- Valor de pico: 65 × 1,414 = **91,9 V** (multiplicar por 1,414 é o mesmo que dividir por 0,707)
+- Valor pico a pico: 2 × 91,9 = **183,8 V**, cerca de 184 V
+
+## Resumo das relações
+
+| Grandeza | Símbolo | Relação |
+|---|---|---|
+| Valor de pico (amplitude) | V<sub>pico</sub> | de zero a +Um |
+| Valor pico a pico | V<sub>pp</sub> | 2 × V<sub>pico</sub> |
+| Valor eficaz (RMS) | V<sub>eficaz</sub> | 0,707 × V<sub>pico</sub> = 0,354 × V<sub>pp</sub> |
+| Valor médio (onda retificada) | V<sub>médio</sub> | 0,637 × V<sub>pico</sub> |
+| Período | T | tempo de um ciclo, em segundos |
+| Frequência | f | 1 ÷ T, em hertz |
+
+Para o exame, memorize a figura: 1 é o pico, 2 é o pico a pico, 3 é o valor eficaz e 4 é o período. E fixe os dois números mágicos: 0,707 (do pico para o eficaz) e 1,414 (do eficaz para o pico).

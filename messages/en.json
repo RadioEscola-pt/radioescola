@@ -332,21 +332,24 @@
     }
   },
   "QuestionCard": {
-    "suggestedCalculator": "Suggested calculator:",
-    "suggestedCalculators": "Suggested calculators:",
-    "open": "Open",
     "correct": "Correct",
-    "incorrect": "Incorrect",
-    "unanswered": "Unanswered",
     "explanation": "Explanation",
+    "incorrect": "Incorrect",
     "notesError": "Unable to load the explanation.",
-    "relatedTutorial": "Related tutorial:",
     "officialSource": "Official source",
+    "open": "Open",
+    "readTime": "{minutes} min",
+    "sourceClose": "Close",
     "sourceDescription": "Exam of {date}, question {question}",
     "sourceOpenNewTab": "Open in new tab",
-    "sourceClose": "Close",
+    "sourcePage": "page {page}",
+    "sourceQuestion": "Question {question}",
     "sourceUnavailable": "document not available",
-    "successRate": "{rate}% success"
+    "studyLibrary": "Study Library",
+    "successRate": "{rate}% success",
+    "suggestedCalculator": "Suggested calculator:",
+    "suggestedCalculators": "Suggested calculators:",
+    "unanswered": "Unanswered"
   },
   "SubmitExam": {
     "title": "Submit Exam",

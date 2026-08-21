@@ -332,21 +332,24 @@
     }
   },
   "QuestionCard": {
-    "suggestedCalculator": "Calculadora sugerida:",
-    "suggestedCalculators": "Calculadoras sugeridas:",
-    "open": "Abrir",
     "correct": "Correto",
-    "incorrect": "Incorreto",
-    "unanswered": "Sem resposta",
     "explanation": "Explicação",
+    "incorrect": "Incorreto",
     "notesError": "Não foi possível carregar a explicação.",
-    "relatedTutorial": "Tutorial relacionado:",
     "officialSource": "Fonte oficial",
+    "open": "Abrir",
+    "readTime": "{minutes} min",
+    "sourceClose": "Fechar",
     "sourceDescription": "Exame de {date}, pergunta {question}",
     "sourceOpenNewTab": "Abrir em nova aba",
-    "sourceClose": "Fechar",
+    "sourcePage": "página {page}",
+    "sourceQuestion": "Pergunta {question}",
     "sourceUnavailable": "documento não disponível",
-    "successRate": "{rate}% de acerto"
+    "studyLibrary": "Biblioteca de Estudo",
+    "successRate": "{rate}% de acerto",
+    "suggestedCalculator": "Calculadora sugerida:",
+    "suggestedCalculators": "Calculadoras sugeridas:",
+    "unanswered": "Sem resposta"
   },
   "SubmitExam": {
     "title": "Enviar Exame",

@@ -131,7 +131,8 @@
           "question": 4,
           "page": 1
         }
-      ]
+      ],
+      "tutorial": "entidades"
     },
     {
       "id": 11,
@@ -506,7 +507,8 @@
           "question": 15,
           "page": 4
         }
-      ]
+      ],
+      "tutorial": "entidades"
     },
     {
       "id": 34,
@@ -518,7 +520,8 @@
         "Um trabalho realizado em 1995 por amadores num grupo de trabalho de gestão de frequências"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "entidades"
     },
     {
       "id": 35,
@@ -554,7 +557,8 @@
           "question": 14,
           "page": 4
         }
-      ]
+      ],
+      "tutorial": "entidades"
     },
     {
       "id": 37,
@@ -590,7 +594,8 @@
         "UR"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "abreviaturas-de-operacao"
     },
     {
       "id": 38,
@@ -621,7 +626,8 @@
         "Mensagem"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "abreviaturas-de-operacao"
     },
     {
       "id": 40,
@@ -633,7 +639,8 @@
         "Quando tornará a chamar-me?"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "abreviaturas-de-operacao"
     },
     {
       "id": 41,
@@ -645,7 +652,8 @@
         "Quando tornará a chamar-me?"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "codigo-q"
     },
     {
       "id": 42,
@@ -657,7 +665,8 @@
         "Mensagem"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "abreviaturas-de-operacao"
     },
     {
       "id": 43,
@@ -676,7 +685,8 @@
           "question": 20,
           "page": 5
         }
-      ]
+      ],
+      "tutorial": "codigo-q"
     },
     {
       "id": 44,
@@ -695,7 +705,8 @@
           "question": 12,
           "page": 3
         }
-      ]
+      ],
+      "tutorial": "abreviaturas-de-operacao"
     },
     {
       "id": 45,
@@ -707,7 +718,8 @@
         "Mensagem"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "abreviaturas-de-operacao"
     },
     {
       "id": 46,
@@ -719,7 +731,8 @@
         "Quando tornará a chamar-me?"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "codigo-q"
     },
     {
       "id": 47,
@@ -738,7 +751,8 @@
           "question": 20,
           "page": 6
         }
-      ]
+      ],
+      "tutorial": "codigo-q"
     },
     {
       "id": 48,
@@ -762,7 +776,8 @@
           "question": 26,
           "page": 7
         }
-      ]
+      ],
+      "tutorial": "alfabeto-fonetico"
     },
     {
       "id": 49,
@@ -774,7 +789,8 @@
         "Alpha, Mouse, Time"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "alfabeto-fonetico"
     },
     {
       "id": 50,
@@ -786,7 +802,8 @@
         "Alpha, Esquilo, Unit"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "alfabeto-fonetico"
     },
     {
       "id": 51,
@@ -798,7 +815,8 @@
         "Alpha, Papa, Yack"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "alfabeto-fonetico"
     },
     {
       "id": 52,
@@ -810,7 +828,8 @@
         "Alpha, Bravo, Fox"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "alfabeto-fonetico"
     },
     {
       "id": 53,
@@ -1042,7 +1061,8 @@
           "question": 13,
           "page": 4
         }
-      ]
+      ],
+      "tutorial": "definicoes"
     },
     {
       "id": 70,
@@ -1356,7 +1376,8 @@
           "question": 16,
           "page": 4
         }
-      ]
+      ],
+      "tutorial": "entidades"
     },
     {
       "id": 87,
@@ -2045,7 +2066,8 @@
         "CQ5"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 140,
@@ -2057,7 +2079,8 @@
         "CQ5"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 141,
@@ -2069,7 +2092,8 @@
         "CQ5"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 142,
@@ -2081,7 +2105,8 @@
         "CR0"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 143,
@@ -2105,7 +2130,8 @@
           "question": 5,
           "page": 2
         }
-      ]
+      ],
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 144,
@@ -2117,7 +2143,8 @@
         "CR9"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 145,
@@ -2136,7 +2163,8 @@
           "question": 4,
           "page": 1
         }
-      ]
+      ],
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 151,
@@ -2160,7 +2188,8 @@
           "question": 6,
           "page": 2
         }
-      ]
+      ],
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 146,
@@ -2172,7 +2201,8 @@
         "CR9"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 147,
@@ -2184,7 +2214,8 @@
         "CR9"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 149,
@@ -2196,7 +2227,8 @@
         "CR9"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 150,
@@ -2208,7 +2240,8 @@
         "CR9"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 152,
@@ -2220,7 +2253,8 @@
         "CR9"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 153,
@@ -2232,7 +2266,8 @@
         "CR9"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "tutorial": "prefixos-ic"
     },
     {
       "id": 155,
@@ -2865,7 +2900,8 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "img": "/images/cat3/sinusoidal.png"
+      "img": "/images/cat3/sinusoidal.png",
+      "tutorial": "corrente-alternada"
     },
     {
       "id": 199,
@@ -2878,7 +2914,8 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "img": "/images/cat3/sinusoidal.png"
+      "img": "/images/cat3/sinusoidal.png",
+      "tutorial": "corrente-alternada"
     },
     {
       "id": 200,
@@ -2898,7 +2935,8 @@
           "page": 12
         }
       ],
-      "img": "/images/cat3/sinusoidal.png"
+      "img": "/images/cat3/sinusoidal.png",
+      "tutorial": "corrente-alternada"
     },
     {
       "id": 201,
@@ -2918,7 +2956,8 @@
           "page": 11
         }
       ],
-      "img": "/images/cat3/sinusoidal.png"
+      "img": "/images/cat3/sinusoidal.png",
+      "tutorial": "corrente-alternada"
     },
     {
       "id": 202,
@@ -2931,7 +2970,8 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "img": "/images/cat3/sinusoidal.png"
+      "img": "/images/cat3/sinusoidal.png",
+      "tutorial": "corrente-alternada"
     },
     {
       "id": 203,
@@ -2944,7 +2984,8 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "img": "/images/cat3/sinusoidal.png"
+      "img": "/images/cat3/sinusoidal.png",
+      "tutorial": "corrente-alternada"
     },
     {
       "id": 204,
@@ -2957,7 +2998,8 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "img": "/images/cat3/sinusoidal.png"
+      "img": "/images/cat3/sinusoidal.png",
+      "tutorial": "corrente-alternada"
     },
     {
       "id": 205,
@@ -2970,7 +3012,8 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "img": "/images/cat3/sinusoidal.png"
+      "img": "/images/cat3/sinusoidal.png",
+      "tutorial": "corrente-alternada"
     },
     {
       "id": 206,
@@ -2983,7 +3026,8 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "img": "/images/cat3/sinusoidal.png"
+      "img": "/images/cat3/sinusoidal.png",
+      "tutorial": "corrente-alternada"
     },
     {
       "id": 207,

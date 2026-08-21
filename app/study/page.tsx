@@ -4,47 +4,11 @@ import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import {
-  BookOpen, Search, Clock,
-  Zap, CircuitBoard, Filter, RadioReceiver, RadioTower, Antenna, Radar,
-  Gauge, ShieldAlert, HardHat, Waves, Palette, SpellCheck, MessagesSquare,
-  Tag, Footprints,
-  type LucideIcon,
-} from 'lucide-react';
+import { BookOpen, Search, Clock } from 'lucide-react';
+import { GUIDE_ACCENTS, guideVisual } from '@/lib/config/study-guides';
 import { CATEGORIES, CATEGORY_CONFIG } from '@/lib/config/categories';
 import type { CategoryId } from '@/lib/config/categories';
 
-// Tinted tile presets for the guide icons (light + dark).
-const ACCENTS = {
-  amber: 'bg-amber-100 text-amber-700 dark:bg-amber-950/50 dark:text-amber-300',
-  blue: 'bg-blue-100 text-blue-700 dark:bg-blue-950/50 dark:text-blue-300',
-  emerald: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300',
-  violet: 'bg-violet-100 text-violet-700 dark:bg-violet-950/50 dark:text-violet-300',
-  cyan: 'bg-cyan-100 text-cyan-700 dark:bg-cyan-950/50 dark:text-cyan-300',
-  rose: 'bg-rose-100 text-rose-700 dark:bg-rose-950/50 dark:text-rose-300',
-  slate: 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300',
-} as const;
-
-// Per-guide icon + accent. Unlisted slugs fall back to a neutral book icon.
-const GUIDE_VISUAL: Record<string, { icon: LucideIcon; accent: keyof typeof ACCENTS }> = {
-  'getting-started': { icon: Footprints, accent: 'amber' },
-  'teoria-electrica-e-radio': { icon: Zap, accent: 'amber' },
-  'componentes': { icon: CircuitBoard, accent: 'blue' },
-  'circuitos': { icon: Filter, accent: 'cyan' },
-  'recetores': { icon: RadioReceiver, accent: 'violet' },
-  'emissores': { icon: RadioTower, accent: 'rose' },
-  'antenas': { icon: Antenna, accent: 'emerald' },
-  'propagacao': { icon: Radar, accent: 'cyan' },
-  'medidas': { icon: Gauge, accent: 'blue' },
-  'interferencias': { icon: ShieldAlert, accent: 'rose' },
-  'seguranca': { icon: HardHat, accent: 'amber' },
-  'campo-electromagnetico': { icon: Waves, accent: 'violet' },
-  'codigo-de-cores': { icon: Palette, accent: 'emerald' },
-  'alfabeto-fonetico': { icon: SpellCheck, accent: 'blue' },
-  'abreviaturas-de-operacao': { icon: MessagesSquare, accent: 'cyan' },
-  'prefixos-ic': { icon: Tag, accent: 'violet' },
-};
-const DEFAULT_VISUAL = { icon: BookOpen, accent: 'slate' as const };
 
 type Item = {
   slug: string;
@@ -197,7 +161,7 @@ export default function StudyIndexPage() {
       ) : (
         <ul className="flex flex-col gap-2">
           {filtered.map((item) => {
-            const visual = GUIDE_VISUAL[item.slug] ?? DEFAULT_VISUAL;
+            const visual = guideVisual(item.slug);
             const Icon = visual.icon;
             return (
             <li key={item.slug}>
@@ -206,7 +170,7 @@ export default function StudyIndexPage() {
                 className="group flex items-start gap-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 transition-all hover:border-amber-300 dark:hover:border-amber-600 hover:shadow-sm"
               >
                 <span
-                  className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${ACCENTS[visual.accent]}`}
+                  className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${GUIDE_ACCENTS[visual.accent]}`}
                   aria-hidden="true"
                 >
                   <Icon className="h-5 w-5" />
