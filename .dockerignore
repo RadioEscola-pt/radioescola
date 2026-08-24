@@ -1,0 +1,35 @@
+# Everything the image build does not need. Keeping this tight matters: the
+# build context carries ~170 MB of exam PDFs in public/ as it is.
+.git
+.github
+.claude
+.vscode
+.idea
+
+node_modules
+.next
+out
+dist
+build
+coverage
+
+# Secrets never belong in an image — runtime config comes from the server's
+# app.env (see docs/deployment.md).
+.env
+.env.*
+!.env.example
+
+__tests__
+docs
+deploy
+deploy.sh
+deploy-remote.sh
+Dockerfile
+.dockerignore
+
+.ocr-cache
+.impeccable
+.playwright-mcp
+screenshots
+*.log
+tsconfig.tsbuildinfo

@@ -1,0 +1,12 @@
+# Terminates TLS (certificates issued and renewed automatically) and proxies to
+# the app container. Next sets its own Cache-Control headers, so nothing here
+# second-guesses them.
+server.radioescola.pt {
+	encode zstd gzip
+	reverse_proxy app:3000
+}
+
+# To also serve the apex domain, point its DNS at this host and add:
+# radioescola.pt {
+# 	redir https://server.radioescola.pt{uri}
+# }

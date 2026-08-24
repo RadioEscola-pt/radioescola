@@ -14,8 +14,33 @@ bun run test:coverage # Vitest with V8 coverage
 bun run type-check   # tsc --noEmit
 bun run content:build # Compile content/questions/** into shipped artifacts
 bun run content:check # Verify artifacts match their source (writes nothing)
-./deploy.sh          # Pull, install, build, PM2 restart (app name: radioescola)
 ```
+
+## Deployment
+
+Tag-triggered, via GitHub Actions → GHCR → the VPS at `server.radioescola.pt`:
+
+```bash
+git tag -a v2.0.0 -m "Release 2.0.0" && git push origin v2.0.0
+```
+
+`.github/workflows/release.yml` runs the checks, builds `Dockerfile`, pushes
+`ghcr.io/radioescola-pt/site:2.0.0`, then rolls it out with `deploy/release.sh`.
+Rollback is that script with an older tag. Full runbook and server setup in
+`docs/deployment.md`.
+
+- **The image tag has no leading `v`** — `docker/metadata-action` strips it, so
+  the tag `v2.0.0` publishes `2.0.0`
+- **`NEXT_PUBLIC_*` is baked into the image**, so a feature-flag change needs a
+  new tag, not an edit to the server's `app.env`
+- **Two API routes read source files at request time** (`/api/notes/*` from
+  `content/notes/`, `/api/study-items` from `app/study/`) using paths built from
+  `process.cwd()`, which file tracing cannot follow. They are kept in the
+  standalone output by `outputFileTracingIncludes` in `next.config.js` — a new
+  route that reads from disk needs an entry there or it will answer empty in
+  production only
+- `deploy.sh` (builds on the box, PM2) and `deploy-remote.sh` (builds on your
+  laptop, rsync) are the superseded predecessors
 
 ## Architecture
 
