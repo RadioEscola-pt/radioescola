@@ -1,11 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import React from 'react';
-import { compile, run } from '@mdx-js/mdx';
-import * as runtime from 'react/jsx-runtime';
-import remarkGfm from 'remark-gfm';
-import remarkFrontmatter from 'remark-frontmatter';
-import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
+import { renderNoteToHtml } from '@/lib/content/render-note';
 
 const NOTES_ROOT = path.join(process.cwd(), 'content', 'notes');
 const VALID_CATEGORIES = new Set(['1', '2', '3']);
@@ -23,14 +18,7 @@ function buildCacheKey(category: string, id: string) {
 
 async function compileMdxToHtml(filePath: string) {
   const source = await fs.readFile(filePath, 'utf8');
-  const compiled = await compile(source, {
-    remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter, remarkGfm],
-    outputFormat: 'function-body',
-  });
-  const { default: Content } = await run(compiled, runtime);
-  const { renderToStaticMarkup } = await import('react-dom/server');
-  const html = renderToStaticMarkup(React.createElement(Content));
-  return html;
+  return renderNoteToHtml(source);
 }
 
 export async function GET(
