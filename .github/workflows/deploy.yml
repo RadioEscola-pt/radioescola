@@ -41,8 +41,11 @@ jobs:
     # Scopes the SSH secrets to this job and gives you somewhere to add a
     # manual approval later (Settings → Environments → production).
     environment:
+      # SITE_URL is the public site; DEPLOY_HOST is the box we SSH to. They were
+      # the same name until www became canonical — keep them apart so a DNS
+      # change to the public name can never redirect a deploy.
       name: production
-      url: https://${{ vars.DEPLOY_HOST }}
+      url: ${{ vars.SITE_URL || format('https://{0}', vars.DEPLOY_HOST) }}
     steps:
       - uses: actions/checkout@v7
 
@@ -91,18 +94,22 @@ jobs:
       # obtaining the certificate on a first deploy to a new host.
       - name: Smoke test
         env:
-          HOST: ${{ vars.DEPLOY_HOST }}
+          # Checks the site the public actually reaches, through whatever DNS
+          # and redirects are in front of it. --location so an apex-to-www
+          # redirect is followed rather than counted as a pass.
+          SITE_URL: ${{ vars.SITE_URL || format('https://{0}', vars.DEPLOY_HOST) }}
         run: |
-          curl --fail --silent --show-error \
+          curl --fail --silent --show-error --location \
                --retry 12 --retry-delay 5 --retry-all-errors \
                --max-time 120 \
-               "https://$HOST/api/health"
+               "$SITE_URL/api/health"
 
       - name: Summary
         if: always()
         env:
           TAG: ${{ inputs.image_tag }}
-          HOST: ${{ vars.DEPLOY_HOST }}
+          SITE_URL: ${{ vars.SITE_URL || format('https://{0}', vars.DEPLOY_HOST) }}
+          DEPLOY_HOST: ${{ vars.DEPLOY_HOST }}
         run: |
           {
             echo "### Deploy"
@@ -110,6 +117,7 @@ jobs:
             echo "| | |"
             echo "|---|---|"
             echo "| Image tag | \`$TAG\` |"
-            echo "| Host | https://$HOST |"
+            echo "| Site | $SITE_URL |"
+            echo "| Deployed to | $DEPLOY_HOST |"
             echo "| Triggered by | ${{ github.event_name }} |"
           } >> "$GITHUB_STEP_SUMMARY"
