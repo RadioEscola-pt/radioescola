@@ -8,24 +8,15 @@ import { Testimonials, type Testimonial } from "@/components/Testimonials";
 
 type RawTestimonial = Omit<Testimonial, "categoryLabel">;
 
+// Real operators only — a callsign is publicly registered to a named person,
+// so a made-up one puts words in a real amateur's mouth.
 const TESTIMONIALS: RawTestimonial[] = [
   {
-    quote: "Usei o Rádio Escola desde a Categoria 3 até à 1. Os simuladores de exame são iguais ao exame real da ANACOM.",
-    name: "Carlos",
-    callsign: "CT7XRQ",
-    category: "1",
-  },
-  {
-    quote: "A prática inteligente foca nas perguntas que erro mais. Em duas semanas senti-me preparado.",
-    name: "Ana",
-    callsign: "CS7BVF",
+    quote:
+      "Comecei com o RadioEscola para tirar a Categoria 3 e voltei sempre que subi de categoria. É o único sítio onde encontrei a matéria toda organizada em português e com perguntas reais de exames, fez toda a diferença.",
+    name: "Joel",
+    callsign: "CS7BLE",
     category: "2",
-  },
-  {
-    quote: "Estudei tudo no telemóvel, no comboio para o trabalho. Muito prático.",
-    name: "Miguel",
-    callsign: "CR7KJD",
-    category: "3",
   },
 ];
 
