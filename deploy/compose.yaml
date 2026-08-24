@@ -1,0 +1,47 @@
+# Lives in the repo, copied to ~/app on the server by the release workflow.
+# Edit it here, never on the box — the next deploy overwrites it.
+name: radioescola
+
+services:
+  app:
+    # IMAGE_TAG comes from ~/app/.env, which release.sh rewrites on every
+    # deploy. Rolling back is therefore just release.sh with an older tag.
+    image: ghcr.io/radioescola-pt/site:${IMAGE_TAG:?set IMAGE_TAG in .env}
+    restart: unless-stopped
+    # Runtime secrets only (RESEND_*). Build-time NEXT_PUBLIC_* flags are
+    # already baked into the image and cannot be changed from here.
+    env_file:
+      - app.env
+    expose:
+      - "3000"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      app:
+        condition: service_healthy
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+volumes:
+  # Holds the ACME account and issued certificates. Losing it means re-issuing
+  # from Let's Encrypt, which is rate limited — do not prune it.
+  caddy_data:
+  caddy_config:
