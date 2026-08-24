@@ -47,7 +47,13 @@ jobs:
       name: production
       url: ${{ vars.SITE_URL || format('https://{0}', vars.DEPLOY_HOST) }}
     steps:
+      # Only the stack definition is needed here — the three files scp'd below.
+      # A full checkout drags in ~180 MB of exam PDFs, which is normally 4-12s
+      # but has twice taken over three minutes (191s on v2.0.4, 245s on v2.0.3),
+      # dwarfing the 21s rollout it exists to serve.
       - uses: actions/checkout@v7
+        with:
+          sparse-checkout: deploy
 
       - name: Configure SSH
         env:
