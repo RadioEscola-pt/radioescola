@@ -6,7 +6,7 @@ services:
   app:
     # IMAGE_TAG comes from ~/app/.env, which release.sh rewrites on every
     # deploy. Rolling back is therefore just release.sh with an older tag.
-    image: ghcr.io/radioescola-pt/site:${IMAGE_TAG:?set IMAGE_TAG in .env}
+    image: ghcr.io/radioescola-pt/radioescola:${IMAGE_TAG:?set IMAGE_TAG in .env}
     restart: unless-stopped
     # Runtime secrets only (RESEND_*). Build-time NEXT_PUBLIC_* flags are
     # already baked into the image and cannot be changed from here.
