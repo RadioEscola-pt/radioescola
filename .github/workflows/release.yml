@@ -11,8 +11,14 @@ concurrency:
   group: release
   cancel-in-progress: false
 
+# A called workflow can only DOWNGRADE the caller's GITHUB_TOKEN permissions,
+# never elevate them — so this ceiling must already cover everything deploy.yml
+# asks for. With `contents: read` alone here, deploy.yml requesting
+# `packages: read` is an elevation and the whole run dies with a
+# startup_failure before a single job begins.
 permissions:
   contents: read
+  packages: write
 
 jobs:
   check:
