@@ -24,8 +24,11 @@ jobs:
   check:
     uses: ./.github/workflows/ci.yml
 
+  # Deliberately NOT gated on `check`: it publishes an image, it does not deploy
+  # one. Running it alongside the checks halves the wall clock, and the worst
+  # case is an unused image in GHCR for a commit whose tests then failed —
+  # `deploy` needs both, so nothing unverified can reach the server.
   build:
-    needs: check
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -54,21 +57,25 @@ jobs:
             type=semver,pattern={{major}}.{{minor}}
             type=sha
 
+      # No build cache on purpose. Measured on v2.0.3: exporting to the GitHub
+      # Actions cache took 250s of a 351s build and produced *zero* cache hits,
+      # because that cache is scoped by ref and tag builds cannot read each
+      # other's entries. Nothing here is worth caching anyway — `COPY . .`
+      # invalidates every layer after the deps stage on every commit, and that
+      # stage is only ~15s of `bun install`.
       - uses: docker/build-push-action@v7
         with:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
           build-args: |
             NEXT_PUBLIC_GAMIFICATION=${{ vars.NEXT_PUBLIC_GAMIFICATION }}
 
   # The rollout itself lives in deploy.yml so the same steps back both a tag
   # release and the manual "Run workflow" button (redeploys and rollbacks).
   deploy:
-    needs: build
+    needs: [check, build]
     uses: ./.github/workflows/deploy.yml
     with:
       image_tag: ${{ needs.build.outputs.image_tag }}
