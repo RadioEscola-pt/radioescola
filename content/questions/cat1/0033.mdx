@@ -20,12 +20,58 @@ sources:
     question: 16
     page: 4
 ---
-A28  Exames:(<a target='_blank' href='exams/cat1/2014_05_23.pdf'>2014_05_23p16</a>)
-
 Num condensador, **à medida que a frequência da corrente alternada aumenta, a reactância diminui**.
 
-A reactância capacitiva é dada por X<sub>C</sub> = 1 / (2πfC), com f em hertz e C em farads. A frequência aparece no denominador, pelo que a relação é inversa: duplicar a frequência reduz a reactância para metade. Por exemplo, um condensador de 100 nF apresenta X<sub>C</sub> = 1 / (2π × 1000 × 100×10<sup>-9</sup>) ≈ 1,6 kΩ a 1 kHz, mas apenas cerca de 160 Ω a 10 kHz.
+## A fórmula
 
-Fisicamente, o condensador opõe-se à variação da tensão aos seus terminais: a corrente que o atravessa é a corrente de carga e descarga das armaduras. A frequências mais altas, a tensão inverte-se mais vezes por segundo, o condensador carrega e descarrega mais frequentemente e circula por isso mais corrente para a mesma tensão aplicada, o que equivale a uma oposição menor. Nos casos extremos: em corrente contínua (f = 0) a reactância é infinita e o condensador bloqueia a corrente; a frequências muito altas comporta-se quase como um curto-circuito. É este comportamento que o torna útil como condensador de acoplamento (deixa passar o sinal e bloqueia a componente contínua) e em filtros passa-alto.
+A reactância capacitiva é dada por
 
-As restantes opções estão erradas: dizer que a reactância aumenta com a frequência descreve uma bobina (X<sub>L</sub> = 2πfL), não um condensador; e a amplitude da corrente não entra na fórmula, porque a reactância é uma propriedade do componente à frequência de trabalho, não do nível do sinal aplicado.
+$$
+X_C = \frac{1}{2\pi f C}
+$$
+
+com $f$ em hertz, $C$ em farads e $X_C$ em ohms. A frequência está no
+**denominador**, pelo que a relação é inversa: duplicar $f$ reduz $X_C$ para
+metade.
+
+Para um condensador de $100\ \text{nF}$:
+
+| Frequência | $X_C$ |
+| --- | --- |
+| $100\ \text{Hz}$ | $\approx 15{,}9\ \text{k}\Omega$ |
+| $1\ \text{kHz}$ | $\approx 1{,}6\ \text{k}\Omega$ |
+| $10\ \text{kHz}$ | $\approx 159\ \Omega$ |
+| $100\ \text{kHz}$ | $\approx 15{,}9\ \Omega$ |
+
+Cada salto de dez vezes na frequência divide a reactância por dez. A conta para
+$1\ \text{kHz}$, por exemplo:
+
+$$
+X_C = \frac{1}{2\pi \times 10^{3} \times 100 \times 10^{-9}} \approx 1592\ \Omega
+$$
+
+## Porque é que isto acontece
+
+O condensador opõe-se à **variação da tensão** aos seus terminais: a corrente que
+o atravessa é a corrente de carga e descarga das armaduras. A frequências mais
+altas a tensão inverte-se mais vezes por segundo, o condensador carrega e
+descarrega mais frequentemente, e circula mais corrente para a mesma tensão
+aplicada — o que equivale a uma oposição menor.
+
+Os casos extremos confirmam a fórmula:
+
+- Em corrente contínua, $f = 0$, logo $X_C \to \infty$: o condensador **bloqueia**
+  a corrente.
+- A frequências muito altas, $X_C \to 0$: comporta-se quase como um
+  **curto-circuito**.
+
+É este comportamento que o torna útil como condensador de acoplamento (deixa
+passar o sinal e bloqueia a componente contínua) e em filtros passa-alto.
+
+## Porque falham as outras opções
+
+- **A reactância aumenta com a frequência** — descreve uma *bobina*, não um
+  condensador. Na bobina a frequência está no numerador: $X_L = 2\pi f L$.
+- **As duas opções sobre a amplitude** — a amplitude não aparece na fórmula. A
+  reactância é uma propriedade do componente à frequência de trabalho, não do
+  nível do sinal aplicado.
