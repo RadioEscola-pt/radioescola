@@ -126,7 +126,10 @@ tailwind.config.js # Tailwind CSS v4 config
 Uses `next-intl` v4. Default locale is **Portuguese (pt)**, also supports English (en).
 - Messages in `messages/{en,pt}.json`
 - Locale config in `lib/i18n/config.ts`
-- Proxy (`proxy.ts`) sets locale cookie from Accept-Language header
+- **Portuguese unless the visitor actively picks otherwise.** `Accept-Language`
+  is deliberately not consulted: `resolveLocale` in `lib/i18n/config.ts` reads
+  the `locale` cookie and falls back to `pt`. Only `setLocale` (the language
+  switcher) ever writes that cookie, so its presence means a real choice
 - Use `useTranslations('SectionName')` in components
 
 ## Gotchas

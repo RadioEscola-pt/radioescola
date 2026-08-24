@@ -9,25 +9,14 @@ export function isLocale(locale: string | undefined | null): locale is Locale {
   return Boolean(locale && locales.includes(locale as Locale));
 }
 
-export function detectLocale(acceptLanguage: string | null | undefined): Locale {
-  if (!acceptLanguage) {
-    return defaultLocale;
-  }
-
-  const candidates = acceptLanguage
-    .split(",")
-    .map((part) => part.trim().split(";")[0]?.toLowerCase())
-    .filter(Boolean) as string[];
-
-  for (const candidate of candidates) {
-    const normalized = candidate.split("-")[0];
-    if (isLocale(candidate.toLowerCase())) {
-      return candidate.toLowerCase() as Locale;
-    }
-    if (isLocale(normalized)) {
-      return normalized as Locale;
-    }
-  }
-
-  return defaultLocale;
+/**
+ * The locale to render for a request.
+ *
+ * Only an explicit choice counts: the cookie is written by the language
+ * switcher and by nothing else. `Accept-Language` is deliberately ignored — a
+ * visitor whose browser prefers English is still studying for a Portuguese
+ * exam, so Portuguese is the right default until they say otherwise.
+ */
+export function resolveLocale(cookieValue: string | undefined | null): Locale {
+  return isLocale(cookieValue) ? cookieValue : defaultLocale;
 }
