@@ -54,8 +54,25 @@ ufw allow 443
 ufw --force enable
 ```
 
-Lock down SSH in `/etc/ssh/sshd_config` — `PasswordAuthentication no`,
-`PermitRootLogin prohibit-password` — then `systemctl restart ssh`.
+Then lock down SSH. **Do not edit `/etc/ssh/sshd_config` directly** — it already
+says `PasswordAuthentication no`, but it `Include`s `sshd_config.d/*.conf` above
+that line, and cloud-init and the provider both drop files in there turning it
+back on. sshd keeps the *first* value it obtains, so the drop-ins win. Add one
+that sorts ahead of them:
+
+```bash
+cat > /etc/ssh/sshd_config.d/00-hardening.conf <<'EOF'
+PasswordAuthentication no
+KbdInteractiveAuthentication no
+PermitRootLogin prohibit-password
+EOF
+
+sshd -t && sshd -T | grep -E 'passwordauth|permitroot'   # confirm before reloading
+systemctl reload ssh
+```
+
+Verify from a *second* terminal that your key still works before you close the
+first one.
 
 ### 3. Docker
 
@@ -64,9 +81,11 @@ install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
 chmod a+r /etc/apt/keyrings/docker.asc
 
-. /etc/os-release
+# Debian 14 is "forky", and Docker publishes no forky suite — pin trixie, whose
+# packages work fine. Check before changing this:
+#   curl -sI https://download.docker.com/linux/debian/dists/forky/Release
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] \
-  https://download.docker.com/linux/debian $VERSION_CODENAME stable" \
+  https://download.docker.com/linux/debian trixie stable" \
   > /etc/apt/sources.list.d/docker.list
 
 apt update
@@ -74,17 +93,18 @@ apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker
 systemctl enable --now docker
 ```
 
-> Docker publishes per-release suites. If `apt update` 404s on the Debian 14
-> codename, the repo has not caught up yet — substitute the previous stable
-> codename (`trixie`) in the `sources.list.d` line. The packages are compatible.
+> Once Docker ships a `forky` suite, switch the line to `$VERSION_CODENAME`.
 
 ### 4. Deploy user
 
 ```bash
-adduser --disabled-password --gecos "" deploy
+useradd --create-home --shell /bin/bash --password '!' deploy
 usermod -aG docker deploy
 install -o deploy -g deploy -m 700 -d /home/deploy/app
 ```
+
+(`useradd`, not `adduser`: `/usr/sbin` is off `PATH` for a non-interactive SSH
+command, so scripted setup fails on `adduser: command not found`.)
 
 `docker` group membership is root-equivalent. That is why this user exists and
 why it does nothing else.
@@ -103,19 +123,19 @@ Keep the private key for the `DEPLOY_SSH_KEY` secret below, then delete it
 locally. Pinning `known_hosts` rather than disabling host-key checking is what
 stops a deploy from being redirected to another host.
 
-### 6. Registry access
+### 6. Registry access — nothing to do
 
 The repo is private, so the image is too, and the server has to authenticate to
-pull it. Create a **classic** personal access token with only the
-`read:packages` scope, then, as `deploy`:
+pull it. Rather than parking a long-lived token on the box, the release workflow
+logs the server in with its own `GITHUB_TOKEN` just before pulling and logs it
+out again afterwards (`if: always()`, so a failed rollout still cleans up). That
+token dies with the workflow run, so no registry credential outlives a deploy.
 
-```bash
-echo "<token>" | docker login ghcr.io -u <github-username> --password-stdin
-```
-
-This writes `~/.docker/config.json` and persists across reboots. (Making the
-GHCR package public instead removes this step — but the image contains the full
-site build, so only do that if the site's content is public anyway.)
+The one consequence: **a manual rollback runs without credentials.** That is
+fine when the image is still cached on the box, which it is for anything recent
+— `release.sh` treats a failed `pull` as a warning and lets `up --wait` decide.
+To roll back to something already pruned, either re-run the release workflow for
+that tag, or log in by hand first with a `read:packages` token.
 
 ### 7. Runtime secrets
 
