@@ -34,6 +34,12 @@ git tag v2.0.0  ──▶  .github/workflows/release.yml
 Edit the `deploy/` files here, never on the server — the next deploy overwrites
 whatever is in `~/app`.
 
+`release.sh` reloads Caddy explicitly after copying the stack across. It has to:
+`docker compose up -d` only recreates a container whose *configuration* changed,
+and the Caddyfile is a bind-mounted file, so editing its contents is invisible
+to compose. Without the reload, a hostname added to the Caddyfile silently never
+takes effect — the deploy reports success and the new name serves nothing.
+
 ## One-time server setup
 
 Everything below runs on the VPS as `root` unless noted.
