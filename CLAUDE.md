@@ -25,9 +25,12 @@ git tag -a v2.0.0 -m "Release 2.0.0" && git push origin v2.0.0
 ```
 
 `.github/workflows/release.yml` runs the checks, builds `Dockerfile`, pushes
-`ghcr.io/radioescola-pt/site:2.0.0`, then rolls it out with `deploy/release.sh`.
-Rollback is that script with an older tag. Full runbook and server setup in
-`docs/deployment.md`.
+`ghcr.io/radioescola-pt/site:2.0.0`, then calls `deploy.yml` to roll it out.
+
+`deploy.yml` also runs on its own from **Actions → Deploy → Run workflow**,
+taking an image tag — that is how you redeploy or roll back, and it beats
+running `release.sh` over SSH because CI supplies the registry credentials the
+box deliberately does not keep. Full runbook in `docs/deployment.md`.
 
 - **The image tag has no leading `v`** — `docker/metadata-action` strips it, so
   the tag `v2.0.0` publishes `2.0.0`

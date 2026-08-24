@@ -1,0 +1,115 @@
+name: Deploy
+
+# Rolls an already-built image out to the VPS. Two ways in:
+#
+#   - workflow_call  — release.yml calls this after it pushes a new image
+#   - workflow_dispatch — the "Run workflow" button, for redeploying or rolling
+#     back to any tag that is already in GHCR, without rebuilding anything
+#
+# Rolling back through this workflow is preferable to running release.sh over
+# SSH by hand: the box holds no registry credentials of its own, so a manual
+# pull of an image it has already pruned would fail. Here CI supplies them.
+on:
+  workflow_call:
+    inputs:
+      image_tag:
+        description: Image tag to deploy
+        required: true
+        type: string
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: "Image tag to deploy, e.g. 2.0.0 — no leading v (see Packages for what exists)"
+        required: true
+        type: string
+
+# Shared with release.yml, so a manual deploy and a tag release can never roll
+# out over each other.
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+    # Scopes the SSH secrets to this job and gives you somewhere to add a
+    # manual approval later (Settings → Environments → production).
+    environment:
+      name: production
+      url: https://${{ vars.DEPLOY_HOST }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Configure SSH
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
+
+      # The compose stack is versioned in the repo, so every deploy ships the
+      # current definition rather than trusting whatever is on the box.
+      - name: Ship stack definition
+        env:
+          TARGET: ${{ vars.DEPLOY_USER }}@${{ vars.DEPLOY_HOST }}
+        run: scp deploy/compose.yaml deploy/Caddyfile deploy/release.sh "$TARGET:app/"
+
+      # The image is private, so the box needs registry credentials — but only
+      # for the length of this job. GITHUB_TOKEN dies with the run, so no
+      # long-lived credential is ever parked on the server.
+      - name: Log the server into GHCR
+        env:
+          TARGET: ${{ vars.DEPLOY_USER }}@${{ vars.DEPLOY_HOST }}
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACTOR: ${{ github.actor }}
+        run: ssh "$TARGET" "docker login ghcr.io -u '$ACTOR' --password-stdin" <<< "$GHCR_TOKEN"
+
+      - name: Roll out
+        env:
+          TARGET: ${{ vars.DEPLOY_USER }}@${{ vars.DEPLOY_HOST }}
+          TAG: ${{ inputs.image_tag }}
+        run: ssh "$TARGET" "bash ~/app/release.sh '$TAG'"
+
+      # Runs even if the rollout failed — never leave credentials behind.
+      - name: Log the server out of GHCR
+        if: always()
+        env:
+          TARGET: ${{ vars.DEPLOY_USER }}@${{ vars.DEPLOY_HOST }}
+        run: ssh "$TARGET" 'docker logout ghcr.io'
+
+      # --retry-all-errors matters: plain --retry ignores TLS handshake failures
+      # (curl exit 35), which is exactly what you get while Caddy is still
+      # obtaining the certificate on a first deploy to a new host.
+      - name: Smoke test
+        env:
+          HOST: ${{ vars.DEPLOY_HOST }}
+        run: |
+          curl --fail --silent --show-error \
+               --retry 12 --retry-delay 5 --retry-all-errors \
+               --max-time 120 \
+               "https://$HOST/api/health"
+
+      - name: Summary
+        if: always()
+        env:
+          TAG: ${{ inputs.image_tag }}
+          HOST: ${{ vars.DEPLOY_HOST }}
+        run: |
+          {
+            echo "### Deploy"
+            echo
+            echo "| | |"
+            echo "|---|---|"
+            echo "| Image tag | \`$TAG\` |"
+            echo "| Host | https://$HOST |"
+            echo "| Triggered by | ${{ github.event_name }} |"
+          } >> "$GITHUB_STEP_SUMMARY"
