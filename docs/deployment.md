@@ -10,7 +10,10 @@ git tag v2.0.0  ──▶  .github/workflows/release.yml
                         │
                         ├─ check    type-check, lint, test, content:check
                         ├─ build    Dockerfile ──▶ ghcr.io/radioescola-pt/site:2.0.0
-                        └─ deploy   scp deploy/* ──▶ ~/app  ──▶ release.sh 2.0.0
+                        └─ deploy ──▶ deploy.yml (also runnable on its own,
+                                      for a redeploy or a rollback)
+                                        │
+                                        scp deploy/* ──▶ ~/app ──▶ release.sh 2.0.0
                                                                 │
                                     VPS: caddy (TLS) ──▶ app container :3000
 ```
@@ -25,7 +28,8 @@ git tag v2.0.0  ──▶  .github/workflows/release.yml
 | `deploy/Caddyfile` | Reverse proxy and automatic TLS |
 | `deploy/release.sh` | Pins an image tag and rolls it out. Also the rollback tool |
 | `.github/workflows/ci.yml` | Checks. Runs on PRs, and is reused by the release |
-| `.github/workflows/release.yml` | Tag → build → push → deploy |
+| `.github/workflows/release.yml` | Tag → build → push → calls the deploy workflow |
+| `.github/workflows/deploy.yml` | The rollout. Called by a release, or run by hand for a redeploy or rollback |
 
 Edit the `deploy/` files here, never on the server — the next deploy overwrites
 whatever is in `~/app`.
@@ -198,17 +202,29 @@ Caddy.
 
 Only `v*.*.*` tags trigger a release. Pushes to `main` run the checks only.
 
-## Rolling back
+## Deploying by hand, and rolling back
 
-Images are never overwritten, so rollback is just pointing at an older one:
+Images are never overwritten, so both are the same operation: point the stack at
+a tag that already exists.
+
+**Actions → Deploy → Run workflow**, and give it an image tag. That is the way to
+do it. The workflow supplies registry credentials, so it works for any tag still
+in GHCR, whether or not the box has it cached — and it is the same code path a
+tag release takes, because `release.yml` calls this workflow too.
+
+Note the tag has **no leading `v`**: published tags are the bare semver
+(`2.0.0`, `2.0`) plus a `sha-` tag. Check the repo's Packages page for what
+exists.
+
+Over SSH also works, but only for an image the box still has cached — it holds
+no registry credentials of its own by design:
 
 ```bash
-ssh deploy@server.radioescola.pt 'bash ~/app/release.sh 1.9.0'
+ssh deploy@server.radioescola.pt 'bash ~/app/release.sh 2.0.0'
 ```
 
-Note the tag has no leading `v` — the published image tags are the semver
-version (`2.0.0`, `2.0`) plus a `sha-` tag. `docker image ls` on the server
-shows what is still cached locally; anything else pulls from GHCR.
+Either way, a tag that can be neither pulled nor found locally aborts before
+`.env` is rewritten, so a typo leaves the running site alone.
 
 ## Operating it
 

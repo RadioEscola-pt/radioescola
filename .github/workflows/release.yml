@@ -59,61 +59,11 @@ jobs:
           build-args: |
             NEXT_PUBLIC_GAMIFICATION=${{ vars.NEXT_PUBLIC_GAMIFICATION }}
 
+  # The rollout itself lives in deploy.yml so the same steps back both a tag
+  # release and the manual "Run workflow" button (redeploys and rollbacks).
   deploy:
     needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: read
-    # Scopes the SSH secrets to this job and gives you somewhere to add a
-    # manual approval later (Settings → Environments → production).
-    environment:
-      name: production
-      url: https://${{ vars.DEPLOY_HOST }}
-    steps:
-      - uses: actions/checkout@v7
-
-      - name: Configure SSH
-        env:
-          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
-          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
-        run: |
-          install -m 700 -d ~/.ssh
-          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
-
-      # The compose stack is versioned in the repo, so every deploy ships the
-      # current definition rather than trusting whatever is on the box.
-      - name: Ship stack definition
-        env:
-          TARGET: ${{ vars.DEPLOY_USER }}@${{ vars.DEPLOY_HOST }}
-        run: scp deploy/compose.yaml deploy/Caddyfile deploy/release.sh "$TARGET:app/"
-
-      # The image is private, so the box needs registry credentials — but only
-      # for the length of this job. GITHUB_TOKEN dies with the run, so no
-      # long-lived credential is ever parked on the server.
-      - name: Log the server into GHCR
-        env:
-          TARGET: ${{ vars.DEPLOY_USER }}@${{ vars.DEPLOY_HOST }}
-          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ACTOR: ${{ github.actor }}
-        run: ssh "$TARGET" "docker login ghcr.io -u '$ACTOR' --password-stdin" <<< "$GHCR_TOKEN"
-
-      - name: Roll out
-        env:
-          TARGET: ${{ vars.DEPLOY_USER }}@${{ vars.DEPLOY_HOST }}
-          TAG: ${{ needs.build.outputs.image_tag }}
-        run: ssh "$TARGET" "bash ~/app/release.sh '$TAG'"
-
-      # Runs even if the rollout failed — never leave credentials behind.
-      - name: Log the server out of GHCR
-        if: always()
-        env:
-          TARGET: ${{ vars.DEPLOY_USER }}@${{ vars.DEPLOY_HOST }}
-        run: ssh "$TARGET" 'docker logout ghcr.io'
-
-      - name: Smoke test
-        env:
-          HOST: ${{ vars.DEPLOY_HOST }}
-        run: curl --fail --silent --show-error --retry 5 --retry-delay 5 "https://$HOST/api/health"
+    uses: ./.github/workflows/deploy.yml
+    with:
+      image_tag: ${{ needs.build.outputs.image_tag }}
+    secrets: inherit
