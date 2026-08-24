@@ -25,8 +25,8 @@ Built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4.
 ### Setup
 
 ```bash
-git clone https://github.com/jcalado/hamradiostudy.git
-cd hamradiostudy
+git clone https://github.com/RadioEscola-pt/radioescola.git
+cd radioescola
 bun install
 bun run dev
 ```

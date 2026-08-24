@@ -9,7 +9,7 @@ release is an immutable image you can roll back to by name.
 git tag v2.0.0  ──▶  .github/workflows/release.yml
                         │
                         ├─ check    type-check, lint, test, content:check
-                        ├─ build    Dockerfile ──▶ ghcr.io/radioescola-pt/site:2.0.0
+                        ├─ build    Dockerfile ──▶ ghcr.io/radioescola-pt/radioescola:2.0.0
                         └─ deploy ──▶ deploy.yml (also runnable on its own,
                                       for a redeploy or a rollback)
                                         │
@@ -223,6 +223,19 @@ does not come up healthy, and a final smoke test hits `/api/health` through
 Caddy.
 
 Only `v*.*.*` tags trigger a release. Pushes to `main` run the checks only.
+
+## The repository rename
+
+The image name comes from `ghcr.io/${{ github.repository }}`, so it follows a
+repository rename automatically — but `deploy/compose.yaml` names it literally
+and does not. Both have to move together, or the workflow publishes to one
+package while the server pulls from another and `release.sh` aborts with
+"neither pullable nor cached".
+
+**Packages do not rename with the repository.** Tags published before a rename
+stay under the old package name, so a rollback across a rename cannot reach
+them. Do not delete the old package, and cut a fresh tag straight after
+renaming so the new one has something to roll back to.
 
 ## Deploying by hand, and rolling back
 
