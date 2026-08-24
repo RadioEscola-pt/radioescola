@@ -40,9 +40,24 @@ Everything below runs on the VPS as `root` unless noted.
 
 ### 1. DNS
 
-Point `server.radioescola.pt` at the VPS (`A`, plus `AAAA` if it has IPv6)
-*before* the first deploy. Caddy issues the certificate on startup and needs the
-name to resolve to itself.
+Point every name Caddy serves at the VPS (`A`, plus `AAAA` if it has IPv6)
+*before* deploying a Caddyfile that mentions it. Certificates are issued on
+demand over HTTP-01, so a name that does not yet resolve here fails the
+challenge — and Let's Encrypt allows only **5 failed validations per hostname
+per hour**.
+
+The names currently served, from `deploy/Caddyfile`:
+
+| Name | Role |
+| --- | --- |
+| `www.radioescola.pt` | canonical public site |
+| `radioescola.pt` | permanent redirect to www |
+| `server.radioescola.pt` | alias, kept so deploys never depend on the public name |
+
+When moving a live name across (as `www` was, from GitHub Pages): lower its TTL
+first, flip the DNS, confirm it resolves to this host, and only then deploy the
+Caddyfile that claims it. Doing it the other way round burns failed validations
+while the old host still answers the challenge.
 
 ### 2. Base system
 
@@ -170,8 +185,9 @@ tag, not an edit on the server.
 
 | Variable | Value |
 | --- | --- |
-| `DEPLOY_HOST` | `server.radioescola.pt` |
+| `DEPLOY_HOST` | `server.radioescola.pt` — the box to SSH to |
 | `DEPLOY_USER` | `deploy` |
+| `SITE_URL` | `https://www.radioescola.pt` — the public site, used for the smoke test and the environment link. Falls back to `https://$DEPLOY_HOST` if unset |
 | `NEXT_PUBLIC_GAMIFICATION` | `true` to ship gamification, otherwise leave unset |
 
 **Settings → Environments → New environment → `production`**, then add its

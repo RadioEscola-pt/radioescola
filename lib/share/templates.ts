@@ -1,6 +1,8 @@
 import type { ShareContent } from "./share-service";
 
-const APP_URL = "https://radioescola.pt";
+// The canonical origin. Shared links point straight at it rather than at the
+// apex, which redirects — a shared result should not cost the recipient a hop.
+const APP_URL = "https://www.radioescola.pt";
 const HASHTAGS = ["hamradio", "radioamador", "portugal"];
 
 interface ExamResultParams {

@@ -1,12 +1,26 @@
 # Terminates TLS (certificates issued and renewed automatically) and proxies to
 # the app container. Next sets its own Cache-Control headers, so nothing here
 # second-guesses them.
-server.radioescola.pt {
+#
+# Certificates are issued on demand over HTTP-01, so a name must already resolve
+# to this host before it is added here — otherwise the challenge fails and Let's
+# Encrypt counts it against the failed-validation limit (5 per hostname/hour).
+
+# The canonical public site.
+www.radioescola.pt {
 	encode zstd gzip
 	reverse_proxy app:3000
 }
 
-# To also serve the apex domain, point its DNS at this host and add:
-# radioescola.pt {
-# 	redir https://server.radioescola.pt{uri}
-# }
+# Apex redirects to www rather than serving a second copy, so there is one
+# canonical origin and no duplicate-content split.
+radioescola.pt {
+	redir https://www.radioescola.pt{uri} permanent
+}
+
+# Kept as an alias so deploys and health checks never depend on the public name
+# — if a DNS change breaks www, this still reaches the box.
+server.radioescola.pt {
+	encode zstd gzip
+	reverse_proxy app:3000
+}
