@@ -12,9 +12,13 @@ import { ErrorBoundary } from "@/components/shared/ErrorBoundary";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 
+// Portuguese, matching the site's default locale and the pt_PT already declared
+// below — these strings are what search results and link previews show, and the
+// audience is sitting the Portuguese ANACOM exam.
 export const metadata: Metadata = {
   title: "Rádio Escola",
-  description: "Study and prepare for ham radio exams with localized content.",
+  description:
+    "Prepare-se para os exames de radioamador da ANACOM: perguntas reais, simuladores de exame cronometrados e explicações em português.",
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
@@ -22,8 +26,9 @@ export const metadata: Metadata = {
     title: "Rádio Escola",
   },
   openGraph: {
-    title: "Rádio Escola - Ham Radio Study",
-    description: "Practice with real questions, take timed exams, and become a licensed ham radio operator.",
+    title: "Rádio Escola — Exames de Radioamador",
+    description:
+      "Pratique com perguntas reais dos exames da ANACOM, faça simulações cronometradas e prepare-se para obter a sua licença de radioamador.",
     type: "website",
     locale: "pt_PT",
     siteName: "Rádio Escola",
