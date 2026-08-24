@@ -21,8 +21,6 @@ sources:
   - pdf: cat1/2014_12_19
     question: 37
 ---
-Exames:(<a target='_blank' href='exams/cat1/2014_12_19.pdf'>2014_12_19p37</a>)
-
 Usa-se um oscilador de referência muito estável porque **qualquer variação de amplitude no sinal do oscilador de referência produz ruído de fase à saída do sintetizador**.
 
 Num sintetizador com malha de captura de fase (PLL), o comparador de fase compara a referência com o sinal do VCO dividido por N, e a malha obriga a saída a seguir fielmente a referência. Isto significa que, dentro da largura de banda da malha, o sintetizador copia para a saída todas as imperfeições da referência, e ainda as amplifica: o ruído de fase da referência aparece na saída multiplicado por N (em decibéis, agravado de 20·log N). As variações de amplitude também contribuem, porque o comparador de fase e os andares limitadores não são ideais e convertem modulação de amplitude em modulação de fase (conversão AM/PM). O resultado são bandas laterais de ruído em torno da portadora, que degradam a pureza espetral: em emissão, alargam o sinal e interferem com os canais vizinhos; em receção, provocam mistura recíproca com sinais fortes adjacentes. Por isso a referência é tipicamente um oscilador a cristal (TCXO ou OCXO), com excelente estabilidade e amplitude constante.

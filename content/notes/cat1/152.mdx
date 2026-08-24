@@ -1,5 +1,3 @@
-Exames:(<a target='_blank' href='exams/cat1/2023_08_00.pdf'>2023_08_00p36</a>)
-
 O circuito descrito é **um sintetizador com malha de captura de fase** (PLL, *Phase Locked Loop*).
 
 A descrição enumera precisamente os blocos de uma PLL usada como sintetizador. O comparador (detetor) de fase mede a diferença de fase entre o sinal de um oscilador de referência estável e o sinal vindo da malha de realimentação, produzindo uma tensão de erro. O filtro passa-baixo suaviza essa tensão e aplica-a à entrada de controlo do oscilador controlado por tensão (VCO), corrigindo a sua frequência até anular o erro. O elemento que transforma esta malha num sintetizador é o divisor de frequências programável colocado na realimentação: o comparador só "vê" a frequência do VCO dividida por N, pelo que a malha engata quando f<sub>saída</sub>/N = f<sub>ref</sub>, ou seja, f<sub>saída</sub> = N × f<sub>ref</sub>.
