@@ -77,7 +77,8 @@ as the MDX body), plus `category.json` holding `anacomFile` and the question
   `loadData()` returns
 - `content/notes/cat{n}/{id}.mdx` — what `/api/notes` serves
 
-Adding a question is documented in `docs/novas-questoes.md` (pt-PT).
+Adding a question is documented in `docs/novas-questoes.md` (pt-PT);
+the topic taxonomy in `docs/topicos.md` (pt-PT).
 
 `bun run content:build` regenerates them; `bun run content:check` verifies they
 match and is wired into `bun run build`, so a hand-edit or a stale artifact
