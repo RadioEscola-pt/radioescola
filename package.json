@@ -15,7 +15,8 @@
     "data:ocr-exams": "bun run scripts/ocr-exams.ts",
     "data:fonte-pages": "bun run scripts/resolve-fonte-pages.ts",
     "content:build": "bun run scripts/content-build.ts",
-    "content:check": "bun run scripts/content-build.ts --check"
+    "content:check": "bun run scripts/content-build.ts --check",
+    "qbank": "bun run scripts/qbank.ts"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

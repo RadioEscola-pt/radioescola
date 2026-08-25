@@ -665,10 +665,10 @@
       "id": 36,
       "question": "Que razão importante existe para que numa bobina se usem toróides de ferro pulverizado em vez de toróides de ferrite?",
       "options": [
-        "Os toróides de fero pulverizado têm normalmente maior permeabilidade inicial",
-        "Os toróides de fero pulverizado têm normalmente maior estabilidade de temperatura",
-        "Os toróides de fero pulverizado requerem normalmente um menor número de espiras para produzir uma determinada indutância",
-        "Os toróides de fero pulverizado apresentam a maior potência nominal"
+        "Os toróides de ferro pulverizado têm normalmente maior permeabilidade inicial",
+        "Os toróides de ferro pulverizado têm normalmente maior estabilidade de temperatura",
+        "Os toróides de ferro pulverizado requerem normalmente um menor número de espiras para produzir uma determinada indutância",
+        "Os toróides de ferro pulverizado apresentam a maior potência nominal"
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
@@ -3833,7 +3833,7 @@
         "A atenuação é independente da frequência",
         "Aumenta",
         "Diminui",
-        "Atinge o máximo próximo dos 18 MHz"
+        "Atinge um máximo próximo dos 18 MHz"
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,

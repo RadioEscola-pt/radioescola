@@ -14,6 +14,7 @@ bun run test:coverage # Vitest with V8 coverage
 bun run type-check   # tsc --noEmit
 bun run content:build # Compile content/questions/** into shipped artifacts
 bun run content:check # Verify artifacts match their source (writes nothing)
+bun run qbank <cmd>  # Inspect the question bank (search, dupes, coverage, …)
 ```
 
 ## Deployment
@@ -92,6 +93,37 @@ and `tesseract`; install `tesseract-data-por` for accented text). With
 a `sources` entry, because that needs the question number read off the scan,
 which is the least reliable part — those are proposed in the report for a human
 to confirm. `bun run data:fonte-pages` is the manual equivalent.
+
+## Inspecting the bank
+
+`bun run qbank` is a read-only developer tool over `content/questions/**` —
+`search`, `show`, `dupes`, `pairs`, `coverage`, `topics`, `paper`, `answers`.
+Analysis lives in `lib/content/analysis.ts` as pure functions; the script is
+I/O and formatting.
+
+It is deliberately **not** wired into CI. `content:check` owns per-file
+validity, and duplicating that here would create a second source of truth that
+drifts. What `qbank` reports is the class of problem no per-file rule can see:
+two files that are each valid but disagree with each other.
+
+- **A duplicate is not automatically a defect.** The same regulatory question is
+  legitimately examined at all three levels, so groups are *classified*, not
+  condemned — `contradiction` (same options, disagreeing on which is right),
+  `typo`, `divergent`, `shared-answers`, `exact`, worst first
+- **Every fuzzy finder also requires the answers to agree.** Stem similarity
+  alone is useless: "Qual das seguintes afirmações é incorreta?" is a template
+  shared by dozens of unrelated questions, and its nearest neighbour by string
+  distance is the *opposite* question. Without the answer check, `pairs`
+  reports hundreds of unrelated matches
+- **`canonical()` is for prose, not for options.** It strips punctuation, which
+  makes `10 dB` and `-10 dB`, or `0,01 µF` and `0,01 F`, compare equal — the
+  within-question duplicate-option check therefore compares raw text. Morse
+  answers canonicalise to the empty string entirely, which is what
+  `comparisonKey()` guards against
+- `--new` against `content/qbank-baseline.json` (written by
+  `dupes --update-baseline`) is the same ratchet as `content/missing-exams.json`.
+  No baseline is committed: the findings currently in the bank are real and
+  unfixed, and baselining them would mark them accepted
 
 Why `order` lives in `category.json`: the question order is **editorial, not id
 order** (in cat3, questions 210-213 sit at positions 8, 10, 19 and 31, grouped
