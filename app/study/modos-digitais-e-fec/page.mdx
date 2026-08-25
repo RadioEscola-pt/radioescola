@@ -1,0 +1,65 @@
+---
+title: Modos Digitais e Controlo de Erros (FEC e CRC)
+description: Protocolos de dados digitais no radioamadorismo (FT8, PSK31, RTTY, Packet), Forward Error Correction (FEC) e deteção por redundância cíclica (CRC).
+categories: [2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Modos Digitais e Controlo de Erros (FEC e CRC)
+
+A evolução do processamento digital de sinais (DSP) revolucionou as radiocomunicações de amador. Hoje, uma grande percentagem dos contactos em HF, VHF e comunicações por satélite é realizada através de **modos digitais**, capazes de descodificar informação mesmo quando o sinal se encontra muito abaixo do limiar de ruído audível.
+
+
+
+## 1. Principais Modos Digitais de Amador
+
+- **RTTY (Radioteletipo):** Um dos modos digitais mais antigos, baseado no código Baudot de 5 bits e modulação por desvio de frequência (FSK).
+- **PSK31:** Modulação por deslocamento de fase (BPSK/QPSK) com largura de banda extremamente estreita (apenas $31,25\text{ Hz}$), permitindo grande eficiência espectral.
+- **FT8 / FT4 (família WSJT-X):** Modulação 8-FSK altamente sincronizada no tempo com blocos de transmissão de 15 segundos, concebida para contactos fiáveis em condições extremas de fraca propagação.
+- **Packet Radio e APRS:** Transmissão de pacotes de dados por rádio com endereçamento, repetição e telemetria (geralmente em 144,800 MHz em Portugal).
+
+---
+
+## 2. Deteção e Correção de Erros
+
+Em canais de rádio ruidosos sujeitos a desvanecimento (*fading*) e interferências, os dados digitais podem sofrer corrupção de bits. Existem duas abordagens complementares para resolver este problema:
+
+### A. CRC — *Cyclic Redundancy Check* (Deteção de Erros)
+O emissor calcula um código matemático de verificação (checksum) a partir dos bits da mensagem e anexa-o ao pacote:
+- O receptor efetua o mesmo cálculo ao receber os dados.
+- Se o CRC calculado coincidir com o recebido, a mensagem é **válida**.
+- Se for diferente, o receptor sabe que a mensagem foi corrompida e descarta o pacote ou pede retransmissão (**ARQ — *Automatic Repeat Request***).
+
+### B. FEC — *Forward Error Correction* (Correção Antecipada de Erros)
+O emissor introduz bits de redundância estruturados (códigos convolucionais, Reed-Solomon ou LDPC):
+- Permite ao receptor **detetar E corrigir erros automaticamente sem necessidade de pedir retransmissão ao emissor**.
+- É fundamental em modos unidireccionais (como FT8 ou transmissões de satélite) onde não é prático pedir repetição de pacotes.
+
+---
+
+## Comparação: ARQ vs FEC
+
+| Método | Como Funciona | Canal Bidireccional Necessário? | Ideal Para |
+| :--- | :--- | :---: | :--- |
+| **ARQ** | O receptor pede retransmissão se o CRC falhar | **Sim** (requer confirmação ACK/NACK) | Packet Radio, Winlink (Email por rádio) |
+| **FEC** | O receptor reconstrói os bits danificados usando redundância | **Não** (funciona em simplex/broadcast) | FT8, transmissões espaciais, D-STAR, DMR |
+
+---
+
+## Perguntas de Exame para Praticar
+
+<StudyQuestionCard
+    prompt="1 - Qual é a principal função de um algoritmo de Forward Error Correction (FEC) numa transmissão digital?"
+    options={["Aumentar a potência do transmissor","Permitir ao receptor corrigir erros sem necessitar de retransmissão","Compactar ficheiros de áudio","Codificar o indicativo de chamada em Código Morse"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="2 - O método Cyclic Redundancy Check (CRC) é utilizado essencialmente para:"
+    options={["Detectar se ocorreram erros durante a recepção dos dados","Aumentar a largura de banda do canal","Sincronizar o relógio do computador","Medir a relação de onda estacionária (ROE)"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="3 - Em que modo digital é comum a utilização do protocolo AX.25 com pacotes e confirmações de recepção?"
+    options={["Packet Radio e APRS","CW analógico","Telefonia em SSB","Modulação em Amplitude clássica"]}
+    correct="A" />

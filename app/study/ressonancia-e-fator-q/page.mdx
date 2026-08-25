@@ -1,0 +1,95 @@
+---
+title: Ressonância, Reatâncias e Fator Q
+description: Cálculo de reatância indutiva e capacitiva, frequência de ressonância LC série e paralelo, e fator de qualidade Q.
+categories: [3, 2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Ressonância, Reatâncias e Fator Q
+
+A oposição que os componentes reactivos (bobinas e condensadores) oferecem à passagem da corrente alternada varia com a frequência. Quando combinamos indutâncias e capacidades, obtemos fenómenos de **ressonância**, que estão na base de toda a sintonia, filtragem e selecção de frequências em emissores e receptores.
+
+---
+
+## Vídeo-Aula: Reatâncias e Ressonância
+
+<iframe
+  className="aspect-video w-full rounded-2xl shadow-lg my-8 border border-slate-200 dark:border-slate-800"
+  src="https://www.youtube.com/embed/0io36TFqG-Q"
+  title="Reatância e Ressonância em Circuitos de Rádio"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+/>
+
+---
+
+## 1. Reatância Indutiva ($X_L$) e Capacitiva ($X_C$)
+
+Ao contrário de uma resistência pura que dissipa energia por calor, uma bobina armazena energia num **campo magnético** e um condensador armazena energia num **campo eléctrico**.
+
+### Reatância Indutiva ($X_L$)
+A bobina opõe-se a variações de corrente. À medida que a frequência da corrente alternada **aumenta**, a reatância indutiva também **aumenta proporcionalmente**:
+
+$$X_L = 2\pi f L$$
+
+- $X_L$ — Reatância indutiva em ohms ($\Omega$)
+- $f$ — Frequência em hertz ($\text{Hz}$)
+- $L$ — Indutância em henrys ($\text{H}$)
+
+### Reatância Capacitiva ($X_C$)
+O condensador bloqueia a corrente contínua ($f = 0$) e facilita a passagem de frequências elevadas. À medida que a frequência **aumenta**, a reatância capacitiva **diminui**:
+
+$$X_C = \frac{1}{2\pi f C}$$
+
+- $X_C$ — Reatância capacitiva em ohms ($\Omega$)
+- $f$ — Frequência em hertz ($\text{Hz}$)
+- $C$ — Capacidade em farads ($\text{F}$)
+
+---
+
+## 2. Frequência de Ressonância ($f_0$)
+
+A **ressonância** ocorre na frequência exacta onde a reatância indutiva iguala a reatância capacitiva ($X_L = X_C$), cancelando mutuamente os seus efeitos reactivos:
+
+$$f_0 = \frac{1}{2\pi\sqrt{L \cdot C}}$$
+
+| Tipo de Circuito | Impedância na Ressonância | Corrente na Ressonância | Aplicação Principal |
+| :--- | :---: | :---: | :--- |
+| **LC Série** | **Mínima** ($Z = R$) | **Máxima** | Filtros passa-faixa, aceitadores de frequência |
+| **LC Paralelo (Tanque)** | **Máxima** ($Z \to \infty$) | **Mínima na fonte** | Circuitos sintonizados de osciladores, andares de saída |
+
+---
+
+## 3. Fator de Mérito ou Qualidade ($Q$) e Largura de Banda
+
+O **Fator Q** quantifica a "pureza" e a selectividade de um circuito ressonante. Representa a razão entre a energia armazenada e a energia dissipada por ciclo:
+
+$$Q = \frac{f_0}{\text{BW}} = \frac{X_L}{R}$$
+
+- $f_0$ — Frequência central de ressonância
+- $\text{BW}$ — Largura de banda a $-3\text{ dB}$ (Bandwidth)
+- $R$ — Resistência de perdas da bobina
+
+### Implicações Práticas:
+- **Alto $Q$ ($Q > 50$):** Curva de resposta muito estreita e afiada, excelente selectividade para separar estações vizinhas.
+- **Baixo $Q$ ($Q < 10$):** Curva de resposta larga e plana, deixando passar uma faixa mais alargada de frequências (maior largura de banda).
+
+---
+
+## Perguntas de Exame para Praticar
+
+<StudyQuestionCard
+    prompt="1 - À medida que a frequência de um sinal aumenta, o que acontece à reatância de uma bobina?"
+    options={["Diminui","Aumenta","Mantém-se constante","Anula-se"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="2 - Qual é a condição fundamental para que ocorra ressonância num circuito LC?"
+    options={["R = 0","XL = XC","XL > XC","A resistência é infinita"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="3 - Se duplicarmos o Fator Q de um circuito sintonizado à mesma frequência central, a sua largura de banda:"
+    options={["Duplica","Reduz-se para metade","Mantém-se inalterada","Quadruplica"]}
+    correct="B" />

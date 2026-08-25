@@ -1,0 +1,74 @@
+---
+title: Baterias, Acumuladores e Fontes de Alimentação
+description: Cálculo de capacidade em Ampere-hora (Ah), autonomia em estações móveis e de emergência, químicas de baterias e fontes lineares vs chaveadas.
+categories: [3, 2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Baterias, Acumuladores e Fontes de Alimentação
+
+A alimentação eléctrica fiável é um requisito essencial para qualquer estação de radioamador, tanto na estação fixa principal ligada à rede eléctrica como em operações móveis, portáteis (SOTA/POTA) ou em cenários de **protecção civil e emergência**.
+
+
+
+## 1. Capacidade de uma Bateria (Ampere-Hora — $Ah$)
+
+A energia armazenada numa bateria expressa-se através da sua **capacidade ($C$) em Ampere-hora ($Ah$)** ou miliampere-hora ($mAh$):
+
+$$C = I \times t$$
+
+- $C$ — Capacidade da bateria em Ampere-hora ($Ah$)
+- $I$ — Corrente constante de descarga em amperes ($A$)
+- $t$ — Tempo de fornecimento em horas ($h$)
+
+> **Exemplo:**  
+> Uma bateria de $12\text{ Ah}$ pode, teoricamente, fornecer:
+> - $1\text{ A}$ durante $12\text{ horas}$;
+> - $2\text{ A}$ durante $6\text{ horas}$;
+> - $6\text{ A}$ durante $2\text{ horas}$.
+
+### Cálculo da Autonomia Real de um Transmissor:
+Nas comunicações de rádio, o equipamento passa a maior parte do tempo em **recepção** (baixo consumo, ex: $0,5\text{ A}$) e apenas parte em **emissão** (alto consumo, ex: $10\text{ A}$ a $100\text{ W}$). O consumo médio ponderado determina a autonomia real da estação.
+
+---
+
+## 2. Tipos e Químicas de Baterias
+
+| Tipo de Bateria | Tensão Nominal / Célula | Vantagens | Cuidados e Desvantagens |
+| :--- | :---: | :--- | :--- |
+| **Chumbo-Ácido / AGM / Gel** | $2,0\text{ V}$ ($12\text{ V}$ em bloco de 6 células) | Baratas, robustas, fáceis de carregar | Muito pesadas; não devem ser descarregadas abaixo de 50% |
+| **Iões de Lítio (Li-Ion / LiPo)** | $3,7\text{ V}$ | Muito leves, alta densidade energética | Sensíveis a sobrecarga e curto-circuito; requerem BMS |
+| **Fosfato de Ferro-Lítio (LiFePO4)** | $3,2\text{ V}$ ($12,8\text{ V}$ em bloco de 4 células) | **Ideal para rádio**: tensão estável em toda a descarga, leve e segura | Custo inicial mais elevado |
+
+---
+
+## 3. Fontes de Alimentação: Lineares vs Comutadas (Chaveadas)
+
+Para alimentar o transceptor de $13,8\text{ V}$ na estação fixa a partir dos $230\text{ V}$ da rede:
+
+- **Fontes Lineares (com transformador toroidal/pesado):**
+  - **Vantagem:** Ruído de radiofrequência (RFI) praticamente nulo.
+  - **Desvantagem:** Grandes, pesadas e dissipam muito calor nos reguladores.
+- **Fontes Comutadas (Switching / SMPS):**
+  - **Vantagem:** Muito leves, compactas e altamente eficientes (pouco aquecimento).
+  - **Desvantagem:** Podem gerar ruído e harmónicas em bandas de HF se não tiverem boa filtragem ou botão *Noise Offset*.
+
+---
+
+## Perguntas de Exame para Praticar
+
+<StudyQuestionCard
+    prompt="1 - Durante quanto tempo pode uma bateria de 20 Ah fornecer uma corrente contínua de 2,5 A antes de se esgotar?"
+    options={["5 horas","8 horas","10 horas","20 horas"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="2 - Qual é a tensão nominal típica de uma bateria de chumbo-ácido de 6 elementos totalmente carregada para alimentar transceptores de amador?"
+    options={["6 V","12 V a 13,8 V","24 V","230 V"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="3 - Por que razão as fontes de alimentação lineares continuam a ser muito apreciadas em estações de HF?"
+    options={["São mais leves que as comutadas","Não geram ruído de comutação por radiofrequência (RFI)","Consomem menos eletricidade","São mais baratas de transportar"]}
+    correct="B" />

@@ -1,0 +1,71 @@
+---
+title: Transístores Bipolares e FETs
+description: Funcionamento dos transístores de junção bipolar (NPN e PNP), modos de corte, ativo e saturação, e transístores de efeito de campo (FET e MOSFET).
+categories: [2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Transístores Bipolares e de Efeito de Campo
+
+O **transístor** é o componente semicondutor activo central de praticamente todos os circuitos electrónicos. Funciona como um **interruptor electrónico controlado** (em circuitos digitais e comutação) ou como um **amplificador de sinais** (em áudio e radiofrequência).
+
+
+
+## 1. Transístor de Junção Bipolar (BJT)
+
+O transístor bipolar é formado por três camadas semicondutoras dopadas, possuindo três terminais:
+- **Base (B):** Terminal de controlo (camada muito fina).
+- **Colector (C):** Recolhe os portadores de carga.
+- **Emissor (E):** Emite os portadores de carga (indicado pela seta no símbolo esquemático).
+
+Existem dois tipos fundamentais:
+- **NPN:** A seta do emissor aponta **para fora** (a corrente entra na Base e no Colector e sai pelo Emissor).
+- **PNP:** A seta do emissor aponta **para dentro** (a corrente entra pelo Emissor e sai pela Base e Colector).
+
+### Relação Fundamental de Correntes e Ganho:
+Uma pequena corrente que entra pela base ($I_B$) controla uma corrente muito maior que flui pelo colector ($I_C$):
+
+$$I_C = \beta \cdot I_B \quad (\text{ou } h_{FE} \cdot I_B)$$
+$$I_E = I_B + I_C \approx I_C$$
+
+- $\beta$ ($h_{FE}$) é o **ganho de corrente em corrente contínua**, tipicamente entre $50$ e $300$.
+
+---
+
+## 2. Modos de Funcionamento do BJT
+
+| Modo | Junção Base-Emissor | Junção Base-Colector | Aplicação | Comportamento |
+| :--- | :---: | :---: | :--- | :--- |
+| **Corte** | Inversamente polarizada | Inversamente polarizada | Chave aberta | $I_C = 0$, tensão $V_{CE} = V_{CC}$ |
+| **Activo** | **Directamente polarizada** | **Inversamente polarizada** | **Amplificação linear** | $I_C = \beta \cdot I_B$, amplifica sinais sem distorção |
+| **Saturação** | Directamente polarizada | Directamente polarizada | Chave fechada | Corrente máxima, $V_{CE} \approx 0,2\text{ V}$ |
+
+---
+
+## 3. Transístores de Efeito de Campo (FET e MOSFET)
+
+Enquanto o BJT é um dispositivo controlado por **corrente** ($I_B$), o **FET** é controlado por **tensão** aplicada à Porta (*Gate*), apresentando uma **impedância de entrada extremamente elevada** (praticamente não consome corrente de controlo):
+
+- **Terminais:** Porta (*Gate* - G), Dreno (*Drain* - D) e Fonte (*Source* - S).
+- **JFET (FET de Junção):** A condução entre Dreno e Fonte é modulada pela polarização inversa da junção da Porta.
+- **MOSFET (Metal-Oxide Semiconductor):** Possui uma camada isolante de óxido de silício entre a Porta e o canal, garantindo isolamento galvânico quase perfeito (usado em andares de potência de RF e andares lógicos).
+
+---
+
+## Perguntas de Exame para Praticar
+
+<StudyQuestionCard
+    prompt="1 - Num transístor bipolar NPN a operar na região activa, a junção Base-Emissor encontra-se:"
+    options={["Directamente polarizada","Inversamente polarizada","Em curto-circuito","Sem qualquer polarização"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="2 - Se a corrente de base de um transístor com ganho beta = 100 for de 0,5 mA, qual é a corrente de colector aproximada?"
+    options={["0,5 mA","50 mA","500 mA","5 mA"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="3 - Qual é a principal vantagem dos transístores de efeito de campo (FET) em relação aos transístores bipolares (BJT) na entrada de receptores?"
+    options={["Maior consumo de corrente na base","Impedância de entrada extremamente elevada","Menor custo de fabrico","Operam apenas em corrente contínua"]}
+    correct="B" />

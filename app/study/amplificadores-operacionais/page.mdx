@@ -1,0 +1,75 @@
+---
+title: Amplificadores Operacionais (Op-Amps)
+description: Características ideais, configurações inversora, não-inversora e seguidor de tensão em circuitos de áudio e processamento de sinal.
+categories: [1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Amplificadores Operacionais (Op-Amps)
+
+O **Amplificador Operacional** (abreviado por *Op-Amp*) é um circuito integrado analógico de alto ganho com duas entradas diferenciais e uma saída de terminação simples. É um dos blocos fundamentais da eletrónica moderna, utilizado em pré-amplificadores de áudio, filtros activos, misturadores e circuitos de instrumentação de estações de radioamador.
+
+
+
+## 1. O Modelo do Amplificador Operacional Ideal
+
+Nas perguntas de exame, assume-se o comportamento de um **Op-Amp ideal**, que possui as seguintes características essenciais:
+
+- **Impedância de Entrada ($Z_{\text{in}}$):** **Infinita ($\infty$)** $\to$ Não drena qualquer corrente dos seus terminais de entrada ($I_+ = I_- = 0$).
+- **Impedância de Saída ($Z_{\text{out}}$):** **Nula ($0\ \Omega$)** $\to$ Pode alimentar qualquer carga sem perda de tensão.
+- **Ganho em Malha Aberta ($A_{OL}$):** **Infinito ($\infty$)** $\to$ Qualquer diferença mínima entre as entradas satura a saída.
+- **Largura de Banda:** **Infinita** $\to$ Amplifica todas as frequências por igual desde CC até ao infinito.
+- **Tensão diferencial nula (Curto-circuito virtual):** Quando há realimentação negativa, a tensão na entrada inversora iguala a tensão na entrada não-inversora ($V_- = V_+$).
+
+---
+
+## 2. Configurações Fundamentais
+
+Graças à **realimentação negativa** (ligação da saída à entrada inversora através de uma resistência $R_f$), o ganho do circuito passa a depender exclusivamente dos valores das resistências externas.
+
+### A. Amplificador Inversor
+O sinal entra pela entrada inversora ($-$) através de $R_1$. A saída fica desfasada em $180^\circ$ (invertida):
+
+$$A_v = -\frac{R_f}{R_1} \quad \implies \quad V_{\text{out}} = -\left(\frac{R_f}{R_1}\right) \cdot V_{\text{in}}$$
+
+### B. Amplificador Não-Inversor
+O sinal entra diretamente pela entrada não-inversora ($+$). A saída fica em fase com a entrada:
+
+$$A_v = 1 + \frac{R_f}{R_1} \quad \implies \quad V_{\text{out}} = \left(1 + \frac{R_f}{R_1}\right) \cdot V_{\text{in}}$$
+
+### C. Seguidor de Tensão (Buffer de Ganho Unitário)
+Quando $R_f = 0$ (saída ligada diretamente à entrada inversora):
+
+$$A_v = 1 \quad (V_{\text{out}} = V_{\text{in}})$$
+
+- **Função:** Casamento de impedâncias (converte uma fonte de alta impedância numa saída de baixa impedância sem alterar a tensão).
+
+---
+
+## Resumo das Fórmulas de Ganho
+
+| Configuração | Ganho de Tensão ($A_v$) | Fase da Saída | Impedância de Entrada |
+| :--- | :---: | :---: | :---: |
+| **Inversor** | $-R_f / R_1$ | Invertida ($180^\circ$) | Igual a $R_1$ |
+| **Não-Inversor** | $1 + R_f / R_1$ | Em fase ($0^\circ$) | Praticamente infinita |
+| **Seguidor (Buffer)** | $+1$ | Em fase ($0^\circ$) | Praticamente infinita |
+
+---
+
+## Perguntas de Exame para Praticar
+
+<StudyQuestionCard
+    prompt="1 - Qual é a impedância de entrada teórica de um amplificador operacional ideal?"
+    options={["Zero ohms","50 ohms","Infinita","Igual à impedância de saída"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="2 - Num amplificador inversor com R1 = 10 kΩ e Rf = 100 kΩ, qual é o ganho de tensão?"
+    options={["+10","-10","+11","-100"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="3 - Qual é a principal função de um seguidor de tensão (buffer)?"
+    options={["Amplificar a corrente e casar impedâncias mantendo a tensão","Inverter a polaridade da tensão de entrada","Filtrar as frequências elevadas","Reduzir a largura de banda"]}
+    correct="A" />

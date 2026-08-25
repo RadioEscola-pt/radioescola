@@ -10,6 +10,7 @@ import {
   Zap, CircuitBoard, Filter, RadioReceiver, RadioTower, Antenna, Radar,
   Gauge, ShieldAlert, HardHat, Waves, Palette, SpellCheck, MessagesSquare,
   Tag, Footprints, Landmark, AudioWaveform, MessageSquareCode, BookMarked,
+  Activity, Cpu, BatteryCharging, Binary, FileCheck,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -49,6 +50,13 @@ export const GUIDE_VISUAL: Record<string, { icon: LucideIcon; accent: GuideAccen
   'codigo-q': { icon: MessageSquareCode, accent: 'blue' },
   'definicoes': { icon: BookMarked, accent: 'violet' },
   'figuras-de-lissajous': { icon: Waves, accent: 'emerald' },
+  'ressonancia-e-fator-q': { icon: Activity, accent: 'rose' },
+  'circuitos-rl-rc': { icon: AudioWaveform, accent: 'cyan' },
+  'amplificadores-operacionais': { icon: CircuitBoard, accent: 'violet' },
+  'transistores': { icon: Cpu, accent: 'blue' },
+  'baterias-e-alimentacao': { icon: BatteryCharging, accent: 'emerald' },
+  'modos-digitais-e-fec': { icon: Binary, accent: 'cyan' },
+  'marcar-exame-anacom': { icon: FileCheck, accent: 'amber' },
 };
 
 export const DEFAULT_GUIDE_VISUAL = { icon: BookOpen, accent: 'slate' as const };
