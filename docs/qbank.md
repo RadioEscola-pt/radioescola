@@ -305,7 +305,7 @@ you add a check, put the logic in `analysis.ts` with a test and keep
 *[English](#qbank) · [Português](#qbank-em-português)*
 
 Uma ferramenta de leitura apenas, para programadores inspecionarem o banco de
-perguntas.
+questões.
 
 ```
 bun run qbank <comando> [args] [--cat 3,2] [--limit N] [--json]
