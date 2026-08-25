@@ -12,10 +12,10 @@ const DONATION_TIERS = [
 /**
  * Annual cost breakdown. `share` is each line's slice of the total, used for the
  * proportion bar — keep it in sync with the expense* amounts in the messages
- * files (server €5.52/mo ≈ €66/yr ≈ 67%, domain €32.37/yr ≈ 33%).
+ * files (server €5.58/mo = €66.96/yr ≈ 67%, domain €32.37/yr ≈ 33%).
  */
 const COSTS = [
-  { nameKey: 'expenseHosting', amountKey: 'expenseHostingAmount', provider: 'Hetzner', share: 67, segment: 'bg-amber-500' },
+  { nameKey: 'expenseHosting', amountKey: 'expenseHostingAmount', provider: 'Euronodes', share: 67, segment: 'bg-amber-500' },
   { nameKey: 'expenseDomain', amountKey: 'expenseDomainAmount', provider: 'radioescola.pt', share: 33, segment: 'bg-amber-500/40' },
 ] as const;
 
