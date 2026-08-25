@@ -18,7 +18,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 8
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 2,
@@ -46,7 +47,8 @@
           "question": 6,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 3,
@@ -65,7 +67,8 @@
           "question": 6,
           "page": 2
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 4,
@@ -83,7 +86,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 8
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 5,
@@ -95,7 +99,8 @@
         "Nenhuma das respostas anteriores está correta"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 6,
@@ -117,7 +122,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 19
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 7,
@@ -136,7 +142,8 @@
           "question": 19,
           "page": 5
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 8,
@@ -154,7 +161,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 19
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 9,
@@ -178,7 +186,8 @@
           "question": 24,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 10,
@@ -202,7 +211,8 @@
           "question": 24,
           "page": 7
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 11,
@@ -221,7 +231,8 @@
           "question": 17,
           "page": 5
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 12,
@@ -240,7 +251,8 @@
           "question": 17,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 13,
@@ -259,7 +271,8 @@
           "question": 32,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "medidas"
     },
     {
       "id": 14,
@@ -283,7 +296,8 @@
           "question": 34
         }
       ],
-      "tutorial": "figuras-de-lissajous"
+      "tutorial": "figuras-de-lissajous",
+      "materia": "medidas"
     },
     {
       "id": 15,
@@ -296,7 +310,8 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "tutorial": "figuras-de-lissajous"
+      "tutorial": "figuras-de-lissajous",
+      "materia": "teoria"
     },
     {
       "id": 16,
@@ -323,7 +338,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 34
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 17,
@@ -335,7 +351,8 @@
         "Quando o desfasamento entre eles é de 180 graus"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 18,
@@ -358,7 +375,8 @@
           "question": 35,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 19,
@@ -381,7 +399,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 37
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 20,
@@ -404,7 +423,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 37
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 21,
@@ -416,7 +436,8 @@
         "\"Forward Shift Keying\""
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 22,
@@ -428,7 +449,8 @@
         "Todas as opções são válidas"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "emissores"
     },
     {
       "id": 23,
@@ -440,7 +462,8 @@
         "Todas as opções são válidas"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 24,
@@ -463,7 +486,8 @@
           "question": 38,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 25,
@@ -475,7 +499,8 @@
         "a quantidade de informação associada a cada bit transmitido"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 26,
@@ -487,7 +512,8 @@
         "O momento em que se produz cada pulso"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 27,
@@ -499,7 +525,8 @@
         "A sistemas de adaptação de impedâncias"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 28,
@@ -522,7 +549,8 @@
           "question": 39,
           "page": 12
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 29,
@@ -534,7 +562,8 @@
         "Duma forma geral, para um dado tipo de comunicação e para um dado bit rate, a largura de faixa necessária apenas depende da potência refletida pela antena"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 30,
@@ -546,7 +575,8 @@
         "a quantificação, a amostragem e a integração"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 31,
@@ -569,7 +599,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 40
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 32,
@@ -581,7 +612,8 @@
         "um pulso de amplitude nula"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 33,
@@ -600,7 +632,8 @@
           "question": 16,
           "page": 4
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 34,
@@ -612,7 +645,8 @@
         "maior for a sua indutância"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 35,
@@ -624,7 +658,8 @@
         "Produção de uma grande faísca nos contactos do interruptor quando a alimentação de energia da bobina é desligada"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 36,
@@ -643,7 +678,8 @@
           "question": 20,
           "page": 5
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 37,
@@ -661,7 +697,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 18
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 38,
@@ -679,7 +716,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 18
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 39,
@@ -691,7 +729,8 @@
         "Ambas resguardadas num mesmo espaço blindado, não importando a orientação relativa dos seus eixos"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 40,
@@ -703,7 +742,8 @@
         "Todas as hipóteses anteriores estão corretas"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 41,
@@ -722,7 +762,8 @@
           "question": 18,
           "page": 5
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 42,
@@ -734,7 +775,8 @@
         "Não é possível estabelecer esta relação, pois dependerá de fatores que não são conhecidos"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 43,
@@ -757,7 +799,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 26
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 44,
@@ -792,7 +835,8 @@
           "pdf": "cat2/2022_12_27",
           "question": 28
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 45,
@@ -811,7 +855,8 @@
           "question": 22,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 46,
@@ -823,7 +868,8 @@
         "0,1 A"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 47,
@@ -835,7 +881,8 @@
         "5,9 V"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 48,
@@ -858,7 +905,8 @@
           "question": 26,
           "page": 7
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 49,
@@ -870,7 +918,8 @@
         "Nenhuma das hipóteses anteriores está correta, pois um transformador nunca poderá servir como transformador de impedâncias"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 50,
@@ -882,7 +931,8 @@
         "Díodos Zener"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 389,
@@ -900,7 +950,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 30
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 51,
@@ -912,7 +963,8 @@
         "É um díodo com capacidade variável em função da tensão que lhe é aplicada"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 52,
@@ -924,7 +976,8 @@
         "A polarização inversa de um díodo ocorre quando o cátodo fica submetido a um potencial positivo relativamente ao ânodo"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 53,
@@ -943,7 +996,8 @@
           "question": 31,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 54,
@@ -961,7 +1015,8 @@
           "pdf": "cat1/2023_08_00",
           "question": 30
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 55,
@@ -973,7 +1028,8 @@
         "A fonte forma-se pelo depósito de metal em silício"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 56,
@@ -991,7 +1047,8 @@
           "pdf": "cat1/2023_08_00",
           "question": 33
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 57,
@@ -1010,7 +1067,8 @@
           "question": 33,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "medidas"
     },
     {
       "id": 58,
@@ -1033,7 +1091,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 33
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 59,
@@ -1045,7 +1104,8 @@
         "Complementary Metal-Oxide Substrate"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 60,
@@ -1064,7 +1124,8 @@
           "question": 33,
           "page": 10
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 61,
@@ -1076,7 +1137,8 @@
         "Baixo consumo de energia"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 62,
@@ -1088,7 +1150,8 @@
         "Nenhuma das respostas anteriores está correta"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 63,
@@ -1106,7 +1169,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 33
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 64,
@@ -1118,7 +1182,8 @@
         "Redução da resistência da placa"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 65,
@@ -1137,7 +1202,8 @@
           "question": 36,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 66,
@@ -1156,7 +1222,8 @@
           "question": 36,
           "page": 9
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 67,
@@ -1169,7 +1236,8 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "img": "/images/cat1/fig1.png"
+      "img": "/images/cat1/fig1.png",
+      "materia": "circuitos"
     },
     {
       "id": 68,
@@ -1181,7 +1249,8 @@
         "Um programa que calcula o ganho de um amplificador de RF"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 69,
@@ -1193,7 +1262,8 @@
         "Muito alta"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 70,
@@ -1206,6 +1276,7 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "materia": "circuitos",
       "calc": "COPADDER"
     },
     {
@@ -1218,7 +1289,8 @@
         "33 mH"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 373,
@@ -1237,6 +1309,7 @@
           "question": 10
         }
       ],
+      "materia": "circuitos",
       "calc": "COPADDER"
     },
     {
@@ -1256,6 +1329,7 @@
           "question": 10
         }
       ],
+      "materia": "circuitos",
       "calc": "COPADDER"
     },
     {
@@ -1276,6 +1350,7 @@
           "page": 3
         }
       ],
+      "materia": "circuitos",
       "calc": "COPADDER"
     },
     {
@@ -1295,7 +1370,8 @@
           "question": 11,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 75,
@@ -1307,7 +1383,8 @@
         "Condensador ideal, díodo ideal e transístor ideal"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 76,
@@ -1325,7 +1402,8 @@
           "pdf": "cat1/2023_08_00",
           "question": 10
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 77,
@@ -1337,7 +1415,8 @@
         "A tensão nominal pode ser excedida"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 78,
@@ -1349,7 +1428,8 @@
         "Tem um valor fixo (independente da corrente no circuito) de cerca de 12,5 V"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 79,
@@ -1361,7 +1441,8 @@
         "Podem-se captar sinais indesejados"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "recetores"
     },
     {
       "id": 80,
@@ -1380,7 +1461,8 @@
           "question": 15,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "recetores"
     },
     {
       "id": 81,
@@ -1392,7 +1474,8 @@
         "23,67 kHz"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 82,
@@ -1414,7 +1497,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 15
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 83,
@@ -1426,7 +1510,8 @@
         "1,78 MHz"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 84,
@@ -1445,7 +1530,8 @@
           "question": 15,
           "page": 4
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 85,
@@ -1457,7 +1543,8 @@
         "63,24 kHz"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 86,
@@ -1476,7 +1563,8 @@
           "question": 15,
           "page": 4
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 87,
@@ -1499,7 +1587,8 @@
           "question": 22,
           "page": 6
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 88,
@@ -1511,7 +1600,8 @@
         "quanto menor for o número de transístores com ganho superior a 0 dB"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 89,
@@ -1523,7 +1613,8 @@
         "Transforma reactâncias e é um filtro notch de banda estreita"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 90,
@@ -1535,7 +1626,8 @@
         "Todas as hipóteses anteriores estão corretas"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 91,
@@ -1547,7 +1639,8 @@
         "Aproximadamente igual à resistência do circuito"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 92,
@@ -1566,7 +1659,8 @@
           "question": 19,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 93,
@@ -1585,7 +1679,8 @@
           "question": 15,
           "page": 4
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 94,
@@ -1604,7 +1699,8 @@
           "question": 11,
           "page": 3
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 95,
@@ -1627,7 +1723,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 15
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 96,
@@ -1639,7 +1736,8 @@
         "Todas as opções são válidas"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 97,
@@ -1651,7 +1749,8 @@
         "A condução do elemento de controlo é variada de forma a manter constante a tensão à saída"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 375,
@@ -1669,7 +1768,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 17
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 98,
@@ -1681,7 +1781,8 @@
         "Um díodo varactor ou varicap"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 99,
@@ -1694,7 +1795,8 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "img": "/images/cat1/fig2.png"
+      "img": "/images/cat1/fig2.png",
+      "materia": "circuitos"
     },
     {
       "id": 100,
@@ -1707,7 +1809,8 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "img": "/images/cat1/fig2.png"
+      "img": "/images/cat1/fig2.png",
+      "materia": "circuitos"
     },
     {
       "id": 101,
@@ -1727,7 +1830,8 @@
           "page": 6
         }
       ],
-      "img": "/images/cat1/fig2a.png"
+      "img": "/images/cat1/fig2a.png",
+      "materia": "circuitos"
     },
     {
       "id": 102,
@@ -1747,7 +1851,8 @@
           "page": 5
         }
       ],
-      "img": "/images/cat1/fig2.png"
+      "img": "/images/cat1/fig2.png",
+      "materia": "circuitos"
     },
     {
       "id": 103,
@@ -1759,7 +1864,8 @@
         "Maior volume físico para a mesma potência"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 104,
@@ -1781,7 +1887,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 17
         }
-      ]
+      ],
+      "materia": "seguranca"
     },
     {
       "id": 105,
@@ -1793,7 +1900,8 @@
         "Condensador eletrolítico"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 106,
@@ -1805,7 +1913,8 @@
         "todo o período"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 107,
@@ -1824,7 +1933,8 @@
           "question": 29,
           "page": 8
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 108,
@@ -1842,7 +1952,8 @@
           "pdf": "cat1/2023_08_00",
           "question": 29
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 390,
@@ -1854,7 +1965,8 @@
         "o transístor conduz durante todo o período"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 109,
@@ -1866,7 +1978,8 @@
         "Todas as opções são válidas"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 110,
@@ -1878,7 +1991,8 @@
         "todo o período"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 111,
@@ -1890,7 +2004,8 @@
         "todo o período"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 112,
@@ -1902,7 +2017,8 @@
         "Classe A"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 113,
@@ -1920,7 +2036,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 29
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 114,
@@ -1933,7 +2050,8 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "img": "/images/cat1/fig3.png"
+      "img": "/images/cat1/fig3.png",
+      "materia": "circuitos"
     },
     {
       "id": 115,
@@ -1953,7 +2071,8 @@
           "page": 7
         }
       ],
-      "img": "/images/cat1/fig7.png"
+      "img": "/images/cat1/fig7.png",
+      "materia": "circuitos"
     },
     {
       "id": 116,
@@ -1966,7 +2085,8 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "img": "/images/cat1/fig3.png"
+      "img": "/images/cat1/fig3.png",
+      "materia": "circuitos"
     },
     {
       "id": 117,
@@ -1978,7 +2098,8 @@
         "rejeita-banda"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 118,
@@ -1990,7 +2111,8 @@
         "Porque, duma forma geral, mantêm as bandas laterais, causando assim múltiplas duplicações de sinal"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 119,
@@ -2012,7 +2134,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 27
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 120,
@@ -2025,7 +2148,8 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "img": "/images/cat1/fig4.png"
+      "img": "/images/cat1/fig4.png",
+      "materia": "circuitos"
     },
     {
       "id": 121,
@@ -2043,7 +2167,8 @@
           "pdf": "cat1/2023_08_00",
           "question": 31
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 122,
@@ -2062,7 +2187,8 @@
           "question": 10,
           "page": 3
         }
-      ]
+      ],
+      "materia": "emissores"
     },
     {
       "id": 123,
@@ -2074,7 +2200,8 @@
         "Todas as hipóteses de resposta estão erradas"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "recetores"
     },
     {
       "id": 124,
@@ -2096,7 +2223,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 31
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 125,
@@ -2115,7 +2243,8 @@
           "question": 31,
           "page": 9
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 126,
@@ -2139,7 +2268,8 @@
           "question": 34,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 127,
@@ -2158,7 +2288,8 @@
           "question": 28,
           "page": 8
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 128,
@@ -2170,7 +2301,8 @@
         "Demora do circuito de atraso"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 129,
@@ -2182,7 +2314,8 @@
         "É um circuito que gera um sinal periódico sem necessidade de lhe ser aplicado um sinal externo"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 130,
@@ -2201,7 +2334,8 @@
           "question": 32,
           "page": 9
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 131,
@@ -2213,7 +2347,8 @@
         "Todas as hipóteses de resposta estão erradas"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 132,
@@ -2232,7 +2367,8 @@
           "question": 34,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 133,
@@ -2244,7 +2380,8 @@
         "Através de um condensador de neutralização"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 134,
@@ -2262,7 +2399,8 @@
           "pdf": "cat1/2023_08_00",
           "question": 32
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 135,
@@ -2285,7 +2423,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 32
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 136,
@@ -2297,7 +2436,8 @@
         "Um oscilador de referência muito estável baseado no efeito de portadora quente"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 137,
@@ -2321,7 +2461,8 @@
           "question": 30,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 138,
@@ -2339,7 +2480,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 32
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 139,
@@ -2351,7 +2493,8 @@
         "Em sinais cujas frequências estão relacionadas com as frequências da portadora numa relação que resulta da sequência de Fibonacci"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "emissores"
     },
     {
       "id": 140,
@@ -2370,7 +2513,8 @@
           "question": 36,
           "page": 11
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 380,
@@ -2388,7 +2532,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 36
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 141,
@@ -2400,7 +2545,8 @@
         "Filtro passa-baixo"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 142,
@@ -2412,7 +2558,8 @@
         "Maior largura de banda da antena"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 143,
@@ -2431,7 +2578,8 @@
           "question": 38,
           "page": 11
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 144,
@@ -2443,7 +2591,8 @@
         "O filtro com processamento digital de sinal é mais eficaz em frequências VHF"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "recetores"
     },
     {
       "id": 145,
@@ -2462,7 +2611,8 @@
           "question": 39,
           "page": 10
         }
-      ]
+      ],
+      "materia": "recetores"
     },
     {
       "id": 146,
@@ -2474,7 +2624,8 @@
         "\"Finite Impulse Response\""
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 147,
@@ -2493,7 +2644,8 @@
           "question": 21,
           "page": 6
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 148,
@@ -2505,7 +2657,8 @@
         "\"Input Impulse Response\""
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 149,
@@ -2517,7 +2670,8 @@
         "é a representação no domínio complexo s(i) dum sinal cuja representação no domínio real é S(r)"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 150,
@@ -2529,7 +2683,8 @@
         "é por uma onda sinusoidal, cuja frequência é inversamente proporcional ao maior período do sinal transformado"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 151,
@@ -2541,7 +2696,8 @@
         "sintetizadores de frequência a cristal"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "recetores"
     },
     {
       "id": 152,
@@ -2563,7 +2719,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 36
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 153,
@@ -2582,7 +2739,8 @@
           "question": 37,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 154,
@@ -2595,7 +2753,8 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "img": "/images/cat1/fig5.png"
+      "img": "/images/cat1/fig5.png",
+      "materia": "circuitos"
     },
     {
       "id": 155,
@@ -2617,7 +2776,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 23
         }
-      ]
+      ],
+      "materia": "medidas"
     },
     {
       "id": 156,
@@ -2640,7 +2800,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 23
         }
-      ]
+      ],
+      "materia": "medidas"
     },
     {
       "id": 157,
@@ -2659,7 +2820,8 @@
           "question": 21,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "medidas"
     },
     {
       "id": 158,
@@ -2671,7 +2833,8 @@
         "Aumenta a largura de banda"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "recetores"
     },
     {
       "id": 159,
@@ -2693,7 +2856,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 25
         }
-      ]
+      ],
+      "materia": "recetores"
     },
     {
       "id": 160,
@@ -2712,7 +2876,8 @@
           "question": 25,
           "page": 7
         }
-      ]
+      ],
+      "materia": "recetores"
     },
     {
       "id": 161,
@@ -2730,7 +2895,8 @@
           "pdf": "cat1/2023_08_00",
           "question": 25
         }
-      ]
+      ],
+      "materia": "recetores"
     },
     {
       "id": 162,
@@ -2742,7 +2908,8 @@
         "A figura de ruído é o fator de ruído expresso em Hz"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "recetores"
     },
     {
       "id": 163,
@@ -2754,7 +2921,8 @@
         "Intermodulação"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 164,
@@ -2773,7 +2941,8 @@
           "question": 23,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "emissores"
     },
     {
       "id": 165,
@@ -2797,7 +2966,8 @@
           "question": 26,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "recetores"
     },
     {
       "id": 166,
@@ -2809,7 +2979,8 @@
         "Passando de AGC rápido para lento"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "recetores"
     },
     {
       "id": 167,
@@ -2828,7 +2999,8 @@
           "question": 7,
           "page": 2
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 372,
@@ -2846,7 +3018,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 7
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 168,
@@ -2865,7 +3038,8 @@
           "question": 28,
           "page": 8
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 169,
@@ -2883,7 +3057,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 7
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 170,
@@ -2901,7 +3076,8 @@
           "pdf": "cat1/2023_08_00",
           "question": 7
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 171,
@@ -2913,7 +3089,8 @@
         "Para maximizar o ganho do amplificador de saída"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 387,
@@ -2931,7 +3108,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 22
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 388,
@@ -2949,7 +3127,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 29
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 172,
@@ -2967,7 +3146,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 22
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 173,
@@ -2979,7 +3159,8 @@
         "ASK"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 306,
@@ -2997,7 +3178,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 39
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 174,
@@ -3009,7 +3191,8 @@
         "têm um elevado Q"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 175,
@@ -3021,7 +3204,8 @@
         "Malha de entrada com VCO, transístores de amplificação e malha de saída com PLL"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "emissores"
     },
     {
       "id": 176,
@@ -3040,7 +3224,8 @@
           "question": 27,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 177,
@@ -3063,7 +3248,8 @@
           "question": 27,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "operacao"
     },
     {
       "id": 178,
@@ -3075,7 +3261,8 @@
         "A classe C não apresenta nenhuma desvantagem relativamente a outras classes de amplificação"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "emissores"
     },
     {
       "id": 179,
@@ -3098,7 +3285,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 28
         }
-      ]
+      ],
+      "materia": "emissores"
     },
     {
       "id": 180,
@@ -3110,7 +3298,8 @@
         "dBc/Ph"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "emissores"
     },
     {
       "id": 181,
@@ -3129,7 +3318,8 @@
           "question": 27,
           "page": 8
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 182,
@@ -3141,7 +3331,8 @@
         "A classe A não apresenta nenhuma vantagem em relação a outras classes de amplificação"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "emissores"
     },
     {
       "id": 183,
@@ -3153,7 +3344,8 @@
         "SHF"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 184,
@@ -3172,7 +3364,8 @@
           "question": 9,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 185,
@@ -3190,7 +3383,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 12
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 186,
@@ -3209,7 +3403,8 @@
           "question": 9,
           "page": 3
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 187,
@@ -3221,7 +3416,8 @@
         "Todas as hipóteses estão corretas"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 386,
@@ -3239,7 +3435,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 21
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 188,
@@ -3258,7 +3455,8 @@
           "question": 12,
           "page": 4
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 189,
@@ -3270,7 +3468,8 @@
         "O ganho aumenta 3 dB"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 190,
@@ -3282,7 +3481,8 @@
         "1450 Ohm"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 191,
@@ -3305,7 +3505,8 @@
           "question": 18,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 192,
@@ -3317,7 +3518,8 @@
         "Largura do feixe de radiação da antena"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 193,
@@ -3340,7 +3542,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 13
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 194,
@@ -3352,7 +3555,8 @@
         "Diminui"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 195,
@@ -3364,7 +3568,8 @@
         "resistência de total e a resistência de perdas da antena"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 196,
@@ -3376,7 +3581,8 @@
         "A antena não é um elemento recíproco, ou seja o seu princípio de funcionamento faz com que radie muito menos no plano horizontal do que no plano vertical"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 197,
@@ -3388,7 +3594,8 @@
         "Todas as opções estão incorretas"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 198,
@@ -3400,7 +3607,8 @@
         "Resistência de radiação e resistência de perdas"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 199,
@@ -3412,7 +3620,8 @@
         "não tem existência física servindo apenas como modelo de referência"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 200,
@@ -3424,7 +3633,8 @@
         "Reduzindo o diâmetro do elemento de radiação"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 377,
@@ -3446,7 +3656,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 24
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 201,
@@ -3459,7 +3670,8 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "img": "/images/cat1/fig6.png"
+      "img": "/images/cat1/fig6.png",
+      "materia": "antenas"
     },
     {
       "id": 202,
@@ -3471,7 +3683,8 @@
         "apresenta um diagrama de radiação omnidirecional num dado plano"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 203,
@@ -3483,7 +3696,8 @@
         "existe uma prevalência do efeito pelicular de polarização"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 204,
@@ -3495,7 +3709,8 @@
         "Vertical"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 385,
@@ -3513,7 +3728,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 13
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 205,
@@ -3531,7 +3747,8 @@
           "pdf": "cat1/2023_08_00",
           "question": 21
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 206,
@@ -3549,7 +3766,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 20
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 207,
@@ -3572,7 +3790,8 @@
           "question": 14,
           "page": 4
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 208,
@@ -3591,7 +3810,8 @@
           "question": 21,
           "page": 6
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 209,
@@ -3603,7 +3823,8 @@
         "que é parte constituinte de um dipolo de Hertz"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 210,
@@ -3622,7 +3843,8 @@
           "question": 18,
           "page": 5
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 211,
@@ -3641,7 +3863,8 @@
           "question": 18,
           "page": 5
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 212,
@@ -3653,7 +3876,8 @@
         "0,2 m"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 376,
@@ -3671,7 +3895,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 20
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 213,
@@ -3690,7 +3915,8 @@
           "question": 19,
           "page": 5
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 214,
@@ -3708,7 +3934,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 21
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 215,
@@ -3727,7 +3954,8 @@
           "question": 20,
           "page": 6
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 216,
@@ -3739,7 +3967,8 @@
         "Equipamento de baixo ruído"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "recetores"
     },
     {
       "id": 217,
@@ -3757,7 +3986,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 4
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 218,
@@ -3776,7 +4006,8 @@
           "question": 2,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 219,
@@ -3788,7 +4019,8 @@
         "diretamente proporcional à distância que a separa da antena de emissão"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 220,
@@ -3807,7 +4039,8 @@
           "question": 2,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 221,
@@ -3819,7 +4052,8 @@
         "A atenuação provocada pelos gases atmosféricos e pela chuva afeta significativamente a propagação abaixo de 30 MHz"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 222,
@@ -3837,7 +4071,8 @@
           "pdf": "cat1/2023_08_00",
           "question": 3
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 383,
@@ -3855,7 +4090,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 3
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 223,
@@ -3874,7 +4110,8 @@
           "question": 4,
           "page": 2
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 224,
@@ -3886,7 +4123,8 @@
         "Por arrefecimento dos equipamentos de receção, se estiverem situados a altitudes acima dos 800 m"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 225,
@@ -3898,7 +4136,8 @@
         "Medida da atividade solar na faixa dos 2,8 GHz"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 226,
@@ -3917,7 +4156,8 @@
           "question": 1,
           "page": 1
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 227,
@@ -3929,7 +4169,8 @@
         "Alteração significativa do campo magnético da Terra num curto período de tempo"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 228,
@@ -3941,7 +4182,8 @@
         "o efeito Doppler faz com que as ondas HF sofram uma translação na frequência para SHF, tornando difícil a receção do sinal"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 381,
@@ -3959,7 +4201,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 1
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 229,
@@ -3971,7 +4214,8 @@
         "Redução dos ecos de longo atraso"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 230,
@@ -3983,7 +4227,8 @@
         "7 MHz"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 231,
@@ -4002,7 +4247,8 @@
           "question": 3,
           "page": 1
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 232,
@@ -4025,7 +4271,8 @@
           "question": 3,
           "page": 1
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 233,
@@ -4037,7 +4284,8 @@
         "Todas as hipóteses anteriores estão incorretas"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 234,
@@ -4049,7 +4297,8 @@
         "\"Longest Universal Function\""
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 235,
@@ -4067,7 +4316,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 5
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 236,
@@ -4086,7 +4336,8 @@
           "question": 2,
           "page": 1
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 384,
@@ -4104,7 +4355,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 4
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 237,
@@ -4116,7 +4368,8 @@
         "\"Narrow Vertical Incidence Source\""
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 238,
@@ -4128,7 +4381,8 @@
         "O maior ângulo de partida que devolve uma onda de rádio à Terra sob condições ionosféricas específicas"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 239,
@@ -4150,7 +4404,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 5
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 240,
@@ -4162,7 +4417,8 @@
         "Não existe qualquer relação entre a desobstrução do primeiro elipsoide de Fresnel e a atenuação do sinal na ligação entre as duas estações"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 241,
@@ -4174,7 +4430,8 @@
         "maior for a frequência"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 242,
@@ -4186,7 +4443,8 @@
         "18 W"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 243,
@@ -4234,7 +4492,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 11
         }
-      ]
+      ],
+      "materia": "medidas"
     },
     {
       "id": 244,
@@ -4253,7 +4512,8 @@
           "question": 7,
           "page": 2
         }
-      ]
+      ],
+      "materia": "medidas"
     },
     {
       "id": 245,
@@ -4271,7 +4531,8 @@
           "pdf": "cat1/2023_08_00",
           "question": 11
         }
-      ]
+      ],
+      "materia": "medidas"
     },
     {
       "id": 374,
@@ -4289,7 +4550,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 11
         }
-      ]
+      ],
+      "materia": "medidas"
     },
     {
       "id": 246,
@@ -4301,7 +4563,8 @@
         "O equipamento cuja frequência máxima de operação é 100 MHz, pois o erro associado à medição é o menor das quatro hipóteses"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "medidas"
     },
     {
       "id": 247,
@@ -4313,7 +4576,8 @@
         "Osciloscópio"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "medidas"
     },
     {
       "id": 248,
@@ -4325,7 +4589,8 @@
         "um gerador de corrente contínua com amplitude variável"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "medidas"
     },
     {
       "id": 249,
@@ -4344,7 +4609,8 @@
           "question": 14,
           "page": 4
         }
-      ]
+      ],
+      "materia": "medidas"
     },
     {
       "id": 250,
@@ -4363,7 +4629,8 @@
           "question": 20,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 251,
@@ -4375,7 +4642,8 @@
         "Um analisador espectral apresenta frequências de rádio; um osciloscópio apresenta frequências de áudio"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "medidas"
     },
     {
       "id": 252,
@@ -4387,7 +4655,8 @@
         "Um refletómetro no domínio do tempo"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "medidas"
     },
     {
       "id": 349,
@@ -4405,7 +4674,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 27
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 253,
@@ -4428,7 +4698,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 14
         }
-      ]
+      ],
+      "materia": "medidas"
     },
     {
       "id": 254,
@@ -4440,7 +4711,8 @@
         "No domínio do tempo"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "medidas"
     },
     {
       "id": 255,
@@ -4463,7 +4735,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 14
         }
-      ]
+      ],
+      "materia": "medidas"
     },
     {
       "id": 256,
@@ -4475,7 +4748,8 @@
         "75 W"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "medidas"
     },
     {
       "id": 257,
@@ -4487,7 +4761,8 @@
         "Um osciloscópio"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "medidas"
     },
     {
       "id": 258,
@@ -4499,7 +4774,8 @@
         "Discriminação de frequências"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "recetores"
     },
     {
       "id": 259,
@@ -4532,7 +4808,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 9
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 260,
@@ -4544,7 +4821,8 @@
         "nos filtros de saída do andar final do amplificador de radiofrequência do emissor"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "recetores"
     },
     {
       "id": 261,
@@ -4562,7 +4840,8 @@
           "pdf": "cat1/2023_08_00",
           "question": 9
         }
-      ]
+      ],
+      "materia": "recetores"
     },
     {
       "id": 262,
@@ -4580,7 +4859,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 9
         }
-      ]
+      ],
+      "materia": "recetores"
     },
     {
       "id": 263,
@@ -4599,7 +4879,8 @@
           "question": 12,
           "page": 3
         }
-      ]
+      ],
+      "materia": "operacao"
     },
     {
       "id": 264,
@@ -4611,7 +4892,8 @@
         "Os amadores da categoria 1 apenas têm direito a licença CEPT se realizarem o seu exame para a categoria 1 num país que não pertença à União Europeia"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 382,
@@ -4629,7 +4911,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 2
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 265,
@@ -4653,7 +4936,8 @@
           "question": 5,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "operacao"
     },
     {
       "id": 266,
@@ -4672,7 +4956,8 @@
           "question": 2,
           "page": 1
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 267,
@@ -4696,7 +4981,8 @@
           "question": 4,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 268,
@@ -4715,7 +5001,8 @@
           "question": 1,
           "page": 1
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 269,
@@ -4738,7 +5025,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 1
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 270,
@@ -4757,7 +5045,8 @@
           "question": 1,
           "page": 1
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 271,
@@ -4776,7 +5065,8 @@
           "question": 3,
           "page": 1
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 272,
@@ -4795,7 +5085,8 @@
           "question": 9,
           "page": 3
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 273,
@@ -4817,7 +5108,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 12
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 274,
@@ -4836,7 +5128,8 @@
           "question": 25,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 275,
@@ -4864,7 +5157,8 @@
           "question": 10,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "emissores"
     },
     {
       "id": 276,
@@ -4883,7 +5177,8 @@
           "question": 37,
           "page": 10
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 277,
@@ -4902,7 +5197,8 @@
           "question": 23,
           "page": 6
         }
-      ]
+      ],
+      "materia": "emissores"
     },
     {
       "id": 278,
@@ -4920,7 +5216,8 @@
           "pdf": "cat1/2023_08_00",
           "question": 28
         }
-      ]
+      ],
+      "materia": "emissores"
     },
     {
       "id": 279,
@@ -4939,7 +5236,8 @@
           "question": 14,
           "page": 4
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 280,
@@ -4958,7 +5256,8 @@
           "question": 38,
           "page": 10
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 281,
@@ -4977,7 +5276,8 @@
           "question": 1,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 282,
@@ -4996,7 +5296,8 @@
           "question": 2,
           "page": 1
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 283,
@@ -5015,7 +5316,8 @@
           "question": 5,
           "page": 2
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 284,
@@ -5042,7 +5344,8 @@
           "question": 12,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 285,
@@ -5061,7 +5364,8 @@
           "question": 13,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "medidas"
     },
     {
       "id": 286,
@@ -5080,7 +5384,8 @@
           "question": 14,
           "unavailable": true
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 287,
@@ -5111,7 +5416,8 @@
           "question": 4,
           "page": 1
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 288,
@@ -5158,7 +5464,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 2
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 289,
@@ -5181,7 +5488,8 @@
           "question": 7,
           "page": 2
         }
-      ]
+      ],
+      "materia": "medidas"
     },
     {
       "id": 290,
@@ -5200,7 +5508,8 @@
           "question": 8,
           "page": 2
         }
-      ]
+      ],
+      "materia": "recetores"
     },
     {
       "id": 291,
@@ -5248,7 +5557,8 @@
           "question": 6,
           "page": 2
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 292,
@@ -5286,7 +5596,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 6
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 371,
@@ -5304,7 +5615,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 6
         }
-      ]
+      ],
+      "materia": "operacao"
     },
     {
       "id": 293,
@@ -5316,7 +5628,8 @@
         "Nenhuma das afirmações está correcta."
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 294,
@@ -5328,7 +5641,8 @@
         "Nenhuma das afirmações está correcta."
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 295,
@@ -5340,7 +5654,8 @@
         "lei das correntes."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 296,
@@ -5359,7 +5674,8 @@
           "question": 8,
           "page": 3
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 297,
@@ -5371,7 +5687,8 @@
         "Teflon e alumínio."
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 298,
@@ -5383,7 +5700,8 @@
         "Todas possuem blindagem."
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 299,
@@ -5395,7 +5713,8 @@
         "A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos em determinadas frequências."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 300,
@@ -5407,7 +5726,8 @@
         "S=20-log(Ei/Et)."
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 301,
@@ -5419,7 +5739,8 @@
         "S=20-log(Hi/Ht)."
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 302,
@@ -5431,7 +5752,8 @@
         "Medidor de onda estacionária."
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "medidas"
     },
     {
       "id": 303,
@@ -5443,7 +5765,8 @@
         "Figuras de Watt."
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "medidas"
     },
     {
       "id": 304,
@@ -5455,7 +5778,8 @@
         "Qualquer tipo de circuito, seja ele capacitivo, resistivo ou indutivo."
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 305,
@@ -5467,7 +5791,8 @@
         "inversamente proporcional à temperatura de ruído efectiva do sistema e directamente proporcional à largura de banda efectiva do sistema."
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 307,
@@ -5479,7 +5804,8 @@
         "Forward Shift Keying."
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 308,
@@ -5491,7 +5817,8 @@
         "Usam a modulação por desvio de fase."
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 309,
@@ -5503,7 +5830,8 @@
         "Coeficiente de onda estacionária."
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "emissores"
     },
     {
       "id": 310,
@@ -5515,7 +5843,8 @@
         "Transmissão digital de dados."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 311,
@@ -5533,7 +5862,8 @@
           "pdf": "cat1/2023_08_00",
           "question": 14
         }
-      ]
+      ],
+      "materia": "medidas"
     },
     {
       "id": 312,
@@ -5545,7 +5875,8 @@
         "Todas as opções são válidas."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 313,
@@ -5557,7 +5888,8 @@
         "Todas as opções são válidas."
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 314,
@@ -5569,7 +5901,8 @@
         "Inversão de fase."
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 315,
@@ -5581,7 +5914,8 @@
         "Nenhuma das opções referidas já que este tipo de sinal não consegue ser visualizado num osciloscópio convencional."
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "medidas"
     },
     {
       "id": 316,
@@ -5593,7 +5927,8 @@
         "O momento em que se produz cada pulso."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 317,
@@ -5605,7 +5940,8 @@
         "Código Morse."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 318,
@@ -5617,7 +5953,8 @@
         "A sistemas de adaptação de impedâncias."
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 319,
@@ -5629,7 +5966,8 @@
         "Usa um carácter como código de alteração para enviar números e caracteres especiais."
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 320,
@@ -5647,7 +5985,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 39
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 321,
@@ -5659,7 +5998,8 @@
         "Modulação de amplitude."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 322,
@@ -5671,7 +6011,8 @@
         "quantificação, amostragem e  integração."
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 323,
@@ -5689,7 +6030,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 40
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 324,
@@ -5701,7 +6043,8 @@
         "a frequência de amostragem deve ser no mínimo dez vezes superior à maior frequência associada ao sinal amostrado"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 325,
@@ -5720,7 +6063,8 @@
           "question": 40,
           "page": 12
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 326,
@@ -5732,7 +6076,8 @@
         "É a distorção resultante do não cumprimento do teorema de Nyquist."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 327,
@@ -5744,7 +6089,8 @@
         "À medida que aumenta a amplitude da corrente alternada aplicada, a reactância diminui."
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 328,
@@ -5756,7 +6102,8 @@
         "A tensão e a corrente estão desfasadas 270º."
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 329,
@@ -5774,7 +6121,8 @@
           "pdf": "cat1/2023_08_00",
           "question": 16
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 330,
@@ -5786,7 +6134,8 @@
         "Todas as respostas estão correctas."
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 331,
@@ -5809,7 +6158,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 16
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 332,
@@ -5827,7 +6177,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 16
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 333,
@@ -5839,7 +6190,8 @@
         "Produção de uma grande faísca nos contactos do interruptor quando a alimentação de energia da bobina é desligada."
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 334,
@@ -5851,7 +6203,8 @@
         "Reactância."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 335,
@@ -5863,7 +6216,8 @@
         "À medida que aumenta a frequência da corrente alternada aplicada, a reactância aumenta."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 336,
@@ -5875,7 +6229,8 @@
         "Siemens."
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 337,
@@ -5887,7 +6242,8 @@
         "A capacidade interna da resistência poderia dessintonizar o circuito."
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 338,
@@ -5899,7 +6255,8 @@
         "Todas as opções são válidas."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 339,
@@ -5911,7 +6268,8 @@
         "Resguardados num mesmo espaço blindado."
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 340,
@@ -5929,7 +6287,8 @@
           "pdf": "cat1/2023_08_00",
           "question": 18
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 341,
@@ -5941,7 +6300,8 @@
         "A tensão e a corrente estão desfasadas 270º."
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 342,
@@ -5953,7 +6313,8 @@
         "Permeabilidade do núcleo."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 343,
@@ -5965,7 +6326,8 @@
         "Os toróides de ferro pulverizado apresentam a maior potência nominal."
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 344,
@@ -5977,7 +6339,8 @@
         "Os núcleos toroidais apresentam um nível menor de características Q."
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 345,
@@ -5989,7 +6352,8 @@
         "Os toróides de ferrite são mais fáceis de usar com tecnologias de montagem superficial."
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 346,
@@ -6001,7 +6365,8 @@
         "Substituindo as resistências da rede por resistências de carga."
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 347,
@@ -6013,7 +6378,8 @@
         "A permeabilidade do núcleo poderia sofrer alterações temporárias."
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 348,
@@ -6025,7 +6391,8 @@
         "Capacidade mútua."
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 350,
@@ -6037,7 +6404,8 @@
         "Corrente estacionária."
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 378,
@@ -6055,7 +6423,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 26
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 351,
@@ -6067,7 +6436,8 @@
         "5,9 V."
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 353,
@@ -6079,7 +6449,8 @@
         "Pico da impedância de carga e tensão de pico."
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 354,
@@ -6091,7 +6462,8 @@
         "Maior tensão de ruptura."
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 379,
@@ -6109,7 +6481,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 30
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 355,
@@ -6129,7 +6502,8 @@
           "page": 9
         }
       ],
-      "img": "/images/cat1/q25.png"
+      "img": "/images/cat1/q25.png",
+      "materia": "componentes"
     },
     {
       "id": 356,
@@ -6142,7 +6516,8 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "img": "/images/cat1/q25.png"
+      "img": "/images/cat1/q25.png",
+      "materia": "componentes"
     },
     {
       "id": 357,
@@ -6154,7 +6529,8 @@
         "Pela corrente directa máxima e tensão de pico inversa."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 358,
@@ -6166,7 +6542,8 @@
         "Polarização indutiva."
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 359,
@@ -6178,7 +6555,8 @@
         "Porta, dreno e fonte."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 360,
@@ -6190,7 +6568,8 @@
         "Baixo consumo de energia."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 361,
@@ -6202,7 +6581,8 @@
         "Redução da resistência da placa."
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 362,
@@ -6214,7 +6594,8 @@
         "Os AMPOP apresentam ganho em vez de perdas de inserção."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 363,
@@ -6226,7 +6607,8 @@
         "Não varia com a frequência."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 364,
@@ -6253,7 +6635,8 @@
           "question": 35
         }
       ],
-      "img": "/images/cat1/fig1.png"
+      "img": "/images/cat1/fig1.png",
+      "materia": "circuitos"
     },
     {
       "id": 365,
@@ -6266,7 +6649,8 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "img": "/images/cat1/q35.png"
+      "img": "/images/cat1/q35.png",
+      "materia": "circuitos"
     },
     {
       "id": 366,
@@ -6278,7 +6662,8 @@
         "Um programa de subrotina que calcula o ganho de um amplificador de RF."
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 367,
@@ -6290,7 +6675,8 @@
         "Muito alta."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "componentes"
     },
     {
       "id": 368,
@@ -6309,7 +6695,8 @@
           "question": 35,
           "page": 10
         }
-      ]
+      ],
+      "materia": "componentes"
     },
     {
       "id": 369,
@@ -6335,7 +6722,8 @@
           "pdf": "cat1/2024_01_02",
           "question": 38
         }
-      ]
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 370,
@@ -6353,7 +6741,8 @@
           "pdf": "cat1/2023_12_22",
           "question": 3
         }
-      ]
+      ],
+      "materia": "propagacao"
     }
   ]
 }
