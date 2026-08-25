@@ -56,11 +56,31 @@ export interface UserStats {
   lastStudyDate: string | null;
 }
 
+/**
+ * Lifetime rollup of exams trimmed out of `examHistory` by EXAM_HISTORY_LIMIT.
+ * Keeps the totals honest once the cap starts biting; the individual attempts
+ * are gone. Absent until the first trim.
+ */
+export interface ArchivedExams {
+  count: number;
+  passed: number;
+  bestScores: Record<string, number>;
+}
+
 export interface UserProgress {
   version: number;
   lastUpdated: number;
   questionStats: Record<string, QuestionStats>;
   examHistory: ExamAttempt[];
+  /**
+   * Every local calendar day (YYYY-MM-DD) the user studied, sorted and unique.
+   * Streaks are derived from this set (see `lib/streaks.ts`) rather than
+   * incremented in place, because a counter cannot be merged across devices
+   * and cannot be recomputed once it drifts. Added in V5.
+   */
+  activeDays: string[];
+  /** Rollup of exams the history cap dropped. Absent until it first bites. */
+  archivedExams?: ArchivedExams;
   stats: UserStats;
   gamification?: GamificationState;  // Optional for V3+, added via migration
 }
@@ -81,7 +101,14 @@ export interface StorageProvider {
   updateGamification(newState: GamificationState): Promise<UserProgress | null>;
 }
 
-export const PROGRESS_VERSION = 4;
+export const PROGRESS_VERSION = 5;
+
+/**
+ * How many individual exam attempts `examHistory` keeps. Older attempts are
+ * folded into `archivedExams`. Without a bound the array grows until
+ * `localStorage.setItem` throws QuotaExceededError and every later write fails.
+ */
+export const EXAM_HISTORY_LIMIT = 300;
 
 // SM-2 Algorithm Constants
 export const SM2_CONFIG = {
@@ -106,6 +133,7 @@ export function createEmptyProgress(): UserProgress {
     lastUpdated: Date.now(),
     questionStats: {},
     examHistory: [],
+    activeDays: [],
     stats: {
       totalExams: 0,
       totalPassed: 0,

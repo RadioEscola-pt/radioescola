@@ -18,10 +18,17 @@ import {
   getCategoryProgress,
   updateQuestionSR,
 } from "@/lib/storage";
+import {
+  STORAGE_ERROR_EVENT,
+  type StorageWriteError,
+} from "@/lib/storage/localStorage";
 
 interface UseProgressReturn {
   progress: UserProgress | null;
   isLoading: boolean;
+  /** Set when a write to storage failed. Null while writes are succeeding. */
+  storageError: StorageWriteError | null;
+  dismissStorageError: () => void;
   recordExam: (attempt: ExamAttempt) => Promise<UserProgress | null>;
   recordQuestion: (attempt: QuestionAttempt) => Promise<void>;
   recordQuestionBatch: (attempts: QuestionAttempt[]) => Promise<void>;
@@ -52,6 +59,22 @@ interface UseProgressReturn {
 export function useProgress(): UseProgressReturn {
   const [progress, setProgress] = useState<UserProgress | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [storageError, setStorageError] = useState<StorageWriteError | null>(null);
+
+  // Answer handlers fire these writes without awaiting them, so a failure would
+  // otherwise be an unhandled rejection nobody sees. The storage layer reports
+  // every failed write on this event; each record* below also swallows the
+  // rejection so a full quota cannot take a study session down with it.
+  useEffect(() => {
+    const onStorageError = (event: Event) => {
+      const detail = (event as CustomEvent<StorageWriteError>).detail;
+      setStorageError(detail ?? { kind: "unknown", message: "" });
+    };
+    window.addEventListener(STORAGE_ERROR_EVENT, onStorageError);
+    return () => window.removeEventListener(STORAGE_ERROR_EVENT, onStorageError);
+  }, []);
+
+  const dismissStorageError = useCallback(() => setStorageError(null), []);
 
   const loadProgress = useCallback(async () => {
     setIsLoading(true);
@@ -71,7 +94,11 @@ export function useProgress(): UseProgressReturn {
 
   const recordExam = useCallback(
     async (attempt: ExamAttempt): Promise<UserProgress | null> => {
-      await storageProvider.recordExamAttempt(attempt);
+      try {
+        await storageProvider.recordExamAttempt(attempt);
+      } catch (error) {
+        console.error("Failed to record exam attempt:", error);
+      }
       // Reload progress to get updated state, and hand the fresh copy back so
       // callers can process gamification against post-exam stats without racing
       // the async React state update.
@@ -83,14 +110,22 @@ export function useProgress(): UseProgressReturn {
   );
 
   const recordQuestion = useCallback(async (attempt: QuestionAttempt) => {
-    await storageProvider.recordQuestionAttempt(attempt);
+    try {
+      await storageProvider.recordQuestionAttempt(attempt);
+    } catch (error) {
+      console.error("Failed to record question attempt:", error);
+    }
     // Don't reload for single questions to avoid performance issues
   }, []);
 
   const recordQuestionBatch = useCallback(
     async (attempts: QuestionAttempt[]) => {
-      for (const attempt of attempts) {
-        await storageProvider.recordQuestionAttempt(attempt);
+      try {
+        for (const attempt of attempts) {
+          await storageProvider.recordQuestionAttempt(attempt);
+        }
+      } catch (error) {
+        console.error("Failed to record question batch:", error);
       }
       // Reload progress after batch
       const updated = await storageProvider.getProgress();
@@ -106,7 +141,11 @@ export function useProgress(): UseProgressReturn {
       srStats: SpacedRepetitionStats,
       wasCorrect: boolean
     ) => {
-      await updateQuestionSR(category, questionId, srStats, wasCorrect);
+      try {
+        await updateQuestionSR(category, questionId, srStats, wasCorrect);
+      } catch (error) {
+        console.error("Failed to record smart-practice review:", error);
+      }
       // Reload progress to get updated state
       const updated = await storageProvider.getProgress();
       setProgress(updated);
@@ -181,6 +220,8 @@ export function useProgress(): UseProgressReturn {
   return {
     progress,
     isLoading,
+    storageError,
+    dismissStorageError,
     recordExam,
     recordQuestion,
     recordQuestionBatch,

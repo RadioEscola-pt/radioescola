@@ -9,10 +9,18 @@ import {
   type QuestionAttempt,
   type QuestionStats,
   type SpacedRepetitionStats,
+  type ArchivedExams,
   PROGRESS_VERSION,
+  EXAM_HISTORY_LIMIT,
   createEmptyProgress,
   getQuestionKey,
 } from "@/lib/types/progress";
+import {
+  addActiveDay,
+  backfillActiveDays,
+  deriveStreaks,
+  normalizeActiveDays,
+} from "@/lib/streaks";
 import { migrateToGamification } from "@/lib/gamification/engine";
 import { createInitialGamificationState } from "@/lib/types/gamification";
 import type { GamificationState } from "@/lib/types/gamification";
@@ -21,6 +29,43 @@ import { convertLegacyExport } from "@/lib/backup/legacy-import";
 
 const STORAGE_KEY = "hamradio_progress";
 const LEGACY_MIGRATED_KEY = "hamradio_legacy_migrated";
+
+/** Fired on `window` when a write to localStorage fails. */
+export const STORAGE_ERROR_EVENT = "hamradio:storage-error";
+
+export interface StorageWriteError {
+  /** `quota` means the browser refused the write because storage is full. */
+  kind: "quota" | "unknown";
+  message: string;
+}
+
+function isQuotaError(error: unknown): boolean {
+  if (typeof DOMException !== "undefined" && error instanceof DOMException) {
+    // Browsers disagree on the name and Firefox only sets the legacy code.
+    return (
+      error.name === "QuotaExceededError" ||
+      error.name === "NS_ERROR_DOM_QUOTA_REACHED" ||
+      error.code === 22 ||
+      error.code === 1014
+    );
+  }
+  return error instanceof Error && error.name === "QuotaExceededError";
+}
+
+/**
+ * Surface a failed write instead of letting it become an unhandled rejection.
+ * Progress writes are fired from answer handlers that do not await them, so a
+ * full quota otherwise fails completely silently — the user keeps studying and
+ * nothing is being saved.
+ */
+function reportStorageError(error: unknown): void {
+  if (typeof window === "undefined") return;
+  const detail: StorageWriteError = {
+    kind: isQuotaError(error) ? "quota" : "unknown",
+    message: error instanceof Error ? error.message : String(error),
+  };
+  window.dispatchEvent(new CustomEvent(STORAGE_ERROR_EVENT, { detail }));
+}
 
 function isLocalStorageAvailable(): boolean {
   if (typeof window === "undefined") return false;
@@ -132,6 +177,7 @@ function saveProgress(progress: UserProgress): Promise<void> {
       resolve();
     } catch (error) {
       console.error("Failed to save progress to localStorage:", error);
+      reportStorageError(error);
       reject(error);
     }
   });
@@ -163,39 +209,69 @@ export function migrateProgress(progress: UserProgress): UserProgress {
     }
   }
 
+  // V4 -> V5: streaks move from three mutable counters to a set of study days,
+  // and examHistory gains a cap. Backfill the days the stored streak implies so
+  // no visible streak collapses; every day before that run was never recorded
+  // anywhere and is unrecoverable, which is the reason V5 starts writing them.
+  if (!Array.isArray(migrated.activeDays)) {
+    migrated.activeDays = backfillActiveDays(
+      migrated.stats.lastStudyDate,
+      migrated.stats.currentStreak
+    );
+  } else {
+    migrated.activeDays = normalizeActiveDays(migrated.activeDays);
+  }
+
+  capExamHistory(migrated);
+
   migrated.version = PROGRESS_VERSION;
   return migrated;
 }
 
-function updateStreak(stats: UserProgress["stats"]): void {
-  const today = getTodayDateString();
-  const lastDate = stats.lastStudyDate;
+/**
+ * Fold exams beyond EXAM_HISTORY_LIMIT into `archivedExams`.
+ * `examHistory` is newest-first, so the tail is the oldest.
+ */
+function capExamHistory(progress: UserProgress): void {
+  if (progress.examHistory.length <= EXAM_HISTORY_LIMIT) return;
 
-  if (!lastDate) {
-    // First time studying
-    stats.currentStreak = 1;
-    stats.longestStreak = 1;
-  } else if (lastDate === today) {
-    // Already studied today, no change
-    return;
-  } else {
-    const lastDateObj = new Date(lastDate);
-    const todayObj = new Date(today);
-    const diffDays = Math.floor(
-      (todayObj.getTime() - lastDateObj.getTime()) / (1000 * 60 * 60 * 24)
-    );
+  const dropped = progress.examHistory.slice(EXAM_HISTORY_LIMIT);
+  progress.examHistory = progress.examHistory.slice(0, EXAM_HISTORY_LIMIT);
 
-    if (diffDays === 1) {
-      // Consecutive day
-      stats.currentStreak += 1;
-      stats.longestStreak = Math.max(stats.longestStreak, stats.currentStreak);
-    } else {
-      // Streak broken
-      stats.currentStreak = 1;
+  const archive: ArchivedExams = progress.archivedExams
+    ? { ...progress.archivedExams, bestScores: { ...progress.archivedExams.bestScores } }
+    : { count: 0, passed: 0, bestScores: {} };
+
+  for (const exam of dropped) {
+    archive.count += 1;
+    if (exam.passed) archive.passed += 1;
+    const best = archive.bestScores[exam.category];
+    if (best === undefined || exam.score > best) {
+      archive.bestScores[exam.category] = exam.score;
     }
   }
 
-  stats.lastStudyDate = today;
+  progress.archivedExams = archive;
+}
+
+/**
+ * Record today as a study day and re-derive every streak number from the set.
+ *
+ * `longestStreak` stays monotonic: users migrated from V4 have a real longest
+ * streak whose days were never written down, so a value derived from the days
+ * we do have must never lower it.
+ */
+function recordStudyDay(progress: UserProgress): void {
+  const today = getTodayDateString();
+  progress.activeDays = addActiveDay(progress.activeDays ?? [], today);
+
+  const derived = deriveStreaks(progress.activeDays, today);
+  progress.stats.currentStreak = derived.currentStreak;
+  progress.stats.longestStreak = Math.max(
+    progress.stats.longestStreak,
+    derived.longestStreak
+  );
+  progress.stats.lastStudyDate = derived.lastStudyDate;
 }
 
 async function recordExamAttempt(attempt: ExamAttempt): Promise<void> {
@@ -220,7 +296,9 @@ async function recordExamAttempt(attempt: ExamAttempt): Promise<void> {
   }
 
   // Update streak
-  updateStreak(progress.stats);
+  recordStudyDay(progress);
+
+  capExamHistory(progress);
 
   await saveProgress(progress);
 }
@@ -235,12 +313,15 @@ async function recordQuestionAttempt(attempt: QuestionAttempt): Promise<void> {
   const existing = progress.questionStats[key];
 
   if (existing) {
+    // Spread `existing` rather than rebuilding the record: bookmarks, notes and
+    // bookmarkedAt live on the same object, and listing fields by hand silently
+    // deleted them every time a bookmarked question was answered.
     progress.questionStats[key] = {
+      ...existing,
       attempts: existing.attempts + 1,
       correct: existing.correct + (attempt.correct ? 1 : 0),
       lastAttempt: attempt.timestamp,
       lastCorrect: attempt.correct,
-      spacedRep: existing.spacedRep, // Preserve existing SR data
     };
   } else {
     progress.questionStats[key] = {
@@ -252,7 +333,7 @@ async function recordQuestionAttempt(attempt: QuestionAttempt): Promise<void> {
   }
 
   // Update streak for any study activity
-  updateStreak(progress.stats);
+  recordStudyDay(progress);
 
   await saveProgress(progress);
 }
@@ -311,7 +392,7 @@ export async function updateQuestionSR(
   }
 
   // Update streak for any study activity
-  updateStreak(progress.stats);
+  recordStudyDay(progress);
 
   await saveProgress(progress);
 }

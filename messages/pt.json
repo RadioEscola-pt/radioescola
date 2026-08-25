@@ -946,5 +946,11 @@
     "message": "Estás offline. Algumas funcionalidades podem estar limitadas.",
     "reconnected": "De volta online!",
     "dismiss": "Fechar"
+  },
+  "Storage": {
+    "notSavedTitle": "O teu progresso não está a ser guardado",
+    "quotaBody": "O armazenamento deste navegador está cheio. Exporta uma cópia de segurança nas definições e limpa dados antigos para voltar a guardar.",
+    "unknownBody": "Este navegador recusou a gravação. Se estás em navegação privada, o progresso não é guardado.",
+    "dismiss": "Fechar"
   }
 }

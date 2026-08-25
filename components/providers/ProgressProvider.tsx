@@ -10,6 +10,8 @@ import type {
   QuestionStats,
   SpacedRepetitionStats,
 } from "@/lib/types/progress";
+import type { StorageWriteError } from "@/lib/storage/localStorage";
+import { StorageWarning } from "@/components/StorageWarning";
 import type {
   GamificationState,
   GamificationResult,
@@ -29,6 +31,8 @@ import { GAMIFICATION_ENABLED } from "@/lib/config/features";
 type ProgressContextType = {
   progress: UserProgress | null;
   isLoading: boolean;
+  storageError: StorageWriteError | null;
+  dismissStorageError: () => void;
   recordExam: (attempt: ExamAttempt) => Promise<UserProgress | null>;
   recordQuestion: (attempt: QuestionAttempt) => Promise<void>;
   recordQuestionWithGamification: (
@@ -229,6 +233,7 @@ export default function ProgressProvider({
   return (
     <ProgressContext.Provider value={contextValue}>
       {children}
+      <StorageWarning />
     </ProgressContext.Provider>
   );
 }
