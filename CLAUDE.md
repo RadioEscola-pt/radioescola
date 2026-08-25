@@ -77,6 +77,8 @@ as the MDX body), plus `category.json` holding `anacomFile` and the question
   `loadData()` returns
 - `content/notes/cat{n}/{id}.mdx` — what `/api/notes` serves
 
+Adding a question is documented in `docs/novas-questoes.md` (pt-PT).
+
 `bun run content:build` regenerates them; `bun run content:check` verifies they
 match and is wired into `bun run build`, so a hand-edit or a stale artifact
 fails the build. It also fails on any `sources` entry pointing at an exam PDF
