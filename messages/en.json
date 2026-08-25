@@ -56,16 +56,25 @@
     "slogan": "Made by amateur radio operators, for (future) amateur radio operators"
   },
   "Browse": {
-    "title": "Browse Category {id}",
-    "loading": "Loading questions...",
-    "flashTitle": "Flashcards Category {id}",
-    "flashLoading": "Loading flashcards...",
-    "flashNotFound": "We could not find category {id}. Try choosing a category from the Browse menu.",
-    "flashNoQuestions": "There are no questions available for this category yet.",
-    "flashSubtitle": "Practice one random question at a time. Reviewed {count} so far.",
+    "emptyClear": "Clear search",
+    "emptyElsewhere": "There are {count} in other topics.",
+    "emptySearchAll": "Search all topics",
+    "emptyTitle": "No questions found.",
     "flashCard": "Card {position} of {total} in this round.",
+    "flashLoading": "Loading flashcards...",
     "flashNext": "Next question",
-    "questionCount": "{count} questions"
+    "flashNoQuestions": "There are no questions available for this category yet.",
+    "flashNotFound": "We could not find category {id}. Try choosing a category from the Browse menu.",
+    "flashSubtitle": "Practice one random question at a time. Reviewed {count} so far.",
+    "flashTitle": "Flashcards Category {id}",
+    "loading": "Loading questions...",
+    "questionCount": "{count} questions",
+    "resultCount": "{shown} of {total}",
+    "searchClear": "Clear search",
+    "searchLabel": "Search",
+    "searchPlaceholder": "Search questions and answers",
+    "title": "Browse Category {id}",
+    "topicAll": "All"
   },
   "StudyHeader": {
     "mode": {

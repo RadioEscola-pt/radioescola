@@ -1,6 +1,6 @@
 "use client";
-import React, { useState, useEffect, useCallback } from 'react';
-import { useParams } from 'next/navigation';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { Category } from '@/lib/types';
 import { loadData } from '@/lib/data';
@@ -11,6 +11,9 @@ import { StudyHeader } from '@/components/StudyHeader';
 import type { CalculatorCode } from '@/lib/types';
 import { useProgressContext } from '@/components/providers/ProgressProvider';
 import { toggleBookmark } from '@/lib/storage/localStorage';
+import { QuestionFilters, useTopicCounts } from '@/components/QuestionFilters';
+import { questionMatches } from '@/lib/utils';
+import { isTopicSlug } from '@/lib/config';
 
 export default function BrowsePage() {
   const params = useParams();
@@ -24,6 +27,20 @@ export default function BrowsePage() {
   const { openCalculator } = useCalculators();
   const { recordQuestionWithGamification, progress, refreshProgress } = useProgressContext();
   const t = useTranslations('Browse');
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [search, setSearch] = useState('');
+
+  // The topic lives in the URL so the dashboard can link straight to a weak
+  // area; the search does not, because a query is a passing question and
+  // pushing one per keystroke would bury the back button.
+  const topicParam = searchParams.get('topic');
+  const activeTopic = topicParam && isTopicSlug(topicParam) ? topicParam : null;
+
+  const setTopic = useCallback((slug: string | null) => {
+    const base = `/browse/${categoryId}`;
+    router.push(slug ? `${base}?topic=${slug}` : base);
+  }, [router, categoryId]);
 
   const isBookmarked = useCallback((questionId: number) => {
     const key = `cat${categoryId}_${questionId}`;
@@ -51,15 +68,37 @@ export default function BrowsePage() {
     });
   }, [categoryId]);
 
+  // Search narrows the set the chips describe; the topic then narrows that.
+  const searched = useMemo(
+    () => (category ? category.questions.filter((q) => questionMatches(q, search)) : []),
+    [category, search]
+  );
+  const counts = useTopicCounts(searched);
+  const visible = useMemo(
+    () => (activeTopic ? searched.filter((q) => q.materia === activeTopic) : searched),
+    [searched, activeTopic]
+  );
+  // Matches outside the active topic, to tell an empty result which of the two
+  // conditions is the one to drop.
+  const elsewhere = searched.length - visible.length;
+
   // Questions load after the native anchor scroll would have fired, so honor
   // #q-{id} links (e.g. from the dashboard's weak areas) once they render.
   useEffect(() => {
     if (!category) return;
     const hash = window.location.hash;
-    if (/^#q-\d+$/.test(hash)) {
-      document.querySelector(hash)?.scrollIntoView();
+    if (!/^#q-\d+$/.test(hash)) return;
+    // A deep link means "show me this question". A topic in the URL could be
+    // hiding it, and the scroll would then fail silently, so the link wins and
+    // the topic is dropped — replace, not push, so back still leaves the page.
+    // The search box needs no such handling: it starts empty on every
+    // navigation, so it cannot be stale when a hash arrives.
+    if (activeTopic) {
+      router.replace(`/browse/${categoryId}`);
+      return;
     }
-  }, [category]);
+    document.querySelector(hash)?.scrollIntoView();
+  }, [category, activeTopic, router, categoryId]);
 
   const handleLaunchCalculator = useCallback((code: string) => {
     openCalculator(code as CalculatorCode);
@@ -77,8 +116,47 @@ export default function BrowsePage() {
         backHref="/"
         subtitle={t("questionCount", { count: category.questions.length })}
       />
+      <QuestionFilters
+        counts={counts}
+        total={searched.length}
+        bankTotal={category.questions.length}
+        activeTopic={activeTopic}
+        onTopicChange={setTopic}
+        search={search}
+        onSearchChange={setSearch}
+      />
       <section className="sm:px-0">
-        {category.questions.map((q, idx) => {
+        {visible.length === 0 && (
+          <div className="px-4 py-12 text-center sm:px-0">
+            <p className="text-sm text-slate-600 dark:text-slate-300">{t('emptyTitle')}</p>
+            {elsewhere > 0 && activeTopic ? (
+              <>
+                <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
+                  {t('emptyElsewhere', { count: elsewhere })}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setTopic(null)}
+                  className="mt-4 rounded-lg bg-amber-500 px-3 py-1.5 text-sm font-semibold text-slate-900 hover:bg-amber-400"
+                >
+                  {t('emptySearchAll')}
+                </button>
+              </>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setSearch('')}
+                className="mt-4 rounded-lg bg-slate-100 px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
+              >
+                {t('emptyClear')}
+              </button>
+            )}
+          </div>
+        )}
+        {visible.map((q) => {
+          // Position in the unfiltered bank: a question keeps one number in
+          // every view, so it stays something you can refer to and link to.
+          const idx = category.questions.indexOf(q);
           const selected = answers[q.id];
           const isAnswered = selected !== undefined;
           const difficultyStats = getQuestionDifficultyStats(q.id);
@@ -102,6 +180,7 @@ export default function BrowsePage() {
                 }}
                 showImage
                 indexNumber={idx + 1}
+                highlight={search}
                 showCalcHint
                 onLaunchCalculator={handleLaunchCalculator}
                 ended={isAnswered}
