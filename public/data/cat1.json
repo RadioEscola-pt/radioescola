@@ -1845,6 +1845,18 @@
       ]
     },
     {
+      "id": 390,
+      "question": "Num amplificador de classe AB",
+      "options": [
+        "o transístor conduz durante menos de meio período",
+        "o transístor conduz durante meio período",
+        "o transístor conduz durante mais de meio período",
+        "o transístor conduz durante todo o período"
+      ],
+      "correctIndex": 2,
+      "hasNotesMdx": true
+    },
+    {
       "id": 109,
       "question": "Qual a vantagem de um amplificador de classe C?",
       "options": [
@@ -3871,7 +3883,7 @@
         "Por aumento da potência da estação emissora",
         "Por filtragem na receção, nomeadamente se estiverem situados em zonas com elevado ruído térmico",
         "Por aumento da altura das torres que suportam as antenas de emissão e de receção",
-        "Por arrefecimento dos equipamentos receção, se estiverem situados a altitudes acima dos 800 m"
+        "Por arrefecimento dos equipamentos de receção, se estiverem situados a altitudes acima dos 800 m"
       ],
       "correctIndex": 2,
       "hasNotesMdx": true
