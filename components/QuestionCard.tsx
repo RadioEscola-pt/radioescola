@@ -9,6 +9,7 @@ import { getCalculatorMeta, topicShortLabel } from '@/lib/config';
 import type { CalculatorCode } from '@/lib/types';
 import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
 import BookmarkButton from '@/components/BookmarkButton';
+import { Highlight } from '@/components/ui/highlight';
 import PdfPageDialog from '@/components/PdfPageDialog';
 import StudyGuideLink from '@/components/StudyGuideLink';
 import {
@@ -34,6 +35,8 @@ interface QuestionCardProps {
   // Difficulty indicator
   successRate?: number; // 0-100 percentage
   attemptCount?: number;
+  /** Search term to mark in the question and its options. */
+  highlight?: string;
 }
 
 /**
@@ -125,6 +128,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   onToggleBookmark,
   successRate,
   attemptCount,
+  highlight,
   categoryId,
 }) => {
   const t = useTranslations('QuestionCard');
@@ -281,7 +285,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
         {indexNumber && (
           <span className="font-semibold text-amber-600 dark:text-amber-500 mr-2">{indexNumber}.</span>
         )}
-        {question.question}
+        <Highlight text={question.question} term={highlight} />
       </p>
 
       <div className={showImage && question.img ? "flex flex-col gap-4 sm:flex-row sm:items-start" : undefined}>
@@ -294,7 +298,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
               disabled={disabled || ended}
               onClick={() => onSelect(idx)}
             >
-              {option}
+              <Highlight text={option} term={highlight} />
             </AnswerOption>
           ))}
         </div>

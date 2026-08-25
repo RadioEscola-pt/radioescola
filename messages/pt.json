@@ -56,16 +56,25 @@
     "slogan": "Feito por radioamadores, para (futuros) radioamadores"
   },
   "Browse": {
-    "title": "Estudar Categoria {id}",
-    "loading": "A carregar questões...",
-    "flashTitle": "Flashcards Categoria {id}",
-    "flashLoading": "A carregar flashcards...",
-    "flashNotFound": "Não encontrámos a categoria {id}. Tenta escolher uma categoria no menu Explorar.",
-    "flashNoQuestions": "Ainda não há questões disponíveis para esta categoria.",
-    "flashSubtitle": "Pratica uma questão aleatória de cada vez. Já reviste {count}.",
+    "emptyClear": "Limpar pesquisa",
+    "emptyElsewhere": "Há {count} noutras matérias.",
+    "emptySearchAll": "Procurar em todas as matérias",
+    "emptyTitle": "Nenhuma pergunta encontrada.",
     "flashCard": "Cartão {position} de {total} nesta ronda.",
+    "flashLoading": "A carregar flashcards...",
     "flashNext": "Próxima questão",
-    "questionCount": "{count} questões"
+    "flashNoQuestions": "Ainda não há questões disponíveis para esta categoria.",
+    "flashNotFound": "Não encontrámos a categoria {id}. Tenta escolher uma categoria no menu Explorar.",
+    "flashSubtitle": "Pratica uma questão aleatória de cada vez. Já reviste {count}.",
+    "flashTitle": "Flashcards Categoria {id}",
+    "loading": "A carregar questões...",
+    "questionCount": "{count} questões",
+    "resultCount": "{shown} de {total}",
+    "searchClear": "Limpar pesquisa",
+    "searchLabel": "Pesquisar",
+    "searchPlaceholder": "Pesquisar nas perguntas e respostas",
+    "title": "Estudar Categoria {id}",
+    "topicAll": "Todas"
   },
   "StudyHeader": {
     "mode": {
