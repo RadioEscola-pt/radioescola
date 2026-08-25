@@ -70,7 +70,7 @@ Next.js 16 App Router with React 19, TypeScript (strict), Tailwind CSS v4.
 All three categories are migrated. **Source of truth is `content/questions/cat{n}/`** —
 one `{id}.mdx` per question (zero-padded filename, YAML frontmatter, explanation
 as the MDX body), plus `category.json` holding `anacomFile` and the question
-`order`. 1,015 questions total.
+`order`. 1,016 questions total.
 
 **Generated — never hand-edit:**
 - `public/data/cat{n}.json` — what the client fetches, already in the shape
@@ -99,7 +99,7 @@ to confirm. `bun run data:fonte-pages` is the manual equivalent.
 `bun run qbank` is a read-only developer tool over `content/questions/**` —
 `search`, `show`, `dupes`, `pairs`, `coverage`, `topics`, `paper`, `answers`.
 Analysis lives in `lib/content/analysis.ts` as pure functions; the script is
-I/O and formatting.
+I/O and formatting. Full guide, in English and Portuguese, in `docs/qbank.md`.
 
 It is deliberately **not** wired into CI. `content:check` owns per-file
 validity, and duplicating that here would create a second source of truth that
