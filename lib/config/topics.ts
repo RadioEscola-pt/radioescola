@@ -53,8 +53,18 @@ export type Topic = {
    * Treat a mismatch as worth a second look, never as an error.
    */
   examinedFrom: CategoryId;
+  /** Full chapter title, as printed in Anexo 1. Reference-page length. */
   pt: string;
   en: string;
+  /**
+   * Card-sized label. The full titles do not fit on a question card —
+   * "Regulamentação nacional e internacional relevante para os serviços de
+   * amador e amador por satélite" is a heading, not a chip. Truncating with CSS
+   * would produce "Regulamentação nacional e intern…", so the short form is
+   * authored rather than derived.
+   */
+  shortPt: string;
+  shortEn: string;
   /** What belongs here. */
   scope: string;
   /** Tie-break against the neighbouring topic it is most often confused with. */
@@ -67,6 +77,7 @@ export const TOPICS: readonly Topic[] = [
     anacomRef: 'PARTE A / 1', examinedFrom: '3',
     pt: 'Teoria da eletricidade, do eletromagnetismo e das radiocomunicações',
     en: 'Electrical, electromagnetic and radio theory',
+    shortPt: 'Teoria', shortEn: 'Theory',
     scope: 'Condutividade, fontes de eletricidade, campos elétrico e magnético, sinais sinusoidais e não sinusoidais, ruído, sinais modulados, potência e energia, processamento digital de sinais.',
     boundary: 'Uma grandeza ou um princípio físico pertence aqui; um objeto que se compra pertence a componentes. A aritmética de decibéis é aqui — o Anexo 1 põe em 1.9 c) a \'relação de potência entre entrada/saída em dB de amplificadores e/ou atenuadores\' — mas só quando a razão é o assunto. Se os dB apenas especificam um parâmetro (largura de banda a -3 dB, ganho de antena, relação frente/costas), a pergunta pertence ao capítulo da coisa descrita.',
   },
@@ -75,6 +86,7 @@ export const TOPICS: readonly Topic[] = [
     anacomRef: 'PARTE A / 2', examinedFrom: '3',
     pt: 'Componentes',
     en: 'Components',
+    shortPt: 'Componentes', shortEn: 'Components',
     scope: 'Resistências, condensadores, bobinas, transformadores, díodos, transístores, válvulas e outros dispositivos considerados isoladamente.',
     boundary: 'Um componente sozinho, e as suas características, pertence aqui. Vários componentes combinados para desempenhar uma função pertencem a circuitos.',
   },
@@ -83,6 +95,7 @@ export const TOPICS: readonly Topic[] = [
     anacomRef: 'PARTE A / 3', examinedFrom: '2',
     pt: 'Circuitos',
     en: 'Circuits',
+    shortPt: 'Circuitos', shortEn: 'Circuits',
     scope: 'Combinações de componentes, filtros, fontes de alimentação, amplificadores, detetores, osciladores, PLL, sistemas de tempo discreto (DSP).',
     boundary: 'Se o enunciado descreve uma montagem com uma função (oscilar, filtrar, amplificar, regular), é circuitos, mesmo que nomeie os componentes que a compõem.',
   },
@@ -91,6 +104,7 @@ export const TOPICS: readonly Topic[] = [
     anacomRef: 'PARTE A / 4', examinedFrom: '2',
     pt: 'Recetores',
     en: 'Receivers',
+    shortPt: 'Recetores', shortEn: 'Receivers',
     scope: 'Tipos de recetor, diagramas de blocos, funcionamento dos andares, características do recetor (sensibilidade, seletividade, bloqueio, intermodulação).',
     boundary: 'Um andar identificado como parte de um recetor pertence aqui, não a circuitos.',
   },
@@ -99,6 +113,7 @@ export const TOPICS: readonly Topic[] = [
     anacomRef: 'PARTE A / 5', examinedFrom: '2',
     pt: 'Emissores',
     en: 'Transmitters',
+    shortPt: 'Emissores', shortEn: 'Transmitters',
     scope: 'Tipos de emissor, diagramas de blocos, funcionamento dos andares, características do emissor, modulação e classes de funcionamento do andar final.',
     boundary: 'Um andar identificado como parte de um emissor pertence aqui, não a circuitos. As designações de classe de emissão (A3E, J3E, F3E) pertencem aqui e não a regulamentação: identificam a modulação, e o seu significado não muda quando a lei muda.',
   },
@@ -107,6 +122,7 @@ export const TOPICS: readonly Topic[] = [
     anacomRef: 'PARTE A / 6', examinedFrom: '2',
     pt: 'Antenas e linhas de transmissão',
     en: 'Antennas and transmission lines',
+    shortPt: 'Antenas', shortEn: 'Antennas',
     scope: 'Tipos e características de antenas, ganho, diretividade, polarização, linhas de transmissão, ROE, adaptação de impedâncias, p.a.r. e p.i.r.e.',
     boundary: 'Potência radiada, ROE e a adaptação de uma antena à linha ou ao emissor pertencem aqui, não a emissores, porque medem o que sai da antena e não o que o emissor produz. Mas adaptação de impedâncias entre dois circuitos, sem antena no enunciado, é circuitos.',
   },
@@ -115,6 +131,7 @@ export const TOPICS: readonly Topic[] = [
     anacomRef: 'PARTE A / 7', examinedFrom: '2',
     pt: 'Propagação',
     en: 'Propagation',
+    shortPt: 'Propagação', shortEn: 'Propagation',
     scope: 'Espectro de frequências, camadas ionosféricas, onda terrestre e ionosférica, MUF, desvanecimento, alcance, horizonte rádio, modos de propagação particulares.',
   },
   {
@@ -122,6 +139,7 @@ export const TOPICS: readonly Topic[] = [
     anacomRef: 'PARTE A / 8', examinedFrom: '2',
     pt: 'Medições',
     en: 'Measurements',
+    shortPt: 'Medições', shortEn: 'Measurements',
     scope: 'Realização de medições e instrumentos: multímetro, osciloscópio, wattímetro, medidor de ROE, analisador de espectro, frequencímetro, medidor S.',
     boundary: 'Se a pergunta é sobre o instrumento ou sobre como medir, é medidas, mesmo que a grandeza medida pertença a outro capítulo.',
   },
@@ -130,6 +148,7 @@ export const TOPICS: readonly Topic[] = [
     anacomRef: 'PARTE A / 9', examinedFrom: '3',
     pt: 'Interferência e imunidade',
     en: 'Interference and immunity',
+    shortPt: 'Interferências', shortEn: 'Interference',
     scope: 'Interferência em equipamentos eletrónicos, causas, harmónicas e espúrias, blindagem, filtragem, ligação à terra, imunidade, compatibilidade eletromagnética.',
     boundary: 'A blindagem pertence aqui quando serve para evitar interferência; a teoria do campo que a blindagem trava pertence a teoria.',
   },
@@ -138,6 +157,7 @@ export const TOPICS: readonly Topic[] = [
     anacomRef: 'PARTE A / 10', examinedFrom: '3',
     pt: 'Segurança',
     en: 'Safety',
+    shortPt: 'Segurança', shortEn: 'Safety',
     scope: 'O corpo humano, tensões e correntes perigosas, rede elétrica, ligação à terra de proteção, descargas atmosféricas, exposição a campos eletromagnéticos, segurança em torres e mastros.',
     boundary: 'Exposição a campos eletromagnéticos pertence aqui, não a teoria, porque a pergunta é sobre o risco para pessoas.',
   },
@@ -146,6 +166,7 @@ export const TOPICS: readonly Topic[] = [
     anacomRef: 'PARTE B', examinedFrom: '3',
     pt: 'Regulamentos e procedimentos nacionais e internacionais de operação',
     en: 'Operating rules and procedures',
+    shortPt: 'Operação', shortEn: 'Operating',
     scope: 'Alfabeto fonético, código Q, abreviaturas de operação, indicativos de chamada, planos de faixas da IARU, procedimentos de contacto, tráfego de emergência, diário de estação.',
     boundary: 'Uma prática acordada entre amadores é operação; uma obrigação imposta por lei é regulamentação. Os planos de faixas da IARU são operação, mesmo quando a pergunta parece regulamentar. Nos indicativos de chamada a divisão é: como se forma e se transmite um indicativo no ar é operação; quem tem direito a qual série, e por quanto tempo, é regulamentação.',
   },
@@ -154,6 +175,7 @@ export const TOPICS: readonly Topic[] = [
     anacomRef: 'PARTE C', examinedFrom: '3',
     pt: 'Regulamentação nacional e internacional relevante para os serviços de amador e amador por satélite',
     en: 'National and international regulations',
+    shortPt: 'Regulamentação', shortEn: 'Regulations',
     scope: 'Regulamento das Radiocomunicações da UIT, regulamentação CEPT, legislação nacional, categorias e CAN, licenciamento de estações, atribuição de faixas e estatutos, potências máximas, entidades (ANACOM, UIT, CEPT, IARU).',
     boundary: 'Se a resposta muda quando a lei muda, é regulamentação.',
   },
@@ -180,3 +202,10 @@ export function isTopicSlug(value: unknown): value is TopicSlug {
 export const ABOVE_ENTRY_LEVEL: readonly TopicSlug[] = TOPICS
   .filter((t) => t.examinedFrom !== '3')
   .map((t) => t.slug);
+
+/** Card-sized label for a topic slug in the reader's locale. */
+export function topicShortLabel(slug: string, locale: string): string | null {
+  if (!isTopicSlug(slug)) return null;
+  const topic = TOPIC_BY_SLUG[slug];
+  return locale.startsWith('pt') ? topic.shortPt : topic.shortEn;
+}

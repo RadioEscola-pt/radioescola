@@ -5,7 +5,7 @@ import DOMPurify from 'dompurify';
 import { Calculator, ChevronRight, FileText, FileX } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Question, SourceRef } from '@/lib/types';
-import { getCalculatorMeta } from '@/lib/config';
+import { getCalculatorMeta, topicShortLabel } from '@/lib/config';
 import type { CalculatorCode } from '@/lib/types';
 import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
 import BookmarkButton from '@/components/BookmarkButton';
@@ -181,6 +181,11 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   }, [notesKey]);
 
   const resolvedNotes = remoteNotesHtml ?? question.notes ?? null;
+  // `materia` is the shipped name for the source's `topic` field.
+  const topicLabel = question.materia ? topicShortLabel(question.materia, locale) : null;
+  const showsDifficulty =
+    attemptCount !== undefined && attemptCount > 0 && successRate !== undefined;
+  const showsBookmark = Boolean(showBookmark && onToggleBookmark);
   const calcCodes = normalizeCalcCodes(question.calc);
 
   // Get color class for difficulty badge based on success rate
@@ -245,28 +250,39 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
         </div>
       )}
 
-      <div className="flex items-start gap-2 mb-3">
-        <p className="flex-1 text-slate-900 dark:text-slate-100">
-          {indexNumber && (
-            <span className="font-semibold text-amber-600 dark:text-amber-500 mr-2">{indexNumber}.</span>
-          )}
-          {question.question}
-        </p>
-        <div className="flex items-center gap-2 shrink-0">
-          {attemptCount !== undefined && attemptCount > 0 && successRate !== undefined && (
-            <span className={`text-xs px-2 py-0.5 rounded-full ${getDifficultyColorClass(successRate)}`}>
-              {t('successRate', { rate: Math.round(successRate) })}
+      {(topicLabel || showsDifficulty || showsBookmark) && (
+        <div className="flex items-center justify-between gap-3 mb-2">
+          {topicLabel ? (
+            <span className="min-w-0 truncate text-[10px] font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+              <span className="sr-only">{t('topic')}: </span>
+              {topicLabel}
             </span>
+          ) : (
+            <span aria-hidden="true" />
           )}
-          {showBookmark && onToggleBookmark && (
-            <BookmarkButton
-              isBookmarked={isBookmarked}
-              onToggle={onToggleBookmark}
-              size="sm"
-            />
-          )}
+          <div className="flex items-center gap-2 shrink-0">
+            {attemptCount !== undefined && attemptCount > 0 && successRate !== undefined && (
+              <span className={`text-xs px-2 py-0.5 rounded-full ${getDifficultyColorClass(successRate)}`}>
+                {t('successRate', { rate: Math.round(successRate) })}
+              </span>
+            )}
+            {showBookmark && onToggleBookmark && (
+              <BookmarkButton
+                isBookmarked={isBookmarked}
+                onToggle={onToggleBookmark}
+                size="sm"
+              />
+            )}
+          </div>
         </div>
-      </div>
+      )}
+
+      <p className="mb-3 text-slate-900 dark:text-slate-100">
+        {indexNumber && (
+          <span className="font-semibold text-amber-600 dark:text-amber-500 mr-2">{indexNumber}.</span>
+        )}
+        {question.question}
+      </p>
 
       <div className={showImage && question.img ? "flex flex-col gap-4 sm:flex-row sm:items-start" : undefined}>
         <div className="space-y-2 sm:flex-[2] sm:min-w-0">
