@@ -19,7 +19,8 @@
           "question": 17,
           "page": 5
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 4,
@@ -38,7 +39,8 @@
           "question": 33,
           "page": 10
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 5,
@@ -57,7 +59,8 @@
           "question": 10,
           "page": 3
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 6,
@@ -76,7 +79,8 @@
           "question": 37,
           "page": 11
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 7,
@@ -88,7 +92,8 @@
         "Podem ser criadas no cabo tensões muito elevadas quando a estação de amador emite"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 8,
@@ -100,7 +105,8 @@
         "Uma tensão DC"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "seguranca"
     },
     {
       "id": 9,
@@ -112,7 +118,8 @@
         "28,0 - 29,7 MHz; 50,0 - 50,5 MHZ; 70,1570 - 70,2875 MHz; 144 - 146 MHz"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 210,
@@ -132,7 +139,8 @@
           "page": 1
         }
       ],
-      "tutorial": "entidades"
+      "tutorial": "entidades",
+      "materia": "operacao"
     },
     {
       "id": 11,
@@ -144,7 +152,8 @@
         "Um amador deverá sempre, por solidariedade com outros, causar perturbações no espectro quando acha que os interesses do radioamadorismo estão e causa"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 213,
@@ -163,7 +172,8 @@
           "question": 28,
           "page": 7
         }
-      ]
+      ],
+      "materia": "operacao"
     },
     {
       "id": 12,
@@ -182,7 +192,8 @@
           "question": 29,
           "page": 9
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 13,
@@ -194,7 +205,8 @@
         "só se atenuam se se propagarem através do ar"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 14,
@@ -206,7 +218,8 @@
         "Os titulares de CAN, exceto da categoria 3, podem partilhar a utilização das suas estações individuais com outros amadores, de acordo com a sua categoria"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 15,
@@ -218,7 +231,8 @@
         "Colaborar com a ANACOM na resolução de interferências"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 16,
@@ -230,7 +244,8 @@
         "Não necessita"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 17,
@@ -242,7 +257,8 @@
         "por dez anos é renovável por iguais periodos"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 18,
@@ -254,7 +270,8 @@
         "o indicativo de chamada consignado a todas as estações móveis da União Europeia"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 19,
@@ -266,7 +283,8 @@
         "Os titulares de CAN, excepto da categoria 3, podem partilhar a utilização das suas estações individuais com outros amadores, de acordo com a sua categoria"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 211,
@@ -285,7 +303,8 @@
           "question": 4,
           "page": 1
         }
-      ]
+      ],
+      "materia": "operacao"
     },
     {
       "id": 20,
@@ -297,7 +316,8 @@
         "As que pretendem, dado não haver limite para número de estações fixas"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 21,
@@ -316,7 +336,8 @@
           "question": 10,
           "page": 3
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 22,
@@ -328,7 +349,8 @@
         "As que pretenderem, dado não haver limite para o número de estações móveis ou portáteis"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 24,
@@ -340,7 +362,8 @@
         "Além de qualquer amador das categorias 1 ou A, os presidentes das Associações de amador"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 25,
@@ -352,7 +375,8 @@
         "Todos os amadores"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 26,
@@ -371,7 +395,8 @@
           "question": 19,
           "page": 6
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 27,
@@ -390,7 +415,8 @@
           "question": 19,
           "page": 5
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 28,
@@ -402,7 +428,8 @@
         "A CEPT ou a União Europeia"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 29,
@@ -421,7 +448,8 @@
           "question": 18,
           "page": 5
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 30,
@@ -440,7 +468,8 @@
           "question": 18,
           "page": 5
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 31,
@@ -452,7 +481,8 @@
         "Que a emissão é proveniente de uma estação fixa adicional"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 212,
@@ -464,7 +494,8 @@
         "Que a emissão é proveniente de uma estação fixa adicional"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 32,
@@ -488,7 +519,8 @@
           "question": 34,
           "page": 9
         }
-      ]
+      ],
+      "materia": "operacao"
     },
     {
       "id": 33,
@@ -508,7 +540,8 @@
           "page": 4
         }
       ],
-      "tutorial": "entidades"
+      "tutorial": "entidades",
+      "materia": "operacao"
     },
     {
       "id": 34,
@@ -521,7 +554,8 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "tutorial": "entidades"
+      "tutorial": "entidades",
+      "materia": "operacao"
     },
     {
       "id": 35,
@@ -533,7 +567,8 @@
         "Não, existe apenas um plano elaborado segundo os interesses da Região 2 defInida no Regulamento das Radiocomunicações"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 10,
@@ -558,7 +593,8 @@
           "page": 4
         }
       ],
-      "tutorial": "entidades"
+      "tutorial": "entidades",
+      "materia": "operacao"
     },
     {
       "id": 37,
@@ -582,7 +618,8 @@
           "question": 2,
           "page": 1
         }
-      ]
+      ],
+      "materia": "operacao"
     },
     {
       "id": 3,
@@ -595,7 +632,8 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "tutorial": "abreviaturas-de-operacao"
+      "tutorial": "abreviaturas-de-operacao",
+      "materia": "operacao"
     },
     {
       "id": 38,
@@ -614,7 +652,8 @@
           "question": 12,
           "page": 3
         }
-      ]
+      ],
+      "materia": "operacao"
     },
     {
       "id": 39,
@@ -627,7 +666,8 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "tutorial": "abreviaturas-de-operacao"
+      "tutorial": "abreviaturas-de-operacao",
+      "materia": "operacao"
     },
     {
       "id": 40,
@@ -640,7 +680,8 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "tutorial": "abreviaturas-de-operacao"
+      "tutorial": "abreviaturas-de-operacao",
+      "materia": "operacao"
     },
     {
       "id": 41,
@@ -653,7 +694,8 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "tutorial": "codigo-q"
+      "tutorial": "codigo-q",
+      "materia": "operacao"
     },
     {
       "id": 42,
@@ -666,7 +708,8 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "tutorial": "abreviaturas-de-operacao"
+      "tutorial": "abreviaturas-de-operacao",
+      "materia": "operacao"
     },
     {
       "id": 43,
@@ -686,7 +729,8 @@
           "page": 5
         }
       ],
-      "tutorial": "codigo-q"
+      "tutorial": "codigo-q",
+      "materia": "operacao"
     },
     {
       "id": 44,
@@ -706,7 +750,8 @@
           "page": 3
         }
       ],
-      "tutorial": "abreviaturas-de-operacao"
+      "tutorial": "abreviaturas-de-operacao",
+      "materia": "operacao"
     },
     {
       "id": 45,
@@ -719,7 +764,8 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "tutorial": "abreviaturas-de-operacao"
+      "tutorial": "abreviaturas-de-operacao",
+      "materia": "operacao"
     },
     {
       "id": 46,
@@ -732,7 +778,8 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "tutorial": "codigo-q"
+      "tutorial": "codigo-q",
+      "materia": "operacao"
     },
     {
       "id": 47,
@@ -752,7 +799,8 @@
           "page": 6
         }
       ],
-      "tutorial": "codigo-q"
+      "tutorial": "codigo-q",
+      "materia": "operacao"
     },
     {
       "id": 48,
@@ -777,7 +825,8 @@
           "page": 7
         }
       ],
-      "tutorial": "alfabeto-fonetico"
+      "tutorial": "alfabeto-fonetico",
+      "materia": "operacao"
     },
     {
       "id": 49,
@@ -790,7 +839,8 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "tutorial": "alfabeto-fonetico"
+      "tutorial": "alfabeto-fonetico",
+      "materia": "operacao"
     },
     {
       "id": 50,
@@ -803,7 +853,8 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "tutorial": "alfabeto-fonetico"
+      "tutorial": "alfabeto-fonetico",
+      "materia": "operacao"
     },
     {
       "id": 51,
@@ -816,7 +867,8 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "tutorial": "alfabeto-fonetico"
+      "tutorial": "alfabeto-fonetico",
+      "materia": "operacao"
     },
     {
       "id": 52,
@@ -829,7 +881,8 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "tutorial": "alfabeto-fonetico"
+      "tutorial": "alfabeto-fonetico",
+      "materia": "operacao"
     },
     {
       "id": 53,
@@ -841,7 +894,8 @@
         "Não está correto. Os equipamentos em operação devem ser mantidos em armários fechados para os proteger do pó"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "seguranca"
     },
     {
       "id": 54,
@@ -853,7 +907,8 @@
         "Raios Alfa"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "seguranca"
     },
     {
       "id": 55,
@@ -872,7 +927,8 @@
           "question": 36,
           "page": 11
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 56,
@@ -884,7 +940,8 @@
         "Ligando os cabos de alimentação do rádio directamente à bateria e instalando condensadores coaxiais em linha com os cabos do\n alternador"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 57,
@@ -896,7 +953,8 @@
         "Sinais que têm uma distribuição de frequências com picos\n acentuados"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "recetores"
     },
     {
       "id": 58,
@@ -908,7 +966,8 @@
         "Todas as opções são válidas"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "recetores"
     },
     {
       "id": 59,
@@ -920,7 +979,8 @@
         "Utilizando um interruptor de corrente com falha na ligação à terra no circuito utilizado para alimentar o\n motor"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 60,
@@ -932,7 +992,8 @@
         "Todas as opções são válidas"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "recetores"
     },
     {
       "id": 61,
@@ -944,7 +1005,8 @@
         "O som de timbre no filtro DSP vai suprimir por completo os espaços entre os caracteres\n CW"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "recetores"
     },
     {
       "id": 62,
@@ -956,7 +1018,8 @@
         "Deve-se ter especial cuidado na alimentação dos equipamentos de emissão e de recepção para garantir o seu bom funcionamento introduzindo-se estabilizadores ou filtros"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 63,
@@ -975,7 +1038,8 @@
           "question": 33,
           "page": 9
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 64,
@@ -987,7 +1051,8 @@
         "Filtro passa banda"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 65,
@@ -999,7 +1064,8 @@
         "Um filtro passa- alto no telefone afectado"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 66,
@@ -1018,7 +1084,8 @@
           "question": 25,
           "page": 8
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 67,
@@ -1030,7 +1097,8 @@
         "o cálculo da abertura e da diretividade, respetivamente"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 68,
@@ -1042,7 +1110,8 @@
         "o cálculo da abertura e da diretividade, respetivamente"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 69,
@@ -1062,7 +1131,8 @@
           "page": 4
         }
       ],
-      "tutorial": "definicoes"
+      "tutorial": "definicoes",
+      "materia": "antenas"
     },
     {
       "id": 70,
@@ -1074,7 +1144,8 @@
         "amplificador de áudio"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "recetores"
     },
     {
       "id": 71,
@@ -1086,7 +1157,8 @@
         "emissor, antena, \"baixada\" da antena e amplificador"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "recetores"
     },
     {
       "id": 72,
@@ -1105,7 +1177,8 @@
           "question": 3,
           "page": 1
         }
-      ]
+      ],
+      "materia": "emissores"
     },
     {
       "id": 73,
@@ -1117,7 +1190,8 @@
         "Qualquer das sequências anteriores estão correctas, pois é indiferente a forma como se liga"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 74,
@@ -1129,7 +1203,8 @@
         "Filtro de saída"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "emissores"
     },
     {
       "id": 75,
@@ -1141,7 +1216,8 @@
         "Microfone"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "emissores"
     },
     {
       "id": 76,
@@ -1153,7 +1229,8 @@
         "Sintonizador de frequência"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "recetores"
     },
     {
       "id": 77,
@@ -1177,7 +1254,8 @@
           "question": 27,
           "page": 7
         }
-      ]
+      ],
+      "materia": "recetores"
     },
     {
       "id": 78,
@@ -1189,7 +1267,8 @@
         "As ondas de rádio duma forma geral propagam-se sem necessidade de guia artificial e por esse facto foram fundamentais no desenvolvimento de comunicações móveis"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 79,
@@ -1201,7 +1280,8 @@
         "Filtragem de saída dos equipamentos emissores"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 80,
@@ -1213,7 +1293,8 @@
         "não tomar providências mesmo que seja interferido, evitando assim problemas"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 81,
@@ -1225,7 +1306,8 @@
         "Todas as respostas anteriores estão correctas"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "seguranca"
     },
     {
       "id": 82,
@@ -1237,7 +1319,8 @@
         "Raios Alfa"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "seguranca"
     },
     {
       "id": 83,
@@ -1249,7 +1332,8 @@
         "Nenhumas aplicações têm faixas exclusivas"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 84,
@@ -1261,7 +1345,8 @@
         "4 letras"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 85,
@@ -1273,7 +1358,8 @@
         "4 caracteres, o último dos quais deverá ser uma letra"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 23,
@@ -1285,7 +1371,8 @@
         "20 anos"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 2,
@@ -1297,7 +1384,8 @@
         "20 anos"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 86,
@@ -1316,7 +1404,8 @@
           "question": 8,
           "page": 2
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 89,
@@ -1328,7 +1417,8 @@
         "Um ano"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 90,
@@ -1340,7 +1430,8 @@
         "Um ano"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 91,
@@ -1352,7 +1443,8 @@
         "Indicativo de chamada de estação fixa adicional"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 92,
@@ -1377,7 +1469,8 @@
           "page": 4
         }
       ],
-      "tutorial": "entidades"
+      "tutorial": "entidades",
+      "materia": "operacao"
     },
     {
       "id": 87,
@@ -1389,7 +1482,8 @@
         "Abandonar a actividade pois acho que nunca vou resolver este problema"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 88,
@@ -1413,7 +1507,8 @@
           "question": 36,
           "page": 9
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 93,
@@ -1425,7 +1520,8 @@
         "Para evitar que eventuais emissões espúrias do emissor em teste sejam radiadas e possam provocar interferências"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "medidas"
     },
     {
       "id": 94,
@@ -1437,7 +1533,8 @@
         "4"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 95,
@@ -1449,7 +1546,8 @@
         "Região P"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 96,
@@ -1461,7 +1559,8 @@
         "As ondas de rádio são ondas que resultam da força gravitacional"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 97,
@@ -1480,7 +1579,8 @@
           "question": 37,
           "page": 10
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 98,
@@ -1492,7 +1592,8 @@
         "Informar os vizinhos do amador que o melhor é reclamarem para a ANACOM"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 99,
@@ -1504,7 +1605,8 @@
         "Introdução de filtragem adequada na estação de amador"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 100,
@@ -1516,7 +1618,8 @@
         "menor é a intensidade de campo num dado ponto do espaço, a uma dada distância nessa frequência, apenas se esse estiver no vazio"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 101,
@@ -1535,7 +1638,8 @@
           "question": 28,
           "page": 8
         }
-      ]
+      ],
+      "materia": "operacao"
     },
     {
       "id": 102,
@@ -1554,7 +1658,8 @@
           "question": 22,
           "page": 7
         }
-      ]
+      ],
+      "materia": "seguranca"
     },
     {
       "id": 103,
@@ -1566,7 +1671,8 @@
         "Sim, se tiver autorização da entidade competente"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 104,
@@ -1585,7 +1691,8 @@
           "question": 2,
           "page": 1
         }
-      ]
+      ],
+      "materia": "operacao"
     },
     {
       "id": 105,
@@ -1597,7 +1704,8 @@
         "são parte dos sufixos de indicadores de chamada que podem ser consignados às estações de amador"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 106,
@@ -1616,7 +1724,8 @@
           "question": 13,
           "page": 4
         }
-      ]
+      ],
+      "materia": "antenas"
     },
     {
       "id": 107,
@@ -1635,7 +1744,8 @@
           "question": 17,
           "page": 5
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 108,
@@ -1647,7 +1757,8 @@
         "AJUDA"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 109,
@@ -1666,7 +1777,8 @@
           "question": 1,
           "page": 1
         }
-      ]
+      ],
+      "materia": "operacao"
     },
     {
       "id": 110,
@@ -1678,7 +1790,8 @@
         "Nada de relevante"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "seguranca"
     },
     {
       "id": 111,
@@ -1690,7 +1803,8 @@
         "Banda lateral\n dupla"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 112,
@@ -1702,7 +1816,8 @@
         "HF"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 113,
@@ -1721,7 +1836,8 @@
           "question": 25,
           "page": 7
         }
-      ]
+      ],
+      "materia": "propagacao"
     },
     {
       "id": 114,
@@ -1733,7 +1849,8 @@
         "SHF"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 115,
@@ -1745,7 +1862,8 @@
         "SHF"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 116,
@@ -1757,7 +1875,8 @@
         "SHF"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 117,
@@ -1769,7 +1888,8 @@
         "250 000 km/s"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 118,
@@ -1781,7 +1901,8 @@
         "Para as comunicações a mais curta distância utilizam-se as faixas de VHF e de UHF (e em particular esta última)"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 119,
@@ -1793,7 +1914,8 @@
         "Seguir os procedimentos publicados pelo ICP-ANACOM"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 120,
@@ -1805,7 +1927,8 @@
         "Seguir os procedimentos publicados pelo ICP-ANACOM"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 121,
@@ -1824,7 +1947,8 @@
           "question": 38,
           "page": 10
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 122,
@@ -1848,7 +1972,8 @@
           "question": 35,
           "page": 9
         }
-      ]
+      ],
+      "materia": "interferencias"
     },
     {
       "id": 123,
@@ -1860,7 +1985,8 @@
         "Em nenhum dos sítios referidos nas três hipóteses anteriores"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 124,
@@ -1872,7 +1998,8 @@
         "transmitir lenta e pacientemente quando solicitado"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 125,
@@ -1884,7 +2011,8 @@
         "aumentar os seus conhecimentos não os partilhando com os outros amadores"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 126,
@@ -1896,7 +2024,8 @@
         "Um amador nunca deve deixar de identificar a estação através do seu indicativo de chamada"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 127,
@@ -1915,7 +2044,8 @@
           "question": 29,
           "page": 8
         }
-      ]
+      ],
+      "materia": "operacao"
     },
     {
       "id": 128,
@@ -1927,7 +2057,8 @@
         "Um amador deverá sempre, por solidariedade com outros, causar perturbações no espectro quando acha que os interesses do radioamadorismo estão e causa"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 129,
@@ -1951,7 +2082,8 @@
           "question": 30,
           "page": 8
         }
-      ]
+      ],
+      "materia": "operacao"
     },
     {
       "id": 130,
@@ -1970,7 +2102,8 @@
           "question": 3,
           "page": 1
         }
-      ]
+      ],
+      "materia": "emissores"
     },
     {
       "id": 131,
@@ -1982,7 +2115,8 @@
         "nenhuma das respostas anteriores está correcta"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "recetores"
     },
     {
       "id": 132,
@@ -1994,7 +2128,8 @@
         "Não existem"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 133,
@@ -2006,7 +2141,8 @@
         "No sítio da internet da IARU"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 135,
@@ -2018,7 +2154,8 @@
         "ANACOM"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 136,
@@ -2030,7 +2167,8 @@
         "A adaptação de impedâncias não é importante numa estação de recepção"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 137,
@@ -2042,7 +2180,8 @@
         "só se atenuam se se propagarem através do ar"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "propagacao"
     },
     {
       "id": 138,
@@ -2054,7 +2193,8 @@
         "por dez anos e é renovável por iguais períodos"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 139,
@@ -2067,7 +2207,8 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "tutorial": "prefixos-ic"
+      "tutorial": "prefixos-ic",
+      "materia": "regulamentacao"
     },
     {
       "id": 140,
@@ -2080,7 +2221,8 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "tutorial": "prefixos-ic"
+      "tutorial": "prefixos-ic",
+      "materia": "regulamentacao"
     },
     {
       "id": 141,
@@ -2093,7 +2235,8 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "tutorial": "prefixos-ic"
+      "tutorial": "prefixos-ic",
+      "materia": "regulamentacao"
     },
     {
       "id": 142,
@@ -2106,7 +2249,8 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
-      "tutorial": "prefixos-ic"
+      "tutorial": "prefixos-ic",
+      "materia": "regulamentacao"
     },
     {
       "id": 143,
@@ -2131,7 +2275,8 @@
           "page": 2
         }
       ],
-      "tutorial": "prefixos-ic"
+      "tutorial": "prefixos-ic",
+      "materia": "regulamentacao"
     },
     {
       "id": 144,
@@ -2144,7 +2289,8 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "tutorial": "prefixos-ic"
+      "tutorial": "prefixos-ic",
+      "materia": "regulamentacao"
     },
     {
       "id": 145,
@@ -2164,7 +2310,8 @@
           "page": 1
         }
       ],
-      "tutorial": "prefixos-ic"
+      "tutorial": "prefixos-ic",
+      "materia": "regulamentacao"
     },
     {
       "id": 151,
@@ -2189,7 +2336,8 @@
           "page": 2
         }
       ],
-      "tutorial": "prefixos-ic"
+      "tutorial": "prefixos-ic",
+      "materia": "regulamentacao"
     },
     {
       "id": 146,
@@ -2202,7 +2350,8 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "tutorial": "prefixos-ic"
+      "tutorial": "prefixos-ic",
+      "materia": "regulamentacao"
     },
     {
       "id": 147,
@@ -2215,7 +2364,8 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
-      "tutorial": "prefixos-ic"
+      "tutorial": "prefixos-ic",
+      "materia": "regulamentacao"
     },
     {
       "id": 149,
@@ -2228,7 +2378,8 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "tutorial": "prefixos-ic"
+      "tutorial": "prefixos-ic",
+      "materia": "regulamentacao"
     },
     {
       "id": 150,
@@ -2241,7 +2392,8 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
-      "tutorial": "prefixos-ic"
+      "tutorial": "prefixos-ic",
+      "materia": "regulamentacao"
     },
     {
       "id": 152,
@@ -2254,7 +2406,8 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "tutorial": "prefixos-ic"
+      "tutorial": "prefixos-ic",
+      "materia": "regulamentacao"
     },
     {
       "id": 153,
@@ -2267,7 +2420,8 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "tutorial": "prefixos-ic"
+      "tutorial": "prefixos-ic",
+      "materia": "regulamentacao"
     },
     {
       "id": 155,
@@ -2286,7 +2440,8 @@
           "question": 11,
           "page": 3
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 156,
@@ -2298,7 +2453,8 @@
         "Taxa anual de utilização do espectro"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 157,
@@ -2310,7 +2466,8 @@
         "terá um novo indicativo de chamada para a sua estação com prefixo e sufixo distintos do anterior"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 158,
@@ -2334,7 +2491,8 @@
           "question": 9,
           "page": 3
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 159,
@@ -2358,7 +2516,8 @@
           "question": 7,
           "page": 2
         }
-      ]
+      ],
+      "materia": "regulamentacao"
     },
     {
       "id": 160,
@@ -2370,7 +2529,8 @@
         "apenas maiores de 18 anos"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 161,
@@ -2382,7 +2542,8 @@
         "Mediante exame ao qual podem candidatar-se amadores maiores de 16 anos, que tenham o tempo mínimo de permanência na categoria 3 ou os amadores da categoria C"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 162,
@@ -2394,7 +2555,8 @@
         "Mediante exame, ao qual podem candidatar-se amadores das categorias 2, 3, B ou C"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 163,
@@ -2406,7 +2568,8 @@
         "AJUDA"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 164,
@@ -2425,7 +2588,8 @@
           "question": 21,
           "page": 6
         }
-      ]
+      ],
+      "materia": "seguranca"
     },
     {
       "id": 165,
@@ -2437,7 +2601,8 @@
         "Não está correcto. Os locais e os equipamentos deverão estar húmidos para evitar que o pó se agarre"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "seguranca"
     },
     {
       "id": 166,
@@ -2449,7 +2614,8 @@
         "Atinge um máximo próximo dos 18\n MHz"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "antenas"
     },
     {
       "id": 167,
@@ -2461,7 +2627,8 @@
         "Inserir um circulador entre dois circuitos"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "circuitos"
     },
     {
       "id": 168,
@@ -2473,7 +2640,8 @@
         "Um ruído semelhante a um gemido que se ouve e pára continuamente"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 169,
@@ -2485,7 +2653,8 @@
         "Defeito do estágio do amplificador IF do receptor da estação"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 170,
@@ -2497,7 +2666,8 @@
         "Harmónicos da frequência do cabo de alimentação AC"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "interferencias"
     },
     {
       "id": 171,
@@ -2521,7 +2691,8 @@
           "question": 21,
           "page": 6
         }
-      ]
+      ],
+      "materia": "seguranca"
     },
     {
       "id": 172,
@@ -2533,7 +2704,8 @@
         "Chuva de meteoros"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 173,
@@ -2545,7 +2717,8 @@
         "Todas as\n opções são válidas"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "regulamentacao"
     },
     {
       "id": 174,
@@ -2557,7 +2730,8 @@
         "Próximo do segmento RTTY, próximo dos 14,070 MHz"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 175,
@@ -2569,7 +2743,8 @@
         "Nestas faixas de frequências, os radioamadores estão sujeitos à utilização da banda lateral inferior"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 176,
@@ -2581,7 +2756,8 @@
         "Modulação em fase"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 177,
@@ -2593,7 +2769,8 @@
         "Banda lateral dupla"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "operacao"
     },
     {
       "id": 178,
@@ -2612,7 +2789,8 @@
           "question": 32,
           "page": 8
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 179,
@@ -2624,7 +2802,8 @@
         "não aumenta nem diminui qualquer que seja o valor da tensão aplicada"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 180,
@@ -2649,7 +2828,8 @@
           "page": 8
         }
       ],
-      "tutorial": "ohm"
+      "tutorial": "ohm",
+      "materia": "teoria"
     },
     {
       "id": 181,
@@ -2661,7 +2841,8 @@
         "Watt"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 182,
@@ -2673,7 +2854,8 @@
         "Watt"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 183,
@@ -2685,7 +2867,8 @@
         "Joule"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 184,
@@ -2697,7 +2880,8 @@
         "Joule"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 185,
@@ -2709,7 +2893,8 @@
         "Joule"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 186,
@@ -2721,7 +2906,8 @@
         "Watt"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 187,
@@ -2740,7 +2926,8 @@
           "question": 39,
           "page": 12
         }
-      ]
+      ],
+      "materia": "teoria"
     },
     {
       "id": 188,
@@ -2752,7 +2939,8 @@
         "Plástico"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 189,
@@ -2764,7 +2952,8 @@
         "Ferro"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 190,
@@ -2776,7 +2965,8 @@
         "Plastico"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "teoria"
     },
     {
       "id": 191,
@@ -2788,7 +2978,8 @@
         "Para evitar choques elétricos"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "seguranca"
     },
     {
       "id": 192,
@@ -2807,7 +2998,8 @@
           "question": 23,
           "page": 7
         }
-      ]
+      ],
+      "materia": "seguranca"
     },
     {
       "id": 193,
@@ -2819,7 +3011,8 @@
         "Uma tensão DC"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "seguranca"
     },
     {
       "id": 194,
@@ -2831,7 +3024,8 @@
         "Uma tensão DC"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true
+      "hasNotesMdx": true,
+      "materia": "seguranca"
     },
     {
       "id": 195,
@@ -2845,7 +3039,8 @@
       "correctIndex": 3,
       "hasNotesMdx": true,
       "img": "/images/cat3/100k.png",
-      "tutorial": "codigoDecores"
+      "tutorial": "codigoDecores",
+      "materia": "componentes"
     },
     {
       "id": 196,
@@ -2859,7 +3054,8 @@
       "correctIndex": 1,
       "hasNotesMdx": true,
       "img": "/images/cat3/220ohm.png",
-      "tutorial": "codigoDecores"
+      "tutorial": "codigoDecores",
+      "materia": "componentes"
     },
     {
       "id": 197,
@@ -2873,7 +3069,8 @@
       "correctIndex": 1,
       "hasNotesMdx": true,
       "img": "/images/cat3/2k.png",
-      "tutorial": "codigoDecores"
+      "tutorial": "codigoDecores",
+      "materia": "componentes"
     },
     {
       "id": 198,
@@ -2887,7 +3084,8 @@
       "correctIndex": 0,
       "hasNotesMdx": true,
       "img": "/images/cat3/sinusoidal.png",
-      "tutorial": "corrente-alternada"
+      "tutorial": "corrente-alternada",
+      "materia": "teoria"
     },
     {
       "id": 199,
@@ -2901,7 +3099,8 @@
       "correctIndex": 3,
       "hasNotesMdx": true,
       "img": "/images/cat3/sinusoidal.png",
-      "tutorial": "corrente-alternada"
+      "tutorial": "corrente-alternada",
+      "materia": "teoria"
     },
     {
       "id": 200,
@@ -2922,7 +3121,8 @@
         }
       ],
       "img": "/images/cat3/sinusoidal.png",
-      "tutorial": "corrente-alternada"
+      "tutorial": "corrente-alternada",
+      "materia": "teoria"
     },
     {
       "id": 201,
@@ -2943,7 +3143,8 @@
         }
       ],
       "img": "/images/cat3/sinusoidal.png",
-      "tutorial": "corrente-alternada"
+      "tutorial": "corrente-alternada",
+      "materia": "teoria"
     },
     {
       "id": 202,
@@ -2957,7 +3158,8 @@
       "correctIndex": 3,
       "hasNotesMdx": true,
       "img": "/images/cat3/sinusoidal.png",
-      "tutorial": "corrente-alternada"
+      "tutorial": "corrente-alternada",
+      "materia": "teoria"
     },
     {
       "id": 203,
@@ -2971,7 +3173,8 @@
       "correctIndex": 2,
       "hasNotesMdx": true,
       "img": "/images/cat3/sinusoidal.png",
-      "tutorial": "corrente-alternada"
+      "tutorial": "corrente-alternada",
+      "materia": "teoria"
     },
     {
       "id": 204,
@@ -2985,7 +3188,8 @@
       "correctIndex": 0,
       "hasNotesMdx": true,
       "img": "/images/cat3/sinusoidal.png",
-      "tutorial": "corrente-alternada"
+      "tutorial": "corrente-alternada",
+      "materia": "teoria"
     },
     {
       "id": 205,
@@ -2999,7 +3203,8 @@
       "correctIndex": 0,
       "hasNotesMdx": true,
       "img": "/images/cat3/sinusoidal.png",
-      "tutorial": "corrente-alternada"
+      "tutorial": "corrente-alternada",
+      "materia": "teoria"
     },
     {
       "id": 206,
@@ -3013,7 +3218,8 @@
       "correctIndex": 1,
       "hasNotesMdx": true,
       "img": "/images/cat3/sinusoidal.png",
-      "tutorial": "corrente-alternada"
+      "tutorial": "corrente-alternada",
+      "materia": "teoria"
     },
     {
       "id": 207,
@@ -3033,7 +3239,8 @@
           "page": 10
         }
       ],
-      "img": "/images/cat3/frequencia.png"
+      "img": "/images/cat3/frequencia.png",
+      "materia": "teoria"
     },
     {
       "id": 208,
@@ -3046,7 +3253,8 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "img": "/images/cat3/sinal.png"
+      "img": "/images/cat3/sinal.png",
+      "materia": "teoria"
     },
     {
       "id": 209,
@@ -3066,7 +3274,8 @@
           "page": 10
         }
       ],
-      "img": "/images/cat3/simbolos.png"
+      "img": "/images/cat3/simbolos.png",
+      "materia": "componentes"
     }
   ]
 }
