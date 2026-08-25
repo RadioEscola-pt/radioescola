@@ -946,5 +946,11 @@
     "message": "You're offline. Some features may be limited.",
     "reconnected": "Back online!",
     "dismiss": "Dismiss"
+  },
+  "Storage": {
+    "notSavedTitle": "Your progress isn't being saved",
+    "quotaBody": "This browser's storage is full. Export a backup from settings and clear old data to start saving again.",
+    "unknownBody": "This browser refused the write. If you're browsing privately, progress isn't saved.",
+    "dismiss": "Dismiss"
   }
 }

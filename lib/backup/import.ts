@@ -1,5 +1,7 @@
-import type { UserProgress, QuestionStats, ExamAttempt } from "@/lib/types/progress";
+import type { UserProgress, QuestionStats, ExamAttempt, ArchivedExams } from "@/lib/types/progress";
 import { PROGRESS_VERSION } from "@/lib/types/progress";
+import { deriveStreaks, normalizeActiveDays } from "@/lib/streaks";
+import { getTodayDateString } from "@/lib/gamification/daily-goals";
 import type { GamificationState, UnlockedAchievement } from "@/lib/types/gamification";
 import type { BackupFile, ValidationResult, ImportResult, ImportStrategy } from "./types";
 import { generateChecksum } from "./export";
@@ -192,6 +194,34 @@ function mergeGamification(
   };
 }
 
+/**
+ * Combine two exam rollups. The individual attempts behind them are gone, so
+ * counts are taken as the larger of the two rather than summed: the common case
+ * is the same history exported and re-imported, which summing would double.
+ */
+function mergeArchivedExams(
+  existing: ArchivedExams | undefined,
+  imported: ArchivedExams | undefined
+): { archivedExams?: ArchivedExams } {
+  if (!existing && !imported) return {};
+  if (!existing) return { archivedExams: imported };
+  if (!imported) return { archivedExams: existing };
+
+  const bestScores = { ...existing.bestScores };
+  for (const [cat, score] of Object.entries(imported.bestScores)) {
+    const current = bestScores[cat];
+    if (current === undefined || score > current) bestScores[cat] = score;
+  }
+
+  return {
+    archivedExams: {
+      count: Math.max(existing.count, imported.count),
+      passed: Math.max(existing.passed, imported.passed),
+      bestScores,
+    },
+  };
+}
+
 export function mergeProgress(
   existing: UserProgress,
   imported: UserProgress
@@ -211,22 +241,36 @@ export function mergeProgress(
     imported.gamification
   );
 
+  const activeDays = normalizeActiveDays([
+    ...(existing.activeDays ?? []),
+    ...(imported.activeDays ?? []),
+  ]);
+  const derivedStreaks = deriveStreaks(activeDays, getTodayDateString());
+
   const merged: UserProgress = {
     version: PROGRESS_VERSION,
     lastUpdated: Date.now(),
     questionStats,
     examHistory,
+    // A study day happened or it did not, on either device — union is the whole
+    // merge rule, and it is the one field here that is genuinely conflict-free.
+    activeDays,
+    ...mergeArchivedExams(existing.archivedExams, imported.archivedExams),
     stats: {
       totalExams: Math.max(existing.stats.totalExams, imported.stats.totalExams),
       totalPassed: Math.max(existing.stats.totalPassed, imported.stats.totalPassed),
       bestScores: { ...existing.stats.bestScores },
-      currentStreak: Math.max(existing.stats.currentStreak, imported.stats.currentStreak),
-      longestStreak: Math.max(existing.stats.longestStreak, imported.stats.longestStreak),
-      lastStudyDate: existing.stats.lastStudyDate && imported.stats.lastStudyDate
-        ? existing.stats.lastStudyDate > imported.stats.lastStudyDate
-          ? existing.stats.lastStudyDate
-          : imported.stats.lastStudyDate
-        : existing.stats.lastStudyDate || imported.stats.lastStudyDate,
+      // Derived from the unioned day set, not from the two stored counters —
+      // merging two streaks by taking the larger invents a streak neither
+      // device had. longestStreak still floors at the stored values, because a
+      // pre-V5 backup's longest run predates the days we can see.
+      currentStreak: derivedStreaks.currentStreak,
+      longestStreak: Math.max(
+        existing.stats.longestStreak,
+        imported.stats.longestStreak,
+        derivedStreaks.longestStreak
+      ),
+      lastStudyDate: derivedStreaks.lastStudyDate,
     },
     gamification,
   };

@@ -143,7 +143,16 @@ Uses `next-intl` v4. Default locale is **Portuguese (pt)**, also supports Englis
   absent until somebody resolves it. Never use the pergunta number as a page
 - **Image paths are already absolute** in the shipped JSON (`/images/cat{id}/file.png`); source files store them public-relative (`images/...`) and the compiler resolves them. Consumers use `question.img` directly — don't re-prepend
 - **`lib/data.ts` does no normalization.** If question data looks wrong, fix the source and rebuild; don't add a runtime coercion. Malformed data should fail `content:check`, not be patched per visitor
-- **Progress version migration**: Auto-migrates localStorage on load if version < `PROGRESS_VERSION` (currently V3)
+- **Progress version migration**: Auto-migrates localStorage on load if version < `PROGRESS_VERSION` (currently V5)
+- **Streaks are derived, never incremented.** `UserProgress.activeDays` is the
+  set of local days the user studied; `currentStreak`/`longestStreak`/
+  `lastStudyDate` fall out of it via `lib/streaks.ts`. `longestStreak` is kept
+  monotonic because pre-V5 users have a real longest run whose days were never
+  recorded. Never bump a streak counter in place — it cannot be merged between
+  two devices and cannot be recomputed once it drifts
+- **`examHistory` is capped** at `EXAM_HISTORY_LIMIT` (300, newest-first) with
+  the overflow folded into `archivedExams`. Anything counting exams from the
+  array alone is approximate for very heavy users
 - **Exam replay via URL params**: `q=` (question IDs), `a=` (base36-encoded answers), `t=` (time remaining) — no server storage needed
 - **Calculator is a modal context**, not a route — opening calculators doesn't change URL
 
