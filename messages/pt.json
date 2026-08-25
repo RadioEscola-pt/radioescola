@@ -755,68 +755,106 @@
     }
   },
   "BecomeHam": {
-    "title": "Como se tornar um radioamador",
-    "intro": "Em Portugal, o processo para se tornar um radioamador licenciado é regulado pela ANACOM (Autoridade Nacional de Comunicações) e envolve várias etapas e categorias. Este guia irá explicar o processo desde o início até à obtenção da licença mais avançada.",
-    "categoriesTitle": "Categorias de Radioamador",
-    "categoriesIntro": "Existem três categorias para novos radioamadores em Portugal, organizadas de forma progressiva:",
+    "title": "Como te tornas radioamador",
+    "intro": "Desde 25 de agosto de 2026 não há idade mínima nem tempos de espera. Fazes o exame da ANACOM e podes subir de categoria assim que te sentires preparado.",
+    "changed": {
+      "eyebrow": "O que mudou a 25 de agosto de 2026",
+      "title": "A Lei n.º 22/2026 alterou o Decreto-Lei n.º 53/2009.",
+      "age": "Acabou a idade mínima. Qualquer pessoa se pode inscrever no exame. Sendo menor, precisa de autorização escrita de quem exerça o poder paternal ou a tutela.",
+      "wait": "Acabaram os tempos de permanência. Já não é preciso esperar na categoria 3 antes de fazer o exame da 2, nem na 2 antes de fazer o da 1.",
+      "licence": "As estações individuais deixaram de precisar de licença, e o CAN passa a ser válido por 10 anos."
+    },
+    "categoriesTitle": "As três categorias",
+    "categoriesIntro": "Já não se distinguem pela idade nem pelo tempo de espera — distinguem-se pelo que te deixam fazer no ar.",
     "studyCategory": "Estudar esta categoria",
+    "cardLabels": {
+      "bands": "Faixas",
+      "power": "Potência",
+      "exam": "Exame"
+    },
     "category3": {
       "name": "Categoria 3",
-      "age": "Idade mínima: 12 anos",
-      "experience": "Experiência: nenhuma",
-      "privileges": "Privilégios: muito limitados",
-      "exam": "Exame: básico",
-      "power": "Potência: Não pode transmitir*"
+      "role": "Por onde toda a gente começa",
+      "bands": "Segmentos de 80, 40, 20 e 10 m, mais 6 e 2 m e 70 cm",
+      "power": "10 W em HF · 100 W em 10 m · 50 W em VHF/UHF",
+      "exam": "Básico"
     },
-    "category3PowerFootnote": "(Um portador de CAN de categoria 3 poderá) Utilizar estações individuais de qualquer amador de categoria superior, sob a sua supervisão, nos modos de emissão e recepção, utilizando as faixas de frequências que a este forem permitidas; (DL 53/2009 - Artigo 8.º)",
     "category2": {
       "name": "Categoria 2",
-      "age": "Idade mínima: 14 anos",
-      "experience": "Experiência: 2 anos Cat. 3",
-      "privileges": "Privilégios: expandidos",
-      "exam": "Exame: intermediário",
-      "power": "Potência: média"
+      "role": "Quase todas as faixas",
+      "bands": "Alargadas em HF, VHF e UHF, incluindo satélite em 2 m",
+      "power": "200 W em HF · 150 W em VHF/UHF",
+      "exam": "Intermédio"
     },
     "category1": {
       "name": "Categoria 1",
-      "age": "Idade mínima: 16 anos",
-      "experience": "Experiência: 1 ano Cat. 2",
-      "privileges": "Privilégios: completos",
-      "exam": "Exame: avançado",
-      "power": "Potência: alta"
+      "role": "Privilégios completos",
+      "bands": "Todas as faixas atribuídas ao serviço de amador",
+      "power": "1500 W em HF · 300 W em VHF/UHF",
+      "exam": "Avançado"
     },
-    "requirements": "Requisitos",
-    "examLabel": "Exame",
-    "examContentLabel": "Conteúdo do exame",
-    "approval": "Aprovação: Acertar pelo menos 50% das questões.",
-    "waitTimesTitle": "Tempos de Espera e Progressão",
+    "bandsTitle": "Faixas e potências",
+    "bandsIntro": "Potência de pico máxima, em watt, nas faixas de uso corrente.",
+    "bandsCaption": "Potência máxima permitida por faixa de frequências e categoria de amador.",
+    "bandsTable": {
+      "band": "Faixa",
+      "segment": "Segmento",
+      "cat": "Cat {id}",
+      "noAccess": "sem acesso"
+    },
+    "bandsNote": "A potência a usar é sempre a mínima necessária para a comunicação — a tabela dá tetos, não alvos. Os segmentos de 145,806 – 146 e 435 – 438 MHz são exclusivos do serviço de amador por satélite: é por aqui que se trabalham os satélites e a ISS. As faixas de 2200 m, 630 m e 4 m, e as micro-ondas acima de 1240 MHz, ficam reservadas à categoria 1 e constam do Anexo 6 do QNAF. A tabela é de emissão: receber não exige privilégios, pelo que qualquer categoria pode escutar qualquer faixa.",
+    "progressionTitle": "A ordem mantém-se, a espera não",
+    "progressionIntro": "Continuas a subir 3 → 2 → 1, porque cada exame exige a categoria anterior. O que desapareceu foi o relógio entre degraus.",
     "progression": {
-      "entry": "Entrada",
-      "intermediate": "Intermédio",
-      "advanced": "Avançado",
-      "twoYears": "2 anos",
-      "oneYear": "1 ano"
+      "exam": "Exame",
+      "3": {
+        "name": "Entrada",
+        "requires": "sem requisitos"
+      },
+      "2": {
+        "name": "Intermédio",
+        "requires": "exige categoria 3"
+      },
+      "1": {
+        "name": "Avançado",
+        "requires": "exige categoria 2"
+      }
     },
-    "waitTimesNote": "Estes são os tempos mínimos de espera. Muitos radioamadores optam por passar mais tempo em cada categoria para ganhar experiência antes de progredir.",
-    "examProcessTitle": "Processo de exame",
+    "progressionNoGate": "Não há tempos mínimos de permanência. Se passares nos três exames no mesmo ano, subes as três categorias no mesmo ano.",
+    "ageTitle": "A idade deixou de travar o acesso",
+    "ageIntro": "Passou a condicionar apenas a operação. São coisas distintas e é onde a confusão costuma acontecer.",
+    "age": {
+      "certificate": {
+        "label": "Para tirar o CAN",
+        "headline": "Qualquer idade",
+        "body": "Não existe idade mínima para fazer o exame. Sendo o candidato menor, é necessária autorização escrita de quem exerça o poder paternal ou a tutela, nos termos da lei civil."
+      },
+      "operate": {
+        "label": "Para operar",
+        "headline": "Menores de 16 acompanhados",
+        "body": "Um titular de CAN da categoria 3 com menos de 16 anos só pode utilizar estações de amador sob a supervisão de um amador com 16 anos ou mais e com privilégios iguais ou superiores aos seus."
+      }
+    },
+    "examProcessTitle": "Do exame ao indicativo",
     "examProcess": {
       "registration": {
         "title": "Inscrição na ANACOM",
-        "description": "Acede ao portal da ANACOM, preenche o formulário de inscrição e efetua o pagamento da taxa de exame. Receberás confirmação por email com a data e local do exame."
+        "description": "Preenches o formulário online da ANACOM e pagas a taxa de exame. Sendo menor, juntas a autorização escrita."
       },
       "preparation": {
-        "title": "Preparação para o exame",
-        "description": "Estuda o programa oficial usando os nossos materiais, simulações de exame e flashcards. Considera também participar em cursos de clubes de radioamadores locais."
+        "title": "Preparação",
+        "description": "Estudas o programa oficial com as perguntas reais de exame, o treino rápido e os flashcards."
       },
       "exam": {
-        "title": "Realização do exame",
-        "description": "Comparece no local designado pela ANACOM com documento de identificação. O exame é de escolha múltipla e tens tempo limitado para responder a todas as questões."
+        "title": "Prova teórica escrita",
+        "description": "Compareces no local indicado com documento de identificação. A prova é de escolha múltipla, com desconto por resposta errada."
       },
-      "results": {
-        "title": "Resultados e indicativo",
-        "description": "Os resultados são mostrados automaticamente no fim do exame. Se aprovado, recebes o teu indicativo de chamada oficial e podes começar a operar de acordo com a tua categoria."
+      "licence": {
+        "title": "CAN e indicativo de chamada",
+        "description": "Recebes o certificado, válido por 10 anos, e o teu indicativo de chamada. A estação individual já não precisa de licença — podes começar a operar."
       }
-    }
+    },
+    "examProcessNote": "As estações de uso comum, ao contrário das individuais, continuam a precisar de licença."
   },
   "Share": {
     "title": "Partilhar",
