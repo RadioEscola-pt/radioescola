@@ -14,6 +14,7 @@ bun run test:coverage # Vitest with V8 coverage
 bun run type-check   # tsc --noEmit
 bun run content:build # Compile content/questions/** into shipped artifacts
 bun run content:check # Verify artifacts match their source (writes nothing)
+bun run content:new  # Add a question: review, then write all four files
 bun run qbank <cmd>  # Inspect the question bank (search, dupes, coverage, …)
 ```
 
@@ -77,9 +78,6 @@ as the MDX body), plus `category.json` holding `anacomFile` and the question
   `loadData()` returns
 - `content/notes/cat{n}/{id}.mdx` — what `/api/notes` serves
 
-Adding a question is documented in `docs/novas-questoes.md` (pt-PT);
-the topic taxonomy in `docs/topicos.md` (pt-PT).
-
 `bun run content:build` regenerates them; `bun run content:check` verifies they
 match and is wired into `bun run build`, so a hand-edit or a stale artifact
 fails the build. It also fails on any `sources` entry pointing at an exam PDF
@@ -88,6 +86,28 @@ that is not in `public/exams/`. Papers we genuinely do not have are baselined in
 69 references do not break the build; the check also reports baseline entries
 that have become unnecessary. `scripts/content-migrate.ts <cat>` performs a migration and
 refuses to overwrite an existing source directory.
+
+`bun run content:new` is the way to add a question — interactive, or `--from
+draft.mdx` where the draft is a question file with the `id` left out (the same
+format it writes, so there is no second schema). It assigns the id, reviews the
+draft against the whole bank, and then writes all four files. The rules live in
+`lib/content/author.ts` as pure functions; the script is I/O and prompting,
+the same split as `qbank`.
+
+- **It refuses on `error`, asks on `warning`.** A duplicate is not
+  automatically a defect, so a `contradiction` (same options, different correct
+  answer) blocks while an `exact` match in another category only prompts
+- **The topic is picked from a list, never typed.** `topic` is free text in the
+  schema on purpose, which makes a typo the one mistake here that nothing
+  anywhere reports — the card silently loses its label and the browse filter
+  silently stops matching. This is the only place it can be made
+  unrepresentable rather than merely detectable
+- **The `order` position stays a human decision** — it is editorial, not
+  numeric. Interactively it shows the same-topic neighbourhood and asks;
+  otherwise `--after`/`--before`/`--end`. It never appends silently
+
+Adding a question by hand is still documented in `docs/novas-questoes.md`
+(pt-PT); the topic taxonomy in `docs/topicos.md` (pt-PT).
 
 **Linking questions to exam PDFs**: `bun run data:ocr-exams` OCRs the scanned
 papers in `public/exams/` and matches them back to the bank (needs `poppler`

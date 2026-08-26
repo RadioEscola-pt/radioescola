@@ -4,8 +4,67 @@ A fonte de verdade é `content/questions/cat{n}/` — **um ficheiro MDX por
 pergunta**, com os campos estruturados no frontmatter YAML e a explicação no
 corpo do documento. Tudo o resto é gerado a partir daí.
 
-Não existe nenhum script que crie uma pergunta. O processo é manual, e são
-apenas dois ficheiros a editar.
+Há duas maneiras de acrescentar uma: com a ferramenta, ou à mão. A ferramenta é a
+recomendada — faz as mesmas alterações e verifica, **antes de escrever**, o que
+mais nada no projeto verifica. O resto do documento descreve o formato que ela
+escreve, e continua a valer para quem edite os ficheiros diretamente.
+
+# A ferramenta: `bun run content:new`
+
+```bash
+bun run content:new                                  # interativo, campo a campo
+bun run content:new --from rascunho.mdx              # a partir de um ficheiro
+bun run content:new --from rascunho.mdx --dry-run    # mostra o que escreveria
+```
+
+Escreve os quatro ficheiros de uma vez — a pergunta, a linha do `order` e os
+dois artefactos gerados — e deixa a árvore no estado que o `content:check`
+espera.
+
+O rascunho do `--from` é **um ficheiro de pergunta com o `id` omitido**: o
+mesmo formato do destino, para não haver um segundo formato a aprender e para
+que um rascunho rejeitado se corrija e volte a submeter tal como está. A
+categoria vem de `--cat 3` ou de um `category: 3` no frontmatter, que é
+descartado ao escrever. Com `--from -` lê do stdin.
+
+O `id` não se escolhe: é o máximo atual mais um, nunca uma lacuna abaixo dele
+(a razão está em [§1](#1-escolher-a-categoria-e-o-id)).
+
+## O que verifica antes de escrever
+
+| Verificação | O que mais apanha isto |
+| --- | --- |
+| `topic` fora da taxonomia | **nada** — falha em silêncio para sempre |
+| contradiz uma pergunta noutra categoria | `qbank dupes`, se alguém se lembrar de o correr |
+| enunciado quase igual a outro, ou invertido | `qbank pairs`, idem |
+| `page` igual ao número da pergunta | nada |
+| `id` já usado | nada — mas é atribuído automaticamente |
+| duas opções com o mesmo texto | `qbank answers` |
+| PDF de `sources` que não existe | `content:check`, já depois de escrito |
+| imagem que não existe | `content:check`, já depois de escrito |
+| sem explicação, sem fonte, sem matéria, matéria acima do nível | avisos |
+
+Os **erros** impedem a escrita. Os **avisos** pedem confirmação, porque um
+duplicado não é automaticamente um defeito — a mesma pergunta de regulamentação
+é legitimamente examinada nos três níveis. `--force` escreve apesar dos avisos;
+`--yes` responde sim a todas as perguntas, e é obrigatório quando o stdin é um
+pipe.
+
+A matéria é escolhida de uma lista, não escrita: um slug mal escrito passa em
+todos os outros lados e depois não mostra etiqueta nenhuma, por isso aqui é
+impossível de representar em vez de meramente detetável.
+
+## A posição no `order`
+
+É a única decisão que a ferramenta não toma — a ordem é temática, não numérica.
+No modo interativo mostra a vizinhança (as últimas perguntas da mesma matéria,
+com a posição de cada uma) e pergunta depois de que `id` inserir; Enter põe no
+fim. Sem terminal usa-se `--after 107`, `--before 108` ou `--end`.
+
+# Fazer à mão
+
+O que se segue é o que a ferramenta faz — o formato dos ficheiros e a ordem
+das alterações. São dois ficheiros a editar.
 
 ## Antes de começar: a pergunta já existe?
 
@@ -19,6 +78,9 @@ bun run qbank search "toróide" --cat 1      # restringe a uma categoria
 
 A procura ignora acentos e maiúsculas, por isso `propagacao` encontra
 "propagação". Guia completo do `qbank` em [`qbank.md`](qbank.md).
+
+O `content:new` faz esta comparação sozinho, contra as três categorias, antes
+de escrever seja o que for.
 
 ## O que muda, e o que é gerado
 
@@ -317,6 +379,9 @@ Ler o número da pergunta na digitalização é a parte menos fiável do process
 relatório, para confirmação humana.
 
 ## Lista de verificação
+
+Com `bun run content:new`, os primeiros seis pontos são a própria ferramenta;
+sobram o último e a decisão da posição no `order`.
 
 - [ ] Procurei com `qbank search` e a pergunta ainda não existe
 - [ ] `id` = máximo atual + 1, sem reaproveitar lacunas
