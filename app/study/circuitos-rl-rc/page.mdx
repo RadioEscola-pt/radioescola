@@ -1,0 +1,87 @@
+---
+title: Circuitos RL, RC e Impedâncias em CA
+description: Análise fasorial de impedância em circuitos RL e RC, desfasamento entre tensão e corrente, e constante de tempo tau.
+categories: [2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Circuitos RL, RC e Impedâncias em Corrente Alternada
+
+Quando resistências puras ($R$) são combinadas com indutâncias ($L$) ou capacidades ($C$) num circuito alimentado por corrente alternada, a oposição total à passagem da corrente designa-se por **Impedância ($Z$)**. Ao contrário do que acontece em corrente contínua, as grandezas em CA não se somam de forma aritmética direta, mas sim através de uma **soma vectorial (fasorial)**.
+
+## 1. O Triângulo de Impedâncias
+
+Num circuito em corrente alternada, a resistência $R$ situa-se no eixo horizontal (tensão e corrente em fase, $0^\circ$), enquanto as reatâncias situam-se no eixo vertical ortogonal:
+
+- **Bobina pura (indutiva):** A tensão está **adiantada de $90^\circ$** em relação à corrente.
+- **Condensador puro (capacitivo):** A tensão está **atrasada de $90^\circ$** em relação à corrente.
+- **Circuito combinado RL ou RC:** O desfasamento de fase $\theta$ situa-se **entre $0^\circ$ e $90^\circ$**, dependendo da relação entre a reatância e a resistência:
+  $$\theta = \arctan\left(\frac{X}{R}\right)$$
+
+### Fórmula Geral da Impedância:
+
+| Circuito | Fórmula da Impedância Total | Desfasamento de Fase |
+| :--- | :---: | :--- |
+| **Bobina Pura** | $Z = X_L$ | Tensão adiantada exactamente **$90^\circ$** |
+| **Condensador Puro** | $Z = X_C$ | Tensão atrasada exactamente **$90^\circ$** |
+| **Circuito RL Série** | $$Z = \sqrt{R^2 + X_L^2}$$ | Tensão adiantada (entre **$0^\circ$ e $90^\circ$**) |
+| **Circuito RC Série** | $$Z = \sqrt{R^2 + X_C^2}$$ | Tensão atrasada (entre **$0^\circ$ e $90^\circ$**) |
+| **Circuito RLC Série** | $$Z = \sqrt{R^2 + (X_L - X_C)^2}$$ | Depende do balanço entre $X_L$ e $X_C$ |
+
+---
+
+## 2. Quedas de Tensão Fasoriais
+
+A soma vectorial das quedas de tensão num circuito RLC em série é calculada pela raiz quadrada da soma dos quadrados das tensões nos componentes:
+
+$$V_{\text{total}} = \sqrt{V_R^2 + (V_L - V_C)^2}$$
+
+Onde:
+- $V_R = I \cdot R$ (queda de tensão na resistência)
+- $V_L = I \cdot X_L$ (queda de tensão na reatância indutiva)
+- $V_C = I \cdot X_C$ (queda de tensão na reatância capacitiva)
+
+> **Exemplo Prático de Exame:**  
+> Se num circuito RL série temos uma queda de tensão na resistência de $V_R = 3\text{ V}$ e na bobina de $V_L = 4\text{ V}$, a tensão total da fonte **não é $7\text{ V}$**, mas sim:
+> $$V_{\text{total}} = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5\text{ V}$$
+
+---
+
+## 3. Constantes de Tempo ($\tau$) e Transitórios
+
+Quando um circuito RC ou RL é submetido a uma variação súbita de tensão (degrau CC ou onda quadrada), a carga e descarga não acontecem instantaneamente:
+
+### Circuito RC (Condensador)
+A constante de tempo $\tau$ (tau) é o tempo necessário para o condensador carregar até cerca de **63,2%** da tensão final:
+
+$$\tau = R \cdot C$$
+
+- $R$ em ohms ($\Omega$), $C$ em farads ($\text{F}$), $\tau$ em segundos ($\text{s}$).
+- Considera-se que o condensador está **totalmente carregado após $5\tau$** (99,3%).
+
+### Circuito RL (Bobina)
+A corrente na bobina atinge 63,2% do seu valor máximo estacionário no tempo:
+
+$$\tau = \frac{L}{R}$$
+
+- $L$ em henrys ($\text{H}$), $R$ em ohms ($\Omega$), $\tau$ em segundos ($\text{s}$).
+
+---
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - Num circuito RC série com R = 30 Ω e XC = 40 Ω, qual é a impedância total Z?"
+    options={["70 Ω","50 Ω","10 Ω","1200 Ω"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="2 - Se uma resistência de 100 kΩ for ligada em série com um condensador de 10 µF, qual é a constante de tempo do circuito?"
+    options={["1 segundo","0,1 segundos","10 segundos","100 segundos"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="3 - Num circuito puramente indutivo, como se encontra a corrente em relação à tensão?"
+    options={["Em fase","Adiantada 90°","Atrasada 90°","Em oposição de fase (180°)"]}
+    correct="C" />
