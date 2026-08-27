@@ -165,18 +165,37 @@ that tag, or log in by hand first with a `read:packages` token.
 ### 7. Runtime secrets
 
 As `deploy`, create `~/app/app.env` — this is the only configuration that lives
-on the server:
+on the server. The initial setup leaves it in place with every line commented
+out, which reads exactly like a configured file at a glance, so check the
+values and not just the file:
 
 ```bash
 cat > ~/app/app.env <<'EOF'
 RESEND_API_KEY=re_xxxxxxxxxxxx
-EXAM_SUBMISSION_EMAIL=you@example.com
-RESEND_FROM_EMAIL=onboarding@resend.dev
+EXAM_SUBMISSION_EMAIL=exames@radioescola.pt
+RESEND_FROM_EMAIL=site@radioescola.pt
 EOF
 chmod 600 ~/app/app.env
+cd ~/app && docker compose up -d --force-recreate app
 ```
 
 The app runs fine without these; only `/submit-exam` needs them.
+
+- **`up -d`, never `docker compose restart`.** `restart` reuses the existing
+  container with the environment it was created with, so it keeps serving the
+  old values and reports success. Confirm with
+  `docker exec radioescola-app-1 env | grep -E '^RESEND|^EXAM_'` — the file
+  having the right contents is not the same as the container having them
+- **The sender must be on a domain verified in Resend.** `radioescola.pt` is
+  verified: DKIM at `resend._domainkey.radioescola.pt`, Return-Path under
+  `send.radioescola.pt`. Do **not** add `include:amazonses.com` to the root
+  SPF — SPF is checked against the Return-Path, not the `From:` header, so it
+  would spend an SPF lookup for nothing
+- **The recipient must be a real mailbox.** Resend returns a `messageId` on
+  *acceptance*, so the route answers `{success: true}` and the visitor sees a
+  success screen even if the address bounces afterwards. `exames@` is an alias
+  on mailbox.org; if it is ever removed, submissions are lost silently and only
+  the Resend dashboard shows it
 
 `~/app/.env` is a *different* file, written by `release.sh` on every deploy to
 record which image tag is live. Do not put secrets in it.

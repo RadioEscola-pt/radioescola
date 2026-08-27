@@ -78,7 +78,12 @@ Submitted at: ${new Date().toISOString()}
     const { data, error } = await resend.emails.send({
       from: FROM_EMAIL,
       to: RECIPIENT_EMAIL,
-      subject: `Exam Submission - Category ${metadata.category}${metadata.year ? ` (${metadata.year})` : ""}`,
+      // Reply goes to whoever submitted, not to FROM_EMAIL — that is a sending
+      // address on the verified domain, not a monitored mailbox. Spread
+      // conditionally: the contact email is optional, and an explicit
+      // `replyTo: undefined` is not something to rely on the SDK ignoring.
+      ...(metadata.email ? { replyTo: metadata.email } : {}),
+      subject: `Submissão de exame - Categoria ${metadata.category}${metadata.year ? ` (${metadata.year})` : ""}`,
       text: emailBody,
       attachments: [
         {
