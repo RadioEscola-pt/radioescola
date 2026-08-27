@@ -1,7 +1,9 @@
 import React from 'react';
-import { Heart, Coffee, Server, Star, Sparkles, Tent, Radio, Trophy } from 'lucide-react';
+import Link from 'next/link';
+import { Heart, Coffee, Server, Star, Sparkles, Tent, Radio, Trophy, Users, ArrowRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { EXTERNAL_LINKS } from '@/lib/config';
+import SupportersStrip from '@/components/SupportersStrip';
 
 const DONATION_TIERS = [
   { amountKey: 'coffeeAmount', labelKey: 'coffee', icon: Coffee, recommended: false },
@@ -56,6 +58,15 @@ export default async function DonativosPage() {
             />
           </div>
           <p className="mt-2 text-xs text-slate-500">{t('fundingUpdated')}</p>
+
+          <Link
+            href="/apoiantes"
+            className="mt-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white ring-1 ring-white/15 transition-colors hover:bg-white/20"
+          >
+            <Users className="h-4 w-4 text-amber-400" />
+            {t('supportersLink')}
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
         </div>
       </div>
 
@@ -164,6 +175,11 @@ export default async function DonativosPage() {
             })}
           </div>
         </div>
+      </div>
+
+      {/* Thank you — the people who already answered the ask above */}
+      <div className="px-4 sm:px-0 mt-10">
+        <SupportersStrip />
       </div>
     </main>
   );
