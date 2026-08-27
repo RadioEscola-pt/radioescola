@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Github, MessageCircle, Smartphone, Bug, Info, Radio, Zap, BarChart3, GraduationCap, School, TrendingUp, Heart } from "lucide-react";
+import { Github, MessageCircle, Smartphone, Bug, Info, Radio, Zap, BarChart3, GraduationCap, School, TrendingUp, Heart, Users } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { EXTERNAL_LINKS } from "@/lib/config";
 
@@ -13,6 +13,7 @@ const internalLinks = [
   { href: "/estado-da-escola", icon: School, labelKey: "schoolStatus" },
   { href: "/estado-da-nacao", icon: TrendingUp, labelKey: "nationStatus" },
   { href: "/donativos", icon: Heart, labelKey: "donate" },
+  { href: "/apoiantes", icon: Users, labelKey: "supporters" },
 ] as const;
 
 const externalLinks = [

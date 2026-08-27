@@ -53,7 +53,8 @@
     "telegram": "Telegram",
     "app": "App",
     "donate": "Support",
-    "slogan": "Made by amateur radio operators, for (future) amateur radio operators"
+    "slogan": "Made by amateur radio operators, for (future) amateur radio operators",
+    "supporters": "Supporters"
   },
   "Browse": {
     "emptyClear": "Clear search",
@@ -169,7 +170,41 @@
     "excessFairs": "Show up at ham radio fairs and events",
     "excessStickers": "Make stickers and merch to spread the word",
     "excessEquipment": "Get equipment for educational content (SDR, video)",
-    "excessPrizes": "Reward community challenges and contributors"
+    "excessPrizes": "Reward community challenges and contributors",
+    "supportersLink": "See who has already supported"
+  },
+  "Supporters": {
+    "title": "Wall of Supporters",
+    "metaDescription": "The people whose donations keep Rádio Escola on the air. No ads, no subscriptions — just community support.",
+    "heroBadge": "Thank you",
+    "heroTitle": "The people keeping us on the air",
+    "heroSubtitle": "Rádio Escola has no ads and no subscriptions. It is online because some people chose to pay for it — for everyone. This wall is how we say thank you.",
+    "statSupporters": "{count, plural, =1 {# supporter} other {# supporters}}",
+    "statSince": "since {year}",
+    "timelineTitle": "Support over time",
+    "timelineSubtitle": "In order of arrival. Every card is a thank you.",
+    "qslTag": "Thank you",
+    "qslConfirm": "Support confirmed",
+    "supporterSince": "Since {date}",
+    "noCallsign": "Friend of Rádio Escola",
+    "openSlotTitle": "Your callsign here",
+    "openSlotDesc": "There is room on the wall for the next card.",
+    "sustainTitle": "What this support sustains",
+    "sustainServer": "The server running",
+    "sustainServerDesc": "The platform reachable at any hour, with no ads.",
+    "sustainDomain": "The radioescola.pt domain",
+    "sustainDomainDesc": "The address you share with anyone just starting out.",
+    "sustainFree": "Everything free",
+    "sustainFreeDesc": "A thousand-plus questions and exam simulators, at no cost.",
+    "privacyNote": "We publish no amounts and rank nobody by what they gave. If you would rather not appear here, or want your name written differently, just tell us.",
+    "ctaTitle": "Join them",
+    "ctaDesc": "Any support, however small, keeps this school open.",
+    "ctaButton": "Support Rádio Escola",
+    "ctaCosts": "See where the money goes",
+    "stripTitle": "The people keeping us on the air",
+    "stripSubtitle": "{count, plural, =1 {# person has} other {# people have}} supported Rádio Escola so it stays free for everyone.",
+    "stripCta": "See the wall",
+    "stripMore": "+{count}"
   },
   "Study": {
     "title": "Study Library",
