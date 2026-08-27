@@ -16,6 +16,7 @@ bun run content:build # Compile content/questions/** into shipped artifacts
 bun run content:check # Verify artifacts match their source (writes nothing)
 bun run content:new  # Add a question: review, then write all four files
 bun run qbank <cmd>  # Inspect the question bank (search, dupes, coverage, …)
+bun run banco        # Portuguese menu over content:new and qbank
 ```
 
 ## Deployment
@@ -123,6 +124,18 @@ to confirm. `bun run data:fonte-pages` is the manual equivalent.
 `search`, `show`, `dupes`, `pairs`, `coverage`, `topics`, `paper`, `answers`.
 Analysis lives in `lib/content/analysis.ts` as pure functions; the script is
 I/O and formatting. Full guide, in English and Portuguese, in `docs/qbank.md`.
+
+**Its output is Portuguese; its commands and flags are not.** `dupes` and
+`--tier` are the interface and stay English, as do the `--json` payload and the
+baseline keys — only the rendering is translated, and `--tier` accepts either
+form (`gralha` = `typo`). Do not translate a value that is serialised.
+
+`bun run banco` is a Portuguese menu over `qbank` and `content:new`, for anyone
+who would rather not remember the commands. It runs them as subprocesses rather
+than importing them: loading the bank costs ~150 ms, so sharing a process buys
+nothing, and `qbank` dispatches at module scope. It prints the command it is
+about to run, so it doubles as the way to learn the direct form. Prompting
+helpers shared by the two interactive scripts live in `scripts/prompt.ts`.
 
 It is deliberately **not** wired into CI. `content:check` owns per-file
 validity, and duplicating that here would create a second source of truth that

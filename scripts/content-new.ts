@@ -19,10 +19,17 @@
  * draft is fixed and re-fed unchanged, and the file that is finally written is
  * the file that was reviewed.
  */
-import { existsSync, readFileSync, writeFileSync, unlinkSync, mkdirSync } from "fs";
-import { join } from "path";
-import { tmpdir } from "os";
-import readline from "node:readline";
+import {
+  existsSync,
+  readFileSync,
+  writeFileSync,
+  unlinkSync,
+  mkdirSync,
+  copyFileSync,
+  statSync,
+} from "fs";
+import { join, resolve, extname } from "path";
+import { tmpdir, homedir } from "os";
 import { spawnSync } from "node:child_process";
 import matter from "gray-matter";
 import {
@@ -45,6 +52,19 @@ import {
   type Finding,
   type OrderAnchor,
 } from "../lib/content/author";
+import {
+  bold,
+  dim,
+  red,
+  green,
+  yellow,
+  interactive,
+  ask,
+  askText,
+  askChoice,
+  confirm as askConfirm,
+  closePrompts,
+} from "./prompt";
 import { TOPICS, topicShortLabel } from "../lib/config/topics";
 import { CATEGORIES, type CategoryId } from "../lib/config/categories";
 import type { ContentCategory } from "../lib/content/schema";
@@ -92,16 +112,6 @@ const force = has("force");
 /* Output                                                                      */
 /* -------------------------------------------------------------------------- */
 
-const ESC = "\u001b";
-const colour = process.stdout.isTTY === true;
-const paint = (code: string, text: string) =>
-  colour ? `${ESC}[${code}m${text}${ESC}[0m` : text;
-const bold = (t: string) => paint("1", t);
-const dim = (t: string) => paint("2", t);
-const red = (t: string) => paint("31", t);
-const green = (t: string) => paint("32", t);
-const yellow = (t: string) => paint("33", t);
-
 /** Truncates for a one-line summary, on a word boundary where it can. */
 function clip(text: string, width: number): string {
   const flat = text.replace(/\s+/g, " ").trim();
@@ -126,6 +136,7 @@ function usage(): never {
   console.log();
   console.log(dim("  --cat 3        categoria (perguntada se faltar)"));
   console.log(dim("  --after 107    posição no order; também --before 108 ou --end"));
+  console.log(dim("  --image fig.png  imagem a copiar para public/images/cat{n}/"));
   console.log(dim("  --dry-run      mostra o que escreveria, sem escrever nada"));
   console.log(dim("  --yes          não pergunta (obrigatório quando stdin é um pipe)"));
   console.log(dim("  --force        escreve apesar dos avisos"));
@@ -138,61 +149,9 @@ function usage(): never {
 /* Prompting                                                                   */
 /* -------------------------------------------------------------------------- */
 
-let rl: readline.Interface | null = null;
-const interactive = process.stdin.isTTY === true;
-
-function prompts(): readline.Interface {
-  if (rl === null) {
-    rl = readline.createInterface({ input: process.stdin, output: process.stdout });
-  }
-  return rl;
-}
-function closePrompts(): void {
-  rl?.close();
-  rl = null;
-}
-
-const ask = (question: string): Promise<string> =>
-  new Promise((resolve) => prompts().question(question, resolve));
-
-async function askText(label: string, { required = true } = {}): Promise<string> {
-  for (;;) {
-    const answer = (await ask(`${label} ${dim("›")} `)).trim();
-    if (answer.length > 0 || !required) return answer;
-    console.log(dim("  (obrigatório)"));
-  }
-}
-
-/**
- * A numbered list rather than an arrow-key menu: raw mode would have to be
- * handed back and forth with $EDITOR, and a number is one keystroke either way.
- */
-async function askChoice<T>(
-  label: string,
-  options: readonly { value: T; label: string; hint?: string }[],
-  { allowNone = false } = {}
-): Promise<T | null> {
-  console.log(`\n${bold(label)}`);
-  options.forEach((o, i) => {
-    console.log(`  ${String(i + 1).padStart(2)}  ${o.label}${o.hint ? `  ${dim(o.hint)}` : ""}`);
-  });
-  if (allowNone) console.log(dim("   —  Enter para nenhum"));
-
-  for (;;) {
-    const raw = (await ask(`${dim("nº ›")} `)).trim();
-    if (raw.length === 0 && allowNone) return null;
-    const chosen = options[Number.parseInt(raw, 10) - 1];
-    if (chosen) return chosen.value;
-    console.log(dim(`  1-${options.length}${allowNone ? " ou Enter" : ""}`));
-  }
-}
-
-async function confirm(question: string, fallback = false): Promise<boolean> {
-  if (assumeYes) return true;
-  if (!interactive) return fallback;
-  const answer = (await ask(`${question} ${dim("[s/N]")} `)).trim().toLowerCase();
-  return answer === "s" || answer === "sim" || answer === "y" || answer === "yes";
-}
+/** `assumeYes` is this script's flag, so every call site passes it. */
+const confirm = (question: string, fallback = false) =>
+  askConfirm(question, { fallback, assumeYes });
 
 /**
  * The explanation body, through $EDITOR.
@@ -261,6 +220,43 @@ function pdfLookup(pdf: string): { exists: boolean; alsoIn: string[] } {
 
 const imageExists = (rel: string) => existsSync(join(PUBLIC_DIR, rel));
 
+const IMAGE_EXTENSIONS = new Set([".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"]);
+
+/**
+ * What the author typed, resolved to one of the two things it can be.
+ *
+ * A figure already under `public/images/` is referenced where it lies — the
+ * same drawing is sometimes cited by more than one question. Anything else is
+ * a file somewhere on disk, to be copied in at write time.
+ */
+type ImageInput =
+  | { kind: "public"; rel: string }
+  | { kind: "file"; from: string; ext: string }
+  | { kind: "missing" }
+  | { kind: "unsupported"; ext: string };
+
+function classifyImage(input: string): ImageInput {
+  const rel = input.replace(/^\//, "");
+  if (rel.startsWith("images/") && imageExists(rel)) return { kind: "public", rel };
+
+  const from = resolve(input.startsWith("~/") ? join(homedir(), input.slice(2)) : input);
+  if (!existsSync(from) || !statSync(from).isFile()) return { kind: "missing" };
+  const ext = extname(from).toLowerCase();
+  if (!IMAGE_EXTENSIONS.has(ext)) return { kind: "unsupported", ext };
+  return { kind: "file", from, ext };
+}
+
+/**
+ * Named for the question rather than for the file it came from.
+ *
+ * `Screenshot 2026-08-27 at 14.03.11.png` is not a name to carry into the
+ * repo, and a descriptive one taken from the source risks colliding with a
+ * figure another question already references — which would silently replace
+ * that question's drawing. The id is new, so this name cannot be taken.
+ */
+const imageDestination = (category: CategoryId, id: number, ext: string) =>
+  `images/cat${category}/q${id}${ext}`;
+
 /* -------------------------------------------------------------------------- */
 /* Drafts from a file                                                          */
 /* -------------------------------------------------------------------------- */
@@ -317,13 +313,15 @@ function readDraftSource(from: string): string {
 /* -------------------------------------------------------------------------- */
 
 async function askCategory(): Promise<CategoryId> {
+  // Listed ascending, deliberately against the 3→2→1 order used everywhere
+  // else in the app. `askChoice` numbers its options by position, so listing
+  // CATEGORIES as-is made "1" select cat3 and "3" select cat1 — a prompt whose
+  // numbers are all wrong in a way that reads as right. Here the number typed
+  // is the category chosen; the beginner-first order stays a UI concern.
+  const ascending = [...CATEGORIES].sort((a, b) => Number(a) - Number(b));
   const chosen = await askChoice<CategoryId>(
     "Categoria",
-    CATEGORIES.map((c) => ({
-      value: c,
-      label: `cat${c}`,
-      hint: c === "3" ? "iniciado" : c === "1" ? "avançado" : "",
-    }))
+    ascending.map((c) => ({ value: c, label: `Categoria ${c}` }))
   );
   return chosen ?? "3";
 }
@@ -408,6 +406,41 @@ async function askSources(): Promise<Draft["sources"]> {
   }
 }
 
+/**
+ * Validated as it is typed, not at the end.
+ *
+ * The path is the one field here the author can get wrong without noticing —
+ * a typo yields a question that renders a broken image — and finding out after
+ * the enunciado, the options and the explanation have all been entered is the
+ * wrong moment.
+ */
+async function askImage(): Promise<string | null> {
+  for (;;) {
+    const input = await askText(
+      `\n${bold("Imagem")} ${dim("caminho do ficheiro, ou images/cat3/x.png já em public/ (Enter se nenhuma)")}`,
+      { required: false }
+    );
+    if (input.length === 0) return null;
+
+    const classified = classifyImage(input);
+    if (classified.kind === "public") {
+      console.log(`  ${green("✓")} ${dim("já está em public/, referenciada onde está")}`);
+      return input;
+    }
+    if (classified.kind === "file") {
+      console.log(`  ${green("✓")} ${dim(`${classified.from} — copiada ao escrever`)}`);
+      return input;
+    }
+    console.log(
+      `  ${red("✗")} ${dim(
+        classified.kind === "unsupported"
+          ? `${classified.ext} não é um formato de imagem (${[...IMAGE_EXTENSIONS].join(", ")})`
+          : "não existe, nem sob public/ nem como ficheiro"
+      )}`
+    );
+  }
+}
+
 async function askDraft(): Promise<Draft> {
   const catFlag = flag("cat");
   const category =
@@ -429,10 +462,7 @@ async function askDraft(): Promise<Draft> {
   const topic = await askTopic();
   const sources = await askSources();
 
-  const image = await askText(
-    `\n${bold("Imagem")} ${dim("relativa a public/, ex.: images/cat3/x.png (Enter se nenhuma)")}`,
-    { required: false }
-  );
+  const image = flag("image") ?? (await askImage());
 
   console.log(`\n${bold("Explicação")} ${dim("— o corpo MDX. Pode ficar vazia.")}`);
   console.log(dim(`  ${clip(question, 100)}`));
@@ -444,7 +474,7 @@ async function askDraft(): Promise<Draft> {
     answers,
     topic,
     sources,
-    image: image.length > 0 ? image : null,
+    image,
     explanation,
   };
 }
@@ -573,8 +603,44 @@ async function main(): Promise<void> {
   if (category === undefined) die(`cat${draft.category} não carregou`);
 
   const id = draft.id ?? nextId(manifest.order);
+
+  // Resolved here rather than at the prompt because the destination name is
+  // built from the id, and copied later still: a --dry-run, a blocking error
+  // or an abandoned warning must not leave a file behind in public/.
+  const rawImage = flag("image") ?? draft.image ?? null;
+  let image: string | null = null;
+  let imageCopy: { from: string; to: string } | null = null;
+  if (rawImage !== null && rawImage.length > 0) {
+    const classified = classifyImage(rawImage);
+    switch (classified.kind) {
+      case "public":
+        image = classified.rel;
+        break;
+      case "file": {
+        image = imageDestination(draft.category, id, classified.ext);
+        const to = join(PUBLIC_DIR, image);
+        // The id is new, so this can only be a leftover — and overwriting it
+        // would replace a figure that something else may already reference.
+        if (existsSync(to)) die(`${image} já existe`, "Remova-o ou mude-lhe o nome.");
+        imageCopy = { from: classified.from, to };
+        break;
+      }
+      case "unsupported":
+        die(
+          `${rawImage}: ${classified.ext} não é um formato de imagem`,
+          `Formatos: ${[...IMAGE_EXTENSIONS].join(", ")}`
+        );
+      // falls through to die; listed so the switch stays exhaustive
+      case "missing":
+        die(
+          `${rawImage} não existe`,
+          "Passe o caminho de um ficheiro, ou um images/… já sob public/."
+        );
+    }
+  }
+
   const review = reviewDraft(
-    { ...draft, id },
+    { ...draft, id, image },
     {
       category: draft.category,
       anacomFile: manifest.anacomFile,
@@ -584,7 +650,10 @@ async function main(): Promise<void> {
       bank,
       order: manifest.order,
       pdfLookup,
-      imageExists,
+      // The copy has not happened yet, so the destination has to count as
+      // present or the review reports the image it is about to write as
+      // missing.
+      imageExists: (rel: string) => imageExists(rel) || (imageCopy !== null && rel === image),
     }
   );
 
@@ -631,12 +700,19 @@ async function main(): Promise<void> {
         }`
       )}`
     );
+    if (imageCopy !== null) {
+      console.log(dim(`${imageCopy.from}  →  public/${image}`));
+    }
     closePrompts();
     return;
   }
 
   writeFileSync(questionFile, body);
   writeFileSync(join(sourceDir, MANIFEST_FILE), serializeManifest({ ...manifest, order }));
+  if (imageCopy !== null) {
+    mkdirSync(join(imageCopy.to, ".."), { recursive: true });
+    copyFileSync(imageCopy.from, imageCopy.to);
+  }
 
   // Reloaded rather than reused: this parses back what was just written, so a
   // round-trip surprise surfaces here instead of in the next `content:check`.
@@ -644,7 +720,12 @@ async function main(): Promise<void> {
   const dataFile = join(ROOT, "public", "data", `cat${draft.category}.json`);
   writeFileSync(dataFile, appJson);
 
-  const written = [questionFile, join(sourceDir, MANIFEST_FILE), dataFile];
+  const written = [
+    questionFile,
+    join(sourceDir, MANIFEST_FILE),
+    dataFile,
+    ...(imageCopy === null ? [] : [imageCopy.to]),
+  ];
   const note = notes.get(id);
   if (note !== undefined) {
     const noteFile = join(ROOT, "content", "notes", `cat${draft.category}`, `${id}.mdx`);
