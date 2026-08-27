@@ -17,6 +17,8 @@ export interface Supporter {
 export const SUPPORTERS: Supporter[] = [
   { name: 'Pedro Caria', callsign: 'CR7BYT', since: '2026-08' },
   { name: 'Carlos Francisco', callsign: 'CR7CAN', since: '2026-08' },
+  { name: 'José Ribeiro', callsign: 'CT7BAS', since: '2026-08' },
+  { name: 'Francisco São Bento', callsign: 'CS7BIO', since: '2026-08' },
 ];
 
 export interface SupporterYear {
