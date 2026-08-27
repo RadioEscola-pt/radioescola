@@ -4,7 +4,9 @@ A fonte de verdade é `content/questions/cat{n}/` — **um ficheiro MDX por
 pergunta**, com os campos estruturados no frontmatter YAML e a explicação no
 corpo do documento. Tudo o resto é gerado a partir daí.
 
-Há duas maneiras de acrescentar uma: com a ferramenta, ou à mão. A ferramenta é a
+Há duas maneiras de acrescentar uma: com a ferramenta, ou à mão. O
+`bun run banco` é um menu em português por cima da ferramenta e do `qbank`, se
+preferir não decorar comandos. A ferramenta é a
 recomendada — faz as mesmas alterações e verifica, **antes de escrever**, o que
 mais nada no projeto verifica. O resto do documento descreve o formato que ela
 escreve, e continua a valer para quem edite os ficheiros diretamente.
@@ -15,11 +17,12 @@ escreve, e continua a valer para quem edite os ficheiros diretamente.
 bun run content:new                                  # interativo, campo a campo
 bun run content:new --from rascunho.mdx              # a partir de um ficheiro
 bun run content:new --from rascunho.mdx --dry-run    # mostra o que escreveria
+bun run content:new --image ~/figura.png             # copia a figura para o sítio
 ```
 
 Escreve os quatro ficheiros de uma vez — a pergunta, a linha do `order` e os
-dois artefactos gerados — e deixa a árvore no estado que o `content:check`
-espera.
+dois artefactos gerados, mais a figura se houver — e deixa a árvore no estado
+que o `content:check` espera.
 
 O rascunho do `--from` é **um ficheiro de pergunta com o `id` omitido**: o
 mesmo formato do destino, para não haver um segundo formato a aprender e para
@@ -29,6 +32,40 @@ descartado ao escrever. Com `--from -` lê do stdin.
 
 O `id` não se escolhe: é o máximo atual mais um, nunca uma lacuna abaixo dele
 (a razão está em [§1](#1-escolher-a-categoria-e-o-id)).
+
+## A figura, se houver
+
+Aponta-se para o ficheiro onde quer que esteja — no Ambiente de Trabalho, nas
+Transferências, onde calhar — e a ferramenta copia-o para
+`public/images/cat{n}/` ao escrever:
+
+```
+Imagem caminho do ficheiro, ou images/cat3/x.png já em public/ (Enter se nenhuma) › ~/Transferências/figura.png
+  ✓ /home/joel/Transferências/figura.png — copiada ao escrever
+```
+
+Fora do modo interativo é `--image ~/figura.png`, ou um `image:` no frontmatter
+do rascunho, que aceita as duas formas. Formatos: `.png`, `.jpg`, `.jpeg`,
+`.gif`, `.webp`, `.svg`.
+
+O caminho é validado **assim que é escrito**, e a pergunta repete-se até estar
+certo. É o único campo que se pode errar sem dar por isso — o resultado é
+uma pergunta com uma imagem partida — e descobri-lo depois do enunciado, das
+opções e da explicação já escritos seria tarde de mais.
+
+Três coisas que a ferramenta decide:
+
+- **O nome é `q{id}.{extensão}`**, não o do ficheiro de origem. `Captura de
+  ecrã 2026-08-27, 14.03.11.png` não é um nome para trazer para o repositório,
+  e um nome descritivo arrisca colidir com uma figura que outra pergunta já
+  refere — o que lhe trocaria o desenho em silêncio. O `id` é novo, por isso o
+  nome não pode estar ocupado; se ainda assim existir, recusa em vez de
+  substituir
+- **Um caminho já sob `public/images/` é referenciado onde está**, não copiado.
+  O mesmo desenho é legitimamente citado por mais do que uma pergunta
+- **A cópia acontece com as escritas**, não no momento da pergunta. Um
+  `--dry-run`, um erro que bloqueia, ou um aviso que se decide não aceitar não
+  deixam nada para trás em `public/`
 
 ## O que verifica antes de escrever
 
@@ -90,6 +127,7 @@ de escrever seja o que for.
 | `content/questions/cat{n}/category.json` | **você** — uma linha no `order` |
 | `public/data/cat{n}.json` | gerado por `content:build` |
 | `content/notes/cat{n}/{id}.mdx` | gerado por `content:build` |
+| `public/images/cat{n}/{ficheiro}` | **você** — a figura, só se a pergunta tiver uma |
 
 **Nunca editar à mão os dois últimos.** O `content:check` recompila a partir da
 origem e falha se um artefacto tiver sido alterado, e está ligado ao
@@ -247,6 +285,10 @@ volta a prefixar.
 O ficheiro tem de existir em `public/images/cat{n}/`, senão a compilação
 **falha**. Isto vale também para `<img src>` dentro da explicação.
 
+À mão, copiar o ficheiro para lá é um passo à parte, e o nome é uma decisão de
+quem escreve. O `content:new` faz as duas coisas — ver
+[A figura, se houver](#a-figura-se-houver).
+
 ### `tutorial` e `calc`
 
 `tutorial` liga a pergunta a um guia de estudo pelo slug (ex.: `codigo-q`);
@@ -380,7 +422,7 @@ relatório, para confirmação humana.
 
 ## Lista de verificação
 
-Com `bun run content:new`, os primeiros seis pontos são a própria ferramenta;
+Com `bun run content:new`, os primeiros sete pontos são a própria ferramenta;
 sobram o último e a decisão da posição no `order`.
 
 - [ ] Procurei com `qbank search` e a pergunta ainda não existe
@@ -389,6 +431,7 @@ sobram o último e a decisão da posição no `order`.
 - [ ] Exatamente uma resposta com `correct: true`
 - [ ] `topic` é um dos 12 slugs válidos (confirmado com `qbank topics`)
 - [ ] `sources` distingue o número da pergunta da página do PDF
+- [ ] Se a pergunta tem figura, o ficheiro está em `public/images/cat{n}/`
 - [ ] `id` inserido no `order` do `category.json`, na posição temática certa
 - [ ] `bun run content:build` executado e artefactos gerados incluídos no commit
 - [ ] `bun run content:check` e `bun run qbank dupes` passam

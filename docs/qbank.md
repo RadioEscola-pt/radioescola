@@ -13,6 +13,36 @@ It reads `content/questions/**` directly — the MDX sources, not
 file you would edit, and the JSON is a build artifact that goes stale between
 `content:build` runs.
 
+The report is in Portuguese; the commands and flags are not. `dupes`, `--tier`
+and `--json` are the interface, and this document is the reference for both.
+
+## The menu, if you would rather not remember any of this
+
+```
+bun run banco
+```
+
+A Portuguese menu over this tool and `content:new`. It asks what you want,
+collects the arguments, and then runs exactly the command documented here —
+printing it first, so the menu is also how you learn the direct form:
+
+```
+Banco de questões
+   1  Acrescentar uma pergunta  content:new
+   2  Procurar uma pergunta  por texto
+   3  Ver uma pergunta  ex.: cat3#12
+   4  Duplicados  grupos que discordam entre si
+   …
+   —  Enter para sair
+nº › 2
+Termo a procurar › dipolo
+
+  bun run scripts/qbank.ts search dipolo --cat 3
+```
+
+It adds nothing of its own: every option is one of the commands below, and both
+tools keep working on their own.
+
 ## Why it exists
 
 `content:check` already validates every question file and verifies the shipped
@@ -64,13 +94,13 @@ A question is addressed as `cat3#12`; `3#12` and `cat3/12` also parse.
 
 ```
 $ bun run qbank search "carga artificial"
-5 question(s) matching carga artificial
+5 pergunta(s) com carga artificial
 
 cat3#93  Medições  content/questions/cat3/0093.mdx:4
   Porque se deve utilizar uma carga artificial quando estamos a testar um emissor?
    · Para diminuir de forma significativa o consumo de energia
    ✓ Para evitar que eventuais emissões espúrias do emissor em teste sejam radiadas…
-  no sources
+  sem fonte
 ```
 
 Matching folds accents and case, so `propagacao` finds "propagação" and
@@ -92,7 +122,7 @@ disagree on.
 The core command. As of August 2026:
 
 ```
-126 group(s): 4 typo, 33 divergent, 64 shared-answers, 25 exact
+126 grupo(s): 4 gralha, 33 divergente, 64 respostas partilhadas, 25 exato
 ```
 
 **A duplicate is not automatically a defect.** The same regulatory question is
@@ -102,11 +132,11 @@ they are to be a real bug:
 
 | Tier | Means | Read as |
 | --- | --- | --- |
-| `contradiction` | Same question, same options, **disagreeing on which is correct** | One of them is simply wrong |
-| `typo` | Same question, options differ below an edit-distance threshold | Usually a transcription slip; sometimes a wording variant |
-| `divergent` | Same stem, materially different options | A real variant, or a stem that needs disambiguating |
-| `shared-answers` | Different stems over an identical option set | A rephrasing, or options pasted onto the wrong question |
-| `exact` | Identical throughout | Benign across categories; redundant within one |
+| `contradiction` · contradição | Same question, same options, **disagreeing on which is correct** | One of them is simply wrong |
+| `typo` · gralha | Same question, options differ below an edit-distance threshold | Usually a transcription slip; sometimes a wording variant |
+| `divergent` · divergente | Same stem, materially different options | A real variant, or a stem that needs disambiguating |
+| `shared-answers` · respostas partilhadas | Different stems over an identical option set | A rephrasing, or options pasted onto the wrong question |
+| `exact` · exato | Identical throughout | Benign across categories; redundant within one |
 
 Beyond the tier, each group reports what its members disagree on. Across the
 bank: 52 groups where one copy is sourced and its twin is not, 37 where one has
@@ -116,14 +146,17 @@ an explanation and the other does not, 12 that disagree on `topic`, 3 on
 That first number is the most actionable thing in the report. A same-category
 pair where one copy has no provenance is usually one question entered twice.
 
-`--tier contradiction,typo` narrows to the tiers worth acting on.
+`--tier contradiction,typo` narrows to the tiers worth acting on. The report
+prints the Portuguese label, and `--tier` takes either form — `--tier gralha`
+and `--tier typo` select the same groups. The English values stay canonical:
+they are what `--json` and the baseline keys carry.
 
 ## pairs
 
 Fuzzy matching, for near-duplicates that share no exact key.
 
 ```
-77 pair(s): 0 polarity flip, 77 near-stem
+77 par(es): 0 de polaridade invertida, 77 de enunciado parecido
 ```
 
 A **polarity flip** is two near-identical questions asking for opposite answers
@@ -150,7 +183,7 @@ Jaccard over tokens.
 ## coverage
 
 ```
-      total  sourced  refs  with page  explained  images  topic
+      total  com fonte  refs  com página  explicadas  imagens  matéria
 cat3  209    60 29%   75    75 100%    209 100%   15      209 100%
 cat2  418    317 76%  893   0 0%       158 38%    8       418 100%
 cat1  389    194 50%  285   98 34%     389 100%   15      389 100%
@@ -175,7 +208,7 @@ outlier:
   because `schema.ts` types the field as free text, so a misspelled slug passes
   `content:check` and then fails *invisibly*: `topicShortLabel` returns null,
   the card renders no chip, and the browse filter ignores the question
-- **untagged** — `topic: null`
+- **sem matéria** (`untagged`) — `topic: null`
 - **above entry level** — 29 category 3 questions in a chapter ANACOM's Anexo 1
   marks as starting at category 2. Strictly advisory: the annex is from 2009 and
   real 2023 category 3 papers do examine antennas, receivers and propagation.
@@ -185,10 +218,10 @@ outlier:
 
 ```
 $ bun run qbank paper
-36 paper(s) cited by the bank
+36 prova(s) citada(s) pelo banco
 
-cat1/2011_12_13           39 cited  39 with page  2 unclaimed  1 collisions
-cat1/2014_12_19           37 cited   0 with page  4 unclaimed  3 collisions  PDF absent
+cat1/2011_12_13           39 citadas  39 com página  2 por reclamar  1 colisões
+cat1/2014_12_19           37 citadas  0 com página  4 por reclamar  3 colisões  PDF ausente
 ```
 
 Naming a paper lists its perguntas in order with the question that claims each
@@ -206,13 +239,13 @@ Test-construction audit. The current numbers are healthy, which is worth keeping
 as a regression baseline rather than a one-off check:
 
 ```
-correct-answer position
+posição da resposta certa
   a   239  24%
   b   264  26%
   c   269  26%
   d   244  24%
 
-longest option is correct  267/1016 (26%)   chance is about 25%
+a opção mais longa é a certa  267/1016 (26%)  o acaso ronda os 25%
 ```
 
 A spike in either would mean the bank is guessable without knowing the material.
@@ -316,6 +349,37 @@ Lê diretamente `content/questions/**` — os ficheiros MDX de origem, não
 ficheiro que se vai editar, e o JSON é um artefacto de compilação que fica
 desatualizado entre execuções de `content:build`.
 
+O relatório é em português; os comandos e as opções não são. `dupes`, `--tier`
+e `--json` são a interface, e este documento é a referência das duas coisas.
+
+## O menu, para não ter de decorar nada disto
+
+```
+bun run banco
+```
+
+Um menu em português por cima desta ferramenta e do `content:new`. Pergunta o
+que se quer, recolhe os argumentos, e corre exatamente o comando documentado
+aqui — mostrando-o primeiro, para que o menu sirva também para aprender a forma
+direta:
+
+```
+Banco de questões
+   1  Acrescentar uma pergunta  content:new
+   2  Procurar uma pergunta  por texto
+   3  Ver uma pergunta  ex.: cat3#12
+   4  Duplicados  grupos que discordam entre si
+   …
+   —  Enter para sair
+nº › 2
+Termo a procurar › dipolo
+
+  bun run scripts/qbank.ts search dipolo --cat 3
+```
+
+Não acrescenta nada de seu: cada opção é um dos comandos abaixo, e as duas
+ferramentas continuam a funcionar sozinhas.
+
 ## Porque existe
 
 O `content:check` já valida cada ficheiro de pergunta e verifica se os
@@ -369,13 +433,13 @@ Uma pergunta identifica-se por `cat3#12`; `3#12` e `cat3/12` também são aceite
 
 ```
 $ bun run qbank search "carga artificial"
-5 question(s) matching carga artificial
+5 pergunta(s) com carga artificial
 
 cat3#93  Medições  content/questions/cat3/0093.mdx:4
   Porque se deve utilizar uma carga artificial quando estamos a testar um emissor?
    · Para diminuir de forma significativa o consumo de energia
    ✓ Para evitar que eventuais emissões espúrias do emissor em teste sejam radiadas…
-  no sources
+  sem fonte
 ```
 
 A correspondência ignora acentos e maiúsculas, por isso `propagacao` encontra
@@ -398,7 +462,7 @@ membros desses grupos discordam.
 O comando central. Em agosto de 2026:
 
 ```
-126 group(s): 4 typo, 33 divergent, 64 shared-answers, 25 exact
+126 grupo(s): 4 gralha, 33 divergente, 64 respostas partilhadas, 25 exato
 ```
 
 **Um duplicado não é automaticamente um defeito.** A mesma pergunta
@@ -408,11 +472,11 @@ níveis estão ordenados pela probabilidade de serem um erro real:
 
 | Nível | Significa | Lê-se como |
 | --- | --- | --- |
-| `contradiction` | Mesma pergunta, mesmas opções, **a discordar sobre qual está certa** | Uma delas está simplesmente errada |
-| `typo` | Mesma pergunta, opções que diferem abaixo de um limiar de distância de edição | Normalmente um lapso de transcrição; por vezes uma variante de redação |
-| `divergent` | Mesmo enunciado, opções materialmente diferentes | Uma variante real, ou um enunciado que precisa de ser desambiguado |
-| `shared-answers` | Enunciados diferentes sobre um conjunto de opções idêntico | Uma reformulação, ou opções coladas na pergunta errada |
-| `exact` | Idênticas em tudo | Inofensivo entre categorias; redundante dentro da mesma |
+| `contradiction` · contradição | Mesma pergunta, mesmas opções, **a discordar sobre qual está certa** | Uma delas está simplesmente errada |
+| `typo` · gralha | Mesma pergunta, opções que diferem abaixo de um limiar de distância de edição | Normalmente um lapso de transcrição; por vezes uma variante de redação |
+| `divergent` · divergente | Mesmo enunciado, opções materialmente diferentes | Uma variante real, ou um enunciado que precisa de ser desambiguado |
+| `shared-answers` · respostas partilhadas | Enunciados diferentes sobre um conjunto de opções idêntico | Uma reformulação, ou opções coladas na pergunta errada |
+| `exact` · exato | Idênticas em tudo | Inofensivo entre categorias; redundante dentro da mesma |
 
 Além do nível, cada grupo reporta em que é que os seus membros discordam. Em
 todo o banco: 52 grupos em que uma cópia tem fonte e a gémea não, 37 em que uma
@@ -423,7 +487,11 @@ Esse primeiro número é o mais acionável do relatório. Um par na mesma catego
 em que uma das cópias não tem proveniência é normalmente uma pergunta inserida
 duas vezes.
 
-`--tier contradiction,typo` restringe aos níveis que vale a pena tratar.
+`--tier contradiction,typo` restringe aos níveis que vale a pena tratar. O
+relatório mostra a etiqueta portuguesa, e o `--tier` aceita as duas formas —
+`--tier gralha` e `--tier typo` selecionam os mesmos grupos. Os valores
+ingleses continuam a ser os canónicos: são os que o `--json` e as chaves da
+linha de base carregam.
 
 ## pairs
 
@@ -431,7 +499,7 @@ Correspondência aproximada, para quase-duplicados que não partilham nenhuma
 chave exata.
 
 ```
-77 pair(s): 0 polarity flip, 77 near-stem
+77 par(es): 0 de polaridade invertida, 77 de enunciado parecido
 ```
 
 Uma **inversão de polaridade** (`polarity flip`) são duas perguntas quase
@@ -459,7 +527,7 @@ Jaccard sobre tokens.
 ## coverage
 
 ```
-      total  sourced  refs  with page  explained  images  topic
+      total  com fonte  refs  com página  explicadas  imagens  matéria
 cat3  209    60 29%   75    75 100%    209 100%   15      209 100%
 cat2  418    317 76%  893   0 0%       158 38%    8       418 100%
 cat1  389    194 50%  285   98 34%     389 100%   15      389 100%
@@ -495,10 +563,10 @@ anomalia:
 
 ```
 $ bun run qbank paper
-36 paper(s) cited by the bank
+36 prova(s) citada(s) pelo banco
 
-cat1/2011_12_13           39 cited  39 with page  2 unclaimed  1 collisions
-cat1/2014_12_19           37 cited   0 with page  4 unclaimed  3 collisions  PDF absent
+cat1/2011_12_13           39 citadas  39 com página  2 por reclamar  1 colisões
+cat1/2014_12_19           37 citadas  0 com página  4 por reclamar  3 colisões  PDF ausente
 ```
 
 Indicar uma prova lista as suas perguntas por ordem, com a pergunta do banco que
@@ -517,13 +585,13 @@ Auditoria à construção do teste. Os números atuais são saudáveis, o que va
 mais como linha de base contra regressões do que como verificação única:
 
 ```
-correct-answer position
+posição da resposta certa
   a   239  24%
   b   264  26%
   c   269  26%
   d   244  24%
 
-longest option is correct  267/1016 (26%)   chance is about 25%
+a opção mais longa é a certa  267/1016 (26%)  o acaso ronda os 25%
 ```
 
 Um pico em qualquer dos dois significaria que o banco é adivinhável sem saber a

@@ -335,7 +335,7 @@ function describeIssues(members: readonly BankQuestion[]): GroupIssue[] {
   if (topics.size > 1) {
     issues.push({
       kind: "topic",
-      detail: members.map((m) => `${m.ref}=${m.topic ?? "untagged"}`).join(", "),
+      detail: members.map((m) => `${m.ref}=${m.topic ?? "sem matéria"}`).join(", "),
     });
   }
 
@@ -343,7 +343,7 @@ function describeIssues(members: readonly BankQuestion[]): GroupIssue[] {
   if (withExplanation.length > 0 && withExplanation.length < members.length) {
     issues.push({
       kind: "explanation",
-      detail: `explained: ${withExplanation.map((m) => m.ref).join(", ")}; missing: ${members
+      detail: `com explicação: ${withExplanation.map((m) => m.ref).join(", ")}; sem: ${members
         .filter((m) => m.explanation === null)
         .map((m) => m.ref)
         .join(", ")}`,
@@ -354,7 +354,7 @@ function describeIssues(members: readonly BankQuestion[]): GroupIssue[] {
   if (withSources.length > 0 && withSources.length < members.length) {
     issues.push({
       kind: "sources",
-      detail: `sourced: ${withSources.map((m) => m.ref).join(", ")}; unsourced: ${members
+      detail: `com fonte: ${withSources.map((m) => m.ref).join(", ")}; sem: ${members
         .filter((m) => m.sources.length === 0)
         .map((m) => m.ref)
         .join(", ")}`,
@@ -365,7 +365,7 @@ function describeIssues(members: readonly BankQuestion[]): GroupIssue[] {
   if (images.size > 1) {
     issues.push({
       kind: "image",
-      detail: members.map((m) => `${m.ref}=${m.image ?? "none"}`).join(", "),
+      detail: members.map((m) => `${m.ref}=${m.image ?? "nenhuma"}`).join(", "),
     });
   }
 
@@ -379,12 +379,15 @@ function describeIssues(members: readonly BankQuestion[]): GroupIssue[] {
     const rawStems = new Set(members.map((m) => m.question));
     const rawAnswers = new Set(members.map((m) => m.answers.map((a) => a.text).join(" | ")));
     if (rawStems.size > 1 || rawAnswers.size > 1) {
-      const parts = [rawStems.size > 1 ? "stem" : null, rawAnswers.size > 1 ? "options" : null]
+      const parts = [
+        rawStems.size > 1 ? "enunciado" : null,
+        rawAnswers.size > 1 ? "opções" : null,
+      ]
         .filter(Boolean)
-        .join(" and ");
+        .join(" e ");
       issues.push({
         kind: "cosmetic",
-        detail: `${parts} differ only in accents, spacing or punctuation`,
+        detail: `${parts} só diferem em acentos, espaços ou pontuação`,
       });
     }
   }
