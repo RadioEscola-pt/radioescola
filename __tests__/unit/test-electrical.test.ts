@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { ohmsLaw, power, rlc, vswr, gain, transformer, wavelength } from '@/lib/utils';
+import { ohmsLaw, power, rlc, vswr, gain, transformer, wavelength, reactance, qFactor } from '@/lib/utils';
 
 describe('ohmsLaw', () => {
   it('calculates voltage from current and resistance', () => {

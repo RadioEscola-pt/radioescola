@@ -18,7 +18,7 @@
  */
 import { existsSync, readFileSync, readdirSync } from "fs";
 import { join } from "path";
-import { z } from "zod";
+import * as z from "zod";
 import { CategorySchema, type ContentCategory, type ContentQuestion } from "./schema";
 import { parseQuestionFile, questionFileName, idFromFileName } from "./source";
 

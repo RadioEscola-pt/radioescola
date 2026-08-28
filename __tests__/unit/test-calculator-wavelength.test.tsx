@@ -47,7 +47,7 @@ describe("WavelengthCalculator", () => {
     fireEvent.change(screen.getByPlaceholderText("e.g. 14.150"), { target: { value: "14.15" } });
     fireEvent.click(screen.getByRole("button", { name: "calculate" }));
 
-    expect(screen.getByText(/λ =/)).toBeInTheDocument();
+    expect(screen.getByText(/21.19 m/)).toBeInTheDocument();
   });
 
   it("switches to length mode and calculates resonant frequency", () => {
@@ -59,7 +59,7 @@ describe("WavelengthCalculator", () => {
     fireEvent.change(screen.getByPlaceholderText("e.g. 10.05"), { target: { value: "10.07" } });
     fireEvent.click(screen.getByRole("button", { name: "calculate" }));
 
-    expect(screen.getByText(/f =/)).toBeInTheDocument();
+    expect(screen.getByText(/14.141 MHz/)).toBeInTheDocument();
   });
 
   it("resets all fields when clicking reset", () => {

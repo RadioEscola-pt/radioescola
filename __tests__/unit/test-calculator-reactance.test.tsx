@@ -49,7 +49,7 @@ describe("ReactanceCalculator", () => {
     fireEvent.change(screen.getByPlaceholderText("e.g. 10"), { target: { value: "10" } });
     fireEvent.click(screen.getByRole("button", { name: "calculate" }));
 
-    expect(screen.getByText(/XL =/)).toBeInTheDocument();
+    expect(screen.getByText(/446.11/)).toBeInTheDocument();
   });
 
   it("switches to capacitive mode and calculates capacitive reactance", () => {
@@ -62,7 +62,7 @@ describe("ReactanceCalculator", () => {
     fireEvent.change(screen.getByPlaceholderText("e.g. 100"), { target: { value: "100" } });
     fireEvent.click(screen.getByRole("button", { name: "calculate" }));
 
-    expect(screen.getByText(/XC =/)).toBeInTheDocument();
+    expect(screen.getByText(/112.88/)).toBeInTheDocument();
   });
 
   it("shows prompt message if fewer than 2 fields are filled", () => {
