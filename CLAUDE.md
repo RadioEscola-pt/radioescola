@@ -21,14 +21,21 @@ bun run banco        # Portuguese menu over content:new and qbank
 
 ## Deployment
 
-Tag-triggered, via GitHub Actions → GHCR → the VPS at `server.radioescola.pt`:
+**Every commit on `main` goes live**, via GitHub Actions → GHCR → the VPS at
+`server.radioescola.pt`. `.github/workflows/main.yml` runs the checks, builds
+`Dockerfile` into `ghcr.io/radioescola-pt/radioescola:sha-<short>` and calls
+`deploy.yml` to roll it out. Doc-only commits (`docs/**`, `**/*.md`) are skipped.
+
+Tagging is no longer how you ship — it cuts a *named* release, so there is
+something legible to roll back to:
 
 ```bash
 git tag -a v2.0.0 -m "Release 2.0.0" && git push origin v2.0.0
 ```
 
-`.github/workflows/release.yml` runs the checks, builds `Dockerfile`, pushes
-`ghcr.io/radioescola-pt/radioescola:2.0.0`, then calls `deploy.yml` to roll it out.
+`release.yml` then publishes the same image as `2.0.0` and deploys it. The two
+workflows share `build.yml` and `deploy.yml`, and a `release` concurrency group
+so they can never roll out over each other.
 
 `deploy.yml` also runs on its own from **Actions → Deploy → Run workflow**,
 taking an image tag — that is how you redeploy or roll back, and it beats
@@ -36,9 +43,13 @@ running `release.sh` over SSH because CI supplies the registry credentials the
 box deliberately does not keep. Full runbook in `docs/deployment.md`.
 
 - **The image tag has no leading `v`** — `docker/metadata-action` strips it, so
-  the tag `v2.0.0` publishes `2.0.0`
+  the tag `v2.0.0` publishes `2.0.0`. What gets deployed is whatever
+  `metadata-action` resolved: the semver on a tag, `sha-<short>` on a main push
+- **`paths-ignore` lives in `main.yml`, not in `release.yml`** — path filters
+  apply to every trigger in an `on:` block, so a tag whose commit only touched
+  docs would quietly not release. That is why the two triggers are two files
 - **`NEXT_PUBLIC_*` is baked into the image**, so a feature-flag change needs a
-  new tag, not an edit to the server's `app.env`
+  new build, not an edit to the server's `app.env`
 - **Two API routes read source files at request time** (`/api/notes/*` from
   `content/notes/`, `/api/study-items` from `app/study/`) using paths built from
   `process.cwd()`, which file tracing cannot follow. They are kept in the

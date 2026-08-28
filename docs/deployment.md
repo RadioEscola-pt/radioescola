@@ -1,22 +1,31 @@
 # Deployment
 
-Releases are cut by tagging. `git push origin v2.0.0` makes GitHub Actions run
-the test suite, build a Docker image, push it to GHCR, and roll it out to
-`server.radioescola.pt`. Nothing is built on the production box, and every
-release is an immutable image you can roll back to by name.
+Deployment follows `main`. Every commit there runs the test suite, builds a
+Docker image, pushes it to GHCR and rolls it out to `server.radioescola.pt`.
+Nothing is built on the production box, and every deploy is an immutable image
+you can roll back to.
+
+Tagging still exists, but it no longer *ships* anything new — it gives an image
+a name worth remembering, so rollback targets are legible.
 
 ```
-git tag v2.0.0  ──▶  .github/workflows/release.yml
-                        │
-                        ├─ check    type-check, lint, test, content:check
-                        ├─ build    Dockerfile ──▶ ghcr.io/radioescola-pt/radioescola:2.0.0
-                        └─ deploy ──▶ deploy.yml (also runnable on its own,
-                                      for a redeploy or a rollback)
-                                        │
-                                        scp deploy/* ──▶ ~/app ──▶ release.sh 2.0.0
-                                                                │
-                                    VPS: caddy (TLS) ──▶ app container :3000
+push to main  ──▶  .github/workflows/main.yml     ┐
+                                                  ├─ check    type-check, lint, test, content:check
+git tag v2.0.0 ──▶ .github/workflows/release.yml  ┤
+                                                  ├─ build ──▶ build.yml
+                                                  │            Dockerfile ──▶ ghcr.io/radioescola-pt/radioescola
+                                                  │            :sha-bfa2486 on a push, :2.0.0 on a tag
+                                                  └─ deploy ──▶ deploy.yml (also runnable on its own,
+                                                                for a redeploy or a rollback)
+                                                                  │
+                                                       scp deploy/* ──▶ ~/app ──▶ release.sh <tag>
+                                                                                │
+                                                     VPS: caddy (TLS) ──▶ app container :3000
 ```
+
+The two entry points differ only in their trigger and in the name the image
+gets: they call the same `build.yml` and the same `deploy.yml`, and share a
+`release` concurrency group so they queue rather than roll out over each other.
 
 ## Files
 
@@ -27,9 +36,11 @@ git tag v2.0.0  ──▶  .github/workflows/release.yml
 | `deploy/compose.yaml` | The stack: app + Caddy. Copied to the server on every deploy |
 | `deploy/Caddyfile` | Reverse proxy and automatic TLS |
 | `deploy/release.sh` | Pins an image tag and rolls it out. Also the rollback tool |
-| `.github/workflows/ci.yml` | Checks. Runs on PRs, and is reused by the release |
-| `.github/workflows/release.yml` | Tag → build → push → calls the deploy workflow |
-| `.github/workflows/deploy.yml` | The rollout. Called by a release, or run by hand for a redeploy or rollback |
+| `.github/workflows/ci.yml` | Checks. Runs on PRs, and is reused by the two entry points below |
+| `.github/workflows/main.yml` | Push to main → checks → build → deploy. The everyday path |
+| `.github/workflows/release.yml` | Tag → the same three, publishing a named image |
+| `.github/workflows/build.yml` | The image build, shared by both. Returns the tag it pushed |
+| `.github/workflows/deploy.yml` | The rollout. Called by the two above, or run by hand for a redeploy or rollback |
 
 Edit the `deploy/` files here, never on the server — the next deploy overwrites
 whatever is in `~/app`.
@@ -230,18 +241,30 @@ approval.
 Nothing needs configuring for GHCR on the CI side — `GITHUB_TOKEN` with
 `packages: write` covers the push.
 
-## Releasing
+## Shipping
+
+Merge to `main`. That is the whole procedure: the image is named `sha-<short>`
+after the commit, and the deploy step fails loudly if the new container does not
+come up healthy, with a final smoke test on `/api/health` through Caddy.
+
+Commits touching only `docs/**` or `**/*.md` are skipped — nothing in the image
+changed. The path filter lives in `main.yml` and deliberately not in
+`release.yml`: path filters apply to every trigger in an `on:` block, so a tag
+whose commit only touched docs would quietly not release.
+
+Cutting a named release is a separate, optional act:
 
 ```bash
 git tag -a v2.0.0 -m "Release 2.0.0"
 git push origin v2.0.0
 ```
 
-Watch it in the Actions tab. The deploy step fails loudly if the new container
-does not come up healthy, and a final smoke test hits `/api/health` through
-Caddy.
+That rebuilds the same commit as `2.0.0` (plus `2.0`) and deploys it, so the
+version is a name you can roll back to months later without reading SHAs. Tag
+the commits worth naming; the rest ship on merge.
 
-Only `v*.*.*` tags trigger a release. Pushes to `main` run the checks only.
+Every commit leaves an image behind, so GHCR now grows a package version per
+merge rather than per release. Prune it periodically, keeping the tagged ones.
 
 ## The repository rename
 
@@ -267,8 +290,8 @@ in GHCR, whether or not the box has it cached — and it is the same code path a
 tag release takes, because `release.yml` calls this workflow too.
 
 Note the tag has **no leading `v`**: published tags are the bare semver
-(`2.0.0`, `2.0`) plus a `sha-` tag. Check the repo's Packages page for what
-exists.
+(`2.0.0`, `2.0`) plus a `sha-` tag — and a commit that shipped without being
+tagged has only the `sha-` one. Check the repo's Packages page for what exists.
 
 Over SSH also works, but only for an image the box still has cached — it holds
 no registry credentials of its own by design:
