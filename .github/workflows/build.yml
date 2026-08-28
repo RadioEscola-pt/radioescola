@@ -1,0 +1,62 @@
+name: Build
+
+# Builds the image and pushes it to GHCR. Called by release.yml (a tag) and by
+# main.yml (a push to main) so both publish exactly the same way, and returns
+# the tag it pushed for deploy.yml to roll out.
+on:
+  workflow_call:
+    outputs:
+      image_tag:
+        description: The tag that was published, to be deployed verbatim
+        value: ${{ jobs.build.outputs.image_tag }}
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      # The tag metadata-action actually pushed. On a tag that is the semver
+      # with the leading v stripped (`v2.0.0` → `2.0.0`); on a push to main the
+      # semver patterns do not apply, leaving `sha-<short>`. Deploy must pull
+      # exactly this, whichever it is.
+      image_tag: ${{ steps.meta.outputs.version }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: docker/setup-buildx-action@v4
+
+      - uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ghcr.io/${{ github.repository }}
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=sha
+
+      # No build cache on purpose. Measured on v2.0.3: exporting to the GitHub
+      # Actions cache took 250s of a 351s build and produced *zero* cache hits,
+      # because that cache is scoped by ref and tag builds cannot read each
+      # other's entries. Worth re-measuring now that consecutive main pushes
+      # share a ref — though the ceiling is low either way, since `COPY . .`
+      # invalidates every layer after the deps stage on every commit, and that
+      # stage is only ~15s of `bun install`.
+      - uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            NEXT_PUBLIC_GAMIFICATION=${{ vars.NEXT_PUBLIC_GAMIFICATION }}
