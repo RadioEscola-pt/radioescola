@@ -2,45 +2,59 @@
 # Script para executar a suite de testes do Radio Escola
 set -euo pipefail
 
-cd "$(dirname "$0")/.."
+cd "$(cd "${0%/*}" && pwd)/.."
 
 echo "================================================================"
 echo "📻 RADIO ESCOLA - EXECUTANDO SUITE DE TESTES"
 echo "================================================================"
 echo ""
 
-# Determinar comando do Bun / Node
-if command -v bun >/dev/null 2>&1; then
+# Choose Bun as the test runner. If Bun is not in PATH, use the known installation path.
+if command -v bun > /dev/null 2>&1; then
   RUNNER="bun"
-elif command -v npm >/dev/null 2>&1; then
-  RUNNER="npm"
+elif [ -f "C:/Users/pc/AppData/Local/Microsoft/WinGet/Packages/Oven-sh.Bun_Microsoft.Winget.Source_8wekyb3d8bbwe/bun-windows-x64/bun.exe" ]; then
+  RUNNER="C:/Users/pc/AppData/Local/Microsoft/WinGet/Packages/Oven-sh.Bun_Microsoft.Winget.Source_8wekyb3d8bbwe/bun-windows-x64/bun.exe"
 else
-  echo "Erro: nem 'bun' nem 'npm' foram encontrados no PATH." >&2
+  echo "Erro: Bun não encontrado no PATH nem no caminho padrão." >&2
   exit 1
 fi
 
-MODE="${1:-all}"
+# Determine test mode based on arguments. Accept 'headed'/'--headed' and other modes.
+MODE="all"
+for arg in "$@"; do
+  case "$arg" in
+    headed|--headed) MODE="headed" ;;
+    integration|int) MODE="integration" ;;
+    unit) MODE="unit" ;;
+    all-project) MODE="all-project" ;;
+    *) ;;
+  esac
+done
+  case "$MODE" in
+    "integration"|"int")
+      echo "▶ Executando todos os testes de Integração..."
+      $RUNNER run test __tests__/integration/
+      ;;
+    "unit")
+      echo "▶ Executando todos os testes Unitários..."
+      $RUNNER run test __tests__/unit/
+      ;;
+    "all-project")
+      echo "▶ Executando todos os testes do projeto..."
+      $RUNNER run test
+      ;;
+    "headed")
+      echo "▶ Executando testes HEADED das Calculadoras..."
+      $RUNNER run scripts/run_e2e.ts --headed
+      ;;
+    *)
+      echo "▶ Executando testes HEADLESS das Calculadoras..."
+      $RUNNER run scripts/run_e2e.ts
+      ;;
+  esac
 
-case "$MODE" in
-  "integration"|"int")
-    echo "▶ Executando todos os testes de Integracao..."
-    $RUNNER run test __tests__/integration/
-    ;;
-  "unit")
-    echo "▶ Executando todos os testes Unitarios..."
-    $RUNNER run test __tests__/unit/
-    ;;
-  "all-project")
-    echo "▶ Executando todos os testes do projeto..."
-    $RUNNER run test
-    ;;
-  "calculators"|"calc"|"all"|*)
-    echo "▶ Executando os 116 testes das Calculadoras (Integracao e Unitarios)..."
-    $RUNNER run test __tests__/integration/test-calculators.test.tsx __tests__/unit/test-calculator-* __tests__/unit/test-electrical.test.ts
-    ;;
-esac
 
 echo ""
 echo "================================================================"
-echo "✓ Execucao de testes concluida com sucesso!"
+echo "✓ Execução de testes concluída com sucesso!"
 echo "================================================================"

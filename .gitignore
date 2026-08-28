@@ -51,3 +51,4 @@ screenshots/
 
 # Impeccable design-tool state
 .impeccable/
+node_modules_old/

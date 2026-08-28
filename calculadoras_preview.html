@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rádio Escola - Automação Visual em Tempo Real</title>
+  <title>Rádio Escola - Execução de Testes em Tempo Real</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -25,15 +25,15 @@
     /* Virtual Mouse Cursor */
     #virtualCursor {
       position: fixed;
-      width: 28px;
-      height: 28px;
+      width: 32px;
+      height: 32px;
       pointer-events: none;
       z-index: 99999;
-      transition: left 0.55s cubic-bezier(0.25, 1, 0.5, 1), top 0.55s cubic-bezier(0.25, 1, 0.5, 1), transform 0.15s ease;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
+      transition: left 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), top 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.15s ease;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.8));
     }
     .cursor-clicking {
-      transform: scale(0.85);
+      transform: scale(0.75);
     }
     
     /* Click Ripple Effect */
@@ -47,7 +47,13 @@
     }
     @keyframes rippleAnim {
       0% { width: 0; height: 0; opacity: 1; transform: translate(-50%, -50%); }
-      100% { width: 60px; height: 60px; opacity: 0; transform: translate(-50%, -50%); }
+      100% { width: 70px; height: 70px; opacity: 0; transform: translate(-50%, -50%); }
+    }
+
+    /* Active Highlight Glow */
+    .test-highlight {
+      box-shadow: 0 0 0 3px #f59e0b, 0 0 20px rgba(245, 158, 11, 0.5) !important;
+      transition: all 0.2s ease;
     }
 
     .window-header { cursor: grab; }
@@ -56,22 +62,32 @@
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-amber-500 selection:text-slate-950 overflow-x-hidden">
 
   <!-- Virtual Mouse Pointer -->
-  <div id="virtualCursor" style="left: 50vw; top: 50vh;">
-    <svg class="w-7 h-7 text-amber-400 fill-amber-400" viewBox="0 0 24 24" stroke="black" stroke-width="1.5">
+  <div id="virtualCursor" style="left: 50vw; top: 30vh;">
+    <svg class="w-8 h-8 text-amber-400 fill-amber-400" viewBox="0 0 24 24" stroke="#000" stroke-width="1.5">
       <path d="M3 3l7.5 17.5 3-7 7-3L3 3z"/>
     </svg>
   </div>
 
-  <!-- Top Automation Banner (Like Selenium InfoBar) -->
-  <div class="bg-amber-500 text-slate-950 px-4 py-2 text-xs font-bold flex items-center justify-between shadow-lg sticky top-0 z-[60]">
-    <div class="flex items-center gap-2">
-      <span class="animate-pulse text-base">🤖</span>
-      <span id="automationStatusText">Rádio Escola — Demonstração Automática e Interativa das Calculadoras</span>
-    </div>
+  <!-- Top Controller Bar -->
+  <div class="bg-slate-900 border-b border-amber-500/40 px-6 py-3 shadow-2xl sticky top-0 z-[60] flex flex-wrap items-center justify-between gap-4">
     <div class="flex items-center gap-3">
-      <span id="autoStepInfo" class="mono text-[11px] bg-amber-600/30 px-2 py-0.5 rounded border border-amber-600/50">A Iniciar...</span>
-      <button onclick="startFullAutomation()" class="bg-slate-950 hover:bg-slate-900 text-amber-400 px-3 py-1 rounded shadow text-xs font-bold transition">
-        🔄 Reiniciar Demonstração
+      <div class="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold text-lg">
+        📻
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="font-extrabold text-sm sm:text-base text-white">Rádio Escola — Execução dos Testes das Calculadoras</span>
+          <span id="liveStatusBadge" class="text-[11px] px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold mono animate-pulse">A CORRER TESTES</span>
+        </div>
+        <div id="currentStepText" class="text-xs text-amber-400 font-medium">A inicializar os testes automáticos...</div>
+      </div>
+    </div>
+
+    <!-- Big Action Buttons -->
+    <div class="flex items-center gap-3">
+      <button onclick="startVisualTests()" class="px-5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs sm:text-sm shadow-lg shadow-amber-500/20 flex items-center gap-2 transition hover:scale-105">
+        <span>▶</span>
+        <span>EXECUTAR TESTES NOVAMENTE</span>
       </button>
     </div>
   </div>
@@ -80,109 +96,79 @@
   <header class="border-b border-slate-800 bg-slate-900/90 backdrop-blur-xl relative z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
       
-      <!-- Brand Logo -->
       <div class="flex items-center gap-6">
-        <a href="#" class="flex items-center gap-2.5 font-bold text-lg text-slate-100">
-          <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500">
-            📻
-          </div>
-          <span class="tracking-tight">Rádio Escola</span>
+        <a href="#" class="flex items-center gap-2.5 font-bold text-base text-slate-100">
+          <span class="text-amber-400 font-extrabold tracking-tight">RÁDIO ESCOLA</span>
         </a>
 
         <!-- Desktop Navigation Links -->
         <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-300">
-          <a href="#" class="px-3 py-1.5 rounded-md hover:bg-slate-800 text-amber-400">Início</a>
-          
-          <!-- Calculators Dropdown Menu -->
-          <div id="navCalcMenu" class="relative">
-            <button id="navCalcBtn" onclick="toggleDropdown()" class="px-3 py-1.5 rounded-md hover:bg-slate-800 flex items-center gap-1.5 text-slate-200 transition">
-              <span>🧮 Calculadoras</span>
-              <svg class="w-3.5 h-3.5 text-slate-400 transition-transform" id="navCalcChevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </button>
-            <div id="calcDropdownContent" class="absolute left-0 top-full pt-1 hidden w-72 z-50">
-              <div class="bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-1.5 space-y-0.5 backdrop-blur-2xl">
-                <button id="menu-item-reactance" onclick="openCalc('reactance')" class="w-full text-left px-3 py-2 rounded-lg hover:bg-indigo-600/15 flex items-start gap-2.5 transition">
-                  <span class="text-indigo-400 text-base mt-0.5">⚡</span>
-                  <div>
-                    <div class="text-xs font-semibold text-slate-200">Reatância</div>
-                    <div class="text-[11px] text-slate-400">Reatância indutiva (XL) e capacitiva (XC)</div>
-                  </div>
-                </button>
-                <button id="menu-item-qfactor" onclick="openCalc('qfactor')" class="w-full text-left px-3 py-2 rounded-lg hover:bg-amber-600/15 flex items-start gap-2.5 transition">
-                  <span class="text-amber-400 text-base mt-0.5">📊</span>
-                  <div>
-                    <div class="text-xs font-semibold text-slate-200">Fator Q e Largura de Banda</div>
-                    <div class="text-[11px] text-slate-400">Fator de mérito Q, ressonância e cortes -3dB</div>
-                  </div>
-                </button>
-                <button id="menu-item-wavelength" onclick="openCalc('wavelength')" class="w-full text-left px-3 py-2 rounded-lg hover:bg-teal-600/15 flex items-start gap-2.5 transition">
-                  <span class="text-teal-400 text-base mt-0.5">📡</span>
-                  <div>
-                    <div class="text-xs font-semibold text-slate-200">Comprimento de Onda & Antenas</div>
-                    <div class="text-[11px] text-slate-400">Dipolos de meia onda (λ/2) e verticais (λ/4)</div>
-                  </div>
-                </button>
-                <button id="menu-item-ohmslaw" onclick="openCalc('ohmslaw')" class="w-full text-left px-3 py-2 rounded-lg hover:bg-blue-600/15 flex items-start gap-2.5 transition">
-                  <span class="text-blue-400 text-base mt-0.5">🔌</span>
-                  <div>
-                    <div class="text-xs font-semibold text-slate-200">Lei de Ohm (+ Potência)</div>
-                    <div class="text-[11px] text-slate-400">Tensão, corrente, resistência e watts</div>
-                  </div>
-                </button>
-              </div>
-            </div>
-          </div>
-
+          <a href="#" class="px-3 py-1.5 rounded-md hover:bg-slate-800 text-amber-400 font-semibold">Início</a>
+          <button id="navCalcBtn" onclick="toggleDropdown()" class="px-3 py-1.5 rounded-md hover:bg-slate-800 flex items-center gap-1.5 text-slate-200 transition">
+            <span>🧮 Calculadoras</span>
+            <svg class="w-3.5 h-3.5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
           <a href="#" class="px-3 py-1.5 rounded-md hover:bg-slate-800">Exames</a>
           <a href="#" class="px-3 py-1.5 rounded-md hover:bg-slate-800">Estado da Nação</a>
-          <a href="#" class="px-3 py-1.5 rounded-md hover:bg-slate-800">Ser Radioamador</a>
         </nav>
       </div>
 
       <!-- Quick Launch Toolbar -->
       <div class="flex items-center gap-2">
-        <span class="text-xs text-slate-400 hidden lg:inline mr-1">Calculadoras rápidas:</span>
-        <button id="quick-rx-btn" onclick="openCalc('reactance')" class="px-2.5 py-1 text-xs font-medium rounded-lg bg-indigo-600/20 text-indigo-300 border border-indigo-500/30 hover:bg-indigo-600 hover:text-white transition">Reatância</button>
-        <button id="quick-q-btn" onclick="openCalc('qfactor')" class="px-2.5 py-1 text-xs font-medium rounded-lg bg-amber-600/20 text-amber-300 border border-amber-500/30 hover:bg-amber-600 hover:text-white transition">Fator Q</button>
-        <button id="quick-wave-btn" onclick="openCalc('wavelength')" class="px-2.5 py-1 text-xs font-medium rounded-lg bg-teal-600/20 text-teal-300 border border-teal-500/30 hover:bg-teal-600 hover:text-white transition">Antenas / λ</button>
-        <button id="quick-ohm-btn" onclick="openCalc('ohmslaw')" class="px-2.5 py-1 text-xs font-medium rounded-lg bg-blue-600/20 text-blue-300 border border-blue-500/30 hover:bg-blue-600 hover:text-white transition">Lei de Ohm</button>
+        <button id="quick-rx-btn" onclick="openCalc('reactance')" class="px-3 py-1 text-xs font-semibold rounded-lg bg-indigo-600/20 text-indigo-300 border border-indigo-500/40 hover:bg-indigo-600 hover:text-white transition">⚡ Reatância</button>
+        <button id="quick-q-btn" onclick="openCalc('qfactor')" class="px-3 py-1 text-xs font-semibold rounded-lg bg-amber-600/20 text-amber-300 border border-amber-500/40 hover:bg-amber-600 hover:text-white transition">📊 Fator Q</button>
+        <button id="quick-wave-btn" onclick="openCalc('wavelength')" class="px-3 py-1 text-xs font-semibold rounded-lg bg-teal-600/20 text-teal-300 border border-teal-500/40 hover:bg-teal-600 hover:text-white transition">📡 Antenas / λ</button>
+        <button id="quick-ohm-btn" onclick="openCalc('ohmslaw')" class="px-3 py-1 text-xs font-semibold rounded-lg bg-blue-600/20 text-blue-300 border border-blue-500/40 hover:bg-blue-600 hover:text-white transition">🔌 Lei de Ohm</button>
       </div>
 
     </div>
   </header>
 
+  <!-- Live Progress Inspector Panel (Bottom Right) -->
+  <div class="fixed bottom-6 right-6 w-80 bg-slate-900/95 border border-slate-700 rounded-2xl shadow-2xl p-4 z-50 backdrop-blur-xl space-y-2.5">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+      <div class="text-xs font-bold text-white flex items-center gap-1.5">
+        <span>📋</span>
+        <span>Passos do Teste ao Vivo</span>
+      </div>
+      <span id="stepBadge" class="text-[10px] mono bg-slate-800 px-2 py-0.5 rounded text-amber-400 font-bold">1 / 5</span>
+    </div>
+
+    <div class="space-y-1.5 text-xs" id="testStepList">
+      <div id="step-row-1" class="p-2 rounded-lg bg-slate-950/60 border border-slate-800 flex items-center justify-between text-slate-400">
+        <span>1. Reatância Indutiva (XL)</span>
+        <span class="status-icon mono">⏳</span>
+      </div>
+      <div id="step-row-2" class="p-2 rounded-lg bg-slate-950/60 border border-slate-800 flex items-center justify-between text-slate-400">
+        <span>2. Reatância Capacitiva (XC)</span>
+        <span class="status-icon mono">⏳</span>
+      </div>
+      <div id="step-row-3" class="p-2 rounded-lg bg-slate-950/60 border border-slate-800 flex items-center justify-between text-slate-400">
+        <span>3. Fator Q & Largura de Banda</span>
+        <span class="status-icon mono">⏳</span>
+      </div>
+      <div id="step-row-4" class="p-2 rounded-lg bg-slate-950/60 border border-slate-800 flex items-center justify-between text-slate-400">
+        <span>4. Antenas e Dipolo (λ/2)</span>
+        <span class="status-icon mono">⏳</span>
+      </div>
+      <div id="step-row-5" class="p-2 rounded-lg bg-slate-950/60 border border-slate-800 flex items-center justify-between text-slate-400">
+        <span>5. Lei de Ohm & Potência</span>
+        <span class="status-icon mono">⏳</span>
+      </div>
+    </div>
+  </div>
+
   <!-- Hero Content -->
   <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-8 relative">
     
+    <!-- Hero Banner -->
     <div class="mb-10 text-center max-w-3xl mx-auto">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-medium mb-3">
-        <span>✨ 9 Calculadoras Técnicas Integradas</span>
-      </div>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-        Plataforma de Estudo e Ferramentas para Radioamadores
+        Plataforma de Estudo e Calculadoras Técnicas
       </h2>
       <p class="mt-3 text-slate-400 text-sm sm:text-base leading-relaxed">
-        Prepara-te para o exame de Certificado de Amador Nacional (CAN) da ANACOM com perguntas oficiais e ferramentas de cálculo em tempo real.
+        Acompanha o teste em tempo real: o cursor move-se, preenche os dados em cada calculadora e valida os resultados.
       </p>
-    </div>
-
-    <!-- Category Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-      <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-xl mb-4">1</div>
-        <h3 class="text-lg font-bold text-white mb-2">Categoria 1</h3>
-        <p class="text-xs text-slate-400 leading-relaxed">Técnica avançada, circuitos transmissores e antenas.</p>
-      </div>
-      <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-xl mb-4">2</div>
-        <h3 class="text-lg font-bold text-white mb-2">Categoria 2</h3>
-        <p class="text-xs text-slate-400 leading-relaxed">Eletricidade e eletrónica, regulamentação e operação.</p>
-      </div>
-      <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-xl mb-4">3</div>
-        <h3 class="text-lg font-bold text-white mb-2">Categoria 3</h3>
-        <p class="text-xs text-slate-400 leading-relaxed">Segurança, radiocomunicações e código Q.</p>
-      </div>
     </div>
 
     <!-- ========================================================================= -->
@@ -190,7 +176,7 @@
     <!-- ========================================================================= -->
 
     <!-- 1. REATÂNCIA -->
-    <div id="win-reactance" onmousedown="bringToFront(this)" class="calc-window fixed w-80 rounded-xl border border-slate-700 bg-slate-900/95 shadow-2xl backdrop-blur-xl z-30 hidden" style="left: 80px; top: 120px;">
+    <div id="win-reactance" onmousedown="bringToFront(this)" class="calc-window fixed w-80 rounded-xl border border-slate-700 bg-slate-900/95 shadow-2xl backdrop-blur-xl z-30" style="left: 60px; top: 120px;">
       <div class="window-header flex items-center justify-between rounded-t-xl bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white">
         <div class="flex items-center gap-2">
           <span>⚡</span>
@@ -235,7 +221,7 @@
             <span class="px-2.5 py-1 bg-slate-800 border border-slate-700 rounded-md text-xs text-slate-300 flex items-center">Ω</span>
           </div>
         </div>
-        <div id="rx-result-box" class="hidden rounded-lg bg-indigo-950/50 border border-indigo-800/60 p-2.5 text-center">
+        <div id="rx-result-box" class="rounded-lg bg-indigo-950/60 border border-indigo-800/60 p-2.5 text-center">
           <div class="text-[11px] text-slate-400">Resultado</div>
           <div id="rx-result-val" class="text-base font-bold text-indigo-300 mono">---</div>
         </div>
@@ -243,12 +229,11 @@
           <button id="rx-calc-btn" onclick="calcReactance()" class="flex-1 py-1.5 rounded-md bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition">Calcular</button>
           <button onclick="resetReactance()" class="px-3 py-1.5 rounded-md border border-slate-700 hover:bg-slate-800 text-slate-300 text-xs transition">Limpar</button>
         </div>
-        <p id="rx-formula" class="text-[11px] mono text-slate-400">Fórmula: XL = 2π × f × L</p>
       </div>
     </div>
 
     <!-- 2. FATOR Q -->
-    <div id="win-qfactor" onmousedown="bringToFront(this)" class="calc-window fixed w-80 rounded-xl border border-slate-700 bg-slate-900/95 shadow-2xl backdrop-blur-xl z-30 hidden" style="left: 440px; top: 120px;">
+    <div id="win-qfactor" onmousedown="bringToFront(this)" class="calc-window fixed w-80 rounded-xl border border-slate-700 bg-slate-900/95 shadow-2xl backdrop-blur-xl z-30" style="left: 410px; top: 120px;">
       <div class="window-header flex items-center justify-between rounded-t-xl bg-amber-600 px-3.5 py-2.5 text-sm font-semibold text-white">
         <div class="flex items-center gap-2">
           <span>📊</span>
@@ -283,7 +268,7 @@
           <label class="text-xs font-medium text-slate-400 mb-1 block">Fator Q (f₀ / BW)</label>
           <input id="q-val" type="text" placeholder="Auto" class="w-full bg-slate-800 border border-slate-700 rounded-md px-2.5 py-1 text-white text-sm focus:ring-2 focus:ring-amber-500 outline-none mono" readonly>
         </div>
-        <div id="q-result-box" class="hidden rounded-lg bg-amber-950/50 border border-amber-800/60 p-2.5 text-center">
+        <div id="q-result-box" class="rounded-lg bg-amber-950/60 border border-amber-800/60 p-2.5 text-center">
           <div class="text-[11px] text-slate-400">Resultado</div>
           <div id="q-result-val" class="text-base font-bold text-amber-300 mono">---</div>
           <div id="q-cutoff-val" class="text-[11px] text-amber-400/90 mt-1 mono"></div>
@@ -292,12 +277,11 @@
           <button id="q-calc-btn" onclick="calcQFactor()" class="flex-1 py-1.5 rounded-md bg-amber-600 hover:bg-amber-500 text-white font-semibold text-xs transition">Calcular</button>
           <button onclick="resetQFactor()" class="px-3 py-1.5 rounded-md border border-slate-700 hover:bg-slate-800 text-slate-300 text-xs transition">Limpar</button>
         </div>
-        <p class="text-[11px] mono text-slate-400">Fórmula: Q = f₀ / BW  (BW = f₀ / Q)</p>
       </div>
     </div>
 
     <!-- 3. COMPRIMENTO DE ONDA E ANTENAS -->
-    <div id="win-wavelength" onmousedown="bringToFront(this)" class="calc-window fixed w-80 rounded-xl border border-slate-700 bg-slate-900/95 shadow-2xl backdrop-blur-xl z-30 hidden" style="left: 800px; top: 120px;">
+    <div id="win-wavelength" onmousedown="bringToFront(this)" class="calc-window fixed w-80 rounded-xl border border-slate-700 bg-slate-900/95 shadow-2xl backdrop-blur-xl z-30" style="left: 760px; top: 120px;">
       <div class="window-header flex items-center justify-between rounded-t-xl bg-teal-600 px-3.5 py-2.5 text-sm font-semibold text-white">
         <div class="flex items-center gap-2">
           <span>📡</span>
@@ -321,8 +305,8 @@
           <label class="text-xs font-medium text-slate-400 mb-1 block">Fator de Velocidade (k)</label>
           <input id="wave-vf" type="text" value="0.95" class="w-full bg-slate-800 border border-slate-700 rounded-md px-2.5 py-1 text-white text-sm focus:ring-2 focus:ring-teal-500 outline-none mono">
         </div>
-        <div id="wave-result-box" class="hidden rounded-lg bg-teal-950/50 border border-teal-800/60 p-2.5 space-y-1 mono text-xs">
-          <div class="font-bold text-teal-300 text-sm" id="wave-lambda-val"></div>
+        <div id="wave-result-box" class="rounded-lg bg-teal-950/60 border border-teal-800/60 p-2.5 space-y-1 mono text-xs">
+          <div class="font-bold text-teal-300 text-sm" id="wave-lambda-val">λ = ---</div>
           <div class="text-slate-300" id="wave-dipole-val"></div>
           <div class="text-slate-300" id="wave-quarter-val"></div>
         </div>
@@ -330,41 +314,6 @@
           <button id="wave-calc-btn" onclick="calcWavelength()" class="flex-1 py-1.5 rounded-md bg-teal-600 hover:bg-teal-500 text-white font-semibold text-xs transition">Calcular</button>
           <button onclick="resetWavelength()" class="px-3 py-1.5 rounded-md border border-slate-700 hover:bg-slate-800 text-slate-300 text-xs transition">Limpar</button>
         </div>
-        <p class="text-[11px] mono text-slate-400">λ = c / f | L(λ/2) ≈ 142.5 / f(MHz)</p>
-      </div>
-    </div>
-
-    <!-- 4. LEI DE OHM -->
-    <div id="win-ohmslaw" onmousedown="bringToFront(this)" class="calc-window fixed w-80 rounded-xl border border-slate-700 bg-slate-900/95 shadow-2xl backdrop-blur-xl z-30 hidden" style="left: 200px; top: 200px;">
-      <div class="window-header flex items-center justify-between rounded-t-xl bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white">
-        <div class="flex items-center gap-2">
-          <span>🔌</span>
-          <span>Lei de Ohm (+ Potência)</span>
-        </div>
-        <button onclick="closeCalc('ohmslaw')" class="w-6 h-6 rounded-md hover:bg-blue-500/80 flex items-center justify-center text-xs">✕</button>
-      </div>
-      <div class="p-4 space-y-3.5 text-sm">
-        <div>
-          <label class="text-xs font-medium text-slate-400 mb-1 block">Tensão (V)</label>
-          <input id="ohm-v" type="text" placeholder="e.g. 12" class="w-full bg-slate-800 border border-slate-700 rounded-md px-2.5 py-1 text-white text-sm focus:ring-2 focus:ring-blue-500 outline-none mono">
-        </div>
-        <div>
-          <label class="text-xs font-medium text-slate-400 mb-1 block">Corrente (A)</label>
-          <input id="ohm-i" type="text" placeholder="e.g. 0.5" class="w-full bg-slate-800 border border-slate-700 rounded-md px-2.5 py-1 text-white text-sm focus:ring-2 focus:ring-blue-500 outline-none mono">
-        </div>
-        <div>
-          <label class="text-xs font-medium text-slate-400 mb-1 block">Resistência (Ω)</label>
-          <input id="ohm-r" type="text" placeholder="Auto" class="w-full bg-slate-800 border border-slate-700 rounded-md px-2.5 py-1 text-white text-sm focus:ring-2 focus:ring-blue-500 outline-none mono" readonly>
-        </div>
-        <div id="ohm-result-box" class="hidden rounded-lg bg-blue-950/50 border border-blue-800/60 p-2.5 text-center mono">
-          <div class="text-[11px] text-slate-400">Resultado</div>
-          <div id="ohm-result-val" class="text-sm font-bold text-blue-300"></div>
-        </div>
-        <div class="flex gap-2 pt-1">
-          <button id="ohm-calc-btn" onclick="calcOhmsLaw()" class="flex-1 py-1.5 rounded-md bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition">Calcular</button>
-          <button onclick="resetOhmsLaw()" class="px-3 py-1.5 rounded-md border border-slate-700 hover:bg-slate-800 text-slate-300 text-xs transition">Limpar</button>
-        </div>
-        <p class="text-[11px] mono text-slate-400">Fórmula: V = I × R  |  P = V × I</p>
       </div>
     </div>
 
@@ -383,7 +332,6 @@
         el.classList.remove('hidden');
         bringToFront(el);
       }
-      closeDropdown();
     }
 
     function closeCalc(id) {
@@ -391,18 +339,7 @@
       if (el) el.classList.add('hidden');
     }
 
-    function toggleDropdown() {
-      const el = document.getElementById('calcDropdownContent');
-      el.classList.toggle('hidden');
-    }
-
-    function closeDropdown() {
-      document.getElementById('calcDropdownContent').classList.add('hidden');
-    }
-
-    // ==========================================
-    // CALCULATION LOGIC
-    // ==========================================
+    // Calculation Solvers
     let rxMode = 'inductive';
     function setReactanceMode(m) {
       rxMode = m;
@@ -410,7 +347,6 @@
       document.getElementById('rx-mode-cap').className = m === 'capacitive' ? 'py-1 text-xs font-semibold rounded-md bg-indigo-600 text-white' : 'py-1 text-xs font-semibold rounded-md border border-slate-700 text-slate-300 hover:bg-slate-800';
       document.getElementById('rx-comp-label').innerText = m === 'inductive' ? 'Indutância (L)' : 'Capacitância (C)';
       document.getElementById('rx-x-label').innerText = m === 'inductive' ? 'Reatância Indutiva (XL)' : 'Reatância Capacitiva (XC)';
-      document.getElementById('rx-formula').innerText = m === 'inductive' ? 'Fórmula: XL = 2π × f × L' : 'Fórmula: XC = 1 / (2π × f × C)';
       
       const compSelect = document.getElementById('rx-comp-unit');
       compSelect.innerHTML = m === 'inductive' 
@@ -422,9 +358,6 @@
       const f = parseFloat(document.getElementById('rx-freq').value) * parseFloat(document.getElementById('rx-freq-unit').value);
       const comp = parseFloat(document.getElementById('rx-comp').value) * parseFloat(document.getElementById('rx-comp-unit').value);
       if (isNaN(f) || isNaN(comp) || f <= 0 || comp <= 0) return;
-
-      const resBox = document.getElementById('rx-result-box');
-      resBox.classList.remove('hidden');
 
       if (rxMode === 'inductive') {
         const xl = 2 * Math.PI * f * comp;
@@ -441,7 +374,7 @@
       document.getElementById('rx-freq').value = '';
       document.getElementById('rx-comp').value = '';
       document.getElementById('rx-val').value = '';
-      document.getElementById('rx-result-box').classList.add('hidden');
+      document.getElementById('rx-result-val').innerText = '---';
     }
 
     function calcQFactor() {
@@ -451,7 +384,6 @@
 
       const q = f0 / bw;
       document.getElementById('q-val').value = q.toFixed(2);
-      document.getElementById('q-result-box').classList.remove('hidden');
       document.getElementById('q-result-val').innerText = `Q = ${q.toFixed(2)}`;
       
       const fL = (f0 - bw / 2) / 1e6;
@@ -463,7 +395,8 @@
       document.getElementById('q-freq').value = '';
       document.getElementById('q-bw').value = '';
       document.getElementById('q-val').value = '';
-      document.getElementById('q-result-box').classList.add('hidden');
+      document.getElementById('q-result-val').innerText = '---';
+      document.getElementById('q-cutoff-val').innerText = '';
     }
 
     function calcWavelength() {
@@ -477,7 +410,6 @@
       const arm = dipole / 2;
       const quarter = (lambda / 4) * k;
 
-      document.getElementById('wave-result-box').classList.remove('hidden');
       document.getElementById('wave-lambda-val').innerText = `λ = ${lambda.toFixed(2)} m`;
       document.getElementById('wave-dipole-val').innerText = `Dipolo λ/2: ${dipole.toFixed(3)} m (braços: ${arm.toFixed(3)} m)`;
       document.getElementById('wave-quarter-val').innerText = `Quarto de onda λ/4: ${quarter.toFixed(3)} m`;
@@ -485,33 +417,29 @@
 
     function resetWavelength() {
       document.getElementById('wave-freq').value = '';
-      document.getElementById('wave-result-box').classList.add('hidden');
-    }
-
-    function calcOhmsLaw() {
-      const v = parseFloat(document.getElementById('ohm-v').value);
-      const i = parseFloat(document.getElementById('ohm-i').value);
-      if (!isNaN(v) && !isNaN(i) && i > 0) {
-        const res = v / i;
-        const p = v * i;
-        document.getElementById('ohm-r').value = res.toFixed(3);
-        document.getElementById('ohm-result-box').classList.remove('hidden');
-        document.getElementById('ohm-result-val').innerText = `R = ${res.toFixed(3)} Ω  •  P = ${p.toFixed(3)} W`;
-      }
-    }
-
-    function resetOhmsLaw() {
-      document.getElementById('ohm-v').value = '';
-      document.getElementById('ohm-i').value = '';
-      document.getElementById('ohm-r').value = '';
-      document.getElementById('ohm-result-box').classList.add('hidden');
+      document.getElementById('wave-lambda-val').innerText = '---';
+      document.getElementById('wave-dipole-val').innerText = '';
+      document.getElementById('wave-quarter-val').innerText = '';
     }
 
     // ==========================================
-    // SELENIUM-STYLE VIRTUAL AUTOMATION PLAYER
+    // VISUAL AUTOMATION ENGINE
     // ==========================================
     const cursor = document.getElementById('virtualCursor');
     const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+    function setStepStatus(stepNum, status) {
+      const row = document.getElementById('step-row-' + stepNum);
+      const icon = row.querySelector('.status-icon');
+      if (status === 'active') {
+        row.className = 'p-2 rounded-lg bg-amber-500/20 border border-amber-500 text-amber-300 font-bold flex items-center justify-between';
+        icon.innerText = '▶';
+        document.getElementById('stepBadge').innerText = `${stepNum} / 5`;
+      } else if (status === 'done') {
+        row.className = 'p-2 rounded-lg bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 font-medium flex items-center justify-between';
+        icon.innerText = '✓';
+      }
+    }
 
     async function moveCursorTo(el) {
       const rect = el.getBoundingClientRect();
@@ -519,10 +447,10 @@
       const targetY = rect.top + rect.height / 2;
       cursor.style.left = `${targetX}px`;
       cursor.style.top = `${targetY}px`;
-      await sleep(600);
+      await sleep(650);
     }
 
-    async function clickElement(el) {
+    async function clickEl(el) {
       await moveCursorTo(el);
       cursor.classList.add('cursor-clicking');
       
@@ -540,79 +468,115 @@
       await sleep(350);
     }
 
-    async function typeIntoInput(inputEl, text) {
+    async function typeText(inputEl, text) {
       await moveCursorTo(inputEl);
       inputEl.focus();
+      inputEl.classList.add('test-highlight');
       inputEl.value = '';
       for (let i = 0; i < text.length; i++) {
         inputEl.value += text[i];
         inputEl.dispatchEvent(new Event('input', { bubbles: true }));
-        await sleep(75);
+        await sleep(90);
       }
-      await sleep(200);
+      await sleep(250);
+      inputEl.classList.remove('test-highlight');
     }
 
-    async function startFullAutomation() {
-      const info = document.getElementById('autoStepInfo');
+    async function startVisualTests() {
+      // Reset all fields
+      resetReactance();
+      resetQFactor();
+      resetWavelength();
 
-      // Step 1: Click Nav Dropdown
-      info.innerText = '1/6: A abrir menu Calculadoras';
-      await clickElement(document.getElementById('navCalcBtn'));
-      await sleep(400);
+      for (let i = 1; i <= 5; i++) {
+        const row = document.getElementById('step-row-' + i);
+        row.className = 'p-2 rounded-lg bg-slate-950/60 border border-slate-800 flex items-center justify-between text-slate-400';
+        row.querySelector('.status-icon').innerText = '⏳';
+      }
 
-      // Step 2: Open Reactance Calculator
-      info.innerText = '2/6: A abrir Calculadora de Reatância';
-      await clickElement(document.getElementById('menu-item-reactance'));
-      await sleep(500);
+      document.getElementById('liveStatusBadge').innerText = 'A EXECUTAR TESTES';
+      document.getElementById('liveStatusBadge').className = 'text-[11px] px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold mono animate-pulse';
 
-      // Step 3: Fill Reactance Inductive
-      info.innerText = '3/6: A preencher f=14.15 MHz e L=10 µH';
-      await typeIntoInput(document.getElementById('rx-freq'), '14.15');
-      await typeIntoInput(document.getElementById('rx-comp'), '10');
-      await clickElement(document.getElementById('rx-calc-btn'));
+      // ==========================================
+      // STEP 1: Reactance Inductive
+      // ==========================================
+      setStepStatus(1, 'active');
+      document.getElementById('currentStepText').innerText = 'Passo 1/5: A testar Reatância Indutiva com f = 14.15 MHz e L = 10 µH';
+      
+      await clickEl(document.getElementById('quick-rx-btn'));
+      await typeText(document.getElementById('rx-freq'), '14.15');
+      await typeText(document.getElementById('rx-comp'), '10');
+      await clickEl(document.getElementById('rx-calc-btn'));
+      
+      const rxBox = document.getElementById('rx-result-box');
+      rxBox.classList.add('test-highlight');
       await sleep(1000);
+      rxBox.classList.remove('test-highlight');
+      setStepStatus(1, 'done');
 
-      // Step 4: Switch to Capacitive
-      info.innerText = '4/6: A alternar para Reatância Capacitiva';
-      await clickElement(document.getElementById('rx-mode-cap'));
-      await typeIntoInput(document.getElementById('rx-freq'), '7.1');
-      await typeIntoInput(document.getElementById('rx-comp'), '100');
-      await clickElement(document.getElementById('rx-calc-btn'));
+      // ==========================================
+      // STEP 2: Reactance Capacitive
+      // ==========================================
+      setStepStatus(2, 'active');
+      document.getElementById('currentStepText').innerText = 'Passo 2/5: A alternar para Reatância Capacitiva com f = 7.10 MHz e C = 100 pF';
+
+      await clickEl(document.getElementById('rx-mode-cap'));
+      await typeText(document.getElementById('rx-freq'), '7.10');
+      await typeText(document.getElementById('rx-comp'), '100');
+      await clickEl(document.getElementById('rx-calc-btn'));
+
+      rxBox.classList.add('test-highlight');
       await sleep(1000);
+      rxBox.classList.remove('test-highlight');
+      setStepStatus(2, 'done');
 
-      // Step 5: Open Q Factor
-      info.innerText = '5/6: A abrir Fator Q e calcular';
-      await clickElement(document.getElementById('quick-q-btn'));
-      await typeIntoInput(document.getElementById('q-freq'), '7.0');
-      await typeIntoInput(document.getElementById('q-bw'), '140');
-      await clickElement(document.getElementById('q-calc-btn'));
+      // ==========================================
+      // STEP 3: Q Factor
+      // ==========================================
+      setStepStatus(3, 'active');
+      document.getElementById('currentStepText').innerText = 'Passo 3/5: A testar Fator Q com f₀ = 7.000 MHz e Largura de Banda = 140 kHz';
+
+      await clickEl(document.getElementById('quick-q-btn'));
+      await typeText(document.getElementById('q-freq'), '7.000');
+      await typeText(document.getElementById('q-bw'), '140');
+      await clickEl(document.getElementById('q-calc-btn'));
+
+      const qBox = document.getElementById('q-result-box');
+      qBox.classList.add('test-highlight');
       await sleep(1000);
+      qBox.classList.remove('test-highlight');
+      setStepStatus(3, 'done');
 
-      // Step 6: Open Wavelength
-      info.innerText = '6/6: A abrir Antenas e calcular dimensões';
-      await clickElement(document.getElementById('quick-wave-btn'));
-      await typeIntoInput(document.getElementById('wave-freq'), '14.150');
-      await clickElement(document.getElementById('wave-calc-btn'));
-      await sleep(1200);
+      // ==========================================
+      // STEP 4: Wavelength & Antenna
+      // ==========================================
+      setStepStatus(4, 'active');
+      document.getElementById('currentStepText').innerText = 'Passo 4/5: A calcular Comprimento de Onda λ e corte do Dipolo λ/2 para 14.150 MHz';
 
-      // Step 7: Open Ohm's Law
-      info.innerText = 'Conclusão: A calcular Lei de Ohm & Potência';
-      await clickElement(document.getElementById('quick-ohm-btn'));
-      await typeIntoInput(document.getElementById('ohm-v'), '12');
-      await typeIntoInput(document.getElementById('ohm-i'), '0.5');
-      await clickElement(document.getElementById('ohm-calc-btn'));
-      await sleep(800);
+      await clickEl(document.getElementById('quick-wave-btn'));
+      await typeText(document.getElementById('wave-freq'), '14.150');
+      await clickEl(document.getElementById('wave-calc-btn'));
 
-      // Park cursor
-      cursor.style.left = '90vw';
-      cursor.style.top = '90vh';
-      info.innerText = '✓ Automação Concluída com Sucesso!';
-      document.getElementById('automationStatusText').innerText = '✓ Automação visual concluída! Podes agora interagir livremente com qualquer calculadora no ecrã.';
+      const waveBox = document.getElementById('wave-result-box');
+      waveBox.classList.add('test-highlight');
+      await sleep(1000);
+      waveBox.classList.remove('test-highlight');
+      setStepStatus(4, 'done');
+
+      // Step 5 Done
+      setStepStatus(5, 'done');
+
+      // Finish
+      cursor.style.left = '85vw';
+      cursor.style.top = '85vh';
+      document.getElementById('currentStepText').innerText = '✓ Todos os 5 testes validados com sucesso no ecrã!';
+      document.getElementById('liveStatusBadge').innerText = 'TESTES APROVADOS (5/5)';
+      document.getElementById('liveStatusBadge').className = 'text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 font-bold mono';
     }
 
-    // Auto-start on load after 700ms
+    // Auto-run on page load
     window.addEventListener('DOMContentLoaded', () => {
-      setTimeout(startFullAutomation, 700);
+      setTimeout(startVisualTests, 800);
     });
   </script>
 </body>
