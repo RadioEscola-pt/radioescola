@@ -28,15 +28,15 @@ async function runHeadedE2ETest() {
   const browser = await chromium.launch({
     headless: false,
     channel: "chrome", // uses system Google Chrome
-    slowMo: 700,       // 700ms delay between actions so user can clearly see each step
-    args: ["--start-maximized"],
+    slowMo: 900,       // 900ms delay between actions so user can clearly see each step
+    args: ["--start-maximized", "--window-position=50,50"],
   }).catch(async () => {
     // Fallback to msedge if chrome is not found
     return await chromium.launch({
       headless: false,
       channel: "msedge",
-      slowMo: 700,
-      args: ["--start-maximized"],
+      slowMo: 900,
+      args: ["--start-maximized", "--window-position=50,50"],
     });
   });
 
@@ -45,6 +45,7 @@ async function runHeadedE2ETest() {
   });
 
   const page = await context.newPage();
+  await page.bringToFront();
   
   console.log(`3. A navegar para a página das calculadoras: ${appUrl}`);
   await page.goto(appUrl);
@@ -54,9 +55,8 @@ async function runHeadedE2ETest() {
   // TESTE 1: REATÂNCIA INDUTIVA
   // -------------------------------------------------------------
   console.log("\n⚡ [TESTE 1/5] A testar Calculadora de Reatância (Modo Indutivo)");
-  console.log("   → A abrir menu 'Calculadoras' e selecionar 'Reatância'...");
-  await page.click("#navCalcBtn");
-  await page.click("#menu-item-reactance");
+  console.log("   → A abrir calculadora 'Reatância'...");
+  await page.click("#quick-rx-btn");
 
   console.log("   → A preencher Frequência = 14.15 MHz...");
   await page.fill("#rx-freq", "14.15");
