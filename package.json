@@ -11,6 +11,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest --coverage",
+    "test:selenium": "bun run scripts/selenium_style_test.ts",
     "type-check": "tsc --noEmit",
     "data:ocr-exams": "bun run scripts/ocr-exams.ts",
     "data:fonte-pages": "bun run scripts/resolve-fonte-pages.ts",
