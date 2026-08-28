@@ -10,6 +10,9 @@ import "./RLCCalculator";
 import "./VSWRCalculator";
 import "./GainCalculator";
 import "./TransformerCalculator";
+import "./ReactanceCalculator";
+import "./QFactorCalculator";
+import "./WavelengthCalculator";
 
 // Re-export base components
 export * from "./base";

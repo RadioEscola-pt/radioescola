@@ -18,6 +18,9 @@ const RESULT_CLASSES: Record<CalculatorColor, { bg: string; text: string }> = {
   orange: { bg: "bg-orange-50 dark:bg-orange-950/30", text: "text-orange-800 dark:text-orange-300" },
   cyan: { bg: "bg-cyan-50 dark:bg-cyan-950/30", text: "text-cyan-800 dark:text-cyan-300" },
   rose: { bg: "bg-rose-50 dark:bg-rose-950/30", text: "text-rose-800 dark:text-rose-300" },
+  amber: { bg: "bg-amber-50 dark:bg-amber-950/30", text: "text-amber-800 dark:text-amber-300" },
+  indigo: { bg: "bg-indigo-50 dark:bg-indigo-950/30", text: "text-indigo-800 dark:text-indigo-300" },
+  teal: { bg: "bg-teal-50 dark:bg-teal-950/30", text: "text-teal-800 dark:text-teal-300" },
 };
 
 export function CalculatorResult({
