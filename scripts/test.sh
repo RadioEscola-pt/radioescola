@@ -22,10 +22,6 @@ fi
 MODE="${1:-all}"
 
 case "$MODE" in
-  "calculators"|"calc")
-    echo "▶ Executando testes das Calculadoras (Integracao e Unitarios)..."
-    $RUNNER run test __tests__/integration/test-calculators.test.tsx __tests__/unit/test-calculator-* __tests__/unit/test-electrical.test.ts
-    ;;
   "integration"|"int")
     echo "▶ Executando todos os testes de Integracao..."
     $RUNNER run test __tests__/integration/
@@ -34,13 +30,13 @@ case "$MODE" in
     echo "▶ Executando todos os testes Unitarios..."
     $RUNNER run test __tests__/unit/
     ;;
-  "e2e")
-    echo "▶ Executando testes E2E em navegador real (Playwright Headed)..."
-    $RUNNER run test:e2e
-    ;;
-  "all"|*)
-    echo "▶ Executando a suite completa de testes (116 testes)..."
+  "all-project")
+    echo "▶ Executando todos os testes do projeto..."
     $RUNNER run test
+    ;;
+  "calculators"|"calc"|"all"|*)
+    echo "▶ Executando os 116 testes das Calculadoras (Integracao e Unitarios)..."
+    $RUNNER run test __tests__/integration/test-calculators.test.tsx __tests__/unit/test-calculator-* __tests__/unit/test-electrical.test.ts
     ;;
 esac
 

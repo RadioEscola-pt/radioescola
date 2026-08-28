@@ -23,10 +23,6 @@ Write-Host "RADIO ESCOLA - EXECUTANDO TESTES ($Mode)" -ForegroundColor Cyan
 Write-Host "================================================================`n" -ForegroundColor Cyan
 
 switch ($Mode.ToLower()) {
-    { $_ -in "calculators", "calc" } {
-        Write-Host "Executando testes das Calculadoras..." -ForegroundColor Yellow
-        & $bunPath run test __tests__/integration/test-calculators.test.tsx __tests__/unit/test-calculator-* __tests__/unit/test-electrical.test.ts
-    }
     { $_ -in "integration", "int" } {
         Write-Host "Executando testes de Integracao..." -ForegroundColor Yellow
         & $bunPath run test __tests__/integration/
@@ -35,13 +31,13 @@ switch ($Mode.ToLower()) {
         Write-Host "Executando testes Unitarios..." -ForegroundColor Yellow
         & $bunPath run test __tests__/unit/
     }
-    "e2e" {
-        Write-Host "Executando testes E2E em navegador real..." -ForegroundColor Yellow
-        & $bunPath run test:e2e
+    { $_ -in "all-project" } {
+        Write-Host "Executando todos os testes do projeto..." -ForegroundColor Yellow
+        & $bunPath run test
     }
     default {
-        Write-Host "Executando todos os 116 testes..." -ForegroundColor Yellow
-        & $bunPath run test
+        Write-Host "Executando os 116 testes das Calculadoras (Integracao e Unitarios)..." -ForegroundColor Yellow
+        & $bunPath run test __tests__/integration/test-calculators.test.tsx __tests__/unit/test-calculator-* __tests__/unit/test-electrical.test.ts
     }
 }
 
