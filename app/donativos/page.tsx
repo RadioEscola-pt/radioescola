@@ -1,23 +1,27 @@
 import React from 'react';
-import { Heart, Coffee, Server, Star, Sparkles, Tent, Radio, Trophy } from 'lucide-react';
-import { getTranslations } from 'next-intl/server';
-import { EXTERNAL_LINKS } from '@/lib/config';
+import Link from 'next/link';
+import { Heart, Coffee, Server, Star, Sparkles, Tent, Radio, Trophy, Users, ArrowRight } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import { getLocale, getTranslations } from 'next-intl/server';
+import {
+  DONATION_TIERS,
+  EXPENSES,
+  EXTERNAL_LINKS,
+  FUNDING,
+  annualCost,
+  expenseShare,
+  formatEuros,
+  fundingPercent,
+  fundingUpdatedDate,
+} from '@/lib/config';
+import SupportersStrip from '@/components/SupportersStrip';
 
-const DONATION_TIERS = [
-  { amountKey: 'coffeeAmount', labelKey: 'coffee', icon: Coffee, recommended: false },
-  { amountKey: 'hosting10Amount', labelKey: 'hosting10', icon: Server, recommended: true },
-  { amountKey: 'sponsorAmount', labelKey: 'sponsor', icon: Star, recommended: false },
-] as const;
-
-/**
- * Annual cost breakdown. `share` is each line's slice of the total, used for the
- * proportion bar — keep it in sync with the expense* amounts in the messages
- * files (server €5.58/mo = €66.96/yr ≈ 67%, domain €32.37/yr ≈ 33%).
- */
-const COSTS = [
-  { nameKey: 'expenseHosting', amountKey: 'expenseHostingAmount', provider: 'Euronodes', share: 67, segment: 'bg-amber-500' },
-  { nameKey: 'expenseDomain', amountKey: 'expenseDomainAmount', provider: 'radioescola.pt', share: 33, segment: 'bg-amber-500/40' },
-] as const;
+/** The tier's picture, keyed by its label. The amounts live in the config. */
+const TIER_ICONS: Record<string, LucideIcon> = {
+  coffee: Coffee,
+  hosting10: Server,
+  sponsor: Star,
+};
 
 const EXCESS_ITEMS = [
   { icon: Tent, key: 'excessFairs', chip: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-950/40 dark:text-emerald-400' },
@@ -28,10 +32,11 @@ const EXCESS_ITEMS = [
 
 export default async function DonativosPage() {
   const t = await getTranslations('Donate');
+  const locale = await getLocale();
+  const monthFormat = new Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric' });
 
-  const received = parseFloat(t('fundingReceivedRaw'));
-  const goal = parseFloat(t('fundingGoalRaw'));
-  const percent = Math.min(100, Math.round((received / goal) * 100));
+  const goal = annualCost();
+  const percent = fundingPercent();
 
   return (
     <main className="-mx-4 sm:mx-0 pb-8">
@@ -44,10 +49,10 @@ export default async function DonativosPage() {
         <p className="mx-auto mt-3 max-w-xl text-lg leading-relaxed text-slate-300">{t('subtitle')}</p>
 
         <div className="mx-auto mt-8 max-w-md">
-          <p className="text-xs font-medium uppercase tracking-widest text-slate-400">{t('fundingTitle')}</p>
+          <p className="text-xs font-medium uppercase tracking-widest text-slate-400">{t('fundingTitle', { year: String(FUNDING.year) })}</p>
           <div className="mt-2 flex items-end justify-center gap-2">
-            <span className="font-mono text-4xl font-bold text-white">{t('fundingReceived')}</span>
-            <span className="mb-1 text-slate-400">/ {t('fundingGoal')}</span>
+            <span className="font-mono text-4xl font-bold text-white">{formatEuros(FUNDING.received, locale)}</span>
+            <span className="mb-1 text-slate-400">/ {formatEuros(goal, locale)}</span>
           </div>
           <div className="mt-3 h-3 overflow-hidden rounded-full bg-slate-700">
             <div
@@ -55,7 +60,16 @@ export default async function DonativosPage() {
               style={{ width: `${Math.max(percent, 2)}%` }}
             />
           </div>
-          <p className="mt-2 text-xs text-slate-500">{t('fundingUpdated')}</p>
+          <p className="mt-2 text-xs text-slate-500">{t('fundingUpdated', { date: monthFormat.format(fundingUpdatedDate()) })}</p>
+
+          <Link
+            href="/apoiantes"
+            className="mt-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white ring-1 ring-white/15 transition-colors hover:bg-white/20"
+          >
+            <Users className="h-4 w-4 text-amber-400" />
+            {t('supportersLink')}
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
         </div>
       </div>
 
@@ -64,12 +78,11 @@ export default async function DonativosPage() {
         <h2 className="mb-5 text-center text-xl font-semibold text-slate-900 dark:text-white">{t('chooseAmount')}</h2>
         <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
           {DONATION_TIERS.map((tier) => {
-            const amount = t(tier.amountKey);
-            const Icon = tier.icon;
+            const Icon = TIER_ICONS[tier.labelKey] ?? Heart;
             return (
               <a
-                key={tier.amountKey}
-                href={`${EXTERNAL_LINKS.PAYPAL_DONATE}/${amount}`}
+                key={tier.labelKey}
+                href={`${EXTERNAL_LINKS.PAYPAL_DONATE}/${tier.amount}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`group relative flex flex-col items-center gap-2 sm:gap-3 rounded-2xl border p-4 sm:p-6 text-center outline-none transition-all duration-200 hover:-translate-y-1 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 ${
@@ -89,7 +102,7 @@ export default async function DonativosPage() {
                   }`}
                 />
                 <span className={`text-2xl font-bold ${tier.recommended ? 'text-white' : 'text-slate-900 dark:text-white'}`}>
-                  {amount}€
+                  {tier.amount}€
                 </span>
                 <span className={`text-sm ${tier.recommended ? 'text-white/90' : 'text-slate-600 dark:text-slate-400'}`}>
                   {t(tier.labelKey)}
@@ -119,28 +132,32 @@ export default async function DonativosPage() {
           <p className="mt-1 text-xs leading-relaxed text-slate-500 dark:text-slate-400">{t('transparencyDesc')}</p>
 
           <div className="mt-5 flex h-2 gap-0.5 overflow-hidden rounded-full">
-            {COSTS.map((c) => (
-              <div key={c.nameKey} className={c.segment} style={{ width: `${c.share}%` }} />
+            {EXPENSES.map((expense) => (
+              <div key={expense.nameKey} className={expense.segment} style={{ width: `${expenseShare(expense)}%` }} />
             ))}
           </div>
 
           <div className="mt-3 divide-y divide-slate-100 dark:divide-slate-700/60">
-            {COSTS.map((c) => (
-              <div key={c.nameKey} className="flex items-center justify-between py-2.5">
+            {EXPENSES.map((expense) => (
+              <div key={expense.nameKey} className="flex items-center justify-between py-2.5">
                 <div className="flex items-center gap-3">
-                  <span className={`h-2 w-2 shrink-0 rounded-full ${c.segment}`} aria-hidden />
+                  <span className={`h-2 w-2 shrink-0 rounded-full ${expense.segment}`} aria-hidden />
                   <p className="text-sm font-medium text-slate-900 dark:text-white">
-                    {t(c.nameKey)} <span className="font-normal text-slate-400">· {c.provider}</span>
+                    {t(expense.nameKey)} <span className="font-normal text-slate-400">· {expense.provider}</span>
                   </p>
                 </div>
-                <span className="font-mono text-sm text-slate-700 dark:text-slate-300">{t(c.amountKey)}</span>
+                <span className="font-mono text-sm text-slate-700 dark:text-slate-300">
+                  {t(expense.period === 'month' ? 'expenseAmountMonthly' : 'expenseAmountYearly', {
+                    amount: formatEuros(expense.amount, locale),
+                  })}
+                </span>
               </div>
             ))}
           </div>
 
           <div className="mt-3 flex items-center justify-between rounded-xl bg-amber-50 px-3.5 py-3 dark:bg-amber-950/20">
             <span className="text-sm font-semibold text-slate-900 dark:text-white">{t('expenseTotal')}</span>
-            <span className="font-mono text-base font-bold text-amber-600 dark:text-amber-400">{t('expenseTotalAmount')}</span>
+            <span className="font-mono text-base font-bold text-amber-600 dark:text-amber-400">{t('expenseTotalAmount', { amount: formatEuros(goal, locale) })}</span>
           </div>
         </div>
 
@@ -164,6 +181,11 @@ export default async function DonativosPage() {
             })}
           </div>
         </div>
+      </div>
+
+      {/* Thank you — the people who already answered the ask above */}
+      <div className="px-4 sm:px-0 mt-10">
+        <SupportersStrip />
       </div>
     </main>
   );

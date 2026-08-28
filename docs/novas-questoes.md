@@ -4,8 +4,104 @@ A fonte de verdade é `content/questions/cat{n}/` — **um ficheiro MDX por
 pergunta**, com os campos estruturados no frontmatter YAML e a explicação no
 corpo do documento. Tudo o resto é gerado a partir daí.
 
-Não existe nenhum script que crie uma pergunta. O processo é manual, e são
-apenas dois ficheiros a editar.
+Há duas maneiras de acrescentar uma: com a ferramenta, ou à mão. O
+`bun run banco` é um menu em português por cima da ferramenta e do `qbank`, se
+preferir não decorar comandos. A ferramenta é a
+recomendada — faz as mesmas alterações e verifica, **antes de escrever**, o que
+mais nada no projeto verifica. O resto do documento descreve o formato que ela
+escreve, e continua a valer para quem edite os ficheiros diretamente.
+
+# A ferramenta: `bun run content:new`
+
+```bash
+bun run content:new                                  # interativo, campo a campo
+bun run content:new --from rascunho.mdx              # a partir de um ficheiro
+bun run content:new --from rascunho.mdx --dry-run    # mostra o que escreveria
+bun run content:new --image ~/figura.png             # copia a figura para o sítio
+```
+
+Escreve os quatro ficheiros de uma vez — a pergunta, a linha do `order` e os
+dois artefactos gerados, mais a figura se houver — e deixa a árvore no estado
+que o `content:check` espera.
+
+O rascunho do `--from` é **um ficheiro de pergunta com o `id` omitido**: o
+mesmo formato do destino, para não haver um segundo formato a aprender e para
+que um rascunho rejeitado se corrija e volte a submeter tal como está. A
+categoria vem de `--cat 3` ou de um `category: 3` no frontmatter, que é
+descartado ao escrever. Com `--from -` lê do stdin.
+
+O `id` não se escolhe: é o máximo atual mais um, nunca uma lacuna abaixo dele
+(a razão está em [§1](#1-escolher-a-categoria-e-o-id)).
+
+## A figura, se houver
+
+Aponta-se para o ficheiro onde quer que esteja — no Ambiente de Trabalho, nas
+Transferências, onde calhar — e a ferramenta copia-o para
+`public/images/cat{n}/` ao escrever:
+
+```
+Imagem caminho do ficheiro, ou images/cat3/x.png já em public/ (Enter se nenhuma) › ~/Transferências/figura.png
+  ✓ /home/joel/Transferências/figura.png — copiada ao escrever
+```
+
+Fora do modo interativo é `--image ~/figura.png`, ou um `image:` no frontmatter
+do rascunho, que aceita as duas formas. Formatos: `.png`, `.jpg`, `.jpeg`,
+`.gif`, `.webp`, `.svg`.
+
+O caminho é validado **assim que é escrito**, e a pergunta repete-se até estar
+certo. É o único campo que se pode errar sem dar por isso — o resultado é
+uma pergunta com uma imagem partida — e descobri-lo depois do enunciado, das
+opções e da explicação já escritos seria tarde de mais.
+
+Três coisas que a ferramenta decide:
+
+- **O nome é `q{id}.{extensão}`**, não o do ficheiro de origem. `Captura de
+  ecrã 2026-08-27, 14.03.11.png` não é um nome para trazer para o repositório,
+  e um nome descritivo arrisca colidir com uma figura que outra pergunta já
+  refere — o que lhe trocaria o desenho em silêncio. O `id` é novo, por isso o
+  nome não pode estar ocupado; se ainda assim existir, recusa em vez de
+  substituir
+- **Um caminho já sob `public/images/` é referenciado onde está**, não copiado.
+  O mesmo desenho é legitimamente citado por mais do que uma pergunta
+- **A cópia acontece com as escritas**, não no momento da pergunta. Um
+  `--dry-run`, um erro que bloqueia, ou um aviso que se decide não aceitar não
+  deixam nada para trás em `public/`
+
+## O que verifica antes de escrever
+
+| Verificação | O que mais apanha isto |
+| --- | --- |
+| `topic` fora da taxonomia | **nada** — falha em silêncio para sempre |
+| contradiz uma pergunta noutra categoria | `qbank dupes`, se alguém se lembrar de o correr |
+| enunciado quase igual a outro, ou invertido | `qbank pairs`, idem |
+| `page` igual ao número da pergunta | nada |
+| `id` já usado | nada — mas é atribuído automaticamente |
+| duas opções com o mesmo texto | `qbank answers` |
+| PDF de `sources` que não existe | `content:check`, já depois de escrito |
+| imagem que não existe | `content:check`, já depois de escrito |
+| sem explicação, sem fonte, sem matéria, matéria acima do nível | avisos |
+
+Os **erros** impedem a escrita. Os **avisos** pedem confirmação, porque um
+duplicado não é automaticamente um defeito — a mesma pergunta de regulamentação
+é legitimamente examinada nos três níveis. `--force` escreve apesar dos avisos;
+`--yes` responde sim a todas as perguntas, e é obrigatório quando o stdin é um
+pipe.
+
+A matéria é escolhida de uma lista, não escrita: um slug mal escrito passa em
+todos os outros lados e depois não mostra etiqueta nenhuma, por isso aqui é
+impossível de representar em vez de meramente detetável.
+
+## A posição no `order`
+
+É a única decisão que a ferramenta não toma — a ordem é temática, não numérica.
+No modo interativo mostra a vizinhança (as últimas perguntas da mesma matéria,
+com a posição de cada uma) e pergunta depois de que `id` inserir; Enter põe no
+fim. Sem terminal usa-se `--after 107`, `--before 108` ou `--end`.
+
+# Fazer à mão
+
+O que se segue é o que a ferramenta faz — o formato dos ficheiros e a ordem
+das alterações. São dois ficheiros a editar.
 
 ## Antes de começar: a pergunta já existe?
 
@@ -20,6 +116,9 @@ bun run qbank search "toróide" --cat 1      # restringe a uma categoria
 A procura ignora acentos e maiúsculas, por isso `propagacao` encontra
 "propagação". Guia completo do `qbank` em [`qbank.md`](qbank.md).
 
+O `content:new` faz esta comparação sozinho, contra as três categorias, antes
+de escrever seja o que for.
+
 ## O que muda, e o que é gerado
 
 | Ficheiro | Quem escreve |
@@ -28,6 +127,7 @@ A procura ignora acentos e maiúsculas, por isso `propagacao` encontra
 | `content/questions/cat{n}/category.json` | **você** — uma linha no `order` |
 | `public/data/cat{n}.json` | gerado por `content:build` |
 | `content/notes/cat{n}/{id}.mdx` | gerado por `content:build` |
+| `public/images/cat{n}/{ficheiro}` | **você** — a figura, só se a pergunta tiver uma |
 
 **Nunca editar à mão os dois últimos.** O `content:check` recompila a partir da
 origem e falha se um artefacto tiver sido alterado, e está ligado ao
@@ -185,6 +285,10 @@ volta a prefixar.
 O ficheiro tem de existir em `public/images/cat{n}/`, senão a compilação
 **falha**. Isto vale também para `<img src>` dentro da explicação.
 
+À mão, copiar o ficheiro para lá é um passo à parte, e o nome é uma decisão de
+quem escreve. O `content:new` faz as duas coisas — ver
+[A figura, se houver](#a-figura-se-houver).
+
 ### `tutorial` e `calc`
 
 `tutorial` liga a pergunta a um guia de estudo pelo slug (ex.: `codigo-q`);
@@ -318,12 +422,16 @@ relatório, para confirmação humana.
 
 ## Lista de verificação
 
+Com `bun run content:new`, os primeiros sete pontos são a própria ferramenta;
+sobram o último e a decisão da posição no `order`.
+
 - [ ] Procurei com `qbank search` e a pergunta ainda não existe
 - [ ] `id` = máximo atual + 1, sem reaproveitar lacunas
 - [ ] Nome do ficheiro com quatro dígitos e igual ao `id` do frontmatter
 - [ ] Exatamente uma resposta com `correct: true`
 - [ ] `topic` é um dos 12 slugs válidos (confirmado com `qbank topics`)
 - [ ] `sources` distingue o número da pergunta da página do PDF
+- [ ] Se a pergunta tem figura, o ficheiro está em `public/images/cat{n}/`
 - [ ] `id` inserido no `order` do `category.json`, na posição temática certa
 - [ ] `bun run content:build` executado e artefactos gerados incluídos no commit
 - [ ] `bun run content:check` e `bun run qbank dupes` passam

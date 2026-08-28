@@ -1,20 +1,23 @@
 name: Release
 
-# Tagging is the release trigger: `git tag v2.0.0 && git push origin v2.0.0`
-# builds an image, pushes it to GHCR and rolls it out to the VPS.
+# Tagging cuts a *named* release: `git tag v2.0.0 && git push origin v2.0.0`
+# builds an image called 2.0.0, pushes it to GHCR and rolls it out. Day to day
+# nothing needs tagging — main.yml already deploys every commit. Tags exist so
+# there are named points to roll back to.
 on:
   push:
     tags: ["v*.*.*"]
 
-# Never let two releases roll out at once, and never cancel one mid-deploy.
+# Shared with main.yml: never let two releases roll out at once, and never
+# cancel one mid-deploy.
 concurrency:
   group: release
   cancel-in-progress: false
 
 # A called workflow can only DOWNGRADE the caller's GITHUB_TOKEN permissions,
-# never elevate them — so this ceiling must already cover everything deploy.yml
-# asks for. With `contents: read` alone here, deploy.yml requesting
-# `packages: read` is an elevation and the whole run dies with a
+# never elevate them — so this ceiling must already cover everything build.yml
+# and deploy.yml ask for. With `contents: read` alone here, deploy.yml
+# requesting `packages: read` is an elevation and the whole run dies with a
 # startup_failure before a single job begins.
 permissions:
   contents: read
@@ -29,51 +32,10 @@ jobs:
   # case is an unused image in GHCR for a commit whose tests then failed —
   # `deploy` needs both, so nothing unverified can reach the server.
   build:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    outputs:
-      # The tag metadata-action actually pushed (semver strips the leading v,
-      # so `v2.0.0` becomes `2.0.0`). Deploy must pull exactly this.
-      image_tag: ${{ steps.meta.outputs.version }}
-    steps:
-      - uses: actions/checkout@v7
+    uses: ./.github/workflows/build.yml
 
-      - uses: docker/setup-buildx-action@v4
-
-      - uses: docker/login-action@v4
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - id: meta
-        uses: docker/metadata-action@v6
-        with:
-          images: ghcr.io/${{ github.repository }}
-          tags: |
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=sha
-
-      # No build cache on purpose. Measured on v2.0.3: exporting to the GitHub
-      # Actions cache took 250s of a 351s build and produced *zero* cache hits,
-      # because that cache is scoped by ref and tag builds cannot read each
-      # other's entries. Nothing here is worth caching anyway — `COPY . .`
-      # invalidates every layer after the deps stage on every commit, and that
-      # stage is only ~15s of `bun install`.
-      - uses: docker/build-push-action@v7
-        with:
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          build-args: |
-            NEXT_PUBLIC_GAMIFICATION=${{ vars.NEXT_PUBLIC_GAMIFICATION }}
-
-  # The rollout itself lives in deploy.yml so the same steps back both a tag
-  # release and the manual "Run workflow" button (redeploys and rollbacks).
+  # The rollout itself lives in deploy.yml so the same steps back a tag release,
+  # a push to main, and the manual "Run workflow" button (redeploys, rollbacks).
   deploy:
     needs: [check, build]
     uses: ./.github/workflows/deploy.yml

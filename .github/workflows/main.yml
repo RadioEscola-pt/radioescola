@@ -1,0 +1,41 @@
+name: Main
+
+# Every commit on main goes live. The image is named after the commit
+# (`sha-<short>`), so it is still an immutable artefact you can roll back to —
+# release.yml adds a friendlier name to the ones worth remembering.
+#
+# Kept separate from release.yml rather than added as a second trigger there
+# because of `paths-ignore`: path filters apply to every trigger in an `on:`
+# block, and a tag whose commit only touched docs would then quietly not
+# release. Both files call the same build and the same deploy.
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "docs/**"
+      - "**/*.md"
+
+# Shared with release.yml, so a tag release and a main push queue rather than
+# roll out over each other. Not cancel-in-progress: cancelling mid-rollout is
+# worse than deploying twice.
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  check:
+    uses: ./.github/workflows/ci.yml
+
+  build:
+    uses: ./.github/workflows/build.yml
+
+  deploy:
+    needs: [check, build]
+    uses: ./.github/workflows/deploy.yml
+    with:
+      image_tag: ${{ needs.build.outputs.image_tag }}
+    secrets: inherit

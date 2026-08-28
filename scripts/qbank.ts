@@ -225,16 +225,56 @@ function load(): BankQuestion[] {
 /* Rendering                                                                   */
 /* -------------------------------------------------------------------------- */
 
+/**
+ * The disagreement kinds, for reading.
+ *
+ * The values themselves stay English: they are the `--json` payload and the
+ * type in `lib/content/analysis.ts`, so only the rendering is translated.
+ */
+/**
+ * `--tier contradição` and `--tier contradiction` both select the same groups.
+ *
+ * The report says `contradição` now, and a filter that cannot be typed from
+ * what is on screen is a filter nobody reaches for. The English values stay
+ * canonical — they are what `--json`, the baseline keys and `docs/qbank.md`
+ * carry — so this only widens what is accepted.
+ */
+const TIER_ALIASES: Record<string, string> = {
+  contradição: "contradiction",
+  contradicao: "contradiction",
+  gralha: "typo",
+  divergente: "divergent",
+  "respostas-partilhadas": "shared-answers",
+  exato: "exact",
+};
+const KIND_ALIASES: Record<string, string> = {
+  polaridade: "polarity",
+  "enunciado-parecido": "near-stem",
+};
+const canonicalValue = (raw: string, aliases: Record<string, string>): string => {
+  const trimmed = raw.trim();
+  return aliases[trimmed.toLowerCase()] ?? trimmed;
+};
+
+const ISSUE_LABELS: Record<string, string> = {
+  topic: "matéria",
+  explanation: "explicação",
+  sources: "fontes",
+  image: "imagem",
+  cosmetic: "cosmético",
+};
+const issueLabel = (kind: string) => ISSUE_LABELS[kind] ?? kind;
+
 function tierLabel(tier: DuplicateTier): string {
-  if (tier === "contradiction") return red(bold("contradiction"));
-  if (tier === "typo") return yellow("typo");
-  if (tier === "divergent") return yellow("divergent");
-  if (tier === "shared-answers") return cyan("shared-answers");
-  return dim("exact");
+  if (tier === "contradiction") return red(bold("contradição"));
+  if (tier === "typo") return yellow("gralha");
+  if (tier === "divergent") return yellow("divergente");
+  if (tier === "shared-answers") return cyan("respostas partilhadas");
+  return dim("exato");
 }
 
 function renderQuestion(q: BankQuestion, needle?: string): void {
-  const topic = q.topic === null ? dim("untagged") : cyan(topicShortLabel(q.topic, "pt") ?? q.topic);
+  const topic = q.topic === null ? dim("sem matéria") : cyan(topicShortLabel(q.topic, "pt") ?? q.topic);
   say(`${bold(q.ref)}  ${topic}  ${dim(where(q, needle))}`);
   say(`  ${q.question}`);
   for (const a of q.answers) {
@@ -246,10 +286,10 @@ function renderQuestion(q: BankQuestion, needle?: string): void {
       ? q.sources
           .map((s) => `${s.pdf} pergunta ${s.question}${s.page === null ? "" : ` p.${s.page}`}`)
           .join("; ")
-      : "no sources"
+      : "sem fonte"
   );
-  if (q.explanation === null) marks.push("no explanation");
-  if (q.image !== null) marks.push(`image ${q.image}`);
+  if (q.explanation === null) marks.push("sem explicação");
+  if (q.image !== null) marks.push(`imagem ${q.image}`);
   say(`  ${dim(marks.join("  |  "))}`);
 }
 
@@ -260,7 +300,7 @@ function renderQuestion(q: BankQuestion, needle?: string): void {
 function cmdSearch(): void {
   const term = positional[1] ?? "";
   if (term.trim().length === 0) {
-    say("usage: qbank search <term> [--field stem|options|explanation] [--regex] [--cat 3]");
+    say("uso: qbank search <termo> [--field stem|options|explanation] [--regex] [--cat 3]");
     return flush([]);
   }
 
@@ -287,15 +327,15 @@ function cmdSearch(): void {
   }
 
   say(
-    `${bold(String(bank.length))} question(s) matching ${cyan(term)}` +
-      `${field === "all" ? "" : ` in ${field}`}`
+    `${bold(String(bank.length))} pergunta(s) com ${cyan(term)}` +
+      `${field === "all" ? "" : ` em ${field}`}`
   );
   say();
   for (const q of bank.slice(0, limit)) {
     renderQuestion(q, term);
     say();
   }
-  if (bank.length > limit) say(dim(`…and ${bank.length - limit} more (--limit ${bank.length})`));
+  if (bank.length > limit) say(dim(`…e mais ${bank.length - limit} (--limit ${bank.length})`));
   flush();
 }
 
@@ -303,7 +343,7 @@ function cmdShow(): void {
   const bank = load();
   const refs = positional.slice(1);
   if (refs.length === 0) {
-    say("usage: qbank show cat3#12 [cat2#255 …]");
+    say("uso: qbank show cat3#12 [cat2#255 …]");
     return flush([]);
   }
 
@@ -312,7 +352,7 @@ function cmdShow(): void {
     const parsed = parseRef(raw);
     const q = parsed && bank.find((b) => b.category === parsed.category && b.id === parsed.id);
     if (!q) {
-      say(red(`no such question: ${raw}`));
+      say(red(`não existe a pergunta ${raw}`));
       continue;
     }
     found.push(q);
@@ -331,8 +371,8 @@ function cmdShow(): void {
     for (const g of groups.filter((group) => group.members.some((m) => m.ref === q.ref))) {
       const others = g.members.filter((m) => m.ref !== q.ref).map((m) => m.ref);
       say();
-      say(`  ${tierLabel(g.tier)} with ${others.join(", ")}`);
-      for (const issue of g.issues) say(`    ${yellow(issue.kind)}: ${issue.detail}`);
+      say(`  ${tierLabel(g.tier)} com ${others.join(", ")}`);
+      for (const issue of g.issues) say(`    ${yellow(issueLabel(issue.kind))}: ${issue.detail}`);
     }
     say();
   }
@@ -348,7 +388,7 @@ function cmdDupes(): void {
       ...findPairFindings(bank).map((p) => p.key),
     ];
     writeBaseline(keys);
-    say(`${green("baselined")} ${keys.length} finding(s) into ${BASELINE_FILE}`);
+    say(`${green("registados")} ${keys.length} achado(s) em ${BASELINE_FILE}`);
     return flush({ baselined: keys.length });
   }
 
@@ -356,7 +396,7 @@ function cmdDupes(): void {
 
   const wanted = flag("tier");
   if (wanted !== undefined) {
-    const set = new Set(wanted.split(","));
+    const set = new Set(wanted.split(",").map((t) => canonicalValue(t, TIER_ALIASES)));
     groups = groups.filter((g) => set.has(g.tier));
   }
   if (has("new")) {
@@ -379,7 +419,7 @@ function cmdDupes(): void {
   const counts = new Map<DuplicateTier, number>();
   for (const g of groups) counts.set(g.tier, (counts.get(g.tier) ?? 0) + 1);
   say(
-    `${bold(String(groups.length))} group(s): ` +
+    `${bold(String(groups.length))} grupo(s): ` +
       DUPLICATE_TIERS.filter((t) => counts.has(t))
         .map((t) => `${counts.get(t)} ${tierLabel(t)}`)
         .join(", ")
@@ -387,7 +427,7 @@ function cmdDupes(): void {
   say();
 
   for (const g of groups.slice(0, limit)) {
-    const scope = g.crossCategory ? dim("across categories") : yellow("same category");
+    const scope = g.crossCategory ? dim("entre categorias") : yellow("na mesma categoria");
     say(`${tierLabel(g.tier)}  ${g.members.map((m) => bold(m.ref)).join(" ≡ ")}  ${scope}`);
     const first = g.members[0];
     if (first) say(`  ${clip(first.question, 110)}`);
@@ -414,12 +454,12 @@ function cmdDupes(): void {
         }
       }
     }
-    for (const issue of g.issues) say(`    ${yellow(issue.kind)}: ${issue.detail}`);
+    for (const issue of g.issues) say(`    ${yellow(issueLabel(issue.kind))}: ${issue.detail}`);
     say(dim(`    ${g.members.map((m) => where(m)).join("  ")}`));
     say();
   }
   if (groups.length > limit) {
-    say(dim(`…and ${groups.length - limit} more (--limit ${groups.length})`));
+    say(dim(`…e mais ${groups.length - limit} (--limit ${groups.length})`));
   }
   flush();
 }
@@ -445,7 +485,10 @@ function cmdPairs(): void {
   }
 
   const kind = flag("kind");
-  if (kind !== undefined) findings = findings.filter((f) => f.kind === kind);
+  if (kind !== undefined) {
+    const want = canonicalValue(kind, KIND_ALIASES);
+    findings = findings.filter((f) => f.kind === want);
+  }
   if (has("new")) {
     const baseline = loadBaseline();
     findings = findings.filter((f) => !baseline.has(f.key));
@@ -466,21 +509,21 @@ function cmdPairs(): void {
 
   const flips = findings.filter((f) => f.kind === "polarity").length;
   say(
-    `${bold(String(findings.length))} pair(s): ${flips} ${red("polarity flip")}, ` +
-      `${findings.length - flips} ${yellow("near-stem")}`
+    `${bold(String(findings.length))} par(es): ${flips} ${red("de polaridade invertida")}, ` +
+      `${findings.length - flips} ${yellow("de enunciado parecido")}`
   );
   say(
     dim(
-      "A polarity flip is two near-identical questions asking for opposite answers — verify, never merge."
+      "Polaridade invertida são duas perguntas quase iguais a pedir respostas opostas — confirmar, nunca fundir."
     )
   );
   say();
 
   for (const f of findings.slice(0, limit)) {
-    const label = f.kind === "polarity" ? red(bold("polarity")) : yellow("near-stem");
+    const label = f.kind === "polarity" ? red(bold("polaridade")) : yellow("enunciado parecido");
     say(
       `${label}  ${bold(f.a.ref)} ↔ ${bold(f.b.ref)}  ` +
-        dim(`stem ${f.stemSimilarity.toFixed(2)} · answers ${f.answerSimilarity.toFixed(2)}`)
+        dim(`enunciado ${f.stemSimilarity.toFixed(2)} · respostas ${f.answerSimilarity.toFixed(2)}`)
     );
     say(`    ${dim(pad(f.a.ref, 9))} ${clip(f.a.question, 92)}`);
     say(`    ${dim(pad(f.b.ref, 9))} ${clip(f.b.question, 92)}`);
@@ -488,7 +531,7 @@ function cmdPairs(): void {
     say();
   }
   if (findings.length > limit) {
-    say(dim(`…and ${findings.length - limit} more (--limit ${findings.length})`));
+    say(dim(`…e mais ${findings.length - limit} (--limit ${findings.length})`));
   }
   flush();
 }
@@ -530,7 +573,7 @@ function cmdCoverage(): void {
 
   const pct = (n: number, total: number) =>
     total === 0 ? "—" : `${Math.round((n / total) * 100)}%`;
-  const head = ["", "total", "sourced", "refs", "with page", "explained", "images", "topic"];
+  const head = ["", "total", "com fonte", "refs", "com página", "explicadas", "imagens", "matéria"];
   const table = rows.map((r) => [
     r.label,
     String(r.total),
@@ -550,9 +593,9 @@ function cmdCoverage(): void {
 
   if (orphans.length > 0) {
     say();
-    say(`${yellow(String(orphans.length))} image(s) on disk that no question references:`);
+    say(`${yellow(String(orphans.length))} imagem(ns) em disco que nenhuma pergunta refere:`);
     for (const o of orphans.slice(0, limit)) say(`  public/${o}`);
-    if (orphans.length > limit) say(dim(`  …and ${orphans.length - limit} more`));
+    if (orphans.length > limit) say(dim(`  …e mais ${orphans.length - limit}`));
   }
   flush();
 }
@@ -570,7 +613,7 @@ function cmdTopics(): void {
     });
   }
 
-  const head = ["topic", "cat3", "cat2", "cat1", "total"];
+  const head = ["matéria", "cat3", "cat2", "cat1", "total"];
   const table = audit.distribution.map((d) => [
     d.slug,
     ...(["3", "2", "1"] as CategoryId[]).map((c) => String(d.counts[c])),
@@ -585,25 +628,25 @@ function cmdTopics(): void {
   if (audit.invalid.length > 0) {
     say();
     say(
-      red(`${audit.invalid.length} question(s) with a topic that is not a slug in lib/config/topics.ts:`)
+      red(`${audit.invalid.length} pergunta(s) com uma matéria que não é um slug de lib/config/topics.ts:`)
     );
     for (const q of audit.invalid) say(`  ${q.ref} = ${q.topic}  ${dim(where(q))}`);
   }
   if (audit.untagged.length > 0) {
     say();
     say(
-      `${yellow(String(audit.untagged.length))} untagged question(s): ` +
+      `${yellow(String(audit.untagged.length))} pergunta(s) sem matéria: ` +
         audit.untagged.slice(0, 20).map((q) => q.ref).join(", ")
     );
   }
   if (audit.aboveEntryLevel.length > 0) {
     say();
     say(
-      `${audit.aboveEntryLevel.length} category 3 question(s) in a chapter Anexo 1 marks as ` +
-        "starting above entry level:"
+      `${audit.aboveEntryLevel.length} pergunta(s) de categoria 3 num capítulo que o Anexo 1 ` +
+        "marca como começando acima do nível de entrada:"
     );
     say(
-      dim("  Advisory — real 2023 cat 3 papers do examine these. See examinedFrom in lib/config/topics.ts.")
+      dim("  Indicativo — as provas reais de cat 3 de 2023 examinam-nas. Ver examinedFrom em lib/config/topics.ts.")
     );
     for (const q of audit.aboveEntryLevel.slice(0, limit)) {
       say(`  ${pad(q.ref, 9)} ${dim(pad(q.topic ?? "", 16))} ${clip(q.question, 70)}`);
@@ -630,17 +673,17 @@ function cmdPaper(): void {
         }))
       );
     }
-    say(bold(`${papers.length} paper(s) cited by the bank`));
+    say(bold(`${papers.length} prova(s) citada(s) pelo banco`));
     say();
     for (const p of papers) {
       const disk = existsSync(join("public", "exams", `${p.pdf}.pdf`));
       const resolved = p.cited.filter((c) => c.page !== null).length;
       say(
-        `${bold(pad(p.pdf, 24))} ${String(p.cited.length).padStart(3)} cited  ` +
-          `${dim(`${resolved} with page`)}  ` +
-          `${p.gaps.length > 0 ? yellow(`${p.gaps.length} unclaimed`) : green("complete")}` +
-          `${p.collisions.length > 0 ? red(`  ${p.collisions.length} collisions`) : ""}` +
-          `${disk ? "" : red("  PDF absent")}`
+        `${bold(pad(p.pdf, 24))} ${String(p.cited.length).padStart(3)} citadas  ` +
+          `${dim(`${resolved} com página`)}  ` +
+          `${p.gaps.length > 0 ? yellow(`${p.gaps.length} por reclamar`) : green("completa")}` +
+          `${p.collisions.length > 0 ? red(`  ${p.collisions.length} colisões`) : ""}` +
+          `${disk ? "" : red("  PDF ausente")}`
       );
     }
     return flush();
@@ -648,12 +691,12 @@ function cmdPaper(): void {
 
   const paper = papers.find((p) => p.pdf === wanted || p.pdf.endsWith(`/${wanted}`));
   if (!paper) {
-    say(red(`no question cites ${wanted}`));
+    say(red(`nenhuma pergunta cita ${wanted}`));
     return flush(null);
   }
   if (asJson) return flush(paper);
 
-  say(`${bold(paper.pdf)}  ${paper.cited.length} pergunta(s) cited`);
+  say(`${bold(paper.pdf)}  ${paper.cited.length} pergunta(s) citada(s)`);
   say();
   for (const c of paper.cited) {
     const q = bank.find((b) => b.ref === c.ref);
@@ -665,12 +708,12 @@ function cmdPaper(): void {
   }
   if (paper.gaps.length > 0) {
     say();
-    say(`${yellow("unclaimed perguntas")}: ${paper.gaps.join(", ")}`);
-    say(dim("  Either not in the bank yet, or in it without a source reference."));
+    say(`${yellow("perguntas por reclamar")}: ${paper.gaps.join(", ")}`);
+    say(dim("  Ou ainda não estão no banco, ou estão nele sem referência à fonte."));
   }
   for (const c of paper.collisions) {
     say();
-    say(red(`pergunta ${c.question} claimed by ${c.refs.join(", ")} — at most one can be right`));
+    say(red(`pergunta ${c.question} reclamada por ${c.refs.join(", ")} — no máximo uma pode estar certa`));
   }
   flush();
 }
@@ -687,7 +730,7 @@ function cmdAnswers(): void {
   }
 
   const total = audit.total;
-  say(bold("correct-answer position"));
+  say(bold("posição da resposta certa"));
   audit.correctIndexCounts.forEach((count, i) => {
     const share = Math.round((count / total) * 100);
     say(
@@ -697,7 +740,7 @@ function cmdAnswers(): void {
   });
   say(
     dim(
-      `  Uniform is ${Math.round(100 / audit.correctIndexCounts.length)}%; a spike means the bank is guessable.`
+      `  O uniforme seria ${Math.round(100 / audit.correctIndexCounts.length)}%; um pico significa que o banco se adivinha.`
     )
   );
 
@@ -705,46 +748,46 @@ function cmdAnswers(): void {
   const longestShare = Math.round((audit.longestIsCorrect / total) * 100);
   const chance = Math.round(100 / (audit.correctIndexCounts.length || 4));
   say(
-    `${bold("longest option is correct")}  ${audit.longestIsCorrect}/${total} (${longestShare}%)  ` +
-      dim(`chance is about ${chance}%`)
+    `${bold("a opção mais longa é a certa")}  ${audit.longestIsCorrect}/${total} (${longestShare}%)  ` +
+      dim(`o acaso ronda os ${chance}%`)
   );
 
   say();
-  say(bold("options per question"));
+  say(bold("opções por pergunta"));
   for (const [count, n] of [...audit.optionCount.entries()].sort((a, b) => a[0] - b[0])) {
-    say(`  ${count} options  ${n}`);
+    say(`  ${count} opções  ${n}`);
   }
 
   if (audit.duplicateOptions.length > 0) {
     say();
-    say(red(`${audit.duplicateOptions.length} question(s) with two identical options:`));
+    say(red(`${audit.duplicateOptions.length} pergunta(s) com duas opções iguais:`));
     for (const d of audit.duplicateOptions.slice(0, limit)) {
       say(`  ${bold(d.ref)}  ${clip(d.text, 70)}  ${dim(d.file)}`);
     }
   }
   if (audit.misplacedCatchAll.length > 0) {
     say();
-    say(`${yellow(String(audit.misplacedCatchAll.length))} catch-all option(s) not in last position:`);
+    say(`${yellow(String(audit.misplacedCatchAll.length))} opção(ões) de fecho fora da última posição:`);
     for (const m of audit.misplacedCatchAll.slice(0, limit)) {
-      say(`  ${bold(m.ref)}  position ${m.index + 1} of ${m.count}  ${dim(m.file)}`);
+      say(`  ${bold(m.ref)}  posição ${m.index + 1} de ${m.count}  ${dim(m.file)}`);
     }
   }
   flush();
 }
 
 function usage(): void {
-  say(bold("qbank — question-bank inspection"));
+  say(bold("qbank — inspeção do banco de questões"));
   say();
-  say("  search <term>    find questions by text  [--field stem|options|explanation] [--regex]");
-  say("  show <ref…>      one question in full, with its duplicates");
-  say("  dupes            duplicate groups, worst tier first  [--tier] [--new] [--update-baseline]");
-  say("  pairs            fuzzy near-duplicates and polarity flips  [--kind] [--new]");
-  say("  coverage         sources, explanations, images, orphans");
-  say("  topics           taxonomy distribution and outliers");
-  say("  paper [pdf]      what cites an exam paper, and what is unclaimed");
-  say("  answers          answer-construction audit");
+  say("  search <termo>   procura perguntas por texto  [--field stem|options|explanation] [--regex]");
+  say("  show <ref…>      uma pergunta por inteiro, com os seus duplicados");
+  say("  dupes            grupos de duplicados, o pior primeiro  [--tier] [--new] [--update-baseline]");
+  say("  pairs            quase-duplicados e inversões de polaridade  [--kind] [--new]");
+  say("  coverage         fontes, explicações, imagens, órfãs");
+  say("  topics           distribuição da taxonomia e casos fora do nível");
+  say("  paper [pdf]      o que cita uma prova, e o que ficou por reclamar");
+  say("  answers          auditoria à construção das respostas");
   say();
-  say(dim("  global: --cat 3,2   --limit N   --json"));
+  say(dim("  globais: --cat 3,2   --limit N   --json"));
   flush(null);
 }
 

@@ -2,9 +2,9 @@ name: CI
 
 on:
   pull_request:
-  push:
-    branches: [main]
-  # Called by release.yml so a tag runs exactly the same checks a PR does.
+  # Called by main.yml and release.yml, so a push to main and a tag run exactly
+  # the same checks a PR does. No `push` trigger of its own: main.yml already
+  # runs this on every commit there, and both would be the same run twice.
   workflow_call:
 
 concurrency:

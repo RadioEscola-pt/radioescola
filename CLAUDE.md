@@ -14,19 +14,28 @@ bun run test:coverage # Vitest with V8 coverage
 bun run type-check   # tsc --noEmit
 bun run content:build # Compile content/questions/** into shipped artifacts
 bun run content:check # Verify artifacts match their source (writes nothing)
+bun run content:new  # Add a question: review, then write all four files
 bun run qbank <cmd>  # Inspect the question bank (search, dupes, coverage, …)
+bun run banco        # Portuguese menu over content:new and qbank
 ```
 
 ## Deployment
 
-Tag-triggered, via GitHub Actions → GHCR → the VPS at `server.radioescola.pt`:
+**Every commit on `main` goes live**, via GitHub Actions → GHCR → the VPS at
+`server.radioescola.pt`. `.github/workflows/main.yml` runs the checks, builds
+`Dockerfile` into `ghcr.io/radioescola-pt/radioescola:sha-<short>` and calls
+`deploy.yml` to roll it out. Doc-only commits (`docs/**`, `**/*.md`) are skipped.
+
+Tagging is no longer how you ship — it cuts a *named* release, so there is
+something legible to roll back to:
 
 ```bash
 git tag -a v2.0.0 -m "Release 2.0.0" && git push origin v2.0.0
 ```
 
-`.github/workflows/release.yml` runs the checks, builds `Dockerfile`, pushes
-`ghcr.io/radioescola-pt/radioescola:2.0.0`, then calls `deploy.yml` to roll it out.
+`release.yml` then publishes the same image as `2.0.0` and deploys it. The two
+workflows share `build.yml` and `deploy.yml`, and a `release` concurrency group
+so they can never roll out over each other.
 
 `deploy.yml` also runs on its own from **Actions → Deploy → Run workflow**,
 taking an image tag — that is how you redeploy or roll back, and it beats
@@ -34,9 +43,13 @@ running `release.sh` over SSH because CI supplies the registry credentials the
 box deliberately does not keep. Full runbook in `docs/deployment.md`.
 
 - **The image tag has no leading `v`** — `docker/metadata-action` strips it, so
-  the tag `v2.0.0` publishes `2.0.0`
+  the tag `v2.0.0` publishes `2.0.0`. What gets deployed is whatever
+  `metadata-action` resolved: the semver on a tag, `sha-<short>` on a main push
+- **`paths-ignore` lives in `main.yml`, not in `release.yml`** — path filters
+  apply to every trigger in an `on:` block, so a tag whose commit only touched
+  docs would quietly not release. That is why the two triggers are two files
 - **`NEXT_PUBLIC_*` is baked into the image**, so a feature-flag change needs a
-  new tag, not an edit to the server's `app.env`
+  new build, not an edit to the server's `app.env`
 - **Two API routes read source files at request time** (`/api/notes/*` from
   `content/notes/`, `/api/study-items` from `app/study/`) using paths built from
   `process.cwd()`, which file tracing cannot follow. They are kept in the
@@ -77,9 +90,6 @@ as the MDX body), plus `category.json` holding `anacomFile` and the question
   `loadData()` returns
 - `content/notes/cat{n}/{id}.mdx` — what `/api/notes` serves
 
-Adding a question is documented in `docs/novas-questoes.md` (pt-PT);
-the topic taxonomy in `docs/topicos.md` (pt-PT).
-
 `bun run content:build` regenerates them; `bun run content:check` verifies they
 match and is wired into `bun run build`, so a hand-edit or a stale artifact
 fails the build. It also fails on any `sources` entry pointing at an exam PDF
@@ -88,6 +98,28 @@ that is not in `public/exams/`. Papers we genuinely do not have are baselined in
 69 references do not break the build; the check also reports baseline entries
 that have become unnecessary. `scripts/content-migrate.ts <cat>` performs a migration and
 refuses to overwrite an existing source directory.
+
+`bun run content:new` is the way to add a question — interactive, or `--from
+draft.mdx` where the draft is a question file with the `id` left out (the same
+format it writes, so there is no second schema). It assigns the id, reviews the
+draft against the whole bank, and then writes all four files. The rules live in
+`lib/content/author.ts` as pure functions; the script is I/O and prompting,
+the same split as `qbank`.
+
+- **It refuses on `error`, asks on `warning`.** A duplicate is not
+  automatically a defect, so a `contradiction` (same options, different correct
+  answer) blocks while an `exact` match in another category only prompts
+- **The topic is picked from a list, never typed.** `topic` is free text in the
+  schema on purpose, which makes a typo the one mistake here that nothing
+  anywhere reports — the card silently loses its label and the browse filter
+  silently stops matching. This is the only place it can be made
+  unrepresentable rather than merely detectable
+- **The `order` position stays a human decision** — it is editorial, not
+  numeric. Interactively it shows the same-topic neighbourhood and asks;
+  otherwise `--after`/`--before`/`--end`. It never appends silently
+
+Adding a question by hand is still documented in `docs/novas-questoes.md`
+(pt-PT); the topic taxonomy in `docs/topicos.md` (pt-PT).
 
 **Linking questions to exam PDFs**: `bun run data:ocr-exams` OCRs the scanned
 papers in `public/exams/` and matches them back to the bank (needs `poppler`
@@ -103,6 +135,18 @@ to confirm. `bun run data:fonte-pages` is the manual equivalent.
 `search`, `show`, `dupes`, `pairs`, `coverage`, `topics`, `paper`, `answers`.
 Analysis lives in `lib/content/analysis.ts` as pure functions; the script is
 I/O and formatting. Full guide, in English and Portuguese, in `docs/qbank.md`.
+
+**Its output is Portuguese; its commands and flags are not.** `dupes` and
+`--tier` are the interface and stay English, as do the `--json` payload and the
+baseline keys — only the rendering is translated, and `--tier` accepts either
+form (`gralha` = `typo`). Do not translate a value that is serialised.
+
+`bun run banco` is a Portuguese menu over `qbank` and `content:new`, for anyone
+who would rather not remember the commands. It runs them as subprocesses rather
+than importing them: loading the bank costs ~150 ms, so sharing a process buys
+nothing, and `qbank` dispatches at module scope. It prints the command it is
+about to run, so it doubles as the way to learn the direct form. Prompting
+helpers shared by the two interactive scripts live in `scripts/prompt.ts`.
 
 It is deliberately **not** wired into CI. `content:check` owns per-file
 validity, and duplicating that here would create a second source of truth that
