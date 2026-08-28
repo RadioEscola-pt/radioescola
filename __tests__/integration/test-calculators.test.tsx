@@ -37,12 +37,12 @@ import WavelengthCalculator from "@/components/calculators/WavelengthCalculator"
 import OhmsLawCalculator from "@/components/calculators/OhmsLawCalculator";
 import GainCalculator from "@/components/calculators/GainCalculator";
 
-describe("Calculators Suite Behavior & Integration Tests", () => {
+describe("Calculators Integration Tests", () => {
   beforeEach(() => {
     vi.clearAllMocks();
   });
 
-  describe("ReactanceCalculator Behavior", () => {
+  describe("ReactanceCalculator Integration", () => {
     it("performs full inductive reactance calculation flow", () => {
       const onClose = vi.fn();
       const onFocus = vi.fn();
@@ -103,7 +103,7 @@ describe("Calculators Suite Behavior & Integration Tests", () => {
     });
   });
 
-  describe("QFactorCalculator Behavior", () => {
+  describe("QFactorCalculator Integration", () => {
     it("calculates Q factor and bandwidth reciprocally with cutoffs", () => {
       render(
         <QFactorCalculator
@@ -136,7 +136,7 @@ describe("Calculators Suite Behavior & Integration Tests", () => {
     });
   });
 
-  describe("WavelengthCalculator Behavior", () => {
+  describe("WavelengthCalculator Integration", () => {
     it("calculates half-wave dipole dimensions and switches to length mode", () => {
       render(
         <WavelengthCalculator
@@ -167,7 +167,7 @@ describe("Calculators Suite Behavior & Integration Tests", () => {
     });
   });
 
-  describe("OhmsLawCalculator Behavior", () => {
+  describe("OhmsLawCalculator Integration", () => {
     it("computes resistance and electrical power simultaneously", () => {
       render(
         <OhmsLawCalculator
@@ -194,7 +194,7 @@ describe("Calculators Suite Behavior & Integration Tests", () => {
     });
   });
 
-  describe("GainCalculator Behavior", () => {
+  describe("GainCalculator Integration", () => {
     it("supports power ratio, voltage ratio, and cascaded stages", () => {
       render(
         <GainCalculator
