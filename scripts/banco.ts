@@ -29,6 +29,7 @@ import {
 const ROOT = process.cwd();
 const QBANK = join("scripts", "qbank.ts");
 const CONTENT_NEW = join("scripts", "content-new.ts");
+const CONTENT_EDIT = join("scripts", "content-edit.ts");
 
 /* -------------------------------------------------------------------------- */
 /* Correr as ferramentas                                                       */
@@ -83,6 +84,23 @@ const ENTRIES: Entry[] = [
     label: "Acrescentar uma pergunta",
     hint: "content:new",
     build: async () => ({ script: CONTENT_NEW, args: [] }),
+  },
+  {
+    label: "Alterar uma pergunta",
+    hint: "content:edit",
+    build: async () => {
+      const ref = await askText("Referência da pergunta (ex.: cat3#86)", { required: false });
+      if (ref.length === 0) return null;
+      return { script: CONTENT_EDIT, args: [ref] };
+    },
+  },
+  {
+    label: "Escrever explicações em falta",
+    hint: "percorre as perguntas sem explicação",
+    build: async () => ({
+      script: CONTENT_EDIT,
+      args: ["--sem-explicacao", ...(await askCategories())],
+    }),
   },
   {
     label: "Procurar uma pergunta",
