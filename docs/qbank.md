@@ -89,7 +89,19 @@ duplicate question is often entirely legitimate.
 Global flags: `--cat 3,2` to restrict categories, `--limit N` for how many
 findings to print, `--json` for machine-readable output.
 
+`qbank <command> --help` lists that command's options with their accepted
+values — including the Portuguese aliases, which is where you find out that
+`--tier gralha` works.
+
 A question is addressed as `cat3#12`; `3#12` and `cat3/12` also parse.
+
+**Bad input is refused, not absorbed.** An unknown option, an unknown value, a
+misspelt name, a non-numeric `--limit` — each is an error naming what was wrong
+and, where it can, what you probably meant, and exits 1. This used to be
+silent: `--tier inventado` filtered on nothing and reported `0 grupo(s)`,
+`--cat 5` printed a coverage table of zeros, `--limt 2` was ignored. All three
+read as a clean bank, which is the answer you were hoping for, so the typo did
+not waste a run — it ended the search. The rules live in `lib/cli/args.ts`.
 
 ## search and show
 
@@ -357,8 +369,10 @@ is a filter that turns 1,016 questions into seven worth reading, not a verdict.
 | Path | What |
 | --- | --- |
 | `lib/content/analysis.ts` | Pure functions — normalisation, tiers, audits. No I/O |
-| `scripts/qbank.ts` | CLI: argument handling, file lookup, formatting |
-| `__tests__/unit/test-content-analysis.test.ts` | 23 tests over the parts that are easy to get wrong |
+| `lib/cli/args.ts` | Argument parsing and validation. No I/O |
+| `scripts/qbank.ts` | CLI: the option declarations, file lookup, formatting |
+| `__tests__/unit/test-content-analysis.test.ts` | 26 tests over the parts that are easy to get wrong |
+| `__tests__/unit/test-cli-args.test.ts` | 19 tests over what the parser refuses |
 
 The split is what makes the finders testable without a fixture tree on disk. If
 you add a check, put the logic in `analysis.ts` with a test and keep
@@ -461,7 +475,20 @@ passa — uma pergunta duplicada é muitas vezes perfeitamente legítima.
 Opções globais: `--cat 3,2` para restringir categorias, `--limit N` para o
 número de resultados a imprimir, `--json` para saída legível por máquina.
 
+`qbank <comando> --help` lista as opções desse comando com os valores aceites —
+incluindo os aliases em português, que é onde se descobre que `--tier gralha`
+funciona.
+
 Uma pergunta identifica-se por `cat3#12`; `3#12` e `cat3/12` também são aceites.
+
+**O que está mal é recusado, não absorvido.** Uma opção desconhecida, um valor
+desconhecido, um nome mal escrito, um `--limit` não numérico — cada um dá erro
+a dizer o que estava mal e, quando consegue, o que provavelmente se queria
+dizer, e sai com código 1. Antes era tudo silencioso: `--tier inventado`
+filtrava por nada e respondia `0 grupo(s)`, `--cat 5` imprimia uma tabela de
+zeros, `--limt 2` era ignorado. Os três lêem-se como um banco limpo, que é a
+resposta que se esperava — por isso a gralha não desperdiçava uma execução,
+terminava a busca. As regras vivem em `lib/cli/args.ts`.
 
 ## search e show
 
@@ -742,8 +769,10 @@ vale a pena ler, não um veredicto.
 | Caminho | O que é |
 | --- | --- |
 | `lib/content/analysis.ts` | Funções puras — normalização, níveis, auditorias. Sem I/O |
-| `scripts/qbank.ts` | CLI: tratamento de argumentos, localização de ficheiros, formatação |
-| `__tests__/unit/test-content-analysis.test.ts` | 23 testes sobre as partes fáceis de errar |
+| `lib/cli/args.ts` | Tratamento e validação de argumentos. Sem I/O |
+| `scripts/qbank.ts` | CLI: a declaração das opções, localização de ficheiros, formatação |
+| `__tests__/unit/test-content-analysis.test.ts` | 26 testes sobre as partes fáceis de errar |
+| `__tests__/unit/test-cli-args.test.ts` | 19 testes sobre o que o tratamento de argumentos recusa |
 
 Esta separação é o que torna os detetores testáveis sem uma árvore de fixtures em
 disco. Ao acrescentar uma verificação, ponha-se a lógica em `analysis.ts` com um
