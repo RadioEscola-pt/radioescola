@@ -198,6 +198,7 @@ A classe de funcionamento é definida pelo ângulo de condução…
 | `question` | texto não vazio | **sim** | erro |
 | `answers` | lista, mínimo 2 | **sim** | erro |
 | `topic` | slug da taxonomia | não | `null` |
+| `disabled` | motivo, em texto | não | `null` (pergunta ativa) |
 | `sources` | lista de referências | não | `[]` |
 | `image` | caminho relativo a `public/` | não | `null` |
 | `tutorial` | slug de um guia de estudo | não | `null` |
@@ -205,6 +206,11 @@ A classe de funcionamento é definida pelo ângulo de condução…
 
 O texto é sempre aparado (`trim`), e uma cadeia vazia num campo opcional é
 tratada como `null` (`lib/content/schema.ts:22,30-37`).
+
+**Não há mais campos.** O schema é estrito: um campo inventado ou mal escrito
+faz a compilação falhar com `Unrecognized key: "disbaled"`, em vez de ser
+descartado em silêncio. Antes era descartado, e quem o tinha escrito não via
+erro nenhum nem efeito nenhum.
 
 ### As respostas
 
@@ -366,6 +372,45 @@ O `qbank dupes` é o que apanha uma pergunta que já existe noutra categoria com
 uma resposta diferente — nada no schema consegue ver isso, porque cada ficheiro
 é válido isoladamente.
 
+## Desativar uma pergunta sem a apagar
+
+Quando uma pergunta deixa de servir — foi retirada pelo regulador, está errada,
+ou aguarda revisão — **não se apaga o ficheiro nem se tira o `id` do `order`**.
+Acrescenta-se o motivo:
+
+```yaml
+---
+id: 161
+disabled: Retirada do banco a pedido da revisão de conteúdo (2026-08-29).
+question: >-
+  …
+```
+
+E compila-se: `bun run content:build`. A partir daí a pergunta
+
+- **sai** de `public/data/cat{n}.json`, portanto desaparece do site inteiro —
+  consultar, exame, treino, cartões, contagens do painel
+- **perde** o ficheiro em `content/notes/`, porque a `/api/notes` lê do disco
+  sem consultar o banco e continuaria a servi-lo
+- **fica** no ficheiro de origem e no `order`, portanto o `id` nunca é
+  reatribuído e a posição editorial espera por ela se voltar
+- **continua** a ser comparada pelo `qbank` e pelo `content:new`, portanto
+  ninguém a volta a escrever por engano como se fosse nova
+
+O motivo é **texto, não `true`**. `disabled: true` dá erro de schema, de
+propósito: obriga a dizer porquê, e a versão anterior deste campo era um
+booleano que o schema descartava sem dizer nada — a pergunta continuava no ar.
+
+Para reativar, apaga-se a linha e compila-se outra vez.
+
+Ver quais estão desativadas:
+
+```bash
+bun run content:build          # lista-as no fim
+bun run qbank coverage         # coluna "desativadas"
+bun run qbank show cat3#161    # mostra o motivo
+```
+
 ## Erros comuns
 
 | Mensagem | Causa | Solução |
@@ -378,6 +423,9 @@ uma resposta diferente — nada no schema consegue ver isso, porque cada ficheir
 | `referenced image(s) missing from public/` | `image` aponta para ficheiro inexistente | acrescentar o ficheiro ou remover a referência |
 | `References point at N exam PDF(s) that are not on disk` | `pdf` sem ficheiro em `public/exams/` | ver a secção seguinte |
 | `content check failed … differs from compiled output` | artefacto gerado editado à mão, ou esquecimento do `content:build` | executar `bun run content:build` |
+| `Unrecognized key: "…"` | campo inventado ou mal escrito no frontmatter | corrigir o nome; a lista completa está na tabela acima |
+| `disabled: expected string, received boolean` | `disabled: true` | escrever o motivo em texto |
+| `orphaned — no question generates it` | nota gerada sem pergunta que a produza | executar `bun run content:build`, que a remove |
 
 ## Citar uma prova que não está no repositório
 

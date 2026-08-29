@@ -8,7 +8,7 @@
  * the wrong answer marked correct.
  */
 import { describe, it, expect } from "vitest";
-import { safeParseCategory, parseCategory } from "@/lib/content/schema";
+import { safeParseCategory, parseCategory, isWithheld } from "@/lib/content/schema";
 
 /** A minimal valid category; each test breaks one thing. */
 function validCategory() {
@@ -127,6 +127,44 @@ describe("canonical schema", () => {
     const zero = validCategory();
     zero.questions[0]!.sources = [{ pdf: "cat3/2023_08_18", question: 0 }];
     expect(safeParseCategory(zero).success).toBe(false);
+  });
+
+  it("defaults a question to live and carries a withheld reason through", () => {
+    expect(parseCategory(validCategory()).questions[0]!.disabled).toBeNull();
+    expect(isWithheld(parseCategory(validCategory()).questions[0]!)).toBe(false);
+
+    const withheld = validCategory() as Record<string, any>;
+    withheld.questions[0]!.disabled = "retirada pela ANACOM";
+    const q = parseCategory(withheld).questions[0]!;
+    expect(q.disabled).toBe("retirada pela ANACOM");
+    expect(isWithheld(q)).toBe(true);
+  });
+
+  it("rejects `disabled: true`, so the flag cannot parse and mean nothing", () => {
+    // A boolean is what somebody actually wrote once. Zod stripped it as an
+    // unknown key, the build shipped the question anyway, and nothing said so.
+    // The reason is required precisely so that mistake is now loud.
+    const input = validCategory() as Record<string, any>;
+    input.questions[0]!.disabled = true;
+    expect(safeParseCategory(input).success).toBe(false);
+  });
+
+  it("rejects an unknown frontmatter key rather than discarding it", () => {
+    // The general form of the same bug: a mistyped or invented field used to
+    // vanish silently, so the author saw no effect and no error.
+    const input = validCategory() as Record<string, any>;
+    input.questions[0]!.disbaled = "retirada";
+    const result = safeParseCategory(input);
+    expect(result.success).toBe(false);
+    if (!result.success) {
+      expect(result.error.issues.map((i) => i.message).join(" ")).toMatch(/disbaled/);
+    }
+  });
+
+  it("treats a question that omits `disabled` entirely as live", () => {
+    // Hand-built questions reach the analysis helpers from test fixtures and
+    // the legacy importer without going through the schema.
+    expect(isWithheld({ disabled: undefined as unknown as string | null })).toBe(false);
   });
 
   it("trims surrounding whitespace rather than preserving it", () => {

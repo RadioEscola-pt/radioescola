@@ -7,6 +7,7 @@ import { CATEGORIES, CATEGORY_CONFIG, GAMIFICATION_ENABLED } from "@/lib/config"
 import type { CategoryId } from "@/lib/config/categories";
 import { EXAM_CONFIG } from "@/lib/config/exam";
 import { loadData } from "@/lib/data";
+import { encodeReplayAnswers } from "@/lib/exam/replay";
 import type { Data, Question } from "@/lib/types";
 import { useEffect, useMemo, useState } from "react";
 import {
@@ -83,12 +84,7 @@ function parseWeakKey(key: string): { category: string; questionId: number } | n
 function buildReplayHref(exam: ExamAttempt): string | null {
   if (exam.questionIds.length === 0) return null;
   const q = exam.questionIds.join('-');
-  const a = exam.questionIds
-    .map((id) => {
-      const answer = exam.answers[id];
-      return answer === undefined ? 'x' : answer.toString(36);
-    })
-    .join('');
+  const a = encodeReplayAnswers(exam.questionIds, exam.answers);
   return `/exam/${exam.category}?q=${q}&a=${a}&t=0`;
 }
 

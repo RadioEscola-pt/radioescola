@@ -4,6 +4,7 @@ import { useParams, useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { Category } from '@/lib/types';
 import { loadData } from '@/lib/data';
+import { decodeReplayIds, decodeReplayAnswers } from '@/lib/exam/replay';
 import { EXAM_CONFIG, DEFAULT_CATEGORY } from '@/lib/config';
 import { ExamResults } from '@/components/ExamResults';
 import { PageLoading } from '@/components/shared/Loading';
@@ -192,24 +193,11 @@ export default function ExamPage() {
       // If a replay URL is present, reconstruct exact exam/order/answers
       if (qParam) {
         isReplayRef.current = true;
-        const ids = qParam.split('-').map((s) => parseInt(s, 10)).filter((n) => !Number.isNaN(n));
+        const ids = decodeReplayIds(qParam);
         const byId = new Map(base.questions.map((q) => [q.id, q] as const));
         const chosen = ids.map((id) => byId.get(id)).filter((q): q is NonNullable<typeof q> => Boolean(q));
         setCategory({ id: base.id, name: base.name, questions: chosen });
-        // Parse answers compact string (base36 for index, 'x' for unanswered)
-        const ans: Record<number, number> = {};
-        if (aParam) {
-          const chars = aParam.split('');
-          for (let i = 0; i < Math.min(chars.length, chosen.length); i++) {
-            const ch = chars[i];
-            const chosenQuestion = chosen[i];
-            if (ch && ch !== 'x' && chosenQuestion) {
-              const idx = parseInt(ch, 36);
-              if (!Number.isNaN(idx)) ans[chosenQuestion.id] = idx;
-            }
-          }
-        }
-        setAnswers(ans);
+        setAnswers(decodeReplayAnswers(ids, aParam, (id) => byId.has(id)));
         const t = tParam ? parseInt(tParam, 10) : 0;
         setTimeLeft(Number.isFinite(t) ? t : 0);
         setQuizEnded(true);

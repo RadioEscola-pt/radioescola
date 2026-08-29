@@ -24,6 +24,7 @@
 import { existsSync, readFileSync, readdirSync, writeFileSync, statSync } from "fs";
 import { join } from "path";
 import { loadCategory } from "../lib/content/build";
+import { isWithheld } from "../lib/content/schema";
 import { fold } from "../lib/utils/search";
 import {
   buildBank,
@@ -275,7 +276,12 @@ function tierLabel(tier: DuplicateTier): string {
 
 function renderQuestion(q: BankQuestion, needle?: string): void {
   const topic = q.topic === null ? dim("sem matéria") : cyan(topicShortLabel(q.topic, "pt") ?? q.topic);
-  say(`${bold(q.ref)}  ${topic}  ${dim(where(q, needle))}`);
+  // A withheld question is still compared against everything else — that is the
+  // point of keeping it in the bank — so it has to be obvious at a glance that
+  // what you are reading is not what the site is serving.
+  const mark = isWithheld(q) ? `  ${red(bold("desativada"))}` : "";
+  say(`${bold(q.ref)}  ${topic}${mark}  ${dim(where(q, needle))}`);
+  if (isWithheld(q)) say(`  ${red(`desativada: ${q.disabled}`)}`);
   say(`  ${q.question}`);
   for (const a of q.answers) {
     say(`   ${a.correct ? green("✓") : dim("·")} ${clip(a.text, 100)}`);
@@ -322,7 +328,13 @@ function cmdSearch(): void {
 
   if (asJson) {
     return flush(
-      bank.map((q) => ({ ref: q.ref, file: q.file, question: q.question, topic: q.topic }))
+      bank.map((q) => ({
+        ref: q.ref,
+        file: q.file,
+        question: q.question,
+        topic: q.topic,
+        disabled: q.disabled,
+      }))
     );
   }
 
@@ -573,10 +585,11 @@ function cmdCoverage(): void {
 
   const pct = (n: number, total: number) =>
     total === 0 ? "—" : `${Math.round((n / total) * 100)}%`;
-  const head = ["", "total", "com fonte", "refs", "com página", "explicadas", "imagens", "matéria"];
+  const head = ["", "total", "desativadas", "com fonte", "refs", "com página", "explicadas", "imagens", "matéria"];
   const table = rows.map((r) => [
     r.label,
     String(r.total),
+    r.withheld === 0 ? dim("—") : red(String(r.withheld)),
     `${r.withSources} ${dim(pct(r.withSources, r.total))}`,
     String(r.sourceRefs),
     `${r.refsWithPage} ${dim(pct(r.refsWithPage, r.sourceRefs))}`,

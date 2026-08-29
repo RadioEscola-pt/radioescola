@@ -79,6 +79,20 @@ export const QuestionSchema = z
      * taxonomy is applied — legacy `materia` is empty on every question.
      */
     topic: OptionalText,
+    /**
+     * Why this question is withheld from the build; null when it is live.
+     *
+     * A withheld question stays in its file and keeps its place in the
+     * category's `order`, so the id is never reissued and the question is
+     * still compared against by `qbank` and by `content:new` — a withdrawn
+     * question must go on blocking an accidental re-add of the same thing.
+     * `emitCategory` is the single point that drops it from the artifacts.
+     *
+     * A reason string rather than a boolean on purpose: `disabled: true`
+     * is then a schema error rather than something that parses and means
+     * nothing, and the next reader learns why without a git archaeology dig.
+     */
+    disabled: OptionalText,
     /** Official exam papers this question appears in. */
     sources: z.array(SourceRefSchema).default([]),
     /** Public-relative image path, e.g. "images/cat3/foo.png". */
@@ -88,6 +102,12 @@ export const QuestionSchema = z
     /** Prose explanation. Becomes the MDX body once questions own their notes. */
     explanation: OptionalText,
   })
+  // Unknown keys are an error, not something to discard. Zod strips them by
+  // default, which made an invented frontmatter field (`disabled: true`, once)
+  // parse cleanly and do nothing at all — the silent-typo failure that `topic`
+  // being free text already causes. Nothing in the bank uses a key outside
+  // this list, so the strictness costs nothing and catches the next one.
+  .strict()
   // superRefine rather than refine: Zod 4 takes a static object as refine's
   // second argument, so this is the way to keep the offending question's id
   // and values in the message.
@@ -130,6 +150,18 @@ export const CategorySchema = z.object({
 export type Answer = z.infer<typeof AnswerSchema>;
 export type ContentQuestion = z.infer<typeof QuestionSchema>;
 export type ContentCategory = z.infer<typeof CategorySchema>;
+
+/**
+ * Whether a question is withheld from the build.
+ *
+ * One name for the concept, used by the compiler, `qbank` and the authoring
+ * review alike, and `!= null` rather than `=== null` so a hand-built question
+ * that simply omits the field — a test fixture, a legacy import — reads as
+ * live rather than as withheld-with-an-undefined-reason.
+ */
+export function isWithheld(q: Pick<ContentQuestion, "disabled">): boolean {
+  return q.disabled != null;
+}
 
 /** Parses and validates a category, throwing a readable error on bad data. */
 export function parseCategory(input: unknown): ContentCategory {

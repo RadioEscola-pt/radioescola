@@ -293,6 +293,7 @@ function draftFromFile(raw: string, category: CategoryId | null): Draft {
     id: typeof fields.id === "number" ? fields.id : undefined,
     question: fields.question as string,
     answers: fields.answers as Draft["answers"],
+    disabled: (fields.disabled ?? null) as string | null,
     topic: (fields.topic ?? null) as string | null,
     sources: fields.sources as Draft["sources"],
     image: (fields.image ?? null) as string | null,

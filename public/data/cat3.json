@@ -2629,19 +2629,6 @@
       "materia": "regulamentacao"
     },
     {
-      "id": 161,
-      "question": "Para além do reconhecimento de títulos habilitantes válidos emitidos por outras Administrações, como é feito o acesso à categoria 2?",
-      "options": [
-        "Mediante exame ao qual podem candidatar-se amadores maiores de 18 anos, que tenham o tempo mínimo de permanência na categoria 3",
-        "Mediante exame ao qual podem candidatar-se amadores maiores de 16 anos, que tenham o tempo mínimo de permanência na categoria 3 e com certificado do 9º ano emitido por um estabelecimento de ensino reconhecido",
-        "Mediante exame ao qual podem candidatar-se amadores maiores de 12 anos da categoria 3 ou da categoria C",
-        "Mediante exame ao qual podem candidatar-se amadores maiores de 16 anos, que tenham o tempo mínimo de permanência na categoria 3 ou os amadores da categoria C"
-      ],
-      "correctIndex": 3,
-      "hasNotesMdx": true,
-      "materia": "regulamentacao"
-    },
-    {
       "id": 162,
       "question": "Para além do reconhecimento de títulos habilitantes válidos emitidos por outras Administrações, como é feito o acesso à categoria 1?",
       "options": [

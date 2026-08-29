@@ -118,6 +118,30 @@ the same split as `qbank`.
   numeric. Interactively it shows the same-topic neighbourhood and asks;
   otherwise `--after`/`--before`/`--end`. It never appends silently
 
+**Withdrawing a question**: set `disabled: <reason>` in its frontmatter and
+rebuild. `emitCategory` is the only place the flag is applied — the question is
+dropped from `public/data/cat{n}.json` and its generated note is deleted, so it
+vanishes from the whole site with no consumer-side filtering. It stays in its
+source file, in `category.json`'s `order` (so the id is never reissued and the
+editorial position survives), and in everything `qbank` and `content:new`
+compare against, so it goes on blocking an accidental re-add.
+
+- **The reason is a string, never `true`.** `disabled: true` was tried once and
+  did nothing at all: the schema was non-strict, so Zod discarded the unknown
+  key and the build shipped the question anyway. `QuestionSchema` is now
+  `.strict()` — any unknown or mistyped frontmatter key fails the build — and
+  `disabled` takes prose so the flag cannot parse and mean nothing
+- **Use `isWithheld()` from `lib/content/schema.ts`**, not `disabled === null`.
+  Hand-built questions (test fixtures, `legacy.ts`) omit the field, and
+  `undefined === null` is false, which reads as withheld-with-no-reason
+- **Never withhold by moving the file** into a subdirectory. `loadCategory`
+  reads the directory non-recursively so it does work, but it hides the
+  question from `qbank` and from the duplicate review, and forces the id out of
+  `order` where it can be reissued
+- **`content:build` sweeps orphaned notes.** `/api/notes` reads
+  `content/notes/` straight from disk without consulting the bank, so a note
+  left behind by a withdrawn question would still be served
+
 Adding a question by hand is still documented in `docs/novas-questoes.md`
 (pt-PT); the topic taxonomy in `docs/topicos.md` (pt-PT).
 

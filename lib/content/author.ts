@@ -20,7 +20,7 @@
  * - `warning` — legitimate often enough that only a human can say. The bank
  *   examines the same regulatory question at all three levels on purpose.
  */
-import { QuestionSchema, type ContentQuestion } from "./schema";
+import { QuestionSchema, isWithheld, type ContentQuestion } from "./schema";
 import {
   auditAnswers,
   buildBank,
@@ -52,6 +52,8 @@ export type Draft = {
   id?: number;
   question: string;
   answers: DraftAnswer[];
+  /** Reason the question is withheld, for one that arrives already withdrawn. */
+  disabled?: string | null;
   topic?: string | null;
   sources?: { pdf: string; question: number; page?: number | null }[];
   image?: string | null;
@@ -257,6 +259,7 @@ export function reviewDraft(draft: Draft, ctx: ReviewContext): Review {
     id,
     question: draft.question,
     answers: draft.answers,
+    disabled: draft.disabled,
     topic: draft.topic,
     sources: draft.sources,
     image: draft.image,
@@ -329,14 +332,23 @@ export function reviewDraft(draft: Draft, ctx: ReviewContext): Review {
 
   for (const group of duplicates) {
     const others = group.members.filter((m) => m.ref !== draftBank.ref);
-    // A contradiction is the one tier that is never legitimate: same stem,
-    // same options, disagreeing on which option is right. One of the two is
-    // simply wrong, and writing the second one hides it.
+    // Withheld questions stay in the bank precisely so they go on blocking an
+    // accidental re-add. But a contradiction with one is not the defect a
+    // contradiction with a live question is: withdrawing the wrong version and
+    // writing the corrected one is the intended repair, and it would produce
+    // exactly this. So it is still reported, as a warning rather than a block.
+    const live = others.filter((m) => !isWithheld(m));
     findings.push({
-      level: group.tier === "contradiction" ? "error" : "warning",
+      level: group.tier === "contradiction" && live.length > 0 ? "error" : "warning",
       code: `duplicate-${group.tier}`,
-      message: `${group.tier}: já existe em ${others.map((m) => m.ref).join(", ")}.`,
-      detail: others.map((m) => `${m.file} — resposta certa: ${m.correctText}`),
+      message:
+        `${group.tier}: já existe em ${others.map((m) => m.ref).join(", ")}` +
+        (live.length === 0 ? " (desativada)." : "."),
+      detail: others.map(
+        (m) =>
+          `${m.file} — resposta certa: ${m.correctText}` +
+          (isWithheld(m) ? ` [desativada: ${m.disabled}]` : "")
+      ),
     });
   }
 

@@ -12,7 +12,7 @@
  * Only categories that have a source directory are touched, so cat1 and cat2
  * keep shipping their hand-maintained JSON until they are migrated too.
  */
-import { existsSync, readFileSync, writeFileSync, mkdirSync } from "fs";
+import { existsSync, readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync } from "fs";
 import { join } from "path";
 import {
   loadCategory,
@@ -29,7 +29,9 @@ const check = process.argv.includes("--check");
 
 let changed = 0;
 let checked = 0;
+let removed = 0;
 const problems: string[] = [];
+const withheld: { category: string; ids: number[] }[] = [];
 
 function compare(path: string, expected: string) {
   checked++;
@@ -47,6 +49,29 @@ function compare(path: string, expected: string) {
   changed++;
 }
 
+/**
+ * Deletes generated notes that no question claims any more.
+ *
+ * `compare` only ever writes the files it is given, so withholding or removing
+ * a question used to leave its note behind — and `/api/notes` reads straight
+ * from disk without consulting the bank, so that stale file stayed publicly
+ * readable for a question nothing links to. Sweeping is the other half of
+ * generating.
+ */
+function sweepNotes(dir: string, keep: ReadonlySet<string>) {
+  if (!existsSync(dir)) return;
+  for (const name of readdirSync(dir)) {
+    if (!/^\d+\.mdx$/.test(name) || keep.has(name)) continue;
+    const path = join(dir, name);
+    if (check) {
+      problems.push(`${path}: orphaned — no question generates it`);
+      continue;
+    }
+    rmSync(path);
+    removed++;
+  }
+}
+
 const loaded: ContentCategory[] = [];
 
 for (const category of CATEGORIES) {
@@ -55,12 +80,15 @@ for (const category of CATEGORIES) {
 
   const parsed = loadCategory(sourceDir);
   loaded.push(parsed);
-  const { appJson, notes } = emitCategory(parsed);
+  const { appJson, notes, withheld: ids } = emitCategory(parsed);
+  if (ids.length > 0) withheld.push({ category, ids });
 
   compare(join("public", "data", `cat${category}.json`), appJson);
+  const notesDir = join("content", "notes", `cat${category}`);
   for (const [id, body] of notes) {
-    compare(join("content", "notes", `cat${category}`, `${id}.mdx`), body);
+    compare(join(notesDir, `${id}.mdx`), body);
   }
+  sweepNotes(notesDir, new Set([...notes.keys()].map((id) => `${id}.mdx`)));
 }
 
 if (checked === 0) {
@@ -123,6 +151,12 @@ if (dangling.length > 0) {
   }
 }
 
+if (withheld.length > 0) {
+  const total = withheld.reduce((sum, w) => sum + w.ids.length, 0);
+  console.log(`\n${total} question(s) withheld by \`disabled\` — in the bank, not in the artifacts:`);
+  for (const w of withheld) console.log(`  cat${w.category}: ${w.ids.join(", ")}`);
+}
+
 if (check) {
   if (problems.length > 0) {
     console.error(`content check failed (${problems.length} of ${checked} files):`);
@@ -133,5 +167,8 @@ if (check) {
   }
   console.log(`content check passed — ${checked} artifacts match their source`);
 } else {
-  console.log(`content build complete — ${changed} of ${checked} artifacts written`);
+  console.log(
+    `content build complete — ${changed} of ${checked} artifacts written` +
+      (removed > 0 ? `, ${removed} orphaned note(s) removed` : "")
+  );
 }
