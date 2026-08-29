@@ -1,5 +1,7 @@
 # Adicionar perguntas ao banco de questões
 
+*Para **alterar** uma pergunta que já existe, ver [`editar-conteudo.md`](editar-conteudo.md).*
+
 A fonte de verdade é `content/questions/cat{n}/` — **um ficheiro MDX por
 pergunta**, com os campos estruturados no frontmatter YAML e a explicação no
 corpo do documento. Tudo o resto é gerado a partir daí.
@@ -393,7 +395,13 @@ question: >-
   …
 ```
 
-E compila-se: `bun run content:build`. A partir daí a pergunta
+E compila-se: `bun run content:build`. Ou, numa linha só:
+
+```bash
+bun run content:edit cat3#161 --disable "Retirada pela ANACOM."
+```
+
+A partir daí a pergunta
 
 - **sai** de `public/data/cat{n}.json`, portanto desaparece do site inteiro —
   consultar, exame, treino, cartões, contagens do painel

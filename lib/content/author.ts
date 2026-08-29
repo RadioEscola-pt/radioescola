@@ -23,6 +23,7 @@
 import { QuestionSchema, isWithheld, type ContentQuestion } from "./schema";
 import {
   auditAnswers,
+  bankRef,
   buildBank,
   findDuplicateGroups,
   findPairFindings,
@@ -93,6 +94,16 @@ export type ReviewContext = {
   bank: readonly BankQuestion[];
   /** The category's current `order`, for the id collision check. */
   order: readonly number[];
+  /**
+   * The id being *edited* rather than created.
+   *
+   * Two rules invert for an edit. The id is expected to be in `order` — that
+   * is what makes it an edit — and the question is already in the bank, where
+   * it would otherwise report itself as an exact duplicate of itself. Both are
+   * handled here rather than by the caller, since a caller that forgets either
+   * one gets a confident, wrong review.
+   */
+  editing?: number;
   pdfLookup: PdfLookup;
   /** Takes a public-relative path, e.g. "images/cat3/x.png". */
   imageExists: (publicRelative: string) => boolean;
@@ -107,6 +118,17 @@ export type ReviewContext = {
  */
 export function nextId(order: readonly number[]): number {
   return order.reduce((max, id) => Math.max(max, id), 0) + 1;
+}
+
+/**
+ * Whether a `disabled` value is a real reason.
+ *
+ * The schema trims optional text and turns an empty string into `null`, so
+ * `--disable ""` would quietly *publish* the question rather than withhold it
+ * — the opposite of what was asked, reported as success.
+ */
+export function isWithheldReason(reason: string): boolean {
+  return reason.trim().length > 0;
 }
 
 export function hasErrors(findings: readonly Finding[]): boolean {
@@ -281,8 +303,10 @@ export function reviewDraft(draft: Draft, ctx: ReviewContext): Review {
   }
 
   const question = parsed.data;
+  const editingRef = ctx.editing === undefined ? null : bankRef(ctx.category, ctx.editing);
+  const bank = editingRef === null ? ctx.bank : ctx.bank.filter((q) => q.ref !== editingRef);
 
-  if (ctx.order.includes(question.id)) {
+  if (ctx.editing !== question.id && ctx.order.includes(question.id)) {
     findings.push({
       level: "error",
       code: "id-taken",
@@ -322,7 +346,7 @@ export function reviewDraft(draft: Draft, ctx: ReviewContext): Review {
     });
   }
 
-  const withDraft = [...ctx.bank, draftBank];
+  const withDraft = [...bank, draftBank];
   const duplicates = findDuplicateGroups(withDraft).filter((g) =>
     g.members.some((m) => m.ref === draftBank.ref)
   );
@@ -366,6 +390,89 @@ export function reviewDraft(draft: Draft, ctx: ReviewContext): Review {
   }
 
   return { question, findings, duplicates, pairs };
+}
+
+/* -------------------------------------------------------------------------- */
+/* Editing                                                                     */
+/* -------------------------------------------------------------------------- */
+
+export type FieldChange = {
+  /** Field name as an author would say it, in pt-PT. */
+  label: string;
+  before: string;
+  after: string;
+  /**
+   * Changing which option is correct. Called out separately because it is the
+   * highest-stakes edit in the bank — it silently turns a right answer wrong
+   * for every reader — and because it is the edit a legislative change
+   * actually requires, so it must never scroll past unnoticed.
+   */
+  critical?: true;
+};
+
+const NONE = "—";
+
+function describeSources(q: ContentQuestion): string {
+  if (q.sources.length === 0) return NONE;
+  return q.sources
+    .map((s) => `${s.pdf} pergunta ${s.question}${s.page === null ? "" : ` p.${s.page}`}`)
+    .join("; ");
+}
+
+/**
+ * What changed between two versions of a question, for review before writing.
+ *
+ * Options are compared position by position rather than as a block, so a
+ * one-word fix in option 3 reads as a one-word fix instead of as four
+ * rewritten options.
+ */
+export function diffQuestions(
+  before: ContentQuestion,
+  after: ContentQuestion
+): FieldChange[] {
+  const changes: FieldChange[] = [];
+  const add = (label: string, a: string | null, b: string | null, critical?: true) => {
+    if (a === b) return;
+    changes.push({ label, before: a ?? NONE, after: b ?? NONE, ...(critical ? { critical } : {}) });
+  };
+
+  add("enunciado", before.question, after.question);
+
+  const options = Math.max(before.answers.length, after.answers.length);
+  for (let i = 0; i < options; i++) {
+    add(`opção ${i + 1}`, before.answers[i]?.text ?? null, after.answers[i]?.text ?? null);
+  }
+
+  const correctOf = (q: ContentQuestion) => {
+    const index = q.answers.findIndex((a) => a.correct);
+    return index < 0 ? null : `opção ${index + 1} — ${q.answers[index]!.text}`;
+  };
+  add("resposta certa", correctOf(before), correctOf(after), true);
+
+  add("matéria", before.topic, after.topic);
+  add("desativada", before.disabled, after.disabled, true);
+  add("fontes", describeSources(before), describeSources(after));
+  add("imagem", before.image, after.image);
+  add("tutorial", before.tutorial, after.tutorial);
+  add("calculadora", before.calc, after.calc);
+
+  // Prose is summarised rather than shown: a 2,000-character body would bury
+  // every other change in the list, and the editor already showed it.
+  if (before.explanation !== after.explanation) {
+    const summarise = (text: string | null) =>
+      text === null ? NONE : `${text.length} caracteres`;
+    const from = summarise(before.explanation);
+    const to = summarise(after.explanation);
+    changes.push({
+      label: "explicação",
+      before: from,
+      // A rewrite that happens to keep the length would otherwise read
+      // "412 caracteres → 412 caracteres" and look like nothing happened.
+      after: from === to ? `${to} (texto alterado)` : to,
+    });
+  }
+
+  return changes;
 }
 
 export type OrderAnchor =
