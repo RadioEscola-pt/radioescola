@@ -57,4 +57,18 @@ Cada commit no `main` vai para o ar automaticamente, através do GitHub Actions.
 
 ## Licença
 
-Todos os direitos reservados.
+Copyright (C) 2025-2026 Rádio Escola
+
+O código está licenciado sob a **[GNU Affero General Public License v3.0](LICENSE)**.
+És livre de o usar, estudar, modificar e redistribuir; se correres uma versão
+modificada num servidor acessível pela rede, tens de disponibilizar o código
+dessa versão aos seus utilizadores (secção 13 da AGPL).
+
+Duas ressalvas sobre aquilo que a licença **não** cobre:
+
+- **As provas de exame e as questões são da ANACOM**, não nossas. Os PDFs em
+  `public/exams/` e as questões em `content/questions/` são documentos públicos
+  da entidade reguladora e não nos cabe relicenciá-los.
+- **O nome e a identidade "Rádio Escola" não são licenciados.** A AGPL cobre o
+  código; não dá direito a usar a marca, o logótipo ou o nome do projecto para
+  identificar um serviço derivado.
