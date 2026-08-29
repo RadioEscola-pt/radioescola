@@ -24,56 +24,177 @@
 import { existsSync, readFileSync, readdirSync, writeFileSync, statSync } from "fs";
 import { join } from "path";
 import { loadCategory } from "../lib/content/build";
+import { isWithheld } from "../lib/content/schema";
 import { fold } from "../lib/utils/search";
 import {
   buildBank,
   findDuplicateGroups,
   findPairFindings,
   coverage,
+  orderEntries,
+  entriesAround,
   auditTopics,
   auditPapers,
   auditAnswers,
   canonical,
   comparisonKey,
+  levenshtein,
   parseRef,
   DUPLICATE_TIERS,
   type BankQuestion,
   type DuplicateTier,
 } from "../lib/content/analysis";
+import {
+  parseArgs,
+  validateFlags,
+  nearest,
+  canonicalValue,
+  type ArgProblem,
+  type FlagSpec,
+  type CommandSpec,
+} from "../lib/cli/args";
 import { topicShortLabel } from "../lib/config/topics";
 import type { CategoryId } from "../lib/config/categories";
 
 const BASELINE_FILE = join("content", "qbank-baseline.json");
 const CATEGORIES = ["3", "2", "1"] as const;
 
+/**
+ * `--tier contradição` and `--tier contradiction` both select the same groups.
+ *
+ * The report says `contradição` now, and a filter that cannot be typed from
+ * what is on screen is a filter nobody reaches for. The English values stay
+ * canonical — they are what `--json`, the baseline keys and `docs/qbank.md`
+ * carry — so this only widens what is accepted.
+ */
+const TIER_ALIASES: Record<string, string> = {
+  contradição: "contradiction",
+  contradicao: "contradiction",
+  gralha: "typo",
+  divergente: "divergent",
+  "respostas-partilhadas": "shared-answers",
+  exato: "exact",
+};
+const KIND_ALIASES: Record<string, string> = {
+  polaridade: "polarity",
+  "enunciado-parecido": "near-stem",
+};
 /* -------------------------------------------------------------------------- */
 /* Argument handling                                                           */
 /* -------------------------------------------------------------------------- */
 
 const argv = process.argv.slice(2);
-const positional: string[] = [];
-const flags = new Map<string, string | true>();
 
-for (let i = 0; i < argv.length; i++) {
-  const arg = argv[i] ?? "";
-  if (!arg.startsWith("--")) {
-    positional.push(arg);
-    continue;
-  }
-  const [name, inline] = arg.slice(2).split("=", 2);
-  if (!name) continue;
-  if (inline !== undefined) {
-    flags.set(name, inline);
-    continue;
-  }
-  const next = argv[i + 1];
-  if (next !== undefined && !next.startsWith("--")) {
-    flags.set(name, next);
-    i++;
-  } else {
-    flags.set(name, true);
-  }
-}
+/**
+ * What each option is, so bad input can be refused rather than absorbed.
+ *
+ * Every accessor here used to fall back silently: an unknown value produced
+ * `0 grupo(s)`, an unknown category produced a table of zeros, a misspelt name
+ * was ignored entirely. All three read as a clean bank, which is the answer you
+ * were hoping for — so a typo did not waste a run, it ended the search.
+ *
+ * That is the same failure this tool exists to find in the content: something
+ * individually valid that quietly means nothing. The declaration is what lets
+ * the parser refuse it, and what `--help` renders, so the two cannot drift.
+ */
+const GLOBAL_FLAGS: Record<string, FlagSpec> = {
+  cat: {
+    describe: "só estas categorias",
+    placeholder: "<3,2,1>",
+    values: ["1", "2", "3"],
+  },
+  limit: { describe: "quantos resultados imprimir", placeholder: "<n>", number: "int" },
+  json: { describe: "saída legível por máquina" },
+  help: { describe: "esta ajuda" },
+};
+
+const SPECS: Record<string, CommandSpec> = {
+  search: {
+    describe: "procura perguntas por texto",
+    args: "<termo>",
+    flags: {
+      field: {
+        describe: "onde procurar",
+        placeholder: "<campo>",
+        values: ["stem", "options", "explanation", "all"],
+      },
+      regex: { describe: "tratar o termo como expressão regular" },
+    },
+    example: "qbank search ICOA --field stem --cat 3",
+  },
+  show: {
+    describe: "uma pergunta por inteiro, com os seus duplicados",
+    args: "<ref…>",
+    example: "qbank show cat3#161 cat3#162",
+  },
+  dupes: {
+    describe: "grupos de duplicados, o pior primeiro",
+    flags: {
+      tier: {
+        describe: "só estes tipos",
+        placeholder: "<lista>",
+        values: ["contradiction", "typo", "divergent", "shared-answers", "exact"],
+        aliases: TIER_ALIASES,
+      },
+      new: { describe: `só o que não está em ${BASELINE_FILE}` },
+      "update-baseline": { describe: "registar os achados atuais na linha de base" },
+    },
+    example: "qbank dupes --tier contradição,gralha",
+  },
+  pairs: {
+    describe: "quase-duplicados e inversões de polaridade",
+    flags: {
+      kind: {
+        describe: "só este tipo",
+        placeholder: "<tipo>",
+        values: ["polarity", "near-stem"],
+        aliases: KIND_ALIASES,
+      },
+      new: { describe: `só o que não está em ${BASELINE_FILE}` },
+      all: { describe: "incluir pares que o `dupes` já agrupa" },
+      "stem-min": { describe: "semelhança mínima do enunciado", placeholder: "<0-1>", number: "ratio" },
+      "answer-min": { describe: "semelhança mínima das opções", placeholder: "<0-1>", number: "ratio" },
+    },
+    example: "qbank pairs --kind polaridade",
+  },
+  coverage: { describe: "fontes, explicações, imagens, órfãs" },
+  order: {
+    describe: "a sequência de navegação e a posição de cada pergunta",
+    flags: {
+      topic: { describe: "só esta matéria", placeholder: "<slug>" },
+      around: { describe: "uma janela à volta desta pergunta", placeholder: "<ref>" },
+      radius: { describe: "tamanho da janela do --around (5)", placeholder: "<n>", number: "int" },
+    },
+    example: "qbank order --around cat3#161 --radius 8",
+  },
+  topics: { describe: "distribuição da taxonomia e casos fora do nível" },
+  paper: { describe: "o que cita uma prova, e o que ficou por reclamar", args: "[pdf]" },
+  answers: { describe: "auditoria à construção das respostas" },
+};
+
+/** Commands that are the same command under another name. */
+const COMMAND_ALIASES: Record<string, string> = {
+  duplicates: "dupes",
+  papers: "paper",
+};
+
+/** Positional arguments *after* the command, which is parsed out separately. */
+const knownFlagsFor = (command: string | undefined): Record<string, FlagSpec> => ({
+  ...GLOBAL_FLAGS,
+  ...(command === undefined ? {} : SPECS[command]?.flags ?? {}),
+});
+
+// The command has to be resolved before the options can be parsed, because
+// whether `--regex foo` swallows `foo` depends on `--regex` taking no value.
+const rawCommand = argv[0] !== undefined && !argv[0].startsWith("--") ? argv[0] : undefined;
+const commandName =
+  rawCommand === undefined ? undefined : COMMAND_ALIASES[rawCommand] ?? rawCommand;
+const knownFlags = knownFlagsFor(commandName);
+
+const parsed = parseArgs(argv, (name) => knownFlags[name]);
+/** Positional arguments *after* the command, which is parsed out separately. */
+const positional = parsed.positional;
+const flags = parsed.flags;
 
 function flag(name: string): string | undefined {
   const value = flags.get(name);
@@ -127,6 +248,19 @@ function flush(payload?: unknown) {
   process.stdout.write(`${out.join("\n")}\n`);
 }
 
+/**
+ * Reports bad input and stops.
+ *
+ * On stderr and around `flush`, because `--json` would otherwise render the
+ * complaint as `null` on stdout — a caller piping to `jq` would see an empty
+ * result rather than the reason for it, which is the silent-failure this whole
+ * change is about.
+ */
+function die(lines: readonly string[]): never {
+  process.stderr.write(`${lines.join("\n")}\n`);
+  process.exit(1);
+}
+
 /** Truncates for a one-line summary, on a word boundary where it can. */
 function clip(text: string, width: number): string {
   const flat = text.replace(/\s+/g, " ").trim();
@@ -134,6 +268,39 @@ function clip(text: string, width: number): string {
   const cut = flat.slice(0, width - 1);
   const space = cut.lastIndexOf(" ");
   return `${space > width * 0.6 ? cut.slice(0, space) : cut}…`;
+}
+
+/** Renders one argument problem as the lines to print. */
+function renderProblem(p: ArgProblem): string[] {
+  const flagName = bold(`--${p.name}`);
+  const guess = (name: string | null, prefix = "") =>
+    name === null ? [] : [dim(`  queria dizer ${prefix}${name}?`)];
+
+  switch (p.kind) {
+    case "unknown-flag":
+      return [
+        red(`opção desconhecida: ${flagName}`),
+        ...guess(p.suggestion, "--"),
+        dim(`  opções aqui: ${p.known.map((f) => `--${f}`).join(" ")}`),
+      ];
+    case "unexpected-value":
+      return [red(`${flagName} não leva valor, recebeu ${cyan(p.value)}`)];
+    case "missing-value":
+      return [red(`${flagName} precisa de um valor ${dim(p.placeholder)}`)];
+    case "not-a-number":
+      return [
+        red(
+          `${flagName} precisa de um número${p.integer ? " inteiro" : ""}, recebeu ${cyan(p.value)}`
+        ),
+      ];
+    case "unknown-value":
+      return [
+        red(`${flagName}: valor desconhecido ${cyan(p.value)}`),
+        ...guess(p.suggestion),
+        dim(`  valores: ${p.values.join(", ")}`),
+        ...(p.aliases.length === 0 ? [] : [dim(`  também aceita: ${p.aliases.join(", ")}`)]),
+      ];
+  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -231,31 +398,6 @@ function load(): BankQuestion[] {
  * The values themselves stay English: they are the `--json` payload and the
  * type in `lib/content/analysis.ts`, so only the rendering is translated.
  */
-/**
- * `--tier contradição` and `--tier contradiction` both select the same groups.
- *
- * The report says `contradição` now, and a filter that cannot be typed from
- * what is on screen is a filter nobody reaches for. The English values stay
- * canonical — they are what `--json`, the baseline keys and `docs/qbank.md`
- * carry — so this only widens what is accepted.
- */
-const TIER_ALIASES: Record<string, string> = {
-  contradição: "contradiction",
-  contradicao: "contradiction",
-  gralha: "typo",
-  divergente: "divergent",
-  "respostas-partilhadas": "shared-answers",
-  exato: "exact",
-};
-const KIND_ALIASES: Record<string, string> = {
-  polaridade: "polarity",
-  "enunciado-parecido": "near-stem",
-};
-const canonicalValue = (raw: string, aliases: Record<string, string>): string => {
-  const trimmed = raw.trim();
-  return aliases[trimmed.toLowerCase()] ?? trimmed;
-};
-
 const ISSUE_LABELS: Record<string, string> = {
   topic: "matéria",
   explanation: "explicação",
@@ -275,7 +417,12 @@ function tierLabel(tier: DuplicateTier): string {
 
 function renderQuestion(q: BankQuestion, needle?: string): void {
   const topic = q.topic === null ? dim("sem matéria") : cyan(topicShortLabel(q.topic, "pt") ?? q.topic);
-  say(`${bold(q.ref)}  ${topic}  ${dim(where(q, needle))}`);
+  // A withheld question is still compared against everything else — that is the
+  // point of keeping it in the bank — so it has to be obvious at a glance that
+  // what you are reading is not what the site is serving.
+  const mark = isWithheld(q) ? `  ${red(bold("desativada"))}` : "";
+  say(`${bold(q.ref)}  ${topic}${mark}  ${dim(where(q, needle))}`);
+  if (isWithheld(q)) say(`  ${red(`desativada: ${q.disabled}`)}`);
   say(`  ${q.question}`);
   for (const a of q.answers) {
     say(`   ${a.correct ? green("✓") : dim("·")} ${clip(a.text, 100)}`);
@@ -298,7 +445,7 @@ function renderQuestion(q: BankQuestion, needle?: string): void {
 /* -------------------------------------------------------------------------- */
 
 function cmdSearch(): void {
-  const term = positional[1] ?? "";
+  const term = positional[0] ?? "";
   if (term.trim().length === 0) {
     say("uso: qbank search <termo> [--field stem|options|explanation] [--regex] [--cat 3]");
     return flush([]);
@@ -322,7 +469,13 @@ function cmdSearch(): void {
 
   if (asJson) {
     return flush(
-      bank.map((q) => ({ ref: q.ref, file: q.file, question: q.question, topic: q.topic }))
+      bank.map((q) => ({
+        ref: q.ref,
+        file: q.file,
+        question: q.question,
+        topic: q.topic,
+        disabled: q.disabled,
+      }))
     );
   }
 
@@ -341,7 +494,7 @@ function cmdSearch(): void {
 
 function cmdShow(): void {
   const bank = load();
-  const refs = positional.slice(1);
+  const refs = [...positional];
   if (refs.length === 0) {
     say("uso: qbank show cat3#12 [cat2#255 …]");
     return flush([]);
@@ -573,10 +726,11 @@ function cmdCoverage(): void {
 
   const pct = (n: number, total: number) =>
     total === 0 ? "—" : `${Math.round((n / total) * 100)}%`;
-  const head = ["", "total", "com fonte", "refs", "com página", "explicadas", "imagens", "matéria"];
+  const head = ["", "total", "desativadas", "com fonte", "refs", "com página", "explicadas", "imagens", "matéria"];
   const table = rows.map((r) => [
     r.label,
     String(r.total),
+    r.withheld === 0 ? dim("—") : red(String(r.withheld)),
     `${r.withSources} ${dim(pct(r.withSources, r.total))}`,
     String(r.sourceRefs),
     `${r.refsWithPage} ${dim(pct(r.refsWithPage, r.sourceRefs))}`,
@@ -597,6 +751,91 @@ function cmdCoverage(): void {
     for (const o of orphans.slice(0, limit)) say(`  public/${o}`);
     if (orphans.length > limit) say(dim(`  …e mais ${orphans.length - limit}`));
   }
+  flush();
+}
+
+/**
+ * Where questions sit in the browse sequence, and therefore where a new one
+ * would go. The one decision `content:new` refuses to take on its own, and
+ * until now the only way to see it was to run `content:new` interactively.
+ */
+function cmdOrder(): void {
+  const bank = load();
+  const entries = orderEntries(bank);
+
+  const topic = flag("topic");
+  const around = flag("around");
+
+  let shown = entries;
+  let heading: string;
+
+  if (around !== undefined) {
+    const parsed = parseRef(around) ?? parseRef(`cat3#${around}`);
+    const anchor = parsed
+      ? entries.find((e) => e.question.category === parsed.category && e.question.id === parsed.id)
+      : undefined;
+    if (!anchor) {
+      say(red(`não existe a pergunta ${around}`));
+      return flush([]);
+    }
+    const radius = num("radius", 5);
+    shown = entriesAround(entries, anchor.position, radius).filter(
+      (e) => e.question.category === anchor.question.category
+    );
+    heading =
+      `cat${anchor.question.category} · à volta de ${bold(anchor.question.ref)} ` +
+      `(posição ${anchor.position} de ${anchor.total})`;
+  } else if (topic !== undefined) {
+    const slug = topic.trim();
+    shown = entries.filter((e) => e.question.topic === slug);
+    if (shown.length === 0) {
+      say(red(`nenhuma pergunta com a matéria "${slug}"`));
+      say(dim("  as matérias válidas estão em docs/topicos.md e em `qbank topics`"));
+      return flush([]);
+    }
+    heading = `${topicShortLabel(slug, "pt") ?? slug} · ${shown.length} pergunta(s)`;
+  } else {
+    heading = `${shown.length} pergunta(s) na sequência de navegação`;
+  }
+
+  if (asJson) {
+    return flush(
+      shown.map((e) => ({
+        ref: e.question.ref,
+        position: e.position,
+        total: e.total,
+        topic: e.question.topic,
+        disabled: e.question.disabled,
+        question: e.question.question,
+      }))
+    );
+  }
+
+  say(bold(heading));
+  if (topic !== undefined && around === undefined) {
+    // The gaps are the point, not a defect: a subject is spread through the
+    // sequence, and the slot for a new question is between two of these.
+    say(dim("  as posições são salteadas — o order é editorial, não agrupado"));
+  }
+  say();
+
+  const clipped = shown.slice(0, limit);
+  const width = Math.max(...clipped.map((e) => String(e.total).length));
+  for (const e of clipped) {
+    const pos = dim(`${String(e.position).padStart(width)}/${e.total}`);
+    const mark = isWithheld(e.question) ? ` ${red("desativada")}` : "";
+    const label =
+      topic === undefined && e.question.topic !== null
+        ? `  ${cyan(topicShortLabel(e.question.topic, "pt") ?? e.question.topic)}`
+        : "";
+    say(`  ${pos}  ${bold(`#${e.question.id}`)}${mark}  ${clip(e.question.question, 74)}${label}`);
+  }
+  if (shown.length > clipped.length) {
+    say(dim(`  …e mais ${shown.length - clipped.length} (--limit ${shown.length} para ver todas)`));
+  }
+
+  say();
+  say(dim("  inserir uma pergunta nova aqui: content:new --after <id>, --before <id> ou --end"));
   flush();
 }
 
@@ -658,7 +897,7 @@ function cmdTopics(): void {
 function cmdPaper(): void {
   const bank = load();
   const papers = auditPapers(bank);
-  const wanted = positional[1];
+  const wanted = positional[0];
 
   if (wanted === undefined) {
     if (asJson) {
@@ -775,36 +1014,91 @@ function cmdAnswers(): void {
   flush();
 }
 
+/** The command list. Rendered from `SPECS`, so a new command appears here. */
 function usage(): void {
   say(bold("qbank — inspeção do banco de questões"));
   say();
-  say("  search <termo>   procura perguntas por texto  [--field stem|options|explanation] [--regex]");
-  say("  show <ref…>      uma pergunta por inteiro, com os seus duplicados");
-  say("  dupes            grupos de duplicados, o pior primeiro  [--tier] [--new] [--update-baseline]");
-  say("  pairs            quase-duplicados e inversões de polaridade  [--kind] [--new]");
-  say("  coverage         fontes, explicações, imagens, órfãs");
-  say("  topics           distribuição da taxonomia e casos fora do nível");
-  say("  paper [pdf]      o que cita uma prova, e o que ficou por reclamar");
-  say("  answers          auditoria à construção das respostas");
+  const names = Object.keys(SPECS);
+  const width = Math.max(...names.map((n) => `${n} ${SPECS[n]?.args ?? ""}`.trim().length));
+  for (const name of names) {
+    const entry = SPECS[name]!;
+    const head = `${name} ${entry.args ?? ""}`.trim();
+    say(`  ${bold(pad(head, width))}  ${entry.describe}`);
+  }
   say();
   say(dim("  globais: --cat 3,2   --limit N   --json"));
+  say(dim("  `qbank <comando> --help` para as opções de cada um"));
   flush(null);
 }
 
-const command = positional[0] ?? "help";
+/** Everything one command takes, with the accepted values spelled out. */
+function commandHelp(name: string): void {
+  const entry = SPECS[name]!;
+  const own = Object.entries(entry.flags ?? {});
+
+  say(`${bold(`qbank ${name}`)} — ${entry.describe}`);
+  say();
+  const optional = own.map(([f, v]) => `[--${f}${v.placeholder === undefined ? "" : ` ${v.placeholder}`}]`);
+  say(`  ${dim("uso:")} qbank ${name}${entry.args === undefined ? "" : ` ${entry.args}`} ${optional.join(" ")}`.trimEnd());
+
+  if (own.length > 0) {
+    say();
+    const labels = own.map(([f, v]) => `--${f}${v.placeholder === undefined ? "" : ` ${v.placeholder}`}`);
+    const width = Math.max(...labels.map((l) => l.length));
+    own.forEach(([, v], i) => {
+      say(`  ${bold(pad(labels[i]!, width))}  ${v.describe}`);
+      if (v.values !== undefined) {
+        say(`  ${" ".repeat(width)}  ${dim(`valores: ${v.values.join(", ")}`)}`);
+      }
+      if (v.aliases !== undefined) {
+        say(`  ${" ".repeat(width)}  ${dim(`também aceita: ${Object.keys(v.aliases).join(", ")}`)}`);
+      }
+    });
+  }
+
+  say();
+  say(dim("  globais: --cat 3,2   --limit N   --json"));
+  if (entry.example !== undefined) {
+    say();
+    say(`  ${dim("exemplo:")} ${cyan(entry.example)}`);
+  }
+  flush(null);
+}
+
 const commands: Record<string, () => void> = {
   search: cmdSearch,
   show: cmdShow,
   dupes: cmdDupes,
-  duplicates: cmdDupes,
   pairs: cmdPairs,
   coverage: cmdCoverage,
+  order: cmdOrder,
   topics: cmdTopics,
   paper: cmdPaper,
-  papers: cmdPaper,
   answers: cmdAnswers,
 };
 
-const run = commands[command];
-if (run) run();
-else usage();
+if (commandName === undefined) {
+  usage();
+} else if (SPECS[commandName] === undefined) {
+  // Not the same as printing the help: a typo and a forgotten command used to
+  // produce identical output and an exit code of 0, so neither was visible.
+  const guess = nearest(commandName, Object.keys(SPECS), levenshtein);
+  die([
+    red(`comando desconhecido: ${bold(commandName)}`),
+    ...(guess === null ? [] : [dim(`  queria dizer \`${guess}\`?`)]),
+    "",
+    dim(`  comandos: ${Object.keys(SPECS).join(", ")}`),
+  ]);
+} else if (has("help")) {
+  commandHelp(commandName);
+} else {
+  const problems = validateFlags(flags, knownFlags, levenshtein);
+  if (problems.length > 0) {
+    die([
+      ...problems.flatMap(renderProblem),
+      "",
+      dim(`  \`qbank ${commandName} --help\` para as opções deste comando`),
+    ]);
+  }
+  commands[commandName]!();
+}

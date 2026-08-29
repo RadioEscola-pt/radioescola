@@ -1,5 +1,7 @@
 # Adicionar perguntas ao banco de questões
 
+*Para **alterar** uma pergunta que já existe, ver [`editar-conteudo.md`](editar-conteudo.md).*
+
 A fonte de verdade é `content/questions/cat{n}/` — **um ficheiro MDX por
 pergunta**, com os campos estruturados no frontmatter YAML e a explicação no
 corpo do documento. Tudo o resto é gerado a partir daí.
@@ -143,13 +145,16 @@ As categorias são `3` (iniciado), `2` e `1` (avançado) — a progressão
 portuguesa de licenciamento, por isso a ordem habitual é 3 → 2 → 1.
 
 O `id` é único **dentro da categoria**, não em todo o banco. A regra é usar o
-**máximo atual mais um**:
+**máximo atual mais um**. Não vale a pena decorar os números — mudam sempre que
+alguém acrescenta uma pergunta, e a tabela que aqui estava ficou
+desatualizada da primeira vez que isso aconteceu:
 
-| Categoria | Perguntas | `id` mais alto | Próximo `id` |
-| --- | --- | --- | --- |
-| cat3 | 209 | 213 | 214 |
-| cat2 | 418 | 422 | 423 |
-| cat1 | 389 | 390 | 391 |
+```bash
+for c in 3 2 1; do python3 -c "
+import json
+o = json.load(open('content/questions/cat$c/category.json'))['order']
+print(f'cat$c: {len(o)} perguntas, id máx {max(o)}, próximo {max(o) + 1}')"; done
+```
 
 Há lacunas na numeração — `id` 352 em cat1, por exemplo, está livre. **Não se
 reaproveitam.** A razão está no commit que adicionou a última pergunta:
@@ -159,12 +164,6 @@ reaproveitam.** A razão está no commit que adicionou a última pergunta:
 
 Uma ligação antiga para `cat1#352` passaria a mostrar uma pergunta diferente,
 sem erro nenhum.
-
-Para confirmar o máximo atual antes de escolher:
-
-```bash
-python3 -c "import json;print(max(json.load(open('content/questions/cat3/category.json'))['order']))"
-```
 
 ## 2. Criar o ficheiro da pergunta
 
@@ -198,6 +197,7 @@ A classe de funcionamento é definida pelo ângulo de condução…
 | `question` | texto não vazio | **sim** | erro |
 | `answers` | lista, mínimo 2 | **sim** | erro |
 | `topic` | slug da taxonomia | não | `null` |
+| `disabled` | motivo, em texto | não | `null` (pergunta ativa) |
 | `sources` | lista de referências | não | `[]` |
 | `image` | caminho relativo a `public/` | não | `null` |
 | `tutorial` | slug de um guia de estudo | não | `null` |
@@ -205,6 +205,11 @@ A classe de funcionamento é definida pelo ângulo de condução…
 
 O texto é sempre aparado (`trim`), e uma cadeia vazia num campo opcional é
 tratada como `null` (`lib/content/schema.ts:22,30-37`).
+
+**Não há mais campos.** O schema é estrito: um campo inventado ou mal escrito
+faz a compilação falhar com `Unrecognized key: "disbaled"`, em vez de ser
+descartado em silêncio. Antes era descartado, e quem o tinha escrito não via
+erro nenhum nem efeito nenhum.
 
 ### As respostas
 
@@ -312,6 +317,16 @@ posições 8, 10, 19 e 31, agrupadas por assunto, e é esta sequência que o
 utilizador vê ao navegar. O `id` novo entra onde a pergunta faz sentido
 tematicamente, não no fim.
 
+Para ver onde a matéria já vive, e escolher entre que duas perguntas inserir:
+
+```bash
+bun run qbank order --cat 3 --topic regulamentacao   # onde está a matéria
+bun run qbank order --around cat3#161                # os vizinhos de uma posição
+```
+
+As posições saem salteadas, e é esse o ponto: uma matéria está espalhada pela
+sequência, e o lugar da pergunta nova é entre duas destas.
+
 É por isso que o `order` vive num manifesto: inserir uma pergunta é uma
 alteração de uma linha, em vez de renumerar todos os ficheiros seguintes.
 
@@ -366,6 +381,51 @@ O `qbank dupes` é o que apanha uma pergunta que já existe noutra categoria com
 uma resposta diferente — nada no schema consegue ver isso, porque cada ficheiro
 é válido isoladamente.
 
+## Desativar uma pergunta sem a apagar
+
+Quando uma pergunta deixa de servir — foi retirada pelo regulador, está errada,
+ou aguarda revisão — **não se apaga o ficheiro nem se tira o `id` do `order`**.
+Acrescenta-se o motivo:
+
+```yaml
+---
+id: 161
+disabled: Retirada do banco a pedido da revisão de conteúdo (2026-08-29).
+question: >-
+  …
+```
+
+E compila-se: `bun run content:build`. Ou, numa linha só:
+
+```bash
+bun run content:edit cat3#161 --disable "Retirada pela ANACOM."
+```
+
+A partir daí a pergunta
+
+- **sai** de `public/data/cat{n}.json`, portanto desaparece do site inteiro —
+  consultar, exame, treino, cartões, contagens do painel
+- **perde** o ficheiro em `content/notes/`, porque a `/api/notes` lê do disco
+  sem consultar o banco e continuaria a servi-lo
+- **fica** no ficheiro de origem e no `order`, portanto o `id` nunca é
+  reatribuído e a posição editorial espera por ela se voltar
+- **continua** a ser comparada pelo `qbank` e pelo `content:new`, portanto
+  ninguém a volta a escrever por engano como se fosse nova
+
+O motivo é **texto, não `true`**. `disabled: true` dá erro de schema, de
+propósito: obriga a dizer porquê, e a versão anterior deste campo era um
+booleano que o schema descartava sem dizer nada — a pergunta continuava no ar.
+
+Para reativar, apaga-se a linha e compila-se outra vez.
+
+Ver quais estão desativadas:
+
+```bash
+bun run content:build          # lista-as no fim
+bun run qbank coverage         # coluna "desativadas"
+bun run qbank show cat3#161    # mostra o motivo
+```
+
 ## Erros comuns
 
 | Mensagem | Causa | Solução |
@@ -378,6 +438,9 @@ uma resposta diferente — nada no schema consegue ver isso, porque cada ficheir
 | `referenced image(s) missing from public/` | `image` aponta para ficheiro inexistente | acrescentar o ficheiro ou remover a referência |
 | `References point at N exam PDF(s) that are not on disk` | `pdf` sem ficheiro em `public/exams/` | ver a secção seguinte |
 | `content check failed … differs from compiled output` | artefacto gerado editado à mão, ou esquecimento do `content:build` | executar `bun run content:build` |
+| `Unrecognized key: "…"` | campo inventado ou mal escrito no frontmatter | corrigir o nome; a lista completa está na tabela acima |
+| `disabled: expected string, received boolean` | `disabled: true` | escrever o motivo em texto |
+| `orphaned — no question generates it` | nota gerada sem pergunta que a produza | executar `bun run content:build`, que a remove |
 
 ## Citar uma prova que não está no repositório
 

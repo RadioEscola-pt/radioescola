@@ -13,6 +13,8 @@
 import { describe, it, expect } from "vitest";
 import {
   reviewDraft,
+  diffQuestions,
+  isWithheldReason,
   insertIntoOrder,
   nextId,
   hasErrors,
@@ -253,5 +255,124 @@ describe("reviewDraft", () => {
   it("warns about an explanation-less question without blocking it", () => {
     const review = reviewDraft(draft({ explanation: null }), context());
     expect(codes(review.findings)).toEqual(["explanation-missing"]);
+  });
+});
+
+describe("reviewDraft when editing", () => {
+  // The bank fixture holds cat2#255. Editing it must not report it as a
+  // duplicate of itself, and its id being in `order` is what makes it an edit.
+  const editing = (overrides: Partial<Draft> = {}) =>
+    reviewDraft(
+      draft({
+        category: "2",
+        id: 255,
+        question: "O Regulamento das Radiocomunicações é uma publicação",
+        answers: [
+          { text: "da IARU" },
+          { text: "da CEPT" },
+          { text: "da UIT", correct: true },
+          { text: "da NATO" },
+        ],
+        topic: "regulamentacao",
+        ...overrides,
+      }),
+      context({ category: "2", order: [255], editing: 255 })
+    );
+
+  it("does not report the question as a duplicate of itself", () => {
+    expect(codes(editing().findings)).not.toContain("duplicate-exact");
+    expect(editing().duplicates).toEqual([]);
+  });
+
+  it("does not report the id as taken", () => {
+    expect(codes(editing().findings)).not.toContain("id-taken");
+  });
+
+  it("still reports a real problem in the edited question", () => {
+    const review = editing({ topic: "matéria-inventada" });
+    expect(codes(review.findings)).toContain("topic-unknown");
+  });
+
+  it("still reports the id as taken when an edit changes it onto another", () => {
+    const review = reviewDraft(
+      draft({ category: "2", id: 255 }),
+      context({ category: "2", order: [255, 300], editing: 300 })
+    );
+    expect(codes(review.findings)).toContain("id-taken");
+  });
+});
+
+describe("diffQuestions", () => {
+  const base = {
+    id: 1,
+    question: "Enunciado",
+    answers: [
+      { text: "a", correct: true },
+      { text: "b", correct: false },
+    ],
+    topic: "regulamentacao",
+    disabled: null,
+    sources: [],
+    image: null,
+    tutorial: null,
+    calc: null,
+    explanation: null,
+  };
+
+  it("reports nothing when nothing changed", () => {
+    expect(diffQuestions(base, { ...base })).toEqual([]);
+  });
+
+  it("names the option that changed, not all of them", () => {
+    const changes = diffQuestions(base, {
+      ...base,
+      answers: [
+        { text: "a", correct: true },
+        { text: "B corrigido", correct: false },
+      ],
+    });
+    expect(changes).toHaveLength(1);
+    expect(changes[0]).toMatchObject({ label: "opção 2", before: "b", after: "B corrigido" });
+  });
+
+  it("marks a changed correct answer as critical", () => {
+    const changes = diffQuestions(base, {
+      ...base,
+      answers: [
+        { text: "a", correct: false },
+        { text: "b", correct: true },
+      ],
+    });
+    const correct = changes.find((c) => c.label === "resposta certa");
+    expect(correct?.critical).toBe(true);
+    expect(correct?.before).toBe("opção 1 — a");
+    expect(correct?.after).toBe("opção 2 — b");
+  });
+
+  it("marks withholding as critical", () => {
+    const [change] = diffQuestions(base, { ...base, disabled: "retirada" });
+    expect(change).toMatchObject({ label: "desativada", after: "retirada", critical: true });
+  });
+
+  it("summarises an explanation rather than printing it", () => {
+    const [change] = diffQuestions(base, { ...base, explanation: "doze caracte" });
+    expect(change).toMatchObject({ label: "explicação", before: "—", after: "12 caracteres" });
+  });
+
+  it("says so when a rewrite keeps the same length", () => {
+    // "412 caracteres → 412 caracteres" would look like nothing happened.
+    const [change] = diffQuestions(
+      { ...base, explanation: "aaaa" },
+      { ...base, explanation: "bbbb" }
+    );
+    expect(change?.after).toBe("4 caracteres (texto alterado)");
+  });
+});
+
+describe("isWithheldReason", () => {
+  it("rejects a blank reason, which the schema would read as published", () => {
+    expect(isWithheldReason("")).toBe(false);
+    expect(isWithheldReason("   ")).toBe(false);
+    expect(isWithheldReason("retirada pela ANACOM")).toBe(true);
   });
 });

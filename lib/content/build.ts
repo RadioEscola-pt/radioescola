@@ -19,7 +19,7 @@
 import { existsSync, readFileSync, readdirSync } from "fs";
 import { join } from "path";
 import * as z from "zod";
-import { CategorySchema, type ContentCategory, type ContentQuestion } from "./schema";
+import { CategorySchema, isWithheld, type ContentCategory, type ContentQuestion } from "./schema";
 import { parseQuestionFile, questionFileName, idFromFileName } from "./source";
 
 export const CategoryManifestSchema = z.object({
@@ -78,6 +78,8 @@ export type CategoryArtifacts = {
   appJson: string;
   /** Contents of `content/notes/cat{n}/{id}.mdx`, keyed by question id. */
   notes: Map<number, string>;
+  /** Ids withheld from the artifacts by `disabled`, in `order`. */
+  withheld: number[];
 };
 
 /**
@@ -133,14 +135,30 @@ function toAppQuestion(
   return out;
 }
 
-/** Compiles a validated category into the files the app ships. */
+/**
+ * Compiles a validated category into the files the app ships.
+ *
+ * This is the **only** place `disabled` is applied. Withholding a question by
+ * omitting it from the artifact — rather than shipping it with a flag for the
+ * client to filter on — is deliberate: every consumer reads
+ * `category.questions` directly and `lib/data.ts` does no transformation, so a
+ * flag would need the same filter repeated across browse, exam, drill, flash,
+ * smart-practice and the dashboard counts, and the first one to forget it
+ * would show a question that was deliberately withdrawn.
+ *
+ * The note is dropped with the question: there is no point serving an
+ * explanation for something nothing can link to.
+ */
 export function emitCategory(
   category: ContentCategory,
   examsDir = join("public", "exams")
 ): CategoryArtifacts {
   const pdfExists = (pdf: string) => existsSync(join(examsDir, `${pdf}.pdf`));
+  const live = category.questions.filter((q) => !isWithheld(q));
+  const withheld = category.questions.filter(isWithheld).map((q) => q.id);
+
   const notes = new Map<number, string>();
-  for (const q of category.questions) {
+  for (const q of live) {
     if (q.explanation !== null) {
       notes.set(q.id, `${q.explanation}\n`);
     }
@@ -149,12 +167,13 @@ export function emitCategory(
   const app = {
     category: category.id,
     anacomFile: category.anacomFile,
-    questions: category.questions.map((q) => toAppQuestion(q, category.id, pdfExists)),
+    questions: live.map((q) => toAppQuestion(q, category.id, pdfExists)),
   };
 
   return {
     appJson: `${JSON.stringify(app, null, 2)}\n`,
     notes,
+    withheld,
   };
 }
 

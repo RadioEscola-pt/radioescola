@@ -2,6 +2,7 @@
   "name": "hamradiostudy",
   "version": "0.1.0",
   "private": true,
+  "license": "AGPL-3.0-only",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=--max-old-space-size=8192 next dev",
     "tunnel": "bash scripts/tunnel.sh",
@@ -19,6 +20,7 @@
     "content:build": "bun run scripts/content-build.ts",
     "content:check": "bun run scripts/content-build.ts --check",
     "content:new": "bun run scripts/content-new.ts",
+    "content:edit": "bun run scripts/content-edit.ts",
     "qbank": "bun run scripts/qbank.ts",
     "banco": "bun run scripts/banco.ts"
   },

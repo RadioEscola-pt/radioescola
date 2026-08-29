@@ -15,6 +15,7 @@ bun run type-check   # tsc --noEmit
 bun run content:build # Compile content/questions/** into shipped artifacts
 bun run content:check # Verify artifacts match their source (writes nothing)
 bun run content:new  # Add a question: review, then write all four files
+bun run content:edit # Change a question already in the bank
 bun run qbank <cmd>  # Inspect the question bank (search, dupes, coverage, …)
 bun run banco        # Portuguese menu over content:new and qbank
 ```
@@ -118,8 +119,55 @@ the same split as `qbank`.
   numeric. Interactively it shows the same-topic neighbourhood and asks;
   otherwise `--after`/`--before`/`--end`. It never appends silently
 
+**Withdrawing a question**: set `disabled: <reason>` in its frontmatter and
+rebuild. `emitCategory` is the only place the flag is applied — the question is
+dropped from `public/data/cat{n}.json` and its generated note is deleted, so it
+vanishes from the whole site with no consumer-side filtering. It stays in its
+source file, in `category.json`'s `order` (so the id is never reissued and the
+editorial position survives), and in everything `qbank` and `content:new`
+compare against, so it goes on blocking an accidental re-add.
+
+- **The reason is a string, never `true`.** `disabled: true` was tried once and
+  did nothing at all: the schema was non-strict, so Zod discarded the unknown
+  key and the build shipped the question anyway. `QuestionSchema` is now
+  `.strict()` — any unknown or mistyped frontmatter key fails the build — and
+  `disabled` takes prose so the flag cannot parse and mean nothing
+- **Use `isWithheld()` from `lib/content/schema.ts`**, not `disabled === null`.
+  Hand-built questions (test fixtures, `legacy.ts`) omit the field, and
+  `undefined === null` is false, which reads as withheld-with-no-reason
+- **Never withhold by moving the file** into a subdirectory. `loadCategory`
+  reads the directory non-recursively so it does work, but it hides the
+  question from `qbank` and from the duplicate review, and forces the id out of
+  `order` where it can be reissued
+- **`content:build` sweeps orphaned notes.** `/api/notes` reads
+  `content/notes/` straight from disk without consulting the bank, so a note
+  left behind by a withdrawn question would still be served
+
+`bun run content:edit` is the same review applied to a question that already
+exists — `content:new` had no counterpart, so an edit meant opening the MDX by
+hand with no duplicate check and no validation until the next build. It takes a
+ref (`cat3#86`), `--editor` for the whole file, `--from` for a prepared one, or
+a queue selector (`--sem-explicacao`, `--sem-fonte`, `--desativadas`) to work
+through a gap. `--disable <motivo>` / `--enable` are the scripted form of
+withholding.
+
+- **It never touches `order`.** Moving a question is an editorial decision
+  about the browse sequence, not a change to the question; `qbank order` is
+  where you find the slot, and `category.json` is where you write it
+- **`reviewDraft` takes `editing`**, which inverts two rules: the id is
+  expected to be in `order`, and the question is filtered out of the bank so it
+  is not reported as an exact duplicate of itself. Both are handled inside
+  `reviewDraft`, since a caller that forgets either gets a confident, wrong review
+- **Changing the correct answer, or withholding, is confirmed separately** and
+  shown red by `diffQuestions`. `--yes` still covers it: making it unskippable
+  would break `--disable "motivo" --yes` in a script
+- **`scripts/content-io.ts` is the shared I/O** — loading, image resolution,
+  the field prompts, and the one write path. Two tools writing the same four
+  files need one definition of how
+
 Adding a question by hand is still documented in `docs/novas-questoes.md`
-(pt-PT); the topic taxonomy in `docs/topicos.md` (pt-PT).
+(pt-PT), editing in `docs/editar-conteudo.md` (pt-PT); the topic taxonomy in
+`docs/topicos.md` (pt-PT).
 
 **Linking questions to exam PDFs**: `bun run data:ocr-exams` OCRs the scanned
 papers in `public/exams/` and matches them back to the bank (needs `poppler`

@@ -31,6 +31,7 @@ import {
   MANIFEST_FILE,
 } from "@/lib/content/build";
 import { questionFileName, serializeQuestionFile } from "@/lib/content/source";
+import { isWithheld } from "@/lib/content/schema";
 
 const ROOT = resolve(__dirname, "../../");
 
@@ -91,11 +92,29 @@ describe.each(MIGRATED)("cat%s content build", (categoryId) => {
       const notePath = join(notesDir, `${q.id}.mdx`);
       if (existsSync(notePath)) {
         expect(q.explanation).toBe(readFileSync(notePath, "utf-8").trim());
+      } else if (isWithheld(q)) {
+        // A withheld question keeps its explanation in source — it is not
+        // deleted, only withdrawn — but emits no note, because /api/notes
+        // reads straight from disk and would otherwise still serve it.
+        expect(artifacts.notes.has(q.id)).toBe(false);
       } else {
         // cat1 and cat2 have questions with no explanation at all.
         expect(q.explanation).toBeNull();
       }
     }
+  });
+
+  it("withholds disabled questions from the shipped JSON but not from the bank", () => {
+    const shipped = new Set(
+      (JSON.parse(artifacts.appJson) as { questions: { id: number }[] }).questions.map((q) => q.id)
+    );
+    for (const q of category.questions) {
+      // `order` keeps the id either way: that is what reserves it against
+      // `nextId` and preserves the editorial position for a later return.
+      expect(manifest.order).toContain(q.id);
+      expect(shipped.has(q.id)).toBe(!isWithheld(q));
+    }
+    expect(artifacts.withheld).toEqual(category.questions.filter(isWithheld).map((q) => q.id));
   });
 });
 
@@ -131,6 +150,58 @@ describe("source directory validation", () => {
         serializeManifest({ id: "3", anacomFile: 90, order: [1] })
       );
       expect(() => loadCategory(dir)).toThrow(/file but not in order: 4/);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("withholds a disabled question while keeping it loaded and in order", () => {
+    // The whole mechanism on a two-question category, independent of whatever
+    // the real bank currently has withheld.
+    const dir = makeSourceDir();
+    try {
+      const [first, second] = reference.questions;
+      writeFileSync(
+        join(dir, questionFileName(second!.id)),
+        serializeQuestionFile({ ...second!, disabled: "retirada pela ANACOM" })
+      );
+      writeFileSync(
+        join(dir, MANIFEST_FILE),
+        serializeManifest({ id: "3", anacomFile: 90, order: [first!.id, second!.id] })
+      );
+
+      const category = loadCategory(dir);
+      // Still loaded: qbank and the authoring review must go on seeing it, so
+      // a withdrawn question keeps blocking an accidental re-add.
+      expect(category.questions.map((q) => q.id)).toEqual([first!.id, second!.id]);
+      expect(category.questions[1]!.disabled).toBe("retirada pela ANACOM");
+
+      const { appJson, notes, withheld } = emitCategory(category);
+      expect(withheld).toEqual([second!.id]);
+      const shipped = JSON.parse(appJson) as { questions: { id: number }[] };
+      expect(shipped.questions.map((q) => q.id)).toEqual([first!.id]);
+      expect(notes.has(second!.id)).toBe(false);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("round-trips a withheld question through the file format", () => {
+    // Serialization used to list fields explicitly, so a new field that was
+    // not added here would be silently dropped on the next rewrite.
+    const q = { ...reference.questions[0]!, disabled: "retirada pela ANACOM" };
+    const dir = makeSourceDir();
+    try {
+      writeFileSync(join(dir, questionFileName(q.id)), serializeQuestionFile(q));
+      writeFileSync(
+        join(dir, MANIFEST_FILE),
+        serializeManifest({
+          id: "3",
+          anacomFile: 90,
+          order: [q.id, reference.questions[1]!.id],
+        })
+      );
+      expect(loadCategory(dir).questions[0]).toEqual(q);
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }

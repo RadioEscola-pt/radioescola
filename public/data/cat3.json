@@ -538,10 +538,15 @@
           "pdf": "cat3/2023_09_21",
           "question": 15,
           "page": 4
+        },
+        {
+          "pdf": "cat3/2026_04_06",
+          "question": 14,
+          "page": 4
         }
       ],
       "tutorial": "entidades",
-      "materia": "operacao"
+      "materia": "entidades"
     },
     {
       "id": 34,
@@ -555,7 +560,7 @@
       "correctIndex": 0,
       "hasNotesMdx": true,
       "tutorial": "entidades",
-      "materia": "operacao"
+      "materia": "entidades"
     },
     {
       "id": 35,
@@ -615,6 +620,11 @@
         },
         {
           "pdf": "cat3/2023_09_21",
+          "question": 2,
+          "page": 1
+        },
+        {
+          "pdf": "cat3/2026_04_06",
           "question": 2,
           "page": 1
         }
@@ -708,6 +718,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_04_06",
+          "question": 12,
+          "page": 3
+        }
+      ],
       "tutorial": "abreviaturas-de-operacao",
       "materia": "operacao"
     },
@@ -1129,9 +1146,14 @@
           "pdf": "cat3/2023_09_21",
           "question": 13,
           "page": 4
+        },
+        {
+          "pdf": "cat3/2026_04_06",
+          "question": 13,
+          "page": 4
         }
       ],
-      "tutorial": "definicoes",
+      "tutorial": "antenas",
       "materia": "antenas"
     },
     {
@@ -1389,7 +1411,7 @@
     },
     {
       "id": 86,
-      "question": "Qua a validade das licenças de amador de uso comum?",
+      "question": "Qual a validade das licenças de amador de uso comum?",
       "options": [
         "1 ano",
         "5 anos",
@@ -1418,6 +1440,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_04_06",
+          "question": 5,
+          "page": 2
+        }
+      ],
       "materia": "regulamentacao"
     },
     {
@@ -1444,6 +1473,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_04_06",
+          "question": 4,
+          "page": 1
+        }
+      ],
       "materia": "regulamentacao"
     },
     {
@@ -1689,6 +1725,11 @@
         {
           "pdf": "cat3/2023_08_18",
           "question": 2,
+          "page": 1
+        },
+        {
+          "pdf": "cat3/2026_04_06",
+          "question": 1,
           "page": 1
         }
       ],
@@ -2101,6 +2142,11 @@
           "pdf": "cat3/2023_09_21",
           "question": 3,
           "page": 1
+        },
+        {
+          "pdf": "cat3/2026_04_06",
+          "question": 3,
+          "page": 1
         }
       ],
       "materia": "emissores"
@@ -2142,6 +2188,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_04_06",
+          "question": 10,
+          "page": 3
+        }
+      ],
       "materia": "regulamentacao"
     },
     {
@@ -2410,6 +2463,25 @@
       "materia": "regulamentacao"
     },
     {
+      "id": 214,
+      "question": "O Indicativo de Chamada (IC) de uma estação fixa principal de um amador da categoria 2 no Continente (área geográfica POR) tem o prefixo",
+      "options": [
+        "CT7",
+        "CS7",
+        "CR7",
+        "CR9"
+      ],
+      "correctIndex": 1,
+      "sources": [
+        {
+          "pdf": "cat3/2026_04_06",
+          "question": 6,
+          "page": 2
+        }
+      ],
+      "materia": "regulamentacao"
+    },
+    {
       "id": 153,
       "question": "O Indicativo de Chamada (IC) de uma estação fixa principal de um amador de categoria 1 no Continente (região POR) tem o prefixo",
       "options": [
@@ -2421,6 +2493,25 @@
       "correctIndex": 0,
       "hasNotesMdx": true,
       "tutorial": "prefixos-ic",
+      "materia": "regulamentacao"
+    },
+    {
+      "id": 215,
+      "question": "O funcionamento das estações de uso comum necessita de licença?",
+      "options": [
+        "Sim, necessita",
+        "Sim, ncesssita, mas apenas no caso de serem operadas por amadores da categoria 3",
+        "Não necessita, excepto quando estas estações são fixas",
+        "Não necessita"
+      ],
+      "correctIndex": 0,
+      "sources": [
+        {
+          "pdf": "cat3/2026_04_06",
+          "question": 9,
+          "page": 3
+        }
+      ],
       "materia": "regulamentacao"
     },
     {
@@ -2490,6 +2581,11 @@
           "pdf": "cat3/2023_09_21",
           "question": 9,
           "page": 3
+        },
+        {
+          "pdf": "cat3/2026_04_06",
+          "question": 8,
+          "page": 2
         }
       ],
       "materia": "regulamentacao"
@@ -2529,19 +2625,6 @@
         "apenas maiores de 18 anos"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true,
-      "materia": "regulamentacao"
-    },
-    {
-      "id": 161,
-      "question": "Para além do reconhecimento de títulos habilitantes válidos emitidos por outras Administrações, como é feito o acesso à categoria 2?",
-      "options": [
-        "Mediante exame ao qual podem candidatar-se amadores maiores de 18 anos, que tenham o tempo mínimo de permanência na categoria 3",
-        "Mediante exame ao qual podem candidatar-se amadores maiores de 16 anos, que tenham o tempo mínimo de permanência na categoria 3 e com certificado do 9º ano emitido por um estabelecimento de ensino reconhecido",
-        "Mediante exame ao qual podem candidatar-se amadores maiores de 12 anos da categoria 3 ou da categoria C",
-        "Mediante exame ao qual podem candidatar-se amadores maiores de 16 anos, que tenham o tempo mínimo de permanência na categoria 3 ou os amadores da categoria C"
-      ],
-      "correctIndex": 3,
       "hasNotesMdx": true,
       "materia": "regulamentacao"
     },
