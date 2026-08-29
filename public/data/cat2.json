@@ -469,6 +469,7 @@
         "a sensibildade do receptor"
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/0000_00_01",
@@ -4022,6 +4023,7 @@
         "Aproximadamente 5 vezes"
       ],
       "correctIndex": 2,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/0000_00_03",
@@ -5349,6 +5351,7 @@
         "A potência aparente radiada não pode ser medida de forma direta por nenhum equipamento"
       ],
       "correctIndex": 3,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2022_06_27",
@@ -5375,6 +5378,7 @@
         "Permite a determinação da presença de ondas com 'flat-topping'em momentos de pico de modulação"
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2018_03_08",
@@ -5439,6 +5443,7 @@
         "Todas as opções anteriores estão corretas"
       ],
       "correctIndex": 3,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2017_09_27",
@@ -5461,6 +5466,7 @@
         "um frequêncímetro"
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2023_06_15",
@@ -5479,6 +5485,7 @@
         "Reflectómetro"
       ],
       "correctIndex": 2,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2018_05_00",
@@ -5497,6 +5504,7 @@
         "Em série-paralelo"
       ],
       "correctIndex": 2,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/0000_00_03",
@@ -5519,6 +5527,7 @@
         "Em série-paralelo"
       ],
       "correctIndex": 0,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2012_04_10",
@@ -5545,6 +5554,7 @@
         "Porque apresenta um baixo efeito de carga no circuito a medir"
       ],
       "correctIndex": 3,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2016_01_00",
@@ -5575,6 +5585,7 @@
         "Propagação de ondas de rádio"
       ],
       "correctIndex": 0,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2023_08_29",
@@ -5597,6 +5608,7 @@
         "Um wattímetro de potência de pico"
       ],
       "correctIndex": 3,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2022_12_27",
@@ -6411,6 +6423,7 @@
         "Não existem"
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2011_11_00",
@@ -6588,6 +6601,7 @@
         "Tem uma resposta mais rápida"
       ],
       "correctIndex": 2,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2011_11_00",
@@ -6622,6 +6636,7 @@
         "Uma ponte de Wheatstone"
       ],
       "correctIndex": 0,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2018_06_19",
@@ -7062,6 +7077,7 @@
         "Numa ponte de díodos"
       ],
       "correctIndex": 0,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2018_05_00",
@@ -7994,6 +8010,7 @@
         "Baixa impedância de entrada"
       ],
       "correctIndex": 2,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2021_09_06",
@@ -8584,6 +8601,7 @@
         "simula as características de carga da antena sem radiar sinais"
       ],
       "correctIndex": 3,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2017_09_27",
@@ -9127,6 +9145,7 @@
         "Para evitar que sejamos interferidos"
       ],
       "correctIndex": 2,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/0000_00_03",
@@ -9340,6 +9359,7 @@
         "Campo electromagnético recebido na antena da nossa estação"
       ],
       "correctIndex": 0,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2013_08_00",
