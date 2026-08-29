@@ -1,28 +1,28 @@
-# Radio Escola v2
+# Rádio Escola v2
 
-A study platform for Portuguese ham radio licensing exams at [radioescola.pt](https://radioescola.pt). Covers all three license categories (3, 2, and 1) with question browsing, exam simulation, spaced repetition, and progress tracking.
+Plataforma de estudo para os exames de radioamador em Portugal, em [radioescola.pt](https://radioescola.pt). Cobre as três categorias de licença (3, 2 e 1), com consulta de questões, simulação de exame, repetição espaçada e acompanhamento do progresso.
 
-Built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4.
+Feita com Next.js 16, React 19, TypeScript e Tailwind CSS v4.
 
-## Features
+## Funcionalidades
 
-- **Question Browser** - Browse and filter the full question bank by category
-- **Exam Simulation** - Timed 40-question exams with realistic scoring (including -0.25 penalty for wrong answers)
-- **Smart Practice** - Spaced repetition that focuses on your weak areas
-- **Flash Cards** - Quick review mode for memorization
-- **Quick Drill** - 10-question drills for fast practice sessions
-- **Progress Dashboard** - Track your study progress with gamification
-- **Study Notes** - MDX-based notes linked to individual questions
-- **Calculators** - Built-in RF and electronics calculators
-- **PWA** - Installable as a mobile/desktop app, works offline
-- **Bilingual** - Portuguese (default) and English via next-intl
+- **Explorar questões** — percorre e filtra todo o banco de questões por categoria
+- **Simulação de exame** — exames cronometrados de 40 questões com pontuação realista (incluindo a penalização de -0,25 por resposta errada)
+- **Prática Inteligente** — repetição espaçada que insiste nos teus pontos fracos
+- **Flashcards** — modo de revisão rápida para memorizar
+- **Treino Rápido** — sessões de 10 questões para praticar num instante
+- **Progresso** — acompanha o teu estudo, com gamificação
+- **Materiais de estudo** — notas em MDX ligadas a cada questão
+- **Calculadoras** — calculadoras de RF e electrónica integradas
+- **PWA** — instalável como aplicação em telemóvel ou computador, funciona offline
+- **Bilingue** — português (por omissão) e inglês, através do next-intl
 
-## Quickstart
+## Começar
 
-### Prerequisites
-- [Bun](https://bun.sh/) (package manager and runtime)
+### Requisitos
+- [Bun](https://bun.sh/) (gestor de pacotes e runtime)
 
-### Setup
+### Instalação
 
 ```bash
 git clone https://github.com/RadioEscola-pt/radioescola.git
@@ -31,29 +31,30 @@ bun install
 bun run dev
 ```
 
-Open http://localhost:3000
+Abre http://localhost:3000
 
-### Commands
+### Comandos
 
 ```bash
-bun run dev           # Start dev server
-bun run build         # Production build
-bun run start         # Start production server
+bun run dev           # Arranca o servidor de desenvolvimento
+bun run build         # Compila para produção
+bun run start         # Arranca o servidor de produção
 bun run lint          # ESLint
-bun run test          # Run tests (Vitest)
-bun run test:watch    # Tests in watch mode
-bun run type-check    # TypeScript type checking
-./deploy.sh           # Deploy (pull, install, build, PM2 restart)
+bun run test          # Corre os testes (Vitest)
+bun run test:watch    # Testes em modo watch
+bun run type-check    # Verificação de tipos do TypeScript
 ```
 
-## Architecture
+Cada commit no `main` vai para o ar automaticamente, através do GitHub Actions. Uma tag corta uma versão com nome. O guia completo está em [`docs/deployment.md`](docs/deployment.md).
 
-- **Routing**: Next.js App Router with dynamic `[category]` segments
-- **Data**: Static JSON question banks in `public/data/`
-- **Storage**: All user progress in localStorage (no backend database)
-- **i18n**: next-intl v4 with messages in `messages/{en,pt}.json`
-- **Testing**: Vitest + React Testing Library
+## Arquitectura
 
-## License
+- **Rotas**: App Router do Next.js, com segmentos dinâmicos `[category]`
+- **Dados**: bancos de questões em JSON estático, em `public/data/`
+- **Armazenamento**: todo o progresso do utilizador fica em localStorage (sem base de dados no servidor)
+- **i18n**: next-intl v4, com as mensagens em `messages/{en,pt}.json`
+- **Testes**: Vitest + React Testing Library
 
-All rights reserved.
+## Licença
+
+Todos os direitos reservados.
