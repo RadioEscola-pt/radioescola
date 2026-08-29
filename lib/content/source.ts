@@ -58,6 +58,9 @@ export function parseQuestionFile(raw: string, filename: string): ContentQuestio
 export function serializeQuestionFile(q: ContentQuestion): string {
   const frontmatter: Record<string, unknown> = {
     id: q.id,
+    // Second, right under the id: a withheld question should announce itself
+    // in the first two lines rather than hide behind the options.
+    ...(q.disabled === null ? {} : { disabled: q.disabled }),
     question: q.question,
     answers: q.answers.map((a) =>
       // `correct` is omitted on wrong answers: with exactly one correct answer

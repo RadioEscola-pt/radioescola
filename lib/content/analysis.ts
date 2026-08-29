@@ -24,6 +24,7 @@
  */
 import { fold } from "../utils/search";
 import { questionFileName } from "./source";
+import { isWithheld } from "./schema";
 import type { ContentCategory, ContentQuestion } from "./schema";
 import type { CategoryId } from "../config/categories";
 import { ABOVE_ENTRY_LEVEL, isTopicSlug } from "../config/topics";
@@ -540,6 +541,8 @@ export function findPairFindings(
 export type CoverageRow = {
   label: string;
   total: number;
+  /** Of `total`, how many are withheld from the build by `disabled`. */
+  withheld: number;
   withSources: number;
   sourceRefs: number;
   refsWithPage: number;
@@ -553,6 +556,7 @@ function coverageRow(label: string, questions: readonly BankQuestion[]): Coverag
   return {
     label,
     total: questions.length,
+    withheld: questions.filter(isWithheld).length,
     withSources: questions.filter((q) => q.sources.length > 0).length,
     sourceRefs: refs.length,
     refsWithPage: refs.filter((s) => s.page !== null).length,
