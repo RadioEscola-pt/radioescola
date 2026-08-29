@@ -81,6 +81,7 @@ duplicate question is often entirely legitimate.
 | `dupes` | Which questions duplicate each other, and do they agree? |
 | `pairs` | Which questions are *nearly* the same, and which are traps? |
 | `coverage` | What is missing — sources, pages, explanations, images? |
+| `order` | Where does a question sit in the browse sequence — and where would a new one go? |
 | `topics` | How is the taxonomy distributed, and what is misfiled? |
 | `paper [pdf]` | What cites this exam paper, and what is unclaimed? |
 | `answers` | Is the bank guessable? Are any options malformed? |
@@ -183,11 +184,11 @@ Jaccard over tokens.
 ## coverage
 
 ```
-      total  com fonte  refs  com página  explicadas  imagens  matéria
-cat3  209    60 29%   75    75 100%    209 100%   15      209 100%
-cat2  418    317 76%  893   0 0%       158 38%    8       418 100%
-cat1  389    194 50%  285   98 34%     389 100%   15      389 100%
-all   1016   571 56%  1253  173 14%    756 74%    38      1016 100%
+      total  desativadas  com fonte  refs  com página  explicadas  imagens  matéria
+cat3  211    1            66 31%     87    87 100%     209 99%     15       211 100%
+cat2  418    —            317 76%    893   0 0%        158 38%     8        418 100%
+cat1  389    —            194 50%    285   98 34%      389 100%    15       389 100%
+all   1018   1            577 57%    1265  185 15%     756 74%     38       1018 100%
 ```
 
 Reads as: 445 questions cite no exam paper at all, 1,080 of the 1,253 source
@@ -198,6 +199,38 @@ It also lists images on disk that no question references. Category covers are
 excluded, since those are referenced from `lib/config/categories.ts` rather than
 from a question. The reverse check — references with no file — belongs to
 `content:check` and is not repeated here.
+
+The `desativadas` column counts questions withheld by `disabled`: still in the
+bank and still compared against, but not shipped. They are included in `total`,
+which is why it can exceed what the site serves.
+
+## order
+
+Answers the one question `content:new` refuses to answer on its own: where in
+the browse sequence does a new question belong? The order is editorial rather
+than numeric, so the slot is defined by neighbours, not by id.
+
+```
+$ qbank order --cat 3 --topic regulamentacao
+Regulamentação · 61 pergunta(s)
+  as posições são salteadas — o order é editorial, não agrupado
+
+    1/211  #1  O Regulamento das Radiocomunicações é uma publicação
+    3/211  #5  Qual das seguintes não constitui uma obrigação dos utilizadores de…
+    7/211  #9  Quais as sub-faixas que em VHF são permitidas para a operação de…
+```
+
+The gaps are the point: a subject is spread through the sequence, and a new
+question goes between two of these. `--around cat3#161` shows a window either
+side of one position instead (`--radius N`, default 5), which is what you want
+when inserting beside a specific question rather than into a subject.
+
+Withheld questions appear, marked `desativada` — they still hold their place in
+`order`, which is what reserves the id and keeps the slot for a return.
+
+Positions come from `orderEntries` in `lib/content/analysis.ts`, the same
+function `content:new` uses to show its neighbourhood, so the two cannot
+disagree about what position a question is in.
 
 ## topics
 
@@ -420,6 +453,7 @@ passa — uma pergunta duplicada é muitas vezes perfeitamente legítima.
 | `dupes` | Que perguntas se duplicam, e concordam entre si? |
 | `pairs` | Que perguntas são *quase* iguais, e quais são armadilhas? |
 | `coverage` | O que falta — fontes, páginas, explicações, imagens? |
+| `order` | Onde está uma pergunta na sequência de navegação — e onde entraria uma nova? |
 | `topics` | Como está distribuída a taxonomia, e o que está mal classificado? |
 | `paper [pdf]` | O que cita esta prova, e o que ficou por atribuir? |
 | `answers` | O banco é adivinhável? Há opções malformadas? |
@@ -527,11 +561,11 @@ Jaccard sobre tokens.
 ## coverage
 
 ```
-      total  com fonte  refs  com página  explicadas  imagens  matéria
-cat3  209    60 29%   75    75 100%    209 100%   15      209 100%
-cat2  418    317 76%  893   0 0%       158 38%    8       418 100%
-cat1  389    194 50%  285   98 34%     389 100%   15      389 100%
-all   1016   571 56%  1253  173 14%    756 74%    38      1016 100%
+      total  desativadas  com fonte  refs  com página  explicadas  imagens  matéria
+cat3  211    1            66 31%     87    87 100%     209 99%     15       211 100%
+cat2  418    —            317 76%    893   0 0%        158 38%     8        418 100%
+cat1  389    —            194 50%    285   98 34%      389 100%    15       389 100%
+all   1018   1            577 57%    1265  185 15%     756 74%     38       1018 100%
 ```
 
 Lê-se: 445 perguntas não citam nenhuma prova, 1080 das 1253 referências de fonte
@@ -542,6 +576,41 @@ Também lista imagens em disco que nenhuma pergunta referencia. As capas de
 categoria ficam de fora, por serem referenciadas a partir de
 `lib/config/categories.ts` e não de uma pergunta. A verificação inversa —
 referências sem ficheiro — pertence ao `content:check` e não é repetida aqui.
+
+A coluna `desativadas` conta as perguntas retidas pelo `disabled`: continuam no
+banco e continuam a ser comparadas, mas não são publicadas. Entram no `total`,
+que por isso pode ser maior do que o que o site serve.
+
+## order
+
+Responde à única pergunta que o `content:new` se recusa a responder sozinho:
+onde é que uma pergunta nova entra na sequência de navegação? A ordem é
+editorial, não numérica, por isso o lugar define-se pelos vizinhos e não pelo
+`id`.
+
+```
+$ qbank order --cat 3 --topic regulamentacao
+Regulamentação · 61 pergunta(s)
+  as posições são salteadas — o order é editorial, não agrupado
+
+    1/211  #1  O Regulamento das Radiocomunicações é uma publicação
+    3/211  #5  Qual das seguintes não constitui uma obrigação dos utilizadores de…
+    7/211  #9  Quais as sub-faixas que em VHF são permitidas para a operação de…
+```
+
+As posições saltadas são o ponto: uma matéria está espalhada pela sequência, e
+a pergunta nova entra entre duas destas. O `--around cat3#161` mostra antes uma
+janela de cada lado de uma posição (`--radius N`, por omissão 5), que é o que
+se quer quando se insere ao lado de uma pergunta concreta em vez de dentro de
+uma matéria.
+
+As perguntas desativadas aparecem, marcadas `desativada` — continuam a ocupar o
+seu lugar no `order`, que é o que reserva o `id` e guarda a posição para um
+regresso.
+
+As posições vêm do `orderEntries` em `lib/content/analysis.ts`, a mesma função
+que o `content:new` usa para mostrar a vizinhança, por isso as duas não podem
+discordar sobre a posição de uma pergunta.
 
 ## topics
 

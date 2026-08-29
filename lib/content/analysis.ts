@@ -227,6 +227,58 @@ function groupBy<T>(items: readonly T[], key: (item: T) => string): Map<string, 
 }
 
 /* -------------------------------------------------------------------------- */
+/* The browse sequence                                                         */
+/* -------------------------------------------------------------------------- */
+
+export type OrderEntry = {
+  question: BankQuestion;
+  /** 1-based position in its category's `order`. */
+  position: number;
+  /** How many questions that category's `order` holds. */
+  total: number;
+};
+
+/**
+ * Pairs every question with its position in the browse sequence.
+ *
+ * `order` is editorial, not numeric — cat3's 210-213 sit at positions 8, 10,
+ * 19 and 31, grouped by subject — so "where does a new question go?" is a
+ * question about neighbours, not about ids, and it cannot be answered without
+ * seeing the positions. `content:new` computed this inline to show the
+ * neighbourhood it asks about; `qbank order` needs the same numbers, and two
+ * copies of "position" would be two chances to disagree about it.
+ *
+ * Takes the bank as `load()` builds it: whole categories, each already in
+ * `order`. Positions are counted per category, so a `--cat` filter is fine but
+ * an arbitrary subset would number the survivors rather than locate them.
+ */
+export function orderEntries(bank: readonly BankQuestion[]): OrderEntry[] {
+  const totals = new Map<CategoryId, number>();
+  for (const q of bank) totals.set(q.category, (totals.get(q.category) ?? 0) + 1);
+
+  const seen = new Map<CategoryId, number>();
+  return bank.map((question) => {
+    const position = (seen.get(question.category) ?? 0) + 1;
+    seen.set(question.category, position);
+    return { question, position, total: totals.get(question.category) ?? 0 };
+  });
+}
+
+/**
+ * A window of `radius` entries either side of one position.
+ *
+ * What you want when inserting beside a specific question rather than into a
+ * subject: the slot is defined by what sits on both sides of it.
+ */
+export function entriesAround(
+  entries: readonly OrderEntry[],
+  position: number,
+  radius: number
+): OrderEntry[] {
+  return entries.filter((e) => Math.abs(e.position - position) <= radius);
+}
+
+/* -------------------------------------------------------------------------- */
 /* Duplicate groups                                                            */
 /* -------------------------------------------------------------------------- */
 

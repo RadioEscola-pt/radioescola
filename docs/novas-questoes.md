@@ -143,13 +143,16 @@ As categorias são `3` (iniciado), `2` e `1` (avançado) — a progressão
 portuguesa de licenciamento, por isso a ordem habitual é 3 → 2 → 1.
 
 O `id` é único **dentro da categoria**, não em todo o banco. A regra é usar o
-**máximo atual mais um**:
+**máximo atual mais um**. Não vale a pena decorar os números — mudam sempre que
+alguém acrescenta uma pergunta, e a tabela que aqui estava ficou
+desatualizada da primeira vez que isso aconteceu:
 
-| Categoria | Perguntas | `id` mais alto | Próximo `id` |
-| --- | --- | --- | --- |
-| cat3 | 209 | 213 | 214 |
-| cat2 | 418 | 422 | 423 |
-| cat1 | 389 | 390 | 391 |
+```bash
+for c in 3 2 1; do python3 -c "
+import json
+o = json.load(open('content/questions/cat$c/category.json'))['order']
+print(f'cat$c: {len(o)} perguntas, id máx {max(o)}, próximo {max(o) + 1}')"; done
+```
 
 Há lacunas na numeração — `id` 352 em cat1, por exemplo, está livre. **Não se
 reaproveitam.** A razão está no commit que adicionou a última pergunta:
@@ -159,12 +162,6 @@ reaproveitam.** A razão está no commit que adicionou a última pergunta:
 
 Uma ligação antiga para `cat1#352` passaria a mostrar uma pergunta diferente,
 sem erro nenhum.
-
-Para confirmar o máximo atual antes de escolher:
-
-```bash
-python3 -c "import json;print(max(json.load(open('content/questions/cat3/category.json'))['order']))"
-```
 
 ## 2. Criar o ficheiro da pergunta
 
@@ -317,6 +314,16 @@ O manifesto tem três campos: `id`, `anacomFile` e `order`. Só o `order` muda.
 posições 8, 10, 19 e 31, agrupadas por assunto, e é esta sequência que o
 utilizador vê ao navegar. O `id` novo entra onde a pergunta faz sentido
 tematicamente, não no fim.
+
+Para ver onde a matéria já vive, e escolher entre que duas perguntas inserir:
+
+```bash
+bun run qbank order --cat 3 --topic regulamentacao   # onde está a matéria
+bun run qbank order --around cat3#161                # os vizinhos de uma posição
+```
+
+As posições saem salteadas, e é esse o ponto: uma matéria está espalhada pela
+sequência, e o lugar da pergunta nova é entre duas destas.
 
 É por isso que o `order` vive num manifesto: inserir uma pergunta é uma
 alteração de uma linha, em vez de renumerar todos os ficheiros seguintes.

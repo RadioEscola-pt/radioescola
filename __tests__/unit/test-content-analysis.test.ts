@@ -12,6 +12,8 @@ import {
   auditPapers,
   auditTopics,
   parseRef,
+  orderEntries,
+  entriesAround,
   type DuplicateTier,
 } from "@/lib/content/analysis";
 import type { ContentCategory, ContentQuestion } from "@/lib/content/schema";
@@ -29,6 +31,7 @@ function q(
     question,
     answers: options.map((text, i) => ({ text, correct: i === correctIndex })),
     topic: null,
+    disabled: null,
     sources: [],
     image: null,
     tutorial: null,
@@ -293,5 +296,46 @@ describe("Unit: parseRef", () => {
     expect(parseRef("cat1/284")).toEqual({ category: "1", id: 284 });
     expect(parseRef("nonsense")).toBeNull();
     expect(parseRef("cat4#1")).toBeNull();
+  });
+});
+
+describe("Unit: browse sequence positions", () => {
+  // `order` is editorial: ids are deliberately out of sequence, and the
+  // position is what a question's placement actually means.
+  const bank = buildBank([
+    category("3", [q(50, "a", ["x", "y"]), q(7, "b", ["x", "y"]), q(31, "c", ["x", "y"])]),
+    category("2", [q(9, "d", ["x", "y"]), q(4, "e", ["x", "y"])]),
+  ]);
+
+  it("numbers each question by its place in its own category", () => {
+    expect(orderEntries(bank).map((e) => [e.question.ref, e.position, e.total])).toEqual([
+      ["cat3#50", 1, 3],
+      ["cat3#7", 2, 3],
+      ["cat3#31", 3, 3],
+      ["cat2#9", 1, 2],
+      ["cat2#4", 2, 2],
+    ]);
+  });
+
+  it("counts a withheld question as occupying its position", () => {
+    // It stays in `order`, which is what reserves the id and holds the slot.
+    const withHeld = buildBank([
+      category("3", [
+        q(1, "a", ["x", "y"]),
+        q(2, "b", ["x", "y"], 0, { disabled: "retirada" }),
+        q(3, "c", ["x", "y"]),
+      ]),
+    ]);
+    const entries = orderEntries(withHeld);
+    expect(entries.map((e) => e.position)).toEqual([1, 2, 3]);
+    expect(entries[2]!.question.id).toBe(3);
+  });
+
+  it("windows entries around a position, clamped at the ends", () => {
+    const entries = orderEntries(bank).filter((e) => e.question.category === "3");
+    expect(entriesAround(entries, 2, 1).map((e) => e.position)).toEqual([1, 2, 3]);
+    // A window at the start cannot reach below position 1.
+    expect(entriesAround(entries, 1, 1).map((e) => e.position)).toEqual([1, 2]);
+    expect(entriesAround(entries, 2, 0).map((e) => e.position)).toEqual([2]);
   });
 });

@@ -31,6 +31,8 @@ import {
   findDuplicateGroups,
   findPairFindings,
   coverage,
+  orderEntries,
+  entriesAround,
   auditTopics,
   auditPapers,
   auditAnswers,
@@ -613,6 +615,91 @@ function cmdCoverage(): void {
   flush();
 }
 
+/**
+ * Where questions sit in the browse sequence, and therefore where a new one
+ * would go. The one decision `content:new` refuses to take on its own, and
+ * until now the only way to see it was to run `content:new` interactively.
+ */
+function cmdOrder(): void {
+  const bank = load();
+  const entries = orderEntries(bank);
+
+  const topic = flag("topic");
+  const around = flag("around");
+
+  let shown = entries;
+  let heading: string;
+
+  if (around !== undefined) {
+    const parsed = parseRef(around) ?? parseRef(`cat3#${around}`);
+    const anchor = parsed
+      ? entries.find((e) => e.question.category === parsed.category && e.question.id === parsed.id)
+      : undefined;
+    if (!anchor) {
+      say(red(`não existe a pergunta ${around}`));
+      return flush([]);
+    }
+    const radius = num("radius", 5);
+    shown = entriesAround(entries, anchor.position, radius).filter(
+      (e) => e.question.category === anchor.question.category
+    );
+    heading =
+      `cat${anchor.question.category} · à volta de ${bold(anchor.question.ref)} ` +
+      `(posição ${anchor.position} de ${anchor.total})`;
+  } else if (topic !== undefined) {
+    const slug = topic.trim();
+    shown = entries.filter((e) => e.question.topic === slug);
+    if (shown.length === 0) {
+      say(red(`nenhuma pergunta com a matéria "${slug}"`));
+      say(dim("  as matérias válidas estão em docs/topicos.md e em `qbank topics`"));
+      return flush([]);
+    }
+    heading = `${topicShortLabel(slug, "pt") ?? slug} · ${shown.length} pergunta(s)`;
+  } else {
+    heading = `${shown.length} pergunta(s) na sequência de navegação`;
+  }
+
+  if (asJson) {
+    return flush(
+      shown.map((e) => ({
+        ref: e.question.ref,
+        position: e.position,
+        total: e.total,
+        topic: e.question.topic,
+        disabled: e.question.disabled,
+        question: e.question.question,
+      }))
+    );
+  }
+
+  say(bold(heading));
+  if (topic !== undefined && around === undefined) {
+    // The gaps are the point, not a defect: a subject is spread through the
+    // sequence, and the slot for a new question is between two of these.
+    say(dim("  as posições são salteadas — o order é editorial, não agrupado"));
+  }
+  say();
+
+  const clipped = shown.slice(0, limit);
+  const width = Math.max(...clipped.map((e) => String(e.total).length));
+  for (const e of clipped) {
+    const pos = dim(`${String(e.position).padStart(width)}/${e.total}`);
+    const mark = isWithheld(e.question) ? ` ${red("desativada")}` : "";
+    const label =
+      topic === undefined && e.question.topic !== null
+        ? `  ${cyan(topicShortLabel(e.question.topic, "pt") ?? e.question.topic)}`
+        : "";
+    say(`  ${pos}  ${bold(`#${e.question.id}`)}${mark}  ${clip(e.question.question, 74)}${label}`);
+  }
+  if (shown.length > clipped.length) {
+    say(dim(`  …e mais ${shown.length - clipped.length} (--limit ${shown.length} para ver todas)`));
+  }
+
+  say();
+  say(dim("  inserir uma pergunta nova aqui: content:new --after <id>, --before <id> ou --end"));
+  flush();
+}
+
 function cmdTopics(): void {
   const bank = load();
   const audit = auditTopics(bank);
@@ -796,6 +883,7 @@ function usage(): void {
   say("  dupes            grupos de duplicados, o pior primeiro  [--tier] [--new] [--update-baseline]");
   say("  pairs            quase-duplicados e inversões de polaridade  [--kind] [--new]");
   say("  coverage         fontes, explicações, imagens, órfãs");
+  say("  order            a sequência de navegação e a posição de cada pergunta  [--topic slug] [--around ref] [--radius N]");
   say("  topics           distribuição da taxonomia e casos fora do nível");
   say("  paper [pdf]      o que cita uma prova, e o que ficou por reclamar");
   say("  answers          auditoria à construção das respostas");
@@ -812,6 +900,7 @@ const commands: Record<string, () => void> = {
   duplicates: cmdDupes,
   pairs: cmdPairs,
   coverage: cmdCoverage,
+  order: cmdOrder,
   topics: cmdTopics,
   paper: cmdPaper,
   papers: cmdPaper,

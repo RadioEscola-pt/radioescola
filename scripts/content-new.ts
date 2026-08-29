@@ -41,7 +41,7 @@ import {
   type CategoryManifest,
 } from "../lib/content/build";
 import { serializeQuestionFile, questionFileName } from "../lib/content/source";
-import { buildBank, type BankQuestion } from "../lib/content/analysis";
+import { buildBank, orderEntries, type BankQuestion } from "../lib/content/analysis";
 import {
   reviewDraft,
   insertIntoOrder,
@@ -543,8 +543,10 @@ function anchorFromFlags(): OrderAnchor | null {
  * that neighbourhood instead of quietly appending.
  */
 async function askAnchor(category: ContentCategory, topic: string | null): Promise<OrderAnchor> {
-  const entries = category.questions.map((q, i) => ({ position: i + 1, q }));
-  const sameTopic = topic === null ? [] : entries.filter((e) => e.q.topic === topic);
+  // Positions come from `orderEntries`, the same function `qbank order` uses,
+  // so the neighbourhood shown here and the one shown there cannot disagree.
+  const entries = orderEntries(buildBank([category]));
+  const sameTopic = topic === null ? [] : entries.filter((e) => e.question.topic === topic);
   const shown = sameTopic.length > 0 ? sameTopic.slice(-12) : entries.slice(-8);
 
   console.log(`\n${bold("Posição no order")} ${dim("— é editorial, não numérica")}`);
@@ -557,7 +559,7 @@ async function askAnchor(category: ContentCategory, topic: string | null): Promi
   );
   for (const e of shown) {
     const position = dim(`pos ${String(e.position).padStart(3)}`);
-    console.log(`  ${position}  ${bold(`#${e.q.id}`)}  ${clip(e.q.question, 76)}`);
+    console.log(`  ${position}  ${bold(`#${e.question.id}`)}  ${clip(e.question.question, 76)}`);
   }
 
   for (;;) {
