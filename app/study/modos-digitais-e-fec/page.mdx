@@ -1,11 +1,7 @@
 ---
 title: Modos Digitais e Controlo de Erros (FEC e CRC)
 description: Protocolos de dados digitais no radioamadorismo (FT8, PSK31, RTTY, Packet), Forward Error Correction (FEC) e deteção por redundância cíclica (CRC).
-<<<<<<< HEAD
-categories: [2, 1]
-=======
 categories: [3, 2, 1]
->>>>>>> origin/main
 ---
 
 import StudyQuestionCard from '@/components/StudyQuestionCard'
@@ -14,20 +10,11 @@ import StudyQuestionCard from '@/components/StudyQuestionCard'
 
 A evolução do processamento digital de sinais (DSP) revolucionou as radiocomunicações de amador. Hoje, uma grande percentagem dos contactos em HF, VHF e comunicações por satélite é realizada através de **modos digitais**, capazes de descodificar informação mesmo quando o sinal se encontra muito abaixo do limiar de ruído audível.
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> origin/main
 ## 1. Principais Modos Digitais de Amador
 
 - **RTTY (Radioteletipo):** Um dos modos digitais mais antigos, baseado no código Baudot de 5 bits e modulação por desvio de frequência (FSK).
 - **PSK31:** Modulação por deslocamento de fase (BPSK/QPSK) com largura de banda extremamente estreita (apenas $31,25\text{ Hz}$), permitindo grande eficiência espectral.
-<<<<<<< HEAD
-- **FT8 / FT4 (família WSJT-X):** Modulação 8-FSK altamente sincronizada no tempo com blocos de transmissão de 15 segundos, concebida para contactos fiáveis em condições extremas de fraca propagação.
-=======
 - **FT8 (família WSJT-X):** Modulação 8-FSK altamente sincronizada no tempo, com períodos de transmissão de 15 segundos, concebida para contactos fiáveis em condições extremas de fraca propagação. O **FT4**, da mesma família, é a variante rápida: 4-GFSK em períodos de 7,5 segundos.
->>>>>>> origin/main
 - **Packet Radio e APRS:** Transmissão de pacotes de dados por rádio com endereçamento, repetição e telemetria (geralmente em 144,800 MHz em Portugal).
 
 ---
@@ -45,11 +32,7 @@ O emissor calcula um código matemático de verificação (checksum) a partir do
 ### B. FEC — *Forward Error Correction* (Correção Antecipada de Erros)
 O emissor introduz bits de redundância estruturados (códigos convolucionais, Reed-Solomon ou LDPC):
 - Permite ao receptor **detetar E corrigir erros automaticamente sem necessidade de pedir retransmissão ao emissor**.
-<<<<<<< HEAD
-- É fundamental em modos unidireccionais (como FT8 ou transmissões de satélite) onde não é prático pedir repetição de pacotes.
-=======
 - É fundamental nos modos sem canal de retorno para retransmissão (como o FT8, em que cada período de 15 segundos tem de descodificar-se sozinho, ou as transmissões de satélite em broadcast), onde não é prático pedir a repetição de pacotes.
->>>>>>> origin/main
 
 ---
 
@@ -62,11 +45,7 @@ O emissor introduz bits de redundância estruturados (códigos convolucionais, R
 
 ---
 
-<<<<<<< HEAD
-## Perguntas de Exame para Praticar
-=======
 ## Perguntas e respostas
->>>>>>> origin/main
 
 <StudyQuestionCard
     prompt="1 - Qual é a principal função de um algoritmo de Forward Error Correction (FEC) numa transmissão digital?"

@@ -240,7 +240,8 @@
       "reset": "Reset",
       "result": "Result",
       "mode": "Mode",
-      "formula": "Formula"
+      "formula": "Formula",
+      "close": "Close calculator"
     },
     "ohmsLaw": {
       "title": "Ohm's Law Calculator",
@@ -427,6 +428,7 @@
       "promptEnterLength": "Enter element length to calculate resonant frequency.",
       "positiveFreqOnly": "Frequency must be a positive number.",
       "positiveLengthOnly": "Length must be a positive number.",
+      "invalidVelocityFactor": "Velocity factor must be between 0 and 1 (e.g. 0.66 for coaxial cable).",
       "computedDimensions": "λ = {lambda} • Dipole λ/2: {dipole} (arms: {arm} each) • Quarter-wave λ/4: {quarter}",
       "computedFrequency": "Resonant frequency: {freq} • Wavelength in air: {lambda}"
     }

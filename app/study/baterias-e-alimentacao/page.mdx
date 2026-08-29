@@ -10,8 +10,6 @@ import StudyQuestionCard from '@/components/StudyQuestionCard'
 
 A alimentação eléctrica fiável é um requisito essencial para qualquer estação de radioamador, tanto na estação fixa principal ligada à rede eléctrica como em operações móveis, portáteis (SOTA/POTA) ou em cenários de **protecção civil e emergência**.
 
-
-
 ## 1. Capacidade de uma Bateria (Ampere-Hora — $Ah$)
 
 A energia armazenada numa bateria expressa-se através da sua **capacidade ($C$) em Ampere-hora ($Ah$)** ou miliampere-hora ($mAh$):
@@ -41,6 +39,8 @@ Nas comunicações de rádio, o equipamento passa a maior parte do tempo em **re
 | **Iões de Lítio (Li-Ion / LiPo)** | $3,7\text{ V}$ | Muito leves, alta densidade energética | Sensíveis a sobrecarga e curto-circuito; requerem BMS |
 | **Fosfato de Ferro-Lítio (LiFePO4)** | $3,2\text{ V}$ ($12,8\text{ V}$ em bloco de 4 células) | **Ideal para rádio**: tensão estável em toda a descarga, leve e segura | Custo inicial mais elevado |
 
+> **Três tensões que não se confundem.** Numa bateria de chumbo-ácido de 6 células, a tensão **nominal** é $12\text{ V}$; em repouso e com carga completa mede cerca de $12,7\text{ V}$; e os $13,8\text{ V}$ são a tensão de **flutuação** do carregador, ou a saída regulada da fonte de alimentação — nunca a tensão da bateria fora de carga.
+
 ---
 
 ## 3. Fontes de Alimentação: Lineares vs Comutadas (Chaveadas)
@@ -56,7 +56,7 @@ Para alimentar o transceptor de $13,8\text{ V}$ na estação fixa a partir dos $
 
 ---
 
-## Perguntas de Exame para Praticar
+## Perguntas e respostas
 
 <StudyQuestionCard
     prompt="1 - Durante quanto tempo pode uma bateria de 20 Ah fornecer uma corrente contínua de 2,5 A antes de se esgotar?"
@@ -64,8 +64,8 @@ Para alimentar o transceptor de $13,8\text{ V}$ na estação fixa a partir dos $
     correct="B" />
 
 <StudyQuestionCard
-    prompt="2 - Qual é a tensão nominal típica de uma bateria de chumbo-ácido de 6 elementos totalmente carregada para alimentar transceptores de amador?"
-    options={["6 V","12 V a 13,8 V","24 V","230 V"]}
+    prompt="2 - Qual é a tensão nominal de uma bateria de chumbo-ácido de 6 elementos?"
+    options={["6 V","12 V","13,8 V","24 V"]}
     correct="B" />
 
 <StudyQuestionCard

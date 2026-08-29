@@ -240,7 +240,8 @@
       "reset": "Limpar",
       "result": "Resultado",
       "mode": "Modo",
-      "formula": "Fórmula"
+      "formula": "Fórmula",
+      "close": "Fechar calculadora"
     },
     "ohmsLaw": {
       "title": "Lei de Ohm",
@@ -427,6 +428,7 @@
       "promptEnterLength": "Introduz o comprimento do elemento para calcular a frequência de ressonância.",
       "positiveFreqOnly": "A frequência deve ser um número positivo.",
       "positiveLengthOnly": "O comprimento deve ser um número positivo.",
+      "invalidVelocityFactor": "O fator de velocidade deve estar entre 0 e 1 (ex.: 0,66 para cabo coaxial).",
       "computedDimensions": "λ = {lambda} • Dipolo λ/2: {dipole} (braços: {arm} cada) • Quarto de onda λ/4: {quarter}",
       "computedFrequency": "Frequência de ressonância: {freq} • Comprimento de onda no ar: {lambda}"
     }

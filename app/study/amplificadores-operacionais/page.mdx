@@ -10,8 +10,6 @@ import StudyQuestionCard from '@/components/StudyQuestionCard'
 
 O **Amplificador Operacional** (abreviado por *Op-Amp*) é um circuito integrado analógico de alto ganho com duas entradas diferenciais e uma saída de terminação simples. É um dos blocos fundamentais da eletrónica moderna, utilizado em pré-amplificadores de áudio, filtros activos, misturadores e circuitos de instrumentação de estações de radioamador.
 
-
-
 ## 1. O Modelo do Amplificador Operacional Ideal
 
 Nas perguntas de exame, assume-se o comportamento de um **Op-Amp ideal**, que possui as seguintes características essenciais:
@@ -32,6 +30,8 @@ Graças à **realimentação negativa** (ligação da saída à entrada inversor
 O sinal entra pela entrada inversora ($-$) através de $R_1$. A saída fica desfasada em $180^\circ$ (invertida):
 
 $$A_v = -\frac{R_f}{R_1} \quad \implies \quad V_{\text{out}} = -\left(\frac{R_f}{R_1}\right) \cdot V_{\text{in}}$$
+
+> **Atenção nas provas.** O ganho é pedido em valor absoluto ($|A_v| = R_f / R_1$) e a inversão é descrita como um desfasamento de $180^\circ$, não como um valor negativo. Uma tensão de saída dada como negativa é, nas provas oficiais, uma opção errada.
 
 ### B. Amplificador Não-Inversor
 O sinal entra diretamente pela entrada não-inversora ($+$). A saída fica em fase com a entrada:
@@ -57,7 +57,7 @@ $$A_v = 1 \quad (V_{\text{out}} = V_{\text{in}})$$
 
 ---
 
-## Perguntas de Exame para Praticar
+## Perguntas e respostas
 
 <StudyQuestionCard
     prompt="1 - Qual é a impedância de entrada teórica de um amplificador operacional ideal?"
@@ -65,8 +65,8 @@ $$A_v = 1 \quad (V_{\text{out}} = V_{\text{in}})$$
     correct="C" />
 
 <StudyQuestionCard
-    prompt="2 - Num amplificador inversor com R1 = 10 kΩ e Rf = 100 kΩ, qual é o ganho de tensão?"
-    options={["+10","-10","+11","-100"]}
+    prompt="2 - Num amplificador inversor com R1 = 10 kΩ e Rf = 100 kΩ, qual é o ganho de tensão absoluto?"
+    options={["1","10","11","100"]}
     correct="B" />
 
 <StudyQuestionCard

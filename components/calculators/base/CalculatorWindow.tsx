@@ -2,6 +2,7 @@
 
 import React from "react";
 import { X } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useDraggableWindow } from "@/hooks/useDraggableWindow";
 import type { Position, CalculatorColor } from "@/lib/types";
 
@@ -38,6 +39,7 @@ export function CalculatorWindow({
   onFocus,
   children,
 }: CalculatorWindowProps) {
+  const t = useTranslations("Calculators.common");
   const { position, containerRef, beginDrag } = useDraggableWindow({
     initialPosition,
   });
@@ -51,6 +53,8 @@ export function CalculatorWindow({
   return (
     <div
       ref={containerRef}
+      role="dialog"
+      aria-label={title}
       className={`fixed ${width} max-w-[calc(100vw-2rem)] max-md:!left-4 select-none rounded-lg border border-slate-200 bg-white shadow-lg dark:border-slate-700 dark:bg-slate-800`}
       style={{ left: position.x, top: position.y, zIndex }}
       onPointerDown={handlePointerDown}
@@ -63,6 +67,7 @@ export function CalculatorWindow({
         <button
           type="button"
           onClick={onClose}
+          aria-label={t("close")}
           className={`rounded-md p-1 transition ${colorClasses.hover}`}
         >
           <X className="h-4 w-4" />

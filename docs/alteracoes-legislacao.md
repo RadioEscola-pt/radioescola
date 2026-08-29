@@ -1,6 +1,5 @@
 # Alterações da Legislação de Amador e Impacto nas Questões de Exame
 
-<<<<<<< HEAD
 Este documento sistematiza as alterações introduzidas pela **Lei n.º 22/2026, de 27 de maio** ao **Decreto-Lei n.º 53/2009, de 2 de março** (em vigor desde **25 de agosto de 2026**), detalhando o impacto no banco de questões da ANACOM (especialmente da **Categoria 3**), as correções necessárias às perguntas existentes e a análise ao documento oficial da ANACOM [*Exemplos de questões de exame de aptidão para a categoria 3*](https://www.anacom.pt/streaming/QuestoesCategoria3.pdf?contentId=1383817&field=ATTACHED_FILE).
 
 ---
@@ -24,7 +23,7 @@ A análise direta às questões 54 a 91 do documento da ANACOM revela pontos ess
 * **Enunciado:** *Podem requerer à ANACOM a realização de exame para a categoria 3*
 * **Opção Correta no PDF (A):**
   > **"os indivíduos de qualquer idade, com autorização escrita de quem exerça o respetivo poder paternal ou tutela, nos termos da lei civil, no caso de se tratar de candidato menor"**
-* **Correspondência no banco:** [0160.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0160.mdx).  
+* **Correspondência no banco:** [0160.mdx](content/questions/cat3/0160.mdx).  
 * **Conclusão:** A ANACOM já consolidou oficialmente a eliminação do limite mínimo de 12 anos.
 
 ---
@@ -33,7 +32,7 @@ A análise direta às questões 54 a 91 do documento da ANACOM revela pontos ess
 * **Enunciado:** *Para além do reconhecimento de títulos habilitantes válidos emitidos por outras Administrações, como é feito o acesso à categoria 1?*
 * **Opção Correta no PDF (B):**
   > **"Mediante exame, ao qual podem candidatar-se os amadores da categoria 2 e os amadores das categorias A e B"**
-* **Correspondência no banco:** [0162.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0162.mdx).  
+* **Correspondência no banco:** [0162.mdx](content/questions/cat3/0162.mdx).  
 * **Conclusão:** Foi eliminada a exigência de permanência obrigatória de 1 ano na Categoria 2.
 
 ---
@@ -45,20 +44,20 @@ A análise direta às questões 54 a 91 do documento da ANACOM revela pontos ess
   * *(B)* Os titulares de CAN da categoria 3, menores de 16 anos, podem utilizar estações de amador, sem supervisão de um amador, com idade igual ou superior a 16 anos... *(Falsa — a lei exige supervisão!)*.
   * *(C)* Os titulares de CAN da categoria 3, maiores de 16 anos, não podem utilizar as estações de uso comum *(Falsa)*.
   * *(D - Correta):* **"Os titulares de CAN da categoria 3, maiores de 16 anos, podem utilizar, de acordo com a sua categoria, estações individuais de outros amadores"**.
-* **Impacto no banco:** A pergunta antiga [0014.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0014.mdx) ("Qual não está correta?") deve ser atualizada para esta versão afirmativa e moderna da ANACOM.
+* **Impacto no banco:** A pergunta antiga [0014.mdx](content/questions/cat3/0014.mdx) ("Qual não está correta?") deve ser atualizada para esta versão afirmativa e moderna da ANACOM.
 
 ---
 
 ### 📌 Questões 83 a 91 da ANACOM — Regras Estruturantes Consolidadas
-* **Questão 81:** Existem **seis categorias de amadores** (1, 2, 3 e as transitórias A, B, C) $\to$ [0159.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0159.mdx).
-* **Questão 83:** Validade do Certificado de Amador Nacional (CAN) = **10 anos** $\to$ [0002.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0002.mdx) e [0023.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0023.mdx).
-* **Questão 84:** Certificado HAREC após aproveitamento em exame é exclusivo dos **amadores da categoria 1** $\to$ [0025.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0025.mdx).
-* **Questão 85:** Funcionamento de estações de uso comum **necessita de licença** $\to$ [0016.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0016.mdx).
-* **Questão 86:** Responsabilidade pelas estações de uso comum cabe às **associações de amadores e entidades de proteção civil** $\to$ [0024.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0024.mdx).
-* **Questão 88:** Número de estações móveis e portáteis por CAN = **sem limite** $\to$ [0022.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0022.mdx).
-* **Questão 89:** Estações a bordo de aeronaves = **apenas com autorização da entidade competente** $\to$ [0103.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0103.mdx).
-* **Questão 90:** Consulta do quadro de faixas atribuídas em Portugal = **sítio da internet da ANACOM** $\to$ [0133.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0133.mdx).
-* **Questão 91:** Documento a que tem direito após aprovação na Cat 3 = **apenas ao CAN** $\to$ [0155.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0155.mdx).
+* **Questão 81:** Existem **seis categorias de amadores** (1, 2, 3 e as transitórias A, B, C) $\to$ [0159.mdx](content/questions/cat3/0159.mdx).
+* **Questão 83:** Validade do Certificado de Amador Nacional (CAN) = **10 anos** $\to$ [0002.mdx](content/questions/cat3/0002.mdx) e [0023.mdx](content/questions/cat3/0023.mdx).
+* **Questão 84:** Certificado HAREC após aproveitamento em exame é exclusivo dos **amadores da categoria 1** $\to$ [0025.mdx](content/questions/cat3/0025.mdx).
+* **Questão 85:** Funcionamento de estações de uso comum **necessita de licença** $\to$ [0016.mdx](content/questions/cat3/0016.mdx).
+* **Questão 86:** Responsabilidade pelas estações de uso comum cabe às **associações de amadores e entidades de proteção civil** $\to$ [0024.mdx](content/questions/cat3/0024.mdx).
+* **Questão 88:** Número de estações móveis e portáteis por CAN = **sem limite** $\to$ [0022.mdx](content/questions/cat3/0022.mdx).
+* **Questão 89:** Estações a bordo de aeronaves = **apenas com autorização da entidade competente** $\to$ [0103.mdx](content/questions/cat3/0103.mdx).
+* **Questão 90:** Consulta do quadro de faixas atribuídas em Portugal = **sítio da internet da ANACOM** $\to$ [0133.mdx](content/questions/cat3/0133.mdx).
+* **Questão 91:** Documento a que tem direito após aprovação na Cat 3 = **apenas ao CAN** $\to$ [0155.mdx](content/questions/cat3/0155.mdx).
 
 ---
 
@@ -66,13 +65,13 @@ A análise direta às questões 54 a 91 do documento da ANACOM revela pontos ess
 
 | Tema | Regime Anterior (DL 53/2009) | Novo Regime (Lei 22/2026) | Impacto no Banco / Ficheiros |
 | :--- | :--- | :--- | :--- |
-| **Taxas Anuais** | Pagamento anual da taxa de utilização do espectro radioelétrico. | **Extinção / Isenção total** da taxa anual de utilização do espectro para titulares de CAN. | [0156.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0156.mdx) *(O PDF da ANACOM já não inclui pergunta a cobrar taxa)* |
-| **Idade de Acesso (Cat 3)** | Idade mínima de 12 anos. | **Qualquer idade**, com autorização escrita de quem exerça o poder paternal/tutela para menores. | [0160.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0160.mdx) *(Consolidada na Q80 do PDF ANACOM)* |
-| **Acesso à Categoria 2** | Idade mínima de 16 anos e tempo mínimo de permanência na Cat 3. | **Sem tempo mínimo de permanência** na Cat 3; exame acessível a amadores da Cat 3 e Cat C. | [0161.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0161.mdx) |
-| **Acesso à Categoria 1** | Mínimo de 1 ano de permanência obrigatória na Categoria 2. | **Sem tempo mínimo de permanência** na Cat 2; exame direto para amadores da Cat 2 e Cat A/B. | [0162.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0162.mdx) *(Consolidada na Q82 do PDF ANACOM)* |
-| **Prefixos dos Açores** | Prefixos genéricos com algarismo 8 (`CR8`, `CS8`, `CT8`). | **Restauro do prefixo regional histórico `CU`** para os Açores (`CU1` a `CU9`). | [0150.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0150.mdx), [0143.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0143.mdx), [0152.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0152.mdx) |
-| **Operação da Cat 3 em HF** | Praticamente restrita a VHF/UHF; caducidade do CAN se não subisse de categoria. | **Acesso autónomo a segmentos de HF** (80m, 40m, 20m e 10m) e eliminação do regime de caducidade. | [0173.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0173.mdx), Proposta Nova |
-| **Supervisão de Menores** | Sem especificação explícita de idade de supervisão. | Menores de **16 anos** apenas podem emitir sob **supervisão de amador com 16 ou mais anos**. | [0211.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0211.mdx), Q87 do PDF ANACOM |
+| **Taxas Anuais** | Pagamento anual da taxa de utilização do espectro radioelétrico. | **Extinção / Isenção total** da taxa anual de utilização do espectro para titulares de CAN. | [0156.mdx](content/questions/cat3/0156.mdx) *(O PDF da ANACOM já não inclui pergunta a cobrar taxa)* |
+| **Idade de Acesso (Cat 3)** | Idade mínima de 12 anos. | **Qualquer idade**, com autorização escrita de quem exerça o poder paternal/tutela para menores. | [0160.mdx](content/questions/cat3/0160.mdx) *(Consolidada na Q80 do PDF ANACOM)* |
+| **Acesso à Categoria 2** | Idade mínima de 16 anos e tempo mínimo de permanência na Cat 3. | **Sem tempo mínimo de permanência** na Cat 3; exame acessível a amadores da Cat 3 e Cat C. | [0161.mdx](content/questions/cat3/0161.mdx) |
+| **Acesso à Categoria 1** | Mínimo de 1 ano de permanência obrigatória na Categoria 2. | **Sem tempo mínimo de permanência** na Cat 2; exame direto para amadores da Cat 2 e Cat A/B. | [0162.mdx](content/questions/cat3/0162.mdx) *(Consolidada na Q82 do PDF ANACOM)* |
+| **Prefixos dos Açores** | Prefixos genéricos com algarismo 8 (`CR8`, `CS8`, `CT8`). | **Restauro do prefixo regional histórico `CU`** para os Açores (`CU1` a `CU9`). | [0150.mdx](content/questions/cat3/0150.mdx), [0143.mdx](content/questions/cat3/0143.mdx), [0152.mdx](content/questions/cat3/0152.mdx) |
+| **Operação da Cat 3 em HF** | Praticamente restrita a VHF/UHF; caducidade do CAN se não subisse de categoria. | **Acesso autónomo a segmentos de HF** (80m, 40m, 20m e 10m) e eliminação do regime de caducidade. | [0173.mdx](content/questions/cat3/0173.mdx), Proposta Nova |
+| **Supervisão de Menores** | Sem especificação explícita de idade de supervisão. | Menores de **16 anos** apenas podem emitir sob **supervisão de amador com 16 ou mais anos**. | [0211.mdx](content/questions/cat3/0211.mdx), Q87 do PDF ANACOM |
 | **Locais de Exame** | Realização presencial apenas na sede e delegações da ANACOM. | **Descentralização obrigatória** mediante protocolos com autarquias, escolas e outras entidades. | Proposta Nova |
 
 ---
@@ -184,65 +183,11 @@ A lei estabelece que a ANACOM deve promover a descentralização territorial das
 ## 6. Plano de Execução Técnica
 
 1. **Atualizar os ficheiros MDX existentes:**
-   - Aplicar as correções de conteúdo nos ficheiros [0156.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0156.mdx), [0161.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0161.mdx) e [0014.mdx](file:///c:/Users/pc/radioescola/content/questions/cat3/0014.mdx).
+   - Aplicar as correções de conteúdo nos ficheiros [0156.mdx](content/questions/cat3/0156.mdx), [0161.mdx](content/questions/cat3/0161.mdx) e [0014.mdx](content/questions/cat3/0014.mdx).
 2. **Adicionar os novos ficheiros MDX:**
    - Criar `content/questions/cat3/0214.mdx` a `0217.mdx`.
 3. **Atualizar o manifesto de ordenação:**
-   - Inserir os novos IDs no array `order` em [content/questions/cat3/category.json](file:///c:/Users/pc/radioescola/content/questions/cat3/category.json) no bloco temático de regulamentação.
+   - Inserir os novos IDs no array `order` em [content/questions/cat3/category.json](content/questions/cat3/category.json) no bloco temático de regulamentação.
 4. **Recompilar e validar os artefactos:**
    - Executar `bun run content:build` para regerar `public/data/cat3.json` e as notas MDX.
    - Executar `bun run content:check` e `bun run qbank dupes` para garantir conformidade total do banco.
-=======
-Este documento lista as perguntas de regulamentação do banco de questões (especialmente da Categoria 3) que são afetadas pelas alterações à legislação aplicável ao serviço de amador e amador por satélite em Portugal (**Decreto-Lei n.º 53/2009**, atualizado pela **Lei n.º 22/2026**).
-
----
-
-## 1. Perguntas com Alteração Direta na Resposta Oficial
-
-As seguintes questões das provas oficiais anteriores tiveram a sua formulação ou resposta correta alterada pela entrada em vigor da nova legislação:
-
-### 📌 Pergunta 160 (`content/questions/cat3/0160.mdx`) — Idade de Acesso à Categoria 3
-- **Enunciado:** *Podem requerer à ANACOM a realização de exame para a categoria 3...*
-- **Legislação Anterior:** A resposta correta nas provas antigas (ex: prova de 18/08/2023, pergunta 7) era *"maiores de 12 anos"*.
-- **Nova Lei:** A idade mínima de 12 anos foi eliminada.
-- **Resposta Correta Atual:**  
-  > **"os indivíduos de qualquer idade, com autorização escrita de quem exerça o respetivo poder paternal ou tutela, no caso de se tratar de candidato menor"**
-
----
-
-### 📌 Pergunta 162 (`content/questions/cat3/0162.mdx`) — Acesso à Categoria 1
-- **Enunciado:** *Para além do reconhecimento de títulos habilitantes válidos emitidos por outras Administrações, como é feito o acesso à categoria 1?*
-- **Legislação Anterior:** Exigia-se pelo menos 1 ano de permanência obrigatória na Categoria 2 (ex: prova de 18/08/2023, pergunta 8).
-- **Nova Lei:** Eliminada a exigência de tempo de permanência na Categoria 2.
-- **Resposta Correta Atual:**  
-  > **"Mediante exame, ao qual podem candidatar-se os amadores da categoria 2 e os amadores das categorias A e B"**
-
----
-
-## 2. Perguntas Chave da Regulamentação Atual do Decreto-Lei n.º 53/2009
-
-Questões que testam particularidades e regras do regime legal moderno face ao regime antigo:
-
-### 📌 Pergunta 159 (`content/questions/cat3/0159.mdx`) — Número de Categorias de Amador
-- **Pergunta:** *Quantas categorias de amadores existem?*
-- **Resposta:** **Existem seis categorias: A, B, C, 1, 2 e 3** (as 3 atuais 1, 2, 3 e as 3 transitórias consagradas na lei).
-
-### 📌 Pergunta 16 (`content/questions/cat3/0016.mdx`) — Licenciamento de Estações Individuais
-- **Regra:** O funcionamento de estações individuais de amador **não necessita de licença de estação** (o Certificado de Amador Nacional — CAN — habilita diretamente a posse e operação).
-
-### 📌 Perguntas 2 e 23 (`content/questions/cat3/0002.mdx` e `0023.mdx`) — Validade do CAN
-- **Regra:** O Certificado de Amador Nacional (CAN) tem a validade legal de **10 anos** (renovável).
-
-### 📌 Pergunta 86 (`content/questions/cat3/0086.mdx`) — Validade das Licenças de Uso Comum
-- **Regra:** As licenças de estação de uso comum (associações, repetidores) têm a validade de **10 anos**.
-
-### 📌 Perguntas 20 e 22 (`content/questions/cat3/0020.mdx` e `0022.mdx`) — Limite de Estações
-- **Estações Fixas:** No máximo **2** (estação fixa principal e uma estação fixa adicional).
-- **Estações Móveis / Portáteis:** **Sem limite de quantidade**.
-
-### 📌 Pergunta 155 (`content/questions/cat3/0155.mdx`) — Direitos da Categoria 3
-- **Regra:** A aprovação no exame de Categoria 3 confere direito **apenas ao CAN** (não dá direito a certificado HAREC, que é exclusivo da Categoria 1, nem a licença CEPT completa).
-
-### 📌 Pergunta 156 (`content/questions/cat3/0156.mdx`) — Taxas Obrigatórias
-- **Regra:** A taxa anual devida pelos titulares de CAN é a **Taxa de Utilização do Espectro Radioelétrico**.
->>>>>>> origin/main

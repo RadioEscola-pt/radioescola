@@ -42,6 +42,13 @@ const WavelengthCalculator: React.FC<CalculatorInstanceProps> = ({
   const [result, setResult] = React.useState("");
   const [message, setMessage] = React.useState("");
 
+  // The displayed formula constant is 150 * k, so it must track the entered
+  // velocity factor rather than stay pinned to the 0.95 default.
+  const dipoleK = React.useMemo(() => {
+    const k = parseValue(velocityFactor);
+    return Number.isFinite(k) && k > 0 && k <= 1 ? k : null;
+  }, [velocityFactor]);
+
   React.useEffect(() => {
     setMessage(mode === "fromFrequency" ? t("promptEnterFreq") : t("promptEnterLength"));
   }, [t, mode]);
@@ -56,7 +63,12 @@ const WavelengthCalculator: React.FC<CalculatorInstanceProps> = ({
 
   const calculate = () => {
     const k = parseValue(velocityFactor);
-    const validK = Number.isFinite(k) && k > 0 && k <= 1.0 ? k : 0.95;
+    if (!Number.isFinite(k) || k <= 0 || k > 1) {
+      setMessage(t("invalidVelocityFactor"));
+      setResult("");
+      return;
+    }
+    const validK = k;
 
     if (mode === "fromFrequency") {
       const f = parseValue(frequency);
@@ -223,7 +235,7 @@ const WavelengthCalculator: React.FC<CalculatorInstanceProps> = ({
       <CalculatorResult
         value={message}
         color="teal"
-        formula="λ = c / f  |  L(λ/2) ≈ 142.5 / f(MHz)"
+        formula={`λ = c / f  |  L(λ/2) ≈ ${formatValue(150 * (dipoleK ?? 0.95), 2)} / f(MHz)`}
       />
     </CalculatorWindow>
   );
