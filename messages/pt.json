@@ -226,6 +226,7 @@
     "page": "Página {current} / {total}",
     "takeAnother": "Fazer Outro",
     "endQuiz": "Terminar",
+    "viewQuestions": "Ver Perguntas",
     "viewResults": "Ver Resultados",
     "resultsSubtitle": "Resultados",
     "score": "Pontuação: {score} / {total}",

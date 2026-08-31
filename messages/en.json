@@ -226,6 +226,7 @@
     "page": "Page {current} / {total}",
     "takeAnother": "Take Another",
     "endQuiz": "End Quiz",
+    "viewQuestions": "View Questions",
     "viewResults": "View Results",
     "resultsSubtitle": "Results",
     "score": "Score: {score} / {total}",
