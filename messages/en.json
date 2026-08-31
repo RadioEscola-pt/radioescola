@@ -228,6 +228,14 @@
     "endQuiz": "End Quiz",
     "viewQuestions": "View Questions",
     "viewResults": "View Results",
+    "shuffle": {
+      "label": "Shuffle options",
+      "confirmTitleOn": "Shuffle the options?",
+      "confirmTitleOff": "Stop shuffling the options?",
+      "confirmBody": "The option order can only change in a new exam, so this one restarts from scratch. The answers you have given are lost.",
+      "cancel": "Cancel",
+      "restart": "Restart"
+    },
     "resultsSubtitle": "Results",
     "score": "Score: {score} / {total}",
     "questionId": "ID: {id}",

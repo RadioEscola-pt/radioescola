@@ -5,12 +5,21 @@ import { useTranslations } from 'next-intl';
 import { Category } from '@/lib/types';
 import { loadData } from '@/lib/data';
 import { decodeReplayIds, decodeReplayAnswers } from '@/lib/exam/replay';
+import {
+  shuffleAllOptions,
+  toCanonicalAnswers,
+  readShuffleOptionsPreference,
+  writeShuffleOptionsPreference,
+  type OptionPermutation,
+} from '@/lib/exam/shuffle-options';
 import { EXAM_CONFIG, DEFAULT_CATEGORY } from '@/lib/config';
 import { ExamResults } from '@/components/ExamResults';
 import { PageLoading } from '@/components/shared/Loading';
 import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
 import { Button } from '@/components/ui/button';
 import { StudyHeader } from '@/components/StudyHeader';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
+import { Shuffle } from 'lucide-react';
 import { QuestionExplanation } from '@/components/QuestionExplanation';
 import { useProgressContext } from '@/components/providers/ProgressProvider';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
@@ -36,9 +45,23 @@ export default function ExamPage() {
   const [quizEnded, setQuizEnded] = useState(false);
   const [resultsOpen, setResultsOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  // Off on the server and on the first client render, then reconciled from
+  // storage in an effect: reading localStorage while rendering would make the
+  // markup differ between the two and trip hydration.
+  const [shuffleOptions, setShuffleOptions] = useState(false);
+  const [pendingShuffle, setPendingShuffle] = useState<boolean | null>(null);
+  /** Shuffled position -> bank position, per question id. Empty when off. */
+  const [permutations, setPermutations] = useState<Record<number, OptionPermutation>>({});
+  const shuffleRef = useRef(false);
   const progressSavedRef = useRef(false);
   const isReplayRef = useRef(false);
   const [gamificationResult, setGamificationResult] = useState<GamificationResult | null>(null);
+
+  React.useEffect(() => {
+    const stored = readShuffleOptionsPreference();
+    setShuffleOptions(stored);
+    shuffleRef.current = stored;
+  }, []);
 
   // Timer: wall-clock countdown toward a fixed deadline. Deriving the remaining
   // time from Date.now() on each tick — rather than decrementing a per-tick
@@ -144,7 +167,9 @@ export default function ExamPage() {
       passed,
       timestamp: Date.now(),
       questionIds: category.questions.map(q => q.id),
-      answers: { ...answers },
+      // Recorded in the bank's order, never the shuffled one, so replay links
+      // and per-question stats stay meaningful.
+      answers: toCanonicalAnswers(answers, permutations),
     };
 
     // Record individual question attempts
@@ -166,7 +191,7 @@ export default function ExamPage() {
         recordQuestionBatch(questionAttempts);
       }
     });
-  }, [quizEnded, category, answers, score, timeLeft, recordExamWithGamification, recordQuestionBatch]);
+  }, [quizEnded, category, answers, score, timeLeft, permutations, recordExamWithGamification, recordQuestionBatch]);
 
   React.useEffect(() => {
     const cat = typeof params.category === 'string'
@@ -221,10 +246,27 @@ export default function ExamPage() {
         }
       }
       const sample = qs.slice(0, Math.min(MAX_QUESTIONS, qs.length));
-      setCategory({ id: base.id, name: base.name, questions: sample });
+      // A replay above returns early: its answers are positional against the
+      // bank's order, so shuffling one would misreport what was chosen.
+      const dealt = shuffleRef.current ? shuffleAllOptions(sample) : { questions: sample, permutations: {} };
+      setPermutations(dealt.permutations);
+      setCategory({ id: base.id, name: base.name, questions: dealt.questions });
       setDeadline(Date.now() + DURATION_SECONDS * 1000);
     });
   }, [params.category, searchParams]);
+
+  /**
+   * Save the choice and deal a fresh exam with it. The restart is the point:
+   * re-shuffling the questions already on screen would move the options out
+   * from under answers the candidate has given.
+   */
+  const applyShufflePreference = (enabled: boolean) => {
+    writeShuffleOptionsPreference(enabled);
+    setShuffleOptions(enabled);
+    shuffleRef.current = enabled;
+    setPendingShuffle(null);
+    startNewQuiz();
+  };
 
   const startNewQuiz = () => {
     if (!category) return;
@@ -245,7 +287,9 @@ export default function ExamPage() {
         }
       }
       const sample = qs.slice(0, Math.min(MAX_QUESTIONS, qs.length));
-      setCategory({ id: base.id, name: base.name, questions: sample });
+      const dealt = shuffleRef.current ? shuffleAllOptions(sample) : { questions: sample, permutations: {} };
+      setPermutations(dealt.permutations);
+      setCategory({ id: base.id, name: base.name, questions: dealt.questions });
       setAnswers({});
       setScore(0);
       setTimeLeft(DURATION_SECONDS);
@@ -342,6 +386,22 @@ export default function ExamPage() {
         backHref="/"
         subtitle={`${answeredCount}/${category.questions.length}`}
       >
+        {/* Only on the first page, and only while the exam is live: turning
+            this on deals a new exam, which is not something to offer beside a
+            question already answered. */}
+        {!quizEnded && currentPage === 1 && (
+          <label className="flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-300 cursor-pointer select-none">
+            <input
+              type="checkbox"
+              checked={shuffleOptions}
+              onChange={() => setPendingShuffle(!shuffleOptions)}
+              className="w-4 h-4 rounded border-slate-300 dark:border-slate-600 accent-amber-500 cursor-pointer"
+            />
+            <Shuffle className="w-3.5 h-3.5" aria-hidden="true" />
+            <span className="hidden sm:inline">{t('shuffle.label')}</span>
+          </label>
+        )}
+
         {/* Timer */}
         <div className={`font-mono text-sm px-2.5 py-1 rounded-md font-semibold tabular-nums ${
           timeLeft <= 60
@@ -466,6 +526,25 @@ export default function ExamPage() {
 
       {/* Spacer for fixed bottom nav on mobile */}
       <div className="h-16 sm:hidden" />
+
+      <Dialog open={pendingShuffle !== null} onOpenChange={(open) => { if (!open) setPendingShuffle(null); }}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>
+              {pendingShuffle ? t('shuffle.confirmTitleOn') : t('shuffle.confirmTitleOff')}
+            </DialogTitle>
+            <DialogDescription>{t('shuffle.confirmBody')}</DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button variant="ghost" size="sm" onClick={() => setPendingShuffle(null)}>
+              {t('shuffle.cancel')}
+            </Button>
+            <Button size="sm" onClick={() => applyShufflePreference(pendingShuffle === true)}>
+              {t('shuffle.restart')}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </main>
   );
 }

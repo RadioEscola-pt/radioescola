@@ -228,6 +228,14 @@
     "endQuiz": "Terminar",
     "viewQuestions": "Ver Perguntas",
     "viewResults": "Ver Resultados",
+    "shuffle": {
+      "label": "Baralhar opções",
+      "confirmTitleOn": "Baralhar as opções?",
+      "confirmTitleOff": "Deixar de baralhar as opções?",
+      "confirmBody": "A ordem das opções só pode mudar num exame novo, por isso este recomeça do zero. As respostas que já deu perdem-se.",
+      "cancel": "Cancelar",
+      "restart": "Recomeçar"
+    },
     "resultsSubtitle": "Resultados",
     "score": "Pontuação: {score} / {total}",
     "questionId": "ID: {id}",
