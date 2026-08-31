@@ -516,7 +516,9 @@ Opções úteis:
 | `--width`, `--quality` | tamanho das imagens embutidas |
 
 As imagens vão dentro do ficheiro, cerca de 1,4 MB por prova, para a página
-continuar a servir longe do repositório — não gerar as 59 provas por reflexo.
+continuar a servir longe do repositório. Por isso mesmo, `docs/revisao/` está no
+`.gitignore`: a página é um artefacto, gera-se quando é precisa e não se
+compromete. Não gerar as 59 provas por reflexo.
 
 ## Lista de verificação
 

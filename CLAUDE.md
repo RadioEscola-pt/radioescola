@@ -190,9 +190,11 @@ in a browser; it is also on the `banco` menu as *Conferir uma prova*.
   asserted — the latter are flagged, and are the whole point of the page
 - **No report means nothing is corroborated, not everything.** A missing or
   stale `--report` is not an error; every card just says *à mão*
-- **The images are embedded**, so a paper costs ~1.4 MB of committed HTML. That
-  is deliberate — the page has to keep working away from the repo — but do not
-  generate all 59 papers by reflex
+- **`docs/revisao/` is gitignored.** The images are embedded, so a paper is
+  ~1.4 MB of HTML — that is deliberate, the page has to keep working away from
+  the repo, but it makes it a build artifact and not something to commit.
+  Regenerate it when you need it; it is deterministic given the bank, the PDF
+  and the report
 - `--notes notas.json` overlays `{"27": "porquê esta"}` commentary per pergunta,
   which is where the reasoning behind a hand-made match goes; nothing can
   generate that
