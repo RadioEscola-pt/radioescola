@@ -12,6 +12,7 @@ import { Highlight } from '@/components/ui/highlight';
 import PdfPageDialog from '@/components/PdfPageDialog';
 import StudyGuideLink from '@/components/StudyGuideLink';
 import { QuestionExplanation } from '@/components/QuestionExplanation';
+import { TopicIcon } from '@/components/TopicIcon';
 import {
   RESOURCE_ROW, RESOURCE_ROW_INERT, RESOURCE_TILE, RESOURCE_TITLE, RESOURCE_SUBTITLE, RESOURCE_CHEVRON,
 } from '@/components/ui/resource-row';
@@ -190,9 +191,10 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
       {(topicLabel || showsDifficulty || showsBookmark) && (
         <div className="flex items-center justify-between gap-3 mb-2">
           {topicLabel ? (
-            <span className="min-w-0 truncate text-[10px] font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+            <span className="min-w-0 flex items-center gap-1.5 truncate text-[10px] font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
               <span className="sr-only">{t('topic')}: </span>
-              {topicLabel}
+              <TopicIcon slug={question.materia ?? ''} className="w-3.5 h-3.5 shrink-0" />
+              <span className="truncate">{topicLabel}</span>
             </span>
           ) : (
             <span aria-hidden="true" />

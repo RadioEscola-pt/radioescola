@@ -4,6 +4,7 @@ import React from "react";
 import { Search, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { TOPICS, topicShortLabel } from "@/lib/config";
+import { TopicIcon } from "@/components/TopicIcon";
 
 export type TopicCount = { slug: string; label: string; count: number };
 
@@ -83,6 +84,7 @@ export function QuestionFilters({
             aria-pressed={activeTopic === slug}
             className={`${CHIP} ${activeTopic === slug ? CHIP_ON : CHIP_OFF}`}
           >
+            <TopicIcon slug={slug} className="w-3.5 h-3.5 shrink-0 opacity-70" />
             {label}
             <span className="font-mono text-[10px] tabular-nums opacity-60">{count}</span>
           </button>
