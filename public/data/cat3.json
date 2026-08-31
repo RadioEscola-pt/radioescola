@@ -18,6 +18,11 @@
           "pdf": "cat3/2023_08_18",
           "question": 17,
           "page": 5
+        },
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 17,
+          "page": 5
         }
       ],
       "materia": "regulamentacao"
@@ -76,6 +81,11 @@
       "sources": [
         {
           "pdf": "cat3/2023_08_18",
+          "question": 37,
+          "page": 11
+        },
+        {
+          "pdf": "cat3/2026_08_30",
           "question": 37,
           "page": 11
         }
@@ -137,6 +147,11 @@
           "pdf": "cat3/2023_08_18",
           "question": 4,
           "page": 1
+        },
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 14,
+          "page": 4
         }
       ],
       "tutorial": "entidades",
@@ -171,6 +186,11 @@
           "pdf": "cat3/2023_09_21",
           "question": 28,
           "page": 7
+        },
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 29,
+          "page": 9
         }
       ],
       "materia": "operacao"
@@ -190,6 +210,11 @@
         {
           "pdf": "cat3/2023_08_18",
           "question": 29,
+          "page": 9
+        },
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 30,
           "page": 9
         }
       ],
@@ -271,6 +296,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 5,
+          "page": 2
+        }
+      ],
       "materia": "operacao"
     },
     {
@@ -363,6 +395,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 9,
+          "page": 3
+        }
+      ],
       "materia": "regulamentacao"
     },
     {
@@ -376,6 +415,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 11,
+          "page": 3
+        }
+      ],
       "materia": "regulamentacao"
     },
     {
@@ -394,6 +440,11 @@
           "pdf": "cat3/2023_08_18",
           "question": 19,
           "page": 6
+        },
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 18,
+          "page": 5
         }
       ],
       "materia": "regulamentacao"
@@ -447,6 +498,11 @@
           "pdf": "cat3/2023_09_21",
           "question": 18,
           "page": 5
+        },
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 19,
+          "page": 6
         }
       ],
       "materia": "regulamentacao"
@@ -596,6 +652,11 @@
           "pdf": "cat3/2023_09_21",
           "question": 14,
           "page": 4
+        },
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 15,
+          "page": 4
         }
       ],
       "tutorial": "entidades",
@@ -642,6 +703,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 34,
+          "page": 10
+        }
+      ],
       "tutorial": "abreviaturas-de-operacao",
       "materia": "operacao"
     },
@@ -659,6 +727,11 @@
       "sources": [
         {
           "pdf": "cat3/2023_08_18",
+          "question": 12,
+          "page": 3
+        },
+        {
+          "pdf": "cat3/2026_08_30",
           "question": 12,
           "page": 3
         }
@@ -814,6 +887,11 @@
           "pdf": "cat3/2023_08_18",
           "question": 20,
           "page": 6
+        },
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 20,
+          "page": 6
         }
       ],
       "tutorial": "codigo-q",
@@ -870,6 +948,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 26,
+          "page": 8
+        }
+      ],
       "tutorial": "alfabeto-fonetico",
       "materia": "operacao"
     },
@@ -1030,12 +1115,19 @@
       "question": "Qual das seguintes afirmações não está correcta?",
       "options": [
         "A filtragem é desejável na recepção para rejeitar sinais não desejados",
-        "Não deve ser utilizado qualquer tipo de filtragem na recepção pois há o perigo de interferências",
+        "Não deve ser utilizado qualquer tipo de filtragem na recepção pois não há o perigo de interferências",
         "A filtragem é essencial na emissão para evitar a poluição do espectro por sinais espúrios",
         "Deve-se ter especial cuidado na alimentação dos equipamentos de emissão e de recepção para garantir o seu bom funcionamento introduzindo-se estabilizadores ou filtros"
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 35,
+          "page": 10
+        }
+      ],
       "materia": "interferencias"
     },
     {
@@ -1069,6 +1161,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 33,
+          "page": 10
+        }
+      ],
       "materia": "interferencias"
     },
     {
@@ -1115,6 +1214,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 13,
+          "page": 4
+        }
+      ],
       "materia": "antenas"
     },
     {
@@ -1158,7 +1264,7 @@
     },
     {
       "id": 70,
-      "question": "Qual dos seguintes componentes nunca faz parte de um receptor?",
+      "question": "Qual dos seguintes componentes nunca faz parte de um recetor?",
       "options": [
         "Desmodulador",
         "Modulador",
@@ -1167,6 +1273,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 27,
+          "page": 8
+        }
+      ],
       "materia": "recetores"
     },
     {
@@ -1213,6 +1326,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 22,
+          "page": 7
+        }
+      ],
       "materia": "operacao"
     },
     {
@@ -1226,6 +1346,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 3,
+          "page": 1
+        }
+      ],
       "materia": "emissores"
     },
     {
@@ -1355,6 +1482,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 16,
+          "page": 5
+        }
+      ],
       "materia": "operacao"
     },
     {
@@ -1423,6 +1557,11 @@
       "sources": [
         {
           "pdf": "cat3/2023_09_21",
+          "question": 8,
+          "page": 2
+        },
+        {
+          "pdf": "cat3/2026_08_30",
           "question": 8,
           "page": 2
         }
@@ -1519,6 +1658,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 38,
+          "page": 11
+        }
+      ],
       "materia": "interferencias"
     },
     {
@@ -1614,6 +1760,11 @@
           "pdf": "cat3/2023_09_21",
           "question": 37,
           "page": 10
+        },
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 36,
+          "page": 11
         }
       ],
       "materia": "interferencias"
@@ -1692,6 +1843,11 @@
         {
           "pdf": "cat3/2023_08_18",
           "question": 22,
+          "page": 7
+        },
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 23,
           "page": 7
         }
       ],
@@ -1817,6 +1973,11 @@
           "pdf": "cat3/2023_09_21",
           "question": 1,
           "page": 1
+        },
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 1,
+          "page": 1
         }
       ],
       "materia": "operacao"
@@ -1858,6 +2019,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 25,
+          "page": 8
+        }
+      ],
       "materia": "propagacao"
     },
     {
@@ -2040,6 +2208,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 28,
+          "page": 8
+        }
+      ],
       "materia": "operacao"
     },
     {
@@ -2208,6 +2383,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 6,
+          "page": 2
+        }
+      ],
       "materia": "regulamentacao"
     },
     {
@@ -2342,6 +2524,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 4,
+          "page": 1
+        }
+      ],
       "tutorial": "prefixos-ic",
       "materia": "regulamentacao"
     },
@@ -2611,6 +2800,11 @@
           "pdf": "cat3/2023_09_21",
           "question": 7,
           "page": 2
+        },
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 10,
+          "page": 3
         }
       ],
       "materia": "regulamentacao"
@@ -2626,6 +2820,26 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "materia": "regulamentacao"
+    },
+    {
+      "id": 161,
+      "question": "Para além do reconhecimento de títulos habilitantes válidos emitidos por outras Administrações, como é feito o acesso à categoria 2?",
+      "options": [
+        "Mediante exame, ao qual podem candidatar-se amadores maiores de 18 anos e certificado de habilitações do 12º ano",
+        "Mediante exame, ao qual podem candidatar-se amadores maiores de 16 anos e com certificado do 9º ano emitido por um estabelecimento de ensino reconhecido",
+        "Mediante exame, ao qual podem candidatar-se amadores de qualquer categoria",
+        "Mediante exame, ao qual podem candidatar-se amadores da categoria 3"
+      ],
+      "correctIndex": 3,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 7,
+          "page": 2
+        }
+      ],
       "materia": "regulamentacao"
     },
     {
@@ -2652,6 +2866,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 2,
+          "page": 1
+        }
+      ],
       "materia": "operacao"
     },
     {
@@ -2685,6 +2906,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 21,
+          "page": 6
+        }
+      ],
       "materia": "seguranca"
     },
     {
@@ -2977,6 +3205,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 31,
+          "page": 9
+        }
+      ],
       "materia": "teoria"
     },
     {
@@ -3062,6 +3297,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 24,
+          "page": 7
+        }
+      ],
       "materia": "seguranca"
     },
     {
@@ -3121,6 +3363,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 32,
+          "page": 9
+        }
+      ],
       "img": "/images/cat3/100k.png",
       "tutorial": "codigoDecores",
       "materia": "componentes"
@@ -3261,7 +3510,7 @@
     },
     {
       "id": 204,
-      "question": "A figura representa um sinal sinusoidal em que +Um é igual a 1 Volt. Qual o valor eficaz do sinal?",
+      "question": "A figura representa um sinal sinusoidal em que A é igual a 1 Volt. Qual o valor eficaz do sinal?",
       "options": [
         "0.707 Volt",
         "0 Volt",
@@ -3270,7 +3519,14 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
-      "img": "/images/cat3/sinusoidal.png",
+      "sources": [
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 40,
+          "page": 12
+        }
+      ],
+      "img": "/images/cat3/sinusoidal-a.png",
       "tutorial": "corrente-alternada",
       "materia": "teoria"
     },
@@ -3320,6 +3576,11 @@
           "pdf": "cat3/2023_09_21",
           "question": 39,
           "page": 10
+        },
+        {
+          "pdf": "cat3/2026_08_30",
+          "question": 39,
+          "page": 12
         }
       ],
       "img": "/images/cat3/frequencia.png",
