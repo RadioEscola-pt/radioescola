@@ -10,6 +10,10 @@ import type { GamificationResult } from '@/lib/types/gamification';
 import { ShareButton } from './ShareButton';
 import { createExamResultShare } from '@/lib/share';
 import { QuestionExplanation } from './QuestionExplanation';
+import Link from 'next/link';
+import { useLocale } from 'next-intl';
+import { topicShortLabel } from '@/lib/config';
+import { weakTopics } from '@/lib/exam/weak-topics';
 
 type AnswerStatus = 'correct' | 'incorrect' | 'unanswered';
 
@@ -24,6 +28,8 @@ interface ReviewAnswer {
   status: AnswerStatus;
   hasNotesMdx?: boolean;
   notes?: string | null;
+  /** The shipped name for the source's `topic`; drives the study advice. */
+  materia?: string | null;
 }
 
 export interface ExamResultsProps {
@@ -95,6 +101,7 @@ export function ExamResults({
   // answering the same question, and two spellings of it would drift.
   const tq = useTranslations('QuestionCard');
   const tGamification = useTranslations('Gamification');
+  const locale = useLocale();
   const passed = score >= passingScore;
   const isPerfect = score === totalQuestions;
   const [filter, setFilter] = useState<'all' | AnswerStatus>('all');
@@ -151,6 +158,8 @@ export function ExamResults({
     incorrect: reviewAnswers.filter(a => a.status === 'incorrect').length,
     unanswered: reviewAnswers.filter(a => a.status === 'unanswered').length,
   }), [reviewAnswers]);
+
+  const studyAreas = useMemo(() => weakTopics(reviewAnswers), [reviewAnswers]);
 
   const filteredAnswers = useMemo(() =>
     filter === 'all' ? reviewAnswers : reviewAnswers.filter(a => a.status === filter),
@@ -307,6 +316,47 @@ export function ExamResults({
         </Button>
         <ShareButton content={shareContent} iconOnly />
       </div>
+
+      {/* What to study next. Absent after a flawless attempt: there is nothing
+          to advise, and an empty panel would read as a broken one. */}
+      {studyAreas.length > 0 && (
+        <section className="mx-4 sm:mx-0 mt-8">
+          <h2 className="text-lg font-semibold text-foreground mb-1">{t('studyAreas.title')}</h2>
+          <p className="text-sm text-muted-foreground mb-4">{t('studyAreas.subtitle')}</p>
+          <ul className="space-y-2">
+            {studyAreas.map((topic) => {
+              const label = topicShortLabel(topic.slug, locale) ?? topic.slug;
+              const missedShare = Math.round((topic.missed / topic.total) * 100);
+              return (
+                <li key={topic.slug}>
+                  <Link
+                    href={`/browse/${category}?topic=${encodeURIComponent(topic.slug)}`}
+                    className="group flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 transition-colors hover:border-amber-300 dark:hover:border-amber-700"
+                  >
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-baseline justify-between gap-3">
+                        <span className="font-medium text-foreground truncate">{label}</span>
+                        <span className="text-xs text-muted-foreground tabular-nums whitespace-nowrap">
+                          {t('studyAreas.missed', { missed: topic.missed, total: topic.total })}
+                        </span>
+                      </div>
+                      <div className="mt-2 h-1.5 rounded-full bg-muted overflow-hidden">
+                        <div
+                          className="h-full rounded-full bg-amber-500 dark:bg-amber-400"
+                          style={{ width: `${missedShare}%` }}
+                        />
+                      </div>
+                    </div>
+                    <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground whitespace-nowrap">
+                      {t('studyAreas.practice')}
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
 
       {/* Review Section */}
       <section className="mx-4 sm:mx-0 mt-8">

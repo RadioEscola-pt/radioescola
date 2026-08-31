@@ -298,6 +298,7 @@ export default function ExamPage() {
       status: status as 'correct' | 'incorrect' | 'unanswered',
       hasNotesMdx: q.hasNotesMdx,
       notes: q.notes,
+      materia: q.materia,
     };
   });
 

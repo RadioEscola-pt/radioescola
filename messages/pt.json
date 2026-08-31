@@ -461,6 +461,12 @@
       "summary": "Resumo",
       "review": "Rever"
     },
+    "studyAreas": {
+      "title": "Onde estudar a seguir",
+      "subtitle": "As matérias que este exame mostrou mais fracas, a começar pela que te custou mais.",
+      "missed": "{missed} de {total} por acertar",
+      "practice": "Praticar"
+    },
     "status": {
       "passed": "Aprovado!",
       "failed": "Reprovado",
