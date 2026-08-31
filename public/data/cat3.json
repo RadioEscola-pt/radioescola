@@ -602,7 +602,7 @@
         }
       ],
       "tutorial": "entidades",
-      "materia": "entidades"
+      "materia": "operacao"
     },
     {
       "id": 34,
@@ -616,7 +616,7 @@
       "correctIndex": 0,
       "hasNotesMdx": true,
       "tutorial": "entidades",
-      "materia": "entidades"
+      "materia": "operacao"
     },
     {
       "id": 35,
