@@ -15,6 +15,7 @@
     "type-check": "tsc --noEmit",
     "data:ocr-exams": "bun run scripts/ocr-exams.ts",
     "data:fonte-pages": "bun run scripts/resolve-fonte-pages.ts",
+    "data:exam-review": "bun run scripts/exam-review.ts",
     "content:build": "bun run scripts/content-build.ts",
     "content:check": "bun run scripts/content-build.ts --check",
     "content:new": "bun run scripts/content-new.ts",

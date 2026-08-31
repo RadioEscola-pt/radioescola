@@ -177,6 +177,28 @@ a `sources` entry, because that needs the question number read off the scan,
 which is the least reliable part — those are proposed in the report for a human
 to confirm. `bun run data:fonte-pages` is the manual equivalent.
 
+**Confirming those links**: `bun run data:exam-review cat3/2026_08_30` writes a
+self-contained page to `docs/revisao/cat{n}/{prova}.html` — every pergunta of
+the paper beside the bank question claiming it, the scan of its page sticky
+alongside, correct answer marked, with a per-question "revisto" tick. Open it
+in a browser; it is also on the `banco` menu as *Conferir uma prova*.
+
+- **It renders the bank, never the OCR text.** A review exists to distrust the
+  machine, so comparing the scan against a transcription the same machine
+  produced would only confirm the transcription. OCR decides one thing: which
+  links it found by itself (already corroborated) versus which a person
+  asserted — the latter are flagged, and are the whole point of the page
+- **No report means nothing is corroborated, not everything.** A missing or
+  stale `--report` is not an error; every card just says *à mão*
+- **The images are embedded**, so a paper costs ~1.4 MB of committed HTML. That
+  is deliberate — the page has to keep working away from the repo — but do not
+  generate all 59 papers by reflex
+- `--notes notas.json` overlays `{"27": "porquê esta"}` commentary per pergunta,
+  which is where the reasoning behind a hand-made match goes; nothing can
+  generate that
+- The pure parts live in `lib/content/review-page.ts`, the I/O in the script,
+  the same split as `qbank` and `ocr-exams`
+
 ## Inspecting the bank
 
 `bun run qbank` is a read-only developer tool over `content/questions/**` —
