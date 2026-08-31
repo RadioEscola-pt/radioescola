@@ -483,6 +483,41 @@ Ler o número da pergunta na digitalização é a parte menos fiável do process
 (`39` lido como `35`), por isso referências novas são apenas propostas no
 relatório, para confirmação humana.
 
+### Conferir uma prova inteira
+
+Essa confirmação humana é o que a terceira ferramenta serve:
+
+```bash
+bun run data:exam-review cat3/2026_08_30
+```
+
+Escreve `docs/revisao/cat3/2026_08_30.html`, uma página que se abre no browser
+(ou no menu do `banco`, em **Conferir uma prova**). Tem uma secção por página do
+PDF: a digitalização fica encostada à esquerda enquanto as perguntas dessa
+página passam à direita, com a resposta certa marcada e um visto **revisto** por
+pergunta, que se guarda no browser. Os filtros deixam ver só o que falta.
+
+O que a página mostra é o **banco**, nunca o texto do OCR. Conferir uma
+digitalização contra uma transcrição feita pela mesma máquina só confirmaria a
+transcrição. O OCR decide uma coisa apenas: que ligações encontrou sozinho — e
+estão portanto corroboradas — e quais foram afirmadas por uma pessoa. Estas
+últimas aparecem marcadas *correspondida à mão*, e são a razão de ser da página.
+
+Sem relatório do `data:ocr-exams` (`--report`), nada fica corroborado em vez de
+tudo: todas as perguntas aparecem como sendo à mão.
+
+Opções úteis:
+
+| Opção | Para quê |
+| --- | --- |
+| `--notes notas.json` | `{"27": "porquê escolhi esta"}` — a razão de uma correspondência feita à mão, que nenhuma ferramenta consegue gerar |
+| `--out ficheiro.html` | escrever noutro sítio |
+| `--report ficheiro.json` | um relatório de OCR que não seja o `.ocr-cache/report.json` |
+| `--width`, `--quality` | tamanho das imagens embutidas |
+
+As imagens vão dentro do ficheiro, cerca de 1,4 MB por prova, para a página
+continuar a servir longe do repositório — não gerar as 59 provas por reflexo.
+
 ## Lista de verificação
 
 Com `bun run content:new`, os primeiros sete pontos são a própria ferramenta;
