@@ -9,16 +9,21 @@ import { cn } from '@/lib/utils';
 import type { GamificationResult } from '@/lib/types/gamification';
 import { ShareButton } from './ShareButton';
 import { createExamResultShare } from '@/lib/share';
+import { QuestionExplanation } from './QuestionExplanation';
 
 type AnswerStatus = 'correct' | 'incorrect' | 'unanswered';
 
 interface ReviewAnswer {
   index: number;
+  /** The bank id, which is what `/api/notes` is addressed by. */
+  questionId: number;
   question: string;
   options: string[];
   selectedIndex: number | undefined;
   correctIndex: number;
   status: AnswerStatus;
+  hasNotesMdx?: boolean;
+  notes?: string | null;
 }
 
 export interface ExamResultsProps {
@@ -86,6 +91,9 @@ export function ExamResults({
   gamificationEnabled = false,
 }: ExamResultsProps) {
   const t = useTranslations('ExamResults');
+  // The explanation reuses the question card's copy — it is the same label
+  // answering the same question, and two spellings of it would drift.
+  const tq = useTranslations('QuestionCard');
   const tGamification = useTranslations('Gamification');
   const passed = score >= passingScore;
   const isPerfect = score === totalQuestions;
@@ -411,6 +419,16 @@ export function ExamResults({
                       );
                     })}
                   </div>
+                  {/* Mounted with the open panel, so only the question being
+                      reviewed fetches its explanation, not all forty. */}
+                  <QuestionExplanation
+                    categoryId={category}
+                    questionId={item.questionId}
+                    hasNotesMdx={item.hasNotesMdx}
+                    inlineNotes={item.notes}
+                    className="mt-3 pt-3 border-t border-border/60 text-sm"
+                    heading={<p className="mb-2 font-semibold text-foreground">{tq('explanation')}</p>}
+                  />
                 </AccordionContent>
               </AccordionItem>
             ))}
