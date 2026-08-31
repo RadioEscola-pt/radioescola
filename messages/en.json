@@ -461,6 +461,12 @@
       "summary": "Summary",
       "review": "Review"
     },
+    "studyAreas": {
+      "title": "Where to study next",
+      "subtitle": "The topics this exam found weakest, hardest first.",
+      "missed": "{missed} of {total} missed",
+      "practice": "Practise"
+    },
     "status": {
       "passed": "You Passed!",
       "failed": "Not yet",
