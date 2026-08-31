@@ -48,6 +48,10 @@ screenshots/
 # OCR page-text cache (scripts/ocr-exams.ts)
 .ocr-cache/
 
+# Páginas de conferência de provas (scripts/exam-review.ts) — geradas a pedido,
+# ~1,4 MB cada por trazerem as digitalizações embutidas
+docs/revisao/
+
 
 # Impeccable design-tool state
 .impeccable/
