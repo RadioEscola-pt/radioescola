@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import DOMPurify from 'dompurify';
 import { Calculator, ChevronRight, FileText, FileX } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Question, SourceRef } from '@/lib/types';
@@ -12,6 +11,7 @@ import BookmarkButton from '@/components/BookmarkButton';
 import { Highlight } from '@/components/ui/highlight';
 import PdfPageDialog from '@/components/PdfPageDialog';
 import StudyGuideLink from '@/components/StudyGuideLink';
+import { QuestionExplanation } from '@/components/QuestionExplanation';
 import {
   RESOURCE_ROW, RESOURCE_ROW_INERT, RESOURCE_TILE, RESOURCE_TITLE, RESOURCE_SUBTITLE, RESOURCE_CHEVRON,
 } from '@/components/ui/resource-row';
@@ -88,23 +88,6 @@ function buildSourceLink(source: SourceRef, locale: string) {
   };
 }
 
-// The notes arrive as sanitized MDX-rendered HTML, so Tailwind's preflight has
-// already stripped paragraph margins and list markers from it. Restore the
-// rhythm for the tags the notes corpus actually uses: prose, the occasional
-// bullet list, and the formula/diagram images.
-const NOTES_PROSE = [
-  'max-w-[68ch] leading-relaxed',
-  '[&_p]:mb-3 [&_p:last-child]:mb-0',
-  '[&_ul]:my-3 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1',
-  '[&_ol]:my-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-1',
-  '[&_img]:my-3 [&_img]:max-w-full [&_img]:h-auto [&_img]:rounded-lg',
-  '[&_img]:border [&_img]:border-slate-200 dark:[&_img]:border-slate-700',
-  // Inline diagrams draw with currentColor, so they follow the theme.
-  '[&_svg]:my-3 [&_svg]:max-w-full [&_svg]:h-auto',
-  '[&_strong]:font-semibold [&_strong]:text-slate-700 dark:[&_strong]:text-slate-300',
-  '[&_a]:text-blue-600 dark:[&_a]:text-blue-400 [&_a]:underline',
-].join(' ');
-
 /** Normalize calc field to array of calculator codes */
 function normalizeCalcCodes(calc: string | string[] | null | undefined): string[] {
   if (!calc) return [];
@@ -135,56 +118,6 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   const tc = useTranslations('Calculators');
   const locale = useLocale();
   const isAnswered = selectedOption !== undefined;
-  const [remoteNotesHtml, setRemoteNotesHtml] = React.useState<string | null>(null);
-  const [remoteNotesLoading, setRemoteNotesLoading] = React.useState(false);
-  const [remoteNotesError, setRemoteNotesError] = React.useState<string | null>(null);
-
-  // One key for the whole request. It is the only dependency of the fetch
-  // effect on purpose: putting the loading flag in the deps makes the effect
-  // tear itself down the moment it sets it, which cancels its own response.
-  const notesKey = ended && categoryId && question.hasNotesMdx
-    ? `${encodeURIComponent(categoryId)}/${encodeURIComponent(String(question.id))}`
-    : null;
-
-  React.useEffect(() => {
-    setRemoteNotesHtml(null);
-    setRemoteNotesError(null);
-  }, [question.id, categoryId]);
-
-  React.useEffect(() => {
-    if (!notesKey) return;
-
-    let cancelled = false;
-    setRemoteNotesLoading(true);
-    setRemoteNotesError(null);
-    fetch(`/api/notes/${notesKey}`)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Failed to load notes: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        if (cancelled) return;
-        const html = typeof data?.html === 'string' ? data.html : '';
-        setRemoteNotesHtml(html.length > 0 ? html : null);
-      })
-      .catch((err) => {
-        if (cancelled) return;
-        console.error(err);
-        setRemoteNotesError('Unable to load notes.');
-      })
-      .finally(() => {
-        if (cancelled) return;
-        setRemoteNotesLoading(false);
-      });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [notesKey]);
-
-  const resolvedNotes = remoteNotesHtml ?? question.notes ?? null;
   // `materia` is the shipped name for the source's `topic` field.
   const topicLabel = question.materia ? topicShortLabel(question.materia, locale) : null;
   const showsDifficulty =
@@ -313,24 +246,13 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
 
       {ended && (
         <div className="mt-5 border-t border-slate-200 dark:border-slate-700 pt-4 space-y-4 text-sm">
-          {(remoteNotesLoading || remoteNotesError || resolvedNotes) && (
-            <div className="text-slate-600 dark:text-slate-400">
-              <p className="mb-2 font-semibold text-slate-700 dark:text-slate-300">{t('explanation')}</p>
-              {remoteNotesLoading && (
-                <div className="max-w-[68ch] space-y-2" aria-hidden="true">
-                  <div className="h-3 rounded bg-slate-200 dark:bg-slate-700 animate-pulse motion-reduce:animate-none" />
-                  <div className="h-3 rounded bg-slate-200 dark:bg-slate-700 animate-pulse motion-reduce:animate-none" />
-                  <div className="h-3 w-2/3 rounded bg-slate-200 dark:bg-slate-700 animate-pulse motion-reduce:animate-none" />
-                </div>
-              )}
-              {remoteNotesError && !remoteNotesLoading && (
-                <p className="text-red-600 dark:text-red-400">{t('notesError')}</p>
-              )}
-              {!remoteNotesLoading && !remoteNotesError && resolvedNotes && (
-                <div className={NOTES_PROSE} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(resolvedNotes) }} />
-              )}
-            </div>
-          )}
+          <QuestionExplanation
+            categoryId={categoryId}
+            questionId={question.id}
+            hasNotesMdx={question.hasNotesMdx}
+            inlineNotes={question.notes}
+            heading={<p className="mb-2 font-semibold text-slate-700 dark:text-slate-300">{t('explanation')}</p>}
+          />
           {question.tutorial && (
             <div>
               <p className="mb-2 font-semibold text-slate-700 dark:text-slate-300">{t('studyLibrary')}</p>

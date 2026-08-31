@@ -287,11 +287,14 @@ export default function ExamPage() {
     const status = sel === undefined ? 'unanswered' : sel === q.correctIndex ? 'correct' : 'incorrect';
     return {
       index: idx,
+      questionId: q.id,
       question: q.question,
       options: q.options,
       selectedIndex: sel,
       correctIndex: q.correctIndex,
       status: status as 'correct' | 'incorrect' | 'unanswered',
+      hasNotesMdx: q.hasNotesMdx,
+      notes: q.notes,
     };
   });
 
