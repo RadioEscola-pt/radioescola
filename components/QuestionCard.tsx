@@ -193,7 +193,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
           {topicLabel ? (
             <span className="min-w-0 flex items-center gap-1.5 truncate text-[10px] font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
               <span className="sr-only">{t('topic')}: </span>
-              <TopicIcon slug={question.materia ?? ''} className="w-3.5 h-3.5 shrink-0" />
+              <TopicIcon slug={question.materia ?? ''} colored className="w-3.5 h-3.5 shrink-0" />
               <span className="truncate">{topicLabel}</span>
             </span>
           ) : (

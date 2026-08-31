@@ -84,7 +84,7 @@ export function QuestionFilters({
             aria-pressed={activeTopic === slug}
             className={`${CHIP} ${activeTopic === slug ? CHIP_ON : CHIP_OFF}`}
           >
-            <TopicIcon slug={slug} className="w-3.5 h-3.5 shrink-0 opacity-70" />
+            <TopicIcon slug={slug} colored className="w-3.5 h-3.5 shrink-0" />
             {label}
             <span className="font-mono text-[10px] tabular-nums opacity-60">{count}</span>
           </button>

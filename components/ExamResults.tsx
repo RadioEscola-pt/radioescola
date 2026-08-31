@@ -14,7 +14,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { topicShortLabel } from '@/lib/config';
 import { weakTopics } from '@/lib/exam/weak-topics';
-import { TopicIcon } from './TopicIcon';
+import { TopicIcon, topicTileClass } from './TopicIcon';
 
 type AnswerStatus = 'correct' | 'incorrect' | 'unanswered';
 
@@ -333,7 +333,12 @@ export function ExamResults({
                   key={topic.slug}
                   className="flex items-center gap-3 rounded-lg border border-border bg-card px-3 py-3 sm:px-4"
                 >
-                  <span className="shrink-0 grid place-items-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400">
+                  {/* Colour identifies the topic; the bar below stays amber,
+                      which is what carries "this is the gap". */}
+                  <span className={cn(
+                    "shrink-0 grid place-items-center w-9 h-9 rounded-lg",
+                    topicTileClass(topic.slug) || "bg-muted text-muted-foreground"
+                  )}>
                     <TopicIcon slug={topic.slug} className="w-[18px] h-[18px]" />
                   </span>
 
