@@ -4,8 +4,8 @@ question: Qual das seguintes afirmações não está correcta?
 answers:
   - text: A filtragem é desejável na recepção para rejeitar sinais não desejados
   - text: >-
-      Não deve ser utilizado qualquer tipo de filtragem na recepção pois há o
-      perigo de interferências
+      Não deve ser utilizado qualquer tipo de filtragem na recepção pois não há
+      o perigo de interferências
     correct: true
   - text: >-
       A filtragem é essencial na emissão para evitar a poluição do espectro por
@@ -15,9 +15,13 @@ answers:
       de recepção para garantir o seu bom funcionamento introduzindo-se
       estabilizadores ou filtros
 topic: interferencias
+sources:
+  - pdf: cat3/2026_08_30
+    question: 35
+    page: 10
 ---
-A afirmação errada é **"não deve ser utilizado qualquer tipo de filtragem na recepção pois há o perigo de interferências"**, que diz exatamente o contrário do que se faz na prática.
+A afirmação errada é **"não deve ser utilizado qualquer tipo de filtragem na recepção pois não há o perigo de interferências"**, que parte de uma premissa falsa: o perigo de interferências existe, e é justamente por isso que se filtra.
 
-Um filtro serve para deixar passar os sinais que interessam e barrar os que não interessam. Na receção, é precisamente a filtragem que protege contra interferências: sem ela, o recetor ficaria exposto a todos os sinais fortes à volta da frequência que queremos escutar. Dizer que a filtragem cria perigo de interferências é inverter o seu papel, ela existe para os reduzir.
+Um filtro serve para deixar passar os sinais que interessam e barrar os que não interessam. Na receção, é precisamente a filtragem que protege contra interferências: sem ela, o recetor ficaria exposto a todos os sinais fortes à volta da frequência que queremos escutar. Dizer que não há perigo de interferências, e concluir daí que a filtragem é dispensável, é ignorar a própria razão pela qual ela existe.
 
 As restantes afirmações descrevem boas práticas reais: filtrar na receção ajuda a rejeitar sinais não desejados, filtrar na emissão evita espalhar sinais espúrios que poluiriam o espectro e incomodariam outros utilizadores, e uma alimentação bem estabilizada e filtrada garante que o equipamento funciona de forma limpa e estável.
