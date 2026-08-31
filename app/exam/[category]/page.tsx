@@ -11,6 +11,7 @@ import { PageLoading } from '@/components/shared/Loading';
 import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
 import { Button } from '@/components/ui/button';
 import { StudyHeader } from '@/components/StudyHeader';
+import { QuestionExplanation } from '@/components/QuestionExplanation';
 import { useProgressContext } from '@/components/providers/ProgressProvider';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
 import type { ExamAttempt, QuestionAttempt } from '@/lib/types/progress';
@@ -22,6 +23,8 @@ export default function ExamPage() {
   const params = useParams();
   const searchParams = useSearchParams();
   const t = useTranslations('Exam');
+  // The explanation reuses the question card's label — same thing, same word.
+  const tq = useTranslations('QuestionCard');
   const { recordExamWithGamification, recordQuestionBatch, gamification } = useProgressContext();
   const [timeLeft, setTimeLeft] = useState<number>(DURATION_SECONDS);
   // Wall-clock deadline (epoch ms) the countdown runs toward; null when no exam
@@ -307,7 +310,14 @@ export default function ExamPage() {
           mode="exam"
           backHref="/"
           subtitle={t('resultsSubtitle')}
-        />
+        >
+          {/* The two post-exam views are complementary, not a sequence: the
+              cards below summarise, the question pages show each answer in
+              place. Without this, results was a one-way door. */}
+          <Button size="sm" variant="outline" onClick={() => setResultsOpen(false)}>
+            {t('viewQuestions')}
+          </Button>
+        </StudyHeader>
         <ExamResults
           category={category.id}
           score={score}
@@ -408,6 +418,21 @@ export default function ExamPage() {
                   </div>
                 )}
               </div>
+
+              {/* `selected !== correctIndex` is both cases at once: answered
+                  wrongly, and not answered at all. A question already answered
+                  correctly needs no explanation here — it is one tap away in
+                  the results review if the candidate wants it anyway. */}
+              {quizEnded && selected !== q.correctIndex && (
+                <QuestionExplanation
+                  categoryId={category.id}
+                  questionId={q.id}
+                  hasNotesMdx={q.hasNotesMdx}
+                  inlineNotes={q.notes}
+                  className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 text-sm"
+                  heading={<p className="mb-2 font-semibold text-slate-700 dark:text-slate-300">{tq('explanation')}</p>}
+                />
+              )}
             </div>
           );
         })}
