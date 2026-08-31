@@ -14,6 +14,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { topicShortLabel } from '@/lib/config';
 import { weakTopics } from '@/lib/exam/weak-topics';
+import { TopicIcon } from './TopicIcon';
 
 type AnswerStatus = 'correct' | 'incorrect' | 'unanswered';
 
@@ -328,29 +329,36 @@ export function ExamResults({
               const label = topicShortLabel(topic.slug, locale) ?? topic.slug;
               const missedShare = Math.round((topic.missed / topic.total) * 100);
               return (
-                <li key={topic.slug}>
-                  <Link
-                    href={`/browse/${category}?topic=${encodeURIComponent(topic.slug)}`}
-                    className="group flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 transition-colors hover:border-amber-300 dark:hover:border-amber-700"
-                  >
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-baseline justify-between gap-3">
-                        <span className="font-medium text-foreground truncate">{label}</span>
-                        <span className="text-xs text-muted-foreground tabular-nums whitespace-nowrap">
-                          {t('studyAreas.missed', { missed: topic.missed, total: topic.total })}
-                        </span>
-                      </div>
-                      <div className="mt-2 h-1.5 rounded-full bg-muted overflow-hidden">
-                        <div
-                          className="h-full rounded-full bg-amber-500 dark:bg-amber-400"
-                          style={{ width: `${missedShare}%` }}
-                        />
-                      </div>
+                <li
+                  key={topic.slug}
+                  className="flex items-center gap-3 rounded-lg border border-border bg-card px-3 py-3 sm:px-4"
+                >
+                  <span className="shrink-0 grid place-items-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400">
+                    <TopicIcon slug={topic.slug} className="w-[18px] h-[18px]" />
+                  </span>
+
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-baseline justify-between gap-3">
+                      <span className="font-medium text-foreground truncate">{label}</span>
+                      <span className="text-xs text-muted-foreground tabular-nums whitespace-nowrap">
+                        {t('studyAreas.missed', { missed: topic.missed, total: topic.total })}
+                      </span>
                     </div>
-                    <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground whitespace-nowrap">
+                    <div className="mt-2 h-1.5 rounded-full bg-muted overflow-hidden">
+                      <div
+                        className="h-full rounded-full bg-amber-500 dark:bg-amber-400"
+                        style={{ width: `${missedShare}%` }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* The only interactive thing in the row: a link dressed as a
+                      button reads as an action, and keeps one tab stop per topic. */}
+                  <Button asChild size="sm" variant="outline" className="shrink-0">
+                    <Link href={`/browse/${category}?topic=${encodeURIComponent(topic.slug)}`}>
                       {t('studyAreas.practice')}
-                    </span>
-                  </Link>
+                    </Link>
+                  </Button>
                 </li>
               );
             })}
