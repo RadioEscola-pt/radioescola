@@ -566,7 +566,6 @@
         "A intensidade de corrente"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2023_08_29",
@@ -1794,8 +1793,7 @@
         "pode ser desconhecida, sem inconveniente",
         "só pode ser medida nos Centros de Monitorização e Controlo do Espectro da ANACOM"
       ],
-      "correctIndex": 0,
-      "hasNotesMdx": true,
+      "correctIndex": 1,
       "materia": "teoria"
     },
     {
@@ -1808,7 +1806,6 @@
         "uma emissão em qualquer tipo de modulação"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true,
       "materia": "teoria"
     },
     {
@@ -1890,7 +1887,6 @@
         "Modulação de frequência"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true,
       "materia": "teoria"
     },
     {
@@ -4286,7 +4282,6 @@
         "da variação do ruído da portadora em função do sinal que a modula."
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2017_09_27",
@@ -4783,7 +4778,6 @@
         "A relação entre o ganho direto e o ganho do dipolo"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true,
       "materia": "antenas"
     },
     {
@@ -4900,7 +4894,6 @@
         "50 Ohm"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true,
       "materia": "antenas"
     },
     {
@@ -5059,7 +5052,6 @@
         "Ocorreu uma reflexão na camada esporádica-E da ionosfera"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true,
       "materia": "propagacao"
     },
     {
@@ -5129,7 +5121,6 @@
         "manchas solares"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2023_09_25",
@@ -5254,7 +5245,6 @@
         "F"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true,
       "materia": "propagacao"
     },
     {
@@ -5285,7 +5275,6 @@
         "É uma condição de propagação ionosférica, em que estas camadas são atravessadas facilmente nas !faixas de HF"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true,
       "materia": "propagacao"
     },
     {
@@ -5701,7 +5690,6 @@
         "Robustez"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true,
       "materia": "interferencias"
     },
     {
@@ -5770,7 +5758,6 @@
         "Todas as respostas anteriores estão corretas"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true,
       "materia": "seguranca"
     },
     {
@@ -6554,7 +6541,6 @@
         "Não ligar"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2011_11_00",
