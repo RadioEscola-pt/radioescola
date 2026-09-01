@@ -38,7 +38,7 @@ export function QuestionFilters({
   const t = useTranslations("Browse");
 
   return (
-    <div className="sticky top-[6.25rem] z-10 -mx-4 sm:mx-0 mb-4 border-b border-slate-200/60 bg-white/80 px-4 py-2.5 backdrop-blur-xl dark:border-slate-700/40 dark:bg-slate-900/80">
+    <div className="sticky top-[6.25rem] z-10 mb-4 border-b border-slate-200/60 bg-white/80 px-4 py-2.5 backdrop-blur-xl dark:border-slate-700/40 dark:bg-slate-900/80">
       <div className="flex items-center gap-2">
         <div className="flex flex-1 items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 focus-within:border-amber-400 dark:border-slate-700 dark:bg-slate-800">
           <Search className="h-3.5 w-3.5 shrink-0 text-slate-400" aria-hidden="true" />
