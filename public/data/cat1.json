@@ -323,7 +323,6 @@
         "Todas a hipóteses anteriores não estão corretas"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_08_00",
@@ -944,7 +943,6 @@
         "fototransistor"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2024_01_02",
@@ -1302,7 +1300,6 @@
         "1000 mH"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_12_22",
@@ -1342,7 +1339,6 @@
         "300 microfarad"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_07_03",
@@ -2412,7 +2408,6 @@
         "Através de um cristal de quartzo"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2011_12_13",
@@ -2526,7 +2521,6 @@
         "Um circuito eletrónico realimentado, contituído por um amplificador de precisão (push-pull) (com entrada diferencial), seguido por um oscilador controlado por tensão e que na malha de realimentação possui um circuito que iguala a fase dos sinais envolvidos"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_12_22",
@@ -2591,7 +2585,6 @@
         "O filtro com processamento digital de sinal é mais eficaz em frequências VHF"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true,
       "materia": "recetores"
     },
     {
@@ -2789,7 +2782,6 @@
         "Potência do transmissor"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_07_03",
@@ -3012,7 +3004,6 @@
         "A modulação traduz-se na rotação de um sinal da sua gama de frequências no espaço real para outra gama de frequências no espaço real para outra gama de frequências no espaço complexo"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_12_22",
@@ -3121,7 +3112,6 @@
         "Triac"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2024_01_02",
@@ -3172,7 +3162,6 @@
         "Queue Algorithm Modulation"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_12_22",
@@ -3274,7 +3263,6 @@
         "A classe C não apresenta nenhuma vantagem em relação a outras classes de amplificação"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2011_12_13",
@@ -3429,7 +3417,6 @@
         "parasita de uma antena Yagi-Uda"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2024_01_02",
@@ -3646,7 +3633,6 @@
         "São as perturbações resultantes de um circuito ter realimentação negativa"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_12_22",
@@ -3722,7 +3708,6 @@
         "Vertical"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2024_01_02",
@@ -3889,7 +3874,6 @@
         "Os sinais elétricos propagam-se mais lenta,emte num cabo coaxial do que no ar"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_12_22",
@@ -4084,7 +4068,6 @@
         "flF2"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2024_01_02",
@@ -4195,7 +4178,6 @@
         "24,00 - 24,05 MHz"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2024_01_02",
@@ -4349,7 +4331,6 @@
         "A absorção é maior em ondas de polarização horizontal"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2024_01_02",
@@ -4394,7 +4375,6 @@
         "Interseção rádio"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_08_00",
@@ -4456,7 +4436,6 @@
         "Permite a determinação da presença de ondas com \"flat-topping\" em momentos de pico de modulação"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2018_03_08",
@@ -4544,7 +4523,6 @@
         "Todas as hipóteses anteriores estão incorretas, pois a impedância interna dum amperímetro não tem qualquer efeito no erro da medição"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_12_22",
@@ -4668,7 +4646,6 @@
         "Nestas circunstâncias, os campos radiados pelo sistema de teste, duma forma geral, terão uma grande probalidade de provocar interferências prejudiciais noutros sistemas rádio que estejam em operação, nas proximidades"
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2024_01_02",
@@ -4905,7 +4882,6 @@
         "terá que solicitar autorização à CEPT"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2024_01_02",
@@ -5098,7 +5074,6 @@
         "Tem de ser neutralizada"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_08_00",
@@ -5429,7 +5404,6 @@
         "Certificado internacional HAREC, nos termos da Recomendação CEPT T/R 61-02"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_08_00",
@@ -5477,7 +5451,6 @@
         "Um wattímetro de potência de pico"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2022_12_27",
@@ -5521,7 +5494,6 @@
         "Investigar a situação e resolvê-la ou ajudá-la a resolver se o problema for da instalação de receção"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2012_04_10",
@@ -5570,7 +5542,6 @@
         "Queixar-me à Junta de Freguesia"
       ],
       "correctIndex": 1,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_08_00",
@@ -5609,7 +5580,6 @@
         "Esperar que a situação de inteferência passe"
       ],
       "correctIndex": 0,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_12_22",
@@ -6147,7 +6117,6 @@
         "Todas as respostas estão correctas."
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_07_03",
@@ -6708,7 +6677,6 @@
         "Um oscilador de referência, um NCO - (Numerically Controlled Oscillator), um conversor digital-analógico e um filtro passa-baixo"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_08_00",
@@ -6735,7 +6703,6 @@
         "Receção de sinal por mais do que um trajeto"
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_12_22",
