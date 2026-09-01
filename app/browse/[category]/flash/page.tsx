@@ -120,6 +120,15 @@ export default function FlashBrowsePage() {
     setAnsweredCount(0);
   }, [category]);
 
+  // Answering scrolls the page down to the explanation, so a new card has to be
+  // brought back into view. `order` is in the deps because finishing a round
+  // reshuffles it while leaving the cursor at 0. The jump is instant on purpose:
+  // a smooth scroll is animated over the *next* card, which is usually shorter
+  // than the answered one, and gets clamped to its new bottom on the way up.
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, [cursor, order]);
+
   const handleLaunchCalculator = useCallback((code: string) => {
     openCalculator(code as CalculatorCode);
   }, [openCalculator]);
@@ -221,7 +230,7 @@ export default function FlashBrowsePage() {
         subtitle={t("flashCard", { position: sessionPosition, total: category.questions.length })}
       >
         <span className="text-xs font-medium text-slate-500 dark:text-slate-400 tabular-nums">
-          {answeredCount} reviewed
+          {t("flashReviewed", { count: answeredCount })}
         </span>
       </StudyHeader>
 

@@ -66,6 +66,7 @@
     "flashNext": "Próxima questão",
     "flashNoQuestions": "Ainda não há questões disponíveis para esta categoria.",
     "flashNotFound": "Não encontrámos a categoria {id}. Tenta escolher uma categoria no menu Explorar.",
+    "flashReviewed": "{count, plural, =0 {0 revistos} =1 {1 revisto} other {# revistos}}",
     "flashSubtitle": "Pratica uma questão aleatória de cada vez. Já reviste {count}.",
     "flashTitle": "Flashcards Categoria {id}",
     "loading": "A carregar questões...",
