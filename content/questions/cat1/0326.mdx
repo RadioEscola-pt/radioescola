@@ -1,5 +1,8 @@
 ---
 id: 326
+disabled: >-
+  Duplicado exato da cat1#31, de que difere apenas no ponto final das opções. A
+  versão mantida é a cat1#31, que é a que cita as provas oficiais.
 question: Numa conversão analógica/digital em que consiste o aliasing?
 answers:
   - text: >-
@@ -15,7 +18,6 @@ answers:
     correct: true
 topic: teoria
 ---
-
 O aliasing é a **distorção resultante do não cumprimento do teorema de Nyquist**.
 
 O teorema de Nyquist estabelece que a frequência de amostragem tem de ser, no mínimo, o dobro da frequência mais alta contida no sinal. Quando esta condição não é respeitada, as componentes do sinal acima de metade da frequência de amostragem (fs/2) não desaparecem: são "rebatidas" para dentro da banda útil e surgem no sinal amostrado como frequências mais baixas, inexistentes no original. Essas frequências fantasma são os alias, e uma vez amostrado o sinal já não há forma de as distinguir das componentes legítimas.

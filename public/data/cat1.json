@@ -160,6 +160,31 @@
         {
           "pdf": "cat1/2023_12_22",
           "question": 19
+        },
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 19,
+          "page": 6
+        }
+      ],
+      "materia": "interferencias"
+    },
+    {
+      "id": 391,
+      "question": "Qual das expressões define a efetividade da blindagem (S) para campos magnéticos (sendo Hi a intensidade do campo magnético incidente e Ht a intensidade do campo magnético transmitido através da blindagem)?",
+      "options": [
+        "S=20+log(Hi/Ht)",
+        "S=1-log(Hi/Ht)",
+        "S=20xlog(Hi/Ht)",
+        "S=20-log(Hi/Ht)"
+      ],
+      "correctIndex": 2,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 24,
+          "page": 7
         }
       ],
       "materia": "interferencias"
@@ -351,6 +376,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 34,
+          "page": 10
+        }
+      ],
       "materia": "teoria"
     },
     {
@@ -468,7 +500,7 @@
       "id": 24,
       "question": "Qual das seguintes técncicas costuma ser usada para converter sinais analógicos em digitais?",
       "options": [
-        "Amostragem sequêncial",
+        "Amostragem sequencial",
         "Regeneração de sinais harmónicos",
         "Mudança de nível",
         "Inversão de fase"
@@ -484,6 +516,11 @@
           "pdf": "cat1/2014_12_19",
           "question": 38,
           "unavailable": true
+        },
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 40,
+          "page": 12
         }
       ],
       "materia": "teoria"
@@ -881,6 +918,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 26,
+          "page": 8
+        }
+      ],
       "materia": "componentes"
     },
     {
@@ -984,7 +1028,7 @@
         "Polarização inversa",
         "Polarização directa",
         "Polarização nula",
-        "Polarização inductiva"
+        "Polarização indutiva"
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
@@ -1064,6 +1108,11 @@
           "pdf": "cat1/2014_12_19",
           "question": 33,
           "unavailable": true
+        },
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 33,
+          "page": 10
         }
       ],
       "materia": "medidas"
@@ -1425,6 +1474,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 10,
+          "page": 3
+        }
+      ],
       "materia": "componentes"
     },
     {
@@ -1882,6 +1938,11 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 17
+        },
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 17,
+          "page": 6
         }
       ],
       "materia": "seguranca"
@@ -2014,6 +2075,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 29,
+          "page": 9
+        }
+      ],
       "materia": "circuitos"
     },
     {
@@ -2144,6 +2212,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 31,
+          "page": 9
+        }
+      ],
       "img": "/images/cat1/fig4.png",
       "materia": "circuitos"
     },
@@ -2417,6 +2492,11 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 32
+        },
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 32,
+          "page": 9
         }
       ],
       "materia": "circuitos"
@@ -2540,6 +2620,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 36,
+          "page": 11
+        }
+      ],
       "materia": "circuitos"
     },
     {
@@ -2627,7 +2714,7 @@
         "Para manter o tratamento dos sinais numa zona linear",
         "Para evitar saturações no tratamento dos sinais",
         "Para que os sinais sejam ajustados de forma a manter um nível médio na saída",
-        "Todas as hióteses de resposta estão correctas"
+        "Todas as hipóteses de resposta estão correctas"
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
@@ -2636,6 +2723,11 @@
           "pdf": "cat1/2011_12_13",
           "question": 21,
           "page": 6
+        },
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 23,
+          "page": 7
         }
       ],
       "materia": "circuitos"
@@ -2817,7 +2909,7 @@
     },
     {
       "id": 158,
-      "question": "Em que medida é que a diminuição do fator de ruído afeita o desempenho do recetor?",
+      "question": "Em que medida é que o aumento do fator de ruído afeta o desempenho do recetor?",
       "options": [
         "Reduz a relação sinal-ruído",
         "Aumenta a relação sinal-ruído",
@@ -2826,6 +2918,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 25,
+          "page": 8
+        }
+      ],
       "materia": "recetores"
     },
     {
@@ -2988,6 +3087,11 @@
       "sources": [
         {
           "pdf": "cat1/2023_07_03",
+          "question": 7,
+          "page": 2
+        },
+        {
+          "pdf": "cat1/2026_09_01",
           "question": 7,
           "page": 2
         }
@@ -3236,6 +3340,11 @@
           "pdf": "cat1/2014_12_19",
           "question": 27,
           "unavailable": true
+        },
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 27,
+          "page": 8
         }
       ],
       "materia": "operacao"
@@ -3251,6 +3360,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 28,
+          "page": 8
+        }
+      ],
       "materia": "emissores"
     },
     {
@@ -3421,6 +3537,11 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 21
+        },
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 21,
+          "page": 7
         }
       ],
       "materia": "antenas"
@@ -3809,6 +3930,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 20,
+          "page": 6
+        }
+      ],
       "materia": "antenas"
     },
     {
@@ -4054,6 +4182,11 @@
         {
           "pdf": "cat1/2023_08_00",
           "question": 3
+        },
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 5,
+          "page": 2
         }
       ],
       "materia": "propagacao"
@@ -4527,6 +4660,11 @@
         {
           "pdf": "cat1/2023_12_22",
           "question": 11
+        },
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 11,
+          "page": 4
         }
       ],
       "materia": "medidas"
@@ -4726,6 +4864,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 14,
+          "page": 5
+        }
+      ],
       "materia": "medidas"
     },
     {
@@ -4870,6 +5015,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 2,
+          "page": 1
+        }
+      ],
       "materia": "regulamentacao"
     },
     {
@@ -5000,6 +5152,11 @@
         {
           "pdf": "cat1/2023_12_22",
           "question": 1
+        },
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 1,
+          "page": 1
         }
       ],
       "materia": "regulamentacao"
@@ -5566,6 +5723,11 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 6
+        },
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 6,
+          "page": 2
         }
       ],
       "materia": "interferencias"
@@ -5641,6 +5803,11 @@
       "sources": [
         {
           "pdf": "cat1/2023_07_03",
+          "question": 8,
+          "page": 3
+        },
+        {
+          "pdf": "cat1/2026_09_01",
           "question": 8,
           "page": 3
         }
@@ -5726,19 +5893,6 @@
       "materia": "medidas"
     },
     {
-      "id": 303,
-      "question": "Como se designam as figuras que representam num osciloscópio a relação de fase entre dois sinais sinusoidais?",
-      "options": [
-        "Figuras de Lissajous.",
-        "Figuras de Dirac.",
-        "Figuras de mérito.",
-        "Figuras de Watt."
-      ],
-      "correctIndex": 0,
-      "hasNotesMdx": true,
-      "materia": "medidas"
-    },
-    {
       "id": 304,
       "question": "Qual o tipo de circuitos ideais que apresentam os sinais de corrente e de tensão em fase?",
       "options": [
@@ -5761,19 +5915,6 @@
         "inversamente proporcional à temperatura de ruído efectiva do sistema e directamente proporcional à largura de banda efectiva do sistema."
       ],
       "correctIndex": 2,
-      "hasNotesMdx": true,
-      "materia": "teoria"
-    },
-    {
-      "id": 307,
-      "question": "O que quer dizer FSK?",
-      "options": [
-        "Frequency Shunt Kelvin.",
-        "Frequency Shift Keying.",
-        "Forward Shunt Keying.",
-        "Forward Shift Keying."
-      ],
-      "correctIndex": 1,
       "hasNotesMdx": true,
       "materia": "teoria"
     },
@@ -5836,19 +5977,6 @@
       "materia": "medidas"
     },
     {
-      "id": 312,
-      "question": "Que tipo de informação pode ser transmitido por meio de formas de onda digitais?",
-      "options": [
-        "Voz humana.",
-        "Sinais de vídeo.",
-        "Dados.",
-        "Todas as opções são válidas."
-      ],
-      "correctIndex": 3,
-      "hasNotesMdx": true,
-      "materia": "teoria"
-    },
-    {
       "id": 313,
       "question": "Qual a vantagem do uso de sinais digitais sobre o de sinais analógicos para transmissão da mesma informação?",
       "options": [
@@ -5885,6 +6013,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 39,
+          "page": 12
+        }
+      ],
       "materia": "medidas"
     },
     {
@@ -5895,19 +6030,6 @@
         "A amplitude dos impulsos.",
         "A duração dos impulsos.",
         "O momento em que se produz cada pulso."
-      ],
-      "correctIndex": 3,
-      "hasNotesMdx": true,
-      "materia": "teoria"
-    },
-    {
-      "id": 317,
-      "question": "Qual dos seguintes códigos digitais se compõem de elementos de comprimentos diferentes?",
-      "options": [
-        "ASCII.",
-        "AX25.",
-        "Baudot.",
-        "Código Morse."
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
@@ -6037,19 +6159,6 @@
       "materia": "teoria"
     },
     {
-      "id": 326,
-      "question": "Numa conversão analógica/digital em que consiste o aliasing?",
-      "options": [
-        "É a distorção resultante de não se utilizar componentes de qualidade no circuito.",
-        "É uma distorção aleatória que se verifica na conversão de sinais de muito alta frequência.",
-        "É uma distorção relacionada com não linearidades dos amplificadores utilizados no processo.",
-        "É a distorção resultante do não cumprimento do teorema de Nyquist."
-      ],
-      "correctIndex": 3,
-      "hasNotesMdx": true,
-      "materia": "teoria"
-    },
-    {
       "id": 327,
       "question": "Como reage um condensador à corrente alternada?",
       "options": [
@@ -6126,6 +6235,11 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 16
+        },
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 16,
+          "page": 5
         }
       ],
       "materia": "componentes"
@@ -6282,19 +6396,6 @@
         "Permeabilidade do núcleo."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true,
-      "materia": "componentes"
-    },
-    {
-      "id": 343,
-      "question": "Que razão importante existe para que numa bobina se usem toróides de ferro pulverizado em vez de toróides de ferrite?",
-      "options": [
-        "Os toróides de ferro pulverizado têm normalmente maior permeabilidade inicial.",
-        "Os toróides de ferro pulverizado têm normalmente maior estabilidade de temperatura.",
-        "Os toróides de ferro pulverizado requerem normalmente um menor número de espiras para produzir uma determinada indutância.",
-        "Os toróides de ferro pulverizado apresentam a maior potência nominal."
-      ],
-      "correctIndex": 1,
       "hasNotesMdx": true,
       "materia": "componentes"
     },
@@ -6485,6 +6586,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 30,
+          "page": 9
+        }
+      ],
       "img": "/images/cat1/q25.png",
       "materia": "componentes"
     },
@@ -6502,19 +6610,6 @@
       "materia": "componentes"
     },
     {
-      "id": 358,
-      "question": "Que tipo de polarização é necessária para um LED se iluminar?",
-      "options": [
-        "Polarização inversa.",
-        "Polarização directa.",
-        "Polarização nula.",
-        "Polarização indutiva."
-      ],
-      "correctIndex": 1,
-      "hasNotesMdx": true,
-      "materia": "componentes"
-    },
-    {
       "id": 359,
       "question": "Como se designam os três terminais de um transístor de efeito de campo?",
       "options": [
@@ -6524,32 +6619,6 @@
         "Porta, dreno e fonte."
       ],
       "correctIndex": 3,
-      "hasNotesMdx": true,
-      "materia": "componentes"
-    },
-    {
-      "id": 360,
-      "question": "Qual a vantagem de dispositivos lógicos CMOS sobre dispositivos TTL?",
-      "options": [
-        "Capacidade de saída diferencial.",
-        "Baixa distorção.",
-        "Imune a danos causados por descargas estáticas.",
-        "Baixo consumo de energia."
-      ],
-      "correctIndex": 3,
-      "hasNotesMdx": true,
-      "materia": "componentes"
-    },
-    {
-      "id": 361,
-      "question": "Qual a principal função de uma grelha de blindagem num tubo de vácuo?",
-      "options": [
-        "Redução da capacidade entre a grelha e a placa.",
-        "Aumento da eficiência.",
-        "Melhor resposta em alta-frequência.",
-        "Redução da resistência da placa."
-      ],
-      "correctIndex": 0,
       "hasNotesMdx": true,
       "materia": "componentes"
     },
@@ -6618,6 +6687,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 35,
+          "page": 10
+        }
+      ],
       "img": "/images/cat1/q35.png",
       "materia": "circuitos"
     },
@@ -6689,6 +6765,11 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 38
+        },
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 38,
+          "page": 11
         }
       ],
       "materia": "circuitos"
