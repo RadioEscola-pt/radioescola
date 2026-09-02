@@ -173,6 +173,11 @@
         {
           "pdf": "cat2/2022_12_27",
           "question": 8
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 8,
+          "page": 3
         }
       ],
       "materia": "teoria"
@@ -412,6 +417,11 @@
         {
           "pdf": "cat2/2022_12_27",
           "question": 16
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 16,
+          "page": 5
         }
       ],
       "materia": "teoria"
@@ -455,6 +465,11 @@
         {
           "pdf": "cat2/2023_06_15",
           "question": 23
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 23,
+          "page": 6
         }
       ],
       "materia": "teoria"
@@ -590,6 +605,11 @@
         {
           "pdf": "cat2/2023_06_26",
           "question": 27
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 27,
+          "page": 7
         }
       ],
       "materia": "teoria"
@@ -850,6 +870,11 @@
         {
           "pdf": "cat2/2021_09_06",
           "question": 32
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 32,
+          "page": 9
         }
       ],
       "materia": "teoria"
@@ -997,6 +1022,11 @@
         {
           "pdf": "cat2/2022_06_27",
           "question": 35
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 34,
+          "page": 9
         }
       ],
       "materia": "teoria"
@@ -1031,6 +1061,11 @@
         {
           "pdf": "cat2/2023_03_08",
           "question": 34
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 35,
+          "page": 9
         }
       ],
       "materia": "teoria"
@@ -1444,6 +1479,11 @@
         {
           "pdf": "cat2/2021_02_18",
           "question": 18
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 18,
+          "page": 5
         }
       ],
       "materia": "circuitos"
@@ -2392,6 +2432,11 @@
         {
           "pdf": "cat2/2022_12_27",
           "question": 20
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 20,
+          "page": 6
         }
       ],
       "materia": "circuitos"
@@ -2476,6 +2521,11 @@
         {
           "pdf": "cat2/2023_06_15",
           "question": 22
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 22,
+          "page": 6
         }
       ],
       "materia": "componentes"
@@ -2857,6 +2907,11 @@
         {
           "pdf": "cat2/2016_01_00",
           "question": 32
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 31,
+          "page": 8
         }
       ],
       "materia": "componentes"
@@ -3173,6 +3228,11 @@
         {
           "pdf": "cat2/2023_01_27",
           "question": 33
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 33,
+          "page": 9
         }
       ],
       "materia": "componentes"
@@ -3552,6 +3612,11 @@
         {
           "pdf": "cat2/2023_03_08",
           "question": 30
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 30,
+          "page": 8
         }
       ],
       "materia": "circuitos"
@@ -3721,6 +3786,11 @@
         {
           "pdf": "cat2/2023_01_27",
           "question": 29
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 29,
+          "page": 8
         }
       ],
       "materia": "emissores"
@@ -3760,6 +3830,11 @@
         {
           "pdf": "cat2/2023_06_26",
           "question": 10
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 10,
+          "page": 3
         }
       ],
       "materia": "recetores"
@@ -3890,6 +3965,11 @@
         {
           "pdf": "cat2/2023_03_08",
           "question": 14
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 14,
+          "page": 4
         }
       ],
       "materia": "emissores"
@@ -4175,6 +4255,11 @@
         {
           "pdf": "cat2/2020_07_16",
           "question": 26
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 26,
+          "page": 7
         }
       ],
       "materia": "recetores"
@@ -4321,6 +4406,11 @@
         {
           "pdf": "cat2/2023_03_08",
           "question": 25
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 25,
+          "page": 7
         }
       ],
       "materia": "interferencias"
@@ -4530,6 +4620,11 @@
         {
           "pdf": "cat2/2021_02_18",
           "question": 13
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 13,
+          "page": 4
         }
       ],
       "materia": "antenas"
@@ -4742,6 +4837,11 @@
         {
           "pdf": "cat2/2023_06_15",
           "question": 15
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 15,
+          "page": 4
         }
       ],
       "materia": "antenas"
@@ -5266,6 +5366,26 @@
       "materia": "propagacao"
     },
     {
+      "id": 423,
+      "question": "As mudanças regulares da ionosfera repetem-se aproximadamente a cada 11",
+      "options": [
+        "dias",
+        "meses",
+        "anos",
+        "séculos"
+      ],
+      "correctIndex": 2,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 6,
+          "page": 2
+        }
+      ],
+      "materia": "propagacao"
+    },
+    {
       "id": 228,
       "question": "Ao nível da propagação de ondas eletromagnéticas nas faixas de frequências de radiocomunicações, o que se designa por 'ducto'?",
       "options": [
@@ -5310,6 +5430,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 24,
+          "page": 7
+        }
+      ],
       "materia": "antenas"
     },
     {
@@ -5353,6 +5480,11 @@
         {
           "pdf": "cat2/2023_03_08",
           "question": 12
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 12,
+          "page": 4
         }
       ],
       "materia": "medidas"
@@ -5560,6 +5692,11 @@
         {
           "pdf": "cat2/2022_12_27",
           "question": 17
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 17,
+          "page": 5
         }
       ],
       "materia": "medidas"
@@ -5758,6 +5895,13 @@
         "Todas as respostas anteriores estão corretas"
       ],
       "correctIndex": 3,
+      "sources": [
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 5,
+          "page": 2
+        }
+      ],
       "materia": "seguranca"
     },
     {
@@ -6177,6 +6321,11 @@
         {
           "pdf": "cat2/2021_02_18",
           "question": 3
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 3,
+          "page": 1
         }
       ],
       "materia": "regulamentacao"
@@ -6300,6 +6449,11 @@
         {
           "pdf": "cat2/2023_09_25",
           "question": 2
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 2,
+          "page": 1
         }
       ],
       "materia": "regulamentacao"
@@ -6415,6 +6569,11 @@
         {
           "pdf": "cat2/2011_11_00",
           "question": 3
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 1,
+          "page": 1
         }
       ],
       "materia": "operacao"
@@ -6573,6 +6732,11 @@
         {
           "pdf": "cat2/2023_09_25",
           "question": 7
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 7,
+          "page": 2
         }
       ],
       "materia": "operacao"
@@ -6993,6 +7157,11 @@
         {
           "pdf": "cat2/2020_07_16",
           "question": 19
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 19,
+          "page": 5
         }
       ],
       "materia": "emissores"
@@ -7110,6 +7279,11 @@
         {
           "pdf": "cat2/2022_08_26",
           "question": 21
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 21,
+          "page": 6
         }
       ],
       "materia": "circuitos"
@@ -7245,6 +7419,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 4,
+          "page": 2
+        }
+      ],
       "materia": "regulamentacao"
     },
     {
@@ -7308,6 +7489,11 @@
         {
           "pdf": "cat2/2022_12_27",
           "question": 9
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 9,
+          "page": 3
         }
       ],
       "materia": "circuitos"
@@ -7334,6 +7520,11 @@
         {
           "pdf": "cat2/2023_06_26",
           "question": 11
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 11,
+          "page": 3
         }
       ],
       "materia": "interferencias"
@@ -8097,6 +8288,11 @@
         {
           "pdf": "cat2/2022_08_26",
           "question": 37
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 37,
+          "page": 10
         }
       ],
       "materia": "teoria"
@@ -8128,6 +8324,11 @@
         {
           "pdf": "cat2/2012_04_10",
           "question": 39
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 39,
+          "page": 11
         }
       ],
       "materia": "teoria"
@@ -8218,6 +8419,11 @@
         {
           "pdf": "cat2/2016_01_00",
           "question": 39
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 38,
+          "page": 10
         }
       ],
       "materia": "circuitos"
@@ -8535,6 +8741,26 @@
         {
           "pdf": "cat2/2022_07_20",
           "question": 40
+        }
+      ],
+      "materia": "teoria"
+    },
+    {
+      "id": 425,
+      "question": "O que significa \"peak envelope power\"?",
+      "options": [
+        "Potência envolvente eficaz",
+        "Potência de pico envolvente",
+        "Potência pico a pico",
+        "Nenhuma das hipóteses está correta"
+      ],
+      "correctIndex": 1,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 40,
+          "page": 11
         }
       ],
       "materia": "teoria"
@@ -9042,6 +9268,11 @@
         {
           "pdf": "cat2/2023_01_27",
           "question": 36
+        },
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 36,
+          "page": 10
         }
       ],
       "materia": "componentes"
@@ -9208,6 +9439,26 @@
         {
           "pdf": "cat2/2021_02_18",
           "question": 28
+        }
+      ],
+      "materia": "componentes"
+    },
+    {
+      "id": 424,
+      "question": "Se considerarmos um transformador comercialmente disponível com o primário ligado à rede elétrica e apresentando nos terminais do secundário em vazio o valor de 12,6 V, qual das afirmações está correta?",
+      "options": [
+        "A frequência do sinal do secundário é igual à frequência do primário",
+        "Se carregado e à medida que a corrente for aumentando é expectável uma ligeira diminuição da tensão aos terminais do secundário",
+        "Por não ser um transformador ideal, será previsível um ligeiro aquecimento",
+        "Todas as afirmações estão corretas"
+      ],
+      "correctIndex": 3,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat2/2026_09_01",
+          "question": 28,
+          "page": 8
         }
       ],
       "materia": "componentes"
