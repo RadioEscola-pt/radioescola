@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { Search, Sigma, Lightbulb, X, ListTree } from 'lucide-react';
 import { CATEGORIES, CATEGORY_CONFIG, type CategoryId } from '@/lib/config/categories';
 import { FORMULARIO } from '@/lib/config/formulario.data';
-import { questionHref, sectionVisual, type Formula, type FormulaSection, type FormulaTable } from '@/lib/config/formulario';
+import { sectionVisual, type Formula, type FormulaSection, type FormulaTable } from '@/lib/config/formulario';
+import { QuestionRef } from '@/components/question-preview/QuestionRef';
 import { Math, RichText } from './Math';
 
 type Filter = CategoryId | 'all';
@@ -57,28 +58,10 @@ function CategoryBadges({ categorias }: { categorias: CategoryId[] }) {
 
 function Refs({ refs }: { refs: string[] }) {
   if (refs.length === 0) return null;
-  // `min-h-7` keeps these reachable with a thumb; a bare text-xs link is a
-  // ~16px target, which on a phone is a miss more often than a hit.
-  const chip =
-    'inline-flex min-h-7 items-center rounded-md bg-slate-100 px-2 font-mono text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-400';
   return (
     <div className="mt-3 flex flex-wrap items-center gap-x-1.5 gap-y-1">
       <span className="text-xs text-slate-500 dark:text-slate-400">Sai em</span>
-      {refs.map((ref) => {
-        const href = questionHref(ref);
-        const label = ref.replace('#', ' · ');
-        return href ? (
-          <Link
-            key={ref}
-            href={href}
-            className={`${chip} transition-colors duration-150 hover:bg-amber-100 hover:text-amber-800 motion-reduce:transition-none dark:hover:bg-amber-950/60 dark:hover:text-amber-300`}
-          >
-            {label}
-          </Link>
-        ) : (
-          <span key={ref} className={chip}>{label}</span>
-        );
-      })}
+      {refs.map((ref) => <QuestionRef key={ref} refId={ref} />)}
     </div>
   );
 }
