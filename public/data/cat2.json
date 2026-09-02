@@ -9007,18 +9007,6 @@
       "materia": "circuitos"
     },
     {
-      "id": 391,
-      "question": "Qual a resistência total de duas resistências de 33 ohms quando ligadas em paralelo?",
-      "options": [
-        "33 ohms",
-        "0,3 ohms",
-        "330 ohms",
-        "16,5 ohms"
-      ],
-      "correctIndex": 3,
-      "materia": "circuitos"
-    },
-    {
       "id": 392,
       "question": "Qual a resistência total de duas resistências de 66 ohms quando ligadas em paralelo?",
       "options": [
