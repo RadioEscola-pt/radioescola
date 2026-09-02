@@ -55,7 +55,7 @@ function context(overrides: Partial<ReviewContext> = {}): ReviewContext {
     anacomFile: 90,
     bank: BANK,
     order: [1, 4, 5, 213],
-    pdfLookup: () => ({ exists: true, alsoIn: [] }),
+    pdfLookup: () => ({ exists: true, baselined: false, alsoIn: [] }),
     imageExists: () => true,
     ...overrides,
   };
@@ -157,11 +157,25 @@ describe("reviewDraft", () => {
   it("refuses a source pointing at a paper that is not on disk", () => {
     const review = reviewDraft(
       draft(),
-      context({ pdfLookup: () => ({ exists: false, alsoIn: ["cat2"] }) })
+      context({ pdfLookup: () => ({ exists: false, baselined: false, alsoIn: ["cat2"] }) })
     );
     const finding = review.findings.find((f) => f.code === "pdf-missing");
     expect(finding?.level).toBe("error");
     expect(finding?.detail?.[0]).toMatch(/cat2/);
+  });
+
+  it("only warns when the absent paper is baselined, so the question stays editable", () => {
+    // content:check accepts a reference listed in content/missing-exams.json.
+    // Erroring here instead would make every question citing one of those
+    // papers impossible to edit at all — not even to fix a typo.
+    const review = reviewDraft(
+      draft(),
+      context({ pdfLookup: () => ({ exists: false, baselined: true, alsoIn: [] }) })
+    );
+    expect(review.findings.find((f) => f.code === "pdf-missing")).toBeUndefined();
+    const finding = review.findings.find((f) => f.code === "pdf-baselined");
+    expect(finding?.level).toBe("warning");
+    expect(hasErrors(review.findings)).toBe(false);
   });
 
   it("warns when the PDF page equals the pergunta number", () => {

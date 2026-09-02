@@ -1,0 +1,9 @@
+**Quando a Lua se encontra no perigeu.**
+
+Numa ligação EME o sinal percorre duas vezes a distância Terra-Lua, pelo que a atenuação de espaço livre cresce com a *quarta* potência dessa distância. A órbita da Lua é elíptica: no perigeu está a cerca de 356 000 km, no apogeu a cerca de 406 000 km. A diferença parece pequena, mas 40·log(406/356) dá cerca de 2 dB de perda a menos no perigeu — numa ligação que já trabalha no limiar do ruído, 2 dB é a diferença entre ouvir e não ouvir a estação. É por isso que os operadores de EME planeiam as expedições e os contactos difíceis para os dias de perigeu.
+
+A fase da Lua não entra nesta conta: a Lua reflete o nosso sinal por ser um corpo sólido, não por estar iluminada, e a distância não depende de estar cheia ou nova. A fase importa, sim, por outra razão — perto da lua nova a Lua aproxima-se do Sol no céu e a antena apanha o ruído solar — mas isso é ruído recebido, não perda de propagação.
+
+O apogeu é exatamente a condição oposta à certa: é o ponto da órbita mais afastado, com os tais ~2 dB de perda a mais.
+
+Quanto à MUF, é um conceito de propagação ionosférica: diz-nos até que frequência a ionosfera devolve o sinal à Terra. As ligações EME fazem-se em VHF e acima, onde o que se quer é precisamente **atravessar** a ionosfera; uma MUF elevada nada traz de bom a esse percurso.
