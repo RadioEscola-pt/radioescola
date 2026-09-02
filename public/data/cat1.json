@@ -458,6 +458,26 @@
       "materia": "teoria"
     },
     {
+      "id": 400,
+      "question": "Num recetor, o ruído térmico é gerado",
+      "options": [
+        "apenas nas componentes reais das impedâncias dos circuitos",
+        "apenas nas componentes imaginárias das impedâncias dos circuitos",
+        "tanto nas componentes reais como nas componentes imaginárias das impedâncias dos circuitos",
+        "exclusivamente nos transístores"
+      ],
+      "correctIndex": 0,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 37,
+          "page": 11
+        }
+      ],
+      "materia": "teoria"
+    },
+    {
       "id": 21,
       "question": "O que quer dizer FSK?",
       "options": [
@@ -1666,6 +1686,26 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "materia": "circuitos"
+    },
+    {
+      "id": 397,
+      "question": "Como se encontram dispostos os componentes de uma rede PI de um filtro passa-baixo, tendo como referência a entrada e a saída do referido circuito?",
+      "options": [
+        "Duas bobinas estão ligadas em série entre a entrada e a saída e um condensador está ligado entre as duas bobinas e a terra",
+        "Dois condensadores estão ligados em série entre a entrada e a saída e uma bobina está ligada entre os dois condensadores e a terra",
+        "Uma bobina está em paralelo com a entrada, outra está em paralelo com a saída e um condensador está em série entre as duas bobinas",
+        "Um condensador está em paralelo com a entrada, outro está em paralelo com a saída e uma bobina está em série entre os dois condensadores"
+      ],
+      "correctIndex": 3,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 15,
+          "page": 5
+        }
+      ],
       "materia": "circuitos"
     },
     {
@@ -3244,6 +3284,26 @@
       "materia": "teoria"
     },
     {
+      "id": 399,
+      "question": "A modulação de fase é uma forma de modulação na qual",
+      "options": [
+        "a frequência instantânea da portadora varia linearmente com o sinal modulante",
+        "a amplitude instantânea da portadora varia linearmente com o sinal modulante",
+        "o ângulo instantâneo da portadora varia linearmente com o sinal modulante",
+        "o binómio instantâneo da portadora varia linearmente com o sinal modulante"
+      ],
+      "correctIndex": 2,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 22,
+          "page": 7
+        }
+      ],
+      "materia": "teoria"
+    },
+    {
       "id": 173,
       "question": "Qual dos seguintes tipos de modulação designa uma modulação de fase?",
       "options": [
@@ -3547,6 +3607,26 @@
       "materia": "antenas"
     },
     {
+      "id": 395,
+      "question": "Em que consiste uma antena com dipolo dobrado?",
+      "options": [
+        "Um dipolo com um quarto do comprimento de onda",
+        "Um tipo de antena \"ground-plane\"",
+        "Um dipolo construído a partir de um fio com um comprimento de onda formando um \"loop\" muito fino",
+        "Uma antena teórica, portanto não realizável fisicamente, usada para simulação de resistências da radiação"
+      ],
+      "correctIndex": 2,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 12,
+          "page": 4
+        }
+      ],
+      "materia": "antenas"
+    },
+    {
       "id": 188,
       "question": "A impedância no ponto de alimentação de um dipolo dobrado é",
       "options": [
@@ -3777,6 +3857,27 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "img": "/images/cat1/fig6.png",
+      "materia": "antenas"
+    },
+    {
+      "id": 396,
+      "question": "No padrão de radiação de antena da figura, qual é a largura aproximada do feixe a 3dB?",
+      "options": [
+        "60º",
+        "20º",
+        "10º",
+        "3º"
+      ],
+      "correctIndex": 1,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 13,
+          "page": 4
+        }
+      ],
       "img": "/images/cat1/fig6.png",
       "materia": "antenas"
     },
@@ -4083,6 +4184,26 @@
       "materia": "recetores"
     },
     {
+      "id": 393,
+      "question": "Ao programar contactos via reflexão lunar, qual das seguintes condições será mais propícia a uma menor perda de propagação?",
+      "options": [
+        "Quando a Lua se encontra no perigeu",
+        "Em períodos de lua cheia",
+        "Quando a Lua se encontra no apogeu",
+        "Quando a frequência máxima utilizável é superior a 30 MHz"
+      ],
+      "correctIndex": 0,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 4,
+          "page": 2
+        }
+      ],
+      "materia": "propagacao"
+    },
+    {
       "id": 217,
       "question": "Como se designa a camada que se forma ocasionalmente na região E?",
       "options": [
@@ -4359,6 +4480,26 @@
       "sources": [
         {
           "pdf": "cat1/2014_05_23",
+          "question": 3,
+          "page": 1
+        }
+      ],
+      "materia": "propagacao"
+    },
+    {
+      "id": 392,
+      "question": "Quais os fatores que afetam a máxima frequência utilizável (MUF)?",
+      "options": [
+        "Distância e localização do percurso",
+        "Hora do dia e estação do ano",
+        "Radiação solar e distúrbios na ionosfera",
+        "Todas as opções são válidas"
+      ],
+      "correctIndex": 3,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
           "question": 3,
           "page": 1
         }
@@ -4980,6 +5121,26 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 9
+        }
+      ],
+      "materia": "recetores"
+    },
+    {
+      "id": 394,
+      "question": "Em sistemas rádio a intermodulação ocorre quando",
+      "options": [
+        "dois ou mais sinais, com diferentes frequências, se combinam através de um sistema, componente ou dispositivo não linear",
+        "dois ou mais sinais, na mesma frequência, se combinam através de um sistema, componente ou dispositivo não linear",
+        "dois ou mais sinais, com diferentes frequências, se combinam através de um sistema, componente ou dispositivo perfeitamente linear",
+        "dois ou mais sinais, na mesma frequência, se combinam através de um sistema, componente ou dispositivo perfeitamente linear"
+      ],
+      "correctIndex": 0,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 9,
+          "page": 3
         }
       ],
       "materia": "recetores"
@@ -6397,6 +6558,26 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "materia": "componentes"
+    },
+    {
+      "id": 398,
+      "question": "Numa bobina, o material que constitui o seu núcleo influencia a sua indutância. Qual a característica do material que é mais relevante para esse efeito?",
+      "options": [
+        "A sua resistência",
+        "A sua capacidade",
+        "A sua permeabilidade elétrica",
+        "A sua permeabilidade magnética"
+      ],
+      "correctIndex": 3,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_01",
+          "question": 18,
+          "page": 6
+        }
+      ],
       "materia": "componentes"
     },
     {
