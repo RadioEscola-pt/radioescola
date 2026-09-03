@@ -15,4 +15,12 @@ sources:
     question: 33
   - pdf: cat2/2023_01_27
     question: 33
+  - pdf: cat2/2026_08_31
+    question: 33
+    page: 9
 ---
+**Um transístor bipolar que é o único elemento ativo de um amplificador deve trabalhar na zona ativa.**
+
+Na zona ativa, a junção base-emissor está diretamente polarizada e a junção base-coletor está inversamente polarizada. É nesta condição que o transístor se comporta como amplificador: a corrente de coletor é aproximadamente proporcional à corrente de base (`Ic = β × Ib`), pelo que pequenas variações do sinal aplicado à base produzem variações maiores, e fiéis, na saída. A polarização do circuito fixa um ponto de funcionamento a meio desta zona, de modo que o sinal possa oscilar para cima e para baixo em torno dele sem sair dela.
+
+Fora da zona ativa o transístor deixa de reproduzir o sinal. Na zona de **corte** ambas as junções estão bloqueadas e a corrente de coletor é praticamente nula: os semiciclos do sinal que empurrem o transístor para o corte desaparecem, ceifados. Na zona de **saturação** o transístor conduz ao máximo e a tensão coletor-emissor cai a um valor mínimo quase constante: por mais que a entrada aumente, a saída já não acompanha, e o sinal sai com os picos achatados. Em ambos os casos o resultado é distorção severa — corte e saturação são os estados úteis para o transístor funcionar como interruptor, em comutação, não como amplificador. Quanto à "zona inversa de saturação", não é uma região de funcionamento normal de um amplificador; operar as junções ao contrário do previsto não produz amplificação linear.

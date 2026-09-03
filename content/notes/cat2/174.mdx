@@ -1,1 +1,7 @@
-É filtro mais simples para deteção de AM > no sinal RF que entra modulado e sai filtrado só considerando a envolvente do sinal de RF <img  src='images/cat2/detetor_am.png'>.
+**Um detetor de díodo funciona pela retificação e filtragem dos sinais de RF.**
+
+É o desmodulador clássico de AM, e trabalha em dois passos. Primeiro, o **díodo retifica** o sinal de RF: como só conduz num sentido, corta as semi-ondas negativas e deixa passar apenas as positivas. O sinal AM tem a informação na **envolvente** — a amplitude da portadora sobe e desce ao ritmo do áudio — e a retificação torna essa envolvente acessível, porque sem ela as metades positiva e negativa, simétricas, anular-se-iam em média.
+
+Segue-se a **filtragem**: um condensador em paralelo com uma resistência (filtro RC) escolhido com uma constante de tempo intermédia. O condensador carrega-se nos picos de RF e descarrega-se lentamente através da resistência — depressa o suficiente para acompanhar as variações lentas da envolvente (o áudio), mas devagar de mais para seguir as oscilações rápidas da portadora, que assim são alisadas. O que resta na saída é uma tensão que desenha fielmente a envolvente: o sinal modulante recuperado.
+
+As restantes opções invocam mecanismos que não intervêm aqui. A rutura de Zener é o regime de condução inversa usado em reguladores de tensão, não em deteção; a mistura de sinais com ruído na zona de transição não descreve nenhum desmodulador útil; e a variação da reactância com a frequência é o princípio do díodo varicap, usado para sintonizar circuitos, não para detetar AM.
