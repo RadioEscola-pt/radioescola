@@ -17,6 +17,11 @@
         {
           "pdf": "cat2/2018_06_19",
           "question": 7
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 8,
+          "page": 3
         }
       ],
       "materia": "teoria",
@@ -372,6 +377,11 @@
         {
           "pdf": "cat2/2018_03_08",
           "question": 14
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 16,
+          "page": 5
         }
       ],
       "materia": "teoria"
@@ -466,7 +476,7 @@
         "o ganho da antena da estação emissora",
         "a radiação da antena da estação emissora",
         "a altura da antena da estação emissora",
-        "a sensibildade do receptor"
+        "a sensibilidade do recetor"
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
@@ -482,6 +492,11 @@
         {
           "pdf": "cat2/2022_07_20",
           "question": 12
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 12,
+          "page": 4
         }
       ],
       "materia": "medidas"
@@ -939,6 +954,11 @@
         {
           "pdf": "cat2/2022_07_20",
           "question": 20
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 20,
+          "page": 6
         }
       ],
       "materia": "teoria"
@@ -970,6 +990,11 @@
         {
           "pdf": "cat2/2022_07_20",
           "question": 22
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 22,
+          "page": 6
         }
       ],
       "materia": "teoria"
@@ -1146,6 +1171,11 @@
         {
           "pdf": "cat2/2022_02_03",
           "question": 35
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 35,
+          "page": 10
         }
       ],
       "materia": "teoria"
@@ -1231,6 +1261,11 @@
         {
           "pdf": "cat2/2018_03_08",
           "question": 34
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 34,
+          "page": 9
         }
       ],
       "tutorial": "AC",
@@ -1329,6 +1364,11 @@
         {
           "pdf": "cat2/2023_06_26",
           "question": 37
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 37,
+          "page": 10
         }
       ],
       "materia": "teoria"
@@ -1604,6 +1644,11 @@
         {
           "pdf": "cat2/2016_01_00",
           "question": 38
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 39,
+          "page": 10
         }
       ],
       "materia": "teoria"
@@ -1618,6 +1663,7 @@
         "4"
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2021_02_18",
@@ -1626,6 +1672,11 @@
         {
           "pdf": "cat2/2023_06_26",
           "question": 29
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 29,
+          "page": 8
         }
       ],
       "materia": "teoria"
@@ -2163,10 +2214,16 @@
         "600 ohms, 600 ohms, 600 ohms."
       ],
       "correctIndex": 0,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2022_02_03",
           "question": 9
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 9,
+          "page": 3
         }
       ],
       "materia": "circuitos"
@@ -2930,10 +2987,16 @@
         "díodo Túnel"
       ],
       "correctIndex": 2,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2021_09_06",
           "question": 31
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 31,
+          "page": 9
         }
       ],
       "img": "/images/cat2/image-49.png",
@@ -3165,6 +3228,7 @@
         "Na zona inversa de saturação"
       ],
       "correctIndex": 0,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2022_12_27",
@@ -3173,6 +3237,11 @@
         {
           "pdf": "cat2/2023_01_27",
           "question": 33
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 33,
+          "page": 9
         }
       ],
       "materia": "componentes"
@@ -3263,8 +3332,25 @@
         "apresentam uma resposta tipicamente passa-banda",
         "Todas as hipóteses estão corretas"
       ],
-      "correctIndex": 2,
+      "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat2/2022_08_26",
+          "question": 36,
+          "page": 10
+        },
+        {
+          "pdf": "cat2/2024_04_16",
+          "question": 36,
+          "page": 6
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 36,
+          "page": 10
+        }
+      ],
       "materia": "circuitos"
     },
     {
@@ -3277,6 +3363,7 @@
         "Nenhuma das respostas está correta"
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2017_09_27",
@@ -3285,6 +3372,11 @@
         {
           "pdf": "cat2/2018_03_08",
           "question": 23
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 25,
+          "page": 7
         }
       ],
       "materia": "emissores"
@@ -3566,6 +3658,7 @@
         "se uma tensão de audiofrequência aplicada à entrada de um circuito , corresponde uma tensão de radiofrequência na saída do mesmo circuito"
       ],
       "correctIndex": 0,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2013_08_00",
@@ -3574,6 +3667,11 @@
         {
           "pdf": "cat2/2018_03_08",
           "question": 30
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 30,
+          "page": 8
         }
       ],
       "materia": "circuitos"
@@ -3835,6 +3933,7 @@
         "Filtragem"
       ],
       "correctIndex": 0,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2023_08_29",
@@ -3855,6 +3954,11 @@
         {
           "pdf": "cat2/2017_09_27",
           "question": 9
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 10,
+          "page": 3
         }
       ],
       "materia": "recetores"
@@ -3940,6 +4044,11 @@
         {
           "pdf": "cat2/2020_07_16",
           "question": 14
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 14,
+          "page": 4
         }
       ],
       "materia": "recetores"
@@ -4123,6 +4232,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 26,
+          "page": 7
+        }
+      ],
       "materia": "recetores"
     },
     {
@@ -4526,10 +4642,16 @@
         "Uma antena Yagi"
       ],
       "correctIndex": 2,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2021_02_18",
           "question": 13
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 13,
+          "page": 4
         }
       ],
       "materia": "antenas"
@@ -4756,6 +4878,7 @@
         "50 W"
       ],
       "correctIndex": 0,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/0000_00_01",
@@ -4764,6 +4887,11 @@
         {
           "pdf": "cat2/2018_06_19",
           "question": 17
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 15,
+          "page": 4
         }
       ],
       "materia": "antenas"
@@ -4834,6 +4962,7 @@
         "Num aumento de distorção do sinal"
       ],
       "correctIndex": 2,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2011_11_00",
@@ -4842,6 +4971,11 @@
         {
           "pdf": "cat2/0000_00_01",
           "question": 22
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 24,
+          "page": 7
         }
       ],
       "materia": "antenas"
@@ -5052,6 +5186,14 @@
         "Ocorreu uma reflexão na camada esporádica-E da ionosfera"
       ],
       "correctIndex": 3,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 6,
+          "page": 2
+        }
+      ],
       "materia": "propagacao"
     },
     {
@@ -5690,6 +5832,14 @@
         "Robustez"
       ],
       "correctIndex": 0,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 11,
+          "page": 3
+        }
+      ],
       "materia": "interferencias"
     },
     {
@@ -5856,6 +6006,11 @@
         {
           "pdf": "cat2/2023_09_25",
           "question": 1
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 1,
+          "page": 1
         }
       ],
       "materia": "operacao"
@@ -6011,6 +6166,7 @@
         "é uma emissão numa frequência ou em frequências fora da largura de faixa necessária, mas na sua vizinhança imediata, originada por desaptação de impedância no cabo de alimentação da antena"
       ],
       "correctIndex": 2,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2016_01_00",
@@ -6031,6 +6187,11 @@
         {
           "pdf": "cat2/2023_01_27",
           "question": 3
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 3,
+          "page": 1
         }
       ],
       "materia": "interferencias"
@@ -6212,6 +6373,11 @@
         {
           "pdf": "cat2/2023_03_08",
           "question": 4
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 4,
+          "page": 2
         }
       ],
       "materia": "regulamentacao"
@@ -6300,6 +6466,11 @@
         {
           "pdf": "cat2/2023_09_25",
           "question": 2
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 2,
+          "page": 1
         }
       ],
       "materia": "regulamentacao"
@@ -6541,6 +6712,7 @@
         "Não ligar"
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2011_11_00",
@@ -6573,6 +6745,11 @@
         {
           "pdf": "cat2/2023_09_25",
           "question": 7
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 7,
+          "page": 2
         }
       ],
       "materia": "operacao"
@@ -6697,6 +6874,7 @@
         "a deixar passar as frequências mais baixas e as frequências mais altas, rejeitando uma dada gama de frequências"
       ],
       "correctIndex": 0,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2011_11_00",
@@ -6705,6 +6883,11 @@
         {
           "pdf": "cat2/2022_12_27",
           "question": 18
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 18,
+          "page": 5
         }
       ],
       "materia": "circuitos"
@@ -6733,18 +6916,24 @@
     },
     {
       "id": 283,
-      "question": "Uma fonte de alimentação não comutada com entrada a partir da rede, para alimentar um circuito que trabalha com 12 Volt DC",
+      "question": "Uma fonte de alimentação não comutada, com entrada a partir da rede elétrica, para alimentar um circuito que trabalha com 12 Volt DC",
       "options": [
         "não precisa de transformador",
-        "tem que ter uma ponte rectificadora",
-        "tem que ter um estabilizador de corrente",
-        "tem que ter um circuito de rectificação"
+        "não pode ter uma ponte retificadora",
+        "tem que ter um estabilizador de corrente no primário do transformador",
+        "tem que ter um circuito de retificação"
       ],
       "correctIndex": 3,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2011_11_00",
           "question": 25
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 21,
+          "page": 6
         }
       ],
       "materia": "circuitos"
@@ -6830,6 +7019,7 @@
         "Para evitar choques"
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2012_04_10",
@@ -6846,6 +7036,11 @@
         {
           "pdf": "cat2/2023_06_15",
           "question": 5
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 5,
+          "page": 2
         }
       ],
       "materia": "seguranca"
@@ -6981,6 +7176,7 @@
         "Nenhuma das respostas está correcta"
       ],
       "correctIndex": 2,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2018_06_19",
@@ -6993,6 +7189,11 @@
         {
           "pdf": "cat2/2020_07_16",
           "question": 19
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 19,
+          "page": 5
         }
       ],
       "materia": "emissores"
@@ -7502,6 +7703,7 @@
         "Todas as respostas anteriores estão correctas"
       ],
       "correctIndex": 3,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2011_11_00",
@@ -7530,6 +7732,11 @@
         {
           "pdf": "cat2/2023_06_26",
           "question": 23
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 23,
+          "page": 6
         }
       ],
       "materia": "teoria"
@@ -7705,6 +7912,7 @@
         "a energia é duplicada."
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2023_08_29",
@@ -7725,6 +7933,11 @@
         {
           "pdf": "cat2/2022_02_03",
           "question": 40
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 40,
+          "page": 11
         }
       ],
       "materia": "circuitos"
@@ -7830,6 +8043,7 @@
         "a tensões que lhe são aplicadas."
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2012_04_10",
@@ -7838,6 +8052,11 @@
         {
           "pdf": "cat2/2018_06_19",
           "question": 27
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 27,
+          "page": 7
         }
       ],
       "materia": "teoria"
@@ -7890,6 +8109,7 @@
         "250 000 km/s"
       ],
       "correctIndex": 0,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2012_04_10",
@@ -7906,6 +8126,11 @@
         {
           "pdf": "cat2/2023_01_27",
           "question": 32
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 32,
+          "page": 9
         }
       ],
       "materia": "teoria"
@@ -8403,6 +8628,7 @@
         "Modulação de frequência."
       ],
       "correctIndex": 3,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2018_03_08",
@@ -8411,6 +8637,11 @@
         {
           "pdf": "cat2/2022_08_26",
           "question": 39
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 38,
+          "page": 10
         }
       ],
       "materia": "teoria"
@@ -9152,6 +9383,11 @@
         {
           "pdf": "cat2/2022_07_20",
           "question": 17
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 17,
+          "page": 5
         }
       ],
       "materia": "medidas"
@@ -9192,6 +9428,7 @@
         "Todas as afirmações estão correctas"
       ],
       "correctIndex": 3,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2013_08_00",
@@ -9208,6 +9445,11 @@
         {
           "pdf": "cat2/2021_02_18",
           "question": 28
+        },
+        {
+          "pdf": "cat2/2026_08_31",
+          "question": 28,
+          "page": 8
         }
       ],
       "materia": "componentes"

@@ -17,6 +17,12 @@ export const NOTES_PROSE = [
   '[&_img]:border [&_img]:border-slate-200 dark:[&_img]:border-slate-700',
   // Inline diagrams draw with currentColor, so they follow the theme.
   '[&_svg]:my-3 [&_svg]:max-w-full [&_svg]:h-auto',
+  // ...but not KaTeX's own SVGs. It draws a radical as a path 400em wide and
+  // relies on `.hide-tail` clipping it to show just the surd; capping that at
+  // 100% scales the whole 400000-unit viewBox into ~30px and the radical
+  // disappears, leaving `\sqrt{LC}` looking like a strikethrough. The
+  // `.katex svg` selector outranks the bare `svg` one, so order is not at play.
+  '[&_.katex_svg]:my-0 [&_.katex_svg]:max-w-none',
   '[&_strong]:font-semibold [&_strong]:text-slate-700 dark:[&_strong]:text-slate-300',
   '[&_a]:text-blue-600 dark:[&_a]:text-blue-400 [&_a]:underline',
 ].join(' ');
