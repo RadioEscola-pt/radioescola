@@ -32,3 +32,28 @@ jobs:
 
       # Fails if public/data or content/notes drifted from content/questions.
       - run: bun run content:check
+
+  # Browser checks for the calculators: they open from the real navigation and
+  # compute inside the real provider chain. Separate job so it runs alongside
+  # `check` rather than after it — Playwright's webServer starts `next dev`.
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: "1.4.0"
+
+      - run: bun install --frozen-lockfile
+
+      - run: bunx playwright install --with-deps chromium
+
+      - run: bun run test:e2e
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7

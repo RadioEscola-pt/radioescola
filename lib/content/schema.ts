@@ -16,7 +16,7 @@
  * - `topic` exists as a real field, so question -> study-guide mapping has
  *   somewhere to live.
  */
-import { z } from "zod";
+import * as z from "zod";
 
 /** A non-empty string with surrounding whitespace removed. */
 const TrimmedString = z.string().transform((s) => s.trim()).pipe(z.string().min(1));

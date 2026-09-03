@@ -9,8 +9,8 @@ import {
   CalculatorResult,
 } from "./base";
 import { registerCalculatorComponent } from "@/lib/config";
-import { ohmsLaw } from "@/lib/utils";
-import { parseValue, formatValue } from "@/lib/utils";
+import { ohmsLaw, power } from "@/lib/utils";
+import { parseValue, formatValue, findBestUnit, UNIT_GROUPS } from "@/lib/utils";
 import type { CalculatorInstanceProps } from "@/lib/types";
 
 const OhmsLawCalculator: React.FC<CalculatorInstanceProps> = ({
@@ -21,9 +21,11 @@ const OhmsLawCalculator: React.FC<CalculatorInstanceProps> = ({
   onFocus,
 }) => {
   const t = useTranslations("Calculators.ohmsLaw");
+  const tc = useTranslations("Calculators.common");
   const [voltage, setVoltage] = React.useState<string>("");
   const [current, setCurrent] = React.useState<string>("");
   const [resistance, setResistance] = React.useState<string>("");
+  const [result, setResult] = React.useState<string>("");
   const [message, setMessage] = React.useState<string>("");
 
   React.useEffect(() => {
@@ -34,6 +36,7 @@ const OhmsLawCalculator: React.FC<CalculatorInstanceProps> = ({
     setVoltage("");
     setCurrent("");
     setResistance("");
+    setResult("");
     setMessage(t("fillTwoFields"));
   };
 
@@ -45,10 +48,12 @@ const OhmsLawCalculator: React.FC<CalculatorInstanceProps> = ({
     const filledCount = Number(hasVoltage) + Number(hasCurrent) + Number(hasResistance);
     if (filledCount < 2) {
       setMessage(t("provideTwoValues"));
+      setResult("");
       return;
     }
     if (filledCount === 3) {
       setMessage(t("clearOneField"));
+      setResult("");
       return;
     }
 
@@ -58,33 +63,49 @@ const OhmsLawCalculator: React.FC<CalculatorInstanceProps> = ({
 
     if ((hasVoltage && Number.isNaN(V)) || (hasCurrent && Number.isNaN(I)) || (hasResistance && Number.isNaN(R))) {
       setMessage(t("numericOnly"));
+      setResult("");
       return;
     }
 
+    let finalV = V;
+    let finalI = I;
+    let finalR = R;
+
     if (!hasVoltage) {
-      const result = ohmsLaw.voltage(I, R);
-      setVoltage(formatValue(result));
-      setMessage(t("computedVoltage", { value: formatValue(result) }));
-      return;
-    }
-    if (!hasCurrent) {
+      finalV = ohmsLaw.voltage(I, R);
+      setVoltage(formatValue(finalV));
+    } else if (!hasCurrent) {
       if (R === 0) {
         setMessage(t("resistanceNonZero"));
+        setResult("");
         return;
       }
-      const result = ohmsLaw.current(V, R);
-      setCurrent(formatValue(result));
-      setMessage(t("computedCurrent", { value: formatValue(result) }));
-      return;
-    }
-    if (!hasResistance) {
+      finalI = ohmsLaw.current(V, R);
+      setCurrent(formatValue(finalI));
+    } else if (!hasResistance) {
       if (I === 0) {
         setMessage(t("currentNonZero"));
+        setResult("");
         return;
       }
-      const result = ohmsLaw.resistance(V, I);
-      setResistance(formatValue(result));
-      setMessage(t("computedResistance", { value: `${formatValue(result)} Ω` }));
+      finalR = ohmsLaw.resistance(V, I);
+      setResistance(formatValue(finalR));
+    }
+
+    const pWatts = power.fromVI(finalV, finalI);
+    const { value: pDisp, unit: pUnit } = findBestUnit(pWatts, UNIT_GROUPS.power);
+    const powerStr = `${formatValue(pDisp)} ${pUnit}`;
+
+    if (!hasVoltage) {
+      setResult(`V = ${formatValue(finalV)} V  •  P = ${powerStr}`);
+      setMessage(t("computedVoltageWithPower", { value: formatValue(finalV), power: powerStr }));
+    } else if (!hasCurrent) {
+      setResult(`I = ${formatValue(finalI)} A  •  P = ${powerStr}`);
+      setMessage(t("computedCurrentWithPower", { value: formatValue(finalI), power: powerStr }));
+    } else if (!hasResistance) {
+      const { value: rDisp, unit: rUnit } = findBestUnit(finalR, UNIT_GROUPS.resistance);
+      setResult(`R = ${formatValue(rDisp)} ${rUnit}  •  P = ${powerStr}`);
+      setMessage(t("computedResistanceWithPower", { value: `${formatValue(rDisp)} ${rUnit}`, power: powerStr }));
     }
   };
 
@@ -121,12 +142,18 @@ const OhmsLawCalculator: React.FC<CalculatorInstanceProps> = ({
         placeholder="e.g. 24"
         color="blue"
       />
+      {result && (
+        <div className="rounded bg-blue-50 dark:bg-blue-950/40 p-2 text-center">
+          <div className="text-xs font-medium text-slate-600 dark:text-slate-400">{tc("result")}</div>
+          <div className="text-sm font-bold text-blue-700 dark:text-blue-300">{result}</div>
+        </div>
+      )}
       <CalculatorButtons
         onCalculate={calculate}
         onReset={reset}
         color="blue"
       />
-      <CalculatorResult value={message} color="blue" formula="V = I × R" />
+      <CalculatorResult value={message} color="blue" formula="V = I × R  |  P = V × I" />
     </CalculatorWindow>
   );
 };

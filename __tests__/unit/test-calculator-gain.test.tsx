@@ -55,6 +55,21 @@ describe("GainCalculator", () => {
     expect(resultElements[0]).toHaveTextContent(/dB/);
   });
 
+  it("calculates gain from voltage ratio", () => {
+    render(<GainCalculator {...defaultProps} />);
+
+    fireEvent.click(screen.getByRole("button", { name: "voltageRatio" }));
+    expect(screen.getByPlaceholderText("e.g. 1")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("e.g. 10")).toBeInTheDocument();
+
+    fireEvent.change(screen.getByPlaceholderText("e.g. 1"), { target: { value: "1" } });
+    fireEvent.change(screen.getByPlaceholderText("e.g. 10"), { target: { value: "10" } });
+    fireEvent.click(screen.getByRole("button", { name: "calculate" }));
+
+    const resultElements = screen.getAllByText(/20.000 dB/);
+    expect(resultElements.length).toBeGreaterThanOrEqual(1);
+  });
+
   it("switches to dB mode and shows stage inputs", () => {
     render(<GainCalculator {...defaultProps} />);
 

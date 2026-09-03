@@ -233,7 +233,7 @@ export const transformer = {
   },
 };
 
-/** Wavelength and frequency relationship */
+/** Wavelength, frequency and antenna calculations */
 export const wavelength = {
   /** Speed of light in m/s */
   SPEED_OF_LIGHT: 299792458,
@@ -249,4 +249,91 @@ export const wavelength = {
     if (lambda <= 0) return NaN;
     return wavelength.SPEED_OF_LIGHT / lambda;
   },
+
+  /** Half-wave dipole total length in meters: L = (c / (2f)) * k (default velocity factor k = 0.95) */
+  halfWaveDipole: (frequency: number, velocityFactor = 0.95): number => {
+    if (frequency <= 0) return NaN;
+    return (wavelength.SPEED_OF_LIGHT / (2 * frequency)) * velocityFactor;
+  },
+
+  /** Quarter-wave vertical length in meters: L = (c / (4f)) * k */
+  quarterWave: (frequency: number, velocityFactor = 0.95): number => {
+    if (frequency <= 0) return NaN;
+    return (wavelength.SPEED_OF_LIGHT / (4 * frequency)) * velocityFactor;
+  },
+
+  /** Frequency from half-wave dipole length in meters */
+  frequencyFromDipole: (lengthMeters: number, velocityFactor = 0.95): number => {
+    if (lengthMeters <= 0) return NaN;
+    return (wavelength.SPEED_OF_LIGHT * velocityFactor) / (2 * lengthMeters);
+  },
 };
+
+/** Standalone reactance calculations */
+export const reactance = {
+  /** Inductive reactance: XL = 2πfL */
+  inductive: (frequency: number, inductance: number): number => {
+    if (frequency <= 0 || inductance <= 0) return NaN;
+    return 2 * Math.PI * frequency * inductance;
+  },
+
+  /** Capacitive reactance: XC = 1 / (2πfC) */
+  capacitive: (frequency: number, capacitance: number): number => {
+    if (frequency <= 0 || capacitance <= 0) return NaN;
+    return 1 / (2 * Math.PI * frequency * capacitance);
+  },
+
+  /** Inductance from reactance: L = XL / (2πf) */
+  inductanceFromXL: (frequency: number, xl: number): number => {
+    if (frequency <= 0 || xl <= 0) return NaN;
+    return xl / (2 * Math.PI * frequency);
+  },
+
+  /** Capacitance from reactance: C = 1 / (2πfXC) */
+  capacitanceFromXC: (frequency: number, xc: number): number => {
+    if (frequency <= 0 || xc <= 0) return NaN;
+    return 1 / (2 * Math.PI * frequency * xc);
+  },
+
+  /** Frequency from inductance and XL: f = XL / (2πL) */
+  frequencyFromL: (inductance: number, xl: number): number => {
+    if (inductance <= 0 || xl <= 0) return NaN;
+    return xl / (2 * Math.PI * inductance);
+  },
+
+  /** Frequency from capacitance and XC: f = 1 / (2πC XC) */
+  frequencyFromC: (capacitance: number, xc: number): number => {
+    if (capacitance <= 0 || xc <= 0) return NaN;
+    return 1 / (2 * Math.PI * capacitance * xc);
+  },
+};
+
+/** Q Factor and Bandwidth calculations */
+export const qFactor = {
+  /** Q factor from resonant frequency and bandwidth: Q = f0 / BW */
+  fromBandwidth: (f0: number, bw: number): number => {
+    if (f0 <= 0 || bw <= 0) return NaN;
+    return f0 / bw;
+  },
+
+  /** Bandwidth from resonant frequency and Q factor: BW = f0 / Q */
+  bandwidth: (f0: number, q: number): number => {
+    if (f0 <= 0 || q <= 0) return NaN;
+    return f0 / q;
+  },
+
+  /** Resonant frequency from Q factor and bandwidth: f0 = Q * BW */
+  resonantFrequency: (q: number, bw: number): number => {
+    if (q <= 0 || bw <= 0) return NaN;
+    return q * bw;
+  },
+
+  /** Estimate 3dB cutoff frequencies (-3dB points): fL = f0 - BW/2, fH = f0 + BW/2 */
+  cutoffFrequencies: (f0: number, bw: number): { low: number; high: number } => {
+    return {
+      low: Math.max(0, f0 - bw / 2),
+      high: f0 + bw / 2,
+    };
+  },
+};
+

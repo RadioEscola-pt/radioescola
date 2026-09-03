@@ -14,7 +14,7 @@ import { gain } from "@/lib/utils";
 import { UNIT_GROUPS, parseValue, convertToBase, formatValue } from "@/lib/utils";
 import type { CalculatorInstanceProps } from "@/lib/types";
 
-type Mode = "power" | "db";
+type Mode = "power" | "voltage" | "db";
 
 interface DbStage {
   id: string;
@@ -35,6 +35,10 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
   const [power1Unit, setPower1Unit] = React.useState("W");
   const [power2, setPower2] = React.useState("");
   const [power2Unit, setPower2Unit] = React.useState("W");
+  const [voltage1, setVoltage1] = React.useState("");
+  const [voltage1Unit, setVoltage1Unit] = React.useState("V");
+  const [voltage2, setVoltage2] = React.useState("");
+  const [voltage2Unit, setVoltage2Unit] = React.useState("V");
   const [dbStages, setDbStages] = React.useState<DbStage[]>([
     { id: "1", value: "" },
     { id: "2", value: "" },
@@ -43,18 +47,24 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
   const [message, setMessage] = React.useState("");
 
   React.useEffect(() => {
-    setMessage(t("enterTwoPower"));
-  }, [t]);
+    if (mode === "power") setMessage(t("enterTwoPower"));
+    else if (mode === "voltage") setMessage(t("enterTwoVoltage"));
+    else setMessage(t("enterDbValues"));
+  }, [t, mode]);
 
   const reset = () => {
     setPower1("");
     setPower2("");
+    setVoltage1("");
+    setVoltage2("");
     setDbStages([
       { id: "1", value: "" },
       { id: "2", value: "" },
     ]);
     setResult("");
-    setMessage(mode === "power" ? t("enterTwoPower") : t("enterDbValues"));
+    if (mode === "power") setMessage(t("enterTwoPower"));
+    else if (mode === "voltage") setMessage(t("enterTwoVoltage"));
+    else setMessage(t("enterDbValues"));
   };
 
   const addStage = () => {
@@ -100,6 +110,34 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
           value: formatValue(Math.abs(dB))
         })
       );
+    } else if (mode === "voltage") {
+      const v1 = parseValue(voltage1);
+      const v2 = parseValue(voltage2);
+
+      if (Number.isNaN(v1) || Number.isNaN(v2)) {
+        setMessage(t("validBothVoltages"));
+        setResult("");
+        return;
+      }
+      if (v1 <= 0 || v2 <= 0) {
+        setMessage(t("voltagePositive"));
+        setResult("");
+        return;
+      }
+
+      const v1Base = convertToBase(v1, voltage1Unit);
+      const v2Base = convertToBase(v2, voltage2Unit);
+      const dB = gain.voltageToDB(v1Base, v2Base);
+      const ratio = v2Base / v1Base;
+
+      setResult(`${formatValue(dB)} dB`);
+      setMessage(
+        t("voltageRatioResult", {
+          ratio: formatValue(ratio),
+          type: dB >= 0 ? t("gain") : t("loss"),
+          value: formatValue(Math.abs(dB))
+        })
+      );
     } else {
       const validStages = dbStages.filter((s) => s.value.trim().length > 0);
 
@@ -137,6 +175,9 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
     if (mode === "power") {
       return "dB = 10 × log₁₀(P₂/P₁)";
     }
+    if (mode === "voltage") {
+      return "dB = 20 × log₁₀(V₂/V₁)";
+    }
     return "Total dB = dB₁ + dB₂ + dB₃ + ...";
   };
 
@@ -151,20 +192,21 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
       onFocus={onFocus}
     >
       <div>
-        <label className="mb-1 block text-xs font-medium uppercase tracking-wide text-gray-600">
+        <label className="mb-1 block text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
           {tc("mode")}
         </label>
-        <div className="flex gap-2">
+        <div className="flex gap-1">
           <button
             type="button"
             onClick={() => {
               setMode("power");
+              setResult("");
               setMessage(t("enterTwoPower"));
             }}
-            className={`flex-1 rounded px-3 py-1 transition focus:outline-none focus:ring-2 focus:ring-cyan-500 ${
+            className={`flex-1 rounded px-2 py-1 text-xs transition focus:outline-none focus:ring-2 focus:ring-cyan-500 ${
               mode === "power"
                 ? "bg-cyan-600 text-white"
-                : "border border-gray-300 text-gray-700 hover:bg-gray-100"
+                : "border border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
             }`}
           >
             {t("powerRatio")}
@@ -172,13 +214,29 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
           <button
             type="button"
             onClick={() => {
+              setMode("voltage");
+              setResult("");
+              setMessage(t("enterTwoVoltage"));
+            }}
+            className={`flex-1 rounded px-2 py-1 text-xs transition focus:outline-none focus:ring-2 focus:ring-cyan-500 ${
+              mode === "voltage"
+                ? "bg-cyan-600 text-white"
+                : "border border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
+            }`}
+          >
+            {t("voltageRatio")}
+          </button>
+          <button
+            type="button"
+            onClick={() => {
               setMode("db");
+              setResult("");
               setMessage(t("enterDbValues"));
             }}
-            className={`flex-1 rounded px-3 py-1 transition focus:outline-none focus:ring-2 focus:ring-cyan-500 ${
+            className={`flex-1 rounded px-2 py-1 text-xs transition focus:outline-none focus:ring-2 focus:ring-cyan-500 ${
               mode === "db"
                 ? "bg-cyan-600 text-white"
-                : "border border-gray-300 text-gray-700 hover:bg-gray-100"
+                : "border border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
             }`}
           >
             {t("addDb")}
@@ -208,6 +266,31 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
             units={UNIT_GROUPS.power}
             selectedUnit={power2Unit}
             onUnitChange={setPower2Unit}
+            color="cyan"
+          />
+        </>
+      ) : mode === "voltage" ? (
+        <>
+          <CalculatorInput
+            id={`${instanceId}-v1`}
+            label={t("inputVoltage")}
+            value={voltage1}
+            onChange={setVoltage1}
+            placeholder="e.g. 1"
+            units={UNIT_GROUPS.voltage}
+            selectedUnit={voltage1Unit}
+            onUnitChange={setVoltage1Unit}
+            color="cyan"
+          />
+          <CalculatorInput
+            id={`${instanceId}-v2`}
+            label={t("outputVoltage")}
+            value={voltage2}
+            onChange={setVoltage2}
+            placeholder="e.g. 10"
+            units={UNIT_GROUPS.voltage}
+            selectedUnit={voltage2Unit}
+            onUnitChange={setVoltage2Unit}
             color="cyan"
           />
         </>

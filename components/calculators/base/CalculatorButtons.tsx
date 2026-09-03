@@ -19,6 +19,9 @@ const BUTTON_CLASSES: Record<CalculatorColor, { bg: string; hover: string; focus
   orange: { bg: "bg-orange-600", hover: "hover:bg-orange-500", focus: "focus:ring-orange-500" },
   cyan: { bg: "bg-cyan-600", hover: "hover:bg-cyan-500", focus: "focus:ring-cyan-500" },
   rose: { bg: "bg-rose-600", hover: "hover:bg-rose-500", focus: "focus:ring-rose-500" },
+  amber: { bg: "bg-amber-600", hover: "hover:bg-amber-500", focus: "focus:ring-amber-500" },
+  indigo: { bg: "bg-indigo-600", hover: "hover:bg-indigo-500", focus: "focus:ring-indigo-500" },
+  teal: { bg: "bg-teal-600", hover: "hover:bg-teal-500", focus: "focus:ring-teal-500" },
 };
 
 export function CalculatorButtons({
