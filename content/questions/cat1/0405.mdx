@@ -1,0 +1,24 @@
+---
+id: 405
+question: >-
+  Que tipo de circuitos ideais apresentam os sinais de corrente e de tensão em
+  quadratura?
+answers:
+  - text: Circuitos puramente resistivos
+  - text: Circuitos puramente resistivos com transístores
+  - text: Circuitos puramente indutivos
+    correct: true
+  - text: Todas a hipóteses anteriores não estão corretas
+topic: teoria
+sources:
+  - pdf: cat1/2026_09_02
+    question: 34
+    page: 9
+---
+São os **circuitos puramente indutivos**.
+
+Estar em quadratura é estar desfasado de 90°. Numa bobina ideal a tensão é proporcional à *variação* da corrente, u = L·di/dt: a tensão é máxima quando a corrente passa por zero e é nula quando a corrente está no máximo. Aplicada uma corrente sinusoidal, a tensão sai adiantada exatamente 90° — corrente e tensão em quadratura, com a corrente atrasada em relação à tensão.
+
+Num circuito puramente resistivo dá-se o oposto: u = R·i, logo a tensão acompanha a corrente instante a instante e as duas ficam em fase. Acrescentar transístores não muda isso: se o circuito continua a comportar-se resistivamente, o desfasamento continua a ser nulo. E como existe pelo menos uma resposta certa, a última opção também está errada.
+
+O mesmo desfasamento de 90° acontece num condensador ideal, com o sinal trocado — aí é a corrente que fica adiantada em relação à tensão, i = C·du/dt. É por isso que esta pergunta aparece nas provas em duas versões, uma com «circuitos puramente indutivos» entre as opções e outra com «circuitos puramente capacitivos»: ambas as respostas são certas, e a que conta é a que está na folha. O que distingue os dois casos é apenas o sinal do desfasamento, não a sua existência.
