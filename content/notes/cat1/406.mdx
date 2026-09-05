@@ -1,0 +1,7 @@
+PLL quer dizer **"Phase Locked Loop"**, em português malha de captura de fase.
+
+Cada palavra da sigla descreve uma parte do circuito. *Loop* (malha) porque é uma malha fechada de realimentação: um comparador de fase mede a diferença entre um sinal de referência e o sinal de um oscilador controlado por tensão (VCO), essa diferença passa por um filtro passa-baixo e vai corrigir a frequência do VCO. *Phase* porque a grandeza comparada é a fase, não a amplitude. *Locked* porque o regime de funcionamento útil é o de engate: quando a malha estabiliza, o VCO fica preso à referência, com a mesma frequência e uma diferença de fase constante.
+
+É um dos blocos mais reutilizados da rádio: com um divisor programável na malha de realimentação faz-se um sintetizador de frequências; sem divisor serve de desmodulador de FM, porque a tensão de correção do VCO segue as variações de frequência do sinal de entrada.
+
+As restantes hipóteses trocam uma das duas palavras que dão sentido à sigla. «Power» substituiria a fase pela potência, que não é a grandeza comparada, e «Local» descreveria uma malha local, que nada diz sobre o engate — e é precisamente o engate que define o circuito.

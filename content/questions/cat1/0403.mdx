@@ -1,0 +1,20 @@
+---
+id: 403
+question: Que tipo de circuitos são usados em osciladores de frequência variável?
+answers:
+  - text: Pierce e Zener
+  - text: Colpitts e Hartley
+    correct: true
+  - text: Armstrong e Forest
+  - text: Realimentação negativa e realimentação equilibrada
+topic: circuitos
+sources:
+  - pdf: cat1/2026_09_02
+    question: 32
+    page: 9
+---
+Os osciladores de frequência variável (VFO) usam montagens **Colpitts e Hartley**.
+
+Ambas são osciladores LC: a frequência é fixada por um circuito ressonante formado por uma bobina e condensadores, e a realimentação positiva que mantém a oscilação é obtida por uma derivação nesse mesmo circuito — capacitiva no Colpitts (o condensador dividido em dois), indutiva no Hartley (a bobina com tomada intermédia). Como a frequência depende de um L e de um C acessíveis, basta tornar um deles variável — um condensador variável, um varicap — para obter um oscilador sintonizável. É essa a razão pela qual são as duas montagens clássicas do VFO.
+
+O Pierce é a exceção que confirma a regra: tem a mesma topologia geral, mas o elemento ressonante é um cristal de quartzo, cuja frequência é praticamente fixa. Serve por isso o oscilador de frequência fixa, não o VFO. O Zener é um díodo de regulação de tensão, não uma montagem osciladora; Armstrong é de facto um oscilador (de realimentação por acoplamento indutivo), mas «Forest» não designa nenhuma; e «realimentação negativa» é o contrário do que um oscilador precisa — para oscilar é necessária realimentação positiva.
