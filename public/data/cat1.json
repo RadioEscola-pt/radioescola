@@ -1301,8 +1301,20 @@
         "-0,23 V",
         "-2,3 V"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2019_07_08",
+          "question": 35,
+          "page": 10
+        },
+        {
+          "pdf": "cat1/2021_08_30",
+          "question": 35,
+          "page": 10
+        }
+      ],
       "img": "/images/cat1/fig1.png",
       "materia": "circuitos"
     },
