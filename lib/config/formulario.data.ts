@@ -3279,7 +3279,7 @@ export const FORMULARIO: FormulaSection[] = [
           "cat1#364",
           "cat1#365"
         ],
-        "notas": "Ler a figura primeiro: sinal a entrar por R1 na entrada «−», com a «+» à massa, é INVERSOR (usa-se R2/R1); sinal a entrar pela «+» é não inversor (1 + R2/R1). Contas do exame: cat1#364, 68000/1800 ≈ 38; cat1#365, 47000/3300 ≈ 14; cat1#67, 10000/1000 = 10, logo 10 × 0,23 = 2,3 V. Os distratores são sempre os mesmos três: o dobro da razão (76, 28), a razão invertida (0,03, 0,07) e o ganho unitário. Atenção à cat1#67: o circuito é inversor mas a opção dada como certa é +2,3 V — o sinal «−» da fórmula é inversão de fase de 180°, e o exame pede o módulo. Como 1 + R2/R1 difere de R2/R1 apenas de uma unidade, nenhuma opção deste exame distingue as duas montagens pelo valor."
+        "notas": "Ler a figura primeiro: sinal a entrar por R1 na entrada «−», com a «+» à massa, é INVERSOR (usa-se R2/R1); sinal a entrar pela «+» é não inversor (1 + R2/R1). Contas do exame: cat1#364, 68000/1800 ≈ 38; cat1#365, 47000/3300 ≈ 14; cat1#67, 10000/1000 = 10, logo −10 × 0,23 = −2,3 V. Os distratores são sempre os mesmos três: o dobro da razão (76, 28), a razão invertida (0,03, 0,07) e o ganho unitário. Atenção à cat1#67: o enunciado pede a tensão à saída e a prova oferece 2,3 V e −2,3 V — o sinal conta, e a resposta certa é a negativa; cat1#364 e cat1#365, essas sim, pedem o ganho em valor absoluto. Como 1 + R2/R1 difere de R2/R1 apenas de uma unidade, nenhuma opção deste exame distingue as duas montagens pelo valor."
       },
       {
         "key": "massa-virtual-do-ampop",
@@ -5123,12 +5123,10 @@ export const FORMULARIO: FormulaSection[] = [
           }
         ],
         "categorias": [
-          "2",
-          "1"
+          "2"
         ],
         "refs": [
           "cat2#168",
-          "cat1#161",
           "cat2#160",
           "cat2#175",
           "cat2#177"
@@ -7265,7 +7263,7 @@ export const FORMULARIO: FormulaSection[] = [
           ]
         ],
         "notas": [
-          "Regra de bolso: o dipolo mede aproximadamente metade do número que dá nome à banda; a vertical $\\lambda/4$ mede metade do dipolo. A coluna do dipolo é a meia onda elétrica ($\\lambda/2$); com o fator prático de 0,95 fica ~5 % mais curta — é por isso que em cat1#185, a 3,55 MHz, a resposta certa é 40 m e não os 42 m da conta direta."
+          "Regra de bolso: o dipolo mede aproximadamente metade do número que dá nome à banda; a vertical $\\lambda/4$ mede metade do dipolo. A coluna do dipolo é a meia onda elétrica ($\\lambda/2$); com o fator prático de 0,95 fica ~5 % mais curta. Em cat1#185, a 3,55 MHz, dá 42,3 m pela conta direta e 40,1 m com o fator — as duas escolhem a mesma opção, 40 m, porque as restantes (12, 25 e 80 m) estão muito longe."
         ],
         "categorias": [
           "2",
@@ -7430,36 +7428,31 @@ export const FORMULARIO: FormulaSection[] = [
       {
         "key": "atenuacao-espaco-livre",
         "nome": "Atenuação em espaço livre (FSPL) em decibéis",
-        "latex": "A_{\\text{el}}\\,[\\mathrm{dB}] = 20\\log_{10}\\left(\\frac{4\\pi d}{\\lambda}\\right) = 32{,}45 + 20\\log_{10} f\\,[\\mathrm{MHz}] + 20\\log_{10} d\\,[\\mathrm{km}]",
+        "latex": "A_{\\text{el}}\\,[\\mathrm{dB}] = 20\\log_{10}\\left(\\frac{4\\pi d}{\\lambda}\\right) = 32{,}44 + 20\\log_{10} f\\,[\\mathrm{MHz}] + 20\\log_{10} d\\,[\\mathrm{km}]",
         "variantes": [
-          "L_{fs}\\,[\\mathrm{dB}] = 32{,}44 + 20\\log_{10} d\\,[\\mathrm{km}] + 20\\log_{10} f\\,[\\mathrm{MHz}]",
-          "L_{fs}\\,[\\mathrm{dB}] = 92{,}44 + 20\\log_{10} d\\,[\\mathrm{km}] + 20\\log_{10} f\\,[\\mathrm{GHz}]"
+          "A_{\\text{el}}\\,[\\mathrm{dB}] = 32{,}44 + 20\\log_{10} d\\,[\\mathrm{km}] + 20\\log_{10} f\\,[\\mathrm{MHz}]",
+          "A_{\\text{el}}\\,[\\mathrm{dB}] = 92{,}44 + 20\\log_{10} d\\,[\\mathrm{km}] + 20\\log_{10} f\\,[\\mathrm{GHz}]"
         ],
         "variaveis": [
           {
-            "simbolo": "L_{fs}",
+            "simbolo": "A_{\\text{el}}",
             "significado": "atenuação de percurso em espaço livre",
-            "unidade": "adimensional (razão) na forma linear; dB nas variantes"
+            "unidade": "dB"
           },
           {
             "simbolo": "d",
             "significado": "distância entre as duas antenas",
-            "unidade": "m na forma linear; km nas formas em dB"
+            "unidade": "m na forma com 4πd/λ; km nas formas com 32,44 e 92,44"
           },
           {
             "simbolo": "f",
             "significado": "frequência",
-            "unidade": "Hz na forma linear; MHz (ou GHz) nas formas em dB"
+            "unidade": "MHz com a constante 32,44; GHz com 92,44"
           },
           {
             "simbolo": "\\lambda",
             "significado": "comprimento de onda",
             "unidade": "m"
-          },
-          {
-            "simbolo": "c",
-            "significado": "velocidade da luz",
-            "unidade": "m/s"
           }
         ],
         "categorias": [
@@ -7610,7 +7603,7 @@ export const FORMULARIO: FormulaSection[] = [
         "refs": [
           "cat1#240"
         ],
-        "notas": "Regra prática: manter desobstruídos pelo menos 60 % do primeiro elipsoide; o raio é máximo a meio do percurso e cresce quando a frequência baixa. Armadilha: em cat1#240 a resposta dada como certa é que, com o elipsoide livre, a atenuação «é muito menor que a atenuação em espaço livre» — a rigor seria praticamente IGUAL à de espaço livre, mas no exame marca-se «muito menor»."
+        "notas": "Regra prática: manter desobstruídos pelo menos 60 % do primeiro elipsoide; o raio é máximo a meio do percurso e cresce quando a frequência baixa. Com o primeiro elipsoide desobstruído, a atenuação é praticamente IGUAL à de espaço livre (cat1#240): o espaço livre é o melhor caso, o mínimo que a distância e a frequência impõem, e não há percurso que atenue muito menos. É por isso que os 60 % se desobstruem para não perder, não para ganhar — e «é muito menor que a atenuação em espaço livre» é o distrator, não a resposta."
       },
       {
         "key": "frequencia-critica",
