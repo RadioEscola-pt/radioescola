@@ -5,12 +5,22 @@ question: >-
   desobstruído, a atenuação entre as duas estações envolvidas na ligação
 answers:
   - text: é muito menor que a atenuação em espaço livre
-    correct: true
   - text: é muito maior que a atenuação em espaço livre
   - text: é praticamente igual à atenuação em espaço livre
+    correct: true
   - text: >-
       Não existe qualquer relação entre a desobstrução do primeiro elipsoide de
       Fresnel e a atenuação do sinal na ligação entre as duas estações
 topic: propagacao
+sources:
+  - pdf: cat1/2026_09_02
+    question: 5
+    page: 2
 ---
-Quando o primeiro elipsoide de Fresnel está desobstruído, isso significa que a maior parte do caminho entre as estações não possui obstáculos significativos. Isso resulta em uma atenuação muito menor em comparação com a atenuação em espaço livre, onde o sinal precisa superar obstáculos ao longo do caminho.
+A atenuação **é praticamente igual à atenuação em espaço livre**.
+
+A atenuação em espaço livre é a do percurso *sem* obstáculos — é o melhor caso, o mínimo que a distância e a frequência impõem a uma ligação. Não é um valor que se possa melhorar: nenhum percurso real atenua muito menos do que o espaço livre.
+
+O primeiro elipsoide de Fresnel é o volume à volta da linha reta entre as duas antenas por onde passa a maior parte da energia. Se estiver desobstruído, nada intercetou essa energia e a ligação comporta-se, com boa aproximação, como se estivesse em espaço livre — daí «praticamente igual». É por isso que o critério prático de planeamento é desobstruir cerca de 60 % do primeiro elipsoide: não para ganhar alguma coisa em relação ao espaço livre, mas para não perder.
+
+Quanto às restantes opções: «muito menor» inverte o papel do espaço livre, tratando-o como se fosse o caso obstruído; «muito maior» descreve o que acontece quando o elipsoide está obstruído, precisamente o contrário do enunciado; e negar qualquer relação contraria o critério dos 60 %, que existe justamente porque a desobstrução do elipsoide determina a atenuação.

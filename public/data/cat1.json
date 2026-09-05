@@ -4682,8 +4682,15 @@
         "é praticamente igual à atenuação em espaço livre",
         "Não existe qualquer relação entre a desobstrução do primeiro elipsoide de Fresnel e a atenuação do sinal na ligação entre as duas estações"
       ],
-      "correctIndex": 0,
+      "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 5,
+          "page": 2
+        }
+      ],
       "materia": "propagacao"
     },
     {
