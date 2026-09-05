@@ -3346,24 +3346,6 @@
       "materia": "teoria"
     },
     {
-      "id": 372,
-      "question": "Qual a frase que é verdadeira",
-      "options": [
-        "A modulação consiste na amostragem do sinal na sua banda base",
-        "A modulação traduz-se na translação de um sinal da sua gama de frequências para outra gama de frequências",
-        "Num processo de modulação nunca existe qualquer translação de frequências",
-        "A modulação traduz-se na rotação de um sinal da sua gama de frequências no espaço real para outra gama de frequências no espaço real para outra gama de frequências no espaço complexo"
-      ],
-      "correctIndex": 1,
-      "sources": [
-        {
-          "pdf": "cat1/2023_12_22",
-          "question": 7
-        }
-      ],
-      "materia": "teoria"
-    },
-    {
       "id": 168,
       "question": "Qual das afirmações está correta?",
       "options": [
