@@ -1,1 +1,7 @@
-necessário validar na bateria de exames é considerada a resposta 2 https://web.fe.up.pt/~vgt/dados/E3/apontamentos/ampl_sinto.pdf
+**Todas as hipóteses estão corretas.**
+
+Um amplificador sintonizado tem como carga um circuito ressonante LC, em vez de uma simples resistência. A impedância desse circuito é máxima à frequência de ressonância e cai de um lado e do outro dela, e o ganho do andar acompanha essa forma: amplifica bastante em torno da frequência para que está sintonizado e pouco fora dela. É por isso que a sua resposta em frequência é tipicamente **passa-banda**, e é isso que o distingue de um amplificador de banda larga.
+
+Dessa mesma resposta decorre a segunda afirmação: como só amplifica bem uma faixa estreita em torno da frequência de ressonância — de largura B = f₀/Q, em que Q é o fator de qualidade do circuito ressonante — é a escolha natural para **sinais de banda estreita**, como nos andares de RF e de frequência intermédia de recetores e emissores. Um sinal de banda larga sairia mutilado, porque as componentes mais afastadas da ressonância seriam atenuadas.
+
+Quanto à primeira afirmação, o arranjo clássico deste andar leva **circuitos ressonantes tanto na entrada como na saída**: o da entrada seleciona o sinal que se quer amplificar e rejeita os vizinhos antes de este chegar ao dispositivo ativo, e o da saída volta a filtrar e trata da adaptação de impedâncias ao andar seguinte. Como as três afirmações descrevem corretamente o mesmo circuito, a resposta certa é a que as abrange todas.

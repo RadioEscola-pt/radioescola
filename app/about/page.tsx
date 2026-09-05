@@ -28,7 +28,7 @@ const team: TeamMember[] = [
   },
   {
     name: 'Joel Calado',
-    callsign: 'CS7BLE',
+    callsign: 'CT7BLE',
     role: 'Web Developer',
   },
 ];

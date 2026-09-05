@@ -16,8 +16,8 @@ const TESTIMONIALS: RawTestimonial[] = [
     quote:
       "Comecei com o RadioEscola para tirar a Categoria 3 e voltei sempre que subi de categoria. É o único sítio onde encontrei a matéria toda organizada em português e com perguntas reais de exames, fez toda a diferença.",
     name: "Joel",
-    callsign: "CS7BLE",
-    category: "2",
+    callsign: "CT7BLE",
+    category: "1",
   },
 ];
 

@@ -2259,7 +2259,7 @@
       "options": [
         "um detetor de produto",
         "um detetor de frequência modulada",
-        "um detetor de de envolvente",
+        "um detetor de envolvente",
         "um detetor de fase"
       ],
       "correctIndex": 2,
