@@ -358,6 +358,7 @@
         "Todas a hipóteses anteriores não estão corretas"
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_08_00",
