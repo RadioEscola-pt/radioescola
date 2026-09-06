@@ -85,6 +85,11 @@
         {
           "pdf": "cat1/2023_12_22",
           "question": 8
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 8,
+          "page": 3
         }
       ],
       "materia": "circuitos"
@@ -146,6 +151,11 @@
           "pdf": "cat1/2023_07_03",
           "question": 19,
           "page": 5
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 19,
+          "page": 6
         }
       ],
       "materia": "interferencias"
@@ -215,6 +225,11 @@
           "pdf": "cat1/2014_12_19",
           "question": 24,
           "unavailable": true
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 24,
+          "page": 7
         }
       ],
       "materia": "propagacao"
@@ -392,6 +407,11 @@
           "pdf": "cat1/2026_09_02",
           "question": 34,
           "page": 9
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 34,
+          "page": 10
         }
       ],
       "materia": "teoria"
@@ -460,6 +480,11 @@
         {
           "pdf": "cat1/2023_12_22",
           "question": 37
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 37,
+          "page": 11
         }
       ],
       "materia": "teoria"
@@ -890,6 +915,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 26,
+          "page": 8
+        }
+      ],
       "materia": "componentes"
     },
     {
@@ -1109,6 +1141,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 30,
+          "page": 9
+        }
+      ],
       "materia": "componentes"
     },
     {
@@ -1242,6 +1281,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 33,
+          "page": 10
+        }
+      ],
       "materia": "componentes"
     },
     {
@@ -1914,6 +1960,11 @@
           "pdf": "cat1/2014_05_23",
           "question": 11,
           "page": 3
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 15,
+          "page": 5
         }
       ],
       "materia": "circuitos"
@@ -2025,6 +2076,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 17,
+          "page": 5
+        }
+      ],
       "img": "/images/cat1/fig2.png",
       "materia": "circuitos"
     },
@@ -2207,6 +2265,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 29,
+          "page": 8
+        }
+      ],
       "materia": "circuitos"
     },
     {
@@ -2610,6 +2675,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 32,
+          "page": 9
+        }
+      ],
       "materia": "circuitos"
     },
     {
@@ -2746,6 +2818,11 @@
           "pdf": "cat1/2014_12_19",
           "question": 30,
           "unavailable": true
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 31,
+          "page": 9
         }
       ],
       "materia": "circuitos"
@@ -2796,6 +2873,11 @@
       "sources": [
         {
           "pdf": "cat1/2026_09_02",
+          "question": 36,
+          "page": 10
+        },
+        {
+          "pdf": "cat1/2026_09_03",
           "question": 36,
           "page": 10
         }
@@ -3020,6 +3102,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 23,
+          "page": 7
+        }
+      ],
       "materia": "recetores"
     },
     {
@@ -3405,6 +3494,11 @@
         {
           "pdf": "cat1/2023_08_00",
           "question": 7
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 7,
+          "page": 2
         }
       ],
       "materia": "teoria"
@@ -3420,6 +3514,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 22,
+          "page": 7
+        }
+      ],
       "materia": "circuitos"
     },
     {
@@ -3625,6 +3726,11 @@
           "pdf": "cat1/2026_09_01",
           "question": 28,
           "page": 8
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 28,
+          "page": 8
         }
       ],
       "materia": "emissores"
@@ -3703,6 +3809,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 27,
+          "page": 8
+        }
+      ],
       "materia": "emissores"
     },
     {
@@ -3809,6 +3922,11 @@
           "pdf": "cat1/2026_09_01",
           "question": 21,
           "page": 7
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 20,
+          "page": 6
         }
       ],
       "materia": "antenas"
@@ -4174,6 +4292,11 @@
         {
           "pdf": "cat1/2023_08_00",
           "question": 21
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 21,
+          "page": 6
         }
       ],
       "materia": "antenas"
@@ -4412,6 +4535,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 4,
+          "page": 1
+        }
+      ],
       "materia": "recetores"
     },
     {
@@ -4672,6 +4802,11 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 1
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 1,
+          "page": 1
         }
       ],
       "materia": "regulamentacao"
@@ -5054,6 +5189,11 @@
           "pdf": "cat1/2026_09_01",
           "question": 11,
           "page": 4
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 11,
+          "page": 4
         }
       ],
       "materia": "medidas"
@@ -5283,6 +5423,11 @@
           "pdf": "cat1/2026_09_01",
           "question": 14,
           "page": 5
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 14,
+          "page": 5
         }
       ],
       "materia": "medidas"
@@ -5346,6 +5491,11 @@
         },
         {
           "pdf": "cat1/2026_09_02",
+          "question": 9,
+          "page": 3
+        },
+        {
+          "pdf": "cat1/2026_09_03",
           "question": 9,
           "page": 3
         }
@@ -5532,6 +5682,11 @@
           "pdf": "cat1/2023_07_03",
           "question": 2,
           "page": 1
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 2,
+          "page": 1
         }
       ],
       "materia": "regulamentacao"
@@ -5693,6 +5848,11 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 12
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 12,
+          "page": 4
         }
       ],
       "materia": "antenas"
@@ -6144,6 +6304,11 @@
           "pdf": "cat1/2023_07_03",
           "question": 6,
           "page": 2
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 6,
+          "page": 2
         }
       ],
       "materia": "interferencias"
@@ -6587,6 +6752,11 @@
         {
           "pdf": "cat1/2023_12_22",
           "question": 40
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 40,
+          "page": 12
         }
       ],
       "materia": "teoria"
@@ -6854,6 +7024,11 @@
         {
           "pdf": "cat1/2023_08_00",
           "question": 18
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 18,
+          "page": 6
         }
       ],
       "materia": "componentes"
@@ -7195,6 +7370,11 @@
       "sources": [
         {
           "pdf": "cat1/2026_09_01",
+          "question": 35,
+          "page": 10
+        },
+        {
+          "pdf": "cat1/2026_09_03",
           "question": 35,
           "page": 10
         }
