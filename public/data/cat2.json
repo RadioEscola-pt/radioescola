@@ -1120,7 +1120,7 @@
     },
     {
       "id": 42,
-      "question": "Exprima em GHz: 9 300 MHz",
+      "question": "Exprima 9 300 MHz em GHz.",
       "options": [
         "93 000 GHz",
         "0,93 GHz",
