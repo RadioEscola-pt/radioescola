@@ -40,7 +40,9 @@
       "2": "Intermédio",
       "1": "Avançado"
     },
-    "formulary": "Formulário"
+    "formulary": "Formulário",
+    "close": "Fechar",
+    "categoryPicker": "Categoria"
   },
   "Footer": {
     "quickDrill": "Treino Rápido",

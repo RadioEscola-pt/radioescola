@@ -20,9 +20,11 @@ const LANGUAGES = [
 
 type LanguageSwitcherProps = {
   className?: string;
+  /** Resize the trigger — the drawer needs a full touch target, not the bar's 36px. */
+  triggerClassName?: string;
 };
 
-export default function LanguageSwitcher({ className }: LanguageSwitcherProps) {
+export default function LanguageSwitcher({ className, triggerClassName }: LanguageSwitcherProps) {
   const router = useRouter();
   const locale = useLocale();
   const t = useTranslations("LanguageSwitcher");
@@ -48,7 +50,8 @@ export default function LanguageSwitcher({ className }: LanguageSwitcherProps) {
             type="button"
             className={cn(
               "inline-flex h-9 w-9 items-center justify-center rounded-md",
-              "text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100"
+              "text-slate-700 transition-colors hover:bg-slate-200 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-slate-100",
+              triggerClassName
             )}
             aria-label={`${t("label")}: ${t(currentLanguage.labelKey)}`}
             disabled={isPending}

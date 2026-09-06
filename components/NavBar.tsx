@@ -23,6 +23,7 @@ import ThemeToggle from "./ThemeToggle";
 import MobileNav from "./MobileNav";
 import { useCalculators } from "@/components/providers/CalculatorProvider";
 import { CATEGORIES, CATEGORY_CONFIG } from "@/lib/config/categories";
+import { navSections } from "@/lib/nav-sections";
 import type { CalculatorCode } from "@/lib/types";
 
 export default function NavBar() {
@@ -32,13 +33,7 @@ export default function NavBar() {
   const tc = useTranslations("Calculators");
   const pathname = usePathname();
 
-  const section = {
-    home: pathname === "/",
-    study: ["/browse", "/aprender", "/drill"].some((p) => pathname.startsWith(p)),
-    exams: pathname.startsWith("/exam") || pathname.startsWith("/submit-exam"),
-    nation: pathname.startsWith("/estado-da-nacao"),
-    becomeHam: pathname.startsWith("/ser-radioamador"),
-  };
+  const section = navSections(pathname);
 
   const calculators = getAllCalculators();
 

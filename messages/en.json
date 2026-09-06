@@ -40,7 +40,9 @@
       "2": "Intermediate",
       "1": "Advanced"
     },
-    "formulary": "Formula Sheet"
+    "formulary": "Formula Sheet",
+    "close": "Close",
+    "categoryPicker": "Category"
   },
   "Footer": {
     "quickDrill": "Quick Drill",
