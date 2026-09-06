@@ -7631,10 +7631,9 @@ export const FORMULARIO: FormulaSection[] = [
         "refs": [
           "cat1#222",
           "cat1#383",
-          "cat1#299",
           "cat1#9"
         ],
-        "notas": "A notação é fixa: f + o (onda ordinária) + nome da camada — foE (cat1#222), foF2 (cat1#383); fcE, feE e flE são invenções dos distratores. Como $f_c \\propto \\sqrt{N}$, sobe de dia, no verão e no máximo solar; é por isso que a ionosfera só é blindagem em DETERMINADAS frequências, tipicamente até ≈ 30 MHz (cat1#299, cat1#9)."
+        "notas": "A notação é fixa: f + o (onda ordinária) + nome da camada — foE (cat1#222), foF2 (cat1#383); fcE, feE e flE são invenções dos distratores. Como $f_c \\propto \\sqrt{N}$, sobe de dia, no verão e no máximo solar; é por isso que a ionosfera só é blindagem em DETERMINADAS frequências, tipicamente até ≈ 30 MHz (cat1#9)."
       },
       {
         "key": "muf-lei-da-secante",
