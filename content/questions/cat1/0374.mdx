@@ -18,5 +18,14 @@ sources:
   - pdf: cat1/2026_09_01
     question: 11
     page: 4
+  - pdf: cat1/2026_09_03
+    question: 11
+    page: 4
 ---
+Um amperímetro deve ter uma impedância interna **o mais baixa possível, idealmente próxima de zero**.
 
+O amperímetro liga-se em série no ramo cuja corrente se quer medir, pelo que toda essa corrente o atravessa e a sua impedância interna R<sub>a</sub> passa a somar-se à impedância R do circuito. Onde antes circulava I = V/R, passa a circular I' = V/(R + R<sub>a</sub>): o aparelho lê uma corrente menor do que a que existia antes de ele ser inserido, e a queda de tensão I × R<sub>a</sub> aos seus terminais, a chamada tensão de carga (*burden voltage*), é tensão roubada ao circuito. O erro relativo vale R<sub>a</sub>/(R + R<sub>a</sub>), ou seja, aproximadamente a razão entre a impedância interna e a do circuito: um amperímetro de 1 Ω num circuito de 100 Ω erra cerca de 1%, um de 10 Ω erra cerca de 9%, e no limite R<sub>a</sub> → 0 o aparelho torna-se um pedaço de fio e o erro de inserção anula-se. É por isso que os amperímetros usam *shunts* de miliohms, e que a função de miliamperes de um multímetro, com alguns ohms de resistência, já perturba visivelmente um circuito de baixa tensão.
+
+O voltímetro é o caso dual (ver cat1#245): liga-se em paralelo e quer uma impedância infinita, para não desviar corrente do ponto que mede. A regra comum aos dois é a mesma: o instrumento deve alterar o menos possível o circuito onde é inserido, e isso significa impedância nula quando fica em série e impedância infinita quando fica em paralelo.
+
+As restantes opções falham por razões distintas. Uma impedância a tender para infinito interromperia o ramo, que é o comportamento ideal do voltímetro, não do amperímetro. Uma impedância da mesma ordem de grandeza da do circuito é o pior cenário útil, porque com R<sub>a</sub> = R a corrente cai para metade e o erro chega a 50%. E afirmar que a impedância interna não tem efeito é simplesmente falso: como se viu, ela determina diretamente o erro de inserção da medição.

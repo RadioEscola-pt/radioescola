@@ -14,5 +14,14 @@ sources:
   - pdf: cat1/2026_09_01
     question: 21
     page: 7
+  - pdf: cat1/2026_09_03
+    question: 20
+    page: 6
 ---
+Um dipolo de Hertz é um elemento **balanceado**.
 
+Balanceado significa simétrico em relação ao ponto de alimentação: dois braços iguais, alimentados de forma diferencial, em que nenhum dos terminais está ligado à massa. Em cada instante a corrente que sai por um terminal da linha entra pelo outro, as tensões nos dois braços são iguais e de sinal contrário relativamente à terra, e não existe caminho de modo comum. A antena fecha-se sobre si própria e não precisa do solo para funcionar, ao contrário da antena de Marconi, o quarto de onda vertical que se alimenta entre o radiador e a terra ou um plano de terra: aí um dos terminais é a própria massa, o elemento é assimétrico e diz-se não balanceado.
+
+A consequência prática está na alimentação. O cabo coaxial é uma linha não balanceada, com a malha ao potencial da massa, e ligá-lo diretamente a um dipolo faz da superfície exterior da malha um terceiro condutor: parte da corrente de um dos braços regressa por ela em modo comum, a linha passa a radiar, o diagrama deforma-se e aparece RF na estação. Entre o coaxial e o dipolo coloca-se por isso um *balun* (*balanced-unbalanced*), tipicamente um choke de corrente, que bloqueia essa corrente na malha; com linha bifilar, ela própria balanceada, o problema não se põe.
+
+As duas opções sobre a antena Yagi-Uda descrevem papéis, não a natureza do elemento. «Parasita» designa os refletores e diretores de uma Yagi, que não recebem alimentação nenhuma e são excitados apenas por acoplamento com o elemento alimentado; um dipolo de Hertz é, por definição, um elemento alimentado, pelo que não é parasita. E embora um dipolo possa servir de elemento excitado numa Yagi, isso é uma utilização possível, não uma propriedade sua: sozinho, o dipolo de Hertz é uma antena completa, e o que o caracteriza como elemento é ser balanceado.

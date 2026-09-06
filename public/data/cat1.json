@@ -85,6 +85,11 @@
         {
           "pdf": "cat1/2023_12_22",
           "question": 8
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 8,
+          "page": 3
         }
       ],
       "materia": "circuitos"
@@ -107,7 +112,7 @@
       "question": "Duma forma geral, qual das seguintes linhas de transmissão possui a melhor blindagem a campos eletromagnéticos?",
       "options": [
         "Cabo coaxial",
-        "PLC - (Power Line Communications)",
+        "PLC - \"Power Line Communications\"",
         "Par telefónico",
         "Todas possuem blindagem"
       ],
@@ -121,6 +126,11 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 19
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 19,
+          "page": 5
         }
       ],
       "materia": "interferencias"
@@ -131,7 +141,7 @@
       "options": [
         "Duma forma geral, pode-se obter uma boa blindagem a campos elétricos com materiais semicondutores",
         "Duma forma geral, a ligação à terra não é relevante quando se pretende obter uma boa blindagem a campos elétricos",
-        "Duma forma geral, pode-se obter uma boa blindagem a campos elétricos com mateirais isolantes",
+        "Duma forma geral, pode-se obter uma boa blindagem a campos elétricos com materiais isolantes",
         "Duma forma geral, a blindagem a campos elétricos só é eficiente quando estabelece um caminho de baixa impedância para a terra"
       ],
       "correctIndex": 3,
@@ -141,6 +151,11 @@
           "pdf": "cat1/2023_07_03",
           "question": 19,
           "page": 5
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 19,
+          "page": 6
         }
       ],
       "materia": "interferencias"
@@ -210,6 +225,11 @@
           "pdf": "cat1/2014_12_19",
           "question": 24,
           "unavailable": true
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 24,
+          "page": 7
         }
       ],
       "materia": "propagacao"
@@ -235,6 +255,11 @@
           "pdf": "cat1/2023_07_03",
           "question": 24,
           "page": 7
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 24,
+          "page": 6
         }
       ],
       "materia": "interferencias"
@@ -348,6 +373,7 @@
         "Todas a hipóteses anteriores não estão corretas"
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_08_00",
@@ -361,6 +387,31 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 34
+        }
+      ],
+      "materia": "teoria"
+    },
+    {
+      "id": 405,
+      "question": "Que tipo de circuitos ideais apresentam os sinais de corrente e de tensão em quadratura?",
+      "options": [
+        "Circuitos puramente resistivos",
+        "Circuitos puramente resistivos com transístores",
+        "Circuitos puramente indutivos",
+        "Todas a hipóteses anteriores não estão corretas"
+      ],
+      "correctIndex": 2,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 34,
+          "page": 9
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 34,
+          "page": 10
         }
       ],
       "materia": "teoria"
@@ -429,6 +480,11 @@
         {
           "pdf": "cat1/2023_12_22",
           "question": 37
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 37,
+          "page": 11
         }
       ],
       "materia": "teoria"
@@ -473,6 +529,26 @@
           "pdf": "cat1/2026_09_01",
           "question": 37,
           "page": 11
+        }
+      ],
+      "materia": "teoria"
+    },
+    {
+      "id": 407,
+      "question": "A grandeza que dá uma medida da qualidade de desempenho dos sistemas de comunicações analógicas pode designar-se por",
+      "options": [
+        "relação sinal ruído",
+        "relação frente-costas",
+        "relação de onda estacionária",
+        "relação de impedância"
+      ],
+      "correctIndex": 0,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 37,
+          "page": 10
         }
       ],
       "materia": "teoria"
@@ -619,6 +695,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 39,
+          "page": 11
+        }
+      ],
       "materia": "teoria"
     },
     {
@@ -832,6 +915,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 26,
+          "page": 8
+        }
+      ],
       "materia": "componentes"
     },
     {
@@ -967,6 +1057,11 @@
           "pdf": "cat1/2023_07_03",
           "question": 26,
           "page": 7
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 26,
+          "page": 7
         }
       ],
       "materia": "componentes"
@@ -1026,6 +1121,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 30,
+          "page": 8
+        }
+      ],
       "materia": "componentes"
     },
     {
@@ -1039,6 +1141,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 30,
+          "page": 9
+        }
+      ],
       "materia": "componentes"
     },
     {
@@ -1172,6 +1281,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 33,
+          "page": 10
+        }
+      ],
       "materia": "componentes"
     },
     {
@@ -1240,6 +1356,26 @@
       "materia": "circuitos"
     },
     {
+      "id": 404,
+      "question": "A montagem com um transístor, designada como \"amplificador de tensão\" (ou \"emissor comum\"), caracteriza-se por",
+      "options": [
+        "ter ganho (em valor absoluto) superior a 1",
+        "ter impedância de entrada elevada",
+        "inverter o sinal de entrada",
+        "Todas as respostas anteriores estão corretas"
+      ],
+      "correctIndex": 3,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 33,
+          "page": 9
+        }
+      ],
+      "materia": "circuitos"
+    },
+    {
       "id": 64,
       "question": "Qual a principal função de uma grelha de blindagem num tubo de vácuo?",
       "options": [
@@ -1250,6 +1386,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 35,
+          "page": 9
+        }
+      ],
       "materia": "componentes"
     },
     {
@@ -1478,6 +1621,11 @@
         {
           "pdf": "cat1/2023_08_00",
           "question": 10
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 10,
+          "page": 3
         }
       ],
       "materia": "componentes"
@@ -1509,6 +1657,26 @@
       "sources": [
         {
           "pdf": "cat1/2026_09_01",
+          "question": 10,
+          "page": 3
+        }
+      ],
+      "materia": "componentes"
+    },
+    {
+      "id": 410,
+      "question": "Num circuito que opera em corrente contínua poderemos ligar dois díodos de junção em paralelo?",
+      "options": [
+        "Sim, sem qualquer problema. Contudo essa montagem nunca é utilizada pois não tem qualquer interesse",
+        "Sim, mas será aconselhável colocar um condensador em série com cada um deles",
+        "Sim, mas será aconselhável colocar uma resistência em série com cada um deles",
+        "Sim, mas será aconselhável colocar uma bobina em série com cada um deles"
+      ],
+      "correctIndex": 2,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
           "question": 10,
           "page": 3
         }
@@ -1613,6 +1781,11 @@
           "pdf": "cat1/2011_12_13",
           "question": 15,
           "page": 4
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 15,
+          "page": 4
         }
       ],
       "materia": "circuitos"
@@ -1668,6 +1841,11 @@
         },
         {
           "pdf": "cat1/2023_07_03",
+          "question": 22,
+          "page": 6
+        },
+        {
+          "pdf": "cat1/2026_09_02",
           "question": 22,
           "page": 6
         }
@@ -1802,6 +1980,11 @@
           "pdf": "cat1/2014_05_23",
           "question": 11,
           "page": 3
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 15,
+          "page": 5
         }
       ],
       "materia": "circuitos"
@@ -1897,7 +2080,7 @@
         "É o elemento regulador ou de controlo do circuito",
         "Fornece corrente a D1"
       ],
-      "correctIndex": 0,
+      "correctIndex": 2,
       "hasNotesMdx": true,
       "img": "/images/cat1/fig2.png",
       "materia": "circuitos"
@@ -1911,8 +2094,15 @@
         "Filtra a saída",
         "Filtra a tensão de alimentação"
       ],
-      "correctIndex": 2,
+      "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 17,
+          "page": 5
+        }
+      ],
       "img": "/images/cat1/fig2.png",
       "materia": "circuitos"
     },
@@ -2013,6 +2203,26 @@
       "materia": "componentes"
     },
     {
+      "id": 402,
+      "question": "Como se costuma designar um condensador ligado ao secundário de um transformador usado para absorver picos de tensão de curta duração?",
+      "options": [
+        "Condensador \"clipper\"",
+        "Condensador de compensação ou de ajuste",
+        "Condensador \"feedback\"",
+        "Condensador supressor de picos"
+      ],
+      "correctIndex": 3,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 17,
+          "page": 5
+        }
+      ],
+      "materia": "componentes"
+    },
+    {
       "id": 106,
       "question": "Num amplificador de classe B, o transístor conduz durante",
       "options": [
@@ -2075,6 +2285,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 29,
+          "page": 8
+        }
+      ],
       "materia": "circuitos"
     },
     {
@@ -2324,6 +2541,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 31,
+          "page": 9
+        }
+      ],
       "materia": "recetores"
     },
     {
@@ -2471,6 +2695,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 32,
+          "page": 9
+        }
+      ],
       "materia": "circuitos"
     },
     {
@@ -2489,6 +2720,26 @@
           "pdf": "cat1/2014_12_19",
           "question": 34,
           "unavailable": true
+        }
+      ],
+      "materia": "circuitos"
+    },
+    {
+      "id": 403,
+      "question": "Que tipo de circuitos são usados em osciladores de frequência variável?",
+      "options": [
+        "Pierce e Zener",
+        "Colpitts e Hartley",
+        "Armstrong e Forest",
+        "Realimentação negativa e realimentação equilibrada"
+      ],
+      "correctIndex": 1,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 32,
+          "page": 9
         }
       ],
       "materia": "circuitos"
@@ -2587,6 +2838,11 @@
           "pdf": "cat1/2014_12_19",
           "question": 30,
           "unavailable": true
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 31,
+          "page": 9
         }
       ],
       "materia": "circuitos"
@@ -2622,6 +2878,31 @@
       "correctIndex": 0,
       "hasNotesMdx": true,
       "materia": "emissores"
+    },
+    {
+      "id": 406,
+      "question": "O que quer dizer PLL?",
+      "options": [
+        "\"Phase Local Loop\"",
+        "\"Power Local Loop\"",
+        "\"Phase Locked Loop\"",
+        "\"Power Locked Loop\""
+      ],
+      "correctIndex": 2,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 36,
+          "page": 10
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 36,
+          "page": 10
+        }
+      ],
+      "materia": "circuitos"
     },
     {
       "id": 140,
@@ -2808,6 +3089,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 38,
+          "page": 10
+        }
+      ],
       "materia": "teoria"
     },
     {
@@ -2824,6 +3112,26 @@
       "materia": "teoria"
     },
     {
+      "id": 414,
+      "question": "No âmbito das transformadas de Fourier, o que designa a sigla FFT?",
+      "options": [
+        "\"Forward Fourier Transform\"",
+        "\"Fixed Fourier Transform\"",
+        "\"Finite Fourier Transform\"",
+        "\"Fast Fourier Transform\""
+      ],
+      "correctIndex": 3,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 38,
+          "page": 11
+        }
+      ],
+      "materia": "teoria"
+    },
+    {
       "id": 151,
       "question": "Num recetor, para que os sinais sejam ajustados de forma a manter um nível médio na saída aproximadamente constante, devem utilizar-se circuitos",
       "options": [
@@ -2834,6 +3142,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 23,
+          "page": 7
+        }
+      ],
       "materia": "recetores"
     },
     {
@@ -2955,6 +3270,11 @@
           "pdf": "cat1/2014_12_19",
           "question": 21,
           "unavailable": true
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 23,
+          "page": 6
         }
       ],
       "materia": "medidas"
@@ -2975,6 +3295,31 @@
           "pdf": "cat1/2026_09_01",
           "question": 25,
           "page": 8
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 25,
+          "page": 7
+        }
+      ],
+      "materia": "recetores"
+    },
+    {
+      "id": 413,
+      "question": "O fator que afeta o desempenho de um recetor através do mecanismo designado por \"reciprocal mixing\"",
+      "options": [
+        "é o ruído de fase associado aos condensadores existentes nos vários andares do recetor",
+        "é o ruído de fase associado ao amplificador que alimenta o altifalante",
+        "é o ruído de fase associado à fonte de alimentação",
+        "é o ruído de fase associado ao oscilador local"
+      ],
+      "correctIndex": 3,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 25,
+          "page": 7
         }
       ],
       "materia": "recetores"
@@ -3151,24 +3496,6 @@
       "materia": "teoria"
     },
     {
-      "id": 372,
-      "question": "Qual a frase que é verdadeira",
-      "options": [
-        "A modulação consiste na amostragem do sinal na sua banda base",
-        "A modulação traduz-se na translação de um sinal da sua gama de frequências para outra gama de frequências",
-        "Num processo de modulação nunca existe qualquer translação de frequências",
-        "A modulação traduz-se na rotação de um sinal da sua gama de frequências no espaço real para outra gama de frequências no espaço real para outra gama de frequências no espaço complexo"
-      ],
-      "correctIndex": 1,
-      "sources": [
-        {
-          "pdf": "cat1/2023_12_22",
-          "question": 7
-        }
-      ],
-      "materia": "teoria"
-    },
-    {
       "id": 168,
       "question": "Qual das afirmações está correta?",
       "options": [
@@ -3203,6 +3530,11 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 7
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 7,
+          "page": 2
         }
       ],
       "materia": "teoria"
@@ -3222,6 +3554,11 @@
         {
           "pdf": "cat1/2023_08_00",
           "question": 7
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 7,
+          "page": 2
         }
       ],
       "materia": "teoria"
@@ -3237,6 +3574,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 22,
+          "page": 7
+        }
+      ],
       "materia": "circuitos"
     },
     {
@@ -3260,7 +3604,7 @@
     },
     {
       "id": 388,
-      "question": "Qual dos seguintes dispositivos costuma ser mais apropriado para as aplicações de um amplificador de potência UHF ou SHF",
+      "question": "Qual dos seguintes dispositivos costuma ser mais apropriado para as aplicações de um amplificador de potência UHF ou SHF?",
       "options": [
         "FET",
         "Varicap",
@@ -3272,6 +3616,11 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 29
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 29,
+          "page": 8
         }
       ],
       "materia": "componentes"
@@ -3342,6 +3691,26 @@
         {
           "pdf": "cat1/2023_12_22",
           "question": 39
+        }
+      ],
+      "materia": "teoria"
+    },
+    {
+      "id": 415,
+      "question": "Qual o significado da sigla AMTOR?",
+      "options": [
+        "\"Analogic Teleprinting Over Radio\"",
+        "\"Amateur Transmission Over Radio\"",
+        "\"Amateur Teleprinting Over Radio\"",
+        "\"Analogic Transmission Over Radio\""
+      ],
+      "correctIndex": 2,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 39,
+          "page": 11
         }
       ],
       "materia": "teoria"
@@ -3437,6 +3806,11 @@
           "pdf": "cat1/2026_09_01",
           "question": 28,
           "page": 8
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 28,
+          "page": 8
         }
       ],
       "materia": "emissores"
@@ -3475,6 +3849,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 27,
+          "page": 7
+        }
+      ],
       "materia": "emissores"
     },
     {
@@ -3508,6 +3889,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 27,
+          "page": 8
+        }
+      ],
       "materia": "emissores"
     },
     {
@@ -3605,6 +3993,7 @@
         "parasita de uma antena Yagi-Uda"
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2024_01_02",
@@ -3614,6 +4003,11 @@
           "pdf": "cat1/2026_09_01",
           "question": 21,
           "page": 7
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 20,
+          "page": 6
         }
       ],
       "materia": "antenas"
@@ -3669,6 +4063,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 12,
+          "page": 3
+        }
+      ],
       "materia": "antenas"
     },
     {
@@ -3719,6 +4120,26 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "materia": "antenas"
+    },
+    {
+      "id": 411,
+      "question": "O que é o ganho absoluto de uma antena?",
+      "options": [
+        "É a relação entre a intensidade mínima de radiação (numa dada direção) e a que teríamos se a potência entregue à antena fosse radiada isotropicamente",
+        "É a relação entre a intensidade mínima de radiação (numa dada direção) e a que teríamos se a potência entregue à antena fosse radiada por uma antena diretiva teórica com um número infinito de elementos",
+        "É a relação entre a intensidade máxima de radiação (numa dada direção) e a que teríamos se a potência entregue à antena fosse radiada por uma antena diretiva teórica com um número infinito de elementos",
+        "É a relação entre a intensidade máxima de radiação (numa dada direção) e a que teríamos se a potência entregue à antena fosse radiada isotropicamente"
+      ],
+      "correctIndex": 3,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 13,
+          "page": 4
+        }
+      ],
       "materia": "antenas"
     },
     {
@@ -3808,6 +4229,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 13,
+          "page": 4
+        }
+      ],
       "materia": "antenas"
     },
     {
@@ -3965,6 +4393,11 @@
         {
           "pdf": "cat1/2023_08_00",
           "question": 21
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 21,
+          "page": 6
         }
       ],
       "materia": "antenas"
@@ -3984,6 +4417,11 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 20
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 21,
+          "page": 6
         }
       ],
       "materia": "antenas"
@@ -4125,7 +4563,7 @@
     },
     {
       "id": 213,
-      "question": "Qual o comprimento físico de uma linha de transmissão coaxial que a nível elétrico apresenta 1/4 do comprimento de onda à frequência de 7,2 MHz (para um fator de velocidade de 0,66)?",
+      "question": "Qual o comprimento físico de uma linha de transmissão coaxial comum que a nível elétrico apresenta 1/4 do comprimento de onda à frequência de 7,2 MHz (para um fator de velocidade de 0,66)?",
       "options": [
         "10 m",
         "6,9 m",
@@ -4138,6 +4576,11 @@
         {
           "pdf": "cat1/2011_12_13",
           "question": 19,
+          "page": 5
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 20,
           "page": 5
         }
       ],
@@ -4193,6 +4636,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 4,
+          "page": 1
+        }
+      ],
       "materia": "recetores"
     },
     {
@@ -4230,6 +4680,11 @@
         {
           "pdf": "cat1/2023_12_22",
           "question": 4
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 3,
+          "page": 1
         }
       ],
       "materia": "propagacao"
@@ -4440,14 +4895,20 @@
       "options": [
         "438 - 440 MHz",
         "1240 - 1260 MHz",
-        "7100 - 7200 MHz",
-        "24,00 - 24,05 MHz"
+        "7100 - 7200 kHz",
+        "24,00 - 24,05 GHz"
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2024_01_02",
           "question": 1
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 1,
+          "page": 1
         }
       ],
       "materia": "regulamentacao"
@@ -4512,6 +4973,26 @@
       "sources": [
         {
           "pdf": "cat1/2026_09_01",
+          "question": 3,
+          "page": 1
+        }
+      ],
+      "materia": "propagacao"
+    },
+    {
+      "id": 408,
+      "question": "Qual das seguintes opções constitui um bom indicador da possibilidade de propagação de ondas na faixa dos 50 MHz?",
+      "options": [
+        "Propagação das ondas com saltos curtos na faixa dos 28 MHz",
+        "Propagação das ondas com saltos longos na faixa dos 28 MHz",
+        "Atenuação severa dos sinais na faixa dos 28 MHz",
+        "Ecos de longo atraso na faixa dos 28 MHz"
+      ],
+      "correctIndex": 0,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
           "question": 3,
           "page": 1
         }
@@ -4669,6 +5150,31 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 5
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 4,
+          "page": 1
+        }
+      ],
+      "materia": "propagacao"
+    },
+    {
+      "id": 409,
+      "question": "A inversão de temperaturas é um fenómeno que tem efeitos sobre a propagação rádio. Em que região da atmosfera estes fenómenos ocorrem?",
+      "options": [
+        "Na ionosfera",
+        "Na troposfera",
+        "Na estratosfera",
+        "Na mesosfera"
+      ],
+      "correctIndex": 1,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 5,
+          "page": 2
         }
       ],
       "materia": "propagacao"
@@ -4682,8 +5188,15 @@
         "é praticamente igual à atenuação em espaço livre",
         "Não existe qualquer relação entre a desobstrução do primeiro elipsoide de Fresnel e a atenuação do sinal na ligação entre as duas estações"
       ],
-      "correctIndex": 0,
+      "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 5,
+          "page": 2
+        }
+      ],
       "materia": "propagacao"
     },
     {
@@ -4809,6 +5322,7 @@
         "Todas as hipóteses anteriores estão incorretas, pois a impedância interna dum amperímetro não tem qualquer efeito no erro da medição"
       ],
       "correctIndex": 0,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_12_22",
@@ -4816,6 +5330,11 @@
         },
         {
           "pdf": "cat1/2026_09_01",
+          "question": 11,
+          "page": 4
+        },
+        {
+          "pdf": "cat1/2026_09_03",
           "question": 11,
           "page": 4
         }
@@ -4929,18 +5448,23 @@
     },
     {
       "id": 349,
-      "question": "numa situação em que se estão a fazer testes a um emissor, ligou-se a saida do emissor sobre uma carga artificial, através de um cabo coaxial. Qual das afirmações seguintes está correta",
+      "question": "Numa situação em que se estão a fazer testes a um emissor, ligou-se a saída do emissor sobre uma carga artificial, através de um cabo coaxial. Qual das afirmações seguintes está correta?",
       "options": [
         "Nestas circunstâncias, não existe qualquer radiação de campos eletromagnéticos, pelo equipamento, cabo coaxial ou carga artificial",
         "Nestas circunstâncias, apenas são radiados campos eletromagnéticos pelo cabo coaxial e pela carga artificial, pois o equipamento não emite qualquer radiação",
-        "Nestas circunstâncias, os campos radiados pelo sistema de teste, duma forma geral não são susceptiveis de provocar interferências prejudiciais noutros sisemas rádio que estejam em operação, nas proximidades",
-        "Nestas circunstâncias, os campos radiados pelo sistema de teste, duma forma geral, terão uma grande probalidade de provocar interferências prejudiciais noutros sistemas rádio que estejam em operação, nas proximidades"
+        "Nestas circunstâncias, os campos radiados pelo sistema de teste, duma forma geral não são suscetíveis de provocar interferências prejudiciais noutros sistemas rádio que estejam em operação, nas proximidades",
+        "Nestas circunstâncias, os campos radiados pelo sistema de teste, duma forma geral, terão uma grande probabilidade de provocar interferências prejudiciais noutros sistemas rádio que estejam em operação, nas proximidades"
       ],
       "correctIndex": 2,
       "sources": [
         {
           "pdf": "cat1/2024_01_02",
           "question": 27
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 28,
+          "page": 8
         }
       ],
       "materia": "interferencias"
@@ -4983,6 +5507,26 @@
       "materia": "medidas"
     },
     {
+      "id": 401,
+      "question": "Em que domínio são apresentados os sinais num analisador espetral?",
+      "options": [
+        "No domínio da frequência",
+        "No domínio lógico",
+        "No domínio do espaço",
+        "No domínio do tempo"
+      ],
+      "correctIndex": 0,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 14,
+          "page": 4
+        }
+      ],
+      "materia": "medidas"
+    },
+    {
       "id": 255,
       "question": "Qual dos seguintes procedimentos é uma precaução muito importante a tomar ao ligar um analisador espectral à saída de um transmissor?",
       "options": [
@@ -5020,6 +5564,11 @@
       "sources": [
         {
           "pdf": "cat1/2026_09_01",
+          "question": 14,
+          "page": 5
+        },
+        {
+          "pdf": "cat1/2026_09_03",
           "question": 14,
           "page": 5
         }
@@ -5082,6 +5631,16 @@
         {
           "pdf": "cat1/2023_12_22",
           "question": 9
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 9,
+          "page": 3
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 9,
+          "page": 3
         }
       ],
       "materia": "interferencias"
@@ -5173,6 +5732,11 @@
           "pdf": "cat1/2011_12_13",
           "question": 12,
           "page": 3
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 6,
+          "page": 2
         }
       ],
       "materia": "operacao"
@@ -5199,11 +5763,11 @@
     },
     {
       "id": 382,
-      "question": "Sempre que uma amdor de categoria 1 pretenda exercer a actividade temporariamente num país cuja Administração tenha adotado a Recomendação CEPT T/R 61-01 (licensa CEPT)",
+      "question": "Sempre que um amador da categoria 1 pretenda exercer a atividade temporariamente num país cuja Administração tenha adotado a Recomendação CEPT T/R 61-01 (licença CEPT),",
       "options": [
         "poderá utilizar as estações nas faixas que utiliza em Portugal",
         "sem prejuízo de respeitar as condicionantes expressas na Recomendação referida, deverá respeitar as condicionantes aplicáveis nesse país",
-        "terá que solicitar uma licensa à ANACOM",
+        "terá que solicitar uma licença à ANACOM",
         "terá que solicitar autorização à CEPT"
       ],
       "correctIndex": 1,
@@ -5211,6 +5775,11 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 2
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 2,
+          "page": 1
         }
       ],
       "materia": "regulamentacao"
@@ -5254,6 +5823,11 @@
       "sources": [
         {
           "pdf": "cat1/2023_07_03",
+          "question": 2,
+          "page": 1
+        },
+        {
+          "pdf": "cat1/2026_09_03",
           "question": 2,
           "page": 1
         }
@@ -5330,6 +5904,11 @@
           "pdf": "cat1/2026_09_01",
           "question": 1,
           "page": 1
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 1,
+          "page": 1
         }
       ],
       "materia": "regulamentacao"
@@ -5404,6 +5983,7 @@
         "Tem de ser neutralizada"
       ],
       "correctIndex": 0,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_08_00",
@@ -5412,6 +5992,11 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 12
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 12,
+          "page": 4
         }
       ],
       "materia": "antenas"
@@ -5790,6 +6375,11 @@
           "pdf": "cat1/2014_05_23",
           "question": 7,
           "page": 2
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 11,
+          "page": 3
         }
       ],
       "materia": "medidas"
@@ -5824,6 +6414,7 @@
         "Investigar a situação e resolvê-la ou ajudá-la a resolver se o problema for da instalação de receção"
       ],
       "correctIndex": 3,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2012_04_10",
@@ -5856,6 +6447,11 @@
         },
         {
           "pdf": "cat1/2023_07_03",
+          "question": 6,
+          "page": 2
+        },
+        {
+          "pdf": "cat1/2026_09_03",
           "question": 6,
           "page": 2
         }
@@ -5938,15 +6534,22 @@
     },
     {
       "id": 294,
-      "question": "De acordo com a lei dos nós de Kirchoff, qual das afirmações está correcta?",
+      "question": "De acordo com a lei dos nós de Kirchhoff, qual das afirmações está correta?",
       "options": [
         "A soma algébrica das correntes no nó é maior que zero.",
         "A soma algébrica das correntes no nó é menor que zero.",
         "A soma algébrica das correntes no nó é igual a zero.",
-        "Nenhuma das afirmações está correcta."
+        "Nenhuma das afirmações está correta."
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 8,
+          "page": 2
+        }
+      ],
       "materia": "teoria"
     },
     {
@@ -6012,19 +6615,6 @@
       "correctIndex": 0,
       "hasNotesMdx": true,
       "materia": "interferencias"
-    },
-    {
-      "id": 299,
-      "question": "Qual das seguintes afirmações está correcta?",
-      "options": [
-        "A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos apenas para radiação óptica.",
-        "A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos apenas acima de 1 GHz.",
-        "A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos em todas as frequências.",
-        "A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos em determinadas frequências."
-      ],
-      "correctIndex": 3,
-      "hasNotesMdx": true,
-      "materia": "propagacao"
     },
     {
       "id": 300,
@@ -6284,7 +6874,7 @@
       "question": "Duma forma geral e no domínio do tempo, na fase de amostragem de uma conversão analógica/digital",
       "options": [
         "o sinal analógico é  passado por um filtro passa baixo, resultando um sinal digital de amplitude variável proporcional ao sinal amostrado, mas com uma menor gama espectral.",
-        "o sinal analógico é  multiplicado por um trem de imimpulsos de amplitude constante, resultando um trem de impulsos de amplitude variável proporcional ao sinal amostrado.",
+        "o sinal analógico é  multiplicado por um trem de impulsos de amplitude constante, resultando um trem de impulsos de amplitude variável proporcional ao sinal amostrado.",
         "o sinal analógico é  sujeito a uma amplificação não linear, passa por um filtro passa alto de forma a regenerar as componentes de mais alta frequência que constituirão o sinal digital.",
         "o sinal analógico é  misturado com outro sinal analógico padrão de frequência muito superior, resultando um sinal digital de amplitude variável proporcional ao sinal amostrado."
       ],
@@ -6294,6 +6884,11 @@
         {
           "pdf": "cat1/2023_12_22",
           "question": 40
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 40,
+          "page": 12
         }
       ],
       "materia": "teoria"
@@ -6327,6 +6922,11 @@
           "pdf": "cat1/2023_07_03",
           "question": 40,
           "page": 12
+        },
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 40,
+          "page": 11
         }
       ],
       "materia": "teoria"
@@ -6387,6 +6987,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 16,
+          "page": 4
+        }
+      ],
       "materia": "componentes"
     },
     {
@@ -6432,6 +7039,26 @@
         {
           "pdf": "cat1/2023_12_22",
           "question": 16
+        }
+      ],
+      "materia": "componentes"
+    },
+    {
+      "id": 412,
+      "question": "Num condensador plano constituído por duas superfícies metálicas, separadas por um isolante, a sua capacidade aumenta quando",
+      "options": [
+        "diminui a área das superfícies metálicas",
+        "diminui o afastamento entre as superfícies metálicas",
+        "diminui a constante dielétrica do isolante",
+        "Todas as respostas estão corretas"
+      ],
+      "correctIndex": 1,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 16,
+          "page": 5
         }
       ],
       "materia": "componentes"
@@ -6486,6 +7113,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_02",
+          "question": 18,
+          "page": 5
+        }
+      ],
       "materia": "componentes"
     },
     {
@@ -6542,6 +7176,11 @@
         {
           "pdf": "cat1/2023_08_00",
           "question": 18
+        },
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 18,
+          "page": 6
         }
       ],
       "materia": "componentes"
@@ -6883,6 +7522,11 @@
       "sources": [
         {
           "pdf": "cat1/2026_09_01",
+          "question": 35,
+          "page": 10
+        },
+        {
+          "pdf": "cat1/2026_09_03",
           "question": 35,
           "page": 10
         }

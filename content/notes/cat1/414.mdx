@@ -1,0 +1,5 @@
+FFT designa **"Fast Fourier Transform"**, transformada rápida de Fourier.
+
+Não é uma transformada diferente da transformada discreta de Fourier (DFT): é um algoritmo para a calcular depressa. Feita de forma direta, a DFT de N amostras exige da ordem de N² multiplicações; a FFT, explorando a simetria e a periodicidade dos fatores envolvidos e dividindo sucessivamente o problema ao meio, reduz esse esforço a cerca de N·log₂N. Para N = 1024 a diferença é entre um milhão de operações e cerca de dez mil.
+
+É essa redução que torna possível calcular espetros em tempo real com meios modestos, e está por trás de quase tudo o que hoje se vê num equipamento moderno: o ecrã de cascata de um SDR, os analisadores de espetro digitais e os modos digitais estreitos como o FT8, que dependem de uma análise espetral fina para detetar sinais abaixo do ruído.

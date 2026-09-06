@@ -1,0 +1,24 @@
+---
+id: 402
+question: >-
+  Como se costuma designar um condensador ligado ao secundário de um
+  transformador usado para absorver picos de tensão de curta duração?
+answers:
+  - text: Condensador "clipper"
+  - text: Condensador de compensação ou de ajuste
+  - text: Condensador "feedback"
+  - text: Condensador supressor de picos
+    correct: true
+topic: componentes
+sources:
+  - pdf: cat1/2026_09_02
+    question: 17
+    page: 5
+---
+Chama-se **condensador supressor de picos**.
+
+O nome descreve a função. Um condensador opõe-se à variação da tensão aos seus terminais: para a mudar é preciso fornecer-lhe carga, e isso leva tempo. Um pico de tensão de curta duração é exatamente uma variação rápida, de modo que o condensador o absorve — a energia do pico vai carregá-lo em vez de aparecer aos terminais da carga. Visto do lado da frequência, o mesmo raciocínio: a reactância de um condensador é tanto menor quanto mais alta a frequência, e um impulso estreito é rico em componentes de alta frequência, que encontram assim um caminho de baixa impedância.
+
+Colocado no secundário de um transformador, protege o que vem a seguir dos transitórios que a rede injeta no primário e que o transformador deixa passar por acoplamento capacitivo entre os enrolamentos.
+
+As outras designações pertencem a outras funções: um circuito «clipper» corta a amplitude de um sinal por meio de díodos, e não é um condensador; o condensador de compensação ou de ajuste é o que se retoca para acertar a sintonia ou a resposta de um circuito; e um condensador de «feedback» está numa malha de realimentação, a definir ganho ou estabilidade, não a absorver transitórios.
