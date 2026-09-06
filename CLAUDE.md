@@ -52,7 +52,7 @@ box deliberately does not keep. Full runbook in `docs/deployment.md`.
 - **`NEXT_PUBLIC_*` is baked into the image**, so a feature-flag change needs a
   new build, not an edit to the server's `app.env`
 - **Two API routes read source files at request time** (`/api/notes/*` from
-  `content/notes/`, `/api/study-items` from `app/study/`) using paths built from
+  `content/notes/`, `/api/study-items` from `app/aprender/`) using paths built from
   `process.cwd()`, which file tracing cannot follow. They are kept in the
   standalone output by `outputFileTracingIncludes` in `next.config.js` — a new
   route that reads from disk needs an entry there or it will answer empty in
@@ -71,7 +71,7 @@ Next.js 16 App Router with React 19, TypeScript (strict), Tailwind CSS v4.
 - `/exam/[category]` - Timed 40-question exam simulation
 - `/drill` - Quick 10-question drill
 - `/dashboard` - Progress with gamification
-- `/study` - Study materials index
+- `/aprender` - Study materials index (was `/study`, which still redirects)
 
 **API routes**: `/api/data`, `/api/notes/[category]/[id]`, `/api/study-items`, `/api/submit-exam`
 
@@ -256,9 +256,9 @@ import-only, kept for re-running a migration from an archived JSON file.
 
 ## The formulary, and citing a question anywhere
 
-`/study/formulario` is every expression the exams ask you to calculate — 151
+`/aprender/formulario` is every expression the exams ask you to calculate — 151
 formulas and 59 reference tables over 14 sections. It is a normal study page
-(`app/study/formulario/page.mdx`), so the study index picks it up on its own,
+(`app/aprender/formulario/page.mdx`), so the study index picks it up on its own,
 but its content is data rather than prose: the page filters ~210 entries three
 ways and a hand-written MDX wall cannot be filtered.
 
