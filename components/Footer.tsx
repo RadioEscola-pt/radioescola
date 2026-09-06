@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Github, MessageCircle, Smartphone, Bug, Info, Radio, Zap, BarChart3, GraduationCap, School, TrendingUp, Heart, Users } from "lucide-react";
+import { Github, MessageCircle, Smartphone, Bug, Info, Zap, BarChart3, GraduationCap, School, TrendingUp, Heart, Users } from "lucide-react";
+import LogoMark from "@/components/brand/LogoMark";
 import { useTranslations } from "next-intl";
 import { EXTERNAL_LINKS } from "@/lib/config";
 
@@ -84,7 +85,7 @@ export default function Footer() {
             {t("slogan")}
           </p>
           <Link href="/" className="logo-link flex items-center gap-2 text-slate-400 transition-colors hover:text-amber-600 dark:text-slate-500 dark:hover:text-amber-400">
-            <Radio className="logo-radio-icon h-4 w-4" />
+            <LogoMark className="logo-mark h-8 w-auto text-slate-500 dark:text-slate-400" />
             <span className="text-sm font-medium tracking-tight">Rádio Escola</span>
           </Link>
         </div>

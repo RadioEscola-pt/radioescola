@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Upload, Menu, GraduationCap, BarChart3, Settings, Globe, Zap, Radio, TrendingUp } from "lucide-react";
+import { Home, BookOpen, FileText, Upload, Menu, GraduationCap, BarChart3, Settings, Globe, Zap, TrendingUp } from "lucide-react";
+import LogoMark from "@/components/brand/LogoMark";
 import {
   Sheet,
   SheetContent,
@@ -56,7 +57,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
       <SheetContent side="right" className="w-[300px] overflow-y-auto">
         <SheetHeader className="text-left">
           <SheetTitle className="flex items-center gap-2 text-slate-800 dark:text-slate-100">
-            <Radio className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+            <LogoMark className="h-9 w-auto text-slate-900 dark:text-white" />
             <span className="tracking-tight">Rádio Escola</span>
           </SheetTitle>
         </SheetHeader>

@@ -266,6 +266,7 @@ messages/        # i18n JSON: en.json, pt.json
 hooks/           # React hooks: useProgress, useGamification, useExamTimer, etc.
 public/data/     # GENERATED question bank JSON (do not hand-edit)
 public/exams/    # PDF exam papers (cat1/, cat2/, cat3/)
+public/logo/     # GENERATED brand marks (master + guide in docs/brand/)
 specs/           # Feature specifications
 __tests__/       # unit/, integration/, contracts/
 next.config.js   # Next.js configuration
@@ -306,6 +307,14 @@ Uses `next-intl` v4. Default locale is **Portuguese (pt)**, also supports Englis
   array alone is approximate for very heavy users
 - **Exam replay via URL params**: `q=` (question IDs), `a=` (base36-encoded answers), `t=` (time remaining) — no server storage needed
 - **Calculator is a modal context**, not a route — opening calculators doesn't change URL
+- **The logo is `components/brand/LogoMark.tsx`**, embedded rather than served
+  from `public/logo/`, because only an inline SVG can take its ink from
+  `currentColor` — that is what makes one component the black mark on light and
+  the white mark on dark. The red antenna/resistor/ground are grouped as
+  `.logo-signal` so `globals.css` can pulse them on the nav hover. Everything
+  under `public/logo/`, `public/icons/` and `app/{icon.svg,favicon.ico,apple-icon.png}`
+  is generated from the vector master; `docs/brand/README.md` says how, and why
+  the mark carries two reds and needs a dark tile to work as a square icon
 
 ## Code Style
 
