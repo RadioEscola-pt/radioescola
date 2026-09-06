@@ -3945,6 +3945,26 @@
       "materia": "recetores"
     },
     {
+      "id": 423,
+      "question": "Que circuito é usado para processar os sinais provenientes do amplificador de IF e do BFO e os envia posteriormente para o amplificador de AF num recetor super-heterodino de fonia em banda lateral única?",
+      "options": [
+        "Oscilador de RF",
+        "Filtro IF",
+        "Modulador balanceado",
+        "Detetor de produto"
+      ],
+      "correctIndex": 3,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat2/2026_09_03",
+          "question": 10,
+          "page": 3
+        }
+      ],
+      "materia": "recetores"
+    },
+    {
       "id": 161,
       "question": "Que sinal ou sinais podem ser encontrados na saída de um modulador balanceado adequadamente ajustado?",
       "options": [
