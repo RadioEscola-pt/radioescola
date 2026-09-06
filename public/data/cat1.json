@@ -3993,6 +3993,7 @@
         "parasita de uma antena Yagi-Uda"
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2024_01_02",
@@ -4898,6 +4899,7 @@
         "24,00 - 24,05 GHz"
       ],
       "correctIndex": 1,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2024_01_02",
@@ -5320,6 +5322,7 @@
         "Todas as hipóteses anteriores estão incorretas, pois a impedância interna dum amperímetro não tem qualquer efeito no erro da medição"
       ],
       "correctIndex": 0,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_12_22",
@@ -5980,6 +5983,7 @@
         "Tem de ser neutralizada"
       ],
       "correctIndex": 0,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat1/2023_08_00",
@@ -6410,6 +6414,7 @@
         "Investigar a situação e resolvê-la ou ajudá-la a resolver se o problema for da instalação de receção"
       ],
       "correctIndex": 3,
+      "hasNotesMdx": true,
       "sources": [
         {
           "pdf": "cat2/2012_04_10",
