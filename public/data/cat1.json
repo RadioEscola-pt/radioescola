@@ -6472,19 +6472,6 @@
       "materia": "interferencias"
     },
     {
-      "id": 299,
-      "question": "Qual das seguintes afirmações está correcta?",
-      "options": [
-        "A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos apenas para radiação óptica.",
-        "A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos apenas acima de 1 GHz.",
-        "A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos em todas as frequências.",
-        "A ionosfera constitui uma blindagem à volta da Terra, a campos electromagnéticos em determinadas frequências."
-      ],
-      "correctIndex": 3,
-      "hasNotesMdx": true,
-      "materia": "propagacao"
-    },
-    {
       "id": 300,
       "question": "A efectividade da blindagem S é definida para campos eléctricos de acordo com a seguinte expressão (sendo _i_ a intensidade do campo eléctrico incidente e _t_ a intensidade do campo eléctrico transmitido através da blindagem)",
       "options": [
