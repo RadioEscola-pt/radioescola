@@ -26,6 +26,7 @@ apenas dentro do losango.
 | Ficheiro | O que é |
 | --- | --- |
 | `components/brand/LogoMark.tsx` | o losango embutido, tinta em `currentColor` |
+| `components/brand/LogoWordmark.tsx` | «RÁDIO ESCOLA» embutido, tinta em `currentColor` |
 | `public/logo/mark.svg` | losango, tinta escura (fundos claros) |
 | `public/logo/mark-on-dark.svg` | losango, tinta branca (fundos escuros) |
 | `public/logo/mark-mono.svg` | losango a uma cor só |
@@ -33,12 +34,20 @@ apenas dentro do losango.
 | `app/icon.svg`, `app/favicon.ico`, `app/apple-icon.png` | ícones do separador e do iOS |
 | `public/icons/icon*.svg`, `public/icons/icon*.png` | ícones da PWA, referidos pelo `manifest.webmanifest` |
 
-`components/brand/LogoMark.tsx` é a única cópia embutida, e é a que a barra de
-navegação, o rodapé e o menu móvel usam. É embutida em vez de servida como
-`<img>` porque só assim a tinta pode seguir `currentColor` — um componente dá o
-losango preto no tema claro e branco no escuro, sem um segundo ficheiro para
-manter sincronizado. Os ficheiros em `public/logo/` são para tudo o resto
-(e-mail, apresentações, quem peça o logótipo).
+`LogoMark.tsx` e `LogoWordmark.tsx` são as cópias embutidas, e são as que a
+barra de navegação, o rodapé e o menu móvel usam, lado a lado. São embutidas em
+vez de servidas como `<img>` porque só assim a tinta pode seguir `currentColor`
+— um componente dá o losango preto no tema claro e branco no escuro, sem um
+segundo ficheiro para manter sincronizado. Os ficheiros em `public/logo/` são
+para tudo o resto (e-mail, apresentações, quem peça o logótipo).
+
+**Porque é que o lockup não se usa inteiro.** O `public/logo/lockup.svg` fixa o
+tamanho do wordmark em relação ao losango, e essa proporção não serve uma barra
+de 56 px: o losango precisa de `h-10` para o interior se ler, e a essa altura o
+wordmark do lockup sai com metade do corpo do texto que substituiu. Separados,
+cada um leva a sua altura — na navegação, `h-10` e `h-5`. O
+`LogoWordmark.tsx` leva o `viewBox` da caixa envolvente medida do wordmark
+dentro do lockup, para não arrastar folga à volta das letras.
 
 ## O losango é alto, não quadrado
 

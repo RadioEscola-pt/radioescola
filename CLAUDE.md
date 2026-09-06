@@ -361,10 +361,14 @@ Uses `next-intl` v4. Default locale is **Portuguese (pt)**, also supports Englis
   array alone is approximate for very heavy users
 - **Exam replay via URL params**: `q=` (question IDs), `a=` (base36-encoded answers), `t=` (time remaining) — no server storage needed
 - **Calculator is a modal context**, not a route — opening calculators doesn't change URL
-- **The logo is `components/brand/LogoMark.tsx`**, embedded rather than served
-  from `public/logo/`, because only an inline SVG can take its ink from
-  `currentColor` — that is what makes one component the black mark on light and
-  the white mark on dark. The red antenna/resistor/ground are grouped as
+- **The logo is two components** — `components/brand/LogoMark.tsx` (the
+  diamond) and `LogoWordmark.tsx` (the «RÁDIO ESCOLA» letterforms) — set side by
+  side rather than one lockup, because `public/logo/lockup.svg` fixes the
+  wordmark's size against the diamond and that ratio leaves the wordmark far too
+  small once the diamond is at the `h-10` it needs to stay legible. Both are
+  embedded rather than served from `public/logo/`, because only an inline SVG
+  can take its ink from `currentColor` — that is what makes one component the
+  black mark on light and the white mark on dark. The red antenna/resistor/ground are grouped as
   `.logo-signal` so `globals.css` can pulse them on the nav hover. Everything
   under `public/logo/`, `public/icons/` and `app/{icon.svg,favicon.ico,apple-icon.png}`
   is generated from the vector master; `docs/brand/README.md` says how, and why

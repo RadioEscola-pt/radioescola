@@ -209,13 +209,14 @@
 }
 
 /* Site logo radio broadcast effect.
-   `.logo-signal` is the red antenna/resistor/ground group inside LogoMark —
-   the parts that carry the signal, so they are the parts that pulse. */
-.logo-mark .logo-signal {
+   `.logo-signal` is the red antenna/resistor/ground inside LogoMark and
+   LogoLockup — the parts that carry the signal, so they are the parts that
+   pulse. Keyed off `.logo-link` alone so both components are covered. */
+.logo-signal {
   transition: opacity 0.3s ease-out;
 }
 
-.logo-link:hover .logo-mark .logo-signal {
+.logo-link:hover .logo-signal {
   animation: signal-pulse 1.2s ease-out infinite;
 }
 
@@ -295,7 +296,7 @@
     animation: none;
   }
 
-  .logo-link:hover .logo-mark .logo-signal {
+  .logo-link:hover .logo-signal {
     animation: none;
   }
 }

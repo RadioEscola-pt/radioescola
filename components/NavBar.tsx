@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { Home, BookOpen, FileText, Calculator, ChevronDown, Upload, GraduationCap, BarChart3, UserCircle, Globe, Zap, TrendingUp, Sigma } from "lucide-react";
 import LogoMark from "@/components/brand/LogoMark";
+import LogoWordmark from "@/components/brand/LogoWordmark";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -49,8 +50,8 @@ export default function NavBar() {
     <header className="sticky top-0 z-50 border-b border-slate-200/50 bg-slate-50/70 backdrop-blur-xl dark:border-slate-700/50 dark:bg-slate-900/70">
       <div className="container mx-auto flex h-14 items-center justify-between px-4">
         <Link href="/" className="logo-link flex shrink-0 items-center gap-2 whitespace-nowrap font-bold text-lg text-slate-800 transition-colors hover:text-amber-700 dark:text-slate-100 dark:hover:text-amber-300">
-          <LogoMark className="logo-mark h-10 w-auto text-slate-900 dark:text-white" />
-          <span className="tracking-tight">Rádio Escola</span>
+          <LogoMark className="h-10 w-auto shrink-0 text-slate-900 dark:text-white" />
+          <LogoWordmark className="h-5 w-auto text-slate-900 dark:text-white" />
         </Link>
 
         {/* Desktop Navigation */}
