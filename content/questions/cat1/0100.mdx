@@ -5,13 +5,19 @@ answers:
   - text: Contribui para a ressonância do circuito à frequência de entrada
   - text: Fornece uma polarização fixa a Q1
   - text: Filtra a saída
-    correct: true
   - text: Filtra a tensão de alimentação
-image: images/cat1/fig2.png
+    correct: true
 topic: circuitos
 sources:
   - pdf: cat1/2026_09_03
     question: 17
     page: 5
+image: images/cat1/fig2.png
 ---
-O capacitor C1 é utilizado para filtrar a saída do circuito, removendo qualquer componente de alta frequência e fornecendo uma saída mais suave e estabilizada.
+O C1 **filtra a tensão de alimentação**.
+
+O circuito da figura é um regulador série: entram +25 V do lado esquerdo e saem +12 V do lado direito. Q1 é o transístor de passagem, montado como seguidor de emissor, com a base mantida a tensão constante pelo zener D1, que R1 polariza a partir da entrada. C1 está ligado entre a entrada de +25 V e a massa — ou seja, do lado *não* regulado do circuito, antes de Q1.
+
+É aí que interessa filtrar. A tensão de alimentação vem tipicamente de um retificador e traz consigo a ondulação da rede; C1 desvia essa ondulação para a massa antes que ela chegue ao regulador, aliviando o trabalho que Q1 e D1 têm de fazer para a rejeitar.
+
+As restantes hipóteses pertencem a outros componentes ou a outro tipo de circuito. Quem está do lado da saída, aos +12 V, é o C3 — pelo que "filtra a saída" não pode descrever o C1. A polarização fixa da base de Q1 é dada pelo conjunto R1–D1, não por um condensador ligado à alimentação. E não há aqui nenhum circuito sintonizado: um regulador linear trabalha em contínua, não tem frequência de entrada nem ressonância.
