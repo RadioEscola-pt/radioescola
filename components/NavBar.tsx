@@ -32,7 +32,7 @@ export default function NavBar() {
 
   const section = {
     home: pathname === "/",
-    study: ["/browse", "/study", "/drill"].some((p) => pathname.startsWith(p)),
+    study: ["/browse", "/aprender", "/drill"].some((p) => pathname.startsWith(p)),
     exams: pathname.startsWith("/exam") || pathname.startsWith("/submit-exam"),
     nation: pathname.startsWith("/estado-da-nacao"),
     becomeHam: pathname.startsWith("/ser-radioamador"),
@@ -80,13 +80,13 @@ export default function NavBar() {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="whitespace-nowrap">
-                  <Link href="/study" className="cursor-pointer">
+                  <Link href="/aprender" className="cursor-pointer">
                     <BookOpen className="mr-2 h-4 w-4" />
                     {t("studyLibrary")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="whitespace-nowrap">
-                  <Link href="/study/formulario" className="cursor-pointer">
+                  <Link href="/aprender/formulario" className="cursor-pointer">
                     <Sigma className="mr-2 h-4 w-4 text-violet-500" />
                     {t("formulary")}
                   </Link>

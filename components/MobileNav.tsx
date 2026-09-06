@@ -94,7 +94,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
                     {t("quickDrill")}
                   </Link>
                   <Link
-                    href="/study"
+                    href="/aprender"
                     onClick={closeMenu}
                     className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-slate-100"
                   >
@@ -102,7 +102,7 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
                     <span className="text-sm font-medium">{t("studyLibrary")}</span>
                   </Link>
                   <Link
-                    href="/study/formulario"
+                    href="/aprender/formulario"
                     onClick={closeMenu}
                     className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-800"
                   >
