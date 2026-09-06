@@ -247,7 +247,9 @@
     "questionId": "ID: {id}",
     "correct": "Correto",
     "incorrect": "Incorreto",
-    "unanswered": "Sem resposta"
+    "unanswered": "Sem resposta",
+    "clearAnswer": "Limpar resposta",
+    "clearAnswerFor": "Limpar a resposta à pergunta {number}"
   },
   "Calculators": {
     "common": {

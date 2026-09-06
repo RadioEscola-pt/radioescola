@@ -19,7 +19,7 @@ import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-opt
 import { Button } from '@/components/ui/button';
 import { StudyHeader } from '@/components/StudyHeader';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
-import { Shuffle } from 'lucide-react';
+import { Shuffle, Eraser } from 'lucide-react';
 import { QuestionExplanation } from '@/components/QuestionExplanation';
 import { useProgressContext } from '@/components/providers/ProgressProvider';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
@@ -470,6 +470,31 @@ export default function ExamPage() {
                       </AnswerOption>
                     );
                   })}
+
+                  {/* Always rendered while the exam is live, disabled until
+                      there is something to clear: revealing it on selection
+                      would shift every question below it, and the candidate
+                      should see that going back to blank is available before
+                      committing to a guess. Blank scores 0, wrong scores
+                      -WRONG_ANSWER_PENALTY, so this is a scoring decision. */}
+                  {!quizEnded && (
+                    <div className="pt-1">
+                      <button
+                        type="button"
+                        onClick={() => setAnswers(prev => {
+                          const next = { ...prev };
+                          delete next[q.id];
+                          return next;
+                        })}
+                        disabled={timeUp || selected === undefined}
+                        aria-label={t('clearAnswerFor', { number: questionNumber })}
+                        className="inline-flex items-center gap-1.5 rounded-lg px-2 py-1 text-xs font-medium text-slate-500 dark:text-slate-400 hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-slate-700 dark:hover:text-slate-200 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-slate-500 dark:disabled:hover:text-slate-400 transition-colors"
+                      >
+                        <Eraser className="h-3.5 w-3.5" aria-hidden="true" />
+                        {t('clearAnswer')}
+                      </button>
+                    </div>
+                  )}
                 </div>
 
                 {q.img && (
@@ -499,7 +524,12 @@ export default function ExamPage() {
         })}
       </section>
 
-      {/* Bottom navigation - fixed on mobile */}
+      {/* Bottom navigation - fixed on mobile. Hidden when the whole exam fits
+          on one page, which is the shipped configuration: a permanently
+          disabled Anterior/Seguinte pair reads as something broken, and on
+          mobile it is a fixed bar eating screen for nothing. Terminar stays
+          reachable throughout because StudyHeader is sticky. */}
+      {totalPages > 1 && (
       <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 p-3 sm:relative sm:mt-6 sm:border-t-0 sm:bg-transparent sm:p-0">
         <div className="flex items-center justify-between gap-2 max-w-5xl mx-auto">
           <button
@@ -523,9 +553,10 @@ export default function ExamPage() {
           </button>
         </div>
       </div>
+      )}
 
       {/* Spacer for fixed bottom nav on mobile */}
-      <div className="h-16 sm:hidden" />
+      {totalPages > 1 && <div className="h-16 sm:hidden" />}
 
       <Dialog open={pendingShuffle !== null} onOpenChange={(open) => { if (!open) setPendingShuffle(null); }}>
         <DialogContent>
