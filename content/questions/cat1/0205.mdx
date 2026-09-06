@@ -15,5 +15,14 @@ topic: antenas
 sources:
   - pdf: cat1/2023_08_00
     question: 21
+  - pdf: cat1/2026_09_03
+    question: 21
+    page: 6
 ---
-A partir de determinadas frequências não se usam cabos coaxiais e usam se guias de ondas, e também têm muito pucas perdas. 
+A frequência de corte é **a frequência abaixo da qual não existe propagação no guia de ondas**.
+
+Um guia de ondas é um tubo metálico oco, sem condutor central. Ao contrário do cabo coaxial, que transporta o modo TEM desde a corrente contínua, o guia só conduz uma onda que "caiba" na sua secção transversal: o campo elétrico tem de se anular nas paredes condutoras, e isso só é possível quando o comprimento de onda é suficientemente curto. Para o modo dominante de um guia retangular, o TE<sub>10</sub>, a condição é que meio comprimento de onda caiba na dimensão larga interior *a*, o que dá a frequência de corte f<sub>c</sub> = c / 2a — ou, de forma equivalente, λ<sub>c</sub> = 2a.
+
+Abaixo de f<sub>c</sub> a onda não desaparece de repente, mas torna-se evanescente: a sua amplitude decai exponencialmente ao longo do guia sem transportar potência. A frequência de corte é portanto um limite *inferior*, e o guia comporta-se como um filtro passa-alto. Um guia WR-90, com a = 22,86 mm, tem f<sub>c</sub> ≈ 6,56 GHz e usa-se entre 8,2 e 12,4 GHz — confortavelmente acima do corte, mas abaixo dos 13,1 GHz em que o modo seguinte, o TE<sub>20</sub>, também começaria a propagar-se e a partilhar a potência de forma imprevisível.
+
+As restantes opções falham por razões diferentes. A primeira inverte o sentido do limite: o guia deixa de ser útil a frequências muito altas por passar a suportar vários modos, mas isso não é a frequência de corte. A terceira liga o corte ao comprimento do guia, que é irrelevante — o que conta é a dimensão transversal. A quarta descreve algo que não define nada: a velocidade de grupo no guia varia continuamente com a frequência, tende para zero junto ao corte e aproxima-se de c muito acima dele, sem que o valor c/2 marque qualquer transição.

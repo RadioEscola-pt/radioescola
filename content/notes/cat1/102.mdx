@@ -1,1 +1,7 @@
-O resistor R2 tem como objetivo fornecer uma carga mínima constante à base de Q1, garantindo o funcionamento adequado do transistor e contribuindo para a regulação do circuito.
+R2 **fornece uma carga mínima constante a Q1**.
+
+R2 está ligado entre a saída de +12 V e a massa, do lado do emissor de Q1 — não à sua base, que é o zener D1 que fixa, polarizado através de R1. É uma resistência de descarga (*bleeder*), e o seu papel é garantir que passa sempre alguma corrente pelo transístor de passagem, mesmo quando não há carga externa ligada à saída.
+
+Isso importa porque um seguidor de emissor só regula enquanto conduz. Sem carga nenhuma, a corrente de emissor cairia praticamente a zero, Q1 deixaria de conduzir em condições e a saída subiria na direção da tensão da base, ficando mal definida. R2 impõe esse mínimo, e de passagem descarrega os condensadores de saída quando a fonte é desligada.
+
+As restantes hipóteses descrevem funções que pertencem a outros componentes: a polarização da base de Q1 e a corrente que alimenta D1 vêm ambas de R1, e reduzir o ruído do zener é o trabalho de C2, o condensador que na figura está em paralelo com D1 — é ele que desvia para a massa o ruído de avalanche do zener e a ondulação residual que chega à base através de R1, coisa que uma resistência ligada à saída não pode fazer.
