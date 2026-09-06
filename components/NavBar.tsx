@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Calculator, ChevronDown, Upload, GraduationCap, BarChart3, UserCircle, Globe, Zap, Radio, TrendingUp } from "lucide-react";
+import { Home, BookOpen, FileText, Calculator, ChevronDown, Upload, GraduationCap, BarChart3, UserCircle, Globe, Zap, Radio, TrendingUp , Sigma } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -72,21 +72,27 @@ export default function NavBar() {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-[480px] p-0">
               {/* Top: quick actions */}
-              <div className="p-1.5 flex gap-1">
-                <DropdownMenuItem asChild className="flex-1 whitespace-nowrap">
+              <div className="p-1.5 grid grid-cols-2 gap-1">
+                <DropdownMenuItem asChild className="whitespace-nowrap">
                   <Link href="/drill" className="cursor-pointer">
                     <Zap className="mr-2 h-4 w-4 text-amber-500" />
                     {t("quickDrill")}
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild className="flex-1 whitespace-nowrap">
+                <DropdownMenuItem asChild className="whitespace-nowrap">
                   <Link href="/study" className="cursor-pointer">
                     <BookOpen className="mr-2 h-4 w-4" />
                     {t("studyLibrary")}
                   </Link>
                 </DropdownMenuItem>
+                <DropdownMenuItem asChild className="whitespace-nowrap">
+                  <Link href="/study/formulario" className="cursor-pointer">
+                    <Sigma className="mr-2 h-4 w-4 text-violet-500" />
+                    {t("formulary")}
+                  </Link>
+                </DropdownMenuItem>
                 <DropdownMenuSub>
-                  <DropdownMenuSubTrigger className="flex-1 whitespace-nowrap">
+                  <DropdownMenuSubTrigger className="whitespace-nowrap">
                     <Calculator className="mr-2 h-4 w-4" />
                     {t("calculators")}
                   </DropdownMenuSubTrigger>
