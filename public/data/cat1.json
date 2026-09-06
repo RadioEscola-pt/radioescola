@@ -1664,6 +1664,26 @@
       "materia": "componentes"
     },
     {
+      "id": 410,
+      "question": "Num circuito que opera em corrente contínua poderemos ligar dois díodos de junção em paralelo?",
+      "options": [
+        "Sim, sem qualquer problema. Contudo essa montagem nunca é utilizada pois não tem qualquer interesse",
+        "Sim, mas será aconselhável colocar um condensador em série com cada um deles",
+        "Sim, mas será aconselhável colocar uma resistência em série com cada um deles",
+        "Sim, mas será aconselhável colocar uma bobina em série com cada um deles"
+      ],
+      "correctIndex": 2,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 10,
+          "page": 3
+        }
+      ],
+      "materia": "componentes"
+    },
+    {
       "id": 79,
       "question": "Qual das seguintes opções constitui um efeito indesejado da utilização de um filtro de largura de banda demasiado ampla na secção IF de um recetor?",
       "options": [
@@ -3092,6 +3112,26 @@
       "materia": "teoria"
     },
     {
+      "id": 414,
+      "question": "No âmbito das transformadas de Fourier, o que designa a sigla FFT?",
+      "options": [
+        "\"Forward Fourier Transform\"",
+        "\"Fixed Fourier Transform\"",
+        "\"Finite Fourier Transform\"",
+        "\"Fast Fourier Transform\""
+      ],
+      "correctIndex": 3,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 38,
+          "page": 11
+        }
+      ],
+      "materia": "teoria"
+    },
+    {
       "id": 151,
       "question": "Num recetor, para que os sinais sejam ajustados de forma a manter um nível médio na saída aproximadamente constante, devem utilizar-se circuitos",
       "options": [
@@ -3258,6 +3298,26 @@
         },
         {
           "pdf": "cat1/2026_09_02",
+          "question": 25,
+          "page": 7
+        }
+      ],
+      "materia": "recetores"
+    },
+    {
+      "id": 413,
+      "question": "O fator que afeta o desempenho de um recetor através do mecanismo designado por \"reciprocal mixing\"",
+      "options": [
+        "é o ruído de fase associado aos condensadores existentes nos vários andares do recetor",
+        "é o ruído de fase associado ao amplificador que alimenta o altifalante",
+        "é o ruído de fase associado à fonte de alimentação",
+        "é o ruído de fase associado ao oscilador local"
+      ],
+      "correctIndex": 3,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
           "question": 25,
           "page": 7
         }
@@ -3631,6 +3691,26 @@
         {
           "pdf": "cat1/2023_12_22",
           "question": 39
+        }
+      ],
+      "materia": "teoria"
+    },
+    {
+      "id": 415,
+      "question": "Qual o significado da sigla AMTOR?",
+      "options": [
+        "\"Analogic Teleprinting Over Radio\"",
+        "\"Amateur Transmission Over Radio\"",
+        "\"Amateur Teleprinting Over Radio\"",
+        "\"Analogic Transmission Over Radio\""
+      ],
+      "correctIndex": 2,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 39,
+          "page": 11
         }
       ],
       "materia": "teoria"
@@ -4039,6 +4119,26 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "materia": "antenas"
+    },
+    {
+      "id": 411,
+      "question": "O que é o ganho absoluto de uma antena?",
+      "options": [
+        "É a relação entre a intensidade mínima de radiação (numa dada direção) e a que teríamos se a potência entregue à antena fosse radiada isotropicamente",
+        "É a relação entre a intensidade mínima de radiação (numa dada direção) e a que teríamos se a potência entregue à antena fosse radiada por uma antena diretiva teórica com um número infinito de elementos",
+        "É a relação entre a intensidade máxima de radiação (numa dada direção) e a que teríamos se a potência entregue à antena fosse radiada por uma antena diretiva teórica com um número infinito de elementos",
+        "É a relação entre a intensidade máxima de radiação (numa dada direção) e a que teríamos se a potência entregue à antena fosse radiada isotropicamente"
+      ],
+      "correctIndex": 3,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 13,
+          "page": 4
+        }
+      ],
       "materia": "antenas"
     },
     {
@@ -4878,6 +4978,26 @@
       "materia": "propagacao"
     },
     {
+      "id": 408,
+      "question": "Qual das seguintes opções constitui um bom indicador da possibilidade de propagação de ondas na faixa dos 50 MHz?",
+      "options": [
+        "Propagação das ondas com saltos curtos na faixa dos 28 MHz",
+        "Propagação das ondas com saltos longos na faixa dos 28 MHz",
+        "Atenuação severa dos sinais na faixa dos 28 MHz",
+        "Ecos de longo atraso na faixa dos 28 MHz"
+      ],
+      "correctIndex": 0,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 3,
+          "page": 1
+        }
+      ],
+      "materia": "propagacao"
+    },
+    {
       "id": 232,
       "question": "Que medida se deve tomar para obter uma atenuação baixa nas transmissões de HF?",
       "options": [
@@ -5033,6 +5153,26 @@
           "pdf": "cat1/2026_09_02",
           "question": 4,
           "page": 1
+        }
+      ],
+      "materia": "propagacao"
+    },
+    {
+      "id": 409,
+      "question": "A inversão de temperaturas é um fenómeno que tem efeitos sobre a propagação rádio. Em que região da atmosfera estes fenómenos ocorrem?",
+      "options": [
+        "Na ionosfera",
+        "Na troposfera",
+        "Na estratosfera",
+        "Na mesosfera"
+      ],
+      "correctIndex": 1,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 5,
+          "page": 2
         }
       ],
       "materia": "propagacao"
@@ -6894,6 +7034,26 @@
         {
           "pdf": "cat1/2023_12_22",
           "question": 16
+        }
+      ],
+      "materia": "componentes"
+    },
+    {
+      "id": 412,
+      "question": "Num condensador plano constituído por duas superfícies metálicas, separadas por um isolante, a sua capacidade aumenta quando",
+      "options": [
+        "diminui a área das superfícies metálicas",
+        "diminui o afastamento entre as superfícies metálicas",
+        "diminui a constante dielétrica do isolante",
+        "Todas as respostas estão corretas"
+      ],
+      "correctIndex": 1,
+      "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_09_03",
+          "question": 16,
+          "page": 5
         }
       ],
       "materia": "componentes"

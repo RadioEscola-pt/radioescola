@@ -1,0 +1,30 @@
+---
+id: 410
+question: >-
+  Num circuito que opera em corrente contínua poderemos ligar dois díodos de
+  junção em paralelo?
+answers:
+  - text: >-
+      Sim, sem qualquer problema. Contudo essa montagem nunca é utilizada pois
+      não tem qualquer interesse
+  - text: >-
+      Sim, mas será aconselhável colocar um condensador em série com cada um
+      deles
+  - text: >-
+      Sim, mas será aconselhável colocar uma resistência em série com cada um
+      deles
+    correct: true
+  - text: 'Sim, mas será aconselhável colocar uma bobina em série com cada um deles'
+topic: componentes
+sources:
+  - pdf: cat1/2026_09_03
+    question: 10
+    page: 3
+---
+Pode, mas **será aconselhável colocar uma resistência em série com cada um deles**.
+
+Ligam-se díodos em paralelo para repartir uma corrente maior do que a que um só aguenta. O problema é que dois díodos nominalmente iguais nunca têm exatamente a mesma tensão de condução: uma diferença de algumas dezenas de milivolts basta para que, ligados diretamente em paralelo e portanto sujeitos à mesma tensão, um conduza bastante mais do que o outro. Como a corrente cresce exponencialmente com a tensão na junção, a repartição é tudo menos equitativa.
+
+Pior, o efeito realimenta-se: o díodo que conduz mais aquece, e a tensão de condução de uma junção de silício desce cerca de 2 mV por cada grau, o que o faz conduzir ainda mais. É a fuga térmica, que acaba por destruir o díodo mais carregado e, de seguida, o outro.
+
+Uma pequena resistência em série com cada díodo — resistência de equilíbrio ou *ballast* — resolve o problema: assim que um ramo puxa mais corrente, a queda de tensão na sua resistência aumenta e reduz a tensão efetiva na junção, forçando a repartição. Um condensador em série bloquearia por completo a corrente contínua, e uma bobina, em contínua, comporta-se como um curto-circuito e nada equilibra.

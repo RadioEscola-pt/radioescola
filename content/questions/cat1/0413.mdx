@@ -1,0 +1,26 @@
+---
+id: 413
+question: >-
+  O fator que afeta o desempenho de um recetor através do mecanismo designado
+  por "reciprocal mixing"
+answers:
+  - text: >-
+      é o ruído de fase associado aos condensadores existentes nos vários
+      andares do recetor
+  - text: é o ruído de fase associado ao amplificador que alimenta o altifalante
+  - text: é o ruído de fase associado à fonte de alimentação
+  - text: é o ruído de fase associado ao oscilador local
+    correct: true
+topic: recetores
+sources:
+  - pdf: cat1/2026_09_03
+    question: 25
+    page: 7
+---
+O *reciprocal mixing* deve-se **ao ruído de fase associado ao oscilador local**.
+
+Um oscilador real não produz uma risca espetral pura: em torno da frequência nominal existe uma saia de ruído de fase, tanto mais larga quanto pior for o oscilador. No misturador, cada componente dessa saia bate com os sinais presentes à entrada, exatamente como bate a portadora do oscilador local. O resultado é que um sinal forte numa frequência adjacente, ao misturar-se com o ruído de fase em vez de se misturar com a portadora, cai na banda de passagem da frequência intermédia — daí "mistura recíproca".
+
+O efeito prático é uma subida do ruído de fundo sempre que aparece um sinal forte próximo: uma estação fraca que se ouvia bem fica submersa, sem que haja qualquer sobrecarga ou distorção. É por isso que a pureza espetral do oscilador local, e não apenas a seletividade dos filtros, limita a gama dinâmica de um bom recetor.
+
+Os condensadores dos andares intermédios, o amplificador de áudio e a fonte de alimentação podem degradar um recetor por outras vias, mas nenhum deles intervém neste mecanismo, que é próprio da mistura.
