@@ -1,6 +1,20 @@
 import Link from "next/link";
 import { getLocale, getTranslations } from "next-intl/server";
-import { BookOpen, Radio, ArrowRight, FileText, ShieldCheck } from "lucide-react";
+import {
+  BookOpen,
+  Radio,
+  ArrowRight,
+  FileText,
+  ShieldCheck,
+  StickyNote,
+  Calculator,
+  PenLine,
+  Ban,
+  MousePointerClick,
+  LayoutGrid,
+  Eraser,
+  ClipboardCheck,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   BAND_PLAN,
@@ -22,6 +36,19 @@ export default async function BecomeHamPage() {
   const cardKeys = ["bands", "power", "exam"] as const;
 
   const examProcessSteps = ["registration", "preparation", "exam", "licence"] as const;
+
+  const provided = [
+    { key: "paper", Icon: StickyNote },
+    { key: "calculator", Icon: Calculator },
+    { key: "pen", Icon: PenLine },
+  ] as const;
+
+  const examDaySteps = [
+    { key: "start", Icon: MousePointerClick },
+    { key: "screen", Icon: LayoutGrid },
+    { key: "clear", Icon: Eraser },
+    { key: "submit", Icon: ClipboardCheck },
+  ] as const;
 
   return (
     <div className="py-8">
@@ -264,7 +291,7 @@ export default async function BecomeHamPage() {
       </section>
 
       {/* Exam process */}
-      <section>
+      <section className="mb-14">
         <h2 className="text-xl font-semibold text-slate-900 dark:text-white mb-6">
           {t("examProcessTitle")}
         </h2>
@@ -297,6 +324,86 @@ export default async function BecomeHamPage() {
           <ShieldCheck className="h-4 w-4 shrink-0 text-slate-400 mt-px" />
           {t("examProcessNote")}
         </p>
+      </section>
+
+      {/* Exam day — the sitting itself, which the process list only names */}
+      <section>
+        <h2 className="text-xl font-semibold text-slate-900 dark:text-white mb-1">
+          {t("examDayTitle")}
+        </h2>
+        <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 max-w-2xl leading-relaxed">
+          {t("examDayIntro")}
+        </p>
+
+        <div className="grid gap-4 md:grid-cols-2 mb-8">
+          {/* Provided */}
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-5 py-4">
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
+              {t("examDay.providedLabel")}
+            </p>
+            <ul className="mt-3 space-y-3">
+              {provided.map(({ key, Icon }) => (
+                <li key={key} className="flex gap-3">
+                  <Icon className="h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400 mt-0.5" />
+                  <div>
+                    <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                      {t(`examDay.provided.${key}.title`)}
+                    </p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                      {t(`examDay.provided.${key}.body`)}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Forbidden */}
+          <div className="rounded-xl border border-rose-300 dark:border-rose-500/50 bg-rose-50 dark:bg-rose-900/20 px-5 py-4">
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-rose-700 dark:text-rose-400">
+              {t("examDay.forbiddenLabel")}
+            </p>
+            <div className="mt-3 flex gap-3">
+              <Ban className="h-4 w-4 shrink-0 text-rose-600 dark:text-rose-400 mt-0.5" />
+              <div>
+                <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                  {t("examDay.forbiddenTitle")}
+                </p>
+                <p className="mt-1 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  {t("examDay.forbiddenBody")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100 mb-4">
+          {t("examDay.stepsTitle")}
+        </h3>
+
+        <ol className="grid gap-3 sm:grid-cols-2">
+          {examDaySteps.map(({ key, Icon }, index) => (
+            <li
+              key={key}
+              className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-5 py-4"
+            >
+              <div className="flex items-center gap-2.5">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-amber-100 dark:bg-amber-900/40">
+                  <Icon className="h-3.5 w-3.5 text-amber-600 dark:text-amber-400" />
+                </span>
+                <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500">
+                  {index + 1}
+                </span>
+                <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                  {t(`examDay.steps.${key}.title`)}
+                </h4>
+              </div>
+              <p className="mt-2 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                {t(`examDay.steps.${key}.body`)}
+              </p>
+            </li>
+          ))}
+        </ol>
       </section>
     </div>
   );

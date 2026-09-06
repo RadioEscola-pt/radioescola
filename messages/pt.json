@@ -905,15 +905,56 @@
         "description": "Estudas o programa oficial com as perguntas reais de exame, o treino rápido e os flashcards."
       },
       "exam": {
-        "title": "Prova teórica escrita",
-        "description": "Compareces no local indicado com documento de identificação. A prova é de escolha múltipla, com desconto por resposta errada."
+        "title": "Prova teórica",
+        "description": "Compareces no local indicado com documento de identificação. A prova é feita no computador: 40 perguntas de escolha múltipla, com desconto por resposta errada."
       },
       "licence": {
         "title": "CAN e indicativo de chamada",
         "description": "Recebes o certificado, válido por 10 anos, e o teu indicativo de chamada. A estação individual já não precisa de licença — podes começar a operar."
       }
     },
-    "examProcessNote": "As estações de uso comum, ao contrário das individuais, continuam a precisar de licença."
+    "examProcessNote": "As estações de uso comum, ao contrário das individuais, continuam a precisar de licença.",
+    "examDayTitle": "No dia do exame",
+    "examDayIntro": "A prova é feita no computador e o material está todo à tua espera na secretária. Não levas nada — e não podes levar nada.",
+    "examDay": {
+      "providedLabel": "Encontras na secretária",
+      "provided": {
+        "paper": {
+          "title": "Folhas em branco",
+          "body": "Para rascunho e para as contas."
+        },
+        "calculator": {
+          "title": "Calculadora científica",
+          "body": "Fornecida no local. Não precisas de levar a tua."
+        },
+        "pen": {
+          "title": "Caneta",
+          "body": "Também fornecida."
+        }
+      },
+      "forbiddenLabel": "Não é permitido",
+      "forbiddenTitle": "Nenhum material de consulta",
+      "forbiddenBody": "Não podes levar informação do exterior para a sala — e isso inclui formulários. As expressões de que precisares têm de estar na tua cabeça, e é por isso que vale a pena treinar as contas sem apoio antes do dia.",
+      "stepsTitle": "Como decorre a prova",
+      "steps": {
+        "start": {
+          "title": "Começas quando estiveres pronto",
+          "body": "A prova só arranca quando clicares para iniciar. Instala-te primeiro, sem pressa."
+        },
+        "screen": {
+          "title": "As 40 perguntas num só ecrã",
+          "body": "Aparecem todas de uma vez, sem páginas. Podes responder pela ordem que quiseres e voltar atrás sempre que quiseres — despacha primeiro as que sabes de imediato e guarda o tempo para as outras."
+        },
+        "clear": {
+          "title": "Podes limpar uma resposta",
+          "body": "Cada pergunta tem um botão para apagar a resposta e deixá-la em branco. Numa pergunta em que não tenhas confiança, isso não é desistir: em branco vale 0 pontos, errada vale −0,25."
+        },
+        "submit": {
+          "title": "Submetes e ficas logo a saber",
+          "body": "Ao submeteres, aparece uma tabela com a tua pontuação e com o resultado: aprovado ou reprovado. Não há espera pelo resultado."
+        }
+      }
+    }
   },
   "Share": {
     "title": "Partilhar",
