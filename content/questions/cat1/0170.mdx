@@ -25,4 +25,10 @@ sources:
     question: 7
     page: 2
 ---
-Para trasmitir informaçao de voz numa distancia elevada, só é possivel utilizando a modulação.
+Os sinais não se emitem em banda base **porque a banda base da maior parte dos sinais se localiza numa zona do espectro não adequada às radiocomunicações**.
+
+A banda base é a gama de frequências que o sinal ocupa tal como sai da fonte: a voz com qualidade telefónica fica entre cerca de 300 Hz e 3 kHz, o áudio de alta qualidade chega aos 20 kHz, o vídeo a alguns megahertz. Para radiar essas frequências diretamente seria preciso uma antena comparável ao comprimento de onda, e a 3 kHz o comprimento de onda é λ = c/f = 100 km — um quarto de onda mediria 25 km, e a 300 Hz dez vezes mais. Uma antena de dimensões razoáveis a essas frequências tem uma resistência de radiação ínfima e um rendimento praticamente nulo; não é por acaso que as únicas emissões em ELF, para submarinos, usam antenas de dezenas de quilómetros para transmitir uns poucos bits por minuto.
+
+Há ainda um segundo problema, independente do primeiro: todas as estações teriam a mesma banda base. Se cada uma emitisse a sua voz entre 300 Hz e 3 kHz, os sinais sobrepor-se-iam nas mesmas frequências e nenhum recetor conseguiria separá-los. A modulação faz uma translação do sinal para junto de uma portadora, e é essa translação que permite atribuir a cada estação um canal distinto, sintonizável pelo recetor, e escolher a banda cujas características de propagação servem ao serviço pretendido — HF para a reflexão ionosférica, VHF e acima para a linha de vista.
+
+As outras opções não descrevem o problema. Os sinais em banda base recuperam-se todos os dias, por fio, no telefone ou num cabo de áudio; a dificuldade está em radiá-los, não em recuperá-los. A correção de erros é uma técnica de codificação digital que a modulação analógica não tem, e em nada depende de uma translação de frequências. E, havendo uma resposta correta, "nenhuma das respostas" fica excluída.
