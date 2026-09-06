@@ -75,9 +75,9 @@ export default function StudyIndexPage() {
 
   const handleCategoryChange = (value: string) => {
     if (value === 'all') {
-      router.push('/study');
+      router.push('/aprender');
     } else {
-      router.push(`/study?cat=${value}`);
+      router.push(`/aprender?cat=${value}`);
     }
   };
 
@@ -166,7 +166,7 @@ export default function StudyIndexPage() {
             return (
             <li key={item.slug}>
               <Link
-                href={`/study/${item.slug}`}
+                href={`/aprender/${item.slug}`}
                 className="group flex items-start gap-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 transition-all hover:border-amber-300 dark:hover:border-amber-600 hover:shadow-sm"
               >
                 <span

@@ -3,7 +3,7 @@ import path from 'node:path';
 import matter from 'gray-matter';
 import { NextResponse } from 'next/server';
 
-const STUDY_DIR = path.join(process.cwd(), 'app', 'study');
+const STUDY_DIR = path.join(process.cwd(), 'app', 'aprender');
 
 type Item = {
   slug: string;

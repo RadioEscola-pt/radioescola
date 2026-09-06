@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/resource-row';
 
 interface StudyGuideLinkProps {
-  /** Guide slug, matching a folder under app/study/. */
+  /** Guide slug, matching a folder under app/aprender/. */
   slug: string;
   /** Localized "N min" formatter. */
   readTimeLabel: (minutes: number) => string;
@@ -37,7 +37,7 @@ const StudyGuideLink: React.FC<StudyGuideLinkProps> = ({ slug, readTimeLabel }) 
 
   return (
     <Link
-      href={`/study/${slug}`}
+      href={`/aprender/${slug}`}
       className={`group ${RESOURCE_ROW}`}
     >
       <span

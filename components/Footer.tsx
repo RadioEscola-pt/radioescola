@@ -7,7 +7,7 @@ import { EXTERNAL_LINKS } from "@/lib/config";
 
 const internalLinks = [
   { href: "/drill", icon: Zap, labelKey: "quickDrill" },
-  { href: "/study/formulario", icon: Sigma, labelKey: "formulary" },
+  { href: "/aprender/formulario", icon: Sigma, labelKey: "formulary" },
   { href: "/dashboard", icon: BarChart3, labelKey: "progress" },
   { href: "/ser-radioamador", icon: GraduationCap, labelKey: "becomeHam" },
   { href: "/about", icon: Info, labelKey: "about" },

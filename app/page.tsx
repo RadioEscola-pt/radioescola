@@ -139,7 +139,7 @@ export default async function HomePage() {
           {([
             { href: "/browse/3/smart-practice", icon: Brain, titleKey: "smartPracticeTitle", descKey: "smartPracticeDescription" },
             { href: "/browse/3/flash", icon: Layers, titleKey: "flashcardsTitle", descKey: "flashcardsDescription" },
-            { href: "/study", icon: BookOpen, titleKey: "studyLibraryTitle", descKey: "studyLibraryDescription" },
+            { href: "/aprender", icon: BookOpen, titleKey: "studyLibraryTitle", descKey: "studyLibraryDescription" },
           ] as const).map((feature) => {
             const Icon = feature.icon;
             return (
