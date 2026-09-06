@@ -39,7 +39,8 @@
       "3": "Beginner",
       "2": "Intermediate",
       "1": "Advanced"
-    }
+    },
+    "formulary": "Formula Sheet"
   },
   "Footer": {
     "quickDrill": "Quick Drill",
@@ -54,7 +55,8 @@
     "app": "App",
     "donate": "Support",
     "slogan": "Made by amateur radio operators, for (future) amateur radio operators",
-    "supporters": "Supporters"
+    "supporters": "Supporters",
+    "formulary": "Formula Sheet"
   },
   "Browse": {
     "emptyClear": "Clear search",

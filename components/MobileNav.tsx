@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Upload, Menu, GraduationCap, BarChart3, Settings, Globe, Zap, Radio, TrendingUp } from "lucide-react";
+import { Home, BookOpen, FileText, Upload, Menu, GraduationCap, BarChart3, Settings, Globe, Zap, Radio, TrendingUp, Sigma } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -100,6 +100,14 @@ export default function MobileNav({ open, onOpenChange }: MobileNavProps) {
                   >
                     <BookOpen className="h-4 w-4 shrink-0" />
                     <span className="text-sm font-medium">{t("studyLibrary")}</span>
+                  </Link>
+                  <Link
+                    href="/study/formulario"
+                    onClick={closeMenu}
+                    className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-800"
+                  >
+                    <Sigma className="h-4 w-4 shrink-0 text-violet-500" />
+                    <span className="text-sm font-medium">{t("formulary")}</span>
                   </Link>
 
                   <div className="border-t my-1" />
