@@ -10,7 +10,7 @@
   "NavBar": {
     "home": "Início",
     "dashboard": "Progresso",
-    "study": "Estudar",
+    "study": "Aprender",
     "browse": "Explorar",
     "browseFlashcards": "Flashcards",
     "browseComplete": "Completo",
@@ -39,7 +39,8 @@
       "3": "Entrada",
       "2": "Intermédio",
       "1": "Avançado"
-    }
+    },
+    "formulary": "Formulário"
   },
   "Footer": {
     "quickDrill": "Treino Rápido",
@@ -54,7 +55,8 @@
     "app": "App",
     "donate": "Apoiar",
     "slogan": "Feito por radioamadores, para (futuros) radioamadores",
-    "supporters": "Apoiantes"
+    "supporters": "Apoiantes",
+    "formulary": "Formulário"
   },
   "Browse": {
     "emptyClear": "Limpar pesquisa",

@@ -52,7 +52,7 @@ box deliberately does not keep. Full runbook in `docs/deployment.md`.
 - **`NEXT_PUBLIC_*` is baked into the image**, so a feature-flag change needs a
   new build, not an edit to the server's `app.env`
 - **Two API routes read source files at request time** (`/api/notes/*` from
-  `content/notes/`, `/api/study-items` from `app/study/`) using paths built from
+  `content/notes/`, `/api/study-items` from `app/aprender/`) using paths built from
   `process.cwd()`, which file tracing cannot follow. They are kept in the
   standalone output by `outputFileTracingIncludes` in `next.config.js` — a new
   route that reads from disk needs an entry there or it will answer empty in
@@ -71,7 +71,7 @@ Next.js 16 App Router with React 19, TypeScript (strict), Tailwind CSS v4.
 - `/exam/[category]` - Timed 40-question exam simulation
 - `/drill` - Quick 10-question drill
 - `/dashboard` - Progress with gamification
-- `/study` - Study materials index
+- `/aprender` - Study materials index (was `/study`, which still redirects)
 
 **API routes**: `/api/data`, `/api/notes/[category]/[id]`, `/api/study-items`, `/api/submit-exam`
 
@@ -254,11 +254,65 @@ The canonical model (`lib/content/schema.ts`) is the single definition of a
 question, with types inferred from the Zod schema. `lib/content/legacy.ts` is
 import-only, kept for re-running a migration from an archived JSON file.
 
+## The formulary, and citing a question anywhere
+
+`/aprender/formulario` is every expression the exams ask you to calculate — 151
+formulas and 59 reference tables over 14 sections. It is a normal study page
+(`app/aprender/formulario/page.mdx`), so the study index picks it up on its own,
+but its content is data rather than prose: the page filters ~210 entries three
+ways and a hand-written MDX wall cannot be filtered.
+
+**The content was derived from `content/questions/**`, not from a textbook.**
+Every entry carries the bank refs that require it, and anything that could not
+be tied to a real question was dropped. `categorias` is *derived* from `refs` —
+the CAT badge on a card is a promise the references under it have to keep. Keep
+that rule when editing: a new formula needs at least one ref, and the refs have
+to resolve.
+
+- **`lib/config/formulario.data.ts` is hand-maintained.** It was generated once
+  from the bank; there is no `formulario:build`. `__tests__/unit/test-formulario.test.ts`
+  is what stands in for one — it checks refs against the **shipped artifacts**
+  (`public/data/cat{n}.json`, not the source files, so a question withheld with
+  `disabled` is caught), anchor uniqueness, KaTeX validity, and that no bare
+  LaTeX sits in a field rendered as prose
+- **Filtering toggles `hidden`; it never rebuilds the list.** Every row mounts
+  once. Rebuilding re-mounts up to 180 rows and makes React re-parse ~1200
+  blocks of KaTeX markup, which measured at a full second per filter change
+- **`unidade` is rendered as text**, so LaTeX in it reaches the reader verbatim.
+  Inline `$…$` is fine anywhere prose is rendered — a bare `\Omega` is not
+- Sticky offsets are measured, not guessed: the toolbar publishes its height as
+  `--fm-toolbar` on the component ROOT, because the sticky section headings read
+  that variable and are its siblings, not its descendants
+
+**`<QuestionRef refId="cat2#92" />`** (`components/question-preview/`) is the way
+to cite a bank question on **any** surface. It owns both the chip's appearance
+and the preview, so a citation looks and behaves the same everywhere; the
+formulary's "Sai em" row is just its first caller.
+
+- **The preview shows the options but withholds which one is right** until you
+  ask. This is deliberate and is the feature, not an oversight: the formulary is
+  a study surface, and a card that hands over the answer the moment you point at
+  a citation takes the question away from anyone using it to test themselves.
+  Do not "fix" it by marking the correct option eagerly — a test asserts it
+- **Two input models, one piece of markup.** A pointer hovers (or tabs) and gets
+  a popover while the click still follows the link; a touch device has no hover,
+  so a tap opens a bottom sheet carrying the link instead. The element is an
+  `<a>` either way — the branch is in the click handler, so server and client
+  agree and the chip still works with no JavaScript
+- **Never use `loadData()` for a preview.** It fetches all three categories
+  because its callers need the whole bank. `lib/question-lookup.ts` fetches the
+  one category a ref names and caches it, promise included, so six chips on a
+  row share one request
+- The card copies `components/ui/answer-option.tsx` exactly — the `border-l-4`
+  and the 24px letter chip are the app's answer vocabulary, so the preview reads
+  as the same product rather than a second one
+
 ## Key Directories
 
 ```
 app/             # Next.js App Router pages and API routes
-components/      # ui/, providers/, calculators/, gamification/, shared/, settings/
+components/      # ui/, providers/, calculators/, gamification/, shared/, settings/,
+                 #   formulario/ (the formulary page), question-preview/ (QuestionRef)
 lib/             # Core logic: i18n/, types/, config/, storage/, gamification/, spaced-repetition/, utils/
 content/questions/ # Question SOURCE of truth, one MDX per question (cat1/, cat2/, cat3/)
 content/notes/   # GENERATED explanation files (do not hand-edit)

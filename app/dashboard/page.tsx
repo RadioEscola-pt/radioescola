@@ -229,7 +229,7 @@ export default function DashboardPage() {
         <div className="px-4 sm:px-0 mb-8">
           <div className="grid sm:grid-cols-3 gap-4">
             {[
-              { href: "/study", icon: BookOpen, color: "green", step: 1, titleKey: "onboardingStep1Title" as const, descKey: "onboardingStep1Desc" as const },
+              { href: "/aprender", icon: BookOpen, color: "green", step: 1, titleKey: "onboardingStep1Title" as const, descKey: "onboardingStep1Desc" as const },
               { href: "/browse/3", icon: ListChecks, color: "amber", step: 2, titleKey: "onboardingStep2Title" as const, descKey: "onboardingStep2Desc" as const },
               { href: "/exam/3", icon: GraduationCap, color: "rose", step: 3, titleKey: "onboardingStep3Title" as const, descKey: "onboardingStep3Desc" as const },
             ].map(({ href, icon: Icon, color, step, titleKey, descKey }) => (
@@ -271,7 +271,7 @@ export default function DashboardPage() {
             variant="glass"
             className="bg-amber-500/20 border-amber-500/40 text-amber-800 hover:bg-amber-500/30 active:translate-y-0.5 transition-all duration-200 dark:bg-amber-400/10 dark:border-amber-400/30 dark:text-amber-200 dark:hover:bg-amber-400/20"
           >
-            <Link href="/study">{t("onboardingCta")}</Link>
+            <Link href="/aprender">{t("onboardingCta")}</Link>
           </Button>
         </div>
 

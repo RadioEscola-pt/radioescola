@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { Github, MessageCircle, Smartphone, Bug, Info, Zap, BarChart3, GraduationCap, School, TrendingUp, Heart, Users } from "lucide-react";
+import { Github, MessageCircle, Smartphone, Bug, Info, Zap, BarChart3, GraduationCap, School, TrendingUp, Heart, Users, Sigma } from "lucide-react";
 import LogoMark from "@/components/brand/LogoMark";
 import { useTranslations } from "next-intl";
 import { EXTERNAL_LINKS } from "@/lib/config";
 
 const internalLinks = [
   { href: "/drill", icon: Zap, labelKey: "quickDrill" },
+  { href: "/aprender/formulario", icon: Sigma, labelKey: "formulary" },
   { href: "/dashboard", icon: BarChart3, labelKey: "progress" },
   { href: "/ser-radioamador", icon: GraduationCap, labelKey: "becomeHam" },
   { href: "/about", icon: Info, labelKey: "about" },

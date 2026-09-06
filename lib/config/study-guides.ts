@@ -10,7 +10,7 @@ import {
   Zap, CircuitBoard, Filter, RadioReceiver, RadioTower, Antenna, Radar,
   Gauge, ShieldAlert, HardHat, Waves, Palette, SpellCheck, MessagesSquare,
   Tag, Footprints, Landmark, AudioWaveform, MessageSquareCode, BookMarked,
-  Activity, Cpu, BatteryCharging, Binary, FileCheck,
+  Activity, Cpu, BatteryCharging, Binary, FileCheck, Sigma,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -57,6 +57,7 @@ export const GUIDE_VISUAL: Record<string, { icon: LucideIcon; accent: GuideAccen
   'baterias-e-alimentacao': { icon: BatteryCharging, accent: 'emerald' },
   'modos-digitais-e-fec': { icon: Binary, accent: 'cyan' },
   'marcar-exame-anacom': { icon: FileCheck, accent: 'amber' },
+  'formulario': { icon: Sigma, accent: 'violet' },
 };
 
 export const DEFAULT_GUIDE_VISUAL = { icon: BookOpen, accent: 'slate' as const };
