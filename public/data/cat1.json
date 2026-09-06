@@ -2191,7 +2191,7 @@
     },
     {
       "id": 105,
-      "question": "Que tipo de condensador é normalmente utilizado em fontes de alimentação para filtrar os sinais retificados de corrente alternada?",
+      "question": "Que tipo de condensador é normalmente utilizado em circuitos de abastecimento de energia para filtrar os sinais retificados de corrente alternada?",
       "options": [
         "Condensador cerâmico de disco",
         "Condensador de vácuo variável",
@@ -2200,6 +2200,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat2/2026_09_03",
+          "question": 21,
+          "page": 6
+        }
+      ],
       "materia": "componentes"
     },
     {
