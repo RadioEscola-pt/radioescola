@@ -141,7 +141,7 @@
       "options": [
         "Duma forma geral, pode-se obter uma boa blindagem a campos elétricos com materiais semicondutores",
         "Duma forma geral, a ligação à terra não é relevante quando se pretende obter uma boa blindagem a campos elétricos",
-        "Duma forma geral, pode-se obter uma boa blindagem a campos elétricos com mateirais isolantes",
+        "Duma forma geral, pode-se obter uma boa blindagem a campos elétricos com materiais isolantes",
         "Duma forma geral, a blindagem a campos elétricos só é eficiente quando estabelece um caminho de baixa impedância para a terra"
       ],
       "correctIndex": 3,
@@ -4794,8 +4794,8 @@
       "options": [
         "438 - 440 MHz",
         "1240 - 1260 MHz",
-        "7100 - 7200 MHz",
-        "24,00 - 24,05 MHz"
+        "7100 - 7200 kHz",
+        "24,00 - 24,05 GHz"
       ],
       "correctIndex": 1,
       "sources": [
@@ -6742,7 +6742,7 @@
       "question": "Duma forma geral e no domínio do tempo, na fase de amostragem de uma conversão analógica/digital",
       "options": [
         "o sinal analógico é  passado por um filtro passa baixo, resultando um sinal digital de amplitude variável proporcional ao sinal amostrado, mas com uma menor gama espectral.",
-        "o sinal analógico é  multiplicado por um trem de imimpulsos de amplitude constante, resultando um trem de impulsos de amplitude variável proporcional ao sinal amostrado.",
+        "o sinal analógico é  multiplicado por um trem de impulsos de amplitude constante, resultando um trem de impulsos de amplitude variável proporcional ao sinal amostrado.",
         "o sinal analógico é  sujeito a uma amplificação não linear, passa por um filtro passa alto de forma a regenerar as componentes de mais alta frequência que constituirão o sinal digital.",
         "o sinal analógico é  misturado com outro sinal analógico padrão de frequência muito superior, resultando um sinal digital de amplitude variável proporcional ao sinal amostrado."
       ],
