@@ -436,7 +436,7 @@
       "shortTitle": "Wavelength",
       "description": "Calculate wavelength and half/quarter-wave antenna wire dimensions",
       "fromFrequency": "Frequency → Antenna",
-      "fromLength": "Length → Frequency",
+      "fromLength": "Antenna → Frequency",
       "frequency": "Frequency (f)",
       "antennaLength": "Antenna Length",
       "antennaType": "Antenna Type",

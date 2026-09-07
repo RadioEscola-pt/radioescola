@@ -53,7 +53,7 @@ describe("WavelengthCalculator", () => {
   it("switches to length mode and calculates resonant frequency", () => {
     render(<WavelengthCalculator {...defaultProps} />);
 
-    fireEvent.click(screen.getByRole("button", { name: "fromLength" }));
+    fireEvent.click(screen.getByRole("radio", { name: "fromLength" }));
     expect(screen.getByPlaceholderText("e.g. 10.05")).toBeInTheDocument();
 
     fireEvent.change(screen.getByPlaceholderText("e.g. 10.05"), { target: { value: "10.07" } });
@@ -92,7 +92,7 @@ describe("WavelengthCalculator", () => {
     // check that k reached the solver is the answer itself. A 6.992 m dipole on
     // 0.66 resonates at 14.149 MHz; had the 0.95 fallback silently applied it
     // would read 20.366 MHz.
-    fireEvent.click(screen.getByRole("button", { name: "fromLength" }));
+    fireEvent.click(screen.getByRole("radio", { name: "fromLength" }));
     fireEvent.change(screen.getByPlaceholderText("e.g. 10.05"), { target: { value: "6.992" } });
     fireEvent.click(screen.getByRole("button", { name: "calculate" }));
     expect(screen.getByText(/14.149 MHz/)).toBeInTheDocument();

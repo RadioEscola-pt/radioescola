@@ -6,6 +6,7 @@ import {
   CalculatorWindow,
   CalculatorInput,
   CalculatorButtons,
+  CalculatorModeSwitch,
   CalculatorResult,
 } from "./base";
 import { registerCalculatorComponent } from "@/lib/config";
@@ -20,7 +21,12 @@ import {
 } from "@/lib/utils";
 import type { CalculatorInstanceProps } from "@/lib/types";
 
-type Mode = "fromFrequency" | "fromLength";
+/**
+ * Both the switch order and the union. The labels are the translation keys, so
+ * a mode cannot be offered without a string to call it by.
+ */
+const MODES = ["fromFrequency", "fromLength"] as const;
+type Mode = (typeof MODES)[number];
 
 const WavelengthCalculator: React.FC<CalculatorInstanceProps> = ({
   instanceId,
@@ -84,6 +90,14 @@ const WavelengthCalculator: React.FC<CalculatorInstanceProps> = ({
   React.useEffect(() => {
     setMessage(mode === "fromFrequency" ? t("promptEnterFreq") : t("promptEnterLength"));
   }, [t, mode]);
+
+  // Changing mode clears the answer rather than leaving the previous mode's
+  // number sitting under the new fields, where it reads as a result for them.
+  const switchMode = (next: Mode) => {
+    setMode(next);
+    setResult("");
+    setMessage(next === "fromFrequency" ? t("promptEnterFreq") : t("promptEnterLength"));
+  };
 
   const reset = () => {
     setFrequency("");
@@ -165,41 +179,19 @@ const WavelengthCalculator: React.FC<CalculatorInstanceProps> = ({
       onFocus={onFocus}
     >
       <div>
-        <label className="mb-1 block text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
+        <label
+          id={`${instanceId}-mode`}
+          className="mb-1 block text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400"
+        >
           {tc("mode")}
         </label>
-        <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={() => {
-              setMode("fromFrequency");
-              setResult("");
-              setMessage(t("promptEnterFreq"));
-            }}
-            className={`flex-1 rounded px-3 py-1 transition focus:outline-none focus:ring-2 focus:ring-teal-500 ${
-              mode === "fromFrequency"
-                ? "bg-teal-600 text-white"
-                : "border border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
-            }`}
-          >
-            {t("fromFrequency")}
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setMode("fromLength");
-              setResult("");
-              setMessage(t("promptEnterLength"));
-            }}
-            className={`flex-1 rounded px-3 py-1 transition focus:outline-none focus:ring-2 focus:ring-teal-500 ${
-              mode === "fromLength"
-                ? "bg-teal-600 text-white"
-                : "border border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
-            }`}
-          >
-            {t("fromLength")}
-          </button>
-        </div>
+        <CalculatorModeSwitch
+          labelId={`${instanceId}-mode`}
+          color="teal"
+          value={mode}
+          onChange={switchMode}
+          options={MODES.map((value) => ({ value, label: t(value) }))}
+        />
       </div>
 
       {mode === "fromFrequency" ? (

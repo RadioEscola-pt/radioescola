@@ -158,7 +158,7 @@ describe("Calculators Integration Tests", () => {
       expect(screen.getAllByText(/21.19 m/).length).toBeGreaterThanOrEqual(1);
 
       // Switch to length -> frequency mode
-      fireEvent.click(screen.getByRole("button", { name: "fromLength" }));
+      fireEvent.click(screen.getByRole("radio", { name: "fromLength" }));
       const lengthInput = screen.getByPlaceholderText("e.g. 10.05");
       fireEvent.change(lengthInput, { target: { value: "10.063" } });
       fireEvent.click(calcBtn);

@@ -436,7 +436,7 @@
       "shortTitle": "Comprimento de Onda",
       "description": "Calcula o comprimento de onda e as dimensões de dipolos de meia onda e verticais",
       "fromFrequency": "Frequência → Antena",
-      "fromLength": "Comprimento → Frequência",
+      "fromLength": "Antena → Frequência",
       "frequency": "Frequência (f)",
       "antennaLength": "Comprimento da Antena",
       "antennaType": "Tipo de Antena",
