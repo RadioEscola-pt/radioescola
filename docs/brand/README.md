@@ -52,10 +52,22 @@ dentro do lockup, para não arrastar folga à volta das letras.
 ## O losango é alto, não quadrado
 
 A proporção é ~1:2. Num ícone quadrado sobra folga nos lados, e por isso os
-ícones da PWA assentam o losango sobre um quadrado `#211d1d` de cantos
-redondos — sem esse fundo a marca ficaria minúscula ao lado de outros ícones.
-`icon-maskable-512.png` recua o losango para dentro da zona segura de 80%, que
-é o que o Android corta.
+ícones assentam o losango sobre um quadrado de cantos redondos — sem esse fundo
+a marca ficaria minúscula ao lado de outros ícones. `icon-maskable-512.png`
+recua o losango para dentro da zona segura de 80%, que é o que o Android corta.
+
+**O quadrado é branco, e a tinta segue-o.** Era `#211d1d`, o que punha o ícone
+a desaparecer na barra de separadores escura do Chrome: o quadrado dava
+`#211d1d` contra um `#202124`, 1,04:1 de contraste — a mesma cor, na prática.
+Em branco dá 16:1 no escuro. O preço é a barra clara, onde o quadrado passa de
+12,7:1 para 1,31:1 e deixa de ter aresta própria; o que lá dentro está — o
+losango escuro e o vermelho — continua a ler-se contra o branco, que é o que
+importa a 16 px. Se algum dia se quiser a aresta de volta no tema claro, é um
+filete à volta do quadrado, e isso já é mexer na marca.
+
+Quando se troca o fundo troca-se a tinta com ele, pela tabela de cores acima:
+losango, letras e «2019» a `#211d1d` sobre claro, a `#ffffff` sobre escuro. Os
+dois vermelhos do sinal não mudam em nenhuma das variantes.
 
 Pela mesma razão, na barra de navegação o losango precisa de mais altura do que
 um ícone normal (`h-10` numa barra `h-14`): a `h-8` o interior — o «RE», o
