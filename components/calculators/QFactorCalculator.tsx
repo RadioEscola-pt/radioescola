@@ -9,6 +9,7 @@ import {
   CalculatorResult,
 } from "./base";
 import { registerCalculatorComponent } from "@/lib/config";
+import { Math as Tex } from "@/components/formulario/Math";
 import { qFactor } from "@/lib/utils/electrical";
 import {
   UNIT_GROUPS,
@@ -18,6 +19,21 @@ import {
   formatValue,
 } from "@/lib/utils";
 import type { CalculatorInstanceProps } from "@/lib/types";
+
+/**
+ * Both directions of the same relation, plus the cutoffs.
+ *
+ * The third line is new. Every result this window produces names the -3 dB
+ * frequencies, and until now nothing on screen said where they came from — the
+ * old one-line formula covered only Q and BW, so the two extra numbers in the
+ * message arrived unexplained. They are the half-bandwidth either side of f0,
+ * which is one line to write and the whole reason the bandwidth is measured at
+ * -3 dB rather than anywhere else.
+ */
+const FORMULA = String.raw`\begin{aligned}
+  Q &= \frac{f_0}{\mathrm{BW}} \qquad \mathrm{BW} = \frac{f_0}{Q} \\[2pt]
+  f_{1,2} &= f_0 \mp \frac{\mathrm{BW}}{2}
+\end{aligned}`;
 
 const QFactorCalculator: React.FC<CalculatorInstanceProps> = ({
   instanceId,
@@ -191,7 +207,7 @@ const QFactorCalculator: React.FC<CalculatorInstanceProps> = ({
         onReset={reset}
         color="amber"
       />
-      <CalculatorResult value={message} color="amber" formula="Q = f₀ / BW  (BW = f₀ / Q)" />
+      <CalculatorResult value={message} color="amber" formula={<Tex tex={FORMULA} display className="block" />} />
     </CalculatorWindow>
   );
 };

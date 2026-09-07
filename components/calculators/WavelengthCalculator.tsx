@@ -37,6 +37,17 @@ const MODES = [
 ] as const;
 type Mode = (typeof MODES)[number]["value"];
 
+/**
+ * The antenna the length in the second mode belongs to. Unlike MODES the label
+ * names the option itself, so the key can be the value's own translation key —
+ * there is no direction to invert here.
+ */
+const ANTENNAS = [
+  { value: "half", labelKey: "halfWaveDipole" },
+  { value: "quarter", labelKey: "quarterWaveVertical" },
+] as const;
+type AntennaType = (typeof ANTENNAS)[number]["value"];
+
 const WavelengthCalculator: React.FC<CalculatorInstanceProps> = ({
   instanceId,
   initialPosition,
@@ -53,7 +64,7 @@ const WavelengthCalculator: React.FC<CalculatorInstanceProps> = ({
   const [length, setLength] = React.useState("");
   const [lengthUnit, setLengthUnit] = React.useState("m");
   const [velocityFactor, setVelocityFactor] = React.useState("0.95");
-  const [antennaType, setAntennaType] = React.useState<"half" | "quarter">("half");
+  const [antennaType, setAntennaType] = React.useState<AntennaType>("half");
 
   const [result, setResult] = React.useState("");
   const [message, setMessage] = React.useState("");
@@ -106,6 +117,15 @@ const WavelengthCalculator: React.FC<CalculatorInstanceProps> = ({
     setMode(next);
     setResult("");
     setMessage(next === "fromFrequency" ? t("promptEnterFreq") : t("promptEnterLength"));
+  };
+
+  // A quarter-wave vertical and a dipole of the same length resonate an octave
+  // apart, so the previous answer is not merely stale after this switch — it is
+  // wrong by a factor of two. Same clearing rule as switchMode.
+  const switchAntennaType = (next: AntennaType) => {
+    setAntennaType(next);
+    setResult("");
+    setMessage(t("promptEnterLength"));
   };
 
   const reset = () => {
@@ -234,18 +254,27 @@ const WavelengthCalculator: React.FC<CalculatorInstanceProps> = ({
             onUnitChange={setLengthUnit}
             color="teal"
           />
+          {/*
+            Two options, and the one picked changes the divisor in the formula
+            below as well as the answer — so it is the same kind of setting as
+            the mode above and gets the same control. As a <select> the second
+            option, and the fact that there was a choice at all, were both a tap
+            away; on the track the pair is the visible reason the 2 becomes a 4.
+          */}
           <div>
-            <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">
+            <label
+              id={`${instanceId}-antenna`}
+              className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400"
+            >
               {t("antennaType")}
             </label>
-            <select
+            <CalculatorModeSwitch
+              labelId={`${instanceId}-antenna`}
+              color="teal"
               value={antennaType}
-              onChange={(e) => setAntennaType(e.target.value as "half" | "quarter")}
-              className="w-full rounded border border-slate-300 bg-white px-2 py-1 text-sm text-slate-900 focus:outline-none focus:ring focus:border-teal-500 focus:ring-teal-500 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100"
-            >
-              <option value="half">{t("halfWaveDipole")}</option>
-              <option value="quarter">{t("quarterWaveVertical")}</option>
-            </select>
+              onChange={switchAntennaType}
+              options={ANTENNAS.map(({ value, labelKey }) => ({ value, label: t(labelKey) }))}
+            />
           </div>
         </>
       )}

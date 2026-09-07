@@ -98,6 +98,29 @@ describe("WavelengthCalculator", () => {
     expect(screen.getByText(/14.149 MHz/)).toBeInTheDocument();
   });
 
+  it("offers the antenna type as a switch, and re-solves for the one picked", () => {
+    render(<WavelengthCalculator {...defaultProps} />);
+    fireEvent.click(screen.getByRole("radio", { name: "modeFrequency" }));
+
+    // Both options are on screen. As a <select> the second one, and the fact
+    // that there was a choice at all, were hidden behind a tap.
+    expect(screen.getByRole("radio", { name: "halfWaveDipole" })).toBeChecked();
+    expect(screen.getByRole("radio", { name: "quarterWaveVertical" })).not.toBeChecked();
+
+    fireEvent.change(screen.getByPlaceholderText("e.g. 10.05"), { target: { value: "10" } });
+    fireEvent.click(screen.getByRole("button", { name: "calculate" }));
+    expect(screen.getByText(/14.240 MHz/)).toBeInTheDocument();
+
+    // A vertical of that length is half an antenna, so it resonates an octave
+    // down — the previous answer is not stale, it is wrong by a factor of two.
+    // Hence the switch clears it rather than leaving it under the new setting.
+    fireEvent.click(screen.getByRole("radio", { name: "quarterWaveVertical" }));
+    expect(screen.queryByText(/14.240 MHz/)).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: "calculate" }));
+    expect(screen.getByText(/7.120 MHz/)).toBeInTheDocument();
+  });
+
   it("resets all fields when clicking reset", () => {
     render(<WavelengthCalculator {...defaultProps} />);
 

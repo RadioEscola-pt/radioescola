@@ -9,9 +9,22 @@ import {
   CalculatorResult,
 } from "./base";
 import { registerCalculatorComponent } from "@/lib/config";
+import { Math as Tex } from "@/components/formulario/Math";
 import { ohmsLaw, power } from "@/lib/utils";
 import { parseValue, formatValue, findBestUnit, UNIT_GROUPS } from "@/lib/utils";
 import type { CalculatorInstanceProps } from "@/lib/types";
+
+/**
+ * The two relations this window applies, side by side because it always applies
+ * both: it solves for whichever of V, I and R was left blank, and then reports
+ * the power regardless. Written as maths rather than as `V = I x R`, so it reads
+ * the same as the same law on `/aprender/formulario`.
+ *
+ * The symbol is V, not the U of the formulary and of ANACOM: the three fields
+ * above are labelled V, I and R, and a formula that renamed one of them here
+ * would be the one line on screen that does not match the boxes it explains.
+ */
+const FORMULA = String.raw`V = I \cdot R \qquad P = V \cdot I`;
 
 const OhmsLawCalculator: React.FC<CalculatorInstanceProps> = ({
   instanceId,
@@ -153,7 +166,7 @@ const OhmsLawCalculator: React.FC<CalculatorInstanceProps> = ({
         onReset={reset}
         color="blue"
       />
-      <CalculatorResult value={message} color="blue" formula="V = I × R  |  P = V × I" />
+      <CalculatorResult value={message} color="blue" formula={<Tex tex={FORMULA} display className="block" />} />
     </CalculatorWindow>
   );
 };
