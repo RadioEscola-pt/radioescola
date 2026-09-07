@@ -68,6 +68,56 @@ test("every registered calculator opens and closes from the navigation", async (
   }
 });
 
+/**
+ * The submenu is ~700px tall for nine calculators, which is taller than the
+ * viewport of an ordinary laptop once the browser's own chrome is taken off. It
+ * used to be cut off there: `overflow-hidden` with no max-height, so Radix
+ * shifted it up to the top of the screen and the rest fell off the bottom with
+ * no scrollbar and nothing able to reach it — not the wheel, not the page
+ * scroll (the panel is position: fixed), while arrow-down still put focus on
+ * items nobody could see.
+ *
+ * Only a browser can catch this: it is a collision between a measured height, a
+ * viewport, and Radix's positioning, and none of those exist in jsdom. Hence a
+ * test that does nothing but shrink the window.
+ */
+test("the calculators submenu stays reachable on a short viewport", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 600 });
+
+  await page.getByRole("button", { name: pt.NavBar.study }).click();
+  await page.getByRole("menuitem", { name: pt.NavBar.calculators }).click();
+
+  const submenu = page.getByRole("menu").last();
+  await expect(submenu).toBeVisible();
+
+  // The panel fits the window rather than running off the bottom of it.
+  const box = (await submenu.boundingBox())!;
+  expect(box.y).toBeGreaterThanOrEqual(0);
+  expect(box.y + box.height).toBeLessThanOrEqual(600);
+
+  // It is too tall for that, so the overflow has to be scrollable and not clipped.
+  await expect(submenu).toHaveCSS("overflow-y", "auto");
+  const { clientHeight, scrollHeight } = await submenu.evaluate((el) => ({
+    clientHeight: el.clientHeight,
+    scrollHeight: el.scrollHeight,
+  }));
+  expect(scrollHeight).toBeGreaterThan(clientHeight);
+
+  // The last calculator is the one that used to be lost. Reaching it by keyboard
+  // is the stricter check: focus landing somewhere invisible was the real defect.
+  // `End` rather than nine ArrowDowns: Radix moves focus on its own schedule and
+  // presses sent back to back get swallowed, which made the loop stop at the
+  // third item and fail for a reason that had nothing to do with the layout.
+  const last = CALCULATORS[CALCULATORS.length - 1]!;
+  await page.getByRole("menuitem", { name: pt.NavBar.calculators }).hover();
+  await page.keyboard.press("ArrowRight");
+  await page.keyboard.press("End");
+
+  const focused = page.locator(":focus");
+  await expect(focused).toContainText(last.menu);
+  await expect(focused).toBeInViewport({ ratio: 1 });
+});
+
 test("Ohm's law computes through the real UI", async ({ page }) => {
   const window = await openCalculator(page, "Lei de Ohm");
 
