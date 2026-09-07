@@ -9,6 +9,7 @@ import {
   CalculatorResult,
 } from "./base";
 import { registerCalculatorComponent } from "@/lib/config";
+import { Math as Tex } from "@/components/formulario/Math";
 import { wavelength } from "@/lib/utils/electrical";
 import {
   UNIT_GROUPS,
@@ -48,6 +49,37 @@ const WavelengthCalculator: React.FC<CalculatorInstanceProps> = ({
     const k = parseValue(velocityFactor);
     return Number.isFinite(k) && k > 0 && k <= 1 ? k : null;
   }, [velocityFactor]);
+
+  /**
+   * The expression under the result, as maths rather than as a line of ASCII.
+   *
+   * It follows the mode, because the two modes do not share a formula: giving a
+   * frequency solves for λ and the two antenna lengths, giving a length solves
+   * back for f. Showing `λ = c / f` to somebody who is going the other way is
+   * the kind of small lie that makes a study aid untrustworthy — and this one is
+   * read beside `/aprender/formulario`, so it uses that page's notation:
+   * `L_{λ/2}`, the constant over `f [MHz]`, the answer in metres.
+   *
+   * The two constants stay derived from the entered k (150k and 75k) instead of
+   * being written out, so the line keeps agreeing with the numbers above it.
+   */
+  const formulaTex = React.useMemo(() => {
+    if (mode === "fromFrequency") {
+      const k = dipoleK ?? 0.95;
+      return String.raw`\begin{aligned}
+        \lambda &= \frac{c}{f} \\[2pt]
+        L_{\lambda/2} &\approx \frac{${formatValue(150 * k, 2)}}{f\,[\mathrm{MHz}]}\ \mathrm{m} \\[2pt]
+        L_{\lambda/4} &\approx \frac{${formatValue(75 * k, 2)}}{f\,[\mathrm{MHz}]}\ \mathrm{m}
+      \end{aligned}`;
+    }
+    // A quarter-wave vertical is half of the dipole the solver works in, so the
+    // length entered is doubled before inverting — which lands as a 4 here.
+    const divisor = antennaType === "quarter" ? 4 : 2;
+    return String.raw`\begin{aligned}
+      f &= \frac{c\,k}{${divisor}L} \\[2pt]
+      \lambda &= \frac{c}{f}
+    \end{aligned}`;
+  }, [mode, antennaType, dipoleK]);
 
   React.useEffect(() => {
     setMessage(mode === "fromFrequency" ? t("promptEnterFreq") : t("promptEnterLength"));
@@ -235,7 +267,7 @@ const WavelengthCalculator: React.FC<CalculatorInstanceProps> = ({
       <CalculatorResult
         value={message}
         color="teal"
-        formula={`λ = c / f  |  L(λ/2) ≈ ${formatValue(150 * (dipoleK ?? 0.95), 2)} / f(MHz)`}
+        formula={<Tex tex={formulaTex} display className="block" />}
       />
     </CalculatorWindow>
   );

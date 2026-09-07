@@ -98,9 +98,14 @@ test.describe("wavelength calculator", () => {
     await window.getByLabel("Frequência (f)").fill("14.150");
     await window.getByLabel("Fator de Velocidade (k)").fill("0.66");
 
-    // The formula constant is 150 × k, so it must follow the input rather than
-    // stay pinned to the 142.50 of the default k = 0.95.
-    await expect(window).toContainText("99.00 / f(MHz)");
+    // The two formula constants are 150 × k and 75 × k, so they must follow the
+    // input rather than stay pinned to the 142.50 and 71.25 of the default
+    // k = 0.95. Asserted as bare numbers because KaTeX splits the expression
+    // across its own markup — matching "99.00 / f(MHz)" would be asserting the
+    // renderer, not the physics.
+    await expect(window).toContainText("99.00");
+    await expect(window).toContainText("49.50");
+    await expect(window).not.toContainText("142.50");
 
     await window.getByRole("button", { name: "Calcular" }).click();
     await expect(window).toContainText("6.992 m");

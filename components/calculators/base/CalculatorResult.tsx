@@ -8,7 +8,13 @@ interface CalculatorResultProps {
   label?: string;
   value: string;
   color?: CalculatorColor;
-  formula?: string;
+  /**
+   * The expression the calculator just applied. A plain string keeps the
+   * monospaced look the other eight calculators were written against; a node
+   * lets one hand over rendered maths (KaTeX) instead, without every caller
+   * having to opt into a second prop.
+   */
+  formula?: React.ReactNode;
 }
 
 const RESULT_CLASSES: Record<CalculatorColor, { bg: string; text: string }> = {
@@ -40,10 +46,18 @@ export function CalculatorResult({
         </p>
       )}
       <p className={`text-sm font-semibold ${colorClasses.text}`}>{value}</p>
-      {formula && (
-        <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 font-mono">
-          {t("formula")}: {formula}
-        </p>
+      {/*
+        A div, not a p: rendered maths is block-level markup, and nesting it in
+        a paragraph is invalid HTML that React reports as a hydration mismatch.
+        `overflow-x-auto` because the window is 320px wide and an expression
+        that does not fit has to scroll inside this box rather than push the
+        calculator open.
+      */}
+      {formula !== undefined && formula !== "" && (
+        <div className="mt-1 overflow-x-auto text-xs text-slate-500 dark:text-slate-400">
+          {t("formula")}:{" "}
+          {typeof formula === "string" ? <span className="font-mono">{formula}</span> : formula}
+        </div>
       )}
     </div>
   );

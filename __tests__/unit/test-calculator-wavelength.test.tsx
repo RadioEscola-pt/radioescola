@@ -78,15 +78,22 @@ describe("WavelengthCalculator", () => {
   it("uses the entered velocity factor for the result and the shown formula", () => {
     render(<WavelengthCalculator {...defaultProps} />);
 
-    fireEvent.click(screen.getByRole("button", { name: "fromLength" }));
-    fireEvent.change(screen.getByPlaceholderText("e.g. 10.05"), { target: { value: "6.992" } });
     fireEvent.change(screen.getByPlaceholderText("0.95"), { target: { value: "0.66" } });
 
-    // The formula constant is 150 x k, not the 142.50 of the default.
-    expect(screen.getByText(/99.00 \/ f\(MHz\)/)).toBeInTheDocument();
+    // The constants are 150 x k and 75 x k, not the 142.50 and 71.25 of the
+    // default. They are asserted as bare numbers because KaTeX puts each one in
+    // its own node — matching "99.00 / f(MHz)" would assert the renderer rather
+    // than the physics.
+    expect(screen.getByText("99.00")).toBeInTheDocument();
+    expect(screen.getByText("49.50")).toBeInTheDocument();
+    expect(screen.queryByText("142.50")).not.toBeInTheDocument();
 
-    // A 6.992 m dipole on 0.66 velocity factor resonates at 14.149 MHz; had the
-    // 0.95 fallback silently applied it would read 20.366 MHz.
+    // The other mode inverts the same k, and shows no constant at all — so the
+    // check that k reached the solver is the answer itself. A 6.992 m dipole on
+    // 0.66 resonates at 14.149 MHz; had the 0.95 fallback silently applied it
+    // would read 20.366 MHz.
+    fireEvent.click(screen.getByRole("button", { name: "fromLength" }));
+    fireEvent.change(screen.getByPlaceholderText("e.g. 10.05"), { target: { value: "6.992" } });
     fireEvent.click(screen.getByRole("button", { name: "calculate" }));
     expect(screen.getByText(/14.149 MHz/)).toBeInTheDocument();
   });
