@@ -6,9 +6,11 @@ import {
   CalculatorWindow,
   CalculatorInput,
   CalculatorButtons,
+  CalculatorModeSwitch,
   CalculatorResult,
 } from "./base";
 import { registerCalculatorComponent } from "@/lib/config";
+import { Math as Tex } from "@/components/formulario/Math";
 import { transformer } from "@/lib/utils";
 import {
   UNIT_GROUPS,
@@ -20,7 +22,16 @@ import {
 } from "@/lib/utils";
 import type { CalculatorInstanceProps } from "@/lib/types";
 
-type Mode = "voltage" | "turns" | "impedance";
+/**
+ * The switch order, and the union. Each label names what you enter, which
+ * here is also what the mode is called.
+ */
+const MODES = [
+  { value: "voltage", labelKey: "voltage" },
+  { value: "turns", labelKey: "turns" },
+  { value: "impedance", labelKey: "impedance" },
+] as const;
+type Mode = (typeof MODES)[number]["value"];
 
 const TransformerCalculator: React.FC<CalculatorInstanceProps> = ({
   instanceId,
@@ -65,6 +76,14 @@ const TransformerCalculator: React.FC<CalculatorInstanceProps> = ({
       case "impedance":
         return t("enterImpedance");
     }
+  };
+
+  // Each mode reads different fields, so an answer left over from the last
+  // one is a result for a question no longer on screen.
+  const switchMode = (next: Mode) => {
+    setMode(next);
+    setResult("");
+    setMessage(getInitialMessage(next));
   };
 
   const reset = () => {
@@ -167,14 +186,18 @@ const TransformerCalculator: React.FC<CalculatorInstanceProps> = ({
     }
   };
 
-  const getFormula = (): string => {
+  /**
+   * V rather than the formulary's U, because the fields above say "Tensão
+   * Primária (Vp)". The window it sits in wins over another page.
+   */
+  const getFormulaTex = (): string => {
     switch (mode) {
       case "voltage":
-        return "n = Vs / Vp";
+        return String.raw`n = \frac{V_s}{V_p}`;
       case "turns":
-        return "n = Ns / Np";
+        return String.raw`n = \frac{N_s}{N_p}`;
       case "impedance":
-        return "Zs = Zp × n²";
+        return String.raw`Z_s = Z_p \, n^{2}`;
     }
   };
 
@@ -189,53 +212,19 @@ const TransformerCalculator: React.FC<CalculatorInstanceProps> = ({
       onFocus={onFocus}
     >
       <div>
-        <label className="mb-1 block text-xs font-medium uppercase tracking-wide text-gray-600">
+        <label
+          id={`${instanceId}-mode`}
+          className="mb-1 block text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400"
+        >
           {t("calculateFrom")}
         </label>
-        <div className="flex gap-1">
-          <button
-            type="button"
-            onClick={() => {
-              setMode("voltage");
-              setMessage(getInitialMessage("voltage"));
-            }}
-            className={`flex-1 rounded px-2 py-1 text-xs transition focus:outline-none focus:ring-2 focus:ring-rose-500 ${
-              mode === "voltage"
-                ? "bg-rose-600 text-white"
-                : "border border-gray-300 text-gray-700 hover:bg-gray-100"
-            }`}
-          >
-            {t("voltage")}
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setMode("turns");
-              setMessage(getInitialMessage("turns"));
-            }}
-            className={`flex-1 rounded px-2 py-1 text-xs transition focus:outline-none focus:ring-2 focus:ring-rose-500 ${
-              mode === "turns"
-                ? "bg-rose-600 text-white"
-                : "border border-gray-300 text-gray-700 hover:bg-gray-100"
-            }`}
-          >
-            {t("turns")}
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setMode("impedance");
-              setMessage(getInitialMessage("impedance"));
-            }}
-            className={`flex-1 rounded px-2 py-1 text-xs transition focus:outline-none focus:ring-2 focus:ring-rose-500 ${
-              mode === "impedance"
-                ? "bg-rose-600 text-white"
-                : "border border-gray-300 text-gray-700 hover:bg-gray-100"
-            }`}
-          >
-            {t("impedance")}
-          </button>
-        </div>
+        <CalculatorModeSwitch
+          labelId={`${instanceId}-mode`}
+          color="rose"
+          value={mode}
+          onChange={switchMode}
+          options={MODES.map(({ value, labelKey }) => ({ value, label: t(labelKey) }))}
+        />
       </div>
 
       {mode === "voltage" && (
@@ -312,10 +301,10 @@ const TransformerCalculator: React.FC<CalculatorInstanceProps> = ({
 
       {result && (
         <div className="rounded bg-rose-50 p-2 text-center">
-          <div className="text-xs font-medium text-gray-600">{tc("result")}</div>
+          <div className="text-xs font-medium text-slate-500 dark:text-slate-400">{tc("result")}</div>
           <div className="text-lg font-bold text-rose-700">{result}</div>
           {details && (
-            <div className="mt-1 text-xs text-gray-600">{details}</div>
+            <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">{details}</div>
           )}
         </div>
       )}
@@ -325,7 +314,11 @@ const TransformerCalculator: React.FC<CalculatorInstanceProps> = ({
         onReset={reset}
         color="rose"
       />
-      <CalculatorResult value={message} color="rose" formula={getFormula()} />
+      <CalculatorResult
+        value={message}
+        color="rose"
+        formula={<Tex tex={getFormulaTex()} display className="block" />}
+      />
     </CalculatorWindow>
   );
 };

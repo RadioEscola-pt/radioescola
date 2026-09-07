@@ -6,9 +6,11 @@ import {
   CalculatorWindow,
   CalculatorInput,
   CalculatorButtons,
+  CalculatorModeSwitch,
   CalculatorResult,
 } from "./base";
 import { registerCalculatorComponent } from "@/lib/config";
+import { Math as Tex } from "@/components/formulario/Math";
 import { reactance } from "@/lib/utils/electrical";
 import {
   UNIT_GROUPS,
@@ -19,7 +21,15 @@ import {
 } from "@/lib/utils";
 import type { CalculatorInstanceProps } from "@/lib/types";
 
-type Mode = "inductive" | "capacitive";
+/**
+ * The switch order, and the union. Both labels name the reactance the mode
+ * computes, so the translation key doubles as the state value.
+ */
+const MODES = [
+  { value: "inductive", labelKey: "inductive" },
+  { value: "capacitive", labelKey: "capacitive" },
+] as const;
+type Mode = (typeof MODES)[number]["value"];
 
 const ReactanceCalculator: React.FC<CalculatorInstanceProps> = ({
   instanceId,
@@ -47,6 +57,14 @@ const ReactanceCalculator: React.FC<CalculatorInstanceProps> = ({
   React.useEffect(() => {
     setMessage(t("promptTwoFields"));
   }, [t]);
+
+  // Each mode reads different fields, so an answer left over from the last
+  // one is a result for a question no longer on screen.
+  const switchMode = (next: Mode) => {
+    setMode(next);
+    setResult("");
+    setMessage(t("promptTwoFields"));
+  };
 
   const reset = () => {
     setFrequency("");
@@ -145,8 +163,14 @@ const ReactanceCalculator: React.FC<CalculatorInstanceProps> = ({
     }
   };
 
-  const getFormula = (): string => {
-    return mode === "inductive" ? "XL = 2π × f × L" : "XC = 1 / (2π × f × C)";
+  /**
+   * The reciprocal is the whole difference between the two, and a fraction bar
+   * shows it where a `1 / (...)` only spells it.
+   */
+  const getFormulaTex = (): string => {
+    return mode === "inductive"
+      ? String.raw`X_L = 2\pi f L`
+      : String.raw`X_C = \frac{1}{2\pi f C}`;
   };
 
   return (
@@ -160,41 +184,19 @@ const ReactanceCalculator: React.FC<CalculatorInstanceProps> = ({
       onFocus={onFocus}
     >
       <div>
-        <label className="mb-1 block text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
+        <label
+          id={`${instanceId}-mode`}
+          className="mb-1 block text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400"
+        >
           {tc("mode")}
         </label>
-        <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={() => {
-              setMode("inductive");
-              setResult("");
-              setMessage(t("promptTwoFields"));
-            }}
-            className={`flex-1 rounded px-3 py-1 transition focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
-              mode === "inductive"
-                ? "bg-indigo-600 text-white"
-                : "border border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
-            }`}
-          >
-            {t("inductive")}
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setMode("capacitive");
-              setResult("");
-              setMessage(t("promptTwoFields"));
-            }}
-            className={`flex-1 rounded px-3 py-1 transition focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
-              mode === "capacitive"
-                ? "bg-indigo-600 text-white"
-                : "border border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
-            }`}
-          >
-            {t("capacitive")}
-          </button>
-        </div>
+        <CalculatorModeSwitch
+          labelId={`${instanceId}-mode`}
+          color="indigo"
+          value={mode}
+          onChange={switchMode}
+          options={MODES.map(({ value, labelKey }) => ({ value, label: t(labelKey) }))}
+        />
       </div>
 
       <CalculatorInput
@@ -259,7 +261,11 @@ const ReactanceCalculator: React.FC<CalculatorInstanceProps> = ({
         onReset={reset}
         color="indigo"
       />
-      <CalculatorResult value={message} color="indigo" formula={getFormula()} />
+      <CalculatorResult
+        value={message}
+        color="indigo"
+        formula={<Tex tex={getFormulaTex()} display className="block" />}
+      />
     </CalculatorWindow>
   );
 };

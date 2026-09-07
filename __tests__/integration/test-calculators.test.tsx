@@ -89,7 +89,7 @@ describe("Calculators Integration Tests", () => {
       );
 
       // Switch to capacitive
-      fireEvent.click(screen.getByRole("button", { name: "capacitive" }));
+      fireEvent.click(screen.getByRole("radio", { name: "capacitive" }));
 
       const freqInput = screen.getByPlaceholderText("e.g. 7.1");
       const capInput = screen.getByPlaceholderText("e.g. 100");

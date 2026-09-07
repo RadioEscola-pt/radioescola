@@ -58,7 +58,7 @@ describe("RLCCalculator", () => {
   it("switches to impedance mode and shows resistance and frequency inputs", () => {
     render(<RLCCalculator {...defaultProps} />);
 
-    fireEvent.click(screen.getByRole("button", { name: "impedance" }));
+    fireEvent.click(screen.getByRole("radio", { name: "impedance" }));
 
     expect(screen.getByPlaceholderText("e.g. 50")).toBeInTheDocument();
     expect(screen.getByPlaceholderText("e.g. 7")).toBeInTheDocument();

@@ -349,6 +349,7 @@
       "inputVoltage": "Input Voltage (V1)",
       "outputVoltage": "Output Voltage (V2)",
       "dbStages": "dB Stages",
+      "add": "Add",
       "dbValue": "dB value",
       "enterTwoPower": "Enter two power values to calculate gain in dB.",
       "enterTwoVoltage": "Enter two voltage values to calculate gain in dB.",

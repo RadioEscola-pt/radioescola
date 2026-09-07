@@ -99,7 +99,7 @@ describe("GainCalculator", () => {
 
     fireEvent.click(screen.getByRole("radio", { name: "addDb" }));
 
-    const addButton = screen.getByRole("button", { name: /Add/ });
+    const addButton = screen.getByRole("button", { name: "add" });
     fireEvent.click(addButton);
 
     const dbInputs = screen.getAllByPlaceholderText("dbValue");

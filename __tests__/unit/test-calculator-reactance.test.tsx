@@ -55,7 +55,7 @@ describe("ReactanceCalculator", () => {
   it("switches to capacitive mode and calculates capacitive reactance", () => {
     render(<ReactanceCalculator {...defaultProps} />);
 
-    fireEvent.click(screen.getByRole("button", { name: "capacitive" }));
+    fireEvent.click(screen.getByRole("radio", { name: "capacitive" }));
     expect(screen.getByPlaceholderText("e.g. 100")).toBeInTheDocument();
 
     fireEvent.change(screen.getByPlaceholderText("e.g. 7.1"), { target: { value: "14.1" } });

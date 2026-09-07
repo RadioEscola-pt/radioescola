@@ -294,7 +294,7 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
       ) : (
         <div>
           <div className="mb-2 flex items-center justify-between">
-            <label className="text-xs font-medium uppercase tracking-wide text-gray-600">
+            <label className="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
               {t("dbStages")}
             </label>
             <button
@@ -303,13 +303,13 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
               className="flex items-center gap-1 rounded bg-cyan-600 px-2 py-1 text-xs text-white transition hover:bg-cyan-500"
             >
               <Plus className="h-3 w-3" />
-              Add
+              {t("add")}
             </button>
           </div>
           <div className="max-h-48 space-y-2 overflow-y-auto">
             {dbStages.map((stage, index) => (
               <div key={stage.id} className="flex items-center gap-2">
-                <span className="text-xs text-gray-500 w-6">{index + 1}.</span>
+                <span className="w-6 text-xs text-slate-400 dark:text-slate-500">{index + 1}.</span>
                 <input
                   type="text"
                   value={stage.value}
@@ -317,7 +317,7 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
                   className="flex-1 rounded border border-gray-300 px-2 py-1 text-sm focus:border-cyan-500 focus:outline-none focus:ring"
                   placeholder={t("dbValue")}
                 />
-                <span className="text-xs text-gray-500">dB</span>
+                <span className="text-xs text-slate-400 dark:text-slate-500">dB</span>
                 {dbStages.length > 1 && (
                   <button
                     type="button"
@@ -335,7 +335,7 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
 
       {result && (
         <div className="rounded bg-cyan-50 p-2 text-center">
-          <div className="text-xs font-medium text-gray-600">{tc("result")}</div>
+          <div className="text-xs font-medium text-slate-500 dark:text-slate-400">{tc("result")}</div>
           <div className="text-lg font-bold text-cyan-700">{result}</div>
         </div>
       )}

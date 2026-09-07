@@ -6,14 +6,25 @@ import {
   CalculatorWindow,
   CalculatorInput,
   CalculatorButtons,
+  CalculatorModeSwitch,
   CalculatorResult,
 } from "./base";
 import { registerCalculatorComponent } from "@/lib/config";
+import { Math as Tex } from "@/components/formulario/Math";
 import { vswr } from "@/lib/utils";
 import { UNIT_GROUPS, parseValue, convertToBase, formatValue } from "@/lib/utils";
 import type { CalculatorInstanceProps } from "@/lib/types";
 
-type Mode = "power" | "direct";
+/**
+ * The switch order, and the union. The state value says which quantity is
+ * entered; the label key is separate because "fromPower" is a phrase, not a
+ * quantity.
+ */
+const MODES = [
+  { value: "power", labelKey: "fromPower" },
+  { value: "direct", labelKey: "directVswr" },
+] as const;
+type Mode = (typeof MODES)[number]["value"];
 
 const VSWRCalculator: React.FC<CalculatorInstanceProps> = ({
   instanceId,
@@ -37,6 +48,14 @@ const VSWRCalculator: React.FC<CalculatorInstanceProps> = ({
   React.useEffect(() => {
     setMessage(t("enterPower"));
   }, [t]);
+
+  // Each mode reads different fields, so an answer left over from the last
+  // one is a result for a question no longer on screen.
+  const switchMode = (next: Mode) => {
+    setMode(next);
+    setResult("");
+    setMessage(next === "power" ? t("enterPower") : t("enterVswr"));
+  };
 
   const reset = () => {
     setForwardPower("");
@@ -113,11 +132,16 @@ const VSWRCalculator: React.FC<CalculatorInstanceProps> = ({
     }
   };
 
-  const getFormula = (): string => {
+  /**
+   * `P_d` and `P_r` are the formulary's symbols, and match the fields above
+   * ("Potência Direta", "Potência Refletida"). The word stays VSWR rather than
+   * the formulary's ROE because that is what this window calls it throughout.
+   */
+  const getFormulaTex = (): string => {
     if (mode === "power") {
-      return "VSWR = (1 + √(Pr/Pf)) / (1 - √(Pr/Pf))";
+      return String.raw`\mathrm{VSWR} = \frac{1 + \sqrt{P_r / P_d}}{1 - \sqrt{P_r / P_d}}`;
     }
-    return "Γ = (VSWR - 1) / (VSWR + 1)";
+    return String.raw`\left|\Gamma\right| = \frac{\mathrm{VSWR} - 1}{\mathrm{VSWR} + 1}`;
   };
 
   return (
@@ -131,39 +155,19 @@ const VSWRCalculator: React.FC<CalculatorInstanceProps> = ({
       onFocus={onFocus}
     >
       <div>
-        <label className="mb-1 block text-xs font-medium uppercase tracking-wide text-gray-600">
+        <label
+          id={`${instanceId}-mode`}
+          className="mb-1 block text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400"
+        >
           {t("inputMode")}
         </label>
-        <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={() => {
-              setMode("power");
-              setMessage(t("enterPower"));
-            }}
-            className={`flex-1 rounded px-3 py-1 transition focus:outline-none focus:ring-2 focus:ring-orange-500 ${
-              mode === "power"
-                ? "bg-orange-600 text-white"
-                : "border border-gray-300 text-gray-700 hover:bg-gray-100"
-            }`}
-          >
-            {t("fromPower")}
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setMode("direct");
-              setMessage(t("enterVswr"));
-            }}
-            className={`flex-1 rounded px-3 py-1 transition focus:outline-none focus:ring-2 focus:ring-orange-500 ${
-              mode === "direct"
-                ? "bg-orange-600 text-white"
-                : "border border-gray-300 text-gray-700 hover:bg-gray-100"
-            }`}
-          >
-            {t("directVswr")}
-          </button>
-        </div>
+        <CalculatorModeSwitch
+          labelId={`${instanceId}-mode`}
+          color="orange"
+          value={mode}
+          onChange={switchMode}
+          options={MODES.map(({ value, labelKey }) => ({ value, label: t(labelKey) }))}
+        />
       </div>
 
       {mode === "power" ? (
@@ -204,10 +208,10 @@ const VSWRCalculator: React.FC<CalculatorInstanceProps> = ({
 
       {result && (
         <div className="rounded bg-orange-50 p-2 text-center">
-          <div className="text-xs font-medium text-gray-600">{tc("result")}</div>
+          <div className="text-xs font-medium text-slate-500 dark:text-slate-400">{tc("result")}</div>
           <div className="text-lg font-bold text-orange-700">{result}</div>
           {details && (
-            <div className="mt-1 text-xs text-gray-600">{details}</div>
+            <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">{details}</div>
           )}
         </div>
       )}
@@ -217,7 +221,11 @@ const VSWRCalculator: React.FC<CalculatorInstanceProps> = ({
         onReset={reset}
         color="orange"
       />
-      <CalculatorResult value={message} color="orange" formula={getFormula()} />
+      <CalculatorResult
+        value={message}
+        color="orange"
+        formula={<Tex tex={getFormulaTex()} display className="block" />}
+      />
     </CalculatorWindow>
   );
 };

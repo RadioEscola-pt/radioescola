@@ -349,6 +349,7 @@
       "inputVoltage": "Tensão de Entrada (V1)",
       "outputVoltage": "Tensão de Saída (V2)",
       "dbStages": "Estágios dB",
+      "add": "Adicionar",
       "dbValue": "Valor dB",
       "enterTwoPower": "Introduz dois valores de potência para calcular o ganho em dB.",
       "enterTwoVoltage": "Introduz dois valores de tensão para calcular o ganho em dB.",
