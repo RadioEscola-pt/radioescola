@@ -23,6 +23,9 @@ const FOCUS_CLASSES: Record<CalculatorColor, string> = {
   orange: "focus:border-orange-500 focus:ring-orange-500",
   cyan: "focus:border-cyan-500 focus:ring-cyan-500",
   rose: "focus:border-rose-500 focus:ring-rose-500",
+  amber: "focus:border-amber-500 focus:ring-amber-500",
+  indigo: "focus:border-indigo-500 focus:ring-indigo-500",
+  teal: "focus:border-teal-500 focus:ring-teal-500",
 };
 
 export function CalculatorInput({

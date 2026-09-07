@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { ohmsLaw, power, rlc, vswr, gain, transformer, wavelength } from '@/lib/utils';
+import { ohmsLaw, power, rlc, vswr, gain, transformer, wavelength, reactance, qFactor } from '@/lib/utils';
 
 describe('ohmsLaw', () => {
   it('calculates voltage from current and resistance', () => {
@@ -178,8 +178,77 @@ describe('wavelength', () => {
     expect(wavelength.SPEED_OF_LIGHT).toBe(299792458);
   });
 
+  it('calculates half-wave dipole and quarter-wave lengths', () => {
+    // at 14.15 MHz, half wave is approx 10.05m with k=0.95
+    const half = wavelength.halfWaveDipole(14.15e6, 0.95);
+    expect(half).toBeCloseTo(10.06, 1);
+
+    const quarter = wavelength.quarterWave(14.15e6, 0.95);
+    expect(quarter).toBeCloseTo(5.03, 1);
+  });
+
+  it('calculates frequency from dipole length', () => {
+    const f = wavelength.frequencyFromDipole(10.063, 0.95);
+    expect(f).toBeCloseTo(14.15e6, -4);
+  });
+
   it('returns NaN for invalid inputs', () => {
     expect(wavelength.fromFrequency(0)).toBeNaN();
     expect(wavelength.toFrequency(0)).toBeNaN();
+    expect(wavelength.halfWaveDipole(0)).toBeNaN();
   });
 });
+
+describe('reactance', () => {
+  it('calculates inductive reactance', () => {
+    // XL = 2 * pi * f * L
+    const xl = reactance.inductive(1e6, 10e-6);
+    expect(xl).toBeCloseTo(62.83, 1);
+  });
+
+  it('calculates capacitive reactance', () => {
+    // XC = 1 / (2 * pi * f * C)
+    const xc = reactance.capacitive(1e6, 100e-12);
+    expect(xc).toBeCloseTo(1591.55, 1);
+  });
+
+  it('calculates inductance and capacitance from reactance', () => {
+    const l = reactance.inductanceFromXL(1e6, 62.8318);
+    expect(l).toBeCloseTo(10e-6, 7);
+
+    const c = reactance.capacitanceFromXC(1e6, 1591.55);
+    expect(c).toBeCloseTo(100e-12, 13);
+  });
+
+  it('calculates frequency from reactance', () => {
+    const fFromL = reactance.frequencyFromL(10e-6, 62.831853);
+    expect(fFromL).toBeCloseTo(1e6, -2);
+
+    const fFromC = reactance.frequencyFromC(100e-12, 1591.549);
+    expect(fFromC).toBeCloseTo(1e6, -2);
+  });
+});
+
+describe('qFactor', () => {
+  it('calculates Q factor from resonant frequency and bandwidth', () => {
+    const q = qFactor.fromBandwidth(7e6, 140e3);
+    expect(q).toBe(50);
+  });
+
+  it('calculates bandwidth from resonant frequency and Q factor', () => {
+    const bw = qFactor.bandwidth(7e6, 50);
+    expect(bw).toBe(140e3);
+  });
+
+  it('calculates resonant frequency from Q factor and bandwidth', () => {
+    const f0 = qFactor.resonantFrequency(50, 140e3);
+    expect(f0).toBe(7e6);
+  });
+
+  it('calculates cutoff frequencies', () => {
+    const { low, high } = qFactor.cutoffFrequencies(7e6, 140e3);
+    expect(low).toBe(6.93e6);
+    expect(high).toBe(7.07e6);
+  });
+});
+

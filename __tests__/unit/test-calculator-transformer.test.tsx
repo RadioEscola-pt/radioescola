@@ -56,7 +56,7 @@ describe("TransformerCalculator", () => {
   it("switches to turns mode and shows turns inputs", () => {
     render(<TransformerCalculator {...defaultProps} />);
 
-    fireEvent.click(screen.getByRole("button", { name: "turns" }));
+    fireEvent.click(screen.getByRole("radio", { name: "turns" }));
 
     expect(screen.getByPlaceholderText("e.g. 1000")).toBeInTheDocument();
     expect(screen.getByPlaceholderText("e.g. 100")).toBeInTheDocument();
@@ -65,7 +65,7 @@ describe("TransformerCalculator", () => {
   it("calculates from turns values", () => {
     render(<TransformerCalculator {...defaultProps} />);
 
-    fireEvent.click(screen.getByRole("button", { name: "turns" }));
+    fireEvent.click(screen.getByRole("radio", { name: "turns" }));
     fireEvent.change(screen.getByPlaceholderText("e.g. 1000"), { target: { value: "1000" } });
     fireEvent.change(screen.getByPlaceholderText("e.g. 100"), { target: { value: "100" } });
     fireEvent.click(screen.getByRole("button", { name: "calculate" }));
@@ -76,7 +76,7 @@ describe("TransformerCalculator", () => {
   it("switches to impedance mode and calculates", () => {
     render(<TransformerCalculator {...defaultProps} />);
 
-    fireEvent.click(screen.getByRole("button", { name: "impedance" }));
+    fireEvent.click(screen.getByRole("radio", { name: "impedance" }));
 
     fireEvent.change(screen.getByPlaceholderText("e.g. 50"), { target: { value: "50" } });
     fireEvent.change(screen.getByPlaceholderText("e.g. 2"), { target: { value: "2" } });

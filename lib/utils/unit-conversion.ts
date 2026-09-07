@@ -45,6 +45,12 @@ export const UNIT_MULTIPLIERS: Record<string, number> = {
   "mA": 1e-3,
   "µA": 1e-6,
 
+  // Length / Wavelength (base: Meter)
+  "m": 1,
+  "cm": 1e-2,
+  "mm": 1e-3,
+  "km": 1e3,
+
   // dB (no conversion, but included for completeness)
   "dB": 1,
   "dBm": 1,
@@ -59,6 +65,7 @@ export const UNIT_GROUPS = {
   power: ["mW", "W", "kW"],
   voltage: ["mV", "V", "kV"],
   current: ["µA", "mA", "A"],
+  length: ["mm", "cm", "m", "km"],
 } as const;
 
 /**

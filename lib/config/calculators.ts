@@ -9,6 +9,9 @@ import {
   Radio,
   TrendingUp,
   ArrowLeftRight,
+  Activity,
+  Gauge,
+  Antenna,
 } from "lucide-react";
 import type { CalculatorCode, CalculatorConfig } from "@/lib/types";
 
@@ -72,6 +75,33 @@ const registry: Record<CalculatorCode, LazyCalculatorConfig> = {
     description: "Calculate turns ratio, voltages, currents, and impedance",
     icon: ArrowLeftRight,
     color: "rose",
+  },
+  REACTANCE: {
+    code: "REACTANCE",
+    translationKey: "reactance",
+    title: "Reactance Calculator",
+    shortTitle: "Reactance",
+    description: "Calculate inductive and capacitive reactance (XL and XC)",
+    icon: Activity,
+    color: "indigo",
+  },
+  QFACTOR: {
+    code: "QFACTOR",
+    translationKey: "qFactor",
+    title: "Q Factor & Bandwidth Calculator",
+    shortTitle: "Q Factor",
+    description: "Calculate Q factor, resonant frequency, and bandwidth (Q = f0 / BW)",
+    icon: Gauge,
+    color: "amber",
+  },
+  WAVELENGTH: {
+    code: "WAVELENGTH",
+    translationKey: "wavelength",
+    title: "Wavelength & Antenna Calculator",
+    shortTitle: "Wavelength",
+    description: "Calculate wavelength and half/quarter-wave antenna wire dimensions",
+    icon: Antenna,
+    color: "teal",
   },
 };
 

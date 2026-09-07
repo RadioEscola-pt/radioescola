@@ -58,7 +58,7 @@ describe("VSWRCalculator", () => {
   it("switches to direct mode and shows VSWR input", () => {
     render(<VSWRCalculator {...defaultProps} />);
 
-    fireEvent.click(screen.getByRole("button", { name: "directVswr" }));
+    fireEvent.click(screen.getByRole("radio", { name: "directVswr" }));
 
     expect(screen.getByPlaceholderText("e.g. 1.5")).toBeInTheDocument();
   });
@@ -66,7 +66,7 @@ describe("VSWRCalculator", () => {
   it("calculates from direct VSWR value", () => {
     render(<VSWRCalculator {...defaultProps} />);
 
-    fireEvent.click(screen.getByRole("button", { name: "directVswr" }));
+    fireEvent.click(screen.getByRole("radio", { name: "directVswr" }));
     fireEvent.change(screen.getByPlaceholderText("e.g. 1.5"), { target: { value: "1.5" } });
     fireEvent.click(screen.getByRole("button", { name: "calculate" }));
 

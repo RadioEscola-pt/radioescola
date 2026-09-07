@@ -6,9 +6,11 @@ import {
   CalculatorWindow,
   CalculatorInput,
   CalculatorButtons,
+  CalculatorModeSwitch,
   CalculatorResult,
 } from "./base";
 import { registerCalculatorComponent } from "@/lib/config";
+import { Math as Tex } from "@/components/formulario/Math";
 import { rlc } from "@/lib/utils";
 import {
   UNIT_GROUPS,
@@ -19,7 +21,15 @@ import {
 } from "@/lib/utils";
 import type { CalculatorInstanceProps } from "@/lib/types";
 
-type Mode = "resonance" | "impedance";
+/**
+ * The switch order, and the union. Both labels name the quantity the mode
+ * solves for, so the translation key doubles as the state value.
+ */
+const MODES = [
+  { value: "resonance", labelKey: "resonance" },
+  { value: "impedance", labelKey: "impedance" },
+] as const;
+type Mode = (typeof MODES)[number]["value"];
 
 const RLCCalculator: React.FC<CalculatorInstanceProps> = ({
   instanceId,
@@ -45,6 +55,14 @@ const RLCCalculator: React.FC<CalculatorInstanceProps> = ({
   React.useEffect(() => {
     setMessage(t("enterLCResonance"));
   }, [t]);
+
+  // Each mode reads different fields, so an answer left over from the last
+  // one is a result for a question no longer on screen.
+  const switchMode = (next: Mode) => {
+    setMode(next);
+    setResult("");
+    setMessage(next === "resonance" ? t("enterLCResonance") : t("enterRLCImpedance"));
+  };
 
   const reset = () => {
     setResistance("");
@@ -115,11 +133,15 @@ const RLCCalculator: React.FC<CalculatorInstanceProps> = ({
     }
   };
 
-  const getFormula = (): string => {
+  /**
+   * Resonance is where the two reactances cancel; impedance is what is left when
+   * they do not. Both in the notation of `/aprender/formulario`.
+   */
+  const getFormulaTex = (): string => {
     if (mode === "resonance") {
-      return "f₀ = 1 / (2π√LC)";
+      return String.raw`f_0 = \frac{1}{2\pi\sqrt{L\,C}}`;
     }
-    return "Z = √(R² + (XL - XC)²)";
+    return String.raw`Z = \sqrt{R^{2} + \left(X_L - X_C\right)^{2}}`;
   };
 
   return (
@@ -133,39 +155,19 @@ const RLCCalculator: React.FC<CalculatorInstanceProps> = ({
       onFocus={onFocus}
     >
       <div>
-        <label className="mb-1 block text-xs font-medium uppercase tracking-wide text-gray-600">
+        <label
+          id={`${instanceId}-mode`}
+          className="mb-1 block text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400"
+        >
           {tc("mode")}
         </label>
-        <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={() => {
-              setMode("resonance");
-              setMessage(t("enterLCResonance"));
-            }}
-            className={`flex-1 rounded px-3 py-1 transition focus:outline-none focus:ring-2 focus:ring-purple-500 ${
-              mode === "resonance"
-                ? "bg-purple-600 text-white"
-                : "border border-gray-300 text-gray-700 hover:bg-gray-100"
-            }`}
-          >
-            {t("resonance")}
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setMode("impedance");
-              setMessage(t("enterRLCImpedance"));
-            }}
-            className={`flex-1 rounded px-3 py-1 transition focus:outline-none focus:ring-2 focus:ring-purple-500 ${
-              mode === "impedance"
-                ? "bg-purple-600 text-white"
-                : "border border-gray-300 text-gray-700 hover:bg-gray-100"
-            }`}
-          >
-            {t("impedance")}
-          </button>
-        </div>
+        <CalculatorModeSwitch
+          labelId={`${instanceId}-mode`}
+          color="purple"
+          value={mode}
+          onChange={switchMode}
+          options={MODES.map(({ value, labelKey }) => ({ value, label: t(labelKey) }))}
+        />
       </div>
 
       {mode === "impedance" && (
@@ -222,7 +224,7 @@ const RLCCalculator: React.FC<CalculatorInstanceProps> = ({
 
       {result && (
         <div className="rounded bg-purple-50 p-2 text-center">
-          <div className="text-xs font-medium text-gray-600">{tc("result")}</div>
+          <div className="text-xs font-medium text-slate-500 dark:text-slate-400">{tc("result")}</div>
           <div className="text-lg font-bold text-purple-700">{result}</div>
         </div>
       )}
@@ -232,7 +234,11 @@ const RLCCalculator: React.FC<CalculatorInstanceProps> = ({
         onReset={reset}
         color="purple"
       />
-      <CalculatorResult value={message} color="purple" formula={getFormula()} />
+      <CalculatorResult
+        value={message}
+        color="purple"
+        formula={<Tex tex={getFormulaTex()} display className="block" />}
+      />
     </CalculatorWindow>
   );
 };

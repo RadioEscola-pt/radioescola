@@ -53,5 +53,12 @@ screenshots/
 docs/revisao/
 
 
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
 # Impeccable design-tool state
 .impeccable/
+node_modules_old/

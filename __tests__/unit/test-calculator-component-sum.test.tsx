@@ -32,21 +32,20 @@ const defaultProps = {
 };
 
 describe("ComponentSumCalculator", () => {
-  it("renders component type select, mode buttons, and two component rows", () => {
+  it("renders both mode switches and two component rows", () => {
     render(<ComponentSumCalculator {...defaultProps} />);
 
-    // Component type select (has resistor/capacitor/inductor options)
-    const selects = screen.getAllByRole("combobox");
-    const typeSelect = selects.find((s) =>
-      Array.from(s.querySelectorAll("option")).some(
-        (o) => o.value === "resistor"
-      )
-    );
-    expect(typeSelect).toBeInTheDocument();
+    // Component type: three options on a track, all visible, resistor selected.
+    // It was a <select>, so the assertion is that the options are *present* and
+    // not folded away behind a tap.
+    for (const type of ["resistor", "capacitor", "inductor"]) {
+      expect(screen.getByRole("radio", { name: type })).toBeInTheDocument();
+    }
+    expect(screen.getByRole("radio", { name: "resistor" })).toBeChecked();
 
-    // Mode buttons
-    expect(screen.getByText("series")).toBeInTheDocument();
-    expect(screen.getByText("parallel")).toBeInTheDocument();
+    // Configuration
+    expect(screen.getByRole("radio", { name: "series" })).toBeChecked();
+    expect(screen.getByRole("radio", { name: "parallel" })).not.toBeChecked();
 
     // Two value inputs
     const inputs = screen.getAllByPlaceholderText("value");

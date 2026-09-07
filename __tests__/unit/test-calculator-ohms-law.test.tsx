@@ -63,6 +63,7 @@ describe("OhmsLawCalculator", () => {
 
     const voltageInput = screen.getByPlaceholderText("e.g. 12");
     expect(voltageInput).toHaveValue("20.000");
+    expect(screen.getByText(/P = 40.000 W/)).toBeInTheDocument();
   });
 
   it("calculates resistance from voltage and current", () => {

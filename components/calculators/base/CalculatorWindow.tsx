@@ -2,6 +2,7 @@
 
 import React from "react";
 import { X } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useDraggableWindow } from "@/hooks/useDraggableWindow";
 import type { Position, CalculatorColor } from "@/lib/types";
 
@@ -23,6 +24,9 @@ const COLOR_CLASSES: Record<CalculatorColor, { bg: string; hover: string; focus:
   orange: { bg: "bg-orange-600", hover: "hover:bg-orange-500", focus: "focus:ring-orange-500" },
   cyan: { bg: "bg-cyan-600", hover: "hover:bg-cyan-500", focus: "focus:ring-cyan-500" },
   rose: { bg: "bg-rose-600", hover: "hover:bg-rose-500", focus: "focus:ring-rose-500" },
+  amber: { bg: "bg-amber-600", hover: "hover:bg-amber-500", focus: "focus:ring-amber-500" },
+  indigo: { bg: "bg-indigo-600", hover: "hover:bg-indigo-500", focus: "focus:ring-indigo-500" },
+  teal: { bg: "bg-teal-600", hover: "hover:bg-teal-500", focus: "focus:ring-teal-500" },
 };
 
 export function CalculatorWindow({
@@ -35,6 +39,7 @@ export function CalculatorWindow({
   onFocus,
   children,
 }: CalculatorWindowProps) {
+  const t = useTranslations("Calculators.common");
   const { position, containerRef, beginDrag } = useDraggableWindow({
     initialPosition,
   });
@@ -48,6 +53,8 @@ export function CalculatorWindow({
   return (
     <div
       ref={containerRef}
+      role="dialog"
+      aria-label={title}
       className={`fixed ${width} max-w-[calc(100vw-2rem)] max-md:!left-4 select-none rounded-lg border border-slate-200 bg-white shadow-lg dark:border-slate-700 dark:bg-slate-800`}
       style={{ left: position.x, top: position.y, zIndex }}
       onPointerDown={handlePointerDown}
@@ -60,6 +67,7 @@ export function CalculatorWindow({
         <button
           type="button"
           onClick={onClose}
+          aria-label={t("close")}
           className={`rounded-md p-1 transition ${colorClasses.hover}`}
         >
           <X className="h-4 w-4" />

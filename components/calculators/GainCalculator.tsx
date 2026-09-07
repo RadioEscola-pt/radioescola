@@ -7,14 +7,26 @@ import {
   CalculatorWindow,
   CalculatorInput,
   CalculatorButtons,
+  CalculatorModeSwitch,
   CalculatorResult,
 } from "./base";
 import { registerCalculatorComponent } from "@/lib/config";
+import { Math as Tex } from "@/components/formulario/Math";
 import { gain } from "@/lib/utils";
 import { UNIT_GROUPS, parseValue, convertToBase, formatValue } from "@/lib/utils";
 import type { CalculatorInstanceProps } from "@/lib/types";
 
-type Mode = "power" | "db";
+/**
+ * The switch order, and the union. Two of the modes turn a ratio into dB and
+ * the third adds dB together, so the labels name what you feed each one rather
+ * than pretending the three are the same kind of operation.
+ */
+const MODES = [
+  { value: "power", labelKey: "powerRatio" },
+  { value: "voltage", labelKey: "voltageRatio" },
+  { value: "db", labelKey: "addDb" },
+] as const;
+type Mode = (typeof MODES)[number]["value"];
 
 interface DbStage {
   id: string;
@@ -35,6 +47,10 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
   const [power1Unit, setPower1Unit] = React.useState("W");
   const [power2, setPower2] = React.useState("");
   const [power2Unit, setPower2Unit] = React.useState("W");
+  const [voltage1, setVoltage1] = React.useState("");
+  const [voltage1Unit, setVoltage1Unit] = React.useState("V");
+  const [voltage2, setVoltage2] = React.useState("");
+  const [voltage2Unit, setVoltage2Unit] = React.useState("V");
   const [dbStages, setDbStages] = React.useState<DbStage[]>([
     { id: "1", value: "" },
     { id: "2", value: "" },
@@ -42,19 +58,37 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
   const [result, setResult] = React.useState("");
   const [message, setMessage] = React.useState("");
 
+  const promptFor = React.useCallback(
+    (m: Mode) =>
+      m === "power" ? t("enterTwoPower") : m === "voltage" ? t("enterTwoVoltage") : t("enterDbValues"),
+    [t]
+  );
+
   React.useEffect(() => {
-    setMessage(t("enterTwoPower"));
-  }, [t]);
+    setMessage(promptFor(mode));
+  }, [promptFor, mode]);
+
+  // The three modes read different fields, so a total left over from the last
+  // one is an answer to a question no longer on screen.
+  const switchMode = (next: Mode) => {
+    setMode(next);
+    setResult("");
+    setMessage(promptFor(next));
+  };
 
   const reset = () => {
     setPower1("");
     setPower2("");
+    setVoltage1("");
+    setVoltage2("");
     setDbStages([
       { id: "1", value: "" },
       { id: "2", value: "" },
     ]);
     setResult("");
-    setMessage(mode === "power" ? t("enterTwoPower") : t("enterDbValues"));
+    if (mode === "power") setMessage(t("enterTwoPower"));
+    else if (mode === "voltage") setMessage(t("enterTwoVoltage"));
+    else setMessage(t("enterDbValues"));
   };
 
   const addStage = () => {
@@ -100,6 +134,34 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
           value: formatValue(Math.abs(dB))
         })
       );
+    } else if (mode === "voltage") {
+      const v1 = parseValue(voltage1);
+      const v2 = parseValue(voltage2);
+
+      if (Number.isNaN(v1) || Number.isNaN(v2)) {
+        setMessage(t("validBothVoltages"));
+        setResult("");
+        return;
+      }
+      if (v1 <= 0 || v2 <= 0) {
+        setMessage(t("voltagePositive"));
+        setResult("");
+        return;
+      }
+
+      const v1Base = convertToBase(v1, voltage1Unit);
+      const v2Base = convertToBase(v2, voltage2Unit);
+      const dB = gain.voltageToDB(v1Base, v2Base);
+      const ratio = v2Base / v1Base;
+
+      setResult(`${formatValue(dB)} dB`);
+      setMessage(
+        t("voltageRatioResult", {
+          ratio: formatValue(ratio),
+          type: dB >= 0 ? t("gain") : t("loss"),
+          value: formatValue(Math.abs(dB))
+        })
+      );
     } else {
       const validStages = dbStages.filter((s) => s.value.trim().length > 0);
 
@@ -133,11 +195,24 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
     }
   };
 
-  const getFormula = (): string => {
+  /**
+   * The expression behind the current mode, in the notation of
+   * `/aprender/formulario`. The 10 against the 20 is the whole exam trap here —
+   * power uses 10, amplitude uses 20 — so the two live in the same shape and
+   * differ only where they should.
+   *
+   * The symbol is V rather than the formulary's U because that is what the
+   * fields above call it ("Tensão de Entrada (V1)"). Agreeing with the window
+   * you are in beats agreeing with another page.
+   */
+  const getFormulaTex = (): string => {
     if (mode === "power") {
-      return "dB = 10 × log₁₀(P₂/P₁)";
+      return String.raw`A_{\mathrm{dB}} = 10 \log_{10}\left(\frac{P_2}{P_1}\right)`;
     }
-    return "Total dB = dB₁ + dB₂ + dB₃ + ...";
+    if (mode === "voltage") {
+      return String.raw`A_{\mathrm{dB}} = 20 \log_{10}\left(\frac{V_2}{V_1}\right)`;
+    }
+    return String.raw`A_{\mathrm{dB}} = A_1 + A_2 + \cdots + A_n`;
   };
 
   return (
@@ -151,39 +226,19 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
       onFocus={onFocus}
     >
       <div>
-        <label className="mb-1 block text-xs font-medium uppercase tracking-wide text-gray-600">
+        <label
+          id={`${instanceId}-mode`}
+          className="mb-1 block text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400"
+        >
           {tc("mode")}
         </label>
-        <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={() => {
-              setMode("power");
-              setMessage(t("enterTwoPower"));
-            }}
-            className={`flex-1 rounded px-3 py-1 transition focus:outline-none focus:ring-2 focus:ring-cyan-500 ${
-              mode === "power"
-                ? "bg-cyan-600 text-white"
-                : "border border-gray-300 text-gray-700 hover:bg-gray-100"
-            }`}
-          >
-            {t("powerRatio")}
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setMode("db");
-              setMessage(t("enterDbValues"));
-            }}
-            className={`flex-1 rounded px-3 py-1 transition focus:outline-none focus:ring-2 focus:ring-cyan-500 ${
-              mode === "db"
-                ? "bg-cyan-600 text-white"
-                : "border border-gray-300 text-gray-700 hover:bg-gray-100"
-            }`}
-          >
-            {t("addDb")}
-          </button>
-        </div>
+        <CalculatorModeSwitch
+          labelId={`${instanceId}-mode`}
+          color="cyan"
+          value={mode}
+          onChange={switchMode}
+          options={MODES.map(({ value, labelKey }) => ({ value, label: t(labelKey) }))}
+        />
       </div>
 
       {mode === "power" ? (
@@ -211,10 +266,35 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
             color="cyan"
           />
         </>
+      ) : mode === "voltage" ? (
+        <>
+          <CalculatorInput
+            id={`${instanceId}-v1`}
+            label={t("inputVoltage")}
+            value={voltage1}
+            onChange={setVoltage1}
+            placeholder="e.g. 1"
+            units={UNIT_GROUPS.voltage}
+            selectedUnit={voltage1Unit}
+            onUnitChange={setVoltage1Unit}
+            color="cyan"
+          />
+          <CalculatorInput
+            id={`${instanceId}-v2`}
+            label={t("outputVoltage")}
+            value={voltage2}
+            onChange={setVoltage2}
+            placeholder="e.g. 10"
+            units={UNIT_GROUPS.voltage}
+            selectedUnit={voltage2Unit}
+            onUnitChange={setVoltage2Unit}
+            color="cyan"
+          />
+        </>
       ) : (
         <div>
           <div className="mb-2 flex items-center justify-between">
-            <label className="text-xs font-medium uppercase tracking-wide text-gray-600">
+            <label className="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
               {t("dbStages")}
             </label>
             <button
@@ -223,13 +303,13 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
               className="flex items-center gap-1 rounded bg-cyan-600 px-2 py-1 text-xs text-white transition hover:bg-cyan-500"
             >
               <Plus className="h-3 w-3" />
-              Add
+              {t("add")}
             </button>
           </div>
           <div className="max-h-48 space-y-2 overflow-y-auto">
             {dbStages.map((stage, index) => (
               <div key={stage.id} className="flex items-center gap-2">
-                <span className="text-xs text-gray-500 w-6">{index + 1}.</span>
+                <span className="w-6 text-xs text-slate-400 dark:text-slate-500">{index + 1}.</span>
                 <input
                   type="text"
                   value={stage.value}
@@ -237,7 +317,7 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
                   className="flex-1 rounded border border-gray-300 px-2 py-1 text-sm focus:border-cyan-500 focus:outline-none focus:ring"
                   placeholder={t("dbValue")}
                 />
-                <span className="text-xs text-gray-500">dB</span>
+                <span className="text-xs text-slate-400 dark:text-slate-500">dB</span>
                 {dbStages.length > 1 && (
                   <button
                     type="button"
@@ -255,7 +335,7 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
 
       {result && (
         <div className="rounded bg-cyan-50 p-2 text-center">
-          <div className="text-xs font-medium text-gray-600">{tc("result")}</div>
+          <div className="text-xs font-medium text-slate-500 dark:text-slate-400">{tc("result")}</div>
           <div className="text-lg font-bold text-cyan-700">{result}</div>
         </div>
       )}
@@ -265,7 +345,11 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
         onReset={reset}
         color="cyan"
       />
-      <CalculatorResult value={message} color="cyan" formula={getFormula()} />
+      <CalculatorResult
+        value={message}
+        color="cyan"
+        formula={<Tex tex={getFormulaTex()} display className="block" />}
+      />
     </CalculatorWindow>
   );
 };

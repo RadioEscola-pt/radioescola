@@ -1,0 +1,178 @@
+import { test, expect, type Locator, type Page } from "@playwright/test";
+
+import pt from "@/messages/pt.json";
+
+/**
+ * These tests drive the shipped app: the real NavBar, the real
+ * CalculatorProvider, the real `messages/pt.json`. Anything that can be
+ * asserted without a browser (the physics, a component in isolation) belongs in
+ * `__tests__/`, not here — this suite exists to catch the wiring that unit
+ * tests cannot see, so it stays deliberately short.
+ *
+ * The default locale is Portuguese and no cookie is set, so the UI strings
+ * asserted below are the pt ones a visitor actually gets. The menu entry uses
+ * `shortTitle` while the window uses `title`, and for four calculators those
+ * differ — hence both columns here.
+ */
+const CALCULATORS = [
+  { menu: "Lei de Ohm", title: "Lei de Ohm" },
+  { menu: "Soma Componentes", title: "Soma de Componentes" },
+  { menu: "Circuito RLC", title: "Circuito RLC" },
+  { menu: "VSWR", title: "VSWR" },
+  { menu: "Ganho", title: "Ganho" },
+  { menu: "Transformador", title: "Transformador" },
+  { menu: "Reatância", title: "Reatância" },
+  { menu: "Fator Q", title: "Fator Q e Largura de Banda" },
+  { menu: "Comprimento de Onda", title: "Comprimento de Onda e Antenas" },
+] as const;
+
+type CalculatorName = (typeof CALCULATORS)[number]["menu"];
+
+/**
+ * Opens a calculator the way a visitor does: NavBar → Aprender → Calculadoras.
+ *
+ * The nav label comes from `messages/pt.json` rather than being spelt out: it
+ * is how the test reaches the calculator, not something it asserts, and
+ * hardcoding it once cost a whole red suite when the menu was renamed from
+ * "Estudar" to "Aprender". The strings this suite is actually about — the
+ * calculator names, the labels, the results — stay written out on purpose.
+ */
+async function openCalculator(page: Page, menu: CalculatorName): Promise<Locator> {
+  const entry = CALCULATORS.find((c) => c.menu === menu)!;
+
+  await page.getByRole("button", { name: pt.NavBar.study }).click();
+  await page.getByRole("menuitem", { name: pt.NavBar.calculators }).click();
+  // Match on the item's own title node: a couple of the descriptions mention
+  // another calculator's name, so an accessible-name substring is ambiguous.
+  await page
+    .getByRole("menuitem")
+    .filter({ has: page.getByText(entry.menu, { exact: true }) })
+    .click();
+
+  const window = page.getByRole("dialog", { name: entry.title, exact: true });
+  await expect(window).toBeVisible();
+  return window;
+}
+
+test.beforeEach(async ({ page }) => {
+  await page.goto("/");
+});
+
+test("every registered calculator opens and closes from the navigation", async ({ page }) => {
+  for (const { menu, title } of CALCULATORS) {
+    const window = await openCalculator(page, menu);
+    await expect(window).toContainText(title);
+
+    await window.getByRole("button", { name: "Fechar calculadora" }).click();
+    await expect(window).toBeHidden();
+  }
+});
+
+/**
+ * The submenu is ~700px tall for nine calculators, which is taller than the
+ * viewport of an ordinary laptop once the browser's own chrome is taken off. It
+ * used to be cut off there: `overflow-hidden` with no max-height, so Radix
+ * shifted it up to the top of the screen and the rest fell off the bottom with
+ * no scrollbar and nothing able to reach it — not the wheel, not the page
+ * scroll (the panel is position: fixed), while arrow-down still put focus on
+ * items nobody could see.
+ *
+ * Only a browser can catch this: it is a collision between a measured height, a
+ * viewport, and Radix's positioning, and none of those exist in jsdom. Hence a
+ * test that does nothing but shrink the window.
+ */
+test("the calculators submenu stays reachable on a short viewport", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 600 });
+
+  await page.getByRole("button", { name: pt.NavBar.study }).click();
+  await page.getByRole("menuitem", { name: pt.NavBar.calculators }).click();
+
+  const submenu = page.getByRole("menu").last();
+  await expect(submenu).toBeVisible();
+
+  // The panel fits the window rather than running off the bottom of it.
+  const box = (await submenu.boundingBox())!;
+  expect(box.y).toBeGreaterThanOrEqual(0);
+  expect(box.y + box.height).toBeLessThanOrEqual(600);
+
+  // It is too tall for that, so the overflow has to be scrollable and not clipped.
+  await expect(submenu).toHaveCSS("overflow-y", "auto");
+  const { clientHeight, scrollHeight } = await submenu.evaluate((el) => ({
+    clientHeight: el.clientHeight,
+    scrollHeight: el.scrollHeight,
+  }));
+  expect(scrollHeight).toBeGreaterThan(clientHeight);
+
+  // The last calculator is the one that used to be lost. Reaching it by keyboard
+  // is the stricter check: focus landing somewhere invisible was the real defect.
+  // `End` rather than nine ArrowDowns: Radix moves focus on its own schedule and
+  // presses sent back to back get swallowed, which made the loop stop at the
+  // third item and fail for a reason that had nothing to do with the layout.
+  const last = CALCULATORS[CALCULATORS.length - 1]!;
+  await page.getByRole("menuitem", { name: pt.NavBar.calculators }).hover();
+  await page.keyboard.press("ArrowRight");
+  await page.keyboard.press("End");
+
+  const focused = page.locator(":focus");
+  await expect(focused).toContainText(last.menu);
+  await expect(focused).toBeInViewport({ ratio: 1 });
+});
+
+test("Ohm's law computes through the real UI", async ({ page }) => {
+  const window = await openCalculator(page, "Lei de Ohm");
+
+  await window.getByLabel("Tensão (V)").fill("12");
+  await window.getByLabel("Corrente (A)").fill("2");
+  await window.getByRole("button", { name: "Calcular" }).click();
+
+  await expect(window).toContainText(/Resistência calculada: 6/);
+});
+
+test.describe("wavelength calculator", () => {
+  test("computes antenna dimensions with the default velocity factor", async ({ page }) => {
+    const window = await openCalculator(page, "Comprimento de Onda");
+
+    await window.getByLabel("Frequência (f)").fill("14.150");
+    await window.getByRole("button", { name: "Calcular" }).click();
+
+    // λ = c / f = 21.19 m; dipole = λ/2 × 0.95 = 10.064 m
+    await expect(window).toContainText("λ = 21.19 m");
+    await expect(window).toContainText("10.064 m");
+  });
+
+  test("a velocity factor of 0.66 changes both the answer and the shown formula", async ({
+    page,
+  }) => {
+    const window = await openCalculator(page, "Comprimento de Onda");
+
+    await window.getByLabel("Frequência (f)").fill("14.150");
+    await window.getByLabel("Fator de Velocidade (k)").fill("0.66");
+
+    // The two formula constants are 150 × k and 75 × k, so they must follow the
+    // input rather than stay pinned to the 142.50 and 71.25 of the default
+    // k = 0.95. Asserted as bare numbers because KaTeX splits the expression
+    // across its own markup — matching "99.00 / f(MHz)" would be asserting the
+    // renderer, not the physics.
+    await expect(window).toContainText("99.00");
+    await expect(window).toContainText("49.50");
+    await expect(window).not.toContainText("142.50");
+
+    await window.getByRole("button", { name: "Calcular" }).click();
+    await expect(window).toContainText("6.992 m");
+  });
+
+  test("rejects an out-of-range velocity factor instead of silently using 0.95", async ({
+    page,
+  }) => {
+    const window = await openCalculator(page, "Comprimento de Onda");
+
+    await window.getByLabel("Frequência (f)").fill("14.150");
+    // 66 is the percent convention for coax — a plausible mistake that must not
+    // be silently reinterpreted as the 0.95 default.
+    await window.getByLabel("Fator de Velocidade (k)").fill("66");
+    await window.getByRole("button", { name: "Calcular" }).click();
+
+    await expect(window).toContainText("O fator de velocidade deve estar entre 0 e 1");
+    await expect(window).not.toContainText("λ = 21.19 m");
+  });
+});

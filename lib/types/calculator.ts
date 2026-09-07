@@ -14,7 +14,10 @@ export type CalculatorCode =
   | "RLC"
   | "VSWR"
   | "GAIN"
-  | "TRANSFORMER";
+  | "TRANSFORMER"
+  | "REACTANCE"
+  | "QFACTOR"
+  | "WAVELENGTH";
 
 /** Calculator metadata for registry */
 export interface CalculatorConfig {
@@ -39,7 +42,10 @@ export type CalculatorColor =
   | "purple"
   | "orange"
   | "cyan"
-  | "rose";
+  | "rose"
+  | "amber"
+  | "indigo"
+  | "teal";
 
 /** Props passed to calculator component instances */
 export interface CalculatorInstanceProps {
