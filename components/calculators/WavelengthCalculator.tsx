@@ -22,11 +22,20 @@ import {
 import type { CalculatorInstanceProps } from "@/lib/types";
 
 /**
- * Both the switch order and the union. The labels are the translation keys, so
- * a mode cannot be offered without a string to call it by.
+ * The switch order, and the union.
+ *
+ * A mode is *named* for the direction the solver runs and *labelled* for what
+ * it produces, which are opposite ends of the same arrow: `fromFrequency`
+ * yields a length, so it reads "Comprimento" on the switch. The two are kept as
+ * separate fields rather than letting the state value double as its own
+ * translation key, because that inversion is exactly the kind of thing that
+ * looks like a bug six months from now.
  */
-const MODES = ["fromFrequency", "fromLength"] as const;
-type Mode = (typeof MODES)[number];
+const MODES = [
+  { value: "fromFrequency", labelKey: "modeLength" },
+  { value: "fromLength", labelKey: "modeFrequency" },
+] as const;
+type Mode = (typeof MODES)[number]["value"];
 
 const WavelengthCalculator: React.FC<CalculatorInstanceProps> = ({
   instanceId,
@@ -179,18 +188,24 @@ const WavelengthCalculator: React.FC<CalculatorInstanceProps> = ({
       onFocus={onFocus}
     >
       <div>
+        {/*
+          "Calcular", not "Modo": the switch picks which quantity comes out, and
+          naming the verb here lets each half be the one noun it produces. The
+          word is the same as the button below on purpose — the control answers
+          "what will Calcular give me?".
+        */}
         <label
           id={`${instanceId}-mode`}
           className="mb-1 block text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400"
         >
-          {tc("mode")}
+          {t("modeLabel")}
         </label>
         <CalculatorModeSwitch
           labelId={`${instanceId}-mode`}
           color="teal"
           value={mode}
           onChange={switchMode}
-          options={MODES.map((value) => ({ value, label: t(value) }))}
+          options={MODES.map(({ value, labelKey }) => ({ value, label: t(labelKey) }))}
         />
       </div>
 
