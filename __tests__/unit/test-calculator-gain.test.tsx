@@ -58,7 +58,7 @@ describe("GainCalculator", () => {
   it("calculates gain from voltage ratio", () => {
     render(<GainCalculator {...defaultProps} />);
 
-    fireEvent.click(screen.getByRole("button", { name: "voltageRatio" }));
+    fireEvent.click(screen.getByRole("radio", { name: "voltageRatio" }));
     expect(screen.getByPlaceholderText("e.g. 1")).toBeInTheDocument();
     expect(screen.getByPlaceholderText("e.g. 10")).toBeInTheDocument();
 
@@ -73,7 +73,7 @@ describe("GainCalculator", () => {
   it("switches to dB mode and shows stage inputs", () => {
     render(<GainCalculator {...defaultProps} />);
 
-    fireEvent.click(screen.getByRole("button", { name: "addDb" }));
+    fireEvent.click(screen.getByRole("radio", { name: "addDb" }));
 
     const dbInputs = screen.getAllByPlaceholderText("dbValue");
     expect(dbInputs.length).toBe(2);
@@ -82,7 +82,7 @@ describe("GainCalculator", () => {
   it("calculates total dB from stage values", () => {
     render(<GainCalculator {...defaultProps} />);
 
-    fireEvent.click(screen.getByRole("button", { name: "addDb" }));
+    fireEvent.click(screen.getByRole("radio", { name: "addDb" }));
 
     const dbInputs = screen.getAllByPlaceholderText("dbValue");
     fireEvent.change(dbInputs[0]!, { target: { value: "3" } });
@@ -97,7 +97,7 @@ describe("GainCalculator", () => {
   it("adds a dB stage", () => {
     render(<GainCalculator {...defaultProps} />);
 
-    fireEvent.click(screen.getByRole("button", { name: "addDb" }));
+    fireEvent.click(screen.getByRole("radio", { name: "addDb" }));
 
     const addButton = screen.getByRole("button", { name: /Add/ });
     fireEvent.click(addButton);
@@ -109,7 +109,7 @@ describe("GainCalculator", () => {
   it("shows error for empty dB values", () => {
     render(<GainCalculator {...defaultProps} />);
 
-    fireEvent.click(screen.getByRole("button", { name: "addDb" }));
+    fireEvent.click(screen.getByRole("radio", { name: "addDb" }));
     fireEvent.click(screen.getByRole("button", { name: "calculate" }));
 
     expect(screen.getByText("atLeastOneDb")).toBeInTheDocument();

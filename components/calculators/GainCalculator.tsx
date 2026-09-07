@@ -7,14 +7,26 @@ import {
   CalculatorWindow,
   CalculatorInput,
   CalculatorButtons,
+  CalculatorModeSwitch,
   CalculatorResult,
 } from "./base";
 import { registerCalculatorComponent } from "@/lib/config";
+import { Math as Tex } from "@/components/formulario/Math";
 import { gain } from "@/lib/utils";
 import { UNIT_GROUPS, parseValue, convertToBase, formatValue } from "@/lib/utils";
 import type { CalculatorInstanceProps } from "@/lib/types";
 
-type Mode = "power" | "voltage" | "db";
+/**
+ * The switch order, and the union. Two of the modes turn a ratio into dB and
+ * the third adds dB together, so the labels name what you feed each one rather
+ * than pretending the three are the same kind of operation.
+ */
+const MODES = [
+  { value: "power", labelKey: "powerRatio" },
+  { value: "voltage", labelKey: "voltageRatio" },
+  { value: "db", labelKey: "addDb" },
+] as const;
+type Mode = (typeof MODES)[number]["value"];
 
 interface DbStage {
   id: string;
@@ -46,11 +58,23 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
   const [result, setResult] = React.useState("");
   const [message, setMessage] = React.useState("");
 
+  const promptFor = React.useCallback(
+    (m: Mode) =>
+      m === "power" ? t("enterTwoPower") : m === "voltage" ? t("enterTwoVoltage") : t("enterDbValues"),
+    [t]
+  );
+
   React.useEffect(() => {
-    if (mode === "power") setMessage(t("enterTwoPower"));
-    else if (mode === "voltage") setMessage(t("enterTwoVoltage"));
-    else setMessage(t("enterDbValues"));
-  }, [t, mode]);
+    setMessage(promptFor(mode));
+  }, [promptFor, mode]);
+
+  // The three modes read different fields, so a total left over from the last
+  // one is an answer to a question no longer on screen.
+  const switchMode = (next: Mode) => {
+    setMode(next);
+    setResult("");
+    setMessage(promptFor(next));
+  };
 
   const reset = () => {
     setPower1("");
@@ -171,14 +195,24 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
     }
   };
 
-  const getFormula = (): string => {
+  /**
+   * The expression behind the current mode, in the notation of
+   * `/aprender/formulario`. The 10 against the 20 is the whole exam trap here —
+   * power uses 10, amplitude uses 20 — so the two live in the same shape and
+   * differ only where they should.
+   *
+   * The symbol is V rather than the formulary's U because that is what the
+   * fields above call it ("Tensão de Entrada (V1)"). Agreeing with the window
+   * you are in beats agreeing with another page.
+   */
+  const getFormulaTex = (): string => {
     if (mode === "power") {
-      return "dB = 10 × log₁₀(P₂/P₁)";
+      return String.raw`A_{\mathrm{dB}} = 10 \log_{10}\left(\frac{P_2}{P_1}\right)`;
     }
     if (mode === "voltage") {
-      return "dB = 20 × log₁₀(V₂/V₁)";
+      return String.raw`A_{\mathrm{dB}} = 20 \log_{10}\left(\frac{V_2}{V_1}\right)`;
     }
-    return "Total dB = dB₁ + dB₂ + dB₃ + ...";
+    return String.raw`A_{\mathrm{dB}} = A_1 + A_2 + \cdots + A_n`;
   };
 
   return (
@@ -192,56 +226,19 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
       onFocus={onFocus}
     >
       <div>
-        <label className="mb-1 block text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
+        <label
+          id={`${instanceId}-mode`}
+          className="mb-1 block text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400"
+        >
           {tc("mode")}
         </label>
-        <div className="flex gap-1">
-          <button
-            type="button"
-            onClick={() => {
-              setMode("power");
-              setResult("");
-              setMessage(t("enterTwoPower"));
-            }}
-            className={`flex-1 rounded px-2 py-1 text-xs transition focus:outline-none focus:ring-2 focus:ring-cyan-500 ${
-              mode === "power"
-                ? "bg-cyan-600 text-white"
-                : "border border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
-            }`}
-          >
-            {t("powerRatio")}
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setMode("voltage");
-              setResult("");
-              setMessage(t("enterTwoVoltage"));
-            }}
-            className={`flex-1 rounded px-2 py-1 text-xs transition focus:outline-none focus:ring-2 focus:ring-cyan-500 ${
-              mode === "voltage"
-                ? "bg-cyan-600 text-white"
-                : "border border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
-            }`}
-          >
-            {t("voltageRatio")}
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setMode("db");
-              setResult("");
-              setMessage(t("enterDbValues"));
-            }}
-            className={`flex-1 rounded px-2 py-1 text-xs transition focus:outline-none focus:ring-2 focus:ring-cyan-500 ${
-              mode === "db"
-                ? "bg-cyan-600 text-white"
-                : "border border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
-            }`}
-          >
-            {t("addDb")}
-          </button>
-        </div>
+        <CalculatorModeSwitch
+          labelId={`${instanceId}-mode`}
+          color="cyan"
+          value={mode}
+          onChange={switchMode}
+          options={MODES.map(({ value, labelKey }) => ({ value, label: t(labelKey) }))}
+        />
       </div>
 
       {mode === "power" ? (
@@ -348,7 +345,11 @@ const GainCalculator: React.FC<CalculatorInstanceProps> = ({
         onReset={reset}
         color="cyan"
       />
-      <CalculatorResult value={message} color="cyan" formula={getFormula()} />
+      <CalculatorResult
+        value={message}
+        color="cyan"
+        formula={<Tex tex={getFormulaTex()} display className="block" />}
+      />
     </CalculatorWindow>
   );
 };

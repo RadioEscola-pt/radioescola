@@ -217,7 +217,7 @@ describe("Calculators Integration Tests", () => {
       expect(screen.getByText("10.000 dB")).toBeInTheDocument();
 
       // Voltage mode: 1V -> 10V = 20 dB
-      fireEvent.click(screen.getByRole("button", { name: "voltageRatio" }));
+      fireEvent.click(screen.getByRole("radio", { name: "voltageRatio" }));
       const v1 = screen.getByPlaceholderText("e.g. 1");
       const v2 = screen.getByPlaceholderText("e.g. 10");
       fireEvent.change(v1, { target: { value: "1" } });
