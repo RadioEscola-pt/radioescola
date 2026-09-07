@@ -208,33 +208,16 @@
   animation: result-pop 0.25s ease-out;
 }
 
-/* Site logo radio broadcast effect */
-.logo-radio-icon path {
+/* Site logo radio broadcast effect.
+   `.logo-signal` is the red antenna/resistor/ground inside LogoMark and
+   LogoLockup — the parts that carry the signal, so they are the parts that
+   pulse. Keyed off `.logo-link` alone so both components are covered. */
+.logo-signal {
   transition: opacity 0.3s ease-out;
 }
 
-.logo-link:hover .logo-radio-icon path {
+.logo-link:hover .logo-signal {
   animation: signal-pulse 1.2s ease-out infinite;
-}
-
-.logo-link:hover .logo-radio-icon path:nth-child(1) {
-  animation-delay: 0.15s;
-}
-
-.logo-link:hover .logo-radio-icon path:nth-child(2) {
-  animation-delay: 0s;
-}
-
-.logo-link:hover .logo-radio-icon path:nth-child(3) {
-  animation-delay: 0s;
-}
-
-.logo-link:hover .logo-radio-icon path:nth-child(4) {
-  animation-delay: 0.15s;
-}
-
-.logo-link:hover .logo-radio-icon circle {
-  animation: center-glow 1.2s ease-out infinite;
 }
 
 @keyframes signal-pulse {
@@ -243,15 +226,6 @@
   }
   40% {
     opacity: 1;
-  }
-}
-
-@keyframes center-glow {
-  0%, 100% {
-    filter: drop-shadow(0 0 0px currentColor);
-  }
-  40% {
-    filter: drop-shadow(0 0 3px currentColor);
   }
 }
 
@@ -322,8 +296,7 @@
     animation: none;
   }
 
-  .logo-link:hover .logo-radio-icon path,
-  .logo-link:hover .logo-radio-icon circle {
+  .logo-link:hover .logo-signal {
     animation: none;
   }
 }

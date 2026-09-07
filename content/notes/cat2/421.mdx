@@ -1,0 +1,7 @@
+**Num emissor de FM, a malha de captura de fase contém obrigatoriamente um oscilador controlado por tensão, onde entra o sinal modulante.**
+
+Uma malha de captura de fase (PLL) é um circuito realimentado com três blocos essenciais: um **comparador de fase**, que compara a saída com uma referência estável (normalmente derivada de um cristal); um **filtro passa-baixo de malha**, que converte essa comparação numa tensão contínua de erro; e um **oscilador controlado por tensão (VCO)**, cuja frequência depende da tensão aplicada à sua entrada de controlo. A tensão de erro corrige continuamente o VCO, prendendo-o à referência — daí o nome. É o VCO que gera efetivamente a portadora, com a estabilidade do cristal.
+
+Para produzir FM basta somar o **sinal modulante** à tensão de controlo do VCO: as variações do áudio fazem a frequência da portadora desviar-se para cima e para baixo em torno do valor central — exatamente a definição de modulação de frequência. Por isso o VCO é o bloco obrigatório, e é nele que o sinal modulante entra.
+
+Quanto às restantes hipóteses: o filtro da malha é passa-baixo, não passa-alto, e as harmónicas do sinal modulante limitam-se precisamente com filtragem passa-baixo; um amplificador de RF trabalha com radiofrequência, pelo que não faz sentido nele entrar o sinal modulante, que é de audiofrequência; e, estando certa a afirmação sobre o VCO, a hipótese de nenhuma resposta estar correta cai por si.

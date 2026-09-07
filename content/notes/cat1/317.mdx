@@ -1,5 +1,0 @@
-O único destes códigos com elementos de comprimento variável é o **código Morse**.
-
-No Morse, cada carácter é representado por uma sequência própria de pontos e traços, e essas sequências não têm todas o mesmo tamanho: o E é um único ponto, o T um único traço, mas um algarismo como o 0 são cinco traços. O código foi aliás desenhado assim de propósito, atribuindo os símbolos mais curtos às letras mais frequentes, o que o torna uma forma primitiva de codificação de comprimento variável (a mesma ideia que mais tarde formalizou a codificação de Huffman). É por isso que a descodificação de Morse exige espaços de separação entre elementos, letras e palavras: sem eles não se saberia onde acaba um carácter e começa o seguinte.
-
-Os restantes são códigos de comprimento fixo. O Baudot usa exatamente 5 bits por carácter (é o código clássico do RTTY), o ASCII usa 7 bits por carácter (8 com paridade) e o AX.25, o protocolo de packet radio derivado do HDLC, transporta os dados em octetos de 8 bits dentro de tramas de estrutura bem definida. Em qualquer deles, todos os caracteres ocupam o mesmo número de bits, pelo que o recetor sabe à partida onde cada um termina.

@@ -14,10 +14,19 @@ import { toggleBookmark } from '@/lib/storage/localStorage';
 import { QuestionFilters, useTopicCounts } from '@/components/QuestionFilters';
 import { questionMatches } from '@/lib/utils';
 import { isTopicSlug } from '@/lib/config';
+import {
+  ORDER_PARAM,
+  browseHref,
+  dealRanks,
+  isRandomOrder,
+  orderQuestions,
+  type QuestionRanks,
+} from '@/lib/browse/order';
 
 export default function BrowsePage() {
   const params = useParams();
   const [category, setCategory] = useState<Category | null>(null);
+  const [ranks, setRanks] = useState<QuestionRanks | null>(null);
   const categoryId = typeof params.category === 'string'
     ? params.category
     : Array.isArray(params.category)
@@ -31,16 +40,27 @@ export default function BrowsePage() {
   const searchParams = useSearchParams();
   const [search, setSearch] = useState('');
 
-  // The topic lives in the URL so the dashboard can link straight to a weak
-  // area; the search does not, because a query is a passing question and
-  // pushing one per keystroke would bury the back button.
+  // The topic and the order live in the URL so the dashboard can link straight
+  // to a weak area and a shuffled page can be shared; the search does not,
+  // because a query is a passing question and pushing one per keystroke would
+  // bury the back button.
   const topicParam = searchParams.get('topic');
   const activeTopic = topicParam && isTopicSlug(topicParam) ? topicParam : null;
+  const randomOrder = isRandomOrder(searchParams.get(ORDER_PARAM));
 
-  const setTopic = useCallback((slug: string | null) => {
-    const base = `/browse/${categoryId}`;
-    router.push(slug ? `${base}?topic=${slug}` : base);
-  }, [router, categoryId]);
+  // Either control has to carry the other's state through the URL.
+  const navigate = useCallback((next: { topic?: string | null; random?: boolean }) => {
+    router.push(browseHref(categoryId, { topic: activeTopic, random: randomOrder, ...next }));
+  }, [router, categoryId, activeTopic, randomOrder]);
+
+  const setTopic = useCallback(
+    (slug: string | null) => navigate({ topic: slug }),
+    [navigate]
+  );
+  const setRandomOrder = useCallback(
+    (on: boolean) => navigate({ random: on }),
+    [navigate]
+  );
 
   const isBookmarked = useCallback((questionId: number) => {
     const key = `cat${categoryId}_${questionId}`;
@@ -64,7 +84,12 @@ export default function BrowsePage() {
 
   useEffect(() => {
     loadData().then((data) => {
-      setCategory(data.categories[categoryId] ?? null);
+      const loaded = data.categories[categoryId] ?? null;
+      setCategory(loaded);
+      // Dealt on load rather than when the toggle flips: the order is a
+      // property of the visit, so turning it off to look something up and back
+      // on again lands on the page you left, and a reload is the reshuffle.
+      setRanks(loaded ? dealRanks(loaded.questions.map((q) => q.id)) : null);
     });
   }, [categoryId]);
 
@@ -81,6 +106,11 @@ export default function BrowsePage() {
   // Matches outside the active topic, to tell an empty result which of the two
   // conditions is the one to drop.
   const elsewhere = searched.length - visible.length;
+  // Ordering last: it reorders what survived the filters, never what they see.
+  const ordered = useMemo(
+    () => orderQuestions(visible, randomOrder ? ranks : null),
+    [visible, randomOrder, ranks]
+  );
 
   // Questions load after the native anchor scroll would have fired, so honor
   // #q-{id} links (e.g. from the dashboard's weak areas) once they render.
@@ -94,11 +124,11 @@ export default function BrowsePage() {
     // The search box needs no such handling: it starts empty on every
     // navigation, so it cannot be stale when a hash arrives.
     if (activeTopic) {
-      router.replace(`/browse/${categoryId}`);
+      router.replace(browseHref(categoryId, { random: randomOrder }));
       return;
     }
     document.querySelector(hash)?.scrollIntoView();
-  }, [category, activeTopic, router, categoryId]);
+  }, [category, activeTopic, randomOrder, router, categoryId]);
 
   const handleLaunchCalculator = useCallback((code: string) => {
     openCalculator(code as CalculatorCode);
@@ -124,6 +154,8 @@ export default function BrowsePage() {
         onTopicChange={setTopic}
         search={search}
         onSearchChange={setSearch}
+        randomOrder={randomOrder}
+        onRandomOrderChange={setRandomOrder}
       />
       <section className="sm:px-0">
         {visible.length === 0 && (
@@ -153,7 +185,7 @@ export default function BrowsePage() {
             )}
           </div>
         )}
-        {visible.map((q) => {
+        {ordered.map((q) => {
           // Position in the unfiltered bank: a question keeps one number in
           // every view, so it stays something you can refer to and link to.
           const idx = category.questions.indexOf(q);

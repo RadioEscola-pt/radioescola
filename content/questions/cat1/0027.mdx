@@ -9,8 +9,6 @@ answers:
   - text: A sistemas de adaptação de impedâncias
 topic: teoria
 ---
-A21
-
 As siglas CRC e FEC estão associadas a **sistemas de deteção de erros em transmissão de dados**.
 
 CRC significa *Cyclic Redundancy Check* (verificação por redundância cíclica). O emissor trata o bloco de dados como um polinómio binário, divide-o por um polinómio gerador conhecido de ambos os lados e acrescenta o resto dessa divisão ao fim do bloco. O recetor repete a divisão: se o resto não for o esperado, houve erros no percurso. O CRC apenas deteta, não corrige, pelo que normalmente desencadeia um pedido de retransmissão (é o esquema usado, por exemplo, nas tramas do packet radio AX.25).

@@ -1,7 +1,0 @@
-A vantagem dos dispositivos CMOS sobre os TTL é o **baixo consumo de energia**.
-
-Uma porta CMOS é construída com um par complementar de transístores MOS (um de canal N e um de canal P) ligados em série entre a alimentação e a massa. Em qualquer estado lógico estável, um dos transístores está ao corte, pelo que praticamente não circula corrente entre a alimentação e a massa: o consumo em repouso reduz-se a correntes de fuga da ordem dos nanoamperes. A energia é gasta sobretudo durante as comutações, ao carregar e descarregar as capacidades dos nós (o consumo dinâmico cresce com C × V² × f), pelo que a baixas frequências de relógio o consumo é mínimo.
-
-A lógica TTL, sendo bipolar, funciona de forma diferente: os transístores precisam de corrente de base permanente e as resistências internas de polarização conduzem mesmo com as saídas paradas. Um circuito TTL consome portanto uma corrente apreciável em repouso, independentemente de estar ou não a comutar.
-
-As restantes opções estão erradas: nem CMOS nem TTL têm, como característica de família, saídas diferenciais (isso é próprio de famílias como ECL ou LVDS); "baixa distorção" é um critério de circuitos analógicos, sem sentido como figura de mérito de lógica digital; e a imunidade a descargas estáticas é precisamente o contrário da realidade, pois o óxido fino da porta dos transístores MOS torna o CMOS mais vulnerável a danos por eletricidade estática do que o TTL, exigindo proteções internas e cuidados de manuseamento.

@@ -4,10 +4,16 @@ import { EXAM_CONFIG } from "@/lib/config";
 describe("Contract: Exam Config", () => {
   it("should have valid exam configuration values", () => {
     expect(EXAM_CONFIG.DURATION_SECONDS).toBe(3600);
-    expect(EXAM_CONFIG.QUESTIONS_PER_PAGE).toBe(10);
+    expect(EXAM_CONFIG.QUESTIONS_PER_PAGE).toBe(40);
     expect(EXAM_CONFIG.MAX_QUESTIONS).toBe(40);
     expect(EXAM_CONFIG.PASSING_SCORE).toBe(20);
     expect(EXAM_CONFIG.WRONG_ANSWER_PENALTY).toBe(0.25);
+  });
+
+  it("should fit the whole exam on one page, as the real exam does", () => {
+    expect(EXAM_CONFIG.QUESTIONS_PER_PAGE).toBeGreaterThanOrEqual(
+      EXAM_CONFIG.MAX_QUESTIONS
+    );
   });
 
   it("should have immutable config (as const)", () => {

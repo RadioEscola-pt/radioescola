@@ -22,6 +22,7 @@ import {
   serializeManifest,
   CategoryManifestSchema,
   MANIFEST_FILE,
+  loadMissingExamsBaseline,
   type CategoryManifest,
 } from "../lib/content/build";
 import { serializeQuestionFile } from "../lib/content/source";
@@ -101,14 +102,27 @@ export function loadManifest(category: CategoryId): CategoryManifest {
   );
 }
 
+/**
+ * The baseline of known-absent papers, read once.
+ *
+ * Read through `loadMissingExamsBaseline` rather than parsed here, so the
+ * authoring tools and `content:check` cannot drift into disagreeing about
+ * which papers are tolerated.
+ */
+let missingExams: Set<string> | null = null;
+const isBaselined = (pdf: string): boolean =>
+  (missingExams ??= loadMissingExamsBaseline(ROOT)).has(pdf);
+
 /** Existence of an exam PDF, with the wrong-prefix hint `findDanglingPdfs` gives. */
-export function pdfLookup(pdf: string): { exists: boolean; alsoIn: string[] } {
-  if (existsSync(join(EXAMS_DIR, `${pdf}.pdf`))) return { exists: true, alsoIn: [] };
+export function pdfLookup(pdf: string): { exists: boolean; baselined: boolean; alsoIn: string[] } {
+  if (existsSync(join(EXAMS_DIR, `${pdf}.pdf`))) {
+    return { exists: true, baselined: false, alsoIn: [] };
+  }
   const stem = pdf.slice(pdf.indexOf("/") + 1);
   const alsoIn = CATEGORIES.filter(
     (c) => `cat${c}` !== pdf.split("/")[0] && existsSync(join(EXAMS_DIR, `cat${c}`, `${stem}.pdf`))
   ).map((c) => `cat${c}`);
-  return { exists: false, alsoIn };
+  return { exists: false, baselined: isBaselined(pdf), alsoIn };
 }
 
 export const imageExists = (rel: string) => existsSync(join(PUBLIC_DIR, rel));
@@ -272,14 +286,16 @@ export async function askSources(): Promise<Draft["sources"]> {
     });
     if (pdf.length === 0) return sources;
 
-    const { exists, alsoIn } = pdfLookup(pdf);
+    const { exists, baselined, alsoIn } = pdfLookup(pdf);
     console.log(
       exists
         ? `  ${green("✓")} ${dim("existe em public/exams")}`
         : `  ${yellow("!")} ${dim(
             alsoIn.length > 0
               ? `não existe aqui, mas existe em ${alsoIn.join(", ")}`
-              : "não existe em public/exams"
+              : baselined
+                ? "não existe em public/exams, mas está baselinado"
+                : "não existe em public/exams"
           )}`
     );
 

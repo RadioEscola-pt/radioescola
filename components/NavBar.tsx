@@ -1,7 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { Home, BookOpen, FileText, Calculator, ChevronDown, Upload, GraduationCap, BarChart3, UserCircle, Globe, Zap, Radio, TrendingUp } from "lucide-react";
+import { Home, BookOpen, FileText, Calculator, ChevronDown, Upload, GraduationCap, BarChart3, UserCircle, Globe, Zap, TrendingUp, Sigma } from "lucide-react";
+import LogoMark from "@/components/brand/LogoMark";
+import LogoWordmark from "@/components/brand/LogoWordmark";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,6 +23,7 @@ import ThemeToggle from "./ThemeToggle";
 import MobileNav from "./MobileNav";
 import { useCalculators } from "@/components/providers/CalculatorProvider";
 import { CATEGORIES, CATEGORY_CONFIG } from "@/lib/config/categories";
+import { navSections } from "@/lib/nav-sections";
 import type { CalculatorCode } from "@/lib/types";
 
 export default function NavBar() {
@@ -30,13 +33,7 @@ export default function NavBar() {
   const tc = useTranslations("Calculators");
   const pathname = usePathname();
 
-  const section = {
-    home: pathname === "/",
-    study: ["/browse", "/study", "/drill"].some((p) => pathname.startsWith(p)),
-    exams: pathname.startsWith("/exam") || pathname.startsWith("/submit-exam"),
-    nation: pathname.startsWith("/estado-da-nacao"),
-    becomeHam: pathname.startsWith("/ser-radioamador"),
-  };
+  const section = navSections(pathname);
 
   const calculators = getAllCalculators();
 
@@ -48,8 +45,8 @@ export default function NavBar() {
     <header className="sticky top-0 z-50 border-b border-slate-200/50 bg-slate-50/70 backdrop-blur-xl dark:border-slate-700/50 dark:bg-slate-900/70">
       <div className="container mx-auto flex h-14 items-center justify-between px-4">
         <Link href="/" className="logo-link flex shrink-0 items-center gap-2 whitespace-nowrap font-bold text-lg text-slate-800 transition-colors hover:text-amber-700 dark:text-slate-100 dark:hover:text-amber-300">
-          <Radio className="logo-radio-icon h-5 w-5 text-amber-600 dark:text-amber-400" />
-          <span className="tracking-tight">Rádio Escola</span>
+          <LogoMark className="h-10 w-auto shrink-0 text-slate-900 dark:text-white" />
+          <LogoWordmark className="h-5 w-auto text-slate-900 dark:text-white" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -72,21 +69,27 @@ export default function NavBar() {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-[480px] p-0">
               {/* Top: quick actions */}
-              <div className="p-1.5 flex gap-1">
-                <DropdownMenuItem asChild className="flex-1 whitespace-nowrap">
+              <div className="p-1.5 grid grid-cols-2 gap-1">
+                <DropdownMenuItem asChild className="whitespace-nowrap">
                   <Link href="/drill" className="cursor-pointer">
                     <Zap className="mr-2 h-4 w-4 text-amber-500" />
                     {t("quickDrill")}
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild className="flex-1 whitespace-nowrap">
-                  <Link href="/study" className="cursor-pointer">
+                <DropdownMenuItem asChild className="whitespace-nowrap">
+                  <Link href="/aprender" className="cursor-pointer">
                     <BookOpen className="mr-2 h-4 w-4" />
                     {t("studyLibrary")}
                   </Link>
                 </DropdownMenuItem>
+                <DropdownMenuItem asChild className="whitespace-nowrap">
+                  <Link href="/aprender/formulario" className="cursor-pointer">
+                    <Sigma className="mr-2 h-4 w-4 text-violet-500" />
+                    {t("formulary")}
+                  </Link>
+                </DropdownMenuItem>
                 <DropdownMenuSub>
-                  <DropdownMenuSubTrigger className="flex-1 whitespace-nowrap">
+                  <DropdownMenuSubTrigger className="whitespace-nowrap">
                     <Calculator className="mr-2 h-4 w-4" />
                     {t("calculators")}
                   </DropdownMenuSubTrigger>

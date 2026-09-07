@@ -10,7 +10,7 @@
   "NavBar": {
     "home": "Home",
     "dashboard": "Progress",
-    "study": "Study",
+    "study": "Learn",
     "browse": "Browse",
     "browseFlashcards": "Flashcards",
     "browseComplete": "Complete",
@@ -39,7 +39,10 @@
       "3": "Beginner",
       "2": "Intermediate",
       "1": "Advanced"
-    }
+    },
+    "formulary": "Formula Sheet",
+    "close": "Close",
+    "categoryPicker": "Category"
   },
   "Footer": {
     "quickDrill": "Quick Drill",
@@ -54,7 +57,8 @@
     "app": "App",
     "donate": "Support",
     "slogan": "Made by amateur radio operators, for (future) amateur radio operators",
-    "supporters": "Supporters"
+    "supporters": "Supporters",
+    "formulary": "Formula Sheet"
   },
   "Browse": {
     "emptyClear": "Clear search",
@@ -66,9 +70,13 @@
     "flashNext": "Next question",
     "flashNoQuestions": "There are no questions available for this category yet.",
     "flashNotFound": "We could not find category {id}. Try choosing a category from the Browse menu.",
+    "flashReviewed": "{count} reviewed",
     "flashSubtitle": "Practice one random question at a time. Reviewed {count} so far.",
     "flashTitle": "Flashcards Category {id}",
     "loading": "Loading questions...",
+    "orderRandom": "Random",
+    "orderRandomHint": "Shuffles the question order. Reloading the page deals a new one.",
+    "orderRandomLabel": "Random order",
     "questionCount": "{count} questions",
     "resultCount": "{shown} of {total}",
     "searchClear": "Clear search",
@@ -226,13 +234,24 @@
     "page": "Page {current} / {total}",
     "takeAnother": "Take Another",
     "endQuiz": "End Quiz",
+    "viewQuestions": "View Questions",
     "viewResults": "View Results",
+    "shuffle": {
+      "label": "Shuffle options",
+      "confirmTitleOn": "Shuffle the options?",
+      "confirmTitleOff": "Stop shuffling the options?",
+      "confirmBody": "The option order can only change in a new exam, so this one restarts from scratch. The answers you have given are lost.",
+      "cancel": "Cancel",
+      "restart": "Restart"
+    },
     "resultsSubtitle": "Results",
     "score": "Score: {score} / {total}",
     "questionId": "ID: {id}",
     "correct": "Correct",
     "incorrect": "Incorrect",
-    "unanswered": "Unanswered"
+    "unanswered": "Unanswered",
+    "clearAnswer": "Clear answer",
+    "clearAnswerFor": "Clear the answer to question {number}"
   },
   "Calculators": {
     "common": {
@@ -524,6 +543,12 @@
     "tabs": {
       "summary": "Summary",
       "review": "Review"
+    },
+    "studyAreas": {
+      "title": "Where to study next",
+      "subtitle": "The topics this exam found weakest, hardest first.",
+      "missed": "{missed} of {total} missed",
+      "practice": "Practise"
     },
     "status": {
       "passed": "You Passed!",
@@ -949,15 +974,56 @@
         "description": "Study the official syllabus with real exam questions, quick drills and flashcards."
       },
       "exam": {
-        "title": "Written theory paper",
-        "description": "Attend at the venue ANACOM assigns, with photo ID. The paper is multiple choice, with a penalty for wrong answers."
+        "title": "Theory exam",
+        "description": "Attend at the venue ANACOM assigns, with photo ID. The exam is sat on a computer: 40 multiple-choice questions, with a penalty for wrong answers."
       },
       "licence": {
         "title": "CAN and callsign",
         "description": "You receive the certificate, valid for 10 years, and your callsign. An individual station no longer needs a licence — you can start operating."
       }
     },
-    "examProcessNote": "Common-use stations, unlike individual ones, still need a licence."
+    "examProcessNote": "Common-use stations, unlike individual ones, still need a licence.",
+    "examDayTitle": "On the day",
+    "examDayIntro": "The exam is sat on a computer, and everything you need is already on the desk. You bring nothing — and you may bring nothing.",
+    "examDay": {
+      "providedLabel": "Waiting on the desk",
+      "provided": {
+        "paper": {
+          "title": "Blank paper",
+          "body": "For rough work and for the arithmetic."
+        },
+        "calculator": {
+          "title": "Scientific calculator",
+          "body": "Provided at the venue. You do not need to bring your own."
+        },
+        "pen": {
+          "title": "A pen",
+          "body": "Provided as well."
+        }
+      },
+      "forbiddenLabel": "Not allowed",
+      "forbiddenTitle": "No reference material",
+      "forbiddenBody": "You may not take outside information into the room — and that includes formula sheets. Any expression you need has to be in your head, which is why it pays to practise the calculations unaided before the day.",
+      "stepsTitle": "How the exam runs",
+      "steps": {
+        "start": {
+          "title": "You start when you are ready",
+          "body": "The exam only begins when you click to start it. Settle in first; there is no rush."
+        },
+        "screen": {
+          "title": "All 40 questions on one screen",
+          "body": "They appear together, with no pages. You can answer in any order and go back as often as you like — clear the ones you know straight away and save your time for the rest."
+        },
+        "clear": {
+          "title": "You can clear an answer",
+          "body": "Every question has a button that clears your answer and leaves it blank. On a question you are not confident about, that is not giving up: blank scores 0, wrong scores −0.25."
+        },
+        "submit": {
+          "title": "Submit, and you know at once",
+          "body": "When you submit, a table shows your score and the result: pass or fail. There is no waiting for it."
+        }
+      }
+    }
   },
   "Share": {
     "title": "Share",

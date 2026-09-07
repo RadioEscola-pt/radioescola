@@ -9,16 +9,28 @@ import { cn } from '@/lib/utils';
 import type { GamificationResult } from '@/lib/types/gamification';
 import { ShareButton } from './ShareButton';
 import { createExamResultShare } from '@/lib/share';
+import { QuestionExplanation } from './QuestionExplanation';
+import Link from 'next/link';
+import { useLocale } from 'next-intl';
+import { topicShortLabel } from '@/lib/config';
+import { weakTopics } from '@/lib/exam/weak-topics';
+import { TopicIcon, topicTileClass } from './TopicIcon';
 
 type AnswerStatus = 'correct' | 'incorrect' | 'unanswered';
 
 interface ReviewAnswer {
   index: number;
+  /** The bank id, which is what `/api/notes` is addressed by. */
+  questionId: number;
   question: string;
   options: string[];
   selectedIndex: number | undefined;
   correctIndex: number;
   status: AnswerStatus;
+  hasNotesMdx?: boolean;
+  notes?: string | null;
+  /** The shipped name for the source's `topic`; drives the study advice. */
+  materia?: string | null;
 }
 
 export interface ExamResultsProps {
@@ -86,7 +98,11 @@ export function ExamResults({
   gamificationEnabled = false,
 }: ExamResultsProps) {
   const t = useTranslations('ExamResults');
+  // The explanation reuses the question card's copy — it is the same label
+  // answering the same question, and two spellings of it would drift.
+  const tq = useTranslations('QuestionCard');
   const tGamification = useTranslations('Gamification');
+  const locale = useLocale();
   const passed = score >= passingScore;
   const isPerfect = score === totalQuestions;
   const [filter, setFilter] = useState<'all' | AnswerStatus>('all');
@@ -143,6 +159,8 @@ export function ExamResults({
     incorrect: reviewAnswers.filter(a => a.status === 'incorrect').length,
     unanswered: reviewAnswers.filter(a => a.status === 'unanswered').length,
   }), [reviewAnswers]);
+
+  const studyAreas = useMemo(() => weakTopics(reviewAnswers), [reviewAnswers]);
 
   const filteredAnswers = useMemo(() =>
     filter === 'all' ? reviewAnswers : reviewAnswers.filter(a => a.status === filter),
@@ -300,6 +318,59 @@ export function ExamResults({
         <ShareButton content={shareContent} iconOnly />
       </div>
 
+      {/* What to study next. Absent after a flawless attempt: there is nothing
+          to advise, and an empty panel would read as a broken one. */}
+      {studyAreas.length > 0 && (
+        <section className="mx-4 sm:mx-0 mt-8">
+          <h2 className="text-lg font-semibold text-foreground mb-1">{t('studyAreas.title')}</h2>
+          <p className="text-sm text-muted-foreground mb-4">{t('studyAreas.subtitle')}</p>
+          <ul className="space-y-2">
+            {studyAreas.map((topic) => {
+              const label = topicShortLabel(topic.slug, locale) ?? topic.slug;
+              const missedShare = Math.round((topic.missed / topic.total) * 100);
+              return (
+                <li
+                  key={topic.slug}
+                  className="flex items-center gap-3 rounded-lg border border-border bg-card px-3 py-3 sm:px-4"
+                >
+                  {/* Colour identifies the topic; the bar below stays amber,
+                      which is what carries "this is the gap". */}
+                  <span className={cn(
+                    "shrink-0 grid place-items-center w-9 h-9 rounded-lg",
+                    topicTileClass(topic.slug) || "bg-muted text-muted-foreground"
+                  )}>
+                    <TopicIcon slug={topic.slug} className="w-[18px] h-[18px]" />
+                  </span>
+
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-baseline justify-between gap-3">
+                      <span className="font-medium text-foreground truncate">{label}</span>
+                      <span className="text-xs text-muted-foreground tabular-nums whitespace-nowrap">
+                        {t('studyAreas.missed', { missed: topic.missed, total: topic.total })}
+                      </span>
+                    </div>
+                    <div className="mt-2 h-1.5 rounded-full bg-muted overflow-hidden">
+                      <div
+                        className="h-full rounded-full bg-amber-500 dark:bg-amber-400"
+                        style={{ width: `${missedShare}%` }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* The only interactive thing in the row: a link dressed as a
+                      button reads as an action, and keeps one tab stop per topic. */}
+                  <Button asChild size="sm" variant="outline" className="shrink-0">
+                    <Link href={`/browse/${category}?topic=${encodeURIComponent(topic.slug)}`}>
+                      {t('studyAreas.practice')}
+                    </Link>
+                  </Button>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
+
       {/* Review Section */}
       <section className="mx-4 sm:mx-0 mt-8">
         <h2 className="text-lg font-semibold text-foreground mb-4">{t('tabs.review')}</h2>
@@ -411,6 +482,16 @@ export function ExamResults({
                       );
                     })}
                   </div>
+                  {/* Mounted with the open panel, so only the question being
+                      reviewed fetches its explanation, not all forty. */}
+                  <QuestionExplanation
+                    categoryId={category}
+                    questionId={item.questionId}
+                    hasNotesMdx={item.hasNotesMdx}
+                    inlineNotes={item.notes}
+                    className="mt-3 pt-3 border-t border-border/60 text-sm"
+                    heading={<p className="mb-2 font-semibold text-foreground">{tq('explanation')}</p>}
+                  />
                 </AccordionContent>
               </AccordionItem>
             ))}

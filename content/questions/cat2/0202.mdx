@@ -16,4 +16,16 @@ sources:
     question: 16
   - pdf: cat2/2018_06_19
     question: 17
+  - pdf: cat2/2026_08_31
+    question: 15
+    page: 4
 ---
+**A potência aparente radiada é de 15 dBW.**
+
+O decibel é uma escala **logarítmica**, e é isso que torna esta conta tão simples. Multiplicar potências em unidades lineares corresponde a **somar** os seus valores em dB — porque o logaritmo de um produto é a soma dos logaritmos. O ganho da antena multiplica a potência que lhe é entregue; em dB, essa multiplicação vira uma adição:
+
+p.a.r. = potência entregue + ganho da antena = 10 dBW + 5 dBd = **15 dBW**
+
+O resultado mantém a unidade dBW porque o dBW é uma potência referida a 1 W, enquanto o ganho em dBd é uma razão pura (relativa a um dipolo de meia onda), sem dimensão. Somar uma potência em dBW com um ganho em dB dá sempre uma potência em dBW. Para confirmar em unidades lineares: 10 dBW são 10 W e 5 dBd é um ganho de cerca de 3,16 vezes, portanto a p.a.r. vale aproximadamente 31,6 W — que é precisamente 15 dBW.
+
+As opções em watts falham porque convertem mal a escala: 15 W seriam apenas cerca de 11,8 dBW, e 50 W resultariam de tratar os dB como se fossem fatores lineares (10 × 5), o que ignora por completo a natureza logarítmica do decibel. E 50 dBW seria uma potência absurda para o problema — 100 000 W —, obtida multiplicando os valores em dB quando a operação correta é somá-los.

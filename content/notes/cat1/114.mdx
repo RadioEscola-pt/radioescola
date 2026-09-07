@@ -1,5 +1,3 @@
-A92
-
 R1 e R2 servem para estabelecer a **polarização fixa** da base do transístor Q1.
 
 As duas resistências formam um divisor de tensão entre Vcc e a massa, e a base está ligada ao ponto intermédio. Desprezando a corrente de base (o divisor é dimensionado para que a sua corrente seja muito maior do que ela), a tensão da base fica fixada em V<sub>B</sub> = Vcc × R2 / (R1 + R2), um valor que depende apenas de Vcc e da razão das resistências, e não do transístor. Fixada V<sub>B</sub>, a tensão no emissor fica V<sub>E</sub> = V<sub>B</sub> − V<sub>BE</sub> (cerca de 0,7 V abaixo), e a corrente de repouso fica definida por V<sub>E</sub>/R4. É este esquema que garante um ponto de funcionamento estável, praticamente insensível às variações do ganho β entre transístores e à temperatura.

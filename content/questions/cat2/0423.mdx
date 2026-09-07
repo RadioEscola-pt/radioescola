@@ -1,0 +1,27 @@
+---
+id: 423
+question: >-
+  Que circuito é usado para processar os sinais provenientes do amplificador de
+  IF e do BFO e os envia posteriormente para o amplificador de AF num recetor
+  super-heterodino de fonia em banda lateral única?
+answers:
+  - text: Oscilador de RF
+  - text: Filtro IF
+  - text: Modulador balanceado
+  - text: Detetor de produto
+    correct: true
+topic: recetores
+sources:
+  - pdf: cat2/2026_09_03
+    question: 10
+    page: 3
+---
+**O circuito que combina o sinal de FI com o do BFO e produz o áudio é o detetor de produto.**
+
+Num sinal de banda lateral única a portadora é suprimida na emissão — só se transmite uma das bandas laterais. O recetor fica, por isso, sem a referência que lhe permitiria recuperar a modulação diretamente: para desmodular SSB é preciso **reinserir a portadora localmente**. É esse o papel do **BFO** (oscilador de frequência de batimento), que gera um sinal à frequência onde a portadora estaria, na banda de FI.
+
+O **detetor de produto** é um misturador que **multiplica** o sinal vindo do amplificador de FI pelo sinal do BFO. Da multiplicação resultam a soma e a diferença das frequências; a diferença cai na gama áudio (300 Hz a 3 kHz) e é exatamente a voz original, que segue para o amplificador de AF. A soma, em RF, é eliminada por filtragem. Daí o nome: a saída é o *produto* dos dois sinais. Na prática o radioamador vive com isto todos os dias — quando a voz sai "de pato" ou grave demais, está a corrigir a frequência do BFO (ou do VFO) até a portadora reinserida coincidir com o sítio certo, e é também por isso que um recetor SSB tem de escolher entre USB e LSB.
+
+Repare-se que o **detetor de envolvente** dos recetores de AM (um simples díodo e condensador) não serve aqui: só funciona porque a portadora presente na AM lhe dá uma envolvente a seguir. Sem portadora não há envolvente que corresponda ao áudio, e a saída é ininteligível. Foi essa limitação que obrigou a inventar o detetor de produto.
+
+As restantes opções são outros andares. O **oscilador de RF** (o oscilador local ou VFO) alimenta o primeiro misturador para converter o sinal recebido para a FI; não recebe sinal de FI nem produz áudio. O **filtro IF** está *antes* do detetor: é ele que dá a seletividade, deixando passar apenas a banda lateral pretendida, mas não desmodula nada. O **modulador balanceado** merece um cuidado especial: eletricamente é praticamente o mesmo circuito (um misturador equilibrado), mas o nome designa o andar do **emissor**, onde multiplica o áudio pela portadora para gerar DSB com portadora suprimida. No recetor, a operação inversa — multiplicar FI pelo BFO para recuperar áudio — chama-se detetor de produto. É a função, e não a topologia, que dá o nome ao andar.

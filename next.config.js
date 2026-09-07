@@ -19,11 +19,20 @@ const nextConfig = {
   // standalone bundle ships without them and both routes answer empty.
   outputFileTracingIncludes: {
     "/api/notes/\\[category\\]/\\[id\\]": ["content/notes/**/*.mdx"],
-    "/api/study-items": ["app/study/**/page.mdx"],
+    "/api/study-items": ["app/aprender/**/page.mdx"],
   },
   // Ephemeral Cloudflare tunnels (bun run tunnel) serve the dev server from a
   // random *.trycloudflare.com host; Next blocks cross-origin dev assets otherwise.
   allowedDevOrigins: ["*.trycloudflare.com"],
+  // /study/* was the public home of the guides until they moved to /aprender/*.
+  // The old paths are in the wild — indexed, bookmarked, linked from the
+  // Telegram group — so they redirect permanently rather than 404.
+  async redirects() {
+    return [
+      { source: "/study", destination: "/aprender", permanent: true },
+      { source: "/study/:slug*", destination: "/aprender/:slug*", permanent: true },
+    ];
+  },
 };
 
 module.exports = withNextIntl(withMDX(nextConfig));

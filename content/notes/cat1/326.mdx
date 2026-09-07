@@ -1,7 +1,0 @@
-O aliasing é a **distorção resultante do não cumprimento do teorema de Nyquist**.
-
-O teorema de Nyquist estabelece que a frequência de amostragem tem de ser, no mínimo, o dobro da frequência mais alta contida no sinal. Quando esta condição não é respeitada, as componentes do sinal acima de metade da frequência de amostragem (fs/2) não desaparecem: são "rebatidas" para dentro da banda útil e surgem no sinal amostrado como frequências mais baixas, inexistentes no original. Essas frequências fantasma são os alias, e uma vez amostrado o sinal já não há forma de as distinguir das componentes legítimas.
-
-A solução prática é preventiva: coloca-se um filtro passa-baixo (filtro anti-aliasing) antes do conversor A/D, garantindo que nada acima de fs/2 chega à amostragem.
-
-As restantes opções descrevem outros fenómenos: a má qualidade dos componentes e as não linearidades dos amplificadores produzem ruído e distorção harmónica ou de intermodulação, não aliasing. E o aliasing não é aleatório, pois conhecida a frequência de amostragem, o alias de cada componente é perfeitamente previsível; também não depende de o sinal ser de muito alta frequência em termos absolutos, mas apenas da sua frequência em relação à frequência de amostragem utilizada.

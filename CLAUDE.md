@@ -52,7 +52,7 @@ box deliberately does not keep. Full runbook in `docs/deployment.md`.
 - **`NEXT_PUBLIC_*` is baked into the image**, so a feature-flag change needs a
   new build, not an edit to the server's `app.env`
 - **Two API routes read source files at request time** (`/api/notes/*` from
-  `content/notes/`, `/api/study-items` from `app/study/`) using paths built from
+  `content/notes/`, `/api/study-items` from `app/aprender/`) using paths built from
   `process.cwd()`, which file tracing cannot follow. They are kept in the
   standalone output by `outputFileTracingIncludes` in `next.config.js` — a new
   route that reads from disk needs an entry there or it will answer empty in
@@ -71,7 +71,7 @@ Next.js 16 App Router with React 19, TypeScript (strict), Tailwind CSS v4.
 - `/exam/[category]` - Timed 40-question exam simulation
 - `/drill` - Quick 10-question drill
 - `/dashboard` - Progress with gamification
-- `/study` - Study materials index
+- `/aprender` - Study materials index (was `/study`, which still redirects)
 
 **API routes**: `/api/data`, `/api/notes/[category]/[id]`, `/api/study-items`, `/api/submit-exam`
 
@@ -177,6 +177,30 @@ a `sources` entry, because that needs the question number read off the scan,
 which is the least reliable part — those are proposed in the report for a human
 to confirm. `bun run data:fonte-pages` is the manual equivalent.
 
+**Confirming those links**: `bun run data:exam-review cat3/2026_08_30` writes a
+self-contained page to `docs/revisao/cat{n}/{prova}.html` — every pergunta of
+the paper beside the bank question claiming it, the scan of its page sticky
+alongside, correct answer marked, with a per-question "revisto" tick. Open it
+in a browser; it is also on the `banco` menu as *Conferir uma prova*.
+
+- **It renders the bank, never the OCR text.** A review exists to distrust the
+  machine, so comparing the scan against a transcription the same machine
+  produced would only confirm the transcription. OCR decides one thing: which
+  links it found by itself (already corroborated) versus which a person
+  asserted — the latter are flagged, and are the whole point of the page
+- **No report means nothing is corroborated, not everything.** A missing or
+  stale `--report` is not an error; every card just says *à mão*
+- **`docs/revisao/` is gitignored.** The images are embedded, so a paper is
+  ~1.4 MB of HTML — that is deliberate, the page has to keep working away from
+  the repo, but it makes it a build artifact and not something to commit.
+  Regenerate it when you need it; it is deterministic given the bank, the PDF
+  and the report
+- `--notes notas.json` overlays `{"27": "porquê esta"}` commentary per pergunta,
+  which is where the reasoning behind a hand-made match goes; nothing can
+  generate that
+- The pure parts live in `lib/content/review-page.ts`, the I/O in the script,
+  the same split as `qbank` and `ocr-exams`
+
 ## Inspecting the bank
 
 `bun run qbank` is a read-only developer tool over `content/questions/**` —
@@ -230,11 +254,65 @@ The canonical model (`lib/content/schema.ts`) is the single definition of a
 question, with types inferred from the Zod schema. `lib/content/legacy.ts` is
 import-only, kept for re-running a migration from an archived JSON file.
 
+## The formulary, and citing a question anywhere
+
+`/aprender/formulario` is every expression the exams ask you to calculate — 151
+formulas and 59 reference tables over 14 sections. It is a normal study page
+(`app/aprender/formulario/page.mdx`), so the study index picks it up on its own,
+but its content is data rather than prose: the page filters ~210 entries three
+ways and a hand-written MDX wall cannot be filtered.
+
+**The content was derived from `content/questions/**`, not from a textbook.**
+Every entry carries the bank refs that require it, and anything that could not
+be tied to a real question was dropped. `categorias` is *derived* from `refs` —
+the CAT badge on a card is a promise the references under it have to keep. Keep
+that rule when editing: a new formula needs at least one ref, and the refs have
+to resolve.
+
+- **`lib/config/formulario.data.ts` is hand-maintained.** It was generated once
+  from the bank; there is no `formulario:build`. `__tests__/unit/test-formulario.test.ts`
+  is what stands in for one — it checks refs against the **shipped artifacts**
+  (`public/data/cat{n}.json`, not the source files, so a question withheld with
+  `disabled` is caught), anchor uniqueness, KaTeX validity, and that no bare
+  LaTeX sits in a field rendered as prose
+- **Filtering toggles `hidden`; it never rebuilds the list.** Every row mounts
+  once. Rebuilding re-mounts up to 180 rows and makes React re-parse ~1200
+  blocks of KaTeX markup, which measured at a full second per filter change
+- **`unidade` is rendered as text**, so LaTeX in it reaches the reader verbatim.
+  Inline `$…$` is fine anywhere prose is rendered — a bare `\Omega` is not
+- Sticky offsets are measured, not guessed: the toolbar publishes its height as
+  `--fm-toolbar` on the component ROOT, because the sticky section headings read
+  that variable and are its siblings, not its descendants
+
+**`<QuestionRef refId="cat2#92" />`** (`components/question-preview/`) is the way
+to cite a bank question on **any** surface. It owns both the chip's appearance
+and the preview, so a citation looks and behaves the same everywhere; the
+formulary's "Sai em" row is just its first caller.
+
+- **The preview shows the options but withholds which one is right** until you
+  ask. This is deliberate and is the feature, not an oversight: the formulary is
+  a study surface, and a card that hands over the answer the moment you point at
+  a citation takes the question away from anyone using it to test themselves.
+  Do not "fix" it by marking the correct option eagerly — a test asserts it
+- **Two input models, one piece of markup.** A pointer hovers (or tabs) and gets
+  a popover while the click still follows the link; a touch device has no hover,
+  so a tap opens a bottom sheet carrying the link instead. The element is an
+  `<a>` either way — the branch is in the click handler, so server and client
+  agree and the chip still works with no JavaScript
+- **Never use `loadData()` for a preview.** It fetches all three categories
+  because its callers need the whole bank. `lib/question-lookup.ts` fetches the
+  one category a ref names and caches it, promise included, so six chips on a
+  row share one request
+- The card copies `components/ui/answer-option.tsx` exactly — the `border-l-4`
+  and the 24px letter chip are the app's answer vocabulary, so the preview reads
+  as the same product rather than a second one
+
 ## Key Directories
 
 ```
 app/             # Next.js App Router pages and API routes
-components/      # ui/, providers/, calculators/, gamification/, shared/, settings/
+components/      # ui/, providers/, calculators/, gamification/, shared/, settings/,
+                 #   formulario/ (the formulary page), question-preview/ (QuestionRef)
 lib/             # Core logic: i18n/, types/, config/, storage/, gamification/, spaced-repetition/, utils/
 content/questions/ # Question SOURCE of truth, one MDX per question (cat1/, cat2/, cat3/)
 content/notes/   # GENERATED explanation files (do not hand-edit)
@@ -242,6 +320,7 @@ messages/        # i18n JSON: en.json, pt.json
 hooks/           # React hooks: useProgress, useGamification, useExamTimer, etc.
 public/data/     # GENERATED question bank JSON (do not hand-edit)
 public/exams/    # PDF exam papers (cat1/, cat2/, cat3/)
+public/logo/     # GENERATED brand marks (master + guide in docs/brand/)
 specs/           # Feature specifications
 __tests__/       # unit/, integration/, contracts/
 next.config.js   # Next.js configuration
@@ -282,6 +361,18 @@ Uses `next-intl` v4. Default locale is **Portuguese (pt)**, also supports Englis
   array alone is approximate for very heavy users
 - **Exam replay via URL params**: `q=` (question IDs), `a=` (base36-encoded answers), `t=` (time remaining) — no server storage needed
 - **Calculator is a modal context**, not a route — opening calculators doesn't change URL
+- **The logo is two components** — `components/brand/LogoMark.tsx` (the
+  diamond) and `LogoWordmark.tsx` (the «RÁDIO ESCOLA» letterforms) — set side by
+  side rather than one lockup, because `public/logo/lockup.svg` fixes the
+  wordmark's size against the diamond and that ratio leaves the wordmark far too
+  small once the diamond is at the `h-10` it needs to stay legible. Both are
+  embedded rather than served from `public/logo/`, because only an inline SVG
+  can take its ink from `currentColor` — that is what makes one component the
+  black mark on light and the white mark on dark. The red antenna/resistor/ground are grouped as
+  `.logo-signal` so `globals.css` can pulse them on the nav hover. Everything
+  under `public/logo/`, `public/icons/` and `app/{icon.svg,favicon.ico,apple-icon.png}`
+  is generated from the vector master; `docs/brand/README.md` says how, and why
+  the mark carries two reds and needs a dark tile to work as a square icon
 
 ## Code Style
 

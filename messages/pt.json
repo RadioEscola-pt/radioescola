@@ -10,7 +10,7 @@
   "NavBar": {
     "home": "Início",
     "dashboard": "Progresso",
-    "study": "Estudar",
+    "study": "Aprender",
     "browse": "Explorar",
     "browseFlashcards": "Flashcards",
     "browseComplete": "Completo",
@@ -39,7 +39,10 @@
       "3": "Entrada",
       "2": "Intermédio",
       "1": "Avançado"
-    }
+    },
+    "formulary": "Formulário",
+    "close": "Fechar",
+    "categoryPicker": "Categoria"
   },
   "Footer": {
     "quickDrill": "Treino Rápido",
@@ -54,7 +57,8 @@
     "app": "App",
     "donate": "Apoiar",
     "slogan": "Feito por radioamadores, para (futuros) radioamadores",
-    "supporters": "Apoiantes"
+    "supporters": "Apoiantes",
+    "formulary": "Formulário"
   },
   "Browse": {
     "emptyClear": "Limpar pesquisa",
@@ -66,9 +70,13 @@
     "flashNext": "Próxima questão",
     "flashNoQuestions": "Ainda não há questões disponíveis para esta categoria.",
     "flashNotFound": "Não encontrámos a categoria {id}. Tenta escolher uma categoria no menu Explorar.",
+    "flashReviewed": "{count, plural, =0 {0 revistos} =1 {1 revisto} other {# revistos}}",
     "flashSubtitle": "Pratica uma questão aleatória de cada vez. Já reviste {count}.",
     "flashTitle": "Flashcards Categoria {id}",
     "loading": "A carregar questões...",
+    "orderRandom": "Aleatória",
+    "orderRandomHint": "Baralha a ordem das questões. Recarregar a página baralha de novo.",
+    "orderRandomLabel": "Ordem aleatória",
     "questionCount": "{count} questões",
     "resultCount": "{shown} de {total}",
     "searchClear": "Limpar pesquisa",
@@ -226,13 +234,24 @@
     "page": "Página {current} / {total}",
     "takeAnother": "Fazer Outro",
     "endQuiz": "Terminar",
+    "viewQuestions": "Ver Perguntas",
     "viewResults": "Ver Resultados",
+    "shuffle": {
+      "label": "Baralhar opções",
+      "confirmTitleOn": "Baralhar as opções?",
+      "confirmTitleOff": "Deixar de baralhar as opções?",
+      "confirmBody": "A ordem das opções só pode mudar num exame novo, por isso este recomeça do zero. As respostas que já deu perdem-se.",
+      "cancel": "Cancelar",
+      "restart": "Recomeçar"
+    },
     "resultsSubtitle": "Resultados",
     "score": "Pontuação: {score} / {total}",
     "questionId": "ID: {id}",
     "correct": "Correto",
     "incorrect": "Incorreto",
-    "unanswered": "Sem resposta"
+    "unanswered": "Sem resposta",
+    "clearAnswer": "Limpar resposta",
+    "clearAnswerFor": "Limpar a resposta à pergunta {number}"
   },
   "Calculators": {
     "common": {
@@ -524,6 +543,12 @@
     "tabs": {
       "summary": "Resumo",
       "review": "Rever"
+    },
+    "studyAreas": {
+      "title": "Onde estudar a seguir",
+      "subtitle": "As matérias que este exame mostrou mais fracas, a começar pela que te custou mais.",
+      "missed": "{missed} de {total} por acertar",
+      "practice": "Praticar"
     },
     "status": {
       "passed": "Aprovado!",
@@ -923,7 +948,7 @@
         "requires": "exige categoria 2"
       }
     },
-    "progressionNoGate": "Não há tempos mínimos de permanência. Se passares nos três exames no mesmo ano, subes as três categorias no mesmo ano.",
+    "progressionNoGate": "Não há tempos mínimos de permanência. Se passares nos três exames no mesmo ano, sobes as três categorias no mesmo ano.",
     "ageTitle": "A idade deixou de travar o acesso",
     "ageIntro": "Passou a condicionar apenas a operação. São coisas distintas e é onde a confusão costuma acontecer.",
     "age": {
@@ -949,15 +974,56 @@
         "description": "Estudas o programa oficial com as perguntas reais de exame, o treino rápido e os flashcards."
       },
       "exam": {
-        "title": "Prova teórica escrita",
-        "description": "Compareces no local indicado com documento de identificação. A prova é de escolha múltipla, com desconto por resposta errada."
+        "title": "Prova teórica",
+        "description": "Compareces no local indicado com documento de identificação. A prova é feita no computador: 40 perguntas de escolha múltipla, com desconto por resposta errada."
       },
       "licence": {
         "title": "CAN e indicativo de chamada",
         "description": "Recebes o certificado, válido por 10 anos, e o teu indicativo de chamada. A estação individual já não precisa de licença — podes começar a operar."
       }
     },
-    "examProcessNote": "As estações de uso comum, ao contrário das individuais, continuam a precisar de licença."
+    "examProcessNote": "As estações de uso comum, ao contrário das individuais, continuam a precisar de licença.",
+    "examDayTitle": "No dia do exame",
+    "examDayIntro": "A prova é feita no computador e o material está todo à tua espera na secretária. Não levas nada — e não podes levar nada.",
+    "examDay": {
+      "providedLabel": "Encontras na secretária",
+      "provided": {
+        "paper": {
+          "title": "Folhas em branco",
+          "body": "Para rascunho e para as contas."
+        },
+        "calculator": {
+          "title": "Calculadora científica",
+          "body": "Fornecida no local. Não precisas de levar a tua."
+        },
+        "pen": {
+          "title": "Caneta",
+          "body": "Também fornecida."
+        }
+      },
+      "forbiddenLabel": "Não é permitido",
+      "forbiddenTitle": "Nenhum material de consulta",
+      "forbiddenBody": "Não podes levar informação do exterior para a sala — e isso inclui formulários. As expressões de que precisares têm de estar na tua cabeça, e é por isso que vale a pena treinar as contas sem apoio antes do dia.",
+      "stepsTitle": "Como decorre a prova",
+      "steps": {
+        "start": {
+          "title": "Começas quando estiveres pronto",
+          "body": "A prova só arranca quando clicares para iniciar. Instala-te primeiro, sem pressa."
+        },
+        "screen": {
+          "title": "As 40 perguntas num só ecrã",
+          "body": "Aparecem todas de uma vez, sem páginas. Podes responder pela ordem que quiseres e voltar atrás sempre que quiseres — despacha primeiro as que sabes de imediato e guarda o tempo para as outras."
+        },
+        "clear": {
+          "title": "Podes limpar uma resposta",
+          "body": "Cada pergunta tem um botão para apagar a resposta e deixá-la em branco. Numa pergunta em que não tenhas confiança, isso não é desistir: em branco vale 0 pontos, errada vale −0,25."
+        },
+        "submit": {
+          "title": "Submetes e ficas logo a saber",
+          "body": "Ao submeteres, aparece uma tabela com a tua pontuação e com o resultado: aprovado ou reprovado. Não há espera pelo resultado."
+        }
+      }
+    }
   },
   "Share": {
     "title": "Partilhar",

@@ -11,4 +11,18 @@ answers:
   - text: '1,78 MHz'
 topic: circuitos
 ---
-A frequência de ressonância em um circuito série RLC é dada por: f = 1 / (2 * pi * sqrt(L * C)). Substituindo os valores, obtemos f ≈ 22,36 MHz.
+A frequência de ressonância é aproximadamente **3,56 MHz**.
+
+Num circuito RLC série a ressonância ocorre quando a reatância indutiva iguala a capacitiva ($X_L = X_C$), o que conduz à fórmula de Thomson:
+
+$$f_0 = \frac{1}{2\pi\sqrt{L\,C}}$$
+
+Repare que $R$ não entra na fórmula: os $22\ \Omega$ afetam o fator de qualidade $Q$ e a largura de banda do circuito, mas não a frequência a que ele ressoa. É um dado posto no enunciado precisamente para distrair.
+
+Fazendo as contas, comece por converter as unidades: $L = 0{,}05\ \text{mH} = 5\times10^{-5}\ \text{H}$ e $C = 40\ \text{pF} = 4\times10^{-11}\ \text{F}$. O produto vale $L\,C = 5\times10^{-5}\times 4\times10^{-11} = 2\times10^{-15}$, cuja raiz quadrada é $\sqrt{2\times10^{-15}} \approx 4{,}47\times10^{-8}$. Então
+
+$$f_0 = \frac{1}{2\pi \times 4{,}47\times10^{-8}} \approx \frac{1}{2{,}81\times10^{-7}} \approx 3{,}56\times10^{6}\ \text{Hz}$$
+
+ou seja **3,56 MHz**.
+
+Quanto às restantes opções, saem todas de erros à volta do $2\pi$: $22{,}36$ MHz é o valor que se obtém esquecendo-o, porque $1/\sqrt{L\,C} \approx 2{,}236\times10^{7}$ é a frequência angular $\omega$ em radianos por segundo e não uma frequência em hertz; $44{,}72$ MHz é o dobro desse mesmo erro; e $1{,}78$ MHz é metade da resposta certa. Num exame, se o seu resultado for cerca de $6{,}28$ vezes maior do que uma das opções, é sinal de que se esqueceu do $2\pi$.

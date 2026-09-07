@@ -40,7 +40,7 @@ export function StudyHeader({
   const href = backHref ?? "/";
 
   return (
-    <div className="sticky top-14 z-10 -mx-4 sm:-mx-0 mb-4">
+    <div className="sticky top-14 z-10 mb-4">
       {/* Category accent stripe */}
       <div className={`h-[2px] ${accent}`} />
 
@@ -78,7 +78,7 @@ export function StudyHeader({
                   <span className="text-slate-200 dark:text-slate-700 select-none hidden sm:inline">
                     &middot;
                   </span>
-                  <span className="text-xs text-slate-400 dark:text-slate-500 leading-none hidden sm:inline truncate">
+                  <span className="text-xs text-slate-400 dark:text-slate-500 leading-none hidden sm:inline truncate min-w-0">
                     {subtitle}
                   </span>
                 </>

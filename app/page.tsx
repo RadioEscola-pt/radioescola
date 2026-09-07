@@ -16,8 +16,8 @@ const TESTIMONIALS: RawTestimonial[] = [
     quote:
       "Comecei com o RadioEscola para tirar a Categoria 3 e voltei sempre que subi de categoria. É o único sítio onde encontrei a matéria toda organizada em português e com perguntas reais de exames, fez toda a diferença.",
     name: "Joel",
-    callsign: "CS7BLE",
-    category: "2",
+    callsign: "CT7BLE",
+    category: "1",
   },
 ];
 
@@ -139,7 +139,7 @@ export default async function HomePage() {
           {([
             { href: "/browse/3/smart-practice", icon: Brain, titleKey: "smartPracticeTitle", descKey: "smartPracticeDescription" },
             { href: "/browse/3/flash", icon: Layers, titleKey: "flashcardsTitle", descKey: "flashcardsDescription" },
-            { href: "/study", icon: BookOpen, titleKey: "studyLibraryTitle", descKey: "studyLibraryDescription" },
+            { href: "/aprender", icon: BookOpen, titleKey: "studyLibraryTitle", descKey: "studyLibraryDescription" },
           ] as const).map((feature) => {
             const Icon = feature.icon;
             return (

@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
-import { Search, X } from "lucide-react";
+import { Search, Shuffle, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { TOPICS, topicShortLabel } from "@/lib/config";
+import { TopicIcon } from "@/components/TopicIcon";
 
 export type TopicCount = { slug: string; label: string; count: number };
 
@@ -16,6 +17,8 @@ interface QuestionFiltersProps {
   onTopicChange: (slug: string | null) => void;
   search: string;
   onSearchChange: (value: string) => void;
+  randomOrder: boolean;
+  onRandomOrderChange: (on: boolean) => void;
 }
 
 const CHIP =
@@ -33,11 +36,12 @@ const CHIP_ON = "bg-amber-500 text-slate-900";
  */
 export function QuestionFilters({
   counts, total, bankTotal, activeTopic, onTopicChange, search, onSearchChange,
+  randomOrder, onRandomOrderChange,
 }: QuestionFiltersProps) {
   const t = useTranslations("Browse");
 
   return (
-    <div className="sticky top-[6.25rem] z-10 -mx-4 sm:mx-0 mb-4 border-b border-slate-200/60 bg-white/80 px-4 py-2.5 backdrop-blur-xl dark:border-slate-700/40 dark:bg-slate-900/80">
+    <div className="sticky top-[6.25rem] z-10 mb-4 border-b border-slate-200/60 bg-white/80 px-4 py-2.5 backdrop-blur-xl dark:border-slate-700/40 dark:bg-slate-900/80">
       <div className="flex items-center gap-2">
         <div className="flex flex-1 items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 focus-within:border-amber-400 dark:border-slate-700 dark:bg-slate-800">
           <Search className="h-3.5 w-3.5 shrink-0 text-slate-400" aria-hidden="true" />
@@ -60,6 +64,19 @@ export function QuestionFilters({
             </button>
           )}
         </div>
+        {/* A toggle, not a link to a shuffled copy: the label names the order,
+            and aria-pressed says whether it is the one in force. */}
+        <button
+          type="button"
+          onClick={() => onRandomOrderChange(!randomOrder)}
+          aria-pressed={randomOrder}
+          aria-label={t("orderRandomLabel")}
+          title={t("orderRandomHint")}
+          className={`${CHIP} shrink-0 ${randomOrder ? CHIP_ON : CHIP_OFF}`}
+        >
+          <Shuffle className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+          <span className="hidden sm:inline">{t("orderRandom")}</span>
+        </button>
         <span className="shrink-0 font-mono text-xs tabular-nums text-slate-500 dark:text-slate-400">
           {total === bankTotal ? bankTotal : t("resultCount", { shown: total, total: bankTotal })}
         </span>
@@ -83,6 +100,7 @@ export function QuestionFilters({
             aria-pressed={activeTopic === slug}
             className={`${CHIP} ${activeTopic === slug ? CHIP_ON : CHIP_OFF}`}
           >
+            <TopicIcon slug={slug} colored className="w-3.5 h-3.5 shrink-0" />
             {label}
             <span className="font-mono text-[10px] tabular-nums opacity-60">{count}</span>
           </button>

@@ -5,12 +5,22 @@ import { useTranslations } from 'next-intl';
 import { Category } from '@/lib/types';
 import { loadData } from '@/lib/data';
 import { decodeReplayIds, decodeReplayAnswers } from '@/lib/exam/replay';
+import {
+  shuffleAllOptions,
+  toCanonicalAnswers,
+  readShuffleOptionsPreference,
+  writeShuffleOptionsPreference,
+  type OptionPermutation,
+} from '@/lib/exam/shuffle-options';
 import { EXAM_CONFIG, DEFAULT_CATEGORY } from '@/lib/config';
 import { ExamResults } from '@/components/ExamResults';
 import { PageLoading } from '@/components/shared/Loading';
 import { AnswerOption, type AnswerOptionState } from '@/components/ui/answer-option';
 import { Button } from '@/components/ui/button';
 import { StudyHeader } from '@/components/StudyHeader';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
+import { Shuffle, Eraser } from 'lucide-react';
+import { QuestionExplanation } from '@/components/QuestionExplanation';
 import { useProgressContext } from '@/components/providers/ProgressProvider';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
 import type { ExamAttempt, QuestionAttempt } from '@/lib/types/progress';
@@ -22,6 +32,8 @@ export default function ExamPage() {
   const params = useParams();
   const searchParams = useSearchParams();
   const t = useTranslations('Exam');
+  // The explanation reuses the question card's label — same thing, same word.
+  const tq = useTranslations('QuestionCard');
   const { recordExamWithGamification, recordQuestionBatch, gamification } = useProgressContext();
   const [timeLeft, setTimeLeft] = useState<number>(DURATION_SECONDS);
   // Wall-clock deadline (epoch ms) the countdown runs toward; null when no exam
@@ -33,9 +45,23 @@ export default function ExamPage() {
   const [quizEnded, setQuizEnded] = useState(false);
   const [resultsOpen, setResultsOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  // Off on the server and on the first client render, then reconciled from
+  // storage in an effect: reading localStorage while rendering would make the
+  // markup differ between the two and trip hydration.
+  const [shuffleOptions, setShuffleOptions] = useState(false);
+  const [pendingShuffle, setPendingShuffle] = useState<boolean | null>(null);
+  /** Shuffled position -> bank position, per question id. Empty when off. */
+  const [permutations, setPermutations] = useState<Record<number, OptionPermutation>>({});
+  const shuffleRef = useRef(false);
   const progressSavedRef = useRef(false);
   const isReplayRef = useRef(false);
   const [gamificationResult, setGamificationResult] = useState<GamificationResult | null>(null);
+
+  React.useEffect(() => {
+    const stored = readShuffleOptionsPreference();
+    setShuffleOptions(stored);
+    shuffleRef.current = stored;
+  }, []);
 
   // Timer: wall-clock countdown toward a fixed deadline. Deriving the remaining
   // time from Date.now() on each tick — rather than decrementing a per-tick
@@ -141,7 +167,9 @@ export default function ExamPage() {
       passed,
       timestamp: Date.now(),
       questionIds: category.questions.map(q => q.id),
-      answers: { ...answers },
+      // Recorded in the bank's order, never the shuffled one, so replay links
+      // and per-question stats stay meaningful.
+      answers: toCanonicalAnswers(answers, permutations),
     };
 
     // Record individual question attempts
@@ -163,7 +191,7 @@ export default function ExamPage() {
         recordQuestionBatch(questionAttempts);
       }
     });
-  }, [quizEnded, category, answers, score, timeLeft, recordExamWithGamification, recordQuestionBatch]);
+  }, [quizEnded, category, answers, score, timeLeft, permutations, recordExamWithGamification, recordQuestionBatch]);
 
   React.useEffect(() => {
     const cat = typeof params.category === 'string'
@@ -218,10 +246,27 @@ export default function ExamPage() {
         }
       }
       const sample = qs.slice(0, Math.min(MAX_QUESTIONS, qs.length));
-      setCategory({ id: base.id, name: base.name, questions: sample });
+      // A replay above returns early: its answers are positional against the
+      // bank's order, so shuffling one would misreport what was chosen.
+      const dealt = shuffleRef.current ? shuffleAllOptions(sample) : { questions: sample, permutations: {} };
+      setPermutations(dealt.permutations);
+      setCategory({ id: base.id, name: base.name, questions: dealt.questions });
       setDeadline(Date.now() + DURATION_SECONDS * 1000);
     });
   }, [params.category, searchParams]);
+
+  /**
+   * Save the choice and deal a fresh exam with it. The restart is the point:
+   * re-shuffling the questions already on screen would move the options out
+   * from under answers the candidate has given.
+   */
+  const applyShufflePreference = (enabled: boolean) => {
+    writeShuffleOptionsPreference(enabled);
+    setShuffleOptions(enabled);
+    shuffleRef.current = enabled;
+    setPendingShuffle(null);
+    startNewQuiz();
+  };
 
   const startNewQuiz = () => {
     if (!category) return;
@@ -242,7 +287,9 @@ export default function ExamPage() {
         }
       }
       const sample = qs.slice(0, Math.min(MAX_QUESTIONS, qs.length));
-      setCategory({ id: base.id, name: base.name, questions: sample });
+      const dealt = shuffleRef.current ? shuffleAllOptions(sample) : { questions: sample, permutations: {} };
+      setPermutations(dealt.permutations);
+      setCategory({ id: base.id, name: base.name, questions: dealt.questions });
       setAnswers({});
       setScore(0);
       setTimeLeft(DURATION_SECONDS);
@@ -287,11 +334,15 @@ export default function ExamPage() {
     const status = sel === undefined ? 'unanswered' : sel === q.correctIndex ? 'correct' : 'incorrect';
     return {
       index: idx,
+      questionId: q.id,
       question: q.question,
       options: q.options,
       selectedIndex: sel,
       correctIndex: q.correctIndex,
       status: status as 'correct' | 'incorrect' | 'unanswered',
+      hasNotesMdx: q.hasNotesMdx,
+      notes: q.notes,
+      materia: q.materia,
     };
   });
 
@@ -304,7 +355,14 @@ export default function ExamPage() {
           mode="exam"
           backHref="/"
           subtitle={t('resultsSubtitle')}
-        />
+        >
+          {/* The two post-exam views are complementary, not a sequence: the
+              cards below summarise, the question pages show each answer in
+              place. Without this, results was a one-way door. */}
+          <Button size="sm" variant="outline" onClick={() => setResultsOpen(false)}>
+            {t('viewQuestions')}
+          </Button>
+        </StudyHeader>
         <ExamResults
           category={category.id}
           score={score}
@@ -328,6 +386,22 @@ export default function ExamPage() {
         backHref="/"
         subtitle={`${answeredCount}/${category.questions.length}`}
       >
+        {/* Only on the first page, and only while the exam is live: turning
+            this on deals a new exam, which is not something to offer beside a
+            question already answered. */}
+        {!quizEnded && currentPage === 1 && (
+          <label className="flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-300 cursor-pointer select-none">
+            <input
+              type="checkbox"
+              checked={shuffleOptions}
+              onChange={() => setPendingShuffle(!shuffleOptions)}
+              className="w-4 h-4 rounded border-slate-300 dark:border-slate-600 accent-amber-500 cursor-pointer"
+            />
+            <Shuffle className="w-3.5 h-3.5" aria-hidden="true" />
+            <span className="hidden sm:inline">{t('shuffle.label')}</span>
+          </label>
+        )}
+
         {/* Timer */}
         <div className={`font-mono text-sm px-2.5 py-1 rounded-md font-semibold tabular-nums ${
           timeLeft <= 60
@@ -396,6 +470,31 @@ export default function ExamPage() {
                       </AnswerOption>
                     );
                   })}
+
+                  {/* Always rendered while the exam is live, disabled until
+                      there is something to clear: revealing it on selection
+                      would shift every question below it, and the candidate
+                      should see that going back to blank is available before
+                      committing to a guess. Blank scores 0, wrong scores
+                      -WRONG_ANSWER_PENALTY, so this is a scoring decision. */}
+                  {!quizEnded && (
+                    <div className="pt-1">
+                      <button
+                        type="button"
+                        onClick={() => setAnswers(prev => {
+                          const next = { ...prev };
+                          delete next[q.id];
+                          return next;
+                        })}
+                        disabled={timeUp || selected === undefined}
+                        aria-label={t('clearAnswerFor', { number: questionNumber })}
+                        className="inline-flex items-center gap-1.5 rounded-lg px-2 py-1 text-xs font-medium text-slate-500 dark:text-slate-400 hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-slate-700 dark:hover:text-slate-200 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-slate-500 dark:disabled:hover:text-slate-400 transition-colors"
+                      >
+                        <Eraser className="h-3.5 w-3.5" aria-hidden="true" />
+                        {t('clearAnswer')}
+                      </button>
+                    </div>
+                  )}
                 </div>
 
                 {q.img && (
@@ -405,12 +504,32 @@ export default function ExamPage() {
                   </div>
                 )}
               </div>
+
+              {/* `selected !== correctIndex` is both cases at once: answered
+                  wrongly, and not answered at all. A question already answered
+                  correctly needs no explanation here — it is one tap away in
+                  the results review if the candidate wants it anyway. */}
+              {quizEnded && selected !== q.correctIndex && (
+                <QuestionExplanation
+                  categoryId={category.id}
+                  questionId={q.id}
+                  hasNotesMdx={q.hasNotesMdx}
+                  inlineNotes={q.notes}
+                  className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 text-sm"
+                  heading={<p className="mb-2 font-semibold text-slate-700 dark:text-slate-300">{tq('explanation')}</p>}
+                />
+              )}
             </div>
           );
         })}
       </section>
 
-      {/* Bottom navigation - fixed on mobile */}
+      {/* Bottom navigation - fixed on mobile. Hidden when the whole exam fits
+          on one page, which is the shipped configuration: a permanently
+          disabled Anterior/Seguinte pair reads as something broken, and on
+          mobile it is a fixed bar eating screen for nothing. Terminar stays
+          reachable throughout because StudyHeader is sticky. */}
+      {totalPages > 1 && (
       <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 p-3 sm:relative sm:mt-6 sm:border-t-0 sm:bg-transparent sm:p-0">
         <div className="flex items-center justify-between gap-2 max-w-5xl mx-auto">
           <button
@@ -434,9 +553,29 @@ export default function ExamPage() {
           </button>
         </div>
       </div>
+      )}
 
       {/* Spacer for fixed bottom nav on mobile */}
-      <div className="h-16 sm:hidden" />
+      {totalPages > 1 && <div className="h-16 sm:hidden" />}
+
+      <Dialog open={pendingShuffle !== null} onOpenChange={(open) => { if (!open) setPendingShuffle(null); }}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>
+              {pendingShuffle ? t('shuffle.confirmTitleOn') : t('shuffle.confirmTitleOff')}
+            </DialogTitle>
+            <DialogDescription>{t('shuffle.confirmBody')}</DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button variant="ghost" size="sm" onClick={() => setPendingShuffle(null)}>
+              {t('shuffle.cancel')}
+            </Button>
+            <Button size="sm" onClick={() => applyShufflePreference(pendingShuffle === true)}>
+              {t('shuffle.restart')}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </main>
   );
 }

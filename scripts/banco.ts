@@ -30,6 +30,7 @@ const ROOT = process.cwd();
 const QBANK = join("scripts", "qbank.ts");
 const CONTENT_NEW = join("scripts", "content-new.ts");
 const CONTENT_EDIT = join("scripts", "content-edit.ts");
+const EXAM_REVIEW = join("scripts", "exam-review.ts");
 
 /* -------------------------------------------------------------------------- */
 /* Correr as ferramentas                                                       */
@@ -187,6 +188,15 @@ const ENTRIES: Entry[] = [
     build: async () => {
       const pdf = await askText("Prova (Enter para a lista de todas)", { required: false });
       return { script: QBANK, args: ["paper", ...(pdf.length > 0 ? [pdf] : [])] };
+    },
+  },
+  {
+    label: "Conferir uma prova",
+    hint: "página com as digitalizações ao lado das perguntas",
+    build: async () => {
+      const pdf = await askText("Prova (ex.: cat3/2026_08_30)", { required: false });
+      if (pdf.length === 0) return null;
+      return { script: EXAM_REVIEW, args: [pdf] };
     },
   },
   {

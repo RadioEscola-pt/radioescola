@@ -84,7 +84,17 @@ export type Review = {
   pairs: PairFinding[];
 };
 
-export type PdfLookup = (pdf: string) => { exists: boolean; alsoIn: string[] };
+/**
+ * `baselined` is the third state between present and missing: a paper listed
+ * in `content/missing-exams.json`, which `content:check` accepts. Without it
+ * this rule and the build disagree, and a question citing one of those papers
+ * cannot be edited at all — not even to fix a one-letter typo.
+ */
+export type PdfLookup = (pdf: string) => {
+  exists: boolean;
+  baselined: boolean;
+  alsoIn: string[];
+};
 
 export type ReviewContext = {
   /** The category the draft is being added to. */
@@ -233,8 +243,20 @@ function reviewSources(q: ContentQuestion, pdfLookup: PdfLookup): Finding[] {
   }
 
   for (const s of q.sources) {
-    const { exists, alsoIn } = pdfLookup(s.pdf);
-    if (!exists) {
+    const { exists, baselined, alsoIn } = pdfLookup(s.pdf);
+    if (!exists && baselined) {
+      // Already accepted by the build, so blocking here would only make the
+      // question uneditable. Still worth saying: the paper is genuinely gone,
+      // and the baseline is a ratchet to shrink, not a permission slip.
+      findings.push({
+        level: "warning",
+        code: "pdf-baselined",
+        message: `\`${s.pdf}\` não está em public/exams/, mas está baselinado.`,
+        detail: [
+          "O content:check aceita-o; a referência fica por confirmar até o PDF aparecer.",
+        ],
+      });
+    } else if (!exists) {
       findings.push({
         level: "error",
         code: "pdf-missing",
