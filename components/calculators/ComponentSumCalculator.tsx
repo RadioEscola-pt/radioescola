@@ -3,8 +3,14 @@
 import React from "react";
 import { Plus, X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { CalculatorWindow, CalculatorButtons, CalculatorResult } from "./base";
+import {
+  CalculatorWindow,
+  CalculatorButtons,
+  CalculatorModeSwitch,
+  CalculatorResult,
+} from "./base";
 import { registerCalculatorComponent } from "@/lib/config";
+import { Math as Tex } from "@/components/formulario/Math";
 import {
   UNIT_GROUPS,
   parseValue,
@@ -14,8 +20,17 @@ import {
 } from "@/lib/utils";
 import type { CalculatorInstanceProps } from "@/lib/types";
 
-type ComponentType = "resistor" | "capacitor" | "inductor";
-type Mode = "series" | "parallel";
+/**
+ * Both switches, in the order they are offered. The translation key doubles as
+ * the state value here — unlike in the wavelength calculator, these labels name
+ * the thing itself rather than something it produces, so there is nothing to
+ * invert.
+ */
+const TYPES = ["resistor", "capacitor", "inductor"] as const;
+const MODES = ["series", "parallel"] as const;
+
+type ComponentType = (typeof TYPES)[number];
+type Mode = (typeof MODES)[number];
 
 interface Component {
   id: string;
@@ -52,23 +67,23 @@ const ComponentSumCalculator: React.FC<CalculatorInstanceProps> = ({
 
   const getUnitsForType = (type: ComponentType): readonly string[] => UNIT_MAP[type];
 
-  const getTypeLabel = (type: ComponentType): string => {
-    switch (type) {
-      case "resistor": return t("resistor");
-      case "capacitor": return t("capacitor");
-      case "inductor": return t("inductor");
-    }
-  };
-
-  const getModeLabel = (m: Mode): string => {
-    return m === "series" ? t("series") : t("parallel");
-  };
+  const getTypeLabel = (type: ComponentType): string => t(type);
+  const getModeLabel = (m: Mode): string => t(m);
 
   const handleComponentTypeChange = (type: ComponentType) => {
     setComponentType(type);
     const units = getUnitsForType(type);
     const defaultUnit = units[0] ?? "Ω";
     setComponents(components.map(c => ({ ...c, unit: defaultUnit })));
+    setResult("");
+    setMessage(t("addComponentValues"));
+  };
+
+  // Series and parallel give different totals from the same values, so leaving
+  // the previous answer on screen after the switch turns it into a wrong answer
+  // for the configuration now selected. Same reason the type change clears it.
+  const handleModeChange = (next: Mode) => {
+    setMode(next);
     setResult("");
     setMessage(t("addComponentValues"));
   };
@@ -149,16 +164,29 @@ const ComponentSumCalculator: React.FC<CalculatorInstanceProps> = ({
     setMessage(t("addComponentValues"));
   };
 
-  const getFormula = (): string => {
-    if (componentType === "capacitor") {
-      return mode === "series"
-        ? "1/(1/C₁ + 1/C₂ + ...)"
-        : "C = C₁ + C₂ + ...";
-    }
-    const symbol = componentType === "resistor" ? "R" : "L";
-    return mode === "series"
-      ? `${symbol} = ${symbol}₁ + ${symbol}₂ + ...`
-      : `1/(1/${symbol}₁ + 1/${symbol}₂ + ...)`;
+  const SYMBOL: Record<ComponentType, string> = { resistor: "R", capacitor: "C", inductor: "L" };
+
+  /**
+   * The expression the calculator is applying, in the notation of
+   * `/aprender/formulario` — `X_{eq}` on the left, terms to `X_n`, `\cdots`
+   * between them — so the two pages read as one product.
+   *
+   * The reciprocal branch used to render as a bare `1/(1/C₁ + 1/C₂ + ...)`,
+   * with nothing said to be equal to it, while the additive branch carried its
+   * `C =`. Written as maths the missing left-hand side is impossible to keep,
+   * which is most of why it is worth writing as maths.
+   *
+   * Capacitors are the ones that add in parallel and combine reciprocally in
+   * series; resistors and coils go the other way. The condition below is the
+   * same one the solver uses, and is the single fact this calculator exists to
+   * teach — so it stays visible in the formula rather than only in the total.
+   */
+  const getFormulaTex = (): string => {
+    const s = SYMBOL[componentType];
+    const additive = componentType === "capacitor" ? mode === "parallel" : mode === "series";
+    return additive
+      ? String.raw`${s}_{\text{eq}} = ${s}_{1} + ${s}_{2} + \cdots + ${s}_{n}`
+      : String.raw`\frac{1}{${s}_{\text{eq}}} = \frac{1}{${s}_{1}} + \frac{1}{${s}_{2}} + \cdots + \frac{1}{${s}_{n}}`;
   };
 
   return (
@@ -171,49 +199,43 @@ const ComponentSumCalculator: React.FC<CalculatorInstanceProps> = ({
       onClose={onClose}
       onFocus={onFocus}
     >
+      {/*
+        The type was a <select>: three options, all short, and picking one
+        changes the units on every row below. A dropdown hides two thirds of
+        that behind a tap, and hides the consequence entirely. On the track all
+        three are visible and one tap away, which is what a three-way setting
+        with visible fallout should be.
+      */}
       <div>
-        <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">
+        <label
+          id={`${instanceId}-type`}
+          className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400"
+        >
           {t("componentType")}
         </label>
-        <select
+        <CalculatorModeSwitch
+          labelId={`${instanceId}-type`}
+          color="green"
           value={componentType}
-          onChange={(e) => handleComponentTypeChange(e.target.value as ComponentType)}
-          className="w-full rounded border border-slate-300 bg-white px-2 py-1 text-slate-900 focus:border-green-500 focus:outline-none focus:ring dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100"
-        >
-          <option value="resistor">{t("resistor")}</option>
-          <option value="capacitor">{t("capacitor")}</option>
-          <option value="inductor">{t("inductor")}</option>
-        </select>
+          onChange={handleComponentTypeChange}
+          options={TYPES.map((value) => ({ value, label: t(value) }))}
+        />
       </div>
 
       <div>
-        <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">
+        <label
+          id={`${instanceId}-config`}
+          className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400"
+        >
           {t("configuration")}
         </label>
-        <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={() => setMode("series")}
-            className={`flex-1 rounded px-3 py-1 transition focus:outline-none focus:ring-2 focus:ring-green-500 ${
-              mode === "series"
-                ? "bg-green-600 text-white"
-                : "border border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
-            }`}
-          >
-            {t("series")}
-          </button>
-          <button
-            type="button"
-            onClick={() => setMode("parallel")}
-            className={`flex-1 rounded px-3 py-1 transition focus:outline-none focus:ring-2 focus:ring-green-500 ${
-              mode === "parallel"
-                ? "bg-green-600 text-white"
-                : "border border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
-            }`}
-          >
-            {t("parallel")}
-          </button>
-        </div>
+        <CalculatorModeSwitch
+          labelId={`${instanceId}-config`}
+          color="green"
+          value={mode}
+          onChange={handleModeChange}
+          options={MODES.map((value) => ({ value, label: t(value) }))}
+        />
       </div>
 
       <div>
@@ -278,7 +300,11 @@ const ComponentSumCalculator: React.FC<CalculatorInstanceProps> = ({
         onReset={reset}
         color="green"
       />
-      <CalculatorResult value={message} color="green" formula={getFormula()} />
+      <CalculatorResult
+        value={message}
+        color="green"
+        formula={<Tex tex={getFormulaTex()} display className="block" />}
+      />
     </CalculatorWindow>
   );
 };

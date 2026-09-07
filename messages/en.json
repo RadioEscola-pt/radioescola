@@ -291,7 +291,7 @@
       "components": "Components",
       "resistor": "Resistor",
       "capacitor": "Capacitor",
-      "inductor": "Inductor (Coil)",
+      "inductor": "Inductor",
       "series": "Series",
       "parallel": "Parallel",
       "add": "Add",
