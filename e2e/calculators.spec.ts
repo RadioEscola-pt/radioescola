@@ -1,5 +1,7 @@
 import { test, expect, type Locator, type Page } from "@playwright/test";
 
+import pt from "@/messages/pt.json";
+
 /**
  * These tests drive the shipped app: the real NavBar, the real
  * CalculatorProvider, the real `messages/pt.json`. Anything that can be
@@ -26,12 +28,20 @@ const CALCULATORS = [
 
 type CalculatorName = (typeof CALCULATORS)[number]["menu"];
 
-/** Opens a calculator the way a visitor does: NavBar → Estudar → Calculadoras. */
+/**
+ * Opens a calculator the way a visitor does: NavBar → Aprender → Calculadoras.
+ *
+ * The nav label comes from `messages/pt.json` rather than being spelt out: it
+ * is how the test reaches the calculator, not something it asserts, and
+ * hardcoding it once cost a whole red suite when the menu was renamed from
+ * "Estudar" to "Aprender". The strings this suite is actually about — the
+ * calculator names, the labels, the results — stay written out on purpose.
+ */
 async function openCalculator(page: Page, menu: CalculatorName): Promise<Locator> {
   const entry = CALCULATORS.find((c) => c.menu === menu)!;
 
-  await page.getByRole("button", { name: "Estudar" }).click();
-  await page.getByRole("menuitem", { name: "Calculadoras" }).click();
+  await page.getByRole("button", { name: pt.NavBar.study }).click();
+  await page.getByRole("menuitem", { name: pt.NavBar.calculators }).click();
   // Match on the item's own title node: a couple of the descriptions mention
   // another calculator's name, so an accessible-name substring is ambiguous.
   await page
