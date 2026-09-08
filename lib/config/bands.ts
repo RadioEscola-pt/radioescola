@@ -71,3 +71,44 @@ export function formatSegment(row: BandRow, locale: string): string {
   const n = new Intl.NumberFormat(locale, { maximumFractionDigits: 3 });
   return `${n.format(row.from)} – ${n.format(row.to)} ${row.unit}`;
 }
+
+/** One band's ceiling for a single category. `null` where there is no access. */
+export type BandBar = { band: string; power: number | null };
+
+export type BandReach = {
+  /** One entry per band, in BAND_PLAN order: long wave to short. */
+  bars: readonly BandBar[];
+  /** How many bands the category may transmit on. */
+  bandCount: number;
+  /** The highest ceiling it holds on any band, in watts. */
+  maxPower: number;
+};
+
+/**
+ * Collapses BAND_PLAN into one bar per band for a category: the best ceiling it
+ * holds anywhere in that band, or `null` if it holds none of the segments.
+ *
+ * This is what makes the three licences comparable at a glance, so it is derived
+ * rather than written down. The annex is provisional for category 3 (see the
+ * note at the top of this file) and will be reissued; a hardcoded "7 faixas"
+ * would quietly go stale the day the table changes.
+ */
+export function bandReach(id: CategoryId): BandReach {
+  const bars: BandBar[] = [];
+
+  for (const row of BAND_PLAN) {
+    const power = row.power[id];
+    if (row.band) {
+      bars.push({ band: row.band, power });
+      continue;
+    }
+    // An empty label continues the band above, so widen that bar instead.
+    const current = bars[bars.length - 1];
+    if (current && power !== null && (current.power === null || power > current.power)) {
+      current.power = power;
+    }
+  }
+
+  const powers = bars.flatMap((bar) => (bar.power === null ? [] : [bar.power]));
+  return { bars, bandCount: powers.length, maxPower: Math.max(...powers) };
+}

@@ -2,8 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { BookOpen, IdCard, Radio, ExternalLink, Building2, ArrowRight, Zap, Brain, Layers, Play } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { CATEGORIES, CATEGORY_CONFIG, CATEGORY_IMAGES } from "@/lib/config";
 import { Button } from "@/components/ui/button";
+import CategoryChoice from "@/components/home/CategoryChoice";
 import { Testimonials, type Testimonial } from "@/components/Testimonials";
 import SupportersStrip from "@/components/SupportersStrip";
 
@@ -51,49 +51,7 @@ export default async function HomePage() {
           <span className="font-semibold text-amber-600 dark:text-amber-400">{t("heroAccent")}</span>
         </h1>
 
-        {/* Category cards */}
-        <div className="mt-8 md:mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {CATEGORIES.map((id) => {
-            const s = CATEGORY_CONFIG[id];
-            const name = t("categoryName", { id });
-            const browseLabel = t("categoryBrowse");
-            const simulationLabel = t("categorySimulation");
-            const image = CATEGORY_IMAGES[id];
-
-            return (
-              <div
-                key={id}
-                className="group relative overflow-hidden rounded-xl h-72 md:h-80 transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element -- self-hosted standalone build deliberately avoids the /_next/image optimizer */}
-                <img
-                  src={image}
-                  alt={`${name} illustration`}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
-                <div className="relative h-full flex flex-col justify-between p-6">
-                  <div>
-                    <span className={`inline-block text-xs font-bold uppercase tracking-widest ${s.badgeText} ${s.badgeBg} rounded-full px-3 py-1`}>
-                      {id === '3' ? t("categoryLevel.beginner") : id === '2' ? t("categoryLevel.intermediate") : t("categoryLevel.advanced")}
-                    </span>
-                  </div>
-                  <div>
-                    <h2 className="text-3xl font-bold text-white mb-4 drop-shadow-lg">{name}</h2>
-                    <div className="flex gap-2">
-                      <Button variant="secondary" className="flex-1" asChild>
-                        <Link href={`/browse/${id}`}>{browseLabel}</Link>
-                      </Button>
-                      <Button className={`flex-1 ${s.solidBtn}`} asChild>
-                        <Link href={`/exam/${id}`}>{simulationLabel}</Link>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <CategoryChoice />
       </section>
 
       {/* Testimonials */}
