@@ -109,8 +109,10 @@
       "intermediate": "Intermédio",
       "advanced": "Avançado"
     },
+    "categoryStartHere": "Começa aqui",
+    "categoryFacts": "{bands} faixas · até {power} W · {count} perguntas",
     "categoryBrowse": "Estudar",
-    "categorySimulation": "Exame",
+    "categorySimulation": "Simular exame",
     "processHeading": "Como Tirar a Licença",
     "processSteps": {
       "study": {

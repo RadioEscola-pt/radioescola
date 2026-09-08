@@ -109,8 +109,10 @@
       "intermediate": "Intermediate",
       "advanced": "Advanced"
     },
+    "categoryStartHere": "Start here",
+    "categoryFacts": "{bands} bands · up to {power} W · {count} questions",
     "categoryBrowse": "Study",
-    "categorySimulation": "Exam",
+    "categorySimulation": "Simulate exam",
     "processHeading": "How to Get Licensed",
     "processSteps": {
       "study": {
