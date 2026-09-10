@@ -13,7 +13,7 @@
 /** What has been received, and when it was last checked. Update after a batch. */
 export const FUNDING = {
   /** Donations received during `year`, in euros */
-  received: 225,
+  received: 230,
   /** The year the total covers — the "Donativos em 2026" heading */
   year: 2026,
   /** When `received` was last reconciled against PayPal, `YYYY-MM` */
@@ -121,7 +121,8 @@ export const SUPPORTERS: Supporter[] = [
   { name: 'Paulo Viegas', callsign: 'CR7BSO', since: '2026-08' },
   { name: 'Joana Silva', callsign: 'CR7BZG', since: '2026-08' },
   { name: 'Filipe Lopes', callsign: 'CT1ILT', since: '2026-09' },
-  { name: 'Fábio Valente', callsign: 'CR7CDC', since: '2026-09' }
+  { name: 'Fábio Valente', callsign: 'CR7CDC', since: '2026-09' },
+  { name: 'Shudong Han', callsign: 'CS7CGK', since: '2026-09' }
 ];
 
 export interface SupporterYear {
