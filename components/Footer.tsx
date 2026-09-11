@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Github, MessageCircle, Smartphone, Bug, Info, Zap, BarChart3, GraduationCap, School, TrendingUp, Heart, Users, Sigma } from "lucide-react";
+import { Github, MessageCircle, Smartphone, Bug, Info, Zap, BarChart3, GraduationCap, School, TrendingUp, Heart, Users, Sigma, ShieldCheck } from "lucide-react";
 import LogoMark from "@/components/brand/LogoMark";
 import LogoWordmark from "@/components/brand/LogoWordmark";
 import { useTranslations } from "next-intl";
@@ -17,6 +17,7 @@ const internalLinks = [
   { href: "/estado-da-nacao", icon: TrendingUp, labelKey: "nationStatus" },
   { href: "/donativos", icon: Heart, labelKey: "donate" },
   { href: "/apoiantes", icon: Users, labelKey: "supporters" },
+  { href: "/privacidade", icon: ShieldCheck, labelKey: "privacy" },
 ] as const;
 
 const externalLinks = [
