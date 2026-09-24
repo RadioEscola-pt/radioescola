@@ -1,0 +1,132 @@
+---
+title: Amplificadores e Classes de Funcionamento
+description: Ganho e decibéis, polarização e ponto de funcionamento em repouso, e as classes A, AB, B e C pelo ângulo de condução, rendimento e linearidade.
+categories: [2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Amplificadores e Classes de Funcionamento
+
+Quase todos os andares de uma estação amplificam alguma coisa: o sinal que chega da antena, a frequência intermédia, o áudio, a portadora que alimenta o cabo. A **classe de funcionamento** é a escolha entre fidelidade e rendimento, e não se podem ter as duas ao mesmo tempo. É ela que decide que amplificador serve para SSB, qual serve para FM e qual aquece a caixa do transcetor.
+
+---
+
+## 1. Ganho: o que se mede e como se exprime
+
+Há **amplificação de tensão** quando a uma tensão alternada à entrada corresponde, à saída, uma tensão também alternada mas de maior amplitude: amplificar é aumentar a amplitude preservando a forma de onda, não converter alternada em contínua.
+
+Conforme a grandeza, fala-se de ganho de tensão, de corrente ou de potência. Num transístor bipolar, o ganho de corrente em contínuo é a razão entre as duas correntes:
+
+$$\beta = \frac{I_C}{I_B}$$
+
+- $\beta$: ganho de corrente em contínuo (também escrito $h_{FE}$), sem unidades
+- $I_C$: corrente de coletor, em ampere ($\text{A}$)
+- $I_B$: corrente de base, em ampere ($\text{A}$)
+
+Um coletor com $45\text{ mA}$ para $1{,}5\text{ mA}$ de base dá $\beta = 30$.
+
+Em rádio o ganho exprime-se quase sempre em **decibéis**, com duas fórmulas conforme se parte de potências ou de tensões:
+
+$$G_{\text{dB}} = 10 \log_{10} \frac{P_{\text{saída}}}{P_{\text{entrada}}} \qquad\qquad G_{\text{dB}} = 20 \log_{10} \frac{U_{\text{saída}}}{U_{\text{entrada}}}$$
+
+- $G_{\text{dB}}$: ganho, em decibel ($\text{dB}$)
+- $P_{\text{saída}}$, $P_{\text{entrada}}$: potências à saída e à entrada, em watt ($\text{W}$)
+- $U_{\text{saída}}$, $U_{\text{entrada}}$: tensões à saída e à entrada, em volt ($\text{V}$)
+
+A vantagem prática é que **os decibéis somam-se**: três andares de $5\text{ dB}$ dão $15\text{ dB}$, e um amplificador de $20\text{ dB}$ seguido de um atenuador de $30\text{ dB}$ dá $-10\text{ dB}$, ou seja, o conjunto atenua. Em potência, $10\text{ dB}$ são $10$ vezes e $20\text{ dB}$ são $100$ vezes (logo $1\text{ W}$ num amplificador de $20\text{ dB}$ dá $100\text{ W}$); em tensão, $20\text{ dB}$ são $10$ vezes.
+
+---
+
+## 2. Polarização e ponto de funcionamento em repouso
+
+Um transístor só amplifica se estiver na **zona ativa**: junção base-emissor diretamente polarizada, junção base-coletor inversamente polarizada. Sem tensão contínua na base, um sinal de alguns milivolt nem abriria a junção; a **polarização** fixa um ponto de trabalho em torno do qual o sinal pode oscilar.
+
+A forma mais comum é a **polarização fixa** por divisor de tensão: duas resistências entre a alimentação e a massa, com a base no ponto médio. No gráfico de $I_C$ em função de $V_{CE}$, a alimentação e a resistência de coletor impõem uma **reta de carga**, e a polarização escolhe um ponto sobre ela: o **ponto de funcionamento em repouso**, ou ponto Q, o que o transístor ocupa sem sinal.
+
+**É a posição desse ponto que define a classe de funcionamento**, e o que a quantifica é o **ângulo de condução**: a fração do ciclo em que o elemento ativo conduz, em graus.
+
+---
+
+## 3. As quatro classes
+
+| Classe | Ângulo de condução | Rendimento típico | Linearidade | Aplicação típica |
+| :--- | :---: | :---: | :--- | :--- |
+| **A** | $360^\circ$ (todo o período) | $20$ a $30\%$ | Muito boa, baixa distorção harmónica | Pequenos sinais, andares de RF e FI, excitadores, áudio |
+| **AB** | entre $180^\circ$ e $360^\circ$ (mais de meio período) | $50$ a $60\%$ | Boa, sem distorção de cruzamento | Lineares de potência para SSB |
+| **B** | $180^\circ$ (meio período) | $60$ a $70\%$ | Aceitável apenas em *push-pull* | Andares de saída de áudio, lineares de RF |
+| **C** | menos de $180^\circ$ | $70$ a $85\%$ | Má, elevada distorção harmónica | Andares finais de FM e CW, multiplicadores de frequência |
+
+### Classe A
+
+O ponto de repouso fica a meio da reta de carga e o transístor **conduz durante todo o período**. A **vantagem principal é a baixa distorção harmónica**: a saída acompanha a entrada em todo o ciclo e a forma de onda é reproduzida fielmente. A desvantagem é o rendimento, o pior de todas as classes: a corrente de repouso circula permanentemente e aquece o transístor mesmo sem sinal.
+
+### Classe B e a montagem *push-pull*
+
+Em classe B o transístor é polarizado no limiar de corte e **conduz durante meio período**. Um só transístor entregaria meia onda, pelo que a classe B se usa em **push-pull**: dois dispositivos em oposição, cada um com a sua alternância, recombinadas à saída. A junta não é perfeita, porque há uma pequena zona morta enquanto nenhum dos dois conduz, e daí a **distorção de cruzamento** (*crossover distortion*) típica desta montagem.
+
+### Classe AB
+
+É o compromisso entre as duas anteriores: uma polarização ligeiramente acima do corte faz o transístor **conduzir durante mais de meio período**, mas não o período completo. Essa sobreposição impede que os dois ramos de um push-pull estejam ambos cortados, o que elimina a distorção de cruzamento, com rendimento próximo do da classe B.
+
+### Classe C
+
+O transístor é polarizado abaixo do corte e só conduz nos picos, durante **menos de meio período**. A **vantagem é a elevada eficiência**; a **desvantagem principal é a elevada distorção harmónica**, inevitável num dispositivo que corta a maior parte do sinal. A saída é um trem de impulsos e não uma réplica da entrada, pelo que exige um circuito ressonante de saída que reconstitua a sinusoide; em contrapartida, essa riqueza em harmónicas torna-a útil como multiplicador de frequência.
+
+Um amplificador de classe C **não pode amplificar SSB nem AM**, porque não preserva as variações de amplitude da envolvente; esses modos exigem um amplificador linear, em classe A ou AB. O que resulta de amplificar um sinal de amplitude variável num andar não linear está no guia de [distorção e intermodulação](/aprender/distorcao-e-intermodulacao).
+
+---
+
+## 4. Rendimento, calor e o compromisso
+
+O rendimento é a fração da potência consumida que sai efetivamente como radiofrequência:
+
+$$\eta = \frac{P_{\text{RF saída}}}{P_{\text{RF entrada}} + P_{\text{alimentação}}} \times 100$$
+
+- $\eta$: rendimento, em percentagem
+- $P_{\text{RF saída}}$: potência de radiofrequência entregue à saída, em watt ($\text{W}$)
+- $P_{\text{RF entrada}}$: potência de radiofrequência aplicada à entrada, em watt ($\text{W}$)
+- $P_{\text{alimentação}}$: potência fornecida pela fonte de alimentação, em watt ($\text{W}$)
+
+Nenhum amplificador chega a $100\%$, e **toda a diferença entre a potência que entra e a potência de RF que sai é dissipada sob a forma de calor**, no próprio dispositivo ativo. Daí os dissipadores e as ventoinhas: um andar em classe A com $25\%$ de rendimento dissipa três vezes a potência que entrega; um em classe C com $80\%$ dissipa um quarto dela. Nos modos de ciclo de trabalho elevado, como os digitais, reduz-se a potência para não danificar o andar final.
+
+---
+
+## 5. As classes na cadeia de um emissor e de um recetor
+
+Num emissor, o **excitador** eleva o sinal do oscilador ou do modulador até ao nível que o andar final exige, em classe A. O **andar final** trabalha na classe que o modo permitir: classe C em FM e CW, onde a envolvente é constante; classe AB num linear de SSB, cuja potência de saída se especifica em potência de pico da envolvente. Um andar final de FM em classe C divide-se, de forma simplificada, em três partes: **malha de adaptação de entrada, transístores de amplificação e malha de adaptação de saída**, seguidas de um filtro passa-baixo.
+
+Num recetor, os andares são de pequeno sinal e trabalham em classe A: o amplificador de RF de entrada, o de frequência intermédia e o de áudio. Os dois primeiros são **amplificadores sintonizados**, com circuitos ressonantes à entrada e à saída: resposta passa-banda, para sinais de banda estreita.
+
+A montagem também conta: o **emissor comum** amplifica tensão e corrente e inverte o sinal; o **seguidor de emissor** tem ganho unitário, impedância de entrada elevada e de saída baixa, e adapta andares em vez de amplificar. Em UHF e SHF, o dispositivo habitual num amplificador de potência é o **FET**.
+
+> Os modos de funcionamento do transístor estão no guia [Transístores](/aprender/transistores); os diagramas de blocos completos, em [Emissores](/aprender/emissores) e [Recetores](/aprender/recetores).
+
+---
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - Num amplificador de classe C, o transístor conduz durante:"
+    options={["menos de meio período","meio período","mais de meio período","todo o período"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="2 - Qual é a principal desvantagem de um amplificador em classe C?"
+    options={["Baixo rendimento","Elevada distorção harmónica","Elevado ruído próprio","Não permite o uso de circuitos sintonizados"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="3 - Qual das classes de funcionamento apresenta a menor distorção harmónica?"
+    options={["Classe AB","Classe B","Classe C","Classe A"]}
+    correct="D" />
+
+<StudyQuestionCard
+    prompt="4 - Um amplificador com um ganho de 30 dB tem a saída ligada a um atenuador de 12 dB. O ganho do conjunto é de:"
+    options={["18 dB","42 dB","-18 dB","360 dB"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="5 - Num emissor, a diferença entre a potência fornecida ao amplificador e a potência de RF que este entrega à saída:"
+    options={["é irradiada pela antena","é devolvida à fonte de alimentação","é dissipada sob a forma de calor","corresponde às correntes estacionárias no cabo"]}
+    correct="C" />

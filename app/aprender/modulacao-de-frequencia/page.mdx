@@ -1,0 +1,136 @@
+---
+title: Modulação de Frequência e de Fase (FM e PM)
+description: O que varia em FM e em PM, o desvio de frequência e o índice de modulação, a largura de banda pela regra de Carson, a imunidade ao ruído pelo limitador e pelo efeito de captura, e as manipulações digitais FSK e PSK.
+categories: [2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Modulação de Frequência e de Fase (FM e PM)
+
+A FM é o modo em que se fazem quase todos os contactos locais em VHF e UHF, e é a modulação que o exame usa para verificar se distingue três grandezas fáceis de confundir: o desvio, o índice de modulação e a largura de banda ocupada. A modulação de fase aparece nas mesmas perguntas porque é a mesma família, e as manipulações FSK e PSK são as suas versões comutadas.
+
+---
+
+## 1. Modulação angular: o que varia, e o que fica constante
+
+Modular é transladar um sinal da sua gama de frequências para outra, sobrepondo a informação a uma portadora. A [modulação de amplitude](/aprender/modulacao-am) fá-lo mexendo na amplitude da portadora; a FM e a PM deixam a amplitude quieta e mexem no **ângulo**, pelo que se designam em conjunto por **modulações angulares**.
+
+| | O que varia ao ritmo do sinal | Envolvente | Sensibilidade ao ruído de amplitude |
+| :--- | :--- | :---: | :--- |
+| **AM** | a amplitude (o nível instantâneo de potência) | variável | elevada |
+| **FM** | a frequência | constante | baixa |
+| **PM** | a fase (o ângulo) | constante | baixa |
+
+Em **FM**, a frequência da portadora varia proporcionalmente à **amplitude instantânea** do sinal modulante, e apenas a isso: não varia com a frequência do modulante. Em **PM**, é o ângulo instantâneo da portadora que varia linearmente com o sinal modulante.
+
+As duas não são independentes: a frequência instantânea é a taxa de variação da fase, pelo que não se mexe numa sem mexer na outra. Distinguem-se apenas pelo que é proporcional ao modulante, o desvio de frequência numa e o desvio de fase na outra; aplicar a um modulador de fase (que atua sobre a sintonia do circuito de tanque) o áudio previamente integrado produz FM verdadeira. O índice de modulação de uma emissão modulada em fase **não depende** da frequência da portadora.
+
+---
+
+## 2. Desvio de frequência
+
+O **desvio de frequência** é a diferença entre o valor máximo de frequência que a onda modulada apresenta por efeito da modulação e a frequência da portadora não modulada. Não é a diferença entre o máximo e o mínimo (essa é o dobro), nem a deriva de um oscilador instável, nem a tolerância de frequência regulamentar.
+
+Quem o fixa é a **amplitude da tensão de modulação**: falar mais alto ao microfone aumenta o desvio, falar mais agudo não. A **percentagem de modulação** em FM é o quociente entre o desvio instantâneo e o desvio máximo definido: com um máximo de $15\text{ kHz}$, um desvio instantâneo de $3\text{ kHz}$ dá $3/15 = 0{,}2$. Já num multiplicador de frequência o desvio é multiplicado pelo mesmo fator que a portadora, pelo que um emissor modulado a $\pm 5\text{ kHz}$ apresenta $\pm 10\text{ kHz}$ na segunda harmónica.
+
+---
+
+## 3. Índice de modulação
+
+O **índice de modulação** de um sinal de FM é a razão entre o desvio máximo de frequência e a frequência do sinal modulante:
+
+$$m = \frac{\Delta f}{f_m}$$
+
+- $m$: índice de modulação, grandeza adimensional (não se expressa em hertz)
+- $\Delta f$: desvio máximo de frequência, em hertz ($\text{Hz}$)
+- $f_m$: frequência do sinal modulante, em hertz ($\text{Hz}$)
+
+Com $\Delta f = \pm 6\text{ kHz}$ e $f_m = 2\text{ kHz}$, o índice é $6/2 = 3$; com $\Delta f = \pm 5\text{ kHz}$ e $f_m = 3\text{ kHz}$, é $5/3 \approx 1{,}67$. Quando o denominador é a **mais alta** frequência de modulação do sistema, o mesmo quociente chama-se **razão de desvio**: $7{,}5/3{,}5 \approx 2{,}14$.
+
+---
+
+## 4. Largura de banda ocupada: a regra de Carson
+
+Ao contrário da AM, uma emissão de FM não tem duas faixas laterais: por cada frequência modulante gera um número **infinito** de frequências laterais. As de ordem elevada são desprezáveis, e a largura de banda útil calcula-se pela **regra de Carson**:
+
+$$B = 2 \cdot (\Delta f + f_m)$$
+
+- $B$: largura de banda necessária, em hertz ($\text{Hz}$)
+- $\Delta f$: desvio máximo de frequência, em hertz ($\text{Hz}$)
+- $f_m$: frequência máxima de modulação, em hertz ($\text{Hz}$)
+
+Três contas que saem em exame: $2 \cdot (25 + 3) = 56\text{ kHz}$; $2 \cdot (3 + 2{,}5) = 11\text{ kHz}$; e, para fonia de amador com $\Delta f = 5\text{ kHz}$ e $f_m = 3\text{ kHz}$, $2 \cdot (5 + 3) = 16\text{ kHz}$, que cabe num canal de $25\text{ kHz}$. Daqui sai o compromisso central da FM: **quanto maior o desvio, menos ruído se nota no recetor, mas maior a faixa de frequências ocupada**.
+
+| | Desvio típico | Índice de modulação | Largura de banda | Uso |
+| :--- | :---: | :---: | :---: | :--- |
+| **FM de banda estreita** | $\pm 5\text{ kHz}$ | menor | $\approx 16\text{ kHz}$ | fonia de amador, canais de $25\text{ kHz}$ |
+| **FM de banda larga** | $\pm 75\text{ kHz}$ | maior | $\approx 180\text{ kHz}$ | radiodifusão comercial |
+
+O índice de modulação de um sinal de FM de banda estreita é, portanto, **menor** que o de um sinal de banda larga.
+
+---
+
+## 5. Porque é que a FM resiste ao ruído
+
+A informação está na frequência, não na amplitude, pelo que tudo o que perturbe a amplitude (estática, ignição de automóveis) pode ser removido antes da deteção. É essa a função do andar **limitador**: recortar o sinal a uma **amplitude constante**, e não limitar o desvio de frequência nem a fase. A receção em AM é, face à FM, mais sensível aos ruídos interferentes.
+
+A mesma virtude tem um lado incómodo: se dois sinais de FM chegarem na mesma frequência, só o mais forte é desmodulado e o mais fraco desaparece por completo, em vez de se ouvir de mistura. É o **efeito de captura**, que não é dessensibilização nem modulação cruzada.
+
+O áudio extrai-se com um **discriminador**, um detetor de flanco, um detetor Foster-Seeley ou um desmodulador com PLL, nunca com um detetor de envolvente: estão descritos em [Recetores](/aprender/recetores) e em [Malha de Captura de Fase](/aprender/malha-de-captura-de-fase), que é também onde o VCO recebe o sinal modulante num emissor de FM.
+
+### Pré-ênfase e de-ênfase
+
+À saída de um desmodulador de FM o ruído cresce com a frequência de áudio e estraga sobretudo os agudos. Para o compensar aplica-se **pré-ênfase** antes da modulação, um realce das frequências de áudio mais altas (na Europa com constante de tempo de $50\ \mu\text{s}$); a rede que depois **restabelece** o equilíbrio original, atenuando os agudos na mesma proporção, é a de **de-ênfase**.
+
+### Envolvente constante e o andar final
+
+Por a envolvente ser constante, o andar de potência pode ser fortemente não linear sem prejudicar a informação, o que autoriza a classe C e o seu rendimento elevado: ver [Amplificadores e Classes](/aprender/amplificadores-e-classes) e [Distorção e Intermodulação](/aprender/distorcao-e-intermodulacao).
+
+---
+
+## 6. Porque não se usa FM em fonia abaixo dos 29,5 MHz
+
+Porque a **largura de banda excederia os limites regulamentares** aplicáveis. As faixas de HF são estreitas, e uma emissão de $16\text{ kHz}$ onde uma de SSB ocupa menos de $3\text{ kHz}$ seria insustentável. A razão não é o rendimento do emissor, nem a atenuação das harmónicas, nem a estabilidade de frequência.
+
+Em HF a fonia faz-se por isso em [banda lateral única](/aprender/banda-lateral-unica), ficando a FM reservada ao topo dos 10 metros e às faixas de VHF e UHF. A sua classe de emissão UIT é **F3E** (as classes estão explicadas no guia de [modulação de amplitude](/aprender/modulacao-am)).
+
+---
+
+## 7. FSK e PSK: as versões digitais
+
+Quando o sinal modulante deixa de ser áudio e passa a ser uma sequência de bits, a portadora já não varia continuamente: **comuta** entre estados discretos, e fala-se de manipulação.
+
+- **FSK**, de *Frequency Shift Keying* (manipulação por desvio de frequência), comuta a portadora entre duas ou mais frequências fixas. É FM aplicada a um sinal digital: o RTTY usa duas frequências, o FT8 usa oito.
+- **PSK**, de *Phase Shift Keying* (manipulação por deslocamento de fase), comuta a **fase** da portadora, sendo por isso uma modulação de **fase**; é o que faz o PSK31. A ASK comuta a amplitude e a QAM combina amplitude e fase, pelo que nenhuma delas é uma modulação puramente de fase.
+
+Como a informação vive na fase, uma resposta em fase não linear num filtro de frequência intermédia (FI) é o defeito que mais os prejudica. Os protocolos estão em [Modos Digitais e FEC](/aprender/modos-digitais-e-fec); o modo como o transcetor os gera e descodifica, em [Processamento Digital de Sinal](/aprender/processamento-digital-de-sinal).
+
+---
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - Qual é a largura de faixa necessária numa emissão de modulação de frequência com um desvio de frequência de 4 kHz e uma frequência máxima de modulação de 3 kHz?"
+    options={["1 kHz","7 kHz","14 kHz","12 kHz"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="2 - Num emissor de FM com um desvio máximo de ± 8 kHz e uma frequência de modulação de 2 kHz, qual é o índice de modulação?"
+    options={["16","4","0,25","8000"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="3 - Em modulação de frequência, o desvio de frequência obtido depende:"
+    options={["da amplitude da tensão de modulação","da frequência da tensão de modulação","da frequência da portadora","do rendimento do andar final"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="4 - Como se designa o efeito pelo qual, de dois sinais de fonia FM recebidos na mesma frequência, apenas o mais forte é desmodulado?"
+    options={["Dessensibilização","Interferência por modulação cruzada","Discriminação de frequências","Efeito de captura"]}
+    correct="D" />
+
+<StudyQuestionCard
+    prompt="5 - Qual dos seguintes tipos de manipulação corresponde a uma modulação de fase?"
+    options={["ASK","PSK","FSK","Modulação por impulsos"]}
+    correct="B" />

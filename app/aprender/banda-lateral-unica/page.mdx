@@ -1,0 +1,138 @@
+---
+title: Banda Lateral Única (SSB) e Telegrafia (CW)
+description: Porque se suprimem a portadora e uma banda lateral, que banda lateral se usa em cada faixa, e como se geram e recebem os sinais de BLU e de telegrafia.
+categories: [3, 2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Banda Lateral Única (SSB) e Telegrafia (CW)
+
+Quase toda a voz nas faixas de HF é **banda lateral única**, e quase todos os contactos de longa distância com pouca potência são em **telegrafia**. Ambos os modos retiram da emissão tudo o que não transporta informação. O exame pergunta-os por três ângulos: o que se suprime e porquê, que banda lateral se usa em que faixa, e que andares fazem o trabalho.
+
+---
+
+## 1. O que se suprime, e o que isso poupa
+
+Uma emissão de [modulação de amplitude](/aprender/modulacao-am) produz uma portadora e **duas** bandas laterais, e cada banda lateral leva a mesma informação que a outra. A portadora não leva nenhuma. Com modulação a 100 %, a potência reparte-se assim:
+
+$$P_{\text{portadora}} = \frac{2}{3}\,P_{\text{total}} \qquad P_{\text{banda lateral}} = \frac{1}{6}\,P_{\text{total}}$$
+
+- $P_{\text{portadora}}$: potência gasta na portadora, em watt ($\text{W}$)
+- $P_{\text{banda lateral}}$: potência gasta em **cada** uma das duas bandas laterais, em watt ($\text{W}$)
+- $P_{\text{total}}$: potência total da emissão, em watt ($\text{W}$)
+
+Dois terços da potência vão para a parte do sinal que nada diz, e o resto divide-se por duas cópias do mesmo. A banda lateral única suprime a portadora e uma das bandas laterais, entregando toda a potência à que resta, que fica seis vezes mais forte do que ficaria em AM:
+
+$$G = 10 \log_{10} 6 \approx 7{,}8\text{ dB}$$
+
+- $G$: ganho em potência útil da BLU sobre a AM, em decibel ($\text{dB}$)
+
+Nada se perde: **toda a informação é transmitida**, porque as duas bandas laterais eram redundantes. Daí o par de vantagens que o exame quer ouvir, menor largura de banda e elevada eficiência energética. A BLU continua a ser modulação **de amplitude**, não de frequência nem de fase; a designação UIT é **J3E**, contra **A3E** para a AM clássica.
+
+---
+
+## 2. Largura de banda, espectro e ruído
+
+Voz inteligível ocupa a banda de áudio entre cerca de $300\text{ Hz}$ e $2\,700\text{ Hz}$, e em BLU essa banda é transmitida uma só vez:
+
+$$B_{\text{BLU}} = f_{\max} - f_{\min} \qquad B_{\text{AM}} = 2\,f_{\max}$$
+
+- $B_{\text{BLU}}$: largura de banda de uma emissão em banda lateral única, em hertz ($\text{Hz}$)
+- $B_{\text{AM}}$: largura de banda da mesma voz em dupla banda lateral, em hertz ($\text{Hz}$)
+- $f_{\min}$, $f_{\max}$: frequências extremas do áudio transmitido, em hertz ($\text{Hz}$)
+
+Com esses $300$ a $2\,700\text{ Hz}$, a emissão em BLU ocupa $2{,}4\text{ kHz}$ e a mesma voz em AM ocuparia $5{,}4\text{ kHz}$; com o canal de $3\text{ kHz}$ que o exame toma como referência, são $3\text{ kHz}$ contra $6\text{ kHz}$. Em qualquer dos casos, **metade**. Em HF isso duplica o número de estações que cabem lado a lado, e é por isso que a BLU é a emissão de fonia de menor largura de banda que o exame lista. O ganho não é só de espaço: o ruído que um recetor recolhe cresce com a banda que deixa passar,
+
+$$P_r = k\,T\,B$$
+
+- $P_r$: potência de ruído, em watt ($\text{W}$)
+- $k$: constante de Boltzmann, em joule por kelvin ($\text{J/K}$)
+- $T$: temperatura de ruído efetiva do sistema, em kelvin ($\text{K}$)
+- $B$: largura de banda efetiva, em hertz ($\text{Hz}$)
+
+pelo que metade da largura de banda é metade do ruído, mais $3\text{ dB}$ de relação sinal-ruído a somar ao ganho em potência útil.
+
+---
+
+## 3. Banda lateral superior ou inferior: a convenção por faixa
+
+Suprimida a portadora, falta escolher **qual** das bandas laterais se emite. A que fica acima da frequência de trabalho é a **banda lateral superior** (em inglês *USB*, de *upper sideband*); a que fica abaixo é a **banda lateral inferior** (em inglês *LSB*, de *lower sideband*). São tecnicamente equivalentes, mas não intercambiáveis: se o emissor manda uma e o recetor desmodula a outra, a voz sai invertida no espectro e impercetível. Como qualquer das duas serviria, os radioamadores fixaram uma convenção comum:
+
+| Faixa | Frequências | Banda lateral usada |
+| :--- | :--- | :--- |
+| 160 m | 1,8 MHz | LSB |
+| 80 e 75 m | 3,5 MHz | LSB |
+| 40 m | 7 MHz | LSB |
+| 20 m | 14 MHz | USB |
+| 17 m | 18 MHz | USB |
+| 15 m | 21 MHz | USB |
+| 12 m | 24 MHz | USB |
+| 10 m | 28 MHz | USB |
+| VHF e UHF | 144 MHz e acima | USB |
+
+A regra prática: **abaixo dos 10 MHz, banda lateral inferior; acima, banda lateral superior**, incluindo todo o VHF e UHF. A faixa dos 60 m é a exceção conhecida, por usar a superior apesar de estar abaixo desse limiar.
+
+É uma **convenção**, vinda do hábito e dos valores por omissão dos equipamentos, não uma imposição regulamentar: a banda lateral inferior não é a única autorizada por lei nas faixas baixas nem é mais eficiente do que a superior. E nenhuma emissão em BLU é compatível com um detetor de AM simples: falta-lhe a portadora. Dois distratores: a **dupla banda lateral** gasta o dobro do espectro sem vantagem, e a **banda lateral vestigial** é técnica de televisão analógica.
+
+---
+
+## 4. Como se gera um sinal de banda lateral única
+
+São dois passos, nesta ordem:
+
+1. **Modulador balanceado.** Combina o sinal do oscilador de portadora com o do amplificador de voz e cancela a portadora: à sua saída, bem ajustado, encontram-se **ambas as bandas laterais e nenhuma portadora**.
+2. **Filtro.** Um filtro estreito, tipicamente a cristal de quartzo, corta uma das bandas laterais; é ele que decide se o resultado é USB ou LSB.
+
+Segue-se a conversão para a frequência de saída e a amplificação, que tem de ser **linear**, porque a envolvente de um sinal de BLU varia com a voz. Excitar em excesso um andar de BLU dá achatamento dos picos (*flat-topping*), distorção e **mais** largura de banda, invadindo os canais vizinhos: é o *splatter* do guia de [distorção e intermodulação](/aprender/distorcao-e-intermodulacao).
+
+A envolvente variável manda também na medição: a razão entre potência de pico envolvente e potência média em voz BLU é de cerca de **2,5 para 1**, pelo que só um **wattímetro de leitura de pico** garante, com precisão bastante, que não se excede o limite autorizado.
+
+---
+
+## 5. Como se recebe
+
+Falta a portadora, e sem ela não há referência para recuperar o áudio: **para desmodular, o recetor tem de a restabelecer**. Quem a repõe é o **oscilador de batimento (BFO)**, e o andar que combina a saída do BFO com o sinal do amplificador de frequência intermédia, entregando-o ao amplificador de áudio, é o **detetor de produto**. Um detetor de envolvente não serve; o de produto dá melhor relação sinal-ruído. Há também o **recetor de conversão direta**, que traduz o sinal de RF diretamente para áudio e dispensa por isso o amplificador de frequência intermédia: é a resposta que o exame espera quando pergunta qual o recetor apropriado para BLU ou CW sem andar de mistura nem amplificador de FI.
+
+É a portadora reinserida que define a origem da escala de áudio. Se estiver algumas centenas de hertz ao lado, todas as componentes da voz ficam deslocadas da mesma quantidade absoluta, as relações entre elas alteram-se e a voz sai grave ou nasalada, até ficar ininteligível. Sintonizar BLU exige por isso mais cuidado do que AM ou FM, e a facilidade de sintonia nunca conta como vantagem da BLU.
+
+---
+
+## 6. Telegrafia (CW)
+
+**CW** é *Continuous Wave*, onda contínua, por oposição às antigas ondas amortecidas da descarga entre elétrodos. O sinal de um emissor de CW consiste **num sinal de RF que é ligado e desligado** segundo as regras do código Morse: não é a frequência que varia, nem a fase, nem há um tom de áudio a modular a portadora. É manipulação da própria portadora (*on-off keying*), e a designação UIT é **A1A**.
+
+Com dois estados e cadência lenta, a largura de banda é de algumas dezenas a algumas centenas de hertz, **a menor de todas as emissões** que o exame compara, BLU incluída. O filtro de receção acompanha, e é aí que está a vantagem: por $P_r = k\,T\,B$, um filtro de $500\text{ Hz}$ recolhe dez vezes menos ruído do que um de $5\text{ kHz}$, $10\text{ dB}$ de melhoria no ruído de fundo. Com propagação fraca, uma estação em CW ainda se copia quando em fonia já desapareceu.
+
+Duas consequências práticas. A telegrafia **não tem áudio próprio**: uma portadora ligada e desligada não produz som num detetor, e é o BFO que, por batimento com a frequência intermédia, a torna num tom audível. E como a amplitude é constante, a linearidade deixa de ser exigência e pode amplificar-se CW em classe C. Aviso do exame: um filtro *notch* automático de DSP pode apagar o sinal de CW desejado ao mesmo tempo que apaga os interferentes, porque para o algoritmo todos são tons.
+
+> O código Morse é, tecnicamente, um **modo digital**, ao lado do RTTY, do PSK31 e do packet, no guia de [modos digitais](/aprender/modos-digitais-e-fec); os diagramas de blocos completos estão em [Emissores](/aprender/emissores) e [Recetores](/aprender/recetores).
+
+---
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - Numa emissão de fonia em banda lateral única, o que é efetivamente transmitido?"
+    options={["A portadora e as duas bandas laterais","A portadora e uma das bandas laterais","Uma banda lateral, sendo suprimidas a portadora e a outra banda lateral","As duas bandas laterais, sendo suprimida apenas a portadora"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="2 - Que banda lateral utilizam habitualmente as estações de amador nas faixas dos 160, 75 e 40 metros?"
+    options={["A banda lateral inferior","A banda lateral superior","A banda lateral vestigial","As duas, alternadamente"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="3 - Num emissor de fonia em banda lateral única, que circuito combina o sinal do oscilador de portadora com o do amplificador de voz e suprime a portadora?"
+    options={["O filtro de saída","O detetor de produto","O amplificador linear de potência","O modulador balanceado"]}
+    correct="D" />
+
+<StudyQuestionCard
+    prompt="4 - Para que serve o oscilador de batimento (BFO) na receção de banda lateral única?"
+    options={["Limitar a amplitude do sinal antes do detetor","Restabelecer a portadora suprimida, para o detetor de produto recuperar o áudio","Gerar o tom de 800 Hz que a emissão transporta","Deslocar a frequência intermédia para a banda lateral inferior"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="5 - Qual das seguintes emissões utiliza, de uma forma geral, a menor largura de banda?"
+    options={["Banda lateral única","Dupla banda lateral","CW","Modulação de frequência"]}
+    correct="C" />

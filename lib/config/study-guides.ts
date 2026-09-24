@@ -10,7 +10,7 @@ import {
   Zap, CircuitBoard, Filter, RadioReceiver, RadioTower, Antenna, Radar,
   Gauge, ShieldAlert, HardHat, Waves, Palette, SpellCheck, MessagesSquare,
   Tag, Footprints, Landmark, AudioWaveform, MessageSquareCode, BookMarked,
-  Activity, Cpu, BatteryCharging, Binary, FileCheck, Sigma,
+  Activity, Cpu, BatteryCharging, Binary, FileCheck, Sigma, Network, Repeat, AudioLines, TrendingUp, Blend, Radio, SignalHigh, ChartSpline,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -58,6 +58,14 @@ export const GUIDE_VISUAL: Record<string, { icon: LucideIcon; accent: GuideAccen
   'modos-digitais-e-fec': { icon: Binary, accent: 'cyan' },
   'marcar-exame-anacom': { icon: FileCheck, accent: 'amber' },
   'formulario': { icon: Sigma, accent: 'violet' },
+  'leis-de-kirchhoff': { icon: Network, accent: 'amber' },
+  'malha-de-captura-de-fase': { icon: Repeat, accent: 'rose' },
+  'processamento-digital-de-sinal': { icon: AudioLines, accent: 'cyan' },
+  'amplificadores-e-classes': { icon: TrendingUp, accent: 'violet' },
+  'distorcao-e-intermodulacao': { icon: Blend, accent: 'rose' },
+  'modulacao-am': { icon: Radio, accent: 'amber' },
+  'banda-lateral-unica': { icon: SignalHigh, accent: 'emerald' },
+  'modulacao-de-frequencia': { icon: ChartSpline, accent: 'blue' },
 };
 
 export const DEFAULT_GUIDE_VISUAL = { icon: BookOpen, accent: 'slate' as const };

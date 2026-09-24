@@ -1,0 +1,137 @@
+---
+title: Distorção e Intermodulação
+description: O que a falta de linearidade faz a um sinal de rádio: harmónicas, produtos de intermodulação, splatter na emissão e bloqueio, transmodulação e perda de gama dinâmica na receção.
+categories: [3, 2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Distorção e Intermodulação
+
+Muitos dos defeitos que um radioamador ouve ou provoca têm a mesma origem: um circuito que deixou de ser linear. É a não linearidade que enche a banda de "splatter" quando se fala alto de mais ao microfone, que faz aparecer radiodifusão no meio dos 40 metros, e que faz um sinal fraco desaparecer quando o vizinho carrega no PTT.
+
+---
+
+## 1. Linear e não linear
+
+Um circuito **linear** multiplica o sinal por uma constante e, quando muito, atrasa-o: à saída aparecem exatamente as mesmas frequências que entraram, com outra amplitude e outra fase. Num circuito **não linear** a característica de transferência não é uma reta, ou seja, o ganho depende do nível instantâneo do sinal. Daqui sai a frase que o exame verifica de várias maneiras: **só um dispositivo não linear cria frequências novas**.
+
+Nenhum componente real é perfeitamente linear; a questão é se os termos não lineares são pequenos ao ponto de não incomodarem. Ficam grandes quando um andar é levado perto da saturação, quando um misturador recebe energia a mais, ou quando o "circuito" é um contacto de metal oxidado, que conduz melhor num sentido do que no outro.
+
+---
+
+## 2. Distorção harmónica: um sinal, múltiplos inteiros
+
+Com **um único sinal** à entrada, uma não linearidade produz apenas múltiplos inteiros da sua frequência:
+
+$$f_n = n \cdot f$$
+
+- $f$: frequência fundamental do sinal, em hertz ($\text{Hz}$)
+- $n$: ordem da harmónica, um número inteiro ($n = 2, 3, 4, \dots$)
+
+Um emissor em $7\text{ MHz}$ radia harmónicas em $14$, $21$ e $28\text{ MHz}$. O essencial é que **caem muito longe da frequência útil**, noutras faixas, e por isso se removem com facilidade: um **filtro passa-baixo** à saída do emissor deixa passar a fundamental e atenua o que está acima (se as espúrias surgirem acima *e* abaixo da nominal, o filtro adequado é um passa-banda).
+
+Um andar que trabalhe com corte profundo é rico em harmónicas por construção, pelo que só serve para modos de amplitude constante como CW ou FM; um sinal de SSB exige amplificação linear, assunto do guia [amplificadores e classes de funcionamento](/aprender/amplificadores-e-classes).
+
+---
+
+## 3. Intermodulação: dois sinais, produtos ao lado do sinal útil
+
+Com **dois ou mais sinais de frequências diferentes** no mesmo elemento não linear, os termos não lineares multiplicam-nos entre si e geram combinações:
+
+$$f_{\text{IM}} = m \cdot f_1 \pm n \cdot f_2$$
+
+- $f_1$, $f_2$: frequências dos sinais presentes à entrada, em hertz ($\text{Hz}$)
+- $m$, $n$: números inteiros positivos
+- a **ordem** do produto é a soma $m + n$
+
+São precisas as duas condições: frequências **diferentes** e dispositivo **não linear**. Na mesma frequência nascem só harmónicas; num dispositivo linear não nasce nada.
+
+### A aritmética que decide tudo
+
+Tome $f_1 = 14{,}100\text{ MHz}$ e $f_2 = 14{,}102\text{ MHz}$. Os produtos de **segunda ordem** são a soma e a diferença:
+
+$$f_1 + f_2 = 28{,}202\text{ MHz} \qquad f_2 - f_1 = 0{,}002\text{ MHz}$$
+
+Um está perto do dobro, o outro perto de zero: ambos longe da banda e filtráveis. Os de **terceira ordem** são $2f_1 - f_2$ e $2f_2 - f_1$:
+
+$$2f_1 - f_2 = 28{,}200 - 14{,}102 = 14{,}098\text{ MHz}$$
+
+$$2f_2 - f_1 = 28{,}204 - 14{,}100 = 14{,}104\text{ MHz}$$
+
+Caem a $2\text{ kHz}$ dos originais, dentro da própria faixa, e **nenhum filtro os separa do sinal útil** porque estão colados a ele. É essa a razão de a terceira ordem dominar as especificações de amplificadores lineares e de recetores (o ponto de interceção de terceira ordem, IP3).
+
+Atenção a uma armadilha: "terceira ordem" é a soma dos coeficientes, **não** o número de sinais. Bastam **duas** frequências para gerar um produto de terceira ordem.
+
+---
+
+## 4. Na emissão: excitação a mais, ALC e splatter
+
+Um sinal de SSB é uma soma de muitas componentes próximas, pelo que um andar final não linear gera um contínuo de produtos de terceira ordem que alarga a emissão para os canais adjacentes. É o **splatter**, e a causa habitual é a excitação excessiva.
+
+Falar demasiado alto ao microfone satura o andar final e achata os picos da envolvente, defeito conhecido por **"flat-topping"**. A consequência é sempre a mesma, e é assim que o exame a pergunta: o sinal **fica distorcido e ocupa maior largura de banda**; não fica mais forte nem mais inteligível, e a potência aparente não aumenta. A defesa é o **controlo automático de nível (ALC)**, que reduz o ganho antes da saturação, e é por isso o ajuste mais importante nos modos digitais de transmissão contínua, como o PSK31. Quem quiser ver o resultado usa um **analisador de espectro**, que mostra os sinais no domínio da frequência.
+
+Dois emissores próximos intermodulam-se entre si quando o sinal de um entra no andar final do outro por acoplamento entre antenas, o que se resolve com isoladores e filtros de cavidade. O equivalente doméstico é a **junta de metal corroído**, que mistura emissoras de radiodifusão AM fortes e reirradia as combinações para dentro das faixas de amador: ouvir várias estações misturadas é a assinatura desse "parafuso ferrugento", e a cura está na junta, não no recetor.
+
+---
+
+## 5. Na receção: bloqueio, transmodulação e gama dinâmica
+
+Os andares de entrada de um recetor lidam com tudo o que a antena entrega dentro da banda de passagem dos filtros, e não só com o sinal sintonizado. Um sinal forte próximo causa três avarias distintas:
+
+- **Dessensibilização (bloqueio)**: o interferente comprime o ganho dos primeiros andares e o sinal desejado sai atenuado, como se a sensibilidade tivesse caído, embora chegue à antena com a mesma amplitude. O risco cresce com a potência do perturbador, com a proximidade física e com a proximidade em frequência.
+- **Transmodulação (modulação cruzada)**: a não linearidade transfere a **modulação** do sinal forte para o desejado, que se ouve contaminado com o áudio alheio em vez de apenas enfraquecido.
+- **Intermodulação no "front-end"**: dois interferentes fortes geram, dentro do próprio recetor, um produto que calha na frequência sintonizada; ouve-se um sinal que não existe no ar.
+
+A **gama dinâmica** junta tudo isto: a distância entre o sinal mais fraco que o recetor distingue do ruído e o mais forte que ainda processa sem sair da zona linear. Um recetor com muito ganho à entrada não é melhor por isso.
+
+---
+
+## 6. Quadro-resumo
+
+| Fenómeno | Onde nasce | Como se manifesta | Remédio |
+| :--- | :--- | :--- | :--- |
+| **Distorção harmónica** | Emissor, andar não linear | Espúrias em $2f$, $3f$, noutras faixas | Filtro passa-baixo à saída |
+| **Intermodulação** | Andar final, misturador, junta corroída | Produtos $2f_1 - f_2$ dentro da faixa, splatter | Linearidade, menos excitação, isolamento |
+| **Dessensibilização** | Entrada do recetor | O sinal desejado enfraquece ou some | Estreitar a banda de RF, atenuar, menos ganho |
+| **Transmodulação** | Entrada do recetor | Ouve-se a modulação de outra estação | Pré-seletor, atenuador, maior gama dinâmica |
+
+---
+
+## 7. O que fazer na prática
+
+- **Ajustar a excitação**, não maximizá-la: o ganho de microfone e o ALC são o controlo de largura de banda da estação.
+- **Usar amplificação linear** em SSB e nos modos digitais de amplitude variável, e filtrar logo a seguir ao andar final.
+- **Disciplinar o atenuador e o pré-amplificador**: em HF o ruído atmosférico chega quase sempre para ouvir, e um pré-amplificador ligado sem necessidade só aproxima a entrada da saturação.
+- **Apertar a seletividade antes dos andares ativos**, com um pré-seletor ou filtros de entrada mais estreitos.
+
+> Os caminhos por onde a interferência entra num aparelho vizinho estão no guia de [interferências e imunidade](/aprender/interferencias); a estrutura dos andares de entrada, no guia de [recetores](/aprender/recetores).
+
+---
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - O que dá origem à intermodulação num circuito eletrónico?"
+    options={["Um ganho demasiado baixo","Circuitos ou dispositivos não lineares","Falta de neutralização","Realimentação positiva"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="2 - Por que motivo merecem os produtos de intermodulação de terceira ordem atenção especial num amplificador linear de potência?"
+    options={["Porque invertem as bandas laterais do sinal","Porque duplicam a potência de saída do emissor","Porque ficam muito próximos, em frequência, do sinal desejado","Porque só aparecem acima do dobro da frequência de trabalho"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="3 - Num produto de intermodulação de terceira ordem, quantas frequências têm de estar envolvidas?"
+    options={["Obrigatoriamente três frequências","Pelo menos duas frequências","Uma frequência e as suas harmónicas ímpares","Uma única frequência"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="4 - O que sucede ao sinal de um emissor de banda lateral única que esteja sobremodulado?"
+    options={["O áudio fica mais alto, sem outros efeitos","Ocupa menos largura de banda e perde agudos","Fica distorcido e ocupa maior largura de banda","Melhora a relação sinal-ruído"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="5 - Como se designa a redução de sensibilidade de um recetor provocada por um sinal forte numa frequência próxima?"
+    options={["Silenciamento","Efeito de captura","Dessensibilização","Rejeição de imagem"]}
+    correct="C" />

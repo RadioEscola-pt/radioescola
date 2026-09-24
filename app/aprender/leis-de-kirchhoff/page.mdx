@@ -1,0 +1,134 @@
+---
+title: Leis de Kirchhoff
+description: A lei dos nós e a lei das malhas, as convenções de sinal de que dependem, e a sua aplicação a circuitos série, paralelo e divisores de tensão.
+categories: [2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Leis de Kirchhoff
+
+A Lei de Ohm descreve um componente isolado; as **Leis de Kirchhoff** descrevem o que acontece quando esse componente é ligado a outros. São as duas regras que permitem repartir a tensão de uma fonte por vários andares, dimensionar uma resistência de queda para alimentar um módulo, ou perceber porque é que a corrente consumida por um transcetor se divide entre ramos ligados à mesma bateria. Tudo o que o exame pergunta sobre associações série e paralelo sai delas.
+
+---
+
+## 1. Duas leis, e só duas
+
+Gustav Kirchhoff enunciou **duas** leis, e é esse o número que o exame verifica. Cada uma tem uma designação alternativa, pela grandeza a que se aplica:
+
+| Lei | Também designada por | Grandeza | Princípio de conservação |
+| :--- | :--- | :---: | :--- |
+| **Lei dos nós** | lei das **correntes** | $I$ | Conservação da carga elétrica |
+| **Lei das malhas** | lei das **tensões** | $U$ | Conservação da energia |
+
+Não existe uma "lei das redes", nem uma "lei das fontes", nem uma "lei das potências" ou "lei das resistências": são apenas as designações falsas que aparecem nas opções de exame. Fixe o par: **nós ↔ correntes**, **malhas ↔ tensões**.
+
+---
+
+## 2. A lei dos nós (lei das correntes)
+
+Um **nó** é um ponto de ligação entre dois ou mais condutores. Um nó não armazena carga: tudo o que lá entra tem obrigatoriamente de sair. Daí resulta que
+
+$$\sum_{k} I_k = 0$$
+
+- $I_k$: cada uma das correntes que concorrem no nó, em ampere ($\text{A}$)
+
+A palavra **algébrica** é o essencial do enunciado: a soma é *igual a zero*, nunca maior nem menor que zero, porque cada corrente entra na conta com o seu sinal. A convenção habitual é atribuir sinal positivo às correntes que **entram** no nó e negativo às que **saem**, embora o inverso sirva igualmente bem, desde que seja coerente dentro do mesmo problema.
+
+Exemplo: num nó entram $3\text{ A}$ por um condutor e $2\text{ A}$ por outro, e está ligado um terceiro condutor. Por esse terceiro saem forçosamente $5\text{ A}$, porque $+3 + 2 - 5 = 0$. Dito sem sinais: **a soma das correntes que entram iguala a soma das correntes que saem**.
+
+### Consequência: o circuito em paralelo
+
+Num circuito em paralelo, o ponto onde os ramos se separam é um nó. A corrente total fornecida pela fonte é, portanto, a **soma das correntes em cada uma das ramificações**:
+
+$$I_{\text{total}} = I_1 + I_2 + I_3 + \dots$$
+
+Não é a média das correntes dos ramos, e não diminui quando se acrescentam ramos; pelo contrário, cada ramo adicional oferece um caminho novo e aumenta a corrente total exigida à fonte. Este é um ponto em que o exame insiste.
+
+---
+
+## 3. A lei das malhas (lei das tensões)
+
+Uma **malha** é um percurso fechado dentro de um circuito. Percorrendo-a até ao fim regressa-se ao ponto de partida, e a diferença de potencial entre um ponto e ele próprio é necessariamente nula. Logo:
+
+$$\sum_{k} U_k = 0$$
+
+- $U_k$: cada variação de potencial encontrada ao longo da malha, em volt ($\text{V}$)
+
+Também aqui a soma é **algébrica**: cada tensão entra com sinal positivo ou negativo consoante o sentido em que se atravessa o elemento. Atravessar uma fonte do polo negativo para o positivo conta como subida de potencial; atravessar uma resistência no sentido da corrente conta como queda. Escrita em termos práticos, a lei diz que a energia fornecida pelas forças eletromotrizes é integralmente consumida nas quedas de tensão dos restantes elementos:
+
+$$\sum E = \sum R \cdot I$$
+
+Exemplo: numa malha com uma pilha de $12\text{ V}$ e duas resistências em série onde caem $8\text{ V}$ e $4\text{ V}$, tem-se $+12 - 8 - 4 = 0$.
+
+### Consequência: o circuito em série
+
+Num circuito em série há um único caminho, logo **a mesma corrente percorre todos os elementos**; o que se reparte é a tensão. E como as forças eletromotrizes também entram na soma, duas baterias de $12\text{ V}$ ligadas em série apresentam $24\text{ V}$ aos terminais do conjunto.
+
+---
+
+## 4. Aplicar as leis a problemas de exame
+
+### Encontrar a queda de tensão que falta
+
+Quatro resistências em série alimentadas a $50\text{ V}$, com quedas de $25\text{ V}$, $10\text{ V}$ e $13\text{ V}$ nas três primeiras. Pela lei das malhas, a quarta fica com o que sobra:
+
+$$U_4 = 50 - (25 + 10 + 13) = 2\text{ V}$$
+
+O problema inverso resolve-se do mesmo modo: se as quedas medidas forem $9{,}2\text{ V}$, $12{,}5\text{ V}$, $10\text{ V}$ e $3{,}4\text{ V}$, a tensão aplicada ao conjunto é a sua soma, $35{,}1\text{ V}$.
+
+### A resistência de queda em série
+
+Um circuito precisa de $60\text{ V}$ e consome $0{,}8\text{ A}$, mas só há uma fonte de $300\text{ V}$. A resistência colocada em série tem de absorver a diferença de tensão, e é percorrida pela mesma corrente do circuito:
+
+$$R = \frac{300 - 60}{0{,}8} = \frac{240}{0{,}8} = 300\ \Omega$$
+
+A lei das malhas dá a tensão que a resistência tem de suportar; a Lei de Ohm converte-a em ohms.
+
+### O divisor de tensão
+
+Duas resistências em série formam um **divisor de tensão**. Partilhando a mesma corrente, a tensão reparte-se na proporção dos valores:
+
+$$U_2 = U \cdot \frac{R_2}{R_1 + R_2}$$
+
+Com duas resistências iguais (por exemplo $100\ \Omega$ e $100\ \Omega$, com a saída retirada do ponto médio), a tensão de saída é **metade** da de entrada. Em decibéis, metade da tensão corresponde a $20 \log_{10} 0{,}5 \approx -6\text{ dB}$: é o atenuador de $6\text{ dB}$ que o exame apresenta.
+
+---
+
+## 5. Donde vêm as regras de associação
+
+As fórmulas de associação de resistências não são regras à parte: deduzem-se diretamente das duas leis:
+
+- **Em série**, a corrente é comum e as quedas somam-se, o que dá $R = R_1 + R_2 + \dots$
+- **Em paralelo**, a tensão é comum e as correntes somam-se, o que dá $\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + \dots$
+
+> Os valores e os cálculos de associação estão reunidos no guia [Componentes](/aprender/componentes); a Lei de Ohm e a potência, no guia de [teoria elétrica e de rádio](/aprender/teoria-electrica-e-radio).
+
+---
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - No que respeita às Leis de Kirchhoff, qual das afirmações é verdadeira?"
+    options={["Existem três leis: a dos nós, a das redes e a das malhas","Existem duas leis: a dos nós e a das malhas","Existem duas leis: a das redes e a das fontes","Existe uma única lei, a das tensões"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="2 - A lei das malhas de Kirchhoff também se designa por:"
+    options={["lei das potências","lei das resistências","lei das tensões","lei das correntes"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="3 - De acordo com a lei dos nós, a soma algébrica das correntes num nó é:"
+    options={["maior que zero","menor que zero","igual a zero","igual à tensão aplicada"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="4 - Três resistências estão ligadas em série e o conjunto é alimentado com 24 V. As quedas de tensão nas duas primeiras são de 6 V e 11 V. Qual é a queda de tensão na terceira?"
+    options={["5 V","7 V","17 V","41 V"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="5 - Num circuito em paralelo com dois ramos percorridos por 0,4 A e 0,9 A, qual é a corrente total fornecida pela fonte?"
+    options={["0,5 A","0,65 A","1,3 A","0,36 A"]}
+    correct="C" />
