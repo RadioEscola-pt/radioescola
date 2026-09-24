@@ -224,7 +224,23 @@
     "markComplete": "Marcar como concluído",
     "markIncomplete": "Marcar como incompleto",
     "error": "Não foi possível carregar os materiais.",
-    "retry": "Tentar novamente"
+    "retry": "Tentar novamente",
+    "guide": {
+      "breadcrumb": "Aprender",
+      "categories": "Categorias",
+      "readTime": "Leitura",
+      "readTimeValue": "{minutes} min",
+      "sections": "Secções",
+      "position": "Guia",
+      "positionValue": "{index} de {total}",
+      "onThisPage": "Nesta página",
+      "linkedGuides": "Guias ligados",
+      "practiceLabel": "Treinar esta matéria",
+      "practiceCta": "Perguntas da categoria {category}",
+      "previous": "Anterior",
+      "next": "Seguinte",
+      "otherGuides": "Outros guias"
+    }
   },
   "Exam": {
     "loading": "A carregar...",

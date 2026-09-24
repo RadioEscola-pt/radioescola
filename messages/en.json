@@ -224,7 +224,23 @@
     "markComplete": "Mark as complete",
     "markIncomplete": "Mark as incomplete",
     "error": "Could not load study materials.",
-    "retry": "Try again"
+    "retry": "Try again",
+    "guide": {
+      "breadcrumb": "Study",
+      "categories": "Categories",
+      "readTime": "Reading",
+      "readTimeValue": "{minutes} min",
+      "sections": "Sections",
+      "position": "Guide",
+      "positionValue": "{index} of {total}",
+      "onThisPage": "On this page",
+      "linkedGuides": "Related guides",
+      "practiceLabel": "Practise this topic",
+      "practiceCta": "Category {category} questions",
+      "previous": "Previous",
+      "next": "Next",
+      "otherGuides": "Other guides"
+    }
   },
   "Exam": {
     "loading": "Loading...",

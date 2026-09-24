@@ -74,6 +74,13 @@ export function guideVisual(slug: string) {
   return GUIDE_VISUAL[slug] ?? DEFAULT_GUIDE_VISUAL;
 }
 
+/**
+ * Guides that own their own page layout, so the shared guide chrome (header
+ * band, section rail, prev/next) stays off them. `formulario` is a filtered
+ * data surface with its own measured sticky offsets, not a prose guide.
+ */
+export const BARE_GUIDE_SLUGS = new Set(['formulario']);
+
 /** One entry of /api/study-items. */
 export type StudyItem = {
   slug: string;

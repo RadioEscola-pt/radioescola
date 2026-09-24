@@ -3,7 +3,7 @@ const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [["remark-gfm"], ["remark-frontmatter"], ["remark-math"]],
-    rehypePlugins: [["rehype-katex"]],
+    rehypePlugins: [["rehype-slug"], ["rehype-katex"]],
   },
 });
 
@@ -20,6 +20,9 @@ const nextConfig = {
   outputFileTracingIncludes: {
     "/api/notes/\\[category\\]/\\[id\\]": ["content/notes/**/*.mdx"],
     "/api/study-items": ["app/aprender/**/page.mdx"],
+    // app/aprender/layout.tsx reads the same frontmatter, for the guide header
+    // band and the prev/next pair.
+    "/aprender/**": ["app/aprender/**/page.mdx"],
   },
   // Ephemeral Cloudflare tunnels (bun run tunnel) serve the dev server from a
   // random *.trycloudflare.com host; Next blocks cross-origin dev assets otherwise.
