@@ -1130,5 +1130,9 @@
     "quotaBody": "This browser's storage is full. Export a backup from settings and clear old data to start saving again.",
     "unknownBody": "This browser refused the write. If you're browsing privately, progress isn't saved.",
     "dismiss": "Dismiss"
+  },
+  "Download": {
+    "caption": "Download",
+    "action": "Download"
   }
 }

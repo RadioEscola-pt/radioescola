@@ -1,99 +1,94 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import Link from 'next/link';
-import {
-  Download,
-  FileDown,
-  FileText,
-  FileArchive,
-  FileSpreadsheet,
-  FileImage,
-  FileAudio,
-  FileVideo,
-  FileCode,
-} from 'lucide-react';
+import { Download } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
 
 interface DownloadButtonProps {
   url: string;
   name: string;
   description?: string;
-  sizeMb?: number; // optional size in megabytes
 }
 
-export default function DownloadButton({ url, name, description, sizeMb }: DownloadButtonProps) {
-  const href = (() => {
-    if (/^https?:\/\//i.test(url)) return url;
-    const clean = url.replace(/^\/+/, '');
-    if (clean.startsWith('docs/')) return `/${clean}`;
-    if (clean.startsWith('/docs/')) return clean;
-    return `/docs/${clean}`;
-  })();
+/** Bare filename, `docs/x.pdf`, `/docs/x.pdf` and absolute URLs all land here. */
+function resolveHref(url: string) {
+  if (/^https?:\/\//i.test(url)) return url;
+  const clean = url.replace(/^\/+/, '');
+  return clean.startsWith('docs/') ? `/${clean}` : `/docs/${clean}`;
+}
 
-  const ext = (() => {
-    const fromUrl = url.split('?')[0]?.split('#')[0] ?? '';
-    const idx = fromUrl.lastIndexOf('.');
-    return idx > -1 ? fromUrl.slice(idx + 1).toLowerCase() : '';
-  })();
+function extensionOf(url: string) {
+  const name = url.split('?')[0]?.split('#')[0] ?? '';
+  const dot = name.lastIndexOf('.');
+  return dot > -1 ? name.slice(dot + 1).toUpperCase() : 'FILE';
+}
 
-  const Icon = (() => {
-    switch (ext) {
-      case 'pdf':
-      case 'txt':
-      case 'md':
-        return FileText;
-      case 'zip':
-      case 'rar':
-      case '7z':
-        return FileArchive;
-      case 'csv':
-      case 'xls':
-      case 'xlsx':
-        return FileSpreadsheet;
-      case 'png':
-      case 'jpg':
-      case 'jpeg':
-      case 'webp':
-      case 'svg':
-        return FileImage;
-      case 'mp3':
-      case 'wav':
-      case 'flac':
-        return FileAudio;
-      case 'mp4':
-      case 'mov':
-      case 'webm':
-        return FileVideo;
-      case 'js':
-      case 'ts':
-      case 'json':
-        return FileCode;
-      default:
-        return FileDown;
-    }
-  })();
+/**
+ * Measured, never declared. The size used to be a `sizeMb` prop typed in at the
+ * call site, and it was wrong: the phonetic alphabet PDF was advertised as 3 MB
+ * and is 272 KB. Files live under `public/`, which the Dockerfile copies into
+ * the image, so this reads the real thing at request time.
+ */
+function fileSize(href: string) {
+  if (/^https?:\/\//i.test(href)) return null;
+  try {
+    const bytes = fs.statSync(path.join(process.cwd(), 'public', href)).size;
+    if (bytes < 1024) return `${bytes} B`;
+    if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
+    return `${(bytes / (1024 * 1024)).toFixed(1).replace('.', ',')} MB`;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * A file offered by a study guide, drawn as the guides draw a formula: a
+ * bordered panel with a caption, not a poster. The whole row is the link, so
+ * the "Transferir" pill is a span: an interactive element nested in an anchor
+ * is invalid, and it used to swallow the keyboard here.
+ */
+export default async function DownloadButton({ url, name, description }: DownloadButtonProps) {
+  const t = await getTranslations('Download');
+  const href = resolveHref(url);
+  const size = fileSize(href);
 
   return (
-    <Link href={href} download className="block w-full">
-      <button
-        type="button"
-        aria-label={`Download ${name}`}
-        className="w-full rounded-lg bg-slate-700 text-primary-foreground transition-colors hover:bg-primary/90"
+    <div className="not-prose my-7 overflow-hidden rounded-[10px] border border-[var(--guide-line)] bg-[var(--guide-panel)]">
+      <p className="border-b border-[var(--guide-line)] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.12em] text-stone-500 dark:text-slate-400">
+        {t('caption')}
+      </p>
+
+      <Link
+        href={href}
+        download
+        className="group flex items-center gap-3.5 px-4 py-3.5 no-underline transition-colors hover:bg-amber-500/[0.07] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-amber-500/60 dark:hover:bg-white/5"
       >
-        <div className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer">
-          <div className="flex items-center gap-4">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/20">
-              <Icon className="h-6 w-6" />
+        <span className="shrink-0 rounded-[5px] border border-[var(--guide-line)] px-1.5 py-0.5 text-[11px] font-bold tracking-[0.08em] text-stone-600 dark:text-slate-300">
+          {extensionOf(url)}
+        </span>
+
+        <span className="min-w-0 flex-1">
+          <span className="block text-[15px] font-semibold text-slate-900 dark:text-slate-100">
+            {name}
+          </span>
+          {description && (
+            <span className="mt-0.5 block text-[13px] leading-snug text-stone-500 dark:text-slate-400">
+              {description}
             </span>
-            <div className="text-left">
-              <div className="text-lg md:text-xl font-semibold leading-tight">{name}</div>
-              {description && (
-                <div className="text-sm opacity-90">{description}</div>
-              )}
-            </div>
-          </div>
-          <div className="text-sm opacity-90 whitespace-nowrap">
-            {ext ? ext.toUpperCase() : 'FILE'}{typeof sizeMb === 'number' ? ` · ${sizeMb.toFixed(1)} MB` : ''}
-          </div>
-        </div>
-      </button>
-    </Link>
+          )}
+        </span>
+
+        {size && (
+          <span className="hidden shrink-0 text-[13px] tabular-nums text-stone-500 sm:block dark:text-slate-400">
+            {size}
+          </span>
+        )}
+
+        <span className="inline-flex shrink-0 items-center gap-1.5 rounded-[7px] border border-[var(--guide-line)] bg-white px-2.5 py-1.5 text-[13px] font-semibold text-slate-900 transition-colors group-hover:border-brand-700 group-hover:bg-brand-700 group-hover:text-white dark:bg-transparent dark:text-slate-100 dark:group-hover:border-brand-500 dark:group-hover:bg-brand-600">
+          <Download className="h-[15px] w-[15px]" aria-hidden="true" />
+          <span className="hidden sm:inline">{t('action')}</span>
+        </span>
+      </Link>
+    </div>
   );
 }

@@ -1130,5 +1130,9 @@
     "quotaBody": "O armazenamento deste navegador está cheio. Exporta uma cópia de segurança nas definições e limpa dados antigos para voltar a guardar.",
     "unknownBody": "Este navegador recusou a gravação. Se estás em navegação privada, o progresso não é guardado.",
     "dismiss": "Fechar"
+  },
+  "Download": {
+    "caption": "Para descarregar",
+    "action": "Transferir"
   }
 }
