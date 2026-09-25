@@ -222,6 +222,13 @@ export function migrateProgress(progress: UserProgress): UserProgress {
     migrated.activeDays = normalizeActiveDays(migrated.activeDays);
   }
 
+  // V5 -> V6: guias lidos. Não há nada para recuperar, porque a leitura de um
+  // guia nunca foi registada em lado nenhum; o campo começa vazio e enche-se a
+  // partir daqui.
+  if (!migrated.readGuides || typeof migrated.readGuides !== "object") {
+    migrated.readGuides = {};
+  }
+
   capExamHistory(migrated);
 
   migrated.version = PROGRESS_VERSION;
@@ -354,6 +361,24 @@ async function updateGamification(
   return progress;
 }
 
+async function setGuideRead(
+  slug: string,
+  read: boolean
+): Promise<UserProgress | null> {
+  const progress = await getProgress();
+  if (!progress) return null;
+
+  const guides = { ...(progress.readGuides ?? {}) };
+  if (read) {
+    guides[slug] = Date.now();
+  } else {
+    delete guides[slug];
+  }
+  progress.readGuides = guides;
+  await saveProgress(progress);
+  return progress;
+}
+
 /**
  * Update spaced repetition stats for a specific question
  * Used by Smart Practice mode to track review intervals
@@ -404,6 +429,7 @@ export const localStorageProvider: StorageProvider = {
   recordQuestionAttempt,
   clearProgress,
   updateGamification,
+  setGuideRead,
 };
 
 // Utility functions for accessing specific stats

@@ -240,7 +240,34 @@
       "previous": "Anterior",
       "next": "Seguinte",
       "otherGuides": "Outros guias"
-    }
+    },
+    "chapters": {
+      "comecar": "Começar por aqui",
+      "teoria": "Teoria elétrica, eletromagnética e de rádio",
+      "componentes": "Componentes",
+      "circuitos": "Circuitos",
+      "recetores": "Recetores",
+      "emissores": "Emissores",
+      "antenas": "Antenas e linhas de transmissão",
+      "propagacao": "Espectro e propagação",
+      "medidas": "Medidas",
+      "interferencias": "Interferências e imunidade",
+      "seguranca": "Segurança",
+      "operacao": "Regras e procedimentos de operação",
+      "regulamentacao": "Regulamentação",
+      "referencia": "Referência"
+    },
+    "guides": "{count} guias",
+    "guidesOne": "1 guia",
+    "minutes": "{count} min",
+    "readOf": "{read} de {total} lidos",
+    "allRead": "tudo lido",
+    "markRead": "Marcar como lido",
+    "markUnread": "Marcar como por ler",
+    "read": "Lido",
+    "byChapter": "Capítulos",
+    "alphabetical": "A a Z",
+    "guideCount": "{count} guias"
   },
   "Exam": {
     "loading": "A carregar...",

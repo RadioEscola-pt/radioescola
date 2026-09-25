@@ -4,6 +4,8 @@ import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import { Check } from 'lucide-react';
+import { useProgress } from '@/hooks/useProgress';
 import { BARE_GUIDE_SLUGS, type StudyItem } from '@/lib/config/study-guides';
 import GuideToc, { useGuideSections } from '@/components/study/GuideToc';
 
@@ -38,6 +40,8 @@ export default function GuideShell({
   children: ReactNode;
 }) {
   const t = useTranslations('Study.guide');
+  const tStudy = useTranslations('Study');
+  const { isGuideRead, toggleGuideRead } = useProgress();
   const pathname = usePathname() ?? '';
   const slug = pathname.replace(/^\/aprender\/?/, '').replace(/\/$/, '');
   const { sections, activeId } = useGuideSections(slug);
@@ -54,6 +58,7 @@ export default function GuideShell({
   // Categories are authored most-beginner first, so the first one is the level
   // a reader arriving at this guide is most likely studying for.
   const practiceCategory = item.categories[0] ?? '3';
+  const read = isGuideRead(slug);
 
   return (
     <div data-guide-shell>
@@ -118,6 +123,22 @@ export default function GuideShell({
           )}
 
           {children}
+
+          <div className="mt-10 flex justify-center">
+            <button
+              type="button"
+              onClick={() => void toggleGuideRead(slug)}
+              aria-pressed={read}
+              className={`inline-flex items-center gap-2 rounded-lg border px-4 py-2.5 text-[15px] font-semibold transition-colors ${
+                read
+                  ? 'border-emerald-600/30 bg-emerald-600/10 text-emerald-700 hover:bg-emerald-600/15 dark:border-emerald-500/30 dark:text-emerald-400'
+                  : 'border-stone-200 text-slate-700 hover:border-stone-300 hover:bg-stone-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800'
+              }`}
+            >
+              <Check className="h-4 w-4" aria-hidden="true" />
+              {read ? tStudy('read') : tStudy('markRead')}
+            </button>
+          </div>
 
           {(previous || next) && (
             <nav

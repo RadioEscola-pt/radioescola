@@ -79,6 +79,13 @@ export interface UserProgress {
    * and cannot be recomputed once it drifts. Added in V5.
    */
   activeDays: string[];
+  /**
+   * Guias de estudo marcados como lidos: slug -> timestamp da marcação.
+   * Declarado pelo leitor, não inferido de scroll: um guia consultado para tirar
+   * uma dúvida não conta como estudado, e a página do índice trata a ausência
+   * como «por ler», nunca como erro. Added in V6.
+   */
+  readGuides?: Record<string, number>;
   /** Rollup of exams the history cap dropped. Absent until it first bites. */
   archivedExams?: ArchivedExams;
   stats: UserStats;
@@ -99,9 +106,15 @@ export interface StorageProvider {
    * if there is nothing stored to merge into).
    */
   updateGamification(newState: GamificationState): Promise<UserProgress | null>;
+  /**
+   * Mark a study guide read or unread, merging atomically the same way
+   * `updateGamification` does. Returns the merged progress, or null if there is
+   * nothing stored yet.
+   */
+  setGuideRead(slug: string, read: boolean): Promise<UserProgress | null>;
 }
 
-export const PROGRESS_VERSION = 5;
+export const PROGRESS_VERSION = 6;
 
 /**
  * How many individual exam attempts `examHistory` keeps. Older attempts are

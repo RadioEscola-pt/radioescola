@@ -53,6 +53,10 @@ interface UseProgressReturn {
   ) => { mastered: number; attempted: number; masteryRate: number };
   clearProgress: () => Promise<void>;
   refreshProgress: () => Promise<void>;
+  /** Marca ou desmarca um guia como lido. */
+  toggleGuideRead: (slug: string) => Promise<void>;
+  /** Se o guia está marcado como lido. */
+  isGuideRead: (slug: string) => boolean;
   updateGamificationState: (newState: GamificationState) => Promise<void>;
 }
 
@@ -217,6 +221,22 @@ export function useProgress(): UseProgressReturn {
     []
   );
 
+  const isGuideRead = useCallback(
+    (slug: string) => Boolean(progress?.readGuides?.[slug]),
+    [progress]
+  );
+
+  const toggleGuideRead = useCallback(
+    async (slug: string) => {
+      const updated = await storageProvider.setGuideRead(
+        slug,
+        !progress?.readGuides?.[slug]
+      );
+      if (updated) setProgress(updated);
+    },
+    [progress]
+  );
+
   return {
     progress,
     isLoading,
@@ -233,6 +253,8 @@ export function useProgress(): UseProgressReturn {
     getCategoryProgress: getCategoryProgressHook,
     clearProgress: clearProgressHook,
     refreshProgress,
+    toggleGuideRead,
+    isGuideRead,
     updateGamificationState,
   };
 }
