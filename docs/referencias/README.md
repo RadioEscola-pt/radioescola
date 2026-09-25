@@ -230,26 +230,35 @@ anunciar matérias novas. Vale a pena reconfirmar antes de medir outra vez.
 `medir-anexo1.py` nesta pasta: lê a tabela do PDF, atribui a categoria pela
 coluna onde cai o X, e sonda os guias que declaram cada categoria.
 
-| Categoria | Itens exigidos | Com cobertura |
-| :--- | ---: | ---: |
-| 3 | 46 | **46 (100%)** |
-| 2 | 166 | 163 (98%) |
-| 1 | 295 | 288 (97%) |
+| Categoria | Itens exigidos | Primeira medição | Depois de fechadas as lacunas |
+| :--- | ---: | ---: | ---: |
+| 3 | 46 | 46 (100%) | **46 (100%)** |
+| 2 | 166 | 163 (98%) | **166 (100%)** |
+| 1 | 295 | 288 (97%) | **295 (100%)** |
 
-**O que falta, confirmado à mão:**
+A primeira medição encontrou seis itens sem cobertura nenhuma, todos fora da
+categoria 3, que já estava completa. Foram escritos no mesmo dia, como secções
+dentro dos guias que já tratavam do capítulo, e não como guias novos: um guia de
+duzentas palavras sobre válvulas seria a página mais fina do site.
 
-| Item | Exigido desde | Onde devia estar |
+| Item | Exigido desde | Onde ficou |
 | :--- | :--- | :--- |
-| 2.7 a) Conceito de válvula termoiónica | cat 2 | `componentes` |
-| 7.2 b) Recomendação ECC/REC (05)06 | cat 2 | `entidades` |
-| 7.2 a) Recomendação T/R 61-01 | cat 1 | `entidades` |
-| 7.2 d), e) Países não-CEPT que subscrevem as recomendações | cat 1 e 2 | `entidades` |
-| 6.3 r) Dispersão boreal (aurora) | cat 1 | `propagacao` |
-| 6.3 s) Dispersão em meteoritos | cat 1 | `propagacao` |
+| 2.7 a) Conceito de válvula termoiónica | cat 2 | `componentes` § 2.8 |
+| 7.2 a) Recomendação T/R 61-01 | cat 1 | `entidades`, «As recomendações que dão a licença» |
+| 7.2 b) Recomendação ECC/REC (05)06 | cat 2 | a mesma secção |
+| 7.2 d), e) Países não-CEPT que subscrevem as recomendações | cat 1 e 2 | a mesma secção |
+| 6.3 r) Dispersão boreal (aurora) | cat 1 | `propagacao` § 7.6 |
+| 6.3 s) Dispersão em meteoritos | cat 1 | `propagacao` § 7.6 |
 
-Duas ironias: as recomendações em falta são precisamente os PDF que estão nesta
-pasta, e o `entidades` fala da CEPT sem nunca nomear as recomendações que dão a
-licença. Nada disto é matéria de categoria 3, que está completa.
+Duas ironias que a medição deixou à vista: as recomendações em falta eram
+precisamente os PDF que estão nesta pasta, e o `entidades` falava da CEPT sem
+nunca nomear as recomendações que dão a licença.
+
+**Uma armadilha de vocabulário, que custou uma afirmação errada:** o Anexo 1 diz
+«dispersão em **meteoritos**» e o banco diz «dispersão de **meteoros**». Uma
+procura por `meteorit` devolve zero e leva a escrever que o banco nunca
+perguntou pelo assunto, quando tem `cat2#219` a perguntar a gama de frequências.
+Procure pelas duas grafias.
 
 **Cinco «faltas» eram falso negativo da sonda** e estão registadas em
 `VERIFICADOS`, dentro do script, com o sítio onde a matéria está: separação de
