@@ -200,3 +200,78 @@ que sai a linha que interessa a este projeto:
 Ou seja, a **Categoria 2 portuguesa é a licença Novice da CEPT**. Está aqui
 porque é a fonte dessa afirmação; o programa de exame correspondente é o do
 ERC Report 32, acima.
+
+---
+
+## `anacom-anexo1-materias-exame.pdf` — Anexo 1 da ANACOM
+
+*Matérias dos exames de aptidão para as categorias de amador 1, 2 e 3*, anexo
+aos «Procedimentos aprovados pelo ICP-ANACOM». 13 páginas, criado em maio de
+2009. Descarregado da página dos procedimentos
+(<https://www.anacom.pt/render.jsp?contentId=954649>), ficheiro
+`/streaming/ANEXO1.pdf?contentId=954743`.
+
+`sha256 26404a001bcba8a67f66c070d941a9c333d6151c9bdf55f088d06f36610a9567`
+
+**É esta a autoridade, não a CEPT.** Uma tabela item a item com três colunas,
+uma por categoria, e um X na categoria mais baixa que exige a matéria,
+cumulativo para cima porque a progressão é 3 → 2 → 1. Onde os documentos da
+CEPT obrigam a inferir («cat 1 = HAREC, cat 2 = Novice»), este marca. A
+verificação de que o X é cumulativo: «Leis de Kirchhoff» tem X só na coluna 1,
+e as perguntas de Kirchhoff no banco são todas de cat 1.
+
+Em vigor à data desta escrita, apesar da **Lei n.º 22/2026**: a página dos
+procedimentos continua a ligar este anexo, e a nota da ANACOM sobre a lei nova
+diz apenas que o quadro de 2009 se manteve **até** 25 de agosto de 2026, sem
+anunciar matérias novas. Vale a pena reconfirmar antes de medir outra vez.
+
+### Cobertura dos guias, medida contra este anexo (2026-09-25)
+
+`medir-anexo1.py` nesta pasta: lê a tabela do PDF, atribui a categoria pela
+coluna onde cai o X, e sonda os guias que declaram cada categoria.
+
+| Categoria | Itens exigidos | Com cobertura |
+| :--- | ---: | ---: |
+| 3 | 46 | **46 (100%)** |
+| 2 | 166 | 163 (98%) |
+| 1 | 295 | 288 (97%) |
+
+**O que falta, confirmado à mão:**
+
+| Item | Exigido desde | Onde devia estar |
+| :--- | :--- | :--- |
+| 2.7 a) Conceito de válvula termoiónica | cat 2 | `componentes` |
+| 7.2 b) Recomendação ECC/REC (05)06 | cat 2 | `entidades` |
+| 7.2 a) Recomendação T/R 61-01 | cat 1 | `entidades` |
+| 7.2 d), e) Países não-CEPT que subscrevem as recomendações | cat 1 e 2 | `entidades` |
+| 6.3 r) Dispersão boreal (aurora) | cat 1 | `propagacao` |
+| 6.3 s) Dispersão em meteoritos | cat 1 | `propagacao` |
+
+Duas ironias: as recomendações em falta são precisamente os PDF que estão nesta
+pasta, e o `entidades` fala da CEPT sem nunca nomear as recomendações que dão a
+licença. Nada disto é matéria de categoria 3, que está completa.
+
+**Cinco «faltas» eram falso negativo da sonda** e estão registadas em
+`VERIFICADOS`, dentro do script, com o sítio onde a matéria está: separação de
+antenas e TVI em `interferencias`, planos da IARU em `entidades`, mistura
+recíproca em `malha-de-captura-de-fase`, potência de pico em
+`amplificadores-e-classes`. A sonda é de palavras, não de sentido: confirme
+sempre à mão antes de escrever que falta.
+
+---
+
+## `anacom-questoes-categoria3.pdf` — exemplos oficiais da categoria 3
+
+*Exemplos de questões de exame de aptidão para a categoria 3*, 20 páginas, 91
+questões, cerca de metade da base de exame. Descarregado de
+`/streaming/QuestoesCategoria3.pdf?contentId=1383817`.
+
+`sha256 a1cbb3f3012a86b7551289482affb7c89660206b22d8864c9a43d0ec5604acf8`
+
+A análise pergunta a pergunta, e o que ela implica para o banco depois da Lei
+22/2026, está em `docs/alteracoes-legislacao.md`, que até aqui só a citava por
+ligação.
+
+> **As ligações da ANACOM devolvem 403 a um `curl` simples.** É preciso um
+> cabeçalho `User-Agent` de browser para as descarregar, e foi por isso que
+> estes ficheiros passaram a estar guardados aqui em vez de referidos por URL.
