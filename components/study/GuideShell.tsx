@@ -57,10 +57,10 @@ export default function GuideShell({
 
   return (
     <div data-guide-shell>
-      {/* Full bleed: the band breaks out of the centred <main> to the viewport
-          edges, while its contents stay on the page's own grid. */}
-      <header className="relative left-1/2 -ml-[50vw] mb-9 w-screen border-b border-stone-200 bg-stone-50 py-7 dark:border-slate-800 dark:bg-slate-800/40">
-        <div className="mx-auto flex w-full max-w-5xl flex-col gap-7 px-4 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+      {/* `guide-band` paints the background out to the viewport edges without
+          the element leaving the page grid: see globals.css. */}
+      <header className="guide-band relative mb-9 bg-[var(--guide-band)] py-7">
+        <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
           <div className="max-w-2xl">
             <nav aria-label={t('breadcrumb')} className="mb-2.5 text-[13px] text-stone-600 dark:text-slate-400">
               <Link href="/aprender" className="no-underline hover:underline">

@@ -311,26 +311,29 @@
 :root {
   --guide-line: oklch(0.91 0.008 75);
   --guide-panel: oklch(0.985 0.012 75);
+  --guide-band: oklch(0.975 0.006 80);
 }
 
 .dark {
   --guide-line: oklch(1 0 0 / 12%);
   --guide-panel: oklch(1 0 0 / 3.5%);
+  --guide-band: oklch(0.28 0.02 258);
+}
+
+/* The guide header reads as a full-width band without being one: a ring of
+   solid shadow paints its colour out to the viewport edges, and the clip path
+   keeps that ring off the rest of the page. Nothing overflows, so nothing has
+   to be clipped at the root; a `100vw` element there would have meant
+   `overflow-x: hidden` on `html`, which silently disables the overflow
+   propagation `body` relies on and with it the scroll lock of every Radix
+   dialog, the mobile menu included. */
+.guide-band {
+  box-shadow: 0 0 0 100vmax var(--guide-band);
+  clip-path: inset(0 -100vmax);
 }
 
 /* Links follow the brand. Tailwind Typography ships indigo, which this product
    is not; `prose-indigo` used to be pinned on the wrapper. */
-/* The full-bleed guide header is 100vw, i.e. the viewport including the
-   scrollbar; clipping the overhang here stops it raising a horizontal
-   scrollbar. It goes on `html`, not `body`: overflow set on the body
-   propagates to the viewport and the body is then treated as visible, so the
-   rule would do nothing. `hidden` rather than `clip` because Chrome still
-   scrolls the clipped overhang; on the root element the viewport stays the
-   scroll container, so the sticky navigation and section rail keep working. */
-html {
-  overflow-x: hidden;
-}
-
 .prose {
   --tw-prose-links: var(--color-brand-700);
   --tw-prose-invert-links: var(--color-brand-300);
