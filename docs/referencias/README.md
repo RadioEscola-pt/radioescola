@@ -230,11 +230,20 @@ anunciar matérias novas. Vale a pena reconfirmar antes de medir outra vez.
 `medir-anexo1.py` nesta pasta: lê a tabela do PDF, atribui a categoria pela
 coluna onde cai o X, e sonda os guias que declaram cada categoria.
 
-| Categoria | Itens exigidos | Primeira medição | Depois de fechadas as lacunas |
-| :--- | ---: | ---: | ---: |
-| 3 | 46 | 46 (100%) | **46 (100%)** |
-| 2 | 166 | 163 (98%) | **166 (100%)** |
-| 1 | 295 | 288 (97%) | **295 (100%)** |
+| Categoria | Itens exigidos | Com cobertura |
+| :--- | ---: | ---: |
+| 3 | 47 | 46 |
+| 2 | 167 | 164 |
+| 1 | 296 | 292 |
+
+> **Os números desta tabela já foram piores do que a realidade e melhores do que
+> a realidade.** A primeira versão do `medir-anexo1.py` lia a tabela linha a
+> linha, e a tabela do PDF tem células que ocupam várias linhas com o X alinhado
+> pelo meio: 47 itens saíam sem texto (a sonda saltava-os em silêncio, o que
+> inflacionava a cobertura) e pelo menos um item, o 1.6 b) «valor instantâneo,
+> valor médio, amplitude e valor eficaz», **de categoria 3**, nunca chegava a
+> ser contado. O parser passou a ler por blocos, da alínea até à seguinte. Se
+> voltar a mexer nele, confirme primeiro que 1.6 b) aparece em `--itens`.
 
 A primeira medição encontrou seis itens sem cobertura nenhuma, todos fora da
 categoria 3, que já estava completa. Foram escritos no mesmo dia, como secções

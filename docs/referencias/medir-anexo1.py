@@ -7,6 +7,7 @@ contexto: só por eles teríamos de inferir que cat 1 = HAREC e cat 2 = Novice.
 
     python3 docs/referencias/medir-anexo1.py            # resumo
     python3 docs/referencias/medir-anexo1.py --faltas   # itens sem sinal
+    python3 docs/referencias/medir-anexo1.py --itens    # a tabela toda, uma linha por item
 
 Precisa do PDF nesta pasta e de `pdftotext` (poppler). A sonda é de palavras,
 não de sentido: confirme à mão tudo o que aparecer como falta.
@@ -21,7 +22,7 @@ ORDER = ['3', '2', '1']          # da mais baixa para a mais alta
 VERIFICADOS = {
     ('9.3', 'd'): 'interferencias: «Separação das antenas de emissão e de TV»',
     ('9.3', 'f'): 'interferencias: TVI, BCI e entrada de antena do receptor',
-    ('9.4', 'b'): 'entidades: «Os planos de frequências da IARU»',
+    ('6', 'b'): 'entidades: «Os planos de frequências da IARU»',
     ('4.4', 'h'): 'malha-de-captura-de-fase: ruído de fase e mistura recíproca',
     ('1.9', 'f'): 'amplificadores-e-classes e banda-lateral-unica: potência de pico',
 }
@@ -37,29 +38,83 @@ def norm(s):
 
 
 def parse_annex():
-    """(capítulo, subcapítulo, alínea, texto, categoria mínima) por item."""
+    """(capítulo, subcapítulo, alínea, texto, categoria mínima) por item.
+
+    A tabela do PDF tem células que ocupam várias linhas e alinham o X pelo meio
+    vertical, pelo que a alínea, o seu texto e a sua cruz podem estar em linhas
+    diferentes. Ler linha a linha perdia itens inteiros em silêncio: o 1.6 b),
+    «valor instantâneo, valor médio, amplitude e valor eficaz», que é matéria de
+    categoria 3, nunca chegou a entrar na contagem. Por isso lê-se por blocos:
+    da linha de uma alínea até à seguinte, com uma espreitadela à linha de cima
+    para o caso de o texto começar acima da alínea.
+    """
     text = subprocess.run(['pdftotext', '-layout', str(PDF), '-'],
                           capture_output=True, text=True, check=True).stdout
     items, chapter, sub = [], '', ''
+
+    def flush(block, cols, chapter, sub, letter):
+        """Fecha um item: a cruz manda, o texto é o que sobra."""
+        xs = [(i, len(line)) for line in block for i, ch in enumerate(line) if ch == 'X']
+        if not xs:
+            return None
+        cat = min((abs(pos - x), str(c)) for x, _ in xs for c, pos in cols.items())[1]
+        body = ' '.join(re.sub(r'\s+', ' ', l).strip(' X') for l in block)
+        body = re.sub(r'\s+', ' ', body).strip()
+        return (chapter, sub, letter, body, cat)
+
     for page in text.split('\f'):
-        header = next((l for l in page.split('\n') if 'Cat. 1' in l), None)
+        lines = page.split('\n')
+        header = next((l for l in lines if 'Cat. 1' in l), None)
         if not header:
             continue
         cols = {c: header.find(f'Cat. {c}') for c in (1, 2, 3)}
-        for line in page.split('\n'):
-            if m := re.match(r'\s*(\d+)\s+([A-ZÁÂÃÉÊÍÓÔÕÚÇ][^a-z]*)$', line):
-                chapter = f'{m.group(1)} {m.group(2).strip().title()}'
-            if m := re.match(r'\s*(\d+\.\d+)\s+(\S.*?)\s*(?:\(ver nota.*)?$', line):
+
+        letter, block = None, []
+        for n, line in enumerate(lines):
+            head = re.sub(r'\(ver nota.*', '', line).rstrip()
+
+            is_new = bool(re.match(r'\s*[a-z]\)', line))
+            is_head = bool(
+                re.match(r'\s*\d+\.\d+\s+\S', head)
+                or re.match(r'\s*\d+\.?\s+[A-ZÁÂÃÉÊÍÓÔÕÚÇ][A-ZÁÂÃÉÊÍÓÔÕÚÇ \-/,\.]*$', head)
+                or re.match(r'\s*\d+\.\s*$', head)
+            )
+
+            if (is_new or is_head) and letter:
+                if item := flush(block, cols, chapter, sub, letter):
+                    items.append(item)
+                letter, block = None, []
+
+            # Um capítulo pode vir invertido, com o número sozinho numa linha e o
+            # título na anterior («PLANOS DE FAIXAS ... / 6.»).
+            if re.match(r'\s*\d+\.\s*$', head) and n > 0:
+                title = re.sub(r'\(ver nota.*', '', lines[n - 1]).strip()
+                letters = [c for c in title if c.isalpha()]
+                caps = sum(1 for c in letters if c.isupper())
+                if len(letters) > 4 and caps / len(letters) > 0.8:
+                    chapter = sub = f"{head.strip().rstrip('.')} {title.title()}"
+                    continue
+            if m := re.match(r'\s*(\d+)\.?\s+([A-ZÁÂÃÉÊÍÓÔÕÚÇ][A-ZÁÂÃÉÊÍÓÔÕÚÇ \-/,\.]*)$', head):
+                chapter = sub = f'{m.group(1)} {m.group(2).strip().title()}'
+                continue
+            if m := re.match(r'\s*(\d+\.\d+)\s+(\S.*?)\s*$', head):
                 sub = f'{m.group(1)} {m.group(2).strip()}'
-            if not (m := re.match(r'\s*([a-z])\)\s+(\S.*)$', line)):
                 continue
-            xs = [i for i, ch in enumerate(line) if ch == 'X']
-            if not xs:
-                continue
-            # a coluna mais à direita que o X alcança é a categoria mais baixa
-            cat = min((abs(pos - x), str(c)) for x in xs for c, pos in cols.items())[1]
-            body = re.sub(r'\s+', ' ', m.group(2)).strip(' X')
-            items.append((chapter, sub, m.group(1), body, cat))
+
+            if is_new:
+                letter = re.match(r'\s*([a-z])\)', line).group(1)
+                block = [line[line.index(')') + 1:]]
+                # Texto que começa na linha acima da alínea (célula centrada).
+                if not block[0].strip(' X'):
+                    prev = lines[n - 1] if n else ''
+                    if prev.strip() and not re.match(r'\s*([a-z]\)|\d)', prev):
+                        block.insert(0, prev)
+            elif letter is not None:
+                block.append(line)
+
+        if letter and (item := flush(block, cols, chapter, sub, letter)):
+            items.append(item)
+
     return items
 
 
@@ -84,6 +139,15 @@ def probe_terms(body):
 
 def main():
     items = parse_annex()
+
+    if '--itens' in sys.argv:
+        # Uma linha por item, para procurar por assunto: a numeração do Anexo 1 é
+        # a do HAREC e a dos guias é a do Novice, por isso casar por número dá
+        # asneira e o casamento tem de ser pelo texto.
+        for chapter, sub, letter, body, cat in items:
+            print(f'cat{cat} | {chapter[:28]:30} | {sub[:34]:36} | {letter}) {body}')
+        return
+
     corpus = guide_corpus()
     required = {c: [i for i in items if ORDER.index(i[4]) <= ORDER.index(c)] for c in ORDER}
 
