@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 import type { CategoryId } from '@/lib/config/categories';
 import { CATEGORIES } from '@/lib/config/categories';
 
@@ -46,19 +46,16 @@ export function setReaderCategory(category: CategoryId | null) {
   window.dispatchEvent(new CustomEvent(EVENT, { detail: category }));
 }
 
+function subscribe(onChange: () => void) {
+  window.addEventListener(EVENT, onChange);
+  window.addEventListener('storage', onChange);
+  return () => {
+    window.removeEventListener(EVENT, onChange);
+    window.removeEventListener('storage', onChange);
+  };
+}
+
+/** No servidor, e na hidratação, ninguém escolheu ainda. */
 export function useReaderCategory(): CategoryId | null {
-  const [category, setCategory] = useState<CategoryId | null>(null);
-
-  useEffect(() => {
-    setCategory(getReaderCategory());
-    const sync = () => setCategory(getReaderCategory());
-    window.addEventListener(EVENT, sync);
-    window.addEventListener('storage', sync);
-    return () => {
-      window.removeEventListener(EVENT, sync);
-      window.removeEventListener('storage', sync);
-    };
-  }, []);
-
-  return category;
+  return useSyncExternalStore(subscribe, getReaderCategory, () => null);
 }

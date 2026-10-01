@@ -29,6 +29,7 @@ export function useGuideSections(slug: string) {
   const [activeId, setActiveId] = useState<string | null>(null);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- the headings exist only in the rendered DOM
     setActiveId(null);
     const headings = Array.from(
       document.querySelectorAll<HTMLHeadingElement>('article.prose h2[id]')
@@ -91,6 +92,7 @@ function useLinkedGuides(items: StudyItem[], currentSlug: string) {
         .filter((slug) => slug && slug !== currentSlug)
     );
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- the links exist only in the rendered DOM
     setLinked(items.filter((i) => slugs.has(i.slug)));
   }, [items, currentSlug]);
 
