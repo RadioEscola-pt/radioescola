@@ -1,0 +1,112 @@
+---
+title: Malha de Captura de Fase (PLL)
+description: O que é uma malha de captura de fase, os blocos que a constituem, a gama de captura, e o seu uso na síntese de frequências e na modulação e desmodulação de FM.
+categories: [2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Malha de Captura de Fase (PLL)
+
+Quase todos os transcetores modernos geram a frequência de trabalho com uma **malha de captura de fase**, que substituiu a gaveta de cristais e o VFO instável do equipamento antigo. O exame pergunta pela sigla, pelos blocos que a compõem, pela gama de captura e pelo papel que desempenha num emissor de FM.
+
+---
+
+## 1. O que é uma malha de captura de fase
+
+**PLL** é a sigla inglesa de ***Phase Locked Loop***, que em português se traduz por **malha de captura de fase**.
+
+Duma forma geral, é **uma malha de realimentação em que o sinal realimentado é usado para sincronizar a frequência (ou a fase) instantânea do sinal de saída com a do sinal de entrada**. Repare na grandeza em causa: a realimentação atua sobre a **fase e a frequência**, nunca sobre a potência ou a amplitude.
+
+A malha está **engatada** (*locked*) quando a tensão de erro estabiliza: a saída fica com a frequência da referência (ou um múltiplo dela) e mantém apenas uma diferença de fase constante.
+
+---
+
+## 2. Os blocos da malha
+
+O diagrama é uma malha fechada: a referência entra no comparador de fase, a tensão de erro atravessa o filtro, o filtro comanda o VCO, e a saída deste regressa ao comparador (nos sintetizadores, pelo divisor).
+
+| Bloco | O que faz |
+| :--- | :--- |
+| **Oscilador de referência** | Fornece a frequência estável $f_{\text{ref}}$ contra a qual tudo é comparado; é tipicamente a cristal. |
+| **Comparador (detetor) de fase** | Compara a fase da referência com a do sinal realimentado e dá uma tensão de erro proporcional à diferença. |
+| **Filtro passa-baixo (filtro de malha)** | Alisa essa tensão, eliminando o batimento e o ruído, e entrega ao VCO uma tensão de controlo contínua. |
+| **VCO** | Gera o sinal de saída; a sua frequência varia com a tensão de controlo. |
+| **Divisor de frequências programável** | Divide a frequência do VCO por $N$ antes de a devolver ao comparador. |
+
+Duas armadilhas clássicas do exame: o filtro da malha é **passa-baixo**, nunca passa-alto; e um **detetor de envolvente** não pode fazer parte do diagrama de blocos de uma PLL, porque é o detetor de AM, que responde a variações de amplitude.
+
+### O oscilador controlado por tensão (VCO)
+
+Um **VCO** (*Voltage Controlled Oscillator*) é um **oscilador controlado por tensão**: a frequência de saída depende de uma tensão contínua aplicada à entrada de controlo. Obtém-se com um **díodo varicap** no circuito de tanque, cuja capacidade varia com a tensão inversa aplicada e desloca a frequência de ressonância. A variação por volt é o ganho do VCO, em Hz/V.
+
+---
+
+## 3. Engate, gama de captura e gama de manutenção
+
+A **gama de captura** é **a gama de frequências que permite fechar a malha**: a banda de entrada, em torno da frequência de repouso do VCO, dentro da qual uma malha desengatada consegue adquirir o sincronismo. É uma gama de **frequências**, não de tensões nem de impedâncias, e não é um intervalo de tempo (o tempo até fechar chama-se tempo de aquisição).
+
+O limite vem do filtro: com a malha aberta, o comparador produz um batimento à diferença entre a frequência de entrada e a do VCO, e esse batimento tem de **atravessar o filtro passa-baixo** para corrigir o VCO; se a diferença for demasiado grande, cai fora da banda do filtro e a malha nunca fecha. Já engatada, o erro de fase é quase contínuo e deixa de ser atenuado, pelo que a malha segue o sinal numa banda mais larga, a **gama de manutenção**, sempre igual ou maior do que a de captura.
+
+A banda do filtro é por isso um **compromisso**: estreita, dá uma saída mais limpa mas engata devagar e captura numa gama menor; larga, engata depressa e captura mais longe, mas deixa chegar ao VCO a ondulação do comparador, que surge na saída como espúrios.
+
+---
+
+## 4. Síntese de frequências com divisor programável
+
+O que transforma a malha num **sintetizador** é o divisor programável. O comparador só "vê" a frequência do VCO dividida por $N$, pelo que a malha engata quando essa fração iguala a referência:
+
+$$f_{\text{VCO}} = N \times f_{\text{ref}}$$
+
+- $f_{\text{VCO}}$: frequência de saída, gerada pelo VCO, em hertz ($\text{Hz}$)
+- $f_{\text{ref}}$: frequência do oscilador de referência, em hertz ($\text{Hz}$)
+- $N$: fator de divisão do divisor programável (número inteiro)
+
+Como $N$ é inteiro, o **passo do sintetizador é igual a $f_{\text{ref}}$**: com $f_{\text{ref}} = 12{,}5\ \text{kHz}$, $N = 11\,520$ dá $144{,}000\ \text{MHz}$ e $N = 11\,521$ dá $144{,}0125\ \text{MHz}$. Programando $N$ percorre-se toda a banda com a estabilidade do cristal de referência e a agilidade de um VCO.
+
+---
+
+## 5. O oscilador de referência e o ruído de fase
+
+Dentro da banda da malha a saída **copia a referência**, defeitos incluídos e ainda amplificados: o ruído de fase da referência aparece na saída multiplicado por $N$ (agravado de $20 \cdot \log N$ decibéis). Até as variações de **amplitude** da referência produzem **ruído de fase** à saída do sintetizador, porque o comparador e os limitadores não são ideais e convertem modulação de amplitude em modulação de fase.
+
+Num analisador de espetro esse ruído vê-se como sinais muito concentrados em torno da portadora, um pouco acima e um pouco abaixo desta, e exprime-se em **dBc/Hz**. Em emissão alarga o sinal e incomoda os canais vizinhos; em receção provoca mistura recíproca. Daí a referência ser quase sempre um cristal compensado ou termostatizado.
+
+---
+
+## 6. A PLL no emissor e no recetor
+
+**Modulador de FM.** Uma malha de captura de fase que contém um oscilador controlado por tensão está associada a um **modulador de frequência**. Num emissor de FM a malha contém **obrigatoriamente um VCO, e é nele que entra o sinal modulante**: somado à tensão de controlo, o áudio faz a portadora desviar-se em torno do valor central, que é a definição de FM. Para que a malha não corrija esse desvio como se fosse um erro, o filtro é feito propositadamente lento face às frequências de áudio.
+
+**Desmodulador de FM.** Sem divisor, a mesma malha desmodula FM: como o VCO é obrigado a seguir a frequência instantânea do sinal recebido, a **tensão de controlo do VCO é o áudio recuperado**. É uma alternativa ao detetor de flanco e ao discriminador Foster-Seeley referidos no capítulo dos recetores, e, ao contrário do detetor de envolvente, desmodula FM.
+
+**PLL não é DDS.** Um **DDS** (síntese digital direta) é formado por um oscilador de referência, um NCO (*Numerically Controlled Oscillator*), um conversor digital-analógico e um filtro passa-baixo: não tem comparador de fase nem VCO.
+
+---
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - Qual dos seguintes circuitos não pode fazer parte do diagrama de blocos de uma malha de captura de fase?"
+    options={["Comparador de fase","Filtro passa-baixo","Detetor de envolvente","Oscilador controlado por tensão"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="2 - Num sintetizador com malha de captura de fase, a frequência de referência é 10 kHz e o divisor programável está em N = 14 500. Qual é a frequência de saída?"
+    options={["10 kHz","14,5 MHz","145 MHz","1450 MHz"]}
+    correct="C" />
+
+<StudyQuestionCard
+    prompt="3 - A gama de captura de uma malha de captura de fase é:"
+    options={["A gama de frequências que permite fechar a malha","A gama de tensões de controlo admitidas pelo VCO","A gama de impedâncias de entrada que permite fechar a malha","O tempo que a malha leva a fechar"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="4 - Num emissor de FM com malha de captura de fase, onde entra o sinal modulante?"
+    options={["Num filtro passa-alto, para cortar as harmónicas","Na entrada de controlo do oscilador controlado por tensão","Num amplificador de RF colocado após o comparador de fase","No divisor de frequências programável"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="5 - Porque se usa um oscilador de referência muito estável num sintetizador com malha de captura de fase?"
+    options={["Porque qualquer variação de amplitude da referência impede a malha de engatar","Porque qualquer variação de amplitude da referência produz ruído de fase à saída do sintetizador","Porque qualquer variação de amplitude da referência produz distorção harmónica no sinal modulante","Porque só assim o divisor programável aceita valores de N elevados"]}
+    correct="B" />

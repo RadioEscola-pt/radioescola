@@ -100,6 +100,38 @@ A combinação de uma bobina com um condensador forma um **circuito sintonizado 
 
 > O funcionamento dos circuitos série e paralelo e dos filtros é tratado no capítulo dos **Circuitos**.
 
+## 2.8 Válvulas termoiónicas
+
+Antes do transístor, o elemento activo de qualquer circuito era a **válvula termoiónica** (ou tubo de vácuo): uma ampola de vidro onde se fez o vácuo, com dois ou mais eléctrodos no interior.
+
+O princípio é o **efeito termoiónico**: um metal aquecido **emite electrões**. Um filamento aquece o **cátodo** até este libertar electrões, e o **ânodo** (também chamado placa), mantido a um potencial positivo, atrai-os através do vácuo. Como só o cátodo aquecido emite, a corrente circula **num só sentido**.
+
+A **válvula díodo** tem por isso apenas **dois eléctrodos** (cátodo e ânodo) e a sua aplicação é a **rectificação**, tal como no díodo semicondutor da secção anterior.
+
+O **tríodo** acrescenta um terceiro eléctrodo entre os outros dois: a **grelha de comando**. Uma pequena variação de tensão na grelha controla uma variação muito maior na corrente de ânodo, e é isso que faz da válvula um **amplificador**. A relação entre as duas chama-se factor de amplificação:
+
+$$\mu = \frac{\Delta V_a}{\Delta V_g}$$
+
+- $\mu$: factor de amplificação da válvula, sem unidades
+- $\Delta V_a$: variação da tensão de ânodo, em volt ($\text{V}$)
+- $\Delta V_g$: variação da tensão de grelha que a compensa, em volt ($\text{V}$)
+
+As duas variações comparam-se **para a mesma corrente de ânodo**: $\mu$ diz
+quantos volt de ânodo são precisos para produzir o efeito de um volt de grelha.
+
+Acrescentando mais grelhas obtêm-se as restantes famílias. O **número de eléctrodos** é o que o exame pergunta:
+
+| Válvula | Eléctrodos | Eléctrodo acrescentado |
+| :--- | :---: | :--- |
+| **Díodo** | 2 | cátodo e ânodo |
+| **Tríodo** | 3 | grelha de comando |
+| **Tétrodo** | 4 | grelha de blindagem (ou de ecrã) |
+| **Pêntodo** | 5 | grelha supressora |
+
+A **grelha de blindagem** do tétrodo existe para **reduzir a capacidade entre a grelha de comando e a placa**: num tríodo esses dois eléctrodos comportam-se como as armaduras de um pequeno condensador, que liga a saída de novo à entrada e pode pôr o andar a oscilar.
+
+**Porque foram substituídas, e onde permaneceram.** Na electrónica de consumo, os dispositivos de estado sólido (transístores) ganharam terreno sobretudo por serem **muito mais pequenos**, além de dispensarem filamento e tensões elevadas. Em radioamadorismo, porém, as válvulas mantêm-se nos **amplificadores de potência de RF**, onde toleram melhor do que um transístor equivalente as desadaptações de impedância e as sobrecargas momentâneas. Trabalham com tensões de ânodo de centenas ou milhares de volt, que se mantêm perigosas depois de desligado o equipamento.
+
 ## Perguntas e respostas
 
 <StudyQuestionCard
@@ -150,4 +182,14 @@ A combinação de uma bobina com um condensador forma um **circuito sintonizado 
 <StudyQuestionCard
     prompt="10 - Um transformador só funciona com:"
     options={["Corrente contínua","Corrente alternada","Tensão nula","Sinais digitais"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="11 - O efeito termoiónico consiste na:"
+    options={["emissão de protões por um metal aquecido","emissão de electrões por um metal aquecido","emissão de electrões por um isolante arrefecido","absorção de electrões por um metal próximo do zero absoluto"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="12 - Quantos eléctrodos tem uma válvula tríodo e qual é a sua utilização típica?"
+    options={["Dois eléctrodos, usada na rectificação","Três eléctrodos, usada na amplificação","Quatro eléctrodos, usada na rectificação","Cinco eléctrodos, sem utilização prática"]}
     correct="B" />

@@ -1,0 +1,173 @@
+---
+title: Modulação de Amplitude (AM)
+description: O que é modular, o espectro de um sinal AM com portadora e duas bandas laterais, a profundidade de modulação e a sobremodulação, as classes de emissão da UIT e a modulação por impulsos.
+categories: [3, 2, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Modulação de Amplitude (AM)
+
+Uma portadora sozinha não diz nada: é uma sinusoide constante que ocupa espectro e não transporta mensagem. **Modular** é a operação que lhe imprime a informação, e é também a operação que decide quanta largura de banda a estação vai ocupar, quanta potência é aproveitada e quão vulnerável ao ruído fica a ligação. A modulação de amplitude é a mais antiga e a mais simples de todas, e é a base a partir da qual se explicam todas as outras.
+
+---
+
+## 1. Modular: portadora, sinal modulante, sinal modulado
+
+O sinal de informação (voz, dados, telegrafia) ocupa a **banda base**, uma gama de frequências baixas junto de $0\text{ Hz}$. Nenhuma antena de dimensões razoáveis irradia eficazmente essas frequências. A modulação resolve o problema **transladando o sinal da sua gama de frequências para outra gama**, em torno da frequência da portadora.
+
+Há três nomes a não confundir:
+
+| Termo | O que é |
+| :--- | :--- |
+| **Portadora** | A onda de radiofrequência, de amplitude e frequência constantes, que serve de veículo |
+| **Sinal modulante** | O sinal de informação em banda base, que altera a portadora |
+| **Sinal modulado** | O resultado, que é o que sai para a antena |
+
+Uma portadora sinusoidal só tem três grandezas onde a informação pode ser inscrita, e cada uma dá um tipo de modulação: a **amplitude** (AM), a **frequência** (FM) e a **fase** (PM). Como a frequência instantânea é a derivada da fase, FM e PM agrupam-se sob o nome de **modulações angulares**. No emissor, o circuito que faz a operação é o **modulador**; no recetor, o que a desfaz é o **desmodulador** ou **detetor**, e por isso um desmodulador nunca faz parte de um emissor.
+
+---
+
+## 2. O espectro de um sinal AM
+
+Em AM, **a amplitude da portadora varia proporcionalmente à amplitude instantânea do sinal modulante**. O contorno que a amplitude desenha no tempo chama-se **envolvente**, e é nela que vai a informação: alterar a envolvente de uma onda de RF é exatamente a definição de modulação de amplitude. Como a potência instantânea é proporcional ao quadrado da amplitude, uma emissão em AM apresenta um **nível instantâneo de potência variável**, ao contrário de FM ou de CW.
+
+No domínio da frequência, modular em amplitude com um tom de frequência $f_m$ produz **três** componentes: a portadora e duas **bandas laterais** (ou faixas laterais), uma imediatamente acima e outra imediatamente abaixo dela.
+
+$$f_{\text{BLS}} = f_p + f_m \qquad\qquad f_{\text{BLI}} = f_p - f_m$$
+
+- $f_{\text{BLS}}$: frequência da banda lateral superior, em hertz ($\text{Hz}$)
+- $f_{\text{BLI}}$: frequência da banda lateral inferior, em hertz ($\text{Hz}$)
+- $f_p$: frequência da portadora, em hertz ($\text{Hz}$)
+- $f_m$: frequência do sinal modulante, em hertz ($\text{Hz}$)
+
+São sempre **duas** bandas laterais, e daí o nome **dupla banda lateral** (DSB): uma emissão em dupla faixa lateral é, por definição, uma emissão em modulação de amplitude. Com voz, cada componente de áudio gera o seu par de frequências laterais, pelo que cada banda lateral é uma cópia do espectro do áudio, uma direita e outra invertida.
+
+A largura de banda necessária é, portanto, o **dobro da frequência mais alta do sinal modulante**:
+
+$$B = 2 f_{\text{max}}$$
+
+- $B$: largura de banda necessária, em hertz ($\text{Hz}$)
+- $f_{\text{max}}$: frequência mais alta do sinal modulante, em hertz ($\text{Hz}$)
+
+Com a fonia limitada a $3\text{ kHz}$, como é habitual numa emissão radiotelefónica, a largura de banda necessária é de $2 \times 3 = 6\text{ kHz}$. Uma portadora em $7{,}100\text{ MHz}$ modulada com esse áudio ocupa de $7{,}097$ a $7{,}103\text{ MHz}$. Note-se que a largura de banda **necessária** é o valor mínimo suficiente para transmitir a informação com a qualidade pretendida, e não engloba tudo o que o emissor irradia: fora dela ficam ainda as emissões espúrias.
+
+---
+
+## 3. A informação está nas bandas laterais
+
+Este é o ponto que o exame pergunta de várias formas. **A portadora não transporta informação nenhuma**: é constante em amplitude, em frequência e em fase, e tudo o que varia está nas bandas laterais. Ainda assim, é nela que fica a maior parte da potência.
+
+$$P_{\text{total}} = P_p \left(1 + \frac{m^2}{2}\right)$$
+
+- $P_{\text{total}}$: potência total emitida, em watt ($\text{W}$)
+- $P_p$: potência da portadora, em watt ($\text{W}$)
+- $m$: índice de modulação, sem unidades (de $0$ a $1$)
+
+Com $m = 1$, ou seja a $100\%$ de modulação, uma portadora de $100\text{ W}$ dá $150\text{ W}$ no total: $100\text{ W}$ na portadora e $50\text{ W}$ repartidos igualmente pelas duas bandas laterais, $25\text{ W}$ em cada. São **dois terços da potência gastos naquilo que não transporta informação**, e nem sequer um terço útil, porque as duas bandas laterais são redundantes entre si.
+
+É esta contabilidade que justifica a [banda lateral única](/aprender/banda-lateral-unica), que suprime a portadora e uma das bandas laterais sem perder um único bit de informação, ocupando cerca de metade da largura de banda de uma emissão AM.
+
+---
+
+## 4. Profundidade de modulação e sobremodulação
+
+A **profundidade de modulação** (ou percentagem de modulação, ou índice de modulação) mede quanto a envolvente se afasta do valor de repouso:
+
+$$m = \frac{U_{\text{max}} - U_{\text{min}}}{U_{\text{max}} + U_{\text{min}}} \times 100$$
+
+- $m$: profundidade de modulação, em percentagem
+- $U_{\text{max}}$: amplitude máxima da envolvente, em volt ($\text{V}$)
+- $U_{\text{min}}$: amplitude mínima da envolvente, em volt ($\text{V}$)
+
+Com picos de $100\text{ V}$ e mínimos de $20\text{ V}$, a profundidade é $(100-20)/(100+20) = 0{,}667$, ou $66{,}7\%$. A $100\%$ a envolvente chega a anular-se nos mínimos: é o limite em que, para a mesma potência de portadora, se obtém o máximo de potência nas bandas laterais e portanto o máximo nível de áudio no recetor. Por isso a regra prática é **modular o mais alto possível sem exceder os $100\%$**.
+
+Acima disso há **sobremodulação**, e a consequência é dupla: o sinal fica **distorcido** e **a largura de banda ocupada aumenta**, invadindo os canais adjacentes e causando interferências. O mecanismo (saturação do andar final, *flat-topping*, produtos de intermodulação que se espalham para fora da banda) está explicado no guia de [distorção e intermodulação](/aprender/distorcao-e-intermodulacao). O mesmo se aplica a SSB, onde a amplitude de RF acompanha diretamente o áudio.
+
+Atenção ao vocabulário: em modulação de frequência, o índice de modulação e a percentagem de modulação são definidos de outra maneira, a partir do desvio de frequência. Isso pertence ao guia de [modulação de frequência](/aprender/modulacao-de-frequencia).
+
+---
+
+## 5. Classes de emissão da UIT
+
+Uma classe de emissão é um código curto, normalizado pela UIT, que descreve uma emissão em três símbolos:
+
+| Símbolo | O que descreve | Valores frequentes |
+| :---: | :--- | :--- |
+| **1.º** (letra) | Tipo de modulação da portadora principal | $A$ dupla banda lateral; $H$, $R$, $J$ banda lateral única com portadora completa, reduzida ou suprimida; $F$ modulação de frequência; $G$ modulação de fase; $N$ portadora não modulada |
+| **2.º** (algarismo) | Natureza dos sinais que modulam a portadora | $0$ nenhum; $1$ um canal digital sem subportadora modulante; $2$ um canal digital com subportadora modulada; $3$ um canal analógico |
+| **3.º** (letra) | Tipo de informação transmitida | $A$ telegrafia manual (auditiva); $B$ telegrafia automática; $E$ telefonia; $F$ televisão; $D$ dados; $N$ nenhuma |
+
+As quatro que o exame usa, e que convém saber de cor:
+
+| Classe | Leitura | Modo |
+| :---: | :--- | :--- |
+| **A1A** | AM dupla banda lateral, um canal digital sem subportadora, telegrafia manual | CW (Morse manipulado) |
+| **A3E** | AM dupla banda lateral, um canal analógico, telefonia | AM de fonia |
+| **J3E** | Banda lateral única com portadora suprimida, um canal analógico, telefonia | SSB de fonia |
+| **F3E** | Modulação de frequência, um canal analógico, telefonia | FM de fonia |
+
+O atalho é a primeira letra: $A$ e $J$ são famílias de amplitude, $F$ é frequência. Aparece também $A2A$ ou $A2E$, telegrafia com subportadora modulada, audível num recetor AM sem oscilador de batimento.
+
+---
+
+## 6. Modulação por impulsos
+
+Em vez de uma onda contínua, a portadora pode ser um **trem de impulsos** regularmente espaçados, e a informação vai num dos seus parâmetros:
+
+| Sigla | Designação | Parâmetro que varia |
+| :---: | :--- | :--- |
+| **PAM** | *Pulse-Amplitude Modulation* | A amplitude de cada impulso |
+| **PWM** | *Pulse-Width Modulation* | A duração de cada impulso |
+| **PPM** | *Pulse-Position Modulation* | O instante em que cada impulso é produzido |
+| **PCM** | *Pulse-Code Modulation* | Um código binário, em grupos de impulsos |
+
+Em PPM os impulsos são todos iguais em amplitude e em duração, e ocorrem à cadência do relógio de amostragem: o que a informação altera é apenas o desvio temporal de cada um em relação ao instante de referência do seu intervalo.
+
+Como um impulso está presente ou ausente, e os seus parâmetros tomam valores discretos, a modulação por impulsos presta-se naturalmente à **transmissão digital de dados**: é essa a sua função típica. O PCM é o caso completo, em que um sinal analógico é amostrado, quantificado e transmitido como uma sequência de impulsos codificados; a cadeia de amostragem e quantificação está no guia de [processamento digital de sinal](/aprender/processamento-digital-de-sinal).
+
+---
+
+## 7. AM, SSB e FM lado a lado
+
+| | **AM (A3E)** | **SSB (J3E)** | **FM (F3E)** |
+| :--- | :--- | :--- | :--- |
+| Espectro emitido | Portadora e duas bandas laterais | Uma banda lateral | Portadora e um número teoricamente infinito de frequências laterais |
+| Largura de banda com fonia | $\approx 6\text{ kHz}$ | $\approx 3\text{ kHz}$, cerca de metade da de AM | $\approx 16\text{ kHz}$, a mais larga das três |
+| Eficiência de potência | Má: dois terços na portadora | Muito boa: toda a potência na informação | Boa: amplitude constante permite classe C |
+| Sensibilidade ao ruído | Elevada, porque o ruído é de amplitude | Elevada, pela mesma razão | Baixa, e daí a vantagem de menos ruído |
+| Recetor | Simples, detetor de envolvente | Exige restituir a portadora (BFO e detetor de produto) | Exige limitador e discriminador |
+| Uso típico | Radiodifusão em onda média, aeronáutica | Fonia em HF, o modo dominante nas faixas de amador | Fonia em VHF e UHF, repetidores |
+
+Para o detalhe de cada um, siga para [banda lateral única](/aprender/banda-lateral-unica) e para [modulação de frequência](/aprender/modulacao-de-frequencia). Em fonia, a ordem crescente de largura de banda é SSB, AM, FM.
+
+> Os andares de um emissor e de um recetor estão em [Emissores](/aprender/emissores) e [Recetores](/aprender/recetores); a linearidade que AM e SSB exigem do andar final, em [amplificadores e classes](/aprender/amplificadores-e-classes).
+
+---
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - Numa emissão em modulação de amplitude, quantas bandas laterais existem?"
+    options={["1","2","3","4"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="2 - Numa emissão em AM, a maior parte da potência é utilizada para transmitir:"
+    options={["a banda lateral inferior","a banda lateral superior","as duas bandas laterais","a portadora"]}
+    correct="D" />
+
+<StudyQuestionCard
+    prompt="3 - Em modulação de amplitude com dupla banda lateral, qual é a largura de banda necessária para uma emissão de fonia com áudio limitado a 3 kHz?"
+    options={["3 kHz","6 kHz","10 kHz","12 kHz"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="4 - Qual é o inconveniente da sobremodulação?"
+    options={["Reduz a largura de faixa ocupada pela emissão","Distorce o sinal e alarga a faixa ocupada, podendo interferir nos canais adjacentes","Aumenta o rendimento do andar final","Suprime automaticamente a portadora"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="5 - Que parâmetro varia no sinal modulado num sistema de modulação por posição de pulso (PPM)?"
+    options={["A amplitude dos pulsos","A duração dos pulsos","O instante em que cada pulso é produzido","O número de pulsos por segundo"]}
+    correct="C" />

@@ -39,6 +39,33 @@ A **troposfera** é a camada baixa da atmosfera, onde ocorrem os fenómenos mete
 
 A actividade solar segue um ciclo de aproximadamente **11 anos**, avaliado pelo número de **manchas solares**. Quanto **mais manchas solares**, maior a ionização da ionosfera, mais alta a MUF e **melhores as condições de propagação em HF**, sobretudo nas frequências mais elevadas.
 
+## 7.6 Dispersão boreal e dispersão em meteoritos
+
+Dois modos de VHF de categoria 1 que não dependem das camadas regulares: em vez de refletirem numa camada estável, **dispersam** o sinal num volume de ionização temporária.
+
+**Dispersão boreal (aurora).** A atividade auroral resulta da **emissão pelo Sol de partículas carregadas eletricamente**. O vento solar, reforçado por erupções e por ejeções de massa coronal, é guiado pelo campo magnético terrestre até às regiões polares, onde ioniza a alta atmosfera por volta dos 100 km. Não é reflexão *no* vento solar, nem efeito de poucas manchas solares, nem de chuvas de meteoros. Essa cortina ionizada devolve sinais de **VHF**, sobretudo em 50 e 144 MHz, com as antenas apontadas a **norte** e não para a estação distante, porque o percurso passa pela zona auroral. Como a cortina está em movimento rápido e desordenado, o sinal sofre uma forte **dispersão Doppler** que o alarga e o torna áspero: a portadora perde pureza, o tom de CW ouve-se sibilante e a fonia fica rouca e pouco inteligível. É a mesma degradação que dá ao *scatter* em HF o seu som oscilante. Por isso trabalha-se quase sempre em **CW**, ou em SSB com articulação lenta.
+
+Abre com os **distúrbios geomagnéticos**, ou seja, com uma alteração significativa do campo magnético da Terra num curto período de tempo. O aviso é o **índice K**, medida da estabilidade de curta duração do campo magnético: valores baixos indicam calma, valores de 5 ou mais indicam tempestade e aurora provável. Atenção à pergunta de exame que pede a *vantagem* da elevada atividade geomagnética; aí a resposta esperada é a melhoria da propagação de longo percurso em HF.
+
+**Dispersão em meteoritos.** Os meteoros vaporizam-se entre os **85 e os 120 km** e deixam atrás de si um **rasto de gás ionizado**, em forma de tubo fino. É o rasto, e não o corpo do meteoro, que reflete a onda. Cada um dura de frações de segundo a poucos segundos, pelo que o contacto se ouve como uma sucessão de **rajadas** curtas e fortes separadas por silêncio. A gama útil vai de cerca de **28 a 148 MHz** (6 e 2 metros são as faixas de eleição): abaixo disso a ionosfera já faz o percurso, acima o rasto reflete mal. A altitude limita o alcance de um salto:
+
+$$d_{\max} \approx 2\sqrt{2\,R\,h}$$
+
+- $d_{\max}$: alcance máximo de um salto, em quilómetros ($\text{km}$)
+- $R$: raio da Terra, cerca de $6371\text{ km}$
+- $h$: altitude do rasto ionizado, entre $85$ e $120\text{ km}$
+
+Com $h = 100\text{ km}$ dá cerca de $2260\text{ km}$, o alcance típico do modo. Há meteoros esporádicos todo o ano, com **máximo de madrugada**, quando o nosso lado da Terra avança contra as partículas; as **chuvas de meteoros** (Perseidas em agosto, Geminídeas em dezembro) multiplicam a taxa. Como a janela é de segundos, usam-se **modos digitais rápidos** (MSK144, antes FSK441) ou CW a alta velocidade, em períodos alternados de 15 segundos e com mensagens muito curtas.
+
+| | Dispersão boreal | Dispersão em meteoritos |
+| :--- | :--- | :--- |
+| **O que reflete** | cortina de ionização polar criada pelo vento solar | rasto de gás ionizado deixado pelo meteoro |
+| **Altitude** | cerca de 100 km, na zona auroral | 85 a 120 km |
+| **Faixas** | VHF, sobretudo 50 e 144 MHz | 28 a 148 MHz |
+| **Som do sinal** | áspero e sibilante, alargado por Doppler | rajadas curtas e fortes entre silêncios |
+| **Quando** | distúrbios geomagnéticos, índice K elevado | todo o ano, máximo de madrugada; chuvas de meteoros |
+| **Prática** | antenas a norte, CW ou SSB lenta | MSK144 ou FSK441, períodos de 15 s |
+
 ## Perguntas e respostas
 
 <StudyQuestionCard
@@ -90,3 +117,12 @@ A actividade solar segue um ciclo de aproximadamente **11 anos**, avaliado pelo 
     prompt="10 - Para comunicações a grandes distâncias (DX) em ondas curtas utiliza-se sobretudo a banda:"
     options={["HF","VHF","UHF","SHF"]}
     correct="A" />
+<StudyQuestionCard
+    prompt="11 - Qual é a causa da atividade auroral?"
+    options={["A reflexão das ondas no vento solar","A emissão pelo Sol de partículas carregadas eletricamente","Um número reduzido de manchas solares","Chuvas de meteoros concentradas em latitudes elevadas"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="12 - Que gama de frequências é adequada às comunicações por dispersão em meteoritos?"
+    options={["1,8 a 1,9 MHz","10 a 14 MHz","28 a 148 MHz","220 a 450 MHz"]}
+    correct="C" />

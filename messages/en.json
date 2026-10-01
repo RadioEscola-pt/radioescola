@@ -226,7 +226,52 @@
     "markComplete": "Mark as complete",
     "markIncomplete": "Mark as incomplete",
     "error": "Could not load study materials.",
-    "retry": "Try again"
+    "retry": "Try again",
+    "guide": {
+      "breadcrumb": "Study",
+      "categories": "Categories",
+      "readTime": "Reading",
+      "readTimeValue": "{minutes} min",
+      "sections": "Sections",
+      "position": "Guide",
+      "positionValue": "{index} of {total}",
+      "onThisPage": "On this page",
+      "linkedGuides": "Related guides",
+      "practiceLabel": "Practise this topic",
+      "practiceCta": "Category {category} questions",
+      "previous": "Previous",
+      "next": "Next",
+      "otherGuides": "Other guides",
+      "categoryShort": "cat {category}",
+      "onlyFrom": "Only examined from category {category}"
+    },
+    "chapters": {
+      "comecar": "Start here",
+      "teoria": "Electrical, electromagnetic and radio theory",
+      "componentes": "Components",
+      "circuitos": "Circuits",
+      "recetores": "Receivers",
+      "emissores": "Transmitters",
+      "antenas": "Antennas and transmission lines",
+      "propagacao": "Spectrum and propagation",
+      "medidas": "Measurements",
+      "interferencias": "Interference and immunity",
+      "seguranca": "Safety",
+      "operacao": "Operating rules and procedures",
+      "regulamentacao": "Regulations",
+      "referencia": "Reference"
+    },
+    "guides": "{count} guides",
+    "guidesOne": "1 guide",
+    "minutes": "{count} min",
+    "readOf": "{read} of {total} read",
+    "allRead": "all read",
+    "markRead": "Mark as read",
+    "markUnread": "Mark as unread",
+    "read": "Read",
+    "byChapter": "Chapters",
+    "alphabetical": "A to Z",
+    "guideCount": "{count} guides"
   },
   "Exam": {
     "loading": "Loading...",
@@ -1116,5 +1161,9 @@
     "quotaBody": "This browser's storage is full. Export a backup from settings and clear old data to start saving again.",
     "unknownBody": "This browser refused the write. If you're browsing privately, progress isn't saved.",
     "dismiss": "Dismiss"
+  },
+  "Download": {
+    "caption": "Download",
+    "action": "Download"
   }
 }

@@ -1,0 +1,124 @@
+---
+title: Processamento Digital de Sinal (DSP)
+description: Conversão analógica/digital em três etapas, teorema de Nyquist e aliasing, quantificação e resolução em bits, filtros digitais FIR e IIR e o papel do DSP no recetor moderno.
+categories: [3, 1]
+---
+
+import StudyQuestionCard from '@/components/StudyQuestionCard'
+
+# Processamento Digital de Sinal (DSP)
+
+Nos transcetores atuais o sinal é tratado em números, não em tensões: a filtragem de FI, a redução de ruído, o filtro *notch* e muitas vezes a própria desmodulação são feitas por um **processador digital de sinal (DSP)**. Saber o que acontece na passagem de analógico para digital é o que permite usar bem os comandos de um rádio moderno, e é matéria de exame na categoria 1.
+
+> Os modos digitais propriamente ditos (FT8, PSK31, RTTY, *packet*) e o controlo de erros são tratados no guia [Modos Digitais e Controlo de Erros](/aprender/modos-digitais-e-fec). Aqui interessa-nos o *processamento* do sinal, seja ele de voz, de CW ou de dados.
+
+---
+
+## 1. Porque se processa em digital
+
+A resposta de um filtro analógico é aquilo que as tolerâncias, a temperatura e o envelhecimento dos componentes deixarem que seja; a de um filtro digital é uma lista de coeficientes na memória. Daí três vantagens, todas examinadas:
+
+- **Operações elementares:** qualquer algoritmo de DSP se decompõe em somas, multiplicações e atrasos de uma amostra, executáveis por hardware genérico em vez de circuitos dedicados.
+- **Sem a variabilidade dos componentes analógicos:** a aritmética é determinística, pelo que todos os exemplares do mesmo filtro se comportam de igual maneira, sem ajuste nem calibração.
+- **Flexibilidade:** para obter outro filtro, outra largura de banda ou outro modo basta correr outro programa, e é isto que está na base do **SDR** (*Software Defined Radio*).
+
+---
+
+## 2. A conversão analógica/digital
+
+A conversão A/D divide-se em **três etapas, por esta ordem**:
+
+| Etapa | O que faz | O que sai |
+| :--- | :--- | :--- |
+| **1. Amostragem** | Mede a amplitude do sinal em instantes regularmente espaçados | Discreto no tempo, **contínuo** em amplitude |
+| **2. Quantificação** | Arredonda cada amostra para o nível discreto mais próximo | Discreto no tempo **e** em amplitude |
+| **3. Codificação** | Traduz cada nível numa palavra binária | Sequência de bits |
+
+A técnica usada para converter sinais analógicos em digitais designa-se **amostragem sequencial**: lêem-se valores sucessivos, um após outro, no tempo; não há regeneração de harmónicas, mudança de nível nem inversão de fase. No domínio do tempo, amostrar é **multiplicar o sinal por um trem de impulsos de amplitude constante**, de que resulta um trem de impulsos de amplitude variável, proporcional ao sinal.
+
+### 2.1 Teorema de Nyquist e *aliasing*
+
+O **teorema de Nyquist**, ou teorema da amostragem, estabelece que a frequência de amostragem deve ser **no mínimo o dobro** da maior frequência presente no sinal:
+
+$$f_s \ge 2 f_{\text{max}}$$
+
+- $f_s$: frequência de amostragem, em hertz ($\text{Hz}$)
+- $f_{\text{max}}$: frequência mais alta contida no sinal ($\text{Hz}$)
+
+Se a condição não for respeitada, as componentes acima de $f_s/2$ "dobram-se" e reaparecem nas amostras como frequências mais baixas que não existiam no original: são os *alias*. O **aliasing é, por definição, a distorção resultante do não cumprimento do teorema de Nyquist**, e nada tem que ver com a qualidade dos componentes ou com não linearidades dos amplificadores. Ao ouvido, um tom que sobe para lá do limite parece descer outra vez, e a voz ganha um timbre metálico que já não se corrige. Daí o **filtro anti-*aliasing***: um passa-baixo analógico, **sempre antes do conversor**, que remove tudo acima de $f_s/2$ antes de haver amostras para estragar.
+
+Amostrar bastante acima desse mínimo chama-se **sobre amostragem**, e a vantagem é **aumentar a relação sinal/ruído**: o ruído de quantificação espalha-se por toda a banda de $0$ a $f_s/2$, pelo que amostrar mais depressa o dilui, enquanto o sinal útil fica confinado à sua banda, onde um filtro digital o isola.
+
+### 2.2 Quantificação, resolução e gama dinâmica
+
+Com $n$ bits dispõe-se de $2^n$ níveis. A diferença entre o valor real e o nível atribuído é o **erro de quantificação**, irreversível, que se manifesta como ruído:
+
+$$\text{SNR}_{\text{max}} \approx 6{,}02\,n + 1{,}76 \ \ [\text{dB}]$$
+
+- $n$: número de bits do conversor
+- $\text{SNR}_{\text{max}}$: relação sinal/ruído máxima, em decibéis ($\text{dB}$)
+
+Ou seja, **cada bit vale cerca de $6\text{ dB}$ de gama dinâmica**: 16 bits dão perto de $98\text{ dB}$. É por isso que a resolução do conversor de um SDR determina a sua capacidade de ouvir um sinal fraco ao lado de um forte.
+
+---
+
+## 3. Sinais e sistemas em tempo discreto
+
+Feita a conversão, o sinal deixa de ser uma função contínua e passa a ser uma **sequência numerada de amostras**. Um **sistema em tempo discreto** transforma uma sequência de entrada noutra de saída com três operações apenas: somar, multiplicar por uma constante e atrasar uma amostra.
+
+A **transformada de Fourier** liga as duas leituras do sinal: dá a representação no domínio da frequência $S(f)$ de um sinal cuja representação no domínio do tempo é $s(t)$; para um sinal periódico, é composta por **impulsos nas frequências harmónicas**. A **FFT** (*Fast Fourier Transform*) não é outra transformada: é o algoritmo que calcula a versão discreta, a DFT, depressa o bastante para desenhar a cascata de um SDR em tempo real.
+
+---
+
+## 4. Filtros digitais: FIR e IIR
+
+| Sigla | Significado | Estrutura | Consequências |
+| :--- | :--- | :--- | :--- |
+| **FIR** | *Finite Impulse Response* | Só amostras da entrada, sem realimentação | Sempre **estável**; permite **fase linear**; exige mais coeficientes |
+| **IIR** | *Infinite Impulse Response* | **Recursiva**: realimenta saídas anteriores | Menos cálculo para a mesma seletividade; fase não linear, risco de instabilidade |
+
+A **resposta impulsional** é o que sai do filtro quando se lhe aplica um único impulso à entrada: num FIR termina ao fim de um número finito de amostras (daí *finite*); num IIR prolonga-se indefinidamente, apenas decaindo, por causa da realimentação. Em ambos ela é fixada pelos **coeficientes** (por software, não por tolerâncias de componentes), e é isso que permite ter num só recetor uma vasta gama de larguras de banda e de formatos de filtro, escolhidos por menu.
+
+---
+
+## 5. Reconstrução: a volta ao analógico
+
+Um **conversor digital/analógico (D/A)** transforma cada palavra binária numa tensão, mantida até à amostra seguinte; a escada resultante é alisada por um **filtro de reconstrução** passa-baixo, que remove as réplicas do espectro em torno dos múltiplos de $f_s$. O mesmo princípio serve para *gerar* sinal: um **DDS** (*Direct Digital Synthesis*) é feito de oscilador de referência, NCO (*Numerically Controlled Oscillator*), conversor D/A e filtro passa-baixo.
+
+---
+
+## 6. O DSP no rádio real
+
+- **Filtro de FI digital:** troca os filtros de cristal por filtros calculados, de largura e forma ajustáveis. É esta a vantagem face ao filtro analógico, e não qualquer eficácia especial em VHF.
+- **Redução de ruído (NR):** aproveita o facto de a voz e o CW serem correlacionados no tempo enquanto o ruído é aleatório. Atenua **ruído branco de banda larga, ruído de ignição e ruído da linha elétrica**: os três.
+- **Filtro *notch* automático:** elimina tons contínuos interferentes. Atenção à armadilha clássica: **um sinal de CW é também um tom contínuo**, e o *notch* automático pode apagá-lo junto com a interferência. Em CW, desliga-se.
+- **Limites:** o DSP atua **depois** de o sinal ser captado. Não melhora a ligação à terra, nem o ganho ou a largura de banda da antena, e não recupera o que o *aliasing* ou a saturação do conversor já destruíram.
+
+---
+
+## Perguntas e respostas
+
+<StudyQuestionCard
+    prompt="1 - A conversão analógica/digital divide-se em três etapas, que são:"
+    options={["Diferenciação, amostragem e integração","Amostragem, quantificação e codificação","Integração, codificação e quantificação","Quantificação, amostragem e integração"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="2 - O teorema da amostragem (Nyquist) obriga a que a frequência de amostragem seja, no mínimo:"
+    options={["Igual à maior frequência do sinal","O dobro da maior frequência do sinal","Quatro vezes a maior frequência do sinal","Dez vezes a maior frequência do sinal"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="3 - Numa conversão analógica/digital, o aliasing é:"
+    options={["A distorção resultante do não cumprimento do teorema de Nyquist","Uma distorção causada por componentes de má qualidade","Uma distorção devida à não linearidade dos amplificadores","Um ruído aleatório próprio das frequências muito elevadas"]}
+    correct="A" />
+
+<StudyQuestionCard
+    prompt="4 - Em processamento digital de sinal, a sigla FIR designa um filtro de:"
+    options={["Frequency Independent Response","Finite Impulse Response","Forward Impulse Radio","Filtered Input Response"]}
+    correct="B" />
+
+<StudyQuestionCard
+    prompt="5 - Qual é o inconveniente de usar um filtro notch DSP automático em CW?"
+    options={["Faz os sinais parecerem modulados pelo relógio do DSP","Pode eliminar o sinal desejado juntamente com a interferência","Suprime os espaços entre caracteres","Reduz a sensibilidade do recetor em VHF"]}
+    correct="B" />

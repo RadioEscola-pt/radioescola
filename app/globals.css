@@ -301,6 +301,198 @@
   }
 }
 
+/* ── Guias de estudo ────────────────────────────────────────────────────────
+   The 37 guides under app/aprender are plain MDX with nothing but content in
+   them, so how a guide *reads* is defined here and in components/study/. A
+   change in this block lands on all 37 and edits none. Companion pieces:
+   `mdx-components.tsx` (the numbered-heading and table wrappers) and
+   `GuideShell` (header band, section rail, prev/next).                        */
+
+:root {
+  --guide-line: oklch(0.91 0.008 75);
+  --guide-panel: oklch(0.985 0.012 75);
+  --guide-band: oklch(0.975 0.006 80);
+}
+
+.dark {
+  --guide-line: oklch(1 0 0 / 12%);
+  --guide-panel: oklch(1 0 0 / 3.5%);
+  --guide-band: oklch(0.28 0.02 258);
+}
+
+/* The guide header reads as a full-width band without being one: a ring of
+   solid shadow paints its colour out to the viewport edges, and the clip path
+   keeps that ring off the rest of the page. Nothing overflows, so nothing has
+   to be clipped at the root; a `100vw` element there would have meant
+   `overflow-x: hidden` on `html`, which silently disables the overflow
+   propagation `body` relies on and with it the scroll lock of every Radix
+   dialog, the mobile menu included. */
+.guide-band {
+  box-shadow: 0 0 0 100vmax var(--guide-band);
+  clip-path: inset(0 -100vmax);
+}
+
+/* Links follow the brand. Tailwind Typography ships indigo, which this product
+   is not; `prose-indigo` used to be pinned on the wrapper. */
+.prose {
+  --tw-prose-links: var(--color-brand-700);
+  --tw-prose-invert-links: var(--color-brand-300);
+}
+
+[data-guide-shell] .prose {
+  max-width: none;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+/* The measure belongs to the prose, not to everything in it: a five-column
+   comparison table squeezed into 68ch wraps every cell onto three lines. */
+[data-guide-shell] .prose > :where(p, ul, ol, blockquote, h2, h3, h4, hr) {
+  max-width: 62ch;
+}
+
+/* The header band already carries the title, from the same frontmatter. */
+[data-guide-shell] .prose > h1:first-child {
+  display: none;
+}
+
+[data-guide-shell] .prose h2 {
+  font-size: 1.4375rem;
+  letter-spacing: -0.01em;
+  margin-top: 2.4em;
+  scroll-margin-top: 5rem;
+}
+
+[data-guide-shell] .prose h3 {
+  font-size: 1.1rem;
+  scroll-margin-top: 5rem;
+}
+
+/* A numbered heading hangs its numeral in a gutter the article reserves, so
+   the heading text and the body text share one left edge. Under lg there is no
+   margin to hang into and the numeral sits inline instead. */
+[data-guide-shell] .guide-h2 {
+  display: flex;
+  gap: 0.55rem;
+}
+
+[data-guide-shell] .guide-h2-number {
+  flex-shrink: 0;
+  color: var(--color-brand-500);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 1024px) {
+  [data-guide-shell] .prose {
+    padding-left: 4rem;
+  }
+
+  [data-guide-shell] .guide-h2 {
+    margin-left: -4rem;
+    gap: 1rem;
+  }
+
+  [data-guide-shell] .guide-h2-number {
+    width: 3rem;
+    text-align: right;
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  [data-guide-shell] .prose > hr {
+    margin-left: -4rem;
+  }
+}
+
+/* A formula and the list defining its symbols are one object, so they are
+   drawn as one panel. `$$…$$` on a single line renders as a lone inline KaTeX
+   span inside its own paragraph (not `.katex-display`), which is what `:has`
+   matches here; it is also why the font-size is raised. */
+[data-guide-shell] .prose p:has(> .katex:only-child) {
+  margin: 1.7em 0;
+  padding: 1.3rem 1.25rem;
+  border: 1px solid var(--guide-line);
+  border-radius: 0.75rem;
+  background: var(--guide-panel);
+  text-align: center;
+  font-size: 1.25em;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+[data-guide-shell] .prose p:has(> .katex:only-child):has(+ ul) {
+  margin-bottom: 0;
+  border-bottom: 0;
+  border-radius: 0.75rem 0.75rem 0 0;
+}
+
+[data-guide-shell] .prose p:has(> .katex:only-child) + ul {
+  margin-top: 0;
+  margin-bottom: 1.7em;
+  padding: 0.2rem 1.25rem 1.1rem 2.7rem;
+  border: 1px solid var(--guide-line);
+  border-top: 0;
+  border-radius: 0 0 0.75rem 0.75rem;
+  background: var(--guide-panel);
+  font-size: 0.9em;
+}
+
+[data-guide-shell] .prose p:has(> .katex:only-child) + ul > li {
+  margin: 0.2rem 0;
+}
+
+/* Comparison tables run wider than the measure and are read on phones. */
+[data-guide-shell] .guide-table-scroll {
+  margin: 1.6em 0;
+  overflow-x: auto;
+}
+
+@media (max-width: 640px) {
+  [data-guide-shell] .guide-table-scroll {
+    margin-inline: -1rem;
+    padding-inline: 1rem;
+  }
+}
+
+[data-guide-shell] .prose .guide-table-scroll table {
+  margin: 0;
+  min-width: 30rem;
+  font-size: 0.875em;
+}
+
+[data-guide-shell] .prose :is(th, td) {
+  border: 1px solid var(--guide-line);
+  padding: 0.6rem 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+[data-guide-shell] .prose thead th {
+  background: var(--guide-panel);
+  font-size: 0.94em;
+}
+
+/* The cross-reference note every guide ends on. Tailwind's blockquote is an
+   italic quote with a rule down its side; this is neither. */
+[data-guide-shell] .prose blockquote {
+  margin: 2em 0 0;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--guide-line);
+  border-left: 1px solid var(--guide-line);
+  border-radius: 0.6rem;
+  background: var(--guide-panel);
+  font-style: normal;
+  font-size: 0.95em;
+}
+
+[data-guide-shell] .prose blockquote p {
+  margin: 0;
+}
+
+[data-guide-shell] .prose blockquote p::before,
+[data-guide-shell] .prose blockquote p::after {
+  content: none;
+}
+
 /*
  * The home page's category cards.
  *

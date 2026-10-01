@@ -10,7 +10,7 @@ import {
   Zap, CircuitBoard, Filter, RadioReceiver, RadioTower, Antenna, Radar,
   Gauge, ShieldAlert, HardHat, Waves, Palette, SpellCheck, MessagesSquare,
   Tag, Footprints, Landmark, AudioWaveform, MessageSquareCode, BookMarked,
-  Activity, Cpu, BatteryCharging, Binary, FileCheck, Sigma,
+  Activity, Cpu, BatteryCharging, Binary, FileCheck, Sigma, Network, Repeat, AudioLines, TrendingUp, Blend, Radio, SignalHigh, ChartSpline,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -58,6 +58,14 @@ export const GUIDE_VISUAL: Record<string, { icon: LucideIcon; accent: GuideAccen
   'modos-digitais-e-fec': { icon: Binary, accent: 'cyan' },
   'marcar-exame-anacom': { icon: FileCheck, accent: 'amber' },
   'formulario': { icon: Sigma, accent: 'violet' },
+  'leis-de-kirchhoff': { icon: Network, accent: 'amber' },
+  'malha-de-captura-de-fase': { icon: Repeat, accent: 'rose' },
+  'processamento-digital-de-sinal': { icon: AudioLines, accent: 'cyan' },
+  'amplificadores-e-classes': { icon: TrendingUp, accent: 'violet' },
+  'distorcao-e-intermodulacao': { icon: Blend, accent: 'rose' },
+  'modulacao-am': { icon: Radio, accent: 'amber' },
+  'banda-lateral-unica': { icon: SignalHigh, accent: 'emerald' },
+  'modulacao-de-frequencia': { icon: ChartSpline, accent: 'blue' },
 };
 
 export const DEFAULT_GUIDE_VISUAL = { icon: BookOpen, accent: 'slate' as const };
@@ -65,6 +73,13 @@ export const DEFAULT_GUIDE_VISUAL = { icon: BookOpen, accent: 'slate' as const }
 export function guideVisual(slug: string) {
   return GUIDE_VISUAL[slug] ?? DEFAULT_GUIDE_VISUAL;
 }
+
+/**
+ * Guides that own their own page layout, so the shared guide chrome (header
+ * band, section rail, prev/next) stays off them. `formulario` is a filtered
+ * data surface with its own measured sticky offsets, not a prose guide.
+ */
+export const BARE_GUIDE_SLUGS = new Set(['formulario']);
 
 /** One entry of /api/study-items. */
 export type StudyItem = {
@@ -75,3 +90,83 @@ export type StudyItem = {
   type?: string;
   readTime?: number;
 };
+
+/**
+ * Os guias agrupados pelos capítulos do programa de exame, pela ordem do
+ * programa e não pelo alfabeto.
+ *
+ * A fonte é o Anexo 1 da ANACOM (`docs/referencias/`), que numera os capítulos
+ * e marca a categoria de cada matéria; os guias técnicos já carregam esse
+ * número nos próprios títulos de secção (`## 2.1`, `## 7.6`). O mapa está
+ * escrito por extenso, e não deduzido dos títulos, porque metade dos guias não
+ * tem secções numeradas e um agrupamento meio deduzido meio declarado seria
+ * pior de ler do que estas trinta e sete linhas. `__tests__` garante que cobre
+ * todos os guias e não inventa nenhum.
+ *
+ * Os títulos vivem em `messages/{pt,en}.json`, sob `Study.chapters`: isto é
+ * dados, não texto.
+ */
+export interface StudyChapter {
+  id: string;
+  /** Número no programa. Nulo nos grupos que não são capítulos do exame. */
+  number: string | null;
+  slugs: string[];
+}
+
+export const STUDY_CHAPTERS: StudyChapter[] = [
+  { id: 'comecar', number: null, slugs: ['getting-started', 'marcar-exame-anacom'] },
+  {
+    id: 'teoria',
+    number: '1',
+    slugs: [
+      'teoria-electrica-e-radio',
+      'corrente-alternada',
+      'campo-electromagnetico',
+      'modulacao-am',
+      'banda-lateral-unica',
+      'modulacao-de-frequencia',
+      'processamento-digital-de-sinal',
+    ],
+  },
+  { id: 'componentes', number: '2', slugs: ['componentes', 'transistores', 'codigo-de-cores'] },
+  {
+    id: 'circuitos',
+    number: '3',
+    slugs: [
+      'leis-de-kirchhoff',
+      'circuitos',
+      'circuitos-rl-rc',
+      'ressonancia-e-fator-q',
+      'amplificadores-e-classes',
+      'amplificadores-operacionais',
+      'distorcao-e-intermodulacao',
+      'malha-de-captura-de-fase',
+      'baterias-e-alimentacao',
+    ],
+  },
+  { id: 'recetores', number: '4', slugs: ['recetores'] },
+  { id: 'emissores', number: '5', slugs: ['emissores'] },
+  { id: 'antenas', number: '6', slugs: ['antenas'] },
+  { id: 'propagacao', number: '7', slugs: ['propagacao'] },
+  { id: 'medidas', number: '8', slugs: ['medidas', 'figuras-de-lissajous'] },
+  { id: 'interferencias', number: '9', slugs: ['interferencias'] },
+  { id: 'seguranca', number: '10', slugs: ['seguranca'] },
+  {
+    id: 'operacao',
+    number: 'B',
+    slugs: [
+      'alfabeto-fonetico',
+      'codigo-q',
+      'abreviaturas-de-operacao',
+      'prefixos-ic',
+      'modos-digitais-e-fec',
+    ],
+  },
+  { id: 'regulamentacao', number: 'C', slugs: ['definicoes', 'entidades'] },
+  { id: 'referencia', number: null, slugs: ['formulario'] },
+];
+
+/** O capítulo de um guia, ou undefined se o mapa não o cobrir. */
+export function chapterOf(slug: string): StudyChapter | undefined {
+  return STUDY_CHAPTERS.find((c) => c.slugs.includes(slug));
+}
