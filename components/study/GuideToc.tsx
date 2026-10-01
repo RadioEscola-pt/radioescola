@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import type { StudyItem } from '@/lib/config/study-guides';
+import type { CategoryId } from '@/lib/config/categories';
+import { GUIDE_SECTIONS, sectionNeededFor } from '@/lib/config/guide-sections';
+import { useReaderCategory } from '@/lib/reader-category';
 
 export type Section = { id: string; number: string | null; label: string };
 
@@ -111,6 +114,20 @@ export default function GuideToc({
 }) {
   const t = useTranslations('Study.guide');
   const linked = useLinkedGuides(items, currentSlug);
+  const reader = useReaderCategory();
+
+  /**
+   * A categoria mínima de cada secção, pela ordem em que as secções aparecem no
+   * ficheiro, que é a mesma em que o `rehype-slug` as numera no DOM. Só se
+   * marca quem já escolheu uma categoria: sem escolha não se presume nível
+   * nenhum, e nada aqui esconde matéria, apenas a assinala.
+   */
+  const declared = GUIDE_SECTIONS[currentSlug] ?? [];
+  const mark = (index: number): CategoryId | null => {
+    if (!reader) return null;
+    const min = declared[index]?.min ?? null;
+    return min && !sectionNeededFor(min, reader) ? min : null;
+  };
 
   return (
     <div className="flex flex-col gap-7">
@@ -118,8 +135,9 @@ export default function GuideToc({
         <nav aria-label={t('onThisPage')}>
           <p className={LABEL}>{t('onThisPage')}</p>
           <ul className="mt-3.5 flex list-none flex-col gap-2.5 p-0">
-            {sections.map((s) => {
+            {sections.map((s, index) => {
               const active = s.id === activeId;
+              const beyond = mark(index);
               return (
                 <li key={s.id} className="m-0 p-0">
                   <a
@@ -128,7 +146,9 @@ export default function GuideToc({
                     className={`flex gap-2.5 text-sm no-underline transition-colors ${
                       active
                         ? 'font-semibold text-brand-700 dark:text-brand-300'
-                        : 'text-stone-600 hover:text-stone-900 dark:text-slate-400 dark:hover:text-slate-200'
+                        : beyond
+                          ? 'text-stone-400 hover:text-stone-600 dark:text-slate-600 dark:hover:text-slate-400'
+                          : 'text-stone-600 hover:text-stone-900 dark:text-slate-400 dark:hover:text-slate-200'
                     }`}
                   >
                     {s.number && (
@@ -140,7 +160,17 @@ export default function GuideToc({
                         {s.number}
                       </span>
                     )}
-                    <span className={s.number ? '' : 'pl-[26px]'}>{s.label}</span>
+                    <span className={s.number ? '' : 'pl-[26px]'}>
+                      {s.label}
+                      {beyond && (
+                        <span
+                          className="ml-1.5 whitespace-nowrap rounded border border-stone-200 px-1 py-px align-[1px] text-[10px] font-semibold text-stone-500 dark:border-slate-700 dark:text-slate-500"
+                          title={t('onlyFrom', { category: beyond })}
+                        >
+                          {t('categoryShort', { category: beyond })}
+                        </span>
+                      )}
+                    </span>
                   </a>
                 </li>
               );

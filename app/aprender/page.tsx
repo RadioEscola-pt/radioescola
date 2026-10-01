@@ -9,6 +9,7 @@ import { STUDY_CHAPTERS, type StudyItem } from '@/lib/config/study-guides';
 import { CATEGORIES, CATEGORY_CONFIG } from '@/lib/config/categories';
 import type { CategoryId } from '@/lib/config/categories';
 import { useProgress } from '@/hooks/useProgress';
+import { setReaderCategory } from '@/lib/reader-category';
 
 type Drawer = {
   id: string;
@@ -99,8 +100,12 @@ export default function StudyIndexPage() {
     [inCategory]
   );
 
-  const setCategory = (value: string) =>
+  const setCategory = (value: string) => {
+    // A escolha feita aqui segue para dentro dos guias, onde marca as secções
+    // que esta categoria não precisa de estudar.
+    setReaderCategory(value === 'all' ? null : (value as CategoryId));
     router.push(value === 'all' ? '/aprender' : `/aprender?cat=${value}`);
+  };
 
   return (
     <main>

@@ -293,3 +293,61 @@ ligação.
 > **As ligações da ANACOM devolvem 403 a um `curl` simples.** É preciso um
 > cabeçalho `User-Agent` de browser para as descarregar, e foi por isso que
 > estes ficheiros passaram a estar guardados aqui em vez de referidos por URL.
+
+
+---
+
+## A categoria de cada secção dos guias
+
+`lib/config/guide-sections.ts` diz, para cada uma das 170 secções `##` dos 37
+guias, qual a **categoria mais baixa que precisa dela**. Serve para dobrar, por
+leitor, o que o exame dele não pede: quem faz a categoria 3 não tem de se
+preocupar com as classes de amplificação nem com a dispersão boreal.
+
+Apurado em 2026-09-25 por cinco análises paralelas, cada uma a cruzar duas
+fontes por secção: o Anexo 1, que marca a categoria de cada alínea, e o banco,
+que prova o que é mesmo perguntado a cada nível. **Onde discordam ganha o
+banco**, porque uma pergunta numa prova de categoria 3 é matéria de categoria 3
+independentemente da tabela. A regra é o **mínimo**, nunca a média: uma secção
+com um facto de categoria 3 e um refinamento de categoria 1 fica em 3, porque o
+candidato de 3 tem de a ler.
+
+**As chamadas que dependem de uma pergunta sem fonte**, e que mudam se exigir
+prova confirmada:
+
+| Secção | Ficou | Assenta em | Passaria a |
+| :--- | :--- | :--- | :--- |
+| `modos-digitais-e-fec`, todo | 1 | `cat3#174` é sem fonte e pergunta plano de bandas, não modulação | 3 |
+| `distorcao-e-intermodulacao` § 4 | 3 | `cat3#169`, sem fonte | 2 |
+| `propagacao` § 7.6 | 1 | `cat2#219`, sem fonte e com nota de validação por fazer | 2 |
+| `banda-lateral-unica` §§ 3 e 6 | 3 | `cat3#111`, `#175`, `#177`, `#61`, todas sem fonte | 2 |
+
+**Onde o Anexo 1 diz uma coisa e as provas dizem outra**, com fonte confirmada
+dos dois lados, e ganhou o banco: `circuitos` § 3.1 Filtros (anexo 3.2 a) diz
+cat 2; `cat3#63` e `cat3#64` saem em provas cat 3 de 2023 e 2026),
+`entidades` § CEPT (anexo põe T/R 61-01 em cat 1 e (05)06 em cat 2; `cat3#25` e
+`cat3#155` saem em provas cat 3) e `emissores` § 5.3.
+
+**Quatro frontmatter que a análise pôs em causa**, e que ainda não mexi:
+
+- `processamento-digital-de-sinal` é `[3, 1]` e salta o 2, quando as categorias
+  são cumulativas: quem faz a 2 é examinado em tudo o que a 3 exige, e a secção
+  6 deste guia é matéria de categoria 3
+- `corrente-alternada` `[3, 2]` e `campo-electromagnetico` `[3, 2]` excluem a
+  categoria 1 pela razão inversa
+- `baterias-e-alimentacao` declara `[3, 2, 1]` mas não tem uma única secção com
+  prova de categoria 3
+
+**Defeitos de conteúdo que a análise destapou**, por ordem de gravidade:
+
+- `corrente-alternada` não diz que o valor médio de uma sinusoide completa é
+  **0 V**, e `cat3#206` pergunta exactamente isso; o guia só fala do valor médio
+  da onda rectificada, pelo que quem o seguir responde 0,637 V
+- `codigo-q` deixa o **QRS** fora da tabela «os que saem no exame», embora o
+  parágrafo seguinte mande estudá-lo e o Anexo 1 o liste
+- `alfabeto-fonetico` escreve «Alfa» e «Xray»; o Anexo 1 e as opções das
+  perguntas escrevem «Alpha» e «X-ray»
+- `recetores` não menciona *noise blanker*, DSP nem *notch*, e há quatro
+  perguntas de categoria 3 sobre isso (`cat3#57`, `#58`, `#60`, `#61`)
+- `cat3#68` tem duas opções textualmente iguais; `cat3#198` e `cat3#205` são
+  duplicados exactos, ambos sem fonte

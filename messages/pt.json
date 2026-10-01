@@ -239,7 +239,9 @@
       "practiceCta": "Perguntas da categoria {category}",
       "previous": "Anterior",
       "next": "Seguinte",
-      "otherGuides": "Outros guias"
+      "otherGuides": "Outros guias",
+      "categoryShort": "cat {category}",
+      "onlyFrom": "Só sai a partir da categoria {category}"
     },
     "chapters": {
       "comecar": "Começar por aqui",
