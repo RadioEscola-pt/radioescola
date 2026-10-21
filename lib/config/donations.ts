@@ -126,8 +126,8 @@ export const SUPPORTERS: Supporter[] = [
   { name: 'Rui Delgado', callsign: 'CR7BOU', since: '2026-09' },
   { name: 'Fabio Carvalho', callsign: 'CR7BZY', since: '2026-09' },
   { name: 'Anaximandro Furtado', callsign: 'CT7BGW', since: '2026-10' },
-  { name: 'Nuno De Sousa', callsign: 'CR7CIO', since: '2026-10' }
-  { name: 'Nuno Gomes', callsign: 'CT2HOV', since: '2026-10' }
+  { name: 'Nuno De Sousa', callsign: 'CR7CIO', since: '2026-10' },
+  { name: 'Nuno Gomes', callsign: 'CT2HOV', since: '2026-10' },
   { name: 'Manuel Cerva', callsign: 'CT1CZZ', since: '2026-10' }
 
 
