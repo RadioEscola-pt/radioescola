@@ -46,6 +46,11 @@
           "pdf": "cat1/2014_12_19",
           "question": 6,
           "unavailable": true
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 8,
+          "page": 2
         }
       ],
       "materia": "circuitos"
@@ -105,6 +110,13 @@
       ],
       "correctIndex": 0,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 19,
+          "page": 6
+        }
+      ],
       "materia": "interferencias"
     },
     {
@@ -198,6 +210,11 @@
       "sources": [
         {
           "pdf": "cat1/2026_09_01",
+          "question": 24,
+          "page": 7
+        },
+        {
+          "pdf": "cat1/2026_10_22",
           "question": 24,
           "page": 7
         }
@@ -456,6 +473,25 @@
           "pdf": "cat1/2014_12_19",
           "question": 35,
           "unavailable": true
+        }
+      ],
+      "materia": "teoria"
+    },
+    {
+      "id": 423,
+      "question": "Diz-se que dois sinais sinusoidais estão em oposição de fase?",
+      "options": [
+        "Quando o desfasamento entre eles é de 0 graus",
+        "Quando o desfasamento entre eles é de 60 graus",
+        "Quando o desfasamento entre eles é de 90 graus",
+        "Quando o desfasamento entre eles é de 180 graus"
+      ],
+      "correctIndex": 3,
+      "sources": [
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 34,
+          "page": 9
         }
       ],
       "materia": "teoria"
@@ -1568,6 +1604,11 @@
           "pdf": "cat1/2023_07_03",
           "question": 10,
           "page": 3
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 10,
+          "page": 3
         }
       ],
       "materia": "circuitos",
@@ -1965,6 +2006,25 @@
       "materia": "circuitos"
     },
     {
+      "id": 419,
+      "question": "Qual a relação de fase entre a corrente e a tensão através de um circuito ressonante em série?",
+      "options": [
+        "A tensão tem um avanço de 90° em relação à corrente",
+        "A corrente tem um avanço de 90° em relação à tensão",
+        "A corrente e a tensão estão em fase",
+        "A tensão e a corrente estão em oposição de fase"
+      ],
+      "correctIndex": 2,
+      "sources": [
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 15,
+          "page": 4
+        }
+      ],
+      "materia": "circuitos"
+    },
+    {
       "id": 94,
       "question": "Em que consiste a ressonância num circuito eléctrico?",
       "options": [
@@ -2185,6 +2245,11 @@
           "pdf": "cat1/2026_09_01",
           "question": 17,
           "page": 6
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 17,
+          "page": 5
         }
       ],
       "materia": "seguranca"
@@ -2390,6 +2455,13 @@
       ],
       "correctIndex": 1,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 29,
+          "page": 8
+        }
+      ],
       "img": "/images/cat1/fig3.png",
       "materia": "circuitos"
     },
@@ -2473,6 +2545,11 @@
         {
           "pdf": "cat1/2023_12_22",
           "question": 27
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 27,
+          "page": 8
         }
       ],
       "materia": "circuitos"
@@ -2576,6 +2653,11 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 31
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 31,
+          "page": 9
         }
       ],
       "materia": "circuitos"
@@ -2669,6 +2751,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 32,
+          "page": 9
+        }
+      ],
       "materia": "circuitos"
     },
     {
@@ -3154,6 +3243,11 @@
           "pdf": "cat1/2026_09_03",
           "question": 23,
           "page": 7
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 23,
+          "page": 6
         }
       ],
       "materia": "recetores"
@@ -3370,6 +3464,11 @@
           "pdf": "cat1/2023_07_03",
           "question": 25,
           "page": 7
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 25,
+          "page": 7
         }
       ],
       "materia": "recetores"
@@ -3540,6 +3639,11 @@
         },
         {
           "pdf": "cat1/2026_09_02",
+          "question": 7,
+          "page": 2
+        },
+        {
+          "pdf": "cat1/2026_10_22",
           "question": 7,
           "page": 2
         }
@@ -3733,6 +3837,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 22,
+          "page": 6
+        }
+      ],
       "materia": "circuitos"
     },
     {
@@ -4184,6 +4295,13 @@
       ],
       "correctIndex": 3,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 13,
+          "page": 4
+        }
+      ],
       "materia": "antenas"
     },
     {
@@ -4429,6 +4547,11 @@
           "pdf": "cat1/2026_09_02",
           "question": 21,
           "page": 6
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 20,
+          "page": 5
         }
       ],
       "materia": "antenas"
@@ -4628,6 +4751,11 @@
           "pdf": "cat1/2023_07_03",
           "question": 20,
           "page": 6
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 21,
+          "page": 6
         }
       ],
       "materia": "antenas"
@@ -4692,6 +4820,11 @@
           "pdf": "cat1/2026_09_02",
           "question": 3,
           "page": 1
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 5,
+          "page": 2
         }
       ],
       "materia": "propagacao"
@@ -4835,6 +4968,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 4,
+          "page": 1
+        }
+      ],
       "materia": "propagacao"
     },
     {
@@ -5514,6 +5654,25 @@
       "materia": "medidas"
     },
     {
+      "id": 418,
+      "question": "Qual a vantagem de um osciloscópio relativamente a um voltímetro digital?",
+      "options": [
+        "O osciloscópio requer menos potência",
+        "Mais fácil medição de impedâncias complexas",
+        "Menor impedância de entrada",
+        "Todas as hipóteses anteriores estão incorretas"
+      ],
+      "correctIndex": 3,
+      "sources": [
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 14,
+          "page": 4
+        }
+      ],
+      "materia": "medidas"
+    },
+    {
       "id": 401,
       "question": "Em que domínio são apresentados os sinais num analisador espetral?",
       "options": [
@@ -5744,6 +5903,11 @@
           "pdf": "cat1/2026_09_02",
           "question": 6,
           "page": 2
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 6,
+          "page": 2
         }
       ],
       "materia": "operacao"
@@ -5835,6 +5999,11 @@
         },
         {
           "pdf": "cat1/2026_09_03",
+          "question": 2,
+          "page": 1
+        },
+        {
+          "pdf": "cat1/2026_10_22",
           "question": 2,
           "page": 1
         }
@@ -5981,6 +6150,25 @@
       "materia": "antenas"
     },
     {
+      "id": 417,
+      "question": "Qual é o objetivo principal da instalação de \"traps\" nas antenas?",
+      "options": [
+        "Permitir o funcionamento em multibanda",
+        "Impedir frequências indesejadas",
+        "Fornecer impedâncias equilibradas do ponto de alimentação",
+        "Evitar o funcionamento da antena fora da faixa desejada"
+      ],
+      "correctIndex": 0,
+      "sources": [
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 12,
+          "page": 3
+        }
+      ],
+      "materia": "antenas"
+    },
+    {
       "id": 273,
       "question": "Qual a desvantagem de uso de uma antena multibanda com (traps)?",
       "options": [
@@ -6112,6 +6300,11 @@
         {
           "pdf": "cat1/2023_08_00",
           "question": 28
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 27,
+          "page": 8
         }
       ],
       "materia": "emissores"
@@ -6212,6 +6405,11 @@
           "pdf": "cat1/2023_07_03",
           "question": 5,
           "page": 2
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 3,
+          "page": 1
         }
       ],
       "materia": "propagacao"
@@ -6312,6 +6510,12 @@
           "pdf": "cat1/2014_05_23",
           "question": 4,
           "page": 1
+        },
+        {
+          "pdf": "cat1/2026_10_21",
+          "question": 1,
+          "page": 1,
+          "unavailable": true
         }
       ],
       "materia": "regulamentacao"
@@ -7027,6 +7231,11 @@
           "pdf": "cat1/2026_09_01",
           "question": 16,
           "page": 5
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 16,
+          "page": 4
         }
       ],
       "materia": "componentes"
@@ -7188,6 +7397,11 @@
           "pdf": "cat1/2026_09_03",
           "question": 18,
           "page": 6
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 18,
+          "page": 5
         }
       ],
       "materia": "componentes"
@@ -7415,6 +7629,45 @@
       "materia": "componentes"
     },
     {
+      "id": 421,
+      "question": "Qual o símbolo esquemático para um díodo emissor de luz?",
+      "options": [
+        "1",
+        "5",
+        "6",
+        "7"
+      ],
+      "correctIndex": 1,
+      "sources": [
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 30,
+          "page": 8
+        }
+      ],
+      "img": "/images/cat1/diodo.png",
+      "materia": "componentes"
+    },
+    {
+      "id": 422,
+      "question": "Qual dos seguintes dispositivos de estado sólido é mais semelhante a um tubo de vácuo quanto às suas características gerais?",
+      "options": [
+        "Um transístor bipolar",
+        "Um transístor de efeito de campo",
+        "Um díodo de túnel",
+        "Um varicap"
+      ],
+      "correctIndex": 1,
+      "sources": [
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 33,
+          "page": 9
+        }
+      ],
+      "materia": "componentes"
+    },
+    {
       "id": 356,
       "question": "Na Figura 1 (ver acima) qual o símbolo esquemático para um LED?",
       "options": [
@@ -7542,6 +7795,26 @@
       "materia": "circuitos"
     },
     {
+      "id": 424,
+      "question": "Qual o ganho de tensão absoluto aproximado do circuito da figura, se R1=3300 ohms e R2=47000 ohms?",
+      "options": [
+        "28",
+        "14",
+        "7",
+        "0,07"
+      ],
+      "correctIndex": 1,
+      "sources": [
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 35,
+          "page": 10
+        }
+      ],
+      "img": "/images/cat1/q36.png",
+      "materia": "circuitos"
+    },
+    {
       "id": 366,
       "question": "Em que consiste um amplificador operacional?",
       "options": [
@@ -7635,6 +7908,44 @@
         }
       ],
       "materia": "propagacao"
+    },
+    {
+      "id": 416,
+      "question": "Se um frequencímetro com um precisão de ±1,0 ppm registar 146520000 Hz, qual seria o máximo de diferença entre a frequência real medida e a leitura respetiva?",
+      "options": [
+        "1465,2 Hz",
+        "1 kHz",
+        "146,52 Hz",
+        "1,4652 MHz"
+      ],
+      "correctIndex": 2,
+      "sources": [
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 11,
+          "page": 3
+        }
+      ],
+      "materia": "medidas"
+    },
+    {
+      "id": 420,
+      "question": "O primário de um transformador com 1000 espiras é percorrido por uma corrente de 5 A. Qual será a corrente no secundário do transformador se este tiver 500 espiras?",
+      "options": [
+        "1 A",
+        "2,5 A",
+        "5 A",
+        "10 A"
+      ],
+      "correctIndex": 3,
+      "sources": [
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 26,
+          "page": 7
+        }
+      ],
+      "materia": "componentes"
     }
   ]
 }
