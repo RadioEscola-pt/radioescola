@@ -33,7 +33,7 @@ export function idFromFileName(name: string): number | null {
  * the frontmatter id.
  */
 export function parseQuestionFile(raw: string, filename: string): ContentQuestion {
-  const { data, content } = matter(raw);
+  const { data, content } = matter(raw.replace(/\r\n/g, "\n"));
 
   // The body is the explanation. Blank body (a stub) means no explanation yet.
   const explanation = content.trim().length > 0 ? content.trim() : null;

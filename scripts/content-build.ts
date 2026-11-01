@@ -53,7 +53,7 @@ const withheld: { category: string; ids: number[] }[] = [];
 
 function compare(path: string, expected: string) {
   checked++;
-  const actual = existsSync(path) ? readFileSync(path, "utf-8") : null;
+  const actual = existsSync(path) ? readFileSync(path, "utf-8").replace(/\r\n/g, "\n") : null;
   if (actual === expected) return;
 
   if (check) {

@@ -60,7 +60,7 @@ describe.each(MIGRATED)("cat%s content build", (categoryId) => {
   });
 
   it("reproduces the shipped JSON byte for byte", () => {
-    expect(artifacts.appJson).toBe(readFileSync(artifactPath, "utf-8"));
+    expect(artifacts.appJson).toBe(readFileSync(artifactPath, "utf-8").replace(/\r\n/g, "\n"));
   });
 
   it("reproduces every committed note file byte for byte", () => {
@@ -74,7 +74,7 @@ describe.each(MIGRATED)("cat%s content build", (categoryId) => {
         mismatches.push(`${name}: not emitted`);
         continue;
       }
-      if (emitted !== readFileSync(join(notesDir, name), "utf-8")) {
+      if (emitted !== readFileSync(join(notesDir, name), "utf-8").replace(/\r\n/g, "\n")) {
         mismatches.push(`${name}: content differs`);
       }
     }
@@ -91,7 +91,7 @@ describe.each(MIGRATED)("cat%s content build", (categoryId) => {
     for (const q of category.questions) {
       const notePath = join(notesDir, `${q.id}.mdx`);
       if (existsSync(notePath)) {
-        expect(q.explanation).toBe(readFileSync(notePath, "utf-8").trim());
+        expect(q.explanation).toBe(readFileSync(notePath, "utf-8").replace(/\r\n/g, "\n").trim());
       } else if (isWithheld(q)) {
         // A withheld question keeps its explanation in source — it is not
         // deleted, only withdrawn — but emits no note, because /api/notes
