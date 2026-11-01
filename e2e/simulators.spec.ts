@@ -6,10 +6,15 @@ import pt from "@/messages/pt.json";
 
 const SCREENSHOT_DIR = join(process.cwd(), "test-results", "screenshots");
 
-async function captureScreenshot(page: Page, testInfo: TestInfo, filename: string) {
+async function captureScreenshot(
+  page: Page,
+  testInfo: TestInfo,
+  filename: string,
+  fullPage = false
+) {
   mkdirSync(SCREENSHOT_DIR, { recursive: true });
   const filePath = join(SCREENSHOT_DIR, filename);
-  const buffer = await page.screenshot({ path: filePath, fullPage: false });
+  const buffer = await page.screenshot({ path: filePath, fullPage });
   await testInfo.attach(filename, { body: buffer, contentType: "image/png" });
 }
 
@@ -234,5 +239,18 @@ test.describe("simulators, menus, questions, and tutorials", () => {
     await page.goto("/aprender/formulario");
     await expect(page.getByRole("heading", { level: 1 }).first()).toBeVisible();
     await captureScreenshot(page, testInfo, "29-tutorial-formulario.png");
+  });
+
+  test("opens Submit Exam (/submit-exam) and displays anonymization notice", async ({
+    page,
+  }, testInfo) => {
+    await page.goto("/submit-exam");
+    await expect(
+      page.getByRole("heading", { name: pt.SubmitExam.title })
+    ).toBeVisible();
+    await expect(
+      page.getByText(pt.SubmitExam.form.anonymizedNotice)
+    ).toBeVisible();
+    await captureScreenshot(page, testInfo, "30-submit-exam.png", true);
   });
 });

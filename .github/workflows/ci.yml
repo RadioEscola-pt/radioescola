@@ -109,6 +109,7 @@ jobs:
             echo "| Tutorials | 27. Guia Leis de Kirchhoff (\`/aprender/leis-de-kirchhoff\`) | \`27-tutorial-guide-kirchhoff.png\` |"
             echo "| Tutorials | 28. Guia Código de Cores (\`/aprender/codigo-de-cores\`) | \`28-tutorial-guide-codigo-cores.png\` |"
             echo "| Tutorials | 29. Formulário de Exame (\`/aprender/formulario\`) | \`29-tutorial-formulario.png\` |"
+            echo "| Submit Exam | 30. Enviar Exame + Aviso de Anonimização (\`/submit-exam\`) | \`30-submit-exam.png\` |"
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Comment E2E artifacts on Pull Request
