@@ -1,9 +1,7 @@
 import { getTranslations } from "next-intl/server";
-import { readFileSync } from "fs";
-import { join } from "path";
 import Link from "next/link";
 import { CATEGORIES, CATEGORY_CONFIG } from "@/lib/config";
-import type { CategoryId } from "@/lib/config/categories";
+import { QUESTION_COUNTS, type CategoryId } from "@/lib/config/categories";
 
 /** ANACOM metadata per category — these are external facts that change rarely */
 const ANACOM_METADATA: Record<string, { verified: number; anacomProvided: number }> = {
@@ -12,21 +10,11 @@ const ANACOM_METADATA: Record<string, { verified: number; anacomProvided: number
   "1": { verified: 197, anacomProvided: 208 },
 };
 
-function getQuestionCount(catId: string): number {
-  try {
-    const filePath = join(process.cwd(), "public", "data", `cat${catId}.json`);
-    const data = JSON.parse(readFileSync(filePath, "utf-8"));
-    return data.questions?.length ?? 0;
-  } catch {
-    return 0;
-  }
-}
-
 export default async function EstadoEscolaPage() {
   const t = await getTranslations("EstadoEscola");
 
   const rows = CATEGORIES.map((catId) => {
-    const total = getQuestionCount(catId);
+    const total = QUESTION_COUNTS[catId];
     const meta = ANACOM_METADATA[catId] ?? { verified: 0, anacomProvided: 0 };
     const anacomTotal = meta.anacomProvided * 2;
     const cfg = CATEGORY_CONFIG[catId as CategoryId];

@@ -22,11 +22,27 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { Shuffle, Eraser } from 'lucide-react';
 import { QuestionExplanation } from '@/components/QuestionExplanation';
 import { useProgressContext } from '@/components/providers/ProgressProvider';
+import { useExamTimer } from '@/hooks/useExamTimer';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
 import type { ExamAttempt, QuestionAttempt } from '@/lib/types/progress';
 import type { GamificationResult } from '@/lib/types/gamification';
 
 const { DURATION_SECONDS, QUESTIONS_PER_PAGE, MAX_QUESTIONS, PASSING_SCORE, WRONG_ANSWER_PENALTY } = EXAM_CONFIG;
+
+function dealExamQuestions(base: Category, shuffleOpts: boolean) {
+  const qs = [...base.questions];
+  for (let i = qs.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const qi = qs[i];
+    const qj = qs[j];
+    if (qi !== undefined && qj !== undefined) {
+      qs[i] = qj;
+      qs[j] = qi;
+    }
+  }
+  const sample = qs.slice(0, Math.min(MAX_QUESTIONS, qs.length));
+  return shuffleOpts ? shuffleAllOptions(sample) : { questions: sample, permutations: {} };
+}
 
 export default function ExamPage() {
   const params = useParams();
@@ -35,10 +51,7 @@ export default function ExamPage() {
   // The explanation reuses the question card's label — same thing, same word.
   const tq = useTranslations('QuestionCard');
   const { recordExamWithGamification, recordQuestionBatch, gamification } = useProgressContext();
-  const [timeLeft, setTimeLeft] = useState<number>(DURATION_SECONDS);
-  // Wall-clock deadline (epoch ms) the countdown runs toward; null when no exam
-  // is actively running (loading or replay).
-  const [deadline, setDeadline] = useState<number | null>(null);
+  const [timerActive, setTimerActive] = useState(false);
   const [score, setScore] = useState(0);
   const [category, setCategory] = useState<Category | null>(null);
   const [answers, setAnswers] = useState<Record<number, number>>({});
@@ -57,62 +70,22 @@ export default function ExamPage() {
   const isReplayRef = useRef(false);
   const [gamificationResult, setGamificationResult] = useState<GamificationResult | null>(null);
 
+  const { timeLeft, reset: resetTimer, setTimeLeft } = useExamTimer({
+    initialSeconds: DURATION_SECONDS,
+    paused: quizEnded || !timerActive,
+    onExpire: useCallback(() => {
+      if (!quizEnded) {
+        setQuizEnded(true);
+        setResultsOpen(true);
+      }
+    }, [quizEnded]),
+  });
+
   React.useEffect(() => {
     const stored = readShuffleOptionsPreference();
     setShuffleOptions(stored);
     shuffleRef.current = stored;
   }, []);
-
-  // Timer: wall-clock countdown toward a fixed deadline. Deriving the remaining
-  // time from Date.now() on each tick — rather than decrementing a per-tick
-  // counter — avoids cumulative drift and prevents background-tab throttling from
-  // silently granting extra time (a throttled tick still reads the true clock).
-  // Deps are [quizEnded, deadline] only, so the interval is created once per exam,
-  // not recreated on every tick.
-  const timerRef = React.useRef<ReturnType<typeof setInterval> | null>(null);
-  React.useEffect(() => {
-    if (quizEnded || deadline === null) {
-      if (timerRef.current) {
-        clearInterval(timerRef.current);
-        timerRef.current = null;
-      }
-      return;
-    }
-
-    const tick = () => {
-      const remaining = Math.max(0, Math.round((deadline - Date.now()) / 1000));
-      setTimeLeft(remaining);
-      if (remaining <= 0 && timerRef.current) {
-        clearInterval(timerRef.current);
-        timerRef.current = null;
-      }
-    };
-
-    tick(); // sync immediately so the display is correct on (re)start
-    timerRef.current = setInterval(tick, 250);
-
-    // Re-sync the moment the tab regains focus; background tabs throttle timers.
-    const onVisibilityChange = () => {
-      if (document.visibilityState === "visible") tick();
-    };
-    document.addEventListener("visibilitychange", onVisibilityChange);
-
-    return () => {
-      document.removeEventListener("visibilitychange", onVisibilityChange);
-      if (timerRef.current) {
-        clearInterval(timerRef.current);
-        timerRef.current = null;
-      }
-    };
-  }, [quizEnded, deadline]);
-
-  // End quiz when time runs out
-  React.useEffect(() => {
-    if (timeLeft === 0 && !quizEnded) {
-      setQuizEnded(true);
-      setResultsOpen(true);
-    }
-  }, [timeLeft, quizEnded]);
 
   // Scoring: +1 correct, -0.25 wrong, 0 unanswered
   React.useEffect(() => {
@@ -202,10 +175,8 @@ export default function ExamPage() {
     // Reset state on category change
     setAnswers({});
     setScore(0);
-    setTimeLeft(DURATION_SECONDS);
-    // Keep the timer inert until the fresh/replay branch below establishes the
-    // deadline, so a stale deadline from a previous exam can't tick in between.
-    setDeadline(null);
+    setTimerActive(false);
+    resetTimer(DURATION_SECONDS);
     setQuizEnded(false);
     setResultsOpen(false);
     setCurrentPage(1);
@@ -235,25 +206,15 @@ export default function ExamPage() {
       // Otherwise, sample a fresh random exam
       isReplayRef.current = false;
       progressSavedRef.current = false;
-      const qs = [...base.questions];
-      for (let i = qs.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        const qi = qs[i];
-        const qj = qs[j];
-        if (qi !== undefined && qj !== undefined) {
-          qs[i] = qj;
-          qs[j] = qi;
-        }
-      }
-      const sample = qs.slice(0, Math.min(MAX_QUESTIONS, qs.length));
       // A replay above returns early: its answers are positional against the
       // bank's order, so shuffling one would misreport what was chosen.
-      const dealt = shuffleRef.current ? shuffleAllOptions(sample) : { questions: sample, permutations: {} };
+      const dealt = dealExamQuestions(base, shuffleRef.current);
       setPermutations(dealt.permutations);
       setCategory({ id: base.id, name: base.name, questions: dealt.questions });
-      setDeadline(Date.now() + DURATION_SECONDS * 1000);
+      resetTimer(DURATION_SECONDS);
+      setTimerActive(true);
     });
-  }, [params.category, searchParams]);
+  }, [params.category, searchParams, resetTimer, setTimeLeft]);
 
   /**
    * Save the choice and deal a fresh exam with it. The restart is the point:
@@ -276,24 +237,13 @@ export default function ExamPage() {
     loadData().then((data) => {
       const base = data.categories[catId];
       if (!base) return;
-      const qs = [...base.questions];
-      for (let i = qs.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        const qi = qs[i];
-        const qj = qs[j];
-        if (qi !== undefined && qj !== undefined) {
-          qs[i] = qj;
-          qs[j] = qi;
-        }
-      }
-      const sample = qs.slice(0, Math.min(MAX_QUESTIONS, qs.length));
-      const dealt = shuffleRef.current ? shuffleAllOptions(sample) : { questions: sample, permutations: {} };
+      const dealt = dealExamQuestions(base, shuffleRef.current);
       setPermutations(dealt.permutations);
       setCategory({ id: base.id, name: base.name, questions: dealt.questions });
       setAnswers({});
       setScore(0);
-      setTimeLeft(DURATION_SECONDS);
-      setDeadline(Date.now() + DURATION_SECONDS * 1000);
+      resetTimer(DURATION_SECONDS);
+      setTimerActive(true);
       setCurrentPage(1);
       setQuizEnded(false);
       setResultsOpen(false);

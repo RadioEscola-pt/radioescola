@@ -8,7 +8,7 @@ import { BookOpen, Check, ChevronDown, Search } from 'lucide-react';
 import { STUDY_CHAPTERS, type StudyItem } from '@/lib/config/study-guides';
 import { CATEGORIES, CATEGORY_CONFIG } from '@/lib/config/categories';
 import type { CategoryId } from '@/lib/config/categories';
-import { useProgress } from '@/hooks/useProgress';
+import { useProgressContext } from '@/components/providers/ProgressProvider';
 import { setReaderCategory } from '@/lib/reader-category';
 
 type Drawer = {
@@ -23,7 +23,7 @@ export default function StudyIndexPage() {
   const t = useTranslations('Study');
   const searchParams = useSearchParams();
   const router = useRouter();
-  const { isGuideRead } = useProgress();
+  const { isGuideRead } = useProgressContext();
 
   const [items, setItems] = useState<StudyItem[]>([]);
   const [loading, setLoading] = useState(true);

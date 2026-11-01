@@ -12,7 +12,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useProgress } from "@/hooks/useProgress";
+import { useProgressContext } from "@/components/providers/ProgressProvider";
 import { exportProgress } from "@/lib/backup/export";
 import { parseBackupFile, validateBackup, importBackup, mergeProgress } from "@/lib/backup/import";
 import { isLegacyExport, convertLegacyExport } from "@/lib/backup/legacy-import";
@@ -21,7 +21,7 @@ import type { ImportStrategy, ValidationResult } from "@/lib/backup/types";
 
 export default function DataManagement() {
   const t = useTranslations("DataManagement");
-  const { progress, refreshProgress, clearProgress } = useProgress();
+  const { progress, refreshProgress, clearProgress } = useProgressContext();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [isExporting, setIsExporting] = useState(false);

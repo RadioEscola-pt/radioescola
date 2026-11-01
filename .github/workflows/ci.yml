@@ -13,6 +13,7 @@ concurrency:
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
   check:
@@ -33,9 +34,9 @@ jobs:
       # Fails if public/data or content/notes drifted from content/questions.
       - run: bun run content:check
 
-  # Browser checks for the calculators: they open from the real navigation and
-  # compute inside the real provider chain. Separate job so it runs alongside
-  # `check` rather than after it — Playwright's webServer starts `next dev`.
+  # Browser behavioral checks for calculators and simulators (exam, browse,
+  # flashcards, smart-practice, drill) with screenshot artifacts attached to
+  # every PR / run.
   e2e:
     runs-on: ubuntu-latest
     steps:
@@ -49,11 +50,108 @@ jobs:
 
       - run: bunx playwright install --with-deps chromium
 
-      - run: bun run test:e2e
+      - name: Run Playwright E2E behavioral tests
+        id: playwright
+        run: bun run test:e2e
 
-      - uses: actions/upload-artifact@v4
-        if: failure()
+      - name: Upload E2E screenshots artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        id: screenshots_artifact
+        with:
+          name: e2e-screenshots
+          path: test-results/screenshots/
+          retention-days: 14
+
+      - name: Upload Playwright HTML report artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        id: report_artifact
         with:
           name: playwright-report
           path: playwright-report/
-          retention-days: 7
+          retention-days: 14
+
+      - name: Publish E2E behavioral summary
+        if: always()
+        run: |
+          {
+            echo "## 🧪 E2E Behavioral Tests & Screenshots"
+            echo ""
+            echo "| Suite | Surface | Screenshot |"
+            echo "| --- | --- | --- |"
+            echo "| Calculators | 1. Lei de Ohm | \`01-calc-ohms-law.png\` |"
+            echo "| Calculators | 2. Soma de Componentes | \`02-calc-component-sum.png\` |"
+            echo "| Calculators | 3. Circuito RLC | \`03-calc-rlc.png\` |"
+            echo "| Calculators | 4. VSWR | \`04-calc-vswr.png\` |"
+            echo "| Calculators | 5. Ganho (dB) | \`05-calc-gain.png\` |"
+            echo "| Calculators | 6. Transformador | \`06-calc-transformer.png\` |"
+            echo "| Calculators | 7. Reatância (XL/XC) | \`07-calc-reactance.png\` |"
+            echo "| Calculators | 8. Fator Q e Largura de Banda | \`08-calc-q-factor.png\` |"
+            echo "| Calculators | 9. Comprimento de Onda e Antenas | \`09-calc-wavelength.png\` |"
+            echo "| Simulators | 10. Home & Categorias (\`/\`) | \`10-home-categories.png\` |"
+            echo "| Simulators | 11. Exame Ativo (\`/exam/3\`) | \`11-exam-simulator-active.png\` |"
+            echo "| Simulators | 12. Exame — Modal Baralhar Opções | \`12-exam-shuffle-dialog.png\` |"
+            echo "| Simulators | 13. Exame — Ecrã de Resultados | \`13-exam-simulator-results.png\` |"
+            echo "| Simulators | 14. Exame — Acordeão de Revisão | \`14-exam-results-accordion-review.png\` |"
+            echo "| Simulators | 15. Exame — Revisão Inline com Explicação | \`15-exam-inline-questions-review.png\` |"
+            echo "| Questions | 16. Questões Categoria 3 (\`/browse/3\`) | \`16-browse-cat3-questions.png\` |"
+            echo "| Simulators | 17. Flashcards (\`/browse/3/flash\`) | \`17-simulator-flashcards.png\` |"
+            echo "| Simulators | 18. Prática Inteligente SM-2 (\`/browse/3/smart-practice\`) | \`18-simulator-smart-practice.png\` |"
+            echo "| Simulators | 19. Treino Rápido (\`/drill\`) | \`19-simulator-drill.png\` |"
+            echo "| Menus | 20. Menu Aprender | \`20-menu-aprender.png\` |"
+            echo "| Menus | 21. Submenu Calculadoras | \`21-menu-calculadoras.png\` |"
+            echo "| Menus | 22. Menu Exames | \`22-menu-exames.png\` |"
+            echo "| Questions | 23. Questões Categoria 2 (\`/browse/2\`) | \`23-browse-cat2-questions.png\` |"
+            echo "| Questions | 24. Questões Categoria 1 (\`/browse/1\`) | \`24-browse-cat1-questions.png\` |"
+            echo "| Tutorials | 25. Índice de Tutoriais (\`/aprender\`) | \`25-tutorials-index.png\` |"
+            echo "| Tutorials | 26. Capítulo Expandido (\`/aprender\`) | \`26-tutorials-chapter-expanded.png\` |"
+            echo "| Tutorials | 27. Guia Leis de Kirchhoff (\`/aprender/leis-de-kirchhoff\`) | \`27-tutorial-guide-kirchhoff.png\` |"
+            echo "| Tutorials | 28. Guia Código de Cores (\`/aprender/codigo-de-cores\`) | \`28-tutorial-guide-codigo-cores.png\` |"
+            echo "| Tutorials | 29. Formulário de Exame (\`/aprender/formulario\`) | \`29-tutorial-formulario.png\` |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Comment E2E artifacts on Pull Request
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const marker = "<!-- e2e-behavioral-artifacts -->";
+            const status = "${{ steps.playwright.outcome }}" === "success" ? "✅ Passaram" : "❌ Falharam";
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const screenshotsUrl = "${{ steps.screenshots_artifact.outputs.artifact-url }}" || runUrl;
+            const reportUrl = "${{ steps.report_artifact.outputs.artifact-url }}" || runUrl;
+
+            const body = [
+              marker,
+              `### 📸 Testes de Comportamento E2E (Simuladores & Calculadoras): **${status}**`,
+              "",
+              "| Artefacto | Descrição | Download |",
+              "| --- | --- | --- |",
+              `| **\`e2e-screenshots\`** | Screenshots das calculadoras e simuladores (\`exam\`, \`browse\`, \`flash\`, \`smart-practice\`, \`drill\`) | [📥 Baixar Screenshots](${screenshotsUrl}) |`,
+              `| **\`playwright-report\`** | Relatório HTML interativo do Playwright com imagens anexadas | [📊 Baixar Relatório](${reportUrl}) |`,
+              "",
+              `🔗 [Ver execução completa no GitHub Actions](${runUrl})`
+            ].join("\n");
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const existing = comments.find((c) => c.body && c.body.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
