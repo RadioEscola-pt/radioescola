@@ -114,7 +114,7 @@
         {
           "pdf": "cat1/2026_10_22",
           "question": 19,
-          "page": 6
+          "page": 5
         }
       ],
       "materia": "interferencias"
@@ -2566,7 +2566,7 @@
         {
           "pdf": "cat1/2026_10_22",
           "question": 27,
-          "page": 8
+          "page": 7
         }
       ],
       "materia": "circuitos"
@@ -5905,6 +5905,11 @@
           "pdf": "cat1/2026_09_01",
           "question": 9,
           "page": 3
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 9,
+          "page": 3
         }
       ],
       "materia": "recetores"
@@ -6330,7 +6335,7 @@
         },
         {
           "pdf": "cat1/2026_10_22",
-          "question": 27,
+          "question": 28,
           "page": 8
         }
       ],
