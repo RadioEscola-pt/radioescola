@@ -127,5 +127,5 @@ export const DEFAULT_CATEGORY: CategoryId = '3';
 export const QUESTION_COUNTS: Record<CategoryId, number> = {
   '3': 212,
   '2': 421,
-  '1': 403,
+  '1': 412,
 };

@@ -545,6 +545,11 @@
         {
           "pdf": "cat1/2024_01_02",
           "question": 37
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 37,
+          "page": 10
         }
       ],
       "materia": "teoria"
@@ -716,6 +721,11 @@
           "pdf": "cat1/2023_07_03",
           "question": 39,
           "page": 12
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 39,
+          "page": 11
         }
       ],
       "materia": "teoria"
@@ -751,6 +761,13 @@
       ],
       "correctIndex": 2,
       "hasNotesMdx": true,
+      "sources": [
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 40,
+          "page": 11
+        }
+      ],
       "materia": "teoria"
     },
     {
@@ -3016,6 +3033,11 @@
           "pdf": "cat1/2023_07_03",
           "question": 36,
           "page": 11
+        },
+        {
+          "pdf": "cat1/2026_10_22",
+          "question": 36,
+          "page": 10
         }
       ],
       "materia": "circuitos"
@@ -3085,6 +3107,11 @@
       "sources": [
         {
           "pdf": "cat1/2023_07_03",
+          "question": 38,
+          "page": 11
+        },
+        {
+          "pdf": "cat1/2026_10_22",
           "question": 38,
           "page": 11
         }
@@ -6512,10 +6539,9 @@
           "page": 1
         },
         {
-          "pdf": "cat1/2026_10_21",
+          "pdf": "cat1/2026_10_22",
           "question": 1,
-          "page": 1,
-          "unavailable": true
+          "page": 1
         }
       ],
       "materia": "regulamentacao"
