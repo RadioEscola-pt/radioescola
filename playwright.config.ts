@@ -13,16 +13,22 @@ const BASE_URL = process.env.E2E_BASE_URL ?? `http://localhost:${PORT}`;
  */
 export default defineConfig({
   testDir: "./e2e",
+  outputDir: "./test-results/artifacts",
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: process.env.CI
-    ? ([["github"], ["html", { open: "never" }]] as const)
-    : "list",
+    ? ([
+        ["github"],
+        ["html", { open: "never" }],
+        ["./e2e/screenshot-reporter.ts"],
+      ] as const)
+    : ([["list"], ["./e2e/screenshot-reporter.ts"]] as const),
   use: {
     baseURL: BASE_URL,
     trace: "on-first-retry",
+    screenshot: "on",
   },
   projects: [
     {
@@ -31,7 +37,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: `bun run dev --port ${PORT}`,
+    command: `npx next dev --port ${PORT}`,
     url: BASE_URL,
     // Locally this reuses the dev server you already have running.
     reuseExistingServer: !process.env.CI,

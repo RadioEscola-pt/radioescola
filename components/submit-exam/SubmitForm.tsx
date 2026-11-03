@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { CATEGORIES, type CategoryId } from "@/lib/config/categories";
-import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { Send, CheckCircle, AlertCircle, Loader2, ShieldCheck } from "lucide-react";
 import type { ExamSubmissionMetadata, SubmissionStatus } from "@/lib/types";
 
 interface SubmitFormProps {
@@ -100,7 +100,7 @@ export function SubmitForm({ pageCount, status, error, onSubmit, onRetry }: Subm
       </div>
 
       {/* Email (optional) */}
-      <div className="mb-6">
+      <div className="mb-4">
         <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
           {t("form.email")}
         </label>
@@ -112,6 +112,12 @@ export function SubmitForm({ pageCount, status, error, onSubmit, onRetry }: Subm
           className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-md text-sm bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500"
         />
         <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{t("form.emailHint")}</p>
+      </div>
+
+      {/* Anonymization notice */}
+      <div className="mb-6 flex items-start gap-2 rounded-lg bg-emerald-50/70 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/60 p-3 text-xs text-emerald-900 dark:text-emerald-200">
+        <ShieldCheck className="h-4 w-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+        <span>{t("form.anonymizedNotice")}</span>
       </div>
 
       {/* Error state */}

@@ -336,3 +336,10 @@ and issued certificates, and re-issuing runs into Let's Encrypt rate limits.
 - **`deploy.sh` and `deploy-remote.sh` are superseded.** The first builds on the
   production box, the second builds on your laptop; both fight with the
   container for the port. Delete them once this flow is live.
+
+## Open Questions (for review)
+
+- **Manter, atualizar ou remover `deploy.sh` / `deploy-remote.sh`?**
+  - Atualmente o deploy oficial usa Docker + Caddy (`deploy/release.sh` + `deploy/compose.yaml`) e `next.config.js` usa `output: "standalone"`.
+  - O `deploy.sh` usa `pm2 start "bun run start"` (`next start`), o que gera aviso com `output: "standalone"`, além de exigir `pm2` global.
+  - **Questão em aberto**: Faz sentido manter/adaptar um script local para quem queira correr/testar uma build de produção sem Docker (ex.: correndo `node .next/standalone/server.js` sem depender de `pm2`), ou podemos remover definitivamente `deploy.sh` e `deploy-remote.sh`?

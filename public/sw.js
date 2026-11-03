@@ -3,7 +3,8 @@
 // Bumped on every change to the shape of /data/cat*.json, since precached
 // payloads outlive a deploy. v3: options instead of answers, 0-indexed
 // correctIndex. v4: fonte/fontePages replaced by nested `sources`.
-const CACHE_NAME = "radioescola-v4";
+// v5: skip Next.js RSC/prefetch requests and never resolve undefined in staleWhileRevalidate.
+const CACHE_NAME = "radioescola-v5";
 
 // Static assets to cache on install
 const STATIC_ASSETS = [
@@ -58,6 +59,24 @@ self.addEventListener("fetch", (event) => {
 
   // Skip chrome-extension and other non-http(s) requests
   if (!url.protocol.startsWith("http")) {
+    return;
+  }
+
+  // Only handle same-origin requests
+  if (url.origin !== self.location.origin) {
+    return;
+  }
+
+  // Skip Next.js App Router RSC / prefetch requests:
+  // 1) Cache API matches by URL and ignores the `RSC: 1` header, which would mix
+  //    RSC payloads and HTML documents under the same URL key (e.g. /submit-exam).
+  // 2) Next.js aborts in-flight prefetches on navigation, which would reject
+  //    FetchEvent if intercepted by the Service Worker.
+  if (
+    request.headers.get("RSC") === "1" ||
+    request.headers.get("Next-Router-Prefetch") === "1" ||
+    url.searchParams.has("_rsc")
+  ) {
     return;
   }
 
@@ -141,7 +160,7 @@ async function staleWhileRevalidate(request) {
       }
       return response;
     })
-    .catch(() => cached);
+    .catch(() => cached || new Response("Offline", { status: 503 }));
 
   return cached || fetchPromise;
 }

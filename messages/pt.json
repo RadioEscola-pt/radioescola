@@ -563,7 +563,8 @@
       "yearPlaceholder": "ex., 2024",
       "email": "Email (opcional)",
       "emailPlaceholder": "teu@email.com",
-      "emailHint": "Caso precisemos de te contactar sobre esta submissão"
+      "emailHint": "Caso precisemos de te contactar sobre esta submissão",
+      "anonymizedNotice": "O exame será anonimizado antes de ser publicado — todos os dados pessoais (nome, número de candidato, assinatura, etc.) são removidos."
     },
     "submit": {
       "button": "Enviar Exame",

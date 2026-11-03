@@ -60,6 +60,8 @@ type ProgressContextType = {
   ) => { mastered: number; attempted: number; masteryRate: number };
   clearProgress: () => Promise<void>;
   refreshProgress: () => Promise<void>;
+  toggleGuideRead: (slug: string) => Promise<void>;
+  isGuideRead: (slug: string) => boolean;
   // Gamification
   gamification: UseGamificationReturn;
   lastGamificationResult: GamificationResult | null;
