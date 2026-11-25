@@ -131,6 +131,8 @@ export const SUPPORTERS: Supporter[] = [
   { name: 'Manuel Cerva', callsign: 'CT1CZZ', since: '2026-10' },
   { name: 'Carlos Frade', callsign: 'CS7CJQ', since: '2026-11' },
   { name: 'Jaime Almeida', callsign: 'CS7BPB', since: '2026-11' },
+  { name: 'António José Oliveira', callsign: 'CT7BXT', since: '2026-11' },
+  { name: 'Arminda Silva', callsign: 'CS7CHW', since: '2026-11' },
 ];
 
 export interface SupporterYear {
