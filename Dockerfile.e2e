@@ -1,0 +1,20 @@
+# syntax=docker/dockerfile:1
+# Runs the Playwright E2E behavioral suite (calculators + simulators) inside
+# a reproducible Debian/Node container and writes screenshots + HTML report to
+# /app/test-results/screenshots and /app/playwright-report.
+
+FROM node:24-bookworm AS e2e
+WORKDIR /app
+
+ENV CI=1 \
+    NEXT_TELEMETRY_DISABLED=1
+
+COPY package.json package-lock.json ./
+RUN npm ci
+
+# Install Chromium and OS dependencies required by Playwright
+RUN npx playwright install --with-deps chromium
+
+COPY . .
+
+CMD ["npx", "playwright", "test"]

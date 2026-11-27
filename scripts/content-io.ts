@@ -376,11 +376,26 @@ export function writeQuestion(
     serializeManifest({ ...manifest, order: [...order] })
   );
 
-  const { appJson, notes } = emitCategory(loadCategory(sourceDir), EXAMS_DIR);
+  const loadedCategory = loadCategory(sourceDir);
+  const { appJson, notes, withheld } = emitCategory(loadedCategory, EXAMS_DIR);
   const dataFile = join(ROOT, "public", "data", `cat${category}.json`);
   writeFileSync(dataFile, appJson);
 
   const written = [questionFile, join(sourceDir, MANIFEST_FILE), dataFile];
+
+  const categoriesConfigFile = join(ROOT, "lib", "config", "categories.ts");
+  if (existsSync(categoriesConfigFile)) {
+    const liveCount = loadedCategory.questions.length - withheld.length;
+    const rawConfig = readFileSync(categoriesConfigFile, "utf-8");
+    const updatedConfig = rawConfig.replace(
+      new RegExp(`(QUESTION_COUNTS[\\s\\S]*?'${category}':\\s*)\\d+`),
+      `$1${liveCount}`
+    );
+    if (updatedConfig !== rawConfig) {
+      writeFileSync(categoriesConfigFile, updatedConfig);
+      written.push(categoriesConfigFile);
+    }
+  }
 
   const noteFile = join(ROOT, "content", "notes", `cat${category}`, `${question.id}.mdx`);
   const note = notes.get(question.id);

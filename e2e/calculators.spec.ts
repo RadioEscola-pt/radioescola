@@ -1,6 +1,17 @@
-import { test, expect, type Locator, type Page } from "@playwright/test";
+import { test, expect, type Locator, type Page, type TestInfo } from "@playwright/test";
+import { mkdirSync } from "node:fs";
+import { join } from "node:path";
 
 import pt from "@/messages/pt.json";
+
+const SCREENSHOT_DIR = join(process.cwd(), "test-results", "screenshots");
+
+async function captureScreenshot(page: Page, testInfo: TestInfo, filename: string) {
+  mkdirSync(SCREENSHOT_DIR, { recursive: true });
+  const filePath = join(SCREENSHOT_DIR, filename);
+  const buffer = await page.screenshot({ path: filePath, fullPage: false });
+  await testInfo.attach(filename, { body: buffer, contentType: "image/png" });
+}
 
 /**
  * These tests drive the shipped app: the real NavBar, the real
@@ -30,20 +41,12 @@ type CalculatorName = (typeof CALCULATORS)[number]["menu"];
 
 /**
  * Opens a calculator the way a visitor does: NavBar → Aprender → Calculadoras.
- *
- * The nav label comes from `messages/pt.json` rather than being spelt out: it
- * is how the test reaches the calculator, not something it asserts, and
- * hardcoding it once cost a whole red suite when the menu was renamed from
- * "Estudar" to "Aprender". The strings this suite is actually about — the
- * calculator names, the labels, the results — stay written out on purpose.
  */
 async function openCalculator(page: Page, menu: CalculatorName): Promise<Locator> {
   const entry = CALCULATORS.find((c) => c.menu === menu)!;
 
   await page.getByRole("button", { name: pt.NavBar.study }).click();
   await page.getByRole("menuitem", { name: pt.NavBar.calculators }).click();
-  // Match on the item's own title node: a couple of the descriptions mention
-  // another calculator's name, so an accessible-name substring is ambiguous.
   await page
     .getByRole("menuitem")
     .filter({ has: page.getByText(entry.menu, { exact: true }) })
@@ -68,19 +71,6 @@ test("every registered calculator opens and closes from the navigation", async (
   }
 });
 
-/**
- * The submenu is ~700px tall for nine calculators, which is taller than the
- * viewport of an ordinary laptop once the browser's own chrome is taken off. It
- * used to be cut off there: `overflow-hidden` with no max-height, so Radix
- * shifted it up to the top of the screen and the rest fell off the bottom with
- * no scrollbar and nothing able to reach it — not the wheel, not the page
- * scroll (the panel is position: fixed), while arrow-down still put focus on
- * items nobody could see.
- *
- * Only a browser can catch this: it is a collision between a measured height, a
- * viewport, and Radix's positioning, and none of those exist in jsdom. Hence a
- * test that does nothing but shrink the window.
- */
 test("the calculators submenu stays reachable on a short viewport", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 600 });
 
@@ -90,12 +80,10 @@ test("the calculators submenu stays reachable on a short viewport", async ({ pag
   const submenu = page.getByRole("menu").last();
   await expect(submenu).toBeVisible();
 
-  // The panel fits the window rather than running off the bottom of it.
   const box = (await submenu.boundingBox())!;
   expect(box.y).toBeGreaterThanOrEqual(0);
   expect(box.y + box.height).toBeLessThanOrEqual(600);
 
-  // It is too tall for that, so the overflow has to be scrollable and not clipped.
   await expect(submenu).toHaveCSS("overflow-y", "auto");
   const { clientHeight, scrollHeight } = await submenu.evaluate((el) => ({
     clientHeight: el.clientHeight,
@@ -103,11 +91,6 @@ test("the calculators submenu stays reachable on a short viewport", async ({ pag
   }));
   expect(scrollHeight).toBeGreaterThan(clientHeight);
 
-  // The last calculator is the one that used to be lost. Reaching it by keyboard
-  // is the stricter check: focus landing somewhere invisible was the real defect.
-  // `End` rather than nine ArrowDowns: Radix moves focus on its own schedule and
-  // presses sent back to back get swallowed, which made the loop stop at the
-  // third item and fail for a reason that had nothing to do with the layout.
   const last = CALCULATORS[CALCULATORS.length - 1]!;
   await page.getByRole("menuitem", { name: pt.NavBar.calculators }).hover();
   await page.keyboard.press("ArrowRight");
@@ -118,7 +101,7 @@ test("the calculators submenu stays reachable on a short viewport", async ({ pag
   await expect(focused).toBeInViewport({ ratio: 1 });
 });
 
-test("Ohm's law computes through the real UI", async ({ page }) => {
+test("1. Ohm's law computes resistance and power through the real UI", async ({ page }, testInfo) => {
   const window = await openCalculator(page, "Lei de Ohm");
 
   await window.getByLabel("Tensão (V)").fill("12");
@@ -126,10 +109,89 @@ test("Ohm's law computes through the real UI", async ({ page }) => {
   await window.getByRole("button", { name: "Calcular" }).click();
 
   await expect(window).toContainText(/Resistência calculada: 6/);
+  await captureScreenshot(page, testInfo, "01-calc-ohms-law.png");
 });
 
-test.describe("wavelength calculator", () => {
-  test("computes antenna dimensions with the default velocity factor", async ({ page }) => {
+test("2. Component Sum computes series resistance through the real UI", async ({ page }, testInfo) => {
+  const window = await openCalculator(page, "Soma Componentes");
+
+  const inputs = window.getByPlaceholder("Valor");
+  await inputs.nth(0).fill("100");
+  await inputs.nth(1).fill("220");
+  await window.getByRole("button", { name: "Calcular" }).click();
+
+  await expect(window).toContainText("320.00 Ω");
+  await captureScreenshot(page, testInfo, "02-calc-component-sum.png");
+});
+
+test("3. RLC Circuit computes resonant frequency through the real UI", async ({ page }, testInfo) => {
+  const window = await openCalculator(page, "Circuito RLC");
+
+  await window.getByLabel("Indutância (L)").fill("10");
+  await window.getByLabel("Capacitância (C)").fill("100");
+  await window.getByRole("button", { name: "Calcular" }).click();
+
+  await expect(window).toContainText(/Frequência de ressonância:/);
+  await captureScreenshot(page, testInfo, "03-calc-rlc.png");
+});
+
+test("4. VSWR computes standing wave ratio and return loss from power", async ({ page }, testInfo) => {
+  const window = await openCalculator(page, "VSWR");
+
+  await window.getByLabel("Potência Direta").fill("100");
+  await window.getByLabel("Potência Refletida").fill("4");
+  await window.getByRole("button", { name: "Calcular" }).click();
+
+  await expect(window).toContainText("VSWR = 1.5000:1");
+  await captureScreenshot(page, testInfo, "04-calc-vswr.png");
+});
+
+test("5. Gain calculator computes dB gain from power ratio", async ({ page }, testInfo) => {
+  const window = await openCalculator(page, "Ganho");
+
+  await window.getByLabel("Potência de Entrada (P1)").fill("10");
+  await window.getByLabel("Potência de Saída (P2)").fill("100");
+  await window.getByRole("button", { name: "Calcular" }).click();
+
+  await expect(window).toContainText("10.000 dB");
+  await captureScreenshot(page, testInfo, "05-calc-gain.png");
+});
+
+test("6. Transformer calculator computes turns ratio and type from voltages", async ({ page }, testInfo) => {
+  const window = await openCalculator(page, "Transformador");
+
+  await window.getByLabel("Tensão Primária (Vp)").fill("230");
+  await window.getByLabel("Tensão Secundária (Vs)").fill("12");
+  await window.getByRole("button", { name: "Calcular" }).click();
+
+  await expect(window).toContainText(/Transformador Redutor/);
+  await captureScreenshot(page, testInfo, "06-calc-transformer.png");
+});
+
+test("7. Reactance calculator computes inductive reactance XL", async ({ page }, testInfo) => {
+  const window = await openCalculator(page, "Reatância");
+
+  await window.getByLabel("Frequência (f)").fill("7.1");
+  await window.getByLabel("Indutância (L)").fill("10");
+  await window.getByRole("button", { name: "Calcular" }).click();
+
+  await expect(window).toContainText(/Reatância Indutiva calculada:/);
+  await captureScreenshot(page, testInfo, "07-calc-reactance.png");
+});
+
+test("8. Q Factor calculator computes quality factor and -3dB cutoffs", async ({ page }, testInfo) => {
+  const window = await openCalculator(page, "Fator Q");
+
+  await window.getByLabel("Frequência Central / Ressonância (f₀)").fill("7.1");
+  await window.getByLabel("Largura de Banda a -3dB (BW)").fill("0.1");
+  await window.getByRole("button", { name: "Calcular" }).click();
+
+  await expect(window).toContainText(/Fator Q: 71/);
+  await captureScreenshot(page, testInfo, "08-calc-q-factor.png");
+});
+
+test.describe("9. Wavelength calculator", () => {
+  test("computes antenna dimensions with the default velocity factor", async ({ page }, testInfo) => {
     const window = await openCalculator(page, "Comprimento de Onda");
 
     await window.getByLabel("Frequência (f)").fill("14.150");
@@ -138,6 +200,7 @@ test.describe("wavelength calculator", () => {
     // λ = c / f = 21.19 m; dipole = λ/2 × 0.95 = 10.064 m
     await expect(window).toContainText("λ = 21.19 m");
     await expect(window).toContainText("10.064 m");
+    await captureScreenshot(page, testInfo, "09-calc-wavelength.png");
   });
 
   test("a velocity factor of 0.66 changes both the answer and the shown formula", async ({
@@ -148,11 +211,6 @@ test.describe("wavelength calculator", () => {
     await window.getByLabel("Frequência (f)").fill("14.150");
     await window.getByLabel("Fator de Velocidade (k)").fill("0.66");
 
-    // The two formula constants are 150 × k and 75 × k, so they must follow the
-    // input rather than stay pinned to the 142.50 and 71.25 of the default
-    // k = 0.95. Asserted as bare numbers because KaTeX splits the expression
-    // across its own markup — matching "99.00 / f(MHz)" would be asserting the
-    // renderer, not the physics.
     await expect(window).toContainText("99.00");
     await expect(window).toContainText("49.50");
     await expect(window).not.toContainText("142.50");
@@ -167,8 +225,6 @@ test.describe("wavelength calculator", () => {
     const window = await openCalculator(page, "Comprimento de Onda");
 
     await window.getByLabel("Frequência (f)").fill("14.150");
-    // 66 is the percent convention for coax — a plausible mistake that must not
-    // be silently reinterpreted as the 0.95 default.
     await window.getByLabel("Fator de Velocidade (k)").fill("66");
     await window.getByRole("button", { name: "Calcular" }).click();
 

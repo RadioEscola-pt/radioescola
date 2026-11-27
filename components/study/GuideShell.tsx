@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { Check } from 'lucide-react';
-import { useProgress } from '@/hooks/useProgress';
+import { useProgressContext } from '@/components/providers/ProgressProvider';
 import { BARE_GUIDE_SLUGS, type StudyItem } from '@/lib/config/study-guides';
 import GuideToc, { useGuideSections } from '@/components/study/GuideToc';
 
@@ -41,7 +41,7 @@ export default function GuideShell({
 }) {
   const t = useTranslations('Study.guide');
   const tStudy = useTranslations('Study');
-  const { isGuideRead, toggleGuideRead } = useProgress();
+  const { isGuideRead, toggleGuideRead } = useProgressContext();
   const pathname = usePathname() ?? '';
   const slug = pathname.replace(/^\/aprender\/?/, '').replace(/\/$/, '');
   const { sections, activeId } = useGuideSections(slug);

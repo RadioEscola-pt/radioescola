@@ -116,6 +116,7 @@ function sweepNotes(dir: string, keep: ReadonlySet<string>) {
 }
 
 const loaded: ContentCategory[] = [];
+const liveCounts = new Map<string, number>();
 
 for (const category of CATEGORIES) {
   const sourceDir = join("content", "questions", `cat${category}`);
@@ -125,6 +126,7 @@ for (const category of CATEGORIES) {
   loaded.push(parsed);
   const { appJson, notes, withheld: ids } = emitCategory(parsed);
   if (ids.length > 0) withheld.push({ category, ids });
+  liveCounts.set(category, parsed.questions.length - ids.length);
 
   compare(join("public", "data", `cat${category}.json`), appJson);
   const notesDir = join("content", "notes", `cat${category}`);
@@ -165,6 +167,18 @@ if (mobileDir !== undefined && checked > 0) {
     join(mobileDir, "assets", "content", "exam_config.json"),
     emitMobileExamConfig(EXAM_CONFIG)
   );
+}
+
+const categoriesConfigPath = join("lib", "config", "categories.ts");
+if (existsSync(categoriesConfigPath) && liveCounts.size > 0) {
+  let categoriesSrc = readFileSync(categoriesConfigPath, "utf-8").replace(/\r\n/g, "\n");
+  for (const [cat, count] of liveCounts) {
+    categoriesSrc = categoriesSrc.replace(
+      new RegExp(`(QUESTION_COUNTS[\\s\\S]*?'${cat}':\\s*)\\d+`),
+      `$1${count}`
+    );
+  }
+  compare(categoriesConfigPath, categoriesSrc);
 }
 
 if (checked === 0) {

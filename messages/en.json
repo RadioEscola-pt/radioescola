@@ -561,9 +561,10 @@
       "categoryPlaceholder": "Select category...",
       "year": "Year (optional)",
       "yearPlaceholder": "e.g., 2024",
-      "email": "Email (optional)",
+      "email": "Email (opcional)",
       "emailPlaceholder": "your@email.com",
-      "emailHint": "In case we need to contact you about this submission"
+      "emailHint": "In case we need to contact you about this submission",
+      "anonymizedNotice": "The exam will be anonymized before publication — all personal data (name, candidate number, signature, etc.) is removed."
     },
     "submit": {
       "button": "Submit Exam",
